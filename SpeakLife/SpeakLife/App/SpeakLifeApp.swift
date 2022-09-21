@@ -55,9 +55,4 @@ struct SpeakLifeApp: App {
         let monthly = storeManager.isPurchased(with: InAppId.revampMonthlyId)
         appState.isPremium = yearly || lifetime || monthly
     }
-    var body: some Scene {
-        WindowGroup {
-            HomeView()
-        }
-    }
 }
