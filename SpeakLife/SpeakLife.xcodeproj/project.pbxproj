@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A278F9B288915DE0084BB57 /* SpeakLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */; };
-		7A278F9D288915DE0084BB57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A278F9C288915DE0084BB57 /* ContentView.swift */; };
+		7A278F9D288915DE0084BB57 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A278F9C288915DE0084BB57 /* HomeView.swift */; };
 		7A278F9F288915DF0084BB57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A278F9E288915DF0084BB57 /* Assets.xcassets */; };
 		7A278FA2288915DF0084BB57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A278FA1288915DF0084BB57 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		7A278F97288915DE0084BB57 /* SpeakLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakLifeApp.swift; sourceTree = "<group>"; };
-		7A278F9C288915DE0084BB57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7A278F9C288915DE0084BB57 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7A278F9E288915DF0084BB57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A278FA1288915DF0084BB57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,8 +51,11 @@
 		7A278F99288915DE0084BB57 /* SpeakLife */ = {
 			isa = PBXGroup;
 			children = (
-				7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */,
-				7A278F9C288915DE0084BB57 /* ContentView.swift */,
+				7AA8706428DACB2900134ADB /* App */,
+				7AA8706528DACB3500134ADB /* Views */,
+				7AA8706628DACB3F00134ADB /* Models */,
+				7AA8706728DACB5100134ADB /* Services */,
+				7AA8706828DACB6100134ADB /* Core */,
 				7A278F9E288915DF0084BB57 /* Assets.xcassets */,
 				7A278FA0288915DF0084BB57 /* Preview Content */,
 			);
@@ -65,6 +68,43 @@
 				7A278FA1288915DF0084BB57 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7AA8706428DACB2900134ADB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7AA8706528DACB3500134ADB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A278F9C288915DE0084BB57 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7AA8706628DACB3F00134ADB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7AA8706728DACB5100134ADB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7AA8706828DACB6100134ADB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A278F9D288915DE0084BB57 /* ContentView.swift in Sources */,
+				7A278F9D288915DE0084BB57 /* HomeView.swift in Sources */,
 				7A278F9B288915DE0084BB57 /* SpeakLifeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
