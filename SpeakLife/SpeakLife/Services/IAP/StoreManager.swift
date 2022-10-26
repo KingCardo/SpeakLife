@@ -22,7 +22,7 @@ final class StoreManager: NSObject, ObservableObject {
     // MARK: - Properties
 
     /// Keeps track of all valid products. These products are available for sale in the App Store.
-    fileprivate var availableProducts: [String?] = InAppId.all
+    //fileprivate var availableProducts: [String?] = InAppId.AppID.allCases
 
     weak var delegate: StoreManagerDelegate?
 

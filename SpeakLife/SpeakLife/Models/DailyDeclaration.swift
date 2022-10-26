@@ -65,9 +65,10 @@ struct Welcome: Codable {
 // MARK: - Declaration
 struct Declaration: Codable, Identifiable, Hashable {
     let text: String
+    let book: String = "Psalm 118:6"
     var category: DeclarationCategory = .faith
     var isFavorite: Bool = false
     var id: String {
-        text
+        text + book
     }
 }

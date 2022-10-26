@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A00721828F8ED4A00965AF7 /* declarations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A00721728F8ED4A00965AF7 /* declarations.json */; };
+		7A00721A2908D22E00965AF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A0072192908D22E00965AF7 /* GoogleService-Info.plist */; };
+		7A00721D2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		7A278F9B288915DE0084BB57 /* SpeakLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */; };
-		7A278F9D288915DE0084BB57 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A278F9C288915DE0084BB57 /* HomeView.swift */; };
 		7A278F9F288915DF0084BB57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A278F9E288915DF0084BB57 /* Assets.xcassets */; };
 		7A278FA2288915DF0084BB57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A278FA1288915DF0084BB57 /* Preview Assets.xcassets */; };
 		7AA8706C28DACC4E00134ADB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8706928DACC4E00134ADB /* Theme.swift */; };
@@ -67,9 +69,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A00721728F8ED4A00965AF7 /* declarations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = declarations.json; sourceTree = "<group>"; };
+		7A0072192908D22E00965AF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7A278F97288915DE0084BB57 /* SpeakLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakLifeApp.swift; sourceTree = "<group>"; };
-		7A278F9C288915DE0084BB57 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7A278F9E288915DF0084BB57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A278FA1288915DF0084BB57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AA8706928DACC4E00134ADB /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -132,12 +135,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A00721D2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A00721628F8ED4A00965AF7 /* AffirmationData */ = {
+			isa = PBXGroup;
+			children = (
+				7A00721728F8ED4A00965AF7 /* declarations.json */,
+			);
+			path = AffirmationData;
+			sourceTree = "<group>";
+		};
 		7A278F8E288915DE0084BB57 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +174,7 @@
 				7AA8706628DACB3F00134ADB /* Models */,
 				7AA8706728DACB5100134ADB /* Services */,
 				7AA8706828DACB6100134ADB /* Core */,
+				7A0072192908D22E00965AF7 /* GoogleService-Info.plist */,
 				7A278F9E288915DF0084BB57 /* Assets.xcassets */,
 				7A278FA0288915DF0084BB57 /* Preview Content */,
 			);
@@ -171,6 +184,7 @@
 		7A278FA0288915DF0084BB57 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				7A00721628F8ED4A00965AF7 /* AffirmationData */,
 				7A278FA1288915DF0084BB57 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -189,7 +203,6 @@
 		7AA8706528DACB3500134ADB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7A278F9C288915DE0084BB57 /* HomeView.swift */,
 				7AA8709728DACCB700134ADB /* Declaration View */,
 				7AA870B828DACCB700134ADB /* Onboarding */,
 			);
@@ -304,13 +317,13 @@
 		7AA8709728DACCB700134ADB /* Declaration View */ = {
 			isa = PBXGroup;
 			children = (
+				7AA870B728DACCB700134ADB /* DeclarationView.swift */,
 				7AA8709828DACCB700134ADB /* IntentsBarView.swift */,
+				7AA870B628DACCB700134ADB /* CategoryChooserView.swift */,
 				7AA8709928DACCB700134ADB /* View Models */,
 				7AA8709C28DACCB700134ADB /* DeclarationContent */,
 				7AA870A028DACCB700134ADB /* ThemeChooserViews */,
 				7AA870A328DACCB700134ADB /* ProfileView */,
-				7AA870B628DACCB700134ADB /* CategoryChooserView.swift */,
-				7AA870B728DACCB700134ADB /* DeclarationView.swift */,
 			);
 			path = "Declaration View";
 			sourceTree = "<group>";
@@ -327,9 +340,9 @@
 		7AA8709C28DACCB700134ADB /* DeclarationContent */ = {
 			isa = PBXGroup;
 			children = (
+				7AA8709F28DACCB700134ADB /* DeclarationContentView.swift */,
 				7AA8709D28DACCB700134ADB /* QuoteLabel.swift */,
 				7AA8709E28DACCB700134ADB /* HeartView.swift */,
-				7AA8709F28DACCB700134ADB /* DeclarationContentView.swift */,
 			);
 			path = DeclarationContent;
 			sourceTree = "<group>";
@@ -442,6 +455,9 @@
 			dependencies = (
 			);
 			name = SpeakLife;
+			packageProductDependencies = (
+				7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */,
+			);
 			productName = SpeakLife;
 			productReference = 7A278F97288915DE0084BB57 /* SpeakLife.app */;
 			productType = "com.apple.product-type.application";
@@ -470,6 +486,9 @@
 				Base,
 			);
 			mainGroup = 7A278F8E288915DE0084BB57;
+			packageReferences = (
+				7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 7A278F98288915DE0084BB57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -486,6 +505,8 @@
 			files = (
 				7A278FA2288915DF0084BB57 /* Preview Assets.xcassets in Resources */,
 				7AA870E628DACFB800134ADB /* Localizable.strings in Resources */,
+				7A00721A2908D22E00965AF7 /* GoogleService-Info.plist in Resources */,
+				7A00721828F8ED4A00965AF7 /* declarations.json in Resources */,
 				7A278F9F288915DF0084BB57 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,7 +535,6 @@
 				7AA8707F28DACC8300134ADB /* NotificationManager.swift in Sources */,
 				7AA870E028DACCB700134ADB /* WidgetScene.swift in Sources */,
 				7AA8708128DACC8300134ADB /* NotificationProcessor.swift in Sources */,
-				7A278F9D288915DE0084BB57 /* HomeView.swift in Sources */,
 				7AA870D028DACCB700134ADB /* ReminderView.swift in Sources */,
 				7AA870D828DACCB700134ADB /* CategoryChooserView.swift in Sources */,
 				7A278F9B288915DE0084BB57 /* SpeakLifeApp.swift in Sources */,
@@ -607,7 +627,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -661,7 +681,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -682,11 +702,13 @@
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SpeakLife;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -711,11 +733,13 @@
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SpeakLife;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -751,6 +775,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7A278F8F288915DE0084BB57 /* Project object */;
 }

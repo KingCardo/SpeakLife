@@ -122,13 +122,12 @@ final class StoreObserver: NSObject {
     /// Handles restored purchase transactions.
     fileprivate func handleRestored(_ transaction: SKPaymentTransaction) {
         
-        let productIDsToRestore = InAppId.all
+        let productIDsToRestore = InAppId.AppID.allCases.map { $0.id }
 
         if transaction.original != nil  {
             let originalID = transaction.original!.payment.productIdentifier
             if productIDsToRestore.contains(originalID) {
                 setSubscriptionKey(id: originalID)
-                receiptValidation(id: InAppId.revampYearlyId, completion: nil)
                 DispatchQueue.main.async {
                     NotificationCenter.default.post(Notification(name: PurchaseSuccess))
                     self.delegate?.storeObserverRestoreDidSucceed(isPremium: true)

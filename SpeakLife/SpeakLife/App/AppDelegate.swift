@@ -8,6 +8,7 @@
 import UIKit
 import BackgroundTasks
 import StoreKit
+import FirebaseCore
 
 final class AppDelegate: NSObject, UIApplicationDelegate {
     
@@ -17,7 +18,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-       
+        FirebaseApp.configure()
         registerNotificationHandler()
         registerBGTask()
         registerIAPDelegateAndObservers()
@@ -34,14 +35,14 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
 
     
     private func updateSubscriptions() {
-        StoreObserver.shared.receiptValidation(id: InAppId.revampYearlyId) { [weak self] didDelete in
-            if didDelete {
-            self?.updateAppState?()
-            }
-        }
-        StoreObserver.shared.receiptValidation(id: InAppId.revampMonthlyId) { didDelete in
-            
-        }
+//        StoreObserver.shared.receiptValidation(id: InAppId.revampYearlyId) { [weak self] didDelete in
+//            if didDelete {
+//            self?.updateAppState?()
+//            }
+//        }
+//        StoreObserver.shared.receiptValidation(id: InAppId.revampMonthlyId) { didDelete in
+//
+//        }
     }
     
     

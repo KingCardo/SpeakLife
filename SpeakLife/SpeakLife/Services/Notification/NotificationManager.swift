@@ -73,7 +73,7 @@ final class NotificationManager: NSObject {
             let body = declaration.body
             
             let content = UNMutableNotificationContent()
-            content.title = "Revamp"
+            content.title = "SpeakLife"
             content.body = body
             content.sound = UNNotificationSound.default
             
@@ -126,7 +126,7 @@ final class NotificationManager: NSObject {
         let body = "Time to unwind and end your day with your favorite affirmations!" // Localize
         
         let content = UNMutableNotificationContent()
-        content.title = "Revamp"
+        content.title = "SpeakLife"
         content.body = body
         content.sound = UNNotificationSound.default
         

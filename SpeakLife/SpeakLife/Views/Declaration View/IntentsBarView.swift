@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct IntentsBarView: View {
     
     // MARK: - Properties

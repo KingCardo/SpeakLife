@@ -29,23 +29,12 @@ struct SubscriptionView: View {
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var storeManager: StoreManager
     
+    @State var currentSelection: InAppId.AppID = InAppId.AppID.speakLife1YR19
+    
     let size: CGSize
-    let monthly = Text("Monthly Premium", comment: "Monthly premium title") + Text(" ")
-    let monthlyPrice = Text("$3.99", comment: "monthly price")
-        .fontWeight(.bold)
-    
-    let yearly = Text("12 months Premium", comment: "yearly premium") + Text(" ")
-    let yearlyPrice = Text("$14.99")
-        .fontWeight(.bold)
-    
-    let lp = Text("Lifetime Premium", comment: "lifetime premium") + Text(" ")
-    let price = Text("$49.99")
-        .fontWeight(.bold)
-    let oneTime = Text(" ") + Text("one time", comment: "one time fee")
-        .font(.caption)
-    
+
     var body: some View {
-        goPremiumView(size:  size)
+        goPremiumView(size: size)
             .foregroundColor(colorScheme == .dark ? .white : Constants.DEABlack)
     }
     
@@ -109,31 +98,14 @@ struct SubscriptionView: View {
                                                 endPoint: .bottom)
         
         return VStack {
-            
-            Text("Only $1.25/month, with yearly option billed annually.", comment: "monthly text breakdown")
-                .font(.callout)
-                .minimumScaleFactor(0.5)
-            
-            HStack {
-                
-               priceButton(action: actionMonthly,
-                           durationtext: monthly,
-                           subcsriptionPriceText: monthlyPrice,
-                           gradient: linearGradient)
-                
-                priceButton(action: actionYearly,
-                            durationtext: yearly,
-                            subcsriptionPriceText: yearlyPrice,
-                            gradient: linearGradient)
-                
-                priceButton(action: actionLifetime,
-                            durationtext: lp,
-                            subcsriptionPriceText: price + oneTime,
-                            gradient: linearGradient)
-                
+            Picker("Gift Amount", selection: $currentSelection) {
+                ForEach(InAppId.AppID.allCases) { inappID in
+                    Text(inappID.title).tag(inappID)
+                }
             }
             
-            .cornerRadius(4)
+            continueButton(gradient: linearGradient)
+
             HStack {
                 Button(action: restore) {
                     Text("Restore", comment: "restore iap")
@@ -143,33 +115,19 @@ struct SubscriptionView: View {
             }
         }
     }
-    
-    private func actionMonthly() {
-        makePurchase(with: InAppId.revampMonthlyId)
-    }
-    
-    private func actionYearly() {
-        makePurchase(with: InAppId.revampYearlyId)
-    }
-    
-    private func actionLifetime() {
-        makePurchase(with: InAppId.revampLifetime)
-    }
-    
-    private func makePurchase(with id: String) {
+
+    private func makePurchase() {
         declarationStore.isPurchasing = true
-        StoreObserver.shared.productId = id
+        StoreObserver.shared.productId = currentSelection.rawValue
         
         if let id = StoreObserver.shared.productId  {
+            print(id)
             StoreManager.shared.startProductRequest(with: id)
         }
     }
     
-    private func priceButton(action: @escaping() -> Void, durationtext: Text, subcsriptionPriceText: Text, gradient: LinearGradient) -> some View {
-        Button(action: action) {
-            durationtext +
-            subcsriptionPriceText
-        }
+    private func continueButton(gradient: LinearGradient) -> some View {
+        Button("Continue", action: makePurchase)
         .foregroundColor(Color.white)
         .frame(width: size.width * 0.22 ,height: 100)
         .padding(.horizontal)
@@ -179,5 +137,12 @@ struct SubscriptionView: View {
     
     private func restore() {
         StoreObserver.shared.restore()
+    }
+}
+
+struct SubscriptionView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        SubscriptionView(size: UIScreen.main.bounds.size)
     }
 }

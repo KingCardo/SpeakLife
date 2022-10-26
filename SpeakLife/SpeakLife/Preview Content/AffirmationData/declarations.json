@@ -1,0 +1,3536 @@
+{
+    "count": 821,
+    "declarations": [
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I believe my angels are with me keeping me safe.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God wants me to have a life filled with prosperity, peace and joy.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God will turn every bad circumstance to turn out for my good!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I choose to trust God no matter what!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God will never leave me!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I trust that everything is working together in my favor.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Everything is coming together in due time, I trust in God's timing.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "What's mine is on the way and what's not is exiting.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I am exactly where I'm meant to be.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God hears me when I talk to him.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "This is the day God has made, I won't waste it!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I am safe in God's presence!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "My prayers are always being listened to by the Creator of the Universe!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God will always come to the rescue!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I have free choice to say yes or no!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "My validation comes from within.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I'm not concerned with other people's opinion's of me.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love the person I am becoming.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love the person I see in the mirror.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I am very happy and loved enormously.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I make good choices that benefit my future.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Taking care of myself is a top priority.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Loving myself is very necessary.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I listen to the voice in my heart.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I ask God to guide my steps when I feel lost.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I will respect myself at all times.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "It's ok to say no.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I am great!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I am a bright light shining wherever I go!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Never settle for a life you don't want out of fear to go after what you truly want.",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I am discipline.",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I am a hard worker.",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I am inspired to do great things with my life!",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I am brave enough to try!",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I am ready to put in the work to succeed!",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I will plan and take action so I don't fail!",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I am proud for how far I've come!",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I will put my all into my dreams!",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I am always evolving for the better!",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I will focus on what brings me peace and happiness!",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I will work on my passions!",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I am prepared to overcome all obstacles!",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I won't listen to the lying thoughts that try to make me afraid!",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I can do anything I put my mind to!",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I will not fear!",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I am thankful for all I have!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for food and clean water I have access to every day!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for my senses!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for this new day!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for all my future blessings!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "Thankfulness creates more doors of blessings!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for my friends!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for my family!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am grateful I have everything inside me to be successful!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "Every day is a gift!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am highly favored and prosperous!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for my body!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I love my mind!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for all the love I receive!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "My gratitude attracts abundance!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am much more powerful than I think!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I am proud of all the bad days I have survived!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I'm not afraid to ask for help.",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I am a strong, wise, warrior!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "Every situation is only temporary!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I will not fear!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I am the author of my life!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "It's ok to feel fear, but I will respond in peace!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I prioritize people who bring peace!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I can't control every circumstance, but I can control how I respond!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I will overcome every fear and obstacle!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "On hard days I always believe better days are coming!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I choose to respond in love, wisdom, and peace.",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "Pain is temporary.",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "Joy is always welcome here!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I was born to find and fulfill my purpose!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I am getting closer and closer to my dreams!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I feed my spirit daily!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Greater days are on the way!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Sadness is temporary.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I keep my eyes on the prize!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I am proud of the person I am, and becoming!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "My experiences was necessary for the success that's coming!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I focus on the life I'm building!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I am a very happy person!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I love me some me!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I take on all challenges with confidence!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I am an overcomer!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I am the only one that has the keys to my happiness!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I am highly favored!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I am getting healthier and stronger with every changed habit.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am loving the results of taking care of myself.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My body and immune system is very strong!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I feel strong and healthy!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I make great choices that boost my health!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I make sure to get good rest!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I make sure to drink enough water!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My body can overcome alot!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My body is constantly renewing itself!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I choose to prioritize my health.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am getting healthier everyday!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I will workout to stay fit!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am blessed beyond measure!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am healed!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My mind is sharp and alert!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I will protect my peace at all cost!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I choose to be at peace today.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I take time to rest and relax everyday.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "When I stay in the present moment, I realize everything will be ok!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "God gives me peace in my storms!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Taking time for myself is very necessary!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am mindful of my thoughts and reject all negativity!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "The enemy has no power here!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am victorious!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am a strong warrior!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Even with chaos around me my peace remains!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am healed, happy, and prosperous!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "My angels keep me and my family safe and protected!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I keep a grateful heart so I can always be at peace!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Every cell in my body is regenerated with peace!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Abundance and prosperity is coming my way!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Abundance is apart of me!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I attract prosperity with my choices.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "My mind visualizes ways to attract more money!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Money is attracted to me!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am attracting financial abundance!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I think like a millionaire, I am a millionaire!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I attract success!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "My hard work always pays off!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am making a lot of money doing what I love!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        
+        {
+            "text": "I am a six figure earner!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        
+        {
+            "text": "Every dollar I give away comes back to me 10 fold!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I know God will bless me with abundance!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am financially set for life!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "My financial future is bright!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "It's good for me to take care of myself!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I know that happy thoughts lead to a positive life!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I love being positive!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I start my day with positive affirmations!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I am excited for the future!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I take care of myself spiritually, mentally, and physically!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I have grown so much from the old me!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I am becoming the very best version of me!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I will take action to reach my full potential!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I pursue my passions!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "The life I want starts now!",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "My best days are ahead of me!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I start everyday with gratitude!",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I will not waste time worried about past mistakes!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I feel God working in me, on me and for me!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I love my life!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I always choose faith over fear!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God loves me very much!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God is with me wherever I go!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I am blessed and thankful for my life.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God helps direct all my steps.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "The Lord sends his angels to keep me safe.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "No matter the circumstance, I trust in God.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I was made for a special reason and will fulfill it.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I know God loves me, I will not fear.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God is my shepherd and He takes care of all his sheep.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God loves me beyond what I can fathom!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Even when a door closes, I know God will lead me to the right one!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I don't live in the past, my future is bright!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I am healed, delivered and prosperous!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Love is what I give and attract!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "God loves me so much, I can love other people!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Love is everywhere I go!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Love overcomes all things.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Love is flowing through me.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I choose to respond in love.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Love is unlimited in it's power.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Love is at the center of everything I do.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Love amplifies my life.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Love can heal all wounds.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I will love myself first, since I can't escape myself.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love myself.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love helping others.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I spread love and positivity to those around me!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love who I've become!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love and accept all the versions of me!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love my body, so I will take care of it!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I am grateful for all God's love!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love taking care of myself!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love and forgive myself.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I choose love.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Real love starts with me.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love my life and all the journey's it takes me.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love the person in the mirror.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I am surrounded by loving family and friends.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love what I do.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I am thankful for the loving people in my life.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for all the obstacles that made me stronger!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "Being grateful keeps me happy in the present.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I embrace all the opportunities coming my way.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for all the closed doors that wasn't meant for me.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am grateful for all the spiritual teachers and mentors who helped me grow.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for my loving family!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I will focus on always being grateful instead of complaining.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am grateful for today!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "My life is overflowing with blessings when I reflect on what I have.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I will be happy now, not later.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I express gratitude to my friends.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am grateful for everyone I have a relationship with.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for the dark times, helps me appreciate the light.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am grateful for the tough times, they made me a warrior!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for my friends who push me to be better!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for the blessings that are on the way.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I fill my mind with gratitude to push out the negativity.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am grateful for the strength God filled me with.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am ready to fulfill the visions in my mind!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am grateful to be financially free!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I love my life!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "Life is great!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I have extreme persistence!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for the little things in my life.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I wake up grateful for a new day to live!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am blessed!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for everything I learned on the journey!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am grateful for all the joys I get to experience in this life.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful life overflows with abundance!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "Being at peace is top priority!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I will say no to the lies in my head!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I focus on my blessings, not the problems!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I will make intentional choices that bring peace!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "God loves me, so I will not fear!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "My angels follow me wherever I go!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I set aside time to feed my spirit daily.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I am a conqueror!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I am in control of how I respond to every situation.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "God will help me navigate this world when I go to him for help.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "No matter what's going on, I will never give up!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "This too shall pass!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "When I look back, I am grateful I never gave up.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I will block out negative thoughts as soon as they enter!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "With God, I can fix every problem that arises!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I won't waste time worrying!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I choose faith over fear!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I'm giving my worries to God!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I am much stronger than I think!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I can change my mindset with discipline and practice!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I am forgiven for all past failures!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I will guard my mind!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "Fear is like a paper tooth tiger!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "Brighter days are always coming!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "No matter the circumstance, I will move in joy!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I plan for the future, not worry about it!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I am at peace, confident, and strong!",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I make time for healthy habits.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I thank God for my health.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I declare my health gets better everyday!",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I make great choices to elevate my health.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I listen to my body.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I drink water, get fresh air, exercise and get plenty of rest.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "God's healing power flows through me!",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "Maintaining my health is top priority.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I live a healthy lifestyle.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My cells are renewed constantly.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "Exercise is a part of my daily routine.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I get better with time.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I feel so much better after exercising.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My body is healing when I sleep.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I will be discipline with my health goals.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I reap the benefits of my healthy choices.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I eat nutritious foods.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "Every day is a fresh start for great choices.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I am healthy, strong, and wise.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I am filled with positivity and great health.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My body functions perfectly how God designed it to.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I make time to relax and give thanks for my health.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I will always prioritize my health.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My age is just a number.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I am forever young.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I appreciate my body, so I will take care of it.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My choices increases my health 10 fold.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My mind creates positive thoughts that renews my health.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I enjoy making healthy choices.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I am always becoming a better version of myself.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My body is blessed.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My life is evolving for the better.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "When I'm alone my peace skyrockets.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I love my life.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "God gives me peace wherever I go!",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "God's peace surrounds me no matter the circumstance.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "Peace is in my DNA.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I believe everything is working out for my good.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I am a conqueror.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I overcome every obstacle!",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I will choose peace over foolishness.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I can create peace with my choices.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I have everything I need.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "My angels follow me everywhere I go.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I am at peace with all my past mistakes.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "Peace is more important than gold.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "My days overflow with  peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I look for the positive in every situation.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I give all my worries to God.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I don't hold grudges.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I am quick to forgive, and move on in peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "Peace, health and rest our top priorities in my life.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I love myself and who I'm becoming.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "Difficult problems make me smarter and stronger.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I respond in kindness to all.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I release my worries to God and absorb peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "My mind is at peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I only allow peaceful souls in my inner circle.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I am only responsible for how I respond.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "My mindset is strong and positive.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "Being at peace is a superpower.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I am happiest when I'm at peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I am blessed financially.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I will prosper.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I work smart and reap the benefits.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I am creating multiple sources of income.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "Money flows to me easily.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I can easily afford my expensive lifstyle.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I plant seeds that make me fruitful!",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I am thankful for the abundance God blesses me with.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I am thankful for all I have now, and making room for more.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I am a blessing to others.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "My cup runs over.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I am attracted to success.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "Money comes to me from all angles.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I level up in everything I do.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "My life is very extravagant.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I use my riches to bless others.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "My bank account has a lot of commas.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "My visions are becoming reality!",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I'm only going higher and higher.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "My mind sees abundance not lack.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "God wants to bless me with more.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I am ready to handle large sums of money.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I am a great handler of money.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I am attracting new opportunites everyday.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I am focused on changing the path of my life for the better.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I have the ability to do what it takes to make my vision reality.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "The hard challenges are all apart of the journey.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I appreciate the good and bad days.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "The challenges on the journey prepare me to win in bigger challenges.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I only have one life, and I won't waste it.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I am dedicated to seeing my vision thru.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I make constant progress with discipline.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I will be better than I was yesterday.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I will not be outworked.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I am capable of achieving everything in my heart with God.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "Discipline is the key when my motivation grows weary.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "Today is a new day to be great!",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "One step at a time, I will achieve my goals.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "My potential is limitless, time to tap into it.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I find solutions for all the obstacles in my way.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I am a great problem solver.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I am ready to work harder than ever.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I am ready for new challenges.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I am a inspiration to others to chase their dreams.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I am glad of how far I came, but got much farther to go.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I am very rare.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "My confident mindset helps me stay on the right path.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I am the creator of my future.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I am wise, resilient and discipline.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I am a very confident person.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "Positive blessings are on the way.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I am thankful for the pure hearted people in my life.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I am filled with peace, health, and confidence.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I will have a great day today!",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I am perfectly aligned with my destiny.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I am in full control of how I respond in life.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "My confidence is growing higher everyday.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I am positive I have what it takes to succeed.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I am a blessing to be around.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I value myself and won't settle for less.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "This next chapter is full of big blessings.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "My faith is pulling down wealth and blessings.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "Miracles are on the way.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I forgive myself for my past mistakes.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "My blessings are here or on the way!",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "Good news is coming!",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I am on the right path to an abundant life.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I love myself and everything about me.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I love learning and growing.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I am building a great life.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I will renew my mindset with practice.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "Today is going to be an incredible day.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I choose to be happy.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I can easily block out negativity.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I spend time with positive, loving people.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I will forgive and move on from bad relationships.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I will be joyful all the days of my life.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I am a top priority in my life.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "Life is just getting better and better.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "This situation will pass.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I make time to be thankful everyday.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I search for the goodness in everything.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I am built for conquer.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I will move in patience and peace.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "Better days are around the corner.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I am confident I can do anything it takes to make my dreams come true.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I survived big storms, I will survive this one too.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I will keep moving forward.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I take care of myself even in the difficult times.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I aim to learn from everything I go thru.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I focus on making progress everyday.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I am making a new beginning.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "Life is just getting better and better.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I am glad with all growth I've made.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I choose to respond in love, peace and hope.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I am wise and brave.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I will conquer every obstacle.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I am doing the best I can with the resources I have.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "Every challenge is an opportunity to grow.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "Challenges are a part of the journey to greatness.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I am making good changes, one day at a time.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "God picks me up when my feet get weary.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I am not giving up on the life I promised myself.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "God has never let me down, we are undefeated.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I am thankful for the King of the Universe's help.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I am an overcomer.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I will not fear anything.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "This is just a chapter, not the whole book.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "Rest is very important on this journey.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I appreciate all the blessings in my life.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I trust the plans God has for me.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God directs my steps, and I trust him.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I ask God to point me the way I should go.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God is bigger than all my challenges.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God will remove my obstacles or make me bigger than them.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God will never leave me.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I thank the King of the Universe for all my blessings.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "Life is a gift, I will enjoy it.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I find quiet time to hear what God is telling me.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I am thankful I have a great purpose.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I will share my blessing with the world.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I know that God is watching over me.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God is preparing me to handle the big blessings coming my way.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God is guiding me every day.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God has designed a great life for me.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God wants me to have an abundant, healthy, peaceful, joyful, and loving life.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I don't worry because the King of the Universe is on my side.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "My future is super bright.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I enjoy following the path God has set for me.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I am blessed and highly favored by the Most High.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I walk by faith and not by sight.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I expect God to bless me.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I am protected everywhere I go.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God lives in me.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I have received so many things I have prayed about.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "Love and compassion is a weapon.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "The Lord is my shepherd.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God is my great healer.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God gives me angels to protect me wherever I go.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I respond in love in all my friendships.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I attract love because that's what I am.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I am rare.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I don't need to be perfect.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I only think positive thoughts about me.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I invest and take care of myself.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I fully accept and love who I am.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I am loved by the King of the Universe.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "My mindset sets me apart from the rest.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "My standards are high because of how I value myself.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I don't chase what I want, I attract it.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "God loves me thru all my ups and downs.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I stay true to who I am.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I love the things that make me different.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I love all the progress I'm making.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "My future self is thanking me for what I'm doing today!",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "My passions give me life.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I am always evolving.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I set boundaries to keep my peace.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I am attracting what is meant for me.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I love my alone time.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I choose to respond in compassion and love.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I refuse to settle for less.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I am a warrior that triumps all my circumstances.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I move with good intentional choices that's going to elevate me with my destiny.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I put in work to get better everyday.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "My mindset is key to my success.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I am bold and fearless.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I engage with people that knows my worth.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I love the new me.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I am thankful and excited about my next chapter.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for the beautiful life I created.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I love how unique God made me.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for my friends that helped me at my lowest.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am grateful for all the prayers God answered.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I start and end everyday with gratitude.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I love my quiet time in nature.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for all the open doors of opportunity as well as the closed ones.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I pray specific prayers so I can recieve exactly what I want.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "Practicing gratitude daily helps me be more grateful.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am living the life I prayed and worked for.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I will enjoy everyday because that is all we have.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "With God I can achieve anything.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for the people I have in my life.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I love that God directs my steps.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "Thankfulness has helped me view the world differently.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am grateful all my needs are met.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for my eyes.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for my abilities.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for my ears to hear.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for my angels that keep me safe.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for my passions.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful I am not for everybody.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful I get to work on my dreams today.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I appreciate all the beauty around me.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for God's intentionality with me.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am grateful for my relationship with the Creator of the Universe.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for the great blessings that are on the way.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I love my career choice.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "Being grateful keeps me in a joyful state.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I have the ability to solve any problem.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "My angels pick me up before danger can get to me.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I can feel afraid but respond in courage.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I can pray to the King of the Universe about all my problems.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I respond with peaceful thoughts when fear comes.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I will win the battle that goes on in my mind.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I will overcome, because I am a warrior.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I will not be held back by fear or stress.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I am an overcomer.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "My mind is stronger than the bad thoughts that pop in my head.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I will set aside time to relax and let go of stress.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "God is my refuge.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I respond to fear with peace and calmness.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "Everything I feared never lasted.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "I choose to be bold like a lion.",
+            "isFavorite": false,
+            "category": "fear"
+        },{
+            "text": "My life is filled with great opportunities.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "My life is overflowing with joy.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "All my dreams are in reach.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I keep a positive mindset no matter the circumstance.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "Today is going to be efficient and productive.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "The King of the Universe has my best interest at heart.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "There are no limits in my life.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "God is giving me the green light.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I am amazed of how far I came.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "My life is awesome and only getting better.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "Great blessings come to me.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "Challenges are just acceleration to growth.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I only want things that are destined for me.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "Failure is the short cut to greatness.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I learn from all my mistakes.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I attract extravagant opportunities.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "My routine is preparing me for new levels.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I always aim for growth.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I love my growth and quality of life.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I choose optimism over negative thoughts.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I know God is working things out in my favor.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "Everything always works out in the end.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I work and pray to fulfill all my dreams.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I will choose to maintain positivity and reject negativity.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I allow God's blessings to flow right to me.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I will chase my passions and dreams.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "I will not let go of my dreams, I can already feel it unfolding.",
+            "isFavorite": false,
+            "category": "hope"
+        },{
+            "text": "My fitness is a top priority.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "Working out makes me stronger, energized and happy.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "Rest is a part of my fitness routine.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My body is filled with life.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "Fitness is a part of my routine.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My body can heal from alot.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My immune system is strong.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My body is powerful.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My mind is sharp.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I start my days taking care of myself.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "Every good choice makes me better.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "God restores my health.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My body functions perfectly.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My health is a top priority!",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I take care of myself because I love myself.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I invest in my health and fitness.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I find activities that I enjoy.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "My health is my responsibility.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I feel better and better everyday.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I am proud of what my body overcame.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I love myself immensely.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I take time to learn about nutrition.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I make sure to get fresh air everyday.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "The sun recharges me.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I take care of my mind.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I establish routines that add value to my life.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I enjoy eating healthy.",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "I will live a long healthy life!",
+            "isFavorite": false,
+            "category": "health"
+        },{
+            "text": "Whoever tries to come and disturb my peace, I'll remove them.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I am loving all the peace in my life.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I can create a peaceful life with my choices.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I respond to all situations in peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I forgive everybody and move on.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I have peace in the midst of life's storms.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I stay in the present and leave tomorrow's worries for then.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I am a master at peace, love, and self control.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "My spirit is filled with peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "God gives me peace when life gets hard.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I take the time to not panic and respond in peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I stay calm when life gets chaotic.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I start my day with peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "My lungs are filled with peace with every breathe.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I respond correctly in peace than with stress.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I enjoy my alone time with the Creator of the Universe.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I make sure to surround myself with peaceful people.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I focus on positivity and peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I choose to think peaceful thoughts.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I remove fearful thoughts with best possible outcome ideas.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "Peace is in my DNA.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "I am at peace with my past as I look towards my bright future.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "God causes everything to workout in my favor.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "No matter how busy I am, I make time to rest and reflect.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "My mind is at peace and all is well.",
+            "isFavorite": false,
+            "category": "peace"
+        },{
+            "text": "True wealth starts with prosperity thinking.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I am a smart, hard worker that can accomplish whatever it takes.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "The Creator of the Universe wants me to prosper.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I am destined for multiple streams of income.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I have products and services that makes me millions.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I will make progress everyday to make my vision reality.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "All my choices take me closer to my destiny.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I will make a plan and take action.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "Challenges are always going to be apart of life, mightest well aim high.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I am rich in my mind, spirit, health and finances.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I will use my creativity and passion to help people.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "Time is the most important currency I have.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I am thankful for what I have and making room for more.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "Others will get blessed by being around me.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "Money comes to me, I don't chase it.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "God supplies all my needs and gives me abundance.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I use my money to make more money.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I am not afraid of failure.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I was built to win.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I will help others with my abundance.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I will teach others how to be prosperous.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "It's ok to be born broke, but not okay to stay that way.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I have wealthy friends to help guide me.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "The year of acceleration is now.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "I am able to bless people everywhere I go.",
+            "isFavorite": false,
+            "category": "wealth"
+        },{
+            "text": "Discipline will keep me on track when my motivation fails to show up!",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I can't give up on all the dreams in my head.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "Life is to short to be mediocre",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "My mind is made up, I will be great.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I will make sure every step I take aligns with my goals.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I am becoming the person that can handle what I'm asking for.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I will never give up!",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "Time is limited, I won't waste it.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I have like minded friends that keep me on my toes.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "If I only get better 1% everyday, I'll be where I want to be soon.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "Friendly competition drives greatness!",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I won't be outworked.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "Giving up is Never an option!",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I will leave my mark before I'm gone!",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I will make my last name great.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I'm the reason my family will have a great life.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "Now is the perfect time to chase my dreams.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "Today is a great day to put in work!",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I won't let how I feel dictate what I know I need to do.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I embrace the obstacles that are apart of my journey.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "My confidence grows with every accomplishment.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "My weaknesses are a chance to grow.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "My drive and focus is embedded in me.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I am proud of how far I've come!",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I am in complete control of my success.",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "The Creator of the Universe gives me great ideas!",
+            "isFavorite": false,
+            "category": "motivation"
+        },{
+            "text": "I will take on this day with focus, courage, and wisdom!",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "No matter what today brings, I will enjoy it!",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "Helping others in the areas I failed in, brings me joy!",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "God loves me very much and that's all I need.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "My dedication and hard work always pays off.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I manifest whatever I say, so I only speak powerful positive things.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I attract only good things wherever I go.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "This is the day the Creator of the Universe gave me, I will enjoy it!",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I will not bring yesterday's problems into today.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I will not complain about anything.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I am working towards my destiny.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I enjoy the present moment I'm in.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I choose peace over everything.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "Constant growth is what makes life great.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I am thankful for every breathe.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I plant money trees so I can reap its fruits one day.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "Life is what I make it!",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I remove situations and people that don't bring peace.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "With God's help I can do anything!",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I am being elevated to new heights!",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I will embrace my weaknesses and turn them into strengths.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I will share my peace and positivity.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I can remove negative thoughts easily.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "My mind is set on abundance.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "The old me is dead.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "I move in love, joy, peace, and patience.",
+            "isFavorite": false,
+            "category": "positivity"
+        },{
+            "text": "God is on my side!",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God helps me make wise choices.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God is my rock to rely on when things get rough.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I trust in the promises God said to me.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I have a great relationship with the Creator of the Universe.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God is bigger than all my problems.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I invite God into every detail of my life.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God has great plans for my life!",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God loves me sooo much!",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God is my great healer!",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "God only has good plans for me.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I take time to thank God for all my blessings!",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I am filled with love!",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I am filled with peace!",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I am filled with joy!",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I am filled with patience!",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I am filled with kindness!",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I am filled with gentleness!",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I am filled with faithfulness!",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I am filled with self control!",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "I am full of love and ready to give it!",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I am attracting more loving people into my life.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I only make room for loving and healthy relationships.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I am dedicated to my soul mate.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "Love is power.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I am appreciated.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "All my connections are genuine.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I forgive my self for all the negative things I thought about myself.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I am perfect the way I am, and still continuing to get better.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "My positive thoughts have brought me to a great place in life.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "Nobody's opinion about me matters except God's and mine!",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "Loving myself first is necessary!",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "All my growth gets me excited for the future.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "My effort to grow will pay off.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I am glad I was born as me!",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I will respect myself and make great choices.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "Even when times are hard, I will keep my head up!",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "When I look in the mirror, I am happy with who I become.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "I take time for myself everyday.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "Thank you for a new day to be great!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am so grateful I get to workout.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for a good nights sleep.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for all the good food I get to eat.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for my loving grandparents.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful to The Creator of The Universe for never leaving my side.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for any opportunity that makes me a better person.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for free choices.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for this chapter that I'm in.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for the great days ahead.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "I am thankful for all my angels that keep me safe.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "\"Faith consists in believing when it is beyond the power of reason to believe.\" – Voltaire",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "\"Faith is taking the first step even when you don’t see the whole staircase.\" – Martin Luther King Jr.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Only in the darkness can you see the stars.\" – Martin Luther King Jr",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Faith is to believe what you do, not see; the reward of this faith is to see what you believe.\" – Saint Augustine",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Faith is unseen but felt, faith is strength when we feel we have none, faith is hope when all seems lost.\" – Catherine Phillips",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Faith is all about believing. You don’t know how it will happen but you know it will.\" - Unknown",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Faith is not something you just have; it is something you constantly have to work toward. Faith is not a feeling; it’s a decision you have to make every day.\" – Al Carraway",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Let your faith be bigger than your fears.\" - Unknown",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.\" – Helen Keller.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Faith and prayer are the vitamins of the soul; man cannot live in health without them.\" – Mahalia Jackson",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Sometimes all you need is a big leap of faith.\" – Sean Bean",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Patience and diligence, like faith, remove mountains.\" – William Penn",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"When you focus on a being a blessing, God makes sure that you are always blessed in abundance.\" – Joel Osteen",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"You can’t know, you can only believe – or not.\" – C.S Lewis",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"It’s worth taking a risk when motivated by faith in God’s Word.\" – Ruben Barreto",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"You have been assigned this mountain to show others it can be moved.\" - Unknown",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Faith is trusting God even when you don’t understand his plan.\" - Unknown",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Don’t be afraid to step out in faith for God.\" – Olivia Hope",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Be faithful in small things because it is in them that your strength lies.\" – Mother Teresa",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Put your faith in the one God who made everything.\" – Les Bridgeman",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "Never be afraid to trust your unknown future to a God who loves you very much.",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Faith is a passionate intuition.\" – William Wordsworth",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"God will never give you anything you can’t handle so don’t stress.\" – Kelly Clarkson",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"When God calls you to do something, he enables you to do it.\" – Robert Schuller",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Faith is the light that guides you through the darkness.\" - Unknown",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Sometimes life hits you in the head with a brick. Don’t lose faith.\" – Steve Jobs",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Faith can move mountains.\" – Mathew 17:20",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Faith in God includes faith in his timing.\" - Unknown",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Believe in your infinite potential. Your only limitations are those you set upon yourself.\" – Roy T. Bennett",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Don’t worry. God is always on time. Trust him.\" - Unknown",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"When you have come to the edge, faith is knowing you will be taught to fly.\" - Unknown",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Faith doesn’t make sense; that’s why it makes miracles.\" – John Di Lemme",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"God is trying to build faith in us, and that is not easy. In order to achieve that, He has no choice but to put us through challenges and difficulties.\" – Gerald Flurry",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"No matter how steep the mountain, the Lord is going to climb it with you.\" – Helen Steiner Rice",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"If we just give God the little that we have, we can trust Him to make it go around.\" – Gloria Gaither",
+            "isFavorite": false,
+            "category": "faith"
+        },{
+            "text": "\"Keep the faith, don’t lose your perseverance and always trust your gut instinct.\" – Paula Abdul",
+            "isFavorite": false,
+            "category": "faith"
+        },
+
+        {
+            "text": "\"I saw that you were perfect, and so I loved you. Then I saw that you were not perfect and I loved you even more.\" — Angelita Lim",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "\"To love is nothing. To be loved is something. But to love and be loved, that’s everything.\" — T. Tolis",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "\"The best and most beautiful things in this world cannot be seen or even heard, but must be felt with the heart.\" — Helen Keller",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"Maybe the only vow we ever need to offer the one we love is this: I will never, not for a sliver of a second, make you feel alone.\" — Tyler Knott Gregson",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.\" — Lao-Tzu",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"I have decided to stick to love; hate is too great a burden to bear.\" — Martin Luther King, Jr.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"Where there is love there is life.\" — Mahatma Gandhi",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"If I could give you one thing in life, I would give you the ability to see yourself through my eyes, only then would you realize how special you are to me.\" - Unknown",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"I can't promise to fix all your problems, but I can promise you won't have to face them all alone.\" - Unknown",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"One word frees us of all the weight and pain of life: That word is love.\" ― Sophocles",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"You don't love someone because they're perfect, you love them in spite of the fact that they're not.\" ― Jodi Picoult",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"I would rather spend one lifetime with you, than face all the ages of this world alone.\" — J.R.R. Tolkien",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"If I know what love is, it is because of you.\" — Herman Hesse",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"Once I knew you I never wanted to know anyone else.\" — Leo Christopher",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"I never want to stop making memories with you.\" — Pierre Jeanty",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"You can't rush something you want to last forever.\" - Unknown",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"P.S. I love you.\" — Cecelia Ahern",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"Love you more.\" - Unknown",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "You saw me at my worst and stayed.",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"You and me together, through the days and nights. I don't worry 'cause everything's gonna be alright.\" — Alicia Keys",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"I just wanna see you. Hold you. Hug you. Touch you. Kiss you. Cuddle with you. Love you.\" - Unknown",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"You're all my heart ever talks about.\" - Unknown",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"I choose you, and I'll choose you over and over and over. Without pause, without a doubt, in a heartbeat. I'll keep choosing you.\" — Unknown",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"I swear I couldn't love you more than I do right now, and yet I know I will tomorrow.\" — Leo Christopher",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"You don't love someone for their looks, or their clothes, or for their fancy car, but because they sing a song only you can hear.\" — Oscar Wilde",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"I want you. All of you. Your flaws. Your mistakes. Your imperfections. I want you, and only you.\" - Unknown",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"If you only knew how much those little moments with you mattered to me.\" - Unknown",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"If I did anything right in my life, it was when I gave my heart to you.\" - Unknown",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"I love that you are my person and I am yours, that whatever door we come to, we will open it together.\" — A.R. Asher",
+            "isFavorite": false,
+            "category": "love"
+        },{
+            "text": "\"When gratitude becomes an essential foundation in our lives, miracles start to appear everywhere.\" - Emmanuel Dagher",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Develop an attitude of gratitude. Say thank you to everyone you meet for everything they do for you.\" - Brian Tracy",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Love yourself a little extra right now. You're evolving, learning, healing, growing, and discovering yourself all at once. It's about to get magical for you.\" - Idil Ahmed",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"When you are grateful, fear disappears and abundance appears.\" - Tony Robbins",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"The real gift of gratitude is that the more grateful you are, the more present you become.\" - Robert Holden",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Gratitude opens the door to the power, the wisdom, the creativity of the universe. You open the door through gratitude.\" – Deepak Chopra",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Sometimes we spend so much time and energy thinking about where we want to go that we don't notice where we happen to be.\" – Dan Gutman",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Learn to be thankful for what you already have, while you pursue all that you want.\" – Jim Rohn",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Sometimes the bad things that happen in our lives put us directly on the path to the best things that will ever happen to us.\" – Nicole Reed",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Remember that sometimes not getting what you want is a wonderful stroke of luck.\" – Dalai Lama",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"If you believe it will work out, you'll see opportunities. If you believe it won't, you'll see obstacles.\" – Wayne Dyer",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Don't let negativity from yesterday dull the sparkle of today.\" – Doreen Virtue",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Instead of thinking 'I will be happy when,' try thinking 'I will be happy now.\" – Unknown",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"If you concentrate on finding whatever is good in every situation, you will discover that your life will suddenly be filled with gratitude, a feeling that nurtures the soul.\" – Harold Kushner",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Don't fear failure so much that you refuse to try new things. The saddest summary of a life contains three descriptions: could have, might have, and should have.\" – Louis E. Boone",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Be aware of what others are doing, applaud their efforts, acknowledge their successes, and encourage them in their pursuits. When we all help one another, everybody wins.\" – Jim Stovall",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"No one who achieves success does so without the help of others. The wise and confident acknowledge this help with gratitude.\" – Alfred North Whitehead",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Forget yesterday–it has already forgotten you. Don’t sweat tomorrow–you haven’t even met. Instead, open your eyes and your heart to a truly precious gift–today.\" – Steve Maraboli",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"If the only prayer you ever say in your life is ‘thank you,’ that would suffice.\" – Meister Eckhart",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Gratitude is the ability to experience life as a gift. It liberates us from the prison of self–preoccupation.\" – John Ortberg",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"I cried because I had no shoes, then I met a man who had no feet.\" – Mahatma Gandhi",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"You are not alone. Within You is the infinite creative power and presence, guiding you, loving you, and waiting to give you anything and everything you choose.\" – The Secret",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Great things happen to those who don't stop believing, trying, learning, and being grateful.\" – Roy T. Bennett",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Though no one can go back and make a brand new start, anyone can start from now and make a brand new ending.\" – Carl Bard",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"To make a difference in someone's life, you don't have to be brilliant, rich, beautiful, or perfect. You just have to care.\" – Mandy Hale",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Decide what kind of life you actually want, then say no to everything that isn't that.\" – Unknown",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Every sunset is an opportunity to reset. Every sunrise begins with new eyes.\" – Richie Norton",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"The soul that gives thanks can find comfort in everything; the soul that complains can find comfort in nothing.\" – Hannah Whitall Smith",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"The secret of being happy is accepting where you are in life and making the most out of every day.\" – Unknown",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"The greatest source of happiness is the ability to be grateful at all times.\" – Zig Ziglar",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"There is always, always, always something to be thankful for.\" – Unknown",
+            "isFavorite": false,
+            "category": "gratitude"
+        },{
+            "text": "\"Acknowledging the good that you already have in your life is the foundation for all abundance.\" – Eckhart Tolle",
+            "isFavorite": false,
+            "category": "gratitude"
+        }
+
+       
+    ]
+}

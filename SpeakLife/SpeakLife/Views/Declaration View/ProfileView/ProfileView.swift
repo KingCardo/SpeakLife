@@ -72,7 +72,7 @@ struct ProfileView: View {
             
             .foregroundColor(colorScheme == .dark ? .white : .black)
             
-            .navigationBarTitle(Text("Revamp"))
+            .navigationBarTitle(Text("SpeakLife"))
             
         }
     }
@@ -150,7 +150,7 @@ struct ProfileView: View {
     }
     
     private var shareRow: some View {
-        SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.and.arrow.up.fill", title: "Share Revamp", viewToPresent: EmptyView()) {
+        SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.and.arrow.up.fill", title: "Share SpeakLife", viewToPresent: EmptyView()) {
             shareApp()
         }
     }
@@ -196,7 +196,7 @@ struct ProfileView: View {
     }
     
     private func shareApp() {
-        let string = LocalizedStringKey("Check out Revamp - Daily Affirmations app that'll transform your life!")
+        let string = LocalizedStringKey("Check out SpeakLife - Daily Bible Promises app that'll transform your life!")
         let url = URL(string:  "\(APP.Product.urlID)")!
         
         let activityVC = UIActivityViewController(activityItems: [string, url], applicationActivities: nil)

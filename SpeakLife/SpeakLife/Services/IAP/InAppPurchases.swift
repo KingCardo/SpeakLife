@@ -12,12 +12,46 @@ struct InAppId: Codable {
     var purchaseDate: Date?
     var purchased = false
     
+    enum AppID: String, Identifiable, CaseIterable {
+        var id: String {
+            self.rawValue
+        }
+        
+        case speakLife1YR99 = "SpeakLife1YR99"
+        case speakLife1YR49 = "SpeakLife1YR49"
+        case speakLife1YR39 = "SpeakLife1YR39"
+        case speakLife1YR19 = "SpeakLife1YR19"
+        case speakLife1MO9 = "SpeakLife1MO9"
+        case speakLife1MO4 = "SpeakLife1MO4"
+        case speakLife1MO2 = "SpeakLife1MO2"
+        
+        var currentPrice: String {
+            switch self {
+            case .speakLife1YR99: return "$99.99"
+            case .speakLife1YR49: return "$49.99"
+            case .speakLife1YR39: return "$39.99"
+            case .speakLife1YR19: return "$19.99"
+            case .speakLife1MO9: return "$9.99"
+            case .speakLife1MO4: return "$4.99"
+            case .speakLife1MO2: return "$2.99"
+            }
+        }
+        
+        var title: String {
+            switch self {
+            case .speakLife1YR99: return "One year $99.99"
+            case .speakLife1YR49: return "One year $49.99"
+            case .speakLife1YR39: return "One year $39.99"
+            case .speakLife1YR19: return "One year $19.99"
+            case .speakLife1MO9: return "One month $9.99"
+            case .speakLife1MO4: return "One month $4.99"
+            case .speakLife1MO2: return "One month $2.99"
+            }
+        }
+    }
     
-    static let revampMonthlyId = "Rvpmonthly"
-    static let revampYearlyId = "Rvpyearly1"
-    static let revampLifetime = "Rvplifetime1"
-    
-    static let all: [String] = [revampYearlyId, revampLifetime]
+
+//    static let all: [String] = [speakLife1YR99, speakLife1YR49, speakLife1YR39, speakLife1YR19, speakLife1MO9, speakLife1MO4, speakLife1MO2]
 }
 
 struct Messages {

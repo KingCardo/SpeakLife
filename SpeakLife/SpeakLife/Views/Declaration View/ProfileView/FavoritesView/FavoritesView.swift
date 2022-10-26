@@ -41,7 +41,7 @@ struct ContentRow: View {
                     }
                 }
                 .sheet(isPresented: $showShareSheet, content: {
-                    ShareSheet(activityItems: ["\(favorite) \nRevamp App: \(APP.Product.urlID)"])
+                    ShareSheet(activityItems: ["\(favorite) \nSpeakLife App: \(APP.Product.urlID)"])
                 })
                 .foregroundColor(colorScheme  == .dark ? .white : Constants.DAMidBlue)
         }

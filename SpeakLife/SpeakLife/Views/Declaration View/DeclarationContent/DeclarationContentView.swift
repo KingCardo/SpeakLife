@@ -42,7 +42,7 @@ struct DeclarationContentView: View {
                         )
                     
                         .sheet(isPresented: $showShareSheet) {
-                            ShareSheet(activityItems: ["\(declaration.text) \nRevamp App: \(APP.Product.urlID)"])
+                            ShareSheet(activityItems: ["\(declaration.text) \nSpeakLife App: \(APP.Product.urlID)"])
                         }
                         
                         if !showShareSheet {
@@ -92,8 +92,15 @@ struct DeclarationContentView: View {
             Spacer()
             
             QuoteLabel(themeViewModel: themeViewModel, quote: declaration.text)
-                .frame(width: geometry.size.width * 0.98, height:  geometry.size.height * 0.75)
+                .frame(width: geometry.size.width * 0.98, height:  geometry.size.height * 0.40)
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
+            
+            Text(declaration.book)
+                .foregroundColor(.white)
+                .font(.callout)
+                .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
+//            QuoteLabel(themeViewModel: themeViewModel, quote: declaration.book)
+//                .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
             
             Spacer()
         }

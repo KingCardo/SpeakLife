@@ -20,7 +20,7 @@ struct SpeakLifeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            DeclarationView()
                 .environmentObject(appState)
                 .environmentObject(declarationStore)
                 .environmentObject(themeStore)
@@ -50,9 +50,9 @@ struct SpeakLifeApp: App {
     }
     
     private func updatePremiumAppState() {
-        let yearly = storeManager.isPurchased(with: InAppId.revampYearlyId)
-        let lifetime = storeManager.isPurchased(with: InAppId.revampLifetime)
-        let monthly = storeManager.isPurchased(with: InAppId.revampMonthlyId)
-        appState.isPremium = yearly || lifetime || monthly
+//        let yearly = storeManager.isPurchased(with: InAppId.revampYearlyId)
+//        let lifetime = storeManager.isPurchased(with: InAppId.revampLifetime)
+//        let monthly = storeManager.isPurchased(with: InAppId.revampMonthlyId)
+//        appState.isPremium = yearly || lifetime || monthly
     }
 }

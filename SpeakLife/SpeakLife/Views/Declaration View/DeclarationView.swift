@@ -23,12 +23,11 @@ struct DeclarationView: View {
     
     
     var body: some View {
-        GeometryReader { geometry  in
+        GeometryReader { geometry in
             ZStack {
                 
                 DeclarationContentView(themeViewModel: themeViewModel, viewModel: viewModel)
                     .frame(width: geometry.size.width, height: geometry.size.height)
-                
                 
                 VStack() {
                     
@@ -60,7 +59,7 @@ struct DeclarationView: View {
         }
         .alert(isPresented: $showAlert) {
             Alert(
-                title: Text("Are you enjoying Revamp?", comment: "review alert title"),
+                title: Text("Are you enjoying SpeakLife?", comment: "review alert title"),
                 primaryButton: .default(
                     Text("Yes"),
                     action: showReview
