@@ -43,6 +43,16 @@ final class StoreManager: NSObject, ObservableObject {
     func startProductRequest(with identifiers: String) {
         StoreObserver.shared.buySubscription(with: identifiers)
     }
+    
+    func getPremiumAppState() -> Bool {
+        for id in InAppId.AppID.allCases {
+            let success = isPurchased(with: id.rawValue)
+            if success {
+                return success
+            }
+        }
+        return false
+    }
 }
 
 

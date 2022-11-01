@@ -18,7 +18,7 @@ struct PremiumView: View {
             if !appState.isPremium {
                 SubscriptionView(size: geometry.size)
             } else {
-                NavigationView  {
+                NavigationView {
                     VStack {
                         Text("You are currently a premium member", comment: "current member text")
                             .font(.title2)

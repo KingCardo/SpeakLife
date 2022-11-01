@@ -16,11 +16,12 @@ struct Benefit: Identifiable  {
     }
     
     static var premiumBenefits: [Benefit] = [
-        Benefit(text: "Affirmations that will transform your day and life!"),
+        Benefit(text: "Bible promises that will transform your day and life!"),
         Benefit(text: "Access to all categories"),
-        Benefit(text: "Create and schedule your own affirmations"),
-        Benefit(text: "Reminders to revamp your mindset!"),
+        Benefit(text: "Create and schedule your own Bible promises"),
+        Benefit(text: "Reminders to renew your mindset with promises from the Creator of the Universe!"),
         Benefit(text: "Access to all themes and new features on the way"),
+        Benefit(text: "Choose amount comfortable for you! Unlocks all premium features.")
     ]
 }
 
@@ -29,7 +30,7 @@ struct SubscriptionView: View {
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var storeManager: StoreManager
     
-    @State var currentSelection: InAppId.AppID = InAppId.AppID.speakLife1YR19
+    @State var currentSelection: InAppId.AppID = InAppId.AppID.speakLife1MO4
     
     let size: CGSize
 
@@ -127,9 +128,9 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        Button("Continue", action: makePurchase)
+        Button("Continue".uppercased(), action: makePurchase)
         .foregroundColor(Color.white)
-        .frame(width: size.width * 0.22 ,height: 100)
+        .frame(width: size.width * 0.75 , height: 70)
         .padding(.horizontal)
         .background(Capsule().fill(gradient))
         .cornerRadius(20)

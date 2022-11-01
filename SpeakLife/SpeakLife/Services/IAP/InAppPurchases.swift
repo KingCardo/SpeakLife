@@ -39,13 +39,13 @@ struct InAppId: Codable {
         
         var title: String {
             switch self {
-            case .speakLife1YR99: return "One year $99.99"
-            case .speakLife1YR49: return "One year $49.99"
-            case .speakLife1YR39: return "One year $39.99"
-            case .speakLife1YR19: return "One year $19.99"
-            case .speakLife1MO9: return "One month $9.99"
-            case .speakLife1MO4: return "One month $4.99"
-            case .speakLife1MO2: return "One month $2.99"
+            case .speakLife1YR99: return "$99.99/year"
+            case .speakLife1YR49: return "$49.99/year"
+            case .speakLife1YR39: return "$39.99/year"
+            case .speakLife1YR19: return "$19.99/year"
+            case .speakLife1MO9: return "$9.99/month"
+            case .speakLife1MO4: return "$4.99/month"
+            case .speakLife1MO2: return "$2.99/month"
             }
         }
     }

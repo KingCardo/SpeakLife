@@ -106,10 +106,12 @@ struct ReminderView: View {
         center.getNotificationSettings { settings in
             guard (settings.authorizationStatus == .authorized) ||
                     (settings.authorizationStatus == .provisional) else {
-                        appState.notificationEnabled = true
-                        completion(true)
-                        return
-                    }
+                DispatchQueue.main.async {
+                    appState.notificationEnabled = true
+                    completion(true)
+                }
+                return
+            }
             completion(false)
             return
         }

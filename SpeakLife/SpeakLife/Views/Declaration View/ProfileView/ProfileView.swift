@@ -19,68 +19,85 @@ struct ProfileView: View {
     
     // MARK: - Properties
     
-    @State var isPresentingContentView: Bool = false
+    @State var isPresentingManageSubscriptionView = false
+    @State var isPresentingContentView = false
+    
+    @ViewBuilder
+    private func navigationStack<Content: View>(content: Content) -> some View {
+        if #available(iOS 16.0, *) {
+            NavigationStack {
+                content
+            }
+        } else {
+            NavigationView {
+                content
+            }
+        }
+    }
+    
+    private var profileView: some View {
+        navigationStack(content:
+                            Form {
+            Section {
+                Text("Premium".uppercased())
+                    .font(.caption)
+                subscriptionRow
+                
+            }
+            Section {
+                Text("SETTINGS")
+                    .font(.caption)
+                remindersRow
+                
+                //widgetsRow
+                favoritesRow
+                
+                createYourOwnRow
+            }
+            
+            
+            Section {
+                Text("SUPPORT")
+                    .font(.caption)
+                
+                shareRow
+                
+                reviewRow
+                
+                feedbackRow
+                
+            }
+            
+            Section {
+                Text("Other".uppercased())
+                    .font(.caption)
+                
+                privacyPolicyRow
+                termsConditionsRow
+                
+            }
+            
+            Section {
+                Text(appVersion)
+                    .font(.caption)
+            }
+        }
+                        
+            .foregroundColor(colorScheme == .dark ? .white : .black)
+                        
+            .navigationBarTitle(Text("SpeakLife"))
+        )
+    }
     
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    Text("Premium".uppercased())
-                        .font(.caption)
-                    subscriptionRow
-                    
-                }
-                Section {
-                    Text("SETTINGS")
-                        .font(.caption)
-                    remindersRow
-                    
-                    //widgetsRow
-                    favoritesRow
-                    
-                    createYourOwnRow
-                }
-                
-                
-                Section {
-                    Text("SUPPORT")
-                        .font(.caption)
-                    
-                    shareRow
-                    
-                    reviewRow
-                    
-                    feedbackRow
-                    
-                }
-                
-                Section {
-                    Text("Other".uppercased())
-                        .font(.caption)
-                    
-                    privacyPolicyRow
-                    termsConditionsRow
-                    
-                }
-                
-                Section {
-                    Text(appVersion)
-                        .font(.caption)
-                }
-            }
-            
-            .foregroundColor(colorScheme == .dark ? .white : .black)
-            
-            .navigationBarTitle(Text("SpeakLife"))
-            
-        }
+        profileView
     }
     
     
     private var subscriptionRow:  some View {
-        SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "crown.fill", title: "Manage Subscription", viewToPresent: PremiumView()) {
-            presentContentView()
+        SettingsRow(isPresentingContentView: $isPresentingManageSubscriptionView, imageTitle: "crown.fill", title: "Manage Subscription", viewToPresent: PremiumView()) {
+            isPresentingManageSubscriptionView.toggle()
         }
     }
     
@@ -107,7 +124,7 @@ struct ProfileView: View {
     private var widgetsRow: some View {
         //TO DO: - add back after add widget functionality
         SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.split.2x2.fill", title: "Widgets", viewToPresent: PremiumView()) {
-           
+            
         }
     }
     
