@@ -52,7 +52,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     
     private func registerBGTask() {
         
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.diosesaqui.updateNotificationContent", using: nil) { task in
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.speaklife.updateNotificationContent", using: nil) { task in
             self.updateNotificationContent(task: task as! BGAppRefreshTask)
         }
     }
@@ -60,7 +60,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     @objc private func scheduleNotificationRequest() {
         let sixhours = TimeInterval(6 * 60  * 60)
 
-        let request = BGAppRefreshTaskRequest(identifier: "com.diosesaqui.updateNotificationContent")
+        let request = BGAppRefreshTaskRequest(identifier: "com.speaklife.updateNotificationContent")
         request.earliestBeginDate = Date(timeIntervalSinceNow: sixhours)
 
 

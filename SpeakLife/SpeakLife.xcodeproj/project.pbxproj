@@ -13,6 +13,7 @@
 		7A278F9B288915DE0084BB57 /* SpeakLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */; };
 		7A278F9F288915DF0084BB57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A278F9E288915DF0084BB57 /* Assets.xcassets */; };
 		7A278FA2288915DF0084BB57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A278FA1288915DF0084BB57 /* Preview Assets.xcassets */; };
+		7A7BEBCD2913536B008D08A3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7BEBCC2913536B008D08A3 /* StoreKit.framework */; };
 		7AA8706C28DACC4E00134ADB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8706928DACC4E00134ADB /* Theme.swift */; };
 		7AA8706D28DACC4E00134ADB /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8706A28DACC4E00134ADB /* Reminder.swift */; };
 		7AA8706E28DACC4E00134ADB /* DailyDeclaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8706B28DACC4E00134ADB /* DailyDeclaration.swift */; };
@@ -75,6 +76,8 @@
 		7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakLifeApp.swift; sourceTree = "<group>"; };
 		7A278F9E288915DF0084BB57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A278FA1288915DF0084BB57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7A7BEBCA2913534E008D08A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7A7BEBCC2913536B008D08A3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7AA8706928DACC4E00134ADB /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		7AA8706A28DACC4E00134ADB /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		7AA8706B28DACC4E00134ADB /* DailyDeclaration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyDeclaration.swift; sourceTree = "<group>"; };
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A00721D2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				7A7BEBCD2913536B008D08A3 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +159,7 @@
 			children = (
 				7A278F99288915DE0084BB57 /* SpeakLife */,
 				7A278F98288915DE0084BB57 /* Products */,
+				7A7BEBCB2913536B008D08A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +174,7 @@
 		7A278F99288915DE0084BB57 /* SpeakLife */ = {
 			isa = PBXGroup;
 			children = (
+				7A7BEBCA2913534E008D08A3 /* Info.plist */,
 				7AA8706428DACB2900134ADB /* App */,
 				7AA8706528DACB3500134ADB /* Views */,
 				7AA8706628DACB3F00134ADB /* Models */,
@@ -188,6 +194,14 @@
 				7A278FA1288915DF0084BB57 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7A7BEBCB2913536B008D08A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A7BEBCC2913536B008D08A3 /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7AA8706428DACB2900134ADB /* App */ = {
@@ -702,6 +716,7 @@
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SpeakLife/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SpeakLife;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -733,6 +748,7 @@
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SpeakLife/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SpeakLife;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

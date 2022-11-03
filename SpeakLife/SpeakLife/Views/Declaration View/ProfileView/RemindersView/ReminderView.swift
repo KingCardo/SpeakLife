@@ -81,7 +81,7 @@ struct ReminderView: View {
 
         let eighteenHours = TimeInterval(18 * 60  * 60)
 
-        let request = BGAppRefreshTaskRequest(identifier: "com.diosesaqui.updateNotificationContent")
+        let request = BGAppRefreshTaskRequest(identifier: "com.speaklife.updateNotificationContent")
         request.earliestBeginDate = Date(timeIntervalSinceNow: eighteenHours)
         
         
