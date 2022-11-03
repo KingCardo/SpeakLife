@@ -71,7 +71,7 @@ struct CategoryChooserView: View {
             ScrollView {
                 Spacer()
                 
-                Text("Select one of the following categories to get focused inspiration.", comment: "category reminder selection")
+                Text("Select one of the following categories to get powerful promises focused on your needs.", comment: "category reminder selection")
                     .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .body))
                     .foregroundColor(colorScheme == .dark ?  Constants.DEABlack : Constants.DALightBlue)
                     .multilineTextAlignment(.center)
