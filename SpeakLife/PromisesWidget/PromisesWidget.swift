@@ -60,9 +60,11 @@ struct PromisesGlanceView: View {
         }
     }
     
+    private let opacity = 0.85
+    
     var body: some View {
         ZStack {
-            Color.black
+            Color.cyan.opacity(opacity)
             Text(affirmation)
                 .foregroundColor(.white)
                 .font(.custom("BodoniSvtyTwoOSITCTT-Book", size: fontSize))
