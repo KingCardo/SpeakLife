@@ -1,20 +1,124 @@
 {
-    "count": 0,
+    "count": 10,
     "declarations": [
         {
             "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
             "isFavorite": false,
             "category": "faith"
         },
         {
             "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I am filled with love!",
             "isFavorite": false,
             "category": "faith"
         },
         {
             "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
             "isFavorite": false,
-            "category": "faith"
+            "category": "love"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "book": "Psalms 23:12 KSJ",
+            "isFavorite": false,
+            "category": "positivity"
         },
     ]
 }

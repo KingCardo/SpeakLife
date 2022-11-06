@@ -95,12 +95,10 @@ struct DeclarationContentView: View {
                 .frame(width: geometry.size.width * 0.98, height:  geometry.size.height * 0.40)
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
             
-            Text(declaration.book)
+            Text(declaration.book ?? "")
                 .foregroundColor(.white)
                 .font(.callout)
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
-//            QuoteLabel(themeViewModel: themeViewModel, quote: declaration.book)
-//                .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
             
             Spacer()
         }
