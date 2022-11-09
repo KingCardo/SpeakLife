@@ -89,8 +89,6 @@ final class StoreObserver: NSObject {
         }
         setSubscriptionKey(id: id)
         
-        receiptValidation(id: id, completion: nil)
-        
         print("\(Messages.deliverContent) \(transaction.payment.productIdentifier).")
 
         // Finish the successful transaction.
@@ -167,7 +165,7 @@ final class StoreObserver: NSObject {
                         if let date = self?.getExpirationDateFromResponse(jsonResponse as! NSDictionary) {
                             
                             let date = Calendar.current.dateComponents(in: .current, from: date).date
-                            self?.updateSubcription(expDate: date, id: id) { didDelete in
+                            self?.updateSubscription(expDate: date, id: id) { didDelete in
                             completion?(didDelete)
                             }
                         }
@@ -184,32 +182,51 @@ final class StoreObserver: NSObject {
     
     func getExpirationDateFromResponse(_ jsonResponse: NSDictionary) -> Date? {
         if let receiptInfo: NSArray = jsonResponse["latest_receipt_info"] as? NSArray {
-            let lastReceipt = receiptInfo.firstObject as! NSDictionary
+            let lastReceipt = receiptInfo.lastObject as! NSDictionary
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss VV"
-            formatter.timeZone = .autoupdatingCurrent
-            
             if let expiresDate = lastReceipt["expires_date"] as? String {
-                return formatter.date(from: expiresDate)
+                formatter.timeZone = TimeZone.current
+                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss VV"
+                guard let stringDate = formatter.date(from: expiresDate)  else { return nil }
+                print(stringDate, "RWRW")
+                return stringDate
             }
-            
             return nil
-        }
-        else {
+        } else {
             return nil
         }
     }
     
-    private func updateSubcription(expDate: Date?, id: String,  completion:  (Bool) -> Void) {
+    func checkForExpiredSubscriptions(completion: @escaping (Bool) -> Void) {
+        
+        let (_ , currentSubscriptionId) = StoreManager.shared.getPremiumAppState()
+        if let currentSubscriptionId = currentSubscriptionId {
+            receiptValidation(id: currentSubscriptionId) { didDelete in
+                completion(didDelete)
+                return
+            }
+        } else {
+            completion(false)
+            return
+        }
+    }
+    
+    private func updateSubscription(expDate: Date?, id: String, completion: @escaping(Bool) -> Void) {
         if let _ = UserDefaults.standard.data(forKey: id) {
-            guard let expDate = expDate else {  return  }
+            guard let expDate = expDate else {
+                completion(false)
+                return
+            }
             let now = Date()
+            print(expDate,  "RWRW exp")
             if now > expDate {
-                print(expDate, now, "RWRW")
                 UserDefaults.standard.removeObject(forKey: id)
                 completion(true)
+                return
             }
         }
+        completion(false)
+        return
     }
     
     private func setSubscriptionKey(id: String) {

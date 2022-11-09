@@ -35,14 +35,9 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
 
     
     private func updateSubscriptions() {
-//        StoreObserver.shared.receiptValidation(id: InAppId.revampYearlyId) { [weak self] didDelete in
-//            if didDelete {
-//            self?.updateAppState?()
-//            }
-//        }
-//        StoreObserver.shared.receiptValidation(id: InAppId.revampMonthlyId) { didDelete in
-//
-//        }
+        StoreObserver.shared.checkForExpiredSubscriptions() { [weak self] expired in
+            self?.appState?.isPremium = expired
+        }
     }
     
     

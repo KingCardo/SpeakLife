@@ -32,7 +32,7 @@ struct SpeakLifeApp: App {
                 appDelegate.appState = appState
                 appDelegate.declarationStore = declarationStore
                 updatePremiumAppState()
-                appstatePremiumUpdate()
+//                appstatePremiumUpdate()
             case .inactive:
                 break
             case .background:
