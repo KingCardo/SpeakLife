@@ -2,121 +2,122 @@
     "count": 10,
     "declarations": [
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.!",
+            "book": "Mark 11:24 NLT",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "Love is patient and kind. Love is not jealous or boastful or proud or rude. It does not demand its own way. It is not irritable, and it keeps no record of being wronged.",
+            "book": "1 Corinthians 13:3-5 NLT",
             "isFavorite": false,
             "category": "love"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "Always be joyful. Never stop praying. Be thankful in all circumstances, for this is God’s will for you who belong to Christ Jesus.",
+            "book": "1 Thessalonians 5:16-18 NLT",
             "isFavorite": false,
             "category": "gratitude"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "The Lord is for me, so I will have no fear.What can mere people do to me?",
+            "book": "Psalm 118:6 NLT",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "The Lord keeps watch over you as you come and go, both now and forever.",
+            "book": "Psalm 121:8 NLT",
             "isFavorite": false,
             "category": "hope"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "You must serve only the Lord your God. If you do, I will bless you with food and water, and I will protect you from illness.",
+            "book": "Exodus 23:25 NLT",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "I am leaving you with a gift—peace of mind and heart. And the peace I give is a gift the world cannot give. So don’t be troubled or afraid.",
+            "book": "John 14:27 NLT",
             "isFavorite": false,
             "category": "peace"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "How much better to get wisdom than gold, and good judgment than silver!",
+            "book": "Proverbs 16:16 NLT",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "Work brings profit, but mere talk leads to poverty!",
+            "book": "Proverbs 14:23 NLT",
             "isFavorite": false,
             "category": "motivation"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "The light shines in the darkness, and the darkness can never extinguish it.",
+            "book": "John 1:5 NLT",
             "isFavorite": false,
             "category": "positivity"
         },
         {
-            "text": "I am filled with love!",
+            "text": "For you know that when your faith is tested, your endurance has a chance to grow.!",
+            "book": "James 1:3 NLT",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "Three things will last forever—faith, hope, and love—and the greatest of these is love.",
+            "book": "1 Corinthians 13:13 NLT",
             "isFavorite": false,
             "category": "love"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "Don’t worry about anything; instead, pray about everything. Tell God what you need, and thank him for all he has done.",
+            "book": "Philippians 4:6-7 NLT",
             "isFavorite": false,
             "category": "gratitude"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "For God has not given us a spirit of fear and timidity, but of power, love, and self-discipline.",
+            "book": "2 Timothy 1:7 NLT",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "\"For I know the plans I have for you,\" says the Lord. \"They are plans for good and not for disaster, to give you a future and a hope.\"",
+            "book": "Jeremiah 29:11 NLT",
             "isFavorite": false,
             "category": "hope"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "Kind words are like honey— sweet to the soul and healthy for the body.",
+            "book": "Proverbs 16:24 NLT",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "I have told you all this so that you may have peace in me. Here on earth you will have many trials and sorrows. But take heart, because I have overcome the world.",
+            "book": "John 16:33 NLT",
             "isFavorite": false,
             "category": "peace"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "Wealth from get-rich-quick schemes quickly disappears; wealth from hard work grows over time.",
+            "book": "Proverbs 13:11 NLT",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "We should help others do what is right and build them up in the Lord.",
+            "book": "Romans 15:2 NLT",
             "isFavorite": false,
             "category": "motivation"
         },
         {
-            "text": "I am filled with love, peace, joy and hope!",
-            "book": "Psalms 23:12 KSJ",
+            "text": "So I say, let the Holy Spirit guide your lives. Then you won’t be doing what your sinful nature craves.",
+            "book": "Galatians 5:16 NLT",
             "isFavorite": false,
             "category": "positivity"
         },
