@@ -50,6 +50,7 @@ struct SpeakLifeApp: App {
     }
     
     private func updatePremiumAppState() {
-        appState.isPremium = storeManager.getPremiumAppState()
+        let (appStatePremium, _) = storeManager.getPremiumAppState()
+        appState.isPremium = appStatePremium
     }
 }
