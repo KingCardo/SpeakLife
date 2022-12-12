@@ -20,7 +20,6 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     case peace
     case wealth
     case selfcontrol
-    case motivation
     case positivity
     
     var id: String {
@@ -28,7 +27,11 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     }
     
     var name: String {
-        self.rawValue.capitalized
+        switch self {
+        case .selfcontrol: return "Self Control"
+        default:  return self.rawValue.capitalized
+        }
+       
     }
     
     
