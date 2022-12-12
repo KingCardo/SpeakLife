@@ -32,7 +32,6 @@ struct SpeakLifeApp: App {
                 appDelegate.appState = appState
                 appDelegate.declarationStore = declarationStore
                 updatePremiumAppState()
-//                appstatePremiumUpdate()
             case .inactive:
                 break
             case .background:
@@ -42,12 +41,7 @@ struct SpeakLifeApp: App {
             }
         }
     }
-    
-    private func appstatePremiumUpdate() {
-        appDelegate.updateAppState = {
-            updatePremiumAppState()
-        }
-    }
+
     
     private func updatePremiumAppState() {
         let (appStatePremium, _) = storeManager.getPremiumAppState()

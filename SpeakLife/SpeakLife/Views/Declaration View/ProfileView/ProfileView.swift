@@ -190,7 +190,7 @@ struct ProfileView: View {
         
         ZStack {
             Text("Privacy Policy", comment: "privacy policy")
-            Link("", destination: URL(string: "https://www.revampdailyaffirmations.com/home")!)
+            Link("", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
         }
     }
     
@@ -198,7 +198,7 @@ struct ProfileView: View {
         
         ZStack {
             Text("Terms and Conditions", comment: "terms n conditions")
-            Link("", destination: URL(string: "https://www.revampdailyaffirmations.com/home")!)
+            Link("", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
         }
     }
     
