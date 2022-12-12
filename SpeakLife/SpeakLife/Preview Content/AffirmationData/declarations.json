@@ -1,5 +1,5 @@
 {
-    "count": 20,
+    "count": 30,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -50,10 +50,10 @@
             "category": "wealth"
         },
         {
-            "text": "Work brings profit, but mere talk leads to poverty!",
-            "book": "Proverbs 14:23 NLT",
+            "text": "A fool is quick-tempered, but a wise person stays calm when insulted.",
+            "book": "Proverbs 12:16 NLT",
             "isFavorite": false,
-            "category": "motivation"
+            "category": "selfcontrol"
         },
         {
             "text": "The light shines in the darkness, and the darkness can never extinguish it.",
@@ -110,10 +110,10 @@
             "category": "wealth"
         },
         {
-            "text": "We should help others do what is right and build them up in the Lord.",
-            "book": "Romans 15:2 NLT",
+            "text": "Better to be patient than powerful; better to have self-control than to conquer a city.",
+            "book": "Proverbs 16:32 NLT",
             "isFavorite": false,
-            "category": "motivation"
+            "category": "selfcontrol"
         },
         {
             "text": "So I say, let the Holy Spirit guide your lives. Then you won’t be doing what your sinful nature craves.",
@@ -122,62 +122,62 @@
             "category": "positivity"
         },
         {
-            "text": "For you know that when your faith is tested, your endurance has a chance to grow.!",
-            "book": "James 1:3 NLT",
+            "text": "Faith shows the reality of what we hope for; it is the evidence of things we cannot see.",
+            "book": "Hebrews 11:1 NLT",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "Three things will last forever—faith, hope, and love—and the greatest of these is love.",
-            "book": "1 Corinthians 13:13 NLT",
+            "text": "And do everything with love.",
+            "book": "1 Corinthians 16:14 NLT",
             "isFavorite": false,
             "category": "love"
         },
         {
-            "text": "Don’t worry about anything; instead, pray about everything. Tell God what you need, and thank him for all he has done.",
-            "book": "Philippians 4:6-7 NLT",
+            "text": "But thank God! He gives us victory over sin and death through our Lord Jesus Christ.",
+            "book": "1 Corinthians 15:57 NLT",
             "isFavorite": false,
             "category": "gratitude"
         },
         {
-            "text": "For God has not given us a spirit of fear and timidity, but of power, love, and self-discipline.",
-            "book": "2 Timothy 1:7 NLT",
+            "text": "The Lord is for me, so I will have no fear. What can mere people do to me?",
+            "book": "Psalm 118:6 NLT",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "\"For I know the plans I have for you,\" says the Lord. \"They are plans for good and not for disaster, to give you a future and a hope.\"",
-            "book": "Jeremiah 29:11 NLT",
+            "text": "So now wrap your heart tightly around the hope that lives within us, knowing that God always keeps his promises!",
+            "book": "Hebrews 10:23 TPT",
             "isFavorite": false,
             "category": "hope"
         },
         {
-            "text": "Kind words are like honey— sweet to the soul and healthy for the body.",
-            "book": "Proverbs 16:24 NLT",
+            "text": "So whether you eat or drink or whatever you do, do it all for the glory of God.",
+            "book": "1 Corinthians 10:31 NLT",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "I have told you all this so that you may have peace in me. Here on earth you will have many trials and sorrows. But take heart, because I have overcome the world.",
-            "book": "John 16:33 NLT",
+            "text": "Now may the Lord of peace himself give you his peace at all times and in every situation. The Lord be with you all.",
+            "book": "2 Thessalonians 3:16 NLT",
             "isFavorite": false,
             "category": "peace"
         },
         {
-            "text": "Wealth from get-rich-quick schemes quickly disappears; wealth from hard work grows over time.",
-            "book": "Proverbs 13:11 NLT",
+            "text": "Honor the Lord with your wealth and with the best part of everything you produce.",
+            "book": "Proverbs 3:9 NLT",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "We should help others do what is right and build them up in the Lord.",
-            "book": "Romans 15:2 NLT",
+            "text": "A person without self-control is like a city with broken-down walls.",
+            "book": "Romans 25:28 NLT",
             "isFavorite": false,
-            "category": "motivation"
+            "category": "selfcontrol"
         },
         {
-            "text": "So I say, let the Holy Spirit guide your lives. Then you won’t be doing what your sinful nature craves.",
-            "book": "Galatians 5:16 NLT",
+            "text": "Let your unfailing love surround us, Lord, for our hope is in you alone.",
+            "book": "Psalm 33:22 NLT",
             "isFavorite": false,
             "category": "positivity"
         },

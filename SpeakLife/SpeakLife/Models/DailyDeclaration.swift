@@ -19,6 +19,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     case health
     case peace
     case wealth
+    case selfcontrol
     case motivation
     case positivity
     
