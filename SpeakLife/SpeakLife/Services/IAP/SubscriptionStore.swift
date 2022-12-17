@@ -17,18 +17,6 @@ public enum StoreError: Error {
     case failedVerification
 }
 
-//Define our app's subscription tiers by level of service, in ascending order.
-//public enum SubscriptionTier: Int, Comparable {
-//    case none = 0
-//    case standard = 1
-//    case premium = 2
-//    case pro = 3
-//
-//    public static func < (lhs: Self, rhs: Self) -> Bool {
-//        return lhs.rawValue < rhs.rawValue
-//    }
-//}
-
 final class SubscriptionStore: ObservableObject {
 
     @Published var isPremium: Bool = false
@@ -212,18 +200,8 @@ final class SubscriptionStore: ObservableObject {
     func sortByPrice(_ products: [Product]) -> [Product] {
         products.sorted(by: { return $0.price < $1.price })
     }
-
-    //Get a subscription's level of service using the product ID.
-//    func tier(for productId: String) -> SubscriptionTier {
-//        switch productId {
-//        case "subscription.standard":
-//            return .standard
-//        case "subscription.premium":
-//            return .premium
-//        case "subscription.pro":
-//            return .pro
-//        default:
-//            return .none
-//        }
-//    }
+    
+    func restore() async {
+        await updateCustomerProductStatus()
+    }
 }

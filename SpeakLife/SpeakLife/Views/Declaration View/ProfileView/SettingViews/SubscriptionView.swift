@@ -154,7 +154,11 @@ struct SubscriptionView: View {
     }
     
     private func restore() {
-        StoreObserver.shared.restore()
+        Task {
+            declarationStore.isPurchasing = true
+            await subscriptionStore.restore()
+            declarationStore.isPurchasing = false
+        }
     }
 }
 

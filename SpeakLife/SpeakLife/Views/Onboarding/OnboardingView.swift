@@ -11,11 +11,6 @@ struct OnboardingView: View  {
     @EnvironmentObject var appState: AppState
     @Environment(\.colorScheme) var colorScheme
     
-    let pub = NotificationCenter.default
-        .publisher(for: PurchaseSuccess)
-    let pub2 = NotificationCenter.default
-                .publisher(for: PurchaseCancelled)
-    
     @State var selection: Tab = .intro
     
     var body: some View {
@@ -53,9 +48,6 @@ struct OnboardingView: View  {
         .onAppear {
             setupAppearance()
 
-        }
-        .onReceive(pub) { outout in
-            self.dismissOnboarding()
         }
     }
     
@@ -106,7 +98,7 @@ struct OnboardingView: View  {
             case .widgets:
                 selection = .subscription
             case .subscription:
-                break
+                dismissOnboarding()
             }
         }
     }
