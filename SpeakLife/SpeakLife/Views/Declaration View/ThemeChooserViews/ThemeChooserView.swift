@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct ThemeChooserView: View {
-    @EnvironmentObject var appState: AppState
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var themesViewModel: ThemeViewModel
     @State private var isPresentingFontChooser = false
@@ -53,7 +53,7 @@ struct ThemeChooserView: View {
                 LazyVGrid(columns: twoColumnGrid, spacing: 16) {
                     ForEach(themesViewModel.themes) { theme in
                         
-                        if theme.isPremium && !appState.isPremium {
+                        if theme.isPremium && !subscriptionStore.isPremium {
                             ZStack {
                                 themeCell(imageString: theme.backgroundImageString, size: size, isPremium: theme.isPremium)
                                 
@@ -104,7 +104,7 @@ struct ThemeChooserView: View {
                                 .cornerRadius(4)
                     
             }
-            if isPremium && !appState.isPremium {
+            if isPremium && !subscriptionStore.isPremium {
                 Image(systemName: "lock.fill")
                     .font(.title)
                     .frame(width: 30, height: 30)

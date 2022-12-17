@@ -10,7 +10,7 @@ import SwiftUI
 struct IntentsBarView: View {
     
     // MARK: - Properties
-    @EnvironmentObject var appState: AppState
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var themeStore: ThemeViewModel
     
@@ -56,7 +56,7 @@ struct IntentsBarView: View {
                 ThemeChooserView(themesViewModel: themeViewModel)
             }
             
-            if !appState.isPremium {
+            if !subscriptionStore.isPremium {
                 CapsuleImageButton(title: "crown.fill") {
                     premiumView()
                     Selection.shared.selectionFeedback()

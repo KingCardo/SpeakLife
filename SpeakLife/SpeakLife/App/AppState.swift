@@ -9,7 +9,6 @@ import SwiftUI
 
 final class AppState: ObservableObject {
     @Published var rootViewId = UUID()
-    @Published var isPremium = false
     @AppStorage("onboarded") var isOnboarded = false
     @AppStorage("notificationEnabled") var notificationEnabled = false
     @AppStorage("notificationCount") var notificationCount = 10

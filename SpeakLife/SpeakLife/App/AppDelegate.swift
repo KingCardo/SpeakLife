@@ -7,7 +7,6 @@
 
 import UIKit
 import BackgroundTasks
-import StoreKit
 import FirebaseCore
 
 final class AppDelegate: NSObject, UIApplicationDelegate {
@@ -21,25 +20,10 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         FirebaseApp.configure()
         registerNotificationHandler()
         registerBGTask()
-        registerIAPDelegateAndObservers()
-        SKPaymentQueue.default().add(StoreObserver.shared)
-        updateSubscriptions()
         
         NotificationCenter.default.addObserver(self, selector: #selector(scheduleNotificationRequest), name: UIApplication.didEnterBackgroundNotification, object: nil)
         return true
     }
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        SKPaymentQueue.default().remove(StoreObserver.shared)
-    }
-
-    
-    private func updateSubscriptions() {
-        StoreObserver.shared.checkForExpiredSubscriptions() { [weak self] expired in
-            self?.appState?.isPremium = expired
-        }
-    }
-    
     
     private func registerNotificationHandler() {
         NotificationManager.shared.notificationCenter.delegate = NotificationHandler.shared
@@ -90,43 +74,4 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         queue.waitUntilAllOperationsAreFinished()
         
     }
-    
-    private func registerIAPDelegateAndObservers() {
-        StoreManager.shared.delegate = self
-        StoreObserver.shared.delegate = self
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(purchaseSuccess), name: PurchaseSuccess, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(purchaseCancelled), name: PurchaseCancelled, object: nil)
-    }
-    
-    @objc private func purchaseSuccess() {
-        appState?.isPremium = true
-        declarationStore?.isPurchasing = false
-    }
-    
-    @objc private func purchaseCancelled()  {
-        declarationStore?.isPurchasing = false
-    }
-    
-}
-
-extension AppDelegate: StoreManagerDelegate {
-    func storeManagerDidReceiveMessage(_ message: String) {
-        declarationStore?.isPurchasing = false
-        declarationStore?.errorMessage = message
-    }
-}
-
-extension AppDelegate: StoreObserverDelegate {
-    func storeObserverDidReceiveMessage(_ message: String) {
-        declarationStore?.isPurchasing = false
-        declarationStore?.errorMessage = message
-    }
-    
-    func storeObserverRestoreDidSucceed(isPremium: Bool) {
-        declarationStore?.isPurchasing = false
-        declarationStore?.errorMessage = "All successful purchases have been restored."
-        appState?.isPremium = isPremium
-    }
-    
 }

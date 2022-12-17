@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoryCell: View  {
     
-    @EnvironmentObject var appState: AppState
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @Environment(\.colorScheme) var colorScheme
     
     let size: CGSize
@@ -36,7 +36,7 @@ struct CategoryCell: View  {
                         .clipped()
                         .cornerRadius(4)
                     
-                    if category.isPremium && !appState.isPremium {
+                    if category.isPremium && !subscriptionStore.isPremium {
                         Image(systemName: "lock.fill")
                             .font(.title)
                             .frame(width: 30, height: 30)
@@ -57,7 +57,7 @@ struct CategoryCell: View  {
 
 struct CategoryChooserView: View {
     
-    @EnvironmentObject var appState: AppState
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.colorScheme) var colorScheme
     
@@ -81,7 +81,7 @@ struct CategoryChooserView: View {
                 LazyVGrid(columns: twoColumnGrid, spacing: 16) {
                     ForEach(viewModel.allCategories) { category in
                         
-                        if category.isPremium && !appState.isPremium {
+                        if category.isPremium && !subscriptionStore.isPremium {
                             ZStack {
                                 CategoryCell(size: geometry.size, category: category)
                               

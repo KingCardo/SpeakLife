@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoryButtonRow: View  {
     
-    @EnvironmentObject var appState: AppState
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @State var isPresentingCategoryList = false
     @State var isPresentingPremiumView = false
@@ -26,7 +26,7 @@ struct CategoryButtonRow: View  {
             Button(action: displayCategoryView) {
                 Image(systemName: "chevron.right")
             }
-            .sheet(isPresented: appState.isPremium ? $isPresentingCategoryList : $isPresentingPremiumView, onDismiss: {
+            .sheet(isPresented: subscriptionStore.isPremium ? $isPresentingCategoryList : $isPresentingPremiumView, onDismiss: {
                 self.isPresentingPremiumView = false
                 self.isPresentingCategoryList = false
             }, content: {
@@ -42,7 +42,7 @@ struct CategoryButtonRow: View  {
     }
     
     private func displayCategoryView()  {
-        if !appState.isPremium {
+        if !subscriptionStore.isPremium {
             isPresentingPremiumView = true
         } else {
             isPresentingCategoryList = true
@@ -52,7 +52,7 @@ struct CategoryButtonRow: View  {
     
     @ViewBuilder
     private var contentView: some View {
-        if !appState.isPremium {
+        if !subscriptionStore.isPremium {
             PremiumView()
         } else {
             CategoryListView(categoryList: CategoryListViewModel(declarationStore))

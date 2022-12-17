@@ -11,11 +11,11 @@ struct PremiumView: View {
     
     @Environment(\.openURL) var openURL
     
-    @EnvironmentObject var appState: AppState
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     
     var body: some View {
         GeometryReader { geometry in
-            if !appState.isPremium {
+            if !subscriptionStore.isPremium {
                 SubscriptionView(size: geometry.size)
             } else {
                 NavigationView {

@@ -12,7 +12,7 @@ struct InAppId: Codable {
     var purchaseDate: Date?
     var purchased = false
     
-    enum AppID: String, Identifiable, CaseIterable {
+    enum Subscription: String, Identifiable, CaseIterable {
         var id: String {
             self.rawValue
         }
@@ -50,8 +50,7 @@ struct InAppId: Codable {
         }
     }
     
-
-//    static let all: [String] = [speakLife1YR99, speakLife1YR49, speakLife1YR39, speakLife1YR19, speakLife1MO9, speakLife1MO4, speakLife1MO2]
+    static let all: [String] = [Subscription.speakLife1YR99.id, Subscription.speakLife1YR49.id, Subscription.speakLife1YR39.id, Subscription.speakLife1YR19.id, Subscription.speakLife1MO9.id, Subscription.speakLife1MO4.id, Subscription.speakLife1MO2.id]
 }
 
 struct Messages {

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct Benefit: Identifiable  {
     
@@ -28,15 +29,21 @@ struct Benefit: Identifiable  {
 struct SubscriptionView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var declarationStore: DeclarationViewModel
-    @EnvironmentObject var storeManager: StoreManager
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
+    @State var errorTitle = ""
+    @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.AppID = InAppId.AppID.speakLife1MO4
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1MO4
+   // let product: Product
     
     let size: CGSize
 
     var body: some View {
         goPremiumView(size: size)
             .foregroundColor(colorScheme == .dark ? .white : Constants.DEABlack)
+            .alert(isPresented: $isShowingError, content: {
+                Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("Okay")))
+            })
     }
     
     private var benefitRows: some View {
@@ -100,7 +107,7 @@ struct SubscriptionView: View {
         
         return VStack {
             Picker("Gift Amount", selection: $currentSelection) {
-                ForEach(InAppId.AppID.allCases) { inappID in
+                ForEach(InAppId.Subscription.allCases) { inappID in
                     Text(inappID.title).tag(inappID)
                 }
             }
@@ -116,14 +123,24 @@ struct SubscriptionView: View {
             }
         }
     }
+    
+    func buy() async {
+        do {
+            if try await subscriptionStore.purchaseWithID([currentSelection.rawValue]) != nil {
+            }
+        } catch StoreError.failedVerification {
+            errorTitle = "Your purchase could not be verified by the App Store."
+            isShowingError = true
+        } catch {
+            print("Failed purchase for \(currentSelection.rawValue): \(error)")
+        }
+    }
 
     private func makePurchase() {
-        declarationStore.isPurchasing = true
-        StoreObserver.shared.productId = currentSelection.rawValue
-        
-        if let id = StoreObserver.shared.productId  {
-            print(id)
-            StoreManager.shared.startProductRequest(with: id)
+        Task {
+            declarationStore.isPurchasing = true
+            await buy()
+            declarationStore.isPurchasing = false
         }
     }
     

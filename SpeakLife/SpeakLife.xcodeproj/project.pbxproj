@@ -13,6 +13,8 @@
 		7A278F9B288915DE0084BB57 /* SpeakLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */; };
 		7A278F9F288915DF0084BB57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A278F9E288915DF0084BB57 /* Assets.xcassets */; };
 		7A278FA2288915DF0084BB57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A278FA1288915DF0084BB57 /* Preview Assets.xcassets */; };
+		7A60143F294E382700CD2103 /* SubscriptionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60143E294E382700CD2103 /* SubscriptionStore.swift */; };
+		7A601441294E574500CD2103 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A601440294E574500CD2103 /* HomeView.swift */; };
 		7A7BEBCD2913536B008D08A3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7BEBCC2913536B008D08A3 /* StoreKit.framework */; };
 		7A7BEBD42913574D008D08A3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7BEBD32913574D008D08A3 /* WidgetKit.framework */; };
 		7A7BEBD62913574D008D08A3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7BEBD52913574D008D08A3 /* SwiftUI.framework */; };
@@ -29,8 +31,6 @@
 		7AA8708028DACC8300134ADB /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8707628DACC8300134ADB /* NotificationHandler.swift */; };
 		7AA8708128DACC8300134ADB /* NotificationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8707728DACC8300134ADB /* NotificationProcessor.swift */; };
 		7AA8708228DACC8300134ADB /* InAppPurchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8707928DACC8300134ADB /* InAppPurchases.swift */; };
-		7AA8708328DACC8300134ADB /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8707A28DACC8300134ADB /* StoreObserver.swift */; };
-		7AA8708428DACC8300134ADB /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8707B28DACC8300134ADB /* StoreManager.swift */; };
 		7AA8709028DACCA700134ADB /* SelectionFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8708628DACCA700134ADB /* SelectionFeedback.swift */; };
 		7AA8709128DACCA700134ADB /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8708728DACCA700134ADB /* GlobalConstants.swift */; };
 		7AA8709228DACCA700134ADB /* ToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8708828DACCA700134ADB /* ToggleStyle.swift */; };
@@ -105,6 +105,8 @@
 		7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakLifeApp.swift; sourceTree = "<group>"; };
 		7A278F9E288915DF0084BB57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A278FA1288915DF0084BB57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7A60143E294E382700CD2103 /* SubscriptionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStore.swift; sourceTree = "<group>"; };
+		7A601440294E574500CD2103 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7A7BEBCA2913534E008D08A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7A7BEBCC2913536B008D08A3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7A7BEBD22913574D008D08A3 /* PromisesWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PromisesWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,8 +125,6 @@
 		7AA8707628DACC8300134ADB /* NotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		7AA8707728DACC8300134ADB /* NotificationProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationProcessor.swift; sourceTree = "<group>"; };
 		7AA8707928DACC8300134ADB /* InAppPurchases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppPurchases.swift; sourceTree = "<group>"; };
-		7AA8707A28DACC8300134ADB /* StoreObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreObserver.swift; sourceTree = "<group>"; };
-		7AA8707B28DACC8300134ADB /* StoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		7AA8708628DACCA700134ADB /* SelectionFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionFeedback.swift; sourceTree = "<group>"; };
 		7AA8708728DACCA700134ADB /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		7AA8708828DACCA700134ADB /* ToggleStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleStyle.swift; sourceTree = "<group>"; };
@@ -275,6 +275,7 @@
 		7AA8706528DACB3500134ADB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7A601440294E574500CD2103 /* HomeView.swift */,
 				7AA8709728DACCB700134ADB /* Declaration View */,
 				7AA870B828DACCB700134ADB /* Onboarding */,
 			);
@@ -345,8 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				7AA8707928DACC8300134ADB /* InAppPurchases.swift */,
-				7AA8707A28DACC8300134ADB /* StoreObserver.swift */,
-				7AA8707B28DACC8300134ADB /* StoreManager.swift */,
+				7A60143E294E382700CD2103 /* SubscriptionStore.swift */,
 			);
 			path = IAP;
 			sourceTree = "<group>";
@@ -625,9 +625,7 @@
 				7AA8709628DACCA800134ADB /* String+Extension.swift in Sources */,
 				7AA870C228DACCB700134ADB /* IntentsBarView.swift in Sources */,
 				7AA870E428DACD1A00134ADB /* AppState.swift in Sources */,
-				7AA8708428DACC8300134ADB /* StoreManager.swift in Sources */,
 				7AA870CB28DACCB700134ADB /* PremiumView.swift in Sources */,
-				7AA8708328DACC8300134ADB /* StoreObserver.swift in Sources */,
 				7AA8709428DACCA800134ADB /* App.swift in Sources */,
 				7AA870C928DACCB700134ADB /* ThemeChooserView.swift in Sources */,
 				7AA8708228DACC8300134ADB /* InAppPurchases.swift in Sources */,
@@ -655,9 +653,11 @@
 				7AA8709528DACCA800134ADB /* FontPickerController.swift in Sources */,
 				7AA8708028DACC8300134ADB /* NotificationHandler.swift in Sources */,
 				7AA870D628DACCB700134ADB /* CreateYourOwnView.swift in Sources */,
+				7A60143F294E382700CD2103 /* SubscriptionStore.swift in Sources */,
 				7AA8707E28DACC8300134ADB /* APIService.swift in Sources */,
 				7AA870CA28DACCB700134ADB /* SubscriptionView.swift in Sources */,
 				7AA8709128DACCA700134ADB /* GlobalConstants.swift in Sources */,
+				7A601441294E574500CD2103 /* HomeView.swift in Sources */,
 				7AA870D228DACCB700134ADB /* CategoryListView.swift in Sources */,
 				7AA870DA28DACCB700134ADB /* NotificationScene.swift in Sources */,
 				7AA870D528DACCB700134ADB /* ReminderEditView.swift in Sources */,
@@ -817,7 +817,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
@@ -831,6 +831,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -851,7 +852,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
@@ -865,6 +866,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

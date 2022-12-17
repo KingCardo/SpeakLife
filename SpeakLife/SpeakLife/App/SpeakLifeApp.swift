@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 @main
 struct SpeakLifeApp: App {
@@ -16,22 +17,21 @@ struct SpeakLifeApp: App {
     @StateObject var appState = AppState()
     @StateObject var declarationStore = DeclarationViewModel(apiService: APIClient())
     @StateObject var themeStore = ThemeViewModel()
-    @StateObject var storeManager = StoreManager.shared
+    @StateObject var subscriptionStore = SubscriptionStore()
     
     var body: some Scene {
         WindowGroup {
-            DeclarationView()
+            HomeView()
                 .environmentObject(appState)
                 .environmentObject(declarationStore)
                 .environmentObject(themeStore)
-                .environmentObject(storeManager)
+                .environmentObject(subscriptionStore)
         }
         .onChange(of: scenePhase) { (newScenePhase) in
             switch newScenePhase {
             case .active:
                 appDelegate.appState = appState
                 appDelegate.declarationStore = declarationStore
-                updatePremiumAppState()
             case .inactive:
                 break
             case .background:
@@ -40,11 +40,5 @@ struct SpeakLifeApp: App {
                 break
             }
         }
-    }
-
-    
-    private func updatePremiumAppState() {
-        let (appStatePremium, _) = storeManager.getPremiumAppState()
-        appState.isPremium = appStatePremium
     }
 }
