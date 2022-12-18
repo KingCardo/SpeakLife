@@ -38,7 +38,7 @@ final class NotificationProcessor {
             let shuffled = allDeclarations.shuffled()
             for number in 1...count {
                 let declaration = shuffled[number]
-                let notificationData = NotificationData(title: declaration.category.name, body: declaration.text)
+                let notificationData = NotificationData(title: declaration.book ?? "", body: declaration.text)
                 data.append(notificationData)
             }
         } else {

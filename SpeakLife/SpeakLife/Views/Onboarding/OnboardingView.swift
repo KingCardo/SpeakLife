@@ -65,7 +65,9 @@ struct OnboardingView: View  {
     private func subscriptionScene(size: CGSize) -> some View  {
         
         ZStack {
-            SubscriptionView(size: size)
+            SubscriptionView(size: size) {
+                advance()
+            }
             
             VStack  {
                 HStack  {

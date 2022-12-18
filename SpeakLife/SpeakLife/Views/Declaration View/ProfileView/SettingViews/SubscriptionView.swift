@@ -34,9 +34,9 @@ struct SubscriptionView: View {
     @State var isShowingError: Bool = false
     
     @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1MO4
-   // let product: Product
     
     let size: CGSize
+    var callback: (() -> Void)?
 
     var body: some View {
         goPremiumView(size: size)
@@ -127,6 +127,7 @@ struct SubscriptionView: View {
     func buy() async {
         do {
             if try await subscriptionStore.purchaseWithID([currentSelection.rawValue]) != nil {
+                callback?()
             }
         } catch StoreError.failedVerification {
             errorTitle = "Your purchase could not be verified by the App Store."
@@ -156,8 +157,10 @@ struct SubscriptionView: View {
     private func restore() {
         Task {
             declarationStore.isPurchasing = true
-            await subscriptionStore.restore()
+            try? await AppStore.sync()
             declarationStore.isPurchasing = false
+            errorTitle = "All purchases restored"
+            isShowingError = true
         }
     }
 }

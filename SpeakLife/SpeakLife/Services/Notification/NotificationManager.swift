@@ -70,8 +70,10 @@ final class NotificationManager: NSObject {
         
         for (idx, declaration) in declarations.enumerated() {
             let id = UUID().uuidString
-            let body = declaration.body
-            
+            var body = declaration.body
+            if let title  = declaration.title {
+                body += " ~ " + declaration.title
+            }
             let content = UNMutableNotificationContent()
             content.title = "SpeakLife"
             content.body = body
