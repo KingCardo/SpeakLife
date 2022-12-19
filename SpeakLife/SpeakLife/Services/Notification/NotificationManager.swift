@@ -125,7 +125,7 @@ final class NotificationManager: NSObject {
     
     private func nightlyAffirmationReminder() {
         let id = UUID().uuidString
-        let body = "Time to unwind and end your day with your favorite affirmations!" // Localize
+        let body = "Time to unwind and end your day with your favorite Bible promises!" // Localize
         
         let content = UNMutableNotificationContent()
         content.title = "SpeakLife"

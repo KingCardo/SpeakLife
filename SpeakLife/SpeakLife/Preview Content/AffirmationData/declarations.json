@@ -1,5 +1,5 @@
 {
-    "count": 30,
+    "count": 40,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -178,6 +178,66 @@
         {
             "text": "Let your unfailing love surround us, Lord, for our hope is in you alone.",
             "book": "Psalm 33:22 NLT",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "For it is by believing in your heart that you are made right with God, and it is by openly declaring your faith that you are saved.",
+            "book": "Romans 10:10 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Most important of all, continue to show deep love for each other, for love covers a multitude of sins.",
+            "book": "1 Peter 4:8 NLT",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Devote yourselves to prayer with an alert mind and a thankful heart.",
+            "book": "Colossians 4:2 NLT",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "Fearing people is a dangerous trap, but trusting the Lord means safety.",
+            "book": "Proverbs 29:25 NLT",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I am counting on the Lord; yes, I am counting on him. I have put my hope in his word."
+            "book": "Psalm 130:5 NLT",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "You must serve only the Lord your God. If you do, I will bless you with food and water, and I will protect you from illness.",
+            "book": "Exodus 23:25 NLT",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "So letting your sinful nature control your mind leads to death. But letting the Spirit control your mind leads to life and peace.",
+            "book": "Romans 8:6 NLT",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Wealth from get-rich-quick schemes quickly disappears; wealth from hard work grows over time.",
+            "book": "Proverbs 13:11 NLT",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "A fool is quick-tempered, but a wise person stays calm when insulted.",
+            "book": "Proverbs 12:16 NLT",
+            "isFavorite": false,
+            "category": "selfcontrol"
+        },
+        {
+            "text": "Let us hold tightly without wavering to the hope we affirm, for God can be trusted to keep his promise.",
+            "book": "Hebrews 10:23 NLT",
             "isFavorite": false,
             "category": "positivity"
         },
