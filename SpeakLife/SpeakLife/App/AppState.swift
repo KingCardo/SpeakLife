@@ -11,10 +11,10 @@ final class AppState: ObservableObject {
     @Published var rootViewId = UUID()
     @AppStorage("onboarded") var isOnboarded = false
     @AppStorage("notificationEnabled") var notificationEnabled = false
-    @AppStorage("notificationCount") var notificationCount = 10
+    @AppStorage("notificationCount") var notificationCount = 4
     @AppStorage("startTimeNotification") var startTimeNotification = ""
     @AppStorage("endTimeNotification") var endTimeNotification = ""
-    @AppStorage("startTimeIndex") var startTimeIndex = 20
-    @AppStorage("endTimeIndex") var endTimeIndex = 29
+    @AppStorage("startTimeIndex") var startTimeIndex = 16
+    @AppStorage("endTimeIndex") var endTimeIndex = 25
     @AppStorage("selectedNotificationCategories") var selectedNotificationCategories: String = ""
 }

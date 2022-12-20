@@ -26,7 +26,8 @@ struct OnboardingView: View  {
                     .tag(Tab.notification)
                 
                 WidgetScene(size: geometry.size) {
-                    advance()
+                    dismissOnboarding()
+                   // advance()
                 }
                     .tag(Tab.widgets)
             
@@ -34,8 +35,8 @@ struct OnboardingView: View  {
                 //                categoryScene()
                 //                    .tag(Tab.category)
                 
-                subscriptionScene(size: geometry.size)
-                    .tag(Tab.subscription)
+//                subscriptionScene(size: geometry.size)
+//                    .tag(Tab.subscription)
                 
                 
             }
@@ -98,6 +99,7 @@ struct OnboardingView: View  {
             case .notification:
                 askNotificationPermission()
             case .widgets:
+               
                 selection = .subscription
             case .subscription:
                 dismissOnboarding()
