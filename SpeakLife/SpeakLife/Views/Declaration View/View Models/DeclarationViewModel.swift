@@ -81,7 +81,7 @@ final class DeclarationViewModel: ObservableObject {
             guard let self  = self else { return }
             self.isFetching = false
             self.allDeclarations = declarations
-            self.choose(self.selectedCategory)
+            self.choose(self.selectedCategory) { _ in }
             self.favorites = self.getFavorites()
             self.createOwn = self.getCreateOwn()
             self.errorMessage = error?.localizedDescription
@@ -184,11 +184,17 @@ final class DeclarationViewModel: ObservableObject {
     
     // MARK: - Declarations
     
-    func choose(_ category: DeclarationCategory) {
-        selectedCategoryString = category.rawValue
+    func choose(_ category: DeclarationCategory, completion: @escaping(Bool) -> Void) {
         fetchDeclarations(for: category) { [weak self] declarations in
+            guard declarations.count > 0 else {
+                self?.errorMessage = "Oops, you need to add one to this category first!"
+                completion(false)
+                return
+            }
+            self?.selectedCategoryString = category.rawValue
             let shuffled = declarations.shuffled()
             self?.declarations = shuffled
+            completion(true)
         }
     }
     

@@ -67,49 +67,55 @@ struct CategoryChooserView: View {
     
     var body: some View {
         GeometryReader { geometry in
-        NavigationView {
-            ScrollView {
-                Spacer()
-                
-                Text("Select one of the following categories to get powerful promises focused on your needs.", comment: "category reminder selection")
-                    .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .body))
-                    .foregroundColor(colorScheme == .dark ?  Constants.DEABlack : Constants.DALightBlue)
-                    .multilineTextAlignment(.center)
-                    .lineSpacing(10)
-                    .lineLimit(2)
-                
-                LazyVGrid(columns: twoColumnGrid, spacing: 16) {
-                    ForEach(viewModel.allCategories) { category in
-                        
-                        if category.isPremium && !subscriptionStore.isPremium {
-                            ZStack {
-                                CategoryCell(size: geometry.size, category: category)
-                              
-                                NavigationLink("            ", destination: PremiumView())
-                                
-                            }
+            NavigationView {
+                ScrollView {
+                    Spacer()
+                    
+                    Text("Select one of the following categories to get powerful promises focused on your needs.", comment: "category reminder selection")
+                        .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .body))
+                        .foregroundColor(colorScheme == .dark ?  Constants.DEABlack : Constants.DALightBlue)
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(10)
+                        .lineLimit(2)
+                    
+                    LazyVGrid(columns: twoColumnGrid, spacing: 16) {
+                        ForEach(viewModel.allCategories) { category in
                             
-                        } else {
-                        CategoryCell(size: geometry.size, category: category)
-                            .onTapGesture {
-                                
-                                Selection.shared.selectionFeedback()
-                                viewModel.choose(category)
-                                self.presentationMode.wrappedValue.dismiss()
+                            if category.isPremium && !subscriptionStore.isPremium {
+                                ZStack {
+                                    CategoryCell(size: geometry.size, category: category)
+                                    
+                                    NavigationLink("            ", destination: PremiumView())
+                                    
                                 }
+                                
+                            } else {
+                                CategoryCell(size: geometry.size, category: category)
+                                    .onTapGesture {
+                                        
+                                        Selection.shared.selectionFeedback()
+                                        viewModel.choose(category) { success in
+                                            if success {
+                                                self.presentationMode.wrappedValue.dismiss()
+                                            } 
+                                        }
+                                       
+                                    }
                             }
-                    }
-                }.padding()
+                        }
+                    }.padding()
+                }
+                .navigationBarTitle(Text("Select Category"))
+                .background(
+                    Image("declarationBackground")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                )
+            }.onAppear  {
+                UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Constants.DAMidBlue)]
+            }.alert(viewModel.errorMessage ?? "Error", isPresented: $viewModel.showErrorMessage) {
+                Button("OK", role: .cancel) { }
             }
-            .navigationBarTitle(Text("Select Category"))
-            .background(
-                Image("declarationBackground")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            )
-        }.onAppear  {
-            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Constants.DAMidBlue)]
-        }
         }
     }
 }
