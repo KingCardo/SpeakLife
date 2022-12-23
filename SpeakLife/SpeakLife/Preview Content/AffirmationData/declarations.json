@@ -1,5 +1,5 @@
 {
-    "count": 40,
+    "count": 50,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -238,6 +238,66 @@
         {
             "text": "Let us hold tightly without wavering to the hope we affirm, for God can be trusted to keep his promise.",
             "book": "Hebrews 10:23 NLT",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "So faith comes from hearing, that is, hearing the Good News about Christ.",
+            "book": "Romans 10:17 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Love does no wrong to others, so love fulfills the requirements of God's law.",
+            "book": "Romans 13:10 NLT",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "This is the day the Lord has made. We will rejoice and be glad in it.",
+            "book": "Psalms 118:24 NLT",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "Don't be afraid, for I am with you. Don't be discouraged, for I am your God. I will strengthen you and help you. I will hold you up with my victorious right hand.",
+            "book": "Isaiah 41:10 NLT",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "But if we look forward to something we don't yet have, we must wait patiently and confidently.",
+            "book": "Romans 8:25 NLT",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Don’t you realize that your body is the temple of the Holy Spirit, who lives in you and was given to you by God? You do not belong to yourself, for God bought you with a high price. So you must honor God with your body.",
+            "book": "1 Corinthians 6:19-20 NLT",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Now may the Lord of peace himself give you his peace at all times and in every situation. The Lord be with you all.",
+            "book": "2 Thessalonians 3:16 NLT",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Choose a good reputation over great riches; being held in high esteem is better than silver or gold.",
+            "book": "Proverbs 22:1 NLT",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "The temptations in your life are no different from what others experience. And God is faithful. He will not allow the temptation to be more than you can stand. When you are tempted, he will show you a way out so that you can endure.",
+            "book": "1 Corinthians 10:13 NLT",
+            "isFavorite": false,
+            "category": "selfcontrol"
+        },
+        {
+            "text": "Trust in the Lord with all your heart; do not depend on your own understanding.",
+            "book": "Proverbs 3:5 NLT",
             "isFavorite": false,
             "category": "positivity"
         },
