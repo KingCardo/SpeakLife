@@ -1,5 +1,5 @@
 {
-    "count": 50,
+    "count": 60,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -300,6 +300,66 @@
             "book": "Proverbs 3:5 NLT",
             "isFavorite": false,
             "category": "positivity"
+        },
+        {
+            "text": "And it is impossible to please God without faith. Anyone who wants to come to him must believe that God exists and that he rewards those who sincerely seek him.",
+            "book": "Hebrews 11:6 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "\"I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.\"",
+            "book": "Mark 11:24 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "\"I tell you the truth, you can say to this mountain, ‘May you be lifted up and thrown into the sea,’ and it will happen. But you must really believe it will happen and have no doubt in your heart.\"",
+            "book": "Mark 11:23 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Our life is lived by faith. We do not live by what we see in front of us.",
+            "book": "2 Corinthians 5:7 NLV",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "For the word of God will never fail.",
+            "book": "Luke 1:375 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "But when you ask him, be sure that your faith is in God alone. Do not waver, for a person with divided loyalty is as unsettled as a wave of the sea that is blown and tossed by the wind.",
+            "book": "James 1:6 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "If you openly declare that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved.",
+            "book": "Romans 10:9 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Seek his will in all you do, and he will show you which path to take.",
+            "book": "Proverbs 3:6 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "But they who wait upon the Lord will get new strength. They will rise up with wings like eagles. They will run and not get tired. They will walk and not become weak.",
+            "book": "Isaiah 40:31 NLV",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "So be strong and courageous! Do not be afraid and do not panic before them. For the Lord your God will personally go ahead of you. He will neither fail you nor abandon you.",
+            "book": "Deuteronomy 31:6 NLT",
+            "isFavorite": false,
+            "category": "faith"
         },
     ]
 }
