@@ -1,5 +1,5 @@
 {
-    "count": 60,
+    "count": 70,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -327,7 +327,7 @@
         },
         {
             "text": "For the word of God will never fail.",
-            "book": "Luke 1:375 NLT",
+            "book": "Luke 1:37 NLT",
             "isFavorite": false,
             "category": "faith"
         },
@@ -360,6 +360,66 @@
             "book": "Deuteronomy 31:6 NLT",
             "isFavorite": false,
             "category": "faith"
+        },
+        {
+            "text": "But God showed his great love for us by sending Christ to die for us while we were still sinners.",
+            "book": "Romans 5:8 NLT",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "But when you are praying, first forgive anyone you are holding a grudge against, so that your Father in heaven will forgive your sins, too.",
+            "book": "Mark 11:25 NLT",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "If you love only those who love you, why should you get credit for that? Even sinners love those who love them!",
+            "book": "Luke 6:32 NLT",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Such love has no fear, because perfect love expels all fear. If we are afraid, it is for fear of punishment, and this shows that we have not fully experienced his perfect love.",
+            "book": "1 John 4:18 NLT",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Love never gives up, never loses faith, is always hopeful, and endures through every circumstance.",
+            "book": "1 Corinthians 13:7 NLT",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Owe nothing to anyone—except for your obligation to love one another. If you love your neighbor, you will fulfill the requirements of God’s law.",
+            "book": "Romans 13:8 NLT",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Love does no wrong to others, so love fulfills the requirements of God’s law.",
+            "book": "Romans 13:10 NLT",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "A friend is always loyal, and a brother is born to help in time of need.",
+            "book": "Proverbs 17:17 NLT",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Do to others as you would like them to do to you.",
+            "book": "Luke 6:31 NLT",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Don’t be selfish; don’t try to impress others. Be humble, thinking of others as better than yourselves.",
+            "book": "Philippians 2:3 NLT",
+            "isFavorite": false,
+            "category": "love"
         },
     ]
 }
