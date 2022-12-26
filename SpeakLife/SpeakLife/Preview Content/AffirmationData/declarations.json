@@ -1,5 +1,5 @@
 {
-    "count": 80,
+    "count": 90,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -140,8 +140,8 @@
             "category": "gratitude"
         },
         {
-            "text": "The Lord is for me, so I will have no fear. What can mere people do to me?",
-            "book": "Psalm 118:6 NLT",
+            "text": "I pray that God, the source of hope, will fill you completely with joy and peace because you trust in him. Then you will overflow with confident hope through the power of the Holy Spirit.",
+            "book": "Romans 15:13 NLT",
             "isFavorite": false,
             "category": "fear"
         },
@@ -480,6 +480,66 @@
             "book": "Psalm 23:1 NLT",
             "isFavorite": false,
             "category": "gratitude"
+        },
+        {
+            "text": "When I am afraid, I will put my trust in you.",
+            "book": "Psalm 56:3 WEB",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I prayed to the Lord, and he answered me. He freed me from all my fears.",
+            "book": "Psalm 34:4 NLT",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "\"That is why I tell you not to worry about everyday life—whether you have enough food and drink, or enough clothes to wear. Isn’t life more than food, and your body more than clothing?\"",
+            "book": "Matthew 6:25  NLT",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me. Your rod and your staff, they comfort me.",
+            "book": "Psalm 23:4 WEB",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "So don’t worry about tomorrow, for tomorrow will bring its own worries. Today’s trouble is enough for today.",
+            "book": "Matthew 6:34 NLT",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "Give all your cares to the Lord and He will give you strength. He will never let those who are right with Him be shaken.",
+            "book": "Psalm 55:22 NLV",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "Never stop praying.",
+            "book": "1 Thessalonians 5:17 NLT",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "Do not be afraid of them who kill the body. They are not able to kill the soul. But fear Him Who is able to destroy both soul and body in hell.",
+            "book": "Matthew 10:28 NLV",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "For I know that nothing can keep us from the love of God. Death cannot! Life cannot! Angels cannot! Leaders cannot! Any other power cannot! Hard things now or in the future cannot!",
+            "book": "Romans 8:38 NLV",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "Do not be afraid of them. For the Lord your God is the One fighting for you.",
+            "book": "Deuteronomy 3:22 NLV",
+            "isFavorite": false,
+            "category": "fear"
         },
     ]
 }
