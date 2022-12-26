@@ -1,5 +1,5 @@
 {
-    "count": 70,
+    "count": 80,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -420,6 +420,66 @@
             "book": "Philippians 2:3 NLT",
             "isFavorite": false,
             "category": "love"
+        },
+        {
+            "text": "Be thankful in all circumstances, for this is God’s will for you who belong to Christ Jesus.",
+            "book": "1 Thessalonians 5:18 NLT",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "Enter his gates with thanksgiving; go into his courts with praise. Give thanks to him and praise his name.",
+            "book": "Psalm 100:4 NLT",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "Give thanks to the Lord, for he is good! His faithful love endures forever.",
+            "book": "Psalm 136:1  NLT",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "No one is holy like the Lord! There is no one besides you; there is no Rock like our God.",
+            "book": "1 Samuel 2:2 NLT",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "Whatever is good and perfect is a gift coming down to us from God our Father, who created all the lights in the heavens. He never changes or casts a shifting shadow.",
+            "book": "James 1:17 NLT",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "We thank God for the power Christ has given us. He leads us and makes us win in everything. He speaks through us wherever we go. The Good News is like a sweet smell to those who hear it.",
+            "book": "2 Corinthians 2:14 NLV",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I know how to live on almost nothing or with everything. I have learned the secret of living in every situation, whether it is with a full stomach or empty, with plenty or little.",
+            "book": "Philippians 4:12 NLT",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I will praise the name of God with song. And I will give Him great honor with much thanks.",
+            "book": "Psalm 69:30 NLT",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "Yes, you will be enriched in every way so that you can always be generous. And when we take your gifts to those who need them, they will thank God.",
+            "book": "2 Corinthians 9:11 NLT",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "The Lord is my shepherd; I have all that I need.",
+            "book": "Psalm 23:1 NLT",
+            "isFavorite": false,
+            "category": "gratitude"
         },
     ]
 }
