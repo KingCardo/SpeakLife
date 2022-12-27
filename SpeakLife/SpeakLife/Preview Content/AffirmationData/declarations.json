@@ -1,5 +1,5 @@
 {
-    "count": 170,
+    "count": 190,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -1000,6 +1000,106 @@
             "text": "I am healed, delivered and prosperous!",
             "isFavorite": false,
             "category": "faith"
+        },
+        {
+            "text": "I choose to respond in love.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "God loves me so much, I can love other people!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Love is at the center of everything I do.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I spread love and positivity to those around me!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love and forgive myself.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I am loved by the King of the Universe.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "God loves me thru all my ups and downs.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I move with good intentional choices that's going to elevate me with my destiny.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "My mindset is key to my success.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I am bold and fearless.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I forgive my self for all the negative things I thought about myself.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I will respect myself and make great choices.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Nobody's opinion about me matters except God's and mine!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "When I look in the mirror, I am happy with who I become.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I ask God to guide my steps when I feel lost.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Thank you Jesus for dying for my sins!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love myself.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love my body, so I will take care of it!",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Love is unlimited in it's power.",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I love helping others.",
+            "isFavorite": false,
+            "category": "love"
         },
     ]
 }
