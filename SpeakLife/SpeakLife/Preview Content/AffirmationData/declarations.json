@@ -1,5 +1,5 @@
 {
-    "count": 160,
+    "count": 170,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -948,6 +948,56 @@
         },
         {
             "text": "I choose to trust God no matter what!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I trust that everything is working together in my favor.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Everything is coming together in due time, I trust in God's timing.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God hears me when I talk to him.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "This is the day God has made, I won't waste it!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "My prayers are always being listened to by the Creator of the Universe!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God will always come to the rescue!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I am filled with love, peace, joy and hope!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I am safe in God's presence!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Even when a door closes, I know God will lead me to the right one!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I am healed, delivered and prosperous!",
             "isFavorite": false,
             "category": "faith"
         },
