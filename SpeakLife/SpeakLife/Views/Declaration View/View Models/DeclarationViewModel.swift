@@ -15,11 +15,7 @@ final class DeclarationViewModel: ObservableObject {
     
     @AppStorage("selectedCategory") var selectedCategoryString = "faith"
     
-    @Published var declarations: [Declaration] = [] {
-        didSet  {
-            declarations = Array(Set(declarations))
-        }
-    }
+    @Published var declarations: [Declaration] = []
     
     @Published var allCategories: [DeclarationCategory] = DeclarationCategory.allCases
     
