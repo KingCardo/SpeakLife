@@ -1,5 +1,5 @@
 {
-    "count": 150,
+    "count": 160,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -860,7 +860,7 @@
             "category": "positivity"
         },
         {
-            "text": " I am the Vine and you are the branches. Get your life from Me. Then I will live in you and you will give much fruit. You can do nothing without Me.",
+            "text": "I am the Vine and you are the branches. Get your life from Me. Then I will live in you and you will give much fruit. You can do nothing without Me.",
             "book": "John 15:5 NLV",
             "isFavorite": false,
             "category": "positivity"
@@ -900,6 +900,56 @@
             "book": "Jeremiah 32:27 NLT",
             "isFavorite": false,
             "category": "positivity"
+        },
+        {
+            "text": "God is my rock to rely on when things get rough.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I trust in the promises God said to me.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God is bigger than all my problems.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I invite God into every detail of my life.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God has great plans for my life!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I take time to thank God for all my blessings!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God is my rock to rely on when things get rough.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God wants me to have a life filled with prosperity, peace and joy.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "God will cause every every bad circumstance to turn out for my good!",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I choose to trust God no matter what!",
+            "isFavorite": false,
+            "category": "faith"
         },
     ]
 }
