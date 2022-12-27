@@ -1,5 +1,5 @@
 {
-    "count": 90,
+    "count": 150,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -540,6 +540,366 @@
             "book": "Deuteronomy 3:22 NLV",
             "isFavorite": false,
             "category": "fear"
+        },
+        {
+            "text": "We can rejoice, too, when we run into problems and trials, for we know that they help us develop endurance. And endurance develops strength of character, and character strengthens our confident hope of salvation.",
+            "book": "Romans 5:3-4 NLT",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "God will take away all their tears. There will be no more death or sorrow or crying or pain. All the old things have passed away.",
+            "book": "Revelation 21:4 NLV",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "For You are my hope, O Lord God. You are my trust since I was young.",
+            "book": "Psalms 71:5 NLV",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "You are my refuge and my shield; your word is my source of hope.",
+            "book": "Psalms 119:114 NLT",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Good will come to the man who trusts in the Lord, and whose hope is in the Lord.",
+            "book": "Jeremiah 17:7 NLV",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "The name of the Lord is a strong tower. The man who does what is right runs into it and is safe.",
+            "book": "Proverbs 18:10 NLV",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I can do all things because Christ gives me the strength.",
+            "book": "Philippians 4:13 NLV",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Now, because of this, those who belong to Christ will not suffer the punishment of sin.",
+            "book": "Romans 8:1 NLV",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Be happy in your hope. Do not give up when trouble comes. Do not let anything stop you from praying.",
+            "book": "Romans 12:12 NLV",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "The Lord is not slow about keeping His promise as some people think. He is waiting for you. The Lord does not want any person to be punished forever. He wants all people to be sorry for their sins and turn from them.",
+            "book": "2 Peter 3:9 NLV",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Every moving thing that lives will be food for you. I give all to you as I gave you the green plants.",
+            "book": "Genesis 9:3 NLV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Don’t be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God.",
+            "book": "Romans 12:2 WEB",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Abstain from every form of evil.",
+            "book": "1 Thessalonians 5:22 NLT",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "If any man destroys the house of God, God will destroy him. God’s house is holy. You are the place where He lives.",
+            "book": "1 Corinthians 3:17 NLV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Behold, I will bring it health and cure, and I will cure them; and I will reveal to them abundance of peace and truth.",
+            "book": "Jeremiah 33:6 WEB",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Heal me, O Lord, and I will be healed. Save me and I will be saved. For You are my praise.",
+            "book": "Jeremiah 17:14 NLV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord will always lead you. He will meet the needs of your soul in the dry times and give strength to your body. You will be like a garden that has enough water, like a well of water that never dries up.",
+            "book": "Isaiah 58:11 NLV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Jesus looked at them intently and said, \"Humanly speaking, it is impossible. But with God everything is possible.\"",
+            "book": "Matthew 19:26 NLV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Do not be wise in your own eyes. Fear the Lord and turn away from what is sinful. It will be healing to your body and medicine to your bones.",
+            "book": "Proverbs 3:7-8 NLV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord nurses them when they are sick and restores them to health.",
+            "book": "Psalm 41:3 NLT",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "When I am afraid, I will put my trust in you.",
+            "book": "Psalm 56:3 WEB",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I prayed to the Lord, and he answered me. He freed me from all my fears.",
+            "book": "Psalm 34:4 NLT",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "\"That is why I tell you not to worry about everyday life—whether you have enough food and drink, or enough clothes to wear. Isn’t life more than food, and your body more than clothing?\"",
+            "book": "Matthew 6:25  NLT",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me. Your rod and your staff, they comfort me.",
+            "book": "Psalm 23:4 WEB",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "So don’t worry about tomorrow, for tomorrow will bring its own worries. Today’s trouble is enough for today.",
+            "book": "Matthew 6:34 NLT",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Give all your cares to the Lord and He will give you strength. He will never let those who are right with Him be shaken.",
+            "book": "Psalm 55:22 NLV",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Never stop praying.",
+            "book": "1 Thessalonians 5:17 NLT",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Do not be afraid of them who kill the body. They are not able to kill the soul. But fear Him Who is able to destroy both soul and body in hell.",
+            "book": "Matthew 10:28 NLV",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "For I know that nothing can keep us from the love of God. Death cannot! Life cannot! Angels cannot! Leaders cannot! Any other power cannot! Hard things now or in the future cannot!",
+            "book": "Romans 8:38 NLV",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Do not be afraid of them. For the Lord your God is the One fighting for you.",
+            "book": "Deuteronomy 3:22 NLV",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "When I am afraid, I will put my trust in you.",
+            "book": "Psalm 56:3 WEB",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I prayed to the Lord, and he answered me. He freed me from all my fears.",
+            "book": "Psalm 34:4 NLT",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "\"That is why I tell you not to worry about everyday life—whether you have enough food and drink, or enough clothes to wear. Isn’t life more than food, and your body more than clothing?\"",
+            "book": "Matthew 6:25  NLT",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me. Your rod and your staff, they comfort me.",
+            "book": "Psalm 23:4 WEB",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "So don’t worry about tomorrow, for tomorrow will bring its own worries. Today’s trouble is enough for today.",
+            "book": "Matthew 6:34 NLT",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Give all your cares to the Lord and He will give you strength. He will never let those who are right with Him be shaken.",
+            "book": "Psalm 55:22 NLV",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Never stop praying.",
+            "book": "1 Thessalonians 5:17 NLT",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Do not be afraid of them who kill the body. They are not able to kill the soul. But fear Him Who is able to destroy both soul and body in hell.",
+            "book": "Matthew 10:28 NLV",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "For I know that nothing can keep us from the love of God. Death cannot! Life cannot! Angels cannot! Leaders cannot! Any other power cannot! Hard things now or in the future cannot!",
+            "book": "Romans 8:38 NLV",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Do not be afraid of them. For the Lord your God is the One fighting for you.",
+            "book": "Deuteronomy 3:22 NLV",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "When I am afraid, I will put my trust in you.",
+            "book": "Psalm 56:3 WEB",
+            "isFavorite": false,
+            "category": "selfcontrol"
+        },
+        {
+            "text": "I prayed to the Lord, and he answered me. He freed me from all my fears.",
+            "book": "Psalm 34:4 NLT",
+            "isFavorite": false,
+            "category": "selfcontrol"
+        },
+        {
+            "text": "\"That is why I tell you not to worry about everyday life—whether you have enough food and drink, or enough clothes to wear. Isn’t life more than food, and your body more than clothing?\"",
+            "book": "Matthew 6:25  NLT",
+            "isFavorite": false,
+            "category": "selfcontrol"
+        },
+        {
+            "text": "Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me. Your rod and your staff, they comfort me.",
+            "book": "Psalm 23:4 WEB",
+            "isFavorite": false,
+            "category": "selfcontrol"
+        },
+        {
+            "text": "So don’t worry about tomorrow, for tomorrow will bring its own worries. Today’s trouble is enough for today.",
+            "book": "Matthew 6:34 NLT",
+            "isFavorite": false,
+            "category": "selfcontrol"
+        },
+        {
+            "text": "Give all your cares to the Lord and He will give you strength. He will never let those who are right with Him be shaken.",
+            "book": "Psalm 55:22 NLV",
+            "isFavorite": false,
+            "category": "selfcontrol"
+        },
+        {
+            "text": "Never stop praying.",
+            "book": "1 Thessalonians 5:17 NLT",
+            "isFavorite": false,
+            "category": "selfcontrol"
+        },
+        {
+            "text": "Do not be afraid of them who kill the body. They are not able to kill the soul. But fear Him Who is able to destroy both soul and body in hell.",
+            "book": "Matthew 10:28 NLV",
+            "isFavorite": false,
+            "category": "selfcontrol"
+        },
+        {
+            "text": "For I know that nothing can keep us from the love of God. Death cannot! Life cannot! Angels cannot! Leaders cannot! Any other power cannot! Hard things now or in the future cannot!",
+            "book": "Romans 8:38 NLV",
+            "isFavorite": false,
+            "category": "selfcontrol"
+        },
+        {
+            "text": "Do not be afraid of them. For the Lord your God is the One fighting for you.",
+            "book": "Deuteronomy 3:22 NLV",
+            "isFavorite": false,
+            "category": "selfcontrol"
+        },
+        {
+            "text": "When I am afraid, I will put my trust in you.",
+            "book": "Psalm 56:3 WEB",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I prayed to the Lord, and he answered me. He freed me from all my fears.",
+            "book": "Psalm 34:4 NLT",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "\"That is why I tell you not to worry about everyday life—whether you have enough food and drink, or enough clothes to wear. Isn’t life more than food, and your body more than clothing?\"",
+            "book": "Matthew 6:25  NLT",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me. Your rod and your staff, they comfort me.",
+            "book": "Psalm 23:4 WEB",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "So don’t worry about tomorrow, for tomorrow will bring its own worries. Today’s trouble is enough for today.",
+            "book": "Matthew 6:34 NLT",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "Give all your cares to the Lord and He will give you strength. He will never let those who are right with Him be shaken.",
+            "book": "Psalm 55:22 NLV",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "Never stop praying.",
+            "book": "1 Thessalonians 5:17 NLT",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "Do not be afraid of them who kill the body. They are not able to kill the soul. But fear Him Who is able to destroy both soul and body in hell.",
+            "book": "Matthew 10:28 NLV",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "For I know that nothing can keep us from the love of God. Death cannot! Life cannot! Angels cannot! Leaders cannot! Any other power cannot! Hard things now or in the future cannot!",
+            "book": "Romans 8:38 NLV",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "Do not be afraid of them. For the Lord your God is the One fighting for you.",
+            "book": "Deuteronomy 3:22 NLV",
+            "isFavorite": false,
+            "category": "positivity"
         },
     ]
 }
