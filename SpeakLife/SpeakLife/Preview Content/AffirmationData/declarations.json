@@ -1,5 +1,5 @@
 {
-    "count": 310,
+    "count": 329,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -902,11 +902,6 @@
             "category": "positivity"
         },
         {
-            "text": "God is my rock to rely on when things get rough.",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
             "text": "I trust in the promises God said to me.",
             "isFavorite": false,
             "category": "faith"
@@ -1700,6 +1695,106 @@
             "text": "I attract prosperity with my choices.",
             "isFavorite": false,
             "category": "wealth"
+        },
+        {
+            "text": "I am thankful for every breathe.",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "Constant growth with God is what makes life great.",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I will not bring yesterday's problems into today.",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I spend time with positive, loving people.",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I forgive myself for my past mistakes.",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I will renew my mindset with practice.",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "My faith is pulling down wealth and blessings.",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "This next chapter is full of big blessings",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I am positive I have what it takes to succeed.",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I am perfectly aligned with my destiny.",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I will have a great day today!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I start everyday with gratitude to the Most High!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I am excited for the future!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "The old me is dead.",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I will embrace my weaknesses and turn them into strengths.",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I will not complain about anything.",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "This is the day the Creator of the Universe gave me, I will enjoy it!",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I manifest whatever I say, so I only speak powerful positive things.",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "God loves me very much and that's all I need.",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "I will take on this day with focus, courage, and wisdom!",
+            "isFavorite": false,
+            "category": "positivity"
         },
 
     ]
