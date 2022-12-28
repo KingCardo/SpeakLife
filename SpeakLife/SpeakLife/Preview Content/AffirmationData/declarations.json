@@ -1,5 +1,5 @@
 {
-    "count": 230,
+    "count": 310,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -1301,5 +1301,406 @@
             "isFavorite": false,
             "category": "fear"
         },
+        {
+            "text": "Greater days are on the way!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "My experiences was necessary for the success that's coming!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I take on all challenges with confidence!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I am highly favored!",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Life is just getting better and better.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I choose to respond in love, peace and hope.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Every challenge is an opportunity to grow.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "God picks me up when my feet get weary.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "God has never let me down, we are undefeated.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I am thankful for the King of the Universe's help.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "This is just a chapter, not the whole book.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Rest is very important on this journey.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "My life is overflowing with joy.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "All my dreams are in reach.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "The King of the Universe has my best interest at heart.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "God is giving me the green light.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "My life is awesome and only getting better.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Challenges are just acceleration to growth.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I attract extravagant opportunities.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "My routine is preparing me for new levels.",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "My body and immune system is very strong!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I make great choices that boost my health!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My body is constantly renewing itself!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I make sure to drink enough water!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My mind is sharp and alert!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am getting healthier everyday!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I thank God for my health.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "God's healing power flows through me!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My cells are renewed constantly!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I reap the benefits of my healthy choices.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Every day is a fresh start for great choices.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am healthy, strong, and wise.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My body functions perfectly how God designed it to.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am forever young.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My mind creates positive thoughts that renews my health.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My body is filled with life.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Fitness is a part of my routine.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My immune system is strong.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "God restores my health",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I feel better and better everyday.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I will protect my peace at all cost!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "God gives me peace in my storms!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am mindful of my thoughts and reject all negativity!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "The enemy has no power here!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "My angels keep me and my family safe and protected!",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Peace is in my DNA.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I believe everything is working out for my good.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I can create peace with my choices.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "My days overflow with peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I look for the positive in every situation.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I give all my worries to God.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am quick to forgive, and move on in peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I love myself and who I'm becoming.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I release my worries to God and absorb peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I stay in the present and leave tomorrow's worries for then.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "My spirit is filled with peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I take the time to not panic and respond in peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I enjoy my alone time with the Creator of the Universe.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I remove fearful thoughts with best possible outcome ideas.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "God causes everything to workout in my favor.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I will not fear!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I will use my creativity and passion to help people.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I will make progress everyday to make my vision reality.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I have products and services that makes me millions.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "The Creator of the Universe wants me to prosper.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "True wealth starts with prosperity thinking.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am a great handler of money.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "My mind sees abundance not lack.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "My visions are becoming reality!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I use my riches to bless others.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am thankful for all I have now, and making room for more.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I plant seeds that make me fruitful!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am creating multiple sources of income.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I work smart and reap the benefits.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am making a lot of money doing what I love!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "My hard work always pays off!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I think like a millionaire, I am a millionaire!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am attracting financial abundance!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "My mind visualizes ways to attract more money!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I attract prosperity with my choices.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+
     ]
 }
