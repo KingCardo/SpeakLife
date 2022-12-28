@@ -1,5 +1,5 @@
 {
-    "count": 210,
+    "count": 230,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -1200,6 +1200,106 @@
             "text": "I am thankful for food and clean water I have access to every day!",
             "isFavorite": false,
             "category": "gratitude"
+        },
+        {
+            "text": "I will not fear!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "Everything I feared never lasted.",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I choose to be bold like a lion.",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "God is my refuge.",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I will overcome, because I am a warrior.",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I can feel afraid but respond in courage.",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "No matter the circumstance, I will move in joy!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "Fear is like a paper tooth tiger!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I am much stronger than I think!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I'm giving my worries to God!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "With God, I can fix every problem that arises!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "When I look back, I am grateful I never gave up.",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "God will help me navigate this world when I go to him for help.",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "My angels follow me wherever I go!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "God loves me, so I will not fear!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I will say no to the lies in my head!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I choose to respond in love, wisdom, and peace.",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I will overcome every fear and obstacle!",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I can't control every circumstance, but I can control how I respond",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "It's ok to feel fear, but I will respond in peace!",
+            "isFavorite": false,
+            "category": "fear"
         },
     ]
 }
