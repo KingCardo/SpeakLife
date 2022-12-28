@@ -1,5 +1,5 @@
 {
-    "count": 190,
+    "count": 210,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -1100,6 +1100,106 @@
             "text": "I love helping others.",
             "isFavorite": false,
             "category": "love"
+        },
+        {
+            "text": "I thank God for being the air in my lungs.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for the great days ahead.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful to The Creator of The Universe for never leaving my side.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "Being grateful keeps me in a joyful state.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for God's intentionality with me.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "With God I can achieve anything.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am living the life I prayed and worked for.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am grateful for all the joys I get to experience in this life.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I wake up grateful for a new day to live!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am grateful for the strength God filled me with.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am grateful for the tough times, they made me a warrior!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "My life is overflowing with blessings when I reflect on what I have.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for all the closed doors that wasn't meant for me.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for all the obstacles that made me stronger!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "My gratitude attracts abundance!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "Every day is a gift!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for my friends!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for my family!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "Thankfulness creates more doors of blessings!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for food and clean water I have access to every day!",
+            "isFavorite": false,
+            "category": "gratitude"
         },
     ]
 }
