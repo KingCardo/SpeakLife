@@ -1,5 +1,5 @@
 {
-    "count": 339,
+    "count": 349,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -1157,7 +1157,7 @@
             "category": "gratitude"
         },
         {
-            "text": "I am thankful for all the closed doors that wasn't meant for me.",
+            "text": "I am thankful for all the closed doors that weren't meant for me.",
             "isFavorite": false,
             "category": "gratitude"
         },
@@ -1855,6 +1855,66 @@
             "book": "John 1:1 NLT",
             "isFavorite": false,
             "category": "faith"
+        },
+        {
+            "text": "The Lord your God is with you, a Powerful One Who wins the battle. He will have much joy over you. With His love He will give you new life. He will have joy over you with loud singing.",
+            "book": "Zephaniah 3:17 NLV",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "We know and have believed the love which God has for us. God is love, and he who remains in love remains in God, and God remains in him.",
+            "book": "1 John 4:16 WEB",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "\"A new commandment I give to you, that you love one another. Just as I have loved you, you also love one another.\"",
+            "book": "John 13:34 WEB",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "\"I love those who love me, and those who look for me with much desire will find me.\"",
+            "book": "Proverbs 8:17 NLV",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I pray that you will know the love of Christ. His love goes beyond anything we can understand. I pray that you will be filled with God Himself.",
+            "book": "Ephesians 3:19 NLV",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "The steadfast love of the Lord never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness.",
+            "book": "Lamentations 3:22-23 ESV",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "You must love the Lord your God with all your heart and with all your soul and with all your mind and with all your strength.’ This is the first Law.",
+            "book": "Mark 12:30 NLV",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Who then will condemn us? No one—for Christ Jesus died for us and was raised to life for us, and he is sitting in the place of honor at God’s right hand, pleading for us.",
+            "book": "Romans 8:34 NLT",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "\"But I say to you, Love your enemies and pray for those who persecute you\"",
+            "book": "Matthew 5:44 ESV",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Greater love has no one than this, that someone lay down his life for his friends.",
+            "book": "John 15:13 WEB",
+            "isFavorite": false,
+            "category": "love"
         },
 
     ]

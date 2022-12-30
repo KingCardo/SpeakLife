@@ -37,10 +37,18 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         }
     }
     
-    @objc private func scheduleNotificationRequest(timeInterval: TimeInterval = TimeInterval(6 * 60  * 60)) {
+    @objc func scheduleNotificationRequest()  {
+        scheduleNotificationRequestWithInterval(true)
+        scheduleNotificationRequestWithInterval()
+    }
     
+    func scheduleNotificationRequestWithInterval(_ resyncNow: Bool = false) {
+    
+        let now = TimeInterval(1)
+        let sixHours = TimeInterval(6 * 60 * 60)
+        
         let request = BGAppRefreshTaskRequest(identifier: "com.speaklife.updateNotificationContent")
-        request.earliestBeginDate = Date(timeIntervalSinceNow: timeInterval)
+        request.earliestBeginDate = Date(timeIntervalSinceNow: resyncNow ? now : sixHours)
 
         do {
             try BGTaskScheduler.shared.submit(request)
