@@ -73,7 +73,7 @@ final class NotificationProcessor {
         
         while localCount < count  {
             let declaration = categoryReminders[localCount]
-            let notificationData = NotificationData(title: declaration.category.name, body: declaration.text)
+            let notificationData = NotificationData(title: declaration.book ?? "", body: declaration.text)
             data.append(notificationData)
             localCount += 1
         }

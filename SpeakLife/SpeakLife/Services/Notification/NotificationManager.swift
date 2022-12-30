@@ -8,6 +8,8 @@
 import UserNotifications
 import Foundation
 
+let resyncNotification = NSNotification.Name("NotificationsDone")
+
 final class NotificationManager: NSObject {
     
     static let shared = NotificationManager()
@@ -17,8 +19,10 @@ final class NotificationManager: NSObject {
             UserDefaults.standard.object(forKey: "lastScheduledNotificationDate") as? Date
         } set {
             UserDefaults.standard.set(newValue!, forKey: "lastScheduledNotificationDate")
+            scheduleNotificationResync(lastScheduledNotificationDate)
         }
     }
+    
     
     private override init() {}
     
@@ -82,12 +86,9 @@ final class NotificationManager: NSObject {
             var dateComponents = DateComponents()
             dateComponents.calendar = Calendar.autoupdatingCurrent
             dateComponents.timeZone = TimeZone.autoupdatingCurrent
-            if dateComponents.timeZone!.isDaylightSavingTime() {
-                dateComponents.hour = hourMinute[idx].hour
-            } else {
-                dateComponents.hour = hourMinute[idx].hour - 1
-            }
-           
+        
+            dateComponents.hour = hourMinute[idx].hour
+
             dateComponents.minute = hourMinute[idx].minute
             
             if let ymd = dateComponents.calendar?.dateComponents([.year, .month, .day, .hour], from: Date()) {
@@ -121,6 +122,20 @@ final class NotificationManager: NSObject {
                 lastScheduledNotificationDate = modifiedDate
             }
         }
+    }
+    
+    @objc func postResyncNotifcation() {
+        NotificationCenter.default.post(name: resyncNotification, object: nil)
+    }
+    
+    private func scheduleNotificationResync(_ resyncDate: Date?) {
+        guard let resyncDate = resyncDate else { return }
+        
+        Timer.scheduledTimer(timeInterval: resyncDate.timeIntervalSinceNow,
+                             target: self,
+                             selector: #selector(postResyncNotifcation),
+                             userInfo: nil,
+                             repeats: false)
     }
     
     private func nightlyAffirmationReminder() {

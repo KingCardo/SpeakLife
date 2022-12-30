@@ -74,11 +74,14 @@ struct ProfileView: View {
                 
                 privacyPolicyRow
                 termsConditionsRow
-                
+               
             }
             
             Section {
+                copyrightView
+                
                 Text(appVersion)
+                    .font(.caption2)
                     .font(.caption)
             }
         }
@@ -200,6 +203,10 @@ struct ProfileView: View {
             Text("Terms and Conditions", comment: "terms n conditions")
             Link("", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
         }
+    }
+    
+    private var copyrightView: some  View {
+        Text("Scripture quotations marked (NLT) are taken from the Holy Bible, New Living Translation, copyright ©1996, 2004, 2015 by Tyndale House Foundation. Used by permission of Tyndale House Publishers, Carol Stream, Illinois 60188. All rights reserved.")
     }
     
     

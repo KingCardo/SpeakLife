@@ -22,6 +22,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         registerBGTask()
         
         NotificationCenter.default.addObserver(self, selector: #selector(scheduleNotificationRequest), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(scheduleNotificationRequest), name: resyncNotification, object: nil)
         return true
     }
     
@@ -36,12 +37,10 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         }
     }
     
-    @objc private func scheduleNotificationRequest() {
-        let sixhours = TimeInterval(6 * 60  * 60)
-
+    @objc private func scheduleNotificationRequest(timeInterval: TimeInterval = TimeInterval(6 * 60  * 60)) {
+    
         let request = BGAppRefreshTaskRequest(identifier: "com.speaklife.updateNotificationContent")
-        request.earliestBeginDate = Date(timeIntervalSinceNow: sixhours)
-
+        request.earliestBeginDate = Date(timeIntervalSinceNow: timeInterval)
 
         do {
             try BGTaskScheduler.shared.submit(request)

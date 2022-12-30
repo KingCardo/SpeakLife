@@ -1,5 +1,5 @@
 {
-    "count": 329,
+    "count": 339,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -1795,6 +1795,66 @@
             "text": "I will take on this day with focus, courage, and wisdom!",
             "isFavorite": false,
             "category": "positivity"
+        },
+        {
+            "text": "God saved you by his grace when you believed. And you can’t take credit for this; it is a gift from God.",
+            "book": "Ephesians 2:8 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I have been crucified with Christ, and it is no longer I who live, but Christ lives in me. That life which I now live in the flesh, I live by faith in the Son of God, who loved me, and gave himself up for me.",
+            "book": "Galatians 2:20 WEB",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "For every child of God defeats this evil world, and we achieve this victory through our faith.",
+            "book": "1 John 5:4 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "\"You can pray for anything, and if you have faith, you will receive it.\"",
+            "book": "Matthew 21:22 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "For nothing will be impossible with God.",
+            "book": "Luke 1:37 ESV",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "I have written this to you who believe in the name of the Son of God, so that you may know you have eternal life.",
+            "book": "1 John 5:13 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Give all your worries and cares to God, for he cares about you.",
+            "book": "1 Peter 5:7 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "\"Most certainly I tell you, he who hears my word and believes him who sent me has eternal life, and doesn’t come into judgment, but has passed out of death into life.\"",
+            "book": "John 5:24 WEB",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Seek the Lord and his strength; seek his presence continually!",
+            "book": "1 Chronicles 16:11 ESV",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "In the beginning the Word already existed. The Word was with God, and the Word was God.",
+            "book": "John 1:1 NLT",
+            "isFavorite": false,
+            "category": "faith"
         },
 
     ]
