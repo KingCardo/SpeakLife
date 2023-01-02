@@ -31,7 +31,6 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
         case .selfcontrol: return "Self Control"
         default:  return self.rawValue.capitalized
         }
-       
     }
     
     

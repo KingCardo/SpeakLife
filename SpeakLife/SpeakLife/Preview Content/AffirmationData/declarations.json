@@ -1,5 +1,5 @@
 {
-    "count": 349,
+    "count": 359,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -1916,6 +1916,65 @@
             "isFavorite": false,
             "category": "love"
         },
-
+        {
+            "text": "Surely God is my salvation; I will trust and not be afraid.The Lord, the Lord himself, is my strength and my defense; he has become my salvation.",
+            "book": "Isaiah 12:2 NIV",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "The Sovereign Lord is my strength! He makes me as surefooted as a deer, able to tread upon the heights.",
+            "book": "Habakkuk 3:19 NLT",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "\"I am with you and will watch over you wherever you go, and I will bring you back to this land. I will not leave you until I have done what I have promised you.\"",
+            "book": "Genesis 28:15 NLT",
+            "isFavorite": false,
+            "category": "positivity"
+        },
+        {
+            "text": "\"If you will listen carefully to the voice of the Lord your God and do what is right in his sight, obeying his commands and keeping all his decrees, then I will not make you suffer any of the diseases I sent on the Egyptians; for I am the Lord who heals you.\"",
+            "book": "Exodus 15:26 NLT",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Salvation is not a reward for the good things we have done, so none of us can boast about it.",
+            "book": "Ephesians 2:9 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Know then that the Lord your God is God, the faithful God. He keeps His promise and shows His loving-kindness to those who love Him and keep His Laws, even to a thousand family groups in the future.",
+            "book": "Deuteronomy 7:9 NLV",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "But from there you will seek the Lord your God, and you will find Him if you search for Him with all your heart and all your soul.",
+            "book": "Deuteronomy 4:29 AMP",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "The eternal God is your dwelling place. Underneath are the everlasting arms. He thrust out the enemy from before you, and said, ‘Destroy!’",
+            "book": "Deuteronomy 33:27 WEB",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "For he will order his angels to protect you wherever you go.",
+            "book": "Psalm 91:11 NLT",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "no evil will conquer you; no plague will come near your home.",
+            "book": "Psalm 91:10 NLT",
+            "isFavorite": false,
+            "category": "peace"
+        },
     ]
 }
