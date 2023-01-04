@@ -42,8 +42,9 @@ struct ProfileView: View {
                 Text("Premium".uppercased())
                     .font(.caption)
                 subscriptionRow
-                
+                bookLink
             }
+            
             Section {
                 Text("SETTINGS")
                     .font(.caption)
@@ -202,6 +203,13 @@ struct ProfileView: View {
         ZStack {
             Text("Terms and Conditions", comment: "terms n conditions")
             Link("", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
+        }
+    }
+    
+    private var bookLink: some  View {
+        ZStack {
+            Text("100 Days of Power Declarations", comment: "")
+            Link("", destination: URL(string: "https://books.apple.com/us/book/100-days-of-power-declarations/id1616288315")!)
         }
     }
     
