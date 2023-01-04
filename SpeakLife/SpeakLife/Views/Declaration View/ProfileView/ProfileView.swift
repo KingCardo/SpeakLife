@@ -208,7 +208,11 @@ struct ProfileView: View {
     
     private var bookLink: some  View {
         ZStack {
-            Text("100 Days of Power Declarations", comment: "")
+            HStack {
+                Image(systemName: "book.fill")
+                    .foregroundColor(Constants.DAMidBlue)
+                Text("100 Days of Power Declarations", comment: "")
+            }
             Link("", destination: URL(string: "https://books.apple.com/us/book/100-days-of-power-declarations/id1616288315")!)
         }
     }
