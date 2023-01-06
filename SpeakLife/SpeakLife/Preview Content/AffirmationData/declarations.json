@@ -1,5 +1,5 @@
 {
-    "count": 370,
+    "count": 380,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -2041,6 +2041,66 @@
             "book": "1 John 5:13 NLT",
             "isFavorite": false,
             "category": "hope"
+        },
+        {
+            "text": "For God so loved the world that He gave His only Son. Whoever puts his trust in God’s Son will not be lost but will have life that lasts forever.",
+            "book": "John 3:16 NLV",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "I give them life that lasts forever. They will never be punished. No one is able to take them out of My hand. ",
+            "book": "John 10:28 NLV",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Do not love this world nor the things it offers you, for when you love the world, you do not have the love of the Father in you.",
+            "book": "1 John 2:15 NLT",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "Give all your worries to Him because He cares for you.",
+            "book": "1 Peter 5:7 NLV",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "You are my refuge and my shield; your word is my source of hope.",
+            "book": "Psalm 119:114 NLV",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "So humble yourselves before God. Resist the devil, and he will flee from you.",
+            "book": "James 4:7 NLT",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "In all circumstances take up the shield of faith, with which you can extinguish all the flaming darts of the evil one;",
+            "book": "Ephesians 6:16 ESV",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Then you will experience God’s peace, which exceeds anything we can understand. His peace will guard your hearts and minds as you live in Christ Jesus.",
+            "book": "Philippians 4:7 NLT",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "God wants each of you to use his body in the right way by keeping it holy and by respecting it.",
+            "book": "1 Thessalonians 4:4 NLV",
+            "isFavorite": false,
+            "category": "selfcontrol"
+        },
+        {
+            "text": "Finally, brothers and sisters, whatever is true, whatever is noble, whatever is right, whatever is pure, whatever is lovely, whatever is admirable—if anything is excellent or praiseworthy—think about such things.",
+            "book": "Philippians 4:8 NIV",
+            "isFavorite": false,
+            "category": "positivity"
         },
     ]
 }
