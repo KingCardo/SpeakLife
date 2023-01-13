@@ -79,7 +79,7 @@ final class APIClient: APIService {
     
     private func syncDeclarations(completion: @escaping(Bool) -> Void)  {
         loadFromBackEnd { declarations, error in
-            if self.declarationCountBE > self.declarationCountFile {
+            if self.declarationCountBE != self.declarationCountFile {
                 completion(true)
             } else {
                 completion(false)

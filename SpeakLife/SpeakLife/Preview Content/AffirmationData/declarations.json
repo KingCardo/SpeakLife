@@ -1,5 +1,5 @@
 {
-    "count": 380,
+    "count": 377,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -740,12 +740,6 @@
             "category": "wealth"
         },
         {
-            "text": "Anyone who does not take care of his family and those in his house has turned away from the faith. He is worse than a person who has never put his trust in Christ.",
-            "book": "1 Timothy 5:8 NLV",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "A good name is to be chosen instead of many riches. Favor is better than silver and gold.",
             "book": "Proverbs 22:1 NLV",
             "isFavorite": false,
@@ -758,20 +752,8 @@
             "category": "wealth"
         },
         {
-            "text": "A stingy man hurries after riches, and doesn’t know that poverty waits for him.",
-            "book": "Proverbs 28:22 WEB",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "\"But don’t begin until you count the cost. For who would begin construction of a building without first calculating the cost to see if there is enough money to finish it?\"",
             "book": "Luke 14:28 NLT",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "He who increases his wealth by excessive interest gathers it for one who has pity on the poor.",
-            "book": "Proverbs 28:8 WEB",
             "isFavorite": false,
             "category": "wealth"
         },
