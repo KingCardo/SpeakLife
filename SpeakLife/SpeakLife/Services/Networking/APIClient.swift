@@ -19,8 +19,13 @@ final class APIClient: APIService {
         syncDeclarations() { [weak  self]  needsSync in
             if needsSync {
                 var favorites: [Declaration] = []
+                var myOwn: [Declaration] = []
+                
                 self?.loadFromDisk() { declarations, error in
                     favorites = declarations.filter { $0.isFavorite == true }
+                    myOwn = declarations.filter {
+                        $0.category == .myOwn
+                    }
                 }
                 self?.loadFromBackEnd() { declarations, error in
                     var updatedDeclarations: [Declaration] = declarations
@@ -29,6 +34,7 @@ final class APIClient: APIService {
                         updatedDeclarations.removeAll { $0.id == fav.id }
                     }
                     updatedDeclarations.append(contentsOf: favorites)
+                    updatedDeclarations.append(contentsOf: myOwn)
                     completion(updatedDeclarations,  nil)
                 }
             } else {
@@ -100,10 +106,8 @@ final class APIClient: APIService {
             let declarations = welcome.declarations
             declarationCountBE = welcome.count
             completion(declarations, nil)
-            
         } catch {
             completion([],APIError.failedDecode)
-            
         }
     }
     

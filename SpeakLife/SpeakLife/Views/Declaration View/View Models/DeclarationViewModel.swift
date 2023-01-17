@@ -33,13 +33,7 @@ final class DeclarationViewModel: ObservableObject {
         }
     }
     
-    @Published var createOwn: [Declaration] = [] {
-        didSet  {
-            if selectedCategory == .myOwn {
-                declarations = createOwn.shuffled()
-            }
-        }
-    }
+    @Published var createOwn: [Declaration] = []
     
     @Published var isFetching = false
     
