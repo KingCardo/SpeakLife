@@ -184,7 +184,7 @@ struct ProfileView: View {
     @ViewBuilder
     private var feedbackRow: some View {
         if MFMailComposeViewController.canSendMail() {
-            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.grid.3x1.folder.fill.badge.plus", title: "Report Feedback", viewToPresent: MailView(isShowing: $isPresentingContentView, result: self.$result)) {
+            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.grid.3x1.folder.fill.badge.plus", title: "Suggest New Categories - Feedback", viewToPresent: MailView(isShowing: $isPresentingContentView, result: self.$result)) {
                 presentContentView()
             }
         }
