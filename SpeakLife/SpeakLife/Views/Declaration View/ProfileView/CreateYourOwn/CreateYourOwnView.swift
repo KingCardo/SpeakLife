@@ -37,7 +37,7 @@ struct AlertView: View {
                 Text("Save", comment: "save")
                     .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
                     .foregroundColor(.white)
-                    .background(disabled ? Constants.DAMidBlue.opacity(0.5) : Constants.DAMidBlue)
+                    .background(disabled ? Constants.DAMidBlue.opacity(0.2) : Constants.DAMidBlue)
                     .cornerRadius(100)
             }
             .disabled(disabled)
