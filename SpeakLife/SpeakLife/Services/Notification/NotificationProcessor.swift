@@ -28,36 +28,41 @@ final class NotificationProcessor {
                              categories: [DeclarationCategory]? = nil,
                              completion: @escaping([NotificationData]) -> Void) {
         
-        // get enough for the week
-        //let newCount = count * 7
-        
-        var data = [NotificationData]()
-        var categoryReminders: [Declaration] = []
-        
-        if categories == nil {
-            let shuffled = allDeclarations.shuffled()
-            for number in 1...count {
-                let declaration = shuffled[number]
-                let notificationData = NotificationData(title: declaration.book ?? "", body: declaration.text)
-                data.append(notificationData)
-            }
-        } else {
-            for category in categories! {
-                fetchDeclarations(for: category) { declarations in
-                    let divisor = (count/categories!.count)
-                    let endpoint = min(divisor, declarations.count - 1)
-                    let notificationCategories = declarations.shuffled()[0...endpoint]
-                    categoryReminders.append(contentsOf: notificationCategories)
+        DispatchQueue.global(qos: .userInitiated).sync {
+            getDeclarations()
+            
+            
+            // get enough for the week
+            //let newCount = count * 7
+            
+            var data = [NotificationData]()
+            var categoryReminders: [Declaration] = []
+            
+            if categories == nil {
+                let shuffled = allDeclarations.shuffled()
+                for number in 1...count {
+                    let declaration = shuffled[number]
+                    let notificationData = NotificationData(title: declaration.book ?? "", body: declaration.text)
+                    data.append(notificationData)
+                }
+            } else {
+                for category in categories! {
+                    fetchDeclarations(for: category) { declarations in
+                        let divisor = (count/categories!.count)
+                        let endpoint = min(divisor, declarations.count - 1)
+                        let notificationCategories = declarations.shuffled()[0...endpoint]
+                        categoryReminders.append(contentsOf: notificationCategories)
+                    }
+                }
+                if categoryReminders.count >= count {
+                    data = parse(categoryReminders, count: count)
+                }  else {
+                    data = parse(categoryReminders, count: categoryReminders.count)
                 }
             }
-            if categoryReminders.count >= count {
-                data = parse(categoryReminders, count: count)
-            }  else {
-                data = parse(categoryReminders, count: categoryReminders.count)
-            }
+            completion(data)
+            return
         }
-        completion(data)
-        return
         
     }
     
