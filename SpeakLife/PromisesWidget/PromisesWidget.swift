@@ -39,7 +39,63 @@ struct Provider: TimelineProvider {
 }
 extension Provider {
     struct Data {
-        static let declarations: [String] = ["I am filled with love, peace, joy and hope!", "I believe my angels are with me keeping me safe.", "God will turn every bad circumstance to turn out for my good!", "I am exactly where I'm meant to be.", "My prayers are always being listened to by the Creator of the Universe!", "I'm not concerned with other people's opinion's of me.",  "I love the person I am becoming.",  "I love the person I see in the mirror." , "Taking care of myself is a top priority.", "I ask God to guide my steps when I feel lost.", "Never settle for a life you don't want out of fear to go after what you truly want.", "I am inspired to do great things with my life!", "I am ready to put in the work to succeed!", "I am proud for how far I've come!", "I won't listen to the lying thoughts that try to make me afraid!", "I am thankful for food and clean water I have access to every day!", "I am thankful for all my future blessings!", "Thankfulness creates more doors of blessings!", "I am thankful for my family!", "I am grateful I have everything inside me to be successful!",  "I am highly favored!", "My gratitude attracts abundance!", "I am much more powerful than I think!", "I am a strong, wise, warrior!", "I am the author of my life!", "It's ok to feel fear, but I will respond in peace!",  "I prioritize people who bring peace!", "I will overcome every fear and obstacle!", "On hard days I always believe better days are coming!", "I was born to find and fulfill my purpose!", "I am getting closer and closer to my dreams!", "I feed my spirit daily!", "My experiences was necessary for the success that's coming!", "I am a very happy person!", "I am the only one that has the keys to my happiness!", "I am loving the results of taking care of myself.", "I choose to prioritize my health.", "I will workout to stay fit!", "I will protect my peace at all cost!", "My mind is sharp and alert!", "God gives me peace in my storms!", "Taking time for myself is very necessary!", "I am mindful of my thoughts and reject all negativity!", "Abundance and prosperity is coming my way!", "I attract prosperity with my choices.", "I am making a lot of money doing what I love!", "My financial future is bright!", "I start my day with positive affirmations!",  "I take care of myself spiritually, mentally, and physically!",  "I pursue my passions!", "God is with me wherever I go!", "I was made for a special reason and will fulfill it.", "Even when a door closes, I know God will lead me to the right one!", "I choose to respond in love.", "I love myself.",  "I love what I do.", "Being grateful keeps me happy in the present.", "I am thankful for all the closed doors that wasn't meant for me.", "I am thankful for my friends who push me to be better!", "I have extreme persistence!", "I wake up grateful for a new day to live!", "I am thankful for everything I learned on the journey!", "I will make intentional choices that bring peace!", "I am in control of how I respond to every situation.", "I won't waste time worrying!", "I choose faith over fear!", "I can change my mindset with discipline and practice!", "Fear is like a paper tooth tiger!", "I declare my health gets better everyday!", "I drink water, get fresh air, exercise and get plenty of rest.", "I reap the benefits of my healthy choices.", "My body functions perfectly how God designed it to.", "I am always becoming a better version of myself.", "God gives me peace wherever I go!", "My angels follow me everywhere I go.", "I release my worries to God and absorb peace.",  "I am thankful for all I have now, and making room for more.",  "I level up in everything I do.", "My visions are becoming reality!", "I am attracting new opportunites everyday.", "I only have one life, and I won't waste it.", "One step at a time, I will achieve my goals.", "I forgive myself for my past mistakes.", "Good news is coming!", "I spend time with positive, loving people.", "Life is just getting better and better.", "Challenges are a part of the journey to greatness.", "I trust the plans God has for me.", "My standards are high because of how I value myself.", "I am bold and fearless.", "Thankfulness has helped me view the world differently.", "I am thankful for my passions."]
+        static let declarations: [String] = ["I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
+        "Love is patient and kind. Love is not jealous or boastful or proud or rude. It does not demand its own way. It is not irritable, and it keeps no record of being wronged.",
+         "Always be joyful. Never stop praying. Be thankful in all circumstances, for this is God’s will for you who belong to Christ Jesus.",
+         "The Lord is for me, so I will have no fear. What can mere people do to me?",
+          "The Lord keeps watch over you as you come and go, both now and forever.",
+            "You must serve only the Lord your God. If you do, I will bless you with food and water, and I will protect you from illness.",
+           "I am leaving you with a gift—peace of mind and heart. And the peace I give is a gift the world cannot give. So don’t be troubled or afraid.",
+            "How much better to get wisdom than gold, and good judgment than silver!",
+           "A fool is quick-tempered, but a wise person stays calm when insulted.",
+            "The light shines in the darkness, and the darkness can never extinguish it.",
+            "For you know that when your faith is tested, your endurance has a chance to grow.",
+           "Three things will last forever—faith, hope, and love—and the greatest of these is love.",
+            "Don’t worry about anything; instead, pray about everything. Tell God what you need, and thank him for all he has done.",
+            "For God has not given us a spirit of fear and timidity, but of power, love, and self-discipline.",
+            "\"For I know the plans I have for you,\" says the Lord. \"They are plans for good and not for disaster, to give you a future and a hope.\"",
+            "Kind words are like honey— sweet to the soul and healthy for the body.",
+            "I have told you all this so that you may have peace in me. Here on earth you will have many trials and sorrows. But take heart, because I have overcome the world.",
+            "Wealth from get-rich-quick schemes quickly disappears; wealth from hard work grows over time.",
+            "Better to be patient than powerful; better to have self-control than to conquer a city.",
+            "So I say, let the Holy Spirit guide your lives. Then you won’t be doing what your sinful nature craves.",
+            "Faith shows the reality of what we hope for; it is the evidence of things we cannot see.",
+            "And do everything with love.",
+            "But thank God! He gives us victory over sin and death through our Lord Jesus Christ.",
+            "I pray that God, the source of hope, will fill you completely with joy and peace because you trust in him. Then you will overflow with confident hope through the power of the Holy Spirit.",
+            "So now wrap your heart tightly around the hope that lives within us, knowing that God always keeps his promises!",
+            "So whether you eat or drink or whatever you do, do it all for the glory of God.",
+            "Now may the Lord of peace himself give you his peace at all times and in every situation. The Lord be with you all.",
+            "Honor the Lord with your wealth and with the best part of everything you produce.",
+            "A person without self-control is like a city with broken-down walls.",
+            "Let your unfailing love surround us, Lord, for our hope is in you alone.",
+            "For it is by believing in your heart that you are made right with God, and it is by openly declaring your faith that you are saved.",
+            "Most important of all, continue to show deep love for each other, for love covers a multitude of sins.",
+            "Devote yourselves to prayer with an alert mind and a thankful heart.",
+            "Fearing people is a dangerous trap, but trusting the Lord means safety.",
+            "I am counting on the Lord; yes, I am counting on him. I have put my hope in his word.",
+            "I will reward them with a long life and give them my salavtion",
+            "So letting your sinful nature control your mind leads to death. But letting the Spirit control your mind leads to life and peace.",
+            "Work hard and become a leader; be lazy and become a slave.",
+            "The Lord is more pleased when we do what is right and just than when we offer him sacrifices.",
+            "Let us hold tightly without wavering to the hope we affirm, for God can be trusted to keep his promise.",
+            "So faith comes from hearing, that is, hearing the Good News about Christ.",
+            "Love does no wrong to others, so love fulfills the requirements of God's law.",
+            "This is the day the Lord has made. We will rejoice and be glad in it.",
+            "Don't be afraid, for I am with you. Don't be discouraged, for I am your God. I will strengthen you and help you. I will hold you up with my victorious right hand.",
+            "But if we look forward to something we don't yet have, we must wait patiently and confidently.",
+            "Don’t you realize that your body is the temple of the Holy Spirit, who lives in you and was given to you by God? You do not belong to yourself, for God bought you with a high price. So you must honor God with your body.",
+            "The Lord gives his people strength. The Lord blesses them with peace.",
+            "Choose a good reputation over great riches; being held in high esteem is better than silver or gold.",
+            "The temptations in your life are no different from what others experience. And God is faithful. He will not allow the temptation to be more than you can stand. When you are tempted, he will show you a way out so that you can endure.",
+            "Trust in the Lord with all your heart; do not depend on your own understanding.",
+            "And it is impossible to please God without faith. Anyone who wants to come to him must believe that God exists and that he rewards those who sincerely seek him.",
+            "\"I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.\"",
+            "\"I tell you the truth, you can say to this mountain, ‘May you be lifted up and thrown into the sea,’ and it will happen. But you must really believe it will happen and have no doubt in your heart.\"",
+            "Our life is lived by faith. We do not live by what we see in front of us.",
+            "For the word of God will never fail.",
+            "But when you ask him, be sure that your faith is in God alone. Do not waver, for a person with divided loyalty is as unsettled as a wave of the sea that is blown and tossed by the wind.",
+            "If you openly declare that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved."]
     }
 }
 
@@ -92,7 +148,7 @@ struct PromisesWidget: Widget {
         }
         .configurationDisplayName("My Promises")
         .description("Shows today's Bible promises.")
-        .supportedFamilies([.systemSmall, .systemMedium,.systemLarge])
+        .supportedFamilies([.systemMedium, .systemLarge, .systemExtraLarge])
     }
 }
 

@@ -1,5 +1,5 @@
 {
-    "count": 377,
+    "count": 375,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -1579,11 +1579,6 @@
             "category": "peace"
         },
         {
-            "text": "I will not fear!",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "I will use my creativity and passion to help people.",
             "isFavorite": false,
             "category": "wealth"
@@ -2047,12 +2042,6 @@
             "book": "1 Peter 5:7 NLV",
             "isFavorite": false,
             "category": "fear"
-        },
-        {
-            "text": "You are my refuge and my shield; your word is my source of hope.",
-            "book": "Psalm 119:114 NLV",
-            "isFavorite": false,
-            "category": "hope"
         },
         {
             "text": "So humble yourselves before God. Resist the devil, and he will flee from you.",
