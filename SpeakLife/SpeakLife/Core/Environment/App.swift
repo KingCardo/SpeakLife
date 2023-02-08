@@ -22,5 +22,9 @@ struct APP {
         static var urlID: String {
             "https://apps.apple.com/app/id1617492998"
         }
+        
+        static var instagramURL: String {
+            "https://www.instagram.com/speaklife_biblepromises"
+        }
     }
 }

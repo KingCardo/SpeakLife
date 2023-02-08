@@ -62,6 +62,8 @@ struct ProfileView: View {
                 Text("SUPPORT")
                     .font(.caption)
                 
+                followUs
+                
                 shareRow
                 
                 reviewRow
@@ -185,6 +187,11 @@ struct ProfileView: View {
             shareApp()
         }.onAppear {
             Analytics.logEvent(Event.shareSpeakLifeTapped, parameters: nil)
+        }
+    }
+    
+    private var followUs: some View {
+        SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "flame.fill", title: "Follow us on Instagram", viewToPresent: EmptyView(), url: APP.Product.instagramURL) {
         }
     }
     
