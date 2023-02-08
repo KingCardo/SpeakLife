@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct IntentsBarView: View {
     
@@ -62,6 +63,7 @@ struct IntentsBarView: View {
                     Selection.shared.selectionFeedback()
                 }.sheet(isPresented: $isPresentingPremiumView) {
                     self.isPresentingPremiumView = false
+                    Analytics.logEvent(Event.tryPremiumAbandoned, parameters: nil)
                 } content: {
                     PremiumView()
                 }
@@ -77,14 +79,17 @@ struct IntentsBarView: View {
     
     private func chooseWallPaper() {
         self.isPresentingThemeChooser = true
+        Analytics.logEvent(Event.themeChangerTapped, parameters: nil)
     }
     
     private func chooseCategory() {
         self.isPresentingCategoryChooser = true
+        Analytics.logEvent(Event.categoryChooserTapped, parameters: nil)
     }
     
     private func premiumView()  {
         self.isPresentingPremiumView = true
+        Analytics.logEvent(Event.tryPremiumTapped, parameters: nil)
     }
 }
 

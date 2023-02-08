@@ -8,6 +8,7 @@
 import UIKit
 import BackgroundTasks
 import FirebaseCore
+import FirebaseAnalytics
 
 final class AppDelegate: NSObject, UIApplicationDelegate {
     
@@ -20,6 +21,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         FirebaseApp.configure()
         registerNotificationHandler()
         registerBGTask()
+        Analytics.logEvent(Event.SessionStarted, parameters: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(scheduleNotificationRequest), name: UIApplication.didEnterBackgroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(scheduleNotificationRequest), name: resyncNotification, object: nil)

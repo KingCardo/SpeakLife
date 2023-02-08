@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct CategoryButtonRow: View  {
     
@@ -44,10 +45,11 @@ struct CategoryButtonRow: View  {
     private func displayCategoryView()  {
         if !subscriptionStore.isPremium {
             isPresentingPremiumView = true
+            Analytics.logEvent(Event.tryPremiumTapped, parameters: nil)
         } else {
             isPresentingCategoryList = true
+            Analytics.logEvent(Event.reminders_categoriesTapped, parameters: nil)
         }
-        
     }
     
     @ViewBuilder

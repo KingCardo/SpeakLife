@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct AlertView: View {
     @Environment(\.colorScheme) var colorScheme
@@ -71,7 +72,7 @@ struct CreateYourOwnView: View {
                 .foregroundColor(colorScheme == .dark ? .white : .black)
                 .navigationBarTitle(Text("Add your own", comment: "add your own title"))
             
-            if showAlert  {
+            if showAlert {
                 AlertView(shown: $showAlert, alertText: $alertText) {
                     self.save()
                 }
@@ -79,6 +80,7 @@ struct CreateYourOwnView: View {
         }
         .onAppear()  {
             loadCreateOwn()
+            Analytics.logEvent(Event.createYourOwnTapped, parameters: nil)
         }
     }
     
@@ -166,6 +168,7 @@ struct CreateYourOwnView: View {
     private func save() {
         declarationStore.createDeclaration(alertText)
         alertText = ""
+        Analytics.logEvent(Event.addYourOwnSaved, parameters: nil)
     }
     
     private func popToRoot()  {

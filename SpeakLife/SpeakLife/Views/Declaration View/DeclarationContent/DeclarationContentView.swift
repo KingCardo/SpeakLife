@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import FirebaseAnalytics
 
 struct DeclarationContentView: View {
     
@@ -101,6 +101,8 @@ struct DeclarationContentView: View {
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
             
             Spacer()
+        }.onAppear {
+            Analytics.logEvent(Event.swipe_affirmation, parameters: nil)
         }
     }
     
@@ -111,6 +113,7 @@ struct DeclarationContentView: View {
             CapsuleImageButton(title: "tray.and.arrow.up") {
                 Selection.shared.selectionFeedback()
                 self.showShareSheet = true
+                Analytics.logEvent(Event.shareTapped, parameters: nil)
                 //share(declaration)
             }
             
@@ -118,6 +121,7 @@ struct DeclarationContentView: View {
                 Selection.shared.selectionFeedback()
                 favorite(declaration)
                 self.isFavorite = declaration.isFavorite ? false : true
+                Analytics.logEvent(Event.favoriteTapped, parameters: nil)
             }
 
         }

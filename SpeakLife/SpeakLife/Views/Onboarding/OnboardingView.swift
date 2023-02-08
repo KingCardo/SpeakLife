@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct OnboardingView: View  {
     @EnvironmentObject var appState: AppState
@@ -48,7 +49,7 @@ struct OnboardingView: View  {
         
         .onAppear {
             setupAppearance()
-
+            Analytics.logEvent(Event.freshInstall, parameters: nil)
         }
     }
     
@@ -160,6 +161,7 @@ struct OnboardingView: View  {
     private func dismissOnboarding() {
         withAnimation {
             appState.isOnboarded = true
+            Analytics.logEvent(Event.onBoardingFinished, parameters: nil)
         }
     }
     

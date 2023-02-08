@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MessageUI
+import FirebaseAnalytics
 
 struct ProfileView: View {
     
@@ -96,12 +97,17 @@ struct ProfileView: View {
     
     var body: some View {
         profileView
+            .onAppear {
+                Analytics.logEvent(Event.profileTapped, parameters: nil)
+            }
     }
     
     
     private var subscriptionRow:  some View {
         SettingsRow(isPresentingContentView: $isPresentingManageSubscriptionView, imageTitle: "crown.fill", title: "Manage Subscription", viewToPresent: PremiumView()) {
             isPresentingManageSubscriptionView.toggle()
+        }.onAppear {
+            Analytics.logEvent(Event.manageSubscriptionTapped, parameters: nil)
         }
     }
     
@@ -121,6 +127,8 @@ struct ProfileView: View {
                             .frame(width: 8)
                             .foregroundColor(Constants.DAMidBlue)
                     })
+        }.onAppear {
+            Analytics.logEvent(Event.remindersTapped, parameters: nil)
         }
     }
     
@@ -167,12 +175,16 @@ struct ProfileView: View {
                             .frame(width: 8)
                             .foregroundColor(Constants.DAMidBlue)
                     })
+        }.onAppear {
+            Analytics.logEvent(Event.createYourOwnTapped, parameters: nil)
         }
     }
     
     private var shareRow: some View {
         SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.and.arrow.up.fill", title: "Share SpeakLife", viewToPresent: EmptyView()) {
             shareApp()
+        }.onAppear {
+            Analytics.logEvent(Event.shareSpeakLifeTapped, parameters: nil)
         }
     }
     
@@ -214,6 +226,8 @@ struct ProfileView: View {
                 Text("100 Days of Power Declarations", comment: "")
             }
             Link("", destination: URL(string: "https://books.apple.com/us/book/100-days-of-power-declarations/id1616288315")!)
+        }.onAppear {
+            Analytics.logEvent(Event.powerDeclarationsTapped, parameters: nil)
         }
     }
     

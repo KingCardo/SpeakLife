@@ -2073,5 +2073,11 @@
             "isFavorite": false,
             "category": "positivity"
         },
+        {
+            "text": "",
+            "book": "",
+            "isFavorite": false,
+            "category": "wealth"
+        },
     ]
 }

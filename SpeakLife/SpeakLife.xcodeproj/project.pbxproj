@@ -21,6 +21,7 @@
 		7A7BEBD92913574D008D08A3 /* PromisesWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7BEBD82913574D008D08A3 /* PromisesWidget.swift */; };
 		7A7BEBDC2913574F008D08A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A7BEBDB2913574F008D08A3 /* Assets.xcassets */; };
 		7A7BEBE22913574F008D08A3 /* PromisesWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7A7BEBD22913574D008D08A3 /* PromisesWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7A92E31B2993882F00FBF2AE /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A92E31A2993882F00FBF2AE /* Events.swift */; };
 		7AA8706C28DACC4E00134ADB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8706928DACC4E00134ADB /* Theme.swift */; };
 		7AA8706D28DACC4E00134ADB /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8706A28DACC4E00134ADB /* Reminder.swift */; };
 		7AA8706E28DACC4E00134ADB /* DailyDeclaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8706B28DACC4E00134ADB /* DailyDeclaration.swift */; };
@@ -115,6 +116,7 @@
 		7A7BEBD82913574D008D08A3 /* PromisesWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromisesWidget.swift; sourceTree = "<group>"; };
 		7A7BEBDB2913574F008D08A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A7BEBDD2913574F008D08A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A92E31A2993882F00FBF2AE /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		7AA8706928DACC4E00134ADB /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		7AA8706A28DACC4E00134ADB /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		7AA8706B28DACC4E00134ADB /* DailyDeclaration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyDeclaration.swift; sourceTree = "<group>"; };
@@ -262,6 +264,14 @@
 			path = PromisesWidget;
 			sourceTree = "<group>";
 		};
+		7A92E3192993881D00FBF2AE /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				7A92E31A2993882F00FBF2AE /* Events.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
 		7AA8706428DACB2900134ADB /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +315,7 @@
 		7AA8706828DACB6100134ADB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7A92E3192993881D00FBF2AE /* Analytics */,
 				7AA870E528DACFB800134ADB /* Localizable.strings */,
 				7AA8708528DACCA700134ADB /* Components */,
 				7AA8708A28DACCA700134ADB /* Environment */,
@@ -627,6 +638,7 @@
 				7AA870E428DACD1A00134ADB /* AppState.swift in Sources */,
 				7AA870CB28DACCB700134ADB /* PremiumView.swift in Sources */,
 				7AA8709428DACCA800134ADB /* App.swift in Sources */,
+				7A92E31B2993882F00FBF2AE /* Events.swift in Sources */,
 				7AA870C928DACCB700134ADB /* ThemeChooserView.swift in Sources */,
 				7AA8708228DACC8300134ADB /* InAppPurchases.swift in Sources */,
 				7AA870DE28DACCB700134ADB /* TimeNotificationStepper.swift in Sources */,
