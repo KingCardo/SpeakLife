@@ -206,7 +206,7 @@ final class DeclarationViewModel: ObservableObject {
     func fetchDeclarations(for category: DeclarationCategory, completion: @escaping(([Declaration]) -> Void)) {
         if let declarations = allDeclarationsDict[category] {
             completion(declarations)
-        }  else if category ==  .favorites {
+        }  else if category == .favorites {
             refreshFavorites()
             completion(favorites)
         } else if category == .myOwn {

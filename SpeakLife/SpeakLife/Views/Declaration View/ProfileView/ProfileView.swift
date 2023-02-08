@@ -253,10 +253,9 @@ struct ProfileView: View {
     }
     
     private func shareApp() {
-        let string = LocalizedStringKey("Check out SpeakLife - Daily Bible Promises app that'll transform your life!")
         let url = URL(string:  "\(APP.Product.urlID)")!
         
-        let activityVC = UIActivityViewController(activityItems: [string, url], applicationActivities: nil)
+        let activityVC = UIActivityViewController(activityItems: ["Check out SpeakLife - Daily Bible Promises app that'll transform your life!", url], applicationActivities: nil)
         let scenes = UIApplication.shared.connectedScenes
         let windowScene = scenes.first as? UIWindowScene
         let window = windowScene?.windows.first

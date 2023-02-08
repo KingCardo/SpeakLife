@@ -15,10 +15,15 @@ struct DeclarationView: View {
     
     @EnvironmentObject var viewModel: DeclarationViewModel
     @EnvironmentObject var themeViewModel: ThemeViewModel
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     
     @AppStorage("review.counter") private var reviewCounter = 0
+    @AppStorage("share.counter") private var shareCounter = 0
+    @AppStorage("review.done") private var reviewDone = false
+    @AppStorage("shared.count") private var shared = 0
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State private var showAlert = false
+    @State private var share = false
     @State var isShowingMailView = false
     
     
@@ -55,7 +60,9 @@ struct DeclarationView: View {
         }
         .onAppear {
             reviewCounter += 1
+            shareCounter += 1
             requestReview()
+            shareApp()
         }
         .alert(isPresented: $showAlert) {
             Alert(
@@ -70,22 +77,57 @@ struct DeclarationView: View {
                 )
             )
         }
+        .alert(isPresented: $share) {
+            Alert(
+                title: Text("Help us spread SpeakLife?", comment: ""),
+                primaryButton: .default(
+                    Text("Yes, I'll share with friends!"),
+                    action: shareSpeakLife
+                ),
+                secondaryButton: .destructive(
+                    Text("No thanks"),
+                    action: { }
+                )
+            )
+        }
         .sheet(isPresented: $isShowingMailView) {
             MailView(isShowing: $isShowingMailView, result: self.$result)
         }
     }
     
-    
-    
     private func requestReview() {
         #if !DEBUG
-          if reviewCounter > 2 {
+          if reviewCounter > 5 && !reviewDone {
               showAlert = true
+              reviewDone.toggle()
               reviewCounter = 0
-  
           }
         #endif
       }
+    
+    private func shareApp() {
+#if !DEBUG
+        if shareCounter > 3 && !subscriptionStore.isPremium && shared < 3 {
+            share = true
+            shareCounter = 0
+        }
+#endif
+    }
+    
+    private func shareSpeakLife()  {
+        DispatchQueue.main.async {
+            if let scene = UIApplication.shared.connectedScenes
+                .first(where: { $0.activationState == .foregroundActive })
+                as? UIWindowScene {
+                let url = URL(string: "\(APP.Product.urlID)")!
+                
+                let activityVC = UIActivityViewController(activityItems: ["Check out SpeakLife - Daily Bible Promises app that'll transform your life!", url], applicationActivities: nil)
+                let window = scene.windows.first
+                window?.rootViewController?.present(activityVC, animated: true)
+                shared += 1
+            }
+        }
+    }
     
     private func showReview() {
         DispatchQueue.main.async {
