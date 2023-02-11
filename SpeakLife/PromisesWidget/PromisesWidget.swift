@@ -111,7 +111,7 @@ struct PromisesGlanceView: View {
     
     var fontSize: CGFloat {
         switch family {
-        case .systemSmall: return 20
+        case .systemMedium: return 16
         default: return 24
         }
     }

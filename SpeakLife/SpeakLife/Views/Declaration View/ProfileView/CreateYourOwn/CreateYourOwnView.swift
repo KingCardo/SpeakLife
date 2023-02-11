@@ -21,7 +21,7 @@ struct AlertView: View {
         VStack {
             HStack {
                 Spacer()
-                Button(action: dismiss) {
+                Button(action: dismissX) {
                     Image(systemName: "x.circle.fill")
                         .resizable()
                         .frame(width: 25, height: 25)
@@ -34,6 +34,7 @@ struct AlertView: View {
             TextEditor(text: $alertText)
                 .font(.custom("HelveticaNeue", size: 13))
                 .foregroundColor(colorScheme == .dark ? .white : .black)
+                .cornerRadius(10)
             Button(action: dismiss) {
                 Text("Save", comment: "save")
                     .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
@@ -48,6 +49,12 @@ struct AlertView: View {
         .background(Constants.DALightBlue)
         .cornerRadius(12)
         .clipped()
+    }
+    
+    private func dismissX() {
+        withAnimation {
+            shown.toggle()
+        }
     }
     
     private func dismiss() {

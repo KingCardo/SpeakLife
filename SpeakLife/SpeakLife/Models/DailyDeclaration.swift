@@ -21,6 +21,29 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     case wealth
     case selfcontrol
     case positivity
+    case anxiety
+    case addiction
+    case depression
+    case loneliness
+    
+    static var categoryOrder: [DeclarationCategory] = [
+        .faith,
+        .love,
+        .favorites,
+        .myOwn,
+        .addiction,
+        .anxiety,
+        .depression,
+        .fear,
+        .gratitude,
+        .health,
+        .hope,
+        .loneliness,
+        .peace,
+        .positivity,
+        .selfcontrol,
+        .wealth
+            ]
     
     var id: String {
          self.rawValue
