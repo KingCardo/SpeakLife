@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct CategoryCell: View  {
     
@@ -92,10 +93,10 @@ struct CategoryChooserView: View {
                             } else {
                                 CategoryCell(size: geometry.size, category: category)
                                     .onTapGesture {
-                                        
                                         Selection.shared.selectionFeedback()
                                         viewModel.choose(category) { success in
                                             if success {
+                                                Analytics.logEvent(Event.categoryChooserTapped, parameters: ["category": category.rawValue])
                                                 self.presentationMode.wrappedValue.dismiss()
                                             } 
                                         }

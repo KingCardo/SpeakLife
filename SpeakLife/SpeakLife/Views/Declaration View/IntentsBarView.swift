@@ -84,7 +84,6 @@ struct IntentsBarView: View {
     
     private func chooseCategory() {
         self.isPresentingCategoryChooser = true
-        Analytics.logEvent(Event.categoryChooserTapped, parameters: nil)
     }
     
     private func premiumView()  {

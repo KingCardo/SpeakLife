@@ -151,7 +151,7 @@ final class NotificationManager: NSObject {
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.autoupdatingCurrent
         dateComponents.timeZone = TimeZone.autoupdatingCurrent
-        dateComponents.hour = 8
+        dateComponents.hour = 11
         
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: dateComponents, repeats: false)
@@ -177,7 +177,7 @@ final class NotificationManager: NSObject {
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.autoupdatingCurrent
         dateComponents.timeZone = TimeZone.autoupdatingCurrent
-        dateComponents.hour = 22
+        dateComponents.hour = 19
         
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: dateComponents, repeats: false)
@@ -280,7 +280,8 @@ final class UpdateNotificationsOperation: Operation {
             
             guard let self = self else { return }
             
-            if self.appState.notificationEnabled/*, !pending*/ {
+            if self.appState.notificationEnabled {
+                self.appState.lastNotificationSetDate = Date()
                 NotificationManager.shared.registerNotifications(count: self.appState.notificationCount,
                                                                  startTime: self.appState.startTimeIndex,
                                                                  endTime: self.appState.endTimeIndex,

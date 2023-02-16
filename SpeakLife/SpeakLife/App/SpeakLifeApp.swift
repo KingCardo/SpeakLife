@@ -19,6 +19,8 @@ struct SpeakLifeApp: App {
     @StateObject var themeStore = ThemeViewModel()
     @StateObject var subscriptionStore = SubscriptionStore()
     
+    private let fourDaysInSeconds: Double = 345600
+    
     var body: some Scene {
         WindowGroup {
             HomeView()
@@ -32,6 +34,10 @@ struct SpeakLifeApp: App {
             case .active:
                 appDelegate.appState = appState
                 appDelegate.declarationStore = declarationStore
+                if appState.lastNotificationSetDate < appState.lastNotificationSetDate.addingTimeInterval(fourDaysInSeconds), appState.notificationEnabled {
+                    NotificationManager.shared.registerNotifications(count: appState.notificationCount, startTime: appState.startTimeIndex, endTime: appState.endTimeIndex)
+                    appState.lastNotificationSetDate = Date()
+                }
             case .inactive:
                 break
             case .background:

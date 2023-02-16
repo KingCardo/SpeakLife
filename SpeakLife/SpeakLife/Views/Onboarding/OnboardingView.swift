@@ -171,6 +171,7 @@ struct OnboardingView: View  {
                                                              startTime: appState.startTimeIndex,
                                                              endTime: appState.endTimeIndex,
                                                              categories: nil)
+            appState.lastNotificationSetDate = Date()
         }
     }
 }

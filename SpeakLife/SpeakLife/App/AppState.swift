@@ -10,6 +10,7 @@ import SwiftUI
 final class AppState: ObservableObject {
     @Published var rootViewId = UUID()
     @AppStorage("onboarded") var isOnboarded = false
+    @AppStorage("lastNotificationSetDate") var lastNotificationSetDate = Date()
     @AppStorage("notificationEnabled") var notificationEnabled = false
     @AppStorage("notificationCount") var notificationCount = 4
     @AppStorage("startTimeNotification") var startTimeNotification = ""
@@ -17,4 +18,16 @@ final class AppState: ObservableObject {
     @AppStorage("startTimeIndex") var startTimeIndex = 16
     @AppStorage("endTimeIndex") var endTimeIndex = 25
     @AppStorage("selectedNotificationCategories") var selectedNotificationCategories: String = ""
+}
+
+extension Date: RawRepresentable {
+    private static let formatter = ISO8601DateFormatter()
+    
+    public var rawValue: String {
+        Date.formatter.string(from: self)
+    }
+    
+    public init?(rawValue: String) {
+        self = Date.formatter.date(from: rawValue) ?? Date()
+    }
 }

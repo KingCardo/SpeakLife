@@ -76,6 +76,7 @@ struct ReminderView: View {
                                                              categories: declarationViewModel.selectedCategories)
             }
         }
+        appState.lastNotificationSetDate = Date()
     }
     private func scheduleNotificationRequest() {
 
