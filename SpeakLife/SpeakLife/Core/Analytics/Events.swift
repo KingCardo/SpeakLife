@@ -28,4 +28,5 @@ struct Event {
     static let SessionStarted = "SessionStarted"
     static let swipe_affirmation = "swipe_affirmation"
     static let manageSubscriptionTapped = "manageSubscriptionTapped"
+    static let premiumSucceded = "premiumSucceded"
 }

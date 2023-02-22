@@ -1,5 +1,5 @@
 {
-    "count": 416,
+    "count": 429,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -2318,6 +2318,84 @@
             "book": "Romans 8:39 NIV",
             "isFavorite": false,
             "category": "loneliness"
+        },
+        {
+            "text": "But I will restore you to health and heal your wounds,’declares the Lord",
+            "book": "Jeremiah 30:17 NIV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The righteous cry out, and the Lord hears them; he delivers them from all their troubles.",
+            "book": "Psalm 34:17 NIV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The righteous person may have many troubles, but the Lord delivers him from them all",
+            "book": "Psalm 34:19 NIV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I will not die but live. And I will tell of what the Lord has done.",
+            "book": "Psalm 118:17 NLV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Dear friend, I pray that you are doing well in every way. I pray that your body is strong and well even as your soul is.",
+            "book": "3 John 2 NLV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Heal me, Lord, and I will be healed; save me and I will be saved, for you are the one I praise.",
+            "book": "Jeremiah 17:14 NIV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "God gave Jesus of Nazareth the Holy Spirit and power. He went around doing good and healing all who were troubled by the devil because God was with Him.",
+            "book": "Acts 10:38 NLV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "He forgives all my sins and heals all my diseases.",
+            "book": "Psalm 103:3 NLV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Let all that I am praise the Lord; may I never forget the good things he does for me.",
+            "book": "Psalm 103:2 NLV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "if my people, who are called by my name, will humble themselves and pray and seek my face and turn from their wicked ways, then I will hear from heaven, and I will forgive their sin and will heal their land.",
+            "book": "2 Chronicles 7:14 NIV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "And the prayer of faith will save the one who is sick, and the Lord will raise him up. And if he has committed sins, he will be forgiven.",
+            "book": "James 5:15 ESV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Above all else, guard your heart, for everything you do flows from it.",
+            "book": "Proverbs 4:23 NIV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "O Lord my God, I cried to you for help, and you restored my health.",
+            "book": "Psalm 30:2 NLT",
+            "isFavorite": false,
+            "category": "health"
         },
     ]
 }

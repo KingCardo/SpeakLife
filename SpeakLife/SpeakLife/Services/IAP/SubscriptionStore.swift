@@ -8,6 +8,7 @@
 import Foundation
 import StoreKit
 import Combine
+import FirebaseAnalytics
 
 typealias Transaction = StoreKit.Transaction
 typealias RenewalInfo = StoreKit.Product.SubscriptionInfo.RenewalInfo
@@ -116,6 +117,8 @@ final class SubscriptionStore: ObservableObject {
             //Check whether the transaction is verified. If it isn't,
             //this function rethrows the verification error.
             let transaction = try checkVerified(verification)
+            
+            Analytics.logEvent(Event.premiumSucceded, parameters: ["product": product.displayPrice])
 
             //The transaction is verified. Deliver content to the user.
             await updateCustomerProductStatus()

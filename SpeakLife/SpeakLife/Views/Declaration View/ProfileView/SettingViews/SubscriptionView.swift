@@ -17,12 +17,14 @@ struct Benefit: Identifiable  {
     }
     
     static var premiumBenefits: [Benefit] = [
-        Benefit(text: "Bible promises that will transform your day and life!"),
-        Benefit(text: "Access to all categories"),
-        Benefit(text: "Create and schedule your own Bible promises or affirmations."),
-        Benefit(text: "Reminders to renew your mindset with promises from the Creator of the Universe!"),
-        Benefit(text: "Access to all themes and new features on the way"),
-        Benefit(text: "Choose amount comfortable for you! Unlocks all premium features.")
+        Benefit(text: "Welcome! Suggested donation is $4.99/month or choose a different amount."),
+        Benefit(text: "Unlocks all premium features.")
+//        Benefit(text: "Bible promises that will transform your day and life!"),
+//        Benefit(text: "Access to all categories"),
+//        Benefit(text: "Create and schedule your own Bible promises or affirmations."),
+//        Benefit(text: "Reminders to renew your mindset with promises from the Creator of the Universe!"),
+//        Benefit(text: "Access to all themes and new features on the way"),
+//        Benefit(text: "Choose amount comfortable for you! Unlocks all premium features.")
     ]
 }
 
@@ -42,7 +44,7 @@ struct SubscriptionView: View {
         goPremiumView(size: size)
             .foregroundColor(colorScheme == .dark ? .white : Constants.DEABlack)
             .alert(isPresented: $isShowingError, content: {
-                Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("Okay")))
+                Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("Ok")))
             })
     }
     
