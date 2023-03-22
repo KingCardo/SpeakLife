@@ -20,7 +20,6 @@ struct ProfileBarButton: View {
         HStack {
             Spacer()
             CapsuleImageButton(title: "person.crop.circle") {
-                Selection.shared.selectionFeedback()
                 profileButtonTapped()
             }.sheet(isPresented: $isPresentingProfileView, onDismiss: {
                 self.isPresentingProfileView = false

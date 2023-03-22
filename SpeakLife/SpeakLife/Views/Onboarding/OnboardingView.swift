@@ -92,7 +92,6 @@ struct OnboardingView: View  {
     // MARK: - Private methods
     
     private func advance() {
-        Selection.shared.selectionFeedback()
         withAnimation {
             switch selection {
             case .intro:

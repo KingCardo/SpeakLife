@@ -46,10 +46,8 @@ struct StepperNotificationCountView: View {
             
         } onIncrement: {
             incrementStep()
-            Selection.shared.selectionFeedback()
         } onDecrement: {
             decrementStep()
-            Selection.shared.selectionFeedback()
         }
     
     
@@ -101,12 +99,10 @@ struct TimeNotificationCountView<Content: View> : View {
             incrementStep()
             valueTime(timeSlots[value])
             valueIndex(value)
-            Selection.shared.selectionFeedback()
         } onDecrement: {
             decrementStep()
             valueTime(timeSlots[value])
             valueIndex(value)
-            Selection.shared.selectionFeedback()
         }
         
         .accentColor(Constants.DALightBlue)

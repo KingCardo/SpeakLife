@@ -93,7 +93,6 @@ struct CategoryChooserView: View {
                             } else {
                                 CategoryCell(size: geometry.size, category: category)
                                     .onTapGesture {
-                                        Selection.shared.selectionFeedback()
                                         viewModel.choose(category) { success in
                                             if success {
                                                 Analytics.logEvent(Event.categoryChooserTapped, parameters: ["category": category.rawValue])

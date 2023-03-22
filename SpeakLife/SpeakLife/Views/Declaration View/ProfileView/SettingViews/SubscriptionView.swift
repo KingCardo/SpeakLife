@@ -17,8 +17,9 @@ struct Benefit: Identifiable  {
     }
     
     static var premiumBenefits: [Benefit] = [
-        Benefit(text: "Welcome! Suggested donation is $4.99/month or choose a different amount."),
-        Benefit(text: "Unlocks all premium features.")
+        Benefit(text: "Welcome! Suggested donation is $39.99/month or choose a different amount."),
+        Benefit(text: "Unlocks all premium features."),
+        Benefit(text: "Try 7 days free. Cancel anytime.")
 //        Benefit(text: "Bible promises that will transform your day and life!"),
 //        Benefit(text: "Access to all categories"),
 //        Benefit(text: "Create and schedule your own Bible promises or affirmations."),
@@ -35,7 +36,7 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1MO4
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39
     
     let size: CGSize
     var callback: (() -> Void)?
@@ -95,6 +96,7 @@ struct SubscriptionView: View {
             if declarationStore.isPurchasing {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
+                    .scaleEffect(3)
             }
             
         }
@@ -148,12 +150,13 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        Button("Continue".uppercased(), action: makePurchase)
-        .foregroundColor(Color.white)
-        .frame(width: size.width * 0.75 , height: 70)
-        .padding(.horizontal)
-        .background(Capsule().fill(gradient))
-        .cornerRadius(20)
+        Button("Try Free & Subscribe".uppercased(), action: makePurchase)
+            .font(.callout)
+            .foregroundColor(Color.white)
+            .frame(width: size.width * 0.75 , height: 70)
+            .padding(.horizontal)
+            .background(Capsule().fill(gradient))
+            .cornerRadius(20)
     }
     
     private func restore() {

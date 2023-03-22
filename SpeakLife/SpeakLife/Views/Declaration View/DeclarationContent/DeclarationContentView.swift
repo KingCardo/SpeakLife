@@ -111,14 +111,12 @@ struct DeclarationContentView: View {
         HStack(spacing: 24) {
 
             CapsuleImageButton(title: "tray.and.arrow.up") {
-                Selection.shared.selectionFeedback()
                 self.showShareSheet = true
                 Analytics.logEvent(Event.shareTapped, parameters: nil)
                 //share(declaration)
             }
             
             CapsuleImageButton(title: declaration.isFavorite ? "heart.fill" : "heart") {
-                Selection.shared.selectionFeedback()
                 favorite(declaration)
                 self.isFavorite = declaration.isFavorite ? false : true
                 Analytics.logEvent(Event.favoriteTapped, parameters: nil)

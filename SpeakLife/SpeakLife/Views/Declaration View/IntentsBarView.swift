@@ -27,7 +27,6 @@ struct IntentsBarView: View {
         HStack(spacing: 8) {
             
             Button {
-                Selection.shared.selectionFeedback()
                 chooseCategory()
             } label: {
                 HStack {
@@ -50,7 +49,6 @@ struct IntentsBarView: View {
             
             CapsuleImageButton(title: "paintbrush.fill") {
                 chooseWallPaper()
-                Selection.shared.selectionFeedback()
             }.sheet(isPresented: $isPresentingThemeChooser) {
                 self.isPresentingThemeChooser = false
             } content: {
@@ -60,7 +58,6 @@ struct IntentsBarView: View {
             if !subscriptionStore.isPremium {
                 CapsuleImageButton(title: "crown.fill") {
                     premiumView()
-                    Selection.shared.selectionFeedback()
                 }.sheet(isPresented: $isPresentingPremiumView) {
                     self.isPresentingPremiumView = false
                     Analytics.logEvent(Event.tryPremiumAbandoned, parameters: nil)
