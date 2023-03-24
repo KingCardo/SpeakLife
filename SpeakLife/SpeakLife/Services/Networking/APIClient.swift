@@ -16,7 +16,7 @@ final class APIClient: APIService {
     
     func declarations(completion: @escaping([Declaration], APIError?) -> Void) {
         
-        syncDeclarations() { [weak  self]  needsSync in
+        syncDeclarations() { [weak  self] needsSync in
             if needsSync {
                 var favorites: [Declaration] = []
                 var myOwn: [Declaration] = []
@@ -107,6 +107,7 @@ final class APIClient: APIService {
             declarationCountBE = welcome.count
             completion(declarations, nil)
         } catch {
+            print(error, "RWRW")
             completion([],APIError.failedDecode)
         }
     }
