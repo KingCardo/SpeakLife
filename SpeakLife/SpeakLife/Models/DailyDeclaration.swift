@@ -76,7 +76,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     
     var isPremium: Bool {
         switch self {
-        case .faith, .love, .favorites, .anxiety, .peace: return false
+        case .faith, .love, .favorites, .anxiety: return false
         default: return true
         }
     }

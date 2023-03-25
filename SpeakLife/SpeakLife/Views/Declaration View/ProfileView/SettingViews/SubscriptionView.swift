@@ -17,9 +17,11 @@ struct Benefit: Identifiable  {
     }
     
     static var premiumBenefits: [Benefit] = [
-        Benefit(text: "Welcome! Suggested donation is $39.99/month or choose a different amount."),
-        Benefit(text: "Unlocks all premium features."),
-        Benefit(text: "Try 7 days free. Cancel anytime.")
+        Benefit(text: "Try 7 days free. Cancel anytime"),
+        Benefit(text: "Reminders to revamp your mindset."),
+        Benefit(text: "Categories for any situation."),
+        Benefit(text: "Access to all themes and new features on the way"),
+        Benefit(text: "Choose amount comfortable for you! Unlocks all premium features.")
 //        Benefit(text: "Bible promises that will transform your day and life!"),
 //        Benefit(text: "Access to all categories"),
 //        Benefit(text: "Create and schedule your own Bible promises or affirmations."),
@@ -36,7 +38,7 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
     
     let size: CGSize
     var callback: (() -> Void)?
