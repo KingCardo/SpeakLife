@@ -104,9 +104,11 @@ final class APIClient: APIService {
         do {
             let welcome = try JSONDecoder().decode(Welcome.self, from: data)
             let declarations = welcome.declarations
+            let set = Set(declarations)
+            let array = Array(set)
             declarationCountBE = welcome.count
-            print(welcome.declarations.count, "RWRW")
-            completion(declarations, nil)
+           // print(welcome.declarations.count, "RWRW")
+            completion(array, nil)
         } catch {
             print(error, "RWRW")
             completion([],APIError.failedDecode)

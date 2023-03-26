@@ -25,24 +25,36 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     case addiction
     case depression
     case loneliness
+    case motivation
+    case confidence
+    case hardtimes
+    case forgiveness
+    case discipline
+    case perseverance
     
     static var categoryOrder: [DeclarationCategory] = [
         .favorites,
         .myOwn,
         .anxiety,
-        .peace,
-        .faith,
         .love,
+        .faith,
+        .peace,
+        .wealth,
+        .motivation,
+        .discipline,
+        .health,
         .addiction,
         .depression,
         .fear,
         .gratitude,
-        .health,
         .hope,
+        .confidence,
+        .hardtimes,
+        .forgiveness,
         .loneliness,
         .positivity,
         .selfcontrol,
-        .wealth
+        .perseverance
             ]
     
     var id: String {
@@ -52,6 +64,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     var name: String {
         switch self {
         case .selfcontrol: return "Self Control"
+        case .hardtimes: return "Hard Times"
         default:  return self.rawValue.capitalized
         }
     }
