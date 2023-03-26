@@ -191,6 +191,31 @@ final class NotificationManager: NSObject {
         }
     }
     
+    func newAffirmationReminder() {
+        let id = UUID().uuidString
+        let body = "New Affirmations 🚨" // Localize
+        
+        let content = UNMutableNotificationContent()
+        content.title = "SpeakLife"
+        content.body = body
+        content.sound = UNNotificationSound.default
+        content.badge = 1
+        
+        let nextTriggerDate = Calendar.current.date(byAdding: .minute, value: 1, to: Date())!
+        let comps = Calendar.current.dateComponents([.year, .month, .day, .minute], from: nextTriggerDate)
+        
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: comps, repeats: false)
+        
+        
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        notificationCenter.add(request) { (error) in
+            if error != nil {
+                //  TODO: - handle error
+            }
+        }
+    }
+    
     private func getArrayDates(from dates: [Date], startTimeIndex: Int, endTimeIndex: Int) -> [Date] {
         
         var newArrayDate: [Date] = []

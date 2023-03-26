@@ -67,7 +67,7 @@ final class NotificationProcessor {
     }
     
     private func getDeclarations() {
-        service.declarations { declarations, error in
+        service.declarations { declarations, error, _ in
             self.allDeclarations = declarations
         }
     }

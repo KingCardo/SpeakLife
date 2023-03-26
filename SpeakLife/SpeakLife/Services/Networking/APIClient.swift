@@ -14,7 +14,7 @@ final class APIClient: APIService {
     @AppStorage("declarationCountFile") var declarationCountFile = 0
     @AppStorage("declarationCountBE") var declarationCountBE = 0
     
-    func declarations(completion: @escaping([Declaration], APIError?) -> Void) {
+    func declarations(completion: @escaping([Declaration], APIError?, Bool) -> Void) {
         
         syncDeclarations() { [weak  self] needsSync in
             if needsSync {
@@ -35,11 +35,11 @@ final class APIClient: APIService {
                     }
                     updatedDeclarations.append(contentsOf: favorites)
                     updatedDeclarations.append(contentsOf: myOwn)
-                    completion(updatedDeclarations,  nil)
+                    completion(updatedDeclarations,  nil, true)
                 }
             } else {
                 self?.loadFromDisk() { declarations, error in
-                    completion(declarations, error)
+                    completion(declarations, error, false)
                 }
             }
         }

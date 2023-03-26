@@ -55,10 +55,14 @@ final class DeclarationViewModel: ObservableObject {
     
     private let service: APIService
     
+    private let notificationManager: NotificationManager
+    
     // MARK: - Init(s)
     
-    init(apiService: APIService) {
+    init(apiService: APIService,
+         notificationManager: NotificationManager = .shared) {
         self.service = apiService
+        self.notificationManager = notificationManager
         
         fetchDeclarations()
         fetchSelectedCategories()
@@ -71,7 +75,7 @@ final class DeclarationViewModel: ObservableObject {
     private func fetchDeclarations() {
         isFetching = true
         
-        service.declarations() {  [weak self] declarations, error in
+        service.declarations() {  [weak self] declarations, error, neededSync in
             guard let self  = self else { return }
             self.isFetching = false
             self.allDeclarations = declarations
@@ -80,6 +84,9 @@ final class DeclarationViewModel: ObservableObject {
             self.createOwn = self.getCreateOwn()
             self.errorMessage = error?.localizedDescription
             
+            if neededSync {
+                self.notificationManager.newAffirmationReminder()
+            }
         }
     }
     
