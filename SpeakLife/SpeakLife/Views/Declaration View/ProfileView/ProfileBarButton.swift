@@ -21,6 +21,7 @@ struct ProfileBarButton: View {
             Spacer()
             CapsuleImageButton(title: "person.crop.circle") {
                 profileButtonTapped()
+                Selection.shared.selectionFeedback()
             }.sheet(isPresented: $isPresentingProfileView, onDismiss: {
                 self.isPresentingProfileView = false
             }, content: {
