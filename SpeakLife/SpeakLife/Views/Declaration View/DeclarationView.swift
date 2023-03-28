@@ -36,7 +36,7 @@ struct DeclarationView: View {
                 
                 VStack() {
                     
-                    ProfileBarButton()
+                    ProfileBarButton(viewModel: ProfileBarButtonViewModel())
                         .frame(height: geometry.size.height * 0.10)
                     
                     Spacer()

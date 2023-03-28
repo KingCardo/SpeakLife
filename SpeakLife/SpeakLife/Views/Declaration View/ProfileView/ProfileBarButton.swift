@@ -7,12 +7,16 @@
 
 import SwiftUI
 
+final class ProfileBarButtonViewModel: ObservableObject {
+    @Published var isPresentingProfileView = false
+}
 
 struct ProfileBarButton: View {
     
     // MARK: - Properties
     
-    @State private var isPresentingProfileView = false
+   
+    @StateObject var viewModel: ProfileBarButtonViewModel
     
     
     var body: some View {
@@ -22,8 +26,8 @@ struct ProfileBarButton: View {
             CapsuleImageButton(title: "person.crop.circle") {
                 profileButtonTapped()
                 Selection.shared.selectionFeedback()
-            }.sheet(isPresented: $isPresentingProfileView, onDismiss: {
-                self.isPresentingProfileView = false
+            }.sheet(isPresented: $viewModel.isPresentingProfileView, onDismiss: {
+                self.viewModel.isPresentingProfileView = false
             }, content: {
                 ProfileView()
             })
@@ -31,18 +35,21 @@ struct ProfileBarButton: View {
             
             
         }.padding()
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                self.viewModel.isPresentingProfileView = false
+                    }
     }
     
     // MARK: - Intent(s)
     
     private func profileButtonTapped() {
-        self.isPresentingProfileView = true
+        self.viewModel.isPresentingProfileView = true
     }
 }
 
 struct ProfileBarView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileBarButton()
+        ProfileBarButton(viewModel: ProfileBarButtonViewModel())
     }
 }
 
