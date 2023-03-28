@@ -120,30 +120,20 @@ struct DeclarationContentView: View {
                 image = UIApplication.shared.windows.first?.rootViewController?.view.toImage()
                 self.showShareSheet = true
                 Analytics.logEvent(Event.shareTapped, parameters: nil)
-                //share(declaration)
+                Selection.shared.selectionFeedback()
             }
             
             CapsuleImageButton(title: declaration.isFavorite ? "heart.fill" : "heart") {
                 favorite(declaration)
                 self.isFavorite = declaration.isFavorite ? false : true
                 Analytics.logEvent(Event.favoriteTapped, parameters: nil)
+                Selection.shared.selectionFeedback()
             }
 
         }
         .foregroundColor(.white)
     }
-    
-    // MARK: - Intent(s)
-    
-    
-    //  MARK: - TO DO - fix with uiViewControllerRepresentable
-//    private func share(_  declaration: Declaration) {
-//        let activityVC = UIActivityViewController(activityItems: [declaration.text as NSString, "\nRevamp App: https://www.apple.com"], applicationActivities: nil)
-//        let scenes = UIApplication.shared.connectedScenes
-//        let windowScene = scenes.first  as? UIWindowScene
-//        let window = windowScene?.windows.first
-//        window?.rootViewController?.present(activityVC, animated: true, completion: nil)
-//    }
+
     
     private func favorite(_ declaration: Declaration) {
         viewModel.favorite(declaration: declaration)

@@ -21,6 +21,11 @@ struct LazyView<Content: View>: View {
     }
 }
 
+final class ProfileViewModel: ObservableObject {
+    @Published var isPresentingManageSubscriptionView = false
+    @Published var isPresentingContentView = false
+}
+
 struct ProfileView: View {
     
     @Environment(\.colorScheme) var colorScheme
@@ -31,9 +36,8 @@ struct ProfileView: View {
     
     // MARK: - Properties
     
-    @State var isPresentingManageSubscriptionView = false
-    @State var isPresentingContentView = false
-    
+    @StateObject var profileViewModel = ProfileViewModel()
+   
     
     init() {
         Analytics.logEvent(Event.profileTapped, parameters: nil)
@@ -94,9 +98,9 @@ struct ProfileView: View {
     }
     
     private var subscriptionRow:  some View {
-        SettingsRow(isPresentingContentView: $isPresentingManageSubscriptionView, imageTitle: "crown.fill", title: "Manage Subscription", viewToPresent: PremiumView()) {
-            isPresentingManageSubscriptionView.toggle()
-                    Analytics.logEvent(Event.manageSubscriptionTapped, parameters: nil)
+        SettingsRow(isPresentingContentView: $profileViewModel.isPresentingManageSubscriptionView, imageTitle: "crown.fill", title: "Manage Subscription", viewToPresent: PremiumView()) {
+            profileViewModel.isPresentingManageSubscriptionView.toggle()
+            Analytics.logEvent(Event.manageSubscriptionTapped, parameters: nil)
         }
         
     }
@@ -168,19 +172,19 @@ struct ProfileView: View {
     }
     
     private var shareRow: some View {
-        SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.and.arrow.up.fill", title: "Share SpeakLife", viewToPresent: EmptyView()) {
+        SettingsRow(isPresentingContentView: $profileViewModel.isPresentingContentView, imageTitle: "square.and.arrow.up.fill", title: "Share SpeakLife", viewToPresent: EmptyView()) {
             shareApp()
             Analytics.logEvent(Event.shareSpeakLifeTapped, parameters: nil)
         }
     }
     
     private var followUs: some View {
-        SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "flame.fill", title: "Follow us on Instagram", viewToPresent: EmptyView(), url: APP.Product.instagramURL) {
+        SettingsRow(isPresentingContentView: $profileViewModel.isPresentingContentView, imageTitle: "flame.fill", title: "Follow us on Instagram", viewToPresent: EmptyView(), url: APP.Product.instagramURL) {
         }
     }
     
     private var reviewRow: some View  {
-        SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "star.bubble.fill", title: "Leave us a Review", viewToPresent: EmptyView(), url: "\(APP.Product.urlID)?action=write-review") {
+        SettingsRow(isPresentingContentView: $profileViewModel.isPresentingContentView, imageTitle: "star.bubble.fill", title: "Leave us a Review", viewToPresent: EmptyView(), url: "\(APP.Product.urlID)?action=write-review") {
         }
     }
     
@@ -188,7 +192,7 @@ struct ProfileView: View {
     @ViewBuilder
     private var feedbackRow: some View {
         if MFMailComposeViewController.canSendMail() {
-            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.grid.3x1.folder.fill.badge.plus", title: "Suggest New Categories - Feedback", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result))) {
+            SettingsRow(isPresentingContentView: $profileViewModel.isPresentingContentView, imageTitle: "square.grid.3x1.folder.fill.badge.plus", title: "Suggest New Categories - Feedback", viewToPresent: LazyView(MailView(isShowing: $profileViewModel.isPresentingContentView, result: self.$result))) {
                 presentContentView()
             }
         }
@@ -226,7 +230,7 @@ struct ProfileView: View {
     
     @MainActor
     private func presentContentView() {
-        self.isPresentingContentView = true
+        self.profileViewModel.isPresentingContentView = true
     }
     
     private func shareApp() {
