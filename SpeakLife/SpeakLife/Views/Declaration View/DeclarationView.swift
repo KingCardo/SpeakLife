@@ -47,11 +47,18 @@ struct DeclarationView: View {
                 
             }
         }
-        .background(Image(themeViewModel.selectedTheme.backgroundImageString)
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .blur(radius: (themeViewModel.selectedTheme.blurEffect ? 2 : 0))
-            .ignoresSafeArea())
+        .background(
+            ZStack {
+                Image(themeViewModel.selectedTheme.backgroundImageString)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea()
+                Rectangle()
+                    .fill(Color.black.opacity(themeViewModel.selectedTheme.blurEffect ? 0.5 : 0))
+                    .edgesIgnoringSafeArea(.all)
+            }
+        )
+            
         .alert(isPresented: $viewModel.showErrorMessage) {
             Alert(
                 title: Text("Error", comment: "Error title message"),

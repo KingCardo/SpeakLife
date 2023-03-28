@@ -186,3 +186,12 @@ struct CreateYourOwnView: View {
         declarationStore.refreshCreateOwn()
     }
 }
+
+struct CreateYourOwnView_Previews: PreviewProvider {
+    static var previews: some View {
+        CreateYourOwnView()
+            .environmentObject(DeclarationViewModel(apiService: APIClient()))
+            .environmentObject(AppState())
+            
+    }
+}

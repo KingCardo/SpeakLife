@@ -141,7 +141,7 @@ final class NotificationManager: NSObject {
     
     private func morningAffirmationReminder() {
         let id = UUID().uuidString
-        let body = "Stay on offense and start your day with your favorite Bible promises!" // Localize
+        let body = "Start your day with 3 minutes of affirmations to renew your mindset 🚨!" // Localize
         
         let content = UNMutableNotificationContent()
         content.title = "SpeakLife"
@@ -177,7 +177,7 @@ final class NotificationManager: NSObject {
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.autoupdatingCurrent
         dateComponents.timeZone = TimeZone.autoupdatingCurrent
-        dateComponents.hour = 19
+        dateComponents.hour = 20
         
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: dateComponents, repeats: false)

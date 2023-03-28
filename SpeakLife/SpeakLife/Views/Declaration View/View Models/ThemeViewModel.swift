@@ -10,7 +10,7 @@ import SwiftUI
 final class ThemeViewModel: ObservableObject {
     
     @AppStorage("theme") var theme = Theme.longroadtraveled.encode()!
-    @AppStorage("fontString") var fontString = "BodoniSvtyTwoOSITCTT-Book" {
+    @AppStorage("fontString") var fontString = "AppleSDGothicNeo-Regular" {
         didSet {
             selectedFont = .custom(fontString, size: 38)
         }
@@ -19,7 +19,7 @@ final class ThemeViewModel: ObservableObject {
     // MARK: Properties
     
     @Published var selectedTheme: Theme = .longroadtraveled
-    @Published var selectedFont: Font = .custom("BodoniSvtyTwoOSITCTT-Book", size: 38)
+    @Published var selectedFont: Font = .custom("AppleSDGothicNeo-Regular", size: 38)
     
     
     init() {

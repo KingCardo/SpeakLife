@@ -54,7 +54,7 @@ struct Theme: Identifiable, Codable {
         }
     }
     
-    static var all: [Theme] = [autumnTrees, cross, lion, longroadtraveled, rainbow, space, stars, summerbeach, moon, canyons, artsy, luxurydrive]
+    static var all: [Theme] = [autumnTrees, cross, lion, longroadtraveled, rainbow, space, stars, summerbeach, moon, canyons, artsy, luxurydrive,beautifulsky, desertsky, gorgeousmoon, plantgreen, fogroad, greenplants]
     
     private static let autumnTrees = Theme("autumntrees", isPremium: false, blurEffect: true)
     private static let cross = Theme("cross", isPremium: false)
@@ -66,9 +66,15 @@ struct Theme: Identifiable, Codable {
     private static let stars = Theme("stars", mode: .light)
     private static let summerbeach = Theme("summerbeach", blurEffect: true)
     private static let artsy = Theme("artsy", blurEffect: true)
-    private static let canyons = Theme("canyons", blurEffect: false)
-    private static let talltrees = Theme("talltrees",  mode: .light, blurEffect: false)
-    private static let luxurydrive = Theme("luxurydrive", blurEffect: false)
+    private static let canyons = Theme("canyons")
+    private static let talltrees = Theme("talltrees",  mode: .light)
+    private static let luxurydrive = Theme("luxurydrive")
+    private static let beautifulsky = Theme("beautifulsky")
+    private static let desertsky = Theme("desertsky", mode: .light, blurEffect: true)
+    private static let gorgeousmoon = Theme("gorgeousmoon")
+    private static let plantgreen = Theme("plantgreen")
+    private static let fogroad = Theme("fogroad", blurEffect: true)
+    private static let greenplants = Theme("greenplants",blurEffect: true)
 }
 
 
