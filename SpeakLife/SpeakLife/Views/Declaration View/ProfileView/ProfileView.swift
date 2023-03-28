@@ -36,7 +36,7 @@ struct ProfileView: View {
     
     // MARK: - Properties
     
-    @StateObject var profileViewModel = ProfileViewModel()
+    @ObservedObject var profileViewModel = ProfileViewModel()
    
     
     init() {
