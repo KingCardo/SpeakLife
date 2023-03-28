@@ -16,6 +16,7 @@ struct DeclarationContentView: View {
     @ObservedObject var viewModel: DeclarationViewModel
     @State private var isFavorite: Bool = false
     @State private var showShareSheet = false
+    @State private var image: UIImage?
     
     private let degrees: Double = 90
     
@@ -42,7 +43,12 @@ struct DeclarationContentView: View {
                         )
                     
                         .sheet(isPresented: $showShareSheet) {
-                            ShareSheet(activityItems: ["\(declaration.text) \nSpeakLife App: \(APP.Product.urlID)"])
+                            if let image = image {
+                                            Image(uiImage: image)
+                                                .resizable()
+                                                .scaledToFit()
+                                        }
+                            ShareSheet(activityItems: [image, "\(declaration.text) \nSpeakLife App: \(APP.Product.urlID)"])
                         }
                         
                         if !showShareSheet {
@@ -111,6 +117,7 @@ struct DeclarationContentView: View {
         HStack(spacing: 24) {
 
             CapsuleImageButton(title: "tray.and.arrow.up") {
+                image = UIApplication.shared.windows.first?.rootViewController?.view.toImage()
                 self.showShareSheet = true
                 Analytics.logEvent(Event.shareTapped, parameters: nil)
                 //share(declaration)
