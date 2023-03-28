@@ -42,5 +42,8 @@ struct SettingsRow<Content: View>: View {
             Link("", destination: URL(string: url!)!)
             }
         }.foregroundColor(colorScheme == .dark ? .white : .black)
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                self.isPresentingContentView = false
+            }
     }
 }

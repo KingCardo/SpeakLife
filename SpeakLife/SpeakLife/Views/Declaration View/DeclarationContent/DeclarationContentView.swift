@@ -89,7 +89,9 @@ struct DeclarationContentView: View {
             .offset(x: geometry.size.width)
             .tabViewStyle(.page(indexDisplayMode: .never))
         }
-        
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+            self.showShareSheet = false
+        }
     }
     
     

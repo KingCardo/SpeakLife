@@ -35,6 +35,10 @@ struct CategoryButtonRow: View  {
             })
             .padding()
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+            self.isPresentingPremiumView = false
+            self.isPresentingCategoryList = false
+        }
         
         .accentColor(Constants.DALightBlue)
                 .overlay(RoundedRectangle(cornerRadius: 10)

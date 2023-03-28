@@ -70,6 +70,11 @@ struct IntentsBarView: View {
             }
         }
         .padding()
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+            self.isPresentingThemeChooser = false
+            self.isPresentingPremiumView = false
+            self.isPresentingCategoryChooser = false
+                }
         
         .foregroundColor(.white)
     }
