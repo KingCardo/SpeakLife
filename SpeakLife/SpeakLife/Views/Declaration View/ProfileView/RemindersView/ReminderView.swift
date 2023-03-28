@@ -7,6 +7,7 @@
 
 import SwiftUI
 import BackgroundTasks
+import FirebaseAnalytics
 
 final class ReminderViewModel: ObservableObject {
     private let reminders: [Reminder] = [
@@ -55,6 +56,8 @@ struct ReminderView: View {
             registerNotifications()
         }
         .onAppear() {
+            print("RWRW")
+            Analytics.logEvent(Event.remindersTapped, parameters: nil)
             askNotificationPermission() { showAlert in
                 self.showAlert = showAlert
             }

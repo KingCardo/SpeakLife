@@ -96,10 +96,9 @@ struct ProfileView: View {
     private var subscriptionRow:  some View {
         SettingsRow(isPresentingContentView: $isPresentingManageSubscriptionView, imageTitle: "crown.fill", title: "Manage Subscription", viewToPresent: PremiumView()) {
             isPresentingManageSubscriptionView.toggle()
+                    Analytics.logEvent(Event.manageSubscriptionTapped, parameters: nil)
         }
-        .onAppear {
-            Analytics.logEvent(Event.manageSubscriptionTapped, parameters: nil)
-        }
+        
     }
     
     @MainActor
@@ -120,9 +119,7 @@ struct ProfileView: View {
                             .foregroundColor(Constants.DAMidBlue)
                     })
         }
-        .onAppear {
-            Analytics.logEvent(Event.remindersTapped, parameters: nil)
-        }
+        
     }
     
     private var widgetsRow: some View {
@@ -168,16 +165,11 @@ struct ProfileView: View {
                             .foregroundColor(Constants.DAMidBlue)
                     })
         }
-        .onAppear {
-            Analytics.logEvent(Event.createYourOwnTapped, parameters: nil)
-        }
     }
     
     private var shareRow: some View {
         SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.and.arrow.up.fill", title: "Share SpeakLife", viewToPresent: EmptyView()) {
             shareApp()
-        }
-        .onAppear {
             Analytics.logEvent(Event.shareSpeakLifeTapped, parameters: nil)
         }
     }
@@ -224,9 +216,6 @@ struct ProfileView: View {
             Link(destination: URL(string: "https://books.apple.com/us/book/100-days-of-power-declarations/id1616288315")!, label: {
                 Text("100 Days of Power Declarations", comment: "")
             })
-        }
-        .onAppear {
-            Analytics.logEvent(Event.powerDeclarationsTapped, parameters: nil)
         }
     }
     private var copyrightView: some  View {

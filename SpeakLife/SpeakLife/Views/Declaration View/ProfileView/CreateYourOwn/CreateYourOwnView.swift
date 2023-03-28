@@ -73,6 +73,10 @@ struct CreateYourOwnView: View {
     @State private var showAlert = false
     @State private var alertText = ""
     
+    init() {
+        print("RWRW")
+        Analytics.logEvent(Event.createYourOwnTapped, parameters: nil)
+    }
     var body: some View {
         ZStack {
             configureView()
