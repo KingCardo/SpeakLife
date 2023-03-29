@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F740F6929D4017400E89E7F /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F740F6829D4017400E89E7F /* APIClientTests.swift */; };
 		7A00721828F8ED4A00965AF7 /* declarations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A00721728F8ED4A00965AF7 /* declarations.json */; };
 		7A00721A2908D22E00965AF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A0072192908D22E00965AF7 /* GoogleService-Info.plist */; };
 		7A00721D2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -76,6 +77,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2F740F6229D4014500E89E7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A278F8F288915DE0084BB57 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A278F96288915DE0084BB57;
+			remoteInfo = SpeakLife;
+		};
 		7A7BEBE02913574F008D08A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7A278F8F288915DE0084BB57 /* Project object */;
@@ -100,6 +108,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2F740F5E29D4014500E89E7F /* SpeakLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeakLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F740F6729D4017300E89E7F /* SpeakLifeTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpeakLifeTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		2F740F6829D4017400E89E7F /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		7A00721728F8ED4A00965AF7 /* declarations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = declarations.json; sourceTree = "<group>"; };
 		7A0072192908D22E00965AF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7A278F97288915DE0084BB57 /* SpeakLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +182,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2F740F5B29D4014400E89E7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A278F94288915DE0084BB57 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -192,6 +210,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F740F5F29D4014500E89E7F /* SpeakLifeTests */ = {
+			isa = PBXGroup;
+			children = (
+				2F740F6829D4017400E89E7F /* APIClientTests.swift */,
+				2F740F6729D4017300E89E7F /* SpeakLifeTests-Bridging-Header.h */,
+			);
+			path = SpeakLifeTests;
+			sourceTree = "<group>";
+		};
 		7A00721628F8ED4A00965AF7 /* AffirmationData */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +232,7 @@
 			children = (
 				7A278F99288915DE0084BB57 /* SpeakLife */,
 				7A7BEBD72913574D008D08A3 /* PromisesWidget */,
+				2F740F5F29D4014500E89E7F /* SpeakLifeTests */,
 				7A278F98288915DE0084BB57 /* Products */,
 				7A7BEBCB2913536B008D08A3 /* Frameworks */,
 			);
@@ -215,6 +243,7 @@
 			children = (
 				7A278F97288915DE0084BB57 /* SpeakLife.app */,
 				7A7BEBD22913574D008D08A3 /* PromisesWidgetExtension.appex */,
+				2F740F5E29D4014500E89E7F /* SpeakLifeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -525,6 +554,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2F740F5D29D4014400E89E7F /* SpeakLifeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F740F6429D4014500E89E7F /* Build configuration list for PBXNativeTarget "SpeakLifeTests" */;
+			buildPhases = (
+				2F740F5A29D4014400E89E7F /* Sources */,
+				2F740F5B29D4014400E89E7F /* Frameworks */,
+				2F740F5C29D4014400E89E7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F740F6329D4014500E89E7F /* PBXTargetDependency */,
+			);
+			name = SpeakLifeTests;
+			productName = SpeakLifeTests;
+			productReference = 2F740F5E29D4014500E89E7F /* SpeakLifeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		7A278F96288915DE0084BB57 /* SpeakLife */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A278FA5288915DF0084BB57 /* Build configuration list for PBXNativeTarget "SpeakLife" */;
@@ -574,6 +621,11 @@
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					2F740F5D29D4014400E89E7F = {
+						CreatedOnToolsVersion = 14.0.1;
+						LastSwiftMigration = 1400;
+						TestTargetID = 7A278F96288915DE0084BB57;
+					};
 					7A278F96288915DE0084BB57 = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -600,11 +652,19 @@
 			targets = (
 				7A278F96288915DE0084BB57 /* SpeakLife */,
 				7A7BEBD12913574D008D08A3 /* PromisesWidgetExtension */,
+				2F740F5D29D4014400E89E7F /* SpeakLifeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2F740F5C29D4014400E89E7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A278F95288915DE0084BB57 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -628,6 +688,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2F740F5A29D4014400E89E7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F740F6929D4017400E89E7F /* APIClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A278F93288915DE0084BB57 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -700,6 +768,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2F740F6329D4014500E89E7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A278F96288915DE0084BB57 /* SpeakLife */;
+			targetProxy = 2F740F6229D4014500E89E7F /* PBXContainerItemProxy */;
+		};
 		7A7BEBE12913574F008D08A3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7A7BEBD12913574D008D08A3 /* PromisesWidgetExtension */;
@@ -708,6 +781,61 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		2F740F6529D4014500E89E7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 652R6A63L8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CardoWashington.SpeakLifeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "SpeakLifeTests/SpeakLifeTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpeakLife.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpeakLife";
+			};
+			name = Debug;
+		};
+		2F740F6629D4014500E89E7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 652R6A63L8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CardoWashington.SpeakLifeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "SpeakLifeTests/SpeakLifeTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpeakLife.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpeakLife";
+			};
+			name = Release;
+		};
 		7A278FA3288915DF0084BB57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -829,7 +957,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
@@ -848,7 +976,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.17;
+				MARKETING_VERSION = 1.0.18;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -864,7 +992,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
@@ -883,7 +1011,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.17;
+				MARKETING_VERSION = 1.0.18;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -899,7 +1027,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PromisesWidget/Info.plist;
@@ -911,7 +1039,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.17;
+				MARKETING_VERSION = 1.0.18;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife.PromisesWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -928,7 +1056,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PromisesWidget/Info.plist;
@@ -940,7 +1068,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.17;
+				MARKETING_VERSION = 1.0.18;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife.PromisesWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -953,6 +1081,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2F740F6429D4014500E89E7F /* Build configuration list for PBXNativeTarget "SpeakLifeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F740F6529D4014500E89E7F /* Debug */,
+				2F740F6629D4014500E89E7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7A278F92288915DE0084BB57 /* Build configuration list for PBXProject "SpeakLife" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

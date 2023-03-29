@@ -48,7 +48,7 @@ struct DeclarationContentView: View {
                                                 .resizable()
                                                 .scaledToFit()
                                         }
-                            ShareSheet(activityItems: [image, "\(declaration.text) \nSpeakLife App: \(APP.Product.urlID)"])
+                            ShareSheet(activityItems: [image, " \nSpeakLife App: \(APP.Product.urlID)"])
                         }
                         
                         if !showShareSheet {
