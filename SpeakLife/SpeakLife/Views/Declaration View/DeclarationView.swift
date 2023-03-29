@@ -19,7 +19,7 @@ struct DeclarationView: View {
     
     @AppStorage("review.counter") private var reviewCounter = 0
     @AppStorage("share.counter") private var shareCounter = 0
-    @AppStorage("review.done") private var reviewDone = false
+    @AppStorage("review.try") private var reviewTry = 0
     @AppStorage("shared.count") private var shared = 0
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State private var showAlert = false
@@ -71,46 +71,38 @@ struct DeclarationView: View {
             requestReview()
             shareApp()
         }
-        .alert(isPresented: $showAlert) {
-            Alert(
-                title: Text("Are you enjoying SpeakLife?", comment: "review alert title"),
-                primaryButton: .default(
-                    Text("Yes"),
-                    action: showReview
-                ),
-                secondaryButton: .destructive(
-                    Text("No"),
-                    action: sendEmail
-                )
-            )
+
+        .alert("Are you enjoying SpeakLife?", isPresented: $showAlert) {
+            Button("Yes") {
+                showReview()
+            }
+            Button("Leave feedback") {
+                sendEmail()
+            }
         }
-        .alert(isPresented: $share) {
-            Alert(
-                title: Text("Help us spread SpeakLife?", comment: ""),
-                primaryButton: .default(
-                    Text("Yes, I'll share with friends!"),
-                    action: shareSpeakLife
-                ),
-                secondaryButton: .destructive(
-                    Text("No thanks"),
-                    action: { }
-                )
-            )
+        
+        .alert("Help us spread SpeakLife?", isPresented: $share) {
+            Button("Yes, I'll share with friends!") {
+                shareSpeakLife()
+            }
+            Button("No thanks") {
+            }
         }
+    
         .sheet(isPresented: $isShowingMailView) {
             MailView(isShowing: $isShowingMailView, result: self.$result)
         }
     }
     
     private func requestReview() {
-        #if !DEBUG
-          if reviewCounter > 5 && !reviewDone {
-              showAlert = true
-              reviewDone.toggle()
-              reviewCounter = 0
-          }
-        #endif
-      }
+        if reviewCounter > 5 && reviewTry <= 3 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                showAlert = true
+                reviewCounter = 0
+                reviewTry += 1
+            }
+        }
+    }
     
     private func shareApp() {
 #if !DEBUG
@@ -138,10 +130,8 @@ struct DeclarationView: View {
     
     private func showReview() {
         DispatchQueue.main.async {
-            if let scene = UIApplication.shared.connectedScenes
-                .first(where: { $0.activationState == .foregroundActive })
-                as? UIWindowScene {
-                SKStoreReviewController.requestReview(in: scene)
+            if let url = URL(string: "\(APP.Product.urlID)?action=write-review") {
+                UIApplication.shared.open(url)
             }
         }
     }
