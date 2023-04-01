@@ -7,18 +7,22 @@
 
 import SwiftUI
 
-struct Selection {
+final class Selection {
     
     static var shared = Selection()
     
     private var generator = UISelectionFeedbackGenerator()
     
     private init() {
-        generator.prepare()
+        DispatchQueue.main.async { [weak self] in
+            self?.generator.prepare()
+        }
     }
     
     func selectionFeedback() {
-        generator.selectionChanged()
+        DispatchQueue.main.async {  [weak self] in
+            self?.generator.selectionChanged()
+        }
     }
 }
 

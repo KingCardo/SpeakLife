@@ -61,7 +61,7 @@ struct OnboardingView: View  {
   
     
     private func categoryScene() -> some View {
-        Text("categroy")
+        Text("category")
     }
     
     private func subscriptionScene(size: CGSize) -> some View  {

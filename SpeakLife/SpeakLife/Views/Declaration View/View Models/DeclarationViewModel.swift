@@ -79,6 +79,7 @@ final class DeclarationViewModel: ObservableObject {
             guard let self  = self else { return }
             self.isFetching = false
             self.allDeclarations = declarations
+            self.populateDeclarationsByCategory()
             self.choose(self.selectedCategory) { _ in }
             self.favorites = self.getFavorites()
             self.createOwn = self.getCreateOwn()
@@ -87,6 +88,16 @@ final class DeclarationViewModel: ObservableObject {
             if neededSync {
                 self.notificationManager.newAffirmationReminder()
             }
+        }
+    }
+    
+    private func populateDeclarationsByCategory() {
+        for declaration in allDeclarations {
+            let category = declaration.category
+            if allDeclarationsDict[category] == nil {
+                allDeclarationsDict[category] = []
+            }
+            allDeclarationsDict[category]?.append(declaration)
         }
     }
     
@@ -106,7 +117,7 @@ final class DeclarationViewModel: ObservableObject {
         
         guard let index = allDeclarations.firstIndex(where: { $0.id == declaration.id }) else { return }
         allDeclarations[index] = declarations[indexOf]
-
+        
         
         service.save(declarations: allDeclarations) { [weak self] success in
             self?.refreshFavorites()
@@ -141,7 +152,7 @@ final class DeclarationViewModel: ObservableObject {
         
         service.save(declarations: allDeclarations) { [weak self] success in
             guard success else { return }
-                self?.refreshCreateOwn()
+            self?.refreshCreateOwn()
         }
     }
     
@@ -154,7 +165,7 @@ final class DeclarationViewModel: ObservableObject {
         guard let indexOf = createOwn.firstIndex(where: { $0.id == declaration.id } ) else {
             return
         }
-    
+        
         allDeclarations.removeAll(where: { $0.id == declaration.id })
         createOwn.remove(at: indexOf)
         service.save(declarations: allDeclarations) { [weak self] success in
@@ -171,7 +182,7 @@ final class DeclarationViewModel: ObservableObject {
         allDeclarations.filter { $0.category == .myOwn }
     }
     
-  
+    
     func removeOwn(at indexSet: IndexSet) {
         _ = indexSet.map { int in
             let declaration = createOwn[int]
@@ -239,7 +250,7 @@ final class DeclarationViewModel: ObservableObject {
         self.selectedCategories = selectedCategories
         service.save(selectedCategories: selectedCategories) { success in
             if success {
-
+                
             }
         }
     }
@@ -247,7 +258,7 @@ final class DeclarationViewModel: ObservableObject {
     func setDeclaration(_ content: String,  category: String)  {
         
         if let category = DeclarationCategory(category),
-            let categoryArray = allDeclarationsDict[category] {
+           let categoryArray = allDeclarationsDict[category] {
             guard let declaration = categoryArray.filter ({ $0.text ==  content }).first else {
                 print("failed to create dec rwrw")
                 return

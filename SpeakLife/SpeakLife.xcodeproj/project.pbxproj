@@ -315,8 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				7A601440294E574500CD2103 /* HomeView.swift */,
-				7AA8709728DACCB700134ADB /* Declaration View */,
 				7AA870B828DACCB700134ADB /* Onboarding */,
+				7AA8709728DACCB700134ADB /* Declaration View */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -471,13 +471,13 @@
 		7AA870A328DACCB700134ADB /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
-				7AA870A428DACCB700134ADB /* SettingViews */,
+				7AA870B528DACCB700134ADB /* ProfileBarButton.swift */,
 				7AA870A828DACCB700134ADB /* ProfileView.swift */,
+				7AA870A428DACCB700134ADB /* SettingViews */,
+				7AA870AC28DACCB700134ADB /* RemindersView */,
 				7AA870A928DACCB700134ADB /* FavoritesView */,
 				7AA870AB28DACCB700134ADB /* MailView.swift */,
-				7AA870AC28DACCB700134ADB /* RemindersView */,
 				7AA870B328DACCB700134ADB /* CreateYourOwn */,
-				7AA870B528DACCB700134ADB /* ProfileBarButton.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -886,7 +886,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -940,7 +940,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

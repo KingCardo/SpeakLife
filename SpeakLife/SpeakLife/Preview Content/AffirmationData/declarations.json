@@ -1,5 +1,5 @@
 {
-    "count": 1224,
+    "count": 1269,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -34,6 +34,19 @@
         {
             "text": "You must serve only the Lord your God. If you do, I will bless you with food and water, and I will protect you from illness.",
             "book": "Exodus 23:25 NLT",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "So then, just as you received Christ Jesus as Lord, continue to live your lives in him, rooted and built up in him, strengthened in the faith as you were taught, and overflowing with thankfulness.",
+            "book": "Colossians 2:6-7 NIV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        
+        {
+            "text": "Worship the LORD your God, and his blessing will be on your food and water. I will take away sickness from among you.",
+            "book": "Exodus 23:25 NIV",
             "isFavorite": false,
             "category": "health"
         },
@@ -86,7 +99,7 @@
             "category": "fear"
         },
         {
-            "text": "\"For I know the plans I have for you,\" says the Lord. \"They are plans for good and not for disaster, to give you a future and a hope.\"",
+            "text": "For I know the plans I have for you, says the Lord. They are plans for good and not for disaster, to give you a future and a hope.",
             "book": "Jeremiah 29:11 NLT",
             "isFavorite": false,
             "category": "hope"
@@ -96,6 +109,12 @@
             "book": "Proverbs 16:24 NLT",
             "isFavorite": false,
             "category": "health"
+        },
+        {
+            "text": "For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, plans to give you hope and a future.",
+            "book": "Jeremiah 29:11 NIV",
+            "isFavorite": false,
+            "category": "depression"
         },
         {
             "text": "I have told you all this so that you may have peace in me. Here on earth you will have many trials and sorrows. But take heart, because I have overcome the world.",
@@ -160,6 +179,12 @@
         {
             "text": "Now may the Lord of peace himself give you his peace at all times and in every situation. The Lord be with you all.",
             "book": "2 Thessalonians 3:16 NLT",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Let the peace of Christ rule in your hearts, since as members of one body you were called to peace. And be thankful.",
+            "book": "Colossians 3:15 NIV",
             "isFavorite": false,
             "category": "peace"
         },
@@ -248,8 +273,20 @@
             "category": "faith"
         },
         {
-            "text": "Love does no wrong to others, so love fulfills the requirements of God's law.",
-            "book": "Romans 13:10 NLT",
+            "text": "And Jesus answered them, 'Truly, I say to you, if you have faith and do not doubt, you will not only do what has been done to the fig tree, but even if you say to this mountain, 'Be taken up and thrown into the sea,' it will happen.'",
+            "book": "Matthew 21:21 ESV",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "For in it the righteousness of God is revealed from faith for faith, as it is written, 'The righteous shall live by faith.'",
+            "book": "Romans 1:17 ESV",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Love does no harm to a neighbor. Therefore love is the fulfillment of the law.",
+            "book": "Romans 13:10 NIV",
             "isFavorite": false,
             "category": "love"
         },
@@ -322,6 +359,18 @@
         {
             "text": "Our life is lived by faith. We do not live by what we see in front of us.",
             "book": "2 Corinthians 5:7 NLV",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "For we walk by faith, not by sight.",
+            "book": "2 Corinthians 5:7 ESV",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "For by grace you have been saved through faith, and that not of yourselves; it is the gift of God, not of works, lest anyone should boast.",
+            "book": "Ephesians 2:8-9 NKJV",
             "isFavorite": false,
             "category": "faith"
         },
@@ -554,6 +603,12 @@
             "category": "hope"
         },
         {
+            "text": "He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain, for the old order of things has passed away.",
+            "book": "Revelation 21:4 NIV",
+            "isFavorite": false,
+            "category": "depression"
+        },
+        {
             "text": "For You are my hope, O Lord God. You are my trust since I was young.",
             "book": "Psalms 71:5 NLV",
             "isFavorite": false,
@@ -662,8 +717,20 @@
             "category": "health"
         },
         {
+            "text": "The LORD sustains them on their sickbed and restores them from their bed of illness.",
+            "book": "Psalm 41:3 NIV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
             "text": "You will keep in perfect peace all who trust in you, all whose thoughts are fixed on you!",
             "book": "Isaiah 26:3 NLT",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Turn from evil and do good; seek peace and pursue it.",
+            "book": "Psalm 34:14 NIV",
             "isFavorite": false,
             "category": "peace"
         },
@@ -696,6 +763,12 @@
             "book": "Psalm 34:17 NLV",
             "isFavorite": false,
             "category": "peace"
+        },
+        {
+            "text": "The righteous cry out, and the LORD hears them; he delivers them from all their troubles.",
+            "book": "Psalm 34:17 NIV",
+            "isFavorite": false,
+            "category": "depression"
         },
         {
             "text": "Do not worry. Learn to pray about everything. Give thanks to God as you ask Him for what you need. The peace of God is much greater than the human mind can understand. This peace will keep your hearts and minds through Christ Jesus.",
@@ -736,6 +809,18 @@
         {
             "text": "And my God will give you everything you need because of His great riches in Christ Jesus.",
             "book": "Philippians 4:19 NLT",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be poured into your lap. For with the measure you use, it will be measured to you.",
+            "book": "Luke 6:38 NIV",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "For where your treasure is, there your heart will be also.",
+            "book": "Matthew 6:21 NIV",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -806,6 +891,18 @@
             "category": "selfcontrol"
         },
         {
+            "text": "Hatred stirs up conflict, but love covers over all wrongs.",
+            "book": "Proverbs 10:12 NIV",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Be completely humble and gentle; be patient, bearing with one another in love.",
+            "book": "Ephesians 4:2 NIV",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
             "text": "Watch yourselves! You do not want to lose what we have worked for. You want to get what has been promised to you.",
             "book": "2 John 1:8 NLV",
             "isFavorite": false,
@@ -824,10 +921,22 @@
             "category": "selfcontrol"
         },
         {
+            "text": "The rich rule over the poor, and the borrower is slave to the lender.",
+            "book": "Proverbs 22:7 NIV",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
             "text": "Keep your lives free from the love of money. Be happy with what you have. God has said, \"I will never leave you or let you be alone.\"",
             "book": "Hebrews 13:5 NLV",
             "isFavorite": false,
             "category": "positivity"
+        },
+        {
+            "text": "Moreover, when God gives someone wealth and possessions, and the ability to enjoy them, to accept their lot and be happy in their toil—this is a gift of God.",
+            "book": "Ecclesiastes 5:19 NIV",
+            "isFavorite": false,
+            "category": "wealth"
         },
         {
             "text": "The grass dries up. The flower loses its color. But the Word of our God stands forever.",
@@ -1792,10 +1901,34 @@
             "category": "faith"
         },
         {
-            "text": "\"You can pray for anything, and if you have faith, you will receive it.\"",
+            "text": "You can pray for anything, and if you have faith, you will receive it.",
             "book": "Matthew 21:22 NLT",
             "isFavorite": false,
             "category": "faith"
+        },
+        {
+            "text": "And whatever you ask in prayer, you will receive, if you have faith.",
+            "book": "Matthew 21:22 ESV",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "And whatever you ask in prayer, you will receive, if you have faith.",
+            "book": "Matthew 21:22 ESV",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Jesus said to her, 'I am the resurrection and the life. He who believes in Me, though he may die, he shall live.'",
+            "book": "John 11:25 NKJV",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Love is patient, love is kind. It does not envy, it does not boast, it is not proud.",
+            "book": "1 Corinthians 13:4 NIV",
+            "isFavorite": false,
+            "category": "love"
         },
         {
             "text": "For nothing will be impossible with God.",
@@ -1814,6 +1947,12 @@
             "book": "1 Peter 5:7 NLT",
             "isFavorite": false,
             "category": "faith"
+        },
+        {
+            "text": "Cast all your anxiety on him because he cares for you.",
+            "book": "1 Peter 5:7 NIV",
+            "isFavorite": false,
+            "category": "depression"
         },
         {
             "text": "\"Most certainly I tell you, he who hears my word and believes him who sent me has eternal life, and doesn’t come into judgment, but has passed out of death into life.\"",
@@ -1842,6 +1981,12 @@
         {
             "text": "We know and have believed the love which God has for us. God is love, and he who remains in love remains in God, and God remains in him.",
             "book": "1 John 4:16 WEB",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "We love because he first loved us.",
+            "book": "1 John 4:19 ESV",
             "isFavorite": false,
             "category": "love"
         },
@@ -1890,6 +2035,12 @@
         {
             "text": "Greater love has no one than this, that someone lay down his life for his friends.",
             "book": "John 15:13 WEB",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Dear friends, let us love one another, for love comes from God. Everyone who loves has been born of God and knows God.",
+            "book": "1 John 4:7 NIV",
             "isFavorite": false,
             "category": "love"
         },
@@ -2062,6 +2213,24 @@
             "category": "peace"
         },
         {
+            "text": "For God is not a God of confusion but of peace.",
+            "book": "1 Corinthians 14:33 ESV",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "Blessed are the peacemakers, for they will be called children of God.",
+            "book": "Matthew 5:9 NIV",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.",
+            "book": "Philippians 4:7 NIV",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
             "text": "God wants each of you to use his body in the right way by keeping it holy and by respecting it.",
             "book": "1 Thessalonians 4:4 NLV",
             "isFavorite": false,
@@ -2108,6 +2277,12 @@
             "book": "Galatians 5:22-23 NLT",
             "isFavorite": false,
             "category": "addiction"
+        },
+        {
+            "text": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness.",
+            "book": "Galatians 5:22 ESV",
+            "isFavorite": false,
+            "category": "peace"
         },
         {
             "text": "The temptations in your life are no different from what others experience. And God is faithful. He will not allow the temptation to be more than you can stand. When you are tempted, he will show you a way out so that you can endure.",
@@ -2170,6 +2345,12 @@
             "category": "anxiety"
         },
         {
+            "text": "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
+            "book": "John 14:27 NIV",
+            "isFavorite": false,
+            "category": "depression"
+        },
+        {
             "text": "So letting your sinful nature control your mind leads to death. But letting the Spirit control your mind leads to life and peace.",
             "book": "Romans 8:6 NLT",
             "isFavorite": false,
@@ -2230,6 +2411,12 @@
             "category": "depression"
         },
         {
+            "text": "Keep your lives free from the love of money and be content with what you have, because God has said, 'Never will I leave you; never will I forsake you.'",
+            "book": "Hebrews 13:5 NIV",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
             "text": "The righteous cry out, and the Lord hears them; he delivers them from all their troubles.",
             "book": "Psalm 34:17 NIV",
             "isFavorite": false,
@@ -2270,6 +2457,12 @@
             "book": "Deuteronomy 31:6 NLT",
             "isFavorite": false,
             "category": "loneliness"
+        },
+        {
+            "text": "Be strong and courageous. Do not be afraid or terrified because of them, for the LORD your God goes with you; he will never leave you nor forsake you.",
+            "book": "Deuteronomy 31:6 NIV",
+            "isFavorite": false,
+            "category": "motivation"
         },
         {
             "text": "\"And be sure of this: I am with you always, even to the end of the age.\"",
@@ -2322,6 +2515,12 @@
         {
             "text": "But I will restore you to health and heal your wounds,’declares the Lord",
             "book": "Jeremiah 30:17 NIV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I will give you back your health and heal your wounds, says the LORD.",
+            "book": "Jeremiah 30:17 NLT",
             "isFavorite": false,
             "category": "health"
         },
@@ -5271,6 +5470,12 @@
             "category": "motivation"
         },
         {
+            "text": "Trust in the Lord with all your heart, and lean not on your own understanding; In all your ways acknowledge Him, and He shall direct your paths.",
+            "book": "Proverbs 3:5-6 NKJV",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
             "text": "Let us run with perseverance the race marked out for us, fixing our eyes on Jesus, the pioneer and perfecter of faith.",
             "book": "Hebrews 12:1-2",
             "isFavorite": false,
@@ -5311,6 +5516,12 @@
             "book": "Philippians 4:6-7",
             "isFavorite": false,
             "category": "motivation"
+        },
+        {
+            "text": "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+            "book": "Philippians 4:6 NIV",
+            "isFavorite": false,
+            "category": "depression"
         },
         {
             "text": "I am confident in my abilities and talents.",
@@ -5512,12 +5723,6 @@
             "category": "confidence"
         },
         {
-            "text": "For God has not given us a spirit of fear and timidity, but of power, love, and self-discipline.",
-            "book": "2 Timothy 1:7 NLT",
-            "isFavorite": false,
-            "category": "confidence"
-        },
-        {
             "text": "Now faith is confidence in what we hope for and assurance about what we do not see.",
             "book": "Hebrews 11:1 NIV",
             "isFavorite": false,
@@ -5564,6 +5769,12 @@
             "book": "Psalm 46:1 NIV",
             "isFavorite": false,
             "category": "hardtimes"
+        },
+        {
+            "text": "God is our refuge and strength, an ever-present help in trouble.",
+            "book": "Psalm 46:1 NIV",
+            "isFavorite": false,
+            "category": "depression"
         },
         {
             "text": "When you pass through the waters, I will be with you; and through the rivers, they shall not overwhelm you; when you walk through fire you shall not be burned, and the flame shall not consume you.",
@@ -5650,6 +5861,18 @@
             "category": "hardtimes"
         },
         {
+            "text": "Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.",
+            "book": "Colossians 3:23 NIV",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
+            "text": "Therefore, my dear brothers and sisters, stand firm. Let nothing move you. Always give yourselves fully to the work of the Lord, because you know that your labor in the Lord is not in vain.",
+            "book": "1 Corinthians 15:58 NIV",
+            "isFavorite": false,
+            "category": "motivation"
+        },
+        {
             "text": "But he said to me, “My grace is sufficient for you, for my power is made perfect in weakness.” Therefore I will boast all the more gladly about my weaknesses, so that Christ’s power may rest on me.",
             "book": "2 Corinthians 12:9 NIV",
             "isFavorite": false,
@@ -5668,8 +5891,14 @@
             "category": "hardtimes"
         },
         {
-            "text": "The Lord is close to the brokenhearted and saves those who are crushed in spirit.",
+            "text": "The LORD is close to the brokenhearted and saves those who are crushed in spirit.",
             "book": "Psalm 34:18 NIV",
+            "isFavorite": false,
+            "category": "depression"
+        },
+        {
+            "text": "Come to me, all you who are weary and burdened, and I will give you rest.",
+            "book": "Matthew 11:28 NIV",
             "isFavorite": false,
             "category": "hardtimes"
         },
@@ -5677,7 +5906,7 @@
             "text": "Come to me, all you who are weary and burdened, and I will give you rest.",
             "book": "Matthew 11:28 NIV",
             "isFavorite": false,
-            "category": "hardtimes"
+            "category": "depression"
         },
         {
             "text": "Cast all your anxiety on him because he cares for you.",
@@ -6157,10 +6386,10 @@
             "category": "discipline"
         },
         {
-            "text": "The discipline of the Lord is your wealth, and your poverty will be gone.",
-            "book": "Proverbs 10:22 NCV",
+            "text": "The blessing of the LORD brings wealth, without painful toil for it.",
+            "book": "Proverbs 10:22 NIV",
             "isFavorite": false,
-            "category": "discipline"
+            "category": "wealth"
         },
         {
             "text": "Those who disregard discipline despise themselves, but the one who heeds correction gains understanding.",
@@ -6578,6 +6807,48 @@
             "book": "1 Peter 4:1-2 NKJV",
             "isFavorite": false,
             "category": "perseverance"
+        },
+        {
+            "text": "But without faith it is impossible to please Him, for he who comes to God must believe that He is, and that He is a rewarder of those who diligently seek Him.",
+            "book": "Hebrews 11:6 NKJV",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "My command is this: Love each other as I have loved you.",
+            "book": "John 15:12 NIV",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "Dear friend, I pray that you may enjoy good health and that all may go well with you, even as your soul is getting along well.",
+            "book": "3 John 1:2 NIV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "He heals the brokenhearted and binds up their wounds.",
+            "book": "Psalm 147:3 NIV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "A cheerful heart is good medicine, but a crushed spirit dries up the bones.",
+            "book": "Proverbs 17:22 NIV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My son, pay attention to what I say; turn your ear to my words. Do not let them out of your sight, keep them within your heart; for they are life to those who find them and health to one’s whole body.",
+            "book": "Proverbs 4:20-22 NIV",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.",
+            "book": "Isaiah 53:5 NIV",
+            "isFavorite": false,
+            "category": "health"
         },
     ]
 }

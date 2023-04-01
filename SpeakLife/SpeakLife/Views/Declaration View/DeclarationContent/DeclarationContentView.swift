@@ -17,6 +17,7 @@ struct DeclarationContentView: View {
     @State private var isFavorite: Bool = false
     @State private var showShareSheet = false
     @State private var image: UIImage?
+   // @State private var showScreenshotLabel = false
     
     private let degrees: Double = 90
     
@@ -33,36 +34,29 @@ struct DeclarationContentView: View {
             TabView {
                 ForEach(viewModel.declarations) { declaration in
                     ZStack {
-    
                         quoteLabel(declaration, geometry)
-                        .padding()
-                        .rotationEffect(Angle(degrees: -degrees))
-                        .frame(
-                            width: geometry.size.width,
-                            height: geometry.size.height
-                        )
-                    
-                        .sheet(isPresented: $showShareSheet) {
-                            if let image = image {
-                                            Image(uiImage: image)
-                                                .resizable()
-                                                .scaledToFit()
-                                        }
-                            ShareSheet(activityItems: [image, " \nSpeakLife App: \(APP.Product.urlID)"])
-                        }
+                            .padding()
+                            .rotationEffect(Angle(degrees: -degrees))
+                            .frame(
+                                width: geometry.size.width,
+                                height: geometry.size.height
+                            )
+                            .sheet(isPresented: $showShareSheet) {
+                                if let image = image {
+                                                Image(uiImage: image)
+                                                    .resizable()
+                                                    .scaledToFit()
+                                            }
+                                ShareSheet(activityItems: [image, "\nSpeakLife App: \(APP.Product.urlID)"])
+                            }
+                            
                         
                         if !showShareSheet {
-                            VStack {
-                                Spacer()
-                                intentStackButtons(declaration: declaration)
-                                Spacer()
-                                    .frame(height: horizontalSizeClass == .compact ? geometry.size.height * 0.15 : geometry.size.height * 0.30)
-                            }
-                            .rotationEffect(Angle(degrees: -degrees))
+                            intentVstack(declaration: declaration, geometry)
+                                .rotationEffect(Angle(degrees: -degrees))
                         }
                         
                         if isFavorite {
-                            
                             withAnimation {
                                 HeartView()
                                     .scaleEffect(1.2)
@@ -75,11 +69,8 @@ struct DeclarationContentView: View {
                                     withAnimation {
                                         self.isFavorite = false
                                     }
-                                    
                                 }
-                                
                             }
-                            
                         }
                     }
                 }
@@ -92,7 +83,40 @@ struct DeclarationContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
             self.showShareSheet = false
         }
+//        .onReceive(NotificationCenter.default.publisher(for: UIApplication.userDidTakeScreenshotNotification)) { _ in
+//            showScreenshotLabel = true
+//
+//            // Hide the label after 2 seconds
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                showScreenshotLabel = false
+//            }
+//        }
     }
+    
+    private func intentVstack(declaration: Declaration, _ geometry: GeometryProxy) -> some View {
+            VStack {
+               // screenshotLabel()
+                Spacer()
+                intentStackButtons(declaration: declaration)
+                Spacer()
+                    .frame(height: horizontalSizeClass == .compact ? geometry.size.height * 0.15 : geometry.size.height * 0.30)
+               
+            }
+    }
+    
+//    @ViewBuilder
+//    private func screenshotLabel() -> some View {
+//        if showScreenshotLabel {
+//             Text("@speaklife.biblepromises")
+//                .font(.caption)
+//                .foregroundColor(Color.white)
+//                .padding()
+//                .background(Color.black.opacity(0.7))
+//                .cornerRadius(12)
+//                .animation(.easeInOut)
+//                .transition(.opacity)
+//        }
+//    }
     
     
     private func quoteLabel(_ declaration: Declaration, _ geometry: GeometryProxy) -> some View  {
@@ -117,7 +141,7 @@ struct DeclarationContentView: View {
     
     private func intentStackButtons(declaration: Declaration) -> some View  {
         HStack(spacing: 24) {
-
+            
             CapsuleImageButton(title: "tray.and.arrow.up") {
                 image = UIApplication.shared.windows.first?.rootViewController?.view.toImage()
                 self.showShareSheet = true
@@ -131,11 +155,11 @@ struct DeclarationContentView: View {
                 Analytics.logEvent(Event.favoriteTapped, parameters: nil)
                 Selection.shared.selectionFeedback()
             }
-
+            
         }
         .foregroundColor(.white)
     }
-
+    
     
     private func favorite(_ declaration: Declaration) {
         viewModel.favorite(declaration: declaration)
@@ -164,7 +188,7 @@ struct DeclarationContentView_Previews: PreviewProvider {
     
     static var previews: some View {
         DeclarationContentView(themeViewModel: ThemeViewModel(), viewModel: DeclarationViewModel(apiService: APIClient()))
-
+        
     }
 }
 
@@ -186,6 +210,6 @@ struct ShareSheet: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
-    
+        
     }
 }

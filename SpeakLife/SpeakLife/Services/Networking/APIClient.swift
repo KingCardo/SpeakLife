@@ -16,29 +16,28 @@ final class APIClient: APIService {
     
     func declarations(completion: @escaping([Declaration], APIError?, Bool) -> Void) {
         
-        syncDeclarations() { [weak  self] needsSync in
+        self.loadFromBackEnd() { declarations, error, needsSync in
             if needsSync {
                 var favorites: [Declaration] = []
                 var myOwn: [Declaration] = []
                 
-                self?.loadFromDisk() { declarations, error in
+                self.loadFromDisk() { declarations, error in
                     favorites = declarations.filter { $0.isFavorite == true }
                     myOwn = declarations.filter {
                         $0.category == .myOwn
                     }
                 }
-                self?.loadFromBackEnd() { declarations, error in
-                    var updatedDeclarations: [Declaration] = declarations
-                    
-                    for fav in favorites  {
-                        updatedDeclarations.removeAll { $0.id == fav.id }
-                    }
-                    updatedDeclarations.append(contentsOf: favorites)
-                    updatedDeclarations.append(contentsOf: myOwn)
-                    completion(updatedDeclarations,  nil, true)
+                var updatedDeclarations: [Declaration] = declarations
+                
+                for fav in favorites  {
+                    updatedDeclarations.removeAll { $0.id == fav.id }
                 }
+                updatedDeclarations.append(contentsOf: favorites)
+                updatedDeclarations.append(contentsOf: myOwn)
+                completion(updatedDeclarations,  nil, true)
+                
             } else {
-                self?.loadFromDisk() { declarations, error in
+                self.loadFromDisk() { declarations, error in
                     completion(declarations, error, false)
                 }
             }
@@ -83,35 +82,31 @@ final class APIClient: APIService {
         }
     }
     
-    private func syncDeclarations(completion: @escaping(Bool) -> Void)  {
-        loadFromBackEnd { declarations, error in
-            if self.declarationCountBE != self.declarationCountFile {
-                completion(true)
-            } else {
-                completion(false)
-            }
-        }
-    }
-    
-    private func loadFromBackEnd(completion: @escaping([Declaration], APIError?) ->  Void) {
+    private func loadFromBackEnd(completion: @escaping([Declaration], APIError?, Bool) ->  Void) {
         guard
             let url = Bundle.main.url(forResource: "declarations", withExtension: "json"),
             let data = try? Data(contentsOf: url) else {
-                completion([],APIError.resourceNotFound)
+                completion([],APIError.resourceNotFound, false)
             return
         }
         
         do {
             let welcome = try JSONDecoder().decode(Welcome.self, from: data)
-            let declarations = welcome.declarations
-            let set = Set(declarations)
-            let array = Array(set)
+            let declarations = Set(welcome.declarations)
+           // let set = Set(declarations)
+            let array = Array(declarations)
             declarationCountBE = welcome.count
-           // print(welcome.declarations.count, "RWRW")
-            completion(array, nil)
+            print(welcome.declarations.count, "RWRW")
+            if self.declarationCountBE != self.declarationCountFile {
+                completion(array, nil, true)
+                return
+            }
+           
+            completion(array, nil, false)
+            return
         } catch {
             print(error, "RWRW")
-            completion([],APIError.failedDecode)
+            completion([],APIError.failedDecode, false)
         }
     }
     
