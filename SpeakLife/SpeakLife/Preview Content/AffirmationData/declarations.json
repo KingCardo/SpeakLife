@@ -1,5 +1,5 @@
 {
-    "count": 1269,
+    "count": 1272,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -104,6 +104,24 @@
             "isFavorite": false,
             "category": "hope"
         },
+        {
+            "text": "But he said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.' Therefore I will boast all the more gladly about my weaknesses, so that Christ's power may rest on me.",
+            "book": "2 Corinthians 12:9 NIV",
+            "isFavorite": false,
+            "category": "depression"
+        },
+        {
+            "text": "You are my hiding place; you will protect me from trouble and surround me with songs of deliverance.",
+            "book": "Psalm 32:7 NIV",
+            "isFavorite": false,
+            "category": "depression"
+        },
+        {
+            "text": "Weeping may endure for a night, but joy comes in the morning.",
+            "book": "Psalm 30:5 NKJV",
+            "isFavorite": false,
+            "category": "depression"
+        }
         {
             "text": "Kind words are like honey— sweet to the soul and healthy for the body.",
             "book": "Proverbs 16:24 NLT",
