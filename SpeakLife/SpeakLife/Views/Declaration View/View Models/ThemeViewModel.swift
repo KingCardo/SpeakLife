@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Combine
+
 
 final class ThemeViewModel: ObservableObject {
     
@@ -16,6 +18,13 @@ final class ThemeViewModel: ObservableObject {
         }
     }
     
+    @Published var selectedImage: UIImage? = nil
+    @Published var backgroundImage: Image? = nil
+    @Published var showUserSelectedImage = false
+    
+    private var cancellable: AnyCancellable?
+    
+    
     // MARK: Properties
     
     @Published var selectedTheme: Theme = .longroadtraveled
@@ -24,15 +33,26 @@ final class ThemeViewModel: ObservableObject {
     
     init() {
         load()
+        cancellable = $selectedImage
+            .sink { [weak self] image in
+                guard let self = self else { return }
+                if let image = image {
+                    self.selectedTheme.setUserSelectedImage(image: image)
+                    self.showUserSelectedImage = true
+                } else {
+                    self.showUserSelectedImage = false
+                }
+            }
     }
     
     var themes: [Theme] = Theme.all
-
+    
     
     // MARK: Intent(s)
     
     func choose(_ theme: Theme) {
         self.selectedTheme = theme
+        showUserSelectedImage = false
         selectedTheme.setBackground(theme.backgroundImageString)
     }
     
@@ -53,6 +73,7 @@ final class ThemeViewModel: ObservableObject {
         if let theme = Theme.decode(data: theme) {
             selectedTheme = theme
             selectedFont = .custom(fontString, size: 38)
+            selectedImage = theme.userSelectedImage
         }
     }
 }

@@ -16,6 +16,7 @@ struct DeclarationView: View {
     @EnvironmentObject var viewModel: DeclarationViewModel
     @EnvironmentObject var themeViewModel: ThemeViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
+    @Environment(\.presentationMode) var presentationMode
     
     @AppStorage("review.counter") private var reviewCounter = 0
     @AppStorage("share.counter") private var shareCounter = 0
@@ -49,10 +50,18 @@ struct DeclarationView: View {
         }
         .background(
             ZStack {
-                Image(themeViewModel.selectedTheme.backgroundImageString)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .ignoresSafeArea()
+                if themeViewModel.showUserSelectedImage {
+                    Image(uiImage: themeViewModel.selectedImage!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .ignoresSafeArea()
+                } else {
+                    Image(themeViewModel.selectedTheme.backgroundImageString)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .ignoresSafeArea()
+                }
+               
                 Rectangle()
                     .fill(Color.black.opacity(themeViewModel.selectedTheme.blurEffect ? 0.5 : 0))
                     .edgesIgnoringSafeArea(.all)

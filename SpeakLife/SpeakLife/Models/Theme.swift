@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Theme: Identifiable, Codable {
+class Theme: Identifiable, Codable {
     
     enum Mode: String, Codable {
         case light
@@ -25,15 +25,32 @@ struct Theme: Identifiable, Codable {
         Image(backgroundImageString)
     }
     
-    init(_ backgroundImageString: String, mode: Mode = .dark, isPremium: Bool = true, blurEffect: Bool = false) {
+    private(set) var userSelectedImageData: Data?
+    
+    var userSelectedImage: UIImage? {
+        if let imageData = userSelectedImageData,  let uiimage = UIImage(data: imageData) {
+            return uiimage
+        }
+        return nil
+    }
+    
+    init(_ backgroundImageString: String, mode: Mode = .dark, isPremium: Bool = true, blurEffect: Bool = false, userSelectedImageData: Data? = nil) {
         self.backgroundImageString = backgroundImageString
         self.mode = mode
         self.isPremium = isPremium
         self.blurEffect = blurEffect
+        self.userSelectedImageData = userSelectedImageData
     }
     
-    mutating func setBackground(_ backgroundImageString: String) {
-        self.backgroundImageString  = backgroundImageString
+    func setUserSelectedImage(image: UIImage) {
+        if let imageData = image.jpegData(compressionQuality: 0.5) {
+            userSelectedImageData = imageData
+        }
+    }
+    
+    func setBackground(_ backgroundImageString: String) {
+        self.backgroundImageString = backgroundImageString
+        self.userSelectedImageData = nil
     }
     
      func encode() -> Data? {
