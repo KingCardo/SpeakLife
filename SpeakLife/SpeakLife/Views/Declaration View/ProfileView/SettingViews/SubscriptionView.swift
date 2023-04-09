@@ -17,8 +17,9 @@ struct Benefit: Identifiable  {
     }
     
     static var premiumBenefits: [Benefit] = [
-        Benefit(text: "Try 7 days free. Cancel anytime"),
-        Benefit(text: "Reminders to revamp your mindset."),
+        Benefit(text: "Try 3 days free. Cancel anytime"),
+        Benefit(text: "Reminders to renew your mindset with scripture from the Creator of the Universe!"),
+        //Benefit(text: "Reminders to revamp your mindset."),
         Benefit(text: "Categories for any situation."),
         Benefit(text: "Access to all themes and new features on the way"),
         Benefit(text: "Choose amount comfortable for you! Unlocks all premium features.")
@@ -176,5 +177,7 @@ struct SubscriptionView_Previews: PreviewProvider {
     
     static var previews: some View {
         SubscriptionView(size: UIScreen.main.bounds.size)
+            .environmentObject(DeclarationViewModel(apiService: APIClient()))
+            .environmentObject(SubscriptionStore())
     }
 }

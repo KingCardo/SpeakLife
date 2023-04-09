@@ -93,10 +93,10 @@ final class APIClient: APIService {
         do {
             let welcome = try JSONDecoder().decode(Welcome.self, from: data)
             let declarations = Set(welcome.declarations)
-           // let set = Set(declarations)
-            let array = Array(declarations)
+            let removed = declarations.filter({ $0.book != nil })
+            let array = Array(removed)
             declarationCountBE = welcome.count
-            print(welcome.declarations.count, "RWRW")
+            print(removed.count, "RWRW")
             if self.declarationCountBE != self.declarationCountFile {
                 completion(array, nil, true)
                 return

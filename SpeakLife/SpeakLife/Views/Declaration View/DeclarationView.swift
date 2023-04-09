@@ -104,7 +104,7 @@ struct DeclarationView: View {
     }
     
     private func requestReview() {
-        if reviewCounter > 5 && reviewTry <= 3 {
+        if reviewCounter > 2 && reviewTry <= 3 {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 showAlert = true
                 reviewCounter = 0
