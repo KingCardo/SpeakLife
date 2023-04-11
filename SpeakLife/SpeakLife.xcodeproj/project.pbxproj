@@ -75,6 +75,10 @@
 		7AA870E328DACD1A00134ADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA870E128DACD1A00134ADB /* AppDelegate.swift */; };
 		7AA870E428DACD1A00134ADB /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA870E228DACD1A00134ADB /* AppState.swift */; };
 		7AA870E628DACFB800134ADB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AA870E528DACFB800134ADB /* Localizable.strings */; };
+		7ABA50C329E4D52B002699F1 /* PrayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA50C229E4D52B002699F1 /* PrayerView.swift */; };
+		7ABA50C529E4D818002699F1 /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA50C429E4D818002699F1 /* Prayer.swift */; };
+		7ABA50C729E4D996002699F1 /* PrayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA50C629E4D996002699F1 /* PrayerViewModel.swift */; };
+		7ABA50C929E4DE60002699F1 /* PrayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA50C829E4DE60002699F1 /* PrayerDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +185,10 @@
 		7AA870E128DACD1A00134ADB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AA870E228DACD1A00134ADB /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		7AA870E528DACFB800134ADB /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		7ABA50C229E4D52B002699F1 /* PrayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerView.swift; sourceTree = "<group>"; };
+		7ABA50C429E4D818002699F1 /* Prayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prayer.swift; sourceTree = "<group>"; };
+		7ABA50C629E4D996002699F1 /* PrayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerViewModel.swift; sourceTree = "<group>"; };
+		7ABA50C829E4DE60002699F1 /* PrayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -476,6 +484,7 @@
 			children = (
 				7AA870B528DACCB700134ADB /* ProfileBarButton.swift */,
 				7AA870A828DACCB700134ADB /* ProfileView.swift */,
+				7ABA50C129E4D4FD002699F1 /* Prayer */,
 				7AA870A428DACCB700134ADB /* SettingViews */,
 				7AA870AC28DACCB700134ADB /* RemindersView */,
 				7AA870A928DACCB700134ADB /* FavoritesView */,
@@ -552,6 +561,17 @@
 				7AA870BD28DACCB700134ADB /* TimeSlots.swift */,
 			);
 			path = TimeSlots;
+			sourceTree = "<group>";
+		};
+		7ABA50C129E4D4FD002699F1 /* Prayer */ = {
+			isa = PBXGroup;
+			children = (
+				7ABA50C229E4D52B002699F1 /* PrayerView.swift */,
+				7ABA50C429E4D818002699F1 /* Prayer.swift */,
+				7ABA50C629E4D996002699F1 /* PrayerViewModel.swift */,
+				7ABA50C829E4DE60002699F1 /* PrayerDetailView.swift */,
+			);
+			path = Prayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -728,16 +748,20 @@
 				7AA8706D28DACC4E00134ADB /* Reminder.swift in Sources */,
 				7AA8709228DACCA700134ADB /* ToggleStyle.swift in Sources */,
 				7AA870D928DACCB700134ADB /* DeclarationView.swift in Sources */,
+				7ABA50C329E4D52B002699F1 /* PrayerView.swift in Sources */,
 				7AA870C428DACCB700134ADB /* DeclarationViewModel.swift in Sources */,
 				7AA870CF28DACCB700134ADB /* MailView.swift in Sources */,
 				7AA870D128DACCB700134ADB /* ReminderCell.swift in Sources */,
+				7ABA50C729E4D996002699F1 /* PrayerViewModel.swift in Sources */,
 				7AA870C828DACCB700134ADB /* FontChooserView.swift in Sources */,
 				7AA8709028DACCA700134ADB /* SelectionFeedback.swift in Sources */,
 				7AA870CC28DACCB700134ADB /* SettingsRow.swift in Sources */,
+				7ABA50C929E4DE60002699F1 /* PrayerDetailView.swift in Sources */,
 				7AA8709528DACCA800134ADB /* FontPickerController.swift in Sources */,
 				7AA8708028DACC8300134ADB /* NotificationHandler.swift in Sources */,
 				7AA870D628DACCB700134ADB /* CreateYourOwnView.swift in Sources */,
 				7A60143F294E382700CD2103 /* SubscriptionStore.swift in Sources */,
+				7ABA50C529E4D818002699F1 /* Prayer.swift in Sources */,
 				7AA8707E28DACC8300134ADB /* APIService.swift in Sources */,
 				7AA870CA28DACCB700134ADB /* SubscriptionView.swift in Sources */,
 				7AA8709128DACCA700134ADB /* GlobalConstants.swift in Sources */,
@@ -961,7 +985,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
@@ -980,7 +1004,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.01;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -996,7 +1020,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
@@ -1015,7 +1039,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.01;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1031,7 +1055,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PromisesWidget/Info.plist;
@@ -1043,7 +1067,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.01;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife.PromisesWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1060,7 +1084,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PromisesWidget/Info.plist;
@@ -1072,7 +1096,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.01;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife.PromisesWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

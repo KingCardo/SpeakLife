@@ -201,7 +201,7 @@ final class NotificationManager: NSObject {
         content.sound = UNNotificationSound.default
         content.badge = 1
         
-        let nextTriggerDate = Calendar.current.date(byAdding: .minute, value: 1, to: Date())!
+        let nextTriggerDate = Calendar.current.date(byAdding: .minute, value: 10, to: Date())!
         let comps = Calendar.current.dateComponents([.year, .month, .day, .minute], from: nextTriggerDate)
         
         let trigger = UNCalendarNotificationTrigger(

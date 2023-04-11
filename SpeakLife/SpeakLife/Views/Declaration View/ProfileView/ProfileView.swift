@@ -60,7 +60,8 @@ struct ProfileView: View {
                 bookLink
             }
             
-            Section(header: Text("SETTINGS").font(.caption)) {
+            Section(header: Text("Yours").font(.caption)) {
+                prayerRow
                 remindersRow
                 favoritesRow
                 createYourOwnRow
@@ -127,6 +128,26 @@ struct ProfileView: View {
     private var widgetsRow: some View {
         // TO DO: - add back after add widget functionality
         EmptyView()
+    }
+    
+    @MainActor
+    private var prayerRow: some View {
+        HStack {
+            Image(systemName: "hands.sparkles.fill")
+                .foregroundColor(Constants.DAMidBlue)
+            NavigationLink(LocalizedStringKey("Prayers"), destination: LazyView(PrayerView()))
+                .opacity(0)
+                .background(
+                    HStack {
+                        Text("Prayer", comment:  "Prayers row title")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 8)
+                            .foregroundColor(Constants.DAMidBlue)
+                    })
+        }
     }
     
     @MainActor
