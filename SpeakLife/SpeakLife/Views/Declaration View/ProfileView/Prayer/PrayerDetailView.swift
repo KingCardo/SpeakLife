@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct PrayerDetailView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
     let prayer: String
 
     var body: some View {
         VStack {
             Text(prayer)
-                .font(.largeTitle)
-                .padding()
-            
+                .font(.title)
+                .lineSpacing(4)
+                .padding(.horizontal, 32)
+                .foregroundColor(colorScheme  == .dark ? .white : Constants.DAMidBlue)
+               
             Spacer()
         }
     }

@@ -79,6 +79,8 @@
 		7ABA50C529E4D818002699F1 /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA50C429E4D818002699F1 /* Prayer.swift */; };
 		7ABA50C729E4D996002699F1 /* PrayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA50C629E4D996002699F1 /* PrayerViewModel.swift */; };
 		7ABA50C929E4DE60002699F1 /* PrayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA50C829E4DE60002699F1 /* PrayerDetailView.swift */; };
+		7ABA50CB29E63178002699F1 /* PrayerServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA50CA29E63178002699F1 /* PrayerServiceClient.swift */; };
+		7ABA50CF29E63275002699F1 /* prayers.json in Resources */ = {isa = PBXBuildFile; fileRef = 7ABA50CE29E63275002699F1 /* prayers.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +191,8 @@
 		7ABA50C429E4D818002699F1 /* Prayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prayer.swift; sourceTree = "<group>"; };
 		7ABA50C629E4D996002699F1 /* PrayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerViewModel.swift; sourceTree = "<group>"; };
 		7ABA50C829E4DE60002699F1 /* PrayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerDetailView.swift; sourceTree = "<group>"; };
+		7ABA50CA29E63178002699F1 /* PrayerServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerServiceClient.swift; sourceTree = "<group>"; };
+		7ABA50CE29E63275002699F1 /* prayers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = prayers.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				7A00721728F8ED4A00965AF7 /* declarations.json */,
+				7ABA50CE29E63275002699F1 /* prayers.json */,
 			);
 			path = AffirmationData;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				7AA8707028DACC8300134ADB /* APIError.swift */,
 				7AA8707128DACC8300134ADB /* APIClient.swift */,
 				7AA8707228DACC8300134ADB /* Protocols */,
+				7ABA50CA29E63178002699F1 /* PrayerServiceClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -695,6 +701,7 @@
 				7A278FA2288915DF0084BB57 /* Preview Assets.xcassets in Resources */,
 				7AA870E628DACFB800134ADB /* Localizable.strings in Resources */,
 				7A00721A2908D22E00965AF7 /* GoogleService-Info.plist in Resources */,
+				7ABA50CF29E63275002699F1 /* prayers.json in Resources */,
 				7A00721828F8ED4A00965AF7 /* declarations.json in Resources */,
 				7A278F9F288915DF0084BB57 /* Assets.xcassets in Resources */,
 			);
@@ -778,6 +785,7 @@
 				7AA8707C28DACC8300134ADB /* APIError.swift in Sources */,
 				7AA870CD28DACCB700134ADB /* ProfileView.swift in Sources */,
 				7AA870DC28DACCB700134ADB /* TimeSlots.swift in Sources */,
+				7ABA50CB29E63178002699F1 /* PrayerServiceClient.swift in Sources */,
 				7AA8709328DACCA700134ADB /* CapsuleImageButton.swift in Sources */,
 				7AA870DF28DACCB700134ADB /* IntroScene.swift in Sources */,
 				7AA870DD28DACCB700134ADB /* OnboardingView.swift in Sources */,

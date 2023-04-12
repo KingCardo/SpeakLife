@@ -49,6 +49,8 @@ final class DeclarationViewModel: ObservableObject {
     
     @Published var showErrorMessage = false
     
+    @Published var showNewAlertMessage = false
+    
     private var allDeclarations: [Declaration] = []
     
     var selectedCategories = Set<DeclarationCategory>()
@@ -86,7 +88,8 @@ final class DeclarationViewModel: ObservableObject {
             self.errorMessage = error?.localizedDescription
             
             if neededSync {
-                self.notificationManager.newAffirmationReminder()
+                self.showNewAlertMessage = true
+              //  self.notificationManager.newAffirmationReminder()
             }
         }
     }

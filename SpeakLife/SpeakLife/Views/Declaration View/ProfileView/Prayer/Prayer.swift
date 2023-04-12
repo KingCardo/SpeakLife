@@ -7,11 +7,17 @@
 
 import Foundation
 
-struct Prayer: Identifiable, Hashable {
+struct WelcomePrayers: Decodable {
+    let prayers: [Prayer]
+}
+
+struct Prayer: Identifiable, Hashable, Decodable {
     
     let prayerText: String
-    private(set) var isFavorite = false
     let category: DeclarationCategory
     let isPremium: Bool
-    let id = UUID()
+    
+    var id: UUID {
+        UUID()
+    }
 }

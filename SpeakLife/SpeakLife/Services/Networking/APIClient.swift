@@ -16,12 +16,12 @@ final class APIClient: APIService {
     
     func declarations(completion: @escaping([Declaration], APIError?, Bool) -> Void) {
         
-        self.loadFromBackEnd() { declarations, error, needsSync in
+        self.loadFromBackEnd() { [weak self] declarations, error, needsSync in
             if needsSync {
                 var favorites: [Declaration] = []
                 var myOwn: [Declaration] = []
                 
-                self.loadFromDisk() { declarations, error in
+                self?.loadFromDisk() { declarations, error in
                     favorites = declarations.filter { $0.isFavorite == true }
                     myOwn = declarations.filter {
                         $0.category == .myOwn
@@ -34,10 +34,11 @@ final class APIClient: APIService {
                 }
                 updatedDeclarations.append(contentsOf: favorites)
                 updatedDeclarations.append(contentsOf: myOwn)
+                self?.declarationCountFile = updatedDeclarations.count
                 completion(updatedDeclarations,  nil, true)
                 
             } else {
-                self.loadFromDisk() { declarations, error in
+                self?.loadFromDisk() { declarations, error in
                     completion(declarations, error, false)
                 }
             }
@@ -95,8 +96,7 @@ final class APIClient: APIService {
             let declarations = Set(welcome.declarations)
             let removed = declarations.filter({ $0.book != nil })
             let array = Array(removed)
-            declarationCountBE = welcome.count
-            print(removed.count, "RWRW")
+            declarationCountBE = array.count //welcome.count
             if self.declarationCountBE != self.declarationCountFile {
                 completion(array, nil, true)
                 return

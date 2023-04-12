@@ -18,6 +18,9 @@ struct HomeView: View {
         if appState.isOnboarded {
             DeclarationView(viewModel: _declarationStore, themeViewModel: _themeStore)
             .id(appState.rootViewId)
+//            .alert(isPresented: $declarationStore.showNewAlertMessage) {
+//                Alert(title: Text("New Bible affirmations added 🚨").font(.caption))
+//            }
         } else {
             OnboardingView()
         }

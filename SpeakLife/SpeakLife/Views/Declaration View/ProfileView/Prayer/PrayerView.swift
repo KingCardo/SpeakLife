@@ -34,12 +34,13 @@ struct PrayerView: View {
                         
                     }
                 }, label: {
-                    Text(prayerViewModel.sectionData[index].title)
+                    Text(prayerViewModel.sectionData[index].title.rawValue.uppercased())
                 })
                 .padding(.top)
             }
         }
         .foregroundColor(colorScheme  == .dark ? .white : Constants.DAMidBlue)
+        .background(colorScheme  == .dark ? Color.black : Color.white)
         .listStyle(GroupedListStyle())
         .navigationBarTitle("Prayer List")
         
@@ -54,6 +55,10 @@ struct PrayerView: View {
             PremiumView()
         }
         
+        .alert(isPresented: $prayerViewModel.hasError, content: {
+            Alert(title: Text("Failed to load prayers"))
+        })
+        
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
             self.isPresentingManageSubscriptionView = false
         }
@@ -67,6 +72,7 @@ struct PrayerView: View {
             }
             Text(prayer.prayerText)
         }
+        .frame(maxHeight: 50)
     }
 }
 

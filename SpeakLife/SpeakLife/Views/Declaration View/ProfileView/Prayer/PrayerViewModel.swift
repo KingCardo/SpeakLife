@@ -8,22 +8,10 @@
 import Combine
 import SwiftUI
 
-protocol PrayerService {
-    func fetchPrayers() async -> [Prayer]
-}
-
-final class PrayerServiceClient: PrayerService {
-    
-    func fetchPrayers() async -> [Prayer] {
-        return [Prayer(prayerText: "Praise the Lord", category: .anxiety, isPremium: false),
-                Prayer(prayerText: "Praise the Lord", category: .wealth, isPremium: true)
-        ]
-    }
-}
 
 struct SectionData: Identifiable {
     let id = UUID()
-    let title: String
+    let title: DeclarationCategory
     let items: [Prayer]
     var isExpanded: Bool = false
 }
@@ -31,6 +19,8 @@ struct SectionData: Identifiable {
 final class PrayerViewModel: ObservableObject {
     
     @Published var sectionData: [SectionData] = []
+    
+    @Published var hasError = false
     
     private var prayers: [Prayer] = [] {
         didSet {
@@ -45,21 +35,26 @@ final class PrayerViewModel: ObservableObject {
     }
     
     func fetchPrayers() async {
+        guard prayers.isEmpty else { return }
         let prayers = await service.fetchPrayers()
         self.prayers = prayers
     }
     
     private func buildSectionData()  {
-       // var sectionData: [SectionData] = []
-        
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.sectionData = [SectionData(title: "Fruits", items: [Prayer(prayerText: "Praise the Lord!", category: .wealth, isPremium: false),
-                                                 Prayer(prayerText: "Praise the Lord!", category: .anxiety, isPremium: true)
-                                                 
-            ])
-                           ]
+        guard !prayers.isEmpty else {
+            DispatchQueue.main.async { [weak self] in
+                self?.hasError = true
+            }
+            return
         }
-        
+    
+        for category in DeclarationCategory.allCases {
+            let prayers = prayers.filter { $0.category == category }
+            DispatchQueue.main.async { [weak self] in
+                if !prayers.isEmpty {
+                    self?.sectionData.append(SectionData(title: category, items: prayers))
+                }
+            }
+        }
     }
 }
