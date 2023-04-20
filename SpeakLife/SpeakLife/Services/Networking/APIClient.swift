@@ -17,31 +17,28 @@ final class APIClient: APIService {
     func declarations(completion: @escaping([Declaration], APIError?, Bool) -> Void) {
         
         self.loadFromBackEnd() { [weak self] declarations, error, needsSync in
-            if needsSync {
-                var favorites: [Declaration] = []
-                var myOwn: [Declaration] = []
-                
-                self?.loadFromDisk() { declarations, error in
-                    favorites = declarations.filter { $0.isFavorite == true }
-                    myOwn = declarations.filter {
-                        $0.category == .myOwn
-                    }
-                }
-                var updatedDeclarations: [Declaration] = declarations
-                
-                for fav in favorites  {
-                    updatedDeclarations.removeAll { $0.id == fav.id }
-                }
-                updatedDeclarations.append(contentsOf: favorites)
-                updatedDeclarations.append(contentsOf: myOwn)
-                self?.declarationCountFile = updatedDeclarations.count
-                completion(updatedDeclarations,  nil, true)
-                
-            } else {
-                self?.loadFromDisk() { declarations, error in
-                    completion(declarations, error, false)
+            var favorites: [Declaration] = []
+            var myOwn: [Declaration] = []
+            
+            self?.loadFromDisk() { declarations, error in
+                favorites = declarations.filter { $0.isFavorite == true }
+                myOwn = declarations.filter {
+                    $0.category == .myOwn
                 }
             }
+            
+            
+            var updatedDeclarations: [Declaration] = declarations
+            
+            for fav in favorites  {
+                updatedDeclarations.removeAll { $0.id == fav.id }
+            }
+            updatedDeclarations.append(contentsOf: favorites)
+            updatedDeclarations.append(contentsOf: myOwn)
+            self?.declarationCountFile = updatedDeclarations.count
+            completion(updatedDeclarations,  nil, needsSync)
+            return
+            
         }
     }
     
@@ -52,9 +49,9 @@ final class APIClient: APIService {
         
         guard let data = try? Data(contentsOf: fileURL),
               let declarations = try? JSONDecoder().decode([Declaration].self, from: data) else {
-                  completion([], APIError.failedRequest)
-                  return
-              }
+            completion([], APIError.failedRequest)
+            return
+        }
         declarationCountFile = declarations.count
         completion(declarations, nil)
         return
@@ -62,7 +59,7 @@ final class APIClient: APIService {
     
     
     func save(declarations: [Declaration], completion: @escaping(Bool) -> Void) {
-    
+        
         guard
             let DocumentDirURL = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true),
             let data = try? JSONEncoder().encode(declarations)
@@ -87,7 +84,7 @@ final class APIClient: APIService {
         guard
             let url = Bundle.main.url(forResource: "declarations", withExtension: "json"),
             let data = try? Data(contentsOf: url) else {
-                completion([],APIError.resourceNotFound, false)
+            completion([],APIError.resourceNotFound, false)
             return
         }
         
@@ -96,13 +93,11 @@ final class APIClient: APIService {
             let declarations = Set(welcome.declarations)
             let removed = declarations.filter({ $0.book != nil })
             let array = Array(removed)
+            let needsSync = array.count != declarationCountBE
+            print(array.count, declarationCountBE, "RWRW count")
+            print(needsSync, "RWRW  needs sync")
             declarationCountBE = array.count //welcome.count
-            if self.declarationCountBE != self.declarationCountFile {
-                completion(array, nil, true)
-                return
-            }
-           
-            completion(array, nil, false)
+            completion(array, nil, needsSync)
             return
         } catch {
             print(error, "RWRW")
@@ -152,9 +147,9 @@ final class APIClient: APIService {
         
         guard let data = try? Data(contentsOf: fileURL),
               let declarationsCategories = try? JSONDecoder().decode(Set<DeclarationCategory>.self, from: data) else {
-                  completion([], APIError.failedRequest)
-                  return
-              }
+            completion([], APIError.failedRequest)
+            return
+        }
         completion(declarationsCategories, nil)
         return
     }

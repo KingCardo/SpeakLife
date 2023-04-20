@@ -22,7 +22,7 @@ final class DeclarationViewModel: ObservableObject {
     private var allDeclarationsDict: [DeclarationCategory: [Declaration]] = [:]
     
     var selectedCategory: DeclarationCategory {
-        DeclarationCategory(rawValue: selectedCategoryString)!
+        DeclarationCategory(rawValue: selectedCategoryString) ?? .love
     }
     
     @Published var favorites: [Declaration] = [] {
@@ -89,7 +89,6 @@ final class DeclarationViewModel: ObservableObject {
             
             if neededSync {
                 self.showNewAlertMessage = true
-              //  self.notificationManager.newAffirmationReminder()
             }
         }
     }

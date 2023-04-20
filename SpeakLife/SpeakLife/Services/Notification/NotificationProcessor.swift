@@ -40,6 +40,7 @@ final class NotificationProcessor {
             
             if categories == nil {
                 let shuffled = allDeclarations.shuffled()
+                guard !shuffled.isEmpty else { return }
                 for number in 1...count {
                     let declaration = shuffled[number]
                     let notificationData = NotificationData(title: declaration.book ?? "", body: declaration.text)
@@ -91,7 +92,7 @@ final class NotificationProcessor {
         if let declarations = allDeclarationsDict[category] {
             completion(declarations)
             
-        } else if category ==  .favorites {
+        } else if category == .favorites {
             let faves = allDeclarations.filter { $0.isFavorite == true }
                completion(faves)
         }  else {

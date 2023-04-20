@@ -20,8 +20,6 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     case peace
     case wealth
     case selfcontrol
-    case positivity
-    case anxiety
     case addiction
     case depression
     case loneliness
@@ -35,10 +33,10 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     static var categoryOrder: [DeclarationCategory] = [
         .favorites,
         .myOwn,
-        .anxiety,
         .love,
-        .faith,
+        .gratitude,
         .peace,
+        .faith,
         .wealth,
         .motivation,
         .discipline,
@@ -46,13 +44,11 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
         .addiction,
         .depression,
         .fear,
-        .gratitude,
         .hope,
         .confidence,
         .hardtimes,
         .forgiveness,
         .loneliness,
-        .positivity,
         .selfcontrol,
         .perseverance
             ]
@@ -89,7 +85,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     
     var isPremium: Bool {
         switch self {
-        case .faith, .love, .favorites, .anxiety: return false
+        case .faith, .love, .favorites, .peace, .gratitude: return false
         default: return true
         }
     }
