@@ -46,7 +46,7 @@ struct MailView: UIViewControllerRepresentable {
     func makeUIViewController(context: UIViewControllerRepresentableContext<MailView>) -> MFMailComposeViewController {
         let vc = MFMailComposeViewController()
         vc.setSubject(NSLocalizedString("Feedback for SpeakLife - Daily Bible Promises(iOS app)", comment: "mail title"))
-        vc.setToRecipients(["foreveryoungco@icloud.com"])
+        vc.setToRecipients(["speaklifebibleapp@gmail.com"])
         vc.mailComposeDelegate = context.coordinator
         // TO DO: -  maybe set version  and iOS number
         return vc
