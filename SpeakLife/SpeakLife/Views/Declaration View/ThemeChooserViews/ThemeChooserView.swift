@@ -42,24 +42,29 @@ struct ThemeChooserView: View {
         self.isPresentingPremiumView = true
     }
     
+    @ViewBuilder
+    private var textHeader: some View {
+        Spacer()
+        
+        Text("Pick from a selection of fonts and backgrounds to personalize your theme.")
+            .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .body))
+            .foregroundColor(Constants.DALightBlue)
+            .multilineTextAlignment(.center)
+            .lineLimit(2)
+        
+        Spacer()
+        
+        Text("Select Font")
+            .font(.body)
+            .fontWeight(.semibold)
+            .foregroundColor(Constants.DALightBlue)
+    }
+    
     private func themeChooserBodyNew(size: CGSize) -> some View {
         NavigationView {
             ScrollView {
                 
-                Spacer()
-                
-                Text("Pick from a selection of fonts and backgrounds to personalize your theme.")
-                    .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .body))
-                    .foregroundColor(Constants.DALightBlue)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(2)
-                
-                Spacer()
-                
-                Text("Select Font")
-                    .font(.body)
-                    .fontWeight(.semibold)
-                    .foregroundColor(Constants.DALightBlue)
+                textHeader
                 
                 fontChooser(size: size)
                 
