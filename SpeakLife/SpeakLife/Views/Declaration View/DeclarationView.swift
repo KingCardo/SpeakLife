@@ -139,9 +139,14 @@ struct DeclarationView: View {
     
     private func showReview() {
         DispatchQueue.main.async {
-            if let url = URL(string: "\(APP.Product.urlID)?action=write-review") {
-                UIApplication.shared.open(url)
+            if let scene = UIApplication.shared.connectedScenes
+                .first(where: { $0.activationState == .foregroundActive })
+                as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: scene)
             }
+//            if let url = URL(string: "\(APP.Product.urlID)?action=write-review") {
+//                UIApplication.shared.open(url)
+//            }
         }
     }
     
