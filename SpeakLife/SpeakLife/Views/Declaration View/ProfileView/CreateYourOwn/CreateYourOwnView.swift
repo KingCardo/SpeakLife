@@ -26,9 +26,10 @@ struct AlertView: View {
                         .resizable()
                         .frame(width: 25, height: 25)
                         .aspectRatio(contentMode: .fit)
+                        .foregroundColor(Constants.DAMidBlue)
                 }
             }
-            Text("Write your own affirmations. These are private to you.", comment: "own affirmations alert")
+            Text("Add entry... These are private to you.", comment: "own affirmations alert")
                 .font(.callout)
                 .multilineTextAlignment(.center)
             TextEditor(text: $alertText)
@@ -74,7 +75,6 @@ struct CreateYourOwnView: View {
     @State private var alertText = ""
     
     init() {
-        print("RWRW")
         Analytics.logEvent(Event.createYourOwnTapped, parameters: nil)
     }
     var body: some View {
@@ -93,6 +93,9 @@ struct CreateYourOwnView: View {
             loadCreateOwn()
             Analytics.logEvent(Event.createYourOwnTapped, parameters: nil)
         }
+//        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+//            self.showShareSheet = false
+//        }
     }
     
     @ViewBuilder
@@ -110,7 +113,7 @@ struct CreateYourOwnView: View {
                 
                 spacerView(16)
                 
-                Text("You haven't added any of your own affirmations yet.", comment: "add your own, none yet text")
+                Text("You haven't added any journal entries yet.", comment: "add your own, none yet text")
                     .font(.callout)
                     .lineLimit(nil)
                 
@@ -162,7 +165,7 @@ struct CreateYourOwnView: View {
     
     private var addAffirmationsButton: some View {
         Button(action: showAffirmationAlert) {
-            Text("Add your own affirmation", comment: "add your own affirmation")
+            Text("Add a private entry", comment: "add your own affirmation")
                 .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
                 .foregroundColor(.white)
                 .background(Constants.DAMidBlue)

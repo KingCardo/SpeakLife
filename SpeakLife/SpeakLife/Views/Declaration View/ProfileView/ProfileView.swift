@@ -179,7 +179,7 @@ struct ProfileView: View {
                 .opacity(0)
                 .background(
                     HStack {
-                        Text("Create Your Own", comment: "create your own title")
+                        Text("Journal", comment: "create your own title")
                         Spacer()
                         Image(systemName: "chevron.right")
                             .resizable()

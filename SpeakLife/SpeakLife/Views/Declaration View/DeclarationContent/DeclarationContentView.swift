@@ -17,7 +17,8 @@ struct DeclarationContentView: View {
     @State private var isFavorite: Bool = false
     @State private var showShareSheet = false
     @State private var image: UIImage?
-   // @State private var showScreenshotLabel = false
+    @State private var showScreenshotLabel = false
+    @State private var showEntryView = false
     
     private let degrees: Double = 90
     
@@ -25,6 +26,21 @@ struct DeclarationContentView: View {
          viewModel: DeclarationViewModel) {
         self.themeViewModel  = themeViewModel
         self.viewModel = viewModel
+    }
+    
+    private var journalView: some View {
+        NavigationLink(LocalizedStringKey("Create Your Own"), destination: LazyView(CreateYourOwnView()))
+            .opacity(0)
+            .background(
+                HStack {
+                    Text("Journal", comment: "create your own title")
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 8)
+                        .foregroundColor(Constants.DAMidBlue)
+                })
     }
     
     @ViewBuilder
@@ -47,9 +63,11 @@ struct DeclarationContentView: View {
                                                     .resizable()
                                                     .scaledToFit()
                                             }
-                                ShareSheet(activityItems: [image, "\nSpeakLife App: \(APP.Product.urlID)"])
+                                ShareSheet(activityItems: [image])
                             }
-                            
+                            .sheet(isPresented: $showEntryView) {
+                                CreateYourOwnView()
+                            }
                         
                         if !showShareSheet {
                             intentVstack(declaration: declaration, geometry)
@@ -57,11 +75,12 @@ struct DeclarationContentView: View {
                         }
                         
                         if isFavorite {
-                            withAnimation {
+                            withAnimation(.spring(response: 0.34, dampingFraction: 0.8, blendDuration: 0.5)) {
                                 HeartView()
                                     .scaleEffect(1.2)
                                     .transition(.scale)
                             }
+
                             .rotationEffect(Angle(degrees: -degrees))
                             .onAppear {
                                 let delay = RunLoop.SchedulerTimeType(.init(timeIntervalSinceNow: 0.3))
@@ -83,19 +102,11 @@ struct DeclarationContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
             self.showShareSheet = false
         }
-//        .onReceive(NotificationCenter.default.publisher(for: UIApplication.userDidTakeScreenshotNotification)) { _ in
-//            showScreenshotLabel = true
-//
-//            // Hide the label after 2 seconds
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//                showScreenshotLabel = false
-//            }
-//        }
     }
     
     private func intentVstack(declaration: Declaration, _ geometry: GeometryProxy) -> some View {
             VStack {
-               // screenshotLabel()
+                screenshotLabel()
                 Spacer()
                 intentStackButtons(declaration: declaration)
                 Spacer()
@@ -104,19 +115,20 @@ struct DeclarationContentView: View {
             }
     }
     
-//    @ViewBuilder
-//    private func screenshotLabel() -> some View {
-//        if showScreenshotLabel {
-//             Text("@speaklife.biblepromises")
-//                .font(.caption)
-//                .foregroundColor(Color.white)
-//                .padding()
-//                .background(Color.black.opacity(0.7))
-//                .cornerRadius(12)
-//                .animation(.easeInOut)
-//                .transition(.opacity)
-//        }
-//    }
+    @ViewBuilder
+    private func screenshotLabel() -> some View {
+            if showScreenshotLabel {
+                 Text("@speaklife_biblepromises")
+                    .font(.caption)
+                    .foregroundColor(Color.white)
+                    .padding()
+                    .background(Color.black.opacity(0.7))
+                    .cornerRadius(12)
+                   // .animation(.easeInOut)
+                    .transition(.opacity)
+        }
+       
+    }
     
     
     private func quoteLabel(_ declaration: Declaration, _ geometry: GeometryProxy) -> some View  {
@@ -143,16 +155,32 @@ struct DeclarationContentView: View {
         HStack(spacing: 24) {
             
             CapsuleImageButton(title: "tray.and.arrow.up") {
-                image = UIApplication.shared.windows.first?.rootViewController?.view.toImage()
-                self.showShareSheet = true
+                withAnimation {
+                    showScreenshotLabel = true
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    image = UIApplication.shared.windows.first?.rootViewController?.view.toImage()
+                    self.showShareSheet = true
+                }
+               
                 Analytics.logEvent(Event.shareTapped, parameters: nil)
                 Selection.shared.selectionFeedback()
+                // Hide the label after 2 seconds
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    showScreenshotLabel = false
+                }
             }
             
             CapsuleImageButton(title: declaration.isFavorite ? "heart.fill" : "heart") {
                 favorite(declaration)
                 self.isFavorite = declaration.isFavorite ? false : true
                 Analytics.logEvent(Event.favoriteTapped, parameters: nil)
+                Selection.shared.selectionFeedback()
+            }
+            
+            CapsuleImageButton(title: "doc.fill.badge.plus") {
+                showEntryView = true
+                Analytics.logEvent(Event.createYourOwnTapped, parameters: nil)
                 Selection.shared.selectionFeedback()
             }
             
