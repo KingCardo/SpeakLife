@@ -106,4 +106,6 @@ struct Declaration: Codable, Identifiable, Hashable {
     var id: String {
         text + category.rawValue
     }
+    
+    var lastEdit: Date?
 }
