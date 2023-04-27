@@ -93,9 +93,6 @@ struct CreateYourOwnView: View {
             loadCreateOwn()
             Analytics.logEvent(Event.createYourOwnTapped, parameters: nil)
         }
-//        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-//            self.showShareSheet = false
-//        }
     }
     
     @ViewBuilder
@@ -131,7 +128,7 @@ struct CreateYourOwnView: View {
                 
                 List {
                     ForEach(declarationStore.createOwn) { declaration in
-                        ContentRow(declaration.text, isEditable: true) { declarationString in
+                        ContentRow(declaration, isEditable: true) { declarationString in
                             edit(declarationString)
                         }
                         .onTapGesture {

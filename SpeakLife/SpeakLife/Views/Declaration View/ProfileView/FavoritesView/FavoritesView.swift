@@ -12,19 +12,23 @@ struct ContentRow: View {
     @Environment(\.colorScheme) var colorScheme
     @State private var showShareSheet = false
     var isEditable: Bool
-    var favorite: String
+    var declaration: Declaration
     var callback: ((String) -> Void)?
     
-    init(_ favorite: String, isEditable: Bool = false, callback: ((String) -> Void)? = nil) {
-        self.favorite = favorite
+    init(_ favorite: Declaration, isEditable: Bool = false, callback: ((String) -> Void)? = nil) {
+        self.declaration = favorite
         self.isEditable = isEditable
         self.callback = callback
     }
     
     var body: some View {
         HStack {
-            Text(favorite)
-                .lineLimit(nil)
+            Text(declaration.text)
+                .lineLimit(2)
+            Spacer()
+            
+            Text(declaration.lastEdit?.toPrettyString() ?? "")
+            
             Spacer()
             
             Image(systemName: "ellipsis.circle.fill")
@@ -34,14 +38,14 @@ struct ContentRow: View {
                     }
                     if isEditable {
                         Button {
-                            edit(favorite)
+                            edit(declaration.text)
                         } label: {
                             Label(LocalizedStringKey("Edit"), systemImage: "pencil.circle.fill")
                         }
                     }
                 }
                 .sheet(isPresented: $showShareSheet, content: {
-                    ShareSheet(activityItems: ["\(favorite) \nSpeakLife App: \(APP.Product.urlID)"])
+                    ShareSheet(activityItems: ["\(declaration) \nSpeakLife App: \(APP.Product.urlID)"])
                 })
                 .foregroundColor(colorScheme  == .dark ? .white : Constants.DAMidBlue)
                 .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
@@ -103,7 +107,7 @@ struct FavoritesView: View {
                 .frame(height: 16)
             List {
                 ForEach(declarationStore.favorites) { favorite in
-                    ContentRow(favorite.text)
+                    ContentRow(favorite)
                         .onTapGesture {
                             withAnimation {
                                 declarationStore.choose(favorite)
