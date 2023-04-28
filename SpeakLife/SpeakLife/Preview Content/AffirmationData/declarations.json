@@ -1,5 +1,5 @@
 {
-    "count": 1273,
+    "count": 452,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -2548,30 +2548,207 @@
             "isFavorite": false,
             "category": "health"
         },
-        {"text": "For great is your love, reaching to the heavens; your faithfulness reaches to the skies." , "book": "Psalm 57:10 NIV", "isFavorite": false, "category": "love"},
-        {"text": "The Lord is good, a refuge in times of trouble. He cares for those who trust in him," , "book": "Nahum 1:7 NIV", "isFavorite": false, "category": "love"},
-        {"text": "No, in all these things we are more than conquerors through him who loved us. For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord." , "book": "Romans 8:37-39 NIV", "isFavorite": false, "category": "love"},
-        {"text": "But you are a forgiving God, gracious and compassionate, slow to anger and abounding in love. Therefore you did not desert them," , "book": "Nehemiah 9:17 NIV", "isFavorite": false, "category": "love"},
-        {"text": "Praise the Lord, my soul; all my inmost being, praise his holy name. Praise the Lord, my soul, and forget not all his benefits— who forgives all your sins and heals all your diseases," , "book": "Psalm 103:1-3 NIV", "isFavorite": false, "category": "love"},
-        {"text": "As a father has compassion on his children, so the Lord has compassion on those who fear him;" , "book": "Psalm 103:13 NIV", "isFavorite": false, "category": "love"},
-        {"text": "But because of his great love for us, God, who is rich in mercy, made us alive with Christ even when we were dead in transgressions—it is by grace you have been saved." , "book": "Ephesians 2:4-5 NIV", "isFavorite": false, "category": "love"},
-        {"text": "Your love, Lord, reaches to the heavens, your faithfulness to the skies." , "book": "Psalm 36:5 NIV", "isFavorite": false, "category": "love"},
-        {"text": "May the Lord direct your hearts into God’s love and Christ’s perseverance." , "book": "2 Thessalonians 3:5 NIV", "isFavorite": false, "category": "love"},
-        {"text": "For the Lord loves the just and will not forsake his faithful ones. Wrongdoers will be completely destroyed; the offspring of the wicked will perish." , "book": "Psalm 37:28 NIV", "isFavorite": false, "category": "love"},
-        {"text": "Whoever does not love does not know God, because God is love." , "book": "1 John 4:8 NIV", "isFavorite": false, "category": "love"},
-        {"text": "The Lord is compassionate and gracious, slow to anger, abounding in love." , "book": "Psalm 103:8 NIV", "isFavorite": false, "category": "love"},
-        {"text": "How priceless is your unfailing love, O God! People take refuge in the shadow of your wings." , "book": "Psalm 36:7 NIV", "isFavorite": false, "category": "love"},
-        {"text": "But you, Lord, are a compassionate and gracious God, slow to anger, abounding in love and faithfulness." , "book": "Psalm 86:15 NIV", "isFavorite": false, "category": "love"},
-        {"text": "Who shall separate us from the love of Christ? Shall trouble or hardship or persecution or famine or nakedness or danger or sword?" , "book": "Romans 8:35 NIV", "isFavorite": false, "category": "love"},
-        {"text": "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord." , "book": "Romans 8:38-39 NIV", "isFavorite": false, "category": "love"},
-        {"text": "For God did not send his Son into the world to condemn the world, but to save the world through him." , "book": "John 3:17 NIV", "isFavorite": false, "category": "love"},
-        {"text": "But you, Lord, are a compassionate and gracious God, slow to anger, abounding in love and faithfulness." , "book": "Psalm 86:15 NIV", "isFavorite": false, "category": "love"},
-        {"text": "This is love: not that we loved God, but that he loved us and sent his Son as an atoning sacrifice for our sins." , "book": "1 John 4:10 NIV", "isFavorite": false, "category": "love"},
-        {"text": "The Lord appeared to us in the past, saying: 'I have loved you with an everlasting love; I have drawn you with unfailing kindness.'" , "book": "Jeremiah 31:3 NIV", "isFavorite": false, "category": "love"},
-        {"text": "Give thanks to the Lord, for he is good; his love endures forever." , "book": "1 Chronicles 16:34 NIV", "isFavorite": false, "category": "love"},
-        {"text": "In this is love, not that we have loved God but that he loved us and sent his Son to be the propitiation for our sins." , "book": "1 John 4:10 ESV", "isFavorite": false, "category": "love"},
-        {"text": "For as high as the heavens are above the earth, so great is his love for those who fear him;" , "book": "Psalm 103:11 NIV", "isFavorite": false, "category": "love"},
-        {"text": "And so we know and rely on the love God has for us. God is love. Whoever lives in love lives in God, and God in them." , "book": "1 John 4:16 NIV", "isFavorite": false, "category": "love"},
+        {
+            "text": "For great is your love, reaching to the heavens; your faithfulness reaches to the skies." ,
+            "book": "Psalm 57:10 NIV",
+            "isFavorite": false,
+            "category": "love"
+        },
+        {
+            "text": "The Lord is good, a refuge in times of trouble. He cares for those who trust in him," ,
+            "book": "Nahum 1:7 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "No, in all these things we are more than conquerors through him who loved us. For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord." ,
+            "book": "Romans 8:37-39 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "But you are a forgiving God, gracious and compassionate, slow to anger and abounding in love. Therefore you did not desert them," ,
+            "book": "Nehemiah 9:17 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "Praise the Lord, my soul; all my inmost being, praise his holy name. Praise the Lord, my soul, and forget not all his benefits— who forgives all your sins and heals all your diseases," ,
+            "book": "Psalm 103:1-3 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "As a father has compassion on his children, so the Lord has compassion on those who fear him;" ,
+            "book": "Psalm 103:13 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "But because of his great love for us, God, who is rich in mercy, made us alive with Christ even when we were dead in transgressions—it is by grace you have been saved." ,
+            "book": "Ephesians 2:4-5 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "Your love, Lord, reaches to the heavens, your faithfulness to the skies." ,
+            "book": "Psalm 36:5 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "May the Lord direct your hearts into God’s love and Christ’s perseverance." ,
+            "book": "2 Thessalonians 3:5 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "For the Lord loves the just and will not forsake his faithful ones. Wrongdoers will be completely destroyed; the offspring of the wicked will perish." ,
+            "book": "Psalm 37:28 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "Whoever does not love does not know God, because God is love." ,
+            "book": "1 John 4:8 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "The Lord is compassionate and gracious, slow to anger, abounding in love." ,
+            "book": "Psalm 103:8 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "How priceless is your unfailing love, O God! People take refuge in the shadow of your wings." ,
+            "book": "Psalm 36:7 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "But you, Lord, are a compassionate and gracious God, slow to anger, abounding in love and faithfulness." ,
+            "book": "Psalm 86:15 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "Who shall separate us from the love of Christ? Shall trouble or hardship or persecution or famine or nakedness or danger or sword?" ,
+            "book": "Romans 8:35 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.",
+            "book": "Romans 8:38-39 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "For God did not send his Son into the world to condemn the world, but to save the world through him.",
+            "book": "John 3:17 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "But you, Lord, are a compassionate and gracious God, slow to anger, abounding in love and faithfulness.",
+            "book": "Psalm 86:15 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "This is love: not that we loved God, but that he loved us and sent his Son as an atoning sacrifice for our sins.",
+            "book": "1 John 4:10 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "The Lord appeared to us in the past, saying: 'I have loved you with an everlasting love; I have drawn you with unfailing kindness.'",
+            "book": "Jeremiah 31:3 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "Give thanks to the Lord, for he is good; his love endures forever.",
+            "book": "1 Chronicles 16:34 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "In this is love, not that we have loved God but that he loved us and sent his Son to be the propitiation for our sins." ,
+            "book": "1 John 4:10 ESV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "For as high as the heavens are above the earth, so great is his love for those who fear him;" ,
+            "book": "Psalm 103:11 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "And so we know and rely on the love God has for us. God is love. Whoever lives in love lives in God, and God in them." ,
+            "book": "1 John 4:16 NIV",
+            "isFavorite": false,
+            "category": "love"},
+        {
+            "text": "Therefore, if anyone is in Christ, he is a new creation. The old has passed away; behold, the new has come." ,
+            "book": "2 Corinthians 5:17 ESV",
+            "isFavorite": false,
+            "category": "identity"},
+        {
+            "text": "But you are a chosen race, a royal priesthood, a holy nation, a people for his own possession, that you may proclaim the excellencies of him who called you out of darkness into his marvelous light." ,
+            "book": "1 Peter 2:9 ESV",
+            "isFavorite": false,
+            "category": "identity"},
+        {
+            "text": "So God created man in his own image, in the image of God he created him; male and female he created them." ,
+            "book": "Genesis 1:27 ESV",
+            "isFavorite": false,
+            "category": "identity"},
+        {
+            "text": "I have been crucified with Christ. It is no longer I who live, but Christ who lives in me. And the life I now live in the flesh I live by faith in the Son of God, who loved me and gave himself for me." ,
+            "book": "Galatians 2:20 ESV",
+            "isFavorite": false,
+            "category": "identity"},
+        {
+            "text": "Or do you not know that your body is a temple of the Holy Spirit within you, whom you have from God? You are not your own, for you were bought with a price. So glorify God in your body." ,
+            "book": "1 Corinthians 6:19-20 ESV",
+            "isFavorite": false,
+            "category": "identity"},
+        {
+            "text": "For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope." ,
+            "book": "Jeremiah 29:11 ESV",
+            "isFavorite": false,
+            "category": "identity"},
+        {
+            "text": "If then you have been raised with Christ, seek the things that are above, where Christ is, seated at the right hand of God. Set your minds on things that are above, not on things that are on earth. For you have died, and your life is hidden with Christ in God. When Christ who is your life appears, then you also will appear with him in glory." ,
+            "book": "Colossians 3:1-4 ESV",
+            "isFavorite": false,
+            "category": "identity"},
+        {
+            "text": "I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing.",
+            "book": "John 15:5 ESV",
+            "isFavorite": false,
+            "category": "identity"},
+        {
+            "text": "Know that the Lord, he is God! It is he who made us, and we are his; we are his people, and the sheep of his pasture." ,
+            "book": "Psalm 100:3 ESV",
+            "isFavorite": false,
+            "category": "identity"},
+        {
+            "text": "We know that our old self was crucified with him in order that the body of sin might be brought to nothing, so that we would no longer be enslaved to sin." ,
+            "book": "Romans 6:6 ESV",
+            "isFavorite": false,
+            "category": "identity"},
+        {
+            "text": "For all who are led by the Spirit of God are sons of God.",
+            "book": "Romans 8:14 ESV",
+            "isFavorite": false,
+            "category": "identity"},
+        {
+            "text": "But to all who did receive him, who believed in his name, he gave the right to become children of God,",
+            "book": "John 1:12 ESV",
+            "isFavorite": false,
+            "category": "identity"},
+        {
+            "text": "See what kind of love the Father has given to us, that we should be called children of God; and so we are. The reason why the world does not know us is that it did not know him.",
+            "book": "1 John 3:1 ESV",
+            "isFavorite": false,
+            "category": "identity"},
+        {
+            "text": "But put on the Lord Jesus Christ, and make no provision for the flesh, to gratify its desires.",
+            "book": "Romans 13:14 ESV",
+            "isFavorite": false,
+            "category": "identity"},
+        {
+            "text": "Therefore, if you have been raised with Christ, seek the things that are above, where Christ is, seated at the right hand of God.",
+            "book": "Colossians 3:1 ESV",
+            "isFavorite": false,
+            "category": "identity"},
+        {
+            "text": "For at one time you were darkness, but now you are light in the Lord. Walk as children of light.",
+            "book": "Ephesians 5:8 ESV",
+            "isFavorite": false,
+            "category": "identity"},
         
     ]
 }

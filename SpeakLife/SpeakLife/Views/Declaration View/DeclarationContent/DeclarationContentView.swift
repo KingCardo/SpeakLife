@@ -124,7 +124,6 @@ struct DeclarationContentView: View {
                     .padding()
                     .background(Color.black.opacity(0.7))
                     .cornerRadius(12)
-                   // .animation(.easeInOut)
                     .transition(.opacity)
         }
        

@@ -29,10 +29,12 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     case forgiveness
     case discipline
     case perseverance
+    case identity
     
     static var categoryOrder: [DeclarationCategory] = [
         .favorites,
         .myOwn,
+        .identity,
         .love,
         .gratitude,
         .peace,
@@ -85,7 +87,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     
     var isPremium: Bool {
         switch self {
-        case .faith, .love, .favorites, .peace, .gratitude: return false
+        case .faith, .love, .favorites, .peace, .identity: return false
         default: return true
         }
     }

@@ -36,6 +36,7 @@ struct AlertView: View {
                 .font(.custom("HelveticaNeue", size: 13))
                 .foregroundColor(colorScheme == .dark ? .white : .black)
                 .cornerRadius(10)
+            
             Button(action: dismiss) {
                 Text("Save", comment: "save")
                     .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))

@@ -96,7 +96,7 @@ final class APIClient: APIService {
             let needsSync = array.count != declarationCountBE
             print(array.count, declarationCountBE, "RWRW count")
             print(needsSync, "RWRW  needs sync")
-            declarationCountBE = array.count //welcome.count
+            declarationCountBE = array.count
             completion(array, nil, needsSync)
             return
         } catch {
