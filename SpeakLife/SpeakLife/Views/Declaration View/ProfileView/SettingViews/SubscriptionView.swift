@@ -94,7 +94,7 @@ struct SubscriptionView: View {
                 Spacer()
                     .frame(height: 24)
                 
-                Text("We're a small knit, family operation focused on bringing the Word of God to the world!", comment: "premium view title")
+                Text("We're focused on bringing the Word of God to the world!", comment: "premium view title")
                     .padding(.all)
                     .font(.caption)
                     .foregroundColor(.gray)
@@ -157,13 +157,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        Button("Try Free & Subscribe".uppercased(), action: makePurchase)
-            .font(.callout)
-            .foregroundColor(Color.white)
-            .frame(width: size.width * 0.75 , height: 70)
-            .padding(.horizontal)
-            .background(Capsule().fill(gradient))
-            .cornerRadius(20)
+        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: "Try Free & Subscribe", action: makePurchase)
     }
     
     private func restore() {

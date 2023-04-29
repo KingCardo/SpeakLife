@@ -33,7 +33,13 @@ final class DeclarationViewModel: ObservableObject {
         }
     }
     
-    @Published var createOwn: [Declaration] = []
+    @Published var createOwn: [Declaration] = [] {
+        didSet {
+            if selectedCategory == .myOwn {
+                declarations = createOwn.shuffled()
+            }
+        }
+    }
     
     @Published var isFetching = false
     
@@ -188,11 +194,7 @@ final class DeclarationViewModel: ObservableObject {
     func removeOwn(at indexSet: IndexSet) {
         _ = indexSet.map { int in
             let declaration = createOwn[int]
-            allDeclarations.removeAll(where: { $0.id == declaration.id })
             removeOwn(declaration: declaration)
-            service.save(declarations: allDeclarations) { [weak self] success in
-                self?.refreshCreateOwn()
-            }
         }
     }
     
