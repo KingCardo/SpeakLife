@@ -1,5 +1,5 @@
 {
-    "count": 452,
+    "count": 472,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -2749,6 +2749,126 @@
             "book": "Ephesians 5:8 ESV",
             "isFavorite": false,
             "category": "identity"},
-        
+        {
+            "text": "Therefore a man shall leave his father and his mother and hold fast to his wife, and they shall become one flesh.",
+            "book": "Genesis 2:24 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Let marriage be held in honor among all, and let the marriage bed be undefiled, for God will judge the sexually immoral and adulterous.",
+            "book": "Hebrews 13:4 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Husbands, love your wives, as Christ loved the church and gave himself up for her.",
+            "book": "Ephesians 5:25 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Therefore what God has joined together, let no one separate.",
+            "book": "Mark 10:9 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Love is patient and kind; love does not envy or boast; it is not arrogant or rude. It does not insist on its own way; it",
+            "book": "1 Corinthians 13:4-5 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "An excellent wife who can find? She is far more precious than jewels.",
+            "book": "Proverbs 31:10 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Two are better than one, because they have a good reward for their toil.",
+            "book": "Ecclesiastes 4:9 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Wives, submit to your own husbands, as to the Lord.",
+            "book": "Ephesians 5:22 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Do not be unequally yoked with unbelievers. For what partnership has righteousness with lawlessness? Or what fellowship has light with darkness?",
+            "book": "2 Corinthians 6:14 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "However, let each one of you love his wife as himself, and let the wife see that she respects her husband.",
+            "book": "Ephesians 5:33 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "So God created man in his own image, in the image of God he created him; male and female he created them.",
+            "book": "Genesis 1:27 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Therefore a man shall leave his father and mother and hold fast to his wife, and the two shall become one flesh.",
+            "book": "Ephesians 5:31 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "For this reason a man will leave his father and mother and be united to his wife, and the two will become one flesh.",
+            "book": "Matthew 19:5 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Likewise, husbands, live with your wives in an understanding way, showing honor to the woman as the weaker vessel, since they are heirs with you of the grace of life, so that your prayers may not be hindered.",
+            "book": "1 Peter 3:7 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Let each of you look not only to his own interests, but also to the interests of others.",
+            "book": "Philippians 2:4 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Do not deprive one another, except perhaps by agreement for a limited time, that you may devote yourselves to prayer; but then come together again, so that Satan may not tempt you because of your lack of self-control.",
+            "book": "1 Corinthians 7:5 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Let all bitterness and wrath and anger and clamor and slander be put away from you, along with all malice.",
+            "book": "Ephesians 4:31 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Therefore, confess your sins to one another and pray for one another, that you may be healed. The prayer of a righteous person has great power as it is working.",
+            "book": "James 5:16 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Wives, submit to your husbands, as is fitting in the Lord. Husbands, love your wives, and do not be harsh with them.",
+            "book": "Colossians 3:18-19 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "But because of the temptation to sexual immorality, each man should have his own wife and each woman her own husband.",
+            "book": "1 Corinthians 7:2 ESV",
+            "isFavorite": false,
+            "category": "marriage"
+        },
     ]
+    
 }

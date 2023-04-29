@@ -30,6 +30,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     case discipline
     case perseverance
     case identity
+    case marriage
     
     static var categoryOrder: [DeclarationCategory] = [
         .favorites,
@@ -45,6 +46,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
         .health,
         .addiction,
         .depression,
+        .marriage,
         .fear,
         .hope,
         .confidence,

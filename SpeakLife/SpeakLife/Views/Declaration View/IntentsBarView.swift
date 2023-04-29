@@ -14,6 +14,7 @@ struct IntentsBarView: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var themeStore: ThemeViewModel
+    @EnvironmentObject var appState: AppState
     
     @ObservedObject var viewModel: DeclarationViewModel
     @ObservedObject var themeViewModel: ThemeViewModel
@@ -25,7 +26,6 @@ struct IntentsBarView: View {
     
     var body: some View {
         HStack(spacing: 8) {
-            
             Button {
                 chooseCategory()
                 Selection.shared.selectionFeedback()
@@ -35,9 +35,15 @@ struct IntentsBarView: View {
                         .font(.callout)
                     Text(viewModel.selectedCategory.categoryTitle)
                         .font(.callout)
+                    if appState.newCategoriesAdded {
+                        Badge()
+                    }
                 }
             }.sheet(isPresented: $isPresentingCategoryChooser, onDismiss: {
-                self.isPresentingCategoryChooser = false
+                withAnimation {
+                    self.isPresentingCategoryChooser = false
+                    self.appState.newCategoriesAdded = false
+                }
             }, content: {
                 CategoryChooserView(viewModel: viewModel)
             })
@@ -74,8 +80,7 @@ struct IntentsBarView: View {
             self.isPresentingThemeChooser = false
             self.isPresentingPremiumView = false
             self.isPresentingCategoryChooser = false
-                }
-        
+        }
         .foregroundColor(.white)
     }
     

@@ -19,10 +19,10 @@ struct Benefit: Identifiable  {
     static var premiumBenefits: [Benefit] = [
         Benefit(text: "Try 3 days free. Cancel anytime"),
         Benefit(text: "Reminders to renew your mindset with scripture from the Creator of the Universe!"),
-        //Benefit(text: "Reminders to revamp your mindset."),
         Benefit(text: "Categories for any situation."),
         Benefit(text: "Access to all themes and new features on the way"),
-        Benefit(text: "Choose amount comfortable for you! Unlocks all premium features.")
+        Benefit(text: "Choose amount comfortable for you! Unlocks all premium features."),
+        Benefit(text: "Enjoy an ad free experience."),
 //        Benefit(text: "Bible promises that will transform your day and life!"),
 //        Benefit(text: "Access to all categories"),
 //        Benefit(text: "Create and schedule your own Bible promises or affirmations."),
@@ -70,20 +70,16 @@ struct SubscriptionView: View {
     
     private func goPremiumView(size: CGSize) -> some View  {
         ZStack {
+            LinearGradient(gradient: Gradient(colors: [.purple, .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                       .edgesIgnoringSafeArea(.all)
             VStack  {
-                Spacer()
-                    .frame(width: 8, height: 36)
-                Text("Try Premium", comment: "premium view title")
-                    .font(.largeTitle)
+                Text("Upgrade to", comment: "premium view title")
+                    .font(.caption)
+                    .foregroundColor(.white)
                 Spacer()
                     .frame(height: 36)
                 VStack {
-                    Image(systemName: "crown.fill")
-                        .resizable()
-                        .frame(width: 80, height: 80)
-                        .foregroundColor(Color.yellow)
-                        .scaledToFit()
-                    Text("Unlock everything", comment: "unlock everything premium view")
+                    Text("SpeakLife Premium", comment: "unlock everything premium view")
                         .font(.title)
                         .fontWeight(.bold)
                 }
@@ -94,6 +90,14 @@ struct SubscriptionView: View {
                     .frame(height: 40)
                 
                 goPremiumStack(size: size)
+                
+                Spacer()
+                    .frame(height: 24)
+                
+                Text("We're a small knit, family operation focused on bringing the Word of God to the world!", comment: "premium view title")
+                    .padding(.all)
+                    .font(.caption)
+                    .foregroundColor(.gray)
             }
             
             if declarationStore.isPurchasing {
@@ -107,7 +111,7 @@ struct SubscriptionView: View {
     
     
     private func goPremiumStack(size: CGSize) -> some View  {
-        let gradient = Gradient(colors: [Constants.DAMidBlue,  .blue])
+        let gradient = Gradient(colors: [Constants.DAMidBlue, .cyan])
         let linearGradient = LinearGradient(gradient: gradient,
                                                 startPoint: .top,
                                                 endPoint: .bottom)

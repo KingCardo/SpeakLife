@@ -11,6 +11,8 @@ final class AppState: ObservableObject {
     @Published var rootViewId = UUID()
     @AppStorage("onboarded") var isOnboarded = false
     @AppStorage("newPrayersAdded") var newPrayersAdded = true
+    @AppStorage("newCategoriesAdded") var newCategoriesAdded = true
+    @AppStorage("newThemesAdded") var newThemesAdded = true
     @AppStorage("lastNotificationSetDate") var lastNotificationSetDate = Date()
     @AppStorage("notificationEnabled") var notificationEnabled = false
     @AppStorage("notificationCount") var notificationCount = 4
