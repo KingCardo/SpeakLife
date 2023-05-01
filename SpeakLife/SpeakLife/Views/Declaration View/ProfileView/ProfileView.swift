@@ -25,6 +25,7 @@ struct ProfileView: View {
     
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var declarationStore: DeclarationViewModel
+    @EnvironmentObject var appState: AppState
     
     @State var result: Result<MFMailComposeResult, Error>? = nil
     private let appVersion = "App version: \(APP.Version.stringNumber)"
@@ -61,6 +62,12 @@ struct ProfileView: View {
             }
             
             Section(header: Text("Yours").font(.caption)) {
+                HStack {
+                    tipsRow
+                    if appState.newSettingsAdded {
+                        Badge()
+                    }
+                }
                 prayerRow
                 remindersRow
                 favoritesRow
@@ -140,6 +147,26 @@ struct ProfileView: View {
                 .background(
                     HStack {
                         Text("Prayer", comment:  "Prayers row title")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 8)
+                            .foregroundColor(Constants.DAMidBlue)
+                    })
+        }
+    }
+    
+    @MainActor
+    private var tipsRow: some View {
+        HStack {
+            Image(systemName: "exclamationmark.shield.fill")
+                .foregroundColor(Constants.DAMidBlue)
+            NavigationLink(LocalizedStringKey("Tips to be Victorious"), destination: LazyView(TipsView(tips: tips)))
+                .opacity(0)
+                .background(
+                    HStack {
+                        Text("Tips to be Victorious", comment:  "Tips row title")
                         Spacer()
                         Image(systemName: "chevron.right")
                             .resizable()

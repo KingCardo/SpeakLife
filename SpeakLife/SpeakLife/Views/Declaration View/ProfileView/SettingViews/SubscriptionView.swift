@@ -94,7 +94,7 @@ struct SubscriptionView: View {
                 Spacer()
                     .frame(height: 24)
                 
-                Text("We're focused on bringing the Word of God to the world!", comment: "premium view title")
+                Text("We're focused on bringing the Word of God to the world! Put on all of God’s armor so that you will be able to stand firm against all strategies of the devil. For we are not fighting against flesh-and-blood enemies, but against evil rulers and authorities of the unseen world, against mighty powers in this dark world, and against evil spirits in the heavenly places.", comment: "premium view title")
                     .padding(.all)
                     .font(.caption)
                     .foregroundColor(.gray)

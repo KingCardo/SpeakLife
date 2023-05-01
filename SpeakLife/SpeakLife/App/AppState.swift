@@ -13,6 +13,7 @@ final class AppState: ObservableObject {
     @AppStorage("newPrayersAdded") var newPrayersAdded = true
     @AppStorage("newCategoriesAdded") var newCategoriesAdded = true
     @AppStorage("newThemesAdded") var newThemesAdded = true
+    @AppStorage("newSettingsAdded") var newSettingsAdded = true
     @AppStorage("lastNotificationSetDate") var lastNotificationSetDate = Date()
     @AppStorage("notificationEnabled") var notificationEnabled = false
     @AppStorage("notificationCount") var notificationCount = 4

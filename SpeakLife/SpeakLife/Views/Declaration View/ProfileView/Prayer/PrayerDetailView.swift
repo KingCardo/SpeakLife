@@ -13,14 +13,17 @@ struct PrayerDetailView: View {
     let prayer: String
 
     var body: some View {
-        VStack {
-            Text(prayer)
-                .font(.title)
-                .lineSpacing(4)
-                .padding(.horizontal, 32)
-                .foregroundColor(colorScheme  == .dark ? .white : Constants.DAMidBlue)
-               
-            Spacer()
+        ZStack {
+            Gradients().cyan
+            VStack {
+                Text(prayer)
+                    .font(.title)
+                    .lineSpacing(4)
+                    .padding(.horizontal, 32)
+                    .foregroundColor(.black)
+                
+                Spacer()
+            }
         }
     }
 }
