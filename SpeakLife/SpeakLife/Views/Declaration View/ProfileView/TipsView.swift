@@ -29,7 +29,7 @@ struct TipsView: View {
             ScrollView {
                 Text("How to use Speaklife to your advantage!🛡🗡")
                     .font(.title)
-                    .foregroundColor(.primary)
+                    .foregroundColor(.black)
                 BulletList(items: tips)
                 Spacer()
             }

@@ -20,7 +20,7 @@ struct BulletList: View {
                         .foregroundColor(.blue)
                     Text(item)
                         .font(.body)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.black)
                     Spacer()
                 }
                 .padding()
