@@ -99,7 +99,6 @@ struct OnboardingView: View  {
             case .notification:
                 askNotificationPermission()
             case .widgets:
-               
                 selection = .subscription
             case .subscription:
                 dismissOnboarding()

@@ -137,7 +137,8 @@ struct SubscriptionView: View {
     
     func buy() async {
         do {
-            if try await subscriptionStore.purchaseWithID([currentSelection.rawValue]) != nil {
+            if let transaction = try await subscriptionStore.purchaseWithID([currentSelection.rawValue]) {
+                print(transaction.ownershipType, "RWRW")
                 callback?()
             }
         } catch StoreError.failedVerification {
