@@ -9,7 +9,7 @@ import SwiftUI
 
 let tips = [
     "We all go through war in this life, whether it's mental, physical, emotional or spiritual! The best thing you can do when going through your circumstance is to fight back!",
-    "Whatever situation your going through, find a collection of 3-5 scriptures that you can meditate on day and night!",
+    "Whatever situation your going through, or lying voices you may hear, find a collection of 3 or more scriptures so that you can meditate on the truth day and night!",
     "Favorite them, and create your own affirmations of how you want the circumstance to turn out, and SAY THEM OUT LOUD!",
     "Not one day here and there, but ATLEAST 3 times a day, everyday until you WIN!",
     "Your spiritual muscles need exercise just like your body, don't expect a six pack after one workout.",
