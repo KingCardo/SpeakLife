@@ -166,7 +166,7 @@ struct ProfileView: View {
                 .opacity(0)
                 .background(
                     HStack {
-                        Text("Tips to be Victorious", comment:  "Tips row title")
+                        Text("Tips on how to use SpeakLife", comment:  "Tips row title")
                         Spacer()
                         Image(systemName: "chevron.right")
                             .resizable()
