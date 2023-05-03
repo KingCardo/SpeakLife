@@ -112,11 +112,15 @@ struct ThemeChooserView: View {
                 self.showingImagePicker = false
             }
             .onAppear {
-                themesViewModel.load()
+                DispatchQueue.global(qos: .userInitiated).async {
+                    themesViewModel.load()
+                }
                 UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Constants.DAMidBlue)]
             }
             .onDisappear {
-                themesViewModel.save()
+                DispatchQueue.global(qos: .userInitiated).async {
+                    themesViewModel.save()
+                }
             }
         }
     }
@@ -130,7 +134,8 @@ struct ThemeChooserView: View {
             
             VStack {
                 Image(imageString)
-                    .resizable().scaledToFill()
+                    .resizable()
+                    .scaledToFill()
                     .frame(width: dimension * 0.4, height: dimension * 0.45)
                     .clipped()
                     .cornerRadius(4)

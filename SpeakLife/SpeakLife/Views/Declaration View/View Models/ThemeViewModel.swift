@@ -66,14 +66,20 @@ final class ThemeViewModel: ObservableObject {
     
     func save() {
         guard let data = selectedTheme.encode() else { return }
-        theme = data
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.theme = data
+        }
     }
     
     func load()  {
         if let theme = Theme.decode(data: theme) {
-            selectedTheme = theme
-            selectedFont = .custom(fontString, size: 38)
-            selectedImage = theme.userSelectedImage
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.selectedTheme = theme
+                self.selectedFont = .custom(self.fontString, size: 38)
+                self.selectedImage = theme.userSelectedImage
+            }
         }
     }
 }
