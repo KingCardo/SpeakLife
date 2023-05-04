@@ -108,6 +108,10 @@ struct CategoryChooserView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                 )
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                    self.presentPremiumView = false
+                    self.presentationMode.wrappedValue.dismiss()
+                }
             }.onAppear  {
                 UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Constants.DAMidBlue)]
             }.alert(viewModel.errorMessage ?? "Error", isPresented: $viewModel.showErrorMessage) {
