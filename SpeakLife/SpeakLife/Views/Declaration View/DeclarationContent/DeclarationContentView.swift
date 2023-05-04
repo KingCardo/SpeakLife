@@ -18,7 +18,6 @@ struct DeclarationContentView: View {
     @State private var showShareSheet = false
     @State private var image: UIImage?
     @State private var showScreenshotLabel = false
-    @State private var showEntryView = false
     
     private let degrees: Double = 90
     
@@ -64,9 +63,6 @@ struct DeclarationContentView: View {
                                                     .scaledToFit()
                                             }
                                 ShareSheet(activityItems: [image])
-                            }
-                            .sheet(isPresented: $showEntryView) {
-                                CreateYourOwnView()
                             }
                         
                         if !showShareSheet {
@@ -174,12 +170,6 @@ struct DeclarationContentView: View {
                 favorite(declaration)
                 self.isFavorite = declaration.isFavorite ? false : true
                 Analytics.logEvent(Event.favoriteTapped, parameters: nil)
-                Selection.shared.selectionFeedback()
-            }
-            
-            CapsuleImageButton(title: "doc.fill.badge.plus") {
-                showEntryView = true
-                Analytics.logEvent(Event.createYourOwnTapped, parameters: nil)
                 Selection.shared.selectionFeedback()
             }
             

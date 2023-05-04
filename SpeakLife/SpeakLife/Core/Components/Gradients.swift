@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct Gradients {
     
     var purple: some View {

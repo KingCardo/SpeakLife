@@ -22,6 +22,7 @@ struct IntentsBarView: View {
     @State private var isPresentingThemeChooser = false
     @State private var isPresentingCategoryChooser = false
     @State private var isPresentingPremiumView = false
+    @State private var showEntryView = false
     
     
     var body: some View {
@@ -51,6 +52,15 @@ struct IntentsBarView: View {
             .padding([.leading, .trailing], Constants.padding)
             .background(themeStore.selectedTheme.mode == .dark ? Constants.backgroundColor : Constants.backgroundColorLight)
             .cornerRadius(Constants.cornerRadius)
+            
+            CapsuleImageButton(title: "doc.fill.badge.plus") {
+                showEntryView = true
+                Analytics.logEvent(Event.createYourOwnTapped, parameters: nil)
+                Selection.shared.selectionFeedback()
+            }
+            .sheet(isPresented: $showEntryView) {
+                CreateYourOwnView()
+            }
             
             Spacer()
             

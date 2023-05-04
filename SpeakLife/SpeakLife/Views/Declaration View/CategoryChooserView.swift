@@ -21,7 +21,7 @@ struct CategoryCell: View  {
     }
     
     @ViewBuilder
-    private func categoryCell(size: CGSize) -> some  View  {
+    private func categoryCell(size: CGSize) -> some View  {
         
         let dimension =  size.width *  0.4
         
@@ -63,6 +63,7 @@ struct CategoryChooserView: View {
     @Environment(\.colorScheme) var colorScheme
     
     @ObservedObject var viewModel: DeclarationViewModel
+    @State private var presentPremiumView  = false
     
     var twoColumnGrid = [GridItem(.flexible()), GridItem(.flexible())]
     
@@ -82,26 +83,22 @@ struct CategoryChooserView: View {
                     LazyVGrid(columns: twoColumnGrid, spacing: 16) {
                         ForEach(viewModel.allCategories) { category in
                             
-                            if category.isPremium && !subscriptionStore.isPremium {
-                                ZStack {
-                                    CategoryCell(size: geometry.size, category: category)
-                                    
-                                    NavigationLink("            ", destination: PremiumView())
-                                    
-                                }
-                                
-                            } else {
-                                CategoryCell(size: geometry.size, category: category)
-                                    .onTapGesture {
+                            CategoryCell(size: geometry.size, category: category)
+                                .onTapGesture {
+                                    if category.isPremium && !subscriptionStore.isPremium {
+                                        presentPremiumView = true
+                                    } else {
                                         viewModel.choose(category) { success in
                                             if success {
                                                 Analytics.logEvent(Event.categoryChooserTapped, parameters: ["category": category.rawValue])
                                                 self.presentationMode.wrappedValue.dismiss()
-                                            } 
+                                            }
                                         }
-                                       
                                     }
-                            }
+                                }
+                                .sheet(isPresented: $presentPremiumView) {
+                                    PremiumView()
+                                }
                         }
                     }.padding()
                 }

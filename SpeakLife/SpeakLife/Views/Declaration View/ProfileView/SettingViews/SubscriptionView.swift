@@ -70,8 +70,8 @@ struct SubscriptionView: View {
     
     private func goPremiumView(size: CGSize) -> some View  {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.purple, .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                       .edgesIgnoringSafeArea(.all)
+            Gradients().purple
+            
             VStack  {
                 Text("Upgrade to", comment: "premium view title")
                     .font(.caption)
