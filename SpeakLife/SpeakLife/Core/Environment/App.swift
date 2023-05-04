@@ -24,7 +24,7 @@ struct APP {
         }
         
         static var instagramURL: String {
-            "https://www.instagram.com/speaklife_biblepromises"
+            "https://www.instagram.com/speaklife.bibleapp"
         }
     }
 }

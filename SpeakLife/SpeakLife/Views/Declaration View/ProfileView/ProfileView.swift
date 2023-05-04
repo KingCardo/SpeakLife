@@ -282,7 +282,7 @@ struct ProfileView: View {
     private func shareApp() {
         guard let url = URL(string:  "\(APP.Product.urlID)")else { return }
         
-        let activityVC = UIActivityViewController(activityItems: ["Check out SpeakLife - Daily Bible Promises app that'll transform your life!", url], applicationActivities: nil)
+        let activityVC = UIActivityViewController(activityItems: ["Check out SpeakLife - Bible Verses app that'll transform your life!", url], applicationActivities: nil)
         let scenes = UIApplication.shared.connectedScenes
         let windowScene = scenes.first as? UIWindowScene
         let window = windowScene?.windows.first
