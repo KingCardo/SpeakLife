@@ -9,13 +9,16 @@ import SwiftUI
 
 let tips = [
     "We all go through war in this life, whether it's mental, physical, emotional or spiritual! The best thing you can do when going through your circumstance is to fight back!",
-    "Whatever situation your going through, or lying voices you may hear, find a collection of 3 or more scriptures so that you can meditate on the truth day and night!",
+    "Your spiritual muscles need exercise just like your body, don't expect a six pack after one workout.",
     "Favorite them, and create your own affirmations of how you want the circumstance to turn out, and SAY THEM OUT LOUD!",
     "Not one day here and there, but ATLEAST 3 times a day, everyday until you WIN!",
-    "Your spiritual muscles need exercise just like your body, don't expect a six pack after one workout.",
     "Give all your cares to the Lord and He will give you strength. He will never let those who are right with Him be shaken. Psalm 55:22 NLV",
-    "God is always developing the fruit of the spirit in us! Love, joy, peace, patience, kindness, goodness, gentleness, faithfulness, and self-control.",
-    "Once you understand where your being developed you can start to see the situation from God's point of view and choose to respond how he would want you to!"
+    "Regularly meditating on Bible affirmations can help reduce stress, anxiety, and negative emotions. This practice can contribute to better mental health, leading to a more balanced and contented life.",
+    "As you immerse yourself in Bible affirmations, you'll gain insight into your God-given purpose and talents. This clarity can guide you towards a more purpose-driven life, aligning your actions with your values and aspirations.",
+    "By focusing on the promises and truths found in scripture, you'll cultivate emotional resilience and the ability to conquer life's trials. The practice of Bible affirmations can serve as a powerful reminder of God's unwavering support in times of difficulty.",
+    "As you internalize the affirmations rooted in God's Word, you'll start recognizing your true worth and potential. This newfound confidence can lead to improved relationships, career growth, and the courage to pursue your dreams.",
+    "The wisdom and guidance found in scripture-based affirmations can help you make informed, faith-aligned decisions. By integrating God's Word into your daily life, you'll be better equipped to face challenges and opportunities with confidence and grace."
+    
 ]
 
 struct TipsView: View {

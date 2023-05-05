@@ -17,12 +17,12 @@ struct Benefit: Identifiable  {
     }
     
     static var premiumBenefits: [Benefit] = [
-        Benefit(text: "Try 3 days free. Cancel anytime"),
-        Benefit(text: "Reminders to renew your mindset with scripture from the Creator of the Universe!"),
-        Benefit(text: "Categories for any situation."),
-        Benefit(text: "Access to all themes and new features on the way"),
-        Benefit(text: "Choose amount comfortable for you! Unlocks all premium features."),
-        Benefit(text: "Enjoy an ad free experience."),
+        Benefit(text: "As you immerse yourself in Bible affirmations, you'll gain insight into your God-given purpose and talents. This clarity can guide you towards a more purpose-driven life, aligning your actions with your values and aspirations."),
+        Benefit(text: "Regularly meditating on Bible affirmations can help reduce stress, anxiety, and negative emotions. This practice can contribute to better mental health, leading to a more balanced and contented life."),
+        Benefit(text: "By focusing on the promises and truths found in scripture, you'll cultivate emotional resilience and the ability to conquer life's trials. The practice of Bible affirmations can serve as a powerful reminder of God's unwavering support in times of difficulty."),
+        Benefit(text: "Our app helps you develop a stronger relationship with God through daily reflection on scripture-based affirmations."),
+        Benefit(text: "As you internalize the affirmations rooted in God's Word, you'll start recognizing your true worth and potential. This newfound confidence can lead to improved relationships, career growth, and the courage to pursue your dreams."),
+        Benefit(text: "The wisdom and guidance found in scripture-based affirmations can help you make informed, faith-aligned decisions. By integrating God's Word into your daily life, you'll be better equipped to face challenges and opportunities with confidence and grace."),
 //        Benefit(text: "Bible promises that will transform your day and life!"),
 //        Benefit(text: "Access to all categories"),
 //        Benefit(text: "Create and schedule your own Bible promises or affirmations."),
@@ -39,7 +39,7 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39
     
     let size: CGSize
     var callback: (() -> Void)?
@@ -71,39 +71,42 @@ struct SubscriptionView: View {
     private func goPremiumView(size: CGSize) -> some View  {
         ZStack {
             Gradients().purple
-            
-            VStack  {
-                Text("Upgrade to", comment: "premium view title")
-                    .font(.caption)
-                    .foregroundColor(.white)
-                Spacer()
-                    .frame(height: 36)
-                VStack {
-                    Text("SpeakLife Premium", comment: "unlock everything premium view")
-                        .font(.title)
-                        .fontWeight(.bold)
+            ScrollView {
+                VStack  {
+                    Spacer()
+                        .frame(height: 12)
+                    Text("Upgrade to", comment: "premium view title")
+                        .font(.caption)
+                        .foregroundColor(.white)
+                    Spacer()
+                        .frame(height: 36)
+                    VStack {
+                        Text("SpeakLife Premium", comment: "unlock everything premium view")
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }
+                    
+                    benefitRows
+                    
+                    Spacer()
+                        .frame(height: 40)
+                    
+                    goPremiumStack(size: size)
+                    
+                    Spacer()
+                        .frame(height: 24)
+                    
+                    Text("We're focused on bringing the Word of God to the world! Put on all of God’s armor so that you will be able to stand firm against all strategies of the devil. For we are not fighting against flesh-and-blood enemies, but against evil rulers and authorities of the unseen world, against mighty powers in this dark world, and against evil spirits in the heavenly places.", comment: "premium view title")
+                        .padding(.all)
+                        .font(.caption)
+                        .foregroundColor(.gray)
                 }
                 
-                benefitRows
-                
-                Spacer()
-                    .frame(height: 40)
-                
-                goPremiumStack(size: size)
-                
-                Spacer()
-                    .frame(height: 24)
-                
-                Text("We're focused on bringing the Word of God to the world! Put on all of God’s armor so that you will be able to stand firm against all strategies of the devil. For we are not fighting against flesh-and-blood enemies, but against evil rulers and authorities of the unseen world, against mighty powers in this dark world, and against evil spirits in the heavenly places.", comment: "premium view title")
-                    .padding(.all)
-                    .font(.caption)
-                    .foregroundColor(.gray)
-            }
-            
-            if declarationStore.isPurchasing {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle())
-                    .scaleEffect(3)
+                if declarationStore.isPurchasing {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .scaleEffect(3)
+                }
             }
             
         }
