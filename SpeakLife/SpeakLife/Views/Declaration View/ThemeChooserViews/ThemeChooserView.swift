@@ -25,12 +25,12 @@ struct ThemeChooserView: View {
         }
     }
     
-    var selectImageView: some View {
+    var selectCustomImageView: some View {
         HStack {
             Button("Select Custom Image") {
                 if !subscriptionStore.isPremium {
-                        premiumView()
-                        Selection.shared.selectionFeedback()
+                    presentPremiumView()
+                    Selection.shared.selectionFeedback()
                 } else {
                     showingImagePicker = true
                 }
@@ -38,7 +38,8 @@ struct ThemeChooserView: View {
         }
         .padding()
     }
-    private func premiumView()  {
+    
+    private func presentPremiumView()  {
         self.isPresentingPremiumView = true
     }
     
@@ -68,7 +69,7 @@ struct ThemeChooserView: View {
                 
                 fontChooser(size: size)
                 
-                selectImageView
+                selectCustomImageView
                 
                 Text("Select Background Image")
                     .font(.body)
@@ -77,19 +78,16 @@ struct ThemeChooserView: View {
                 
                 LazyVGrid(columns: twoColumnGrid, spacing: 16) {
                     ForEach(themesViewModel.themes) { theme in
-                        if theme.isPremium && !subscriptionStore.isPremium {
-                            ZStack {
-                                themeCell(imageString: theme.backgroundImageString, size: size, isPremium: theme.isPremium)
-                                
-                                NavigationLink("", destination: PremiumView())
-                            }
-                        } else {
-                            themeCell(imageString: theme.backgroundImageString, size: size, isPremium: theme.isPremium)
-                                .onTapGesture {
+                        themeCell(imageString: theme.backgroundImageString, size: size, isPremium: theme.isPremium)
+                            .onTapGesture {
+                                if !subscriptionStore.isPremium {
+                                    presentPremiumView()
+                                } else {
                                     themesViewModel.choose(theme)
                                     self.presentationMode.wrappedValue.dismiss()
                                 }
-                        }
+                                
+                            }
                     }
                 }.padding()
             }

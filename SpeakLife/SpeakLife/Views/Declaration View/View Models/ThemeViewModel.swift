@@ -28,7 +28,17 @@ final class ThemeViewModel: ObservableObject {
     // MARK: Properties
     
     @Published var selectedTheme: Theme = .longroadtraveled
-    @Published var selectedFont: Font = .custom("AppleSDGothicNeo-Regular", size: 38)
+    @Published var selectedFont: Font = .custom("AppleSDGothicNeo-Regular", size: 38) {
+        didSet  {
+            updateSelectedFontForBook()
+        }
+    }
+    
+    @Published var selectedFontForBook: Font?
+    
+    private func updateSelectedFontForBook() {
+        selectedFontForBook = .custom(fontString, size: 18)
+    }
     
     
     init() {

@@ -140,7 +140,7 @@ struct DeclarationContentView: View {
             
             Text(declaration.book ?? "")
                 .foregroundColor(.white)
-                .font(.callout)
+                .font(themeViewModel.selectedFontForBook ?? .caption)
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
             
             Spacer()
