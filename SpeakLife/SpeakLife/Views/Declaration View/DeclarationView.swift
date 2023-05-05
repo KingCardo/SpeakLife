@@ -16,6 +16,7 @@ struct DeclarationView: View {
     @EnvironmentObject var viewModel: DeclarationViewModel
     @EnvironmentObject var themeViewModel: ThemeViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
+    @EnvironmentObject var appState: AppState
     @Environment(\.presentationMode) var presentationMode
     
     @AppStorage("review.counter") private var reviewCounter = 0
@@ -34,16 +35,17 @@ struct DeclarationView: View {
                 
                 DeclarationContentView(themeViewModel: themeViewModel, viewModel: viewModel)
                     .frame(width: geometry.size.width, height: geometry.size.height)
-                
-                VStack() {
-                    
-                    ProfileBarButton(viewModel: ProfileBarButtonViewModel())
-                        .frame(height: geometry.size.height * 0.10)
-                    
-                    Spacer()
-                    
-                    IntentsBarView(viewModel: viewModel, themeViewModel: themeViewModel)
-                        .frame(height: geometry.size.height * 0.10)
+                if !appState.showScreenshotLabel {
+                    VStack() {
+                        
+                        ProfileBarButton(viewModel: ProfileBarButtonViewModel())
+                            .frame(height: geometry.size.height * 0.10)
+                        
+                        Spacer()
+                        
+                        IntentsBarView(viewModel: viewModel, themeViewModel: themeViewModel)
+                            .frame(height: geometry.size.height * 0.10)
+                    }
                 }
                 
             }
@@ -61,13 +63,13 @@ struct DeclarationView: View {
                         .aspectRatio(contentMode: .fill)
                         .ignoresSafeArea()
                 }
-               
+                
                 Rectangle()
                     .fill(Color.black.opacity(themeViewModel.selectedTheme.blurEffect ? 0.5 : 0))
                     .edgesIgnoringSafeArea(.all)
             }
         )
-            
+        
         .alert(isPresented: $viewModel.showErrorMessage) {
             Alert(
                 title: Text("Error", comment: "Error title message"),
@@ -80,7 +82,7 @@ struct DeclarationView: View {
             requestReview()
             shareApp()
         }
-
+        
         .alert("Are you enjoying SpeakLife?", isPresented: $showAlert) {
             Button("Yes") {
                 showReview()
@@ -97,7 +99,7 @@ struct DeclarationView: View {
             Button("No thanks") {
             }
         }
-    
+        
         .sheet(isPresented: $isShowingMailView) {
             MailView(isShowing: $isShowingMailView, result: self.$result)
         }
@@ -129,7 +131,7 @@ struct DeclarationView: View {
                 as? UIWindowScene {
                 let url = URL(string: "\(APP.Product.urlID)")!
                 
-                let activityVC = UIActivityViewController(activityItems: ["Check out SpeakLife - Daily Bible Promises app that'll transform your life!", url], applicationActivities: nil)
+                let activityVC = UIActivityViewController(activityItems: ["Check out Speak Life - Bible Verses app that'll transform your life!", url], applicationActivities: nil)
                 let window = scene.windows.first
                 window?.rootViewController?.present(activityVC, animated: true)
                 shared += 1
@@ -144,9 +146,9 @@ struct DeclarationView: View {
                 as? UIWindowScene {
                 SKStoreReviewController.requestReview(in: scene)
             }
-//            if let url = URL(string: "\(APP.Product.urlID)?action=write-review") {
-//                UIApplication.shared.open(url)
-//            }
+            //            if let url = URL(string: "\(APP.Product.urlID)?action=write-review") {
+            //                UIApplication.shared.open(url)
+            //            }
         }
     }
     

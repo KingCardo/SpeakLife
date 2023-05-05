@@ -17,12 +17,12 @@ struct Benefit: Identifiable  {
     }
     
     static var premiumBenefits: [Benefit] = [
-        Benefit(text: "As you immerse yourself in Bible affirmations, you'll gain insight into your God-given purpose and talents. This clarity can guide you towards a more purpose-driven life, aligning your actions with your values and aspirations."),
-        Benefit(text: "Regularly meditating on Bible affirmations can help reduce stress, anxiety, and negative emotions. This practice can contribute to better mental health, leading to a more balanced and contented life."),
-        Benefit(text: "By focusing on the promises and truths found in scripture, you'll cultivate emotional resilience and the ability to conquer life's trials. The practice of Bible affirmations can serve as a powerful reminder of God's unwavering support in times of difficulty."),
-        Benefit(text: "Our app helps you develop a stronger relationship with God through daily reflection on scripture-based affirmations."),
-        Benefit(text: "As you internalize the affirmations rooted in God's Word, you'll start recognizing your true worth and potential. This newfound confidence can lead to improved relationships, career growth, and the courage to pursue your dreams."),
-        Benefit(text: "The wisdom and guidance found in scripture-based affirmations can help you make informed, faith-aligned decisions. By integrating God's Word into your daily life, you'll be better equipped to face challenges and opportunities with confidence and grace."),
+        Benefit(text: "Heightened Sense of Purpose: As you immerse yourself in Bible affirmations, you'll gain insight into your God-given purpose and talents. This clarity can guide you towards a more purpose-driven life, aligning your actions with your values and aspirations."),
+        Benefit(text: "Renewed Mindset: Regularly meditating on Bible affirmations can help reduce stress, anxiety, and negative emotions. This practice can contribute to better mental health, leading to a more balanced and contented life."),
+        Benefit(text: "Enhanced Resilience: By focusing on the promises and truths found in scripture, you'll cultivate emotional resilience and the ability to conquer life's trials. The practice of Bible affirmations can serve as a powerful reminder of God's unwavering support in times of difficulty."),
+        Benefit(text: "Deeper Spiritual Connection: Our app helps you develop a stronger relationship with God through daily reflection on scripture-based affirmations."),
+        Benefit(text: "Boosted Confidence and Self-Worth: As you internalize the affirmations rooted in God's Word, you'll start recognizing your true worth and potential. This newfound confidence can lead to improved relationships, career growth, and the courage to pursue your dreams."),
+        Benefit(text: "Empowered Decision-Making: The wisdom and guidance found in scripture-based affirmations can help you make informed, faith-aligned decisions. By integrating God's Word into your daily life, you'll be better equipped to face challenges and opportunities with confidence and grace."),
 //        Benefit(text: "Bible promises that will transform your day and life!"),
 //        Benefit(text: "Access to all categories"),
 //        Benefit(text: "Create and schedule your own Bible promises or affirmations."),

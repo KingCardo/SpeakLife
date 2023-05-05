@@ -22,6 +22,7 @@ final class AppState: ObservableObject {
     @AppStorage("startTimeIndex") var startTimeIndex = 16
     @AppStorage("endTimeIndex") var endTimeIndex = 25
     @AppStorage("selectedNotificationCategories") var selectedNotificationCategories: String = ""
+    @AppStorage("showScreenshotLabel") var showScreenshotLabel = false
 }
 
 extension Date: RawRepresentable {

@@ -11,13 +11,13 @@ import FirebaseAnalytics
 struct DeclarationContentView: View {
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @EnvironmentObject var appState: AppState
     
     @ObservedObject var themeViewModel: ThemeViewModel
     @ObservedObject var viewModel: DeclarationViewModel
     @State private var isFavorite: Bool = false
     @State private var showShareSheet = false
     @State private var image: UIImage?
-    @State private var showScreenshotLabel = false
     
     private let degrees: Double = 90
     
@@ -65,7 +65,7 @@ struct DeclarationContentView: View {
                                 ShareSheet(activityItems: [image])
                             }
                         
-                        if !showShareSheet {
+                        if !showShareSheet, !appState.showScreenshotLabel {
                             intentVstack(declaration: declaration, geometry)
                                 .rotationEffect(Angle(degrees: -degrees))
                         }
@@ -113,7 +113,7 @@ struct DeclarationContentView: View {
     
     @ViewBuilder
     private func screenshotLabel() -> some View {
-            if showScreenshotLabel {
+        if appState.showScreenshotLabel {
                  Text("@speaklife_biblepromises")
                     .font(.caption)
                     .foregroundColor(Color.white)
@@ -151,7 +151,8 @@ struct DeclarationContentView: View {
             
             CapsuleImageButton(title: "tray.and.arrow.up") {
                 withAnimation {
-                    showScreenshotLabel = true
+                    appState.showScreenshotLabel = true
+                    
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     image = UIApplication.shared.windows.first?.rootViewController?.view.toImage()
@@ -162,7 +163,7 @@ struct DeclarationContentView: View {
                 Selection.shared.selectionFeedback()
                 // Hide the label after 2 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    showScreenshotLabel = false
+                    appState.showScreenshotLabel = false
                 }
             }
             
