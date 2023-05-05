@@ -12,6 +12,7 @@ struct DeclarationContentView: View {
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     
     @ObservedObject var themeViewModel: ThemeViewModel
     @ObservedObject var viewModel: DeclarationViewModel
@@ -58,14 +59,14 @@ struct DeclarationContentView: View {
                             )
                             .sheet(isPresented: $showShareSheet) {
                                 if let image = image {
-                                                Image(uiImage: image)
-                                                    .resizable()
-                                                    .scaledToFit()
-                                            }
+                                    Image(uiImage: image)
+                                        .resizable()
+                                        .scaledToFit()
+                                }
                                 ShareSheet(activityItems: [image])
                             }
                         
-                        if !showShareSheet, !appState.showScreenshotLabel {
+                        if !showShareSheet {
                             intentVstack(declaration: declaration, geometry)
                                 .rotationEffect(Angle(degrees: -degrees))
                         }
@@ -76,7 +77,7 @@ struct DeclarationContentView: View {
                                     .scaleEffect(1.2)
                                     .transition(.scale)
                             }
-
+                            
                             .rotationEffect(Angle(degrees: -degrees))
                             .onAppear {
                                 let delay = RunLoop.SchedulerTimeType(.init(timeIntervalSinceNow: 0.3))
@@ -101,28 +102,31 @@ struct DeclarationContentView: View {
     }
     
     private func intentVstack(declaration: Declaration, _ geometry: GeometryProxy) -> some View {
-            VStack {
-                screenshotLabel()
-                Spacer()
-                intentStackButtons(declaration: declaration)
-                Spacer()
-                    .frame(height: horizontalSizeClass == .compact ? geometry.size.height * 0.15 : geometry.size.height * 0.30)
-               
-            }
+        VStack {
+            
+            screenshotLabel()
+            
+            Spacer()
+            intentStackButtons(declaration: declaration)
+            Spacer()
+                .frame(height: horizontalSizeClass == .compact ? geometry.size.height * 0.15 : geometry.size.height * 0.30)
+        }
+        
+        
     }
     
     @ViewBuilder
     private func screenshotLabel() -> some View {
-        if appState.showScreenshotLabel {
-                 Text("@speaklife_biblepromises")
-                    .font(.caption)
-                    .foregroundColor(Color.white)
-                    .padding()
-                    .background(Color.black.opacity(0.7))
-                    .cornerRadius(12)
-                    .transition(.opacity)
+        if appState.showScreenshotLabel, !subscriptionStore.isPremium {
+            Text("@speaklife.bibleapp")
+                .font(.caption)
+                .foregroundColor(Color.white)
+                .padding()
+                .background(Color.black.opacity(0.7))
+                .cornerRadius(12)
+                .transition(.opacity)
         }
-       
+        
     }
     
     
@@ -145,37 +149,40 @@ struct DeclarationContentView: View {
         }
     }
     
-    
+    @ViewBuilder
     private func intentStackButtons(declaration: Declaration) -> some View  {
-        HStack(spacing: 24) {
-            
-            CapsuleImageButton(title: "tray.and.arrow.up") {
-                withAnimation {
-                    appState.showScreenshotLabel = true
+        if !appState.showScreenshotLabel {
+            HStack(spacing: 24) {
+                
+                CapsuleImageButton(title: "tray.and.arrow.up") {
+                    withAnimation {
+                        appState.showScreenshotLabel = true
+                        
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        image = UIApplication.shared.windows.first?.rootViewController?.view.toImage()
+                        self.showShareSheet = true
+                    }
                     
+                    Analytics.logEvent(Event.shareTapped, parameters: nil)
+                    Selection.shared.selectionFeedback()
+                    // Hide the label after 2 seconds
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        appState.showScreenshotLabel = false
+                    }
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    image = UIApplication.shared.windows.first?.rootViewController?.view.toImage()
-                    self.showShareSheet = true
+                
+                CapsuleImageButton(title: declaration.isFavorite ? "heart.fill" : "heart") {
+                    favorite(declaration)
+                    self.isFavorite = declaration.isFavorite ? false : true
+                    Analytics.logEvent(Event.favoriteTapped, parameters: nil)
+                    Selection.shared.selectionFeedback()
                 }
-               
-                Analytics.logEvent(Event.shareTapped, parameters: nil)
-                Selection.shared.selectionFeedback()
-                // Hide the label after 2 seconds
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    appState.showScreenshotLabel = false
-                }
+                
+                
             }
-            
-            CapsuleImageButton(title: declaration.isFavorite ? "heart.fill" : "heart") {
-                favorite(declaration)
-                self.isFavorite = declaration.isFavorite ? false : true
-                Analytics.logEvent(Event.favoriteTapped, parameters: nil)
-                Selection.shared.selectionFeedback()
-            }
-            
+            .foregroundColor(.white)
         }
-        .foregroundColor(.white)
     }
     
     
