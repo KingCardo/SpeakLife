@@ -80,27 +80,8 @@ struct CategoryChooserView: View {
                         .lineSpacing(10)
                         .lineLimit(2)
                     
-                    LazyVGrid(columns: twoColumnGrid, spacing: 16) {
-                        ForEach(viewModel.allCategories) { category in
-                            
-                            CategoryCell(size: geometry.size, category: category)
-                                .onTapGesture {
-                                    if category.isPremium && !subscriptionStore.isPremium {
-                                        presentPremiumView = true
-                                    } else {
-                                        viewModel.choose(category) { success in
-                                            if success {
-                                                Analytics.logEvent(Event.categoryChooserTapped, parameters: ["category": category.rawValue])
-                                                self.presentationMode.wrappedValue.dismiss()
-                                            }
-                                        }
-                                    }
-                                }
-                                .sheet(isPresented: $presentPremiumView) {
-                                    PremiumView()
-                                }
-                        }
-                    }.padding()
+                    categoryList(geometry: geometry)
+                    
                 }
                 .navigationBarTitle(Text("Select Category"))
                 .background(
@@ -118,5 +99,30 @@ struct CategoryChooserView: View {
                 Button("OK", role: .cancel) { }
             }
         }
+    }
+    
+    private func categoryList(geometry: GeometryProxy) -> some View {
+      
+        LazyVGrid(columns: twoColumnGrid, spacing: 16) {
+            ForEach(viewModel.allCategories) { category in
+                
+                CategoryCell(size: geometry.size, category: category)
+                    .onTapGesture {
+                        if category.isPremium && !subscriptionStore.isPremium {
+                            presentPremiumView = true
+                        } else {
+                            viewModel.choose(category) { success in
+                                if success {
+                                    Analytics.logEvent(Event.categoryChooserTapped, parameters: ["category": category.rawValue])
+                                    self.presentationMode.wrappedValue.dismiss()
+                                }
+                            }
+                        }
+                    }
+                    .sheet(isPresented: $presentPremiumView) {
+                        PremiumView()
+                    }
+            }
+        }.padding()
     }
 }

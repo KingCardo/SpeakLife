@@ -31,6 +31,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     case perseverance
     case identity
     case marriage
+    case godsprotection
+    case guidance
     
     static var categoryOrder: [DeclarationCategory] = [
         .favorites,
@@ -39,7 +41,9 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
         .love,
         .peace,
         .identity,
+        .guidance,
         .gratitude,
+        .godsprotection,
         .wealth,
         .motivation,
         .discipline,
@@ -65,6 +69,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
         switch self {
         case .selfcontrol: return "Self Control"
         case .hardtimes: return "Hard Times"
+        case .godsprotection: return "God's Protection"
         default:  return self.rawValue.capitalized
         }
     }
@@ -89,7 +94,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     
     var isPremium: Bool {
         switch self {
-        case .faith, .love, .favorites, .peace, .identity: return false
+        case .faith, .love, .favorites, .peace, .identity, .guidance: return false
         default: return true
         }
     }
