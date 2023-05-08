@@ -189,7 +189,11 @@ struct DeclarationContentView: View {
                     setCurrentDelcaration(declaration: declaration)
                     Selection.shared.selectionFeedback()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                        speechSynthesizer.speakText(viewModel.currentDeclaration?.text ?? "Hey there, sorry couldn't find the affirmation!")
+                        if let declaration = viewModel.currentDeclaration {
+                            let text = declaration.text
+                            speechSynthesizer.speakText(text)
+                        }
+                        
                     }
                    
                 }
