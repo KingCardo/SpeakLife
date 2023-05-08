@@ -17,6 +17,8 @@ final class DeclarationViewModel: ObservableObject {
     
     @Published var declarations: [Declaration] = []
     
+    private (set) var currentDeclaration: Declaration?
+    
     @Published var allCategories: [DeclarationCategory] = DeclarationCategory.categoryOrder
     
     private var allDeclarationsDict: [DeclarationCategory: [Declaration]] = [:]
@@ -110,6 +112,10 @@ final class DeclarationViewModel: ObservableObject {
     }
     
     // MARK: - Intent(s)
+    
+    func setCurrent(_ declaration: Declaration) {
+        currentDeclaration = declaration
+    }
     
     // MARK: - Favorites
     

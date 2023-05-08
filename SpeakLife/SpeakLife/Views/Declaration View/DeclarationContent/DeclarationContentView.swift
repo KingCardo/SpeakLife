@@ -10,6 +10,8 @@ import FirebaseAnalytics
 
 struct DeclarationContentView: View {
     
+    @StateObject private var speechSynthesizer = SpeechSynthesizer()
+    
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var subscriptionStore: SubscriptionStore
@@ -131,6 +133,7 @@ struct DeclarationContentView: View {
     
     
     private func quoteLabel(_ declaration: Declaration, _ geometry: GeometryProxy) -> some View  {
+        
         VStack {
             Spacer()
             
@@ -155,6 +158,7 @@ struct DeclarationContentView: View {
             HStack(spacing: 24) {
                 
                 CapsuleImageButton(title: "tray.and.arrow.up") {
+                    viewModel.setCurrent(declaration)
                     withAnimation {
                         appState.showScreenshotLabel = true
                         
@@ -171,6 +175,7 @@ struct DeclarationContentView: View {
                         appState.showScreenshotLabel = false
                     }
                 }
+               
                 
                 CapsuleImageButton(title: declaration.isFavorite ? "heart.fill" : "heart") {
                     favorite(declaration)
@@ -179,10 +184,21 @@ struct DeclarationContentView: View {
                     Selection.shared.selectionFeedback()
                 }
                 
-                
+                CapsuleImageButton(title:"play.circle") {
+                    
+                    setCurrentDelcaration(declaration: declaration)
+                    Selection.shared.selectionFeedback()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        speechSynthesizer.speakText(viewModel.currentDeclaration?.text ?? "Hey there, sorry couldn't find the affirmation!")
+                    }
+                   
+                }
             }
             .foregroundColor(.white)
         }
+    }
+    private func setCurrentDelcaration(declaration: Declaration) {
+        viewModel.setCurrent(declaration)
     }
     
     
