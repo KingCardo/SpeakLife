@@ -12,6 +12,7 @@ final class DevotionalViewModel: ObservableObject {
     @Published var devotionalText = ""
     @Published var devotionalDate = ""
     @Published var devotionalBooks = ""
+    @Published var title = ""
     
     var devotional: Devotional? {
         didSet {
@@ -30,6 +31,7 @@ final class DevotionalViewModel: ObservableObject {
         devotionalText = devotional.devotionalText
         devotionalDate = devotional.date.toSimpleDate()
         devotionalBooks = devotional.books
+        title = devotional.title
     }
     
     func fetchDevotional() async {

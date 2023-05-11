@@ -13,10 +13,11 @@ struct WelcomeDevotional: Decodable {
 
 struct Devotional: Decodable, Identifiable {
     let date: Date
+    let title: String
     let devotionalText: String
     let books: String
     
     var id: String {
-        "\(date) + \(books)"
+        "\(date) + \(title)"
     }
 }

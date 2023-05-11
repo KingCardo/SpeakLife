@@ -23,15 +23,25 @@ struct DevotionalView: View {
                         .font(.caption)
                     Spacer()
                         .frame(height: 20)
+                    
+                    Text(viewModel.title)
+                        .font(.title)
+                        .italic()
+                    Spacer()
+                        .frame(height: 10)
+                    Text(viewModel.devotionalBooks)
+                        .font(.callout)
+                        .italic()
+                        .padding([.leading, .trailing])
+                    
+                    Spacer()
+                        .frame(height: 20)
+                    
                     Text(viewModel.devotionalText)
                         .font(.body)
                         .lineSpacing(4)
                         .padding(.horizontal, 32)
-                    Spacer()
-                        .frame(height: 20)
-                    Text(viewModel.devotionalBooks)
-                        .font(.callout)
-                        .italic()
+                    
             
                 }
                 .foregroundColor(.black)

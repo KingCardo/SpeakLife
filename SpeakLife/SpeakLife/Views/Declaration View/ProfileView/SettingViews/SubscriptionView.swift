@@ -30,6 +30,10 @@ struct Benefit: Identifiable  {
 //        Benefit(text: "Create and schedule your own Bible promises or affirmations."),
 //        Benefit(text: "Reminders to renew your mindset with promises from the Creator of the Universe!"),
         Benefit(text: "Access to all themes and new features on the way"),
+        Benefit(text: "Renewed Mindset"),
+        Benefit(text: "Deeper Spiritual Connection"),
+        Benefit(text: "Warrior Resilience"),
+        Benefit(text: "Empowered Decision-Making"),
         Benefit(text: "Choose amount comfortable for you! Unlocks all premium features."),
 //        Benefit(text: "Choose amount comfortable for you! Unlocks all premium features.")
     ]
