@@ -16,11 +16,11 @@ final class AppState: ObservableObject {
     @AppStorage("newSettingsAdded") var newSettingsAdded = true
     @AppStorage("lastNotificationSetDate") var lastNotificationSetDate = Date()
     @AppStorage("notificationEnabled") var notificationEnabled = false
-    @AppStorage("notificationCount") var notificationCount = 4
+    @AppStorage("notificationCount") var notificationCount = 20
     @AppStorage("startTimeNotification") var startTimeNotification = ""
     @AppStorage("endTimeNotification") var endTimeNotification = ""
-    @AppStorage("startTimeIndex") var startTimeIndex = 16
-    @AppStorage("endTimeIndex") var endTimeIndex = 25
+    @AppStorage("startTimeIndex") var startTimeIndex = 19
+    @AppStorage("endTimeIndex") var endTimeIndex = 38
     @AppStorage("selectedNotificationCategories") var selectedNotificationCategories: String = ""
     @AppStorage("showScreenshotLabel") var showScreenshotLabel = false
 }

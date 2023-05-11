@@ -24,7 +24,7 @@ struct Benefit: Identifiable  {
 //        Benefit(text: "Boosted Confidence and Self-Worth: As you internalize the affirmations rooted in God's Word, you'll start recognizing your true worth and potential. This newfound confidence can lead to improved relationships, career growth, and the courage to pursue your dreams."),
 //        Benefit(text: "Empowered Decision-Making: The wisdom and guidance found in scripture-based affirmations can help you make informed, faith-aligned decisions. By integrating God's Word into your daily life, you'll be better equipped to face challenges and opportunities with confidence and grace."),
         Benefit(text: "Reminders to renew your mindset with promises from the Creator of the Universe!"),
-        Benefit(text: "Suggested contribution is $39.99/yr. Choose amount comfortable for you! Unlocks all premium features.")
+        Benefit(text: "Choose amount comfortable for you! Unlocks all premium features.")
 //        Benefit(text: "Bible promises that will transform your day and life!"),
 //        Benefit(text: "Access to all categories"),
 //        Benefit(text: "Create and schedule your own Bible promises or affirmations."),
@@ -41,7 +41,7 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
     
     let size: CGSize
     var callback: (() -> Void)?

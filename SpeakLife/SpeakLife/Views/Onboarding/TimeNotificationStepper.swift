@@ -13,7 +13,7 @@ struct StepperNotificationCountView: View {
     @State private var value: Int
     
     let step = 1
-    let range = 1...15
+    let range = 1...30
     var valueCount: (Int) -> Void
     
     init(_ value: Int, valueCount: @escaping(Int) -> Void) {
@@ -22,7 +22,7 @@ struct StepperNotificationCountView: View {
     }
     
     func incrementStep() {
-        guard value < 15 else { return }
+        guard value < range.last! else { return }
         value += 1
         valueCount(value)
     }
