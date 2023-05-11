@@ -24,12 +24,13 @@ struct Benefit: Identifiable  {
 //        Benefit(text: "Boosted Confidence and Self-Worth: As you internalize the affirmations rooted in God's Word, you'll start recognizing your true worth and potential. This newfound confidence can lead to improved relationships, career growth, and the courage to pursue your dreams."),
 //        Benefit(text: "Empowered Decision-Making: The wisdom and guidance found in scripture-based affirmations can help you make informed, faith-aligned decisions. By integrating God's Word into your daily life, you'll be better equipped to face challenges and opportunities with confidence and grace."),
         Benefit(text: "Reminders to renew your mindset with promises from the Creator of the Universe!"),
-        Benefit(text: "Choose amount comfortable for you! Unlocks all premium features.")
+        Benefit(text: "Access to all Scripture, Daily Devotionals, and categories"),
 //        Benefit(text: "Bible promises that will transform your day and life!"),
 //        Benefit(text: "Access to all categories"),
 //        Benefit(text: "Create and schedule your own Bible promises or affirmations."),
 //        Benefit(text: "Reminders to renew your mindset with promises from the Creator of the Universe!"),
-//        Benefit(text: "Access to all themes and new features on the way"),
+        Benefit(text: "Access to all themes and new features on the way"),
+        Benefit(text: "Choose amount comfortable for you! Unlocks all premium features."),
 //        Benefit(text: "Choose amount comfortable for you! Unlocks all premium features.")
     ]
 }
@@ -60,7 +61,7 @@ struct SubscriptionView: View {
                 Image(systemName: "checkmark.seal.fill")
                     .resizable()
                     .frame(width: 25, height: 25)
-                    .foregroundColor(Constants.DAMidBlue)
+                    .foregroundColor(.white)
                     .scaledToFit()
                 Text(benefit.text, comment: "Benefit text")
                     .font(.caption)
@@ -86,9 +87,11 @@ struct SubscriptionView: View {
                         Text("SpeakLife Premium", comment: "unlock everything premium view")
                             .font(.title)
                             .fontWeight(.bold)
+                            .foregroundColor(.white)
                     }
                     
                     benefitRows
+                        .foregroundColor(.white)
                     
                     Spacer()
                         .frame(height: 40)
@@ -101,7 +104,7 @@ struct SubscriptionView: View {
                     Text("We're focused on bringing the Word of God to the world! Put on all of God’s armor so that you will be able to stand firm against all strategies of the devil. For we are not fighting against flesh-and-blood enemies, but against evil rulers and authorities of the unseen world, against mighty powers in this dark world, and against evil spirits in the heavenly places.", comment: "premium view title")
                         .padding(.all)
                         .font(.caption)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.black)
                 }
                 
                 if declarationStore.isPurchasing {

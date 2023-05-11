@@ -43,4 +43,11 @@ extension Date: RawRepresentable {
         dateFormatter.timeStyle = .short
         return dateFormatter.string(from: self)
     }
+    
+    func toSimpleDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateStyle = .medium
+        return dateFormatter.string(from: self)
+    }
 }

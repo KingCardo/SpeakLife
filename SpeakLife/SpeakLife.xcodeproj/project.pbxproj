@@ -90,6 +90,11 @@
 		7AF18C8829FF8CEE005A6E31 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF18C8729FF8CEE005A6E31 /* TipsView.swift */; };
 		7AF18C8A29FF9819005A6E31 /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF18C8929FF9819005A6E31 /* Gradients.swift */; };
 		7AF18C8C2A08CE92005A6E31 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF18C8B2A08CE92005A6E31 /* SpeechSynthesizer.swift */; };
+		7AF18C8F2A0CBD03005A6E31 /* Devotional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF18C8E2A0CBD03005A6E31 /* Devotional.swift */; };
+		7AF18C912A0CBEB9005A6E31 /* devotionals.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AF18C902A0CBEB9005A6E31 /* devotionals.json */; };
+		7AF18C932A0CBF71005A6E31 /* DevotionalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF18C922A0CBF71005A6E31 /* DevotionalService.swift */; };
+		7AF18C962A0CC532005A6E31 /* DevotionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF18C952A0CC532005A6E31 /* DevotionalView.swift */; };
+		7AF18C982A0CC541005A6E31 /* DevotionalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF18C972A0CC541005A6E31 /* DevotionalViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,6 +215,11 @@
 		7AF18C8729FF8CEE005A6E31 /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		7AF18C8929FF9819005A6E31 /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
 		7AF18C8B2A08CE92005A6E31 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
+		7AF18C8E2A0CBD03005A6E31 /* Devotional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devotional.swift; sourceTree = "<group>"; };
+		7AF18C902A0CBEB9005A6E31 /* devotionals.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = devotionals.json; sourceTree = "<group>"; };
+		7AF18C922A0CBF71005A6E31 /* DevotionalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevotionalService.swift; sourceTree = "<group>"; };
+		7AF18C952A0CC532005A6E31 /* DevotionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevotionalView.swift; sourceTree = "<group>"; };
+		7AF18C972A0CC541005A6E31 /* DevotionalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevotionalViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +266,7 @@
 			children = (
 				7A00721728F8ED4A00965AF7 /* declarations.json */,
 				7ABA50CE29E63275002699F1 /* prayers.json */,
+				7AF18C902A0CBEB9005A6E31 /* devotionals.json */,
 			);
 			path = AffirmationData;
 			sourceTree = "<group>";
@@ -360,6 +371,7 @@
 				7AA8706B28DACC4E00134ADB /* DailyDeclaration.swift */,
 				7AA8706A28DACC4E00134ADB /* Reminder.swift */,
 				7AA8706928DACC4E00134ADB /* Theme.swift */,
+				7AF18C8E2A0CBD03005A6E31 /* Devotional.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -367,6 +379,7 @@
 		7AA8706728DACB5100134ADB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7AF18C8D2A0CBAAF005A6E31 /* DailyDevotions */,
 				7AA8707828DACC8300134ADB /* IAP */,
 				7AA8706F28DACC8200134ADB /* Networking */,
 				7AA8707428DACC8300134ADB /* Notification */,
@@ -395,6 +408,7 @@
 				7AA8707128DACC8300134ADB /* APIClient.swift */,
 				7AA8707228DACC8300134ADB /* Protocols */,
 				7ABA50CA29E63178002699F1 /* PrayerServiceClient.swift */,
+				7AF18C922A0CBF71005A6E31 /* DevotionalService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -471,6 +485,7 @@
 		7AA8709728DACCB700134ADB /* Declaration View */ = {
 			isa = PBXGroup;
 			children = (
+				7AF18C942A0CC518005A6E31 /* Devotionals */,
 				7AA870B728DACCB700134ADB /* DeclarationView.swift */,
 				7AA8709828DACCB700134ADB /* IntentsBarView.swift */,
 				7AA870B628DACCB700134ADB /* CategoryChooserView.swift */,
@@ -606,6 +621,22 @@
 			path = Prayer;
 			sourceTree = "<group>";
 		};
+		7AF18C8D2A0CBAAF005A6E31 /* DailyDevotions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DailyDevotions;
+			sourceTree = "<group>";
+		};
+		7AF18C942A0CC518005A6E31 /* Devotionals */ = {
+			isa = PBXGroup;
+			children = (
+				7AF18C952A0CC532005A6E31 /* DevotionalView.swift */,
+				7AF18C972A0CC541005A6E31 /* DevotionalViewModel.swift */,
+			);
+			path = Devotionals;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -729,6 +760,7 @@
 				7A278FA2288915DF0084BB57 /* Preview Assets.xcassets in Resources */,
 				7AA870E628DACFB800134ADB /* Localizable.strings in Resources */,
 				7A00721A2908D22E00965AF7 /* GoogleService-Info.plist in Resources */,
+				7AF18C912A0CBEB9005A6E31 /* devotionals.json in Resources */,
 				7ABA50CF29E63275002699F1 /* prayers.json in Resources */,
 				7A00721828F8ED4A00965AF7 /* declarations.json in Resources */,
 				7A278F9F288915DF0084BB57 /* Assets.xcassets in Resources */,
@@ -760,6 +792,7 @@
 			files = (
 				7AA8706C28DACC4E00134ADB /* Theme.swift in Sources */,
 				7AA8709628DACCA800134ADB /* String+Extension.swift in Sources */,
+				7AF18C8F2A0CBD03005A6E31 /* Devotional.swift in Sources */,
 				7AA870C228DACCB700134ADB /* IntentsBarView.swift in Sources */,
 				7AA870E428DACD1A00134ADB /* AppState.swift in Sources */,
 				7AA870CB28DACCB700134ADB /* PremiumView.swift in Sources */,
@@ -778,6 +811,7 @@
 				7AA870E028DACCB700134ADB /* WidgetScene.swift in Sources */,
 				7AA8708128DACC8300134ADB /* NotificationProcessor.swift in Sources */,
 				7AA870D028DACCB700134ADB /* ReminderView.swift in Sources */,
+				7AF18C962A0CC532005A6E31 /* DevotionalView.swift in Sources */,
 				7AA870D828DACCB700134ADB /* CategoryChooserView.swift in Sources */,
 				7A278F9B288915DE0084BB57 /* SpeakLifeApp.swift in Sources */,
 				7AA870C528DACCB700134ADB /* QuoteLabel.swift in Sources */,
@@ -813,9 +847,11 @@
 				7AF18C7B29FD1A43005A6E31 /* GoogleAdMob.swift in Sources */,
 				7AA870C628DACCB700134ADB /* HeartView.swift in Sources */,
 				7AA870C728DACCB700134ADB /* DeclarationContentView.swift in Sources */,
+				7AF18C932A0CBF71005A6E31 /* DevotionalService.swift in Sources */,
 				7AA870CE28DACCB700134ADB /* FavoritesView.swift in Sources */,
 				7AA870D428DACCB700134ADB /* CategoryButtonRow.swift in Sources */,
 				7AA8707C28DACC8300134ADB /* APIError.swift in Sources */,
+				7AF18C982A0CC541005A6E31 /* DevotionalViewModel.swift in Sources */,
 				7AA870CD28DACCB700134ADB /* ProfileView.swift in Sources */,
 				7AA870DC28DACCB700134ADB /* TimeSlots.swift in Sources */,
 				7ABA50CB29E63178002699F1 /* PrayerServiceClient.swift in Sources */,
@@ -1029,7 +1065,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 70;
+				CURRENT_PROJECT_VERSION = 71;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
@@ -1064,7 +1100,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 70;
+				CURRENT_PROJECT_VERSION = 71;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
@@ -1099,7 +1135,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 70;
+				CURRENT_PROJECT_VERSION = 71;
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PromisesWidget/Info.plist;
@@ -1128,7 +1164,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 70;
+				CURRENT_PROJECT_VERSION = 71;
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PromisesWidget/Info.plist;

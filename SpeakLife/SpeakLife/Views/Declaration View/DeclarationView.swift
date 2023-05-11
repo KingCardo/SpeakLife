@@ -27,6 +27,7 @@ struct DeclarationView: View {
     @State private var showAlert = false
     @State private var share = false
     @State var isShowingMailView = false
+    @State var showDailyDevotion = false
     
     
     var body: some View {
@@ -37,9 +38,12 @@ struct DeclarationView: View {
                     .frame(width: geometry.size.width, height: geometry.size.height)
                 if !appState.showScreenshotLabel {
                     VStack() {
-                        
-                        ProfileBarButton(viewModel: ProfileBarButtonViewModel())
-                            .frame(height: geometry.size.height * 0.10)
+                        HStack {
+                            dailyDevotionButton
+                            Spacer()
+                            ProfileBarButton(viewModel: ProfileBarButtonViewModel())
+                                .frame(height: geometry.size.height * 0.10)
+                        }
                         
                         Spacer()
                         
@@ -48,6 +52,13 @@ struct DeclarationView: View {
                     }
                 }
                 
+            }
+            .sheet(isPresented: $showDailyDevotion) {
+                if subscriptionStore.isPremium {
+                    DevotionalView(viewModel: DevotionalViewModel())
+                } else {
+                    SubscriptionView(size: geometry.size)
+                }
             }
         }
         .background(
@@ -105,6 +116,14 @@ struct DeclarationView: View {
         }
     }
     
+    private var dailyDevotionButton: some View {
+        CapsuleImageButton(title: "quote.bubble") {
+            showDailyDevotion = true
+            Selection.shared.selectionFeedback()
+        }
+        .padding(.leading)
+    }
+    
     private func requestReview() {
         if reviewCounter > 2 && reviewTry < 3 {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -153,6 +172,7 @@ struct DeclarationView: View {
     }
     
     private func sendEmail() {
+        reviewTry += 3
         if MFMailComposeViewController.canSendMail() {
             isShowingMailView = true
         }
