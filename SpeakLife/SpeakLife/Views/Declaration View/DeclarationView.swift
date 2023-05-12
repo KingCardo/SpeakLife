@@ -28,6 +28,7 @@ struct DeclarationView: View {
     @State private var share = false
     @State var isShowingMailView = false
     @State var showDailyDevotion = false
+    @State private var isSheetPresented = false
     
     
     var body: some View {
@@ -36,19 +37,22 @@ struct DeclarationView: View {
                 
                 DeclarationContentView(themeViewModel: themeViewModel, viewModel: viewModel)
                     .frame(width: geometry.size.width, height: geometry.size.height)
-                if !appState.showScreenshotLabel {
-                    VStack() {
-                        HStack {
-                            //dailyDevotionButton
+                if appState.showIntentBar {
+                    if !appState.showScreenshotLabel {
+                        VStack() {
+                            HStack {
+                                dailyDevotionButton
+                                Spacer()
+                                ProfileBarButton(viewModel: ProfileBarButtonViewModel())
+                                    .frame(height: geometry.size.height * 0.10)
+                            }
+                            
                             Spacer()
-                            ProfileBarButton(viewModel: ProfileBarButtonViewModel())
-                                .frame(height: geometry.size.height * 0.10)
+                            if appState.showIntentBar {
+                                IntentsBarView(viewModel: viewModel, themeViewModel: themeViewModel)
+                                    .frame(height: geometry.size.height * 0.10)
+                            }
                         }
-                        
-                        Spacer()
-                        
-                        IntentsBarView(viewModel: viewModel, themeViewModel: themeViewModel)
-                            .frame(height: geometry.size.height * 0.10)
                     }
                 }
                 
@@ -95,7 +99,7 @@ struct DeclarationView: View {
         }
         
         .alert("Are you enjoying SpeakLife?", isPresented: $showAlert) {
-            Button("Yes") {
+            Button("Leave us a 5 star review") {
                 showReview()
             }
             Button("Leave feedback") {
@@ -114,10 +118,15 @@ struct DeclarationView: View {
         .sheet(isPresented: $isShowingMailView) {
             MailView(isShowing: $isShowingMailView, result: self.$result)
         }
+        .onTapGesture {
+            withAnimation {
+                appState.showIntentBar.toggle()
+            }
+        }
     }
     
     private var dailyDevotionButton: some View {
-        CapsuleImageButton(title: "quote.bubble") {
+        CapsuleImageButton(title: "book.fill") {
             showDailyDevotion = true
             Selection.shared.selectionFeedback()
         }

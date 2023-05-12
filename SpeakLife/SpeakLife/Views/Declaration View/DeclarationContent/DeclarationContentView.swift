@@ -65,7 +65,7 @@ struct DeclarationContentView: View {
                                         .resizable()
                                         .scaledToFit()
                                 }
-                                ShareSheet(activityItems: [image])
+                                ShareSheet(activityItems: [image as Any])
                             }
                         
                         if !showShareSheet {
@@ -164,7 +164,11 @@ struct DeclarationContentView: View {
                         
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        image = UIApplication.shared.windows.first?.rootViewController?.view.toImage()
+                        if let windowScene =  UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                            if let window = windowScene.windows.first {
+                                image = window.rootViewController?.view.toImage()
+                            }
+                        }
                         self.showShareSheet = true
                     }
                     

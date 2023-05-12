@@ -9,11 +9,13 @@ import SwiftUI
 
 final class AppState: ObservableObject {
     @Published var rootViewId = UUID()
+    @Published var showIntentBar = true
     @AppStorage("onboarded") var isOnboarded = false
     @AppStorage("newPrayersAdded") var newPrayersAdded = true
     @AppStorage("newCategoriesAddedv2") var newCategoriesAddedv2 = true
     @AppStorage("newThemesAdded") var newThemesAdded = true
     @AppStorage("newSettingsAdded") var newSettingsAdded = true
+    @AppStorage("newTrackerAdded") var newTrackerAdded = true
     @AppStorage("lastNotificationSetDate") var lastNotificationSetDate = Date()
     @AppStorage("notificationEnabled") var notificationEnabled = false
     @AppStorage("notificationCount") var notificationCount = 20

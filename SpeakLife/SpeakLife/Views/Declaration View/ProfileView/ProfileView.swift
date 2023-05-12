@@ -62,6 +62,13 @@ struct ProfileView: View {
             }
             
             Section(header: Text("Yours").font(.caption)) {
+//                HStack {
+//                    trackerRow
+//                    if appState.newTrackerAdded {
+//                        Badge()
+//                    }
+//                }
+                
                 HStack {
                     tipsRow
                     if appState.newSettingsAdded {
@@ -231,6 +238,26 @@ struct ProfileView: View {
     
     private var reviewRow: some View  {
         SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "star.bubble.fill", title: "Leave us a Review", viewToPresent: EmptyView(), url: "\(APP.Product.urlID)?action=write-review") {
+        }
+    }
+    
+    @MainActor
+    private var trackerRow: some View {
+        HStack {
+            Image(systemName: "hourglass")
+                .foregroundColor(Constants.DAMidBlue)
+            NavigationLink(LocalizedStringKey("Tracker"), destination: LazyView(TrackerView()))
+                .opacity(0)
+                .background(
+                    HStack {
+                        Text("Meditation Tracker", comment:  "Prayers row title")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 8)
+                            .foregroundColor(Constants.DAMidBlue)
+                    })
         }
     }
     
