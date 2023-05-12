@@ -41,7 +41,7 @@ struct DeclarationView: View {
                     if !appState.showScreenshotLabel {
                         VStack() {
                             HStack {
-                                dailyDevotionButton
+                                //dailyDevotionButton
                                 Spacer()
                                 ProfileBarButton(viewModel: ProfileBarButtonViewModel())
                                     .frame(height: geometry.size.height * 0.10)
@@ -58,11 +58,7 @@ struct DeclarationView: View {
                 
             }
             .sheet(isPresented: $showDailyDevotion) {
-                if subscriptionStore.isPremium {
                     DevotionalView(viewModel: DevotionalViewModel())
-                } else {
-                    SubscriptionView(size: geometry.size)
-                }
             }
         }
         .background(
