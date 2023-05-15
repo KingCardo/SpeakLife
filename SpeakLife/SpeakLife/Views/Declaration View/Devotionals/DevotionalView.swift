@@ -13,50 +13,61 @@ struct DevotionalView: View {
     @StateObject var viewModel: DevotionalViewModel
     
     var body: some View {
-        if !subscriptionStore.isPremium {
-            SubscriptionView(size: UIScreen.main.bounds.size)
-        } else {
-            ZStack {
-                Gradients().random
-                ScrollView {
-                    VStack {
-                        Spacer()
-                            .frame(height: 20)
-                        Text(viewModel.devotionalDate)
-                            .font(.caption)
-                        Spacer()
-                            .frame(height: 20)
-                        
-                        Text(viewModel.title)
-                            .font(.title)
-                            .italic()
-                        Spacer()
-                            .frame(height: 10)
-                        Text(viewModel.devotionalBooks)
-                            .font(.callout)
-                            .italic()
-                            .padding([.leading, .trailing])
-                        
-                        Spacer()
-                            .frame(height: 20)
-                        
-                        Text(viewModel.devotionalText)
-                            .font(.body)
-                            .lineSpacing(4)
-                            .padding(.horizontal, 32)
-                        
-                        
+        if subscriptionStore.isPremium || !viewModel.devotionalLimitReached {
+            devotionalView
+                .onAppear {
+                    Task {
+                        await viewModel.fetchDevotional()
+                        viewModel.setDevotionalDictionary()
                     }
-                    .foregroundColor(.black)
                 }
-            
-        }
-            .onAppear {
-                Task {
-                    await viewModel.fetchDevotional()
-                }
-                
+        } else {
+            VStack {
+                Text("It seems like you've used up your free access limit for Devotionals. To continue using our services uninterrupted, please subscribe to our premium plan.")
+                    .font(.callout)
+                    .padding()
+                SubscriptionView(size: UIScreen.main.bounds.size)
             }
+        }
+        
+    }
+    
+    var devotionalView: some View {
+        ZStack {
+            Gradients().random
+            ScrollView {
+                VStack {
+                    Spacer()
+                        .frame(height: 20)
+                    Text(viewModel.devotionalDate)
+                        .font(.caption)
+                    Spacer()
+                        .frame(height: 20)
+                    
+                    Text(viewModel.title)
+                        .font(.title)
+                        .italic()
+                    Spacer()
+                        .frame(height: 10)
+                    Text(viewModel.devotionalBooks)
+                        .font(.callout)
+                        .italic()
+                        .padding([.leading, .trailing])
+                    
+                    Spacer()
+                        .frame(height: 20)
+                    
+                    Text(viewModel.devotionalText)
+                        .font(.body)
+                        .lineSpacing(4)
+                        .padding(.horizontal, 32)
+                    
+                    
+                }
+                .foregroundColor(.black)
+            }
+            
         }
     }
 }
+

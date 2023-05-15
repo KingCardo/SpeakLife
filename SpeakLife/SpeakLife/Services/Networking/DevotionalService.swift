@@ -33,7 +33,18 @@ final class DevotionalServiceClient: DevotionalService {
             
            
             let todaysDate = Date()
-            if let today = devotionals.first(where: { dateFormatter.string(from: $0.date) == dateFormatter.string(from: todaysDate) }) {
+            let calendar = Calendar.current
+            let todaysComponents = calendar.dateComponents([.year, .month, .day], from: todaysDate)
+            
+                let month = todaysComponents.month
+                let day = todaysComponents.day
+            
+            if let today = devotionals.first(where: {
+                let devotionalComponents = calendar.dateComponents([.month, .day], from: $0.date)
+                let devotionalMonth = devotionalComponents.month
+                let devotionalDay = devotionalComponents.day
+                return (devotionalMonth, devotionalDay) == (month, day)})
+                /*dateFormatter.string(from: $0.date) == dateFormatter.string(from: todaysDate) })*/ {
                 return [today]
             } else {
                 return []

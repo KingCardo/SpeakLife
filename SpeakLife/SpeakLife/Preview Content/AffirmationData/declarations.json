@@ -303,12 +303,6 @@
             "category": "faith"
         },
         {
-            "text": "Love does no harm to a neighbor. Therefore love is the fulfillment of the law.",
-            "book": "Romans 13:10 NIV",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
             "text": "This is the day the Lord has made. We will rejoice and be glad in it.",
             "book": "Psalms 118:24 NLT",
             "isFavorite": false,
@@ -351,12 +345,6 @@
             "category": "selfcontrol"
         },
         {
-            "text": "Trust in the Lord with all your heart; do not depend on your own understanding.",
-            "book": "Proverbs 3:5 NLT",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
             "text": "And it is impossible to please God without faith. Anyone who wants to come to him must believe that God exists and that he rewards those who sincerely seek him.",
             "book": "Hebrews 11:6 NLT",
             "isFavorite": false,
@@ -371,12 +359,6 @@
         {
             "text": "\"I tell you the truth, you can say to this mountain, ‘May you be lifted up and thrown into the sea,’ and it will happen. But you must really believe it will happen and have no doubt in your heart.\"",
             "book": "Mark 11:23 NLT",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "Our life is lived by faith. We do not live by what we see in front of us.",
-            "book": "2 Corinthians 5:7 NLV",
             "isFavorite": false,
             "category": "faith"
         },
@@ -1032,12 +1014,6 @@
         {
             "text": "You can pray for anything, and if you have faith, you will receive it.",
             "book": "Matthew 21:22 NLT",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "And whatever you ask in prayer, you will receive, if you have faith.",
-            "book": "Matthew 21:22 ESV",
             "isFavorite": false,
             "category": "faith"
         },
