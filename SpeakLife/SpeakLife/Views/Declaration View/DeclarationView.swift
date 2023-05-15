@@ -41,7 +41,7 @@ struct DeclarationView: View {
                     if !appState.showScreenshotLabel {
                         VStack() {
                             HStack {
-                                //dailyDevotionButton
+                               // dailyDevotionButton
                                 Spacer()
                                 ProfileBarButton(viewModel: ProfileBarButtonViewModel())
                                     .frame(height: geometry.size.height * 0.10)
@@ -114,11 +114,11 @@ struct DeclarationView: View {
         .sheet(isPresented: $isShowingMailView) {
             MailView(isShowing: $isShowingMailView, result: self.$result)
         }
-        .onTapGesture {
-            withAnimation {
-                appState.showIntentBar.toggle()
-            }
-        }
+//        .onTapGesture {
+//            withAnimation {
+//                appState.showIntentBar.toggle()
+//            }
+//        }
     }
     
     private var dailyDevotionButton: some View {
