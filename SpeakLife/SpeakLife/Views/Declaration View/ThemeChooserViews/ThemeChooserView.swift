@@ -27,14 +27,19 @@ struct ThemeChooserView: View {
     
     var selectCustomImageView: some View {
         HStack {
-            Button("Select Custom Image") {
+            Button {
                 if !subscriptionStore.isPremium {
                     presentPremiumView()
                     Selection.shared.selectionFeedback()
                 } else {
                     showingImagePicker = true
                 }
-            }.foregroundColor(Constants.DAMidBlue)
+            } label: {
+                HStack {
+                    Text("Select Custom Image")
+                    Image(systemName: "photo.fill")
+                }
+            }
         }
         .padding()
     }
@@ -49,7 +54,7 @@ struct ThemeChooserView: View {
         
         Text("Pick from a selection of fonts and backgrounds to personalize your theme.")
             .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .body))
-            .foregroundColor(Constants.DALightBlue)
+            .foregroundColor(.white)
             .multilineTextAlignment(.center)
             .lineLimit(2)
         
@@ -58,12 +63,21 @@ struct ThemeChooserView: View {
         Text("Select Font")
             .font(.body)
             .fontWeight(.semibold)
-            .foregroundColor(Constants.DALightBlue)
+            .foregroundColor(.white)
     }
     
     private func themeChooserBodyNew(size: CGSize) -> some View {
         NavigationView {
             ScrollView {
+                
+                HStack {
+                    Text("Theme")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding()
+                    Spacer()
+                }
                 
                 textHeader
                 
@@ -71,18 +85,22 @@ struct ThemeChooserView: View {
                 
                 selectCustomImageView
                 
-                Text("Select Background Image")
+                Text("Choose Background Image")
                     .font(.body)
                     .fontWeight(.semibold)
-                    .foregroundColor(Constants.DALightBlue)
+                    .foregroundColor(.white)
                 
                 LazyVGrid(columns: twoColumnGrid, spacing: 16) {
                     ForEach(themesViewModel.themes) { theme in
-                        themeCell(imageString: theme.backgroundImageString, size: size, isPremium: theme.isPremium)
-                            .onTapGesture {
-                                if !subscriptionStore.isPremium {
-                                    presentPremiumView()
-                                } else {
+                        if theme.isPremium && !subscriptionStore.isPremium {
+                            ZStack {
+                                themeCell(imageString: theme.backgroundImageString, size: size, isPremium: theme.isPremium)
+
+                                NavigationLink("", destination: PremiumView())
+                            }
+                        } else {
+                            themeCell(imageString: theme.backgroundImageString, size: size, isPremium: theme.isPremium)
+                                .onTapGesture {
                                     themesViewModel.choose(theme)
                                     self.presentationMode.wrappedValue.dismiss()
                                 }
@@ -99,12 +117,7 @@ struct ThemeChooserView: View {
             } content: {
                 PremiumView()
             }
-            .navigationBarTitle(Text("Theme"))
-            .background(colorScheme == .light ?
-                        Image("declarationBackground")
-                .resizable()
-                .aspectRatio(contentMode: .fill) : nil
-            )
+            .background(Gradients().trio)
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
                 self.isPresentingPremiumView = false
                 self.showingImagePicker = false

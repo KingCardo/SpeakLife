@@ -27,12 +27,16 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(scheduleNotificationRequest), name: UIApplication.didEnterBackgroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(scheduleNotificationRequest), name: resyncNotification, object: nil)
+        NotificationHandler.shared.callback = { [weak self] content in
+            self?.declarationStore?.setDeclaration(content.body, category: content.title)
+        }
         return true
     }
     
     private func registerNotificationHandler() {
         NotificationManager.shared.notificationCenter.delegate = NotificationHandler.shared
     }
+    
     
     private func registerBGTask() {
         

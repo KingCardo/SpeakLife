@@ -9,6 +9,7 @@ import UserNotifications
 import Foundation
 
 let resyncNotification = NSNotification.Name("NotificationsDone")
+let notificationNavigate = NSNotification.Name("NavigateToContent")
 
 final class NotificationManager: NSObject {
     

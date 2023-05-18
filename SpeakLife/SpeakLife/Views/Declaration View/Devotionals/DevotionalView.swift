@@ -37,6 +37,10 @@ struct DevotionalView: View {
             Gradients().random
             ScrollView {
                 VStack {
+                    if !subscriptionStore.isPremium {
+                        Text("\(viewModel.devotionalsLeft) more free devotionals left")
+                            .padding()
+                    }
                     Spacer()
                         .frame(height: 20)
                     Text(viewModel.devotionalDate)

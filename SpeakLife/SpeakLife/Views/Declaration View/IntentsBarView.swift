@@ -72,12 +72,25 @@ struct IntentsBarView: View {
             } content: {
                 ThemeChooserView(themesViewModel: themeViewModel)
             }
+            
+            if !subscriptionStore.isPremium {
+                CapsuleImageButton(title: "crown.fill") {
+                    premiumView()
+                    Selection.shared.selectionFeedback()
+                }.sheet(isPresented: $isPresentingPremiumView) {
+                    self.isPresentingPremiumView = false
+                    Analytics.logEvent(Event.tryPremiumAbandoned, parameters: nil)
+                } content: {
+                    PremiumView()
+                }
+            }
         }
         .padding()
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
             self.isPresentingThemeChooser = false
             self.isPresentingPremiumView = false
             self.isPresentingCategoryChooser = false
+            self.showEntryView = false
         }
         .foregroundColor(.white)
     }

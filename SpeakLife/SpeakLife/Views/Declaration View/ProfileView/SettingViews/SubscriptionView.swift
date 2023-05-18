@@ -46,7 +46,7 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR29
     
     let size: CGSize
     var callback: (() -> Void)?
@@ -97,6 +97,7 @@ struct SubscriptionView: View {
                     benefitRows
                         .foregroundColor(.white)
                     
+                                        
                     Spacer()
                         .frame(height: 40)
                     
@@ -111,12 +112,14 @@ struct SubscriptionView: View {
                         .foregroundColor(.black)
                 }
                 
-                if declarationStore.isPurchasing {
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle())
-                        .scaleEffect(3)
-                }
+                
             }
+            if declarationStore.isPurchasing {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .scaleEffect(2)
+            }
+
             
         }
     }

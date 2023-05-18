@@ -22,6 +22,21 @@ struct Gradients {
             .edgesIgnoringSafeArea(.all)
     }
     
+    var trio: some View {
+        LinearGradient(gradient: Gradient(colors: [.purple, .cyan, .red]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            .edgesIgnoringSafeArea(.all)
+    }
+    
+    var redPurple: some View {
+        LinearGradient(gradient: Gradient(colors: [.purple, .red]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            .edgesIgnoringSafeArea(.all)
+    }
+    
+    var redCyan: some View {
+        LinearGradient(gradient: Gradient(colors: [ .cyan, .red]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            .edgesIgnoringSafeArea(.all)
+    }
+    
     var cyan: some View { LinearGradient(gradient: Gradient(colors: [.cyan, .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
             .edgesIgnoringSafeArea(.all)
     }

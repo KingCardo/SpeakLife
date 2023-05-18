@@ -8,6 +8,7 @@
 import SwiftUI
 import MessageUI
 import StoreKit
+import UIKit
 
 struct DeclarationView: View {
     
@@ -37,11 +38,12 @@ struct DeclarationView: View {
                 
                 DeclarationContentView(themeViewModel: themeViewModel, viewModel: viewModel)
                     .frame(width: geometry.size.width, height: geometry.size.height)
+                
                 if appState.showIntentBar {
                     if !appState.showScreenshotLabel {
                         VStack() {
                             HStack {
-                               // dailyDevotionButton
+                                //dailyDevotionButton
                                 Spacer()
                                 ProfileBarButton(viewModel: ProfileBarButtonViewModel())
                                     .frame(height: geometry.size.height * 0.10)
@@ -55,14 +57,16 @@ struct DeclarationView: View {
                         }
                     }
                 }
-                
             }
+            
             .sheet(isPresented: $showDailyDevotion) {
-                    DevotionalView(viewModel: DevotionalViewModel())
+                DevotionalView(viewModel: DevotionalViewModel())
             }
+            
         }
         .background(
             ZStack {
+                
                 if themeViewModel.showUserSelectedImage {
                     Image(uiImage: themeViewModel.selectedImage!)
                         .resizable()
@@ -78,13 +82,14 @@ struct DeclarationView: View {
                 Rectangle()
                     .fill(Color.black.opacity(themeViewModel.selectedTheme.blurEffect ? 0.5 : 0))
                     .edgesIgnoringSafeArea(.all)
+                
             }
         )
         
         .alert(isPresented: $viewModel.showErrorMessage) {
             Alert(
-                title: Text("Error", comment: "Error title message"),
-                message: Text("OK", comment: "OK alert message")
+                title: Text("Error", comment: "Error title message") +  Text(viewModel.errorMessage ?? ""),
+                message: Text("Select a category", comment: "OK alert message")
             )
         }
         .onAppear {
@@ -114,11 +119,6 @@ struct DeclarationView: View {
         .sheet(isPresented: $isShowingMailView) {
             MailView(isShowing: $isShowingMailView, result: self.$result)
         }
-//        .onTapGesture {
-//            withAnimation {
-//                appState.showIntentBar.toggle()
-//            }
-//        }
     }
     
     private var dailyDevotionButton: some View {
@@ -126,6 +126,11 @@ struct DeclarationView: View {
             showDailyDevotion = true
             Selection.shared.selectionFeedback()
         }
+        
+        .foregroundColor(.white)
+        .padding(4)
+        .background(Gradients().trio)
+        .cornerRadius(40)
         .padding(.leading)
     }
     
@@ -141,7 +146,7 @@ struct DeclarationView: View {
     
     private func shareApp() {
 #if !DEBUG
-        if shareCounter > 3 && !subscriptionStore.isPremium && shared < 3 {
+        if shareCounter > 5 && shared < 3 {
             share = true
             shareCounter = 0
         }
@@ -183,4 +188,3 @@ struct DeclarationView: View {
         }
     }
 }
-

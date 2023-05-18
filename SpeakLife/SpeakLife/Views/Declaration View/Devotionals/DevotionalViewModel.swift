@@ -40,8 +40,15 @@ final class DevotionalViewModel: ObservableObject {
         }
     }
     
+    var devotionalsLeft: Int {
+        if !devotionalLimitReached {
+            return 5 - devotionalDictionary.count
+        }
+        return 0
+    }
+    
     var devotionalLimitReached: Bool {
-        devotionalDictionary.count > 3
+        devotionalDictionary.count > 5
     }
     
     func setDevotionalDictionary() {
@@ -49,10 +56,6 @@ final class DevotionalViewModel: ObservableObject {
 
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month, .day], from: date)
-
-//        let year = components.year
-//        let month = components.month
-//        let day = components.day
         
         // means we added the date user looked at devotional already
         if let _ = devotionalDictionary[components] {

@@ -50,6 +50,7 @@ final class DeclarationViewModel: ObservableObject {
     var errorMessage: String? {
         didSet {
             if errorMessage != nil  {
+                print(errorMessage, "RWRW")
                 showErrorMessage = true
             }
         }
@@ -266,18 +267,20 @@ final class DeclarationViewModel: ObservableObject {
     }
     
     func setDeclaration(_ content: String,  category: String)  {
+        var contentData = content
+        contentData += " ~ " + category
         
         if let category = DeclarationCategory(category),
            let categoryArray = allDeclarationsDict[category] {
-            guard let declaration = categoryArray.filter ({ $0.text ==  content }).first else {
+            guard let declaration = categoryArray.filter ({ $0.text == contentData }).first else {
                 print("failed to create dec rwrw")
                 return
             }
             self.choose(declaration)
             print("choose dec")
         } else {
-            guard let declaration = allDeclarations.filter ({ $0.text ==  content }).first else {
-                print("failed to create dec rwrw")
+            guard let declaration = allDeclarations.filter ({ $0.text == contentData }).first else {
+                print("failed to create dec rwrw find")
                 return
             }
             self.choose(declaration)
