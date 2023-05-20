@@ -15,6 +15,9 @@ final class DevotionalViewModel: ObservableObject {
     @Published var devotionalDate = ""
     @Published var devotionalBooks = ""
     @Published var title = ""
+    @Published var hasError = false
+    let errorString = "Upgrade to the latest version for Today's Devotional."
+    private let freeCount = 5
     
     var devotional: Devotional? {
         didSet {
@@ -42,7 +45,7 @@ final class DevotionalViewModel: ObservableObject {
     
     var devotionalsLeft: Int {
         if !devotionalLimitReached {
-            return 5 - devotionalDictionary.count
+            return freeCount - devotionalDictionary.count
         }
         return 0
     }
@@ -51,7 +54,7 @@ final class DevotionalViewModel: ObservableObject {
         devotionalDictionary.count > 5
     }
     
-    func setDevotionalDictionary() {
+    private func setDevotionalDictionary() {
         let date = Date()
 
         let calendar = Calendar.current
@@ -84,6 +87,11 @@ final class DevotionalViewModel: ObservableObject {
         if let devotional = await service.fetchDevotionForToday().first {
             DispatchQueue.main.async { [weak self] in
                 self?.devotional = devotional
+            }
+            setDevotionalDictionary()
+        } else {
+            DispatchQueue.main.async { [weak self] in
+                self?.hasError = true
             }
         }
         return

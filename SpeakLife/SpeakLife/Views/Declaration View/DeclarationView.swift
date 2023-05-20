@@ -43,7 +43,7 @@ struct DeclarationView: View {
                     if !appState.showScreenshotLabel {
                         VStack() {
                             HStack {
-                                //dailyDevotionButton
+                                dailyDevotionButton
                                 Spacer()
                                 ProfileBarButton(viewModel: ProfileBarButtonViewModel())
                                     .frame(height: geometry.size.height * 0.10)
@@ -129,7 +129,7 @@ struct DeclarationView: View {
         
         .foregroundColor(.white)
         .padding(4)
-        .background(Gradients().trio)
+        .background(Gradients().purple)
         .cornerRadius(40)
         .padding(.leading)
     }
