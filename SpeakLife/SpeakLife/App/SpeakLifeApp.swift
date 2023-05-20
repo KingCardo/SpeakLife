@@ -18,6 +18,7 @@ struct SpeakLifeApp: App {
     @StateObject var declarationStore = DeclarationViewModel(apiService: APIClient())
     @StateObject var themeStore = ThemeViewModel()
     @StateObject var subscriptionStore = SubscriptionStore()
+    @StateObject var devotionalViewModel = DevotionalViewModel()
    // @StateObject var timeTracker = TimeTrackerViewModel()
     
     private let fourDaysInSeconds: Double = 345600
@@ -29,6 +30,7 @@ struct SpeakLifeApp: App {
                 .environmentObject(declarationStore)
                 .environmentObject(themeStore)
                 .environmentObject(subscriptionStore)
+                .environmentObject(devotionalViewModel)
             //    .environmentObject(timeTracker)
         }
         .onChange(of: scenePhase) { (newScenePhase) in

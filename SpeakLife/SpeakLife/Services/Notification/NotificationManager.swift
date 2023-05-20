@@ -46,6 +46,7 @@ final class NotificationManager: NSObject {
         }
         morningAffirmationReminder()
         nightlyAffirmationReminder()
+        devotionalAffirmationReminder()
     }
     
     private func getNotificationData(for count: Int,
@@ -179,6 +180,32 @@ final class NotificationManager: NSObject {
         dateComponents.calendar = Calendar.autoupdatingCurrent
         dateComponents.timeZone = TimeZone.autoupdatingCurrent
         dateComponents.hour = 20
+        
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: dateComponents, repeats: false)
+        
+        
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        notificationCenter.add(request) { (error) in
+            if error != nil {
+                //  TODO: - handle error
+            }
+        }
+    }
+    
+    private func devotionalAffirmationReminder() {
+        let id = UUID().uuidString
+        let body = "Your Daily Devotion is Ready! Take a moment to nourish your spirit and deepen your faith.!" // Localize
+        
+        let content = UNMutableNotificationContent()
+        content.title = "SpeakLife"
+        content.body = body
+        content.sound = UNNotificationSound.default
+        
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.autoupdatingCurrent
+        dateComponents.timeZone = TimeZone.autoupdatingCurrent
+        dateComponents.hour = 9
         
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: dateComponents, repeats: false)

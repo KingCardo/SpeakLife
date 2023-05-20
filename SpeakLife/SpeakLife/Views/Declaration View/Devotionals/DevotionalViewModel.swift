@@ -38,7 +38,9 @@ final class DevotionalViewModel: ObservableObject {
         set  {
             let encoder = JSONEncoder()
             if let encoded = try? encoder.encode(newValue) {
-                devotionalDictionaryData = encoded
+                DispatchQueue.main.async { [weak self] in
+                    self?.devotionalDictionaryData = encoded
+                }
             }
         }
     }
@@ -64,7 +66,9 @@ final class DevotionalViewModel: ObservableObject {
         if let _ = devotionalDictionary[components] {
             
         } else {
-            devotionalDictionary[components] = true
+            DispatchQueue.main.async { [weak self] in
+                self?.devotionalDictionary[components] = true
+            }
         }
         
     }
@@ -84,6 +88,19 @@ final class DevotionalViewModel: ObservableObject {
     }
     
     func fetchDevotional() async {
+//        
+//        let todaysDate = Date()
+//        let calendar = Calendar.current
+//        let todaysComponents = calendar.dateComponents([.month, .day], from: todaysDate)
+//        
+//        var devotionalComponents: DateComponents?
+//        if let devotional = devotional {
+//            devotionalComponents = calendar.dateComponents([.month, .day], from: devotional.date)
+//           
+//        }
+//        guard devotionalComponents == todaysComponents else { return }
+        
+       
         if let devotional = await service.fetchDevotionForToday().first {
             DispatchQueue.main.async { [weak self] in
                 self?.devotional = devotional

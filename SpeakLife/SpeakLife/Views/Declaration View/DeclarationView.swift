@@ -17,6 +17,7 @@ struct DeclarationView: View {
     @EnvironmentObject var viewModel: DeclarationViewModel
     @EnvironmentObject var themeViewModel: ThemeViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
+    @EnvironmentObject var devotionalViewModel: DevotionalViewModel
     @EnvironmentObject var appState: AppState
     @Environment(\.presentationMode) var presentationMode
     
@@ -60,7 +61,7 @@ struct DeclarationView: View {
             }
             
             .sheet(isPresented: $showDailyDevotion) {
-                DevotionalView(viewModel: DevotionalViewModel())
+                DevotionalView(viewModel:devotionalViewModel)
             }
             
         }
@@ -122,14 +123,27 @@ struct DeclarationView: View {
     }
     
     private var dailyDevotionButton: some View {
-        CapsuleImageButton(title: "book.fill") {
+//        CapsuleImageButton(title: "book.fill") {
+//            showDailyDevotion = true
+//            Selection.shared.selectionFeedback()
+//        }
+        
+        Button(action: {
             showDailyDevotion = true
             Selection.shared.selectionFeedback()
-        }
+        }, label: {
+            Image(systemName: "book.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 25, height: 25)
+        })
         
+        .frame(width: 50, height: 50)
         .foregroundColor(.white)
         .padding(4)
+       
         .background(Gradients().purple)
+        
         .cornerRadius(40)
         .padding(.leading)
     }
