@@ -46,7 +46,7 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR29
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
     
     let size: CGSize
     var callback: (() -> Void)?
@@ -106,7 +106,7 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 24)
                     
-                    Text("Remember, your premium subscription will help to enrich your spiritual journey and allow us to continuously deliver high-quality, inspiring content. Subscribe today and experience the power of Bible affirmations like never before!")
+                    Text("Your premium subscription will help to enrich your spiritual journey and allow us to continuously deliver high-quality, inspiring content. Subscribe today and experience the power of Bible affirmations like never before!")
                         .padding(.all)
                         .font(.caption)
                         .foregroundColor(.black)
