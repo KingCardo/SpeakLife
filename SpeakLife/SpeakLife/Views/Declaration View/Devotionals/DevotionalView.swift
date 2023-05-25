@@ -10,11 +10,21 @@ import SwiftUI
 struct DevotionalView: View {
     
     @EnvironmentObject var subscriptionStore: SubscriptionStore
+    @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: DevotionalViewModel
     
     let spacing: CGFloat = 20
     
     var body: some View {
+        contentView
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                self.presentationMode.wrappedValue.dismiss()
+            }
+        
+    }
+    
+    @ViewBuilder
+    var contentView: some  View {
         if subscriptionStore.isPremium || !viewModel.devotionalLimitReached {
             devotionalView
                 .onAppear {
@@ -33,7 +43,6 @@ struct DevotionalView: View {
                 SubscriptionView(size: UIScreen.main.bounds.size)
             }
         }
-        
     }
     
     var devotionalView: some View {
