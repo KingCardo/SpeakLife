@@ -46,7 +46,7 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39
     
     let size: CGSize
     var callback: (() -> Void)?
