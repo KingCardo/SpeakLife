@@ -88,18 +88,6 @@ final class DevotionalViewModel: ObservableObject {
     }
     
     func fetchDevotional() async {
-//        
-//        let todaysDate = Date()
-//        let calendar = Calendar.current
-//        let todaysComponents = calendar.dateComponents([.month, .day], from: todaysDate)
-//        
-//        var devotionalComponents: DateComponents?
-//        if let devotional = devotional {
-//            devotionalComponents = calendar.dateComponents([.month, .day], from: devotional.date)
-//           
-//        }
-//        guard devotionalComponents == todaysComponents else { return }
-        
        
         if let devotional = await service.fetchDevotionForToday().first {
             DispatchQueue.main.async { [weak self] in

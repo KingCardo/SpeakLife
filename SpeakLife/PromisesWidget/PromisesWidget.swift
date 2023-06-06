@@ -105,6 +105,22 @@ struct SimpleEntry: TimelineEntry {
     
 }
 
+struct Gradients {
+
+    let colors: [Color] = [.cyan, .purple, .white, .red]
+
+    func randomColors() -> [Color] {
+        let shuffledColors = colors.shuffled()
+        let array = Array(shuffledColors.prefix(2))
+        return array
+    }
+
+    var purple: some View {
+        LinearGradient(gradient: Gradient(colors: randomColors()), startPoint: .topLeading, endPoint: .bottomTrailing)
+            .edgesIgnoringSafeArea(.all)
+    }
+}
+
 struct PromisesGlanceView: View {
     @Environment(\.widgetFamily) var family: WidgetFamily
     let affirmation: String
@@ -120,7 +136,7 @@ struct PromisesGlanceView: View {
     
     var body: some View {
         ZStack {
-            Color.cyan.opacity(opacity)
+            Gradients().purple.opacity(opacity)
             Text(affirmation)
                 .foregroundColor(.white)
                 .font(.custom("BodoniSvtyTwoOSITCTT-Book", size: fontSize))

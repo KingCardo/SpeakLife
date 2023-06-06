@@ -1,5 +1,5 @@
 {
-    "count": 560,
+    "count": 589,
     "declarations": [
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
@@ -3378,6 +3378,46 @@
             "isFavorite": false,
             "category": "guidance"
         },
+        {"text": "Come to me, all you who are weary and burdened, and I will give you rest." , "book": "Matthew 11:28 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "He makes me lie down in green pastures, he leads me beside quiet waters." , "book": "Psalm 23:2 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "Return to your rest, my soul, for the LORD has been good to you." , "book": "Psalm 116:7 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "My presence will go with you, and I will give you rest." , "book": "Exodus 33:14 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "He said to them, 'This is what the LORD commanded: 'Tomorrow is to be a day of sabbath rest, a holy sabbath to the LORD.'" , "book": "Exodus 16:23 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "The LORD replied, 'My Presence will go with you, and I will give you rest.'" , "book": "Exodus 33:14 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus." , "book": "Philippians 4:7 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "Let us, therefore, make every effort to enter that rest, so that no one will perish by following their example of disobedience." , "book": "Hebrews 4:11 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "He will cover you with his feathers, and under his wings you will find refuge; his faithfulness will be your shield and rampart." , "book": "Psalm 91:4 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "Take my yoke upon you and learn from me, for I am gentle and humble in heart, and you will find rest for your souls." , "book": "Matthew 11:29 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "Truly my soul finds rest in God; my salvation comes from him." , "book": "Psalm 62:1 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "It is useless for you to work so hard from early morning until late at night, anxiously working for food to eat; for God gives rest to his loved ones." , "book": "Psalm 127:2 NLT", "isFavorite": false, "category": "rest"},
+        {"text": "For thus said the Lord God, the Holy One of Israel, 'In returning and rest you shall be saved; in quietness and in trust shall be your strength.'" , "book": "Isaiah 30:15 ESV", "isFavorite": false, "category": "rest"},
+        {"text": "Six days you shall labor, but on the seventh day you shall rest; even during the plowing season and harvest you must rest." , "book": "Exodus 34:21 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "I lay down and slept; I woke again, for the Lord sustained me." , "book": "Psalm 3:5 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "In peace I will lie down and sleep, for you alone, Lord, make me dwell in safety." , "book": "Psalm 4:8 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "For he satisfies the thirsty and fills the hungry with good things." , "book": "Psalm 107:9 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "The LORD is my shepherd, I lack nothing. He makes me lie down in green pastures, he leads me beside quiet waters, he refreshes my soul." , "book": "Psalm 23:1-3 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "He gives strength to the weary and increases the power of the weak." , "book": "Isaiah 40:29 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "The LORD is my shepherd, I lack nothing. He makes me lie down in green pastures, he leads me beside quiet waters, he refreshes my soul." , "book": "Psalm 23:1-3 NIV", "isFavorite": false, "category": "rest"},
+        {"text": "If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness." , "book": "1 John 1:9 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "Therefore, there is now no condemnation for those who are in Christ Jesus." , "book": "Romans 8:1 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "As far as the east is from the west, so far has he removed our transgressions from us." , "book": "Psalm 103:12 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "Come now, let us settle the matter. Though your sins are like scarlet, they shall be as white as snow; though they are red as crimson, they shall be like wool." , "book": "Isaiah 1:18 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "The Lord is compassionate and gracious, slow to anger, abounding in love." , "book": "Psalm 103:8 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "I have swept away your offenses like a cloud, your sins like the morning mist. Return to me, for I have redeemed you." , "book": "Isaiah 44:22 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "In him we have redemption through his blood, the forgiveness of sins, in accordance with the riches of God’s grace." , "book": "Ephesians 1:7 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "He does not treat us as our sins deserve or repay us according to our iniquities." , "book": "Psalm 103:10 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "I, even I, am he who blots out your transgressions, for my own sake, and remembers your sins no more." , "book": "Isaiah 43:25 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "If my people, who are called by my name, will humble themselves and pray and seek my face and turn from their wicked ways, then I will hear from heaven, and I will forgive their sin and will heal their land." , "book": "2 Chronicles 7:14 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "But if we confess our sins to him, he is faithful and just to forgive us our sins and to cleanse us from all wickedness." , "book": "1 John 1:9 NLT", "isFavorite": false, "category": "guilt"},
+        {"text": "Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ." , "book": "Romans 5:1 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "For I will forgive their wickedness and will remember their sins no more." , "book": "Hebrews 8:12 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "I, even I, am he who blots out your transgressions, for my own sake, and remembers your sins no more." , "book": "Isaiah 43:25 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "In him we have redemption through his blood, the forgiveness of sins, in accordance with the riches of God’s grace." , "book": "Ephesians 1:7 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "The LORD is compassionate and gracious, slow to anger, abounding in love." , "book": "Psalm 103:8 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness." , "book": "1 John 1:9 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "For I will forgive their wickedness and will remember their sins no more." , "book": "Hebrews 8:12 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "Therefore, there is now no condemnation for those who are in Christ Jesus." , "book": "Romans 8:1 NIV", "isFavorite": false, "category": "guilt"},
+        {"text": "As far as the east is from the west, so far has he removed our transgressions from us." , "book": "Psalm 103:12 NIV", "isFavorite": false, "category": "guilt"}
         
     ]
     

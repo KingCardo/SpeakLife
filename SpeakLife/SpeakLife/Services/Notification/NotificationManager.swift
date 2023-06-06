@@ -49,7 +49,7 @@ final class NotificationManager: NSObject {
         devotionalAffirmationReminder()
     }
     
-    private func getNotificationData(for count: Int,
+    func getNotificationData(for count: Int,
                                      categories: Set<DeclarationCategory>?)  ->  [NotificationProcessor.NotificationData] {
         var notificationData: [NotificationProcessor.NotificationData] = []
         
@@ -179,7 +179,7 @@ final class NotificationManager: NSObject {
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.autoupdatingCurrent
         dateComponents.timeZone = TimeZone.autoupdatingCurrent
-        dateComponents.hour = 20
+        dateComponents.hour = 21
         
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: dateComponents, repeats: false)
@@ -208,7 +208,7 @@ final class NotificationManager: NSObject {
         dateComponents.hour = 9
         
         let trigger = UNCalendarNotificationTrigger(
-            dateMatching: dateComponents, repeats: false)
+            dateMatching: dateComponents, repeats: true)
         
         
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)

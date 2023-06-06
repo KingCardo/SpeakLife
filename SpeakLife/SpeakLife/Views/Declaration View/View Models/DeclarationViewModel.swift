@@ -269,6 +269,8 @@ final class DeclarationViewModel: ObservableObject {
     func setDeclaration(_ content: String,  category: String)  {
         var contentData = content
         contentData += " ~ " + category
+        let contentText = prefixString(content, until: "~").dropLast()
+        print(contentText, "RWRW")
         
         if let category = DeclarationCategory(category),
            let categoryArray = allDeclarationsDict[category] {
@@ -279,12 +281,21 @@ final class DeclarationViewModel: ObservableObject {
             self.choose(declaration)
             print("choose dec")
         } else {
-            guard let declaration = allDeclarations.filter ({ $0.text == contentData }).first else {
+            guard let declaration = allDeclarations.filter ({ $0.text == contentText }).first else {
                 print("failed to create dec rwrw find")
                 return
             }
             self.choose(declaration)
             
         }
+    }
+}
+
+func prefixString(_ text: String, until character: Character) -> String {
+    if let index = text.firstIndex(of: character) {
+        let prefix = text[..<index]
+        return String(prefix)
+    } else {
+        return text
     }
 }

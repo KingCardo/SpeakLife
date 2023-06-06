@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct DevotionalView: View {
     
@@ -28,6 +29,7 @@ struct DevotionalView: View {
         if subscriptionStore.isPremium || !viewModel.devotionalLimitReached {
             devotionalView
                 .onAppear {
+                    Analytics.logEvent(Event.devotionalTapped, parameters: nil)
                     Task {
                         await viewModel.fetchDevotional()
                     }
