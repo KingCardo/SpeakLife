@@ -9,9 +9,22 @@ import MessageUI
 import SwiftUI
 
 struct MailView: UIViewControllerRepresentable {
+    enum Origin {
+      case profile
+      case review
+    }
 
     @Binding var isShowing: Bool
     @Binding var result: Result<MFMailComposeResult, Error>?
+    @State var origin: Origin
+    private let appVersion = "App version: \(APP.Version.stringNumber)"
+    
+    var title: String {
+        switch origin {
+        case .profile: return "Support for \(appVersion)"
+        case .review: return "Feedback for SpeakLife - Daily Bible Promises(iOS app)"
+        }
+    }
 
     class Coordinator: NSObject, MFMailComposeViewControllerDelegate {
 
@@ -45,10 +58,9 @@ struct MailView: UIViewControllerRepresentable {
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<MailView>) -> MFMailComposeViewController {
         let vc = MFMailComposeViewController()
-        vc.setSubject(NSLocalizedString("Feedback for SpeakLife - Daily Bible Promises(iOS app)", comment: "mail title"))
+        vc.setSubject(NSLocalizedString(title, comment: "mail title"))
         vc.setToRecipients(["speaklifebibleapp@gmail.com"])
         vc.mailComposeDelegate = context.coordinator
-        // TO DO: -  maybe set version  and iOS number
         return vc
     }
 

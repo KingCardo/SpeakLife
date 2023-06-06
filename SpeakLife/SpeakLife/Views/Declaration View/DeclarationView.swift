@@ -118,7 +118,7 @@ struct DeclarationView: View {
         }
         
         .sheet(isPresented: $isShowingMailView) {
-            MailView(isShowing: $isShowingMailView, result: self.$result)
+            MailView(isShowing: $isShowingMailView, result: self.$result, origin: .review)
         }
     }
     

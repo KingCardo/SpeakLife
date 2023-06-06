@@ -95,6 +95,8 @@ struct ProfileView: View {
             
             Section(footer: VStack {
                 copyrightView
+                Spacer()
+                    .frame(height: 6)
                 Text(appVersion).font(.caption2).font(.caption)
             }) {
             }
@@ -213,7 +215,7 @@ struct ProfileView: View {
                 .opacity(0)
                 .background(
                     HStack {
-                        Text("Journal", comment: "create your own title")
+                        Text("My Own", comment: "create your own title")
                         Spacer()
                         Image(systemName: "chevron.right")
                             .resizable()
@@ -265,7 +267,7 @@ struct ProfileView: View {
     @ViewBuilder
     private var feedbackRow: some View {
         if MFMailComposeViewController.canSendMail() {
-            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.grid.3x1.folder.fill.badge.plus", title: "Suggest New Categories - Feedback", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result))) {
+            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.grid.3x1.folder.fill.badge.plus", title: "Contact Us", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .profile))) {
                 presentContentView()
             }
         }
