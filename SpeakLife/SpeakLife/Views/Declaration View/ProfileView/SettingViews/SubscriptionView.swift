@@ -17,25 +17,22 @@ struct Benefit: Identifiable  {
     }
     
     static var premiumBenefits: [Benefit] = [
-//        Benefit(text: "Heightened Sense of Purpose: As you immerse yourself in Bible affirmations, you'll gain insight into your God-given purpose and talents. This clarity can guide you towards a more purpose-driven life, aligning your actions with your values and aspirations."),
-//        Benefit(text: "Renewed Mindset: Regularly meditating on Bible affirmations can help reduce stress, anxiety, and negative emotions. This practice can contribute to better mental health, leading to a more balanced and contented life."),
-//        Benefit(text: "Enhanced Resilience: By focusing on the promises and truths found in scripture, you'll cultivate emotional resilience and the ability to conquer life's trials. The practice of Bible affirmations can serve as a powerful reminder of God's unwavering support in times of difficulty."),
-//        Benefit(text: "Deeper Spiritual Connection: Our app helps you develop a stronger relationship with God through daily reflection on scripture-based affirmations."),
-//        Benefit(text: "Boosted Confidence and Self-Worth: As you internalize the affirmations rooted in God's Word, you'll start recognizing your true worth and potential. This newfound confidence can lead to improved relationships, career growth, and the courage to pursue your dreams."),
-//        Benefit(text: "Empowered Decision-Making: The wisdom and guidance found in scripture-based affirmations can help you make informed, faith-aligned decisions. By integrating God's Word into your daily life, you'll be better equipped to face challenges and opportunities with confidence and grace."),
+
+        Benefit(text: "But seek first his kingdom and his righteousness, and all these things will be given to you as well. - Matthew 6:33"),
+        Benefit(text: "Do not conform to the pattern of this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what God's will is—his good, pleasing and perfect will. - Romans 12:2"),
+        
+        Benefit(text: "Therefore put on the full armor of God, so that when the day of evil comes, you may be able to stand your ground - Ephesians 6:13"),
+        Benefit(text: "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you. - James 1:5"),
+        
         Benefit(text: "Unlimited Access: With a premium subscription, get unlimited access to our extensive library of Bible affirmations, allowing you to find comfort, guidance, and inspiration anytime you need it."),
-        Benefit(text: "Personalized Experience: Tailor your experience to your needs. Customize and create your own affirmations, and choose themes that resonate with your spiritual journey."),
-        Benefit(text: "Ad-Free Experience: Enjoy an uninterrupted, ad-free experience. Focus on your affirmations without any distractions."),
-       Benefit(text: "Daily Inspirations: Receive exclusive daily inspirational quotes and affirmations, curated just for you, to help start your day on a positive note."),
-        Benefit(text: "Offline Access: Download your favorite affirmations and access them anytime, anywhere, even without internet connection."),
-        Benefit(text: "Early Access: Get early access to new features and content. Be the first to explore new affirmations, themes, and tools."),
-        Benefit(text: "Support the App: Your subscription helps us maintain the app, create new content, and continue providing you with a valuable resource for your spiritual journey."),
-//        Benefit(text: "Renewed Mindset"),
-//        Benefit(text: "Deeper Spiritual Connection"),
-//        Benefit(text: "Warrior Resilience"),
-//        Benefit(text: "Empowered Decision-Making"),
+//        Benefit(text: "Personalized Experience: Tailor your experience to your needs. Customize and create your own affirmations, and choose themes that resonate with your spiritual journey."),
+//        Benefit(text: "Ad-Free Experience: Enjoy an uninterrupted, ad-free experience. Focus on your affirmations without any distractions."),
+//       Benefit(text: "Daily Inspirations: Receive exclusive daily inspirational quotes and affirmations, curated just for you, to help start your day on a positive note."),
+//        Benefit(text: "Offline Access: Download your favorite affirmations and access them anytime, anywhere, even without internet connection."),
+//        Benefit(text: "Early Access: Get early access to new features and content. Be the first to explore new affirmations, themes, and tools."),
+//        Benefit(text: "Support the App: Your subscription helps us maintain the app, create new content, and continue providing you with a valuable resource for your spiritual journey."),
+        Benefit(text: "Let each man give according as he has determined in his heart; not grudgingly, or under compulsion; for God loves a cheerful giver. - 2 Corinthians 9:7"),
         Benefit(text: "Choose amount comfortable for you! Unlocks all premium features."),
-//        Benefit(text: "Choose amount comfortable for you! Unlocks all premium features.")
     ]
 }
 
