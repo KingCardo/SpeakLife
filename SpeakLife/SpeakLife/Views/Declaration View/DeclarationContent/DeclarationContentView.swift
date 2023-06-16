@@ -30,21 +30,7 @@ struct DeclarationContentView: View {
         self.viewModel = viewModel
     }
     
-    private var journalView: some View {
-        NavigationLink(LocalizedStringKey("Create Your Own"), destination: LazyView(CreateYourOwnView()))
-            .opacity(0)
-            .background(
-                HStack {
-                    Text("Journal", comment: "create your own title")
-                    Spacer()
-                    Image(systemName: "chevron.right")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 8)
-                        .foregroundColor(Constants.DAMidBlue)
-                })
-    }
-    
+  
     @ViewBuilder
     var body: some View {
         GeometryReader { geometry in
@@ -102,6 +88,22 @@ struct DeclarationContentView: View {
             self.showShareSheet = false
         }
     }
+    
+    private var journalView: some View {
+        NavigationLink(LocalizedStringKey("Create Your Own"), destination: LazyView(CreateYourOwnView()))
+            .opacity(0)
+            .background(
+                HStack {
+                    Text("Journal", comment: "create your own title")
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 8)
+                        .foregroundColor(Constants.DAMidBlue)
+                })
+    }
+    
     
     private func intentVstack(declaration: Declaration, _ geometry: GeometryProxy) -> some View {
         VStack {
