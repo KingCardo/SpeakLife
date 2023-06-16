@@ -19,7 +19,7 @@ final class DeclarationViewModel: ObservableObject {
     
     private (set) var currentDeclaration: Declaration?
     
-    @Published var allCategories: [DeclarationCategory] = DeclarationCategory.categoryOrder
+    @Published var allCategories: [DeclarationCategory] = DeclarationCategory.getCategoryOrder()
     
     private var allDeclarationsDict: [DeclarationCategory: [Declaration]] = [:]
     

@@ -24,6 +24,10 @@ final class NotificationManager: NSObject {
         }
     }
     
+    static func notificationCategories() -> Set<DeclarationCategory> {
+        [.peace, .identity, .addiction, .guidance, .gratitude, .godsprotection, .love, .faith, .guilt]
+    }
+    
     
     private override init() {}
     
@@ -41,7 +45,7 @@ final class NotificationManager: NSObject {
             let notifications = getNotificationData(for: count, categories: categories)
             prepareNotifications(declarations: notifications,  startTime: startTime, endTime: endTime, count: count)
         } else {
-            let notifications = getNotificationData(for: count, categories: nil)
+            let notifications = getNotificationData(for: count, categories: NotificationManager.notificationCategories())
             prepareNotifications(declarations: notifications,  startTime: startTime, endTime: endTime, count: count)
         }
         morningAffirmationReminder()
@@ -58,7 +62,7 @@ final class NotificationManager: NSObject {
                 notificationData = data
             }
         } else {
-            notificationProcessor.getNotificationData(count: count, categories: nil) { data in
+            notificationProcessor.getNotificationData(count: count, categories: [.faith,]) { data in
                 notificationData = data
             }
         }

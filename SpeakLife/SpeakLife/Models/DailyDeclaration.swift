@@ -8,7 +8,11 @@
 import Foundation
 
 
-enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
+enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparable {
+    static func < (lhs: DeclarationCategory, rhs: DeclarationCategory) -> Bool {
+        return  lhs.name <= rhs.name
+    }
+    
     case faith
     case love
     case favorites
@@ -37,9 +41,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     case guilt
     
     static var categoryOrder: [DeclarationCategory] = [
-        .favorites,
-        .myOwn,
         .faith,
+        .addiction,
         .love,
         .peace,
         .rest,
@@ -52,7 +55,6 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
         .motivation,
         .discipline,
         .health,
-        .addiction,
         .depression,
         .marriage,
         .fear,
@@ -63,7 +65,15 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
         .loneliness,
         .selfcontrol,
         .perseverance
-            ]
+    ]
+    
+    static func getCategoryOrder() -> [DeclarationCategory] {
+        var categories = categoryOrder.sorted(by: <)
+        categories.insert(.myOwn, at: 0)
+        categories.insert(.favorites, at: 0)
+        return categories
+           
+    }
     
     var id: String {
          self.rawValue
@@ -98,7 +108,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable {
     
     var isPremium: Bool {
         switch self {
-        case .faith, .love, .favorites, .peace, .identity, .rest: return false
+        case .favorites, .peace, .identity, .addiction, .guidance, .gratitude, .godsprotection, .guilt: return false
         default: return true
         }
     }

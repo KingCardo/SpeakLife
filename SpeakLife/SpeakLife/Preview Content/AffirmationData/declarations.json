@@ -369,8 +369,8 @@
             "category": "faith"
         },
         {
-            "text": "For by grace you have been saved through faith, and that not of yourselves; it is the gift of God, not of works, lest anyone should boast.",
-            "book": "Ephesians 2:8-9 NKJV",
+            "text": "God saved you by his grace when you believed. And you can’t take credit for this; it is a gift from God. Salvation is not a reward for the good things we have done, so none of us can boast about it.",
+            "book": "Ephesians 2:8-9 NLT",
             "isFavorite": false,
             "category": "faith"
         },
@@ -819,12 +819,6 @@
             "category": "wealth"
         },
         {
-            "text": "For where your treasure is, there your heart will be also.",
-            "book": "Matthew 6:21 NIV",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "A good name is to be chosen instead of many riches. Favor is better than silver and gold.",
             "book": "Proverbs 22:1 NLV",
             "isFavorite": false,
@@ -1018,20 +1012,14 @@
             "category": "faith"
         },
         {
-            "text": "And whatever you ask in prayer, you will receive, if you have faith.",
-            "book": "Matthew 21:22 ESV",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "Jesus said to her, 'I am the resurrection and the life. He who believes in Me, though he may die, he shall live.'",
             "book": "John 11:25 NKJV",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "Love does not give up. Love is kind. Love is not jealous. Love does not put itself up as being important. Love has no pride.",
-            "book": "1 Corinthians 13:4 NLV",
+            "text": "Love is patient, love is kind. It does not envy, it does not boast, it is not proud.",
+            "book": "1 Corinthians 13:4 NIV",
             "isFavorite": false,
             "category": "love"
         },
@@ -1300,7 +1288,7 @@
             "category": "health"
         },
         {
-            "text": "In all circumstances take up the shield of faith, with which you can extinguish all the flaming darts of the evil one;",
+            "text": "In all circumstances take up the shield of faith, with which you can extinguish all the flaming darts of the evil one",
             "book": "Ephesians 6:16 ESV",
             "isFavorite": false,
             "category": "peace"
@@ -2518,12 +2506,12 @@
             "isFavorite": false,
             "category": "love"},
         {
-            "text": "No, in all these things we are more than conquerors through him who loved us. For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord." ,
+            "text": "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord." ,
             "book": "Romans 8:37-39 NIV",
             "isFavorite": false,
             "category": "love"},
         {
-            "text": "But you are a forgiving God, gracious and compassionate, slow to anger and abounding in love. Therefore you did not desert them," ,
+            "text": "But you are a forgiving God, gracious and compassionate, slow to anger and abounding in love." ,
             "book": "Nehemiah 9:17 NIV",
             "isFavorite": false,
             "category": "love"},
@@ -2533,13 +2521,13 @@
             "isFavorite": false,
             "category": "love"},
         {
-            "text": "As a father has compassion on his children, so the Lord has compassion on those who fear him;" ,
+            "text": "As a father has compassion on his children, so the Lord has compassion on those who fear him" ,
             "book": "Psalm 103:13 NIV",
             "isFavorite": false,
             "category": "love"},
         {
-            "text": "But because of his great love for us, God, who is rich in mercy, made us alive with Christ even when we were dead in transgressions—it is by grace you have been saved." ,
-            "book": "Ephesians 2:4-5 NIV",
+            "text": "But God had so much loving-kindness. He loved us with such a great love. Even when we were dead because of our sins, He made us alive by what Christ did for us. You have been saved from the punishment of sin by His loving-favor." ,
+            "book": "Ephesians 2:4-5 NLV",
             "isFavorite": false,
             "category": "love"},
         {
@@ -2553,7 +2541,7 @@
             "isFavorite": false,
             "category": "love"},
         {
-            "text": "For the Lord loves the just and will not forsake his faithful ones. Wrongdoers will be completely destroyed; the offspring of the wicked will perish." ,
+            "text": "For the Lord loves justice, and he will never abandon the godly." ,
             "book": "Psalm 37:28 NIV",
             "isFavorite": false,
             "category": "love"},
@@ -2578,11 +2566,6 @@
             "isFavorite": false,
             "category": "love"},
         {
-            "text": "Who shall separate us from the love of Christ? Shall trouble or hardship or persecution or famine or nakedness or danger or sword?" ,
-            "book": "Romans 8:35 NIV",
-            "isFavorite": false,
-            "category": "love"},
-        {
             "text": "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.",
             "book": "Romans 8:38-39 NIV",
             "isFavorite": false,
@@ -2590,11 +2573,6 @@
         {
             "text": "For God did not send his Son into the world to condemn the world, but to save the world through him.",
             "book": "John 3:17 NIV",
-            "isFavorite": false,
-            "category": "love"},
-        {
-            "text": "But you, Lord, are a compassionate and gracious God, slow to anger, abounding in love and faithfulness.",
-            "book": "Psalm 86:15 NIV",
             "isFavorite": false,
             "category": "love"},
         {
@@ -2613,11 +2591,6 @@
             "isFavorite": false,
             "category": "love"},
         {
-            "text": "In this is love, not that we have loved God but that he loved us and sent his Son to be the propitiation for our sins." ,
-            "book": "1 John 4:10 ESV",
-            "isFavorite": false,
-            "category": "love"},
-        {
             "text": "For as high as the heavens are above the earth, so great is his love for those who fear him;" ,
             "book": "Psalm 103:11 NIV",
             "isFavorite": false,
@@ -2628,7 +2601,7 @@
             "isFavorite": false,
             "category": "love"},
         {
-            "text": "Therefore, if anyone is in Christ, he is a new creation. The old has passed away; behold, the new has come." ,
+            "text": "Therefore, if anyone is in Christ, he is a new creation. The old has passed away" ,
             "book": "2 Corinthians 5:17 ESV",
             "isFavorite": false,
             "category": "identity"},
@@ -2864,8 +2837,8 @@
             "category": "godsprotection"
         },
         {
-            "text": "If you say, 'The Lord is my refuge,' and you make the Most High your dwelling, no harm will overtake you, no disaster will come near your tent.",
-            "book": "Psalm 91:9-10 NIV",
+            "text": "If you make the Lord your refuge, if you make the Most High your shelter, no evil will conquer you; no plague will come near your home.",
+            "book": "Psalm 91:9-10 NLT",
             "isFavorite": false,
             "category": "godsprotection"
         },
@@ -2935,8 +2908,8 @@
             "category": "godsprotection"
         },
         {
-            "text": "A thousand may fall at your side, ten thousand at your right hand, but it will not come near you.",
-            "book": "Psalm 91:7 NIV",
+            "text": "Though a thousand fall at your side, though ten thousand are dying around you, these evils will not touch you.",
+            "book": "Psalm 91:7 NLT",
             "isFavorite": false,
             "category": "godsprotection"
         },
@@ -2971,7 +2944,7 @@
             "category": "godsprotection"
         },
         {
-            "text": "The righteous person may have many troubles, but the Lord delivers him from them all;",
+            "text": "The righteous person may have many troubles, but the Lord delivers him from them all",
             "book": "Psalm 34:19 NIV",
             "isFavorite": false,
             "category": "godsprotection"
@@ -3043,8 +3016,8 @@
             "category": "identity"
         },
         {
-            "text": "He predestined us for adoption to sonship through Jesus Christ, in accordance with his pleasure and will",
-            "book": "Ephesians 1:5 NIV",
+            "text": "God decided in advance to adopt us into his own family by bringing us to himself through Jesus Christ. This is what he wanted to do, and it gave him great pleasure.",
+            "book": "Ephesians 1:5 NLT",
             "isFavorite": false,
             "category": "identity"
         },
@@ -3055,8 +3028,8 @@
             "category": "identity"
         },
         {
-            "text": "For in Christ all the fullness of the Deity lives in bodily form, and in Christ you have been brought to fullness. He is the head over every power and authority.",
-            "book": "Colossians 2:9-10 NIV",
+            "text": "For Christ is not only God-like, He is God in human flesh. When you have Christ, you are complete. He is the head over all leaders and powers.",
+            "book": "Colossians 2:9-10 NLV",
             "isFavorite": false,
             "category": "identity"
         },
@@ -3079,8 +3052,8 @@
             "category": "identity"
         },
         {
-            "text": "Before I formed you in the womb I knew you, before you were born I set you apart; I appointed you as a prophet to the nations.",
-            "book": "Jeremiah 1:5 NIV",
+            "text": "\"Before I started to put you together in your mother, I knew you. Before you were born, I set you apart as holy. I chose you to speak to the nations for Me.\"",
+            "book": "Jeremiah 1:5 NLV",
             "isFavorite": false,
             "category": "identity"
         },
@@ -3127,7 +3100,7 @@
             "category": "identity"
         },
         {
-            "text": "Our bodies are made up of many parts. None of these parts have the same use. 5 There are many people who belong to Christ. And yet, we are one body which is Christ’s. We are all different but we depend on each other.",
+            "text": "Our bodies are made up of many parts. None of these parts have the same use. There are many people who belong to Christ. And yet, we are one body which is Christ’s. We are all different but we depend on each other.",
             "book": "Romans 12:4-5 NLV",
             "isFavorite": false,
             "category": "identity"
@@ -3337,12 +3310,6 @@
             "category": "guidance"
         },
         {
-            "text": "Send me your light and your faithful care, let them lead me; let them bring me to your holy mountain, to the place where you dwell.",
-            "book": "Psalm 43:3 NIV",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
             "text": "Search me, God, and know my heart; test me and know my anxious thoughts. See if there is any offensive way in me, and lead me in the way everlasting.",
             "book": "Psalm 139:23-24 NIV",
             "isFavorite": false,
@@ -3396,7 +3363,7 @@
             "isFavorite": false,
             "category": "rest"},
         {
-            "text": "HHe will cover you with his feathers. He will shelter you with his wings. His faithful promises are your armor and protection." ,
+            "text": "He will cover you with his feathers. He will shelter you with his wings. His faithful promises are your armor and protection." ,
             "book": "Psalm 91:4 NLT",
             "isFavorite": false,
             "category": "rest"},
@@ -3411,7 +3378,7 @@
             "isFavorite": false,
             "category": "rest"},
         {
-            "text": "You rise up early, and go to bed late, and work hard for your food, all for nothing. For the Lord gives to His loved ones even while they sleep.." ,
+            "text": "You rise up early, and go to bed late, and work hard for your food, all for nothing. For the Lord gives to His loved ones even while they sleep." ,
             "book": "Psalm 127:2 NLV",
             "isFavorite": false,
             "category": "rest"},
