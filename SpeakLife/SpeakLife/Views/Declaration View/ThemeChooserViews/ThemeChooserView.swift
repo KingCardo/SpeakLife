@@ -92,20 +92,16 @@ struct ThemeChooserView: View {
                 
                 LazyVGrid(columns: twoColumnGrid, spacing: 16) {
                     ForEach(themesViewModel.themes) { theme in
-                        if theme.isPremium && !subscriptionStore.isPremium {
-                            ZStack {
-                                themeCell(imageString: theme.backgroundImageString, size: size, isPremium: theme.isPremium)
-
-                                NavigationLink("", destination: PremiumView())
-                            }
-                        } else {
                             themeCell(imageString: theme.backgroundImageString, size: size, isPremium: theme.isPremium)
                                 .onTapGesture {
-                                    themesViewModel.choose(theme)
-                                    self.presentationMode.wrappedValue.dismiss()
+                                    if theme.isPremium && !subscriptionStore.isPremium {
+                                        isPresentingPremiumView = true
+                                    } else {
+                                        themesViewModel.choose(theme)
+                                        self.presentationMode.wrappedValue.dismiss()
+        
+                                    }
                                 }
-                                
-                            }
                     }
                 }.padding()
             }
