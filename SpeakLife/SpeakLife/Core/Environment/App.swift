@@ -26,5 +26,17 @@ struct APP {
         static var instagramURL: String {
             "https://www.instagram.com/speaklife.bibleapp"
         }
+        
+        static var googleAdUnitBannerID: String {
+            "ca-app-pub-4361689433807539/7209066019"
+        }
+        
+        static var googleOpenAppAdUnitID: String {
+            "ca-app-pub-4361689433807539/2438340662"
+        }
+        
+        static var googleInterstitialAdUnitID: String {
+            "ca-app-pub-4361689433807539/4343229527"
+        }
     }
 }

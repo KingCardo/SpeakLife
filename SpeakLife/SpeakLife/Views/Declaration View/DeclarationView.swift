@@ -9,6 +9,7 @@ import SwiftUI
 import MessageUI
 import StoreKit
 import UIKit
+import GoogleMobileAds
 
 struct DeclarationView: View {
     
@@ -31,6 +32,7 @@ struct DeclarationView: View {
     @State var isShowingMailView = false
     @State var showDailyDevotion = false
     @State private var isSheetPresented = false
+   // let interstitialAdManager = InterstitialAdManager()
     
     
     var body: some View {
@@ -43,6 +45,11 @@ struct DeclarationView: View {
                 if appState.showIntentBar {
                     if !appState.showScreenshotLabel {
                         VStack() {
+                            if !subscriptionStore.isPremium {
+                             //  interstitialAdManager.showAd()
+//                                GoogleAdBannerView(adUnitID: "ca-app-pub-3940256099942544/2934735716")
+//                                    .frame(width: 320, height: 50)
+                            }
                             HStack {
                                 dailyDevotionButton
                                 Spacer()
@@ -54,6 +61,7 @@ struct DeclarationView: View {
                             if appState.showIntentBar {
                                 IntentsBarView(viewModel: viewModel, themeViewModel: themeViewModel)
                                     .frame(height: geometry.size.height * 0.10)
+                                
                             }
                         }
                     }

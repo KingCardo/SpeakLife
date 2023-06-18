@@ -17,21 +17,28 @@ struct Benefit: Identifiable  {
     }
     
     static var premiumBenefits: [Benefit] = [
+        
+        Benefit(text: "Enjoy the full experience"),
+        Benefit(text: "Bible Scriptures for all of life's journey"),
+        Benefit(text: "Categories for any situation"),
+        Benefit(text: "Reminders to transform your mindset"),
+        Benefit(text: "No ads, or watermarks"),
+        Benefit(text: "Only $3.33/month, billed annually"),
 
-        Benefit(text: "But seek first his kingdom and his righteousness, and all these things will be given to you as well. - Matthew 6:33"),
-        Benefit(text: "Do not conform to the pattern of this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what God's will is—his good, pleasing and perfect will. - Romans 12:2"),
-        
-        Benefit(text: "Therefore put on the full armor of God, so that when the day of evil comes, you may be able to stand your ground - Ephesians 6:13"),
-        Benefit(text: "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you. - James 1:5"),
-        
-        Benefit(text: "Unlimited Access: With a premium subscription, get unlimited access to our extensive library of Bible affirmations, allowing you to find comfort, guidance, and inspiration anytime you need it."),
+//        Benefit(text: "But seek first his kingdom and his righteousness, and all these things will be given to you as well. - Matthew 6:33"),
+//        Benefit(text: "Do not conform to the pattern of this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what God's will is—his good, pleasing and perfect will. - Romans 12:2"),
+//
+//        Benefit(text: "Therefore put on the full armor of God, so that when the day of evil comes, you may be able to stand your ground - Ephesians 6:13"),
+//        Benefit(text: "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you. - James 1:5"),
+//
+//        Benefit(text: "Unlimited Access: With a premium subscription, get unlimited access to our extensive library of Bible affirmations, allowing you to find comfort, guidance, and inspiration anytime you need it."),
 //        Benefit(text: "Personalized Experience: Tailor your experience to your needs. Customize and create your own affirmations, and choose themes that resonate with your spiritual journey."),
 //        Benefit(text: "Ad-Free Experience: Enjoy an uninterrupted, ad-free experience. Focus on your affirmations without any distractions."),
 //       Benefit(text: "Daily Inspirations: Receive exclusive daily inspirational quotes and affirmations, curated just for you, to help start your day on a positive note."),
 //        Benefit(text: "Offline Access: Download your favorite affirmations and access them anytime, anywhere, even without internet connection."),
 //        Benefit(text: "Early Access: Get early access to new features and content. Be the first to explore new affirmations, themes, and tools."),
 //        Benefit(text: "Support the App: Your subscription helps us maintain the app, create new content, and continue providing you with a valuable resource for your spiritual journey."),
-        Benefit(text: "Let each man give according as he has determined in his heart; not grudgingly, or under compulsion; for God loves a cheerful giver. - 2 Corinthians 9:7"),
+       // Benefit(text: "Let each man give according as he has determined in his heart; not grudgingly, or under compulsion; for God loves a cheerful giver. - 2 Corinthians 9:7"),
         Benefit(text: "Choose amount comfortable for you! Unlocks all premium features."),
     ]
 }
