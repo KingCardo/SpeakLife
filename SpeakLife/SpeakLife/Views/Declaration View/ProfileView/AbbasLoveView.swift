@@ -94,8 +94,6 @@ struct AbbasLoveView: View {
 
 struct PageContent: View {
     
-    private let speechSynthesizer = SpeechSynthesizer()
-    
     let verse: String
     let book: String
     
@@ -108,9 +106,6 @@ struct PageContent: View {
             Text(book)
                 .font(.callout)
             
-            CapsuleImageButton(title:"play.circle") {
-                speechSynthesizer.speakText(verse)
-            }
         }
         .padding()
     }
