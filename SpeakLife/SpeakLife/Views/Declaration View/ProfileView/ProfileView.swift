@@ -70,6 +70,13 @@ struct ProfileView: View {
 //                }
                 
                 HStack {
+                    AbbasLoveRow
+                    if appState.abbasLoveAdded {
+                        Badge()
+                    }
+                }
+                
+                HStack {
                     tipsRow
                     if appState.newSettingsAdded {
                         Badge()
@@ -187,6 +194,26 @@ struct ProfileView: View {
     }
     
     @MainActor
+    private var AbbasLoveRow: some View {
+        HStack {
+            Image(systemName: "bolt.heart.fill")
+                .foregroundColor(Constants.DAMidBlue)
+            NavigationLink(LocalizedStringKey("Heavenly Father's Love"), destination: LazyView(AbbasLoveView()))
+                .opacity(0)
+                .background(
+                    HStack {
+                        Text("Father's Love Letter", comment:  "Love row title")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 8)
+                            .foregroundColor(Constants.DAMidBlue)
+                    })
+        }
+    }
+    
+    @MainActor
     private var favoritesRow: some View {
         HStack {
             Image(systemName: "star.fill")
@@ -267,7 +294,7 @@ struct ProfileView: View {
     @ViewBuilder
     private var feedbackRow: some View {
         if MFMailComposeViewController.canSendMail() {
-            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.grid.3x1.folder.fill.badge.plus", title: "Contact Us", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .profile))) {
+            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.grid.3x1.folder.fill.badge.plus", title: "Prayer Request", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .profile))) {
                 presentContentView()
             }
         }

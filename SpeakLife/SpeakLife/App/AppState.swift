@@ -15,6 +15,7 @@ final class AppState: ObservableObject {
     @AppStorage("newCategoriesAddedv3") var newCategoriesAddedv3 = true
     @AppStorage("newThemesAdded") var newThemesAdded = true
     @AppStorage("newSettingsAdded") var newSettingsAdded = true
+    @AppStorage("abbasLoveAdded") var abbasLoveAdded = true
     @AppStorage("newTrackerAdded") var newTrackerAdded = true
     @AppStorage("lastNotificationSetDate") var lastNotificationSetDate = Date()
     @AppStorage("notificationEnabled") var notificationEnabled = false
@@ -25,6 +26,7 @@ final class AppState: ObservableObject {
     @AppStorage("endTimeIndex") var endTimeIndex = 38
     @AppStorage("selectedNotificationCategories") var selectedNotificationCategories: String = ""
     @AppStorage("showScreenshotLabel") var showScreenshotLabel = false
+    @AppStorage("abbasLoveLetterIndex") var loveLetterIndex = 0
 }
 
 extension Date: RawRepresentable {
