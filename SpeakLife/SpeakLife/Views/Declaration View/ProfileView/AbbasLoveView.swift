@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct AbbasLoveView: View {
     
@@ -85,6 +86,7 @@ struct AbbasLoveView: View {
             }
         }
         .onAppear() {
+            Analytics.logEvent(Event.devotionalTapped, parameters: nil)
             appState.abbasLoveAdded = false
         }
     }
