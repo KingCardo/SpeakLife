@@ -71,18 +71,30 @@ struct AbbasLoveView: View {
     @EnvironmentObject var appState: AppState
     
     var body: some View {
-        ZStack {
-            Gradients().redPurple
-            
-            ScrollView {
-                Text("Heavenly Father's Love Letter")
-                    .font(.title)
-                    .foregroundColor(.black)
-                    .padding()
-                PageView(views:
-                    pageContentViews
-                         )
-                .frame(height: 400)
+        
+        GeometryReader { proxy in
+                
+                ScrollView {
+                    Text("Heavenly Father's Love Letter")
+                        .font(.title)
+                        .italic()
+                        .padding()
+                    PageView(views:
+                                pageContentViews
+                    )
+                    .frame(height: proxy.size.height * 0.66)
+            }
+        }
+        .background {
+            ZStack {
+                Image("loveletter2")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+    
+                Rectangle()
+                    .fill(Color.black.opacity(0.3))
+                    .edgesIgnoringSafeArea(.all)
             }
         }
         .onAppear() {
@@ -100,7 +112,8 @@ struct PageContent: View {
     var body: some View {
         VStack {
             Text(verse)
-                .font(.headline)
+                .font(.custom("AppleSDGothicNeo-Regular", size: 24))
+                .padding()
             Spacer()
                 .frame(height: 20)
             Text(book)
