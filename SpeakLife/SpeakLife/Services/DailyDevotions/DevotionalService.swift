@@ -9,6 +9,7 @@ import Foundation
 
 protocol DevotionalService {
     func fetchDevotionForToday() async -> [Devotional]
+    func fetchAllDevotionals() async -> [Devotional]
 }
 
 final class DevotionalServiceClient: DevotionalService {
@@ -53,5 +54,31 @@ final class DevotionalServiceClient: DevotionalService {
             print(error)
            return []
         }
+    }
+    
+    func fetchAllDevotionals() async -> [Devotional] {
+        guard
+            let url = Bundle.main.url(forResource: "devotionals", withExtension: "json"),
+            let data = try? Data(contentsOf: url) else {
+            return []
+        }
+        
+        do {
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy"
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(dateFormatter)
+            
+            let welcome = try decoder.decode(WelcomeDevotional.self, from: data)
+            let devotionals = welcome.devotionals
+           
+            return devotionals
+            
+        } catch {
+            print(error)
+           return []
+        }
+        
     }
 }

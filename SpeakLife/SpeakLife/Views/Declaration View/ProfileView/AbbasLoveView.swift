@@ -83,6 +83,15 @@ struct AbbasLoveView: View {
                                 pageContentViews
                     )
                     .frame(height: proxy.size.height * 0.66)
+                    
+                    Button {
+                        withAnimation {
+                            appState.loveLetterIndex = 0
+                        }
+                    } label: {
+                        Text("reset to beginning")
+                    }
+
             }
         }
         .background {

@@ -13,6 +13,7 @@ struct DevotionalView: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: DevotionalViewModel
+    @State private var scrollToTop = false
     
     let spacing: CGFloat = 20
     
@@ -50,38 +51,44 @@ struct DevotionalView: View {
     var devotionalView: some View {
         ZStack {
             Gradients().random
-            ScrollView {
-                VStack {
-                    if !subscriptionStore.isPremium {
-                        Text("\(viewModel.devotionalsLeft) more free devotionals left")
-                            .padding()
+            ScrollViewReader { scrollView in
+                ScrollView {
+                    VStack {
+                        if !subscriptionStore.isPremium {
+                            Text("\(viewModel.devotionalsLeft) more free devotionals left")
+                                .padding()
+                        }
+                        Spacer()
+                            .frame(height: spacing)
+                        dateLabel
+                            
+                        
+                        titleLabel
+                            
+                        
+                        bookLabel
+                        
+                        devotionText
+                        
+                        navigateDevotionalStack
+                        
                     }
-                    Spacer()
-                        .frame(height: spacing)
-                    dateLabel
-                    Spacer()
-                        .frame(height: spacing)
-                    
-                    titleLabel
-                    Spacer()
-                        .frame(height: 10)
-                    bookLabel
-                    
-                    Spacer()
-                        .frame(height: spacing)
-                    
-                    devotionText
-                    Spacer()
-                        .frame(height: spacing)
-                    
+                    .id("titleID")
+                    .padding(.horizontal, 24)
+                    .foregroundColor(.black)
                 }
-                .padding(.horizontal, 24)
-                .foregroundColor(.black)
+                .onChange(of: scrollToTop) { value in
+                    if value {
+                        scrollView.scrollTo("titleID", anchor: .top)
+                        scrollToTop = false
+                    }
+                }
             }
             
         }
     }
     
+    @ViewBuilder
     var dateLabel: some View {
         HStack {
             Spacer()
@@ -89,24 +96,74 @@ struct DevotionalView: View {
                 .font(.caption)
                 .fontWeight(.bold)
         }
+        Spacer()
+            .frame(height: spacing)
     }
     
+    @ViewBuilder
     var titleLabel: some View {
         Text(viewModel.title)
             .font(.title)
             .fontWeight(.medium)
+        
+        Spacer()
+            .frame(height: 10)
     }
     
+    @ViewBuilder
     var bookLabel: some View {
         Text(viewModel.devotionalBooks)
             .font(.callout)
             .italic()
+        
+        Spacer()
+            .frame(height: spacing)
     }
     
+    @ViewBuilder
     var devotionText: some View {
         Text(viewModel.devotionalText)
             .font(.body)
             .lineSpacing(4)
+        Spacer()
+            .frame(height: spacing)
+    }
+    
+    var navigateDevotionalStack: some View {
+        HStack {
+            Button {
+                Task {
+                    viewModel.devotionValue -= 1
+                    await viewModel.fetchDevotionalFor(value: viewModel.devotionValue)
+                    withAnimation {
+                        scrollToTop = true
+                    }
+                }
+            } label: {
+                Image(systemName: "arrow.backward.circle")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+            }
+            
+            Spacer()
+                .frame(width: 25)
+            
+            Button {
+                Task {
+                    viewModel.devotionValue += 1
+                    await viewModel.fetchDevotionalFor(value: viewModel.devotionValue)
+                    withAnimation {
+                        scrollToTop = true
+                    }
+                }
+            } label: {
+                Image(systemName: "arrow.forward.circle")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+            }
+            
+        }
+        .foregroundColor(.white)
     }
     
 }

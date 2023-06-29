@@ -19,6 +19,10 @@ final class DevotionalViewModel: ObservableObject {
     let errorString = "Upgrade to the latest version for Today's Devotional."
     private let freeCount = 5
     
+    var devotionals: [Devotional] = []
+    
+    var devotionValue = 0
+    
     var devotional: Devotional? {
         didSet {
             updateViewModel()
@@ -81,10 +85,12 @@ final class DevotionalViewModel: ObservableObject {
     
     private func updateViewModel() {
         guard let devotional = devotional else { return }
-        devotionalText = devotional.devotionalText
-        devotionalDate = devotional.date.toSimpleDate()
-        devotionalBooks = devotional.books
-        title = devotional.title
+        DispatchQueue.main.async { [ weak self] in
+            self?.devotionalText = devotional.devotionalText
+            self?.devotionalDate = devotional.date.toSimpleDate()
+            self?.devotionalBooks = devotional.books
+            self?.title = devotional.title
+        }
     }
     
     func fetchDevotional() async {
@@ -100,5 +106,29 @@ final class DevotionalViewModel: ObservableObject {
             }
         }
         return
+    }
+    
+    func fetchDevotionalFor(value: Int) async {
+        if self.devotionals.isEmpty {
+            let devotionals = await service.fetchAllDevotionals()
+            self.devotionals = devotionals
+        }
+            let now = Date()
+            let calendar = Calendar.current
+        if let searchDate = calendar.date(byAdding: .day, value: value, to: now) {
+        
+            let searchComponents = calendar.dateComponents([.year, .month, .day], from: searchDate)
+        
+            let month = searchComponents.month
+            let day = searchComponents.day
+        
+        if let foundDevotional = devotionals.first(where: {
+            let devotionalComponents = calendar.dateComponents([.month, .day], from: $0.date)
+            let devotionalMonth = devotionalComponents.month
+            let devotionalDay = devotionalComponents.day
+            return (devotionalMonth, devotionalDay) == (month, day)}) {
+            self.devotional = foundDevotional
+        }
+        }
     }
 }

@@ -45,7 +45,7 @@ final class NotificationManager: NSObject {
             let notifications = getNotificationData(for: count, categories: categories)
             prepareNotifications(declarations: notifications,  startTime: startTime, endTime: endTime, count: count)
         } else {
-            let notifications = getNotificationData(for: count, categories: NotificationManager.notificationCategories())
+            let notifications = getNotificationData(for: count, categories: nil)
             prepareNotifications(declarations: notifications,  startTime: startTime, endTime: endTime, count: count)
         }
         morningAffirmationReminder()
@@ -62,7 +62,7 @@ final class NotificationManager: NSObject {
                 notificationData = data
             }
         } else {
-            notificationProcessor.getNotificationData(count: count, categories: [.faith,]) { data in
+            notificationProcessor.getNotificationData(count: count, categories: nil) { data in
                 notificationData = data
             }
         }
