@@ -131,35 +131,40 @@ struct DevotionalView: View {
     
     var navigateDevotionalStack: some View {
         HStack {
-            Button {
-                Task {
-                    viewModel.devotionValue -= 1
-                    await viewModel.fetchDevotionalFor(value: viewModel.devotionValue)
-                    withAnimation {
-                        scrollToTop = true
+            if viewModel.devotionValue > -10 {
+                Button {
+                    Task {
+                        viewModel.devotionValue -= 1
+                        await viewModel.fetchDevotionalFor(value: viewModel.devotionValue)
+                        withAnimation {
+                            scrollToTop = true
+                        }
                     }
+                } label: {
+                    Image(systemName: "arrow.backward.circle")
+                        .resizable()
+                        .frame(width: 30, height: 30)
                 }
-            } label: {
-                Image(systemName: "arrow.backward.circle")
-                    .resizable()
-                    .frame(width: 30, height: 30)
             }
             
             Spacer()
                 .frame(width: 25)
             
-            Button {
-                Task {
-                    viewModel.devotionValue += 1
-                    await viewModel.fetchDevotionalFor(value: viewModel.devotionValue)
-                    withAnimation {
-                        scrollToTop = true
+            if viewModel.devotionValue < 1 {
+                
+                Button {
+                    Task {
+                        viewModel.devotionValue += 1
+                        await viewModel.fetchDevotionalFor(value: viewModel.devotionValue)
+                        withAnimation {
+                            scrollToTop = true
+                        }
                     }
+                } label: {
+                    Image(systemName: "arrow.forward.circle")
+                        .resizable()
+                        .frame(width: 30, height: 30)
                 }
-            } label: {
-                Image(systemName: "arrow.forward.circle")
-                    .resizable()
-                    .frame(width: 30, height: 30)
             }
             
         }
