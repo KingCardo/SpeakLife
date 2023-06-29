@@ -60,8 +60,7 @@ final class DevotionalViewModel: ObservableObject {
         devotionalDictionary.count > 5
     }
     
-    private func setDevotionalDictionary() {
-        let date = Date()
+    private func setDevotionalDictionary(date: Date = Date()) {
 
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month, .day], from: date)
@@ -131,6 +130,7 @@ final class DevotionalViewModel: ObservableObject {
             let devotionalDay = devotionalComponents.day
             return (devotionalMonth, devotionalDay) == (month, day)}) {
             self.devotional = foundDevotional
+            setDevotionalDictionary(date: searchDate)
         }
         }
     }
