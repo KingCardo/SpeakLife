@@ -65,7 +65,10 @@
 		<string>3rd42ekr43.skadnetwork</string>
 		<string>3qcr597p9d.skadnetwork</string>
 	</array>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>We use your data to provide personalized advertisements that are relevant to your interests. This helps us keep our app free for you to use. Your data is anonymous and will never be used for any other purpose.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
