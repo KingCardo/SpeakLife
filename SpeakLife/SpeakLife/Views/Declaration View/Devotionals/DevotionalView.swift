@@ -61,10 +61,8 @@ struct DevotionalView: View {
                         Spacer()
                             .frame(height: spacing)
                         dateLabel
-                            
                         
                         titleLabel
-                            
                         
                         bookLabel
                         
@@ -103,11 +101,11 @@ struct DevotionalView: View {
     @ViewBuilder
     var titleLabel: some View {
         Text(viewModel.title)
-            .font(.title)
+            .font(.title2)
             .fontWeight(.medium)
         
         Spacer()
-            .frame(height: 10)
+            .frame(height: 16)
     }
     
     @ViewBuilder

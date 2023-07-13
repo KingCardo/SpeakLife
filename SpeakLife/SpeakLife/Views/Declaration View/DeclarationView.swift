@@ -32,7 +32,6 @@ struct DeclarationView: View {
     @State var isShowingMailView = false
     @State var showDailyDevotion = false
     @State private var isSheetPresented = false
-   // let interstitialAdManager = InterstitialAdManager()
     
     
     var body: some View {
@@ -46,9 +45,8 @@ struct DeclarationView: View {
                     if !appState.showScreenshotLabel {
                         VStack() {
                             if !subscriptionStore.isPremium {
-                             //  interstitialAdManager.showAd()
-//                                GoogleAdBannerView(adUnitID: "ca-app-pub-3940256099942544/2934735716")
-//                                    .frame(width: 320, height: 50)
+                                GoogleAdBannerView()
+                                    .frame(width: geometry.size.width * 0.9, height: 50)
                             }
                             HStack {
                                 dailyDevotionButton
@@ -131,10 +129,6 @@ struct DeclarationView: View {
     }
     
     private var dailyDevotionButton: some View {
-//        CapsuleImageButton(title: "book.fill") {
-//            showDailyDevotion = true
-//            Selection.shared.selectionFeedback()
-//        }
         
         Button(action: {
             showDailyDevotion = true

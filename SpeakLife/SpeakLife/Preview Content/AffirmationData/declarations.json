@@ -3477,8 +3477,93 @@
             "text": "He has taken our sins from us as far as the east is from the west" ,
             "book": "Psalm 103:12 NLV",
             "isFavorite": false,
-            "category": "guilt"}
-        
+            "category": "guilt"},
+        {
+            "text": "Every day in every way, I am getting healthier and stronger.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My body heals quickly and easily.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I have abundant energy, vitality and well-being.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am filled with energy to do all the daily activities in my life.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My mind is at peace and my body is in perfect health.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am fit, healthy and filled with energy.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I sleep soundly and wake up full of energy every day.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am strong, healthy and full of energy.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My heart is healthy and very strong!",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My eyes are blessed with great vision and sight",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My ears are blessed and hear clearly",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "All my organs function in the perfection God created them to",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My immune system is super charged and keeps me healthy",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am healed, forgiven, and prosperous",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "As Christ is in Heaven so am I",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "No weapon formed against me will prosper!",
+            "book": "Isaiah 54:17",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My brain is powerful, healthy and has great memory",
+            "isFavorite": false,
+            "category": "health"
+        },
     ]
     
 }

@@ -8,46 +8,6 @@ import SwiftUI
 import GoogleMobileAds
 import UIKit
 
-
-final class InterstitialAdManager: NSObject {
-    var interstitial: GADInterstitialAd?
-    
-    override init() {
-        super.init()
-        loadInterstitial()
-    }
-    
-    func loadInterstitial() {
-        GADInterstitialAd.load(withAdUnitID: "YOUR_AD_UNIT_ID",
-                               request: GADRequest(),
-                               completionHandler: { [weak self] ad, error in
-            if let error = error {
-                print("Failed to load interstitial ad: \(error.localizedDescription)")
-                return
-            }
-            
-            self?.interstitial = ad
-            self?.interstitial?.fullScreenContentDelegate = self
-        })
-    }
-    
-    func showAd() {
-        if let interstitial = interstitial {
-            interstitial.present(fromRootViewController: (UIApplication.shared.windows.first?.rootViewController)!)
-        } else {
-            print("Interstitial ad not ready yet.")
-        }
-    }
-}
-
-extension InterstitialAdManager: GADFullScreenContentDelegate {
-    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        loadInterstitial()
-    }
-}
-
-
-
 struct GoogleAdBannerView: UIViewRepresentable {
     private let adUnitID: String
     
