@@ -43,10 +43,10 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     static var categoryOrder: [DeclarationCategory] = [
         .faith,
         .addiction,
+        .identity,
         .love,
         .peace,
         .rest,
-        .identity,
         .guidance,
         .gratitude,
         .godsprotection,
@@ -69,6 +69,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     static func getCategoryOrder() -> [DeclarationCategory] {
         var categories = categoryOrder.sorted(by: <)
+        categories.insert(.gratitude, at: 0)
+        categories.insert(.identity, at: 0)
         categories.insert(.myOwn, at: 0)
         categories.insert(.favorites, at: 0)
         return categories

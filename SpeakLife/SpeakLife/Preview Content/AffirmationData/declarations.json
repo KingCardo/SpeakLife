@@ -1504,18 +1504,6 @@
             "category": "wealth"
         },
         {
-            "text": "The righteous cry out, and the Lord hears them; he delivers them from all their troubles.",
-            "book": "Psalm 34:17 NIV",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "\"Come to me, all you who labor and are heavily burdened, and I will give you rest.\"",
-            "book": "Matthew 11:28 WEB",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
             "text": "Weeping may last through the night, but joy comes with the morning.",
             "book": "Psalm 30:5 NLT",
             "isFavorite": false,
@@ -3442,7 +3430,7 @@
             "book": "2 Chronicles 7:14 NIV",
             "isFavorite": false,
             "category": "guilt"},
-    
+        
         {
             "text": "Now that we have been made right with God by putting our trust in Him, we have peace with Him. It is because of what our Lord Jesus Christ did for us.",
             "book": "Romans 5:1 NLV",
@@ -3563,6 +3551,1861 @@
             "text": "My brain is powerful, healthy and has great memory",
             "isFavorite": false,
             "category": "health"
+        },
+        {
+            "text": "The Lord is the Lord who heals me.",
+            "book": "Exodus 15:26",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My days shall be one hundred and twenty years.",
+            "book": "Genesis 6:3",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I shall be buried in a good old age.",
+            "book": "Genesis 15:15",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I shall go to my grave in a full age like as a shock of corn goes in its season.",
+            "book": "Job 5:26",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "When the Lord sees the blood, He will pass over me and the plague shall not be upon me to destroy me.",
+            "book": "Exodus 12:13",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord will take sickness away from the midst of me and the number of my days He will fulfill.",
+            "book": "Exodus 23:25-26",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord will not put any of the diseases I am afraid of on me, but He will take all sickness away from me.",
+            "book": "Deuteronomy 7:15",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "It shall be well with me and my days shall be multiplied and prolonged as the days of heaven upon the earth.",
+            "book": "Deuteronomy 11:9, 21",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord turned the curse into a blessing for me, because the Lord loves me.",
+            "book": "Deuteronomy 23:5; Nehemiah 13:2",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord has redeemed me from every sickness and every plague.",
+            "book": "Deuteronomy 28:61; Galatians 3:13",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "As my days, so shall my strength be.",
+            "book": "Deuteronomy 33:25",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord has ransomed me; my flesh shall be fresher than a child’s and I shall return to the days of my youth.",
+            "book": "Job 33:24-25",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord has healed me and brought up my soul from the grave; the Lord has kept me alive from going down into the pit.",
+            "book": "Psalm 30:1-2",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord will give me strength and bless me with peace.",
+            "book": "Psalm 29:11",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord will preserve me and keep me alive.",
+            "book": "Psalm 41:2",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord will strengthen me upon the bed of illness; the Lord will sustain me on my sickbed.",
+            "book": "Psalm 41:3",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord is the health of my countenance and my God.",
+            "book": "Psalm 43:5",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "No plague shall come near my dwelling.",
+            "book": "Psalm 91:10",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord shall satisfy me with long life.",
+            "book": "Psalm 91:16",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord heals all my diseases.",
+            "book": "Psalm 103:3",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord sent His Word and healed me and delivered me from all my destructions.",
+            "book": "Psalm 107:20",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I shall not die, but live and declare the glory of the Lord.",
+            "book": "Psalm 118:17",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord heals my broken heart and binds up my wounds.",
+            "book": "Psalm 147:3",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The years of my life shall be many.",
+            "book": "Proverbs 4:10",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Trusting the Lord brings health to my navel and marrow to my bones.",
+            "book": "Proverbs 3:8",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Words of the Lord are life to me and health/medicine to my flesh.",
+            "book": "Proverbs 4:22",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The good report of the Lord strengthens my bones.",
+            "book": "Proverbs 15:30",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The pleasant words of the Lord are sweet to my soul and health to my bones.",
+            "book": "Proverbs 16:24",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The joy of the Lord is my strength. A merry heart does good like a medicine.",
+            "book": "Nehemiah 8:10; Proverbs 17:22",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The eyes of the blind shall be opened. The eyes of them that see shall not be dim.",
+            "book": "Isaiah 32:3; 35:5",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am healed by His stripes, for by His wounds we are healed.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I declare that God satisfies me with long life.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My strength is renewed like the eagles.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord sustains me on my sickbed; in my illness, He restores me.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I will not fear, for God is with me; He will strengthen and help me.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The joy of the Lord is my strength.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am fearfully and wonderfully made.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "No weapon formed against me shall prosper.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I have the mind of Christ, bringing health to my body.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I declare that I am strong and healthy.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "God restores health to me and heals my wounds.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord is my helper; I will not fear.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I have a spirit of power, love, and a sound mind.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My body is a temple of the Holy Spirit.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am blessed with divine health.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I will live and not die, declaring the works of the Lord.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord has taken all sickness away from me.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am in good health, as my soul prospers.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am healed, for the Lord is the health of my countenance.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord renews my youth like the eagles.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My faith has made me whole.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I have abundant life in Jesus Christ.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The peace of God, which surpasses all understanding, guards my heart and mind.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I will prosper and be in health, even as my soul prospers.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "By the grace of God, I am what I am, and His grace toward me is not in vain.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I have peace with God through our Lord Jesus Christ.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "The peace of God, which surpasses all understanding, will guard my heart and mind.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am not anxious about anything, but in every situation, I present my requests to God with thanksgiving.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I live in peace and the God of love and peace is with me.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I let the peace of Christ rule in my heart, since as a member of one body I was called to peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "The God of peace will soon crush Satan under my feet.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I will both lie down and sleep in peace, for You alone, Lord, make me dwell in safety.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I pursue peace with everyone, and holiness—without it, no one will see the Lord.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I seek peace and pursue it, because the eyes of the Lord are on the righteous and His ears are attentive to their prayer.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "The Lord gives strength to His people; the Lord blesses His people with peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am a peacemaker, blessed are the peacemakers, for they will be called children of God.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I will not let my heart be troubled and will not be afraid, for the Lord gives me peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "The Lord turns my darkness into light and makes my rough places smooth.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I have peace because I trust in the Lord, and put my hope in His Word.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "The Lord's unfailing love and mercy will surround me, granting me peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "The Lord will guide me always and will satisfy my needs, granting me peace like a river.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I live in unity with others, for there the Lord bestows His blessing, even life forevermore.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I walk in the light as He is in the light, and have fellowship with one another.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am in Christ, He is my peace, who has broken down every wall of partition.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I cast all my anxiety on Him because He cares for me.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I have peace, for He has overcome the world.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "The God of peace is with me, where I experience peace and joy in the Holy Spirit.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I find rest for my soul in the Lord, as I take His yoke upon me.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I know the plans that God has for me, plans of peace and not of evil, to give me a future and a hope.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am not afraid or discouraged, for the battle is not mine, but God's.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I find peace in the Lord, for His steadfast love endures forever.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I keep my mind stayed on God, and He keeps me in perfect peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am not worried or troubled about many things, for only one thing is needed: to sit at the Lord’s feet.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I rejoice in hope, patient in tribulation, constant in prayer, and live in peace with everyone.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I strive for peace with everyone, and for the holiness without which no one will see the Lord.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I let the peace of Christ rule in my heart, to which I was indeed called in one body.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I live in harmony with one another; I do not be haughty, but associate with the lowly.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I do not repay anyone evil for evil, but give thought to do what is honorable in the sight of all.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "If possible, so far as it depends on me, I live peaceably with all.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I rejoice always, pray without ceasing, give thanks in all circumstances.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am called to peace and thankfulness, letting the message of Christ dwell among me richly.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I make every effort to keep the unity of the Spirit through the bond of peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I set my mind on things above, not on earthly things, and the peace of God guards my heart.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I maintain justice and do what is right, for my salvation is close at hand and my righteousness will soon be revealed.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I keep the Sabbath, not doing as I please on this holy day, and call the Sabbath a delight.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I consider the blameless, observe the upright, for a future awaits those who seek peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am guided by the LORD's instruction and guarded by Him. My heart is glad, and I am at peace, secure in my rest.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I trust in the Lord and do good; I dwell in the land and enjoy safe pasture.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I surrender my anxiety to Him because He cares for me.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I live a quiet life and attend to my own business, working with my hands as instructed by the Lord.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am no longer a slave to fear, for I am a child of God, led by the Spirit of God.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I seek first His kingdom and His righteousness, and all these things will be added to me.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am strong and courageous; I don’t be terrified or afraid, for the Lord my God is the one who is going with me.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I walk in the Spirit and not in the flesh, for the fruit of the Spirit is love, joy, peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I let my gentleness be evident to all, for the Lord is near.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am a child of God, fearfully and wonderfully made.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am created in the image and likeness of God.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am forgiven, justified, and redeemed by the blood of Jesus Christ.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am not conformed to this world but transformed by the renewing of my mind.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a chosen people, a royal priesthood, a holy nation, God’s special possession.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a temple of the Holy Spirit, who lives within me.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am an ambassador for Christ, representing His Kingdom on earth.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a disciple of Christ, following His teachings and living in His love.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a co-heir with Christ, partaking in His inheritance.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a new creation, the old has gone and the new has come.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am the salt of the earth and the light of the world.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am set apart, sanctified for His purposes.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am loved with an everlasting love, drawn with unfailing kindness.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am the righteousness of God in Christ Jesus.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am more than a conqueror through Him who loves me.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am the apple of God’s eye, hidden under the shadow of His wings.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a friend of God, He calls me by name.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am part of a chosen generation, a royal priesthood, a holy nation, a peculiar people.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am redeemed from the hand of the enemy.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am set free, whom the Son sets free is free indeed.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am secure in God's love, nothing can separate me from it.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am guided by God's wisdom, He directs my paths.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am complete in Christ, lacking nothing.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am an overcomer, born of God and overcoming the world.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a branch of the true vine, a conduit of Christ's life.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am washed, sanctified, and justified in the name of Jesus Christ and by the Spirit of God.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am established in righteousness and oppression is far from me.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am the workmanship of God, created in Christ Jesus for good works.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am sealed with the Holy Spirit of promise.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a partaker of His divine nature.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a citizen of heaven, living on earth.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am hidden with Christ in God.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am God's workmanship, created in Christ for good works.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am anointed and sealed by God in Christ.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am God's treasured possession, chosen and precious in His sight.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a part of Christ's body, the Church.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am living by faith and not by sight.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am an heir of eternal life.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am saved by grace through faith.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am delivered from the power of darkness and translated into the Kingdom of God's dear Son.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am dead to sin and alive to God in Christ Jesus.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a partaker of Christ; I share in His life.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am chosen by God, holy and dearly loved.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a member of a royal priesthood, a holy nation, a people for God's own possession.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am loved by God and kept in Jesus Christ.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am blessed with every spiritual blessing in the heavenly places.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am grounded and rooted in love.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am God's elect, full of mercy, kindness, humility, and longsuffering.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am redeemed and forgiven by the grace of Christ.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a partaker of the heavenly calling.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I will give thanks to the Lord with my whole heart; I will recount all of His wonderful deeds.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful and remember the works of the Lord; surely I remember Your wonders of old.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I will praise the name of God with a song; I will magnify Him with thanksgiving.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I enter His gates with thanksgiving, and His courts with praise!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I give thanks to the Lord, for He is good; His steadfast love endures forever.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I thank the Lord for His steadfast love, for His wondrous works to the children of man!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I will offer to You the sacrifice of thanksgiving and call on the name of the Lord.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I come into His presence with thanksgiving; I make a joyful noise to Him with songs of praise!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I will give thanks to the Lord, for He is good, for His steadfast love endures forever.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I give thanks to the Lord for His unfailing love and His wonderful deeds for mankind.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for the gift of Christ Jesus given to me by God.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful to God for His inexpressible gift!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I will give thanks in all circumstances; for this is the will of God in Christ Jesus for me.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am always giving thanks to God the Father for everything, in the name of our Lord Jesus Christ.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I let the peace of Christ rule in my heart, since as a member of one body I was called to peace. And I am thankful.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I do not cease to give thanks for you, remembering you in my prayers.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am filled with the knowledge of His will in all spiritual wisdom and understanding, so as to walk in a manner worthy of the Lord, fully pleasing to Him, bearing fruit in every good work and increasing in the knowledge of God.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I always thank my God as I remember you in my prayers.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I give thanks to my God always for you because of the grace of God that was given you in Christ Jesus.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for His inexpressible gift!",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I thank my God in all my remembrance of you.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for the grace of God in truth.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful to God always for the grace given to me in Christ Jesus.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful to Him and bless His name.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I sing to the Lord with thanksgiving; I make melody to our God on the lyre.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am filled with gratitude, singing psalms, hymns, and spiritual songs to God with thankfulness in my heart.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful to God, who gives me the victory through our Lord Jesus Christ.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I give thanks to God for His righteousness and sing praises to the name of the Lord Most High.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I bless the Lord, who counsels me; even at night my heart instructs me.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful that I am fearfully and wonderfully made by God.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful that God's grace is sufficient for me, His power is made perfect in my weakness.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am grateful for God’s faithfulness, His compassions do not fail; they are new every morning.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am grateful that God supplies all my needs according to His riches in glory in Christ Jesus.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for the peace of God, which surpasses all understanding and guards my heart and mind through Christ Jesus.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for the everlasting love of God, from everlasting to everlasting.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am grateful for the gift of eternal life through Jesus Christ our Lord.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful to God, who always leads me in triumph in Christ, and manifests through me the sweet aroma of the knowledge of Him in every place.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I give thanks to God, who has qualified me to share in the inheritance of the saints in Light.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful to the Lord, for He is good and His mercy endures forever.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for the wisdom and revelation that comes from the Spirit of God.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful that I can do all things through Christ who strengthens me.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful that God’s love has been poured out into my heart through the Holy Spirit, who has been given to me.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am grateful for the blessed hope and the glorious appearing of our great God and Savior Jesus Christ.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful that I am a child of God and co-heir with Christ.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I give thanks to the Lord of lords, for His lovingkindness is everlasting.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for the assurance that all things work together for good to those who love God, to those who are called according to His purpose.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am grateful that God's word is a lamp to my feet and a light to my path.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful for the Holy Spirit who helps me in my weakness and intercedes for me.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am grateful for the hope that God gives, which does not disappoint, because God's love has been poured into my heart through the Holy Spirit.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I am thankful that Jesus Christ, the same yesterday, today, and forever.",
+            "isFavorite": false,
+            "category": "gratitude"
+        },
+        {
+            "text": "I live under the protection of Most High and stay in the shadow of God Almighty.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God is my refuge and fortress. I trust in Him for protection.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God will cover me with His feathers, under His wings, I will find refuge.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "I will not fear any danger by night or an arrow during the day.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God has ordered His angels to protect me wherever I go.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord is my light and salvation, whom shall I fear? The Lord is the stronghold of my life, of whom shall I be afraid?",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord is my shield, my glory, and the lifter of my head.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The name of the Lord is a fortified tower; I run to it and am safe.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord will protect me from all harm; He will watch over my life.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God is my refuge and strength, a very present help in trouble.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God surrounds and protects me with favor as with a shield.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "I trust in God's unfailing love forever and ever.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "I will lie down and sleep in peace, for you alone, Lord, make me dwell in safety.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God will save me from the fowler’s snare and from the deadly pestilence.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord is faithful, He will establish me and guard me against the evil one.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "I will not be afraid of ten thousands of people who have set themselves against me all around.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God's word is a lamp to my feet and a light to my path.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God's peace, which surpasses all understanding, will guard my heart and mind through Christ Jesus.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God will fight for me, and I shall hold my peace and remain at rest.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "No weapon formed against me shall prosper, and every tongue that rises against me in judgment, I shall condemn.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "Though I walk in the midst of trouble, God will revive me.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord is my rock, my fortress, and my deliverer, my God in whom I take refuge.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "Even though I walk through the darkest valley, I will fear no evil, for God is with me; His rod and His staff, they comfort me.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God will make my enemies turn their backs to me, and I will destroy them.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord will keep me from all harm, He will watch over my life; the Lord will watch over my coming and going both now and forevermore.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The angel of the Lord encamps around me because I fear Him, and He delivers me.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "I am hidden in the shadow of God's wings.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord is my helper, I will not fear. What can man do to me?",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord is a shield to me, my glory, and the One who lifts up my head.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God will deliver me from every evil work and preserve me for His heavenly kingdom.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God will keep me in perfect peace because my mind is stayed on Him.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord will deliver me from the wicked and save me because I trust in Him.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord is my shield and buckler; I will not be afraid of the terror by night.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God has not given me a spirit of fear, but of power, love, and sound mind.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God is my helper, I shall not fear; what can man do to me?",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord is my keeper, the Lord is the shade at my right hand.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God Himself will be with me. He will not fail me or forsake me.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God will keep my going out and my coming in from this time forth and forevermore.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord will keep me from all evil; He will keep my life.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "In peace, I will lie down and sleep, for the Lord alone makes me dwell in safety.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord will deliver me from every evil deed and will bring me safely into His heavenly kingdom.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God's faithfulness is a shield and buckler. I will not fear the terror of the night.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord is my rock, my fortress, and my deliverer. My God is my rock, in whom I take refuge.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "I am more than a conqueror through Him who loved us.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God will command His angels concerning me to guard me in all my ways.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "God is my refuge and my fortress. In Him, I will trust.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "I am strong and courageous. I will not be afraid or terrified because of them, for the Lord my God goes with me.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "I am safe, for the Lord watches over me day and night.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord is faithful, and He will strengthen and protect me from the evil one.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord will rescue me from every evil attack and will bring me safely to His heavenly kingdom.",
+            "isFavorite": false,
+            "category": "godsprotection"
+        },
+        {
+            "text": "The Lord will guide me continually, and satisfy my soul in drought.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God is my strength and power, He makes my way perfect.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God's Word is a lamp unto my feet and a light unto my path.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "The Lord will show me the path of life.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "I follow after righteousness, godliness, faith, love, patience, and meekness.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "The steps of a good man are ordered by the Lord, and He delights in his way.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "The Lord makes me to lie down in green pastures, He leads me beside the still waters.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "The Lord will instruct me and teach me in the way I should go. He will guide me with His eye.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God will guide me with His counsel, and afterward receive me to glory.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God will make my path straight when I trust in Him with all my heart.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God lights my lamp; the Lord, my God, lightens my darkness.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God will guide me along the best pathway for my life. He will advise me and watch over me.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God teaches me His ways and guides me in straight paths because I humbly submit to Him.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God's instructions are perfect, reviving my soul. His decrees are trustworthy, making wise the simple.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God's words are a flashlight to light the path ahead of me and keep me from stumbling.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "The Lord is my shepherd, guiding me in the right paths for His name's sake.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God guides me in the way of wisdom and leads me along straight paths.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "The Lord will always lead me, satisfy my needs in a scorched land, and strengthen my frame.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God leads me in the paths of righteousness for His name's sake.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God has a plan for me, plans to prosper me and not to harm me, plans to give me hope and a future.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "My steps are ordered by the Lord, and He delights in my way.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God directs my steps, so why try to understand everything along the way?",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "I trust in the Lord with all my heart and lean not on my own understanding. In all my ways I acknowledge Him, and He directs my paths.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "The Lord Himself goes before me and will be with me; He will never leave me nor forsake me.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God is within me, I will not fall; God will help me at break of day.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "I will hear a voice behind me saying, 'This is the way, walk in it,' when I turn to the right or to the left.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "I seek first His kingdom and His righteousness, and all things are added to me.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God's Spirit does not make me timid, but gives me power, love and self-discipline.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "I am directed by the Lord, and I delight in His way.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "The Lord is my helper, I will not be afraid.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "The Lord will guide me always; He will satisfy my needs in a sun-scorched land.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "In all my ways I acknowledge Him, and He makes my paths straight.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "I do not lean on my own understanding; in all my ways I acknowledge Him, and He directs my paths.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God teaches me to profit and leads me in the way I should go.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "The Lord is my light and my salvation; whom shall I fear? The Lord is the strength of my life; of whom shall I be afraid?",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "The Lord is my light and my salvation, so why should I be afraid?",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "The Lord will keep me from all harm; He will watch over my life.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "I am confident in this, that He who began a good work in me will carry it on to completion until the day of Christ Jesus.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God is my refuge and strength, a very present help in trouble.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God is within me, I will not fall.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "I trust in the Lord with all my heart, He will make my paths straight.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "I commit my work to the Lord, and my plans will be established.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God leads me beside quiet waters, He refreshes my soul.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "The Lord directs the steps of the godly. He delights in every detail of their lives.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "When I walk through the deepest valley, I will fear no evil, for God is with me.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God shows me the path of life. In His presence, there is fullness of joy.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God guides me along the right paths for His name's sake.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "God's word is a lamp to my feet and a light to my path.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "The Lord will guide me always; He will satisfy my needs in a sun-scorched land.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "The Spirit of truth will guide me into all truth.",
+            "isFavorite": false,
+            "category": "guidance"
+        },
+        {
+            "text": "I am not a slave to addiction because the Lord has set me free.",
+            "book": "John 8:36",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am able to do all things through Christ who strengthens me.",
+            "book": "Philippians 4:13",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am not dominated by any substance because God has called me to live a life of self-control.",
+            "book": "1 Corinthians 6:12",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "God is my refuge and my fortress, in Him will I trust.",
+            "book": "Psalm 91:2",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I will find mercy and grace to help in time of need.",
+            "book": "Hebrews 4:16",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "God has not given me a spirit of fear, but of power, love, and self-discipline.",
+            "book": "2 Timothy 1:7",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am an overcomer by the blood of the Lamb and by the word of my testimony.",
+            "book": "Revelation 12:11",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am free from addiction, for where the Spirit of the Lord is, there is freedom.",
+            "book": "2 Corinthians 3:17",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I cast all my anxieties on Him, because He cares for me.",
+            "book": "1 Peter 5:7",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "God loves me and He will not let me be tempted beyond my ability, but with the temptation He will also provide the way of escape, that I may be able to endure it.",
+            "book": "1 Corinthians 10:13",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I submit myself to God, resist the devil, and he will flee from me.",
+            "book": "James 4:7",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am more than a conqueror through Christ who loves me.",
+            "book": "Romans 8:37",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am not anxious about anything, but in everything by prayer and supplication with thanksgiving I let my requests be made known to God.",
+            "book": "Philippians 4:6",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am renewed in the spirit of my mind, and I put on the new self, created after the likeness of God in true righteousness and holiness.",
+            "book": "Ephesians 4:23-24",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am dead to sin and alive to God in Christ Jesus.",
+            "book": "Romans 6:11",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am not conformed to this world, but am transformed by the renewal of my mind, that by testing I may discern what is the will of God, what is good and acceptable and perfect.",
+            "book": "Romans 12:2",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I have been set free in Christ, and I will not submit again to a yoke of slavery.",
+            "book": "Galatians 5:1",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I walk by the Spirit, and I will not gratify the desires of the flesh.",
+            "book": "Galatians 5:16",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "The old has passed away; behold, the new has come. I am a new creation in Christ.",
+            "book": "2 Corinthians 5:17",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am no longer a slave to sin because Christ has set me free.",
+            "book": "Romans 6:6",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am chosen, holy, and dearly loved. I clothe myself with compassion, kindness, humility, gentleness, and patience.",
+            "book": "Colossians 3:12",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I have put on the new self, which is being renewed in knowledge in the image of its Creator.",
+            "book": "Colossians 3:10",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I have been crucified with Christ and I no longer live, but Christ lives in me.",
+            "book": "Galatians 2:20",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I have been delivered from the domain of darkness and transferred to the kingdom of his beloved Son.",
+            "book": "Colossians 1:13",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I can confidently say, 'The Lord is my helper; I will not fear; what can man do to me?'",
+            "book": "Hebrews 13:6",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am a child of God, and I am not controlled by addiction.",
+            "book": "John 1:12",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I have overcome the world because the One who is in me is greater than the one who is in the world.",
+            "book": "1 John 4:4",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I seek first God's Kingdom and His righteousness, and all my needs will be provided.",
+            "book": "Matthew 6:33",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I cast all my cares on God because He cares for me.",
+            "book": "1 Peter 5:7",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am a temple of the Holy Spirit and not a home for addiction.",
+            "book": "1 Corinthians 6:19",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I will find new strength and soar high on wings like eagles.",
+            "book": "Isaiah 40:31",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am not worried about anything; instead, I pray about everything.",
+            "book": "Philippians 4:6",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am victorious in Christ Jesus.",
+            "book": "1 Corinthians 15:57",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am born of God and the evil one cannot touch me.",
+            "book": "1 John 5:18",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am clothed with the armor of God to stand against the schemes of the devil.",
+            "book": "Ephesians 6:11",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I will not be anxious about anything. In every situation, I will present my requests to God.",
+            "book": "Philippians 4:6",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am delivered from the power of darkness and translated into the Kingdom of God's dear Son.",
+            "book": "Colossians 1:13",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am strong in the Lord and in the power of His might.",
+            "book": "Ephesians 6:10",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I will walk by faith and not by sight.",
+            "book": "2 Corinthians 5:7",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am complete in Christ, the head over all rule and authority.",
+            "book": "Colossians 2:10",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am loved by God, and nothing can separate me from His love.",
+            "book": "Romans 8:38-39",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I have been given a spirit of power, love, and a sound mind, not of fear.",
+            "book": "2 Timothy 1:7",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am crucified with Christ, and it is no longer I who live, but Christ who lives in me.",
+            "book": "Galatians 2:20",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am an overcomer, and I can do all things through Christ who strengthens me.",
+            "book": "Philippians 4:13",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am no longer conformed to the patterns of this world, but am transformed by the renewing of my mind.",
+            "book": "Romans 12:2",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am not enslaved, for Christ has set me free.",
+            "book": "Galatians 5:1",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am a chosen generation, a royal priesthood, a holy nation, God's special possession.",
+            "book": "1 Peter 2:9",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I have the mind of Christ and hold the thoughts and feelings of Christ.",
+            "book": "1 Corinthians 2:16",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am not given a spirit of fear, but of power, love, and sound mind.",
+            "book": "2 Timothy 1:7",
+            "isFavorite": false,
+            "category": "addiction"
+        },
+        {
+            "text": "I am a temple of God, and His Spirit dwells in me.",
+            "book": "1 Corinthians 3:16",
+            "isFavorite": false,
+            "category": "addiction"
         },
     ]
     

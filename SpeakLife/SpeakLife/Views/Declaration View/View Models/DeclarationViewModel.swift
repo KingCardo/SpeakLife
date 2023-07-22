@@ -50,7 +50,6 @@ final class DeclarationViewModel: ObservableObject {
     var errorMessage: String? {
         didSet {
             if errorMessage != nil  {
-                print(errorMessage, "RWRW")
                 showErrorMessage = true
             }
         }
