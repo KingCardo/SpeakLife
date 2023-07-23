@@ -57,14 +57,14 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .health,
         .depression,
         .marriage,
-        .fear,
-        .hope,
-        .confidence,
+        .fear,//
+        .hope,//
+        .confidence,//
         .hardtimes,
-        .forgiveness,
-        .loneliness,
-        .selfcontrol,
-        .perseverance
+        .forgiveness,//
+        .loneliness,//
+        .selfcontrol,//
+        .perseverance//
     ]
     
     static func getCategoryOrder() -> [DeclarationCategory] {
