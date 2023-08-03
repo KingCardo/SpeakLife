@@ -199,7 +199,7 @@ final class NotificationManager: NSObject {
     
     private func devotionalAffirmationReminder() {
         let id = UUID().uuidString
-        let body = "Your Daily Devotion is Ready! Take a moment to nourish your spirit and deepen your faith.!" // Localize
+        let body = "Your Daily Devotion is Ready! Take a moment to nourish your spirit and deepen your faith!" // Localize
         
         let content = UNMutableNotificationContent()
         content.title = "SpeakLife"

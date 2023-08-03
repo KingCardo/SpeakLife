@@ -44,10 +44,10 @@ struct DeclarationView: View {
                 if appState.showIntentBar {
                     if !appState.showScreenshotLabel {
                         VStack() {
-                            if !subscriptionStore.isPremium {
-                                GoogleAdBannerView()
-                                    .frame(width: geometry.size.width * 0.9, height: 50)
-                            }
+//                            if !subscriptionStore.isPremium {
+//                                GoogleAdBannerView()
+//                                    .frame(width: geometry.size.width * 0.9, height: 50)
+//                            }
                             HStack {
                                 dailyDevotionButton
                                 Spacer()

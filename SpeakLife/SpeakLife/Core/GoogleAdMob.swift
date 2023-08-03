@@ -11,7 +11,7 @@ import UIKit
 struct GoogleAdBannerView: UIViewRepresentable {
     private let adUnitID: String
     
-    init(adUnitID: String = APP.Product.googleAdUnitBannerID) {
+    init(adUnitID: String = APP.Product.googleAdUnitBannerID2) {
         self.adUnitID = adUnitID
     }
     

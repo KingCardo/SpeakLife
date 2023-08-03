@@ -31,6 +31,10 @@ struct APP {
             "ca-app-pub-4361689433807539/7209066019"
         }
         
+        static var googleAdUnitBannerID2: String {
+            "ca-app-pub-4361689433807539/7933731965"
+        }
+        
         static var googleOpenAppAdUnitID: String {
             "ca-app-pub-4361689433807539/2438340662"
         }
