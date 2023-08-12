@@ -36,14 +36,14 @@ struct IntentsBarView: View {
                         .font(.callout)
                     Text(viewModel.selectedCategory.categoryTitle)
                         .font(.callout)
-                    if appState.newCategoriesAddedv3 {
+                    if appState.newCategoriesAddedv4 {
                         Badge()
                     }
                 }
             }.sheet(isPresented: $isPresentingCategoryChooser, onDismiss: {
                 withAnimation {
                     self.isPresentingCategoryChooser = false
-                    self.appState.newCategoriesAddedv3 = false
+                    self.appState.newCategoriesAddedv4 = false
                 }
             }, content: {
                 CategoryChooserView(viewModel: viewModel)

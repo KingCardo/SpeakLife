@@ -12,7 +12,7 @@ final class AppState: ObservableObject {
     @Published var showIntentBar = true
     @AppStorage("onboarded") var isOnboarded = false
     @AppStorage("newPrayersAdded") var newPrayersAdded = true
-    @AppStorage("newCategoriesAddedv3") var newCategoriesAddedv3 = true
+    @AppStorage("newCategoriesAddedv4") var newCategoriesAddedv4 = true
     @AppStorage("newThemesAdded") var newThemesAdded = true
     @AppStorage("newSettingsAdded") var newSettingsAdded = true
     @AppStorage("abbasLoveAdded") var abbasLoveAdded = true
