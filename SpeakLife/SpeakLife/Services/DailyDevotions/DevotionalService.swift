@@ -60,6 +60,7 @@ final class DevotionalServiceClient: DevotionalService {
         guard
             let url = Bundle.main.url(forResource: "devotionals", withExtension: "json"),
             let data = try? Data(contentsOf: url) else {
+            print("RWRW file not found")
             return []
         }
         
@@ -76,7 +77,7 @@ final class DevotionalServiceClient: DevotionalService {
             return devotionals
             
         } catch {
-            print(error)
+            print(error, "RWRW")
            return []
         }
         
