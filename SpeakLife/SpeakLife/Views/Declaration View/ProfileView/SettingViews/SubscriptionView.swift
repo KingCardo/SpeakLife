@@ -110,7 +110,7 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 24)
                     
-                    Text("Your premium subscription will help to enrich your spiritual journey and allow us to continuously deliver high-quality, inspiring content. Subscribe today and experience the power of Bible affirmations like never before!")
+                    Text("We kindly invite you to stand with the SpeakLife movement, dedicated to uplifting, inspiring, and transforming a world craving positivity and goodness. Enjoy access to all premium features.")
                         .padding(.all)
                         .font(.caption)
                         .foregroundColor(.black)
