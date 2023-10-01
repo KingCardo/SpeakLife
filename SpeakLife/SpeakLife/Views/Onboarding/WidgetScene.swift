@@ -82,3 +82,34 @@ struct WidgetScene: View {
         )
     }
 }
+
+
+struct UseCaseScene: View {
+    @EnvironmentObject var appState: AppState
+    let size: CGSize
+    let callBack: (() -> Void)
+    
+    var body: some View {
+        useCaseScene(size: size)
+    }
+    
+    private func useCaseScene(size: CGSize)  -> some View {
+        VStack {
+            TipsView(appState: _appState, tips: tips)
+            Button(action: callBack) {
+                HStack {
+                    Text("Got it!", comment: "Use case scene confirmation")
+                        .font(.body)
+                        .fontWeight(.medium)
+                        .frame(width: size.width * 0.91 ,height: 50)
+                }.padding()
+            }
+            .frame(width: size.width * 0.87 ,height: 50)
+            .background(Constants.DAMidBlue)
+            
+            .foregroundColor(.white)
+            .cornerRadius(8)
+            .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+        }
+    }
+}

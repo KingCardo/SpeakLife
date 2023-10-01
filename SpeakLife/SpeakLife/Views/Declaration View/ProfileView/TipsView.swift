@@ -8,6 +8,7 @@
 import SwiftUI
 
 let tips = [
+    "The number one goal for this app is to teach you about the promises of God, help you speak them over your life and grow a more initimate relationship with our best friend Jesus!",
     "We all go through war in this life because we are in a battle. Yes, Jesus has won the war for us, but we must know how to stand our ground and fight through the trials that may come whether it's mental, physical, emotional or spiritual!",
     "Whatever trial you face, God's word will turn it in your favor! Look up 3 to 5 Bible verses that speaks to your trial. Meditate on them until they fill your heart, and speak them several times a day.",
     "Add the scriptures to your favorites so they will be readily accessible for any time of day. Even schedule to have them sent to you daily!",

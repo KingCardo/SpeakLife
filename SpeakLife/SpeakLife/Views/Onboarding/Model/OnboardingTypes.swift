@@ -11,6 +11,6 @@ enum Tab {
     case intro
     case notification
     case widgets
-   // case category
+    case useCase
     case subscription
 }
