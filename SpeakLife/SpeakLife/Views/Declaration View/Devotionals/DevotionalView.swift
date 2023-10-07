@@ -14,6 +14,7 @@ struct DevotionalView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: DevotionalViewModel
     @State private var scrollToTop = false
+    @State private var share = false
     
     let spacing: CGFloat = 20
     
@@ -62,6 +63,10 @@ struct DevotionalView: View {
                     .id("titleID")
                     .padding(.horizontal, 24)
                     .foregroundColor(.black)
+                    
+                    .sheet(isPresented: $share) {
+                        ShareSheet(activityItems: [viewModel.devotionalText as String,  URL(string: "\(APP.Product.urlID)")! as URL])
+                    }
                 }
                 .onChange(of: scrollToTop) { value in
                     if value {
@@ -71,6 +76,9 @@ struct DevotionalView: View {
                 }
             }
             
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+            self.share = false
         }
     }
     
@@ -115,47 +123,86 @@ struct DevotionalView: View {
             .frame(height: spacing)
     }
     
+    @ViewBuilder
+    private var backDevotionalButton: some View {
+        if viewModel.devotionValue > -10 {
+            Button {
+                Task {
+                    viewModel.devotionValue -= 1
+                    await viewModel.fetchDevotionalFor(value: viewModel.devotionValue)
+                    withAnimation {
+                        scrollToTop = true
+                    }
+                }
+            } label: {
+                Image(systemName: "arrow.backward.circle")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var forwardDevotionalButton: some View {
+        if viewModel.devotionValue < 1 {
+            Button {
+                Task {
+                    viewModel.devotionValue += 1
+                    await viewModel.fetchDevotionalFor(value: viewModel.devotionValue)
+                    withAnimation {
+                        scrollToTop = true
+                    }
+                }
+            } label: {
+                Image(systemName: "arrow.forward.circle")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+            }
+        }
+    }
+    
+    private var shareButton: some View {
+        Button {
+            share.toggle()
+            Analytics.logEvent(Event.devotionalShared, parameters: nil)
+        } label: {
+            Image(systemName: "square.and.arrow.up")
+                .resizable()
+                .frame(width: 25)
+        }
+    }
+    
     var navigateDevotionalStack: some View {
         HStack {
-            if viewModel.devotionValue > -10 {
-                Button {
-                    Task {
-                        viewModel.devotionValue -= 1
-                        await viewModel.fetchDevotionalFor(value: viewModel.devotionValue)
-                        withAnimation {
-                            scrollToTop = true
-                        }
-                    }
-                } label: {
-                    Image(systemName: "arrow.backward.circle")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                }
-            }
+            backDevotionalButton
             
             Spacer()
                 .frame(width: 25)
             
-            if viewModel.devotionValue < 1 {
-                
-                Button {
-                    Task {
-                        viewModel.devotionValue += 1
-                        await viewModel.fetchDevotionalFor(value: viewModel.devotionValue)
-                        withAnimation {
-                            scrollToTop = true
-                        }
-                    }
-                } label: {
-                    Image(systemName: "arrow.forward.circle")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                }
-            }
+            forwardDevotionalButton
+            
+            Spacer()
+                .frame(width: 25)
+            
+            shareButton
             
         }
         .foregroundColor(.white)
     }
     
+    
+    private func shareSpeakLife()  {
+        DispatchQueue.main.async {
+            if let scene = UIApplication.shared.connectedScenes
+                .first(where: { $0.activationState == .foregroundActive })
+                as? UIWindowScene {
+                let url = URL(string: "\(APP.Product.urlID)")!
+                
+                let activityVC = UIActivityViewController(activityItems: ["Check out Speak Life - Bible Verses app that'll transform your life!", url], applicationActivities: nil)
+                let window = scene.windows.first
+                window?.rootViewController?.present(activityVC, animated: true)
+            }
+        }
+    }
+    
 }
-
