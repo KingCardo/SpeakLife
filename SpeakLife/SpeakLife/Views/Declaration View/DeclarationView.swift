@@ -26,9 +26,11 @@ struct DeclarationView: View {
     @AppStorage("share.counter") private var shareCounter = 0
     @AppStorage("review.try") private var reviewTry = 0
     @AppStorage("shared.count") private var shared = 0
+    @AppStorage("premium.count") private var premiumCount = 0
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State private var showAlert = false
     @State private var share = false
+    @State private var goPremium = false
     @State var isShowingMailView = false
     @State var showDailyDevotion = false
     @State private var isSheetPresented = false
@@ -37,7 +39,6 @@ struct DeclarationView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                
                 DeclarationContentView(themeViewModel: themeViewModel, viewModel: viewModel)
                     .frame(width: geometry.size.width, height: geometry.size.height)
                 
@@ -64,6 +65,10 @@ struct DeclarationView: View {
                         }
                     }
                 }
+            }
+            
+            .sheet(isPresented: $goPremium) {
+                SubscriptionView(size: geometry.size)
             }
             
             .sheet(isPresented: $showDailyDevotion) {
@@ -102,6 +107,7 @@ struct DeclarationView: View {
         .onAppear {
             reviewCounter += 1
             shareCounter += 1
+            premiumCount += 1
             requestReview()
             shareApp()
         }
@@ -110,8 +116,8 @@ struct DeclarationView: View {
             Button("Leave us a 5 star review") {
                 showReview()
             }
-            Button("Leave feedback") {
-                sendEmail()
+            Button("Not right now") {
+               // sendEmail()
             }
         }
         
@@ -157,6 +163,15 @@ struct DeclarationView: View {
                 reviewCounter = 0
                 reviewTry += 1
             }
+        }
+    }
+    
+    private func presentGoPremium() {
+        if !subscriptionStore.isPremium, premiumCount == 2 || premiumCount == 6 || premiumCount == 15 {
+            goPremium = true
+        }
+        if premiumCount > 15 {
+            premiumCount = 0
         }
     }
     

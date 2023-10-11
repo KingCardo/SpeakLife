@@ -9,32 +9,50 @@ import SwiftUI
 
 let tips = [
     "The number one goal for this app is to teach you about the promises of God, help you speak them over your life and grow a more initimate relationship with our best friend Jesus!",
-    "We all go through war in this life because we are in a battle. Yes, Jesus has won the war for us, but we must know how to stand our ground and fight through the trials that may come whether it's mental, physical, emotional or spiritual!",
-    "Whatever trial you face, God's word will turn it in your favor! Look up 3 to 5 Bible verses that speaks to your trial. Meditate on them until they fill your heart, and speak them several times a day.",
-    "Add the scriptures to your favorites so they will be readily accessible for any time of day. Even schedule to have them sent to you daily!",
-    "SpeakLife categorizes the wonderful Bible promises so you have the right weapon at your finger tips.",
+    "Peace and Calm: Affirmations often bring peace as the words from the Bible are reassuring and comforting.",
+    "Divine Guidance: Reciting affirmations/scripture can serve as reminders of divine guidance and God’s wisdom in making decisions.",
     "Renewed Mindset: Regularly meditating on Bible affirmations will upgrade your way of thinking and expectation!",
+    "Whatever trial you face, God's word will turn it in your favor! Find 3 to 5 Bible verses from a category you need. Meditate on them until they fill your heart, and speak them several times a day.",
+    "Create your own affirmations and have them sent to you through out the day!",
+    "Add the scriptures to your favorites so they will be readily accessible for any time of day. Even schedule to have them sent to you daily!",
     "Warrior Resilience: By focusing on the promises and truths found in scripture, you'll cultivate emotional resilience and the ability to conquer life's trials. The practice of Bible affirmations can serve as a powerful reminder of God's unwavering support in times of difficulty.",
     "Deeper Spiritual Connection: As you internalize the affirmations rooted in God's Word, you'll start recognizing your true worth and potential.",
-    "Empowered Decision-Making: The wisdom and guidance found in scripture-based affirmations can help you make informed, faith-aligned decisions. By integrating God's Word into your daily life, you'll be better equipped to face challenges and opportunities with confidence and grace."
-    
 ]
 
 struct TipsView: View {
     @EnvironmentObject var appState: AppState
     let tips: [String]
+    @State var selection = 0
     
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.cyan, .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
             
-            ScrollView {
-                Text("How to use Speaklife to manifest your victory!🛡🗡")
+    
+           
+            VStack {
+                Spacer()
+                    .frame(height: 100)
+                Text("How to use and benefit from Speaklife to manifest your victory!🛡🗡")
                     .font(.title)
                     .foregroundColor(.black)
                     .padding()
-                BulletList(items: tips)
+                
+                Spacer()
+                    .frame(height: 50)
+                
+                TabView {
+                    ForEach(tips, id: \.self) { item in
+                        Text(item)
+                            .font(.title2)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding()
+            
+                    }
+                }
+                .tabViewStyle(.page(indexDisplayMode: .always))
+                
                 Spacer()
             }
         }

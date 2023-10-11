@@ -18,29 +18,36 @@ struct Benefit: Identifiable  {
     
     static var premiumBenefits: [Benefit] = [
         
-        Benefit(text: "Enjoy the full experience"),
-        Benefit(text: "Bible Scriptures for all of life's journey"),
+        Benefit(text: "Enjoy your first 3 days for free"),
+        Benefit(text: "Access to Daily Devotionals about how much Jesus loves you!"),
+        Benefit(text: "Bible Affirmations for all of life's journey"),
         Benefit(text: "Categories for any situation"),
         Benefit(text: "Reminders to transform your mindset"),
-        Benefit(text: "No ads, or watermarks"),
+        Benefit(text: "3 days free, then just $39.99/year"),
         Benefit(text: "Only $3.33/month, billed annually"),
+        Benefit(text: "No ads, or watermarks"),
 
-//        Benefit(text: "But seek first his kingdom and his righteousness, and all these things will be given to you as well. - Matthew 6:33"),
-//        Benefit(text: "Do not conform to the pattern of this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what God's will is—his good, pleasing and perfect will. - Romans 12:2"),
-//
-//        Benefit(text: "Therefore put on the full armor of God, so that when the day of evil comes, you may be able to stand your ground - Ephesians 6:13"),
-//        Benefit(text: "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you. - James 1:5"),
-//
-//        Benefit(text: "Unlimited Access: With a premium subscription, get unlimited access to our extensive library of Bible affirmations, allowing you to find comfort, guidance, and inspiration anytime you need it."),
-//        Benefit(text: "Personalized Experience: Tailor your experience to your needs. Customize and create your own affirmations, and choose themes that resonate with your spiritual journey."),
-//        Benefit(text: "Ad-Free Experience: Enjoy an uninterrupted, ad-free experience. Focus on your affirmations without any distractions."),
-//       Benefit(text: "Daily Inspirations: Receive exclusive daily inspirational quotes and affirmations, curated just for you, to help start your day on a positive note."),
-//        Benefit(text: "Offline Access: Download your favorite affirmations and access them anytime, anywhere, even without internet connection."),
-//        Benefit(text: "Early Access: Get early access to new features and content. Be the first to explore new affirmations, themes, and tools."),
-//        Benefit(text: "Support the App: Your subscription helps us maintain the app, create new content, and continue providing you with a valuable resource for your spiritual journey."),
-       // Benefit(text: "Let each man give according as he has determined in his heart; not grudgingly, or under compulsion; for God loves a cheerful giver. - 2 Corinthians 9:7"),
-        Benefit(text: "Choose amount comfortable for you! Unlocks all premium features."),
     ]
+    
+    static var discountBenefits: [Benefit] = [
+        
+        Benefit(text: "Enjoy 50% off discount"),
+        Benefit(text: "3 days free, then just $19.99/year"),
+        Benefit(text: "Only $1.66/month, billed annually"),
+        Benefit(text: "Cancel anytime from settings")
+    ]
+}
+
+struct DiscountSubscriptionView: View {
+    
+    let size: CGSize
+    var callback: (() -> Void)?
+    
+    var body: some View {
+        SubscriptionView(benefits: Benefit.discountBenefits, size: size, currentSelection: InAppId.Subscription.speakLife1YR19, gradient: Gradients().redCyan, ctaText: "Enjoy one time discount of 50% off!", isDiscount: true) {
+            callback?()
+        }
+    }
 }
 
 struct SubscriptionView: View {
@@ -50,10 +57,24 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39
+    var currentSelection: InAppId.Subscription
     
     let size: CGSize
     var callback: (() -> Void)?
+    let benefits: [Benefit]
+    var gradient: any View = Gradients().purple
+    var isDiscount = false
+    
+    var ctaText: String = ""
+    
+    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39, gradient: any View = Gradients().purple, ctaText: String = "3 days free, then just $39.99/year, cancel anytime", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
+        self.benefits = benefits
+        self.size = size
+        self.currentSelection = currentSelection
+        self.gradient = gradient
+        self.ctaText = ctaText
+        self.isDiscount = isDiscount
+    }
 
     var body: some View {
         goPremiumView(size: size)
@@ -64,7 +85,7 @@ struct SubscriptionView: View {
     }
     
     private var benefitRows: some View {
-        ForEach(Benefit.premiumBenefits)  { benefit in
+        ForEach(benefits)  { benefit in
             HStack {
                 Image(systemName: "checkmark.seal.fill")
                     .resizable()
@@ -81,7 +102,7 @@ struct SubscriptionView: View {
     
     private func goPremiumView(size: CGSize) -> some View  {
         ZStack {
-            Gradients().purple
+            AnyView(gradient)
             ScrollView {
                 VStack  {
                     Spacer()
@@ -105,17 +126,16 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 40)
                     
+                    Text(ctaText)
+                        .padding(.all)
+                        .font(isDiscount ? .body : .callout)
+                        .foregroundColor(.white)
+                    
                     goPremiumStack(size: size)
                     
                     Spacer()
                         .frame(height: 24)
-                    
-                    Text("We kindly invite you to stand with the SpeakLife movement, dedicated to uplifting, inspiring, and transforming a world craving positivity and goodness. Enjoy access to all premium features.")
-                        .padding(.all)
-                        .font(.caption)
-                        .foregroundColor(.black)
                 }
-                
                 
             }
             if declarationStore.isPurchasing {
@@ -123,8 +143,6 @@ struct SubscriptionView: View {
                     .progressViewStyle(CircularProgressViewStyle())
                     .scaleEffect(2)
             }
-
-            
         }
     }
     
@@ -136,12 +154,7 @@ struct SubscriptionView: View {
                                                 endPoint: .bottom)
         
         return VStack {
-            Picker("Gift Amount", selection: $currentSelection) {
-                ForEach(InAppId.Subscription.allCases) { inappID in
-                    Text(inappID.title).tag(inappID)
-                }
-            }
-            
+
             continueButton(gradient: linearGradient)
 
             HStack {
@@ -150,6 +163,14 @@ struct SubscriptionView: View {
                         .font(.caption2)
                         .foregroundColor(Color.blue)
                 }
+                
+//                Spacer()
+//                
+//                Button(action: presentOtherIAPOptions) {
+//                    Text("Other", comment: "iap iptons")
+//                        .font(.caption2)
+//                        .foregroundColor(Color.blue)
+//                }
             }
         }
     }
@@ -157,7 +178,6 @@ struct SubscriptionView: View {
     func buy() async {
         do {
             if let transaction = try await subscriptionStore.purchaseWithID([currentSelection.rawValue]) {
-                print(transaction.ownershipType, "RWRW")
                 callback?()
             }
         } catch StoreError.failedVerification {
@@ -189,13 +209,17 @@ struct SubscriptionView: View {
             isShowingError = true
         }
     }
-}
-
-struct SubscriptionView_Previews: PreviewProvider {
     
-    static var previews: some View {
-        SubscriptionView(size: UIScreen.main.bounds.size)
-            .environmentObject(DeclarationViewModel(apiService: APIClient()))
-            .environmentObject(SubscriptionStore())
+    func presentOtherIAPOptions() {
+        
     }
 }
+
+//struct SubscriptionView_Previews: PreviewProvider {
+//    
+//    static var previews: some View {
+//        SubscriptionView(size: UIScreen.main.bounds.size)
+//            .environmentObject(DeclarationViewModel(apiService: APIClient()))
+//            .environmentObject(SubscriptionStore())
+//    }
+//}

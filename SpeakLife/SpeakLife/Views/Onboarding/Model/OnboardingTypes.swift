@@ -13,4 +13,5 @@ enum Tab {
     case widgets
     case useCase
     case subscription
+    case discount
 }

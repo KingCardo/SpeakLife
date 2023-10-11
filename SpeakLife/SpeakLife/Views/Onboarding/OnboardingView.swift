@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseAnalytics
 
 struct OnboardingView: View  {
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
     @Environment(\.colorScheme) var colorScheme
     
@@ -24,27 +25,33 @@ struct OnboardingView: View  {
                 NotificationOnboarding(size: geometry.size) {
                     advance()
                 }
-                    .tag(Tab.notification)
+                .tag(Tab.notification)
+                
+                UseCaseScene(size: geometry.size) {
+                    advance()
+                }.tag(Tab.useCase)
+                
+                subscriptionScene(size: geometry.size)
+                    .tag(Tab.subscription)
                 
                 WidgetScene(size: geometry.size) {
                     //dismissOnboarding()
                     advance()
                 }
-                    .tag(Tab.widgets)
-            
-                UseCaseScene(size: geometry.size) {
-                    advance()
-                }.tag(Tab.useCase)
+                .tag(Tab.widgets)
+                
+              
                 //                categoryScene()
                 //                    .tag(Tab.category)
                 
-                subscriptionScene(size: geometry.size)
-                    .tag(Tab.subscription)
                 
+                
+                discountScene(size: geometry.size)
+                    .tag(Tab.discount)
                 
             }
             .ignoresSafeArea()
-            .tabViewStyle(.page(indexDisplayMode: .always))
+            .tabViewStyle(.page(indexDisplayMode: .never))
             .font(.headline)
         }
         .preferredColorScheme(.light)
@@ -60,7 +67,7 @@ struct OnboardingView: View  {
     }
     
     // MARK: - Private Views
-  
+    
     
     private func categoryScene() -> some View {
         Text("category")
@@ -70,6 +77,31 @@ struct OnboardingView: View  {
         
         ZStack {
             SubscriptionView(size: size) {
+                advance()
+            }
+            
+            VStack  {
+                HStack  {
+                    Button(action:  advance) {
+                        Text("CANCEL",  comment: "Cancel text for label")
+                            .font(.callout)
+                            .frame(height: 35)
+                            .foregroundColor(.black)
+                        
+                    }
+                    Spacer()
+                }
+                .padding()
+                
+                Spacer()
+            }
+        }
+    }
+    
+    private func discountScene(size: CGSize) -> some View  {
+        
+        ZStack {
+            DiscountSubscriptionView(size: size) {
                 advance()
             }
             
@@ -100,11 +132,13 @@ struct OnboardingView: View  {
                 selection = .notification
             case .notification:
                 askNotificationPermission()
-            case .widgets:
-                selection = .useCase
             case .useCase:
                 selection = .subscription
             case .subscription:
+                selection = .widgets
+            case .widgets:
+                moveToDiscount()
+            case .discount:
                 dismissOnboarding()
             }
         }
@@ -135,7 +169,7 @@ struct OnboardingView: View  {
                         }
                         
                         withAnimation {
-                            selection = .widgets
+                            selection = .useCase
                         }
                     }
                 }
@@ -144,7 +178,7 @@ struct OnboardingView: View  {
             
             
             withAnimation {
-                selection = .widgets
+                selection = .useCase
             }
             
             if settings.alertSetting == .enabled {
@@ -160,11 +194,24 @@ struct OnboardingView: View  {
         UIPageControl.appearance().pageIndicatorTintColor = UIColor(Constants.DALightBlue).withAlphaComponent(0.2)
     }
     
+    private func moveToDiscount() {
+        if subscriptionStore.isPremium {
+            withAnimation {
+                appState.isOnboarded = true
+                Analytics.logEvent(Event.onBoardingFinished, parameters: nil)
+            }
+            
+        } else {
+            selection = .discount
+        }
+    }
+    
     private func dismissOnboarding() {
         withAnimation {
             appState.isOnboarded = true
             Analytics.logEvent(Event.onBoardingFinished, parameters: nil)
         }
+        
     }
     
     private func registerNotifications() {
