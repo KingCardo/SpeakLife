@@ -179,6 +179,7 @@ struct DeclarationContentView: View {
                     // Hide the label after 2 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         appState.showScreenshotLabel = false
+                        viewModel.requestReview.toggle()
                     }
                 }
                
@@ -190,19 +191,19 @@ struct DeclarationContentView: View {
                     Selection.shared.selectionFeedback()
                 }
                 
-                CapsuleImageButton(title:"play.circle") {
-                    
-                    setCurrentDelcaration(declaration: declaration)
-                    Selection.shared.selectionFeedback()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                        if let declaration = viewModel.currentDeclaration {
-                            let text = declaration.text
-                            speechSynthesizer.speakText(text)
-                        }
-                        
-                    }
-                   
-                }
+//                CapsuleImageButton(title:"play.circle") {
+//                    
+//                    setCurrentDelcaration(declaration: declaration)
+//                    Selection.shared.selectionFeedback()
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+//                        if let declaration = viewModel.currentDeclaration {
+//                            let text = declaration.text
+//                            speechSynthesizer.speakText(text)
+//                        }
+//                        
+//                    }
+//                   
+//                }
             }
             .foregroundColor(.white)
         }
@@ -214,7 +215,7 @@ struct DeclarationContentView: View {
     
     private func favorite(_ declaration: Declaration) {
         viewModel.favorite(declaration: declaration)
-        
+        viewModel.requestReview.toggle()
     }
 }
 

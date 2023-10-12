@@ -17,6 +17,8 @@ final class DeclarationViewModel: ObservableObject {
     
     @Published var declarations: [Declaration] = []
     
+    @Published var requestReview = false
+    
     private (set) var currentDeclaration: Declaration?
     
     @Published var allCategories: [DeclarationCategory] = DeclarationCategory.getCategoryOrder()

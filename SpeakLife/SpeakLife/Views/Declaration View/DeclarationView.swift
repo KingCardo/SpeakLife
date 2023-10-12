@@ -35,12 +35,32 @@ struct DeclarationView: View {
     @State var showDailyDevotion = false
     @State private var isSheetPresented = false
     
+    @State private var timeElapsed = 0
+       
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 DeclarationContentView(themeViewModel: themeViewModel, viewModel: viewModel)
                     .frame(width: geometry.size.width, height: geometry.size.height)
+                    .onReceive(viewModel.$requestReview) { request in
+                        if request {
+                            showReview()
+                        }
+                    }
+                
+                    .onReceive(timer) { _ in
+                        timeElapsed += 1
+                        if timeElapsed >= 90 {
+                            timer.upstream.connect().cancel()
+                            showReview()
+                        }
+                    }
+                    .onAppear {
+                        // You might reset the timer here if needed
+                    }
                 
                 if appState.showIntentBar {
                     if !appState.showScreenshotLabel {
@@ -108,17 +128,7 @@ struct DeclarationView: View {
             reviewCounter += 1
             shareCounter += 1
             premiumCount += 1
-            requestReview()
             shareApp()
-        }
-        
-        .alert("Are you enjoying SpeakLife?", isPresented: $showAlert) {
-            Button("Leave us a 5 star review") {
-                showReview()
-            }
-            Button("Not right now") {
-               // sendEmail()
-            }
         }
         
         .alert("Help us spread SpeakLife?", isPresented: $share) {
@@ -156,16 +166,6 @@ struct DeclarationView: View {
         .padding(.leading)
     }
     
-    private func requestReview() {
-        if reviewCounter > 2 && reviewTry < 3 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                showAlert = true
-                reviewCounter = 0
-                reviewTry += 1
-            }
-        }
-    }
-    
     private func presentGoPremium() {
         if !subscriptionStore.isPremium, premiumCount == 2 || premiumCount == 6 || premiumCount == 15 {
             goPremium = true
@@ -200,15 +200,16 @@ struct DeclarationView: View {
     }
     
     private func showReview() {
-        DispatchQueue.main.async {
-            if let scene = UIApplication.shared.connectedScenes
-                .first(where: { $0.activationState == .foregroundActive })
-                as? UIWindowScene {
-                SKStoreReviewController.requestReview(in: scene)
+        if reviewCounter > 1 && reviewTry <= 3 {
+            
+            DispatchQueue.main.async {
+                if let scene = UIApplication.shared.connectedScenes
+                    .first(where: { $0.activationState == .foregroundActive })
+                    as? UIWindowScene {
+                    SKStoreReviewController.requestReview(in: scene)
+                    reviewTry += 1
+                }
             }
-            //            if let url = URL(string: "\(APP.Product.urlID)?action=write-review") {
-            //                UIApplication.shared.open(url)
-            //            }
         }
     }
     
