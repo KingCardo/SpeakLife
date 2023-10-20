@@ -301,6 +301,11 @@
             "book": "Romans 1:17 ESV",
             "isFavorite": false,
             "category": "faith"
+        }, 
+        {
+            "text": "In every moment, I am guided by God's righteousness, living and breathing my life through unwavering faith.",
+            "isFavorite": false,
+            "category": "faith"
         },
         {
             "text": "This is the day the Lord has made. We will rejoice and be glad in it.",
@@ -351,6 +356,21 @@
             "category": "faith"
         },
         {
+            "text": "I approach life with unwavering faith, knowing that God exists and rewards my heartfelt pursuit of Him.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Jesus is the assurance in my prayers; when I believe, I receive.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Jesus is the strength behind my belief; when I speak without doubt, mountains move.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
             "text": "\"I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.\"",
             "book": "Mark 11:24 NLT",
             "isFavorite": false,
@@ -369,8 +389,23 @@
             "category": "faith"
         },
         {
+            "text": "Jesus is the reason I walk by faith, seeing beyond what's in front of me.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
             "text": "God saved you by his grace when you believed. And you can’t take credit for this; it is a gift from God. Salvation is not a reward for the good things we have done, so none of us can boast about it.",
             "book": "Ephesians 2:8-9 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Jesus is the gift of grace, saving me not by my deeds, but through unwavering faith.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Jesus is the manifestation of God's promise, making the impossible possible.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -387,8 +422,23 @@
             "category": "faith"
         },
         {
+            "text": "Jesus is the anchor of my faith, keeping me steadfast amidst life's storms.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Jesus is my salvation and my declaration; in Him, my faith is unbreakable.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
             "text": "If you openly declare that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved.",
             "book": "Romans 10:9 NLT",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
+            "text": "Jesus is the guide in every step I take, leading me on the right path.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -405,10 +455,21 @@
             "category": "faith"
         },
         {
+            "text": "Jesus is the renewer of my strength, lifting me to soar like an eagle and ensuring I never tire.",
+            "isFavorite": false,
+            "category": "faith"
+        },
+        {
             "text": "So be strong and courageous! Do not be afraid and do not panic before them. For the Lord your God will personally go ahead of you. He will neither fail you nor abandon you.",
             "book": "Deuteronomy 31:6 NLT",
             "isFavorite": false,
             "category": "faith"
+        },
+        {
+            "text": "Jesus is my unfaltering strength, standing with me always. In Him, I am bold and fearless.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Deuteronomy 31:6"
         },
         {
             "text": "But God showed his great love for us by sending Christ to die for us while we were still sinners.",
@@ -939,16 +1000,34 @@
             "category": "faith"
         },
         {
+            "text": "Jesus is the eternal promise, unchanging and steadfast. In His word, I find victory amidst life's fleeting moments.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Isaiah 40:8"
+        },
+        {
             "text": "This is the day that the Lord has made. Let us be full of joy and be glad in it.",
             "book": "Psalm 118:24 NLT",
             "isFavorite": false,
             "category": "faith"
         },
         {
+            "text": "Jesus is the reason for every joyful day. I rejoice, for He has made this day and invites me to live it in gratitude.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Psalm 118:24"
+        },
+        {
             "text": "I am the Vine and you are the branches. Get your life from Me. Then I will live in you and you will give much fruit. You can do nothing without Me.",
             "book": "John 15:5 NLV",
             "isFavorite": false,
             "category": "faith"
+        },
+        {
+            "text": "Jesus is my vine, and in Him, I am nourished and fruitful. Apart from Him, I am nothing, but with Him, I flourish.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "John 15:5"
         },
         {
             "text": "Be glad you can do the things you should be doing. Do all things without arguing and talking about how you wish you did not have to do them.",
@@ -963,6 +1042,12 @@
             "category": "faith"
         },
         {
+            "text": "Jesus is the architect of my future, holding plans of hope and promise. In Him, I find my purpose and my destiny.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Jeremiah 29:11"
+        },
+        {
             "text": "He who walks with wise men will be wise, but the one who walks with fools will be destroyed.",
             "book": "Proverbs 13:20 NLV",
             "isFavorite": false,
@@ -973,6 +1058,18 @@
             "book": "Psalm 34:4 NLV",
             "isFavorite": false,
             "category": "faith"
+        },
+        {
+            "text": "Jesus is my liberator, freeing me from all my fears. Through Him, I walk in courage and confidence.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Psalm 34:4"
+        },
+        {
+            "text": "Jesus is the anchor for my heart, urging me not to be troubled but to believe, knowing He is ever-present.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "John 14:1"
         },
         {
             "text": "\"Do not let your heart be troubled. You have put your trust in God, put your trust in Me also.\"",
@@ -986,12 +1083,29 @@
             "isFavorite": false,
             "category": "faith"
         },
-        
+        {
+            "text": "In Jesus, I see the limitless power of God, reminding me that nothing is beyond His reach.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Jeremiah 32:27"
+        },
         {
             "text": "God saved you by his grace when you believed. And you can’t take credit for this; it is a gift from God.",
             "book": "Ephesians 2:8 NLT",
             "isFavorite": false,
             "category": "faith"
+        },
+        {
+            "text": "Jesus is the gift of grace, saving me through faith and not by my own deeds.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Ephesians 2:8"
+        },
+        {
+            "text": "Jesus is the reason I live with purpose, for He gave His life for me and now lives within me.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Galatians 2:20"
         },
         {
             "text": "I have been crucified with Christ, and it is no longer I who live, but Christ lives in me. That life which I now live in the flesh, I live by faith in the Son of God, who loved me, and gave himself up for me.",
@@ -1006,10 +1120,22 @@
             "category": "faith"
         },
         {
+            "text": "Jesus is the reason I stand strong, conquering every challenge with faith.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "1 John 5:4"
+        },
+        {
             "text": "You can pray for anything, and if you have faith, you will receive it.",
             "book": "Matthew 21:22 NLT",
             "isFavorite": false,
             "category": "faith"
+        },
+        {
+            "text": "Jesus is my unwavering connection to the Father; when I believe and pray, all things are possible.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Matthew 21:22"
         },
         {
             "text": "Jesus said to her, 'I am the resurrection and the life. He who believes in Me, though he may die, he shall live.'",
@@ -1018,10 +1144,22 @@
             "category": "faith"
         },
         {
+            "text": "Jesus is the source of eternal life, promising that those who believe will never truly die.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "John 11:25"
+        },
+        {
             "text": "Love is patient, love is kind. It does not envy, it does not boast, it is not proud.",
             "book": "1 Corinthians 13:4 NIV",
             "isFavorite": false,
             "category": "love"
+        },
+        {
+            "text": "Jesus is the embodiment of God's promise: nothing is impossible.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Luke 1:37"
         },
         {
             "text": "For nothing will be impossible with God.",
@@ -1034,6 +1172,24 @@
             "book": "1 John 5:13 NLT",
             "isFavorite": false,
             "category": "faith"
+        },
+        {
+            "text": "Jesus is my ultimate confidant, where I lay my worries and find boundless love.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "1 Peter 5:7"
+        },
+        {
+            "text": "Jesus is my assurance, for in Him, I know I have eternal life.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "1 John 5:13"
+        },
+        {
+            "text": "Jesus is my bridge from darkness to light, assuring me eternal life through faith.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "John 5:24"
         },
         {
             "text": "Give all your worries and cares to God, for he cares about you.",
@@ -1156,6 +1312,18 @@
             "category": "faith"
         },
         {
+            "text": "Jesus is by my side, always watching over me; just as God promised Jacob He would never leave.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Genesis 28:15"
+        },
+        {
+            "text": "Jesus is the gift of grace; not of my deeds, but of His boundless mercy.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Ephesians 2:9"
+        },
+        {
             "text": "\"If you will listen carefully to the voice of the Lord your God and do what is right in his sight, obeying his commands and keeping all his decrees, then I will not make you suffer any of the diseases I sent on the Egyptians; for I am the Lord who heals you.\"",
             "book": "Exodus 15:26 NLT",
             "isFavorite": false,
@@ -1178,6 +1346,12 @@
             "book": "Deuteronomy 4:29 AMP",
             "isFavorite": false,
             "category": "faith"
+        },
+        {
+            "text": "Jesus is the treasure I find when I seek with all my heart.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Deuteronomy 4:29"
         },
         {
             "text": "The eternal God is your dwelling place. Underneath are the everlasting arms. He thrust out the enemy from before you, and said, ‘Destroy!’",
@@ -1208,6 +1382,12 @@
             "book": "Psalm 103:3 NLT",
             "isFavorite": false,
             "category": "faith"
+        },
+        {
+            "text": "Jesus is the healer who forgives all my sins and restores my soul.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Psalm 103:3"
         },
         {
             "text": "He redeems me from death and crowns me with love and tender mercies.",
@@ -1270,6 +1450,12 @@
             "category": "faith"
         },
         {
+            "text": "Jesus is the unwavering protector of my soul; I rest securely in His grasp, where nothing can separate me.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "John 10:28"
+        },
+        {
             "text": "Do not love this world nor the things it offers you, for when you love the world, you do not have the love of the Father in you.",
             "book": "1 John 2:15 NLT",
             "isFavorite": false,
@@ -1328,6 +1514,12 @@
             "book": "Philippians 4:8 NIV",
             "isFavorite": false,
             "category": "faith"
+        },
+        {
+            "text": "Jesus is the source of pure and noble thoughts; in His presence, my mind finds peace and righteousness.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Philippians 4:8"
         },
         {
             "text": "Don’t you realize that your body is the temple of the Holy Spirit, who lives in you and was given to you by God? You do not belong to yourself, for God bought you with a high price. So you must honor God with your body.",
@@ -1743,6 +1935,12 @@
             "book": "Proverbs 3:5-6 NKJV",
             "isFavorite": false,
             "category": "faith"
+        },
+        {
+            "text": "Jesus is the guide of my life; I trust in Him with all my heart, and He directs my path.",
+            "isFavorite": false,
+            "category": "faith",
+            "book": "Proverbs 3:5-6"
         },
         {
             "text": "Let us run with perseverance the race marked out for us, fixing our eyes on Jesus, the pioneer and perfecter of faith.",
@@ -17010,6 +17208,176 @@
                 "isFavorite": false,
                 "category": "perseverance"
             },
+        
+                {
+                    "text": "Jesus is my transformation; in Him, I am a new creation.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "2 Corinthians 5:17"
+                },
+                {
+                    "text": "Jesus is my chosen identity; I am part of His royal priesthood and a holy nation.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "1 Peter 2:9"
+                },
+                {
+                    "text": "Jesus is my Creator; I am made in His image, fearfully and wonderfully crafted.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Genesis 1:27"
+                },
+                {
+                    "text": "Jesus is my life's essence; I am crucified with Him, and He lives in me.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Galatians 2:20"
+                },
+                {
+                    "text": "Jesus is my temple; my body is His dwelling place, and I am bought with a price.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "1 Corinthians 6:19-20"
+                },
+                {
+                    "text": "Jesus is my future; His plans for me are filled with hope and purpose.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Jeremiah 29:11"
+                },
+                {
+                    "text": "Jesus is my source of strength; I am a branch, and He is the vine, providing me with life.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "John 15:5"
+                },
+                {
+                    "text": "Jesus is my Shepherd; I am His creation, and He watches over me with love.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Psalm 100:3"
+                },
+                {
+                    "text": "Jesus is my freedom; I am no longer enslaved to sin but set free in Him.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Romans 6:6"
+                },
+                {
+                    "text": "Jesus is my guide; I am led by His Spirit, confirming my identity as God's child.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Romans 8:14"
+                },
+                {
+                    "text": "Jesus is my adoption; I am God's child, welcomed into His family.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "John 1:12"
+                },
+                {
+                    "text": "Jesus is my love; I am called a child of God, lavished with His deep affection.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "1 John 3:1"
+                },
+                {
+                    "text": "Jesus is my clothing; I am clothed in Him, walking in the light.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Romans 13:14"
+                },
+                {
+                    "text": "Jesus is my focus; I am raised with Him, seeking things above.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Colossians 3:1"
+                },
+                {
+                    "text": "Jesus is my light; I am now a child of the light, living in His radiance.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Ephesians 5:8"
+                },
+                {
+                    "text": "Jesus is my adoption; I am predestined for adoption, embraced as God's child.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Ephesians 1:5"
+                },
+                {
+                    "text": "Jesus is my completeness; in Him, I am made complete, lacking nothing.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Colossians 2:9-10"
+                },
+                {
+                    "text": "Jesus is my union; I am one with Him, inseparable in spirit.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "1 Corinthians 6:17"
+                },
+                {
+                    "text": "Jesus is my freedom; I am no longer enslaved to sin but set free in Him.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Romans 6:6"
+                },
+                {
+                    "text": "Jesus is my Creator; I am made in His image, fearfully and wonderfully crafted.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Genesis 1:27"
+                },
+                {
+                    "text": "Jesus is my purpose; I am known and appointed by Him for a special calling.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Jeremiah 1:5"
+                },
+                {
+                    "text": "Jesus is my chosen identity; I am part of His royal priesthood and a holy nation.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "1 Peter 2:9"
+                },
+                {
+                    "text": "Jesus is my hidden life; I am hidden with Him in God, and my life is secure.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Colossians 3:1-3"
+                },
+                {
+                    "text": "Jesus is my conformity; I am predestined to be conformed to His image.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Romans 8:29"
+                },
+                {
+                    "text": "Jesus is my humility; I recognize my identity in Him and use my gifts with humility.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Romans 12:3"
+                },
+                {
+                    "text": "Jesus is my uniqueness; I am fearfully and wonderfully made, God's masterpiece.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Psalm 139:13-14"
+                },
+                {
+                    "text": "Jesus is my depth of love; I am rooted and grounded in His love, comprehending its vastness.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Ephesians 3:19"
+                },
+                {
+                    "text": "Jesus is my success; I meditate on His Word day and night, finding prosperity and good success in Him.",
+                    "isFavorite": false,
+                    "category": "identity",
+                    "book": "Joshua 1:8"
+                },
+
                 
             
             

@@ -53,7 +53,7 @@ struct DeclarationView: View {
                 
                     .onReceive(timer) { _ in
                         timeElapsed += 1
-                        if timeElapsed >= 90 {
+                        if timeElapsed >= 120 {
                             timer.upstream.connect().cancel()
                             showReview()
                         }

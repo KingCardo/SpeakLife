@@ -14,6 +14,7 @@ struct OnboardingView: View  {
     @Environment(\.colorScheme) var colorScheme
     
     @State var selection: Tab = .intro
+    @State var showLastChanceAlert = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -35,7 +36,6 @@ struct OnboardingView: View  {
                     .tag(Tab.subscription)
                 
                 WidgetScene(size: geometry.size) {
-                    //dismissOnboarding()
                     advance()
                 }
                 .tag(Tab.widgets)
@@ -55,6 +55,18 @@ struct OnboardingView: View  {
             .font(.headline)
         }
         .preferredColorScheme(.light)
+        .alert(isPresented: $showLastChanceAlert) {
+            Alert(
+                           title: Text("Last chance to save 50%"),
+                           message: Text("Are you sure you want to pass?"),
+                           primaryButton: .default(Text("Yes I'm sure")) {
+                               dismissOnboarding()
+                           },
+                           secondaryButton: .cancel(Text("Cancel")) {
+                               
+                           }
+                       )
+        }
         
         .onAppear {
             setupAppearance()
@@ -107,7 +119,7 @@ struct OnboardingView: View  {
             
             VStack  {
                 HStack  {
-                    Button(action:  dismissOnboarding) {
+                    Button(action:  showAlertIfNeededAndDismissOnboarding) {
                         Text("CANCEL",  comment: "Cancel text for label")
                             .font(.callout)
                             .frame(height: 35)
@@ -120,6 +132,14 @@ struct OnboardingView: View  {
                 
                 Spacer()
             }
+        }
+    }
+    
+    func showAlertIfNeededAndDismissOnboarding() {
+        if !subscriptionStore.isPremium {
+            showLastChanceAlert = true
+        } else {
+            dismissOnboarding()
         }
     }
     
