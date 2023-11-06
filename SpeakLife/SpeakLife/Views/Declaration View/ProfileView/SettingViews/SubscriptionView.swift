@@ -18,23 +18,23 @@ struct Benefit: Identifiable  {
     
     static var premiumBenefits: [Benefit] = [
         
-        Benefit(text: "Enjoy your first 3 days for free"),
-        Benefit(text: "Access to Daily Devotionals about how much Jesus loves you!"),
+        Benefit(text: "Daily Morning Jesus Devotionals"),
         Benefit(text: "Bible Affirmations for all of life's journey"),
         Benefit(text: "Categories for any situation"),
+        Benefit(text: "Create your own affirmations"),
         Benefit(text: "Reminders to transform your mindset"),
-        Benefit(text: "3 days free, then just $39.99/year"),
-        Benefit(text: "Only $3.33/month, billed annually"),
-        Benefit(text: "No ads, or watermarks"),
+        Benefit(text: "Unlock all prayers")
 
     ]
     
     static var discountBenefits: [Benefit] = [
         
         Benefit(text: "Enjoy 50% off discount"),
-        Benefit(text: "3 days free, then just $19.99/year"),
-        Benefit(text: "Only $1.66/month, billed annually"),
-        Benefit(text: "Cancel anytime from settings")
+        Benefit(text: "Daily Morning Jesus Devotionals"),
+        Benefit(text: "Create your own affirmations"),
+        Benefit(text: "Bible Affirmations for all of life's journey"),
+        Benefit(text: "Categories for any situation"),
+        Benefit(text: "Unlock all prayers")
     ]
 }
 
@@ -44,7 +44,7 @@ struct DiscountSubscriptionView: View {
     var callback: (() -> Void)?
     
     var body: some View {
-        SubscriptionView(benefits: Benefit.discountBenefits, size: size, currentSelection: InAppId.Subscription.speakLife1YR19, gradient: Gradients().redCyan, ctaText: "Enjoy one time discount of 50% off!", isDiscount: true) {
+        SubscriptionView(benefits: Benefit.discountBenefits, size: size, currentSelection: InAppId.Subscription.speakLife1MO2, gradient: Gradients().redCyan, isDiscount: true) {
             callback?()
         }
     }
@@ -65,14 +65,14 @@ struct SubscriptionView: View {
     var gradient: any View = Gradients().purple
     var isDiscount = false
     
-    var ctaText: String = ""
+    var ctaText: String
     
-    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39, gradient: any View = Gradients().purple, ctaText: String = "3 days free, then just $39.99/year, cancel anytime", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
+    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1MO4, gradient: any View = Gradients().purple, ctaText: String = "3 days free, then just", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
         self.benefits = benefits
         self.size = size
         self.currentSelection = currentSelection
         self.gradient = gradient
-        self.ctaText = ctaText
+        self.ctaText = "\(ctaText) \(currentSelection.title). Cancel anytime."
         self.isDiscount = isDiscount
     }
 
@@ -126,15 +126,18 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 40)
                     
+                    goPremiumStack(size: size)
+                    
                     Text(ctaText)
                         .padding(.all)
-                        .font(isDiscount ? .body : .callout)
+                        .font(isDiscount ? .body : .caption)
                         .foregroundColor(.white)
-                    
-                    goPremiumStack(size: size)
                     
                     Spacer()
                         .frame(height: 24)
+                    
+                    Text("This Book of the Law shall not depart from your mouth, but you shall meditate on it day and night, so that you may be careful to do according to all that is written in it. For then you will make your way prosperous, and then you will have good success. - Joshua 1:8")
+                        .padding()
                 }
                 
             }

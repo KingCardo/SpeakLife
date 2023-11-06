@@ -28,7 +28,7 @@ struct DevotionalView: View {
     
     @ViewBuilder
     var contentView: some  View {
-      //  if subscriptionStore.isPremium || !viewModel.devotionalLimitReached {
+        if subscriptionStore.isPremium || !viewModel.devotionalLimitReached {
             devotionalView
                 .onAppear {
                     Analytics.logEvent(Event.devotionalTapped, parameters: nil)
@@ -39,14 +39,14 @@ struct DevotionalView: View {
                 .alert(isPresented: $viewModel.hasError) {
                     Alert(title: Text(viewModel.errorString))
                 }
-//        } else {
-//            VStack {
-//                Text("Oops. You've used up your free access limit for Devotionals. To continue using our services uninterrupted, please subscribe to our premium plan.")
-//                    .font(.callout)
-//                    .padding()
-//                SubscriptionView(size: UIScreen.main.bounds.size)
-//            }
-  //      }
+        } else {
+            VStack {
+                Text("Oops. You've used up your free access limit for Devotionals. To continue using our services uninterrupted, please subscribe to our premium plan.")
+                    .font(.callout)
+                    .padding()
+                SubscriptionView(size: UIScreen.main.bounds.size)
+            }
+        }
     }
     
     var devotionalView: some View {
@@ -55,10 +55,10 @@ struct DevotionalView: View {
             ScrollViewReader { scrollView in
                 ScrollView {
                     VStack {
-//                        if !subscriptionStore.isPremium {
-//                            Text("\(viewModel.devotionalsLeft) more free devotionals left")
-//                                .padding()
-//                        }
+                        if !subscriptionStore.isPremium {
+                            Text("\(viewModel.devotionalsLeft) more free devotionals left")
+                                .padding()
+                        }
 
                         Spacer()
                             .frame(height: spacing)
