@@ -21,6 +21,7 @@ struct DeclarationContentView: View {
     @State private var isFavorite: Bool = false
     @State private var showShareSheet = false
     @State private var image: UIImage?
+    @State private var showAnimation = false
     
     private let degrees: Double = 90
     
