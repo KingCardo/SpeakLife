@@ -28,9 +28,9 @@ struct OnboardingView: View  {
                 }
                 .tag(Tab.notification)
                 
-                UseCaseScene(size: geometry.size) {
-                    advance()
-                }.tag(Tab.useCase)
+//                UseCaseScene(size: geometry.size) {
+//                    advance()
+//                }.tag(Tab.useCase)
                 
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
@@ -189,7 +189,7 @@ struct OnboardingView: View  {
                         }
                         
                         withAnimation {
-                            selection = .useCase
+                            selection = .subscription
                         }
                     }
                 }
@@ -198,7 +198,7 @@ struct OnboardingView: View  {
             
             
             withAnimation {
-                selection = .useCase
+                selection = .subscription
             }
             
             if settings.alertSetting == .enabled {

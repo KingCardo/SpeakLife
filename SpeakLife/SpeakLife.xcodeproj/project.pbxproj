@@ -596,11 +596,11 @@
 		7AA870B828DACCB700134ADB /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				7AA870B928DACCB700134ADB /* NotificationScene.swift */,
 				7AA870BA28DACCB700134ADB /* Model */,
 				7AA870BE28DACCB700134ADB /* OnboardingView.swift */,
 				7AA870BF28DACCB700134ADB /* TimeNotificationStepper.swift */,
 				7AA870C028DACCB700134ADB /* IntroScene.swift */,
+				7AA870B928DACCB700134ADB /* NotificationScene.swift */,
 				7AA870C128DACCB700134ADB /* WidgetScene.swift */,
 			);
 			path = Onboarding;
@@ -1093,7 +1093,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 119;
+				CURRENT_PROJECT_VERSION = 120;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
@@ -1112,7 +1112,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.05;
+				MARKETING_VERSION = 1.4.06;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1128,7 +1128,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 119;
+				CURRENT_PROJECT_VERSION = 120;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
@@ -1147,7 +1147,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.05;
+				MARKETING_VERSION = 1.4.06;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

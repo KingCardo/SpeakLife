@@ -80,7 +80,7 @@ struct SubscriptionView: View {
         goPremiumView(size: size)
             .foregroundColor(colorScheme == .dark ? .white : Constants.DEABlack)
             .alert(isPresented: $isShowingError, content: {
-                Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("Ok")))
+                Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
             })
     }
     
