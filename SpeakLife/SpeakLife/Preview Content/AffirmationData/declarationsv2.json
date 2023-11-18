@@ -1,0 +1,102 @@
+{
+    "count": 6,
+    "declarations": [
+        {
+            "text": "Give thanks to the Lord, for he is good! His faithful love endures forever.",
+            "isFavorite": false,
+            "categories": ["love", "gratitude", "rest"],
+            "book": "Psalm 118:1"
+        },
+        {
+            "text": "For his unfailing love for us is powerful; the Lord’s faithfulness endures forever. Praise the Lord!",
+            "isFavorite": false,
+            "categories": ["love", "godsprotection", "fear",],
+            "book": "Psalm 117:2"
+        },
+        {
+            "text": "Let all who fear the Lord repeat:“His faithful love endures forever.”",
+            "isFavorite": false,
+            "categories": ["love", "godsprotection", "fear",],
+            "book": "Psalm 118:4"
+        },
+        {
+            "text": "In my distress I prayed to the Lord, and the Lord answered me and set me free.",
+            "isFavorite": false,
+            "categories": ["guidance", "rest", "peace", "hope", "hardtimes"],
+            "book": "Psalm 118:5"
+        },
+        {
+            "text": "The Lord is for me, so I will have no fear. What can mere people do to me?",
+            "isFavorite": false,
+            "categories": ["hardtimes", "godsprotection", "rest", "fear"],
+            "book": "Psalm 118:6"
+        },
+        {
+            "text": "Yes, the Lord is for me; he will help me. I will look in triumph at those who hate me.",
+            "isFavorite": false,
+            "categories": ["hardtimes", "godsprotection", "rest", "fear", "perserverance"],
+            "book": "Psalm 118:7"
+        },
+        {
+            "text": "It is better to take refuge in the Lord than to trust in people.",
+            "isFavorite": false,
+            "categories": ["guidance", "godsprotection", "rest"],
+            "book": "Psalm 118:8"
+        },
+        {
+            "text": "I will not die; instead, I will live to tell what the Lord has done.",
+            "isFavorite": false,
+            "categories": ["health", "godsprotection"],
+            "book": "Psalm 118:17"
+        },
+        {
+            "text": "I thank you for answering my prayer and giving me victory!",
+            "isFavorite": false,
+            "categories": ["guidance", "gratitude", "hardtimes"],
+            "book": "Psalm 118:21"
+        },
+        {
+            "text": "This is the day the Lord has made. We will rejoice and be glad in it.",
+            "isFavorite": false,
+            "categories": ["motivation", "gratitude", "hardtimes"],
+            "book": "Psalm 118:24"
+        },
+        {
+            "text": "Give thanks to the Lord, for he is good! His faithful love endures forever.",
+            "isFavorite": false,
+            "categories": ["love", "gratitude", "hardtimes"],
+            "book": "Psalm 118:29"
+        },
+        {
+            "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
+            "book": "Mark 11:24",
+            "isFavorite": false,
+            "categories": ["faith"]
+        },
+        {
+            "text": "Love is patient and kind. Love is not jealous or boastful or proud or rude. It does not demand its own way. It is not irritable, and it keeps no record of being wronged.",
+            "book": "1 Corinthians 13:3-5 NLT",
+            "isFavorite": false,
+            "categories": ["love", "marriage"]
+        },
+        {
+            "text": "Always be joyful. Never stop praying. Be thankful in all circumstances, for this is God’s will for you who belong to Christ Jesus.",
+            "book": "1 Thessalonians 5:16-18 NLT",
+            "isFavorite": false,
+            "categories": ["gratitude", "hardtimes", "identity"]
+        },
+        {
+            "text": "The Lord keeps watch over you as you come and go, both now and forever.",
+            "book": "Psalm 121:8 NLT",
+            "isFavorite": false,
+            "categories": ["hope", "godsprotection"]
+        },
+        {
+            "text": "You must serve only the Lord your God. If you do, I will bless you with food and water, and I will protect you from illness.",
+            "book": "Exodus 23:25 NLT",
+            "isFavorite": false,
+            "categories": ["health"]
+        },
+    ]
+    
+}

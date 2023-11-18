@@ -180,7 +180,7 @@ struct SubscriptionView: View {
     
     func buy() async {
         do {
-            if let transaction = try await subscriptionStore.purchaseWithID([currentSelection.rawValue]) {
+            if let _ = try await subscriptionStore.purchaseWithID([currentSelection.rawValue]) {
                 callback?()
             }
         } catch StoreError.failedVerification {

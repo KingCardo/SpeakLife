@@ -31,6 +31,11 @@ final class NotificationProcessor {
         DispatchQueue.global(qos: .userInitiated).sync {
             getDeclarations()
             
+            guard allDeclarations.count >= count else { 
+                completion([])
+                return
+            }
+            
             
             // get enough for the week
             //let newCount = count * 7
@@ -38,7 +43,7 @@ final class NotificationProcessor {
             var data = [NotificationData]()
             var categoryReminders: [Declaration] = []
             
-            if categories == nil {
+            if categories == nil  {
                 let shuffled = allDeclarations.shuffled()
                 guard !shuffled.isEmpty else { return }
                 for number in 1...count {

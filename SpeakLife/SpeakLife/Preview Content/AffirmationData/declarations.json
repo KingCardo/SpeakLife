@@ -17377,6 +17377,18 @@
                     "category": "identity",
                     "book": "Joshua 1:8"
                 },
+                {
+                    "text": "For his unfailing love for us is powerful; the Lord’s faithfulness endures forever. Praise the Lord!",
+                    "isFavorite": false,
+                    "category": "love",
+                    "book": "Psalm 117:2"
+                },
+                {
+                    "text": "Give thanks to the Lord, for he is good! His faithful love endures forever.",
+                    "isFavorite": false,
+                    "categories": ["love"],
+                    "book": "Psalm 118:1"
+                },
 
                 
             
