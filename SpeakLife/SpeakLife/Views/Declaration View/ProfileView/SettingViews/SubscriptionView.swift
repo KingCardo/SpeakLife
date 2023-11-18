@@ -18,23 +18,26 @@ struct Benefit: Identifiable  {
     
     static var premiumBenefits: [Benefit] = [
         
-        Benefit(text: "Daily Morning Jesus Devotionals"),
-        Benefit(text: "Bible Affirmations for all of life's journey"),
-        Benefit(text: "Categories for any situation"),
-        Benefit(text: "Create your own affirmations"),
-        Benefit(text: "Reminders to transform your mindset"),
-        Benefit(text: "Unlock all prayers")
+        Benefit(text: "Unlock all features"),
+        Benefit(text: "Unlock all Jesus Devotionals"),
+        Benefit(text: "Unlock all themes"),
+//        Benefit(text: "Bible Affirmations for all of life's journey"),
+//        Benefit(text: "Categories for any situation"),
+//        Benefit(text: "Create your own affirmations"),
+//        Benefit(text: "Reminders to transform your mindset"),
+//        Benefit(text: "Unlock all prayers")
 
     ]
     
     static var discountBenefits: [Benefit] = [
         
+        Benefit(text: "Unlock all features"),
         Benefit(text: "Enjoy 50% off discount"),
-        Benefit(text: "Daily Morning Jesus Devotionals"),
-        Benefit(text: "Create your own affirmations"),
-        Benefit(text: "Bible Affirmations for all of life's journey"),
-        Benefit(text: "Categories for any situation"),
-        Benefit(text: "Unlock all prayers")
+//        Benefit(text: "Daily Morning Jesus Devotionals"),
+//        Benefit(text: "Create your own affirmations"),
+//        Benefit(text: "Bible Affirmations for all of life's journey"),
+//        Benefit(text: "Categories for any situation"),
+//        Benefit(text: "Unlock all prayers")
     ]
 }
 
@@ -42,11 +45,140 @@ struct DiscountSubscriptionView: View {
     
     let size: CGSize
     var callback: (() -> Void)?
+    var currentSelection = InAppId.Subscription.speakLife1YR19
+    @EnvironmentObject var declarationStore: DeclarationViewModel
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
+    @State var errorTitle = ""
+    @State var isShowingError: Bool = false
     
     var body: some View {
-        SubscriptionView(benefits: Benefit.discountBenefits, size: size, currentSelection: InAppId.Subscription.speakLife1MO2, gradient: Gradients().redCyan, isDiscount: true) {
-            callback?()
+        ZStack {
+            Gradients().purple
+            discountView() {
+                callback?()
+            }
+            if declarationStore.isPurchasing {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .scaleEffect(2)
+            }
         }
+        .alert(isPresented: $isShowingError, content: {
+            Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
+        })
+//        SubscriptionView(benefits: Benefit.discountBenefits, size: size, currentSelection: InAppId.Subscription.speakLife1YR19, gradient: Gradients().redCyan, isDiscount: true) {
+//            callback?()
+//        }
+    }
+    
+    func discountView(completion: @escaping(() -> Void)) -> some View {
+        VStack {
+            Text("SpeakLife")
+                .font(Constants.titleFont)
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .foregroundStyle(Constants.gold)
+            Spacer()
+                .frame(height: 16)
+            
+            ZStack {
+                Capsule()
+                    .fill(Constants.gold)
+                    .frame(width: 100, height: 30)
+                Text("Premium").textCase(.uppercase)
+                    .font(.subheadline)
+            }
+            
+            Spacer()
+                .frame(height: 32)
+            
+            Text("One Time Offer")
+                .font(.largeTitle)
+            
+            Text("50% Off Yearly")
+                .textCase(.uppercase)
+                .font(.headline)
+            
+            Spacer()
+                .frame(height: 32)
+            
+            selectionBox(currentSelection: currentSelection)
+            Spacer()
+                .frame(height: 32)
+            
+           
+            continueButton {
+                completion()
+            }
+            
+            Spacer()
+                .frame(height: 32)
+            
+            Text("Cancel anytime")
+                .font(.caption)
+            
+            
+            
+            
+        }
+    }
+    
+    func selectionBox(currentSelection: InAppId.Subscription) -> some View {
+        ZStack {
+                   RoundedRectangle(cornerRadius: 10)
+                       .strokeBorder(Color.gray, lineWidth: 1)
+                       .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+                       .frame(height: 60)
+                   
+                   HStack {
+                       VStack(alignment: .leading) {
+                           Text("\(currentSelection.title)")
+                               .bold()
+                           Text("Abundant savings. Billed annually.")
+                               .font(.caption)
+                       }
+                       .padding(.leading)
+                       
+                       Spacer()
+                       
+                       ZStack {
+                           Capsule()
+                               .fill(Color.black)
+                               .frame(width: 100, height: 30)
+                           
+                           Text("Best Value")
+                               .font(.caption)
+                               .foregroundColor(.white)
+                       }
+                       .padding(.trailing)
+                   }
+               }
+               .padding([.leading, .trailing], 20)
+           }
+    
+    func buy() async {
+        do {
+            if let _ = try await subscriptionStore.purchaseWithID([currentSelection.rawValue]) {
+                callback?()
+            }
+        } catch StoreError.failedVerification {
+            errorTitle = "Your purchase could not be verified by the App Store."
+            isShowingError = true
+        } catch {
+            print("Failed purchase for \(currentSelection.rawValue): \(error)")
+        }
+    }
+
+    private func makePurchase() {
+        Task {
+            declarationStore.isPurchasing = true
+            await buy()
+            declarationStore.isPurchasing = false
+        }
+    }
+
+    
+    func continueButton(completion: @escaping(() -> Void)) -> some View {
+        return ShimmerButton(colors: [Constants.DAMidBlue, Constants.gold], buttonTitle: "Subscribe to premium", action: makePurchase)
     }
 }
 
@@ -67,7 +199,7 @@ struct SubscriptionView: View {
     
     var ctaText: String
     
-    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1MO4, gradient: any View = Gradients().purple, ctaText: String = "3 days free, then just", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
+    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39, gradient: any View = Gradients().purple, ctaText: String = "3 days free, then just", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
         self.benefits = benefits
         self.size = size
         self.currentSelection = currentSelection
@@ -112,12 +244,22 @@ struct SubscriptionView: View {
                         .foregroundColor(.white)
                     Spacer()
                         .frame(height: 36)
-                    VStack {
-                        Text("SpeakLife Premium", comment: "unlock everything premium view")
-                            .font(.title)
+                    VStack(alignment: .center) {
+                        Text("SpeakLife", comment: "unlock everything premium view")
+                            .font(Constants.titleFont)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
+                        
+                        Spacer()
+                            .frame(height: 18)
+                        
+                        Text("Manifest your greatest potential for your life with premium")
+                            .multilineTextAlignment(.center)
+                            .font(.subheadline)
+                            .foregroundColor(.white)
                     }
+                    Spacer()
+                        .frame(height: 36)
                     
                     benefitRows
                         .foregroundColor(.white)

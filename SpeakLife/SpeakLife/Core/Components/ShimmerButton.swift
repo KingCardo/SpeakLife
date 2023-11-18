@@ -11,7 +11,7 @@ struct ShimmerButton: View {
     @State private var animationOffset: CGFloat = -UIScreen.main.bounds.width
     let colors: [Color]
     let buttonTitle: String
-    let action: (()-> Void)
+    let action: (() -> Void)
     
     var body: some View {
         
