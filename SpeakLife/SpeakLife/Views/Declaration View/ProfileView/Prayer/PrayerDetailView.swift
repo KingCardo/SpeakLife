@@ -17,7 +17,7 @@ struct PrayerDetailView: View {
             Gradients().cyan
             VStack {
                 Text(prayer)
-                    .font(.title)
+                    .font(.body)
                     .lineSpacing(4)
                     .padding(.horizontal, 32)
                     .foregroundColor(.black)

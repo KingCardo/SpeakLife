@@ -257,6 +257,7 @@ struct SubscriptionView: View {
                             .multilineTextAlignment(.center)
                             .font(.subheadline)
                             .foregroundColor(.white)
+                            .padding(.horizontal)
                     }
                     Spacer()
                         .frame(height: 36)
@@ -308,14 +309,6 @@ struct SubscriptionView: View {
                         .font(.caption2)
                         .foregroundColor(Color.blue)
                 }
-                
-//                Spacer()
-//                
-//                Button(action: presentOtherIAPOptions) {
-//                    Text("Other", comment: "iap iptons")
-//                        .font(.caption2)
-//                        .foregroundColor(Color.blue)
-//                }
             }
         }
     }

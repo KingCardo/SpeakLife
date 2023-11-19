@@ -24,12 +24,12 @@ struct ContentRow: View {
     var body: some View {
         HStack {
             Text(declaration.text)
-                .lineLimit(2)
+               // .lineLimit(2)
             Spacer()
             
-            Text(declaration.lastEdit?.toPrettyString() ?? "")
+           // Text(declaration.lastEdit?.toPrettyString() ?? "")
             
-            Spacer()
+         //   Spacer()
             
             Image(systemName: "ellipsis.circle.fill")
                 .contextMenu {

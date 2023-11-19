@@ -90,21 +90,6 @@ struct DeclarationContentView: View {
         }
     }
     
-    private var journalView: some View {
-        NavigationLink(LocalizedStringKey("Create Your Own"), destination: LazyView(CreateYourOwnView()))
-            .opacity(0)
-            .background(
-                HStack {
-                    Text("Journal", comment: "create your own title")
-                    Spacer()
-                    Image(systemName: "chevron.right")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 8)
-                        .foregroundColor(Constants.DAMidBlue)
-                })
-    }
-    
     
     private func intentVstack(declaration: Declaration, _ geometry: GeometryProxy) -> some View {
         VStack {
@@ -191,20 +176,6 @@ struct DeclarationContentView: View {
                     Analytics.logEvent(Event.favoriteTapped, parameters: nil)
                     Selection.shared.selectionFeedback()
                 }
-                
-//                CapsuleImageButton(title:"play.circle") {
-//                    
-//                    setCurrentDelcaration(declaration: declaration)
-//                    Selection.shared.selectionFeedback()
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-//                        if let declaration = viewModel.currentDeclaration {
-//                            let text = declaration.text
-//                            speechSynthesizer.speakText(text)
-//                        }
-//                        
-//                    }
-//                   
-//                }
             }
             .foregroundColor(.white)
         }

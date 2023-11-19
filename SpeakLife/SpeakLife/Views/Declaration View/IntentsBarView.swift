@@ -53,14 +53,6 @@ struct IntentsBarView: View {
             .background(themeStore.selectedTheme.mode == .dark ? Constants.backgroundColor : Constants.backgroundColorLight)
             .cornerRadius(Constants.cornerRadius)
             
-            CapsuleImageButton(title: "doc.fill.badge.plus") {
-                showEntryView = true
-                Analytics.logEvent(Event.createYourOwnTapped, parameters: nil)
-                Selection.shared.selectionFeedback()
-            }
-            .sheet(isPresented: $showEntryView) {
-                CreateYourOwnView()
-            }
             
             Spacer()
             
@@ -73,17 +65,6 @@ struct IntentsBarView: View {
                 ThemeChooserView(themesViewModel: themeViewModel)
             }
             
-            if !subscriptionStore.isPremium {
-                CapsuleImageButton(title: "crown.fill") {
-                    premiumView()
-                    Selection.shared.selectionFeedback()
-                }.sheet(isPresented: $isPresentingPremiumView) {
-                    self.isPresentingPremiumView = false
-                    Analytics.logEvent(Event.tryPremiumAbandoned, parameters: nil)
-                } content: {
-                    PremiumView()
-                }
-            }
         }
         .padding()
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in

@@ -9,6 +9,7 @@ import SwiftUI
 import MessageUI
 import StoreKit
 import UIKit
+import FirebaseAnalytics
 import GoogleMobileAds
 
 struct DeclarationView: View {
@@ -34,137 +35,132 @@ struct DeclarationView: View {
     @State var isShowingMailView = false
     @State var showDailyDevotion = false
     @State private var isSheetPresented = false
+    @State private var isPresentingPremiumView = false
     
     @State private var timeElapsed = 0
        
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
+    func declarationContent(_ geometry: GeometryProxy) -> some View {
+        DeclarationContentView(themeViewModel: themeViewModel, viewModel: viewModel)
+            .frame(width: geometry.size.width, height: geometry.size.height)
+            .onReceive(viewModel.$requestReview) { request in
+                if request {
+                    showReview()
+                }
+            }
+        
+            .onReceive(timer) { _ in
+                timeElapsed += 1
+                if timeElapsed >= 120 {
+                    timer.upstream.connect().cancel()
+                    showReview()
+                }
+            }
+            .onAppear {
+                // You might reset the timer here if needed
+            }
+
+    }
+    
     
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                DeclarationContentView(themeViewModel: themeViewModel, viewModel: viewModel)
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                    .onReceive(viewModel.$requestReview) { request in
-                        if request {
-                            showReview()
-                        }
-                    }
-                
-                    .onReceive(timer) { _ in
-                        timeElapsed += 1
-                        if timeElapsed >= 120 {
-                            timer.upstream.connect().cancel()
-                            showReview()
-                        }
-                    }
-                    .onAppear {
-                        // You might reset the timer here if needed
-                    }
-                
+                declarationContent(geometry)
                 if appState.showIntentBar {
                     if !appState.showScreenshotLabel {
                         VStack() {
-//                            if !subscriptionStore.isPremium {
-//                                GoogleAdBannerView()
-//                                    .frame(width: geometry.size.width * 0.9, height: 50)
-//                            }
-                            HStack {
-                                dailyDevotionButton
-                                Spacer()
-                                ProfileBarButton(viewModel: ProfileBarButtonViewModel())
-                                    .frame(height: geometry.size.height * 0.10)
-                            }
-                            
-                            Spacer()
-                            if appState.showIntentBar {
-                                IntentsBarView(viewModel: viewModel, themeViewModel: themeViewModel)
-                                    .frame(height: geometry.size.height * 0.10)
+                            if !subscriptionStore.isPremium {
+                                //                                GoogleAdBannerView()
+                                //                                    .frame(width: geometry.size.width * 0.9, height: 50)
+                                //                            }
+                                HStack {
+                                    Spacer()
+                                    
+                                    CapsuleImageButton(title: "crown.fill") {
+                                        premiumView()
+                                        Selection.shared.selectionFeedback()
+                                    }.sheet(isPresented: $isPresentingPremiumView) {
+                                        self.isPresentingPremiumView = false
+                                        Analytics.logEvent(Event.tryPremiumAbandoned, parameters: nil)
+                                    } content: {
+                                        PremiumView()
+                                    }
+                                    .padding(.trailing)
+            
+                                }
                                 
+                                Spacer()
+                                if appState.showIntentBar {
+                                    IntentsBarView(viewModel: viewModel, themeViewModel: themeViewModel)
+                                        .frame(height: geometry.size.height * 0.10)
+                                    
+                                }
                             }
                         }
                     }
                 }
             }
-            
-            .sheet(isPresented: $goPremium) {
-                SubscriptionView(size: geometry.size)
-            }
-            
-            .sheet(isPresented: $showDailyDevotion) {
-                DevotionalView(viewModel:devotionalViewModel)
-            }
-            
-        }
-        .background(
-            ZStack {
                 
-                if themeViewModel.showUserSelectedImage {
-                    Image(uiImage: themeViewModel.selectedImage!)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .ignoresSafeArea()
-                } else {
-                    Image(themeViewModel.selectedTheme.backgroundImageString)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .ignoresSafeArea()
+                    .sheet(isPresented: $goPremium) {
+                        SubscriptionView(size: geometry.size)
+                    }
+        }
+            
+            .background(
+                ZStack {
+                    
+                    if themeViewModel.showUserSelectedImage {
+                        Image(uiImage: themeViewModel.selectedImage!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .ignoresSafeArea()
+                    } else {
+                        Image(themeViewModel.selectedTheme.backgroundImageString)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .ignoresSafeArea()
+                    }
+                    
+                    Rectangle()
+                        .fill(Color.black.opacity(themeViewModel.selectedTheme.blurEffect ? 0.5 : 0))
+                        .edgesIgnoringSafeArea(.all)
+                    
                 }
-                
-                Rectangle()
-                    .fill(Color.black.opacity(themeViewModel.selectedTheme.blurEffect ? 0.5 : 0))
-                    .edgesIgnoringSafeArea(.all)
-                
-            }
-        )
-        
-        .alert(isPresented: $viewModel.showErrorMessage) {
-            Alert(
-                title: Text("Error", comment: "Error title message") +  Text(viewModel.errorMessage ?? ""),
-                message: Text("Select a category", comment: "OK alert message")
             )
-        }
-        .onAppear {
-            reviewCounter += 1
-            shareCounter += 1
-            premiumCount += 1
-            shareApp()
-        }
-        
-        .alert("Help us spread SpeakLife?", isPresented: $share) {
-            Button("Yes, I'll share with friends!") {
-                shareSpeakLife()
+            
+            .alert(isPresented: $viewModel.showErrorMessage) {
+                Alert(
+                    title: Text("Error", comment: "Error title message") +  Text(viewModel.errorMessage ?? ""),
+                    message: Text("Select a category", comment: "OK alert message")
+                )
             }
-            Button("No thanks") {
+            .onAppear {
+                reviewCounter += 1
+                shareCounter += 1
+                premiumCount += 1
+                shareApp()
             }
-        }
+            
+            .alert("Help us spread SpeakLife?", isPresented: $share) {
+                Button("Yes, I'll share with friends!") {
+                    shareSpeakLife()
+                }
+                Button("No thanks") {
+                }
+            }
+            
+            .sheet(isPresented: $isShowingMailView) {
+                MailView(isShowing: $isShowingMailView, result: self.$result, origin: .review)
+            }
         
-        .sheet(isPresented: $isShowingMailView) {
-            MailView(isShowing: $isShowingMailView, result: self.$result, origin: .review)
-        }
     }
-    
-    private var dailyDevotionButton: some View {
         
-        Button(action: {
-            showDailyDevotion = true
-            Selection.shared.selectionFeedback()
-        }, label: {
-            Image(systemName: "book.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 25, height: 25)
-        })
-        
-        .frame(width: 50, height: 50)
-        .foregroundColor(.white)
-        .padding(4)
-       
-        .background(Gradients().purple)
-        
-        .cornerRadius(40)
-        .padding(.leading)
-    }
+        private func premiumView()  {
+            self.isPresentingPremiumView = true
+            Analytics.logEvent(Event.tryPremiumTapped, parameters: nil)
+        }
     
     private func presentGoPremium() {
         if !subscriptionStore.isPremium, premiumCount == 2 || premiumCount == 6 || premiumCount == 15 {

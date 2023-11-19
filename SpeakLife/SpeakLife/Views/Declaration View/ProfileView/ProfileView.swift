@@ -82,10 +82,8 @@ struct ProfileView: View {
                         Badge()
                     }
                 }
-                prayerRow
                 remindersRow
                 favoritesRow
-                createYourOwnRow
             }
             
             Section(header: Text("SUPPORT").font(.caption)) {

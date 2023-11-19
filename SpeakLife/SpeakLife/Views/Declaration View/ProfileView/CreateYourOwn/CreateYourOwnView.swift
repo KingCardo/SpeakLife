@@ -29,7 +29,7 @@ struct AlertView: View {
                         .foregroundColor(Constants.DAMidBlue)
                 }
             }
-            Text("Add entry... These are private to you.", comment: "own affirmations alert")
+            Text("Add an affirmation. These are private to you.", comment: "own affirmations alert")
                 .font(.callout)
                 .multilineTextAlignment(.center)
             TextEditor(text: $alertText)
@@ -80,7 +80,8 @@ struct CreateYourOwnView: View {
         ZStack {
             configureView()
                 .foregroundColor(colorScheme == .dark ? .white : .black)
-                .navigationBarTitle(Text("Add your own", comment: "add your own title"))
+                .navigationBarTitle(Text("Add your own affirmation", comment: "add your own title"))
+                .navigationBarTitleDisplayMode(.inline)
             
             if showAlert {
                 AlertView(shown: $showAlert, alertText: $alertText) {
@@ -109,7 +110,7 @@ struct CreateYourOwnView: View {
                 
                 spacerView(16)
                 
-                Text("You haven't added any journal entries yet.", comment: "add your own, none yet text")
+                Text("You haven't added any affirmations you would like to manifest.", comment: "add your own, none yet text")
                     .font(.callout)
                     .lineLimit(nil)
                 
@@ -161,7 +162,7 @@ struct CreateYourOwnView: View {
     
     private var addAffirmationsButton: some View {
         Button(action: showAffirmationAlert) {
-            Text("Add a private entry", comment: "add your own affirmation")
+            Text("Add an affirmation", comment: "add your own affirmation")
                 .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
                 .foregroundColor(.white)
                 .background(Constants.DAMidBlue)
