@@ -88,8 +88,9 @@ struct DeclarationView: View {
                                         PremiumView()
                                     }
                                     .padding(.trailing)
-            
+                                    
                                 }
+                            }
                                 
                                 Spacer()
                                 if appState.showIntentBar {
@@ -97,7 +98,6 @@ struct DeclarationView: View {
                                         .frame(height: geometry.size.height * 0.10)
                                     
                                 }
-                            }
                         }
                     }
                 }

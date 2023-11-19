@@ -22,35 +22,47 @@ struct HomeView: View {
                     .id(appState.rootViewId)
                     .tabItem {
                         Image(systemName: "house.fill")
+                            .renderingMode(.original)
                         Text("Home")
                     }
                 
                 DevotionalView(viewModel:devotionalViewModel)
                     .tabItem {
-                        Image(systemName: "book.pages.fill")
+                        if #available(iOS 17, *) {
+                            Image(systemName: "book.pages.fill")
+                                .renderingMode(.original)
+                        } else {
+                            Image(systemName: "book.fill")
+                                .renderingMode(.original)
+                        }
                         Text("Devotionals")
                     }
                 
                 CreateYourOwnView()
                     .tabItem {
                         Image(systemName: "plus.circle.fill")
+                            .renderingMode(.original)
                         Text("Yours")
                     }
                 
                 NavigationStack {
                     LazyView(PrayerView())
                 }
-                
-              //  NavigationView(LocalizedStringKey("Prayers"), destination: LazyView(PrayerView()))
-              //  PrayerView()
                     .tabItem {
-                        Image(systemName: "hands.and.sparkles.fill")
+                        if #available(iOS 17, *) {
+                            Image(systemName: "hands.and.sparkles.fill")
+                                .renderingMode(.original)
+                        } else {
+                            Image(systemName: "hands.clap.fill")
+                                .renderingMode(.original)
+                        }
                         Text("Prayers")
                     }
                 
                 ProfileView()
                     .tabItem {
                         Image(systemName: "person.fill")
+                            .renderingMode(.original)
                         Text("Settings")
                     }
             }
