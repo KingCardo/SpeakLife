@@ -8,6 +8,18 @@
 import SwiftUI
 import FirebaseAnalytics
 
+struct VisualEffectBlur: UIViewRepresentable {
+    var blurStyle: UIBlurEffect.Style
+
+    func makeUIView(context: Context) -> UIVisualEffectView {
+        return UIVisualEffectView(effect: UIBlurEffect(style: blurStyle))
+    }
+    
+    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+        uiView.effect = UIBlurEffect(style: blurStyle)
+    }
+}
+
 struct CategoryCell: View  {
     
     @EnvironmentObject var subscriptionStore: SubscriptionStore
@@ -29,19 +41,14 @@ struct CategoryCell: View  {
             colorScheme == .dark ? Constants.DEABlack : Color.white
             
             VStack {
-                ZStack {
-                    Image(category.imageString)
-                        .resizable().scaledToFill()
+                ZStack(alignment: .topTrailing) {
+                        Image(category.imageString)
+                            .resizable().scaledToFill()
+                            .frame(width: dimension, height: dimension)
+                            .clipped()
+                            .cornerRadius(4)
                     
-                        .frame(width: dimension, height: dimension)
-                        .clipped()
-                        .cornerRadius(4)
-                    
-                    if category.isPremium && !subscriptionStore.isPremium {
-                        Image(systemName: "lock.fill")
-                            .font(.title)
-                            .frame(width: 30, height: 30)
-                    }
+                            lockIcon
                 }
                 
                 Text(category.categoryTitle)
@@ -53,6 +60,25 @@ struct CategoryCell: View  {
         .frame(width: dimension + 16, height: size.width * 0.52)
         .cornerRadius(6)
         .shadow(color: Constants.lightShadow, radius: 8, x: 0, y: 4)
+    }
+    
+    @ViewBuilder
+    var lockIcon: some View {
+        if category.isPremium && !subscriptionStore.isPremium {
+            ZStack {
+                VisualEffectBlur(blurStyle: .systemMaterial)
+                    .frame(width: 32, height: 32)
+                
+                    .padding(20)
+                    .blur(radius: 8)
+                   
+                Image(systemName: "lock.fill")
+                    .font(.title)
+                    .frame(width: 25, height: 25)
+          
+            }
+            
+        }
     }
 }
 
