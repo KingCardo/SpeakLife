@@ -50,7 +50,7 @@ struct HomeView: View {
                 
                 ProfileView()
                     .tabItem {
-                        Image(systemName: "gear")
+                        Image(systemName: "person.fill")
                         Text("Settings")
                     }
             }
