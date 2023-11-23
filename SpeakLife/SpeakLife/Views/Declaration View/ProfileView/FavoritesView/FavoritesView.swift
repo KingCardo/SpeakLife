@@ -13,9 +13,9 @@ struct ContentRow: View {
     @State private var showShareSheet = false
     var isEditable: Bool
     var declaration: Declaration
-    var callback: ((String) -> Void)?
+    var callback: ((String, _ delete: Bool) -> Void)?
     
-    init(_ favorite: Declaration, isEditable: Bool = false, callback: ((String) -> Void)? = nil) {
+    init(_ favorite: Declaration, isEditable: Bool = false, callback: ((String, Bool) -> Void)? = nil) {
         self.declaration = favorite
         self.isEditable = isEditable
         self.callback = callback
@@ -27,21 +27,25 @@ struct ContentRow: View {
                // .lineLimit(2)
             Spacer()
             
-           // Text(declaration.lastEdit?.toPrettyString() ?? "")
-            
-         //   Spacer()
-            
             Image(systemName: "ellipsis.circle.fill")
                 .contextMenu {
                     Button(action: share) {
                         Label(LocalizedStringKey("Share"), systemImage: "square.and.arrow.up.fill")
                     }
+                    
+                    
                     if isEditable {
                         Button {
                             edit(declaration.text)
                         } label: {
                             Label(LocalizedStringKey("Edit"), systemImage: "pencil.circle.fill")
                         }
+                    }
+                    
+                    Button {
+                        delete(declaration.text)
+                    } label: {
+                        Label(LocalizedStringKey("Delete"), systemImage: "delete.backward.fill")
                     }
                 }
                 .sheet(isPresented: $showShareSheet, content: {
@@ -55,12 +59,16 @@ struct ContentRow: View {
         .padding()
     }
     
+    func delete(_ declaration: String, delete: Bool = true) {
+        callback?(declaration, delete)
+    }
+    
     private func share() {
         showShareSheet = true
     }
     
     func edit(_ declaration: String) {
-        callback?(declaration)
+        callback?(declaration, false)
     }
 }
 
@@ -85,7 +93,7 @@ struct FavoritesView: View {
                 
                 Image(systemName: "heart.text.square")
                     .resizable()
-                    .frame(width: 150, height: 150)
+                    .frame(width: 100, height: 100)
                     .aspectRatio(contentMode: .fit)
                     .foregroundColor(Constants.DAMidBlue)
                 

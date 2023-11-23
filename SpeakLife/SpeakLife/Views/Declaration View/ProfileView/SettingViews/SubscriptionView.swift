@@ -178,7 +178,7 @@ struct DiscountSubscriptionView: View {
 
     
     func continueButton(completion: @escaping(() -> Void)) -> some View {
-        return ShimmerButton(colors: [Constants.DAMidBlue, Constants.gold], buttonTitle: "Subscribe to premium", action: makePurchase)
+        return ShimmerButton(colors: [Constants.DAMidBlue, Constants.gold], buttonTitle: "Try free & save", action: makePurchase)
     }
 }
 
@@ -199,12 +199,12 @@ struct SubscriptionView: View {
     
     var ctaText: String
     
-    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39, gradient: any View = Gradients().purple, ctaText: String = "3 days free, then just", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
+    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39, gradient: any View = Gradients().purple, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
         self.benefits = benefits
         self.size = size
         self.currentSelection = currentSelection
         self.gradient = gradient
-        self.ctaText = "\(ctaText) \(currentSelection.title). Cancel anytime."
+        self.ctaText = ctaText
         self.isDiscount = isDiscount
     }
 
@@ -225,7 +225,7 @@ struct SubscriptionView: View {
                     .foregroundColor(.white)
                     .scaledToFit()
                 Text(benefit.text, comment: "Benefit text")
-                    .font(.caption)
+                    .font(.callout)
                     .minimumScaleFactor(0.5)
                 Spacer()
             }.padding(.horizontal)
@@ -269,17 +269,27 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 40)
                     
+                    Text(ctaText)
+    
+                        .font(.callout)
+                        .foregroundColor(.white)
+                    
+                    Text(currentSelection.title)
+                        .padding(.horizontal)
+                        .font(.body)
+                        .bold()
+                        .foregroundColor(.white)
+                    
                     goPremiumStack(size: size)
                     
-                    Text(ctaText)
-                        .padding(.all)
-                        .font(isDiscount ? .body : .caption)
-                        .foregroundColor(.white)
+                    
                     
                     Spacer()
                         .frame(height: 24)
                     
-                    Text("This Book of the Law shall not depart from your mouth, but you shall meditate on it day and night, so that you may be careful to do according to all that is written in it. For then you will make your way prosperous, and then you will have good success. - Joshua 1:8")
+                    Text("Don’t copy the behavior and customs of this world, but let God transform you into a new person by changing the way you think. Then you will learn to know God’s will for you, which is good and pleasing and perfect. ~ Romans 12:2 (NIV)")
+                        .font(.title3)
+                        .foregroundColor(.white)
                         .padding()
                 }
                 

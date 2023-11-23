@@ -37,6 +37,7 @@ struct ThemeChooserView: View {
             } label: {
                 HStack {
                     Text("Select Custom Image")
+                        .fontWeight(.semibold)
                     Image(systemName: "photo.fill")
                 }
             }
@@ -85,9 +86,8 @@ struct ThemeChooserView: View {
                 
                 selectCustomImageView
                 
-                Text("Choose Background Image")
+                Text("Choose Background Image 👇")
                     .font(.body)
-                    .fontWeight(.semibold)
                     .foregroundColor(.white)
                 
                 LazyVGrid(columns: twoColumnGrid, spacing: 16) {
@@ -127,6 +127,11 @@ struct ThemeChooserView: View {
             .onDisappear {
                 DispatchQueue.global(qos: .userInitiated).async {
                     themesViewModel.save()
+                }
+            }
+            .onTapGesture {
+                withAnimation(.easeInOut) {
+                    self.hideFontPicker = true
                 }
             }
         }

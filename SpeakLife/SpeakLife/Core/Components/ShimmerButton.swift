@@ -16,8 +16,9 @@ struct ShimmerButton: View {
     var body: some View {
         
         ZStack {
-            Button(buttonTitle, action: action)
-                .font(.system(size: 25, weight: .bold, design: .default))
+            Button(buttonTitle.uppercased(), action: action)
+                .font(.subheadline)
+                .bold()
                 .foregroundColor(.white)
             
             LinearGradient(gradient: Gradient(colors: [.clear, .white.opacity(0.5), .clear]), startPoint: .leading, endPoint: .trailing)

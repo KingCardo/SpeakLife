@@ -104,7 +104,7 @@ struct CreateYourOwnView: View {
                 
                 Image(systemName: "doc.fill.badge.plus")
                     .resizable()
-                    .frame(width: 150, height: 150)
+                    .frame(width: 100, height: 100)
                     .aspectRatio(contentMode: .fit)
                     .foregroundColor(Constants.DAMidBlue)
                 
@@ -122,32 +122,30 @@ struct CreateYourOwnView: View {
             }.padding()
             
         } else {
-            VStack {
-                spacerView(16)
-                    .background(Color.clear)
-                
-                List {
-                    ForEach(declarationStore.createOwn) { declaration in
-                        ContentRow(declaration, isEditable: true) { declarationString in
-                            edit(declarationString)
-                        }
-                        .onTapGesture {
-                            withAnimation {
-                                popToRoot()
-                                declarationStore.choose(declaration)
+                NavigationView {
+                    List(declarationStore.createOwn) { declaration in
+                        NavigationLink(destination: PrayerDetailView(prayer: declaration.text)) {
+                            ContentRow(declaration, isEditable: true) { declarationString, delete in
+                                if delete {
+                                    declarationStore.removeOwn(declaration: declaration)
+                                } else {
+                                    edit(declarationString)
+                                }
                             }
                         }
+                        
                     }
-                    
-                    .onDelete { offsets in
-                        declarationStore.removeOwn(at: offsets)
-                    }
+                    .navigationBarTitle("Affirmations")
                 }
-                Spacer()
-                addAffirmationsButton
-            }
+            VStack {
+                    Spacer()
+                    addAffirmationsButton
+                        .padding()
+                }
+             
         }
     }
+
     
     private func edit(_ declaration: String) {
         alertText = declaration
