@@ -31,7 +31,9 @@ struct AlertView: View {
             }
             Text("Add an affirmation. These are private to you.", comment: "own affirmations alert")
                 .font(.callout)
+                .foregroundStyle(Constants.DAMidBlue)
                 .multilineTextAlignment(.center)
+            
             TextEditor(text: $alertText)
                 .font(.custom("HelveticaNeue", size: 13))
                 .foregroundColor(colorScheme == .dark ? .white : .black)
@@ -48,9 +50,12 @@ struct AlertView: View {
         }
         .padding()
         .frame(width: UIScreen.main.bounds.width-50, height: 300)
-        .background(Constants.DALightBlue)
+        
+        .background(colorScheme == .dark ? .white : Constants.DEABlack)
         .cornerRadius(12)
+        //.border(Constants.DAMidBlue)
         .clipped()
+        
     }
     
     private func dismissX() {
