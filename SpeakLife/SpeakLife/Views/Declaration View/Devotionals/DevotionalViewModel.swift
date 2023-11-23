@@ -17,7 +17,7 @@ final class DevotionalViewModel: ObservableObject {
     @Published var title = ""
     @Published var hasError = false
     let errorString = "Upgrade to the latest version for Today's Devotional."
-    private let freeCount = 5
+   // private let freeCount = 5
     
     var devotionals: [Devotional] = []
     
@@ -49,16 +49,16 @@ final class DevotionalViewModel: ObservableObject {
         }
     }
     
-    var devotionalsLeft: Int {
-        if !devotionalLimitReached {
-            return freeCount - devotionalDictionary.count
-        }
-        return 0
-    }
+//    var devotionalsLeft: Int {
+//        if !devotionalLimitReached {
+//            return freeCount - devotionalDictionary.count
+//        }
+//        return 0
+//    }
     
-    var devotionalLimitReached: Bool {
-        devotionalDictionary.count > 5
-    }
+//    var devotionalLimitReached: Bool {
+//        devotionalDictionary.count > 5
+//    }
     
     private func setDevotionalDictionary(date: Date = Date()) {
 

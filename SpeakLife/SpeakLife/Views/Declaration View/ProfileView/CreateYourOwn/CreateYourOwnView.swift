@@ -83,10 +83,12 @@ struct CreateYourOwnView: View {
     
     var body: some View {
         ZStack {
+            AnyView(Gradients().goldCyan)
             configureView()
-                .foregroundColor(colorScheme == .dark ? .white : .black)
-                .navigationBarTitle(Text("Add your own affirmation", comment: "add your own title"))
-                .navigationBarTitleDisplayMode(.inline)
+              //  .foregroundColor(colorScheme == .dark ? .white : .black)
+               // .navigationBarTitle(Text("Add your own affirmation", comment: "add your own title"))
+               // .navigationBarTitleDisplayMode(.inline)
+             //   .background(Color.clear)
             
             if showAlert {
                 AlertView(shown: $showAlert, alertText: $alertText) {
@@ -121,7 +123,6 @@ struct CreateYourOwnView: View {
                 
                 spacerView(32)
                 
-                
                 addAffirmationsButton
                 
             }.padding()
@@ -139,15 +140,16 @@ struct CreateYourOwnView: View {
                             }
                         }
                         
+                        
                     }
+                   
                     .navigationBarTitle("Affirmations")
                 }
-            VStack {
+                VStack {
                     Spacer()
                     addAffirmationsButton
                         .padding()
                 }
-             
         }
     }
 

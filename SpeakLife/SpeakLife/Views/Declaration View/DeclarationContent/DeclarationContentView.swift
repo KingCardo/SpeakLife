@@ -22,6 +22,8 @@ struct DeclarationContentView: View {
     @State private var showShareSheet = false
     @State private var image: UIImage?
     @State private var showAnimation = false
+    @State private var selectedTab = 0
+    @State private var fadeInOpacity = 0.0
     
     private let degrees: Double = 90
     
@@ -31,29 +33,21 @@ struct DeclarationContentView: View {
         self.viewModel = viewModel
     }
     
-  
-    @ViewBuilder
     var body: some View {
         GeometryReader { geometry in
-            
-            TabView {
-                ForEach(viewModel.declarations) { declaration in
+            TabView(selection: $selectedTab) {
+                ForEach(Array(viewModel.declarations.enumerated()), id: \.element) { index, declaration in
                     ZStack {
                         quoteLabel(declaration, geometry)
+                           
                             .padding()
                             .rotationEffect(Angle(degrees: -degrees))
                             .frame(
                                 width: geometry.size.width,
                                 height: geometry.size.height
                             )
-                            .sheet(isPresented: $showShareSheet) {
-                                if let image = image {
-                                    Image(uiImage: image)
-                                        .resizable()
-                                        .scaledToFit()
-                                }
-                                ShareSheet(activityItems: [image as Any])
-                            }
+                            
+                           
                         
                         if !showShareSheet {
                             intentVstack(declaration: declaration, geometry)
@@ -78,15 +72,36 @@ struct DeclarationContentView: View {
                             }
                         }
                     }
+                    .opacity(fadeInOpacity)
+                    .tag(index)
+                    .sheet(isPresented: $showShareSheet) {
+                        if let image = image {
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                        }
+                        ShareSheet(activityItems: [image as Any])
+                    }
+                    
+                }
+            }
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            .onChange(of: selectedTab) { newIndex in
+                    fadeInOpacity = 0.0
+                withAnimation(.easeOut(duration: 1.0)) {
+                    fadeInOpacity = 1.0
                 }
             }
             .frame(width: geometry.size.height, height: geometry.size.width)
             .rotationEffect(.degrees(90), anchor: .topLeading)
             .offset(x: geometry.size.width)
-            .tabViewStyle(.page(indexDisplayMode: .never))
-        }
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-            self.showShareSheet = false
+           
+            .onAppear {
+                fadeInOpacity = 1.0
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                self.showShareSheet = false
+            }
         }
     }
     
@@ -168,7 +183,7 @@ struct DeclarationContentView: View {
                         viewModel.requestReview.toggle()
                     }
                 }
-               
+                
                 
                 CapsuleImageButton(title: declaration.isFavorite ? "heart.fill" : "heart") {
                     favorite(declaration)
