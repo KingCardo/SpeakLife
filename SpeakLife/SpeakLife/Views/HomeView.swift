@@ -66,9 +66,9 @@ struct HomeView: View {
     
                     ProfileView()
                         .tabItem {
-                            Image(systemName: "person.fill")
+                            Image(systemName: "line.3.horizontal")
                                 .renderingMode(.original)
-                            Text("Settings")
+                            Text("More")
                         }
                 }
                 .accentColor(Constants.DAMidBlue)
