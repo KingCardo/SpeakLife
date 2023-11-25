@@ -282,11 +282,12 @@ struct SubscriptionView: View {
                         
                     }
                     
-                    costDescription
                     
                     goPremiumStack(size: size)
                     
-                    
+                    Spacer()
+                        .frame(height: 16)
+                    costDescription
                     
                     Spacer()
                         .frame(height: 24)
@@ -308,18 +309,18 @@ struct SubscriptionView: View {
     
     @ViewBuilder
     var costDescription: some View {
-        if currentSelection == .speakLife1YR39 {
-            Text(ctaText)
+        HStack(spacing: 2) {
+            if currentSelection == .speakLife1YR39 {
+                Text(ctaText)
+                   
+            }
             
-                .font(.callout)
-                .foregroundColor(.white)
+            Text(currentSelection.title + ".")
+            
+            Text("Cancel anytime.")
         }
-
-        Text(currentSelection.title)
-            .padding(.horizontal)
-            .font(.body)
-            .bold()
-            .foregroundColor(.white)
+        .font(.caption)
+        .foregroundColor(.white)
     }
     
     
@@ -376,10 +377,6 @@ struct SubscriptionView: View {
             errorTitle = "All purchases restored"
             isShowingError = true
         }
-    }
-    
-    func presentOtherIAPOptions() {
-        
     }
     
     func yearlyCTABox() -> some View {
