@@ -10,6 +10,7 @@ import BackgroundTasks
 import FirebaseCore
 import FirebaseAnalytics
 import GoogleMobileAds
+import UserNotifications
 
 final class AppDelegate: NSObject, UIApplicationDelegate {
     
@@ -30,6 +31,12 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         NotificationHandler.shared.callback = { [weak self] content in
             self?.declarationStore?.setDeclaration(content.body, category: content.title)
         }
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+//            if granted {
+//                application.registerForRemoteNotifications()
+//            }
+//        }
+        
         return true
     }
     

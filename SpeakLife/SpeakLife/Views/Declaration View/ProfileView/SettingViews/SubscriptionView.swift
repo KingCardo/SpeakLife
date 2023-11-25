@@ -21,23 +21,23 @@ struct Benefit: Identifiable  {
         Benefit(text: "Unlock all features"),
         Benefit(text: "Unlock all Jesus Devotionals"),
         Benefit(text: "Unlock all themes"),
-//        Benefit(text: "Bible Affirmations for all of life's journey"),
-//        Benefit(text: "Categories for any situation"),
-//        Benefit(text: "Create your own affirmations"),
-//        Benefit(text: "Reminders to transform your mindset"),
-//        Benefit(text: "Unlock all prayers")
-
+        //        Benefit(text: "Bible Affirmations for all of life's journey"),
+        //        Benefit(text: "Categories for any situation"),
+        //        Benefit(text: "Create your own affirmations"),
+        //        Benefit(text: "Reminders to transform your mindset"),
+        //        Benefit(text: "Unlock all prayers")
+        
     ]
     
     static var discountBenefits: [Benefit] = [
         
         Benefit(text: "Unlock all features"),
         Benefit(text: "Enjoy 50% off discount"),
-//        Benefit(text: "Daily Morning Jesus Devotionals"),
-//        Benefit(text: "Create your own affirmations"),
-//        Benefit(text: "Bible Affirmations for all of life's journey"),
-//        Benefit(text: "Categories for any situation"),
-//        Benefit(text: "Unlock all prayers")
+        //        Benefit(text: "Daily Morning Jesus Devotionals"),
+        //        Benefit(text: "Create your own affirmations"),
+        //        Benefit(text: "Bible Affirmations for all of life's journey"),
+        //        Benefit(text: "Categories for any situation"),
+        //        Benefit(text: "Unlock all prayers")
     ]
 }
 
@@ -66,9 +66,9 @@ struct DiscountSubscriptionView: View {
         .alert(isPresented: $isShowingError, content: {
             Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
         })
-//        SubscriptionView(benefits: Benefit.discountBenefits, size: size, currentSelection: InAppId.Subscription.speakLife1YR19, gradient: Gradients().redCyan, isDiscount: true) {
-//            callback?()
-//        }
+        //        SubscriptionView(benefits: Benefit.discountBenefits, size: size, currentSelection: InAppId.Subscription.speakLife1YR19, gradient: Gradients().redCyan, isDiscount: true) {
+        //            callback?()
+        //        }
     }
     
     func discountView(completion: @escaping(() -> Void)) -> some View {
@@ -105,7 +105,7 @@ struct DiscountSubscriptionView: View {
             Spacer()
                 .frame(height: 32)
             
-           
+            
             continueButton {
                 completion()
             }
@@ -116,44 +116,41 @@ struct DiscountSubscriptionView: View {
             Text("Cancel anytime")
                 .font(.caption)
             
-            
-            
-            
         }
     }
     
     func selectionBox(currentSelection: InAppId.Subscription) -> some View {
         ZStack {
-                   RoundedRectangle(cornerRadius: 10)
-                       .strokeBorder(Color.gray, lineWidth: 1)
-                       .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
-                       .frame(height: 60)
-                   
-                   HStack {
-                       VStack(alignment: .leading) {
-                           Text("\(currentSelection.title)")
-                               .bold()
-                           Text("Abundant savings. Billed annually.")
-                               .font(.caption)
-                       }
-                       .padding(.leading)
-                       
-                       Spacer()
-                       
-                       ZStack {
-                           Capsule()
-                               .fill(Color.black)
-                               .frame(width: 100, height: 30)
-                           
-                           Text("Best Value")
-                               .font(.caption)
-                               .foregroundColor(.white)
-                       }
-                       .padding(.trailing)
-                   }
-               }
-               .padding([.leading, .trailing], 20)
-           }
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(Color.gray, lineWidth: 1)
+                .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+                .frame(height: 60)
+            
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("\(currentSelection.title)")
+                        .bold()
+                    Text("Abundant savings. Billed annually.")
+                        .font(.caption)
+                }
+                .padding(.leading)
+                
+                Spacer()
+                
+                ZStack {
+                    Capsule()
+                        .fill(Color.black)
+                        .frame(width: 100, height: 30)
+                    
+                    Text("Best Value")
+                        .font(.caption)
+                        .foregroundColor(.white)
+                }
+                .padding(.trailing)
+            }
+        }
+        .padding([.leading, .trailing], 20)
+    }
     
     func buy() async {
         do {
@@ -167,7 +164,7 @@ struct DiscountSubscriptionView: View {
             print("Failed purchase for \(currentSelection.rawValue): \(error)")
         }
     }
-
+    
     private func makePurchase() {
         Task {
             declarationStore.isPurchasing = true
@@ -175,7 +172,7 @@ struct DiscountSubscriptionView: View {
             declarationStore.isPurchasing = false
         }
     }
-
+    
     
     func continueButton(completion: @escaping(() -> Void)) -> some View {
         return ShimmerButton(colors: [Constants.DAMidBlue, Constants.gold], buttonTitle: "Try free & save", action: makePurchase)
@@ -189,7 +186,7 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    var currentSelection: InAppId.Subscription
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39
     
     let size: CGSize
     var callback: (() -> Void)?
@@ -199,15 +196,14 @@ struct SubscriptionView: View {
     
     var ctaText: String
     
-    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39, gradient: any View = Gradients().purple, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
+    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, gradient: any View = Gradients().purple, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
         self.benefits = benefits
         self.size = size
-        self.currentSelection = currentSelection
         self.gradient = gradient
         self.ctaText = ctaText
         self.isDiscount = isDiscount
     }
-
+    
     var body: some View {
         goPremiumView(size: size)
             .foregroundColor(colorScheme == .dark ? .white : Constants.DEABlack)
@@ -253,7 +249,7 @@ struct SubscriptionView: View {
                         Spacer()
                             .frame(height: 18)
                         
-                        Text("Manifest your greatest potential for your life with premium")
+                        Text("Nourish Your Soul: Daily Bible Inspiration")
                             .multilineTextAlignment(.center)
                             .font(.subheadline)
                             .foregroundColor(.white)
@@ -265,20 +261,28 @@ struct SubscriptionView: View {
                     benefitRows
                         .foregroundColor(.white)
                     
-                                        
+                    
                     Spacer()
                         .frame(height: 40)
                     
-                    Text(ctaText)
-    
-                        .font(.callout)
-                        .foregroundColor(.white)
+                    VStack {
+                        
+                        Button {
+                            currentSelection = InAppId.Subscription.speakLife1YR39
+                        } label: {
+                            yearlyCTABox()
+                        }
+                        
+                        Button {
+                            currentSelection = InAppId.Subscription.speakLife1MO4
+                        } label: {
+                            monthlySelectionBox()
+                        }
+                        
+                        
+                    }
                     
-                    Text(currentSelection.title)
-                        .padding(.horizontal)
-                        .font(.body)
-                        .bold()
-                        .foregroundColor(.white)
+                    costDescription
                     
                     goPremiumStack(size: size)
                     
@@ -302,17 +306,33 @@ struct SubscriptionView: View {
         }
     }
     
+    @ViewBuilder
+    var costDescription: some View {
+        if currentSelection == .speakLife1YR39 {
+            Text(ctaText)
+            
+                .font(.callout)
+                .foregroundColor(.white)
+        }
+
+        Text(currentSelection.title)
+            .padding(.horizontal)
+            .font(.body)
+            .bold()
+            .foregroundColor(.white)
+    }
+    
     
     private func goPremiumStack(size: CGSize) -> some View  {
         let gradient = Gradient(colors: [Constants.DAMidBlue, .cyan])
         let linearGradient = LinearGradient(gradient: gradient,
-                                                startPoint: .top,
-                                                endPoint: .bottom)
+                                            startPoint: .top,
+                                            endPoint: .bottom)
         
         return VStack {
-
+            
             continueButton(gradient: linearGradient)
-
+            
             HStack {
                 Button(action: restore) {
                     Text("Restore", comment: "restore iap")
@@ -335,7 +355,7 @@ struct SubscriptionView: View {
             print("Failed purchase for \(currentSelection.rawValue): \(error)")
         }
     }
-
+    
     private func makePurchase() {
         Task {
             declarationStore.isPurchasing = true
@@ -345,7 +365,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: "Try Free & Subscribe", action: makePurchase)
+        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == .speakLife1YR39 ? "Try Free & Subscribe" : "Subscribe", action: makePurchase)
     }
     
     private func restore() {
@@ -361,13 +381,62 @@ struct SubscriptionView: View {
     func presentOtherIAPOptions() {
         
     }
+    
+    func yearlyCTABox() -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(Color.gray, lineWidth: 1)
+                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == .speakLife1YR39 ? Constants.DAMidBlue : .clear))
+                .frame(height: 60)
+            
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("\(InAppId.Subscription.speakLife1YR39.title)")
+                        .bold()
+                    Text("Abundant savings. Billed annually.")
+                        .font(.caption)
+                }
+                .foregroundStyle(currentSelection == .speakLife1YR39 ? .white : .black)
+                .padding(.leading)
+                
+                Spacer()
+                
+                ZStack {
+                    Capsule()
+                        .fill(Constants.gold)
+                        .frame(width: 100, height: 30)
+                    
+                    Text("Best Value")
+                        .font(.callout)
+                        .foregroundColor(.white)
+                }
+                .padding(.trailing)
+            }
+            
+        }
+        
+        .padding([.leading, .trailing], 20)
+    }
+    
+    func monthlySelectionBox() -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(Color.gray, lineWidth: 1)
+                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == .speakLife1MO4 ? Constants.DAMidBlue : .clear))
+                .frame(height: 60)
+            
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Monthly \(InAppId.Subscription.speakLife1MO4.currentPrice)")
+                        .bold()
+                        .foregroundStyle(currentSelection == .speakLife1MO4 ? .white : .black)
+                }
+                .padding(.leading)
+                
+                Spacer()
+            }
+        }
+        
+        .padding([.leading, .trailing], 20)
+    }
 }
-
-//struct SubscriptionView_Previews: PreviewProvider {
-//    
-//    static var previews: some View {
-//        SubscriptionView(size: UIScreen.main.bounds.size)
-//            .environmentObject(DeclarationViewModel(apiService: APIClient()))
-//            .environmentObject(SubscriptionStore())
-//    }
-//}

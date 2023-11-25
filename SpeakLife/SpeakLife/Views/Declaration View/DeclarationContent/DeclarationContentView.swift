@@ -13,6 +13,7 @@ struct DeclarationContentView: View {
     @StateObject private var speechSynthesizer = SpeechSynthesizer()
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @Environment(\.verticalSizeClass) var verticalSizeClass
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     
@@ -150,6 +151,7 @@ struct DeclarationContentView: View {
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
             
             Spacer()
+                .frame(height: (horizontalSizeClass == .compact && verticalSizeClass == .compact) ? geometry.size.height * 0.15 : geometry.size.height * 0.35)
         }.onAppear {
             Analytics.logEvent(Event.swipe_affirmation, parameters: nil)
         }
