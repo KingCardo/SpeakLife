@@ -7,12 +7,16 @@
 
 import SwiftUI
 
+
+
 struct HomeView: View {
     
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var themeStore: ThemeViewModel
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
+    @Binding var isShowingLanding: Bool
+    
 //    @State private var selectedTab = 0
 //    @State private var isTabBarVisible = true
 //    @State private var time = 0
@@ -21,67 +25,82 @@ struct HomeView: View {
     
     
         var body: some View {
-            if appState.isOnboarded {
-                TabView {
-                    DeclarationView(viewModel: _declarationStore, themeViewModel: _themeStore)
-                        .id(appState.rootViewId)
-                        .tabItem {
-                            Image(systemName: "house.fill")
-                                .renderingMode(.original)
-                            Text("Home")
-                        }
-    
-                    DevotionalView(viewModel:devotionalViewModel)
-                        .tabItem {
-                            if #available(iOS 17, *) {
-                                Image(systemName: "book.pages.fill")
+            Group {
+            if isShowingLanding {
+                LandingView()
+            } else if appState.isOnboarded {
+                    TabView {
+                        DeclarationView(viewModel: _declarationStore, themeViewModel: _themeStore)
+                            .id(appState.rootViewId)
+                            .tabItem {
+                                Image(systemName: "house.fill")
                                     .renderingMode(.original)
-                            } else {
-                                Image(systemName: "book.fill")
-                                    .renderingMode(.original)
+                                Text("Home")
                             }
-                            Text("Devotionals")
-                        }
-                    
-//                    PodcastsListView()
-//                        .tabItem {
-//                            Image(systemName: "headphones")
-//                                .renderingMode(.original)
-//                            Text("Listen")
-//                        }
-    
-                    CreateYourOwnView()
-                        .tabItem {
-                            Image(systemName: "plus.bubble.fill")
-                                .renderingMode(.original)
-                            Text("Yours")
-                        }
-    
-//                    NavigationStack {
-//                        LazyView(PrayerView())
-//                    }
-//                        .tabItem {
-//                            if #available(iOS 17, *) {
-//                                Image(systemName: "hands.and.sparkles.fill")
-//                                    .renderingMode(.original)
-//                            } else {
-//                                Image(systemName: "hands.clap.fill")
-//                                    .renderingMode(.original)
-//                            }
-//                            Text("Prayers")
-//                        }
-    
-                    ProfileView()
-                        .tabItem {
-                            Image(systemName: "line.3.horizontal")
-                                .renderingMode(.original)
-                            Text("More")
-                        }
+                        
+                        DevotionalView(viewModel:devotionalViewModel)
+                            .tabItem {
+                                if #available(iOS 17, *) {
+                                    Image(systemName: "book.pages.fill")
+                                        .renderingMode(.original)
+                                } else {
+                                    Image(systemName: "book.fill")
+                                        .renderingMode(.original)
+                                }
+                                Text("Devotionals")
+                            }
+                        
+                        //  PodcastView()
+                        
+                        //  PodcastsListView()
+                        //                        .tabItem {
+                        //                            Image(systemName: "headphones")
+                        //                                .renderingMode(.original)
+                        //                            Text("Listen")
+                        //                        }
+                        
+                        CreateYourOwnView()
+                            .tabItem {
+                                Image(systemName: "plus.bubble.fill")
+                                    .renderingMode(.original)
+                                Text("Yours")
+                            }
+                        
+                        //                    NavigationStack {
+                        //                        LazyView(PrayerView())
+                        //                    }
+                        //                        .tabItem {
+                        //                            if #available(iOS 17, *) {
+                        //                                Image(systemName: "hands.and.sparkles.fill")
+                        //                                    .renderingMode(.original)
+                        //                            } else {
+                        //                                Image(systemName: "hands.clap.fill")
+                        //                                    .renderingMode(.original)
+                        //                            }
+                        //                            Text("Prayers")
+                        //                        }
+                        
+                        ProfileView()
+                            .tabItem {
+                                Image(systemName: "line.3.horizontal")
+                                    .renderingMode(.original)
+                                Text("More")
+                            }
+                    }
+                    .hideTabBar(if: appState.showScreenshotLabel)
+                    .accentColor(Constants.DAMidBlue)
+                } else {
+                    OnboardingView()
                 }
-                .accentColor(Constants.DAMidBlue)
-            } else {
-                OnboardingView()
             }
+//                    .onAppear {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//                    withAnimation {// 3 seconds delay
+//                        isShowingLanding = false
+//                    }
+//                }
+//            }
+            
         }
     
 //    var body: some View {

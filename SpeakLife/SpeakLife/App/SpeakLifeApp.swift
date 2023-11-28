@@ -20,17 +20,24 @@ struct SpeakLifeApp: App {
     @StateObject var subscriptionStore = SubscriptionStore()
     @StateObject var devotionalViewModel = DevotionalViewModel()
    // @StateObject var timeTracker = TimeTrackerViewModel()
+    @State private var isShowingLanding = true
     
     private let fourDaysInSeconds: Double = 345600
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeView(isShowingLanding: $isShowingLanding)
                 .environmentObject(appState)
                 .environmentObject(declarationStore)
                 .environmentObject(themeStore)
                 .environmentObject(subscriptionStore)
                 .environmentObject(devotionalViewModel)
+                .onAppear {
+                    withAnimation {
+                            isShowingLanding = false
+                        }
+                    
+                }
             //    .environmentObject(timeTracker)
         }
         .onChange(of: scenePhase) { (newScenePhase) in

@@ -12,6 +12,9 @@
 		458510CF2B12B74E00230EE5 /* PodcastsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510CE2B12B74E00230EE5 /* PodcastsListView.swift */; };
 		458510D12B12B77A00230EE5 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D02B12B77A00230EE5 /* Podcast.swift */; };
 		458510D32B12B7A200230EE5 /* PodcastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D22B12B7A200230EE5 /* PodcastService.swift */; };
+		458510D52B13C77000230EE5 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D42B13C77000230EE5 /* WebView.swift */; };
+		458510D72B15935100230EE5 /* HideTabModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D62B15935100230EE5 /* HideTabModifier.swift */; };
+		458510D92B159B0D00230EE5 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D82B159B0D00230EE5 /* LandingView.swift */; };
 		7A00721828F8ED4A00965AF7 /* declarations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A00721728F8ED4A00965AF7 /* declarations.json */; };
 		7A00721A2908D22E00965AF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A0072192908D22E00965AF7 /* GoogleService-Info.plist */; };
 		7A00721D2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -145,6 +148,9 @@
 		458510CE2B12B74E00230EE5 /* PodcastsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsListView.swift; sourceTree = "<group>"; };
 		458510D02B12B77A00230EE5 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		458510D22B12B7A200230EE5 /* PodcastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastService.swift; sourceTree = "<group>"; };
+		458510D42B13C77000230EE5 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		458510D62B15935100230EE5 /* HideTabModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideTabModifier.swift; sourceTree = "<group>"; };
+		458510D82B159B0D00230EE5 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		7A00721728F8ED4A00965AF7 /* declarations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = declarations.json; sourceTree = "<group>"; };
 		7A0072192908D22E00965AF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7A278F97288915DE0084BB57 /* SpeakLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -390,6 +396,7 @@
 				7A601440294E574500CD2103 /* HomeView.swift */,
 				7AA870B828DACCB700134ADB /* Onboarding */,
 				7AA8709728DACCB700134ADB /* Declaration View */,
+				458510D82B159B0D00230EE5 /* LandingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -484,6 +491,7 @@
 				7AF18C8929FF9819005A6E31 /* Gradients.swift */,
 				7AF18C8B2A08CE92005A6E31 /* SpeechSynthesizer.swift */,
 				7AF18C992A0D9884005A6E31 /* BlurView.swift */,
+				458510D42B13C77000230EE5 /* WebView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -508,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				7AA8708F28DACCA700134ADB /* String+Extension.swift */,
+				458510D62B15935100230EE5 /* HideTabModifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -515,7 +524,6 @@
 		7AA8709728DACCB700134ADB /* Declaration View */ = {
 			isa = PBXGroup;
 			children = (
-				458510CD2B12B73000230EE5 /* Podcast */,
 				7AF18C942A0CC518005A6E31 /* Devotionals */,
 				7AA870B728DACCB700134ADB /* DeclarationView.swift */,
 				7AA8709828DACCB700134ADB /* IntentsBarView.swift */,
@@ -523,6 +531,7 @@
 				7AA8709928DACCB700134ADB /* View Models */,
 				7AA8709C28DACCB700134ADB /* DeclarationContent */,
 				7AA870A028DACCB700134ADB /* ThemeChooserViews */,
+				458510CD2B12B73000230EE5 /* Podcast */,
 				7AA870A328DACCB700134ADB /* ProfileView */,
 			);
 			path = "Declaration View";
@@ -836,6 +845,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AA8706C28DACC4E00134ADB /* Theme.swift in Sources */,
+				458510D52B13C77000230EE5 /* WebView.swift in Sources */,
 				7AA8709628DACCA800134ADB /* String+Extension.swift in Sources */,
 				458510D32B12B7A200230EE5 /* PodcastService.swift in Sources */,
 				7AF18C8F2A0CBD03005A6E31 /* Devotional.swift in Sources */,
@@ -894,6 +904,7 @@
 				7AF18C9F2A0DB06C005A6E31 /* TrackerView.swift in Sources */,
 				7AA870C328DACCB700134ADB /* ThemeViewModel.swift in Sources */,
 				7AA870D728DACCB700134ADB /* ProfileBarButton.swift in Sources */,
+				458510D92B159B0D00230EE5 /* LandingView.swift in Sources */,
 				7AF18C7B29FD1A43005A6E31 /* GoogleAdMob.swift in Sources */,
 				7AF18C9A2A0D9884005A6E31 /* BlurView.swift in Sources */,
 				7AA870C628DACCB700134ADB /* HeartView.swift in Sources */,
@@ -908,6 +919,7 @@
 				7AA870DC28DACCB700134ADB /* TimeSlots.swift in Sources */,
 				7ABA50CB29E63178002699F1 /* PrayerServiceClient.swift in Sources */,
 				7AF18C8829FF8CEE005A6E31 /* TipsView.swift in Sources */,
+				458510D72B15935100230EE5 /* HideTabModifier.swift in Sources */,
 				7AF18C8C2A08CE92005A6E31 /* SpeechSynthesizer.swift in Sources */,
 				7AA8709328DACCA700134ADB /* CapsuleImageButton.swift in Sources */,
 				7AA870DF28DACCB700134ADB /* IntroScene.swift in Sources */,
@@ -1117,7 +1129,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 135;
+				CURRENT_PROJECT_VERSION = 136;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
@@ -1136,7 +1148,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.09;
+				MARKETING_VERSION = 1.4.110;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1152,7 +1164,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 135;
+				CURRENT_PROJECT_VERSION = 136;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
@@ -1171,7 +1183,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.09;
+				MARKETING_VERSION = 1.4.110;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1187,7 +1199,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 134;
+				CURRENT_PROJECT_VERSION = 136;
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PromisesWidget/Info.plist;
@@ -1199,7 +1211,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.09;
+				MARKETING_VERSION = 1.4.110;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife.PromisesWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1216,7 +1228,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 134;
+				CURRENT_PROJECT_VERSION = 136;
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PromisesWidget/Info.plist;
@@ -1228,7 +1240,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.09;
+				MARKETING_VERSION = 1.4.110;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife.PromisesWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

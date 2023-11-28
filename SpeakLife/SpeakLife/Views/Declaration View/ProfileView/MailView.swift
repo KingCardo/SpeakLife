@@ -10,8 +10,9 @@ import SwiftUI
 
 struct MailView: UIViewControllerRepresentable {
     enum Origin {
-      case profile
-      case review
+        case profile
+        case review
+        case newFeatures
     }
 
     @Binding var isShowing: Bool
@@ -23,6 +24,7 @@ struct MailView: UIViewControllerRepresentable {
         switch origin {
         case .profile: return "Prayer Request"
         case .review: return "Feedback for SpeakLife - Daily Bible Promises(iOS app) \(appVersion)"
+        case .newFeatures: return "Request new feature"
         }
     }
 

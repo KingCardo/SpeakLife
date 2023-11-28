@@ -40,6 +40,7 @@ struct DeclarationContentView: View {
                 ForEach(Array(viewModel.declarations.enumerated()), id: \.element) { index, declaration in
                     ZStack {
                         quoteLabel(declaration, geometry)
+                            .opacity(fadeInOpacity)
                            
                             .padding()
                             .rotationEffect(Angle(degrees: -degrees))
@@ -73,7 +74,7 @@ struct DeclarationContentView: View {
                             }
                         }
                     }
-                    .opacity(fadeInOpacity)
+                    
                     .tag(index)
                     .sheet(isPresented: $showShareSheet) {
                         if let image = image {

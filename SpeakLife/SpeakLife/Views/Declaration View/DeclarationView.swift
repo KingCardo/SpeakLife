@@ -12,6 +12,7 @@ import UIKit
 import FirebaseAnalytics
 import GoogleMobileAds
 
+
 struct DeclarationView: View {
     
     // MARK: - Properties

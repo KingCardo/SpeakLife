@@ -87,10 +87,11 @@ struct ProfileView: View {
             }
             
             Section(header: Text("SUPPORT").font(.caption)) {
-                followUs
+               // followUs
                 shareRow
                 reviewRow
                 feedbackRow
+                newFeaturesRow
             }
             
             Section(header: Text("Other".uppercased()).font(.caption)) {
@@ -293,6 +294,16 @@ struct ProfileView: View {
     private var feedbackRow: some View {
         if MFMailComposeViewController.canSendMail() {
             SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.grid.3x1.folder.fill.badge.plus", title: "Prayer Request", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .profile))) {
+                presentContentView()
+            }
+        }
+    }
+    
+    @MainActor
+    @ViewBuilder
+    private var newFeaturesRow: some View {
+        if MFMailComposeViewController.canSendMail() {
+            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "highlighter", title: "Request new features", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .newFeatures))) {
                 presentContentView()
             }
         }
