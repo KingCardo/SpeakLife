@@ -33,10 +33,11 @@ struct SpeakLifeApp: App {
                 .environmentObject(subscriptionStore)
                 .environmentObject(devotionalViewModel)
                 .onAppear {
-                    withAnimation {
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        withAnimation {
                             isShowingLanding = false
                         }
-                    
+                    }
                 }
             //    .environmentObject(timeTracker)
         }

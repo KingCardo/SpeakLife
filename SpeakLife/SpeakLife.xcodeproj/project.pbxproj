@@ -15,6 +15,9 @@
 		458510D52B13C77000230EE5 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D42B13C77000230EE5 /* WebView.swift */; };
 		458510D72B15935100230EE5 /* HideTabModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D62B15935100230EE5 /* HideTabModifier.swift */; };
 		458510D92B159B0D00230EE5 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D82B159B0D00230EE5 /* LandingView.swift */; };
+		458510DC2B15C37B00230EE5 /* BibleStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510DB2B15C37B00230EE5 /* BibleStudyView.swift */; };
+		458510DE2B16B29400230EE5 /* BibleStudyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510DD2B16B29400230EE5 /* BibleStudyViewModel.swift */; };
+		458510E02B16B2B000230EE5 /* BibleStudyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510DF2B16B2B000230EE5 /* BibleStudyService.swift */; };
 		7A00721828F8ED4A00965AF7 /* declarations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A00721728F8ED4A00965AF7 /* declarations.json */; };
 		7A00721A2908D22E00965AF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A0072192908D22E00965AF7 /* GoogleService-Info.plist */; };
 		7A00721D2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -151,6 +154,9 @@
 		458510D42B13C77000230EE5 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		458510D62B15935100230EE5 /* HideTabModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideTabModifier.swift; sourceTree = "<group>"; };
 		458510D82B159B0D00230EE5 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		458510DB2B15C37B00230EE5 /* BibleStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleStudyView.swift; sourceTree = "<group>"; };
+		458510DD2B16B29400230EE5 /* BibleStudyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleStudyViewModel.swift; sourceTree = "<group>"; };
+		458510DF2B16B2B000230EE5 /* BibleStudyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleStudyService.swift; sourceTree = "<group>"; };
 		7A00721728F8ED4A00965AF7 /* declarations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = declarations.json; sourceTree = "<group>"; };
 		7A0072192908D22E00965AF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7A278F97288915DE0084BB57 /* SpeakLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -295,6 +301,16 @@
 			path = Podcast;
 			sourceTree = "<group>";
 		};
+		458510DA2B15C36500230EE5 /* BibleStudy */ = {
+			isa = PBXGroup;
+			children = (
+				458510DB2B15C37B00230EE5 /* BibleStudyView.swift */,
+				458510DD2B16B29400230EE5 /* BibleStudyViewModel.swift */,
+				458510DF2B16B2B000230EE5 /* BibleStudyService.swift */,
+			);
+			path = BibleStudy;
+			sourceTree = "<group>";
+		};
 		7A00721628F8ED4A00965AF7 /* AffirmationData */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,10 +409,14 @@
 		7AA8706528DACB3500134ADB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				458510D82B159B0D00230EE5 /* LandingView.swift */,
 				7A601440294E574500CD2103 /* HomeView.swift */,
 				7AA870B828DACCB700134ADB /* Onboarding */,
 				7AA8709728DACCB700134ADB /* Declaration View */,
-				458510D82B159B0D00230EE5 /* LandingView.swift */,
+				7AF18C942A0CC518005A6E31 /* Devotionals */,
+				7AA870A328DACCB700134ADB /* ProfileView */,
+				458510CD2B12B73000230EE5 /* Podcast */,
+				458510DA2B15C36500230EE5 /* BibleStudy */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -524,15 +544,12 @@
 		7AA8709728DACCB700134ADB /* Declaration View */ = {
 			isa = PBXGroup;
 			children = (
-				7AF18C942A0CC518005A6E31 /* Devotionals */,
 				7AA870B728DACCB700134ADB /* DeclarationView.swift */,
 				7AA8709828DACCB700134ADB /* IntentsBarView.swift */,
 				7AA870B628DACCB700134ADB /* CategoryChooserView.swift */,
 				7AA8709928DACCB700134ADB /* View Models */,
 				7AA8709C28DACCB700134ADB /* DeclarationContent */,
 				7AA870A028DACCB700134ADB /* ThemeChooserViews */,
-				458510CD2B12B73000230EE5 /* Podcast */,
-				7AA870A328DACCB700134ADB /* ProfileView */,
 			);
 			path = "Declaration View";
 			sourceTree = "<group>";
@@ -847,6 +864,7 @@
 				7AA8706C28DACC4E00134ADB /* Theme.swift in Sources */,
 				458510D52B13C77000230EE5 /* WebView.swift in Sources */,
 				7AA8709628DACCA800134ADB /* String+Extension.swift in Sources */,
+				458510DE2B16B29400230EE5 /* BibleStudyViewModel.swift in Sources */,
 				458510D32B12B7A200230EE5 /* PodcastService.swift in Sources */,
 				7AF18C8F2A0CBD03005A6E31 /* Devotional.swift in Sources */,
 				7AA870C228DACCB700134ADB /* IntentsBarView.swift in Sources */,
@@ -863,6 +881,7 @@
 				7AF18C8A29FF9819005A6E31 /* Gradients.swift in Sources */,
 				7AA8707D28DACC8300134ADB /* APIClient.swift in Sources */,
 				7AA8706E28DACC4E00134ADB /* DailyDeclaration.swift in Sources */,
+				458510DC2B15C37B00230EE5 /* BibleStudyView.swift in Sources */,
 				7AA8707F28DACC8300134ADB /* NotificationManager.swift in Sources */,
 				7AA870E028DACCB700134ADB /* WidgetScene.swift in Sources */,
 				7AA8708128DACC8300134ADB /* NotificationProcessor.swift in Sources */,
@@ -888,6 +907,7 @@
 				7AA8709028DACCA700134ADB /* SelectionFeedback.swift in Sources */,
 				458510CF2B12B74E00230EE5 /* PodcastsListView.swift in Sources */,
 				7AA870CC28DACCB700134ADB /* SettingsRow.swift in Sources */,
+				458510E02B16B2B000230EE5 /* BibleStudyService.swift in Sources */,
 				7ABA50C929E4DE60002699F1 /* PrayerDetailView.swift in Sources */,
 				7AA8709528DACCA800134ADB /* FontPickerController.swift in Sources */,
 				7AA8708028DACC8300134ADB /* NotificationHandler.swift in Sources */,
@@ -1129,7 +1149,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 136;
+				CURRENT_PROJECT_VERSION = 137;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
@@ -1148,7 +1168,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.110;
+				MARKETING_VERSION = 1.4.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1164,7 +1184,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 136;
+				CURRENT_PROJECT_VERSION = 137;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
@@ -1183,7 +1203,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.110;
+				MARKETING_VERSION = 1.4.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

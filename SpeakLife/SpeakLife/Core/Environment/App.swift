@@ -42,5 +42,10 @@ struct APP {
         static var googleInterstitialAdUnitID: String {
             "ca-app-pub-4361689433807539/4343229527"
         }
+        
+        static var rapidAPIKey: String {
+            "59d7338d06msh8bf6800ac4c9dbbp163ed2jsn4802c2f79391"
+        }
+
     }
 }

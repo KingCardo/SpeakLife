@@ -50,6 +50,13 @@ struct HomeView: View {
                                 Text("Devotionals")
                             }
                         
+//                        BibleStudyView()
+//                            .tabItem {
+//                                Image(systemName: "books.vertical.fill")
+//                                    .renderingMode(.original)
+//                                Text("Study")
+//                            }
+                        
                         //  PodcastView()
                         
                         //  PodcastsListView()

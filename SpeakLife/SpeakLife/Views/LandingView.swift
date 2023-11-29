@@ -10,20 +10,22 @@ import SwiftUI
 struct LandingView: View {
     var body: some View {
         ZStack(alignment: .center) {
-            Gradients().purple
-            Image("desertSky")
+           
+            Image("landingView1")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Constants.DALightBlue, lineWidth: 1))
-            VStack {
+                .aspectRatio(contentMode: .fill)
                 
-                Spacer()
-                    .frame(height: 100)
-                Text("SpeakLife")
-                    .font(Constants.titleFont)
-                Spacer()
-            }
+                //.clipShape(Rectangle())
+//                .overlay(Circle().stroke(Constants.DALightBlue, lineWidth: 1))
+//            VStack {
+//                
+//                Spacer()
+//                    .frame(height: 100)
+//                Text("SpeakLife")
+//                    .foregroundStyle(Color.white)
+//                    .font(Constants.titleFont)
+//                Spacer()
+//            }
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

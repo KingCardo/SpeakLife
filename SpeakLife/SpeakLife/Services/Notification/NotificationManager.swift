@@ -24,8 +24,8 @@ final class NotificationManager: NSObject {
         }
     }
     
-    static func notificationCategories() -> Set<DeclarationCategory> {
-        [.peace, .identity, .addiction, .guidance, .gratitude, .godsprotection, .love, .faith, .guilt]
+    func notificationCategories() -> Set<DeclarationCategory> {
+        [.peace, .identity, .guidance, .gratitude, .godsprotection, .love, .faith, .guilt]
     }
     
     
@@ -45,7 +45,7 @@ final class NotificationManager: NSObject {
             let notifications = getNotificationData(for: count, categories: categories)
             prepareNotifications(declarations: notifications,  startTime: startTime, endTime: endTime, count: count)
         } else {
-            let notifications = getNotificationData(for: count, categories: nil)
+            let notifications = getNotificationData(for: count, categories: notificationCategories())
             prepareNotifications(declarations: notifications,  startTime: startTime, endTime: endTime, count: count)
         }
         morningAffirmationReminder()
