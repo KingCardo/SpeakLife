@@ -92,7 +92,7 @@ struct ProfileView: View {
                 shareRow
                 reviewRow
                 feedbackRow
-                newFeaturesRow
+                //newFeaturesRow
             }
             
             Section(header: Text("Other".uppercased()).font(.caption)) {
@@ -103,8 +103,8 @@ struct ProfileView: View {
             Section(footer: VStack {
                 copyrightView
                 Spacer()
-                    .frame(height: 6)
-                Text(appVersion).font(.caption2).font(.caption)
+                    .frame(height: 12)
+                Text(appVersion).font(.caption2)//.font(.caption)
             }) {
             }
         }
