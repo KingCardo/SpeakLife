@@ -40,26 +40,17 @@ struct DevotionalView: View {
                     Alert(title: Text(viewModel.errorString))
                 }
         } else {
-//            VStack {
-//                Text("Oops. To continue using our services uninterrupted, please subscribe to our premium plan.")
-//                    .font(.callout)
-//                    .padding()
                 SubscriptionView(size: UIScreen.main.bounds.size)
-          //  }
         }
     }
     
     var devotionalView: some View {
         ZStack {
-            Gradients().random
+            Gradients().purple
             ScrollViewReader { scrollView in
                 ScrollView {
                     VStack {
-//                        if !subscriptionStore.isPremium {
-//                            Text("\(viewModel.devotionalsLeft) more free devotionals left")
-//                                .padding()
-//                        }
-
+                        
                         Spacer()
                             .frame(height: spacing)
                         dateLabel
