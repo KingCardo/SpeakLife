@@ -11,7 +11,7 @@ import Combine
 
 final class ThemeViewModel: ObservableObject {
     
-    @AppStorage("theme") var theme = Theme.landingView2.encode()!
+    @AppStorage("theme") var theme = Theme.lakeHills.encode()!
     @AppStorage("fontString") var fontString = "AppleSDGothicNeo-Regular" {
         didSet {
             selectedFont = .custom(fontString, size: 38)

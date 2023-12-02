@@ -21,6 +21,15 @@ struct Benefit: Identifiable  {
         Benefit(text: "Unlock all features"),
         Benefit(text: "Unlock all Jesus Devotionals"),
         Benefit(text: "Unlock all themes"),
+        Benefit(text:"Proverbs 18:21: Words have immense power; they can shape your reality and influence your future. Think of them as tools that can build or destroy."),
+
+        Benefit(text:"Mark 11:23: Your convictions, voiced out loud, hold incredible power. If you truly believe and verbalize your goals or aspirations, no obstacle is too big to overcome, not even metaphorical mountains."),
+
+        Benefit(text: "Matthew 21:22: Faith in what you pray for is crucial. When you ask for something, believe in its possibility with conviction, and your prayers can manifest into reality."),
+
+        Benefit(text: "James 3:4-5: Like a small rudder steering a large ship, your words, though seemingly insignificant, can define your life's trajectory. They can set you on a path to success or failure."),
+
+       // Benefit(text: "Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
         //        Benefit(text: "Bible Affirmations for all of life's journey"),
         //        Benefit(text: "Categories for any situation"),
         //        Benefit(text: "Create your own affirmations"),
@@ -33,6 +42,7 @@ struct Benefit: Identifiable  {
         
         Benefit(text: "Unlock all features"),
         Benefit(text: "Enjoy 50% off discount"),
+        Benefit(text: "Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
         //        Benefit(text: "Daily Morning Jesus Devotionals"),
         //        Benefit(text: "Create your own affirmations"),
         //        Benefit(text: "Bible Affirmations for all of life's journey"),
@@ -115,6 +125,11 @@ struct DiscountSubscriptionView: View {
             
             Text("Cancel anytime")
                 .font(.caption)
+            
+            Text("Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
+                .font(.body)
+                .foregroundStyle(.white)
+                .padding([.leading, .trailing, .top])
             
         }
     }
@@ -292,10 +307,10 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 24)
                     
-                    Text("Don’t copy the behavior and customs of this world, but let God transform you into a new person by changing the way you think. Then you will learn to know God’s will for you, which is good and pleasing and perfect. ~ Romans 12:2 (NIV)")
-                        .font(.title3)
-                        .foregroundColor(.white)
-                        .padding()
+//                    Text("Don’t copy the behavior and customs of this world, but let God transform you into a new person by changing the way you think. Then you will learn to know God’s will for you, which is good and pleasing and perfect. ~ Romans 12:2 (NIV)")
+//                        .font(.title3)
+//                        .foregroundColor(.white)
+//                        .padding()
                 }
                 
             }
