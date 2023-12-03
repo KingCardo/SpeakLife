@@ -25,7 +25,7 @@ struct Benefit: Identifiable  {
 
         Benefit(text:"Mark 11:23: Your convictions, voiced out loud, hold incredible power. If you truly believe and verbalize your goals or aspirations, no obstacle is too big to overcome, not even metaphorical mountains."),
 
-        Benefit(text: "Matthew 21:22: Faith in what you pray for is crucial. When you ask for something, believe in its possibility with conviction, and your prayers can manifest into reality."),
+       // Benefit(text: "Matthew 21:22: Faith in what you pray for is crucial. When you ask for something, believe in its possibility with conviction, and your prayers can manifest into reality."),
 
         Benefit(text: "James 3:4-5: Like a small rudder steering a large ship, your words, though seemingly insignificant, can define your life's trajectory. They can set you on a path to success or failure."),
 
@@ -56,10 +56,23 @@ struct DiscountSubscriptionView: View {
     let size: CGSize
     var callback: (() -> Void)?
     var currentSelection = InAppId.Subscription.speakLife1YR19
+    var percentOffText: String = "50% Off Yearly"
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
+    
+    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR19, percentOffText: String = "50% Off Yearly") {
+        self.size = size
+        self.currentSelection = currentSelection
+        self.percentOffText = percentOffText
+    }
+    
+    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR19,  callback: (() -> Void)? = nil) {
+        self.size = size
+        self.currentSelection = currentSelection
+        self.callback = callback
+    }
     
     var body: some View {
         ZStack {
@@ -104,7 +117,7 @@ struct DiscountSubscriptionView: View {
             Text("One Time Offer")
                 .font(.largeTitle)
             
-            Text("50% Off Yearly")
+            Text(percentOffText)
                 .textCase(.uppercase)
                 .font(.headline)
             

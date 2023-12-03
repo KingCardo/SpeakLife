@@ -30,12 +30,10 @@ struct DeclarationView: View {
     @AppStorage("shared.count") private var shared = 0
     @AppStorage("premium.count") private var premiumCount = 0
     @State var result: Result<MFMailComposeResult, Error>? = nil
-    @State private var showAlert = false
     @State private var share = false
     @State private var goPremium = false
     @State var isShowingMailView = false
     @State var showDailyDevotion = false
-    @State private var isSheetPresented = false
     @State private var isPresentingPremiumView = false
     
     @State private var timeElapsed = 0
@@ -51,16 +49,16 @@ struct DeclarationView: View {
                 }
             }
         
-            .onReceive(timer) { _ in
-                timeElapsed += 1
-                if timeElapsed >= 120 {
-                    timer.upstream.connect().cancel()
-                    showReview()
-                }
-            }
-            .onAppear {
-                // You might reset the timer here if needed
-            }
+//            .onReceive(timer) { _ in
+//                timeElapsed += 1
+//                if timeElapsed >= 120 {
+//                    timer.upstream.connect().cancel()
+//                    showReview()
+//                }
+//            }
+//            .onAppear {
+//                // You might reset the timer here if needed
+//            }
 
     }
     
@@ -150,6 +148,11 @@ struct DeclarationView: View {
                 }
                 Button("No thanks") {
                 }
+            }
+            .sheet(isPresented: $viewModel.showDiscountView) {
+                let selection = appState.discountOfferedTries > 1 ? InAppId.Subscription.speakLife1YR9 : InAppId.Subscription.speakLife1YR19
+                let percentOffText = appState.discountOfferedTries > 1 ? "75% Off Yearly" : "50% Off Yearly"
+                DiscountSubscriptionView(size: UIScreen.main.bounds.size, currentSelection: selection, percentOffText: percentOffText)
             }
             
             .sheet(isPresented: $isShowingMailView) {

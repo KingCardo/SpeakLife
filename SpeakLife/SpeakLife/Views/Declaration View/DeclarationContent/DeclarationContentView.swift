@@ -25,6 +25,8 @@ struct DeclarationContentView: View {
     @State private var showAnimation = false
     @State private var selectedTab = 0
     @State private var fadeInOpacity = 0.0
+    @State private var discountCounter = 0
+    @State private var reviewCounter = 0
     
     private let degrees: Double = 90
     
@@ -90,6 +92,8 @@ struct DeclarationContentView: View {
             .tabViewStyle(.page(indexDisplayMode: .never))
             .onChange(of: selectedTab) { newIndex in
                     fadeInOpacity = 0.0
+                offerDiscountSubscription()
+                askForReview()
                 withAnimation(.easeOut(duration: 1.0)) {
                     fadeInOpacity = 1.0
                 }
@@ -104,6 +108,21 @@ struct DeclarationContentView: View {
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
                 self.showShareSheet = false
             }
+        }
+    }
+    
+    private func askForReview() {
+        reviewCounter += 1
+        if reviewCounter == 3 || reviewCounter == 7 {
+            viewModel.requestReview = true 
+        }
+    }
+    
+    private func offerDiscountSubscription() {
+        discountCounter += 1
+        if (discountCounter == 5 || discountCounter == 12), appState.discountOfferedTries <= 3, !subscriptionStore.isPremium {
+            viewModel.showDiscountView = true
+            appState.discountOfferedTries += 1
         }
     }
     

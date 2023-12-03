@@ -27,6 +27,7 @@ final class AppState: ObservableObject {
     @AppStorage("selectedNotificationCategories") var selectedNotificationCategories: String = ""
     @AppStorage("showScreenshotLabel") var showScreenshotLabel = false
     @AppStorage("abbasLoveLetterIndex") var loveLetterIndex = 0
+    @AppStorage("discountOfferedTries") var discountOfferedTries = 0
 }
 
 extension Date: RawRepresentable {
