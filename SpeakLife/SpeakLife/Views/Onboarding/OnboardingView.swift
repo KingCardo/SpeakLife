@@ -46,8 +46,8 @@ struct OnboardingView: View  {
                 
                 
                 
-                discountScene(size: geometry.size)
-                    .tag(Tab.discount)
+//                discountScene(size: geometry.size)
+//                    .tag(Tab.discount)
                 
             }
             .ignoresSafeArea()
@@ -157,7 +157,7 @@ struct OnboardingView: View  {
             case .subscription:
                 selection = .widgets
             case .widgets:
-                moveToDiscount()
+                dismissOnboarding()
             case .discount:
                 dismissOnboarding()
             }

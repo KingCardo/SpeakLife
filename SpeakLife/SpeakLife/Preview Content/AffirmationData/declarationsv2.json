@@ -4,7 +4,7 @@
         {
             "text": "Give thanks to the Lord, for he is good! His faithful love endures forever.",
             "isFavorite": false,
-            "categories": ["love", "gratitude", "rest"],
+            "categories": ["love", "gratitude", "rest", "hardtimes"],
             "book": "Psalm 118:1"
         },
         {
@@ -50,7 +50,7 @@
             "book": "Psalm 118:17"
         },
         {
-            "text": "I thank you for answering my prayer and giving me victory!",
+            "text": "I thank you for answering my prayers and giving me victory!",
             "isFavorite": false,
             "categories": ["guidance", "gratitude", "hardtimes"],
             "book": "Psalm 118:21"
@@ -60,12 +60,6 @@
             "isFavorite": false,
             "categories": ["motivation", "gratitude", "hardtimes"],
             "book": "Psalm 118:24"
-        },
-        {
-            "text": "Give thanks to the Lord, for he is good! His faithful love endures forever.",
-            "isFavorite": false,
-            "categories": ["love", "gratitude", "hardtimes"],
-            "book": "Psalm 118:29"
         },
         {
             "text": "I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",

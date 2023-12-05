@@ -44,6 +44,8 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         NotificationManager.shared.notificationCenter.delegate = NotificationHandler.shared
     }
     
+
+    
     
     private func registerBGTask() {
         
