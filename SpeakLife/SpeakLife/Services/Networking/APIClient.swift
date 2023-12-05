@@ -91,8 +91,8 @@ final class APIClient: APIService {
         do {
             let welcome = try JSONDecoder().decode(Welcome.self, from: data)
             let declarations = Set(welcome.declarations)
-            let removed = declarations.filter({ $0.book != nil })
-            let array = Array(removed)
+//            let removed = declarations.filter({ $0.book != nil })
+            let array = Array(declarations)
             let needsSync = array.count != declarationCountBE
             print(array.count, declarationCountBE, "RWRW count")
             print(needsSync, "RWRW  needs sync")

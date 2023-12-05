@@ -51,26 +51,33 @@ struct SpeakLifeApp: App {
                     if appState.notificationEnabled {
                         scheduleReminderNotification()
                     }
+                
+                //reset for updated versions
+                if appState.notificationEnabled, appState.resetNotifications {
+                    resetNotifications()
+                    appState.resetNotifications.toggle()
+                }
                
+                // update for next four days
                 if appState.lastNotificationSetDate < appState.lastNotificationSetDate.addingTimeInterval(fourDaysInSeconds), appState.notificationEnabled {
-                   
-                        NotificationManager.shared.registerNotifications(count: appState.notificationCount, startTime: appState.startTimeIndex, endTime: appState.endTimeIndex)
-                        DispatchQueue.main.async {
-                            appState.lastNotificationSetDate = Date()
-                        }
-                        
+                    
+                    resetNotifications()
+        
                     }
-            //    }
             case .inactive:
                 break
             case .background:
                 break
-//                DispatchQueue.global().async {
-//                    timeTracker.calculateElapsedTime()
-//                }
             @unknown default:
                 break
             }
+        }
+    }
+    
+    private func resetNotifications() {
+        NotificationManager.shared.registerNotifications(count: appState.notificationCount, startTime: appState.startTimeIndex, endTime: appState.endTimeIndex)
+        DispatchQueue.main.async {
+            appState.lastNotificationSetDate = Date()
         }
     }
     

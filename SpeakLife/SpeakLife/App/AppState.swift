@@ -28,6 +28,7 @@ final class AppState: ObservableObject {
     @AppStorage("showScreenshotLabel") var showScreenshotLabel = false
     @AppStorage("abbasLoveLetterIndex") var loveLetterIndex = 0
     @AppStorage("discountOfferedTries") var discountOfferedTries = 0
+    @AppStorage("resetNotifications") var resetNotifications = true
 }
 
 extension Date: RawRepresentable {

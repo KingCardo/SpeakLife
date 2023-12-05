@@ -13,7 +13,7 @@ final class DeclarationViewModel: ObservableObject {
     
     // MARK: - Properties
     
-    @AppStorage("selectedCategory") var selectedCategoryString = "faith"
+    @AppStorage("selectedCategory") var selectedCategoryString = "general"
     
     @Published var declarations: [Declaration] = []
     
@@ -28,7 +28,7 @@ final class DeclarationViewModel: ObservableObject {
     private var allDeclarationsDict: [DeclarationCategory: [Declaration]] = [:]
     
     var selectedCategory: DeclarationCategory {
-        DeclarationCategory(rawValue: selectedCategoryString) ?? .love
+        DeclarationCategory(rawValue: selectedCategoryString) ?? .general
     }
     
     @Published var favorites: [Declaration] = [] {
@@ -219,6 +219,7 @@ final class DeclarationViewModel: ObservableObject {
             }
             self?.selectedCategoryString = category.rawValue
             let shuffled = declarations.shuffled()
+            print(shuffled.count, "RWRW")
             self?.declarations = shuffled
             completion(true)
         }

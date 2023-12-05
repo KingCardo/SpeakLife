@@ -99,3 +99,16 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         
     }
 }
+
+
+//extension AppDelegate: SKPaymentTransactionObserver {
+//    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+//        
+//    }
+//    
+//    func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
+//        // Handle the incoming purchase request
+//        // Return true if you are ready to process the payment; return false to defer it
+//        return true
+//    }
+//}
