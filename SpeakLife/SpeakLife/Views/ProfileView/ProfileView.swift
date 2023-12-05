@@ -311,10 +311,18 @@ struct ProfileView: View {
     }
     
     private var privacyPolicyRow: some View {
-        ZStack {
-            Text("Privacy Policy", comment: "privacy policy")
-            Link("", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
-        }
+        NavigationLink(LocalizedStringKey("Privay Policy"), destination: LazyView(PrivacyPolicyView()))
+            .opacity(0)
+            .background(
+                HStack {
+                    Text("Privacy Policy", comment: "pp")
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 8)
+                        .foregroundColor(Constants.DAMidBlue)
+                })
     }
     
     private var termsConditionsRow: some View {
@@ -366,5 +374,57 @@ extension UIView {
             return image
         }
         return nil
+    }
+}
+
+struct PrivacyPolicyView: View {
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Privacy Policy for SpeakLife: Bible Affirmations")
+                    .font(.title)
+                    .fontWeight(.bold)
+
+                Text("Last Updated: 12-05-2023")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+
+                Text("Welcome to SpeakLife ('we', 'us', 'our'). We are committed to protecting your privacy. This Privacy Policy explains how we handle and treat your data when you use SpeakLife: Bible Affirmations ('App')")
+                    .font(.body)
+                
+                Text("1. Information We Collect")
+                    .font(.subheadline)
+                Text("* As a policy, our App does not collect, store, or process any personal data from our users. We believe in your right to privacy and have designed our App accordingly.")
+                    .font(.body)
+                
+                Text("2. Data Usage")
+                    .font(.subheadline)
+                Text("* Since we do not collect any personal data, there is no usage of such data.")
+                    .font(.body)
+                
+                Text("3. Third-Party Services")
+                    .font(.subheadline)
+                Text("* Our App does not use or integrate third-party services that may collect information about you.")
+                    .font(.body)
+                
+                Text("3. Third-Party Services")
+                    .font(.subheadline)
+                Text("* Our App does not use or integrate third-party services that may collect information about you.")
+                    .font(.body)
+                
+                Text("4. Changes to Our Privacy Policy")
+                    .font(.subheadline)
+                Text("* We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last Updated' date.")
+                    .font(.body)
+                
+                Text("5. Contact Us")
+                    .font(.subheadline)
+                Text("* If you have any questions about our Privacy Policy, please contact us at speaklifebibleapp@gmail.com.")
+                    .font(.body)
+                   
+            }
+            .padding()
+        }
+        .navigationTitle("Privacy Policy")
     }
 }

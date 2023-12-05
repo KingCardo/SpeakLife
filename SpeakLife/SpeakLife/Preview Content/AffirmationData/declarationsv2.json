@@ -4,7 +4,7 @@
         {
             "text": "Give thanks to the Lord, for he is good! His faithful love endures forever.",
             "isFavorite": false,
-            "categories": ["love", "gratitude", "rest", "hardtimes"],
+            "categories": ["love", "gratitude", "rest"],
             "book": "Psalm 118:1"
         },
         {
@@ -22,7 +22,7 @@
         {
             "text": "In my distress I prayed to the Lord, and the Lord answered me and set me free.",
             "isFavorite": false,
-            "categories": ["guidance", "rest", "peace", "hope", "hardtimes"],
+            "categories": ["guidance", "peace", "hope", "hardtimes"],
             "book": "Psalm 118:5"
         },
         {
@@ -88,6 +88,16 @@
         {
             "text": "You must serve only the Lord your God. If you do, I will bless you with food and water, and I will protect you from illness.",
             "book": "Exodus 23:25 NLT",
+            "isFavorite": false,
+            "categories": ["health"]
+        },
+        {
+            "text": "I am committed to serving the Living God only! Trusting in his love, abundant blessings of health, nourishment, and protection!",
+            "isFavorite": false,
+            "categories": ["health"]
+        },
+        {
+            "text": "Jesus is my guide and savior, leading me to serve the Lord with dedication, and in doing so, I am blessed with sustenance, hydration, and health.",
             "isFavorite": false,
             "categories": ["health"]
         },
