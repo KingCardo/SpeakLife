@@ -50,17 +50,6 @@ struct DeclarationView: View {
                     showReview()
                 }
             }
-        
-//            .onReceive(timer) { _ in
-//                timeElapsed += 1
-//                if timeElapsed >= 120 {
-//                    timer.upstream.connect().cancel()
-//                    showReview()
-//                }
-//            }
-//            .onAppear {
-//                // You might reset the timer here if needed
-//            }
 
     }
     
@@ -103,10 +92,6 @@ struct DeclarationView: View {
                     }
                 }
             }
-                
-                    .sheet(isPresented: $goPremium) {
-                        SubscriptionView(size: geometry.size)
-                    }
         }
             
             .background(
@@ -151,16 +136,7 @@ struct DeclarationView: View {
                 Button("No thanks") {
                 }
             }
-//            .alert(isPresented: $viewModel.showDiscountView, content: {
-//                Alert(title: Text("Go Premium?"),
-//                      message: Text(
-//                      primaryButton: .default(Text("Yes"),
-//                                              action: {
-//                    showSubscriptionView()
-//                }), secondaryButton: .cancel())
-//                
-//            })
-            .sheet(isPresented: $isPresentingDiscountView) {
+            .sheet(isPresented: $viewModel.showDiscountView) {
                 if appState.discountOfferedTries > 1 {
                     DiscountSubscriptionView(size: UIScreen.main.bounds.size, currentSelection: .speakLife1YR19, percentOffText: "50% Off Yearly")
                 } else {
@@ -174,27 +150,12 @@ struct DeclarationView: View {
         
     }
     
-    private func showSubscriptionView() {
-        isPresentingDiscountView.toggle()
-//        let selection = appState.discountOfferedTries > 1 ? InAppId.Subscription.speakLife1YR19 : InAppId.Subscription.speakLife1YR39
-//        let percentOffText = appState.discountOfferedTries > 1 ? "50% Off Yearly" : "Go Premium"
-//        
-//        DiscountSubscriptionView(size: UIScreen.main.bounds.size, currentSelection: .speakLife1YR19, percentOffText: "50% Off Yearly")
-    }
         
         private func premiumView()  {
             self.isPresentingPremiumView = true
             Analytics.logEvent(Event.tryPremiumTapped, parameters: nil)
         }
     
-//    private func presentGoPremium() {
-//        if !subscriptionStore.isPremium, premiumCount == 2 || premiumCount == 6 || premiumCount == 15 {
-//            goPremium = true
-//        }
-//        if premiumCount > 15 {
-//            premiumCount = 0
-//        }
-//    }
     
     private func shareApp() {
 #if !DEBUG

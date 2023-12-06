@@ -12,11 +12,16 @@ struct PremiumView: View {
     @Environment(\.openURL) var openURL
     
     @EnvironmentObject var subscriptionStore: SubscriptionStore
+    @EnvironmentObject var appState: AppState
     
     var body: some View {
         GeometryReader { geometry in
             if !subscriptionStore.isPremium {
-                SubscriptionView(size: geometry.size)
+                if appState.discountOfferedTries == 2 {
+                    DiscountSubscriptionView(size: UIScreen.main.bounds.size, currentSelection: .speakLife1YR19, percentOffText: "50% Off Yearly")
+                } else {
+                    SubscriptionView(size: UIScreen.main.bounds.size)
+                }
             } else {
                 NavigationView {
                     VStack {
