@@ -91,7 +91,7 @@ final class APIClient: APIService {
         do {
             let welcome = try JSONDecoder().decode(Welcome.self, from: data)
             let declarations = Set(welcome.declarations)
-            let general = declarations.filter { $0.category == .general }
+            let general = declarations.filter { $0.category == .alignment }
             let generalArray = Array(general)
             let removedAllAffirmationsWithoutBookExceptGeneral = declarations.filter { $0.book != nil }
             var array = Array(removedAllAffirmationsWithoutBookExceptGeneral)

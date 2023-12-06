@@ -161,7 +161,7 @@ struct DiscountSubscriptionView: View {
                     Text("Abundant savings. Billed annually.")
                         .font(.caption)
                 }
-                .foregroundColor(.white)
+                .foregroundColor(.black)
                 .padding(.leading)
                 
                 Spacer()

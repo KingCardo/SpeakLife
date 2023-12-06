@@ -25,7 +25,7 @@ final class NotificationManager: NSObject {
     }
     
     func notificationCategories() -> Set<DeclarationCategory> {
-        [.general, .peace, .identity, .guidance, .gratitude, .godsprotection, .love, .faith]
+        [.alignment, .peace, .identity, .guidance, .gratitude, .godsprotection, .love, .faith]
     }
     
     

@@ -120,7 +120,7 @@ struct DeclarationContentView: View {
     
     private func offerDiscountSubscription() {
         discountCounter += 1
-        if (discountCounter % 12 == 0), appState.discountOfferedTries <= 2, !subscriptionStore.isPremium {
+        if (discountCounter % 9 == 0), appState.discountOfferedTries <= 2, !subscriptionStore.isPremium {
             viewModel.showDiscountView = true
             appState.discountOfferedTries += 1
         }

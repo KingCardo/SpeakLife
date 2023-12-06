@@ -118,7 +118,7 @@ struct DeclarationView: View {
             
             .alert(isPresented: $viewModel.showErrorMessage) {
                 Alert(
-                    title: Text("Error", comment: "Error title message") +  Text(viewModel.errorMessage ?? ""),
+                    title: Text("Error", comment: "Error title message") + Text(viewModel.errorMessage ?? ""),
                     message: Text("Select a category", comment: "OK alert message")
                 )
             }
@@ -154,6 +154,7 @@ struct DeclarationView: View {
         private func premiumView()  {
             self.isPresentingPremiumView = true
             Analytics.logEvent(Event.tryPremiumTapped, parameters: nil)
+            appState.discountOfferedTries += 1
         }
     
     

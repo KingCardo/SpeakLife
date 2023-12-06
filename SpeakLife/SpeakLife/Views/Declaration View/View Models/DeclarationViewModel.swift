@@ -28,7 +28,7 @@ final class DeclarationViewModel: ObservableObject {
     private var allDeclarationsDict: [DeclarationCategory: [Declaration]] = [:]
     
     var selectedCategory: DeclarationCategory {
-        DeclarationCategory(rawValue: selectedCategoryString) ?? .general
+        DeclarationCategory(rawValue: selectedCategoryString) ?? .alignment
     }
     
     @Published var favorites: [Declaration] = [] {

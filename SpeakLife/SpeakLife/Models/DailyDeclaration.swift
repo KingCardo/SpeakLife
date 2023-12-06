@@ -13,7 +13,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         return  lhs.name <= rhs.name
     }
     
-    case general
+    case alignment
     case faith
     case love
     case favorites
@@ -42,7 +42,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case guilt
     
     static var categoryOrder: [DeclarationCategory] = [
-        .general,
+        .alignment,
         .faith,
         .addiction,
         .identity,
@@ -74,8 +74,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         categories.insert(.faith, at: 0)
         categories.insert(.myOwn, at: 0)
         categories.insert(.favorites, at: 0)
-        categories.insert(.general, at: 0)
-        categories.remove(at: 8)
+        categories.insert(.alignment, at: 0)
+        categories.remove(at: 5)
         categories.remove(at: 10)
         return categories
            
@@ -114,7 +114,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     var isPremium: Bool {
         switch self {
-        case .general, .favorites, .myOwn, .faith: return false
+        case .alignment, .favorites, .myOwn, .faith: return false
         default: return true
         }
     }
