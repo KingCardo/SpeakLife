@@ -76,7 +76,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         categories.insert(.favorites, at: 0)
         categories.insert(.alignment, at: 0)
         categories.remove(at: 5)
-        categories.remove(at: 10)
+        categories.remove(at: 8)
         return categories
            
     }

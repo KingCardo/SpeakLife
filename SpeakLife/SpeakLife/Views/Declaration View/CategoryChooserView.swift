@@ -113,7 +113,6 @@ struct CategoryChooserView: View {
                     categoryList(geometry: geometry)
                     
                 }
-                .navigationBarTitle(Text("Select Category"))
                 .background(
                     Image("declarationBackground")
                         .resizable()
