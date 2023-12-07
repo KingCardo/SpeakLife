@@ -279,8 +279,7 @@
             "category": "selfcontrol"
         },
         {
-            "text": "Let us hold tightly without wavering to the hope we affirm, for God can be trusted to keep his promise.",
-            "book": "Hebrews 10:23 NLT",
+            "text": "I know God can be trusted to keep his promises.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -296,12 +295,6 @@
             "isFavorite": false,
             "category": "faith"
         },
-        {
-            "text": "For in it the righteousness of God is revealed from faith for faith, as it is written, 'The righteous shall live by faith.'",
-            "book": "Romans 1:17 ESV",
-            "isFavorite": false,
-            "category": "faith"
-        }, 
         {
             "text": "In every moment, I am guided by God's righteousness, living and breathing my life through unwavering faith.",
             "isFavorite": false,
@@ -377,13 +370,7 @@
             "category": "faith"
         },
         {
-            "text": "\"I tell you the truth, you can say to this mountain, ‘May you be lifted up and thrown into the sea,’ and it will happen. But you must really believe it will happen and have no doubt in your heart.\"",
-            "book": "Mark 11:23 NLT",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "For we walk by faith, not by sight.",
+            "text": "I walk by faith, not by sight.",
             "book": "2 Corinthians 5:7 ESV",
             "isFavorite": false,
             "category": "faith"
@@ -422,12 +409,12 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is the anchor of my faith, keeping me steadfast amidst life's storms.",
+            "text": "Jesus is my rock, keeping me secure in life's storms.",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "Jesus is my salvation and my declaration; in Him, my faith is unbreakable.",
+            "text": "Jesus is my salvation; in Him, my faith is unbreakable.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -443,7 +430,7 @@
             "category": "faith"
         },
         {
-            "text": "Seek his will in all you do, and he will show you which path to take.",
+            "text": "I seek His will in all you do, and He will show me which path to take.",
             "book": "Proverbs 3:6 NLT",
             "isFavorite": false,
             "category": "faith"
@@ -455,7 +442,7 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is the renewer of my strength, lifting me to soar like an eagle and ensuring I never tire.",
+            "text": "Jesus is the renewer of my strength, lifting me to soar like an eagle.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -466,7 +453,7 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is my unfaltering strength, standing with me always. In Him, I am bold and fearless.",
+            "text": "Jesus is my unwavering strength, standing with me always. In Him, I am bold and fearless.",
             "isFavorite": false,
             "category": "faith",
             "book": "Deuteronomy 31:6"
@@ -1000,25 +987,13 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is the eternal promise, unchanging and steadfast. In His word, I find victory amidst life's fleeting moments.",
-            "isFavorite": false,
-            "category": "faith",
-            "book": "Isaiah 40:8"
-        },
-        {
             "text": "This is the day that the Lord has made. Let us be full of joy and be glad in it.",
             "book": "Psalm 118:24 NLT",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "Jesus is the reason for every joyful day. I rejoice, for He has made this day and invites me to live it in gratitude.",
-            "isFavorite": false,
-            "category": "faith",
-            "book": "Psalm 118:24"
-        },
-        {
-            "text": "I am the Vine and you are the branches. Get your life from Me. Then I will live in you and you will give much fruit. You can do nothing without Me.",
+            "text": "'I am the Vine and you are the branches. Get your life from Me. Then I will live in you and you will give much fruit. You can do nothing without Me.'",
             "book": "John 15:5 NLV",
             "isFavorite": false,
             "category": "faith"
@@ -1060,7 +1035,7 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is my liberator, freeing me from all my fears. Through Him, I walk in courage and confidence.",
+            "text": "Jesus is my deliverer, freeing me from all my fears. Through Him, I walk in courage and confidence.",
             "isFavorite": false,
             "category": "faith",
             "book": "Psalm 34:4"
@@ -1198,7 +1173,7 @@
             "category": "faith"
         },
         {
-            "text": "Give all your worries and cares to God, for he cares about you.",
+            "text": "I give all my worries and cares to God, for He cares about me.",
             "book": "1 Peter 5:7 NLT",
             "isFavorite": false,
             "category": "depression"
@@ -1318,12 +1293,6 @@
             "book": "Genesis 28:15"
         },
         {
-            "text": "Jesus is the gift of grace; not of my deeds, but of His boundless mercy.",
-            "isFavorite": false,
-            "category": "faith",
-            "book": "Ephesians 2:9"
-        },
-        {
             "text": "\"If you will listen carefully to the voice of the Lord your God and do what is right in his sight, obeying his commands and keeping all his decrees, then I will not make you suffer any of the diseases I sent on the Egyptians; for I am the Lord who heals you.\"",
             "book": "Exodus 15:26 NLT",
             "isFavorite": false,
@@ -1340,12 +1309,6 @@
             "book": "Deuteronomy 7:9 NLV",
             "isFavorite": false,
             "category": "love"
-        },
-        {
-            "text": "But from there you will seek the Lord your God, and you will find Him if you search for Him with all your heart and all your soul.",
-            "book": "Deuteronomy 4:29 AMP",
-            "isFavorite": false,
-            "category": "faith"
         },
         {
             "text": "Jesus is the treasure I find when I seek with all my heart.",
@@ -5918,13 +5881,7 @@
             "category": "faith"
         },
         {
-            "text": "My faith comes from hearing, and hearing through the word of Christ.",
-            "book": "Romans 10:17",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "I walk in Christ Jesus, rooted and built up in Him and established in the faith.",
+            "text": "I walk in Christ Jesus, rooted in Him and established in faith.",
             "book": "Colossians 2:6-7",
             "isFavorite": false,
             "category": "faith"
@@ -5954,14 +5911,7 @@
             "category": "faith"
         },
         {
-            "text": "I am shielded by God’s power through faith for the salvation ready to be revealed in the last time.",
-            "book": "1 Peter 1:5",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "I resist the devil, firm in my faith.",
-            "book": "1 Peter 5:9",
+            "text": "I resist the devil, so he must leave!",
             "isFavorite": false,
             "category": "faith"
         },
@@ -5973,13 +5923,6 @@
         },
         {
             "text": "I ask in faith without doubting.",
-            "book": "James 1:6",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "I keep my faith and a good conscience, which some have rejected and suffered shipwreck in regard to their faith.",
-            "book": "1 Timothy 1:19",
             "isFavorite": false,
             "category": "faith"
         },
@@ -5996,8 +5939,7 @@
             "category": "faith"
         },
         {
-            "text": "I continue in the faith, stable and steadfast, not shifting from the hope of the gospel.",
-            "book": "Colossians 1:23",
+            "text": "It's me and God against the world.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -6008,44 +5950,7 @@
             "category": "faith"
         },
         {
-            "text": "I have been justified by faith, I have peace with God through our Lord Jesus Christ.",
-            "book": "Romans 5:1",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "Faith comes from hearing, and hearing through the word of Christ.",
-            "book": "Romans 10:17",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "I ask in faith, with no doubting, for the one who doubts is like a wave of the sea that is driven and tossed by the wind.",
-            "book": "James 1:6",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "By faith, I am certain of what I do not see.",
-            "book": "Hebrews 11:1",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "I continue in my faith, established and firm, and do not move from the hope held out in the gospel.",
-            "book": "Colossians 1:23",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "The life I now live in the body, I live by faith in the Son of God, who loved me and gave himself for me.",
-            "book": "Galatians 2:20",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "I hold unswervingly to the hope I profess, for he who promised is faithful.",
-            "book": "Hebrews 10:23",
+            "text": "I hold on to God's promises because he is faithful.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -6062,13 +5967,7 @@
             "category": "faith"
         },
         {
-            "text": "I hold firm to the trustworthy word as taught, so that I may be able to give instruction in sound doctrine and also to rebuke those who contradict it.",
-            "book": "Titus 1:9",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "I believe that Jesus is the Christ, the Son of God, and that by believing I may have life in His name.",
+            "text": "I believe that Jesus is the Son of God.",
             "book": "John 20:31",
             "isFavorite": false,
             "category": "faith"
@@ -6080,56 +5979,20 @@
             "category": "faith"
         },
         {
-            "text": "By the grace of God, I am what I am, and His grace to me was not in vain. On the contrary, I worked harder than any of them, though it was not I, but the grace of God that is with me.",
-            "book": "1 Corinthians 15:10",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "I am not ashamed, for I know whom I have believed, and I am convinced that he is able to guard until that day what has been entrusted to me.",
-            "book": "2 Timothy 1:12",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "The aim of my charge is love that issues from a pure heart and a good conscience and a sincere faith.",
+            "text": "I move with a pure heart and clear conscience.",
             "book": "1 Timothy 1:5",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "I have set the LORD always before me; because he is at my right hand, I shall not be shaken.",
+            "text": "I am stable as a rock because Jesus is always with me.",
             "book": "Psalm 16:8",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "By faith in the name of Jesus, His name itself has made strong.",
-            "book": "Acts 3:16",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "I believe I will look upon the goodness of the LORD in the land of the living! I wait for the LORD, who is my help and my shield.",
-            "book": "Psalm 27:13-14",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "God's divine power has granted to me all things that pertain to life and godliness, through the knowledge of Him who called us to His own glory and excellence.",
-            "book": "2 Peter 1:3",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "I keep this commandment unstained and free from reproach until the appearing of our Lord Jesus Christ.",
-            "book": "1 Timothy 6:14",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "God did not appoint me for wrath, but to obtain salvation through our Lord Jesus Christ.",
-            "book": "1 Thessalonians 5:9",
+            "text": "I wait on Jesus, who is my help and my shield.",
+            "book": "Psalm 27:14",
             "isFavorite": false,
             "category": "faith"
         },
@@ -6152,7 +6015,7 @@
             "category": "faith"
         },
         {
-            "text": "I am confident of this, that He who began a good work in me will carry it on to completion until the day of Christ Jesus.",
+            "text": "I am confident that Jesus will finish the work he started in me.",
             "book": "Philippians 1:6",
             "isFavorite": false,
             "category": "faith"
@@ -7589,12 +7452,6 @@
         {
             "text": "I am not anxious about anything, but in every situation, by prayer and petition, with thanksgiving, I present my requests to God.",
             "book": "Philippians 4:6",
-            "isFavorite": false,
-            "category": "hardtimes"
-        },
-        {
-            "text": "I wait for the LORD, my soul waits, and in his word I hope.",
-            "book": "Psalm 130:5",
             "isFavorite": false,
             "category": "hardtimes"
         },
@@ -12190,7 +12047,7 @@
             "category": "perseverance"
         },
         {
-            "text": "Jesus is the anchor, holding me steady in rough seas.",
+            "text": "Jesus is my anchor, keeping me safe in life's storms.",
             "isFavorite": false,
             "category": "perseverance"
         },
@@ -12245,12 +12102,12 @@
             "category": "perseverance"
         },
         {
-            "text": "Jesus is the foundation of my faith, unshakeable and steadfast.",
+            "text": "Jesus is the foundation of my faith, unshakeable.",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "Jesus is my Savior, redeeming me with unending love.",
+            "text": "Jesus is my Savior.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -12260,12 +12117,12 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is the embodiment of divine love, warming my heart.",
+            "text": "Jesus is the embodiment of divine love.",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "Jesus is the bridge to the Father, connecting me to divine grace.",
+            "text": "Jesus is the bridge to the Father, connecting me to God.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -12275,17 +12132,17 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is the light, dispelling all my fears and doubts.",
+            "text": "Jesus is the light, removing all my fears and doubts.",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "Jesus is my defender, shielding me from despair and doubt.",
+            "text": "Jesus is my defender.",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "Jesus is my peace, soothing the tempests of my soul.",
+            "text": "Jesus is my peace.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -12295,7 +12152,7 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is my shepherd, guiding me with gentle assurance.",
+            "text": "Jesus is my shepherd, guiding me everday.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -12310,7 +12167,7 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is the way, leading me with unerring wisdom.",
+            "text": "Jesus is the way, leading me with wisdom.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -12325,12 +12182,12 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is my strength, fortifying me in every trial.",
+            "text": "Jesus is my strength, protecting me in every trial.",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "Jesus is the resurrection, promising life eternal.",
+            "text": "Jesus is the resurrection, giving eternal life.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -12340,17 +12197,12 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is my courage, emboldening my spirit in adversity.",
+            "text": "Jesus is my courage.",
             "isFavorite": false,
             "category": "faith"
         },
         {
             "text": "Jesus is my redeemer, turning my struggles into triumph.",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "Jesus is my mediator, advocating for me in heavenly realms.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -12361,11 +12213,6 @@
         },
         {
             "text": "Jesus is my joy, infusing my spirit with gladness.",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "Jesus is the gate, welcoming me into eternal fellowship.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -12396,7 +12243,7 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is my fortress, wherein I find unwavering security.",
+            "text": "Jesus is my protector, wherein I find my safe place.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -12411,22 +12258,17 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is my consolation, offering solace in sorrow.",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
             "text": "Jesus is the alpha and omega, the eternal certainty.",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "Jesus is the lamb of God, sanctifying me completely.",
+            "text": "Jesus is the lamb of God, always blessing me.",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "Jesus is the prince of peace, stabilizing my restless heart.",
+            "text": "Jesus is my prince of peace, stabilizing my restless heart.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -12446,22 +12288,7 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is the source of bliss, filling me with pure joy.",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
             "text": "Jesus is the giver of life, breathing vitality into me.",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "Jesus is the high priest, ever interceding for me.",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "Jesus is the light of the world, eliminating all shadow.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -12471,7 +12298,7 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is the cornerstone, perfectly aligning my life.",
+            "text": "Jesus is my foundation, perfectly aligning my life.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -12481,7 +12308,7 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is my fortress, in whom I stand secure.",
+            "text": "Jesus is my fortress, who I run to.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -12516,7 +12343,7 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is the wonder counselor, guiding with divine wisdom.",
+            "text": "Jesus is my source, guiding with divine wisdom.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -12531,7 +12358,7 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is the eternal victor, triumphing over all adversity.",
+            "text": "Jesus is King, triumphing over all adversity.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -12622,11 +12449,6 @@
         },
         {
             "text": "Jesus is the bestower of grace, constantly renewing my identity.",
-            "isFavorite": false,
-            "category": "identity"
-        },
-        {
-            "text": "Jesus is the anchor of my selfhood, preventing me from drifting away.",
             "isFavorite": false,
             "category": "identity"
         },
@@ -18176,7 +17998,7 @@
                                     "category": "wealth"
                                 },
                                 {
-                                    "text": "I am complete in Him, who is the head of all principality and power.",
+                                    "text": "I am made complete with God by my side.",
                                     "isFavorite": false,
                                     "category": "alignment"
                                 },
@@ -18221,7 +18043,7 @@
                                     "category": "alignment"
                                 },
                                 {
-                                    "text": "The Lord is the avenger of my life, of whom shall I be afraid?",
+                                    "text": "God is the avenger of my life, of whom shall I be afraid?",
                                     "isFavorite": false,
                                     "category": "alignment"
                                 },
@@ -18231,7 +18053,7 @@
                                     "category": "alignment"
                                 },
                                 {
-                                    "text": "My God supplies all my need according to His riches in glory by Christ Jesus.",
+                                    "text": "My God supplies all my needs!",
                                     "isFavorite": false,
                                     "category": "alignment"
                                 },
@@ -18291,11 +18113,6 @@
                                     "category": "alignment"
                                 },
                                 {
-                                    "text": "I press toward the goal for the prize of the upward call of God in Christ Jesus.",
-                                    "isFavorite": false,
-                                    "category": "alignment"
-                                },
-                                {
                                     "text": "I am crucified with Christ; it is no longer I who live, but Christ lives in me.",
                                     "isFavorite": false,
                                     "category": "alignment"
@@ -18316,7 +18133,7 @@
                                     "category": "alignment"
                                 },
                                 {
-                                    "text": "I am chosen by God, holy and beloved.",
+                                    "text": "I am chosen by God.",
                                     "isFavorite": false,
                                     "category": "alignment"
                                 },
@@ -18376,12 +18193,12 @@
                                     "category": "alignment"
                                 },
                                 {
-                                    "text": "I am thankful for my eyes!",
+                                    "text": "I am thankful for my vision.",
                                     "isFavorite": false,
                                     "category": "alignment"
                                 },
                                 {
-                                    "text": "I am thankful for my ears.",
+                                    "text": "I am thankful for my senses.",
                                     "isFavorite": false,
                                     "category": "alignment"
                                 },
@@ -18478,7 +18295,7 @@
                                     "isFavorite": false,
                                     "category": "alignment"
                                 },{
-                                    "text": "I may fail but God picks me back up.",
+                                    "text": "I may fail, but God picks me back up.",
                                     "isFavorite": false,
                                     "category": "alignment"
                                 },
@@ -18966,7 +18783,7 @@
                                     "isFavorite": false,
                                     "category": "alignment"
                                 },{
-                                    "text": "I went through the fire and come out not even smelling like smoke.",
+                                    "text": "I went through the fire and came out not even smelling like smoke.",
                                     "isFavorite": false,
                                     "category": "alignment"
                                 },{
@@ -19138,7 +18955,7 @@
                                     "isFavorite": false,
                                     "category": "alignment"
                                 },{
-                                    "text": "Even if I don't see a way doesn't mean God doesn't have a way.",
+                                    "text": "Even if I don't see a way, doesn't mean God doesn't have a way.",
                                     "isFavorite": false,
                                     "category": "alignment"
                                 },{

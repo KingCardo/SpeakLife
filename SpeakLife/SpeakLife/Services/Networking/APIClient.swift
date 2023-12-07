@@ -91,11 +91,18 @@ final class APIClient: APIService {
         do {
             let welcome = try JSONDecoder().decode(Welcome.self, from: data)
             let declarations = Set(welcome.declarations)
+            // remove this when finish filtering every category
             let general = declarations.filter { $0.category == .alignment }
             let generalArray = Array(general)
+            
+            let faith = declarations.filter { $0.category == .faith }
+            let faithArray = Set(faith).map({$0})
+            
             let removedAllAffirmationsWithoutBookExceptGeneral = declarations.filter { $0.book != nil }
-            var array = Array(removedAllAffirmationsWithoutBookExceptGeneral)
+            let removedFaith = removedAllAffirmationsWithoutBookExceptGeneral.filter { $0.category != .faith }
+            var array = Array(removedFaith)
             array.append(contentsOf: generalArray)
+            array.append(contentsOf: faithArray)
             let needsSync = array.count != declarationCountBE
             print(array.count, declarationCountBE, "RWRW count")
             print(needsSync, "RWRW  needs sync")
