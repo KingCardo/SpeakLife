@@ -114,7 +114,7 @@ struct DeclarationContentView: View {
     private func askForReview() {
         reviewCounter += 1
         if reviewCounter == 3 || reviewCounter == 15 {
-            viewModel.requestReview = true 
+            viewModel.requestReview = true
         }
     }
     

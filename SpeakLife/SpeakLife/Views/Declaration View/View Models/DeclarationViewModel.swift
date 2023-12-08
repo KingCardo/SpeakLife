@@ -17,7 +17,7 @@ final class DeclarationViewModel: ObservableObject {
     
     @Published var declarations: [Declaration] = []
     
-    @Published var requestReview = false
+    @Published var requestReview = false 
     
     @Published var showDiscountView = false
     

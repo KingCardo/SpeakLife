@@ -46,11 +46,16 @@ struct DeclarationView: View {
         DeclarationContentView(themeViewModel: themeViewModel, viewModel: viewModel)
             .frame(width: geometry.size.width, height: geometry.size.height)
             .onReceive(viewModel.$requestReview) { request in
-                if request {
+                if request, shouldRequest() {
                     showReview()
+                    appState.lastReviewRequestSetDate = Date()
                 }
             }
 
+    }
+    
+    private func shouldRequest() -> Bool {
+        return Date().timeIntervalSince(appState.lastReviewRequestSetDate) >= 24 * 60 * 60
     }
     
     

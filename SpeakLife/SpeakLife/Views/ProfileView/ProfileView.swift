@@ -294,7 +294,7 @@ struct ProfileView: View {
     @ViewBuilder
     private var feedbackRow: some View {
         if MFMailComposeViewController.canSendMail() {
-            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.grid.3x1.folder.fill.badge.plus", title: "Prayer Request", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .profile))) {
+            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.grid.3x1.folder.fill.badge.plus", title: "Report an issue", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .review))) {
                 presentContentView()
             }
         }

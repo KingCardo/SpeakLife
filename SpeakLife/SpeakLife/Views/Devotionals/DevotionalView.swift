@@ -101,7 +101,7 @@ struct DevotionalView: View {
     @ViewBuilder
     var titleLabel: some View {
         Text(viewModel.title)
-            .font(.title2)
+            .font(.custom("AppleSDGothicNeo-Regular", size: 22))
             .fontWeight(.medium)
         
         Spacer()
@@ -111,7 +111,7 @@ struct DevotionalView: View {
     @ViewBuilder
     var bookLabel: some View {
         Text(viewModel.devotionalBooks)
-            .font(.callout)
+            .font(.custom("AppleSDGothicNeo-Regular", size: 16))
             .italic()
         
         Spacer()
@@ -121,7 +121,7 @@ struct DevotionalView: View {
     @ViewBuilder
     var devotionText: some View {
         Text(viewModel.devotionalText)
-            .font(.body)
+            .font(.custom("AppleSDGothicNeo-Regular", size: 18))
             .lineSpacing(4)
         Spacer()
             .frame(height: spacing)

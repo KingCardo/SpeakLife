@@ -23,7 +23,7 @@ struct MailView: UIViewControllerRepresentable {
     var title: String {
         switch origin {
         case .profile: return "Prayer Request"
-        case .review: return "Feedback for SpeakLife - Daily Bible Promises(iOS app) \(appVersion)"
+        case .review: return "Report an issue \(appVersion)"
         case .newFeatures: return "Request new feature"
         }
     }
