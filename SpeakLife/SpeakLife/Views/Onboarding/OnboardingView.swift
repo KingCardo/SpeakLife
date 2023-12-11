@@ -32,13 +32,15 @@ struct OnboardingView: View  {
 //                    advance()
 //                }.tag(Tab.useCase)
                 
-                subscriptionScene(size: geometry.size)
-                    .tag(Tab.subscription)
+               
                 
                 WidgetScene(size: geometry.size) {
                     advance()
                 }
                 .tag(Tab.widgets)
+                
+                subscriptionScene(size: geometry.size)
+                    .tag(Tab.subscription)
                 
               
                 //                categoryScene()
@@ -153,11 +155,13 @@ struct OnboardingView: View  {
             case .notification:
                 askNotificationPermission()
             case .useCase:
-                selection = .subscription
-            case .subscription:
                 selection = .widgets
-            case .widgets:
+            case .subscription:
                 dismissOnboarding()
+               // selection = .widgets
+            case .widgets:
+                selection = .subscription
+            //    dismissOnboarding()
             case .discount:
                 dismissOnboarding()
             }
@@ -189,7 +193,8 @@ struct OnboardingView: View  {
                         }
                         
                         withAnimation {
-                            selection = .subscription
+                           // advance()
+                            selection = .widgets
                         }
                     }
                 }
@@ -198,7 +203,7 @@ struct OnboardingView: View  {
             
             
             withAnimation {
-                selection = .subscription
+                selection = .widgets
             }
             
             if settings.alertSetting == .enabled {

@@ -98,11 +98,21 @@ final class APIClient: APIService {
             let faith = declarations.filter { $0.category == .faith }
             let faithArray = Set(faith).map({$0})
             
+            let confidence = declarations.filter { $0.category == .confidence }
+            let confidenceArray = Set(confidence).map({$0})
+            
+            let gratitude = declarations.filter { $0.category == .gratitude }
+            let gratitudeArray = Set(gratitude).map({$0})
+            
             let removedAllAffirmationsWithoutBookExceptGeneral = declarations.filter { $0.book != nil }
             let removedFaith = removedAllAffirmationsWithoutBookExceptGeneral.filter { $0.category != .faith }
-            var array = Array(removedFaith)
+            let removedConfidence = removedFaith.filter { $0.category != .confidence }
+            let removedGratitude = removedConfidence.filter { $0.category != .gratitude }
+            var array = Array(removedGratitude)
             array.append(contentsOf: generalArray)
             array.append(contentsOf: faithArray)
+            array.append(contentsOf: confidenceArray)
+            array.append(contentsOf: gratitudeArray)
             let needsSync = array.count != declarationCountBE
             print(array.count, declarationCountBE, "RWRW count")
             print(needsSync, "RWRW  needs sync")

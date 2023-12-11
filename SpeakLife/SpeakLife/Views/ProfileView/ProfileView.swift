@@ -101,10 +101,10 @@ struct ProfileView: View {
             }
             
             Section(footer: VStack {
-                copyrightView
-                Spacer()
-                    .frame(height: 12)
-                Text(appVersion).font(.caption2)//.font(.caption)
+               // copyrightView
+              //  Spacer()
+                 //   .frame(height: 12)
+                Text(appVersion).font(.footnote)//.font(.caption)
             }) {
             }
         }

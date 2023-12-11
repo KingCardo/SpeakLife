@@ -51,6 +51,8 @@ final class NotificationManager: NSObject {
         morningAffirmationReminder()
         nightlyAffirmationReminder()
         devotionalAffirmationReminder()
+        christmasReminder()
+        newYearsReminder()
     }
     
     func getNotificationData(for count: Int,
@@ -147,7 +149,7 @@ final class NotificationManager: NSObject {
     
     private func morningAffirmationReminder() {
         let id = UUID().uuidString
-        let body = "Start your day with 3 minutes of affirmations to renew your mindset 🚨!" // Localize
+        let body = "This is the day the Lord has made I will rejoice and be glad in it! - Let's start the day with affirmations." // Localize
         
         let content = UNMutableNotificationContent()
         content.title = "SpeakLife"
@@ -157,7 +159,7 @@ final class NotificationManager: NSObject {
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.autoupdatingCurrent
         dateComponents.timeZone = TimeZone.autoupdatingCurrent
-        dateComponents.hour = 11
+        dateComponents.hour = 8
         
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: dateComponents, repeats: false)
@@ -173,7 +175,7 @@ final class NotificationManager: NSObject {
     
     private func nightlyAffirmationReminder() {
         let id = UUID().uuidString
-        let body = "Time to unwind and end your day with your favorite Bible promises!" // Localize
+        let body = "We conquered another day! Lets end the day with gratitude and affirmations." // Localize
         
         let content = UNMutableNotificationContent()
         content.title = "SpeakLife"
@@ -238,6 +240,62 @@ final class NotificationManager: NSObject {
         
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: comps, repeats: false)
+        
+        
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        notificationCenter.add(request) { (error) in
+            if error != nil {
+                //  TODO: - handle error
+            }
+        }
+    }
+    
+    private func christmasReminder() {
+        let id = UUID().uuidString
+        let body = "Today's affirmation: Remember, Jesus is the heart of this festive season. Let's embrace His love and teachings as we celebrate. Merry Christmas!✝️" // Localize
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Celebrate the True Meaning of Christmas"
+        content.body = body
+        content.sound = UNNotificationSound.default
+        
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.autoupdatingCurrent
+        dateComponents.timeZone = TimeZone.autoupdatingCurrent
+        dateComponents.hour = 9
+        dateComponents.day = 25
+        dateComponents.month = 12
+        
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: dateComponents, repeats: false)
+        
+        
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        notificationCenter.add(request) { (error) in
+            if error != nil {
+                //  TODO: - handle error
+            }
+        }
+    }
+    
+    private func newYearsReminder() {
+        let id = UUID().uuidString
+        let body = "As we step into the New Year, let's prioritize our walk with Jesus. May His teachings guide our choices and bring blessings in every aspect of our lives. Happy New Year!" // Localize
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Start the New Year with Jesus"
+        content.body = body
+        content.sound = UNNotificationSound.default
+        
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.autoupdatingCurrent
+        dateComponents.timeZone = TimeZone.autoupdatingCurrent
+        dateComponents.day = 1
+        dateComponents.month = 1
+        dateComponents.hour = 9
+        
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: dateComponents, repeats: false)
         
         
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
