@@ -25,7 +25,7 @@ struct CategoryListCell: View  {
                 .padding([.trailing])
             
             Text(category.categoryTitle)
-                .font(.title2)
+                .font(Font.custom("Roboto-SemiBold", size: 20, relativeTo: .title))
                 .foregroundColor(colorScheme == .dark ? .white : .black)
             Spacer()
             

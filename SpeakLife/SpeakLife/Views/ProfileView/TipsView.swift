@@ -8,6 +8,7 @@
 import SwiftUI
 
 let tips = [
+    
     "The number one goal for this app is to teach you about the promises of God, help you speak them over your life and grow a more initimate relationship with our best friend Jesus!",
     "Peace and Calm: Affirmations often bring peace as the words from the Bible are reassuring and comforting.",
     "Divine Guidance: Reciting affirmations/scripture can serve as reminders of divine guidance and God’s wisdom in making decisions.",

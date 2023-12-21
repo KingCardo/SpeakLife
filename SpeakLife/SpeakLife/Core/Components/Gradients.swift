@@ -41,6 +41,10 @@ struct Gradients {
             .edgesIgnoringSafeArea(.all)
     }
     
+    var cyanPurple: some View { LinearGradient(gradient: Gradient(colors: [.cyan, .purple, .cyan]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            .edgesIgnoringSafeArea(.all)
+    }
+    
     var cyanGold: some View { LinearGradient(gradient: Gradient(colors: [.cyan, Constants.gold]), startPoint: .topLeading, endPoint: .bottomTrailing)
             .edgesIgnoringSafeArea(.all)
     }

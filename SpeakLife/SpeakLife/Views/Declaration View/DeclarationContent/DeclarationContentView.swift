@@ -197,7 +197,7 @@ struct DeclarationContentView: View {
                         self.showShareSheet = true
                     }
                     
-                    Analytics.logEvent(Event.shareTapped, parameters: nil)
+                    Analytics.logEvent(Event.shareTapped, parameters: ["share": declaration.text])
                     Selection.shared.selectionFeedback()
                     // Hide the label after 2 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -210,7 +210,7 @@ struct DeclarationContentView: View {
                 CapsuleImageButton(title: declaration.isFavorite ? "heart.fill" : "heart") {
                     favorite(declaration)
                     self.isFavorite = declaration.isFavorite ? false : true
-                    Analytics.logEvent(Event.favoriteTapped, parameters: nil)
+                    Analytics.logEvent(Event.favoriteTapped, parameters: ["declaration": declaration.text])
                     Selection.shared.selectionFeedback()
                 }
             }

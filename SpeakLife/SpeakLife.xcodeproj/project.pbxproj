@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F740F6929D4017400E89E7F /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F740F6829D4017400E89E7F /* APIClientTests.swift */; };
+		453172B42B2D274800388AD4 /* BenefitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453172B32B2D274800388AD4 /* BenefitScene.swift */; };
 		4583A4C52B0080440069C27D /* declarationsv2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4583A4C42B0080440069C27D /* declarationsv2.json */; };
 		458510CF2B12B74E00230EE5 /* PodcastsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510CE2B12B74E00230EE5 /* PodcastsListView.swift */; };
 		458510D12B12B77A00230EE5 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D02B12B77A00230EE5 /* Podcast.swift */; };
@@ -147,6 +148,7 @@
 		2F740F5E29D4014500E89E7F /* SpeakLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeakLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F740F6729D4017300E89E7F /* SpeakLifeTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpeakLifeTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		2F740F6829D4017400E89E7F /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		453172B32B2D274800388AD4 /* BenefitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitScene.swift; sourceTree = "<group>"; };
 		4583A4C42B0080440069C27D /* declarationsv2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv2.json; sourceTree = "<group>"; };
 		458510CE2B12B74E00230EE5 /* PodcastsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsListView.swift; sourceTree = "<group>"; };
 		458510D02B12B77A00230EE5 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
@@ -648,6 +650,7 @@
 				7AA870C028DACCB700134ADB /* IntroScene.swift */,
 				7AA870B928DACCB700134ADB /* NotificationScene.swift */,
 				7AA870C128DACCB700134ADB /* WidgetScene.swift */,
+				453172B32B2D274800388AD4 /* BenefitScene.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -899,6 +902,7 @@
 				7AA870CF28DACCB700134ADB /* MailView.swift in Sources */,
 				458510D12B12B77A00230EE5 /* Podcast.swift in Sources */,
 				7AF18C7D29FD1A67005A6E31 /* AdBanner.swift in Sources */,
+				453172B42B2D274800388AD4 /* BenefitScene.swift in Sources */,
 				7AA870D128DACCB700134ADB /* ReminderCell.swift in Sources */,
 				7AF18C8629FEC6EB005A6E31 /* BulletList.swift in Sources */,
 				7AF18C9C2A0D99E5005A6E31 /* TimeTrackerViewModel.swift in Sources */,

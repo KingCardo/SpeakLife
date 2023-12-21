@@ -40,6 +40,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case guidance
     case rest
     case guilt
+    case grace
     
     static var categoryOrder: [DeclarationCategory] = [
         .alignment,
@@ -52,6 +53,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .guidance,
         .gratitude,
         .godsprotection,
+        .grace,
         .guilt,
         .wealth,
         .motivation,
@@ -75,7 +77,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         categories.insert(.myOwn, at: 0)
         categories.insert(.favorites, at: 0)
         categories.insert(.alignment, at: 0)
-        categories.remove(at: 5)
+        categories.remove(at: 4)
         categories.remove(at: 8)
         return categories
            
@@ -90,6 +92,9 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         case .selfcontrol: return "Self Control"
         case .hardtimes: return "Hard Times"
         case .godsprotection: return "God's Protection"
+        case .depression: return "Conquer Depression"
+        case .fear: return "Fear Not!"
+        case .addiction: return "Crush Addiction"
         default:  return self.rawValue.capitalized
         }
     }
@@ -114,7 +119,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     var isPremium: Bool {
         switch self {
-        case .alignment, .favorites, .myOwn, .faith: return false
+        case .alignment, .favorites, .myOwn, .faith, .grace: return false
         default: return true
         }
     }

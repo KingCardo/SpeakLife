@@ -91,28 +91,7 @@ final class APIClient: APIService {
         do {
             let welcome = try JSONDecoder().decode(Welcome.self, from: data)
             let declarations = Set(welcome.declarations)
-            // remove this when finish filtering every category
-            let general = declarations.filter { $0.category == .alignment }
-            let generalArray = Array(general)
-            
-            let faith = declarations.filter { $0.category == .faith }
-            let faithArray = Set(faith).map({$0})
-            
-            let confidence = declarations.filter { $0.category == .confidence }
-            let confidenceArray = Set(confidence).map({$0})
-            
-            let gratitude = declarations.filter { $0.category == .gratitude }
-            let gratitudeArray = Set(gratitude).map({$0})
-            
-            let removedAllAffirmationsWithoutBookExceptGeneral = declarations.filter { $0.book != nil }
-            let removedFaith = removedAllAffirmationsWithoutBookExceptGeneral.filter { $0.category != .faith }
-            let removedConfidence = removedFaith.filter { $0.category != .confidence }
-            let removedGratitude = removedConfidence.filter { $0.category != .gratitude }
-            var array = Array(removedGratitude)
-            array.append(contentsOf: generalArray)
-            array.append(contentsOf: faithArray)
-            array.append(contentsOf: confidenceArray)
-            array.append(contentsOf: gratitudeArray)
+            let array = Array(declarations)
             let needsSync = array.count != declarationCountBE
             print(array.count, declarationCountBE, "RWRW count")
             print(needsSync, "RWRW  needs sync")

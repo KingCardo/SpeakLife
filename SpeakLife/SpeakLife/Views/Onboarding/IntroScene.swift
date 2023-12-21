@@ -28,7 +28,7 @@ struct IntroScene: View {
             Spacer().frame(height: 40)
             VStack {
                 Text("DECLARATIONS", comment: "Intro scene title label")
-                    .font(Font.custom("Roboto-SemiBold", size: 40, relativeTo: .title))
+                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 40, relativeTo: .title))
                     .fontWeight(.semibold)
                     .foregroundColor(Constants.DEABlack)
                 
@@ -36,7 +36,7 @@ struct IntroScene: View {
                 
                 VStack {
                     Text("Read_and_repeat" , comment: "Intro scene instructions")
-                        .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .body))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .foregroundColor(Constants.DALightBlue)
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
@@ -45,7 +45,7 @@ struct IntroScene: View {
                     Spacer().frame(height: 24)
                     
                     Text("The_power_of_declarations", comment: "Intro scene extra tip")
-                        .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .body))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .foregroundColor(Constants.DALightBlue)
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
@@ -59,7 +59,7 @@ struct IntroScene: View {
             Button(action: callBack) {
                 HStack {
                     Text("Begin_transformation", comment: "Intro scene start label")
-                        .font(.body)
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .fontWeight(.medium)
                         .frame(width: size.width * 0.91 ,height: 50)
                 }.padding()

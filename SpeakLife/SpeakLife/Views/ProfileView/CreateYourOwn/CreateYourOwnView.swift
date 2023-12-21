@@ -118,7 +118,7 @@ struct CreateYourOwnView: View {
                 spacerView(16)
                 
                 Text("You haven't added any affirmations you would like to manifest.", comment: "add your own, none yet text")
-                    .font(.callout)
+                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
                     .lineLimit(nil)
                 
                 spacerView(32)

@@ -24,6 +24,7 @@ struct ContentRow: View {
     var body: some View {
         HStack {
             Text(declaration.text)
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
                // .lineLimit(2)
             Spacer()
             

@@ -9,6 +9,7 @@ import Foundation
 
 enum Tab {
     case intro
+    case benefits
     case notification
     case widgets
     case useCase

@@ -8,6 +8,7 @@
 import SwiftUI
 import FirebaseAnalytics
 
+
 struct OnboardingView: View  {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
@@ -22,6 +23,13 @@ struct OnboardingView: View  {
                 
                 IntroScene(size: geometry.size, callBack: advance)
                     .tag(Tab.intro)
+                
+                BenefitScene(size: geometry.size, tips: onboardingTips) {
+                    advance()
+                }.tag(Tab.benefits)
+                
+                
+                
                 
                 NotificationOnboarding(size: geometry.size) {
                     advance()
@@ -151,6 +159,8 @@ struct OnboardingView: View  {
         withAnimation {
             switch selection {
             case .intro:
+                selection = .benefits
+            case .benefits:
                 selection = .notification
             case .notification:
                 askNotificationPermission()

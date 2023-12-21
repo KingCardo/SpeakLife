@@ -220,15 +220,13 @@ struct SubscriptionView: View {
     let size: CGSize
     var callback: (() -> Void)?
     let benefits: [Benefit]
-    var gradient: any View = Gradients().purple
     var isDiscount = false
     
     var ctaText: String
     
-    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, gradient: any View = Gradients().purple, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
+    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
         self.benefits = benefits
         self.size = size
-        self.gradient = gradient
         self.ctaText = ctaText
         self.isDiscount = isDiscount
     }
@@ -259,7 +257,7 @@ struct SubscriptionView: View {
     
     private func goPremiumView(size: CGSize) -> some View  {
         ZStack {
-            AnyView(gradient)
+            Gradients().cyanPurple
             ScrollView {
                 VStack  {
                     Spacer()
@@ -321,7 +319,7 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 24)
                     
-//                    Text("Don’t copy the behavior and customs of this world, but let God transform you into a new person by changing the way you think. Then you will learn to know God’s will for you, which is good and pleasing and perfect. ~ Romans 12:2 (NIV)")
+//                    Text("Don’t copy the behavior and customs of this world, but let God transform you into a new person by changing the way you think. Then you will learn to know God’s will for you, which is good and pleasing and perfect. ~ Romans 12:2)
 //                        .font(.title3)
 //                        .foregroundColor(.white)
 //                        .padding()
