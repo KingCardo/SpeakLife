@@ -45,13 +45,11 @@ struct DeclarationView: View {
     func declarationContent(_ geometry: GeometryProxy) -> some View {
         DeclarationContentView(themeViewModel: themeViewModel, viewModel: viewModel)
             .frame(width: geometry.size.width, height: geometry.size.height)
-            .onReceive(viewModel.$requestReview) { request in
-                if request, shouldRequest() {
-                    showReview()
-                    appState.lastReviewRequestSetDate = Date()
-                }
+            .onReceive(viewModel.$requestReview) { _ in
+                showReview()
+                appState.lastReviewRequestSetDate = Date()
+                
             }
-
     }
     
     private func shouldRequest() -> Bool {

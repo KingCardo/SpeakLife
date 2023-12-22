@@ -13,7 +13,7 @@ struct Tip: Identifiable, Equatable {
     let tip: String
 }
 
-let onboardingTips = [Tip(title:"Rewiring Thought Patterns: ", tip: "Daily Bible affirmations play a crucial role in reshaping your thought processes."),
+let onboardingTips = [Tip(title:"Rewiring Thought Patterns: ", tip: "Meditating on the Jesus and right thoughts is ONLY way to replace bad thoughts."),
                       Tip(title: "Cultivating Optimism: ", tip:"Regularly speaking Bible affirmations transforms your mindset, which transform your life."),
                       Tip(title: "Enhanced Decision-Making: ",tip:"By reprogramming your thoughts with biblical values through daily affirmations, you step into God's grace and take action to your destiny."),
                       Tip(title: "Inner Peace: ",tip: "Biblical affirmations calm the mind, replacing anxiety and fear with tranquility and Jesus's love for you."),

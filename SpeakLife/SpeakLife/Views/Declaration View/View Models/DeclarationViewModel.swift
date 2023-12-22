@@ -13,7 +13,7 @@ final class DeclarationViewModel: ObservableObject {
     
     // MARK: - Properties
     
-    @AppStorage("selectedCategory") var selectedCategoryString = "general"
+    @AppStorage("selectedCategory") var selectedCategoryString = "alignment"
     
     @Published var declarations: [Declaration] = []
     
