@@ -254,7 +254,7 @@ final class NotificationManager: NSObject {
     
     private func christmasReminder() {
         let id = UUID().uuidString
-        let body = "✝️ Today's affirmation: Remember, Jesus is the heart of this festive season. Let's embrace His love and teachings as we celebrate. Merry Christmas!" // Localize
+        let body = "✝️ Jesus is the heart of this festive season. Let's embrace His love and teachings as we celebrate. Merry Christmas!" // Localize
         
         let content = UNMutableNotificationContent()
         content.title = "Celebrate the True Meaning of Christmas"

@@ -24,9 +24,9 @@ struct OnboardingView: View  {
                 IntroScene(size: geometry.size, callBack: advance)
                     .tag(Tab.intro)
                 
-                BenefitScene(size: geometry.size, tips: onboardingTips) {
-                    advance()
-                }.tag(Tab.benefits)
+//                BenefitScene(size: geometry.size, tips: onboardingTips) {
+//                    advance()
+//                }.tag(Tab.benefits)
                 
                 
                 
@@ -159,7 +159,7 @@ struct OnboardingView: View  {
         withAnimation {
             switch selection {
             case .intro:
-                selection = .benefits
+                selection = .notification
             case .benefits:
                 selection = .notification
             case .notification:
