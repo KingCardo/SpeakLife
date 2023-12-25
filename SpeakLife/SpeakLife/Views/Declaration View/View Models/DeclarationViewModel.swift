@@ -15,7 +15,11 @@ final class DeclarationViewModel: ObservableObject {
     
     @AppStorage("selectedCategory") var selectedCategoryString = "alignment"
     
-    @Published var declarations: [Declaration] = []
+    @Published var declarations: [Declaration] = [] {
+        didSet {
+            print(declarations.map { $0.text })
+        }
+    }
     
     @Published var requestReview = false 
     

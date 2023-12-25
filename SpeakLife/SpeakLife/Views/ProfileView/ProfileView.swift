@@ -153,25 +153,25 @@ struct ProfileView: View {
         EmptyView()
     }
     
-    @MainActor
-    private var prayerRow: some View {
-        HStack {
-            Image(systemName: "hands.sparkles.fill")
-                .foregroundColor(Constants.DAMidBlue)
-            NavigationLink(LocalizedStringKey("Prayers"), destination: LazyView(PrayerView()))
-                .opacity(0)
-                .background(
-                    HStack {
-                        Text("Prayer", comment:  "Prayers row title")
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 8)
-                            .foregroundColor(Constants.DAMidBlue)
-                    })
-        }
-    }
+//    @MainActor
+//    private var prayerRow: some View {
+//        HStack {
+//            Image(systemName: "hands.sparkles.fill")
+//                .foregroundColor(Constants.DAMidBlue)
+//            NavigationLink(LocalizedStringKey("Prayers"), destination: LazyView(PrayerView()))
+//                .opacity(0)
+//                .background(
+//                    HStack {
+//                        Text("Prayer", comment:  "Prayers row title")
+//                        Spacer()
+//                        Image(systemName: "chevron.right")
+//                            .resizable()
+//                            .aspectRatio(contentMode: .fit)
+//                            .frame(width: 8)
+//                            .foregroundColor(Constants.DAMidBlue)
+//                    })
+//        }
+//    }
     
     @MainActor
     private var tipsRow: some View {

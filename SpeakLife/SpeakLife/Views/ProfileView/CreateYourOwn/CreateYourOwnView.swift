@@ -130,7 +130,7 @@ struct CreateYourOwnView: View {
         } else {
                 NavigationView {
                     List(declarationStore.createOwn) { declaration in
-                        NavigationLink(destination: PrayerDetailView(prayer: declaration.text)) {
+                        NavigationLink(destination: PrayerDetailView(prayer: declaration.text) { Gradients().cyan }) {
                             ContentRow(declaration, isEditable: true) { declarationString, delete in
                                 if delete {
                                     declarationStore.removeOwn(declaration: declaration)

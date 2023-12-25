@@ -149,7 +149,7 @@ final class NotificationManager: NSObject {
     
     private func morningAffirmationReminder() {
         let id = UUID().uuidString
-        let body = "This is the day the Lord has made I will rejoice and be glad in it! - Let's start the day with affirmations.🗣️" // Localize
+        let body = "🗣️ This is the day the Lord has made I will rejoice and be glad in it! - Let's start the day with affirmations." // Localize
         
         let content = UNMutableNotificationContent()
         content.title = "SpeakLife"
@@ -176,7 +176,7 @@ final class NotificationManager: NSObject {
     private func nightlyAffirmationReminder() {
         let id = UUID().uuidString
         
-        let body = "We conquered another day! Lets end the day with gratitude and affirmations.💜" // Localize
+        let body = "💜 We conquered another day! Lets end the day with gratitude and affirmations." // Localize
         
         let content = UNMutableNotificationContent()
         content.title = "SpeakLife"
@@ -202,7 +202,7 @@ final class NotificationManager: NSObject {
     
     private func devotionalAffirmationReminder() {
         let id = UUID().uuidString
-        let body = "Your Daily Devotion is Ready! Take a moment to sit with Jesus!🪑" // Localize
+        let body = "Your Daily Devotion is Ready! 🪑 Take a moment to sit with Jesus!" // Localize
         
         let content = UNMutableNotificationContent()
         content.title = "SpeakLife"
@@ -212,7 +212,8 @@ final class NotificationManager: NSObject {
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.autoupdatingCurrent
         dateComponents.timeZone = TimeZone.autoupdatingCurrent
-        dateComponents.hour = 9
+        dateComponents.hour = 8
+        dateComponents.minute = 30
         
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: dateComponents, repeats: true)
@@ -253,7 +254,7 @@ final class NotificationManager: NSObject {
     
     private func christmasReminder() {
         let id = UUID().uuidString
-        let body = "Today's affirmation: Remember, Jesus is the heart of this festive season. Let's embrace His love and teachings as we celebrate. Merry Christmas!✝️" // Localize
+        let body = "✝️ Today's affirmation: Remember, Jesus is the heart of this festive season. Let's embrace His love and teachings as we celebrate. Merry Christmas!" // Localize
         
         let content = UNMutableNotificationContent()
         content.title = "Celebrate the True Meaning of Christmas"
@@ -281,7 +282,7 @@ final class NotificationManager: NSObject {
     
     private func newYearsReminder() {
         let id = UUID().uuidString
-        let body = "As we step into the New Year, let's prioritize our walk with Jesus. May His teachings guide our choices and bring blessings in every aspect of our lives. Happy New Year!🥳" // Localize
+        let body = "🥳 As we step into the New Year, let's prioritize our walk with Jesus. May His teachings guide our choices and bring blessings in every aspect of our lives. Happy New Year!" // Localize
         
         let content = UNMutableNotificationContent()
         content.title = "Start the New Year with Jesus"

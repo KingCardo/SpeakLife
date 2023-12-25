@@ -7,14 +7,20 @@
 
 import SwiftUI
 
-struct PrayerDetailView: View {
+struct PrayerDetailView<InjectedView: View>: View {
     
     @Environment(\.colorScheme) var colorScheme
     let prayer: String
+    var gradient: InjectedView
 
+    init(prayer: String, @ViewBuilder content: () -> InjectedView) {
+        self.prayer = prayer
+        self.gradient = content()
+    }
+    
     var body: some View {
         ZStack {
-            Gradients().cyan
+            gradient
             VStack {
                 Text(prayer)
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
@@ -25,11 +31,5 @@ struct PrayerDetailView: View {
                 Spacer()
             }
         }
-    }
-}
-
-struct ItemDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        PrayerDetailView(prayer: "Apple")
     }
 }
