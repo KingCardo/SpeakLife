@@ -57,6 +57,21 @@ final class APIClient: APIService {
         return
     }
     
+    private func loadFile(file: String, completion: @escaping([Declaration], APIError?) -> Void) {
+        let documentDirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentDirURL.appendingPathComponent(file).appendingPathExtension("txt")
+        
+        
+        guard let data = try? Data(contentsOf: fileURL),
+              let declarations = try? JSONDecoder().decode([Declaration].self, from: data) else {
+            completion([], APIError.failedRequest)
+            return
+        }
+        declarationCountFile = declarations.count
+        completion(declarations, nil)
+        return
+    }
+    
     
     func save(declarations: [Declaration], completion: @escaping(Bool) -> Void) {
         

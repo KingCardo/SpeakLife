@@ -13,7 +13,7 @@ final class DeclarationViewModel: ObservableObject {
     
     // MARK: - Properties
     
-    @AppStorage("selectedCategory") var selectedCategoryString = "alignment"
+    @AppStorage("selectedCategory") var selectedCategoryString = "destiny"
     
     @Published var declarations: [Declaration] = [] {
         didSet {
@@ -32,7 +32,7 @@ final class DeclarationViewModel: ObservableObject {
     private var allDeclarationsDict: [DeclarationCategory: [Declaration]] = [:]
     
     var selectedCategory: DeclarationCategory {
-        DeclarationCategory(rawValue: selectedCategoryString) ?? .alignment
+        DeclarationCategory(rawValue: selectedCategoryString) ?? .destiny
     }
     
     @Published var favorites: [Declaration] = [] {

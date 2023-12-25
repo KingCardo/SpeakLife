@@ -13,7 +13,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         return  lhs.name <= rhs.name
     }
     
-    case alignment
+    case destiny
     case faith
     case love
     case favorites
@@ -43,7 +43,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case grace
     
     static var categoryOrder: [DeclarationCategory] = [
-        .alignment,
+        .destiny,
         .faith,
         .addiction,
         .identity,
@@ -74,11 +74,13 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     static func getCategoryOrder() -> [DeclarationCategory] {
         var categories = categoryOrder.sorted(by: <)
         categories.insert(.faith, at: 0)
+        categories.insert(.grace, at: 0)
+        categories.insert(.destiny, at: 0)
         categories.insert(.myOwn, at: 0)
         categories.insert(.favorites, at: 0)
-        categories.insert(.alignment, at: 0)
-        categories.remove(at: 4)
         categories.remove(at: 8)
+        categories.remove(at: 9)
+        categories.remove(at: 12)
         return categories
            
     }
@@ -119,7 +121,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     var isPremium: Bool {
         switch self {
-        case .alignment, .favorites, .myOwn, .faith, .grace: return false
+        case .destiny, .favorites, .myOwn, .faith, .grace: return false
         default: return true
         }
     }
