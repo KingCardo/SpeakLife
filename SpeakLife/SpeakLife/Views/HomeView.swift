@@ -50,7 +50,7 @@ struct HomeView: View {
                                 Image(systemName: "shield.fill")
                                     .renderingMode(.original)
                             }
-                            Text("Warrior's Promise")
+                            Text("Warrior's Prayer")
                         }
                     
                     
