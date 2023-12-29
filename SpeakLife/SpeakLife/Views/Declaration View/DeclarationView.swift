@@ -177,7 +177,7 @@ struct DeclarationView: View {
                 as? UIWindowScene {
                 let url = URL(string: "\(APP.Product.urlID)")!
                 
-                let activityVC = UIActivityViewController(activityItems: ["Check out Speak Life - Bible Verses app that'll transform your life!", url], applicationActivities: nil)
+                let activityVC = UIActivityViewController(activityItems: ["Check out Speak Life - Bible Affirmations app that'll transform your life!", url], applicationActivities: nil)
                 let window = scene.windows.first
                 window?.rootViewController?.present(activityVC, animated: true)
                 shared += 1

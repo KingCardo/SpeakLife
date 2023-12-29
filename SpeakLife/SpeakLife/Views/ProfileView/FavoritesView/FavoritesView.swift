@@ -50,7 +50,7 @@ struct ContentRow: View {
                     }
                 }
                 .sheet(isPresented: $showShareSheet, content: {
-                    ShareSheet(activityItems: ["\(declaration.text) \nSpeakLife App: \(APP.Product.urlID)"])
+                    ShareSheet(activityItems: ["\(declaration.text) \nSpeakLife App:", APP.Product.urlID])
                 })
                 .foregroundColor(colorScheme  == .dark ? .white : Constants.DAMidBlue)
                 .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in

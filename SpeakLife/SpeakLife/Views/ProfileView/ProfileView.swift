@@ -34,6 +34,8 @@ struct ProfileView: View {
     
     @State var isPresentingManageSubscriptionView = false
     @State var isPresentingContentView = false
+    @State private var showShareSheet = false
+    let url = URL(string:APP.Product.urlID)
     
     
     init() {
@@ -62,14 +64,18 @@ struct ProfileView: View {
             }
             
             Section(header: Text("Yours").font(.caption)) {
-//                HStack {
-//                    trackerRow
-//                    if appState.newTrackerAdded {
-//                        Badge()
-//                    }
-//                }
+
+            HStack {
+                warriorView
+                if appState.newSettingsAdded {
+                            Badge()
+                        }
+                }
                 
                 HStack {
+                    
+                   
+                    
                     AbbasLoveRow
                     if appState.abbasLoveAdded {
                         Badge()
@@ -77,12 +83,12 @@ struct ProfileView: View {
                 }
                 createYourOwnRow
                 
-                HStack {
-                    tipsRow
-                    if appState.newSettingsAdded {
-                        Badge()
-                    }
-                }
+//                HStack {
+//                    tipsRow
+//                    if appState.newSettingsAdded {
+//                        Badge()
+//                    }
+//                }
                 remindersRow
                 favoritesRow
             }
@@ -94,6 +100,9 @@ struct ProfileView: View {
                 feedbackRow
                 //newFeaturesRow
             }
+            .sheet(isPresented: $showShareSheet, content: {
+                ShareSheet(activityItems: ["Check out SpeakLife - Bible Affirmations app that'll transform your life!", url])
+            })
             
             Section(header: Text("Other".uppercased()).font(.caption)) {
                 privacyPolicyRow
@@ -310,6 +319,26 @@ struct ProfileView: View {
         }
     }
     
+    private var warriorView: some View {
+        HStack {
+            Image(systemName: "bolt.shield.fill")
+                .foregroundColor(Constants.DAMidBlue)
+            NavigationLink(LocalizedStringKey("WarriorView"), destination: LazyView(WarriorView()))
+                .navigationBarTitle("Warrior's Prayer", displayMode: .inline)
+                .opacity(0)
+                .background(
+                    HStack {
+                        Text("Warrior's Prayer", comment: "pp")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 8)
+                            .foregroundColor(Constants.DAMidBlue)
+                    })
+        }
+    }
+    
     private var privacyPolicyRow: some View {
         NavigationLink(LocalizedStringKey("Privay Policy"), destination: LazyView(PrivacyPolicyView()))
             .opacity(0)
@@ -354,13 +383,7 @@ struct ProfileView: View {
     }
     
     private func shareApp() {
-        guard let url = URL(string:  "\(APP.Product.urlID)")else { return }
-        
-        let activityVC = UIActivityViewController(activityItems: ["Check out SpeakLife - Bible Verses app that'll transform your life!", url], applicationActivities: nil)
-        let scenes = UIApplication.shared.connectedScenes
-        let windowScene = scenes.first as? UIWindowScene
-        let window = windowScene?.windows.first
-        window?.rootViewController?.presentedViewController?.present(activityVC, animated: true)
+        showShareSheet.toggle()
     }
 }
 

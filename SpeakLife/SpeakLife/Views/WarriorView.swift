@@ -60,16 +60,15 @@ struct WarriorView: View {
         ZStack {
             Gradients().cyanGold
             ScrollView {
-                VStack {
+                PrayerDetailView(prayer: psalm91NLT) {
+                    Gradients().cyanGold
                     
-                    PrayerDetailView(prayer: psalm91NLT) {
-                        Gradients().cyanGold
-                        
-                    }
                 }
             }
-        }
+      }
+        
         .onAppear {
+            
             Analytics.logEvent(Event.ninetyOnePsalmTapped, parameters: nil)
         }
         
