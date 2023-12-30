@@ -65,12 +65,12 @@ struct ProfileView: View {
             
             Section(header: Text("Yours").font(.caption)) {
 
-            HStack {
-                warriorView
-                if appState.newSettingsAdded {
-                            Badge()
-                        }
-                }
+//            HStack {
+//                warriorView
+//                if appState.newSettingsAdded {
+//                            Badge()
+//                        }
+//                }
                 
                 HStack {
                     
@@ -324,7 +324,7 @@ struct ProfileView: View {
             Image(systemName: "bolt.shield.fill")
                 .foregroundColor(Constants.DAMidBlue)
             NavigationLink(LocalizedStringKey("WarriorView"), destination: LazyView(WarriorView()))
-                .navigationBarTitle("Warrior's Prayer", displayMode: .inline)
+              //  .navigationBarTitle("Warrior's Prayer", displayMode: .inline)
                 .opacity(0)
                 .background(
                     HStack {

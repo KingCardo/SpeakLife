@@ -41,17 +41,17 @@ struct HomeView: View {
                             Text("Devotionals")
                         }
                     
-//                    WarriorView()
-//                        .tabItem {
-//                            if #available(iOS 17, *) {
-//                                Image(systemName: "bolt.shield.fill")
-//                                    .renderingMode(.original)
-//                            } else {
-//                                Image(systemName: "shield.fill")
-//                                    .renderingMode(.original)
-//                            }
-//                            Text("Warrior's Prayer")
-//                        }
+                    WarriorView()
+                        .tabItem {
+                            if #available(iOS 17, *) {
+                                Image(systemName: "bolt.shield.fill")
+                                    .renderingMode(.original)
+                            } else {
+                                Image(systemName: "shield.fill")
+                                    .renderingMode(.original)
+                            }
+                            Text("Warrior's Prayer")
+                        }
                     
                     
                     CreateYourOwnView()
