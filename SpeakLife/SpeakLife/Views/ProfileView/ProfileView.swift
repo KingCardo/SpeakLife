@@ -64,13 +64,6 @@ struct ProfileView: View {
             }
             
             Section(header: Text("Yours").font(.caption)) {
-
-//            HStack {
-//                warriorView
-//                if appState.newSettingsAdded {
-//                            Badge()
-//                        }
-//                }
                 
                 HStack {
                     
@@ -82,23 +75,16 @@ struct ProfileView: View {
                     }
                 }
                 createYourOwnRow
-                
-//                HStack {
-//                    tipsRow
-//                    if appState.newSettingsAdded {
-//                        Badge()
-//                    }
-//                }
+            
                 remindersRow
                 favoritesRow
             }
             
             Section(header: Text("SUPPORT").font(.caption)) {
-               // followUs
                 shareRow
                 reviewRow
                 feedbackRow
-                prayerRow
+              //  prayerRow
                 //newFeaturesRow
             }
             .sheet(isPresented: $showShareSheet, content: {
@@ -111,9 +97,6 @@ struct ProfileView: View {
             }
             
             Section(footer: VStack {
-               // copyrightView
-              //  Spacer()
-                 //   .frame(height: 12)
                 Text(appVersion).font(.footnote)//.font(.caption)
             }) {
             }
