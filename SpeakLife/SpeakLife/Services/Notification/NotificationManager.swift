@@ -79,7 +79,7 @@ final class NotificationManager: NSObject {
                                       endTime: Int,
                                       count: Int) {
         
-        let hourMinute = getHourMinute(startTime: startTime, endTime: endTime, count: count)
+        let hourMinute = distributeTimes(startTime: startTime, endTime: endTime, count: count)
         
         for (idx, declaration) in declarations.enumerated() {
             let id = UUID().uuidString
@@ -330,7 +330,7 @@ final class NotificationManager: NSObject {
         return newArrayDate
     }
     
-    private func getHourMinute(startTime: Int, endTime: Int, count: Int) -> [(hour: Int, minute: Int)] {
+    func getHourMinute(startTime: Int, endTime: Int, count: Int) -> [(hour: Int, minute: Int)] {
         let dates = TimeSlots.getDateTimeSlots()
         let calendar = Calendar.autoupdatingCurrent
         
@@ -360,6 +360,53 @@ final class NotificationManager: NSObject {
         }
         
         return returnTimes
+    }
+    
+    private func createDate(hour: Int, minute: Int) -> Date? {
+        // Use the current date as the base
+        let currentDate = Date()
+        let calendar = Calendar.autoupdatingCurrent
+
+        // Set the specific hour and minute
+        return calendar.date(bySettingHour: hour, minute: minute, second: 0, of: currentDate)
+    }
+    
+    func distributeTimes(startTime: Int, endTime: Int, count: Int) -> [(hour: Int, minute: Int)] {
+        let dates = TimeSlots.getDateTimeSlots()
+        let calendar = Calendar.autoupdatingCurrent
+        let newArrayDates = getArrayDates(from: dates, startTimeIndex: startTime, endTimeIndex: endTime)
+        let startTimeHour = calendar.component(.hour, from: newArrayDates[0])
+        let startTimeMinute = calendar.component(.minute, from: newArrayDates[0])
+        
+        let endTimeHour = calendar.component(.hour, from: newArrayDates.last!)
+        let endTimeMinute = calendar.component(.minute, from: newArrayDates.last!)
+                                                 
+        let startTime = createDate(hour: startTimeHour, minute: startTimeMinute)!
+        let endTime = createDate(hour: endTimeHour, minute: endTimeMinute)!
+        
+        
+        guard count > 0, startTime < endTime else {
+            return [] // Return an empty array if count is zero or if start time is after end time
+        }
+
+        var result: [(hour: Int, minute: Int)] = []
+
+        // Calculate total duration in seconds
+        let totalSeconds = Int(endTime.timeIntervalSince(startTime))
+        
+        // Calculate interval in seconds
+        let interval = totalSeconds / count
+
+        // Generate times
+        for i in 0..<count {
+            if let time = Calendar.current.date(byAdding: .second, value: i * interval, to: startTime) {
+                let hour = Calendar.current.component(.hour, from: time)
+                let minute = Calendar.current.component(.minute, from: time)
+                result.append((hour, minute))
+            }
+        }
+
+        return result
     }
     
     func notificationsPending(completion: @escaping(Bool, Int?) -> Void) {

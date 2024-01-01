@@ -1,5 +1,12 @@
 //
-//  Use this file to import your target's public headers that you would like to expose to Swift.
-// @testable import Firebase
+//  SpeakLifeTests-Bridging-Header.h
+//  SpeakLifeTests
+//
+//  Created by Riccardo Washington on 12/31/23.
+//
 
-import Firebase
+#ifndef SpeakLifeTests_Bridging_Header_h
+#define SpeakLifeTests_Bridging_Header_h
+
+
+#endif /* SpeakLifeTests_Bridging_Header_h */
