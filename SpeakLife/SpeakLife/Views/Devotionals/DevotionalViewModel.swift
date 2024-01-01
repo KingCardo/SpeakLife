@@ -108,7 +108,7 @@ final class DevotionalViewModel: ObservableObject {
     }
     
     func fetchDevotionalFor(value: Int) async {
-        guard devotionValue > -10 && devotionValue < 1 else {
+        guard devotionValue > -14 && devotionValue < 1 else {
             return
         }
         if self.devotionals.isEmpty {

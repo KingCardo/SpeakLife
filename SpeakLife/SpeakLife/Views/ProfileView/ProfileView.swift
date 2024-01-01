@@ -98,6 +98,7 @@ struct ProfileView: View {
                 shareRow
                 reviewRow
                 feedbackRow
+                prayerRow
                 //newFeaturesRow
             }
             .sheet(isPresented: $showShareSheet, content: {
@@ -311,9 +312,9 @@ struct ProfileView: View {
     
     @MainActor
     @ViewBuilder
-    private var newFeaturesRow: some View {
+    private var prayerRow: some View {
         if MFMailComposeViewController.canSendMail() {
-            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "highlighter", title: "Request new features", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .newFeatures))) {
+            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "highlighter", title: "Prayer Request", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .profile))) {
                 presentContentView()
             }
         }

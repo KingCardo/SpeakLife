@@ -42,6 +42,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case guilt
     case grace
     case joy
+    case wisdom
     
     static var categoryOrder: [DeclarationCategory] = [
         .destiny,
@@ -70,7 +71,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .loneliness,
         .selfcontrol,
         .perseverance,
-        .joy
+        .joy,
+        .wisdom
     ]
     
     static func getCategoryOrder() -> [DeclarationCategory] {
