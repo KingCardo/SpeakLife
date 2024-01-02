@@ -10,11 +10,13 @@ import SwiftUI
 struct Tip: Identifiable, Equatable {
     let id = UUID()
     let title: String
-    let tip: String
+    let text: String
 }
 
 let onboardingTips = [
-    Tip(title: "Speaking Bible affirmations ", tip: "Every day nurtures a personal and intimate relationship with Jesus with a devotional experience.")
+   // Tip(title: "Speaking Bible affirmations ", text: "Every day nurtures a personal and intimate relationship with Jesus with a devotional experience."),
+    //Tip(title: "", text: "Daily devotionals reinforce our connection with Jesus, enhancing our faith through consistent reflection on His love and grace."),
+    Tip(title: "", text: "Through our devotionals, we constantly tap into Jesus' grace, equipping us with a formidable strength that turns every challenge into a testimony of His victorious power in our lives.")
     
     /*Tip(title:"Rewiring Thought Patterns: ", tip: "Meditating on Jesus and right thoughts is ONLY way to replace bad thoughts."),
      Tip(title: "Cultivating Optimism: ", tip:"Regularly speaking Bible affirmations transforms your mindset, which transform your life."),
@@ -60,7 +62,7 @@ struct BenefitScene: View {
                             .foregroundColor(Constants.DAMidBlue)
                             .scaledToFill()
                         
-                        Text(tip.tip)
+                        Text(tip.text)
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
                             .foregroundColor(.black)
                         

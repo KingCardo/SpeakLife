@@ -106,7 +106,30 @@ final class APIClient: APIService {
         do {
             let welcome = try JSONDecoder().decode(Welcome.self, from: data)
             let declarations = Set(welcome.declarations)
-            let array = Array(declarations)
+            
+            let general = declarations.filter { $0.category == .destiny }
+            let generalArray = Array(general)
+            
+            let grace = declarations.filter { $0.category == .grace }
+            let graceArray = Array(grace)
+            
+            let hope = declarations.filter { $0.category == .hope }
+            let hopeArray = Array(hope)
+            
+            let loneliness = declarations.filter { $0.category == .loneliness }
+            let lonelinessArray = Array(loneliness)
+            
+            let motivation = declarations.filter { $0.category == .motivation }
+            let motivationArray = Array(motivation)
+            
+            let removedAllAffirmationsWithoutBookExceptGeneral = declarations.filter { $0.book != nil }
+            
+            var array = Array(removedAllAffirmationsWithoutBookExceptGeneral)
+            array.append(contentsOf: generalArray)
+            array.append(contentsOf: graceArray)
+            array.append(contentsOf: hopeArray)
+            array.append(contentsOf: lonelinessArray)
+            array.append(contentsOf:  motivation)
             let needsSync = array.count != declarationCountBE
             print(array.count, declarationCountBE, "RWRW count")
             print(needsSync, "RWRW  needs sync")

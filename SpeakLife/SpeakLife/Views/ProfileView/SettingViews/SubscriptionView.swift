@@ -20,10 +20,11 @@ struct Benefit: Identifiable  {
         
         Benefit(text: "Unlock all features"),
         Benefit(text: "Unlock all Jesus Devotionals"),
-        Benefit(text: "Unlock all themes"),
-        Benefit(text:"Proverbs 18:21: Words have immense power; they can shape your reality and influence your future. Think of them as tools that can build or destroy."),
+        Benefit(text: "Categories for any situation"),
+      //  Benefit(text: "Unlock all themes"),
+       // Benefit(text:"Proverbs 18:21: Words have immense power; they can shape your reality and influence your future. Think of them as tools that can build or destroy."),
 
-        Benefit(text:"Mark 11:23: Your convictions, voiced out loud, hold incredible power. If you truly believe and verbalize your goals or aspirations, no obstacle is too big to overcome, not even metaphorical mountains."),
+      //  Benefit(text:"Mark 11:23: Your convictions, voiced out loud, hold incredible power. If you truly believe and verbalize your goals or aspirations, no obstacle is too big to overcome, not even metaphorical mountains."),
 
        // Benefit(text: "Matthew 21:22: Faith in what you pray for is crucial. When you ask for something, believe in its possibility with conviction, and your prayers can manifest into reality."),
 
