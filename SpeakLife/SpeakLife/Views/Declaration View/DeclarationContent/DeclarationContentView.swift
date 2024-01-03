@@ -39,7 +39,7 @@ struct DeclarationContentView: View {
     var body: some View {
         GeometryReader { geometry in
             TabView(selection: $selectedTab) {
-                ForEach(Array(viewModel.declarations.enumerated()), id: \.element) { index, declaration in
+                ForEach(Array(viewModel.declarations.enumerated()), id: \.element.id) { index, declaration in
                     ZStack {
                         quoteLabel(declaration, geometry)
                             .opacity(fadeInOpacity)

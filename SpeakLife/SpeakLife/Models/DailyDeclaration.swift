@@ -144,7 +144,8 @@ struct Declaration: Codable, Identifiable, Hashable {
     var category: DeclarationCategory = .faith
     var isFavorite: Bool = false
     var id: String {
-        text + category.rawValue
+        UUID().uuidString
+       // text + category.rawValue
     }
     
     var lastEdit: Date?
