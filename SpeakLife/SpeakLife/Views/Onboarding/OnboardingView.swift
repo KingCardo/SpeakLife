@@ -12,6 +12,7 @@ import FirebaseAnalytics
 struct OnboardingView: View  {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var viewModel: DeclarationViewModel
     @Environment(\.colorScheme) var colorScheme
     
     @State var selection: Tab = .intro
@@ -245,6 +246,7 @@ struct OnboardingView: View  {
         withAnimation {
             appState.isOnboarded = true
             Analytics.logEvent(Event.onBoardingFinished, parameters: nil)
+            viewModel.requestReview.toggle()
         }
         
     }

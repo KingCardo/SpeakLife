@@ -186,8 +186,7 @@ struct DeclarationView: View {
     }
     
     private func showReview() {
-        if reviewCounter > 1 && reviewTry <= 3 {
-            
+        if reviewTry < 3 {
             DispatchQueue.main.async {
                 if let scene = UIApplication.shared.connectedScenes
                     .first(where: { $0.activationState == .foregroundActive })

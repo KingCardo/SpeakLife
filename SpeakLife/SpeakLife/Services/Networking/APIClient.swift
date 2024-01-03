@@ -122,6 +122,9 @@ final class APIClient: APIService {
             let motivation = declarations.filter { $0.category == .motivation }
             let motivationArray = Array(motivation)
             
+            let wisdom = declarations.filter { $0.category == .wisdom }
+            let wisdomArray = Array(wisdom)
+            
             let removedAllAffirmationsWithoutBookExceptGeneral = declarations.filter { $0.book != nil }
             
             var array = Array(removedAllAffirmationsWithoutBookExceptGeneral)
@@ -130,6 +133,7 @@ final class APIClient: APIService {
             array.append(contentsOf: hopeArray)
             array.append(contentsOf: lonelinessArray)
             array.append(contentsOf:  motivation)
+            array.append(contentsOf: wisdomArray)
             let needsSync = array.count != declarationCountBE
             print(array.count, declarationCountBE, "RWRW count")
             print(needsSync, "RWRW  needs sync")
