@@ -192,9 +192,10 @@ struct DeclarationContentView: View {
                         if let windowScene =  UIApplication.shared.connectedScenes.first as? UIWindowScene {
                             if let window = windowScene.windows.first {
                                 image = window.rootViewController?.view.toImage()
+                                self.showShareSheet = true
                             }
                         }
-                        self.showShareSheet = true
+                        
                     }
                     
                     Analytics.logEvent(Event.shareTapped, parameters: ["share": declaration.text])

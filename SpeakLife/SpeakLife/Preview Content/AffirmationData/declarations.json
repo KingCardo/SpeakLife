@@ -7419,7 +7419,7 @@
             "category": "peace"
         },
         {
-            "text": "I am recieving abundant peace and security from God.",
+            "text": "I am receiving abundant peace and security from God.",
             "book": "Jeremiah 33:6",
             "isFavorite": false,
             "category": "peace"
@@ -14468,7 +14468,7 @@
             "isFavorite": false,
             "category": "identity"
         },{
-            "text": "I can't earn God'slove, I just have to recieve it",
+            "text": "I can't earn God's love, I just have to receive it",
             "isFavorite": false,
             "category": "identity"
         },{
@@ -21021,118 +21021,446 @@
                              "category": "wisdom"
                            },
                            {
-                             "text": "My actions reflect the wisdom of God, and I walk blamelessly in His sight.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "My actions reflect the wisdom of God, and I walk blamelessly in His sight.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am unshaken by trials and tribulations, for I have the wisdom of God as my fortress.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am unshaken by trials and tribulations, for I have the wisdom of God as my fortress.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I declare that I am filled with the spirit of wisdom, knowledge, and understanding.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I declare that I am filled with the spirit of wisdom, knowledge, and understanding.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I possess divine insight that leads me to success and prosperity in all areas of my life.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I possess divine insight that leads me to success and prosperity in all areas of my life.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am a wise leader, guiding others with wisdom and compassion.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am a wise leader, guiding others with wisdom and compassion.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am relentless in my pursuit of wisdom, and I continually grow in understanding.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am relentless in my pursuit of wisdom, and I continually grow in understanding.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am a warrior of wisdom, and I declare victory over every challenge that comes my way.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am a warrior of wisdom, and I declare victory over every challenge that comes my way.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "The wisdom of God is my compass, guiding me through the storms of life with unwavering faith.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "The wisdom of God is my compass, guiding me through the storms of life with unwavering faith.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am a champion of wisdom, and I fearlessly face adversity with the knowledge of God's truth.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am a champion of wisdom, and I fearlessly face adversity with the knowledge of God's truth.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am a wise and strategic planner, achieving success in all my endeavors.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am a wise and strategic planner, achieving success in all my endeavors.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am a warrior of wisdom, and I declare victory in every aspect of my life.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am a warrior of wisdom, and I declare victory in every aspect of my life.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am anointed with divine wisdom, and I walk in God's favor and grace.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am anointed with divine wisdom, and I walk in God's favor and grace.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am a warrior of wisdom, and I face every battle with unwavering faith and courage.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am a warrior of wisdom, and I face every battle with unwavering faith and courage.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am filled with divine wisdom, and I use it to bless and inspire those around me.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am filled with divine wisdom, and I use it to bless and inspire those around me.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am a warrior of wisdom, and I declare triumph over every obstacle in my path.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am a warrior of wisdom, and I declare triumph over every obstacle in my path.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am anointed with wisdom and discernment, and I walk in victory and favor.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am anointed with wisdom and discernment, and I walk in victory and favor.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am a champion of wisdom, and I rise above challenges with grace and confidence.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am a champion of wisdom, and I rise above challenges with grace and confidence.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am a warrior of wisdom, and I wield the sword of truth with authority and conviction.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am a warrior of wisdom, and I wield the sword of truth with authority and conviction.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am anointed with wisdom, knowledge, and understanding, and I walk in victory and purpose.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am anointed with wisdom, knowledge, and understanding, and I walk in victory and purpose.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am filled with divine wisdom, and I radiate it to bring light and hope to others.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am filled with divine wisdom, and I radiate it to bring light and hope to others.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
                            {
-                             "text": "I am a victorious overcomer, triumphing over every challenge with the wisdom of God.",
-                             "isFavorite": false,
-                             "category": "wisdom"
+                               "text": "I am a victorious overcomer, triumphing over every challenge with the wisdom of God.",
+                               "isFavorite": false,
+                               "category": "wisdom"
                            },
+                           {
+                               "text": "In Christ, I am equipped with heavenly wisdom to face any situation with confidence.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "I am rooted in Christ, gaining understanding and wisdom in abundance.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "In Christ, I possess the treasures of wisdom and knowledge hidden in Him.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "I am victorious in Christ, for He is the source of all wisdom and understanding.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "Through Christ, I am filled with divine knowledge and revelation.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "I declare victory through Christ, who reveals the depths of wisdom to me.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "In Christ, I have access to the unlimited wisdom and knowledge of the Almighty.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "I am a conqueror in Christ, for His wisdom surpasses all human understanding.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "Through Christ, I gain divine insights that lead me to triumph and success.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "I am a vessel of Christ's wisdom, shining His light in a world filled with darkness.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "In Christ, I am strengthened with the power of His wisdom to overcome all obstacles.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "I declare my identity in Christ, as one who possesses the riches of His wisdom.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "Through Christ, I am filled with discernment and understanding beyond my years.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "I am a warrior of Christ, armed with His wisdom to stand firm in every battle.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "In Christ, I have access to the wellspring of wisdom, quenching my thirst for knowledge.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "Through Christ, I am empowered with wisdom to make righteous decisions.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "I am a warrior of Christ, standing strong in His wisdom against the schemes of the enemy.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "In Christ, I am filled with the knowledge of His will, walking in wisdom and spiritual understanding.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "I command you to love one another, just as I have loved you.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "love"
+                           },
+                           {
+                               "text": "By loving as I have loved you, you reflect my presence in the world.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "love"
+                           },
+                           {
+                               "text": "As I have loved you, you are empowered to love others with compassion.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "love"
+                           },
+                           {
+                               "text": "Loving one another as I have loved you brings joy and unity to your life.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "love"
+                           },
+                           {
+                               "text": "Your love for others is a testament to your relationship with me.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "love"
+                           },
+                           {
+                               "text": "As you love, you walk in my footsteps and fulfill your purpose.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "love"
+                           },
+                           {
+                               "text": "Love is the mark of your identity as a follower of my teachings.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "love"
+                           },
+                           {
+                               "text": "In loving others deeply, you honor my love for you and share it with the world.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "love"
+                           },
+                           {
+                               "text": "I have great plans for your destiny; let my Word be your guide.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           },
+                           {
+                               "text": "Your destiny is to live in freedom and purpose; I will lead you there.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           },
+                           {
+                               "text": "I have a destiny of blessings and abundance for you; seek me and find it.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           },
+                           {
+                               "text": "Renew your mind daily, for it aligns you with your divine destiny.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           },
+                           {
+                               "text": "I have designed your destiny with love and care; trust in my plan.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           },{
+                               "text": "Your destiny is to be a living testimony of my transforming power.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           },{
+                               "text": "I have great plans for you; let your heart be filled with hope and joy.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           },
+                           {
+                               "text": "Your destiny is to walk in faith, knowing I hold your future in my hands.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           }, {
+                               "text": "Your future is filled with promise and purpose, for I am with you always.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           },
+                           {
+                               "text": "I know the beautiful destiny I have prepared for you; walk in faith.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           },
+                           {
+                               "text": "Your future is in my loving care; trust in my perfect plan.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           },{
+                               "text": "I am destined for greatness, with a future filled with hope.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am a warrior of faith, walking in the path of God's purpose.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am fearlessly pursuing my divine destiny with unwavering faith.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am empowered by God's promises, shaping my destiny in victory.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am the architect of my destiny, guided by God's loving hand.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am a conqueror of challenges, destined for God's blessings.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am walking in the light of God's plan, secure in my destiny.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am a vessel of God's purpose, fulfilling my destiny with strength.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am a child of destiny, chosen by God for His marvelous plan.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am unshaken by adversity, for my destiny is rooted in God's love.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am a warrior of hope, determined to embrace my destined future.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am God's masterpiece, designed for a destiny of purpose and joy.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am boldly stepping into my destiny, knowing God's plans are good.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am a victor over doubt and fear, claiming my divine destiny.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am a champion of faith, shaping my destiny with God's guidance.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am destined to rise above challenges, for God is with me.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                               "text": "I am anointed for success, walking confidently in my destiny.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                             },
+                             {
+                                 "text": "In your weakness, my strength is made perfect.",
+                                 "book": "- Jesus",
+                                 "isFavorite": false,
+                                 "category": "grace"
+                             },
+                             {
+                                 "text": "You carry my presence, shining my light wherever you go.",
+                                 "book": "- Jesus",
+                                 "isFavorite": false,
+                                 "category": "grace"
+                             },
+                             {
+                                 "text": "In me, you find true freedom and endless grace.",
+                                 "book": "- Jesus",
+                                 "isFavorite": false,
+                                 "category": "grace"
+                             },
+                             {
+                                 "text": "I am your rock, your fortress, your deliverer in times of need.",
+                                 "book": "- Jesus",
+                                 "isFavorite": false,
+                                 "category": "grace"
+                             },
+                             {
+                                 "text": "You are chosen, royal, holy, and my special possession.",
+                                 "book": "- Jesus",
+                                 "isFavorite": false,
+                                 "category": "grace"
+                             },
+                             {
+                                 "text": "Your faith in me turns your trials into triumphs.",
+                                 "book": "- Jesus",
+                                 "isFavorite": false,
+                                 "category": "grace"
+                             },
+                             {
+                                 "text": "You are not defined by your past but by my love for you.",
+                                 "book": "- Jesus",
+                                 "isFavorite": false,
+                                 "category": "grace"
+                             },
 
-                
-                
-        
-        
-        
-        
-        
+
+                           
+                           
+                           
+                           
+                           
+                           
+                           
         
         
         

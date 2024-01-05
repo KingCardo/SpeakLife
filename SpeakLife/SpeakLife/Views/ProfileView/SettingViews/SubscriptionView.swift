@@ -286,6 +286,14 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 36)
                     
+                    HStack {
+                        Image(systemName: "person.3.fill")
+                        Text("30K+ Users")
+                        
+                        Spacer()
+                        StarRatingView(rating: 4.8)
+                    }.padding([.leading,.trailing, .bottom],20)
+                    
                     benefitRows
                         .foregroundColor(.white)
                     
@@ -464,4 +472,27 @@ struct SubscriptionView: View {
         
         .padding([.leading, .trailing], 20)
     }
+}
+
+
+struct StarRatingView: View {
+    let rating: Double // Assuming the rating is out of 5
+
+    var body: some View {
+        VStack {
+            HStack {
+                ForEach(1...5, id: \.self) { index in
+                    Image(systemName: "star.fill")
+                        .foregroundColor(self.starColor(for: index))
+                }
+            }
+            Text(String(format: "%.1f/5 star rating", rating))
+               // .foregroundStyle(Color.gray)
+                .font(.subheadline)
+        }
+       }
+       
+       func starColor(for index: Int) -> Color {
+           return .yellow //index <= Int(rating) ? .yellow : .gray
+       }
 }

@@ -126,6 +126,12 @@ final class APIClient: APIService {
             let wisdomArray = Array(wisdom)
             
             let removedAllAffirmationsWithoutBookExceptGeneral = declarations.filter { $0.book != nil }
+                .filter({ $0.category != .destiny })
+                .filter({ $0.category != .grace })
+                .filter({ $0.category != .hope })
+                .filter({ $0.category != .loneliness })
+                .filter({ $0.category != .motivation })
+                .filter({ $0.category != .wisdom })
             
             var array = Array(removedAllAffirmationsWithoutBookExceptGeneral)
             array.append(contentsOf: generalArray)
