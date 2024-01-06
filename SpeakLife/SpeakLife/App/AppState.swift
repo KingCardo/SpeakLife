@@ -23,7 +23,7 @@ final class AppState: ObservableObject {
     @AppStorage("startTimeNotification") var startTimeNotification = ""
     @AppStorage("endTimeNotification") var endTimeNotification = ""
     @AppStorage("startTimeIndex") var startTimeIndex = 16
-    @AppStorage("endTimeIndex") var endTimeIndex = 36
+    @AppStorage("endTimeIndex") var endTimeIndex = 40
     @AppStorage("selectedNotificationCategories") var selectedNotificationCategories: String = ""
     @AppStorage("showScreenshotLabel") var showScreenshotLabel = false
     @AppStorage("abbasLoveLetterIndex") var loveLetterIndex = 0

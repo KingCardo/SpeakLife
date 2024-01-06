@@ -29,7 +29,7 @@
             "text": "The Lord keeps watch over you as you come and go, both now and forever.",
             "book": "Psalm 121:8 NLT",
             "isFavorite": false,
-            "category": "hope"
+            "category": "godsprotection"
         },
         {
             "text": "You must serve only the Lord your God. If you do, I will bless you with food and water, and I will protect you from illness.",
@@ -364,19 +364,8 @@
             "category": "faith"
         },
         {
-            "text": "\"I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.\"",
-            "book": "Mark 11:24 NLT",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
             "text": "I walk by faith, not by sight.",
             "book": "2 Corinthians 5:7",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "Jesus is the reason I walk by faith, seeing beyond what's in front of me.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -591,49 +580,49 @@
         },
         {
             "text": "\"That is why I tell you not to worry about everyday life—whether you have enough food and drink, or enough clothes to wear. Isn’t life more than food, and your body more than clothing?\"",
-            "book": "Matthew 6:25  NLT",
+            "book": "Matthew 6:25",
             "isFavorite": false,
             "category": "fear"
         },
         {
             "text": "Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me. Your rod and your staff, they comfort me.",
-            "book": "Psalm 23:4 WEB",
+            "book": "Psalm 23:4",
             "isFavorite": false,
             "category": "fear"
         },
         {
             "text": "So don’t worry about tomorrow, for tomorrow will bring its own worries. Today’s trouble is enough for today.",
-            "book": "Matthew 6:34 NLT",
+            "book": "Matthew 6:34",
             "isFavorite": false,
             "category": "fear"
         },
         {
             "text": "Give all your cares to the Lord and He will give you strength. He will never let those who are right with Him be shaken.",
-            "book": "Psalm 55:22 NLV",
+            "book": "Psalm 55:22",
             "isFavorite": false,
             "category": "fear"
         },
         {
             "text": "Never stop praying.",
-            "book": "1 Thessalonians 5:17 NLT",
+            "book": "1 Thessalonians 5:17",
             "isFavorite": false,
             "category": "fear"
         },
         {
             "text": "Do not be afraid of them who kill the body. They are not able to kill the soul. But fear Him Who is able to destroy both soul and body in hell.",
-            "book": "Matthew 10:28 NLV",
+            "book": "Matthew 10:28",
             "isFavorite": false,
             "category": "fear"
         },
         {
             "text": "For I know that nothing can keep us from the love of God. Death cannot! Life cannot! Angels cannot! Leaders cannot! Any other power cannot! Hard things now or in the future cannot!",
-            "book": "Romans 8:38 NLV",
+            "book": "Romans 8:38",
             "isFavorite": false,
             "category": "fear"
         },
         {
             "text": "Do not be afraid of them. For the Lord your God is the One fighting for you.",
-            "book": "Deuteronomy 3:22 NLV",
+            "book": "Deuteronomy 3:22",
             "isFavorite": false,
             "category": "fear"
         },
@@ -713,23 +702,11 @@
             "text": "Don’t be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God.",
             "book": "Romans 12:2 WEB",
             "isFavorite": false,
-            "category": "health"
+            "category": "identity"
         },
         {
             "text": "Abstain from every form of evil.",
             "book": "1 Thessalonians 5:22 NLT",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "If any man destroys the house of God, God will destroy him. God’s house is holy. You are the place where He lives.",
-            "book": "1 Corinthians 3:17 NLV",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Behold, I will bring it health and cure, and I will cure them; and I will reveal to them abundance of peace and truth.",
-            "book": "Jeremiah 33:6 WEB",
             "isFavorite": false,
             "category": "health"
         },
@@ -754,12 +731,6 @@
         {
             "text": "Do not be wise in your own eyes. Fear the Lord and turn away from what is sinful. It will be healing to your body and medicine to your bones.",
             "book": "Proverbs 3:7-8 NLV",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "The Lord nurses them when they are sick and restores them to health.",
-            "book": "Psalm 41:3 NLT",
             "isFavorite": false,
             "category": "health"
         },
@@ -1002,12 +973,6 @@
             "book": "Philippians 2:14 NLV",
             "isFavorite": false,
             "category": "gratitude"
-        },
-        {
-            "text": "For I know the plans I have for you, says the Lord. \"They are plans for good and not for disaster, to give you a future and a hope.\"",
-            "book": "Jeremiah 29:11 NLT",
-            "isFavorite": false,
-            "category": "faith"
         },
         {
             "text": "Jesus is the architect of my future, holding plans of hope and promise. In Him, I find my purpose and my destiny.",
@@ -1325,7 +1290,7 @@
             "text": "He forgives all my sins and heals all my diseases.",
             "book": "Psalm 103:3 NLT",
             "isFavorite": false,
-            "category": "faith"
+            "category": "health"
         },
         {
             "text": "Jesus is the healer who forgives all my sins and restores my soul.",
@@ -1718,14 +1683,8 @@
             "category": "loneliness"
         },
         {
-            "text": "But I will restore you to health and heal your wounds,’declares the Lord",
-            "book": "Jeremiah 30:17 ",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "I will give you back your health and heal your wounds, says the LORD.",
-            "book": "Jeremiah 30:17 NLT",
+            "book": "Jeremiah 30:17",
             "isFavorite": false,
             "category": "health"
         },
@@ -1754,32 +1713,14 @@
             "category": "health"
         },
         {
-            "text": "Heal me, Lord, and I will be healed; save me and I will be saved, for you are the one I praise.",
-            "book": "Jeremiah 17:14 ",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "God gave Jesus of Nazareth the Holy Spirit and power. He went around doing good and healing all who were troubled by the devil because God was with Him.",
             "book": "Acts 10:38 NLV",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "He forgives all my sins and heals all my diseases.",
-            "book": "Psalm 103:3 NLV",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "Let all that I am praise the Lord; may I never forget the good things he does for me.",
             "book": "Psalm 103:2 NLV",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "if my people, who are called by my name, will humble themselves and pray and seek my face and turn from their wicked ways, then I will hear from heaven, and I will forgive their sin and will heal their land.",
-            "book": "2 Chronicles 7:14 ",
             "isFavorite": false,
             "category": "health"
         },
@@ -1793,7 +1734,7 @@
             "text": "Guard your heart above all else, for it determines the course of your life.",
             "book": "Proverbs 4:23 NLT",
             "isFavorite": false,
-            "category": "health"
+            "category": "destiny"
         },
         {
             "text": "O Lord my God, I cried to you for help, and you restored my health.",
@@ -2522,11 +2463,6 @@
             "isFavorite": false,
             "category": "love"},
         {
-            "text": "Your love, Lord, reaches to the heavens, your faithfulness to the skies." ,
-            "book": "Psalm 36:5 ",
-            "isFavorite": false,
-            "category": "love"},
-        {
             "text": "May the Lord direct your hearts into God’s love and Christ’s perseverance." ,
             "book": "2 Thessalonians 3:5 ",
             "isFavorite": false,
@@ -2547,11 +2483,6 @@
             "isFavorite": false,
             "category": "love"},
         {
-            "text": "But you, Lord, are a compassionate and gracious God, slow to anger, abounding in love and faithfulness." ,
-            "book": "Psalm 86:15 ",
-            "isFavorite": false,
-            "category": "love"},
-        {
             "text": "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.",
             "book": "Romans 8:38-39 ",
             "isFavorite": false,
@@ -2559,11 +2490,6 @@
         {
             "text": "For God did not send his Son into the world to condemn the world, but to save the world through him.",
             "book": "John 3:17 ",
-            "isFavorite": false,
-            "category": "love"},
-        {
-            "text": "This is love: not that we loved God, but that he loved us and sent his Son as an atoning sacrifice for our sins.",
-            "book": "1 John 4:10 ",
             "isFavorite": false,
             "category": "love"},
         {
@@ -2577,7 +2503,7 @@
             "isFavorite": false,
             "category": "love"},
         {
-            "text": "For as high as the heavens are above the earth, so great is his love for those who fear him;" ,
+            "text": "For as high as the heavens are above the earth, so great is his love for those who worship him" ,
             "book": "Psalm 103:11 ",
             "isFavorite": false,
             "category": "love"},
@@ -3441,7 +3367,7 @@
             "category": "health"
         },
         {
-            "text": "I am strong, healthy and full of energy.",
+            "text": "I am strong, healthy and full of life.",
             "isFavorite": false,
             "category": "health"
         },
@@ -4218,11 +4144,6 @@
             "category": "gratitude"
         },
         {
-            "text": "I am thankful for the grace of God in truth.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
             "text": "I am thankful to God, who gives me the victory through our Lord Jesus Christ.",
             "isFavorite": false,
             "category": "gratitude"
@@ -4234,11 +4155,6 @@
         },
         {
             "text": "I bless the Lord, who counsels me; even at night my heart instructs me.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "I am thankful that I am fearfully and wonderfully made by God.",
             "isFavorite": false,
             "category": "gratitude"
         },
@@ -4298,17 +4214,7 @@
             "category": "gratitude"
         },
         {
-            "text": "I am thankful that God’s love has been poured out into my heart through the Holy Spirit.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
             "text": "I am thankful that I am a child of God and co-heir with Christ.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "I give thanks to the Lord of lords, for His lovingkindness is everlasting.",
             "isFavorite": false,
             "category": "gratitude"
         },
@@ -4318,22 +4224,12 @@
             "category": "gratitude"
         },
         {
-            "text": "I am grateful that God's word is a lamp to my feet and a light to my path.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
             "text": "I am thankful for the Holy Spirit who helps me in my weakness and intercedes for me.",
             "isFavorite": false,
             "category": "gratitude"
         },
         {
-            "text": "I am grateful for the hope that God gives, which does not disappoint, because God's love has been poured into my heart through the Holy Spirit.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "I am thankful that Jesus Christ, the same yesterday, today, and forever.",
+            "text": "I am thankful that Jesus Christ, is the same yesterday, today, and forever.",
             "isFavorite": false,
             "category": "gratitude"
         },
@@ -5105,18 +5001,6 @@
             "category": "love"
         },
         {
-            "text": "I keep myself in the love of God, waiting for the mercy of our Lord Jesus Christ that leads to eternal life.",
-            "book": "Jude 1:21",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "I am rooted and grounded in love, and I comprehend the breadth, length, depth, and height of Christ's love for me.",
-            "book": "Ephesians 3:17-18",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
             "text": "I experience the love of Christ, which surpasses all knowledge, and I am filled with all the fullness of God.",
             "book": "Ephesians 3:19",
             "isFavorite": false,
@@ -5177,26 +5061,8 @@
             "category": "love"
         },
         {
-            "text": "By the Lord's love, I am not consumed, for His compassions never fail.",
-            "book": "Lamentations 3:22",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
             "text": "God's love stands firm forever.",
             "book": "Psalm 89:2",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "I know the love that surpasses knowledge.",
-            "book": "Ephesians 3:19",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "God's love for me is steadfast and does not waver.",
-            "book": "Exodus 15:13",
             "isFavorite": false,
             "category": "love"
         },
@@ -5221,12 +5087,6 @@
         {
             "text": "I am more than a conqueror through Him who loves me.",
             "book": "Romans 8:37",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "I abide in love, because God is love.",
-            "book": "1 John 4:16",
             "isFavorite": false,
             "category": "love"
         },
@@ -5297,13 +5157,7 @@
             "category": "faith"
         },
         {
-            "text": "I walk in Christ Jesus, rooted in Him and established in faith.",
-            "book": "Colossians 2:6-7",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "I fight the good fight, I finish the race, I keep the faith.",
+            "text": "I fight the good fight, I run my race, I keep the faith.",
             "book": "2 Timothy 4:7",
             "isFavorite": false,
             "category": "faith"
@@ -5315,7 +5169,7 @@
             "category": "faith"
         },
         {
-            "text": "By faith, I understand that the uerse was created by the word of God.",
+            "text": "By faith, I understand that the universe was created by the word of God.",
             "book": "Hebrews 11:3",
             "isFavorite": false,
             "category": "faith"
@@ -5332,12 +5186,6 @@
             "category": "faith"
         },
         {
-            "text": "I draw near to God with a sincere heart and with full assurance of faith.",
-            "book": "Hebrews 10:22",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
             "text": "I ask in faith without doubting.",
             "isFavorite": false,
             "category": "faith"
@@ -5349,7 +5197,7 @@
             "category": "faith"
         },
         {
-            "text": "I pray in the Holy Spirit, keep myself in God’s love, waiting for the mercy of Jesus Christ that leads to eternal life.",
+            "text": "I pray in the Holy Spirit, keep myself in God’s love, waiting for the return of Jesus Christ that leads to eternal life.",
             "book": "Jude 1:20-21",
             "isFavorite": false,
             "category": "faith"
@@ -6171,12 +6019,6 @@
         {
             "text": "The steadfast love of the Lord never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness.",
             "book": "Lamentations 3:22-23",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Be strong and courageous. Do not fear or be in dread of them, for it is the Lord your God who goes with you. He will not leave you or forsake you.",
-            "book": "Deuteronomy 31:6",
             "isFavorite": false,
             "category": "depression"
         },
@@ -7341,12 +7183,6 @@
             "category": "peace"
         },
         {
-            "text": "I am upheld by the God of peace, who will soon crush Satan under my feet.",
-            "book": "Romans 16:20",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
             "text": "I am resting in the shelter of the Almighty",
             "book": "Psalm 91:1",
             "isFavorite": false,
@@ -7383,20 +7219,8 @@
             "category": "peace"
         },
         {
-            "text": "I am called to peace as a member of Christ's body",
-            "book": "Colossians 3:15",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
             "text": "I am content because God has promised never to leave me.",
             "book": "Hebrews 13:5",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
-            "text": "I am blessed with the covenant of peace from the Lord",
-            "book": "Ezekiel 34:25",
             "isFavorite": false,
             "category": "peace"
         },
@@ -7951,12 +7775,6 @@
             "category": "addiction"
         },
         {
-            "text": "I am grounded and steadfast in my faith.",
-            "book": "Colossians 1:23",
-            "isFavorite": false,
-            "category": "addiction"
-        },
-        {
             "text": "I am free from the law of sin and death through Jesus Christ.",
             "book": "Romans 8:2",
             "isFavorite": false,
@@ -8041,12 +7859,6 @@
             "category": "gratitude"
         },
         {
-            "text": "I am giving thanks for His wondrous works to mankind.",
-            "book": "Psalm 107:8",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
             "text": "I am grateful that Christ died for my sins.",
             "book": "1 Corinthians 15:3",
             "isFavorite": false,
@@ -8077,12 +7889,6 @@
             "category": "gratitude"
         },
         {
-            "text": "I am glad and sing praises to His name.",
-            "book": "Psalm 9:2",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
             "text": "I am blessed.",
             "isFavorite": false,
             "category": "gratitude"
@@ -8091,25 +7897,7 @@
             "text": "I am filled with the knowledge of His will, leading to wisdom and understanding.",
             "book": "Colossians 1:9",
             "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "I am thankful, for the Lord is good and His love endures forever.",
-            "book": "Psalm 106:1",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "I am enriched in every way to be generous, which produces thanksgiving to God.",
-            "book": "2 Corinthians 9:11",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "I am filled with joy and gratitude because of the Lord's love.",
-            "book": "Psalm 92:4",
-            "isFavorite": false,
-            "category": "gratitude"
+            "category": "wisdom"
         },
         {
             "text": "I am praising the Lord for He has been good to me.",
@@ -8133,35 +7921,11 @@
             "text": "I am declaring His glory among the world.",
             "book": "1 Chronicles 16:24",
             "isFavorite": false,
-            "category": "gratitude"
+            "category": "identity"
         },
         {
             "text": "I am always giving thanks to the Father for His direction.",
             "book": "1 Peter 2:9",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "I am thankful for the Lord's unfailing love.",
-            "book": "Psalm 107:8",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "I am continually seeking the Lord and His strength.",
-            "book": "1 Chronicles 16:11",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "I am rejoicing in the Lord always.",
-            "book": "Philippians 4:4",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "I am finding refuge in the shadow of His wings and feasting on His abundance.",
-            "book": "Psalm 36:7-8",
             "isFavorite": false,
             "category": "gratitude"
         },
@@ -8609,12 +8373,6 @@
             "category": "love"
         },
         {
-            "text": "I am showing God's love when I keep His commandments.",
-            "book": "John 14:23",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
             "text": "I am rooted and grounded in love.",
             "book": "Ephesians 3:17",
             "isFavorite": false,
@@ -8629,18 +8387,6 @@
         {
             "text": "I am filled with a love that comes from a pure heart, good conscience, and sincere faith.",
             "book": "1 Timothy 1:5",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "I am abiding in love, and thus abiding in God.",
-            "book": "1 John 4:16",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "I am laying down my life in love for my friends.",
-            "book": "John 15:13",
             "isFavorite": false,
             "category": "love"
         },
@@ -8719,12 +8465,6 @@
         {
             "text": "I am built up in love as the body of Christ.",
             "book": "Ephesians 4:16",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "I am kind to others because love is kind.",
-            "book": "1 Corinthians 13:4",
             "isFavorite": false,
             "category": "love"
         },
@@ -9373,20 +9113,8 @@
             "category": "health"
         },
         {
-            "text": "I am filled with the joy of the Lord, which is my strength.",
-            "book": "Nehemiah 8:10",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "I am walking in the light, experiencing fellowship and purification from all sin.",
             "book": "1 John 1:7",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am hopeful, waiting on the Lord who will renew my strength.",
-            "book": "Isaiah 40:31",
             "isFavorite": false,
             "category": "health"
         },
@@ -9394,7 +9122,7 @@
             "text": "I am protected from harm, for He is my refuge and fortress.",
             "book": "Psalm 91:2",
             "isFavorite": false,
-            "category": "health"
+            "category": "godsprotection"
         },
         {
             "text": "I am blessed with the promise that God will satisfy me with long life.",
@@ -9411,12 +9139,6 @@
         {
             "text": "I am touched by Jesus, the Great Physician.",
             "book": "Mark 2:17",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am rooted in a healthy foundation, built upon the rock.",
-            "book": "Matthew 7:24-25",
             "isFavorite": false,
             "category": "health"
         },
@@ -9453,24 +9175,6 @@
         {
             "text": "I am confident that God will perfect that which concerns me.",
             "book": "Psalm 138:8",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am immovable, always abounding in the work of the Lord.",
-            "book": "1 Corinthians 15:58",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am equipped with every good thing to do God's will.",
-            "book": "Hebrews 13:21",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am firmly grounded, letting peace rule in my heart.",
-            "book": "Colossians 3:15",
             "isFavorite": false,
             "category": "health"
         },
@@ -10928,7 +10632,7 @@
             "category": "faith"
         },
         {
-            "text": "Jesus is my eternal king, ruling with justice and love.",
+            "text": "Jesus is my King, ruling with justice and love.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -11110,11 +10814,6 @@
         },
         {
             "text": "Jesus is the way-maker, creating paths where none exist.",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
-            "text": "Jesus is the eternal one, timeless in his love and power.",
             "isFavorite": false,
             "category": "faith"
         },
@@ -11389,12 +11088,12 @@
             "category": "love"
         },
         {
-            "text": "Jesus is the comforter, wrapping me in a love that heals.",
+            "text": "Jesus is my comforter, wrapping me in a love that heals.",
             "isFavorite": false,
             "category": "love"
         },
         {
-            "text": "Jesus is the protector, shielding me with an unbreakable love.",
+            "text": "Jesus is my protector, shielding me with an unbreakable love.",
             "isFavorite": false,
             "category": "love"
         },
@@ -11404,67 +11103,32 @@
             "category": "love"
         },
         {
-            "text": "Jesus is the generous giver, pouring out love abundantly.",
+            "text": "Jesus loves me despite my shortcomings.",
             "isFavorite": false,
             "category": "love"
         },
         {
-            "text": "Jesus is the kind shepherd, leading me with love.",
+            "text": "Jesus is my relentless pursuer, seeking me with love.",
             "isFavorite": false,
             "category": "love"
         },
         {
-            "text": "Jesus is the compassionate friend, understanding and loving me deeply.",
+            "text": "Jesus is my security blanket, wrapping me in safe love.",
             "isFavorite": false,
             "category": "love"
         },
         {
-            "text": "Jesus is the grace-giver, loving me despite my shortcomings.",
+            "text": "Jesus is my gracious savior, embracing me with open arms.",
             "isFavorite": false,
             "category": "love"
         },
         {
-            "text": "Jesus is the beacon of love, guiding me through darkness.",
+            "text": "Jesus is my merciful judge, choosing love over condemnation.",
             "isFavorite": false,
             "category": "love"
         },
         {
-            "text": "Jesus is the relentless pursuer, seeking me with love.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is the joyful celebrator, rejoicing in love with me.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is the faithful lover, His affections never wane.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is the security blanket, enveloping me in safe love.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is the accepting savior, embracing me with open arms.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is the merciful judge, choosing love over condemnation.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is the unwavering constant, His love forever steadfast.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is the intimate knower, loving me inside and out.",
+            "text": "Jesus loves me inside and out.",
             "isFavorite": false,
             "category": "love"
         },
@@ -11474,57 +11138,7 @@
             "category": "love"
         },
         {
-            "text": "Jesus is the blessing bearer, showering me with love-filled gifts.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is the tear-wiper, tenderly loving me in sorrow.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is the patient teacher, instructing me in love’s ways.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is the genuine truth, His love pure and sincere.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is the soul-whisperer, speaking love into my spirit.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is the life-giver, breathing love into my existence.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is the eternal flame, lighting my way with love.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is forever holding me in His love.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is the fortress, defending me with a strong love.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is the infinite, his love knows no boundaries.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus is my encourager, lifting my spirit with love.",
+            "text": "Jesus is my patient teacher, instructing me in love’s ways.",
             "isFavorite": false,
             "category": "love"
         },
@@ -11549,22 +11163,12 @@
             "category": "peace"
         },
         {
-            "text": "Jesus is the gentle whisper, offering peace amid chaos.",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
-            "text": "Jesus is the steady anchor, grounding us in peaceful waters.",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
             "text": "Jesus is my protective shield, guarding my mind in peace.",
             "isFavorite": false,
             "category": "peace"
         },
         {
-            "text": "Jesus is the reassuring hand, leading me to peaceful paths.",
+            "text": "Jesus leads me to peaceful paths.",
             "isFavorite": false,
             "category": "peace"
         },
@@ -11572,66 +11176,6 @@
             "text": "Jesus is the calming presence, dispelling our fears with peace.",
             "isFavorite": false,
             "category": "peace"
-        },
-        {
-            "text": "Jesus is the forgiving judge, restoring peace in our hearts.",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
-            "text": "Jesus is the reconciler, mending relationships with peace.",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
-            "text": "Jesus is the comforting blanket, enveloping us in warmth and peace.",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
-            "text": "Jesus is the gentle stream, flowing with endless peace.",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
-            "text": "Jesus is the soothing lullaby, whispering peace into our dreams.",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
-            "text": "Jesus is the secure fortress, defending our hearts with His peace.",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
-            "text": "Jesus is the quiet meadow, where our anxieties find peace.",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
-            "text": "Jesus is the solid ground, upon which we stand in peace.",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
-            "text": "Jesus is the abundant grace, filling our lives with peace.",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
-            "text": "Jesus is the peaceful rest, renewing our spirits with tranquility.",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
-            "text": "Jesus is the gentle healer, mending our brokenness with peace.",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
-            "text": "Jesus is the peaceful slumber, granting me restful nights.",
-            "isFavorite": false,
-            "category": "rest"
         },
         {
             "text": "Jesus is my quiet place, where my souls find rest.",
@@ -11642,71 +11186,6 @@
             "text": "Jesus is who I run to where my mind can rest.",
             "isFavorite": false,
             "category": "rest"
-        },
-        {
-            "text": "Jesus is the comforting blanket, wrapping me in rest.",
-            "isFavorite": false,
-            "category": "rest"
-        },
-        {
-            "text": "Jesus is the peaceful sunset, signaling time to rest.",
-            "isFavorite": false,
-            "category": "rest"
-        },
-        {
-            "text": "Jesus is my caring shepherd, guiding me to fields of rest.",
-            "isFavorite": false,
-            "category": "rest"
-        },
-        {
-            "text": "Jesus is my enveloping peace, allowing my heart to rest.",
-            "isFavorite": false,
-            "category": "rest"
-        },
-        {
-            "text": "Jesus is the soft petal, gently inviting us to rest.",
-            "isFavorite": false,
-            "category": "rest"
-        },
-        {
-            "text": "Jesus is the warm embrace, welcoming us into rest.",
-            "isFavorite": false,
-            "category": "rest"
-        },
-        {
-            "text": "Jesus is the silent night, where peaceful rest awaits.",
-            "isFavorite": false,
-            "category": "rest"
-        },
-        {
-            "text": "Jesus is the still water, reflecting the serenity of rest.",
-            "isFavorite": false,
-            "category": "rest"
-        },
-        {
-            "text": "Jesus is the protective shade, sheltering us in rest.",
-            "isFavorite": false,
-            "category": "rest"
-        },
-        {
-            "text": "Jesus is the calming tide, ushering in waves of rest.",
-            "isFavorite": false,
-            "category": "rest"
-        },
-        {
-            "text": "Jesus is the soft murmur, whispering promises of rest.",
-            "isFavorite": false,
-            "category": "rest"
-        },
-        {
-            "text": "Jesus is the calming sunset, signaling a time for rest.",
-            "isFavorite": false,
-            "category": "rest"
-        },
-        {
-            "text": "Jesus is the beacon of light, guiding me through darkness.",
-            "isFavorite": false,
-            "category": "guidance"
         },
         {
             "text": "Jesus is my wise counselor, providing insight and guidance.",
@@ -11759,21 +11238,6 @@
             "category": "guidance"
         },
         {
-            "text": "Jesus is my shining star, guiding me through the night.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is my insightful wisdom, enlightening my decisions.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is the caring hand, leading me with gentle assurance.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
             "text": "Jesus is my understanding mentor, guiding with patience.",
             "isFavorite": false,
             "category": "guidance"
@@ -11794,37 +11258,7 @@
             "category": "guidance"
         },
         {
-            "text": "Jesus is the wind at my back, propelling me forward.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is the friendly advice, suggesting the best pathways.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is the detailed roadmap, showcasing the path ahead.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is the intelligent counselor, advising me with love.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
             "text": "Jesus is the gentle correction, redirecting my wrong steps.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is my patient leader, guiding at my pace.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is the secure foothold, stabilizing my uncertain steps.",
             "isFavorite": false,
             "category": "guidance"
         },
@@ -11839,16 +11273,6 @@
             "category": "guidance"
         },
         {
-            "text": "Jesus is the certain voice, confidently leading the way.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is my reliable compass, ensuring I never lose my way.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
             "text": "Jesus is my meticulous architect, designing a pathway just for me.",
             "isFavorite": false,
             "category": "guidance"
@@ -11859,37 +11283,7 @@
             "category": "guidance"
         },
         {
-            "text": "Jesus is the hopeful vision, casting a guiding light on my future.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is the cautious observer, safeguarding my steps with care.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is the intuitive guide, directing my path with insight.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is the assuring footprint, marking a trail for me to follow.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is the unfailing GPS, recalculating when I go astray.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is my confident leader, heading towards the best destination.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is my encouraging cheerleader, uplifting my spirit when guidance is needed.",
+            "text": "Jesus is my unfailing GPS, recalculating when I go astray.",
             "isFavorite": false,
             "category": "guidance"
         },
@@ -11909,47 +11303,12 @@
             "category": "guidance"
         },
         {
-            "text": "Jesus is the knowing guru, revealing paths unknown.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is my meticulous planner, orchestrating paths of purpose.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is my reliable caretaker, guiding with undivided attention.",
-            "isFavorite": false,
-            "category": "guidance"
-        },
-        {
-            "text": "Jesus is the generous giver, blessing me abundantly.",
+            "text": "Jesus is my generous provider.",
             "isFavorite": false,
             "category": "gratitude"
         },
         {
-            "text": "Jesus is the embodiment of love, showering me with blessings to be grateful for.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the generous provider.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the selfless savior, offering endless reasons for gratitude.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the king, to who my thankfulness knows no bounds.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the infinite source, supplying unlimited reasons to be thankful.",
+            "text": "Jesus is my infinite source, supplying unlimited reasons to be thankful.",
             "isFavorite": false,
             "category": "gratitude"
         },
@@ -11964,22 +11323,7 @@
             "category": "gratitude"
         },
         {
-            "text": "Jesus is the compassionate giver, supplying all needs and wants.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is my ceaseless provider, for whom every day is a day to be thankful.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is my consistent supporter, offering constant reasons for thanks.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is my everyday hero, granting small blessings at every turn.",
+            "text": "Every day is a day to be thankful.",
             "isFavorite": false,
             "category": "gratitude"
         },
@@ -11990,11 +11334,6 @@
         },
         {
             "text": "Jesus is my overflowing cup, from which blessings never cease.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is my unnoticed helper, subtly enhancing every moment.",
             "isFavorite": false,
             "category": "gratitude"
         },
@@ -12024,52 +11363,7 @@
             "category": "gratitude"
         },
         {
-            "text": "Jesus is the sunrise that lights up my world with endless blessings!",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
             "text": "Jesus is the never-ending story of grace that fills my soul with thankfulness!",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the generous giver, showering my life with gifts to be grateful for!",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the painter, coloring my world with countless reasons to give thanks!",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the heartbeat of my thankfulness, pulsating through every grateful moment!",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the radiant sunshine, beaming down blessings and filling my heart with thanks!",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the soft whisper in the chaos, reminding me of the peace found in gratitude!",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the vibrant rainbow after the storm, a symbol of gratefulness in every drop of rain!",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the gardener of my soul, cultivating seeds of thankfulness that bloom into blessings!",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the potter of my spirit, molding my heart into a vessel that pours out thankfulness!",
             "isFavorite": false,
             "category": "gratitude"
         },
@@ -12089,88 +11383,7 @@
             "category": "gratitude"
         },
         {
-            "text": "Jesus is the melody of my soul, orchestrating a symphony of gratitude in every circumstance!",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the infinite love that wraps my life in a blanket of blessings and thankful moments!",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the solid rock, where my gratitude stands firm despite the shifting sands of life!",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the unfolding story of my life, where every page turned reveals a new reason to be thankful!",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        
-        {
-            "text": "Jesus is the fountain of blessings, ever-flowing into my life with grace.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the bright moonlight, lighting up my darkest nights with gratitude.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the gentle healer, mending my heart with threads of thankfulness.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the uplifting breeze, carrying my spirit to heights of gratitude.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the watchful guardian, protecting me with shields of blessings.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the warm sunlight, enveloping me in rays of thankful moments.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the mighty oak, grounding me with roots of eternal thanks.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the divine artist, painting my life with vibrant hues of blessings.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is the unwavering lighthouse, guiding me through seas of blessings.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
-            "text": "Jesus is my sturdy bridge, connecting me to realms of eternal gratitude.",
-            "isFavorite": false,
-            "category": "gratitude"
-        },
-        {
             "text": "Jesus is my abundant provider, ensuring my cup overflows with blessings.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Jesus is the rich vine, from which prosperity and blessings abundantly flow.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Jesus is the treasurer of heavenly wealth, showering me with abundant gifts.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -12181,16 +11394,6 @@
         },
         {
             "text": "Jesus is my gateway to prosperity, opening doors of abundant blessings.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Jesus is the opulent king, whose kingdom thrives with eternal prosperity.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Jesus is the wealth that never fades, securing my life with endless prosperity.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -12216,16 +11419,6 @@
         },
         {
             "text": "Jesus is leading me towards abundant prosperity.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Jesus is the pinnacle of wealth, where prosperity reigns supreme.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Jesus is the reliable investment, returning abundant wealth and blessings.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -12270,52 +11463,12 @@
             "category": "wealth"
         },
         {
-            "text": "Jesus is the gracious supplier, ensuring my needs and wants are abundantly met.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Jesus is the magnifier of blessings, amplifying wealth and prosperity in my life.",
+            "text": "Jesus is my gracious supplier, ensuring my needs and wants are abundantly met.",
             "isFavorite": false,
             "category": "wealth"
         },
         {
             "text": "Jesus is the supporter of my prosperous endeavors, ensuring their success.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Jesus is the shield against poverty, surrounding me with boundless wealth.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Jesus is restoring wealth and abundance in my life.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Jesus is the amplifier of financial gain, multiplying blessings in my life.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Jesus is my catalyst for wealth, initiating a cycle of continual prosperity.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Jesus is the stronghold of my prosperity, where my wealth is steadfast.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Jesus is the mender of financial brokenness, restoring prosperity in abundance.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Jesus is the controller of wealth, directing it lovingly towards my life.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -12385,87 +11538,12 @@
             "category": "guilt"
         },
         {
-            "text": "Jesus is the divine purifier, nullifying every ounce of my guilt.",
-            "isFavorite": false,
-            "category": "guilt"
-        },
-        {
-            "text": "Jesus is the sacred wind, sweeping away the debris of my guilt.",
-            "isFavorite": false,
-            "category": "guilt"
-        },
-        {
-            "text": "Jesus is the mighty ocean, where my guilt is submerged and forgotten.",
-            "isFavorite": false,
-            "category": "guilt"
-        },
-        {
-            "text": "Jesus is the beautiful sunrise, signaling a guilt-free new day.",
-            "isFavorite": false,
-            "category": "guilt"
-        },
-        {
-            "text": "Jesus is the nurturing soil, burying my guilt and sprouting new life.",
-            "isFavorite": false,
-            "category": "guilt"
-        },
-        {
-            "text": "Jesus is my merciful judge, declaring me guiltless in His court.",
-            "isFavorite": false,
-            "category": "guilt"
-        },
-        {
-            "text": "Jesus is my mighty redeemer, exchanging my guilt for grace.",
-            "isFavorite": false,
-            "category": "guilt"
-        },
-        {
-            "text": "Jesus is the benevolent shepherd, leading me away from pastures of guilt.",
-            "isFavorite": false,
-            "category": "guilt"
-        },
-        {
-            "text": "Jesus is my comforting counselor pouring his love into me.",
-            "isFavorite": false,
-            "category": "guilt"
-        },
-        {
             "text": "Jesus is the way to a guilt-free new beginning.",
             "isFavorite": false,
             "category": "guilt"
         },
         {
-            "text": "Jesus is the silencing whisper, hushing the loud voices of my guilt.",
-            "isFavorite": false,
-            "category": "guilt"
-        },
-        {
             "text": "Jesus is the unbreakable chain, linking me to forgiveness and away from guilt.",
-            "isFavorite": false,
-            "category": "guilt"
-        },
-        {
-            "text": "Jesus is the impenetrable fortress, keeping the assaults of guilt at bay.",
-            "isFavorite": false,
-            "category": "guilt"
-        },
-        {
-            "text": "Jesus is the eternal promise, assuring me that I am forgiven.",
-            "isFavorite": false,
-            "category": "guilt"
-        },
-        {
-            "text": "Jesus is the blanket of love, covering all traces of my guilt.",
-            "isFavorite": false,
-            "category": "guilt"
-        },
-        {
-            "text": "Jesus is the safe harbor, where my guilt-drenched ship finds peace.",
-            "isFavorite": false,
-            "category": "guilt"
-        },
-        {
-            "text": "Jesus is the protector, defending me from the attacks of guilt.",
             "isFavorite": false,
             "category": "guilt"
         },
@@ -12790,22 +11868,12 @@
             "category": "discipline"
         },
         {
-            "text": "Jesus is my healer, safeguarding my health with divine strength.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the provider of vitality, infusing my body with heavenly energy.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "Jesus is my source of wellness, blessing every cell of my body.",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "Jesus is the fountain of youth, renewing my spirit and body daily.",
+            "text": "Jesus is my fountain of youth, renewing my spirit and body daily.",
             "isFavorite": false,
             "category": "health"
         },
@@ -12815,17 +11883,12 @@
             "category": "health"
         },
         {
-            "text": "Jesus is the shield, protecting me from every illness and disease.",
+            "text": "Jesus is my shield, protecting me from every illness and disease.",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "Jesus is the caretaker of my health, guarding me against all harm.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the great physician, providing divine solutions for every ailment.",
+            "text": "Jesus is my great physician, providing divine solutions for every sickness.",
             "isFavorite": false,
             "category": "health"
         },
@@ -12835,57 +11898,12 @@
             "category": "health"
         },
         {
-            "text": "Jesus is the eternal energy, fueling my body with endless vitality.",
+            "text": "Jesus is my powerful protector, shielding my body from any weakness.",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "Jesus is the life-giver, breathing healthy energies into my life.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the bearer of health, securing my life with a heavenly guarantee.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the powerful protector, shielding my body from any weakness.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the light of life, illuminating my path towards perfect health.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the vibrant vitality, enabling a life of strength and vitality.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the pure cleanliness, washing away every health concern.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the fortifying power, strengthening my body, soul, and spirit.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the bountiful fruit, offering nourishment for sustained health.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the uplifting spirit, raising my health to heavenly heights.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the miracle worker, transforming my health in miraculous ways.",
+            "text": "Jesus is my miracle worker, transforming my health in miraculous ways.",
             "isFavorite": false,
             "category": "health"
         },
@@ -12893,42 +11911,7 @@
             "text": "Jesus is the divine doctor, providing heavenly care for my body.",
             "isFavorite": false,
             "category": "health"
-        },
-        {
-            "text": "Jesus is the beneficial light, shining prosperity on my physical wellbeing.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the eternal wellness, promising a life free from sickness.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the defender of my health, warding off all infirmities.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the potent remedy, healing any ailment with divine power.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the spiritual strength, empowering my body to resist diseases.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the refreshing breeze, rejuvenating my soul and body every day.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the nourishing bread of life, filling me with vibrant health.",
-            "isFavorite": false,
-            "category": "health"
-        },
+            },
         {
             "text": "Jesus is the healing touch, instantly restoring my health with his love.",
             "isFavorite": false,
@@ -12940,22 +11923,7 @@
             "category": "health"
         },
         {
-            "text": "Jesus is the protective shield, defending my body from all harm.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the rejuvenating spirit, breathing fresh health into me.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the mighty warrior, battling against every health adversary.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Jesus is the wellness provider, ensuring my body is blessed with health.",
+            "text": "Jesus is my mighty warrior, battling against every health adversary.",
             "isFavorite": false,
             "category": "health"
         },
@@ -12970,112 +11938,12 @@
             "category": "health"
         },
         {
-            "text": "Jesus is the stabilizing force, balancing my health in every way.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "Jesus is the lifter of my soul, raising me from depths of sorrow.",
             "isFavorite": false,
             "category": "depression"
         },
         {
-            "text": "Jesus is the light in my darkness, illuminating my path with hope.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the gentle whisper, reminding me of joy in silent moments.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the steady anchor, holding me firm when waves of sadness hit.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the healer of broken hearts, mending my spirit with His love.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the hope in despair, offering light in the darkest of times.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the comforting embrace, wrapping me with endless love and warmth.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the uplifting breeze, carrying away the heavy clouds of sadness.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the serene peace, calming the storms inside my mind.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the fortress of solitude, providing refuge from mental battles.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the unbreakable chain, linking me to everlasting hope and love.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the endless well of positivity, offering joy in times of sadness.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the tender caregiver, healing every wound with divine tenderness.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the hope-bringer, lighting up every shadow with glow.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the loving shepherd, guiding me through valleys of despair.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the eternal supporter, encouraging me when my spirit is down.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the source of strength, empowering me to overcome sorrow.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the rejuvenating spirit, breathing life into my weary soul.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the persistent hope, always whispering promises of better days.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the compassionate friend, understanding my pain without judgment.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the unshakable faith, promising brighter tomorrows amid gloomy today.",
+            "text": "Jesus is my unshakable faith, promising brighter tomorrows amid gloomy today.",
             "isFavorite": false,
             "category": "depression"
         },
@@ -13090,38 +11958,7 @@
             "category": "depression"
         },
         {
-            "text": "Jesus is the surety of happiness, a guarantee in moments of despair.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the endless encouragement, lifting my spirit when I fall.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is the miraculous healer, curing the sickness of the soul.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        
-        {
             "text": "Jesus is my secret hideout when the world feels too heavy.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my playlist of uplifting tunes when life sounds off-key.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my quiet chat room, where I'm always heard and never judged.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my forever friend, sticking with me even when times are tough.",
             "isFavorite": false,
             "category": "depression"
         },
@@ -13131,77 +11968,12 @@
             "category": "depression"
         },
         {
-            "text": "Jesus is my hope in the chatbox, typing messages of love and courage.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my cozy blanket, wrapping me in warmth during chilly days.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
             "text": "Jesus is my superhero, turning pain into power and tears into triumph.",
             "isFavorite": false,
             "category": "depression"
         },
         {
-            "text": "Jesus is my instant reload, refreshing my spirit when it crashes.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my silent scream, understanding my pain even when I can't express it.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my unseen cheerleader, celebrating even my smallest victories.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my unwavering signal, connecting me to endless love and support.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my invisible hug, holding me tight when I feel alone.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my 24/7 hotline, always available for a heartfelt conversation.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my favorite meme, making me smile amid the tears.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my timeless story, reminding me that every chapter gets better.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
             "text": "Jesus is my fearless warrior, fighting alongside me in every battle.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my infinite battery, powering me when I feel completely drained.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my unfiltered selfie, loving me even with my imperfections.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my unseen hand, lifting me up each time I stumble.",
             "isFavorite": false,
             "category": "depression"
         },
@@ -13221,67 +11993,7 @@
             "category": "depression"
         },
         {
-            "text": "Jesus is my sturdy bridge, helping me cross over my river of tears.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my secret diary, keeping my confessions safe and secure.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my unending playlist, replaying messages of hope and love.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my calming ASMR, whispering peace into my anxious heart.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my encrypted password, protecting me from life’s harmful hacks.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
-            "text": "Jesus is my liked comment, appreciating me in every circumstance.",
-            "isFavorite": false,
-            "category": "depression"
-        },
-        {
             "text": "Jesus is my courage when things get scary.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my safe cave where I’m always brave.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my strong guard, protecting my heart.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my bright light in the darkest night.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my firm rock when I’m in shock.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my secure wall, making me stand tall.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my caring shepherd, whispering every loving word.",
             "isFavorite": false,
             "category": "fear"
         },
@@ -13301,106 +12013,6 @@
             "category": "fear"
         },
         {
-            "text": "Jesus is my sunny day, taking fear away.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my loyal friend, on who I can depend.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my solid ground, where love is found.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my safe nest, where my heart can rest.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my calming sea, where fear cannot be.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my protective shield, where I’m safely sealed.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is the light that scatters all my fears.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is the peace that whispers calm in my ear.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my protector, keeping me safe from fear.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my shield.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my strength, with love that always appears.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is the calm amidst all my fearful storms.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my comfort, in His arms, fear transforms.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is the joy that overpowers my fright.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my certainty when fear blurs my sight.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my anchor in fearful, stormy seas.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is the rock where fear comes to cease.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is the friend that makes all fear to ease.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is my rescuer.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
-            "text": "Jesus is the guide through life's twist and turns.",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
             "text": "Jesus is the promise keeper, making my future bright.",
             "isFavorite": false,
             "category": "hope"
@@ -13416,12 +12028,12 @@
             "category": "hope"
         },
         {
-            "text": "Jesus is the victory over every challenging fight.",
+            "text": "Jesus is my victory over every challenging fight.",
             "isFavorite": false,
             "category": "hope"
         },
         {
-            "text": "Jesus is the faithful friend, whose love is pure.",
+            "text": "Jesus is my faithful friend, whose love is pure.",
             "isFavorite": false,
             "category": "hope"
         },
@@ -13711,76 +12323,6 @@
             "category": "forgiveness"
         },
         {
-            "text": "Jesus is the Grace Unfathomable, where my sins are cast into the depths of forgetfulness.",
-            "isFavorite": false,
-            "category": "forgiveness"
-        },
-        {
-            "text": "Jesus is the Beacon of Hope, lighting the path to redemption and guiding me to wholeness.",
-            "isFavorite": false,
-            "category": "forgiveness"
-        },
-        {
-            "text": "Jesus is the Redeemer of Time, turning moments of regret into monuments of grace.",
-            "isFavorite": false,
-            "category": "forgiveness"
-        },
-        {
-            "text": "Jesus is the Holy Embrace, where bitterness is dissolved in the warmth of His forgiveness.",
-            "isFavorite": false,
-            "category": "forgiveness"
-        },
-        {
-            "text": "Jesus is my Rebuilder, reconstructing lives shattered by mistakes into sanctuaries of love.",
-            "isFavorite": false,
-            "category": "forgiveness"
-        },
-        {
-            "text": "Jesus is the Unbroken Promise, His covenant of mercy forever sure, irrespective of our fallibility.",
-            "isFavorite": false,
-            "category": "forgiveness"
-        },
-        {
-            "text": "Jesus is the Fount of Mercy, where my spirit is refreshed, despite my shortcomings.",
-            "isFavorite": false,
-            "category": "forgiveness"
-        },
-        {
-            "text": "Jesus refreshes our souls, offering fresh starts where past mistakes used to be.",
-            "isFavorite": false,
-            "category": "forgiveness"
-        },
-        {
-            "text": "Jesus is like a beautiful melody of love, creating harmonies that overcome the noise of my mistakes.",
-            "isFavorite": false,
-            "category": "forgiveness"
-        },
-        {
-            "text": "Jesus is the Great Restorer, redeeming me from past mistakes.",
-            "isFavorite": false,
-            "category": "forgiveness"
-        },
-        {
-            "text": "Jesus is the Tireless Pursuer, chasing after me with forgiveness even when I lose my way.",
-            "isFavorite": false,
-            "category": "forgiveness"
-        },
-        {
-            "text": "Jesus is the Quencher of Wrath, His love extinguishing the flames of condemnation.",
-            "isFavorite": false,
-            "category": "forgiveness"
-        },
-        {
-            "text": "Jesus is the Dispeller of Shadows, His light revealing the pathway to reconciliation and peace.",
-            "isFavorite": false,
-            "category": "forgiveness"
-        },
-        {
-            "text": "Jesus is the Lover of the Lost, His heart ever inviting me back into the fold of His forgiveness.",
-            "isFavorite": false,
-            "category": "forgiveness"
-        },
-        {
             "text": "Jesus is my Constant Companion.",
             "isFavorite": false,
             "category": "loneliness"
@@ -13811,32 +12353,7 @@
             "category": "selfcontrol"
         },
         {
-            "text": "Jesus is the Shield, deflecting the arrows of impulsive desires and choices.",
-            "isFavorite": false,
-            "category": "selfcontrol"
-        },
-        {
-            "text": "Jesus is molding my willpower into a vessel of disciplined strength.",
-            "isFavorite": false,
-            "category": "selfcontrol"
-        },
-        {
             "text": "Jesus is cultivating within me seeds of disciplined living.",
-            "isFavorite": false,
-            "category": "selfcontrol"
-        },
-        {
-            "text": "Jesus is the Unseen Hand, gently steering my actions towards prudence and care.",
-            "isFavorite": false,
-            "category": "selfcontrol"
-        },
-        {
-            "text": "Jesus is the Peace in Chaos, ensuring calm decision-making amidst storms.",
-            "isFavorite": false,
-            "category": "selfcontrol"
-        },
-        {
-            "text": "Jesus is my Source of Stability, grounding my self-control in divine love.",
             "isFavorite": false,
             "category": "selfcontrol"
         },
@@ -13875,12 +12392,6 @@
             "isFavorite": false,
             "category": "selfcontrol"
         },
-        {
-            "text": "Jesus is leading me with gentle firmness towards self-mastery.",
-            "isFavorite": false,
-            "category": "selfcontrol"
-        },
-        
         {
             "text": "Jesus is leading me through every battle with unbreakable resolve.",
             "isFavorite": false,
@@ -14184,7 +12695,7 @@
             "category": "wealth"
         },
         {
-            "text": "Wealth and riches are in my house because I fear the Lord.",
+            "text": "Wealth and riches are in my house because I worship the Lord.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -14586,7 +13097,7 @@
         },{
             "text": "I make wise choices!",
             "isFavorite": false,
-            "category": "health"
+            "category": "wisdom"
         },
         {
             "text": "By His stripes, I am healed.",
@@ -14605,11 +13116,6 @@
         },
         {
             "text": "I am healthy and flourishing like a tree planted by the rivers of water.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "The Lord is the strength of my life and my portion forever.",
             "isFavorite": false,
             "category": "health"
         },
@@ -14634,32 +13140,7 @@
             "category": "health"
         },
         {
-            "text": "I am fearfully and wonderfully made; my body is a temple of the Holy Spirit.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "I enjoy good health as my soul prospers.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am vigorous and strong, and my health is renewed like the eagle's.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am nourished and sustained by the Word of God.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I walk in divine health, for God's Word is life to me and health to my flesh.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I have the peace of God which surpasses all understanding, guarding my heart and mind.",
             "isFavorite": false,
             "category": "health"
         },
@@ -14670,21 +13151,6 @@
         },
         {
             "text": "I am filled with the life and power of God.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am in good health as my soul is in good health.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am kept safe and healthy because I trust in the Lord.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am energized and revitalized by the Holy Spirit.",
             "isFavorite": false,
             "category": "health"
         },
@@ -14714,7 +13180,7 @@
             "category": "wealth"
         },
         {
-            "text": "I am blessed in my coming in and blessed going out.",
+            "text": "I am blessed coming in and blessed going out.",
             "isFavorite": false,
             "category": "destiny"
         },
@@ -14747,11 +13213,6 @@
             "text": "The favor of God surrounds me like a shield.",
             "isFavorite": false,
             "category": "destiny"
-        },
-        {
-            "text": "I am filled with the knowledge of the Lord's will in all wisdom and spiritual understanding.",
-            "isFavorite": false,
-            "category": "wealth"
         },
         {
             "text": "My steps are ordered by the Lord, and He delights in my way.",
@@ -14819,7 +13280,7 @@
             "category": "grace"
         },
         {
-            "text": "I am God's masterpiece, and the evil one can not defeat me.",
+            "text": "I am God's masterpiece.",
             "isFavorite": false,
             "category": "destiny"
         },
@@ -14921,12 +13382,12 @@
         {
             "text": "I am grateful for a new day!",
             "isFavorite": false,
-            "category": "destiny"
+            "category": "gratitude"
         },
         {
             "text": "I am thankful for my vision.",
             "isFavorite": false,
-            "category": "destiny"
+            "category": "gratitude"
         },
         {
             "text": "I am thankful for my senses.",
@@ -14936,16 +13397,16 @@
         {
             "text": "I am thankful for my mind.",
             "isFavorite": false,
-            "category": "destiny"
+            "category": "gratitude"
         },
         {
             "text": "I am thankful for my body.",
             "isFavorite": false,
-            "category": "destiny"
+            "category": "gratitude"
         },{
             "text": "I am thankful I made it over all my past storms.",
             "isFavorite": false,
-            "category": "destiny"
+            "category": "gratitude"
         },
         {
             "text": "God is always by my side.",
@@ -14964,7 +13425,7 @@
         },{
             "text": "This is the day the Lord has made I will be happy and enjoy it.",
             "isFavorite": false,
-            "category": "destiny"
+            "category": "joy"
         },
         {
             "text": "I speak back to every circumstance that doesn't line up with my destiny.",
@@ -14987,7 +13448,7 @@
             "category": "destiny"
         },
         {
-            "text": "I am making decisions everyday that will lead me to fulfill my destiny.",
+            "text": "I am making great decisions everyday that will lead me to fulfill my destiny.",
             "isFavorite": false,
             "category": "destiny"
         },
@@ -14998,11 +13459,6 @@
         },
         {
             "text": "I move in peace and joy no matter the circumstance.",
-            "isFavorite": false,
-            "category": "destiny"
-        },
-        {
-            "text": "I talk to God about my problems.",
             "isFavorite": false,
             "category": "destiny"
         },
@@ -15042,10 +13498,6 @@
             "text": "I respond in love and kindness.",
             "isFavorite": false,
             "category": "love"
-        },{
-            "text": "I learn from my mistakes.",
-            "isFavorite": false,
-            "category": "destiny"
         },
         {
             "text": "I take action everyday.",
@@ -15075,7 +13527,7 @@
         {
             "text": "Through the highs and lows I trust God.",
             "isFavorite": false,
-            "category": "destiny"
+            "category": "faith"
         },{
             "text": "Abundance is a part of my inheritance.",
             "isFavorite": false,
@@ -15083,7 +13535,7 @@
         },{
             "text": "Great health is a part of my inheritance.",
             "isFavorite": false,
-            "category": "destiny"
+            "category": "health"
         },{
             "text": "Joy and gratitude is how I rise above every storm.",
             "isFavorite": false,
@@ -15131,7 +13583,7 @@
         {
             "text": "I am faithful and grateful over what God gives me.",
             "isFavorite": false,
-            "category": "destiny"
+            "category": "wealth"
         },
         {
             "text": "I am generous to the less fortunate.",
@@ -15170,7 +13622,7 @@
             "isFavorite": false,
             "category": "destiny"
         },{
-            "text": "I can change the atmosphere with my words.",
+            "text": "I change the atmosphere with my words.",
             "isFavorite": false,
             "category": "destiny"
         },{
@@ -15200,11 +13652,11 @@
         },{
             "text": "I am honorable.",
             "isFavorite": false,
-            "category": "destiny"
+            "category": "identity"
         },{
             "text": "I am who God says I am.",
             "isFavorite": false,
-            "category": "destiny"
+            "category": "identity"
         },{
             "text": "I refuse to waste time, energy, or money on things not aligned with my God-given destiny.",
             "isFavorite": false,
@@ -15216,7 +13668,7 @@
         },{
             "text": "I can never be alone when the Creator of the Universe is at my side.",
             "isFavorite": false,
-            "category": "destiny"
+            "category": "loneliness"
         },{
             "text": "I have great focus and vision for my life.",
             "isFavorite": false,
@@ -15422,10 +13874,6 @@
             "isFavorite": false,
             "category": "identity"
         },{
-            "text": "I was created to be different than the crowd.",
-            "isFavorite": false,
-            "category": "destiny"
-        },{
             "text": "I have great patience and resolve.",
             "isFavorite": false,
             "category": "destiny"
@@ -15591,10 +14039,6 @@
             "category": "destiny"
         },{
             "text": "When I pray, heaven is listening.",
-            "isFavorite": false,
-            "category": "destiny"
-        },{
-            "text": "My words can heal.",
             "isFavorite": false,
             "category": "destiny"
         },{
@@ -16304,7 +14748,7 @@
             "isFavorite": false,
             "category": "gratitude"
         },{
-            "text": "I am thankful for God’s healing, touching my mind and soul.",
+            "text": "I am thankful for God’s healing.",
             "isFavorite": false,
             "category": "gratitude"
         },{
@@ -16666,20 +15110,14 @@
         {"text": "I find hope in God’s unfailing love and faithfulness.", "isFavorite": false, "category": "hope"},
         {"text": "My heart is steadfast, trusting in the Lord, filled with hope.", "isFavorite": false, "category": "hope"},
         {"text": "Hope is my anchor; it keeps me grounded in God’s truth.", "isFavorite": false, "category": "hope"},
-        {"text": "I choose hope, for I am a child of the God of hope.", "isFavorite": false, "category": "hope"},
         {"text": "God fills me with joy and peace as I trust in Him, abounding in hope.", "isFavorite": false, "category": "hope"},
-        {"text": "I find refuge in God’s promises, holding onto hope.", "isFavorite": false, "category": "hope"},
-        {"text": "Through Christ, I am more than a conqueror, filled with hope.", "isFavorite": false, "category": "hope"},
         {"text": "My hope grows as I witness God’s goodness in my life.", "isFavorite": false, "category": "hope"},
-        {"text": "I am hopeful, for God’s grace is sufficient for me.", "isFavorite": false, "category": "hope"},
-        {"text": "The Lord renews my strength; I soar on wings of hope.", "isFavorite": false, "category": "hope"},
         {"text": "I am patient in tribulation, steadfast in hope.", "isFavorite": false, "category": "hope"},
         {"text": "In Jesus, I have eternal hope, a gift beyond measure.", "isFavorite": false, "category": "hope"},
         {"text": "My hope in God turns obstacles into opportunities.", "isFavorite": false, "category": "hope"},
         {"text": "Hope is my shield against problems, knowing God is in control.", "isFavorite": false, "category": "hope"},
         {"text": "I remain hopeful, as nothing is impossible with God.", "isFavorite": false, "category": "hope"},
         {"text": "God’s presence in my life is the reason for my constant hope.", "isFavorite": false, "category": "hope"},
-        {"text": "I find hope in every promise God has spoken over my life.", "isFavorite": false, "category": "hope"},
         {"text": "In God, I find the courage to remain hopeful each day.", "isFavorite": false, "category": "hope"},
         {"text": "My hope is in the Lord, who never fails nor leaves me.", "isFavorite": false, "category": "hope"},
         {"text": "I walk in hope, knowing God’s timing is perfect.", "isFavorite": false, "category": "hope"},
@@ -16700,55 +15138,34 @@
         {"text": "My hope in God is unchanging, a steady anchor for my soul.", "isFavorite": false, "category": "hope"},
         {"text": "I am filled with hope, for I trust in God’s unfailing promises.", "isFavorite": false, "category": "hope"},
         {"text": "God’s lovingkindness in the morning is my daily source of hope.", "isFavorite": false, "category": "hope"},
-        {"text": "In the Lord, my hope is secure; He is my refuge and strength.", "isFavorite": false, "category": "hope"},
         {"text": "Hope in God’s word keeps my spirit uplifted and heart joyful.", "isFavorite": false, "category": "hope"},
         {"text": "By His stripes, I am healed and whole.", "isFavorite": false, "category": "health"},
         {"text": "I claim robust health and reject all sickness in Jesus' name.", "isFavorite": false, "category": "health"},
-        {"text": "God’s healing power works within me, restoring my health.", "isFavorite": false, "category": "health"},
-        {"text": "I am strong and healthy, for the Lord sustains me.", "isFavorite": false, "category": "health"},
-        {"text": "I walk in divine health, as sickness has no place in me.", "isFavorite": false, "category": "health"},
         {"text": "Every cell in my body resonates with God’s healing power.", "isFavorite": false, "category": "health"},
         {"text": "I declare good health and immunity against all diseases.", "isFavorite": false, "category": "health"},
-        {"text": "In Christ, my body is a temple of health and vitality.", "isFavorite": false, "category": "health"},
         {"text": "I am blessed with health and reject any form of illness.", "isFavorite": false, "category": "health"},
-        {"text": "God’s promise of health and healing is mine to claim.", "isFavorite": false, "category": "health"},
         {"text": "I am shielded from sickness by the blood of Jesus.", "isFavorite": false, "category": "health"},
-        {"text": "I embrace the vitality and health granted by God’s word.", "isFavorite": false, "category": "health"},
-        {"text": "I am confident in my health, for God is my healer.", "isFavorite": false, "category": "health"},
         {"text": "I speak life and health over my body, rejecting all disease.", "isFavorite": false, "category": "health"},
-        {"text": "God’s healing touch is upon me, restoring my health fully.", "isFavorite": false, "category": "health"},
-        {"text": "I am rejuvenated and energized by the Holy Spirit.", "isFavorite": false, "category": "health"},
         {"text": "My body responds to God’s word, manifesting health and wholeness.", "isFavorite": false, "category": "health"},
         {"text": "I am free from sickness, for Jesus bore it all on the cross.", "isFavorite": false, "category": "health"},
         {"text": "I live in divine health, as God’s healing is active in me.", "isFavorite": false, "category": "health"},
         {"text": "Every day, I grow stronger and healthier in the Lord.", "isFavorite": false, "category": "health"},
-        {"text": "I am protected from illness; my body is a fortress of health.", "isFavorite": false, "category": "health"},
         {"text": "God’s grace shields me from disease, keeping me healthy.", "isFavorite": false, "category": "health"},
         {"text": "I reject sickness and embrace the fullness of health.", "isFavorite": false, "category": "health"},
         {"text": "Health and healing are my inheritance in Christ Jesus.", "isFavorite": false, "category": "health"},
         {"text": "I am empowered by the Holy Spirit to live a healthy life.", "isFavorite": false, "category": "health"},
-        {"text": "I choose to walk in health and wellness every day.", "isFavorite": false, "category": "health"},
-        {"text": "God renews my strength; I soar like an eagle in health.", "isFavorite": false, "category": "health"},
-        {"text": "I declare victory over sickness in the name of Jesus.", "isFavorite": false, "category": "health"},
         {"text": "I am a testimony of God’s miraculous healing power.", "isFavorite": false, "category": "health"},
         {"text": "My body is rejuvenated by the power of the Holy Spirit.", "isFavorite": false, "category": "health"},
         {"text": "I am resilient against illness, fortified by God’s word.", "isFavorite": false, "category": "health"},
         {"text": "I live in perfect health, as it is God’s will for me.", "isFavorite": false, "category": "health"},
         {"text": "I stand in faith for my health, believing in God’s healing promises.", "isFavorite": false, "category": "health"},
         {"text": "Health and vitality are mine, a blessing from the Lord.", "isFavorite": false, "category": "health"},
-        {"text": "I trust in God’s provision for my health and well-being.", "isFavorite": false, "category": "health"},
-        {"text": "God’s love and healing encompass my entire being.", "isFavorite": false, "category": "health"},
         {"text": "I am an overcomer; no sickness can prevail against me.", "isFavorite": false, "category": "health"},
         {"text": "I am filled with divine energy and supernatural health.", "isFavorite": false, "category": "health"},
         {"text": "I speak health and strength over my life in Jesus’ name.", "isFavorite": false, "category": "health"},
         {"text": "I am healed by the wounds of Jesus, walking in perfect health.", "isFavorite": false, "category": "health"},
         {"text": "My faith in God brings health to my body and nourishment to my bones.", "isFavorite": false, "category": "health"},
-        {"text": "I rejoice in the Lord, for He has made me healthy and strong.", "isFavorite": false, "category": "health"},
-        {"text": "I am blessed with health, for I am fearfully and wonderfully made.", "isFavorite": false, "category": "health"},
-        {"text": "My body is a temple of the Holy Spirit, radiating health and vitality.", "isFavorite": false, "category": "health"},
-        {"text": "I claim God’s promise of health, living free from sickness.", "isFavorite": false, "category": "health"},
         {"text": "I am confident in God’s healing power at work in me.", "isFavorite": false, "category": "health"},
-        {"text": "I am strong in the Lord, experiencing vibrant health daily.", "isFavorite": false, "category": "health"},
         {"text": "My trust in God brings peace and health to my mind and body.", "isFavorite": false, "category": "health"},
         {"text": "In Jesus’ name, I reject sickness and embrace divine health.", "isFavorite": false, "category": "health"},
         {"text": "God’s healing power flows through me, rejuvenating my health.", "isFavorite": false, "category": "health"},
@@ -16935,9 +15352,7 @@
         {"text": "In Jesus, I find love that embraces and heals every part of me.", "isFavorite": false, "category": "grace"},
         {"text": "I am forever grateful for Jesus' love, drowning my faults.", "isFavorite": false, "category": "grace"},
         {"text": "I am always loved by Jesus.", "isFavorite": false, "category": "grace"},
-        {"text": "I am empowered by God's grace, equipping me to fulfill my destiny.", "isFavorite": false, "category": "destiny"},
         {"text": "I am a victorious warrior, walking confidently into my destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "I am on a journey to fulfill my destiny, guided by God's perfect plan.", "isFavorite": false, "category": "destiny"},
         {"text": "I am not limited by circumstances; I am empowered to fulfill my destiny.", "isFavorite": false, "category": "destiny"},
         {"text": "I am a warrior for righteousness, advancing God's kingdom through my destiny.", "isFavorite": false, "category": "destiny"},
         {"text": "I am unshaken by adversity, for my destiny is secure in Christ.", "isFavorite": false, "category": "destiny"},
@@ -16981,27 +15396,12 @@
             "category": "love"
         },
         {
-            "text": "I am cherished by Jesus beyond measure.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus loves me with an everlasting love.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
             "text": "No mistake or failure can diminish Jesus' love for me.",
             "isFavorite": false,
             "category": "love"
         },
         {
             "text": "Jesus' love is my anchor in every storm.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "I am constantly embraced by Jesus' love.",
             "isFavorite": false,
             "category": "love"
         },
@@ -17026,32 +15426,12 @@
             "category": "love"
         },
         {
-            "text": "I find comfort in Jesus' constant love for me.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
             "text": "Jesus' love guides me in every decision I make.",
             "isFavorite": false,
             "category": "love"
         },
         {
-            "text": "I am held by Jesus' love, even when I feel weak.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
             "text": "Jesus' love is my source of strength and joy.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "I trust in Jesus' love to lead me on the right path.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "His love is a constant presence in my life.",
             "isFavorite": false,
             "category": "love"
         },
@@ -17091,32 +15471,12 @@
             "category": "love"
         },
         {
-            "text": "I am wrapped in the warmth of Jesus' love.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "I find peace and solace in Jesus' love for me.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "Jesus' love is my constant source of hope.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
             "text": "I am treasured by Jesus, flaws and all.",
             "isFavorite": false,
             "category": "love"
         },
         {
             "text": "In His love, I am made whole.",
-            "isFavorite": false,
-            "category": "love"
-        },
-        {
-            "text": "I am forever grateful for Jesus' boundless love.",
             "isFavorite": false,
             "category": "love"
         },
@@ -17542,11 +15902,6 @@
             "category": "health"
         },
         {
-            "text": "I am the way to health, the truth about healing, and the source of abundant life.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "I have given you authority over sickness and disease. Speak healing, and it shall be done.",
             "book": "- Jesus",
             "isFavorite": false,
@@ -17559,12 +15914,6 @@
             "category": "health"
         },
         {
-            "text": "I am your healer, and my desire is to see you whole and healthy in every way.",
-            "book": "- Jesus",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "Your body is my temple. I dwell in you, bringing healing and restoration.",
             "book": "- Jesus",
             "isFavorite": false,
@@ -17589,49 +15938,13 @@
             "category": "health"
         },
         {
-            "text": "I am the resurrection and the life. I bring health to the sick and life to the dead.",
-            "book": "- Jesus",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am the way to health, the truth about healing, and the source of abundant life.",
-            "book": "- Jesus",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I have given you authority over sickness and disease. Speak healing, and it shall be done.",
-            "book": "- Jesus",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "With me, all things are possible, including your complete healing and health.",
             "book": "- Jesus",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "I am your healer, and my desire is to see you whole and healthy in every way.",
-            "book": "- Jesus",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Your body is my temple. I dwell in you, bringing healing and restoration.",
-            "book": "- Jesus",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "I am the resurrection and the life. I bring health to the sick and life to the dead.",
-            "book": "- Jesus",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am the way to health, the truth about healing, and the source of abundant life.",
             "book": "- Jesus",
             "isFavorite": false,
             "category": "health"
@@ -17947,11 +16260,6 @@
             "category": "fear"
         },
         {
-            "text": "The Lord is your light and salvation; whom shall you fear? The Lord is the strength of your life; of whom shall you be afraid?",
-            "isFavorite": false,
-            "category": "fear"
-        },
-        {
             "text": "Cast all your anxieties on me because I care for you. Do not be afraid, I am your provider.",
             "book": "- Jesus",
             "isFavorite": false,
@@ -18059,7 +16367,8 @@
             "category": "fear"
         },
         {
-            "text": "Do not fear those who can harm the body; fear me who can save your soul for eternity.",
+            "text": "Do not fear those who can harm the body; worship me who can save your soul for eternity.",
+            "book": "- Jesus",
             "isFavorite": false,
             "category": "fear"
         },

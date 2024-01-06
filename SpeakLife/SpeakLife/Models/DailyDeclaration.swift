@@ -25,24 +25,26 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case peace
     case wealth
     case selfcontrol
-    case addiction
-    case depression
+    case wisdom
+    case grace
     case loneliness
     case motivation
+    case addiction
+    case depression
     case confidence
-    case hardtimes
     case forgiveness
-    case discipline
-    case perseverance
-    case identity
-    case marriage
     case godsprotection
     case guidance
     case rest
     case guilt
-    case grace
     case joy
-    case wisdom
+   
+    case hardtimes
+    case discipline
+    case perseverance
+    case identity
+    case marriage
+    
     
     static var categoryOrder: [DeclarationCategory] = [
         .destiny,

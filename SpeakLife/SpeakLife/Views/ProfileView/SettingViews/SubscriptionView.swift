@@ -56,20 +56,20 @@ struct DiscountSubscriptionView: View {
     
     let size: CGSize
     var callback: (() -> Void)?
-    var currentSelection = InAppId.Subscription.speakLife1YR19
+    var currentSelection = InAppId.Subscription.speakLife1YR9
     var percentOffText: String = "50% Off Yearly"
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR19, percentOffText: String = "50% Off Yearly") {
+    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR9, percentOffText: String = "50% Off Yearly") {
         self.size = size
         self.currentSelection = currentSelection
         self.percentOffText = percentOffText
     }
     
-    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR19,  callback: (() -> Void)? = nil) {
+    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR9,  callback: (() -> Void)? = nil) {
         self.size = size
         self.currentSelection = currentSelection
         self.callback = callback
@@ -216,7 +216,7 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
     
     let size: CGSize
     var callback: (() -> Void)?
@@ -288,7 +288,7 @@ struct SubscriptionView: View {
                     
                     HStack {
                         Image(systemName: "person.3.fill")
-                        Text("30K+ Users")
+                        Text("20K+ Users")
                         
                         Spacer()
                         StarRatingView(rating: 4.8)
@@ -304,7 +304,7 @@ struct SubscriptionView: View {
                     VStack {
                         
                         Button {
-                            currentSelection = InAppId.Subscription.speakLife1YR39
+                            currentSelection = InAppId.Subscription.speakLife1YR19
                         } label: {
                             yearlyCTABox()
                         }
@@ -346,7 +346,7 @@ struct SubscriptionView: View {
     @ViewBuilder
     var costDescription: some View {
         HStack(spacing: 2) {
-            if currentSelection == .speakLife1YR39 {
+            if currentSelection == .speakLife1YR19 {
                 Text(ctaText)
                    
             }
@@ -419,17 +419,17 @@ struct SubscriptionView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == .speakLife1YR39 ? Constants.DAMidBlue : .clear))
+                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == .speakLife1YR19 ? Constants.DAMidBlue : .clear))
                 .frame(height: 60)
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text("\(InAppId.Subscription.speakLife1YR39.title)")
+                    Text("\(InAppId.Subscription.speakLife1YR19.title)")
                         .bold()
                     Text("Abundant savings. Billed annually.")
                         .font(.caption)
                 }
-                .foregroundStyle(currentSelection == .speakLife1YR39 ? .white : .black)
+                .foregroundStyle(currentSelection == .speakLife1YR19 ? .white : .black)
                 .padding(.leading)
                 
                 Spacer()
