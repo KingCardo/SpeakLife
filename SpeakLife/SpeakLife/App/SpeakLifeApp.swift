@@ -75,7 +75,8 @@ struct SpeakLifeApp: App {
     }
     
     private func resetNotifications() {
-        NotificationManager.shared.registerNotifications(count: appState.notificationCount, startTime: appState.startTimeIndex, endTime: appState.endTimeIndex)
+        let categories = Set(appState.selectedNotificationCategories.components(separatedBy: ",").compactMap({ DeclarationCategory($0) }))
+        NotificationManager.shared.registerNotifications(count: appState.notificationCount, startTime: appState.startTimeIndex, endTime: appState.endTimeIndex, categories: categories)
         DispatchQueue.main.async {
             appState.lastNotificationSetDate = Date()
         }

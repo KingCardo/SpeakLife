@@ -85,3 +85,74 @@ struct IntroScene: View {
     
     
 }
+
+
+
+struct LoadingScene: View {
+    
+    let size: CGSize
+    let callBack: (() -> Void)
+    
+    @State private var pulsate = false
+    @State private var rotate = false
+    @State private var fadeInOut = false
+    
+    let animationDuration = 0.8
+    let maxScale: CGFloat = 1.2
+    let minOpacity = 0.5
+    let maxOpacity = 1.0
+    let delay = Double.random(in: 3...6)
+    
+    var body: some View {
+        ZStack {
+            Gradients().purple
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                
+                Text("Preparing a personalized journey through the Word for you...")
+                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
+                    .foregroundColor(.white)
+                    .opacity(fadeInOut ? minOpacity : maxOpacity)
+                    .animation(Animation.easeInOut(duration: animationDuration).repeatForever(autoreverses: true), value: fadeInOut)
+                    .padding()
+                
+                Spacer().frame(height: 90)
+                
+                Circle()
+                    .fill(Constants.DAMidBlue.opacity(0.7))
+                    .frame(width: 200, height: 200)
+                    .overlay(
+                        Circle()
+                            .stroke(Color.white, lineWidth: 2)
+                            .scaleEffect(pulsate ? maxScale : 1)
+                            .opacity(fadeInOut ? minOpacity : maxOpacity)
+                    )
+                    .rotationEffect(.degrees(rotate ? 360 : 0))
+                    .animation(Animation.easeInOut(duration: animationDuration).repeatForever(autoreverses: true), value: pulsate)
+                    .animation(Animation.linear(duration: animationDuration * 2).repeatForever(autoreverses: false), value: rotate)
+                    .animation(Animation.easeInOut(duration: animationDuration).repeatForever(autoreverses: true), value: fadeInOut)
+                    .onAppear {
+                        self.pulsate = true
+                        self.rotate = true
+                        self.fadeInOut = true
+                    }
+                //                    .scaleEffect(pulsate ? 1.4 : 0.9)
+                //                    .animation(Animation.easeInOut(duration: 0.8).repeatForever(autoreverses: true), value: pulsate)
+                //                    .onAppear {
+                //                        self.pulsate = true
+                //                    }
+                
+            }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                withAnimation {
+                    callBack()
+                }
+            }
+        }
+    }
+}
+
+

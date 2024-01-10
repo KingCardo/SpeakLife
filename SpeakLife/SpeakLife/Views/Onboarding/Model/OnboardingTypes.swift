@@ -8,11 +8,17 @@
 import Foundation
 
 enum Tab {
+    
+    case personalization
+    case habit
+    case improvement
     case intro
     case benefits
     case notification
     case widgets
     case useCase
+    case loading
     case subscription
     case discount
+    
 }

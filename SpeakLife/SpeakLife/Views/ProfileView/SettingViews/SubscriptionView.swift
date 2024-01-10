@@ -18,9 +18,10 @@ struct Benefit: Identifiable  {
     
     static var premiumBenefits: [Benefit] = [
         
-        Benefit(text: "Unlock all features"),
-        Benefit(text: "Unlock all Jesus Devotionals"),
-        Benefit(text: "Categories for any situation"),
+//        Benefit(text: "Unlock all features"),
+//        Benefit(text: "Unlock all Jesus Devotionals"),
+//        Benefit(text: "Categories for any situation"),
+        Benefit(text: "Unlock everything"),
       //  Benefit(text: "Unlock all themes"),
        // Benefit(text:"Proverbs 18:21: Words have immense power; they can shape your reality and influence your future. Think of them as tools that can build or destroy."),
 
@@ -28,7 +29,8 @@ struct Benefit: Identifiable  {
 
        // Benefit(text: "Matthew 21:22: Faith in what you pray for is crucial. When you ask for something, believe in its possibility with conviction, and your prayers can manifest into reality."),
 
-        Benefit(text: "James 3:4-5: Like a small rudder steering a large ship, your words, though seemingly insignificant, can define your life's trajectory. They can set you on a path to success or failure."),
+      //  Benefit(text: "James 3:4-5: Like a small rudder steering a large ship, your words, though seemingly insignificant, can define your life's trajectory. They can set you on a path to success or failure."),
+        Benefit(text: "Dive deeper into your relationship with Jesus, our goal is to support you in cultivating a vibrant, growing relationship with Christ, every single day. Join us and embrace a life transformed by His word."),
 
        // Benefit(text: "Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
         //        Benefit(text: "Bible Affirmations for all of life's journey"),
@@ -56,7 +58,7 @@ struct DiscountSubscriptionView: View {
     
     let size: CGSize
     var callback: (() -> Void)?
-    var currentSelection = InAppId.Subscription.speakLife1YR9
+    var currentSelection = InAppId.Subscription.speakLife1YR19
     var percentOffText: String = "50% Off Yearly"
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
@@ -216,7 +218,9 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39
+    var firstSelection = InAppId.Subscription.speakLife1YR39
+    var secondSelection = InAppId.Subscription.speakLife1MO4
     
     let size: CGSize
     var callback: (() -> Void)?
@@ -289,6 +293,7 @@ struct SubscriptionView: View {
                     HStack {
                         Image(systemName: "person.3.fill")
                         Text("20K+ Users")
+                            .foregroundStyle(Color.white)
                         
                         Spacer()
                         StarRatingView(rating: 4.8)
@@ -304,13 +309,13 @@ struct SubscriptionView: View {
                     VStack {
                         
                         Button {
-                            currentSelection = InAppId.Subscription.speakLife1YR19
+                            currentSelection = firstSelection
                         } label: {
                             yearlyCTABox()
                         }
                         
                         Button {
-                            currentSelection = InAppId.Subscription.speakLife1MO4
+                            currentSelection = secondSelection
                         } label: {
                             monthlySelectionBox()
                         }
@@ -328,10 +333,10 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 24)
                     
-//                    Text("Don’t copy the behavior and customs of this world, but let God transform you into a new person by changing the way you think. Then you will learn to know God’s will for you, which is good and pleasing and perfect. ~ Romans 12:2)
-//                        .font(.title3)
-//                        .foregroundColor(.white)
-//                        .padding()
+                    Text("James 3:4-5 teaches us the immense power of our words: just as a tiny rudder directs a mighty ship, our words chart the course of our life's journey—guiding us towards either triumph or defeat.")
+                        .font(.caption)
+                        .foregroundColor(.white)
+                        .padding()
                 }
                 
             }
@@ -346,7 +351,7 @@ struct SubscriptionView: View {
     @ViewBuilder
     var costDescription: some View {
         HStack(spacing: 2) {
-            if currentSelection == .speakLife1YR19 {
+            if currentSelection == firstSelection {
                 Text(ctaText)
                    
             }
@@ -402,7 +407,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == .speakLife1YR39 ? "Try Free & Subscribe" : "Subscribe", action: makePurchase)
+        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe", action: makePurchase)
     }
     
     private func restore() {
@@ -419,17 +424,17 @@ struct SubscriptionView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == .speakLife1YR19 ? Constants.DAMidBlue : .clear))
+                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == firstSelection ? Constants.DAMidBlue : .clear))
                 .frame(height: 60)
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text("\(InAppId.Subscription.speakLife1YR19.title)")
+                    Text("\(firstSelection.title)")
                         .bold()
                     Text("Abundant savings. Billed annually.")
                         .font(.caption)
                 }
-                .foregroundStyle(currentSelection == .speakLife1YR19 ? .white : .black)
+                .foregroundStyle(currentSelection == firstSelection ? .white : .black)
                 .padding(.leading)
                 
                 Spacer()
@@ -455,14 +460,14 @@ struct SubscriptionView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == .speakLife1MO4 ? Constants.DAMidBlue : .clear))
+                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == secondSelection ? Constants.DAMidBlue : .clear))
                 .frame(height: 60)
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Monthly \(InAppId.Subscription.speakLife1MO4.currentPrice)")
+                    Text("Monthly \(secondSelection.currentPrice)")
                         .bold()
-                        .foregroundStyle(currentSelection == .speakLife1MO4 ? .white : .black)
+                        .foregroundStyle(currentSelection == secondSelection ? .white : .black)
                 }
                 .padding(.leading)
                 
@@ -487,7 +492,7 @@ struct StarRatingView: View {
                 }
             }
             Text(String(format: "%.1f/5 star rating", rating))
-               // .foregroundStyle(Color.gray)
+                .foregroundStyle(Color.white)
                 .font(.subheadline)
         }
        }

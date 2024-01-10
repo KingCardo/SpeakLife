@@ -15,21 +15,38 @@ struct OnboardingView: View  {
     @EnvironmentObject var viewModel: DeclarationViewModel
     @Environment(\.colorScheme) var colorScheme
     
-    @State var selection: Tab = .intro
+    @State var selection: Tab = .personalization
     @State var showLastChanceAlert = false
+    @StateObject var improvementViewModel = ImprovementViewModel()
+    
+    @ViewBuilder
+    func loadingView(geometry: GeometryProxy) -> some View {
+        if appState.isDonePersonalization {
+            
+        } else {
+            LoadingScene(size: geometry.size, callBack: advance)
+                .tag(Tab.loading)
+        }
+    }
     
     var body: some View {
         GeometryReader { geometry in
             TabView(selection: $selection) {
+                PersonalizationScene(size: geometry.size, callBack: advance)
+                    .tag(Tab.personalization)
+                
+                HabitScene(size: geometry.size, callBack: advance)
+                    .tag(Tab.habit)
+                
+                ImprovementScene(size: geometry.size, callBack: advance, viewModel: improvementViewModel)
+                    .tag(Tab.improvement)
                 
                 IntroScene(size: geometry.size, callBack: advance)
                     .tag(Tab.intro)
                 
-                BenefitScene(size: geometry.size, tips: onboardingTips) {
-                    advance()
-                }.tag(Tab.benefits)
-                
-                
+//                BenefitScene(size: geometry.size, tips: onboardingTips) {
+//                    advance()
+//                }.tag(Tab.benefits)
                 
                 
                 NotificationOnboarding(size: geometry.size) {
@@ -47,6 +64,8 @@ struct OnboardingView: View  {
                     advance()
                 }
                 .tag(Tab.widgets)
+                
+                loadingView(geometry: geometry)
                 
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
@@ -159,8 +178,15 @@ struct OnboardingView: View  {
     private func advance() {
         withAnimation {
             switch selection {
+            case .personalization:
+                selection = .habit
+            case .habit:
+                selection = .improvement
+            case .improvement:
+                appState.selectedNotificationCategories = improvementViewModel.selectedCategories
+                selection = .intro
             case .intro:
-                selection = .benefits
+                selection = .notification
             case .benefits:
                 selection = .notification
             case .notification:
@@ -171,7 +197,16 @@ struct OnboardingView: View  {
                 dismissOnboarding()
                // selection = .widgets
             case .widgets:
+                if appState.isDonePersonalization {
+                    selection = .subscription
+                } else {
+                    selection = .loading
+                }
+                
+            case .loading:
+                
                 selection = .subscription
+                appState.isDonePersonalization = true
             //    dismissOnboarding()
             case .discount:
                 dismissOnboarding()
@@ -246,17 +281,18 @@ struct OnboardingView: View  {
         withAnimation {
             appState.isOnboarded = true
             Analytics.logEvent(Event.onBoardingFinished, parameters: nil)
-            viewModel.requestReview.toggle()
+          //  viewModel.requestReview.toggle()
         }
         
     }
     
     private func registerNotifications() {
         if appState.notificationEnabled {
+            let categories = Set(appState.selectedNotificationCategories.components(separatedBy: ",").compactMap({ DeclarationCategory($0) }))
             NotificationManager.shared.registerNotifications(count: appState.notificationCount,
                                                              startTime: appState.startTimeIndex,
                                                              endTime: appState.endTimeIndex,
-                                                             categories: nil)
+                                                             categories: categories)
             appState.lastNotificationSetDate = Date()
         }
     }

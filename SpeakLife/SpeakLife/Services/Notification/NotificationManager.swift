@@ -149,7 +149,7 @@ final class NotificationManager: NSObject {
     
     private func morningAffirmationReminder() {
         let id = UUID().uuidString
-        let body = "🗣️ This is the day the Lord has made I will rejoice and be glad in it! - Let's start the day with affirmations." // Localize
+        let body = "🗣️ This is the day the Lord has made I will rejoice and be glad in it! - Let's start the day by speaking things into existence." // Localize
         
         let content = UNMutableNotificationContent()
         content.title = "SpeakLife"
@@ -176,7 +176,7 @@ final class NotificationManager: NSObject {
     private func nightlyAffirmationReminder() {
         let id = UUID().uuidString
         
-        let body = "💜 We conquered another day! Lets end the day with gratitude and affirmations." // Localize
+        let body = "💜 We conquered another day! Lets end the day with gratitude and speaking life into tomorrow." // Localize
         
         let content = UNMutableNotificationContent()
         content.title = "SpeakLife"

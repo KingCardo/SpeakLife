@@ -30,6 +30,7 @@ final class AppState: ObservableObject {
     @AppStorage("discountOfferedTries") var discountOfferedTries = 0
     @AppStorage("resetNotifications") var resetNotifications = true
     @AppStorage("lastReviewRequestSetDate") var lastReviewRequestSetDate = Date()
+    @AppStorage("lastReviewRequestSetDate") var isDonePersonalization = false
 }
 
 extension Date: RawRepresentable {
