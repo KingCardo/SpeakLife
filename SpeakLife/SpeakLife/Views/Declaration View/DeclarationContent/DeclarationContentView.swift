@@ -93,7 +93,6 @@ struct DeclarationContentView: View {
             .onChange(of: selectedTab) { newIndex in
                     fadeInOpacity = 0.0
                 askForReview()
-                offerDiscountSubscription()
                 withAnimation(.easeOut(duration: 1.0)) {
                     fadeInOpacity = 1.0
                 }
@@ -115,14 +114,6 @@ struct DeclarationContentView: View {
         reviewCounter += 1
         if reviewCounter == 7 {
             viewModel.requestReview = true
-        }
-    }
-    
-    private func offerDiscountSubscription() {
-        discountCounter += 1
-        if (discountCounter % 4 == 0), appState.discountOfferedTries <= 2, !subscriptionStore.isPremium {
-            viewModel.showDiscountView = true
-            appState.discountOfferedTries += 1
         }
     }
     

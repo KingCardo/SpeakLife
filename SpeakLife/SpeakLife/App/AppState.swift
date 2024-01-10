@@ -27,10 +27,10 @@ final class AppState: ObservableObject {
     @AppStorage("selectedNotificationCategories") var selectedNotificationCategories: String = ""
     @AppStorage("showScreenshotLabel") var showScreenshotLabel = false
     @AppStorage("abbasLoveLetterIndex") var loveLetterIndex = 0
-    @AppStorage("discountOfferedTries") var discountOfferedTries = 0
     @AppStorage("resetNotifications") var resetNotifications = true
     @AppStorage("lastReviewRequestSetDate") var lastReviewRequestSetDate = Date()
-    @AppStorage("lastReviewRequestSetDate") var isDonePersonalization = false
+    @AppStorage("offerDiscount") var offerDiscount = false
+    @AppStorage("discountEndTime") var discountEndTime: Date?
 }
 
 extension Date: RawRepresentable {

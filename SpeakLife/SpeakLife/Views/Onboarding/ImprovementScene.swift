@@ -91,6 +91,7 @@ class ImprovementViewModel: ObservableObject {
     }
     
     func selectExperience(_ experience: Improvements) {
+        print(experience.selectedCategory, "RWRW")
         if selectedExperiences.contains(experience) {
             selectedExperiences.removeAll(where: { $0 == experience })
         } else {
@@ -100,23 +101,23 @@ class ImprovementViewModel: ObservableObject {
     }
 }
 
-enum Improvements: String, CaseIterable {
+enum Improvements: String, CaseIterable { 
+    case joy = "Be happy and content"
+    case gratitude = "Grow in gratitude"
     case stress = "Reduce Stress & Anxiety"
     case grace = "Learn how forgiven you are"
     case love = "Bask in Jesus Love for you"
     case destiny = "Move closer to your destiny"
     case safety = "Protection and safety"
     case guilt = "Be free from guilt and condemnation"
-    case joy = "Be happy and content"
-    case marriage = "Grow your marriage relationship"
     case loneliness = "Feeling alone"
-    case wealth = "Wealth and Wisdom"
+    case wealth = "Wealth"
     case peace = "Remain and live in peace"
     
     var selectedCategory: String {
         switch self {
         case .stress:
-            "anxiety"
+            "fear"
         case .grace:
             "grace"
         case .love:
@@ -129,8 +130,8 @@ enum Improvements: String, CaseIterable {
             "guilt"
         case .joy:
             "joy"
-        case .marriage:
-            "marriage"
+        case .gratitude:
+            "gratitude"
         case .loneliness:
             "loneliness"
         case .wealth:

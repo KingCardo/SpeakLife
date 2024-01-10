@@ -36,6 +36,10 @@ struct SpeakLifeApp: App {
                     DispatchQueue.main.asyncAfter(deadline: .now()) {
                         withAnimation {
                             isShowingLanding = false
+                            let categoryString = appState.selectedNotificationCategories.components(separatedBy: ",").first ?? "destiny"
+                            if let category = DeclarationCategory(categoryString) {
+                                declarationStore.choose(category) { _ in }
+                            }
                         }
                     }
                 }

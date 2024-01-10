@@ -17,7 +17,7 @@ struct PremiumView: View {
     var body: some View {
         GeometryReader { geometry in
             if !subscriptionStore.isPremium {
-                if appState.discountOfferedTries == 2 {
+                if appState.offerDiscount {
                     DiscountSubscriptionView(size: UIScreen.main.bounds.size, currentSelection: .speakLife1YR19, percentOffText: "50% Off Yearly")
                 } else {
                     SubscriptionView(size: UIScreen.main.bounds.size)

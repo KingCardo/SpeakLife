@@ -17,11 +17,12 @@ struct OnboardingView: View  {
     
     @State var selection: Tab = .personalization
     @State var showLastChanceAlert = false
+    @State var isDonePersonalization = false
     @StateObject var improvementViewModel = ImprovementViewModel()
     
     @ViewBuilder
     func loadingView(geometry: GeometryProxy) -> some View {
-        if appState.isDonePersonalization {
+        if isDonePersonalization {
             
         } else {
             LoadingScene(size: geometry.size, callBack: advance)
@@ -194,10 +195,14 @@ struct OnboardingView: View  {
             case .useCase:
                 selection = .widgets
             case .subscription:
+                let categoryString = appState.selectedNotificationCategories.components(separatedBy: ",").first ?? "destiny"
+                if let category = DeclarationCategory(categoryString) {
+                    viewModel.choose(category) { _ in }
+                }
                 dismissOnboarding()
                // selection = .widgets
             case .widgets:
-                if appState.isDonePersonalization {
+                if isDonePersonalization {
                     selection = .subscription
                 } else {
                     selection = .loading
@@ -206,7 +211,7 @@ struct OnboardingView: View  {
             case .loading:
                 
                 selection = .subscription
-                appState.isDonePersonalization = true
+                isDonePersonalization = true
             //    dismissOnboarding()
             case .discount:
                 dismissOnboarding()

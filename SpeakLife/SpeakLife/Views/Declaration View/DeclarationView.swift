@@ -37,10 +37,12 @@ struct DeclarationView: View {
     @State private var isPresentingPremiumView = false
     @State private var isPresentingDiscountView = false
     
+    @State private var timeRemaining: Int = 0
+
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     
     @State private var timeElapsed = 0
-       
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     func declarationContent(_ geometry: GeometryProxy) -> some View {
         DeclarationContentView(themeViewModel: themeViewModel, viewModel: viewModel)
@@ -55,6 +57,8 @@ struct DeclarationView: View {
     private func shouldRequest() -> Bool {
         return Date().timeIntervalSince(appState.lastReviewRequestSetDate) >= 24 * 60 * 60
     }
+
+    
     
     
     var body: some View {
@@ -69,7 +73,10 @@ struct DeclarationView: View {
                                 //                                    .frame(width: geometry.size.width * 0.9, height: 50)
                                 //                            }
                                 HStack {
+                                    discountLabel
+                                        .padding()
                                     Spacer()
+                                   
                                     
                                     CapsuleImageButton(title: "crown.fill") {
                                         premiumView()
@@ -140,7 +147,7 @@ struct DeclarationView: View {
                 }
             }
             .sheet(isPresented: $viewModel.showDiscountView) {
-                if appState.discountOfferedTries > 1 {
+                if appState.offerDiscount {
                     DiscountSubscriptionView(size: UIScreen.main.bounds.size, currentSelection: .speakLife1YR19, percentOffText: "50% Off Yearly")
                 } else {
                     SubscriptionView(size: UIScreen.main.bounds.size)
@@ -157,7 +164,6 @@ struct DeclarationView: View {
         private func premiumView()  {
             self.isPresentingPremiumView = true
             Analytics.logEvent(Event.tryPremiumTapped, parameters: nil)
-            appState.discountOfferedTries += 1
         }
     
     
@@ -169,6 +175,63 @@ struct DeclarationView: View {
         }
 #endif
     }
+    
+    
+    var discountLabel: some View {
+        VStack {
+            if appState.offerDiscount && !subscriptionStore.isPremium {
+                Text("Special gift for you!")
+                    .font(.callout)
+                Text("\(timeString(from: timeRemaining)) left")
+                    .font(.caption)
+            }
+        }
+        .onAppear {
+            if appState.discountEndTime == nil {
+                appState.discountEndTime = Date().addingTimeInterval(12 * 60 * 60)
+            }
+//            UserDefaults.standard.set(Date().addingTimeInterval(12 * 60 * 60), forKey: "discountEndTime")
+            initializeTimer()
+        }
+        .onReceive(timer) { _ in
+            updateTimer()
+        }
+//        .onReceive(timer) { _ in
+//            if $appState.timeRemaining > 0 {
+//                appState.timeRemaining -= 1
+//            } else {
+//                appState.offerDiscount = false
+//                timer.upstream.connect().cancel()
+//            }
+//        }
+    }
+    
+    private func initializeTimer() {
+        if let endTime = appState.discountEndTime, Date() < endTime {
+            appState.offerDiscount = true
+            timeRemaining = Int(endTime.timeIntervalSinceNow)
+        } else {
+            appState.offerDiscount = false
+        }
+    }
+    
+    private func updateTimer() {
+        if let endTime = appState.discountEndTime, Date() < endTime {
+               timeRemaining = Int(endTime.timeIntervalSinceNow)
+           } else {
+               appState.offerDiscount = false
+               timeRemaining = 0
+               timer.upstream.connect().cancel() // Stop the timer
+           }
+       }
+    
+    func timeString(from totalSeconds: Int) -> String {
+        let hours = totalSeconds / 3600
+        let minutes = (totalSeconds % 3600) / 60
+        let seconds = totalSeconds % 60
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    }
+    
     
     private func shareSpeakLife()  {
         DispatchQueue.main.async {
