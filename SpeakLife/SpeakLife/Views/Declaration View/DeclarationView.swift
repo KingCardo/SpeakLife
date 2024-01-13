@@ -207,7 +207,7 @@ struct DeclarationView: View {
     }
     
     private func initializeTimer() {
-        if let endTime = appState.discountEndTime, Date() < endTime {
+        if let endTime = appState.discountEndTime, Date() < endTime, !subscriptionStore.isPremium {
             appState.offerDiscount = true
             timeRemaining = Int(endTime.timeIntervalSinceNow)
         } else {

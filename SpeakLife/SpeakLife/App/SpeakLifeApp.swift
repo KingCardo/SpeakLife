@@ -20,13 +20,12 @@ struct SpeakLifeApp: App {
     @StateObject var subscriptionStore = SubscriptionStore()
     @StateObject var devotionalViewModel = DevotionalViewModel()
    // @StateObject var timeTracker = TimeTrackerViewModel()
-    @State private var isShowingLanding = true
     
     private let fourDaysInSeconds: Double = 345600
     
     var body: some Scene {
         WindowGroup {
-            HomeView(isShowingLanding: $isShowingLanding)
+            HomeView()
                 .environmentObject(appState)
                 .environmentObject(declarationStore)
                 .environmentObject(themeStore)
@@ -35,10 +34,12 @@ struct SpeakLifeApp: App {
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now()) {
                         withAnimation {
-                            isShowingLanding = false
+                            if appState.isShowingLanding {
                             let categoryString = appState.selectedNotificationCategories.components(separatedBy: ",").first ?? "destiny"
-                            if let category = DeclarationCategory(categoryString) {
-                                declarationStore.choose(category) { _ in }
+                                if let category = DeclarationCategory(categoryString) {
+                                    declarationStore.choose(category) { _ in }
+                                    appState.isShowingLanding = false
+                                }
                             }
                         }
                     }

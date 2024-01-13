@@ -13,11 +13,10 @@ struct HomeView: View {
     @EnvironmentObject var themeStore: ThemeViewModel
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
-    @Binding var isShowingLanding: Bool
     
     var body: some View {
         Group {
-            if isShowingLanding {
+            if appState.isShowingLanding {
                 LandingView()
             } else if appState.isOnboarded {
                 TabView {
