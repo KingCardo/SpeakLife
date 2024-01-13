@@ -15377,7 +15377,7 @@
         {"text": "Many are the plans in a person's heart, but it is the Lord's purpose that prevails.", "book": "Proverbs 19:21", "isFavorite": false, "category": "destiny"},
         {"text": "Take delight in the Lord, and he will give you the desires of your heart.", "book": "Psalm 37:4", "isFavorite": false, "category": "destiny"},
         {"text": "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.", "isFavorite": false, "category": "destiny"},
-        {"text": "In all your ways acknowledge him, and he will make your paths straight.", "isFavorite": false, "category": "destiny"},        
+        {"text": "In all your ways acknowledge him, and he will make your paths straight.", "isFavorite": false, "category": "destiny"},
         {
             "text": "I am deeply loved by Jesus, no matter what.",
             "isFavorite": false,
@@ -16590,6 +16590,7 @@
         },
         {
             "text": "Your faithfulness in small things leads to abundance in greater things. I am faithful to my promises.",
+            "book": "- Jesus",
             "isFavorite": false,
             "category": "wealth"
         },
