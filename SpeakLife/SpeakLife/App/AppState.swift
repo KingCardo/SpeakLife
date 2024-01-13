@@ -31,7 +31,6 @@ final class AppState: ObservableObject {
     @AppStorage("lastReviewRequestSetDate") var lastReviewRequestSetDate = Date()
     @AppStorage("offerDiscount") var offerDiscount = false
     @AppStorage("discountEndTime") var discountEndTime: Date?
-    @AppStorage("isShowingLanding") var isShowingLanding: Bool = true
 }
 
 extension Date: RawRepresentable {

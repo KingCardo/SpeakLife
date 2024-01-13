@@ -22,12 +22,14 @@
 		458510DC2B15C37B00230EE5 /* BibleStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510DB2B15C37B00230EE5 /* BibleStudyView.swift */; };
 		458510DE2B16B29400230EE5 /* BibleStudyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510DD2B16B29400230EE5 /* BibleStudyViewModel.swift */; };
 		458510E02B16B2B000230EE5 /* BibleStudyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510DF2B16B2B000230EE5 /* BibleStudyService.swift */; };
+		45C7481B2B5357D40011D8F6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		45C7481C2B5357D40011D8F6 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 7AF18C7F29FD1E20005A6E31 /* GoogleMobileAds */; };
 		45CF27182B4E52C900BC8968 /* Personalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF27172B4E52C900BC8968 /* Personalization.swift */; };
 		45CF271A2B4E52EF00BC8968 /* HabitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF27192B4E52EF00BC8968 /* HabitScene.swift */; };
 		45CF271C2B4E530300BC8968 /* ImprovementScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF271B2B4E530300BC8968 /* ImprovementScene.swift */; };
 		7A00721828F8ED4A00965AF7 /* declarations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A00721728F8ED4A00965AF7 /* declarations.json */; };
 		7A00721A2908D22E00965AF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A0072192908D22E00965AF7 /* GoogleService-Info.plist */; };
-		7A00721D2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		7A00721D2908D50800965AF7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		7A278F9B288915DE0084BB57 /* SpeakLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */; };
 		7A278F9F288915DF0084BB57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A278F9E288915DF0084BB57 /* Assets.xcassets */; };
 		7A278FA2288915DF0084BB57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A278FA1288915DF0084BB57 /* Preview Assets.xcassets */; };
@@ -100,7 +102,7 @@
 		7ABA50CF29E63275002699F1 /* prayers.json in Resources */ = {isa = PBXBuildFile; fileRef = 7ABA50CE29E63275002699F1 /* prayers.json */; };
 		7AF18C7B29FD1A43005A6E31 /* GoogleAdMob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF18C7A29FD1A43005A6E31 /* GoogleAdMob.swift */; };
 		7AF18C7D29FD1A67005A6E31 /* AdBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF18C7C29FD1A67005A6E31 /* AdBanner.swift */; };
-		7AF18C8029FD1E20005A6E31 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 7AF18C7F29FD1E20005A6E31 /* GoogleMobileAds */; };
+		7AF18C8029FD1E20005A6E31 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		7AF18C8229FD2494005A6E31 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF18C8129FD2494005A6E31 /* Badge.swift */; };
 		7AF18C8429FDCE0A005A6E31 /* ShimmerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF18C8329FDCE0A005A6E31 /* ShimmerButton.swift */; };
 		7AF18C8629FEC6EB005A6E31 /* BulletList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF18C8529FEC6EB005A6E31 /* BulletList.swift */; };
@@ -277,9 +279,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AF18C8029FD1E20005A6E31 /* GoogleMobileAds in Frameworks */,
+				45C7481C2B5357D40011D8F6 /* GoogleMobileAds in Frameworks */,
+				45C7481B2B5357D40011D8F6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				7AF18C8029FD1E20005A6E31 /* (null) in Frameworks */,
 				7AF18CA22A0DB126005A6E31 /* SwiftUICharts in Frameworks */,
-				7A00721D2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				7A00721D2908D50800965AF7 /* (null) in Frameworks */,
 				7A7BEBCD2913536B008D08A3 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1177,7 +1181,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 198;
+				CURRENT_PROJECT_VERSION = 199;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
@@ -1212,7 +1216,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 198;
+				CURRENT_PROJECT_VERSION = 199;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				ENABLE_PREVIEWS = YES;
