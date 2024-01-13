@@ -1,414 +1,474 @@
 {
-"prayers": [
-{
-"prayerText": "Heavenly Father, I come before You today with a heart full of gratitude for the gift of faith. I ask that You help me to grow in faith and trust Your divine plan, knowing that Your ways are higher than mine. When I face challenges or uncertainties, remind me to turn to You for guidance and strength, confident in the knowledge that You are always by my side.",
-"isPremium": false,
-"category": "faith"
-},
-{
-"prayerText": "Lord, I believe in Your promises and ask for the strength to stand firm in my faith, even when I face challenges and uncertainties. Help me to remember that You are my rock and my fortress, and that through faith in You, all things are possible. Teach me to trust in Your perfect timing and to rely on Your unfailing love and mercy.",
-"isPremium": false,
-"category": "faith"
-},
-{
-"prayerText": "Heavenly Father, strengthen my faith in You and Your promises. Help me to trust in Your plan for my life. \"Now faith is confidence in what we hope for and assurance about what we do not see.\" (Hebrews 11:1)",
-"isPremium": false,
-"category": "faith"
-},
-{
-"prayerText": "Lord, I pray for the faith of David who trusted in Your protection and defeated Goliath with a sling and a stone. Help me to have faith that You are my defender and will fight my battles for me. (1 Samuel 17:45-50)",
-"isPremium": true,
-"category": "faith"
-},
-{
-"prayerText": "God, help me to walk by faith and not by sight, knowing that You are always by my side. May my faith be unwavering in times of uncertainty. \"For we live by faith, not by sight.\" (2 Corinthians 5:7)",
-"isPremium": true,
-"category": "faith"
-},
-{
-"prayerText": "Father, I ask for the courage to step out in faith and follow Your guidance, even when it seems difficult or impossible. \"Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.\" (Joshua 1:9)",
-"isPremium": true,
-"category": "faith"
-},
-{
-"prayerText": "Lord, increase my faith and help me to be more like Christ. Show me how to rely on You in every aspect of my life. \"I have been crucified with Christ and I no longer live, but Christ lives in me.\" (Galatians 2:20)",
-"isPremium": true,
-"category": "faith"
-},
-{
-"prayerText": "Dear God, I pray for the faith of Abraham who believed in Your promise of a son and became the father of many nations. Help me to trust in Your promises and have faith that You will fulfill Your plans for my life. (Romans 4:16-21)",
-"isPremium": true,
-"category": "faith"
-},
-{
-"prayerText": "Father, teach me to have unwavering faith in Your promises, even when faced with obstacles or adversity. \"So do not fear, for I am with you; do not be dismayed, for I am your God.\" (Isaiah 41:10)",
-"isPremium": true,
-"category": "faith"
-},
-{
-"prayerText": "Lord Jesus, please help me to have the faith of the woman who touched the hem of Your garment and was healed. May I trust in Your power to heal me and provide for my needs. (Mark 5:25-34)",
-"isPremium": true,
-"category": "faith"
-},
-{
-"prayerText": "God, when my faith wavers, remind me of Your faithfulness and the countless ways You have provided for me. \"Because of the Lord's great love we are not consumed, for his compassions never fail.\" (Lamentations 3:22)",
-"isPremium": true,
-"category": "faith"
-},
-{
-"prayerText": "Father, thank You for the gift of faith. Help me to grow in my faith and to share it with others so that they too may come to know and trust in Your love. \"So then faith comes by hearing, and hearing by the word of God.\" (Romans 10:17)",
-"isPremium": true,
-"category": "faith"
-},
-{
-"prayerText": "Heavenly Father, I pray for the healing of relationships that have been broken or strained. Please mend the wounds of our hearts and restore our connections with one another, that we may once again experience the joy of Your love and unity. Guide us in the path of forgiveness, understanding, and compassion, so we can rebuild the bonds that have been weakened.",
-"isPremium": false,
-"category": "love"
-},
-{
-"prayerText": "Dear Lord, I ask for Your healing power to flow through every part of my body, renewing and restoring me to full health. May Your grace and mercy surround me, filling me with the hope and faith I need to overcome any obstacles I may encounter on my journey toward healing. Give me the strength to persevere and the wisdom to seek Your guidance in all aspects of my life.",
-"isPremium": true,
-"category": "health"
-},
-{
-"prayerText": "God, I pray for the emotional and mental healing of those who are struggling with the burdens of life. Please provide them with Your peace, comfort, and strength during their time of need. Help them to find solace in Your loving presence and to trust that You are always with them, guiding and supporting them through every challenge they face.",
-"isPremium": false,
-"category": "peace"
-},
-{
-"prayerText": "Heavenly Father, I lift up those who are suffering from addiction and ask for Your healing hand to touch their lives. Guide them through the process of recovery and help them find the strength and courage to break free from the chains that bind them. Surround them with Your love, grace, and mercy, and lead them to the support and resources they need to rebuild their lives.",
-"isPremium": false,
-"category": "addiction"
-},
-{
-"prayerText": "Almighty God, I pray for those who are battling chronic illnesses. I ask that You would give them the strength to endure each day, and the courage to face their challenges with unwavering faith in Your power to heal. May they find comfort in Your loving presence and experience the peace that surpasses understanding. Grant them hope, resilience, and the assurance that You are walking beside them through every step of their journey.",
-"isPremium": false,
-"category": "health"
-},
-{
-"prayerText": "Dear God, thank You for Your amazing love that is higher than the heavens and deeper than the seas. Help me to comprehend Your love and to be filled with it more and more each day. (Psalm 103:11-12)",
-"isPremium": false,
-"category": "love"
-},
-{
-"prayerText": "Heavenly Father, please help me to love others as You have loved me, sacrificially and unconditionally. May I be a reflection of Your love to those around me. (John 15:12-13)",
-"isPremium": false,
-"category": "love"
-},
-{
-"prayerText": "Heavenly Father, thank You for loving me so much that You sent Your Son to die for me. May I never forget the sacrifice that was made on my behalf and may I live in a way that honors You. (John 3:16)",
-"isPremium": false,
-"category": "love"
-},
-{
-"prayerText": "Lord, I pray that Your love may be the motivation behind all that I do. May Your love guide me in my relationships, my work, and my service to others. (1 Corinthians 16:14)",
-"isPremium": true,
-"category": "love"
-},
-{
-"prayerText": "Lord, I pray that I may know the depth of Your love, which surpasses all understanding. May Your love transform me and guide me in all that I do. (Ephesians 3:17-19)",
-"isPremium": false,
-"category": "love"
-},
-{
-"prayerText": "Lord, teach me to love unconditionally as You do. Help me to be patient, kind, and compassionate toward others. \"Love is patient, love is kind. It does not envy, it does not boast, it is not proud.\" (1 Corinthians 13:4)",
-"isPremium": true,
-"category": "love"
-},
-{
-"prayerText": "God, help me to grow in love and understanding toward those around me. May my actions reflect Your love and grace. \"Above all, love each other deeply, because love covers over a multitude of sins.\" (1 Peter 4:8)",
-"isPremium": true,
-"category": "love"
-},
-{
-"prayerText": "Father, I ask that You strengthen the bonds of love within my family and friendships. May Your love unite us and bring us closer together. \"A friend loves at all times, and a brother is born for adversity.\" (Proverbs 17:17)",
-"isPremium": true,
-"category": "love"
-},
-{
-"prayerText": "Lord, help me to love others selflessly and to put their needs before my own. May I be a reflection of Your love in the world. \"Do everything in love.\" (1 Corinthians 16:14)",
-"isPremium": true,
-"category": "love"
-},
-{
-"prayerText": "God, teach me to forgive and to show mercy as You do. Help me to love others despite their flaws and imperfections. \"Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you.\" (Ephesians 4:32)",
-"isPremium": true,
-"category": "love"
-},
-{
-"prayerText": "Heavenly Father, I pray that my heart remains open to Your love and guidance. Help me to love even when it is difficult. \"And now these three remain: faith, hope and love. But the greatest of these is love.\" (1 Corinthians 13:13)",
-"isPremium": true,
-"category": "love"
-},
-{
-"prayerText": "Lord, let my life be a testimony of Your love. May I be a beacon of hope and love to those who are hurting or lost. \"By this everyone will know that you are my disciples, if you love one another.\" (John 13:35)",
-"isPremium": true,
-"category": "love"
-},
-{
-"prayerText": "Father, help me to show love and compassion to those who are difficult to love. Grant me the wisdom and patience to be a peacemaker. \"Blessed are the peacemakers, for they will be called children of God.\" (Matthew 5:9)",
-"isPremium": true,
-"category": "love"
-},
-{
-"prayerText": "God, teach me to be a loving and supportive partner. Strengthen my relationship and guide us in Your love. \"Two are better than one, because they have a good return for their labor.\" (Ecclesiastes 4:9)",
-"isPremium": true,
-"category": "love"
-},
-{
-"prayerText": "Lord, help me to cultivate a loving heart that is open to forgiveness, understanding, and compassion. May I be an instrument of Your love in this world. \"But I say to you who hear, Love your enemies, do good to those who hate you.\" (Luke 6:27)",
-"isPremium": true,
-"category": "love"
-},
-{
-"prayerText": "Lord, I pray for deliverance from my addiction. Please guide me through this challenging journey and provide the resources, support, and strength I need to overcome and heal.",
-"isPremium": false,
-"category": "addiction"
-},
-{
-"prayerText": "Heavenly Father, grant me the strength to overcome this addiction. Help me lean on You and seek Your guidance. Surround me with Your love and healing power. \"He gives power to the weak and strength to the powerless.\" (Isaiah 40:29)",
-"isPremium": false,
-"category": "addiction"
-},
-{
-"prayerText": "Lord, I pray for Your guidance and love in my battle against addiction. Lead me to the support and resources I need to find freedom. \"I can do all things through Christ who strengthens me.\" (Philippians 4:13)",
-"isPremium": true,
-"category": "addiction"
-},
-{
-"prayerText": "God, please intervene in my struggle with addiction. Help me resist temptation and rely on Your strength. \"No temptation has overtaken you except what is common to mankind. And God is faithful; he will not let you be tempted beyond what you can bear.\" (1 Corinthians 10:13)",
-"isPremium": true,
-"category": "addiction"
-},
-{
-"prayerText": "Dear Lord, I ask for Your strength and guidance as I face this addiction. Help me to turn to You in times of need. \"Cast your cares on the LORD and he will sustain you; he will never let the righteous be shaken.\" (Psalm 55:22)",
-"isPremium": true,
-"category": "addiction"
-},
-{
-"prayerText": "Father, I come to You with a heavy heart, seeking Your help to overcome and break this addiction. Teach me to lean on You for strength. \"So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you.\" (Isaiah 41:10)",
-"isPremium": true,
-"category": "addiction"
-},
-{
-"prayerText": "God, I pray for healing and freedom from my addiction. Help me trust Your power and love during my recovery. \"He sent out his word and healed them; he rescued them from the grave.\" (Psalm 107:20)",
-"isPremium": true,
-"category": "addiction"
-},
-{
-"prayerText": "Heavenly Father, I ask for wisdom and guidance as I confront my addiction. Help me find the support I need. \"For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, plans to give you hope and a future.\" (Jeremiah 29:11)",
-"isPremium": true,
-"category": "addiction"
-},
-{
-"prayerText": "Lord, I pray for Your protection and healing in my battle against addiction. Strengthen my faith and help me trust Your plan. \"The LORD is my light and my salvation; whom shall I fear? The LORD is the stronghold of my life.\" (Psalm 27:1)",
-"isPremium": true,
-"category": "addiction"
-},
-{
-"prayerText": "Dear God, I ask for Your strength to overcome my addiction. Guide me towards a life of recovery and renewed purpose. \"Trust in the LORD with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.\" (Proverbs 3:5-6)",
-"isPremium": true,
-"category": "addiction"
-},
-{
-"prayerText": "Heavenly Father, I ask for Your guidance in managing the resources You have provided. Help me be a good steward and use my wealth wisely. \"The blessing of the LORD brings wealth, without painful toil for it.\" (Proverbs 10:22)",
-"isPremium": false,
-"category": "wealth"
-},
-{
-"prayerText": "Lord, I pray for Your wisdom in creating financial stability. Teach me to prioritize and make wise decisions with my finances. \"If any of you lacks wisdom, you should ask God, who gives generously to all.\" (James 1:5)",
-"isPremium": false,
-"category": "wealth"
-},
-{
-"prayerText": "God, help me maintain a balance between my material wealth and my spiritual well-being. May my heart remain focused on You. \"For where your treasure is, there your heart will be also.\" (Matthew 6:21)",
-"isPremium": true,
-"category": "wealth"
-},
-{
-"prayerText": "Dear Lord, I pray for financial blessings and opportunities to create wealth. Guide me in using my resources to serve You and others. \"Honor the LORD with your wealth, with the firstfruits of all your crops.\" (Proverbs 3:9)",
-"isPremium": true,
-"category": "wealth"
-},
-{
-"prayerText": "Father, I ask for Your guidance in managing my finances. Help me to save, invest, and be generous with the wealth You have given me. \"Whoever can be trusted with very little can also be trusted with much.\" (Luke 16:10)",
-"isPremium": true,
-"category": "wealth"
-},
-{
-"prayerText": "God, I pray for wisdom in making financial decisions. Help me to be disciplined and responsible with my wealth, always seeking Your guidance. \"In all your ways submit to him, and he will make your paths straight.\" (Proverbs 3:6)",
-"isPremium": true,
-"category": "wealth"
-},
-{
-"prayerText": "Heavenly Father, I ask for the strength to resist materialism and to always prioritize my relationship with You. \"Keep your lives free from the love of money and be content with what you have.\" (Hebrews 13:5)",
-"isPremium": true,
-"category": "wealth"
-},
-{
-"prayerText": "Lord, I pray for opportunities to use my wealth to bless others and further Your kingdom. May I always be generous and compassionate. \"A generous person will prosper; whoever refreshes others will be refreshed.\" (Proverbs 11:25)",
-"isPremium": true,
-"category": "wealth"
-},
-{
-"prayerText": "Dear God, I ask for financial provision and abundance. Help me to trust in Your timing and Your plan for my life. \"And my God will meet all your needs according to the riches of his glory in Christ Jesus.\" (Philippians 4:19)",
-"isPremium": true,
-"category": "wealth"
-},
-{
-"prayerText": "Father, I pray for a spirit of gratitude and contentment, regardless of my financial situation. Help me to always trust in Your provision. \"I have learned to be content whatever the circumstances.\" (Philippians 4:11)",
-"isPremium": true,
-"category": "wealth"
-},
-{
-"prayerText": "Heavenly Father, I lay my anxieties before You. Help me trust in Your plan and find peace in Your presence. \"Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.\" (Philippians 4:6)",
-"isPremium": false,
-"category": "peace"
-},
-{
-"prayerText": "Lord, I pray for Your peace to calm my anxious thoughts. Guide me in finding refuge and strength in You. \"The LORD is my light and my salvation; whom shall I fear? The LORD is the stronghold of my life.\" (Psalm 27:1)",
-"isPremium": false,
-"category": "peace"
-},
-{
-"prayerText": "God, I ask for Your help in overcoming my fears and anxieties. Remind me of Your constant presence and love. \"When I am afraid, I put my trust in You.\" (Psalm 56:3)",
-"isPremium": true,
-"category": "peace"
-},
-{
-"prayerText": "Dear Lord, please grant me peace of mind and the ability to cast my anxieties on You. Help me to trust You in every situation. \"Cast all your anxiety on him because he cares for you.\" (1 Peter 5:7)",
-"isPremium": true,
-"category": "peace"
-},
-{
-"prayerText": "Father, I ask for Your guidance in handling these anxious thoughts. Teach me to enjoy Your peace and wisdom in difficult moments. \"For God has not given us a spirit of fear, but of power and of love and of a sound mind.\" (2 Timothy 1:7)",
-"isPremium": true,
-"category": "peace"
-},
-{
-"prayerText": "God, I pray for Your strength to help me overcome anxiety and live like a warrior. Remind me to rely on Your promises and find rest in Your presence. \"Come to me, all you who are weary and burdened, and I will give you rest.\" (Matthew 11:28)",
-"isPremium": true,
-"category": "peace"
-},
-{
-"prayerText": "Heavenly Father, I ask for Your guidance in conquering all anxiety and to live in joy and peace. Help me to trust in Your love and protection. \"Even though I walk through the darkest valley, I will fear no evil, for You are with me.\" (Psalm 23:4)",
-"isPremium": true,
-"category": "peace"
-},
-{
-"prayerText": "Lord, I pray for the ability to let go of my worries and trust in Your plan for my life. Grant me peace and comfort in my times of anxiety. \"Peace I leave with you; my peace I give you. I do not give to you as the world gives.\" (John 14:27)",
-"isPremium": true,
-"category": "peace"
-},
-{
-"prayerText": "Dear God, I ask for Your help in overcoming my fears and anxieties. Help me to focus on Your love and strength. \"You will keep in perfect peace those whose minds are steadfast, because they trust in You.\" (Isaiah 26:3)",
-"isPremium": true,
-"category": "peace"
-},
-{
-"prayerText": "Heavenly Father, I ask for Your healing touch upon my body and mind. Restore my health and give me strength. \"He heals the brokenhearted and binds up their wounds.\" (Psalm 147:3)",
-"isPremium": false,
-"category": "health"
-},
-{
-"prayerText": "Lord, I pray for Your healing power to cleanse me of illness and pain. Help me to trust in Your love and mercy. \"He sent out his word and healed them; he rescued them from the grave.\" (Psalm 107:20)",
-"isPremium": false,
-"category": "health"
-},
-{
-"prayerText": "God, I ask for Your strength and healing during this time of illness. Grant me patience and faith as I seek Your face. \"But those who hope in the LORD will renew their strength.\" (Isaiah 40:31)",
-"isPremium": true,
-"category": "health"
-},
-{
-"prayerText": "Dear Lord, I thank you for healing and comfort in advance as I face lies from the devil. Help me to find peace in Your love and care. \"The LORD sustains them on their sickbed and restores them from their bed of illness.\" (Psalm 41:3)",
-"isPremium": true,
-"category": "health"
-},
-{
-"prayerText": "Father, I thank you for Your healing touch upon my life. Restore my health and give me strength to face each day. \"He said, 'If you listen carefully to the LORD your God and do what is right in his eyes, I will not bring on you any of the diseases.'\" (Exodus 15:26)",
-"isPremium": false,
-"category": "health"
-},
-{
-"prayerText": "God, I thank for Your protection and healing as I face health challenges. Help me trust in Your plan and find peace in Your presence. \"Peace I leave with you; my peace I give you.\" (John 14:27)",
-"isPremium": true,
-"category": "health"
-},
-{
-"prayerText": "Heavenly Father, I ask for Your guidance as I navigate through these health issues. Thank you for loving me and bring healing to my body. \"My flesh and my heart may fail, but God is the strength of my heart and my portion forever.\" (Psalm 73:26)",
-"isPremium": true,
-"category": "health"
-},
-{
-"prayerText": "Lord, I pray for Your healing power to flow through my body, renewing my strength and restoring my health. \"For I am the LORD, who heals you.\" (Exodus 15:26)",
-"isPremium": true,
-"category": "health"
-},
-{
-"prayerText": "Dear God, I ask for Your healing presence in my life. Help me find comfort and strength in You during times of illness. \"The LORD will sustain him on his sickbed and restore him from his bed of illness.\" (Psalm 41:3)",
-"isPremium": true,
-"category": "health"
-},
-{
-"prayerText": "Heavenly Father, please help me to never forget the sacrifice that was made on my behalf and the gift of salvation that You have given me. May I live a life that is pleasing to You and honor Your name in all that I do. (Hebrews 12:28-29)",
-"isPremium": false,
-"category": "gratitude"
-},
-{
-"prayerText": "Heavenly Father, I am grateful for Your love, guidance, protection and direction. Help me to live a life that reflects my gratitude for all You have done. \"Rejoice always, pray continually, give thanks in all circumstances.\" (1 Thessalonians 5:16-18)",
-"isPremium": false,
-"category": "gratitude"
-},
-{
-"prayerText": "Dear God, thank You for Your unwavering presence in my life, you never left my side and continue to be the air in my lungs. I am grateful for Your love, mercy, and grace. \"I will give thanks to you, LORD, with all my heart.\" (Psalm 9:1)",
-"isPremium": true,
-"category": "gratitude"
-},
-{
-"prayerText": "Abba, I am grateful for Your provision and care. Help me to trust in Your timing and plan for my life. \"And my God will meet all your needs according to the riches of his glory in Christ Jesus.\" (Philippians 4:19)",
-"isPremium": true,
-"category": "gratitude"
-},
-{
-"prayerText": "Heavenly Father, please help me to cultivate a heart of gratitude and to give thanks in all circumstances. May I find joy in Your presence and be filled with Your peace. (1 Thessalonians 5:16-18)",
-"isPremium": true,
-"category": "gratitude"
-},
-{
-"prayerText": "God, I am grateful for Your wisdom and guidance in my life. Help me to continually seek Your will and follow Your path. \"Your word is a lamp for my feet, a light on my path.\" (Psalm 119:105)",
-"isPremium": true,
-"category": "gratitude"
-},
-{
-"prayerText": "Lord, I am thankful for Your constant protection and care for me and my family as I go day by day. Help me to find peace and security in Your love. \"The LORD is my strength and my shield.\" (Psalm 28:7)",
-"isPremium": true,
-"category": "gratitude"
-},
-{
-"prayerText": "Heavenly Father, I thank You for Your abundant grace and mercy. Teach me to be grateful in all circumstances and to trust in Your plan. \"Give thanks to the God of heaven, for his steadfast love endures forever.\" (Psalm 136:26)",
-"isPremium": true,
-"category": "gratitude"
-},
-{
-"prayerText": "Dear Lord, I am grateful for Your presence in my life. Help me to continually seek Your guidance and wisdom. \"Let the peace of Christ rule in your hearts, to which indeed you were called in one body. And be thankful.\" (Colossians 3:15)",
-"isPremium": true,
-"category": "gratitude"
-},
-{
-"prayerText": "God, thank You for Your unconditional love and forgiveness. May I always remember to be grateful for Your mercy and grace. \"Praise the LORD. Give thanks to the LORD, for he is good; his love endures forever.\" (Psalm 106:1)",
-"isPremium": true,
-"category": "gratitude"
-},
-{
-"prayerText": "Heavenly Father, I am deeply grateful for the gift of family and friends. Bless and protect them, and help me to cherish the time we spend together. \"I thank my God every time I remember you.\" (Philippians 1:3)",
-"isPremium": true,
-"category": "gratitude"
-},
-{
-"prayerText": "Lord, thank You for the opportunity to serve and make a difference in the lives of others. Help me to be a grateful and compassionate servant. \"In all things I have shown you that by working hard in this way we must help the weak and remember the words of the Lord Jesus, how he himself said, 'It is more blessed to give than to receive.'\" (Acts 20:35)",
-"isPremium": true,
-"category": "gratitude"
-},
-]
+    "prayers": [
+        {
+            "prayerText": "Heavenly Father, I come before You today with a heart full of gratitude for the gift of faith. I ask that You help me to grow in faith and trust Your divine plan, knowing that Your ways are higher than mine. When I face challenges or uncertainties, remind me to turn to You for guidance and strength, confident in the knowledge that You are always by my side.",
+            "isPremium": false,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Lord, I believe in Your promises and ask for the strength to stand firm in my faith, even when I face challenges and uncertainties. Help me to remember that You are my rock and my fortress, and that through faith in You, all things are possible. Teach me to trust in Your perfect timing and to rely on Your unfailing love and mercy.",
+            "isPremium": false,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Heavenly Father, strengthen my faith in You and Your promises. Help me to trust in Your plan for my life. \"Now faith is confidence in what we hope for and assurance about what we do not see.\" (Hebrews 11:1)",
+            "isPremium": false,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Lord, I pray for the faith of David who trusted in Your protection and defeated Goliath with a sling and a stone. Help me to have faith that You are my defender and will fight my battles for me. (1 Samuel 17:45-50)",
+            "isPremium": true,
+            "category": "faith"
+        },
+        {
+            "prayerText": "God, help me to walk by faith and not by sight, knowing that You are always by my side. May my faith be unwavering in times of uncertainty. \"For we live by faith, not by sight.\" (2 Corinthians 5:7)",
+            "isPremium": true,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Father, I ask for the courage to step out in faith and follow Your guidance, even when it seems difficult or impossible. \"Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.\" (Joshua 1:9)",
+            "isPremium": true,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Lord, increase my faith and help me to be more like Christ. Show me how to rely on You in every aspect of my life. \"I have been crucified with Christ and I no longer live, but Christ lives in me.\" (Galatians 2:20)",
+            "isPremium": true,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Dear God, I pray for the faith of Abraham who believed in Your promise of a son and became the father of many nations. Help me to trust in Your promises and have faith that You will fulfill Your plans for my life. (Romans 4:16-21)",
+            "isPremium": true,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Father, teach me to have unwavering faith in Your promises, even when faced with obstacles or adversity. \"So do not fear, for I am with you; do not be dismayed, for I am your God.\" (Isaiah 41:10)",
+            "isPremium": true,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Lord Jesus, please help me to have the faith of the woman who touched the hem of Your garment and was healed. May I trust in Your power to heal me and provide for my needs. (Mark 5:25-34)",
+            "isPremium": true,
+            "category": "faith"
+        },
+        {
+            "prayerText": "God, when my faith wavers, remind me of Your faithfulness and the countless ways You have provided for me. \"Because of the Lord's great love we are not consumed, for his compassions never fail.\" (Lamentations 3:22)",
+            "isPremium": true,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Father, thank You for the gift of faith. Help me to grow in my faith and to share it with others so that they too may come to know and trust in Your love. \"So then faith comes by hearing, and hearing by the word of God.\" (Romans 10:17)",
+            "isPremium": true,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Heavenly Father, please help me to never forget the sacrifice that was made on my behalf and the gift of salvation that You have given me. May I live a life that is pleasing to You and honor Your name in all that I do. (Hebrews 12:28-29)",
+            "isPremium": false,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Heavenly Father, I am grateful for Your love, guidance, protection and direction. Help me to live a life that reflects my gratitude for all You have done. \"Rejoice always, pray continually, give thanks in all circumstances.\" (1 Thessalonians 5:16-18)",
+            "isPremium": false,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Dear God, thank You for Your unwavering presence in my life, you never left my side and continue to be the air in my lungs. I am grateful for Your love, mercy, and grace. \"I will give thanks to you, LORD, with all my heart.\" (Psalm 9:1)",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Abba, I am grateful for Your provision and care. Help me to trust in Your timing and plan for my life. \"And my God will meet all your needs according to the riches of his glory in Christ Jesus.\" (Philippians 4:19)",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Heavenly Father, please help me to cultivate a heart of gratitude and to give thanks in all circumstances. May I find joy in Your presence and be filled with Your peace. (1 Thessalonians 5:16-18)",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "God, I am grateful for Your wisdom and guidance in my life. Help me to continually seek Your will and follow Your path. \"Your word is a lamp for my feet, a light on my path.\" (Psalm 119:105)",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Lord, I am thankful for Your constant protection and care for me and my family as I go day by day. Help me to find peace and security in Your love. \"The LORD is my strength and my shield.\" (Psalm 28:7)",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Heavenly Father, I thank You for Your abundant grace and mercy. Teach me to be grateful in all circumstances and to trust in Your plan. \"Give thanks to the God of heaven, for his steadfast love endures forever.\" (Psalm 136:26)",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Dear Lord, I am grateful for Your presence in my life. Help me to continually seek Your guidance and wisdom. \"Let the peace of Christ rule in your hearts, to which indeed you were called in one body. And be thankful.\" (Colossians 3:15)",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "God, thank You for Your unconditional love and forgiveness. May I always remember to be grateful for Your mercy and grace. \"Praise the LORD. Give thanks to the LORD, for he is good; his love endures forever.\" (Psalm 106:1)",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Heavenly Father, I am deeply grateful for the gift of family and friends. Bless and protect them, and help me to cherish the time we spend together. \"I thank my God every time I remember you.\" (Philippians 1:3)",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Lord, thank You for the opportunity to serve and make a difference in the lives of others. Help me to be a grateful and compassionate servant. \"In all things I have shown you that by working hard in this way we must help the weak and remember the words of the Lord Jesus, how he himself said, 'It is more blessed to give than to receive.'\" (Acts 20:35)",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Lord Jesus, I magnify Your name for the gift of life and health. Thank you for Your healing power and for sustaining me. I declare victory in maintaining great health and praise You for Your constant care and protection.",
+            "isPremium": false,
+            "category": "health"
+        },
+        {
+            "prayerText": "Heavenly Father, in Jesus' name, I express my profound gratitude for my health and well-being. I declare that through Your strength, I experience vitality and wellness. Praise to You, Lord, for Your blessings of health and strength.",
+            "isPremium": false,
+            "category": "health"
+        },
+        {
+            "prayerText": "Dear Lord, thank You for the miracle of healing and the blessing of health. I stand in faith for continued great health and give You all the glory for Your unfailing love and the promise of wholeness in You.",
+            "isPremium": false,
+            "category": "health"
+        },
+        {
+            "prayerText": "Almighty God, Your grace and mercy bring comfort and health. I am thankful for Your divine touch in every aspect of my well-being. I proclaim victory over illness and praise You for Your sustaining power.",
+            "isPremium": true,
+            "category": "health"
+        },
+        {
+            "prayerText": "Father, thank You for the blessing of good health and the joy it brings. I declare by faith that I am strong and healthy in Your care. All praise to You, Lord, for Your mercies and healing power.",
+            "isPremium": true,
+            "category": "health"
+        },
+        {
+            "prayerText": "Lord Jesus, I glorify Your name for the wonderful gift of health. Thank you for Your healing that flows through my body. In faith, I claim continued health and vitality, praising You for Your loving kindness.",
+            "isPremium": true,
+            "category": "health"
+        },
+        {
+            "prayerText": "Heavenly Father, Your word brings life and health. I am grateful for the strength and wellness You provide. I celebrate the victory of good health and give You all the honor and praise.",
+            "isPremium": true,
+            "category": "health"
+        },
+        {
+            "prayerText": "Dear God, thank You for the gift of health that enables me to serve You. I declare robust health and vitality in Your name. Praise to You, Lord, for Your faithfulness in keeping me healthy and strong.",
+            "isPremium": true,
+            "category": "health"
+        },
+        {
+            "prayerText": "Lord, I am immensely grateful for the physical and mental health You bless me with. I declare a life of health and vigor in Your holy name. I praise You, Lord, for Your enduring presence and healing.",
+            "isPremium": true,
+            "category": "health"
+        },
+        {
+            "prayerText": "Almighty God, thank You for the blessing of good health and the ability to enjoy life. By faith, I walk in divine health and wellness. Praise be to You, Lord, for Your continuous grace and healing touch.",
+            "isPremium": true,
+            "category": "health"
+        },
+        {
+            "prayerText": "Lord Jesus, I magnify Your name for the peace You bring into my life. Thank you for the tranquility and calmness that surpass all understanding. I declare victory over turmoil and praise You for the gift of great peace.",
+            "isPremium": false,
+            "category": "peace"
+        },
+        {
+            "prayerText": "Heavenly Father, in Jesus' name, I express my deepest gratitude for the serene spirit You bestow upon us. In a world of chaos, Your peace reigns supreme. I praise You for the unwavering peace that fills my heart.",
+            "isPremium": false,
+            "category": "peace"
+        },
+        {
+            "prayerText": "Dear Lord, thank You for the gift of peace that envelopes my life. In Your presence, I find a quiet strength and comfort. I praise You for this great peace and for the harmony that radiates from Your love.",
+            "isPremium": false,
+            "category": "peace"
+        },
+        {
+            "prayerText": "Almighty God, Your peace is a shelter in times of storm. I am grateful for the security and tranquility You provide. I declare victory in the peace of Your presence and praise You for Your protective embrace.",
+            "isPremium": true,
+            "category": "peace"
+        },
+        {
+            "prayerText": "Father, thank You for the blessing of divine peace that transcends all understanding. In faith, I embrace this peace, knowing it guards my heart and mind. All praise to You, Lord, for Your eternal calm and serenity.",
+            "isPremium": true,
+            "category": "peace"
+        },
+        {
+            "prayerText": "Lord Jesus, I glorify Your name for the peaceful assurance I find in You. Thank you for the calm and restful spirit that flows from Your grace. I praise You for the profound peace that pervades my being.",
+            "isPremium": true,
+            "category": "peace"
+        },
+        {
+            "prayerText": "Heavenly Father, Your word speaks peace into my life. I am grateful for the stability and quietude Your love provides. I celebrate the victory of peace in my heart and give You all the honor and praise.",
+            "isPremium": true,
+            "category": "peace"
+        },
+        {
+            "prayerText": "Dear God, thank You for the stillness and peace that encompass my soul. In Your name, I declare a life filled with peace and contentment. Praise to You, Lord, for Your faithfulness in granting us true peace.",
+            "isPremium": true,
+            "category": "peace"
+        },
+        {
+            "prayerText": "Lord, I am immensely grateful for the peace and harmony You bless me with. I declare a life of tranquility and serenity in Your holy name. I praise You, Lord, for Your enduring presence and peaceful essence.",
+            "isPremium": true,
+            "category": "peace"
+        },
+        {
+            "prayerText": "Almighty God, thank You for the blessing of inner peace and the ability to face life's challenges calmly. By faith, I walk in divine peace and harmony. Praise be to You, Lord, for Your continuous grace and the peace that surpasses all understanding.",
+            "isPremium": true,
+            "category": "peace"
+        },
+        {
+            "prayerText": "Heavenly Father, I magnify Your name for Your abundant blessings. Thank you for Your providence and the wealth You bring into our lives. I declare victory over scarcity and praise You for opening the doors of prosperity.",
+            "isPremium": false,
+            "category": "wealth"
+        },
+        {
+            "prayerText": "Lord Jesus, I am filled with gratitude for the richness of Your love and the material blessings You provide. In faith, I walk towards greater wealth and prosperity, knowing You are my guide and provider.",
+            "isPremium": false,
+            "category": "wealth"
+        },
+        {
+            "prayerText": "Dear God, thank You for Your unending generosity and the prosperity that flows from Your hand. I praise You for the financial stability and abundance You grant us, as I walk in faith towards greater financial blessings.",
+            "isPremium": false,
+            "category": "wealth"
+        },
+        {
+            "prayerText": "Almighty God, thank You for the blessing of wealth and the ability to prosper in all our endeavors. By faith, I walk in divine economic abundance. Praise be to You, Lord, for Your continuous grace and the wealth that flows from Your hand.",
+            "isPremium": true,
+            "category": "wealth"
+        },
+        {
+            "prayerText": "Father, thank You for the abundant life You promise. In faith, I claim a future filled with wealth and success. All praise to You, Lord, for You are the source of all prosperity and financial breakthroughs.",
+            "isPremium": true,
+            "category": "wealth"
+        },
+        {
+            "prayerText": "Lord Jesus, I glorify Your name for the wealth of blessings in my life. Thank you for guiding me towards financial success and prosperity. I praise You for the abundant resources and opportunities You provide.",
+            "isPremium": true,
+            "category": "wealth"
+        },
+        {
+            "prayerText": "Dear God, thank You for the stability and prosperity that mark our lives. In Your name, I declare a life filled with financial abundance and success. Praise to You, Lord, for Your faithfulness in blessing us with wealth.",
+            "isPremium": true,
+            "category": "wealth"
+        },
+        {
+            "prayerText": "Lord, I am immensely grateful for the economic blessings and prosperity You bestow upon us. I declare a life of financial abundance and success in Your holy name. I praise You, Lord, for Your enduring presence and provision.",
+            "isPremium": true,
+            "category": "wealth"
+        },
+        {
+            "prayerText": "Almighty God, thank You for the blessing of wealth and the ability to prosper in all our endeavors. By faith, I walk in divine economic abundance. Praise be to You, Lord, for Your continuous grace and the wealth that flows from Your hand.",
+            "isPremium": true,
+            "category": "wealth"
+        },
+        {
+            "prayerText": "Lord Jesus, I magnify Your name for the strength and hope You provide. Thank you for Your grace that empowers us to overcome addiction. I declare victory over every bondage and praise You for the freedom You offer.",
+            "isPremium": false,
+            "category": "addiction"
+        },
+        {
+            "prayerText": "Heavenly Father, in Jesus' name, I express my deepest gratitude for Your healing touch. In the face of addiction, Your love remains steadfast. I praise You for the deliverance and restoration that are found in Your embrace.",
+            "isPremium": false,
+            "category": "addiction"
+        },
+        {
+            "prayerText": "Dear God, thank You for Your unfailing support and the strength to conquer addiction. I am grateful for Your presence that guides us towards recovery and wholeness. All praise to You, Lord, for Your mercy and healing power.",
+            "isPremium": false,
+            "category": "addiction"
+        },
+        {
+            "prayerText": "Almighty God, Your love breaks every chain of addiction. I am thankful for the freedom and victory You provide. I declare that through Your power, we are liberated from all dependencies. Praise be to You for Your redemptive love.",
+            "isPremium": true,
+            "category": "addiction"
+        },
+        {
+            "prayerText": "Father, thank You for the promise of renewal and recovery. In faith, I claim victory over addiction and its effects. All praise to You, Lord, for You are the source of strength and the path to true freedom.",
+            "isPremium": true,
+            "category": "addiction"
+        },
+        {
+            "prayerText": "Lord Jesus, I glorify Your name for the hope and resilience You instill in us. Thank you for guiding those battling addiction towards a life of sobriety and peace. I praise You for the transformative power of Your love.",
+            "isPremium": true,
+            "category": "addiction"
+        },
+        {
+            "prayerText": "Heavenly Father, Your word speaks of liberation and healing. I am grateful for the strength and courage You impart in the journey of overcoming addiction. I celebrate the victory in Your name and give You all the honor.",
+            "isPremium": true,
+            "category": "addiction"
+        },
+        {
+            "prayerText": "Dear God, thank You for the resilience and determination to fight addiction. In Your name, I declare a life free from the chains of dependency. Praise to You, Lord, for Your faithfulness and the healing You provide.",
+            "isPremium": true,
+            "category": "addiction"
+        },
+        {
+            "prayerText": "Lord, I am immensely grateful for the journey towards sobriety and the strength You provide. I declare a life of freedom from addiction in Your holy name. I praise You, Lord, for Your enduring presence and support.",
+            "isPremium": true,
+            "category": "addiction"
+        },
+        {
+            "prayerText": "Almighty God, thank You for the blessing of recovery and the strength to overcome addiction. By faith, I walk in liberty and wellness. Praise be to You, Lord, for Your continuous grace and the deliverance You offer.",
+            "isPremium": true,
+            "category": "addiction"
+        },
+        {
+            "prayerText": "Lord Jesus, I magnify Your name for guiding me through every challenge. Thank you for the blessings and the lessons learned along the way. I declare victory in gratitude for everything I have and have been through.",
+            "isPremium": false,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Heavenly Father, I am filled with gratitude for Your presence in every moment of my life. In every high and low, Your grace sustains me. I praise You for the journey and the abundant blessings received.",
+            "isPremium": false,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Dear God, thank You for the strength and wisdom gained through life's experiences. Your love has been my anchor, and for this, I am eternally grateful. All praise to You, Lord, for the richness of life.",
+            "isPremium": false,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Almighty God, in every circumstance, Your blessings overflow. I am thankful for both the joys and the trials, as they shape my journey. I declare a heart full of gratitude for all that I have encountered.",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Father, thank You for the tapestry of experiences that make up my life. Each moment, good or bad, has brought me closer to You. In faith, I embrace a spirit of gratitude for all that I have and all that I am.",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Lord Jesus, Your guidance through every season of life fills me with gratitude. Thank you for the victories and the challenges, as both bring growth. I praise You for Your unending love and support.",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Heavenly Father, Your wisdom in every aspect of my life is a source of endless thanksgiving. I celebrate the journey thus far and look forward to what lies ahead, grateful for Your guiding hand.",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Dear God, in reflection, every experience has been a gift from You. With a heart full of thanksgiving, I acknowledge Your role in every step of my path. Praise to You for the blessings of life's journey.",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Lord, the gratitude I hold for every part of my life's story cannot be measured. Your grace in each moment is a treasure. I declare my life a testament to Your goodness and mercy.",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Almighty God, I am overwhelmed with gratitude for the richness of experiences You've provided. Each has shaped me in Your divine wisdom. Praise be to You, Lord, for the multitude of blessings and lessons learned.",
+            "isPremium": true,
+            "category": "gratitude"
+        },
+        {
+            "prayerText": "Dear Jesus, thank You for loving me so much. I am happy because Your love is always with me. I know Your love wins over everything, and I thank You for this wonderful gift.",
+            "isPremium": false,
+            "category": "love"
+        },
+        {
+            "prayerText": "God, I am so grateful for the love You show me through Jesus. Your love makes me feel safe and happy. I want to say thank You for always loving me, no matter what.",
+            "isPremium": false,
+            "category": "love"
+        },
+        {
+            "prayerText": "Thank You, God, for the big love You give us from Jesus. Your love changed my life, and it makes me feel peaceful and joyful. I praise You, Lord, for this amazing love.",
+            "isPremium": false,
+            "category": "love"
+        },
+        {
+            "prayerText": "God, Your love is like a light in my life. I am very thankful for the love Jesus gives me every day. I open my heart to fully receive this love, and I thank You for this special gift.",
+            "isPremium": true,
+            "category": "love"
+        },
+        {
+            "prayerText": "Thank You, Father, for the love from Jesus that wraps around me like a warm hug. I believe in a life full of Your love, and I know it helps and keeps me safe. Thank You for always loving me.",
+            "isPremium": true,
+            "category": "love"
+        },
+        {
+            "prayerText": "Jesus, You are amazing because You love me so much. Thank You for always being there and loving me all the time. I am happy and strong because of Your love.",
+            "isPremium": true,
+            "category": "love"
+        },
+        {
+            "prayerText": "God,Your love in Jesus is so wonderful and makes me feel very special. I am thankful for this love in my life and want to tell You how much I appreciate it. Thank You for this gift of love.",
+            "isPremium": true,
+            "category": "love"
+        },
+        {
+            "prayerText": "Dear God, every day I see Your love in Jesus. My heart is full of thanks because You love me in every way. I want to say a big thank You for all the love You give.",
+            "isPremium": true,
+            "category": "love"
+        },
+        {
+            "prayerText": "Lord, I am so thankful for the love of Jesus in my life. Your love is like a bright light guiding me. I promise to share Your love with others and show how great it is.",
+            "isPremium": true,
+            "category": "love"
+        },
+        {
+            "prayerText": "God, I am amazed and so thankful for Jesus's love. It makes me stronger and better every day. Thank You, Lord, for this never-ending love and all the good things it brings to my life.",
+            "isPremium": true,
+            "category": "love"
+        },
+        
+        {
+            "prayerText": "Dear Jesus, thank You for being so amazing and strong. I am thankful because You help me believe and have faith. I know that with faith, I can do great things. Thank You for this special gift.",
+            "isPremium": false,
+            "category": "faith"
+        },
+        {
+            "prayerText": "God, I am so happy for the faith You give me. Thank You for teaching me to trust and believe in You. Every day, I want to use my faith to do good things and help others.",
+            "isPremium": false,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Thank You, Lord, for showing me how to have faith. Your love makes my faith strong. I am thankful for the power of believing and how it helps me every day.",
+            "isPremium": false,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Jesus, You are my hero because You teach me about faith. Thank you for helping me believe in things I can't see. I know that faith is a superpower, and I want to use it to do good.",
+            "isPremium": true,
+            "category": "faith"
+        },
+        {
+            "prayerText": "God, thank You for my faith. It's like a light in the dark, showing me the way. I promise to use my faith to be brave and kind, just like You want me to be.",
+            "isPremium": true,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Thank You, Lord, for making my faith strong. It helps me to be brave and to do the right things. I am happy because I know You are always with me, helping me.",
+            "isPremium": true,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Dear Jesus, Your love makes my faith grow every day. I am thankful because You show me how to trust and believe. I want to use my faith to help others and make You proud.",
+            "isPremium": true,
+            "category": "faith"
+        },
+        {
+            "prayerText": "God, thank You for teaching me about faith. It's like a strong shield that keeps me safe. I know that with faith, I can face anything and do my best.",
+            "isPremium": true,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Lord, I am grateful for my faith because it makes me feel strong and happy. I want to use my faith to spread kindness and love, just like You teach us.",
+            "isPremium": true,
+            "category": "faith"
+        },
+        {
+            "prayerText": "Jesus, thank You for my faith. It's like a treasure that I will always keep safe. I promise to use my faith to do good things and to always believe in Your love.",
+            "isPremium": true,
+            "category": "faith"
+        },
+        
+        
+        
+        
+    ]
 }

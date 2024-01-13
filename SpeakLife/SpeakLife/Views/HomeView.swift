@@ -47,10 +47,10 @@ struct HomeView: View {
                                 Image(systemName: "bolt.shield.fill")
                                     .renderingMode(.original)
                             } else {
-                                Image(systemName: "shield.fill")
+                                Image(systemName: "bolt.shield")
                                     .renderingMode(.original)
                             }
-                            Text("Warrior's Prayer")
+                            Text("Prayers")
                         }
                     
                     

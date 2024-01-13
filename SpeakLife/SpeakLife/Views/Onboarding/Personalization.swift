@@ -20,7 +20,7 @@ struct PersonalizationScene: View {
         VStack {
             Spacer().frame(height: 90)
             
-            Image("declarationsIllustration")
+            Image("growth")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 235, height: size.height * 0.25)

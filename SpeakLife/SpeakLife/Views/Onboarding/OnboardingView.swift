@@ -181,25 +181,33 @@ struct OnboardingView: View  {
             switch selection {
             case .personalization:
                 selection = .habit
+                Analytics.logEvent("WelcomeScreenDone", parameters: nil)
             case .habit:
                 selection = .improvement
+                Analytics.logEvent("HabitScreenDone", parameters: nil)
             case .improvement:
                 appState.selectedNotificationCategories = improvementViewModel.selectedCategories
                 selection = .intro
+                Analytics.logEvent("ImprovementScreenDone", parameters: nil)
             case .intro:
                 selection = .notification
+                Analytics.logEvent("IntroScreenDone", parameters: nil)
             case .benefits:
                 selection = .notification
+                Analytics.logEvent("BenefitScreenDone", parameters: nil)
             case .notification:
                 askNotificationPermission()
+                Analytics.logEvent("NotificationScreenDone", parameters: nil)
             case .useCase:
                 selection = .widgets
+              
             case .subscription:
                 let categoryString = appState.selectedNotificationCategories.components(separatedBy: ",").first ?? "destiny"
                 if let category = DeclarationCategory(categoryString) {
                     viewModel.choose(category) { _ in }
                 }
                 dismissOnboarding()
+                Analytics.logEvent("SubscriptionScreenDone", parameters: nil)
                // selection = .widgets
             case .widgets:
                 if isDonePersonalization {
@@ -209,7 +217,7 @@ struct OnboardingView: View  {
                 }
                 
             case .loading:
-                
+                Analytics.logEvent("LoadingScreenDone", parameters: nil)
                 selection = .subscription
                 isDonePersonalization = true
             //    dismissOnboarding()

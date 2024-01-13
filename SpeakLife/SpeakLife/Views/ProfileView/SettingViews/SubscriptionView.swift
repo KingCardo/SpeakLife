@@ -19,10 +19,11 @@ struct Benefit: Identifiable  {
     static var premiumBenefits: [Benefit] = [
         
 //        Benefit(text: "Unlock all features"),
-//        Benefit(text: "Unlock all Jesus Devotionals"),
-//        Benefit(text: "Categories for any situation"),
-        Benefit(text: "Unlock everything"),
-      //  Benefit(text: "Unlock all themes"),
+        Benefit(text: "Grow your relationship with the King of the Universe"),
+        Benefit(text: "Unlock all Jesus Devotionals"),
+        Benefit(text: "Categories for any situation"),
+        Benefit(text: "Unlock all themes"),
+        Benefit(text: "Unlock all prayers"),
        // Benefit(text:"Proverbs 18:21: Words have immense power; they can shape your reality and influence your future. Think of them as tools that can build or destroy."),
 
       //  Benefit(text:"Mark 11:23: Your convictions, voiced out loud, hold incredible power. If you truly believe and verbalize your goals or aspirations, no obstacle is too big to overcome, not even metaphorical mountains."),
@@ -30,7 +31,7 @@ struct Benefit: Identifiable  {
        // Benefit(text: "Matthew 21:22: Faith in what you pray for is crucial. When you ask for something, believe in its possibility with conviction, and your prayers can manifest into reality."),
 
       //  Benefit(text: "James 3:4-5: Like a small rudder steering a large ship, your words, though seemingly insignificant, can define your life's trajectory. They can set you on a path to success or failure."),
-        Benefit(text: "Dive deeper into your relationship with Jesus, our goal is to support you in cultivating a vibrant, growing relationship with Christ, every single day. Join us and embrace a life transformed by His word."),
+      //  Benefit(text: "Dive deeper into your relationship with Jesus, our goal is to support you in cultivating a vibrant, growing relationship with Christ, every single day. Join us and embrace a life transformed by His word."),
 
        // Benefit(text: "Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
         //        Benefit(text: "Bible Affirmations for all of life's journey"),
@@ -207,6 +208,7 @@ struct DiscountSubscriptionView: View {
     
     
     func continueButton(completion: @escaping(() -> Void)) -> some View {
+       // ShimmerButton(buttonTitle: currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe", action: makePurchase)
         return ShimmerButton(colors: [Constants.DAMidBlue, Constants.gold], buttonTitle: "Try free & save", action: makePurchase)
     }
 }
@@ -291,11 +293,11 @@ struct SubscriptionView: View {
                         .frame(height: 36)
                     
                     HStack {
-                        Image(systemName: "person.3.fill")
-                        Text("20K+ Users")
-                            .foregroundStyle(Color.white)
-                        
-                        Spacer()
+//                        Image(systemName: "person.3.fill")
+//                        Text("20K+ Users")
+//                            .foregroundStyle(Color.white)
+//                        
+//                        Spacer()
                         StarRatingView(rating: 4.8)
                     }.padding([.leading,.trailing, .bottom],20)
                     
@@ -482,22 +484,42 @@ struct SubscriptionView: View {
 
 struct StarRatingView: View {
     let rating: Double // Assuming the rating is out of 5
+    @State private var starAnimations: [Bool] = Array(repeating: false, count: 5)
 
     var body: some View {
         VStack {
             HStack {
-                ForEach(1...5, id: \.self) { index in
+                ForEach(0..<5, id: \.self) { index in
                     Image(systemName: "star.fill")
                         .foregroundColor(self.starColor(for: index))
+                        .scaleEffect(self.starAnimations[index] ? 1.2 : 1.0)
+                       // .opacity(self.starAnimations[index] ? 0.5 : 1.0)
+                        .onAppear {
+                            self.animateStar(at: index)
+                        }
                 }
             }
+            Spacer()
+                .frame(height: 2)
             Text(String(format: "%.1f/5 star rating", rating))
                 .foregroundStyle(Color.white)
-                .font(.subheadline)
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .caption))
         }
        }
        
        func starColor(for index: Int) -> Color {
            return .yellow //index <= Int(rating) ? .yellow : .gray
+       }
+    
+    func animateStar(at index: Int) {
+           // Change the duration and delay to adjust the twinkling effect
+           let animationDuration: Double = 0.5
+           let animationDelay: Double = Double.random(in: 0...1)
+
+           DispatchQueue.main.asyncAfter(deadline: .now() + animationDelay) {
+               withAnimation(Animation.easeInOut(duration: animationDuration).repeatForever(autoreverses: true)) {
+                   self.starAnimations[index].toggle()
+               }
+           }
        }
 }

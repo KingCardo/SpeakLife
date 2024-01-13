@@ -437,7 +437,10 @@ final class UpdateNotificationsOperation: Operation {
     
     override func start() {
         let categories = appState.selectedNotificationCategories.components(separatedBy: ",").compactMap({ DeclarationCategory($0) })
-        let setCategories = Set(categories)
+        var setCategories = Set(categories)
+        if setCategories.count == 1 {
+            setCategories.insert(DeclarationCategory(rawValue: "destiny")!)
+        }
         let selectedCategories = setCategories.isEmpty ? nil : setCategories
         
         NotificationManager.shared.notificationsPending { [weak self] pending, count in

@@ -180,7 +180,7 @@ struct DeclarationView: View {
     var discountLabel: some View {
         VStack {
             if appState.offerDiscount && !subscriptionStore.isPremium {
-                Text("Special gift for you!")
+                Text("Special gift for you! 👉")
                     .font(.callout)
                 Text("\(timeString(from: timeRemaining)) left")
                     .font(.caption)
@@ -216,6 +216,7 @@ struct DeclarationView: View {
     }
     
     private func updateTimer() {
+        guard timeRemaining != 0 else { return }
         if let endTime = appState.discountEndTime, Date() < endTime {
                timeRemaining = Int(endTime.timeIntervalSinceNow)
            } else {

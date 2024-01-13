@@ -293,15 +293,15 @@ struct ProfileView: View {
         }
     }
     
-    @MainActor
-    @ViewBuilder
-    private var prayerRow: some View {
-        if MFMailComposeViewController.canSendMail() {
-            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "highlighter", title: "Prayer Request", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .profile))) {
-                presentContentView()
-            }
-        }
-    }
+//    @MainActor
+//    @ViewBuilder
+//    private var prayerRow: some View {
+//        if MFMailComposeViewController.canSendMail() {
+//            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "highlighter", title: "Prayer Request", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .profile))) {
+//                presentContentView()
+//            }
+//        }
+//    }
     
     private var warriorView: some View {
         HStack {

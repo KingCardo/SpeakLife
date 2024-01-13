@@ -13,7 +13,11 @@ struct CategoryButtonRow: View  {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @State var isPresentingCategoryList = false
-    @State var isPresentingPremiumView = false
+    @State var isPresentingPremiumView = false {
+        didSet {
+            print("\(isPresentingPremiumView) is being changed")
+        }
+    }
     
     var body: some View {
         HStack {
@@ -35,10 +39,10 @@ struct CategoryButtonRow: View  {
             })
             .padding()
         }
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-            self.isPresentingPremiumView = false
-            self.isPresentingCategoryList = false
-        }
+//        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+//            self.isPresentingPremiumView = false
+//            self.isPresentingCategoryList = false
+//        }
         
         .accentColor(Constants.DALightBlue)
                 .overlay(RoundedRectangle(cornerRadius: 10)

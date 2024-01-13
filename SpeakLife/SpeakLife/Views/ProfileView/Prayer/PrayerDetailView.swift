@@ -19,17 +19,17 @@ struct PrayerDetailView<InjectedView: View>: View {
     }
     
     var body: some View {
-        ZStack {
-            gradient
-            VStack {
-                Text(prayer)
-                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
-                    .lineSpacing(4)
-                    .padding(.horizontal, 32)
-                    .foregroundColor(.black)
-                
-                Spacer()
-            }
+        
+        ScrollView {
+            Text(prayer)
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
+                .lineSpacing(4)
+                .padding(.horizontal, 32)
+                .foregroundColor(.black)
+            
+            Spacer()
         }
+        .background(gradient)
     }
 }
+

@@ -19638,131 +19638,209 @@
                                "text": "I am destined for greatness, with a future filled with hope.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am a warrior of faith, walking in the path of God's purpose.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am fearlessly pursuing my divine destiny with unwavering faith.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am empowered by God's promises, shaping my destiny in victory.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am the architect of my destiny, guided by God's loving hand.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am a conqueror of challenges, destined for God's blessings.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am walking in the light of God's plan, secure in my destiny.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am a vessel of God's purpose, fulfilling my destiny with strength.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am a child of destiny, chosen by God for His marvelous plan.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am unshaken by adversity, for my destiny is rooted in God's love.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am a warrior of hope, determined to embrace my destined future.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am God's masterpiece, designed for a destiny of purpose and joy.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am boldly stepping into my destiny, knowing God's plans are good.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am a victor over doubt and fear, claiming my divine destiny.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am a champion of faith, shaping my destiny with God's guidance.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am destined to rise above challenges, for God is with me.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
+                           },
+                           {
                                "text": "I am anointed for success, walking confidently in my destiny.",
                                "isFavorite": false,
                                "category": "destiny"
-                             },
-                             {
-                                 "text": "In your weakness, my strength is made perfect.",
-                                 "book": "- Jesus",
-                                 "isFavorite": false,
-                                 "category": "grace"
-                             },
-                             {
-                                 "text": "You carry my presence, shining my light wherever you go.",
-                                 "book": "- Jesus",
-                                 "isFavorite": false,
-                                 "category": "grace"
-                             },
-                             {
-                                 "text": "In me, you find true freedom and endless grace.",
-                                 "book": "- Jesus",
-                                 "isFavorite": false,
-                                 "category": "grace"
-                             },
-                             {
-                                 "text": "I am your rock, your fortress, your deliverer in times of need.",
-                                 "book": "- Jesus",
-                                 "isFavorite": false,
-                                 "category": "grace"
-                             },
-                             {
-                                 "text": "You are chosen, royal, holy, and my special possession.",
-                                 "book": "- Jesus",
-                                 "isFavorite": false,
-                                 "category": "grace"
-                             },
-                             {
-                                 "text": "Your faith in me turns your trials into triumphs.",
-                                 "book": "- Jesus",
-                                 "isFavorite": false,
-                                 "category": "grace"
-                             },
-                             {
-                                 "text": "You are not defined by your past but by my love for you.",
-                                 "book": "- Jesus",
-                                 "isFavorite": false,
-                                 "category": "grace"
-                             },
-
-
+                           },
+                           {
+                               "text": "In your weakness, my strength is made perfect.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "grace"
+                           },
+                           {
+                               "text": "You carry my presence, shining my light wherever you go.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "grace"
+                           },
+                           {
+                               "text": "In me, you find true freedom and endless grace.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "grace"
+                           },
+                           {
+                               "text": "I am your rock, your fortress, your deliverer in times of need.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "grace"
+                           },
+                           {
+                               "text": "You are chosen, royal, holy, and my special possession.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "grace"
+                           },
+                           {
+                               "text": "Your faith in me turns your trials into triumphs.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "grace"
+                           },
+                           {
+                               "text": "You are not defined by your past but by my love for you.",
+                               "book": "- Jesus",
+                               "isFavorite": false,
+                               "category": "grace"
+                           },
+                           {
+                               "text": "I meditate on the Word day and night to set myself up for great success.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "I am like a tree planted by the river bearing fruit every season.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           },
+                           {
+                               "text": "The Lord watches over me because I am His child.",
+                               "isFavorite": false,
+                               "category": "godsprotection"
+                           },
+                           {
+                               "text": "God alone is my shield and deliverer.",
+                               "isFavorite": false,
+                               "category": "godsprotection"
+                           },
+                           {
+                               "text": "I can sleep in safety because the Lord is watching over me.",
+                               "isFavorite": false,
+                               "category": "godsprotection"
+                           },
+                           {
+                               "text": "Wisdom and discipline will take me to my destiny.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           },
+                           {
+                               "text": "I stay away from activities that Jesus wouldn't want me to do.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           },
+                           {
+                               "text": "I take pleasure in doing the right thing.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           },
+                           {
+                               "text": "Loyalty and kindness is apart of my dna.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "A great reputation is better than gold.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "God will show me which path to take.",
+                               "isFavorite": false,
+                               "category": "guidance"
+                           },
+                           {
+                               "text": "All of my friends have great discernment and morals.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
+                           {
+                               "text": "I share my love only with my partner.",
+                               "isFavorite": false,
+                               "category": "marriage"
+                           },
+                           {
+                               "text": "My partner is a great blessing to me.",
+                               "isFavorite": false,
+                               "category": "marriage"
+                           },
+                           {
+                               "text": "I am a hard worker with a spirit of excellence.",
+                               "isFavorite": false,
+                               "category": "destiny"
+                           },
+                           {
+                               "text": "I tell the truth in all situations.",
+                               "isFavorite": false,
+                               "category": "wisdom"
+                           },
                            
                            
                            
@@ -19770,9 +19848,11 @@
                            
                            
                            
-        
-        
-        
+                           
+                           
+                           
+                           
+                           
     ]
     
     
