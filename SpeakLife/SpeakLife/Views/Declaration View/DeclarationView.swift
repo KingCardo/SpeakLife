@@ -190,20 +190,11 @@ struct DeclarationView: View {
             if appState.discountEndTime == nil {
                 appState.discountEndTime = Date().addingTimeInterval(12 * 60 * 60)
             }
-//            UserDefaults.standard.set(Date().addingTimeInterval(12 * 60 * 60), forKey: "discountEndTime")
             initializeTimer()
         }
         .onReceive(timer) { _ in
             updateTimer()
         }
-//        .onReceive(timer) { _ in
-//            if $appState.timeRemaining > 0 {
-//                appState.timeRemaining -= 1
-//            } else {
-//                appState.offerDiscount = false
-//                timer.upstream.connect().cancel()
-//            }
-//        }
     }
     
     private func initializeTimer() {

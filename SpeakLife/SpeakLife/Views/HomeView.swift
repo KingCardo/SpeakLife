@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FacebookCore
 
 struct HomeView: View {
     
@@ -14,6 +15,8 @@ struct HomeView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
     @Binding var isShowingLanding: Bool
+    @StateObject private var viewModel = FacebookTrackingViewModel()
+
     
     var body: some View {
         Group {
@@ -70,8 +73,46 @@ struct HomeView: View {
                 }
                 .hideTabBar(if: appState.showScreenshotLabel)
                 .accentColor(Constants.DAMidBlue)
+                .onAppear {
+                    viewModel.requestPermission()
+                }
+
             } else {
                 OnboardingView()
+            }
+        }
+    }
+}
+
+
+import AppTrackingTransparency
+import AdSupport
+
+class TrackingManager {
+    static let shared = TrackingManager()
+
+    func requestTrackingPermission(completion: @escaping (ATTrackingManager.AuthorizationStatus) -> Void) {
+        ATTrackingManager.requestTrackingAuthorization { status in
+            DispatchQueue.main.async {
+                completion(status)
+            }
+        }
+    }
+}
+
+class FacebookTrackingViewModel: ObservableObject {
+    @Published var trackingStatus: ATTrackingManager.AuthorizationStatus = .notDetermined
+    
+    func requestPermission() {
+        if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
+            TrackingManager.shared.requestTrackingPermission { status in
+                switch status {
+                case .notDetermined: Settings.shared.isAdvertiserTrackingEnabled = false
+                case .restricted: Settings.shared.isAdvertiserTrackingEnabled = false
+                case .denied: Settings.shared.isAdvertiserTrackingEnabled = false
+                case .authorized: Settings.shared.isAdvertiserTrackingEnabled = true
+                @unknown default: break
+                }
             }
         }
     }

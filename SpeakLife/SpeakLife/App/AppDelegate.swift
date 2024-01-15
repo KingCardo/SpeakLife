@@ -11,6 +11,8 @@ import FirebaseCore
 import FirebaseAnalytics
 import GoogleMobileAds
 import UserNotifications
+import FacebookCore
+import AppTrackingTransparency
 
 final class AppDelegate: NSObject, UIApplicationDelegate {
     
@@ -21,7 +23,11 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         FirebaseApp.configure()
-      //  GADMobileAds.sharedInstance().start(completionHandler: nil)
+            
+        ApplicationDelegate.shared.application(
+            application,
+            didFinishLaunchingWithOptions: launchOptions
+        )
         registerNotificationHandler()
         registerBGTask()
         Analytics.logEvent(Event.SessionStarted, parameters: nil)
@@ -39,6 +45,19 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         
         return true
     }
+    
+    func application(
+            _ app: UIApplication,
+            open url: URL,
+            options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+        ) -> Bool {
+            ApplicationDelegate.shared.application(
+                app,
+                open: url,
+                sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+            )
+        }
     
     private func registerNotificationHandler() {
         NotificationManager.shared.notificationCenter.delegate = NotificationHandler.shared

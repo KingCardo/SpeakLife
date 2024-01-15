@@ -70,5 +70,22 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb904572920975437</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>904572920975437</string>
+	<key>FacebookDisplayName</key>
+	<string>SpeakLife: Bible Affirmations</string>
+	<key>FacebookClientToken</key>
+	<string>ca6d6cdf360624116b189dfccc35eba5</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>We kindly request your permission to track installations and improve our advertising campaigns.</string>
 </dict>
 </plist>
