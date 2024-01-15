@@ -411,13 +411,9 @@ struct PrivacyPolicyView: View {
                 
                 Text("3. Third-Party Services")
                     .font(.subheadline)
-                Text("* Our App does not use or integrate third-party services that may collect information about you.")
+                Text("* The following data may be collected but is not linked to your identity: App Installs, product interaction.")
                     .font(.body)
                 
-                Text("3. Third-Party Services")
-                    .font(.subheadline)
-                Text("* Our App does not use or integrate third-party services that may collect information about you.")
-                    .font(.body)
                 
                 Text("4. Changes to Our Privacy Policy")
                     .font(.subheadline)
