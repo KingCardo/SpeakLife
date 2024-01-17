@@ -438,8 +438,9 @@ final class UpdateNotificationsOperation: Operation {
     override func start() {
         let categories = appState.selectedNotificationCategories.components(separatedBy: ",").compactMap({ DeclarationCategory($0) })
         var setCategories = Set(categories)
-        if setCategories.count == 1 {
+        if setCategories.count <= 1 {
             setCategories.insert(DeclarationCategory(rawValue: "destiny")!)
+            setCategories.insert(DeclarationCategory(rawValue: "love")!)
         }
         let selectedCategories = setCategories.isEmpty ? nil : setCategories
         

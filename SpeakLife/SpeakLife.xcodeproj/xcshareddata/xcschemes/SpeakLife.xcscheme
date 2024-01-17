@@ -33,7 +33,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2F740F4C29D3FEAB00E89E7F"
+               BlueprintIdentifier = "2F740F5D29D4014400E89E7F"
                BuildableName = "SpeakLifeTests.xctest"
                BlueprintName = "SpeakLifeTests"
                ReferencedContainer = "container:SpeakLife.xcodeproj">
