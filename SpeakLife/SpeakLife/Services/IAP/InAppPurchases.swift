@@ -54,6 +54,24 @@ struct InAppId: Codable {
             case .speakLife1MO2: return "$2.99/month"
             }
         }
+        
+        var ctaDurationTitle: String {
+            switch self {
+            case .speakLife1YR39: return "Yearly"
+            case .speakLife1YR29: return "Yearly"
+            case .speakLife1MO4: return "Monthly"
+            default: return ""
+            }
+        }
+        
+        var ctaPriceTitle: String {
+            switch self {
+            case .speakLife1YR39: return "$39.99"
+            case .speakLife1YR29: return "$29.99"
+            case .speakLife1MO4: return "$4.99"
+            default: return ""
+            }
+        }
     }
     
     static let all: [String] = [Subscription.speakLife1YR99.id, Subscription.speakLife1YR49.id, Subscription.speakLife1YR39.id, Subscription.speakLife1YR29.id, Subscription.speakLife1YR19.id, Subscription.speakLife1MO4.id, Subscription.speakLife1MO2.id, Subscription.speakLife1MO9.id]//, Subscription.speakLife1MO4.id, Subscription.speakLife1MO2.id]

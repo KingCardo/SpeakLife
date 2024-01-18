@@ -222,6 +222,7 @@ struct SubscriptionView: View {
     
     @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39
     var firstSelection = InAppId.Subscription.speakLife1YR39
+    var thirdSelection = InAppId.Subscription.speakLife1YR29
     var secondSelection = InAppId.Subscription.speakLife1MO4
     
     let size: CGSize
@@ -268,36 +269,18 @@ struct SubscriptionView: View {
             ScrollView {
                 VStack  {
                     Spacer()
-                        .frame(height: 12)
-                    Text("Upgrade to", comment: "premium view title")
-                        .font(.caption)
-                        .foregroundColor(.white)
-                    Spacer()
                         .frame(height: 36)
                     VStack(alignment: .center) {
-                        Text("SpeakLife", comment: "unlock everything premium view")
-                            .font(Constants.titleFont)
+                        Text("Try SpeakLife Premium", comment: "unlock everything premium view")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 28))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                         
-                        Spacer()
-                            .frame(height: 18)
-                        
-                        Text("Nourish Your Soul: Daily Bible Inspiration")
-                            .multilineTextAlignment(.center)
-                            .font(.subheadline)
-                            .foregroundColor(.white)
-                            .padding(.horizontal)
                     }
                     Spacer()
-                        .frame(height: 36)
+                        .frame(height: 24)
                     
                     HStack {
-//                        Image(systemName: "person.3.fill")
-//                        Text("20K+ Users")
-//                            .foregroundStyle(Color.white)
-//                        
-//                        Spacer()
                         StarRatingView(rating: 4.8)
                     }.padding([.leading,.trailing, .bottom],20)
                     
@@ -306,14 +289,26 @@ struct SubscriptionView: View {
                     
                     
                     Spacer()
-                        .frame(height: 40)
+                        .frame(height: 16)
                     
-                    VStack {
+                    
+                    costDescription
+                    
+                    Spacer()
+                        .frame(height: 16)
+                    
+                    HStack {
                         
                         Button {
                             currentSelection = firstSelection
                         } label: {
                             yearlyCTABox()
+                        }
+                        
+                        Button {
+                            currentSelection = thirdSelection
+                        } label: {
+                            yearlyNoTrialCTABox()
                         }
                         
                         Button {
@@ -330,15 +325,13 @@ struct SubscriptionView: View {
                     
                     Spacer()
                         .frame(height: 16)
-                    costDescription
-                    
-                    Spacer()
-                        .frame(height: 24)
+                   
                     
                     Text("James 3:4-5 teaches us the immense power of our words: just as a tiny rudder directs a mighty ship, our words chart the course of our life's journey—guiding us towards either triumph or defeat.")
                         .font(.caption)
                         .foregroundColor(.white)
                         .padding()
+                    
                 }
                 
             }
@@ -352,17 +345,28 @@ struct SubscriptionView: View {
     
     @ViewBuilder
     var costDescription: some View {
-        HStack(spacing: 2) {
-            if currentSelection == firstSelection {
-                Text(ctaText)
-                   
+        VStack(spacing: 6) {
+            HStack(spacing: 2) {
+                if currentSelection == firstSelection {
+                    Text(ctaText)
+                }
+                
+                Text(currentSelection.title + ".")
+                
+                Text("Cancel anytime.")
+                
             }
-            
-            Text(currentSelection.title + ".")
-            
-            Text("Cancel anytime.")
-        }
-        .font(.caption)
+            switch currentSelection {
+                
+            case .speakLife1YR39:
+                Text("Try before you commit! Enjoy all our features with no risk for 3 days, then continue for only $39/year if you love it!")
+            case .speakLife1YR29:
+                Text("Get the best price with immediate, full access for only $29/year. Ideal for those ready to jump in!")
+            default: EmptyView()
+            }
+        }.padding()
+            .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .body))
+        //.font(.caption)
         .foregroundColor(.white)
     }
     
@@ -427,30 +431,70 @@ struct SubscriptionView: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
                 .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == firstSelection ? Constants.DAMidBlue : .clear))
-                .frame(height: 60)
+                .frame(height: 90)
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text("\(firstSelection.title)")
+                    Text("\(firstSelection.ctaDurationTitle)")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                    Text("\(firstSelection.ctaPriceTitle)")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
                         .bold()
-                    Text("Abundant savings. Billed annually.")
-                        .font(.caption)
                 }
                 .foregroundStyle(currentSelection == firstSelection ? .white : .black)
                 .padding(.leading)
                 
                 Spacer()
                 
-                ZStack {
-                    Capsule()
-                        .fill(Constants.gold)
-                        .frame(width: 100, height: 30)
-                    
-                    Text("Best Value")
-                        .font(.callout)
-                        .foregroundColor(.white)
+//                ZStack {
+//                    Capsule()
+//                        .fill(Constants.bestValueColor)
+//                        .frame(width: 100, height: 30)
+//                    
+//                    Text("Best Value")
+//                        .font(.callout)
+//                        .foregroundColor(.white)
+//                }
+//                .padding(.trailing)
+            }
+            
+        }
+        
+        .padding([.leading, .trailing], 20)
+    }
+    
+    func yearlyNoTrialCTABox() -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(Color.gray, lineWidth: 1)
+                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == thirdSelection ? Constants.DAMidBlue : .clear))
+                .frame(height: 90)
+            
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("\(thirdSelection.ctaDurationTitle)")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                    Text("\(thirdSelection.ctaPriceTitle)")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
+                        .bold()
+//                    Text("\(thirdSelection.title)")
+//                        .bold()
                 }
-                .padding(.trailing)
+                .foregroundStyle(currentSelection == thirdSelection ? .white : .black)
+                .padding(.leading)
+                
+                Spacer()
+//                
+//                ZStack {
+//                    Capsule()
+//                        .fill(Constants.specialRateColor)
+//                        .frame(width: 100, height: 30)
+//                    
+//                    Text("Special Rate")
+//                        .font(.callout)
+//                        .foregroundColor(.white)
+//                }
+//                .padding(.trailing)
             }
             
         }
@@ -463,14 +507,17 @@ struct SubscriptionView: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
                 .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == secondSelection ? Constants.DAMidBlue : .clear))
-                .frame(height: 60)
+                .frame(height: 90)
             
             HStack {
-                VStack(alignment: .leading) {
-                    Text("Monthly \(secondSelection.currentPrice)")
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("\(secondSelection.ctaDurationTitle)")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                    Text("\(secondSelection.ctaPriceTitle)")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
                         .bold()
-                        .foregroundStyle(currentSelection == secondSelection ? .white : .black)
                 }
+                .foregroundStyle(currentSelection == secondSelection ? .white : .black)
                 .padding(.leading)
                 
                 Spacer()

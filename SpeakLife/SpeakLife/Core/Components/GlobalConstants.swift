@@ -17,7 +17,10 @@ struct Constants {
     static let DAMidBlue = Color(red: 0.376, green: 0.627, blue: 0.996, opacity: 1)
     static let DEABlack = Color(red: 0.262, green: 0.313, blue: 0.376, opacity: 1)
     static let lightShadow = Color(red: 0, green: 0, blue: 0, opacity: 0.09)
-    static let gold = Color(red: 1.0, green: 0.82, blue: 0.0)
+    static let bestValueColor = Color(red: 0.0, green: 0.2, blue: 0.6)
+    static let gold = Color(red: 1.0, green: 0.843, blue: 0.0)
+    static let traditionalGold = Color(red: 1.0, green: 0.843, blue: 0.0)
+    static let specialRateColor = Color(red: 0.2, green: 0.7, blue: 0.3)
     static let titleFont = Font.custom("AppleSDGothicNeo-Regular", size: 38)
 }
 

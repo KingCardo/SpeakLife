@@ -76,6 +76,7 @@ struct HomeView: View {
                 .onAppear {
                     viewModel.requestPermission()
                 }
+                .environment(\.colorScheme, .dark)
 
             } else {
                 OnboardingView()
