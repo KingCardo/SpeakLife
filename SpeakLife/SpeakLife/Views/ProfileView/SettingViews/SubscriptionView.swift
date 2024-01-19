@@ -45,7 +45,7 @@ struct Benefit: Identifiable  {
     static var discountBenefits: [Benefit] = [
         
         Benefit(text: "Unlock all features"),
-        Benefit(text: "Enjoy 50% off discount"),
+        Benefit(text: "Enjoy 60% off discount"),
         Benefit(text: "Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
         //        Benefit(text: "Daily Morning Jesus Devotionals"),
         //        Benefit(text: "Create your own affirmations"),
@@ -220,8 +220,8 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39
-    var firstSelection = InAppId.Subscription.speakLife1YR39
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR49
+    var firstSelection = InAppId.Subscription.speakLife1YR49
     var thirdSelection = InAppId.Subscription.speakLife1YR29
     var secondSelection = InAppId.Subscription.speakLife1MO4
     
@@ -232,7 +232,7 @@ struct SubscriptionView: View {
     
     var ctaText: String
     
-    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
+    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, ctaText: String = "7 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
         self.benefits = benefits
         self.size = size
         self.ctaText = ctaText

@@ -57,6 +57,7 @@ struct InAppId: Codable {
         
         var ctaDurationTitle: String {
             switch self {
+            case .speakLife1YR49: return "Yearly"
             case .speakLife1YR39: return "Yearly"
             case .speakLife1YR29: return "Yearly"
             case .speakLife1MO4: return "Monthly"
@@ -66,6 +67,7 @@ struct InAppId: Codable {
         
         var ctaPriceTitle: String {
             switch self {
+            case .speakLife1YR49: return "$49.99"
             case .speakLife1YR39: return "$39.99"
             case .speakLife1YR29: return "$29.99"
             case .speakLife1MO4: return "$4.99"
