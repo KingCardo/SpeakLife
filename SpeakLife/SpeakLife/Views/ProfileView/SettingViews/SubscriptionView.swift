@@ -289,15 +289,10 @@ struct SubscriptionView: View {
                     
                     
                     Spacer()
-                        .frame(height: 16)
+                        .frame(height: 24)
                     
                     
-                    costDescription
-                    
-                    Spacer()
-                        .frame(height: 16)
-                    
-                    HStack {
+                    VStack {
                         
                         Button {
                             currentSelection = firstSelection
@@ -325,6 +320,11 @@ struct SubscriptionView: View {
                     
                     Spacer()
                         .frame(height: 16)
+                    
+                    costDescription
+                    
+                    Spacer()
+                        .frame(height: 16)
                    
                     
                     Text("James 3:4-5 teaches us the immense power of our words: just as a tiny rudder directs a mighty ship, our words chart the course of our life's journey—guiding us towards either triumph or defeat.")
@@ -345,7 +345,6 @@ struct SubscriptionView: View {
     
     @ViewBuilder
     var costDescription: some View {
-        VStack(spacing: 6) {
             HStack(spacing: 2) {
                 if currentSelection == firstSelection {
                     Text(ctaText)
@@ -356,17 +355,7 @@ struct SubscriptionView: View {
                 Text("Cancel anytime.")
                 
             }
-            switch currentSelection {
-                
-            case .speakLife1YR39:
-                Text("Try before you commit! Enjoy all our features with no risk for 3 days, then continue for only $39/year if you love it!")
-            case .speakLife1YR29:
-                Text("Get the best price with immediate, full access for only $29/year. Ideal for those ready to jump in!")
-            default: EmptyView()
-            }
-        }.padding()
             .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .body))
-        //.font(.caption)
         .foregroundColor(.white)
     }
     
@@ -431,15 +420,19 @@ struct SubscriptionView: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
                 .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == firstSelection ? Constants.DAMidBlue : .clear))
-                .frame(height: 90)
+                .frame(height: 60)
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text("\(firstSelection.ctaDurationTitle)")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                    Text("\(firstSelection.ctaPriceTitle)")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
-                        .bold()
+                    HStack {
+                        Text("\(firstSelection.ctaDurationTitle)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                        Text("\(firstSelection.ctaPriceTitle)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
+                            .bold()
+                    }
+                    Text("Try before you commit.")
+                        .font(.caption)
                 }
                 .foregroundStyle(currentSelection == firstSelection ? .white : .black)
                 .padding(.leading)
@@ -468,33 +461,35 @@ struct SubscriptionView: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
                 .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == thirdSelection ? Constants.DAMidBlue : .clear))
-                .frame(height: 90)
+                .frame(height: 60)
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text("\(thirdSelection.ctaDurationTitle)")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                    Text("\(thirdSelection.ctaPriceTitle)")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
-                        .bold()
-//                    Text("\(thirdSelection.title)")
-//                        .bold()
+                    HStack {
+                        Text("\(thirdSelection.ctaDurationTitle)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                        Text("\(thirdSelection.ctaPriceTitle)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
+                            .bold()
+                    }
+                    Text("Abundant savings. Billed annually.")
+                        .font(.caption)
                 }
                 .foregroundStyle(currentSelection == thirdSelection ? .white : .black)
                 .padding(.leading)
                 
                 Spacer()
-//                
-//                ZStack {
-//                    Capsule()
-//                        .fill(Constants.specialRateColor)
-//                        .frame(width: 100, height: 30)
-//                    
-//                    Text("Special Rate")
-//                        .font(.callout)
-//                        .foregroundColor(.white)
-//                }
-//                .padding(.trailing)
+                
+                ZStack {
+                    Capsule()
+                        .fill(Constants.specialRateColor)
+                        .frame(width: 100, height: 30)
+                    
+                    Text("Special Rate")
+                            .font(.callout)
+                            .foregroundColor(.white)
+                }
+                .padding(.trailing)
             }
             
         }
@@ -507,15 +502,17 @@ struct SubscriptionView: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
                 .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == secondSelection ? Constants.DAMidBlue : .clear))
-                .frame(height: 90)
+                .frame(height: 60)
             
             HStack {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("\(secondSelection.ctaDurationTitle)")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                    Text("\(secondSelection.ctaPriceTitle)")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
-                        .bold()
+                    HStack {
+                        Text("\(secondSelection.ctaDurationTitle)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                        Text("\(secondSelection.ctaPriceTitle)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
+                            .bold()
+                    }
                 }
                 .foregroundStyle(currentSelection == secondSelection ? .white : .black)
                 .padding(.leading)
