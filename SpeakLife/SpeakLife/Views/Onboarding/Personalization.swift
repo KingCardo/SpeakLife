@@ -11,6 +11,7 @@ struct PersonalizationScene: View {
     
     let size: CGSize
     let callBack: (() -> Void)
+              
     
     var body: some  View {
         personalizationView(size: size)

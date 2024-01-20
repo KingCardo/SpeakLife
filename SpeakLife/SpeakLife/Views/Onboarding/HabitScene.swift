@@ -12,6 +12,7 @@ struct HabitScene: View {
     let size: CGSize
     let callBack: (() -> Void)
     @StateObject var viewModel = ExperienceViewModel()
+   
     
     var body: some  View {
         habitView(size: size)
@@ -103,12 +104,14 @@ enum Experience: String, CaseIterable {
 
 struct ExperienceSelectionListView: View {
     @ObservedObject var viewModel: ExperienceViewModel
+    let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     var body: some View {
         VStack {
             
             ForEach(Experience.allCases, id: \.self) { experience in
                 Button(action: {
+                    impactMed.impactOccurred()
                     viewModel.selectExperience(experience)
                 }) {
                     HStack {

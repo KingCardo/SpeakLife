@@ -66,7 +66,7 @@ struct DiscountSubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR9, percentOffText: String = "50% Off Yearly") {
+    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR9, percentOffText: String = "60% Off Yearly") {
         self.size = size
         self.currentSelection = currentSelection
         self.percentOffText = percentOffText

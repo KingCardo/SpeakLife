@@ -26,6 +26,9 @@
 		45C7481C2B5357D40011D8F6 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 7AF18C7F29FD1E20005A6E31 /* GoogleMobileAds */; };
 		45C7481F2B55B4B80011D8F6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 45C7481E2B55B4B80011D8F6 /* FacebookCore */; };
 		45C748232B5802C60011D8F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45C748222B5802C60011D8F6 /* GoogleService-Info.plist */; };
+		45C7482D2B5BBF9A0011D8F6 /* romanticpiano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45C7482C2B5BBF9A0011D8F6 /* romanticpiano.mp3 */; };
+		45C748302B5BC4330011D8F6 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C7482F2B5BC4330011D8F6 /* AudioPlayer.swift */; };
+		45C748322B5BC78F0011D8F6 /* peacefulplace.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45C748312B5BC78F0011D8F6 /* peacefulplace.mp3 */; };
 		45CF27182B4E52C900BC8968 /* Personalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF27172B4E52C900BC8968 /* Personalization.swift */; };
 		45CF271A2B4E52EF00BC8968 /* HabitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF27192B4E52EF00BC8968 /* HabitScene.swift */; };
 		45CF271C2B4E530300BC8968 /* ImprovementScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF271B2B4E530300BC8968 /* ImprovementScene.swift */; };
@@ -174,6 +177,9 @@
 		45C748222B5802C60011D8F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45C748242B5802CA0011D8F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45C748252B585C650011D8F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		45C7482C2B5BBF9A0011D8F6 /* romanticpiano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = romanticpiano.mp3; sourceTree = "<group>"; };
+		45C7482F2B5BC4330011D8F6 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		45C748312B5BC78F0011D8F6 /* peacefulplace.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = peacefulplace.mp3; sourceTree = "<group>"; };
 		45CF27172B4E52C900BC8968 /* Personalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personalization.swift; sourceTree = "<group>"; };
 		45CF27192B4E52EF00BC8968 /* HabitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitScene.swift; sourceTree = "<group>"; };
 		45CF271B2B4E530300BC8968 /* ImprovementScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprovementScene.swift; sourceTree = "<group>"; };
@@ -334,6 +340,23 @@
 			path = BibleStudy;
 			sourceTree = "<group>";
 		};
+		45C748282B5BBE4D0011D8F6 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				45C748312B5BC78F0011D8F6 /* peacefulplace.mp3 */,
+				45C7482C2B5BBF9A0011D8F6 /* romanticpiano.mp3 */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		45C7482E2B5BC41E0011D8F6 /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				45C7482F2B5BC4330011D8F6 /* AudioPlayer.swift */,
+			);
+			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
 		7A00721628F8ED4A00965AF7 /* AffirmationData */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +401,7 @@
 				7AA8706828DACB6100134ADB /* Core */,
 				7A278F9E288915DF0084BB57 /* Assets.xcassets */,
 				45C748252B585C650011D8F6 /* GoogleService-Info.plist */,
+				45C748282B5BBE4D0011D8F6 /* Audio */,
 				7A278FA0288915DF0084BB57 /* Preview Content */,
 				45C748242B5802CA0011D8F6 /* GoogleService-Info.plist */,
 			);
@@ -462,6 +486,7 @@
 		7AA8706728DACB5100134ADB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				45C7482E2B5BC41E0011D8F6 /* AudioPlayer */,
 				7AF18C8D2A0CBAAF005A6E31 /* DailyDevotions */,
 				7AA8707828DACC8300134ADB /* IAP */,
 				7AA8706F28DACC8200134ADB /* Networking */,
@@ -863,9 +888,11 @@
 			files = (
 				456885282B395F66007B1EBB /* declarationsv3.json in Resources */,
 				7A278FA2288915DF0084BB57 /* Preview Assets.xcassets in Resources */,
+				45C748322B5BC78F0011D8F6 /* peacefulplace.mp3 in Resources */,
 				45C748232B5802C60011D8F6 /* GoogleService-Info.plist in Resources */,
 				7AA870E628DACFB800134ADB /* Localizable.strings in Resources */,
 				7AF18C912A0CBEB9005A6E31 /* devotionals.json in Resources */,
+				45C7482D2B5BBF9A0011D8F6 /* romanticpiano.mp3 in Resources */,
 				4583A4C52B0080440069C27D /* declarationsv2.json in Resources */,
 				7ABA50CF29E63275002699F1 /* prayers.json in Resources */,
 				7A00721828F8ED4A00965AF7 /* declarations.json in Resources */,
@@ -998,6 +1025,7 @@
 				7AA870CE28DACCB700134ADB /* FavoritesView.swift in Sources */,
 				7AA870D428DACCB700134ADB /* CategoryButtonRow.swift in Sources */,
 				7AA8707C28DACC8300134ADB /* APIError.swift in Sources */,
+				45C748302B5BC4330011D8F6 /* AudioPlayer.swift in Sources */,
 				45CF27182B4E52C900BC8968 /* Personalization.swift in Sources */,
 				7AF46FC52A41326100A45C01 /* AbbasLoveView.swift in Sources */,
 				7AF18C982A0CC541005A6E31 /* DevotionalViewModel.swift in Sources */,

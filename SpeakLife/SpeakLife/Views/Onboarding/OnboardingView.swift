@@ -340,6 +340,7 @@ struct CustomSpinnerView: View {
             Text("\(Int(progress * 100))%")
                 .font(.largeTitle)
                 .bold()
+                .foregroundColor(Color.white)
         }
         .frame(width: 200, height: 200)
         .onAppear {

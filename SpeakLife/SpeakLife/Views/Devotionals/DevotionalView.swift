@@ -13,6 +13,7 @@ struct DevotionalView: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: DevotionalViewModel
+    @EnvironmentObject var declarationViewModel: DeclarationViewModel
     @State private var scrollToTop = false
     @State private var share = false
     
@@ -168,6 +169,7 @@ struct DevotionalView: View {
     private var shareButton: some View {
         Button {
             share.toggle()
+            declarationViewModel.requestReview.toggle()
             Analytics.logEvent(Event.devotionalShared, parameters: nil)
         } label: {
             Image(systemName: "square.and.arrow.up")

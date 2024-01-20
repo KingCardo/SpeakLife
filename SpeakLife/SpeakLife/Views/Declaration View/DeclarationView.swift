@@ -23,6 +23,7 @@ struct DeclarationView: View {
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
     @EnvironmentObject var appState: AppState
     @Environment(\.presentationMode) var presentationMode
+    let resources = ["romanticpiano", "peacefulplace"]
     
     @AppStorage("review.counter") private var reviewCounter = 0
     @AppStorage("share.counter") private var shareCounter = 0
@@ -78,7 +79,7 @@ struct DeclarationView: View {
                                     discountLabel
                                         .padding()
                                     Spacer()
-                                   
+                                    
                                     
                                     CapsuleImageButton(title: "crown.fill") {
                                         premiumView()
@@ -89,10 +90,21 @@ struct DeclarationView: View {
                                     } content: {
                                         PremiumView()
                                     }
-                                    .padding(.trailing)
+                                    // .padding(.trailing)
                                     
+                                    MusicButtonView(resources: resources, ofType: "mp3")
+                                        .padding(.trailing)
+                                }
+                                    
+                                
+                            } else {
+                                HStack {
+                                    Spacer()
+                                    MusicButtonView(resources: resources, ofType: "mp3")
+                                        .padding(.trailing)
                                 }
                             }
+                            
                                 
                                 Spacer()
                                 if appState.showIntentBar {
@@ -150,7 +162,7 @@ struct DeclarationView: View {
             }
             .sheet(isPresented: $viewModel.showDiscountView) {
                 if appState.offerDiscount {
-                    DiscountSubscriptionView(size: UIScreen.main.bounds.size, currentSelection: .speakLife1YR19, percentOffText: "50% Off Yearly")
+                    DiscountSubscriptionView(size: UIScreen.main.bounds.size, currentSelection: .speakLife1YR19, percentOffText: "60% Off Yearly")
                 } else {
                     SubscriptionView(size: UIScreen.main.bounds.size)
                 }
@@ -260,5 +272,42 @@ struct DeclarationView: View {
         if MFMailComposeViewController.canSendMail() {
             isShowingMailView = true
         }
+    }
+}
+
+
+
+struct MusicButtonView: View {
+    
+    @EnvironmentObject var themeStore: ThemeViewModel
+    
+    let resources: [String]
+    let ofType: String
+    
+    @State var isPlaying = false
+    
+    var body: some View {
+        Button {
+            withAnimation {
+                isPlaying.toggle()
+            }
+            if isPlaying {
+                AudioPlayerService.shared.playSound(files: resources, type: ofType)
+               
+            } else {
+                AudioPlayerService.shared.pauseMusic()
+            }
+        } label: {
+            if isPlaying {
+                Image(systemName: "pause.circle").resizable()
+            } else {
+                Image(systemName: "play.circle").resizable()
+            }
+            
+        }
+        
+        .frame(width: 50, height: 50)
+        .background(themeStore.selectedTheme.mode == .dark ? Constants.backgroundColor : Constants.backgroundColorLight)
+        .clipShape(Circle())
     }
 }

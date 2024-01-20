@@ -93,6 +93,7 @@ struct CreateYourOwnView: View {
             if showAlert {
                 AlertView(shown: $showAlert, alertText: $alertText) {
                     self.save()
+                    declarationStore.requestReview.toggle()
                 }
             }
         }
@@ -104,7 +105,7 @@ struct CreateYourOwnView: View {
     
     @ViewBuilder
     func configureView() -> some View {
-        if declarationStore.createOwn.isEmpty  {
+        if declarationStore.createOwn.isEmpty {
             VStack {
                 spacerView(32)
                     .background(Color.clear)

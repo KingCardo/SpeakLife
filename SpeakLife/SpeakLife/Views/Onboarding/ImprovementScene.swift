@@ -150,12 +150,14 @@ enum Improvements: String, CaseIterable {
 
 struct ImprovementSelectionListView: View {
     @ObservedObject var viewModel: ImprovementViewModel
+    let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     var body: some View {
         VStack {
             
             ForEach(Improvements.allCases, id: \.self) { experience in
                 Button(action: {
+                    impactMed.impactOccurred()
                     viewModel.selectExperience(experience)
                 }) {
                     HStack {
