@@ -35,7 +35,7 @@ struct HabitScene: View {
                     
                     ExperienceSelectionListView(viewModel:viewModel)
                 }
-                .frame(width: size.width * 0.8)
+                .frame(width: size.width * 0.9)
             }
             Spacer()
             Text(viewModel.selectedExperience?.subtitle ?? "")

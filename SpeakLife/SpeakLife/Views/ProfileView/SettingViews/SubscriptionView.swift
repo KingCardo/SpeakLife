@@ -269,7 +269,7 @@ struct SubscriptionView: View {
             ScrollView {
                 VStack  {
                     Spacer()
-                        .frame(height: 36)
+                        .frame(height: 40)
                     VStack(alignment: .center) {
                         Text("Try SpeakLife Premium", comment: "unlock everything premium view")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 28))

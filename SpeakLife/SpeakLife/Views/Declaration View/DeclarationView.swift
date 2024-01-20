@@ -47,8 +47,10 @@ struct DeclarationView: View {
     func declarationContent(_ geometry: GeometryProxy) -> some View {
         DeclarationContentView(themeViewModel: themeViewModel, viewModel: viewModel)
             .frame(width: geometry.size.width, height: geometry.size.height)
-            .onReceive(viewModel.$requestReview) { _ in
-                showReview()
+            .onReceive(viewModel.$requestReview) { value in
+                if value {
+                    showReview()
+                }
                 appState.lastReviewRequestSetDate = Date()
                 
             }
@@ -188,7 +190,7 @@ struct DeclarationView: View {
         }
         .onAppear {
             if appState.discountEndTime == nil {
-                appState.discountEndTime = Date().addingTimeInterval(12 * 60 * 60)
+                appState.discountEndTime = Date().addingTimeInterval(4 * 60 * 60)
             }
             initializeTimer()
         }

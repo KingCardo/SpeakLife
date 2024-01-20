@@ -49,6 +49,7 @@ struct ImprovementScene: View {
                 Spacer()
                 
                 ImprovementSelectionListView(viewModel: viewModel)
+                .frame(width: size.width * 0.9)
                 
                 Button(action: callBack) {
                     HStack {
@@ -69,6 +70,7 @@ struct ImprovementScene: View {
                 Spacer()
                     .frame(width: 5, height: size.height * 0.07)
             }
+            .scrollIndicators(.hidden)
             .frame(width: size.width, height: size.height)
             .background(
                 Image("declarationBackground")
@@ -86,7 +88,11 @@ class ImprovementViewModel: ObservableObject {
     @Published var selectedExperiences: [Improvements] = []
     
     var selectedCategories: String {
-        let categories = selectedExperiences.map { $0.selectedCategory }
+        var categories = selectedExperiences.map { $0.selectedCategory }
+        if categories.contains("grace") {
+            categories.append("guilt")
+            categories.append("forgiveness")
+        }
         return categories.joined(separator: ",")
     }
     
@@ -109,7 +115,7 @@ enum Improvements: String, CaseIterable {
     case love = "Bask in Jesus Love for you"
     case destiny = "Move closer to your destiny"
     case safety = "Protection and safety"
-    case guilt = "Be free from guilt and condemnation"
+   // case guilt = "Be free from guilt and condemnation"
     case loneliness = "Feeling alone"
     case wealth = "Wealth"
     case peace = "Remain and live in peace"
@@ -126,8 +132,8 @@ enum Improvements: String, CaseIterable {
             "destiny"
         case .safety:
             "godsprotection"
-        case .guilt:
-            "guilt"
+//        case .guilt:
+//            "guilt"
         case .joy:
             "joy"
         case .gratitude:
