@@ -85,10 +85,6 @@ struct CreateYourOwnView: View {
         ZStack {
             AnyView(Gradients().goldCyan)
             configureView()
-              //  .foregroundColor(colorScheme == .dark ? .white : .black)
-               // .navigationBarTitle(Text("Add your own affirmation", comment: "add your own title"))
-               // .navigationBarTitleDisplayMode(.inline)
-             //   .background(Color.clear)
             
             if showAlert {
                 AlertView(shown: $showAlert, alertText: $alertText) {

@@ -23,7 +23,7 @@ struct DeclarationView: View {
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
     @EnvironmentObject var appState: AppState
     @Environment(\.presentationMode) var presentationMode
-    let resources = ["romanticpiano", "peacefulplace"]
+    let resources = ["thruslyMarylin", "romanticpiano","peacefulplace"]
     
     @AppStorage("review.counter") private var reviewCounter = 0
     @AppStorage("share.counter") private var shareCounter = 0
@@ -92,7 +92,7 @@ struct DeclarationView: View {
                                     }
                                     // .padding(.trailing)
                                     
-                                    MusicButtonView(resources: resources, ofType: "mp3")
+                                    MusicButtonView(resources: resources.shuffled(), ofType: "mp3")
                                         .padding(.trailing)
                                 }
                                     
@@ -100,7 +100,7 @@ struct DeclarationView: View {
                             } else {
                                 HStack {
                                     Spacer()
-                                    MusicButtonView(resources: resources, ofType: "mp3")
+                                    MusicButtonView(resources: resources.shuffled(), ofType: "mp3")
                                         .padding(.trailing)
                                 }
                             }
@@ -278,6 +278,8 @@ struct DeclarationView: View {
 
 
 struct MusicButtonView: View {
+    @State private var lastButtonTap = Date()
+    @State private var opacity = 0.0
     
     @EnvironmentObject var themeStore: ThemeViewModel
     
@@ -287,27 +289,43 @@ struct MusicButtonView: View {
     @State var isPlaying = false
     
     var body: some View {
-        Button {
-            withAnimation {
-                isPlaying.toggle()
-            }
-            if isPlaying {
-                AudioPlayerService.shared.playSound(files: resources, type: ofType)
-               
-            } else {
-                AudioPlayerService.shared.pauseMusic()
-            }
-        } label: {
-            if isPlaying {
-                Image(systemName: "pause.circle").resizable()
-            } else {
-                Image(systemName: "play.circle").resizable()
-            }
+        
+        Button(action: buttonTapped) {
+                   Image(systemName: isPlaying ? "pause.circle" : "play.circle")
+                       .resizable()
+                       .frame(width: 50, height: 50)
+                       .background(themeStore.selectedTheme.mode == .dark ? Constants.backgroundColor : Constants.backgroundColorLight)
+                       .clipShape(Circle())
+                       .overlay(Circle().fill(Color.black.opacity(opacity)))
+                       .shadow(color: .gray, radius: 10, x: 0, y: 0)
+               }
+    }
+    
+    
+    private func buttonTapped() {
+        lastButtonTap = Date()
+        withAnimation {
+            isPlaying.toggle()
+            opacity = 0.0 // Reset opacity to full
+        }
+        resetOverlayTimer()
+        
+        if isPlaying {
+            AudioPlayerService.shared.playSound(files: resources, type: ofType)
             
+        } else {
+            AudioPlayerService.shared.pauseMusic()
         }
         
-        .frame(width: 50, height: 50)
-        .background(themeStore.selectedTheme.mode == .dark ? Constants.backgroundColor : Constants.backgroundColorLight)
-        .clipShape(Circle())
     }
+    
+    private func resetOverlayTimer() {
+           DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+               if -lastButtonTap.timeIntervalSinceNow >= 3 {
+                   withAnimation {
+                       opacity = 0.3
+                   }
+               }
+           }
+       }
 }
