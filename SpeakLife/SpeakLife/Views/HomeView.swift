@@ -16,6 +16,7 @@ struct HomeView: View {
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
     @Binding var isShowingLanding: Bool
     @StateObject private var viewModel = FacebookTrackingViewModel()
+    let resources = ["romanticpiano","peacefulplace"]
 
     
     var body: some View {
@@ -75,6 +76,9 @@ struct HomeView: View {
                 .accentColor(Constants.DAMidBlue)
                 .onAppear {
                     viewModel.requestPermission()
+                            if declarationStore.backgroundMusicEnabled {
+                                AudioPlayerService.shared.playSound(files: self.resources, type: "mp3")
+                            }
                 }
                 .environment(\.colorScheme, .dark)
 

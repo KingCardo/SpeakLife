@@ -28,7 +28,7 @@ final class AppState: ObservableObject {
     @AppStorage("showScreenshotLabel") var showScreenshotLabel = false
     @AppStorage("abbasLoveLetterIndex") var loveLetterIndex = 0
     @AppStorage("resetNotifications") var resetNotifications = true
-    @AppStorage("lastReviewRequestSetDate") var lastReviewRequestSetDate = Date()
+    @AppStorage("lastReviewRequestSetDatev1") var lastReviewRequestSetDate: Date?
     @AppStorage("offerDiscount") var offerDiscount = false
     @AppStorage("discountEndTime") var discountEndTime: Date?
 }

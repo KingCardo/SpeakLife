@@ -36,10 +36,13 @@ struct ProfileView: View {
     @State var isPresentingContentView = false
     @State private var showShareSheet = false
     let url = URL(string:APP.Product.urlID)
+
+    let resources = ["romanticpiano","peacefulplace"]
     
     
     init() {
         Analytics.logEvent(Event.profileTapped, parameters: nil)
+    
     }
     
     @ViewBuilder
@@ -78,6 +81,7 @@ struct ProfileView: View {
             
                 remindersRow
                 favoritesRow
+                soundsRow
             }
             
             Section(header: Text("SUPPORT").font(.caption)) {
@@ -99,6 +103,14 @@ struct ProfileView: View {
             Section(footer: VStack {
                 Text(appVersion).font(.footnote)//.font(.caption)
             }) {
+            }
+        }
+            .onChange(of: declarationStore.backgroundMusicEnabled) { newValue in
+                print(newValue, "RWRW")
+            if newValue {
+                AudioPlayerService.shared.playSound(files: self.resources, type: "mp3")
+            } else {
+                AudioPlayerService.shared.pauseMusic()
             }
         }
             .foregroundColor(colorScheme == .dark ? .white : .black)
@@ -342,6 +354,18 @@ struct ProfileView: View {
         ZStack {
             Text("Terms and Conditions", comment: "terms n conditions")
             Link("", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
+        }
+    }
+    
+    private var soundsRow: some View {
+        ZStack {
+            HStack {
+                Text("Background Music", comment: "terms n conditions")
+                Spacer()
+                Toggle("", isOn: declarationStore.$backgroundMusicEnabled)
+                        .padding()
+            }
+        
         }
     }
     

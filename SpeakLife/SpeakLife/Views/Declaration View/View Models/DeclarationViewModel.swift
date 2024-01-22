@@ -15,6 +15,8 @@ final class DeclarationViewModel: ObservableObject {
     
     @AppStorage("selectedCategory") var selectedCategoryString = "destiny"
     
+    @AppStorage("backgroundMusicEnabled") var backgroundMusicEnabled = true
+    
     @Published var declarations: [Declaration] = [] {
         didSet {
             print(declarations.map { $0.text })

@@ -86,6 +86,6 @@
 	<key>FacebookClientToken</key>
 	<string>ca6d6cdf360624116b189dfccc35eba5</string>
 	<key>NSUserTrackingUsageDescription</key>
-	<string>We kindly request your permission to track installations and improve our advertising campaigns.</string>
+	<string>We kindly request your permission to track installations to improve our advertising campaigns.</string>
 </dict>
 </plist>

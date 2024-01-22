@@ -23,7 +23,7 @@ struct DeclarationView: View {
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
     @EnvironmentObject var appState: AppState
     @Environment(\.presentationMode) var presentationMode
-    let resources = ["thruslyMarylin", "romanticpiano","peacefulplace"]
+    let resources = ["romanticpiano","peacefulplace"]
     
     @AppStorage("review.counter") private var reviewCounter = 0
     @AppStorage("share.counter") private var shareCounter = 0
@@ -52,17 +52,8 @@ struct DeclarationView: View {
                 if value {
                     showReview()
                 }
-                appState.lastReviewRequestSetDate = Date()
-                
             }
     }
-    
-    private func shouldRequest() -> Bool {
-        return Date().timeIntervalSince(appState.lastReviewRequestSetDate) >= 24 * 60 * 60
-    }
-
-    
-    
     
     var body: some View {
         GeometryReader { geometry in
@@ -90,20 +81,21 @@ struct DeclarationView: View {
                                     } content: {
                                         PremiumView()
                                     }
-                                    // .padding(.trailing)
+                                     .padding(.trailing)
                                     
-                                    MusicButtonView(resources: resources.shuffled(), ofType: "mp3")
-                                        .padding(.trailing)
+//                                    MusicButtonView(resources: resources.shuffled(), ofType: "mp3")
+//                                        .padding(.trailing)
                                 }
                                     
                                 
-                            } else {
-                                HStack {
-                                    Spacer()
-                                    MusicButtonView(resources: resources.shuffled(), ofType: "mp3")
-                                        .padding(.trailing)
-                                }
                             }
+//                            else {
+//                                HStack {
+//                                    Spacer()
+//                                    MusicButtonView(resources: resources.shuffled(), ofType: "mp3")
+//                                        .padding(.trailing)
+//                                }
+//                            }
                             
                                 
                                 Spacer()
@@ -255,13 +247,27 @@ struct DeclarationView: View {
     }
     
     private func showReview() {
-        if reviewTry < 3 {
+        let currentDate = Date()
+        if reviewTry < 3 && appState.lastReviewRequestSetDate == nil {
             DispatchQueue.main.async {
                 if let scene = UIApplication.shared.connectedScenes
                     .first(where: { $0.activationState == .foregroundActive })
                     as? UIWindowScene {
                     SKStoreReviewController.requestReview(in: scene)
                     reviewTry += 1
+                    appState.lastReviewRequestSetDate = Date()
+                }
+            }
+        } else if let lastReviewSetDate = appState.lastReviewRequestSetDate,
+                  currentDate.timeIntervalSince(lastReviewSetDate) >= 2 * 7 * 24 * 60 * 60,
+                  reviewTry < 3 {
+            DispatchQueue.main.async {
+                if let scene = UIApplication.shared.connectedScenes
+                    .first(where: { $0.activationState == .foregroundActive })
+                    as? UIWindowScene {
+                    SKStoreReviewController.requestReview(in: scene)
+                    reviewTry += 1
+                    appState.lastReviewRequestSetDate = Date()
                 }
             }
         }
@@ -275,18 +281,17 @@ struct DeclarationView: View {
     }
 }
 
-
-
 struct MusicButtonView: View {
     @State private var lastButtonTap = Date()
     @State private var opacity = 0.0
     
     @EnvironmentObject var themeStore: ThemeViewModel
+    @EnvironmentObject var viewModel: DeclarationViewModel
     
     let resources: [String]
     let ofType: String
     
-    @State var isPlaying = false
+    @State var isPlaying = true
     
     var body: some View {
         
@@ -298,7 +303,11 @@ struct MusicButtonView: View {
                        .clipShape(Circle())
                        .overlay(Circle().fill(Color.black.opacity(opacity)))
                        .shadow(color: .gray, radius: 10, x: 0, y: 0)
-               }
+        }
+        .onAppear {
+            AudioPlayerService.shared.playSound(files: resources, type: ofType)
+            resetOverlayTimer()
+        }
     }
     
     

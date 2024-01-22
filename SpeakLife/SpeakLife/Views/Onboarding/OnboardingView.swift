@@ -328,12 +328,12 @@ struct CustomSpinnerView: View {
             Circle()
                 .stroke(lineWidth: 15)
                 .opacity(0.3)
-                .foregroundColor(Color.green)
+                .foregroundColor(Constants.DAMidBlue)
             
             Circle()
                 .trim(from: 0, to: progress)
                 .stroke(style: StrokeStyle(lineWidth: 15, lineCap: .round))
-                .foregroundColor(Color.green)
+                .foregroundColor(Constants.DAMidBlue)
                 .rotationEffect(Angle(degrees: -90))
                 .animation(.easeInOut(duration: 2), value: progress)
             
@@ -365,7 +365,7 @@ struct PersonalizationLoadingView: View {
     @State private var checkedFirst = false
     @State private var checkedSecond = false
     @State private var checkedThird = false
-    let delay: Double = Double.random(in: 8...10)
+    let delay: Double = Double.random(in: 9...12)
 
     var body: some View {
         ZStack {
@@ -388,12 +388,12 @@ struct PersonalizationLoadingView: View {
                             checkedFirst = true
                         }
                     }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                         withAnimation(Animation.easeInOut(duration: 0.5)) {
                             checkedSecond = true
                         }
                     }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
                         withAnimation(Animation.easeInOut(duration: 0.5)) {
                             checkedThird = true
                         }
@@ -429,7 +429,7 @@ struct BulletPointView: View {
     var body: some View {
         HStack {
             Image(systemName: isHighlighted ? "checkmark.circle.fill" : "circle")
-                .foregroundColor(isHighlighted ? .green : .white)
+                .foregroundColor(isHighlighted ? Constants.gold : .white)
                 .scaleEffect(isHighlighted ? 1.1 : 1.0)
             Text(text)
                 .foregroundColor(.white)
