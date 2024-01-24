@@ -77,7 +77,7 @@ struct ProfileView: View {
                         Badge()
                     }
                 }
-                createYourOwnRow
+               // createYourOwnRow
             
                 remindersRow
                 favoritesRow
