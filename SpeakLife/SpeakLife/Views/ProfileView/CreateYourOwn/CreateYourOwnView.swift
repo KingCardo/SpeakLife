@@ -8,69 +8,6 @@
 import SwiftUI
 import FirebaseAnalytics
 
-struct AlertView: View {
-    @Environment(\.colorScheme) var colorScheme
-    @Binding var shown: Bool
-    @Binding var alertText: String
-    @State var closure: (() -> Void)?
-    private var disabled: Bool {
-        alertText.count < 3
-    }
-    
-    var body: some View {
-        VStack {
-            HStack {
-                Spacer()
-                Button(action: dismissX) {
-                    Image(systemName: "x.circle.fill")
-                        .resizable()
-                        .frame(width: 25, height: 25)
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundColor(Constants.DAMidBlue)
-                }
-            }
-            Text("Add an affirmation. These are private to you.", comment: "own affirmations alert")
-                .font(.callout)
-                .foregroundStyle(Constants.DAMidBlue)
-                .multilineTextAlignment(.center)
-            
-            TextEditor(text: $alertText)
-                .font(.custom("HelveticaNeue", size: 13))
-                .foregroundColor(colorScheme == .dark ? .white : .black)
-                .cornerRadius(10)
-            
-            Button(action: dismiss) {
-                Text("Save", comment: "save")
-                    .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
-                    .foregroundColor(.white)
-                    .background(disabled ? Constants.DAMidBlue.opacity(0.2) : Constants.DAMidBlue)
-                    .cornerRadius(100)
-            }
-            .disabled(disabled)
-        }
-        .padding()
-        .frame(width: UIScreen.main.bounds.width-50, height: 300)
-        
-        .background(colorScheme == .dark ? .white : Constants.DEABlack)
-        .cornerRadius(12)
-        //.border(Constants.DAMidBlue)
-        .clipped()
-        
-    }
-    
-    private func dismissX() {
-        withAnimation {
-            shown.toggle()
-        }
-    }
-    
-    private func dismiss() {
-        withAnimation {
-            shown.toggle()
-        }
-        closure?()
-    }
-}
 struct CreateYourOwnView: View {
     
     @EnvironmentObject var appState: AppState
@@ -87,7 +24,7 @@ struct CreateYourOwnView: View {
             configureView()
             
             if showAlert {
-                AlertView(shown: $showAlert, alertText: $alertText) {
+                AffirmationAlertView(affirmationText: $alertText, showAlert: $showAlert) {
                     self.save()
                     declarationStore.requestReview.toggle()
                 }
@@ -127,7 +64,7 @@ struct CreateYourOwnView: View {
         } else {
                 NavigationView {
                     List(declarationStore.createOwn) { declaration in
-                        NavigationLink(destination: PrayerDetailView(prayer: declaration.text) { Gradients().cyan }) {
+                        NavigationLink(destination: PrayerDetailView(declaration: declaration, isCreatedOwn: true) { Gradients().cyan }) {
                             ContentRow(declaration, isEditable: true) { declarationString, delete in
                                 if delete {
                                     declarationStore.removeOwn(declaration: declaration)
@@ -201,3 +138,89 @@ struct CreateYourOwnView_Previews: PreviewProvider {
             
     }
 }
+
+
+struct AffirmationAlertView: View {
+    @Environment(\.colorScheme) var colorScheme
+    @Binding var affirmationText: String
+    @Binding var showAlert: Bool
+    @State var closure: (() -> Void)?
+    
+    private var disabled: Bool {
+        affirmationText.count < 3
+    }
+    
+    var body: some View {
+        ZStack {
+            Gradients().cyanGold
+                .edgesIgnoringSafeArea(.all)
+            
+            // Alert card
+            VStack(spacing: 20) {
+                Text("Add an Affirmation")
+                    .font(.system(size: 24, weight: .semibold)) // Custom font size and weight
+                    .foregroundColor(Color(#colorLiteral(red: 0.255, green: 0.518, blue: 0.576, alpha: 1))) // Darker shade for contrast
+                
+                TextEditor(text: $affirmationText)
+                    .font(.custom("HelveticaNeue", size: 16))
+                    .padding()
+                    .background(Color.white)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
+                
+                HStack(spacing: 10) {
+        
+                    Button(action: {
+    
+                        dismiss()
+                    }) {
+                        Text("Save")
+                            .font(.system(size: 20, weight: .medium))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(disabled ? Constants.DAMidBlue.opacity(0.2) : Constants.DAMidBlue)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
+                    }
+                    .disabled(disabled)
+                    
+                    Button("Cancel") {
+                        dismissX()
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.gray.opacity(0.3)) // A lighter background for the cancel button
+                    .foregroundColor(Color.black) // Dark text for contrast
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
+                }
+            }
+            .padding()
+            .background(Color.white)
+            .cornerRadius(20)
+            .shadow(radius: 10)
+            .padding(20)
+        }
+    }
+    
+    private func dismissX() {
+        withAnimation {
+            showAlert.toggle()
+        }
+    }
+    
+    private func dismiss() {
+        withAnimation {
+            showAlert.toggle()
+        }
+        closure?()
+    }
+}
+//
+//struct AffirmationAlertView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AffirmationAlertView()
+//    }
+//}

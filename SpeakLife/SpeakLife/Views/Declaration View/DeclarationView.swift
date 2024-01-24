@@ -83,21 +83,10 @@ struct DeclarationView: View {
                                     }
                                      .padding(.trailing)
                                     
-//                                    MusicButtonView(resources: resources.shuffled(), ofType: "mp3")
-//                                        .padding(.trailing)
                                 }
-                                    
                                 
                             }
-//                            else {
-//                                HStack {
-//                                    Spacer()
-//                                    MusicButtonView(resources: resources.shuffled(), ofType: "mp3")
-//                                        .padding(.trailing)
-//                                }
-//                            }
-                            
-                                
+ 
                                 Spacer()
                                 if appState.showIntentBar {
                                     IntentsBarView(viewModel: viewModel, themeViewModel: themeViewModel)
@@ -154,7 +143,7 @@ struct DeclarationView: View {
             }
             .sheet(isPresented: $viewModel.showDiscountView) {
                 if appState.offerDiscount {
-                    DiscountSubscriptionView(size: UIScreen.main.bounds.size, currentSelection: .speakLife1YR19, percentOffText: "60% Off Yearly")
+                    DiscountSubscriptionView(size: UIScreen.main.bounds.size, currentSelection: .speakLife1YR19, percentOffText: "50% Off Yearly")
                 } else {
                     SubscriptionView(size: UIScreen.main.bounds.size)
                 }
@@ -247,6 +236,12 @@ struct DeclarationView: View {
     }
     
     private func showReview() {
+        
+      
+
+        if let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
+            print("Build number: \(buildNumber)")
+        }
         let currentDate = Date()
         if reviewTry < 3 && appState.lastReviewRequestSetDate == nil {
             DispatchQueue.main.async {
@@ -254,8 +249,13 @@ struct DeclarationView: View {
                     .first(where: { $0.activationState == .foregroundActive })
                     as? UIWindowScene {
                     SKStoreReviewController.requestReview(in: scene)
+                   
                     reviewTry += 1
                     appState.lastReviewRequestSetDate = Date()
+                    
+//                    if let appVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
+//                        appState.lastRequestedRatingVersion = "\(appVersion)\(buildNumber)"
+//                    }
                 }
             }
         } else if let lastReviewSetDate = appState.lastReviewRequestSetDate,

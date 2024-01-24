@@ -12,6 +12,7 @@
 		456885262B390FF4007B1EBB /* WarriorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456885252B390FF4007B1EBB /* WarriorView.swift */; };
 		456885282B395F66007B1EBB /* declarationsv3.json in Resources */ = {isa = PBXBuildFile; fileRef = 456885272B395F66007B1EBB /* declarationsv3.json */; };
 		4568852A2B428D77007B1EBB /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456885292B428D77007B1EBB /* NotificationManagerTests.swift */; };
+		4568BE8F2B60EB1300678565 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568BE8E2B60EB1300678565 /* LoadingView.swift */; };
 		4583A4C52B0080440069C27D /* declarationsv2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4583A4C42B0080440069C27D /* declarationsv2.json */; };
 		458510CF2B12B74E00230EE5 /* PodcastsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510CE2B12B74E00230EE5 /* PodcastsListView.swift */; };
 		458510D12B12B77A00230EE5 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D02B12B77A00230EE5 /* Podcast.swift */; };
@@ -164,6 +165,7 @@
 		456885272B395F66007B1EBB /* declarationsv3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv3.json; sourceTree = "<group>"; };
 		456885292B428D77007B1EBB /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerTests.swift; sourceTree = "<group>"; };
 		4568852B2B428FE2007B1EBB /* SpeakLifeTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpeakLifeTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		4568BE8E2B60EB1300678565 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4583A4C42B0080440069C27D /* declarationsv2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv2.json; sourceTree = "<group>"; };
 		458510CE2B12B74E00230EE5 /* PodcastsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsListView.swift; sourceTree = "<group>"; };
 		458510D02B12B77A00230EE5 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
@@ -704,6 +706,7 @@
 				45CF27172B4E52C900BC8968 /* Personalization.swift */,
 				45CF27192B4E52EF00BC8968 /* HabitScene.swift */,
 				45CF271B2B4E530300BC8968 /* ImprovementScene.swift */,
+				4568BE8E2B60EB1300678565 /* LoadingView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -994,6 +997,7 @@
 				7AA870D128DACCB700134ADB /* ReminderCell.swift in Sources */,
 				7AF18C8629FEC6EB005A6E31 /* BulletList.swift in Sources */,
 				7AF18C9C2A0D99E5005A6E31 /* TimeTrackerViewModel.swift in Sources */,
+				4568BE8F2B60EB1300678565 /* LoadingView.swift in Sources */,
 				7ABA50C729E4D996002699F1 /* PrayerViewModel.swift in Sources */,
 				7AA870C828DACCB700134ADB /* FontChooserView.swift in Sources */,
 				7AA8709028DACCA700134ADB /* SelectionFeedback.swift in Sources */,
@@ -1243,7 +1247,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 213;
+				CURRENT_PROJECT_VERSION = 217;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1263,7 +1267,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.18;
+				MARKETING_VERSION = 2.19;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1279,7 +1283,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 213;
+				CURRENT_PROJECT_VERSION = 217;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1299,7 +1303,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.18;
+				MARKETING_VERSION = 2.19;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -19,11 +19,16 @@ struct Benefit: Identifiable  {
     static var premiumBenefits: [Benefit] = [
         
 //        Benefit(text: "Unlock all features"),
-        Benefit(text: "Grow your relationship with the King of the Universe"),
-        Benefit(text: "Unlock all Jesus Devotionals"),
-        Benefit(text: "Categories for any situation"),
-        Benefit(text: "Unlock all themes"),
-        Benefit(text: "Unlock all prayers"),
+        Benefit(text: "Grow your relationship with Jesus"),
+        Benefit(text: "Walk in your new identity"),
+        Benefit(text: "Fight back with God's promises"),
+        Benefit(text: "Become more like Jesus"),
+        Benefit(text: "Enjoy victory in every area of your life"),
+        Benefit(text: "Experience peace, joy, and God's love"),
+       // Benefit(text: "Unlock all Jesus Devotionals"),
+//        Benefit(text: "Categories for any situation"),
+//        Benefit(text: "Unlock all themes"),
+        Benefit(text: "Unlock everything"),
        // Benefit(text:"Proverbs 18:21: Words have immense power; they can shape your reality and influence your future. Think of them as tools that can build or destroy."),
 
       //  Benefit(text:"Mark 11:23: Your convictions, voiced out loud, hold incredible power. If you truly believe and verbalize your goals or aspirations, no obstacle is too big to overcome, not even metaphorical mountains."),
@@ -66,7 +71,7 @@ struct DiscountSubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR9, percentOffText: String = "60% Off Yearly") {
+    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR9, percentOffText: String = "50% Off Yearly") {
         self.size = size
         self.currentSelection = currentSelection
         self.percentOffText = percentOffText
@@ -220,10 +225,10 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR49
-    var firstSelection = InAppId.Subscription.speakLife1YR49
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39
+    var firstSelection = InAppId.Subscription.speakLife1YR39
     var thirdSelection = InAppId.Subscription.speakLife1YR29
-    var secondSelection = InAppId.Subscription.speakLife1MO4
+    var secondSelection = InAppId.Subscription.speakLife1MO9
     
     let size: CGSize
     var callback: (() -> Void)?
@@ -232,7 +237,7 @@ struct SubscriptionView: View {
     
     var ctaText: String
     
-    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, ctaText: String = "7 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
+    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
         self.benefits = benefits
         self.size = size
         self.ctaText = ctaText
@@ -300,11 +305,11 @@ struct SubscriptionView: View {
                             yearlyCTABox()
                         }
                         
-                        Button {
-                            currentSelection = thirdSelection
-                        } label: {
-                            yearlyNoTrialCTABox()
-                        }
+//                        Button {
+//                            currentSelection = thirdSelection
+//                        } label: {
+//                            yearlyNoTrialCTABox()
+//                        }
                         
                         Button {
                             currentSelection = secondSelection
@@ -402,7 +407,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe", action: makePurchase)
+        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Start 3-Day Free Trial" : "Subscribe", action: makePurchase)
     }
     
     private func restore() {
@@ -431,7 +436,7 @@ struct SubscriptionView: View {
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
                             .bold()
                     }
-                    Text("Try before you commit.")
+                    Text("$3.33/mo. - Save 65%")
                         .font(.caption)
                 }
                 .foregroundStyle(currentSelection == firstSelection ? .white : .black)
@@ -439,16 +444,17 @@ struct SubscriptionView: View {
                 
                 Spacer()
                 
-//                ZStack {
-//                    Capsule()
-//                        .fill(Constants.bestValueColor)
-//                        .frame(width: 100, height: 30)
-//                    
-//                    Text("Best Value")
-//                        .font(.callout)
-//                        .foregroundColor(.white)
-//                }
-//                .padding(.trailing)
+                ZStack {
+                    Capsule()
+                        .fill(Constants.specialRateColor)
+                        .frame(width: 100, height: 30)
+                    
+                    Text("Best Value")
+                        .font(.callout)
+                        .bold()
+                        .foregroundColor(.white)
+                }
+                .padding(.trailing)
             }
             
         }
