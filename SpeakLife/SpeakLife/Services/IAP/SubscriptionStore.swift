@@ -9,6 +9,7 @@ import Foundation
 import StoreKit
 import Combine
 import FirebaseAnalytics
+import FacebookCore
 
 typealias Transaction = StoreKit.Transaction
 typealias RenewalInfo = StoreKit.Product.SubscriptionInfo.RenewalInfo
@@ -118,10 +119,12 @@ final class SubscriptionStore: ObservableObject {
             //this function rethrows the verification error.
             let transaction = try checkVerified(verification)
             
-            Analytics.logEvent(Event.premiumSucceded, parameters: ["product": product.displayPrice])
-
             //The transaction is verified. Deliver content to the user.
             await updateCustomerProductStatus()
+            
+            AppEvents.shared.logPurchase(amount: Double(product.displayPrice) ?? Double(0), currency: "")
+            Analytics.logEvent(Event.premiumSucceded, parameters: ["product": product.displayPrice])
+
 
             //Always finish a transaction.
             await transaction.finish()

@@ -59,9 +59,17 @@ struct InAppId: Codable {
             switch self {
             case .speakLife1YR49: return "Yearly"
             case .speakLife1YR39: return "Yearly"
-            case .speakLife1YR29: return "Yearly"
+            case .speakLife1YR29, .speakLife1YR19: return "Yearly"
             case .speakLife1MO4: return "Monthly"
             case .speakLife1MO9: return "Monthly"
+            default: return ""
+            }
+        }
+        
+        var subTitle: String {
+            switch self {
+            case .speakLife1YR39: return "$3.33/mo. - Save 65%"
+            case .speakLife1YR19: return "$1.66/mo. - Save 65%"
             default: return ""
             }
         }
@@ -71,6 +79,7 @@ struct InAppId: Codable {
             case .speakLife1YR49: return "$49.99"
             case .speakLife1YR39: return "$39.99"
             case .speakLife1YR29: return "$29.99"
+            case .speakLife1YR19: return "$19.99"
             case .speakLife1MO9: return "$9.99"
             case .speakLife1MO4: return "$4.99"
             default: return ""

@@ -64,7 +64,7 @@ struct DiscountSubscriptionView: View {
     
     let size: CGSize
     var callback: (() -> Void)?
-    var currentSelection = InAppId.Subscription.speakLife1YR19
+    var currentSelection = InAppId.Subscription.speakLife1YR9
     var percentOffText: String = "50% Off Yearly"
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
@@ -225,10 +225,10 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39
-    var firstSelection = InAppId.Subscription.speakLife1YR39
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
+    var firstSelection = InAppId.Subscription.speakLife1YR19
     var thirdSelection = InAppId.Subscription.speakLife1YR29
-    var secondSelection = InAppId.Subscription.speakLife1MO9
+    var secondSelection = InAppId.Subscription.speakLife1MO4
     
     let size: CGSize
     var callback: (() -> Void)?
@@ -436,7 +436,7 @@ struct SubscriptionView: View {
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
                             .bold()
                     }
-                    Text("$3.33/mo. - Save 65%")
+                    Text(firstSelection.subTitle)
                         .font(.caption)
                 }
                 .foregroundStyle(currentSelection == firstSelection ? .white : .black)
