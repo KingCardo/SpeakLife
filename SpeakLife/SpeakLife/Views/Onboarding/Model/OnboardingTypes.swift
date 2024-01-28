@@ -10,6 +10,7 @@ import Foundation
 enum Tab {
     
     case personalization
+    case name
     case habit
     case improvement
     case intro

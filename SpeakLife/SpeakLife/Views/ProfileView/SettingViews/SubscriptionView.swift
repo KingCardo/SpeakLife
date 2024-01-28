@@ -64,20 +64,20 @@ struct DiscountSubscriptionView: View {
     
     let size: CGSize
     var callback: (() -> Void)?
-    var currentSelection = InAppId.Subscription.speakLife1YR9
+    var currentSelection = InAppId.Subscription.speakLife1YR19
     var percentOffText: String = "50% Off Yearly"
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR9, percentOffText: String = "50% Off Yearly") {
+    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR19, percentOffText: String = "50% Off Yearly") {
         self.size = size
         self.currentSelection = currentSelection
         self.percentOffText = percentOffText
     }
     
-    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR9,  callback: (() -> Void)? = nil) {
+    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR19,  callback: (() -> Void)? = nil) {
         self.size = size
         self.currentSelection = currentSelection
         self.callback = callback
@@ -225,8 +225,8 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
-    var firstSelection = InAppId.Subscription.speakLife1YR19
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR39
+    var firstSelection = InAppId.Subscription.speakLife1YR39
     var thirdSelection = InAppId.Subscription.speakLife1YR29
     var secondSelection = InAppId.Subscription.speakLife1MO4
     

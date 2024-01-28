@@ -143,7 +143,7 @@ struct DeclarationView: View {
             }
             .sheet(isPresented: $viewModel.showDiscountView) {
                 if appState.offerDiscount {
-                    DiscountSubscriptionView(size: UIScreen.main.bounds.size, currentSelection: .speakLife1YR19, percentOffText: "50% Off Yearly")
+                    DiscountSubscriptionView(size: UIScreen.main.bounds.size, percentOffText: "50% Off Yearly")
                 } else {
                     SubscriptionView(size: UIScreen.main.bounds.size)
                 }
