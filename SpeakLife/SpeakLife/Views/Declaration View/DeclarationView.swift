@@ -23,7 +23,6 @@ struct DeclarationView: View {
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
     @EnvironmentObject var appState: AppState
     @Environment(\.presentationMode) var presentationMode
-    let resources = ["romanticpiano","peacefulplace"]
     
     @AppStorage("review.counter") private var reviewCounter = 0
     @AppStorage("share.counter") private var shareCounter = 0
@@ -281,60 +280,60 @@ struct DeclarationView: View {
     }
 }
 
-struct MusicButtonView: View {
-    @State private var lastButtonTap = Date()
-    @State private var opacity = 0.0
+//struct MusicButtonView: View {
+//    @State private var lastButtonTap = Date()
+//    @State private var opacity = 0.0
+//    
+//    @EnvironmentObject var themeStore: ThemeViewModel
+//    @EnvironmentObject var viewModel: DeclarationViewModel
+//    
+//    let resources: [String]
+//    let ofType: String
+//    
+//    @State var isPlaying = true
+//    
+//    var body: some View {
+//        
+//        Button(action: buttonTapped) {
+//                   Image(systemName: isPlaying ? "pause.circle" : "play.circle")
+//                       .resizable()
+//                       .frame(width: 50, height: 50)
+//                       .background(themeStore.selectedTheme.mode == .dark ? Constants.backgroundColor : Constants.backgroundColorLight)
+//                       .clipShape(Circle())
+//                       .overlay(Circle().fill(Color.black.opacity(opacity)))
+//                       .shadow(color: .gray, radius: 10, x: 0, y: 0)
+//        }
+//        .onAppear {
+//            AudioPlayerService.shared.playSound(files: resources, type: ofType)
+//            resetOverlayTimer()
+//        }
+//    }
     
-    @EnvironmentObject var themeStore: ThemeViewModel
-    @EnvironmentObject var viewModel: DeclarationViewModel
     
-    let resources: [String]
-    let ofType: String
+//    private func buttonTapped() {
+//        lastButtonTap = Date()
+//        withAnimation {
+//            isPlaying.toggle()
+//            opacity = 0.0 // Reset opacity to full
+//        }
+//        resetOverlayTimer()
+//        
+//        if isPlaying {
+//            AudioPlayerService.shared.playSound(files: resources, type: ofType)
+//            
+//        } else {
+//            AudioPlayerService.shared.pauseMusic()
+//        }
+//        
+//    }
     
-    @State var isPlaying = true
-    
-    var body: some View {
-        
-        Button(action: buttonTapped) {
-                   Image(systemName: isPlaying ? "pause.circle" : "play.circle")
-                       .resizable()
-                       .frame(width: 50, height: 50)
-                       .background(themeStore.selectedTheme.mode == .dark ? Constants.backgroundColor : Constants.backgroundColorLight)
-                       .clipShape(Circle())
-                       .overlay(Circle().fill(Color.black.opacity(opacity)))
-                       .shadow(color: .gray, radius: 10, x: 0, y: 0)
-        }
-        .onAppear {
-            AudioPlayerService.shared.playSound(files: resources, type: ofType)
-            resetOverlayTimer()
-        }
-    }
-    
-    
-    private func buttonTapped() {
-        lastButtonTap = Date()
-        withAnimation {
-            isPlaying.toggle()
-            opacity = 0.0 // Reset opacity to full
-        }
-        resetOverlayTimer()
-        
-        if isPlaying {
-            AudioPlayerService.shared.playSound(files: resources, type: ofType)
-            
-        } else {
-            AudioPlayerService.shared.pauseMusic()
-        }
-        
-    }
-    
-    private func resetOverlayTimer() {
-           DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-               if -lastButtonTap.timeIntervalSinceNow >= 3 {
-                   withAnimation {
-                       opacity = 0.3
-                   }
-               }
-           }
-       }
-}
+//    private func resetOverlayTimer() {
+//           DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//               if -lastButtonTap.timeIntervalSinceNow >= 3 {
+//                   withAnimation {
+//                       opacity = 0.3
+//                   }
+//               }
+//           }
+//       }
+//}

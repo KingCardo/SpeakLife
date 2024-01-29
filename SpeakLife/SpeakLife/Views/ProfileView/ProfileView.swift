@@ -37,7 +37,7 @@ struct ProfileView: View {
     @State private var showShareSheet = false
     let url = URL(string:APP.Product.urlID)
 
-    let resources = ["romanticpiano","peacefulplace"]
+ //   let resources = ["romanticpiano","peacefulplace"]
     
     
     init() {
@@ -108,7 +108,7 @@ struct ProfileView: View {
             .onChange(of: declarationStore.backgroundMusicEnabled) { newValue in
                 print(newValue, "RWRW")
             if newValue {
-                AudioPlayerService.shared.playSound(files: self.resources, type: "mp3")
+                AudioPlayerService.shared.playSound(files: resources)
             } else {
                 AudioPlayerService.shared.pauseMusic()
             }

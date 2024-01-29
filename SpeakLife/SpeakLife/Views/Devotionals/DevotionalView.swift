@@ -29,7 +29,7 @@ struct DevotionalView: View {
     
     @ViewBuilder
     var contentView: some  View {
-        if subscriptionStore.isPremium {
+        if subscriptionStore.isPremium || !viewModel.devotionalLimitReached {
             devotionalView
                 .onAppear {
                     Analytics.logEvent(Event.devotionalTapped, parameters: nil)

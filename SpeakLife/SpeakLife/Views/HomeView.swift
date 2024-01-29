@@ -8,6 +8,18 @@
 import SwiftUI
 import FacebookCore
 
+let resources: [MusicResources] = [.romanticPiano, .peacefulplace, .returntosurface, .sethpiano]
+
+struct MusicResources {
+    let name: String
+    let type: String
+    
+    static let romanticPiano = MusicResources(name: "romanticpiano", type: "mp3")
+    static let peacefulplace = MusicResources(name: "peacefulplace", type: "mp3")
+    static let returntosurface = MusicResources(name: "returntosurface", type: "wav")
+    static let sethpiano = MusicResources(name: "sethpiano", type: "wav")
+}
+
 struct HomeView: View {
     
     @EnvironmentObject var declarationStore: DeclarationViewModel
@@ -16,7 +28,6 @@ struct HomeView: View {
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
     @Binding var isShowingLanding: Bool
     @StateObject private var viewModel = FacebookTrackingViewModel()
-    let resources = ["romanticpiano","peacefulplace"]
 
     
     var body: some View {
@@ -77,7 +88,7 @@ struct HomeView: View {
                 .onAppear {
                     viewModel.requestPermission()
                             if declarationStore.backgroundMusicEnabled {
-                                AudioPlayerService.shared.playSound(files: self.resources, type: "mp3")
+                                AudioPlayerService.shared.playSound(files: resources)
                             }
                 }
                 .environment(\.colorScheme, .dark)

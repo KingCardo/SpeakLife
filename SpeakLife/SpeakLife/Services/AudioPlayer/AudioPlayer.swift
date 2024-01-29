@@ -11,7 +11,7 @@ import UIKit
 class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
     static let shared = AudioPlayerService()
     private var audioPlayer: AVAudioPlayer?
-    private var audioFiles: [String] = []
+    private var audioFiles: [MusicResources] = []
     private var currentFileIndex = 0
     private var isPausedInBackground = false
 
@@ -41,15 +41,16 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
         }
 
 
-    func playSound(files: [String], type: String) {
+    func playSound(files: [MusicResources]) {
         self.audioFiles = files
         self.currentFileIndex = 0
+        let type = audioFiles[currentFileIndex].type
         playFile(type: type)
     }
 
     private func playFile(type: String) {
         guard !audioFiles.isEmpty else { return }
-        let name = audioFiles[currentFileIndex]
+        let name = audioFiles[currentFileIndex].name
         print("Playing file: \(name)") // Debugging log
         if let path = Bundle.main.path(forResource: name, ofType: type) {
             do {

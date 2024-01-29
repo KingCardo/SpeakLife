@@ -33,6 +33,7 @@ struct OnboardingView: View  {
     var body: some View {
         GeometryReader { geometry in
             TabView(selection: $selection) {
+               
                 PersonalizationScene(size: geometry.size, callBack: advance)
                     .tag(Tab.personalization)
                 
@@ -48,21 +49,11 @@ struct OnboardingView: View  {
                 IntroScene(size: geometry.size, callBack: advance)
                     .tag(Tab.intro)
                 
-//                BenefitScene(size: geometry.size, tips: onboardingTips) {
-//                    advance()
-//                }.tag(Tab.benefits)
-                
-                
                 NotificationOnboarding(size: geometry.size) {
                     advance()
                 }
                 .tag(Tab.notification)
-                
-//                UseCaseScene(size: geometry.size) {
-//                    advance()
-//                }.tag(Tab.useCase)
-                
-               
+
                 
                 WidgetScene(size: geometry.size) {
                     advance()
@@ -76,14 +67,6 @@ struct OnboardingView: View  {
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
                 
-              
-                //                categoryScene()
-                //                    .tag(Tab.category)
-                
-                
-                
-//                discountScene(size: geometry.size)
-//                    .tag(Tab.discount)
                 
             }
             .ignoresSafeArea()
@@ -105,6 +88,7 @@ struct OnboardingView: View  {
         }
         
         .onAppear {
+            UIScrollView.appearance().isScrollEnabled = false
             setupAppearance()
             Analytics.logEvent(Event.freshInstall, parameters: nil)
         }
