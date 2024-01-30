@@ -14,8 +14,8 @@
 		4568852A2B428D77007B1EBB /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456885292B428D77007B1EBB /* NotificationManagerTests.swift */; };
 		4568BE8F2B60EB1300678565 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568BE8E2B60EB1300678565 /* LoadingView.swift */; };
 		4568BE912B64DB9100678565 /* NameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568BE902B64DB9100678565 /* NameScene.swift */; };
-		4568BE932B672F1F00678565 /* returntosurface.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4568BE922B672F1F00678565 /* returntosurface.wav */; };
-		4568BE952B672F2700678565 /* sethpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4568BE942B672F2700678565 /* sethpiano.wav */; };
+		4568BE982B688C1D00678565 /* returntosurface.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4568BE962B688C1D00678565 /* returntosurface.mp3 */; };
+		4568BE992B688C1D00678565 /* sethpiano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4568BE972B688C1D00678565 /* sethpiano.mp3 */; };
 		4583A4C52B0080440069C27D /* declarationsv2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4583A4C42B0080440069C27D /* declarationsv2.json */; };
 		458510CF2B12B74E00230EE5 /* PodcastsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510CE2B12B74E00230EE5 /* PodcastsListView.swift */; };
 		458510D12B12B77A00230EE5 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D02B12B77A00230EE5 /* Podcast.swift */; };
@@ -170,8 +170,8 @@
 		4568852B2B428FE2007B1EBB /* SpeakLifeTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpeakLifeTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4568BE8E2B60EB1300678565 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4568BE902B64DB9100678565 /* NameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameScene.swift; sourceTree = "<group>"; };
-		4568BE922B672F1F00678565 /* returntosurface.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = returntosurface.wav; sourceTree = "<group>"; };
-		4568BE942B672F2700678565 /* sethpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sethpiano.wav; sourceTree = "<group>"; };
+		4568BE962B688C1D00678565 /* returntosurface.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = returntosurface.mp3; sourceTree = "<group>"; };
+		4568BE972B688C1D00678565 /* sethpiano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sethpiano.mp3; sourceTree = "<group>"; };
 		4583A4C42B0080440069C27D /* declarationsv2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv2.json; sourceTree = "<group>"; };
 		458510CE2B12B74E00230EE5 /* PodcastsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsListView.swift; sourceTree = "<group>"; };
 		458510D02B12B77A00230EE5 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
@@ -352,9 +352,9 @@
 			isa = PBXGroup;
 			children = (
 				45C748312B5BC78F0011D8F6 /* peacefulplace.mp3 */,
-				4568BE922B672F1F00678565 /* returntosurface.wav */,
+				4568BE962B688C1D00678565 /* returntosurface.mp3 */,
+				4568BE972B688C1D00678565 /* sethpiano.mp3 */,
 				45C7482C2B5BBF9A0011D8F6 /* romanticpiano.mp3 */,
-				4568BE942B672F2700678565 /* sethpiano.wav */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -899,18 +899,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				456885282B395F66007B1EBB /* declarationsv3.json in Resources */,
-				4568BE952B672F2700678565 /* sethpiano.wav in Resources */,
 				7A278FA2288915DF0084BB57 /* Preview Assets.xcassets in Resources */,
 				45C748322B5BC78F0011D8F6 /* peacefulplace.mp3 in Resources */,
 				45C748232B5802C60011D8F6 /* GoogleService-Info.plist in Resources */,
 				7AA870E628DACFB800134ADB /* Localizable.strings in Resources */,
+				4568BE982B688C1D00678565 /* returntosurface.mp3 in Resources */,
+				4568BE992B688C1D00678565 /* sethpiano.mp3 in Resources */,
 				7AF18C912A0CBEB9005A6E31 /* devotionals.json in Resources */,
 				45C7482D2B5BBF9A0011D8F6 /* romanticpiano.mp3 in Resources */,
 				4583A4C52B0080440069C27D /* declarationsv2.json in Resources */,
 				7ABA50CF29E63275002699F1 /* prayers.json in Resources */,
 				7A00721828F8ED4A00965AF7 /* declarations.json in Resources */,
 				7A278F9F288915DF0084BB57 /* Assets.xcassets in Resources */,
-				4568BE932B672F1F00678565 /* returntosurface.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1259,7 +1259,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 224;
+				CURRENT_PROJECT_VERSION = 226;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1279,7 +1279,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.23;
+				MARKETING_VERSION = 2.24;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1295,7 +1295,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 224;
+				CURRENT_PROJECT_VERSION = 226;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1315,7 +1315,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.23;
+				MARKETING_VERSION = 2.24;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -22,7 +22,6 @@ struct Benefit: Identifiable  {
         Benefit(text: "Grow your relationship with Jesus"),
         Benefit(text: "Walk in your new identity"),
         Benefit(text: "Fight back with God's promises"),
-        Benefit(text: "Become more like Jesus"),
         Benefit(text: "Enjoy victory in every area of your life"),
         Benefit(text: "Experience peace, joy, and God's love"),
        // Benefit(text: "Unlock all Jesus Devotionals"),

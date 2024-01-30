@@ -16,8 +16,8 @@ struct MusicResources {
     
     static let romanticPiano = MusicResources(name: "romanticpiano", type: "mp3")
     static let peacefulplace = MusicResources(name: "peacefulplace", type: "mp3")
-    static let returntosurface = MusicResources(name: "returntosurface", type: "wav")
-    static let sethpiano = MusicResources(name: "sethpiano", type: "wav")
+    static let returntosurface = MusicResources(name: "returntosurface", type: "mp3")
+    static let sethpiano = MusicResources(name: "sethpiano", type: "mp3")
 }
 
 struct HomeView: View {
@@ -87,9 +87,9 @@ struct HomeView: View {
                 .accentColor(Constants.DAMidBlue)
                 .onAppear {
                     viewModel.requestPermission()
-                            if declarationStore.backgroundMusicEnabled {
-                                AudioPlayerService.shared.playSound(files: resources)
-                            }
+                    if declarationStore.backgroundMusicEnabled {
+                        AudioPlayerService.shared.playSound(files: resources)
+                    }
                 }
                 .environment(\.colorScheme, .dark)
 
