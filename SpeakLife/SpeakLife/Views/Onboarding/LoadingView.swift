@@ -47,6 +47,8 @@ struct CustomSpinnerView: View {
 
 
 struct PersonalizationLoadingView: View {
+    
+    @EnvironmentObject var appState: AppState
     let size: CGSize
     let callBack: (() -> Void)
  
@@ -57,8 +59,16 @@ struct PersonalizationLoadingView: View {
 
     var body: some View {
         ZStack {
-            Gradients().purple
-                .edgesIgnoringSafeArea(.all)
+            
+            if appState.onBoardingTest {
+                Image("highway")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+            } else {
+                Gradients().purple
+                    .edgesIgnoringSafeArea(.all)
+            }
             VStack(spacing: 10) {
                 VStack(spacing: 10) {
                     CustomSpinnerView()
@@ -93,7 +103,7 @@ struct PersonalizationLoadingView: View {
                     BulletPointView(text: "Matching your goals", isHighlighted: $checkedSecond, delay: 1.0)
                     BulletPointView(text: "Creating affirmation notifications", isHighlighted: $checkedThird, delay: 1.5)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: appState.onBoardingTest ? .center : .leading)
                 .padding()
             }
         

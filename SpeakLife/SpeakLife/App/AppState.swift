@@ -10,6 +10,7 @@ import SwiftUI
 final class AppState: ObservableObject {
     @Published var rootViewId = UUID()
     @Published var showIntentBar = true
+    @Published var onBoardingTest = true
     @AppStorage("onboarded") var isOnboarded = false
     @AppStorage("newPrayersAdded") var newPrayersAdded = true
     @AppStorage("newCategoriesAddedv4") var newCategoriesAddedv4 = true

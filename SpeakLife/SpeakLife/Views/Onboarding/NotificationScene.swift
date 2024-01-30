@@ -19,27 +19,32 @@ struct NotificationOnboarding:  View {
     
     private func notificationSceneAlt(size: CGSize) -> some View  {
         VStack {
-            Spacer().frame(height: 50)
             
-            Image("Notifications_illustration")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 235, height: size.height * 0.20)
+            if appState.onBoardingTest {
+                Spacer().frame(height: 150)
+            } else {
+                Spacer().frame(height: 50)
+                
+                Image("Notifications_illustration")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 235, height: size.height * 0.20)
+                Spacer().frame(height: 20)
+            }
             
-            Spacer().frame(height: 20)
             VStack {
                 Text("Notification_settings", comment: "Notification onboarding title")
                     .font(Font.custom("Roboto-SemiBold", size: 40, relativeTo: .title))
                     .fontWeight(.semibold)
                     .minimumScaleFactor(0.7)
-                    .foregroundColor(Constants.DEABlack)
+                    .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
                 
                 Spacer().frame(height: 16)
                 
                 VStack {
                     Text("Setup_notifications", comment: "Setup notifications instructions")
                         .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .body))
-                        .foregroundColor(Constants.DALightBlue)
+                        .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
                         .lineLimit(2)
@@ -53,7 +58,7 @@ struct NotificationOnboarding:  View {
                     appState.notificationCount = valueCount
                     
                 }
-                .foregroundColor(Constants.DEABlack)
+                .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
                 .frame(width: size.width * 0.87 ,height: size.height * 0.09)
                
                 
@@ -66,7 +71,7 @@ struct NotificationOnboarding:  View {
                     appState.startTimeIndex = valueIndex
                 }
                 
-                .foregroundColor(Constants.DEABlack)
+                .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
                 .frame(width: size.width * 0.87 ,height: size.height * 0.09)
 
                 TimeNotificationCountView(value: appState.endTimeIndex) {
@@ -76,7 +81,7 @@ struct NotificationOnboarding:  View {
                 } valueIndex: { valueIndex in
                     appState.startTimeIndex = valueIndex
                 }
-                .foregroundColor(Constants.DEABlack)
+                .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
                 .frame(width: size.width * 0.87 ,height: size.height * 0.09)
                 }
 
@@ -104,9 +109,10 @@ struct NotificationOnboarding:  View {
         }
         .frame(width: size.width, height: size.height)
         .background(
-            Image("declarationBackground")
+            Image(appState.onBoardingTest ? "moon" : "declarationBackground")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
         )
     }
     

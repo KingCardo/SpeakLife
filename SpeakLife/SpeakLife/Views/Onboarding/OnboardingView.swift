@@ -37,11 +37,16 @@ struct OnboardingView: View  {
                 PersonalizationScene(size: geometry.size, callBack: advance)
                     .tag(Tab.personalization)
                 
-                NameScene(size:  geometry.size, callBack: advance)
-                    .tag(Tab.name)
+                if !appState.onBoardingTest {
+                    
+                    NameScene(size:  geometry.size, callBack: advance)
+                        .tag(Tab.name)
+                }
                 
-                HabitScene(size: geometry.size, callBack: advance)
-                    .tag(Tab.habit)
+                if !appState.onBoardingTest {
+                    HabitScene(size: geometry.size, callBack: advance)
+                        .tag(Tab.habit)
+                }
                 
                 ImprovementScene(size: geometry.size, callBack: advance, viewModel: improvementViewModel)
                     .tag(Tab.improvement)
@@ -55,10 +60,12 @@ struct OnboardingView: View  {
                 .tag(Tab.notification)
 
                 
-                WidgetScene(size: geometry.size) {
-                    advance()
+                if !appState.onBoardingTest {
+                    WidgetScene(size: geometry.size) {
+                        advance()
+                    }
+                    .tag(Tab.widgets)
                 }
-                .tag(Tab.widgets)
                 
                 loadingView(geometry: geometry)
                     .tag(Tab.loading)
@@ -88,6 +95,9 @@ struct OnboardingView: View  {
         }
         
         .onAppear {
+            if viewModel.backgroundMusicEnabled {
+                AudioPlayerService.shared.playSound(files: resources)
+            }
             UIScrollView.appearance().isScrollEnabled = false
             setupAppearance()
             Analytics.logEvent(Event.freshInstall, parameters: nil)
@@ -166,55 +176,58 @@ struct OnboardingView: View  {
     // MARK: - Private methods
     
     private func advance() {
-        withAnimation {
-            switch selection {
-            case .personalization:
-                selection = .name
-                Analytics.logEvent("WelcomeScreenDone", parameters: nil)
-            case .name:
-                selection = .habit
-                Analytics.logEvent("NameScreenDone", parameters: nil)
-            case .habit:
-                selection = .improvement
-                Analytics.logEvent("HabitScreenDone", parameters: nil)
-            case .improvement:
-                appState.selectedNotificationCategories = improvementViewModel.selectedCategories
-                selection = .intro
-                Analytics.logEvent("ImprovementScreenDone", parameters: nil)
-            case .intro:
-                selection = .notification
-                Analytics.logEvent("IntroScreenDone", parameters: nil)
-            case .benefits:
-                selection = .notification
-                Analytics.logEvent("BenefitScreenDone", parameters: nil)
-            case .notification:
-                askNotificationPermission()
-                Analytics.logEvent("NotificationScreenDone", parameters: nil)
-            case .useCase:
-                selection = .widgets
-              
-            case .subscription:
-                let categoryString = appState.selectedNotificationCategories.components(separatedBy: ",").first ?? "destiny"
-                if let category = DeclarationCategory(categoryString) {
-                    viewModel.choose(category) { _ in }
-                }
-                dismissOnboarding()
-                Analytics.logEvent("SubscriptionScreenDone", parameters: nil)
-               // selection = .widgets
-            case .widgets:
-                if isDonePersonalization {
+        DispatchQueue.main.async {
+            
+            withAnimation {
+                switch selection {
+                case .personalization:
+                    selection = appState.onBoardingTest ? .improvement : .name
+                    Analytics.logEvent("WelcomeScreenDone", parameters: nil)
+                case .name:
+                    selection = appState.onBoardingTest ? .improvement : .habit
+                    Analytics.logEvent("NameScreenDone", parameters: nil)
+                case .habit:
+                    selection = .improvement
+                    Analytics.logEvent("HabitScreenDone", parameters: nil)
+                case .improvement:
+                    selection = .intro
+                    appState.selectedNotificationCategories = improvementViewModel.selectedCategories
+                    Analytics.logEvent("ImprovementScreenDone", parameters: nil)
+                case .intro:
+                    selection = .notification
+                    Analytics.logEvent("IntroScreenDone", parameters: nil)
+                case .benefits:
+                    selection = .notification
+                    Analytics.logEvent("BenefitScreenDone", parameters: nil)
+                case .notification:
+                    askNotificationPermission()
+                    Analytics.logEvent("NotificationScreenDone", parameters: nil)
+                case .useCase:
+                    selection = .widgets
+                    
+                case .subscription:
+                    let categoryString = appState.selectedNotificationCategories.components(separatedBy: ",").first ?? "destiny"
+                    if let category = DeclarationCategory(categoryString) {
+                        viewModel.choose(category) { _ in }
+                    }
+                    dismissOnboarding()
+                    Analytics.logEvent("SubscriptionScreenDone", parameters: nil)
+                    // selection = .widgets
+                case .widgets:
+                    if isDonePersonalization {
+                        selection = .subscription
+                    } else {
+                        selection = .loading
+                    }
+                    
+                case .loading:
+                    Analytics.logEvent("LoadingScreenDone", parameters: nil)
                     selection = .subscription
-                } else {
-                    selection = .loading
+                    isDonePersonalization = true
+                    //    dismissOnboarding()
+                case .discount:
+                    dismissOnboarding()
                 }
-                
-            case .loading:
-                Analytics.logEvent("LoadingScreenDone", parameters: nil)
-                selection = .subscription
-                isDonePersonalization = true
-            //    dismissOnboarding()
-            case .discount:
-                dismissOnboarding()
             }
         }
     }
@@ -245,7 +258,15 @@ struct OnboardingView: View  {
                         
                         withAnimation {
                            // advance()
-                            selection = .widgets
+                            if appState.onBoardingTest {
+                                if isDonePersonalization {
+                                    selection = .subscription
+                                } else {
+                                    selection = .loading
+                                }
+                            } else {
+                                selection = .widgets
+                            }
                         }
                     }
                 }
@@ -254,7 +275,15 @@ struct OnboardingView: View  {
             
             
             withAnimation {
-                selection = .widgets
+                if appState.onBoardingTest {
+                    if isDonePersonalization {
+                        selection = .subscription
+                    } else {
+                        selection = .loading
+                    }
+                } else {
+                    selection = .widgets
+                }
             }
             
             if settings.alertSetting == .enabled {

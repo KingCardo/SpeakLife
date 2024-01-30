@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PersonalizationScene: View {
+    @EnvironmentObject var appState: AppState
     
     let size: CGSize
     let callBack: (() -> Void)
@@ -19,19 +20,23 @@ struct PersonalizationScene: View {
     
     private func personalizationView(size: CGSize) -> some View  {
         VStack {
-            Spacer().frame(height: 90)
-            
-            Image("growth")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 235, height: size.height * 0.25)
+           
+            if !appState.onBoardingTest {
+                Spacer().frame(height: 90)
+                Image("growth")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 235, height: size.height * 0.25)
+            } else {
+                Spacer()
+            }
             
             Spacer().frame(height: 40)
             VStack {
                 Text("Welcome to SpeakLife", comment: "Intro scene title label")
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 40, relativeTo: .title))
                     .fontWeight(.semibold)
-                    .foregroundColor(Constants.DEABlack)
+                    .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
                     .padding([.leading, .trailing])
                 
                 Spacer().frame(height: 16)
@@ -39,7 +44,7 @@ struct PersonalizationScene: View {
                 VStack {
                     Text("We're glad you found us!" , comment: "Intro scene instructions")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
-                        .foregroundColor(Constants.DALightBlue)
+                        .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
                         .lineLimit(nil)
@@ -48,7 +53,7 @@ struct PersonalizationScene: View {
                     
                     Text("Let's start with a couple questions to personalize your experience.", comment: "Intro scene extra tip")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
-                        .foregroundColor(Constants.DALightBlue)
+                        .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
                         .foregroundColor(Color(red: 119, green: 142, blue: 180, opacity: 1))
@@ -78,9 +83,10 @@ struct PersonalizationScene: View {
         }
         .frame(width: size.width, height: size.height)
         .background(
-            Image("declarationBackground")
+            Image(appState.onBoardingTest ? "lakeHills" : "declarationBackground")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
         )
         
     }

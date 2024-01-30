@@ -9,6 +9,8 @@ import SwiftUI
 
 struct IntroScene: View {
     
+    @EnvironmentObject var appState: AppState
+    
     let size: CGSize
     let callBack: (() -> Void)
     
@@ -18,35 +20,41 @@ struct IntroScene: View {
     
     private func introSceneAlt(size: CGSize) -> some View  {
         VStack {
-            Spacer().frame(height: 90)
             
-            Image("declarationsIllustration")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 235, height: size.height * 0.25)
+            if appState.onBoardingTest {
+                Spacer()
+            } else {
+                Spacer().frame(height: 90)
+                
+                Image("declarationsIllustration")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 235, height: size.height * 0.25)
+            }
+           
             
             Spacer().frame(height: 40)
             VStack {
-                Text("DECLARATIONS", comment: "Intro scene title label")
+                Text(appState.onBoardingTest ? "SpeakLife" : "DECLARATIONS", comment: "Intro scene title label")
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 40, relativeTo: .title))
                     .fontWeight(.semibold)
-                    .foregroundColor(Constants.DEABlack)
+                    .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
                 
                 Spacer().frame(height: 16)
                 
                 VStack {
                     Text("Read_and_repeat" , comment: "Intro scene instructions")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
-                        .foregroundColor(Constants.DALightBlue)
+                        .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
                         .lineLimit(nil)
                     
                     Spacer().frame(height: 24)
                     
-                    Text("The_power_of_declarations", comment: "Intro scene extra tip")
+                    Text(appState.onBoardingTest ? "Embrace your new identity and routine of speaking life" : "The_power_of_declarations", comment: "Intro scene extra tip")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
-                        .foregroundColor(Constants.DALightBlue)
+                        .foregroundColor(appState.onBoardingTest ? .white :Constants.DALightBlue)
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
                         .foregroundColor(Color(red: 119, green: 142, blue: 180, opacity: 1))
@@ -76,9 +84,10 @@ struct IntroScene: View {
         }
         .frame(width: size.width, height: size.height)
         .background(
-            Image("declarationBackground")
+            Image(appState.onBoardingTest ? "lion" : "declarationBackground")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
         )
         
     }

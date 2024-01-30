@@ -11,7 +11,7 @@ struct LandingView: View {
     var body: some View {
         ZStack(alignment: .center) {
            
-            Image("landingView1")
+            Image("lakeHills")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
         

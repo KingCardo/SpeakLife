@@ -87,7 +87,7 @@ struct HomeView: View {
                 .accentColor(Constants.DAMidBlue)
                 .onAppear {
                     viewModel.requestPermission()
-                    if declarationStore.backgroundMusicEnabled {
+                    if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
                         AudioPlayerService.shared.playSound(files: resources)
                     }
                 }

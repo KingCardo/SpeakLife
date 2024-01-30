@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseAnalytics
 
 struct ImprovementScene: View {
+    @EnvironmentObject var appState: AppState
     
     let size: CGSize
     let callBack: (() -> Void)
@@ -21,13 +22,12 @@ struct ImprovementScene: View {
     private func improvementView(size: CGSize) -> some View  {
         ScrollView {
             Spacer().frame(height: 45)
-            //VStack {
                
                 VStack {
                     Text("What would you like to improve first?", comment: "Intro scene title label")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 24, relativeTo: .title))
                         .fontWeight(.semibold)
-                        .foregroundColor(Constants.DEABlack)
+                        .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
                         .padding()
                         .lineLimit(2)
                     
@@ -36,7 +36,7 @@ struct ImprovementScene: View {
                     VStack {
                         Text("Select as many as you like" , comment: "Intro scene instructions")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
-                            .foregroundColor(Constants.DALightBlue)
+                            .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                             .multilineTextAlignment(.center)
                             .lineSpacing(10)
                             .lineLimit(nil)
@@ -73,11 +73,11 @@ struct ImprovementScene: View {
             .scrollIndicators(.hidden)
             .frame(width: size.width, height: size.height)
             .background(
-                Image("declarationBackground")
+                Image(appState.onBoardingTest ? "landingView1" : "declarationBackground")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
             )
-      //  }
         
     }
     

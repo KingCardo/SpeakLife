@@ -14,6 +14,7 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
     private var audioFiles: [MusicResources] = []
     private var currentFileIndex = 0
     private var isPausedInBackground = false
+    var isPlaying = false
 
     private override init() {
            super.init()
@@ -57,6 +58,7 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
                 audioPlayer?.delegate = self
                 audioPlayer?.play()
+                isPlaying = true
             } catch {
                 print("Unable to locate audio file: \(name).\(type)")
             }
@@ -73,5 +75,6 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
     
     func pauseMusic() {
         audioPlayer?.pause()
+        isPlaying = false
     }
 }
