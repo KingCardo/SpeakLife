@@ -17,11 +17,12 @@ final class DeclarationViewModel: ObservableObject {
     
     @AppStorage("backgroundMusicEnabled") var backgroundMusicEnabled = true
     
-    @Published var declarations: [Declaration] = [] {
-        didSet {
-            print(declarations.map { $0.text })
-        }
-    }
+    @Published var declarations: [Declaration] = [] 
+//    {
+//        didSet {
+//            print(declarations.map { $0.text })
+//        }
+//    }
     
     @Published var requestReview = false 
     
