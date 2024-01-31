@@ -19,6 +19,7 @@ struct OnboardingView: View  {
     @State var showLastChanceAlert = false
     @State var isDonePersonalization = false
     @StateObject var improvementViewModel = ImprovementViewModel()
+    let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     @ViewBuilder
     func loadingView(geometry: GeometryProxy) -> some View {
@@ -38,8 +39,8 @@ struct OnboardingView: View  {
                     .tag(Tab.personalization)
                 
         
-                NameScene(size:  geometry.size, callBack: advance)
-                        .tag(Tab.name)
+//                NameScene(size:  geometry.size, callBack: advance)
+//                        .tag(Tab.name)
                 
                 if !appState.onBoardingTest {
                     HabitScene(size: geometry.size, callBack: advance)
@@ -175,11 +176,12 @@ struct OnboardingView: View  {
     
     private func advance() {
         DispatchQueue.main.async {
-            
+           
             withAnimation {
                 switch selection {
                 case .personalization:
-                    selection = .name
+                    impactMed.impactOccurred()
+                    selection = .improvement //.name
                     Analytics.logEvent("WelcomeScreenDone", parameters: nil)
                 case .name:
                     selection = appState.onBoardingTest ? .improvement : .habit
@@ -188,16 +190,19 @@ struct OnboardingView: View  {
                     selection = .improvement
                     Analytics.logEvent("HabitScreenDone", parameters: nil)
                 case .improvement:
+                    impactMed.impactOccurred()
                     selection = .intro
                     appState.selectedNotificationCategories = improvementViewModel.selectedCategories
                     Analytics.logEvent("ImprovementScreenDone", parameters: nil)
                 case .intro:
+                    impactMed.impactOccurred()
                     selection = .notification
                     Analytics.logEvent("IntroScreenDone", parameters: nil)
                 case .benefits:
                     selection = .notification
                     Analytics.logEvent("BenefitScreenDone", parameters: nil)
                 case .notification:
+                    impactMed.impactOccurred()
                     askNotificationPermission()
                     Analytics.logEvent("NotificationScreenDone", parameters: nil)
                 case .useCase:

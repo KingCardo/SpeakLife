@@ -69,6 +69,7 @@ struct DiscountSubscriptionView: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
+    let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR19, percentOffText: String = "50% Off Yearly") {
         self.size = size
@@ -211,6 +212,7 @@ struct DiscountSubscriptionView: View {
     }
     
     private func makePurchase() {
+        impactMed.impactOccurred()
         Task {
             declarationStore.isPurchasing = true
             await buy()
@@ -237,6 +239,7 @@ struct SubscriptionView: View {
     var firstSelection = InAppId.Subscription.speakLife1YR39
     var thirdSelection = InAppId.Subscription.speakLife1YR29
     var secondSelection = InAppId.Subscription.speakLife1MO4
+    let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let size: CGSize
     var callback: (() -> Void)?
@@ -415,7 +418,9 @@ struct SubscriptionView: View {
     }
     
     private func makePurchase() {
+        impactMed.impactOccurred()
         Task {
+            
             declarationStore.isPurchasing = true
             await buy()
             declarationStore.isPurchasing = false

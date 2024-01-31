@@ -80,6 +80,10 @@ final class NotificationManager: NSObject {
                                       count: Int) {
         
         let hourMinute = distributeTimes(startTime: startTime, endTime: endTime, count: count)
+    
+        for (hour, minute) in hourMinute {
+            print(hour, minute, "RWRW")
+        }
         
         for (idx, declaration) in declarations.enumerated() {
             let id = UUID().uuidString

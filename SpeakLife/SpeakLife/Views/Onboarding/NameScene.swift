@@ -20,6 +20,14 @@ struct NameScene: View {
     }
     
     private func nameView(size: CGSize) -> some View  {
+        ZStack {
+            GeometryReader { proxy in
+                Image(appState.onBoardingTest ? "lakeHills" : "declarationBackground")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: proxy.size.width, height: proxy.size.height * 1.2)
+                    .edgesIgnoringSafeArea(.all)
+            }
             
             VStack {
                 
@@ -81,12 +89,13 @@ struct NameScene: View {
                 Spacer()
                     .frame(width: 5, height: size.height * 0.07)
             }
+        }
         .frame(width: size.width, height: size.height)
-        .background(
-            Image(appState.onBoardingTest ? "lakeHills" : "declarationBackground")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all)
-        )
+//        .background(
+//            Image(appState.onBoardingTest ? "lakeHills" : "declarationBackground")
+//                .resizable()
+//                .aspectRatio(contentMode: .fill)
+//                .edgesIgnoringSafeArea(.all)
+//        )
     }
 }
