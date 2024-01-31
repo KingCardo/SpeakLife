@@ -84,7 +84,13 @@ struct DiscountSubscriptionView: View {
     
     var body: some View {
         ZStack {
-            Gradients().purple
+            GeometryReader { geometry in
+                Image("sandOcean")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
+            }
+            
             discountView() {
                 callback?()
             }
@@ -107,7 +113,7 @@ struct DiscountSubscriptionView: View {
             Text("SpeakLife")
                 .font(Constants.titleFont)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                .foregroundStyle(Constants.gold)
+                .foregroundStyle(.white)
             Spacer()
                 .frame(height: 16)
             
@@ -124,10 +130,12 @@ struct DiscountSubscriptionView: View {
             
             Text("One Time Offer")
                 .font(.largeTitle)
+                .foregroundStyle(.white)
             
             Text(percentOffText)
                 .textCase(.uppercase)
                 .font(.headline)
+                .foregroundStyle(.white)
             
             Spacer()
                 .frame(height: 32)
@@ -218,6 +226,7 @@ struct DiscountSubscriptionView: View {
 }
 
 struct SubscriptionView: View {
+    @EnvironmentObject var appState: AppState
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
@@ -269,11 +278,19 @@ struct SubscriptionView: View {
     
     private func goPremiumView(size: CGSize) -> some View  {
         ZStack {
-            Gradients().cyanPurple
+            GeometryReader { geometry in
+                
+                Image("sandOcean")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
+                    .edgesIgnoringSafeArea([.top])
+            }
+           
             ScrollView {
                 VStack  {
                     Spacer()
-                        .frame(height: 40)
+                        .frame(height: 60)
                     VStack(alignment: .center) {
                         Text("Try SpeakLife Premium", comment: "unlock everything premium view")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 28))
@@ -438,7 +455,7 @@ struct SubscriptionView: View {
                     Text(firstSelection.subTitle)
                         .font(.caption)
                 }
-                .foregroundStyle(currentSelection == firstSelection ? .white : .black)
+                .foregroundStyle(.white)
                 .padding(.leading)
                 
                 Spacer()
@@ -519,7 +536,7 @@ struct SubscriptionView: View {
                             .bold()
                     }
                 }
-                .foregroundStyle(currentSelection == secondSelection ? .white : .black)
+                .foregroundStyle(.white)
                 .padding(.leading)
                 
                 Spacer()
@@ -557,7 +574,7 @@ struct StarRatingView: View {
        }
        
        func starColor(for index: Int) -> Color {
-           return .yellow //index <= Int(rating) ? .yellow : .gray
+           return Constants.DAMidBlue //index <= Int(rating) ? .yellow : .gray
        }
     
     func animateStar(at index: Int) {

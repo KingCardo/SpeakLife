@@ -108,16 +108,17 @@ class ImprovementViewModel: ObservableObject {
 }
 
 enum Improvements: String, CaseIterable { 
-    case joy = "Be happy and content"
+   // case joy = "Be happy and content"
     case gratitude = "Grow in gratitude"
     case stress = "Reduce Stress & Anxiety"
     case grace = "Learn how forgiven you are"
     case love = "Bask in Jesus Love for you"
+    case health = "Maintain or restore your health"
     case destiny = "Move closer to your destiny"
-    case safety = "Protection and safety"
+  //  case safety = "Protection and safety"
    // case guilt = "Be free from guilt and condemnation"
     case loneliness = "Feeling alone"
-    case wealth = "Wealth"
+  //  case wealth = "Wealth"
     case peace = "Remain and live in peace"
     
     var selectedCategory: String {
@@ -130,18 +131,20 @@ enum Improvements: String, CaseIterable {
             "love"
         case .destiny:
             "destiny"
-        case .safety:
-            "godsprotection"
+        case .health:
+            "health"
+       // case .safety:
+        //    "godsprotection"
 //        case .guilt:
 //            "guilt"
-        case .joy:
-            "joy"
+//        case .joy:
+//            "joy"
         case .gratitude:
             "gratitude"
         case .loneliness:
             "loneliness"
-        case .wealth:
-            "wealth"
+//        case .wealth:
+//            "wealth"
         case .peace:
             "peace"
         }

@@ -37,11 +37,9 @@ struct OnboardingView: View  {
                 PersonalizationScene(size: geometry.size, callBack: advance)
                     .tag(Tab.personalization)
                 
-                if !appState.onBoardingTest {
-                    
-                    NameScene(size:  geometry.size, callBack: advance)
+        
+                NameScene(size:  geometry.size, callBack: advance)
                         .tag(Tab.name)
-                }
                 
                 if !appState.onBoardingTest {
                     HabitScene(size: geometry.size, callBack: advance)
@@ -181,7 +179,7 @@ struct OnboardingView: View  {
             withAnimation {
                 switch selection {
                 case .personalization:
-                    selection = appState.onBoardingTest ? .improvement : .name
+                    selection = .name
                     Analytics.logEvent("WelcomeScreenDone", parameters: nil)
                 case .name:
                     selection = appState.onBoardingTest ? .improvement : .habit
