@@ -106,9 +106,9 @@ struct TimeNotificationCountView<Content: View> : View {
         }
         
         .accentColor(Constants.DALightBlue)
-                .padding()
-                .overlay(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Constants.DAMidBlue, lineWidth: 1))
+        .padding()
+        .overlay(RoundedRectangle(cornerRadius: 10)
+        .stroke(Constants.DAMidBlue, lineWidth: 1))
         
     }
 }

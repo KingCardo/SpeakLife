@@ -79,7 +79,11 @@ final class NotificationManager: NSObject {
                                       endTime: Int,
                                       count: Int) {
         
+        print(startTime, endTime, "RWRW initial times")
+        
         let hourMinute = distributeTimes(startTime: startTime, endTime: endTime, count: count)
+        
+        guard hourMinute.count > 1 else { return }
     
         for (hour, minute) in hourMinute {
             print(hour, minute, "RWRW")

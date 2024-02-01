@@ -106,7 +106,6 @@ struct ProfileView: View {
             }
         }
             .onChange(of: declarationStore.backgroundMusicEnabled) { newValue in
-                print(newValue, "RWRW")
             if newValue {
                 AudioPlayerService.shared.playSound(files: resources)
             } else {

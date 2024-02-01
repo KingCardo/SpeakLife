@@ -97,7 +97,6 @@ class ImprovementViewModel: ObservableObject {
     }
     
     func selectExperience(_ experience: Improvements) {
-        print(experience.selectedCategory, "RWRW")
         if selectedExperiences.contains(experience) {
             selectedExperiences.removeAll(where: { $0 == experience })
         } else {

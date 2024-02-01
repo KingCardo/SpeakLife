@@ -226,7 +226,6 @@ final class DeclarationViewModel: ObservableObject {
             }
             self?.selectedCategoryString = category.rawValue
             let shuffled = declarations.shuffled()
-            print(shuffled.count, "RWRW")
             self?.declarations = shuffled
             completion(true)
         }
