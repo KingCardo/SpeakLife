@@ -34,7 +34,7 @@ struct CustomSpinnerView: View {
         .onAppear {
             Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
                 withAnimation {
-                    self.progress += 0.01
+                    self.progress += 0.05
                     if self.progress >= 1.0 {
                         timer.invalidate()
                     }
@@ -55,7 +55,7 @@ struct PersonalizationLoadingView: View {
     @State private var checkedFirst = false
     @State private var checkedSecond = false
     @State private var checkedThird = false
-    let delay: Double = Double.random(in: 9...12)
+    let delay: Double = Double.random(in: 6...7)
 
     var body: some View {
         ZStack {
@@ -86,12 +86,12 @@ struct PersonalizationLoadingView: View {
                             checkedFirst = true
                         }
                     }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         withAnimation(Animation.easeInOut(duration: 0.5)) {
                             checkedSecond = true
                         }
                     }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                         withAnimation(Animation.easeInOut(duration: 0.5)) {
                             checkedThird = true
                         }

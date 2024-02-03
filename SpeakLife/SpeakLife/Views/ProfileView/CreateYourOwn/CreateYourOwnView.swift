@@ -139,7 +139,7 @@ struct TextViewWrapper: UIViewRepresentable {
         textView.backgroundColor = .white
         textView.textColor = .black
         textView.layer.cornerRadius = 4
-        textView.font = UIFont(name: "HelveticaNeue", size: 20) 
+        textView.font = UIFont(name: "HelveticaNeue", size: 20)
         return textView
     }
 
