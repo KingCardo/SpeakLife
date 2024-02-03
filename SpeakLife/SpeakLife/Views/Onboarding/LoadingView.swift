@@ -55,13 +55,13 @@ struct PersonalizationLoadingView: View {
     @State private var checkedFirst = false
     @State private var checkedSecond = false
     @State private var checkedThird = false
-    let delay: Double = Double.random(in: 6...7)
+    let delay: Double = Double.random(in: 4...6)
 
     var body: some View {
         ZStack {
             
             if appState.onBoardingTest {
-                Image("highway")
+                Image("cross")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)

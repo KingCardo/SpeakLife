@@ -22,7 +22,7 @@ struct NameScene: View {
     
     private func nameView(size: CGSize) -> some View  {
         ZStack {
-            Image(appState.onBoardingTest ? "lakeHills" : "declarationBackground")
+            Image(appState.onBoardingTest ? "beautifulsky" : "declarationBackground")
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()

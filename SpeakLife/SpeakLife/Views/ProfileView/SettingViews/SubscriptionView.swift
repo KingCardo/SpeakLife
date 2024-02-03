@@ -19,11 +19,11 @@ struct Benefit: Identifiable  {
     static var premiumBenefits: [Benefit] = [
         
 //        Benefit(text: "Unlock all features"),
-        Benefit(text: "Grow your relationship with Jesus"),
-        Benefit(text: "Walk in your new identity"),
-        Benefit(text: "Fight back with God's promises"),
-        Benefit(text: "Enjoy victory in every area of your life"),
-        Benefit(text: "Experience peace, joy, and God's love"),
+        Benefit(text: "Daily Devotional's to grow with Jesus"),
+        Benefit(text: "Walk in your new identity by speaking life with curated notifications"),
+        Benefit(text: "30+ categories to fight back with God's promises"),
+       // Benefit(text: "Enjoy victory in every area of your life"),
+        Benefit(text: "Personalize your experience and create your own theme"),
        // Benefit(text: "Unlock all Jesus Devotionals"),
 //        Benefit(text: "Categories for any situation"),
 //        Benefit(text: "Unlock all themes"),
@@ -286,8 +286,8 @@ struct SubscriptionView: View {
                     .foregroundColor(.white)
                     .scaledToFit()
                 Text(benefit.text, comment: "Benefit text")
-                    .font(.callout)
-                    .minimumScaleFactor(0.5)
+                    .font(.caption)
+                   // .minimumScaleFactor(0.5)
                 Spacer()
             }.padding(.horizontal)
         }
@@ -624,7 +624,7 @@ struct TestimonialView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
             Text("🌟 Testimonial's 🌟")
-                .font(.headline)
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .headline))
                 .padding(.top)
                 .frame(maxWidth: .infinity)
             
