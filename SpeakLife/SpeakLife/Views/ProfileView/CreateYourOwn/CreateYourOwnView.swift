@@ -130,6 +130,24 @@ struct CreateYourOwnView: View {
     }
 }
 
+
+struct TextViewWrapper: UIViewRepresentable {
+    @Binding var text: String
+
+    func makeUIView(context: Context) -> UITextView {
+        let textView = UITextView()
+        textView.backgroundColor = .white
+        textView.textColor = .black
+        textView.layer.cornerRadius = 4
+        textView.font = UIFont(name: "HelveticaNeue", size: 20) 
+        return textView
+    }
+
+    func updateUIView(_ uiView: UITextView, context: Context) {
+        uiView.text = text
+    }
+}
+
 struct CreateYourOwnView_Previews: PreviewProvider {
     static var previews: some View {
         CreateYourOwnView()
@@ -161,12 +179,8 @@ struct AffirmationAlertView: View {
                     .font(.system(size: 24, weight: .semibold)) // Custom font size and weight
                     .foregroundColor(Color(#colorLiteral(red: 0.255, green: 0.518, blue: 0.576, alpha: 1))) // Darker shade for contrast
                 
-                TextEditor(text: $affirmationText)
-                    .font(.custom("HelveticaNeue", size: 16))
-                    .padding()
-                    .background(Color.white)
-                    .foregroundColor(colorScheme == .dark ? .white : .black)
-                    .cornerRadius(10)
+                TextViewWrapper(text: $affirmationText)
+                    .foregroundColor(.black)
                     .shadow(radius: 5)
                 
                 HStack(spacing: 10) {
@@ -198,7 +212,6 @@ struct AffirmationAlertView: View {
                 }
             }
             .padding()
-            .background(Color.white)
             .cornerRadius(20)
             .shadow(radius: 10)
             .padding(20)
@@ -218,9 +231,3 @@ struct AffirmationAlertView: View {
         closure?()
     }
 }
-//
-//struct AffirmationAlertView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AffirmationAlertView()
-//    }
-//}
