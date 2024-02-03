@@ -66,8 +66,8 @@ struct DeclarationView: View {
                                 //                                    .frame(width: geometry.size.width * 0.9, height: 50)
                                 //                            }
                                 HStack {
-                                    discountLabel
-                                        .padding()
+//                                    discountLabel
+//                                        .padding()
                                     Spacer()
                                     
                                     

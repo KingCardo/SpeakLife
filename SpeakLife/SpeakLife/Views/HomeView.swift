@@ -120,6 +120,7 @@ class FacebookTrackingViewModel: ObservableObject {
     @Published var trackingStatus: ATTrackingManager.AuthorizationStatus = .notDetermined
     
     func requestPermission() {
+        
         if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
             TrackingManager.shared.requestTrackingPermission { status in
                 switch status {

@@ -71,7 +71,7 @@ class Theme: Identifiable, Codable {
         }
     }
     
-    static var all: [Theme] = [autumnTrees, cross, lion, lakeHills, longroadtraveled, landingView1, landingView2, highway, lakeMountain, sandOcean, citynight, woodnight, rainbow, space, stars, summerbeach, moon, canyons, artsy, luxurydrive,beautifulsky, desertsky, gorgeousmoon, plantgreen, fogroad, greenplants, talltrees, trippy, jungleflower, shadowrose]
+    static var all: [Theme] = [autumnTrees, cross, lion, lakeHills, longroadtraveled, landingView1, landingView2, highway, forestwinter, lakeMountain, sandOcean, citynight, woodnight, rainbow, space, stars, summerbeach, moon, canyons, artsy, luxurydrive,beautifulsky, desertsky, gorgeousmoon, plantgreen, fogroad, greenplants, talltrees, jungleflower, shadowrose]
     
     private static let autumnTrees = Theme("autumntrees", isPremium: false, blurEffect: true)
     private static let cross = Theme("cross", isPremium: false)
@@ -102,7 +102,8 @@ class Theme: Identifiable, Codable {
     static let lakeHills = Theme("lakeHills",isPremium: false,blurEffect: true)
     static let sandOcean = Theme("sandOcean",blurEffect: true)
     static let citynight = Theme("citynight",blurEffect: false)
-    static let woodnight = Theme("woodnight",blurEffect: false)
+    static let woodnight = Theme("woodnight",blurEffect: true)
+    static let forestwinter = Theme("forestwinter",blurEffect: false)
 }
 
 

@@ -24,8 +24,6 @@ struct DeclarationContentView: View {
     @State private var image: UIImage?
     @State private var showAnimation = false
     @State private var selectedTab = 0
-    @State private var fadeInOpacity = 0.0
-    @State private var discountCounter = 0
     @State private var reviewCounter = 0
     
     private let degrees: Double = 90
@@ -42,8 +40,6 @@ struct DeclarationContentView: View {
                 ForEach(Array(viewModel.declarations.enumerated()), id: \.element.id) { index, declaration in
                     ZStack {
                         quoteLabel(declaration, geometry)
-                            .opacity(fadeInOpacity)
-                           
                             .padding()
                             .rotationEffect(Angle(degrees: -degrees))
                             .frame(
@@ -91,19 +87,13 @@ struct DeclarationContentView: View {
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             .onChange(of: selectedTab) { newIndex in
-                    fadeInOpacity = 0.0
                 askForReview()
-                withAnimation(.easeOut(duration: 1.0)) {
-                    fadeInOpacity = 1.0
-                }
+        
             }
             .frame(width: geometry.size.height, height: geometry.size.width)
             .rotationEffect(.degrees(90), anchor: .topLeading)
             .offset(x: geometry.size.width)
            
-            .onAppear {
-                fadeInOpacity = 1.0
-            }
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
                 self.showShareSheet = false
             }

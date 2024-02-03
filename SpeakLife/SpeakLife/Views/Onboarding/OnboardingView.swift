@@ -39,8 +39,8 @@ struct OnboardingView: View  {
                     .tag(Tab.personalization)
                 
         
-//                NameScene(size:  geometry.size, callBack: advance)
-//                        .tag(Tab.name)
+                NameScene(size:  geometry.size, callBack: advance)
+                        .tag(Tab.name)
                 
                 if !appState.onBoardingTest {
                     HabitScene(size: geometry.size, callBack: advance)
@@ -181,7 +181,7 @@ struct OnboardingView: View  {
                 switch selection {
                 case .personalization:
                     impactMed.impactOccurred()
-                    selection = .improvement //.name
+                    selection = /*.improvement*/ .name
                     Analytics.logEvent("WelcomeScreenDone", parameters: nil)
                 case .name:
                     selection = appState.onBoardingTest ? .improvement : .habit
@@ -318,7 +318,6 @@ struct OnboardingView: View  {
         withAnimation {
             appState.isOnboarded = true
             Analytics.logEvent(Event.onBoardingFinished, parameters: nil)
-            viewModel.requestReview.toggle()
         }
         
     }

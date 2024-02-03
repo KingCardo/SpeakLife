@@ -235,8 +235,22 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
-    var firstSelection = InAppId.Subscription.speakLife1YR19
+    let testimonials: [Testimonial] = [
+        Testimonial(id: 1, text: "This app has transformed my daily routine, bringing peace and inspiration to every day.", author: "Alex J.", details: "UK"),
+        Testimonial(id: 2, text: "A truly uplifting experience every time I use this app. Highly recommended for anyone seeking daily motivation.", author: "Caleb W.", details: "USA"),
+        Testimonial(id: 3, text: "I've found solace and strength in the daily affirmations. It's a part of my morning ritual now!", author: "Samantha F.", details: "USA"),
+        Testimonial(id: 4, text: "I love creating my own affirmations and saying them thruout the day!", author: "Rahul P.", details: "India"),
+        Testimonial(id: 5, text: "Every morning, I look forward to the daily affirmations and devotionals. They set a positive tone for my day and remind me of the strength within.", author: " Michael T.", details: "Australia"),
+        Testimonial(id: 6, text: "This app has been a true companion in my spiritual journey. The personalized scriptures have helped me find answers and peace in difficult times!", author: "Khalil P.", details: "Singapore"),
+        Testimonial(id: 7, text: "I never realized how impactful daily devotionals could be until I started using this app. It's like having a personal guide to navigate life's ups and downs.", author: "Emily C.", details: "United Kingdom"),
+        Testimonial(id: 8, text: "Integrating this app into my daily routine has been transformative. The affirmations and prayers provide a moment of peace and reflection that enriches my whole day.", author: "Maria S.", details: "Philippines")
+    ]
+    @State private var currentTestimonialIndex: Int = 0
+    @State private var textOpacity: Double = 0
+    let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect() // Adjust time as needed
+    
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR29
+    var firstSelection = InAppId.Subscription.speakLife1YR29
     var thirdSelection = InAppId.Subscription.speakLife1YR29
     var secondSelection = InAppId.Subscription.speakLife1MO4
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
@@ -349,21 +363,25 @@ struct SubscriptionView: View {
                     
                     Spacer()
                         .frame(height: 16)
-                   
                     
-                    Text("James 3:4-5 teaches us the immense power of our words: just as a tiny rudder directs a mighty ship, our words chart the course of our life's journey—guiding us towards either triumph or defeat.")
-                        .font(.caption)
-                        .foregroundColor(.white)
-                        .padding()
-                    
+                    TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
+                                    .id(currentTestimonialIndex)
                 }
-                
+            }
+            .onReceive(timer) { _ in
+                withAnimation(.easeInOut) {
+                    let nextIndex = (currentTestimonialIndex + 1) % testimonials.count
+                    currentTestimonialIndex = nextIndex
+                }
             }
             if declarationStore.isPurchasing {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
                     .scaleEffect(2)
             }
+        }
+        .onDisappear {
+            timer.upstream.connect().cancel()
         }
     }
     
@@ -593,4 +611,67 @@ struct StarRatingView: View {
                }
            }
        }
+}
+
+struct TestimonialView: View {
+    var testimonial: Testimonial
+    @Namespace private var animationNamespace
+    let size: CGSize
+    
+    @State private var currentTextOpacity: Double = 1.0
+    @State private var textKey: UUID = UUID()
+
+    var body: some View {
+        VStack(alignment: .center, spacing: 10) {
+            Text("🌟 Testimonial's 🌟")
+                .font(.headline)
+                .padding(.top)
+                .frame(maxWidth: .infinity)
+            
+            TestimonialTextView(text: testimonial.text)
+                .id(textKey)
+                .frame(height: 110)
+                .matchedGeometryEffect(id: "text", in: animationNamespace)
+            
+            Text("- \(testimonial.author), \(testimonial.details)")
+                .font(.footnote)
+                .opacity(currentTextOpacity)
+                .frame(maxWidth: .infinity, alignment: .trailing) // Right-align author details
+                .padding([.horizontal, .bottom])
+                .matchedGeometryEffect(id: "author", in: animationNamespace)
+                .transition(.opacity)
+        }
+        .foregroundColor(.white)
+        .padding()
+        .frame(width: size.width * 0.90, height: 200)
+        .background(Constants.DAMidBlue.opacity(0.9))
+        .cornerRadius(20)
+        .shadow(radius: 5)
+        .padding()
+        .onChange(of: testimonial.text) { _ in
+            textKey = UUID()
+        }
+    }
+}
+
+struct TestimonialTextView: View {
+    var text: String
+    
+    var body: some View {
+        Text("\"\(text)\"")
+            .font(.custom("AppleSDGothicNeo-Regular", size: 16))
+            //.font(.body)
+            .fontWeight(.light)
+            .italic()
+            .padding()
+            .transition(.opacity) // Apply a fade transition
+            .animation(.easeInOut(duration: 3.0), value: text) // Animate the opacity transition
+    }
+}
+
+struct Testimonial {
+    var id: Int
+    var text: String
+    var author: String
+    var details: String
 }

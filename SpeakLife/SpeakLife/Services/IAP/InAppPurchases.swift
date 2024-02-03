@@ -69,6 +69,7 @@ struct InAppId: Codable {
         var subTitle: String {
             switch self {
             case .speakLife1YR39: return "$3.33/mo. - Save 65%"
+            case .speakLife1YR29: return "$2.49/mo. - Save 50%"
             case .speakLife1YR19: return "$1.66/mo. - Save 65%"
             default: return ""
             }
