@@ -130,9 +130,24 @@ struct CreateYourOwnView: View {
     }
 }
 
-
 struct TextViewWrapper: UIViewRepresentable {
     @Binding var text: String
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+
+    class Coordinator: NSObject, UITextViewDelegate {
+        var parent: TextViewWrapper
+
+        init(_ parent: TextViewWrapper) {
+            self.parent = parent
+        }
+
+        func textViewDidChange(_ textView: UITextView) {
+            parent.text = textView.text
+        }
+    }
 
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
@@ -140,6 +155,7 @@ struct TextViewWrapper: UIViewRepresentable {
         textView.textColor = .black
         textView.layer.cornerRadius = 4
         textView.font = UIFont(name: "HelveticaNeue", size: 20)
+        textView.delegate = context.coordinator
         return textView
     }
 
