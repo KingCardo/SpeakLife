@@ -54,6 +54,7 @@ final class NotificationProcessor {
             } else {
                 for category in categories! {
                     fetchDeclarations(for: category) { declarations in
+                        guard declarations.count >= count else { completion([]); return }
                         let divisor = (count/categories!.count)
                         let endpoint = min(divisor, declarations.count - 1)
                         let notificationCategories = declarations.shuffled()[0...endpoint]

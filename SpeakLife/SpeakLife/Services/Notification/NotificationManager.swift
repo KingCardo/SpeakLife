@@ -39,14 +39,20 @@ final class NotificationManager: NSObject {
     func registerNotifications(count: Int,
                                startTime: Int,
                                endTime: Int,
-                               categories: Set<DeclarationCategory>? = nil) {
+                               categories: Set<DeclarationCategory>? = nil,
+                               callback: (() -> Void)? = nil) {
         removeNotifications()
         if let categories = categories {
             let notifications = getNotificationData(for: count, categories: categories)
-            prepareNotifications(declarations: notifications,  startTime: startTime, endTime: endTime, count: count)
+            // callback if data is less than count RWRW
+            prepareNotifications(declarations: notifications,  startTime: startTime, endTime: endTime, count: count) {
+                callback?()
+            }
         } else {
             let notifications = getNotificationData(for: count, categories: notificationCategories())
-            prepareNotifications(declarations: notifications,  startTime: startTime, endTime: endTime, count: count)
+            prepareNotifications(declarations: notifications,  startTime: startTime, endTime: endTime, count: count) {
+                callback?()
+            }
         }
         morningAffirmationReminder()
         nightlyAffirmationReminder()
@@ -77,13 +83,17 @@ final class NotificationManager: NSObject {
     private func prepareNotifications(declarations: [NotificationProcessor.NotificationData],
                                       startTime: Int,
                                       endTime: Int,
-                                      count: Int) {
+                                      count: Int,
+                                      callback: (() -> Void)? = nil) {
         
         print(startTime, endTime, "RWRW initial times")
         
         let hourMinute = distributeTimes(startTime: startTime, endTime: endTime, count: count)
         
-        guard hourMinute.count > 1 else { return }
+        guard hourMinute.count > 1 else { callback?()
+            return }
+        guard declarations.count >= count else { callback?()
+            return }
     
         for (hour, minute) in hourMinute {
             print(hour, minute, "RWRW")

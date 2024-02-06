@@ -73,6 +73,9 @@ struct OnboardingView: View  {
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
                 
+                discountScene(size: geometry.size)
+                    .tag(Tab.discount)
+                
                 
             }
             .ignoresSafeArea()
@@ -82,7 +85,7 @@ struct OnboardingView: View  {
         .preferredColorScheme(.light)
         .alert(isPresented: $showLastChanceAlert) {
             Alert(
-                           title: Text("Last chance to save 50%"),
+                           title: Text("Last chance to save 33%"),
                            message: Text("Are you sure you want to pass?"),
                            primaryButton: .default(Text("Yes I'm sure")) {
                                dismissOnboarding()
@@ -213,7 +216,8 @@ struct OnboardingView: View  {
                     if let category = DeclarationCategory(categoryString) {
                         viewModel.choose(category) { _ in }
                     }
-                    dismissOnboarding()
+                    moveToDiscount()
+                   // dismissOnboarding()
                     Analytics.logEvent("SubscriptionScreenDone", parameters: nil)
                     // selection = .widgets
                 case .widgets:

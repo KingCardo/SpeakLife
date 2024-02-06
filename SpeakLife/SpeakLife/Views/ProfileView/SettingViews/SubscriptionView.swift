@@ -63,33 +63,35 @@ struct DiscountSubscriptionView: View {
     
     let size: CGSize
     var callback: (() -> Void)?
-    var currentSelection = InAppId.Subscription.speakLife1YR9
-    var percentOffText: String = "50% Off Yearly"
+    var currentSelection = InAppId.Subscription.speakLife1YR19
+    var percentOffText: String
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
-    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR9, percentOffText: String = "50% Off Yearly") {
+    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR19, percentOffText: String = "33% Off SpeakLife Premium") {
         self.size = size
         self.currentSelection = currentSelection
         self.percentOffText = percentOffText
     }
     
-    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR9,  callback: (() -> Void)? = nil) {
+    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR19,  callback: (() -> Void)?) {
         self.size = size
         self.currentSelection = currentSelection
         self.callback = callback
+        self.percentOffText = "33% Off SpeakLife Premium"
     }
     
     var body: some View {
         ZStack {
             GeometryReader { geometry in
-                Image("sandOcean")
+                Image("desertSky")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
+                    .edgesIgnoringSafeArea(.top)
             }
             
             discountView() {
@@ -137,24 +139,37 @@ struct DiscountSubscriptionView: View {
                 .textCase(.uppercase)
                 .font(.headline)
                 .foregroundStyle(.white)
+            Spacer()
+                .frame(height: 16)
+
+            
+            Text("\(currentSelection.title) Cancel anytime")
+                .font(.caption)
+                .foregroundStyle(.white)
             
             Spacer()
                 .frame(height: 32)
             
-            selectionBox(currentSelection: currentSelection)
-            Spacer()
-                .frame(height: 32)
+//            selectionBox(currentSelection: currentSelection)
+//            Spacer()
+//                .frame(height: 32)
             
             
             continueButton {
                 completion()
             }
             
-            Spacer()
-                .frame(height: 32)
+//            Text(currentSelection.title)
+//                .font(.callout)
+//                .foregroundStyle(.white)
             
-            Text("Cancel anytime")
-                .font(.caption)
+            Spacer()
+                .frame(height: 52)
+            
+            
+            
+//            Spacer()
+//                .frame(height: 16)
             
             Text("Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
                 .font(.body)
@@ -223,7 +238,7 @@ struct DiscountSubscriptionView: View {
     
     func continueButton(completion: @escaping(() -> Void)) -> some View {
        // ShimmerButton(buttonTitle: currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe", action: makePurchase)
-        return ShimmerButton(colors: [Constants.DAMidBlue, Constants.gold], buttonTitle: "Try free & save", action: makePurchase)
+        return ShimmerButton(colors: [Constants.DAMidBlue, Constants.gold], buttonTitle: "Get 33% Off", action: makePurchase)
     }
 }
 
@@ -309,7 +324,7 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 60)
                     VStack(alignment: .center) {
-                        Text("Try SpeakLife Premium", comment: "unlock everything premium view")
+                        Text("Unlock SpeakLife for free", comment: "unlock everything premium view")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 28))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -330,13 +345,13 @@ struct SubscriptionView: View {
                         .frame(height: 24)
                     
                     
-                    VStack {
+                  //  VStack {
                         
-                        Button {
-                            currentSelection = firstSelection
-                        } label: {
-                            yearlyCTABox()
-                        }
+//                        Button {
+//                            currentSelection = firstSelection
+//                        } label: {
+//                            yearlyCTABox()
+//                        }
                         
 //                        Button {
 //                            currentSelection = thirdSelection
@@ -344,14 +359,28 @@ struct SubscriptionView: View {
 //                            yearlyNoTrialCTABox()
 //                        }
                         
-                        Button {
-                            currentSelection = secondSelection
-                        } label: {
-                            monthlySelectionBox()
-                        }
+//                        Button {
+//                            currentSelection = secondSelection
+//                        } label: {
+//                            monthlySelectionBox()
+//                        }
                         
                         
-                    }
+                 //   }
+                    
+                    
+//                    goPremiumStack(size: size)
+//                    
+//                    Spacer()
+//                        .frame(height: 16)
+//                    
+//                    costDescription
+                    
+                  //  Spacer()
+                //        .frame(height: 16)
+                    
+                    TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
+                                    .id(currentTestimonialIndex)
                     
                     
                     goPremiumStack(size: size)
@@ -363,9 +392,6 @@ struct SubscriptionView: View {
                     
                     Spacer()
                         .frame(height: 16)
-                    
-                    TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
-                                    .id(currentTestimonialIndex)
                 }
             }
             .onReceive(timer) { _ in
@@ -397,7 +423,7 @@ struct SubscriptionView: View {
                 Text("Cancel anytime.")
                 
             }
-            .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .body))
+            .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .callout))
         .foregroundColor(.white)
     }
     

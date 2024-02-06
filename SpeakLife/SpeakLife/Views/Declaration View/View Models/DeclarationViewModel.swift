@@ -24,6 +24,8 @@ final class DeclarationViewModel: ObservableObject {
 //        }
 //    }
     
+    @Published var errorAlert = false
+    
     @Published var requestReview = false 
     
     @Published var showDiscountView = false

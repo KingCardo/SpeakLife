@@ -52,6 +52,7 @@ struct ReminderView: View {
                 dismissButton: .default(Text("Settings", comment: "settings alert"), action: goToSettings)
             )
         }
+        
         .onDisappear {
             registerNotifications()
         }
@@ -75,7 +76,10 @@ struct ReminderView: View {
             NotificationManager.shared.registerNotifications(count: appState.notificationCount,
                                                              startTime: appState.startTimeIndex,
                                                              endTime: appState.endTimeIndex,
-                                                             categories: declarationViewModel.selectedCategories)
+                                                             categories: declarationViewModel.selectedCategories) {
+                declarationViewModel.errorAlert.toggle()
+                
+            }
             }
         }
         appState.lastNotificationSetDate = Date()

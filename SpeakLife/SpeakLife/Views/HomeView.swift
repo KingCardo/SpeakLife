@@ -56,6 +56,13 @@ struct HomeView: View {
                             Text("Devotionals")
                         }
                     
+                    CreateYourOwnView()
+                        .tabItem {
+                            Image(systemName: "plus.bubble.fill")
+                                .renderingMode(.original)
+                            Text("Yours")
+                        }
+                    
                     WarriorView()
                         .tabItem {
                             if #available(iOS 17, *) {
@@ -67,14 +74,7 @@ struct HomeView: View {
                             }
                             Text("Prayers")
                         }
-                    
-                    
-                    CreateYourOwnView()
-                        .tabItem {
-                            Image(systemName: "plus.bubble.fill")
-                                .renderingMode(.original)
-                            Text("Yours")
-                        }
+                   
                     
                     ProfileView()
                         .tabItem {

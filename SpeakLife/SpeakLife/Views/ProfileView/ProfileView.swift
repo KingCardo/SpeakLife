@@ -115,6 +115,13 @@ struct ProfileView: View {
             .foregroundColor(colorScheme == .dark ? .white : .black)
             .navigationBarTitle(Text("SpeakLife"))
         )
+        .alert(isPresented: $declarationStore.errorAlert) {
+            Alert(
+                title: Text("Error", comment: "notifications not enough"),
+                message: Text("Failed to register notifications", comment: "go to settings"),
+                dismissButton: .default(Text("Try again", comment: "settings alert"), action: {})
+            )
+        }
     }
     
     var body: some View {

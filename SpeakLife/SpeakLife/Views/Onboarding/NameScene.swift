@@ -49,6 +49,7 @@ struct NameScene: View {
                             
                             TextField("Enter your name", text: $userName)
                                 .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
+                              //  .textFieldStyle(CustomTextFieldStyle())
                                 .padding()  // Adds padding inside the TextField
                                 .frame(width: size.width * 0.87, height: 50)  // Sets the frame for the TextField
                                 .background(
@@ -90,5 +91,12 @@ struct NameScene: View {
             }
 
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+    }
+}
+
+struct CustomTextFieldStyle: TextFieldStyle {
+    func _body(configuration: TextField<_Label>) -> some View {
+        configuration
+            .foregroundColor(Color.white) // Change the text color
     }
 }
