@@ -30,6 +30,8 @@ final class DeclarationViewModel: ObservableObject {
     
     @Published var showDiscountView = false
     
+    @Published var helpUsGrowAlert = false
+    
     private (set) var currentDeclaration: Declaration?
     
     @Published var allCategories: [DeclarationCategory] = DeclarationCategory.getCategoryOrder()

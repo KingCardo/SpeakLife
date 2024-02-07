@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PersonalizationScene: View {
     @EnvironmentObject var appState: AppState
+    @StateObject private var faceBookTrackingViewModel = FacebookTrackingViewModel()
     
     let size: CGSize
     let callBack: (() -> Void)
@@ -88,6 +89,9 @@ struct PersonalizationScene: View {
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
         )
+        .onAppear {
+            faceBookTrackingViewModel.requestPermission()
+        }
         
     }
     

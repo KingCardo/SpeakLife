@@ -34,7 +34,7 @@ struct CustomSpinnerView: View {
         .onAppear {
             Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
                 withAnimation {
-                    self.progress += 0.05
+                    self.progress += 0.02
                     if self.progress >= 1.0 {
                         timer.invalidate()
                     }
@@ -55,7 +55,7 @@ struct PersonalizationLoadingView: View {
     @State private var checkedFirst = false
     @State private var checkedSecond = false
     @State private var checkedThird = false
-    let delay: Double = Double.random(in: 4...6)
+    let delay: Double = Double.random(in: 6...7)
 
     var body: some View {
         ZStack {

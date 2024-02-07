@@ -15,6 +15,7 @@ struct NameScene: View {
     @AppStorage("userName") private var userName = ""
     @State private var keyboardHeight: CGFloat = 0
    // @State private var isTextFieldFocused: Bool = false
+   
     
     var body: some  View {
         nameView(size: size)

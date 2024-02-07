@@ -100,6 +100,11 @@ struct DeclarationContentView: View {
         }
     }
     
+    func requestReview() {
+        viewModel.requestReview = true
+        appState.helpUsGrowCount += 1
+    }
+    
     private func askForReview() {
         reviewCounter += 1
         if reviewCounter == 5 {

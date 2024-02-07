@@ -29,14 +29,20 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
     
     @objc private func appDidEnterBackground() {
             if audioPlayer?.isPlaying == true {
-                audioPlayer?.pause()
+                DispatchQueue.main.async { [weak self] in
+                    self?.audioPlayer?.pause()
+                    self?.isPlaying = false
+                }
                 isPausedInBackground = true
             }
         }
 
         @objc private func appWillEnterForeground() {
             if isPausedInBackground {
-                audioPlayer?.play()
+                DispatchQueue.main.async { [weak self] in
+                    self?.audioPlayer?.play()
+                    self?.isPlaying = true
+                }
                 isPausedInBackground = false
             }
         }
@@ -57,7 +63,9 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
                 audioPlayer?.delegate = self
-                audioPlayer?.play()
+                DispatchQueue.main.async { [weak self] in
+                    self?.audioPlayer?.play()
+                }
                 isPlaying = true
             } catch {
                 print("Unable to locate audio file: \(name).\(type)")
@@ -74,7 +82,9 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
     }
     
     func pauseMusic() {
-        audioPlayer?.pause()
+        DispatchQueue.main.async { [weak self] in
+            self?.audioPlayer?.pause()
+        }
         isPlaying = false
     }
 }

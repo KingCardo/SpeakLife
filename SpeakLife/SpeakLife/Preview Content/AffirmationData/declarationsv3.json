@@ -2334,8 +2334,433 @@
                 "isFavorite": false,
                 "category": "confidence"
             },
-    
-    
+            {
+                "text": "The LORD is close to the brokenhearted and saves those who are crushed in spirit.",
+                "book": "Psalms 34:18",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "Cast all your anxiety on Him because He cares for you.",
+                "book": "1 Peter 5:7",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+                "book": "Philippians 4:6",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, plans to give you hope and a future.",
+                "book": "Jeremiah 29:11",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "The LORD is my shepherd, I lack nothing. He makes me lie down in green pastures, he leads me beside quiet waters, he refreshes my soul.",
+                "book": "Psalms 23:1-3",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "Come to me, all you who are weary and burdened, and I will give you rest.",
+                "book": "Matthew 11:28",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
+                "book": "John 14:27",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "I can do all this through him who gives me strength.",
+                "book": "Philippians 4:13",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "Why, my soul, are you downcast? Why so disturbed within me? Put your hope in God, for I will yet praise him, my Savior and my God.",
+                "book": "Psalms 42:11",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "He heals the brokenhearted and binds up their wounds.",
+                "book": "Psalms 147:3",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "But those who hope in the LORD will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.",
+                "book": "Isaiah 40:31",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "You will keep in perfect peace those whose minds are steadfast, because they trust in you.",
+                "book": "Isaiah 26:3",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.",
+                "book": "Isaiah 41:10",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "Therefore we do not lose heart. Though outwardly we are wasting away, yet inwardly we are being renewed day by day.",
+                "book": "2 Corinthians 4:16",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "May the God of hope fill you with all joy and peace as you trust in him, so that you may overflow with hope by the power of the Holy Spirit.",
+                "book": "Romans 15:13",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "Trust in the LORD with all your heart and lean not on your own understanding.",
+                "book": "Proverbs 3:5",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain, for the old order of things has passed away.",
+                "book": "Revelation 21:4",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "Be strong and courageous. Do not be afraid or terrified because of them, for the LORD your God goes with you; he will never leave you nor forsake you.",
+                "book": "Deuteronomy 31:6",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "The righteous cry out, and the LORD hears them; he delivers them from all their troubles.",
+                "book": "Psalms 34:17",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "But the Lord stood at my side and gave me strength.",
+                "book": "2 Timothy 4:17",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "Weeping may stay for the night, but rejoicing comes in the morning.",
+                "book": "Psalms 30:5",
+                "isFavorite": false,
+                "category": "depression"
+            },
+            {
+                "text": "My comfort in my suffering is this: Your promise preserves my life.",
+                "book": "Psalms 119:50",
+                "isFavorite": false,
+                "category": "depression"
+            },
+                {
+                    "text": "Come to me, all who are weary and burdened, and I will give you rest.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "My peace I give to you; not as the world gives do I give to you. Let not your hearts be troubled, neither let them be afraid.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "In the world you will have tribulation. But take heart; I have overcome the world.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am the light of the world. Whoever follows me will not walk in darkness, but will have the light of life.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "If you abide in me, and my words abide in you, ask whatever you wish, and it will be done for you.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Do not let your hearts be troubled. Trust in God; trust also in me.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I have told you these things so that in me you may have peace.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Let not your hearts be troubled, neither let them be afraid.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am the resurrection and the life. Whoever believes in me, though he die, yet shall he live.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Everyone who lives and believes in me shall never die. Do you believe this?",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am the bread of life; whoever comes to me shall not hunger, and whoever believes in me shall never thirst.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Whoever follows me will not walk in darkness, but will have the light of life.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Your faith has made you well; go in peace.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Take heart, daughter; your faith has healed you.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Do not be anxious about your life, what you will eat or what you will drink, nor about your body, what you will put on.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am the way, and the truth, and the life. No one comes to the Father except through me.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Peace I leave with you; my peace I give to you. Let not your hearts be troubled, neither let them be afraid.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Take my yoke upon you, and learn from me, for I am gentle and lowly in heart, and you will find rest for your souls.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "You are the light of the world. A city set on a hill cannot be hidden.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I tell you, my friends, do not be afraid of those who kill the body and after that can do no more.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Therefore I tell you, do not worry about your life, what you will eat; or about your body, what you will wear.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Are not five sparrows sold for two pennies? Yet not one of them is forgotten by God.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Indeed, the very hairs of your head are all numbered. Don't be afraid; you are worth more than many sparrows.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                }, 
+                {
+                    "text": "Do not worry about your life, what you will eat or what you will drink, nor about your body, what you will put on.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "You did not choose me, but I chose you and appointed you that you should go and bear fruit and that your fruit should abide.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "In me, you may have peace. In the world, you will have tribulation, but take courage; I have overcome the world.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Let your heart be not troubled; believe in God, believe also in me.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am with you always, to the very end of the age. Do not be afraid.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },{
+                    "text": "My joy I give to you, that your joy may be full. Your sorrow will turn into joy.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Take heart, for I have overcome the world. In me, you may have peace.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Trust in me with all your heart; I will direct your paths and light your way.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "You are precious in my sight. I have called you by name; you are mine.",
+                    "book": "- Jesus",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am victorious, for greater is He that is in me than he that is in the world.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am being transformed by the renewal of my mind, proving what is the good, acceptable, and perfect will of God.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am bearing fruit in every season, my leaf does not wither, and whatever I do prospers.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am joyful in hope, patient in affliction, faithful in prayer.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am casting all my anxieties on Him, for He cares for me deeply.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am standing on the promises of God, my solid foundation in every storm.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am renewed day by day, letting go of the old and embracing the new.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am filled with the peace of God, which surpasses all understanding.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am a child of God, fearfully and wonderfully made, destined for great things.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am clothed with strength and dignity, and I laugh without fear of the future.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am set free, for whom the Son sets free is free indeed.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "I am more than a conqueror through Him who loves me.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Trust in the Lord with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.",
+                    "book": "Proverbs 3:5-6",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Jesus is my unbroken promise, assuring me that better days will come.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Jesus is my superhero, turning pain into power and tears into triumph.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Jesus is my fearless warrior, fighting alongside me in every battle.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                {
+                    "text": "Jesus is my safest space, where every emotion is valid and respected.",
+                    "isFavorite": false,
+                    "category": "depression"
+                },
+                
+
+            
+            
+            
+            
     
     
     

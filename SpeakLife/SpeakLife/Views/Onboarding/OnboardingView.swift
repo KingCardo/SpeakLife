@@ -19,6 +19,7 @@ struct OnboardingView: View  {
     @State var showLastChanceAlert = false
     @State var isDonePersonalization = false
     @StateObject var improvementViewModel = ImprovementViewModel()
+   
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     @ViewBuilder
@@ -178,7 +179,7 @@ struct OnboardingView: View  {
     // MARK: - Private methods
     
     private func advance() {
-        DispatchQueue.main.async {
+       // DispatchQueue.main.async {
            
             withAnimation {
                 switch selection {
@@ -217,7 +218,7 @@ struct OnboardingView: View  {
                         viewModel.choose(category) { _ in }
                     }
                     moveToDiscount()
-                   // dismissOnboarding()
+                    //dismissOnboarding()
                     Analytics.logEvent("SubscriptionScreenDone", parameters: nil)
                     // selection = .widgets
                 case .widgets:
@@ -235,7 +236,7 @@ struct OnboardingView: View  {
                 case .discount:
                     dismissOnboarding()
                 }
-            }
+        //    }
         }
     }
     
@@ -308,13 +309,11 @@ struct OnboardingView: View  {
     
     private func moveToDiscount() {
         if subscriptionStore.isPremium {
-            withAnimation {
-                appState.isOnboarded = true
-                Analytics.logEvent(Event.onBoardingFinished, parameters: nil)
-            }
-            
+            dismissOnboarding()
         } else {
-            selection = .discount
+            withAnimation {
+                selection = .discount
+            }
         }
     }
     
@@ -322,6 +321,7 @@ struct OnboardingView: View  {
         withAnimation {
             appState.isOnboarded = true
             Analytics.logEvent(Event.onBoardingFinished, parameters: nil)
+          //  viewModel.helpUsGrowAlert = true
         }
         
     }

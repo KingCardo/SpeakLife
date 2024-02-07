@@ -27,7 +27,7 @@ struct HomeView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
     @Binding var isShowingLanding: Bool
-    @StateObject private var viewModel = FacebookTrackingViewModel()
+  //  @StateObject private var viewModel = FacebookTrackingViewModel()
 
     
     var body: some View {
@@ -36,7 +36,7 @@ struct HomeView: View {
                 LandingView()
             } else if appState.isOnboarded {
                 TabView {
-                    DeclarationView(viewModel: _declarationStore, themeViewModel: _themeStore)
+                    DeclarationView()
                         .id(appState.rootViewId)
                         .tabItem {
                             Image(systemName: "house.fill")
@@ -86,18 +86,24 @@ struct HomeView: View {
                 .hideTabBar(if: appState.showScreenshotLabel)
                 .accentColor(Constants.DAMidBlue)
                 .onAppear {
-                    viewModel.requestPermission()
+                    UIScrollView.appearance().isScrollEnabled = true
                     if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
                         AudioPlayerService.shared.playSound(files: resources)
                     }
                 }
                 .environment(\.colorScheme, .dark)
-
+                
+            
             } else {
                 OnboardingView()
             }
         }
     }
+    
+//    func requestReview() {
+//        declarationStore.requestReview.toggle()
+//        appState.helpUsGrowCount += 1
+//    }
 }
 
 

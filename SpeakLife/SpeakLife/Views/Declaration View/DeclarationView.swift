@@ -52,6 +52,15 @@ struct DeclarationView: View {
                     showReview()
                 }
             }
+            .alert(isPresented: $viewModel.helpUsGrowAlert) {
+                Alert(
+                    title: Text("Help us grow?"),
+                    primaryButton: .default(Text("Yes")) {
+                        requestReview()
+                    },
+                    secondaryButton: .cancel()
+                )
+            }
     }
     
     var body: some View {
@@ -62,14 +71,9 @@ struct DeclarationView: View {
                     if !appState.showScreenshotLabel {
                         VStack() {
                             if !subscriptionStore.isPremium {
-                                //                                GoogleAdBannerView()
-                                //                                    .frame(width: geometry.size.width * 0.9, height: 50)
-                                //                            }
+                              
                                 HStack {
-//                                    discountLabel
-//                                        .padding()
                                     Spacer()
-                                    
                                     
                                     CapsuleImageButton(title: "crown.fill") {
                                         premiumView()
@@ -120,17 +124,26 @@ struct DeclarationView: View {
                 }
             )
             
+            
             .alert(isPresented: $viewModel.showErrorMessage) {
                 Alert(
                     title: Text("Error", comment: "Error title message") + Text(viewModel.errorMessage ?? ""),
                     message: Text("Select a category", comment: "OK alert message")
                 )
             }
+        
+            
             .onAppear {
                 reviewCounter += 1
                 shareCounter += 1
                 premiumCount += 1
                 shareApp()
+//                if appState.helpUsGrowCount == 0 {
+//                   // requestReview()
+//                    DispatchQueue.main.async {
+//                        viewModel.helpUsGrowAlert = true 
+//                    }
+//                }
             }
             
             .alert("Help us spread SpeakLife?", isPresented: $share) {
@@ -163,7 +176,7 @@ struct DeclarationView: View {
     
     private func shareApp() {
 #if !DEBUG
-        if shareCounter > 5 && shared < 3 {
+        if shareCounter > 3 && shared < 3 {
             share = true
             shareCounter = 0
         }
@@ -234,10 +247,15 @@ struct DeclarationView: View {
         }
     }
     
+    func requestReview() {
+        if appState.helpUsGrowCount == 0 {
+            viewModel.requestReview.toggle()
+            appState.helpUsGrowCount += 1
+        }
+    }
+    
     private func showReview() {
         
-      
-
         if let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
             print("Build number: \(buildNumber)")
         }

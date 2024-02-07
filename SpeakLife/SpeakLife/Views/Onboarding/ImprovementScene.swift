@@ -93,6 +93,7 @@ class ImprovementViewModel: ObservableObject {
             categories.append("guilt")
             categories.append("forgiveness")
         }
+        categories.append("destiny")
         return categories.joined(separator: ",")
     }
     

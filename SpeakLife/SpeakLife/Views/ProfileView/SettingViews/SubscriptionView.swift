@@ -148,33 +148,34 @@ struct DiscountSubscriptionView: View {
                 .foregroundStyle(.white)
             
             Spacer()
-                .frame(height: 32)
+                .frame(height:  UIScreen.main.bounds.height * 0.03)
             
 //            selectionBox(currentSelection: currentSelection)
 //            Spacer()
 //                .frame(height: 32)
             
-            
-            continueButton {
-                completion()
-            }
+            Text("Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
+                .font(.body)
+                .foregroundStyle(.white)
+                .padding([.leading, .trailing, .top])
+           
             
 //            Text(currentSelection.title)
 //                .font(.callout)
 //                .foregroundStyle(.white)
             
             Spacer()
-                .frame(height: 52)
+                .frame(height: UIScreen.main.bounds.height * 0.20)
             
             
+            continueButton {
+                completion()
+            }
             
 //            Spacer()
 //                .frame(height: 16)
             
-            Text("Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
-                .font(.body)
-                .foregroundStyle(.white)
-                .padding([.leading, .trailing, .top])
+            
             
         }
     }
@@ -381,6 +382,9 @@ struct SubscriptionView: View {
                     
                     TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
                                     .id(currentTestimonialIndex)
+                    
+//                    Spacer()
+//                        .frame(height: 48)
                     
                     
                     goPremiumStack(size: size)
