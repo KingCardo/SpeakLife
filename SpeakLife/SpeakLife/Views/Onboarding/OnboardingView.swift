@@ -67,8 +67,8 @@ struct OnboardingView: View  {
                     .tag(Tab.widgets)
                 }
                 
-                loadingView(geometry: geometry)
-                    .tag(Tab.loading)
+//                loadingView(geometry: geometry)
+//                    .tag(Tab.loading)
                 
                 
                 subscriptionScene(size: geometry.size)
@@ -86,7 +86,7 @@ struct OnboardingView: View  {
         .preferredColorScheme(.light)
         .alert(isPresented: $showLastChanceAlert) {
             Alert(
-                           title: Text("Last chance to save 33%"),
+                           title: Text("Last chance to save 50%"),
                            message: Text("Are you sure you want to pass?"),
                            primaryButton: .default(Text("Yes I'm sure")) {
                                dismissOnboarding()
@@ -267,11 +267,11 @@ struct OnboardingView: View  {
                         withAnimation {
                            // advance()
                             if appState.onBoardingTest {
-                                if isDonePersonalization {
+                               // if isDonePersonalization {
                                     selection = .subscription
-                                } else {
-                                    selection = .loading
-                                }
+//                                } else {
+//                                    selection = .loading
+//                                }
                             } else {
                                 selection = .widgets
                             }
@@ -284,11 +284,11 @@ struct OnboardingView: View  {
             
             withAnimation {
                 if appState.onBoardingTest {
-                    if isDonePersonalization {
+                   // if isDonePersonalization {
                         selection = .subscription
-                    } else {
-                        selection = .loading
-                    }
+//                    } else {
+//                        selection = .loading
+                  //  }
                 } else {
                     selection = .widgets
                 }
@@ -321,7 +321,7 @@ struct OnboardingView: View  {
         withAnimation {
             appState.isOnboarded = true
             Analytics.logEvent(Event.onBoardingFinished, parameters: nil)
-          //  viewModel.helpUsGrowAlert = true
+            viewModel.helpUsGrowAlert = true
         }
         
     }

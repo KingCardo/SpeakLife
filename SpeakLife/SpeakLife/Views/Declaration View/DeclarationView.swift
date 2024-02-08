@@ -52,15 +52,6 @@ struct DeclarationView: View {
                     showReview()
                 }
             }
-            .alert(isPresented: $viewModel.helpUsGrowAlert) {
-                Alert(
-                    title: Text("Help us grow?"),
-                    primaryButton: .default(Text("Yes")) {
-                        requestReview()
-                    },
-                    secondaryButton: .cancel()
-                )
-            }
     }
     
     var body: some View {
@@ -132,18 +123,23 @@ struct DeclarationView: View {
                 )
             }
         
+            .alert(isPresented: $viewModel.helpUsGrowAlert) {
+                Alert(
+                    title: Text("Help us grow?"),
+                    message: Text("Leave us a 5 star review 🌟"),
+                    primaryButton: .default(Text("Yes")) {
+                        requestReview()
+                    },
+                    secondaryButton: .cancel()
+                )
+            }
+        
             
             .onAppear {
                 reviewCounter += 1
                 shareCounter += 1
                 premiumCount += 1
                 shareApp()
-//                if appState.helpUsGrowCount == 0 {
-//                   // requestReview()
-//                    DispatchQueue.main.async {
-//                        viewModel.helpUsGrowAlert = true 
-//                    }
-//                }
             }
             
             .alert("Help us spread SpeakLife?", isPresented: $share) {
@@ -249,7 +245,7 @@ struct DeclarationView: View {
     
     func requestReview() {
         if appState.helpUsGrowCount == 0 {
-            viewModel.requestReview.toggle()
+            showReview()
             appState.helpUsGrowCount += 1
         }
     }
@@ -269,6 +265,7 @@ struct DeclarationView: View {
                    
                     reviewTry += 1
                     appState.lastReviewRequestSetDate = Date()
+                    Analytics.logEvent(Event.leaveReviewShown, parameters: nil)
                     
 //                    if let appVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
 //                        appState.lastRequestedRatingVersion = "\(appVersion)\(buildNumber)"
@@ -285,6 +282,7 @@ struct DeclarationView: View {
                     SKStoreReviewController.requestReview(in: scene)
                     reviewTry += 1
                     appState.lastReviewRequestSetDate = Date()
+                    Analytics.logEvent(Event.leaveReviewShown, parameters: nil)
                 }
             }
         }

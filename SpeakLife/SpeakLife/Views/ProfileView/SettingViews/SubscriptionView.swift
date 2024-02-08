@@ -63,25 +63,23 @@ struct DiscountSubscriptionView: View {
     
     let size: CGSize
     var callback: (() -> Void)?
-    var currentSelection = InAppId.Subscription.speakLife1YR19
-    var percentOffText: String
+    var currentSelection = InAppId.Subscription.speakLife1YR9
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
+    let percentOffText: String = "50% Off SpeakLife Premium"
     
-    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR19, percentOffText: String = "33% Off SpeakLife Premium") {
+    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR9) {
         self.size = size
         self.currentSelection = currentSelection
-        self.percentOffText = percentOffText
     }
     
-    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR19,  callback: (() -> Void)?) {
+    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR9,  callback: (() -> Void)?) {
         self.size = size
         self.currentSelection = currentSelection
         self.callback = callback
-        self.percentOffText = "33% Off SpeakLife Premium"
     }
     
     var body: some View {
@@ -113,12 +111,12 @@ struct DiscountSubscriptionView: View {
     
     func discountView(completion: @escaping(() -> Void)) -> some View {
         VStack {
-            Text("SpeakLife")
-                .font(Constants.titleFont)
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                .foregroundStyle(.white)
-            Spacer()
-                .frame(height: 16)
+//            Text("SpeakLife")
+//                .font(Constants.titleFont)
+//                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+//                .foregroundStyle(.white)
+//            Spacer()
+//                .frame(height: 16)
             
             ZStack {
                 Capsule()
@@ -239,7 +237,7 @@ struct DiscountSubscriptionView: View {
     
     func continueButton(completion: @escaping(() -> Void)) -> some View {
        // ShimmerButton(buttonTitle: currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe", action: makePurchase)
-        return ShimmerButton(colors: [Constants.DAMidBlue, Constants.gold], buttonTitle: "Get 33% Off", action: makePurchase)
+        return ShimmerButton(colors: [Constants.DAMidBlue, Constants.gold], buttonTitle: "Get 50% Off", action: makePurchase)
     }
 }
 
@@ -265,8 +263,8 @@ struct SubscriptionView: View {
     @State private var textOpacity: Double = 0
     let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect() // Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR29
-    var firstSelection = InAppId.Subscription.speakLife1YR29
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
+    var firstSelection = InAppId.Subscription.speakLife1YR19
     var thirdSelection = InAppId.Subscription.speakLife1YR29
     var secondSelection = InAppId.Subscription.speakLife1MO4
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
@@ -346,13 +344,13 @@ struct SubscriptionView: View {
                         .frame(height: 24)
                     
                     
-                  //  VStack {
+                    VStack {
                         
-//                        Button {
-//                            currentSelection = firstSelection
-//                        } label: {
-//                            yearlyCTABox()
-//                        }
+                        Button {
+                            currentSelection = firstSelection
+                        } label: {
+                            yearlyCTABox()
+                        }
                         
 //                        Button {
 //                            currentSelection = thirdSelection
@@ -360,31 +358,14 @@ struct SubscriptionView: View {
 //                            yearlyNoTrialCTABox()
 //                        }
                         
-//                        Button {
-//                            currentSelection = secondSelection
-//                        } label: {
-//                            monthlySelectionBox()
-//                        }
+                        Button {
+                            currentSelection = secondSelection
+                        } label: {
+                            monthlySelectionBox()
+                        }
                         
                         
-                 //   }
-                    
-                    
-//                    goPremiumStack(size: size)
-//                    
-//                    Spacer()
-//                        .frame(height: 16)
-//                    
-//                    costDescription
-                    
-                  //  Spacer()
-                //        .frame(height: 16)
-                    
-                    TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
-                                    .id(currentTestimonialIndex)
-                    
-//                    Spacer()
-//                        .frame(height: 48)
+                    }
                     
                     
                     goPremiumStack(size: size)
@@ -396,6 +377,15 @@ struct SubscriptionView: View {
                     
                     Spacer()
                         .frame(height: 16)
+                    
+                    TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
+                                    .id(currentTestimonialIndex)
+                    
+//                    Spacer()
+//                        .frame(height: 48)
+                    
+                    
+            
                 }
             }
             .onReceive(timer) { _ in
