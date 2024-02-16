@@ -23,7 +23,6 @@ struct DeclarationContentView: View {
     @State private var showShareSheet = false
     @State private var image: UIImage?
     @State private var showAnimation = false
-    @State private var selectedTab = 0
     @State private var reviewCounter = 0
     
     private let degrees: Double = 90
@@ -36,7 +35,7 @@ struct DeclarationContentView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            TabView(selection: $selectedTab) {
+            TabView(selection: $viewModel.selectedTab) {
                 ForEach(Array(viewModel.declarations.enumerated()), id: \.element.id) { index, declaration in
                     ZStack {
                         quoteLabel(declaration, geometry)
@@ -86,9 +85,8 @@ struct DeclarationContentView: View {
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
-            .onChange(of: selectedTab) { newIndex in
+            .onChange(of: viewModel.selectedTab) { newIndex in
                 askForReview()
-        
             }
             .frame(width: geometry.size.height, height: geometry.size.width)
             .rotationEffect(.degrees(90), anchor: .topLeading)
@@ -107,7 +105,7 @@ struct DeclarationContentView: View {
     
     private func askForReview() {
         reviewCounter += 1
-        if reviewCounter == 5 {
+        if reviewCounter == 10 {
             viewModel.requestReview = true
         }
     }
@@ -232,13 +230,6 @@ extension View {
     }
 }
 
-struct DeclarationContentView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        DeclarationContentView(themeViewModel: ThemeViewModel(), viewModel: DeclarationViewModel(apiService: APIClient()))
-        
-    }
-}
 
 struct ShareSheet: UIViewControllerRepresentable {
     typealias Callback = (_ activityType: UIActivity.ActivityType?, _ completed: Bool, _ returnedItems: [Any]?, _ error: Error?) -> Void

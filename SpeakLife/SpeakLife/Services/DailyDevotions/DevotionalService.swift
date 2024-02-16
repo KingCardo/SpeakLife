@@ -31,6 +31,7 @@ final class DevotionalServiceClient: DevotionalService {
             
             let welcome = try decoder.decode(WelcomeDevotional.self, from: data)
             let devotionals = welcome.devotionals
+            print(devotionals.count, "RWRW")
             
            
             let todaysDate = Date()
@@ -51,7 +52,7 @@ final class DevotionalServiceClient: DevotionalService {
             }
             
         } catch {
-            print(error)
+            print(error, "RWRW")
            return []
         }
     }
@@ -77,7 +78,7 @@ final class DevotionalServiceClient: DevotionalService {
             return devotionals
             
         } catch {
-            print(error, "RWRW")
+            print(error.localizedDescription, "RWRW")
            return []
         }
         

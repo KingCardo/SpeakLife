@@ -17,7 +17,13 @@ final class DeclarationViewModel: ObservableObject {
     
     @AppStorage("backgroundMusicEnabled") var backgroundMusicEnabled = true
     
-    @Published var declarations: [Declaration] = [] 
+    @Published var declarations: [Declaration] = [] {
+        didSet {
+            selectedTab = 0
+        }
+    }
+    
+    @Published var selectedTab = 0
 //    {
 //        didSet {
 //            print(declarations.map { $0.text })
@@ -34,7 +40,7 @@ final class DeclarationViewModel: ObservableObject {
     
     private (set) var currentDeclaration: Declaration?
     
-    @Published var allCategories: [DeclarationCategory] = DeclarationCategory.getCategoryOrder()
+    @Published var allCategories: [DeclarationCategory] = DeclarationCategory.categoryOrder
     
     private var allDeclarationsDict: [DeclarationCategory: [Declaration]] = [:]
     

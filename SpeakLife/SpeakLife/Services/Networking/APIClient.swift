@@ -97,7 +97,7 @@ final class APIClient: APIService {
     
     private func loadFromBackEnd(completion: @escaping([Declaration], APIError?, Bool) ->  Void) {
         guard
-            let url = Bundle.main.url(forResource: "declarations", withExtension: "json"),
+            let url = Bundle.main.url(forResource: "declarationsv3", withExtension: "json"),
             let data = try? Data(contentsOf: url) else {
             completion([],APIError.resourceNotFound, false)
             return
@@ -107,39 +107,7 @@ final class APIClient: APIService {
             let welcome = try JSONDecoder().decode(Welcome.self, from: data)
             let declarations = Set(welcome.declarations)
             
-//            let general = declarations.filter { $0.category == .destiny }
-//            let generalArray = Array(general)
-//            
-//            let grace = declarations.filter { $0.category == .grace }
-//            let graceArray = Array(grace)
-//            
-//            let hope = declarations.filter { $0.category == .hope }
-//            let hopeArray = Array(hope)
-//            
-//            let loneliness = declarations.filter { $0.category == .loneliness }
-//            let lonelinessArray = Array(loneliness)
-//            
-//            let motivation = declarations.filter { $0.category == .motivation }
-//            let motivationArray = Array(motivation)
-//            
-//            let wisdom = declarations.filter { $0.category == .wisdom }
-//            let wisdomArray = Array(wisdom)
-//            
-//            let removedAllAffirmationsWithoutBookExceptGeneral = declarations.filter { $0.book != nil }
-//                .filter({ $0.category != .destiny })
-//                .filter({ $0.category != .grace })
-//                .filter({ $0.category != .hope })
-//                .filter({ $0.category != .loneliness })
-//                .filter({ $0.category != .motivation })
-//                .filter({ $0.category != .wisdom })
-            
             let array = Array(declarations)
-//            array.append(contentsOf: generalArray)
-//            array.append(contentsOf: graceArray)
-//            array.append(contentsOf: hopeArray)
-//            array.append(contentsOf: lonelinessArray)
-//            array.append(contentsOf:  motivationArray)
-//            array.append(contentsOf: wisdomArray)
             let needsSync = array.count != declarationCountBE
             print(array.count, declarationCountBE, "RWRW count")
             print(needsSync, "RWRW  needs sync")

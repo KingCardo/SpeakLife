@@ -24,72 +24,55 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case health
     case peace
     case wealth
-    case selfcontrol
-    case wisdom
+   // case selfcontrol
+   // case wisdom
     case grace
     case loneliness
-    case motivation
+  //  case motivation
     case addiction
     case depression
     case confidence
     case forgiveness
     case godsprotection
     case guidance
-    case rest
-    case guilt
+  //  case rest
+   // case guilt
     case joy
    
     case hardtimes
-    case discipline
+   // case discipline
     case perseverance
     case identity
     case marriage
     
     
     static var categoryOrder: [DeclarationCategory] = [
+        .favorites,
+        .myOwn,
         .destiny,
+        .grace,
         .faith,
         .addiction,
-        .identity,
-        .love,
-        .peace,
-        .rest,
-        .guidance,
-        .gratitude,
-        .godsprotection,
-        .grace,
-        .guilt,
-        .wealth,
-        .motivation,
-        .discipline,
-        .health,
-        .depression,
-        .marriage,
-        .fear,
-        .hope,
         .confidence,
-        .hardtimes,
+        .depression,
+        .fear,
         .forgiveness,
-        .loneliness,
-        .selfcontrol,
-        .perseverance,
+        .godsprotection,
+        .gratitude,
+        .guidance,
+        .hardtimes,
+        .health,
+        .hope,
+        .identity,
         .joy,
-        .wisdom
+        .loneliness,
+        .love,
+        .marriage,
+        .peace,
+        .perseverance,
+        .wealth,
     ]
     
-    static func getCategoryOrder() -> [DeclarationCategory] {
-        var categories = categoryOrder.sorted(by: <)
-        categories.insert(.faith, at: 0)
-        categories.insert(.grace, at: 0)
-        categories.insert(.destiny, at: 0)
-        categories.insert(.myOwn, at: 0)
-        categories.insert(.favorites, at: 0)
-        categories.remove(at: 8)
-        categories.remove(at: 9)
-        categories.remove(at: 12)
-        return categories
-           
-    }
     
     var id: String {
          self.rawValue
@@ -97,7 +80,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     var name: String {
         switch self {
-        case .selfcontrol: return "Self Control"
+       // case .selfcontrol: return "Self Control"
         case .hardtimes: return "Hard Times"
         case .godsprotection: return "God's Protection"
         case .depression: return "Conquer Depression"

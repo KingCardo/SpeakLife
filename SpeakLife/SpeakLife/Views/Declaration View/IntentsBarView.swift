@@ -93,10 +93,3 @@ struct IntentsBarView: View {
         Analytics.logEvent(Event.tryPremiumTapped, parameters: nil)
     }
 }
-
-
-struct IntentsBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        IntentsBarView(viewModel: DeclarationViewModel(apiService: APIClient()), themeViewModel: ThemeViewModel())
-    }
-}

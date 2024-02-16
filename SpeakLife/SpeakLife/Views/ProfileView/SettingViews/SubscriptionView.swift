@@ -19,10 +19,11 @@ struct Benefit: Identifiable  {
     static var premiumBenefits: [Benefit] = [
         
 //        Benefit(text: "Unlock all features"),
+       // Benefit(text: "Build your spirit by meditating on God's love for you"),
         Benefit(text: "Daily Devotional's to grow with Jesus"),
-        Benefit(text: "Walk in your new identity by speaking life with curated notifications"),
-        Benefit(text: "30+ categories to fight back with God's promises"),
-       // Benefit(text: "Enjoy victory in every area of your life"),
+        Benefit(text: "Unlimited curated notifications"),
+       // Benefit(text: "30+ categories to declare victory with God's promises"),
+        Benefit(text: "Declare victory and gratitude every area of your life"),
         Benefit(text: "Personalize your experience and create your own theme"),
        // Benefit(text: "Unlock all Jesus Devotionals"),
 //        Benefit(text: "Categories for any situation"),
