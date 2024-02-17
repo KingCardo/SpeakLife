@@ -74,8 +74,8 @@ struct OnboardingView: View  {
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
                 
-                discountScene(size: geometry.size)
-                    .tag(Tab.discount)
+//                discountScene(size: geometry.size)
+//                    .tag(Tab.discount)
                 
                 
             }
@@ -308,20 +308,21 @@ struct OnboardingView: View  {
     }
     
     private func moveToDiscount() {
-        if subscriptionStore.isPremium {
-            dismissOnboarding()
-        } else {
-            withAnimation {
-                selection = .discount
-            }
-        }
+        dismissOnboarding()
+//        if subscriptionStore.isPremium {
+//            dismissOnboarding()
+//        } else {
+//            withAnimation {
+//                selection = .discount
+//            }
+//        }
     }
     
     private func dismissOnboarding() {
         withAnimation {
             appState.isOnboarded = true
             Analytics.logEvent(Event.onBoardingFinished, parameters: nil)
-            viewModel.helpUsGrowAlert = true
+           // viewModel.helpUsGrowAlert = true
         }
         
     }
