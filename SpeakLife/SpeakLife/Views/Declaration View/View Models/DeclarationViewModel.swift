@@ -17,7 +17,9 @@ final class DeclarationViewModel: ObservableObject {
     
     @AppStorage("backgroundMusicEnabled") var backgroundMusicEnabled = true
     
-    @Published var declarations: [Declaration] = [] {
+    @Published private(set) var declarations: [Declaration] = []
+    
+    private var resetListToTop: Bool = false {
         didSet {
             selectedTab = 0
         }
@@ -237,6 +239,7 @@ final class DeclarationViewModel: ObservableObject {
             self?.selectedCategoryString = category.rawValue
             let shuffled = declarations.shuffled()
             self?.declarations = shuffled
+            self?.resetListToTop = true 
             completion(true)
         }
     }
