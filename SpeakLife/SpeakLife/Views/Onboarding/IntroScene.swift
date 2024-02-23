@@ -52,7 +52,7 @@ struct IntroScene: View {
                     
                     Spacer().frame(height: 24)
                     
-                    Text(appState.onBoardingTest ? "Embrace your new identity and routine of speaking life" : "The_power_of_declarations", comment: "Intro scene extra tip")
+                    Text("The_power_of_declarations", comment: "Intro scene extra tip")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white :Constants.DALightBlue)
                         .multilineTextAlignment(.center)
