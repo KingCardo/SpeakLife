@@ -153,7 +153,7 @@ struct FavoritesView_Previews: PreviewProvider {
     
     static var previews: some View {
         FavoritesView()
-            .environmentObject(DeclarationViewModel(apiService: APIClient()))
+            .environmentObject(DeclarationViewModel(apiService: LocalAPIClient()))
     }
 }
 

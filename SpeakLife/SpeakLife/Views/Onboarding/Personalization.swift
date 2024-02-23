@@ -50,7 +50,7 @@ struct PersonalizationScene: View {
                         .lineSpacing(10)
                         .lineLimit(nil)
                     
-                    Spacer().frame(height: appState.onBoardingTest ? 150 : 24)
+                    Spacer().frame(height: appState.onBoardingTest ? size.height * 0.25 : 24)
                     
                     Text("Let's start with a couple questions to personalize your experience.", comment: "Intro scene extra tip")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))

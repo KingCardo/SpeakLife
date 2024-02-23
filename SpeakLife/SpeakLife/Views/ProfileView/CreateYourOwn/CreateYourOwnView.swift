@@ -167,7 +167,7 @@ struct TextViewWrapper: UIViewRepresentable {
 struct CreateYourOwnView_Previews: PreviewProvider {
     static var previews: some View {
         CreateYourOwnView()
-            .environmentObject(DeclarationViewModel(apiService: APIClient()))
+            .environmentObject(DeclarationViewModel(apiService: LocalAPIClient()))
             .environmentObject(AppState())
             
     }

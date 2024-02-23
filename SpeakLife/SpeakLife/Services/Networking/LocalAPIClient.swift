@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-final class APIClient: APIService {
+final class LocalAPIClient: APIService {
     
     @AppStorage("declarationCountFile") var declarationCountFile = 0
     @AppStorage("declarationCountBE") var declarationCountBE = 0

@@ -31,7 +31,7 @@ final class NotificationManager: NSObject {
     
     private override init() {}
     
-    private let notificationProcessor = NotificationProcessor(service: APIClient())
+    private let notificationProcessor = NotificationProcessor(service: LocalAPIClient())
     
     let notificationCenter = UNUserNotificationCenter.current()
     

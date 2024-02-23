@@ -15,7 +15,7 @@ struct SpeakLifeApp: App {
     @Environment(\.scenePhase) private var scenePhase
     
     @StateObject var appState = AppState()
-    @StateObject var declarationStore = DeclarationViewModel(apiService: APIClient())
+    @StateObject var declarationStore = DeclarationViewModel(apiService: LocalAPIClient())
     @StateObject var themeStore = ThemeViewModel()
     @StateObject var subscriptionStore = SubscriptionStore()
     @StateObject var devotionalViewModel = DevotionalViewModel()

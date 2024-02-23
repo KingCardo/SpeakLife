@@ -50,7 +50,7 @@ struct IntroScene: View {
                         .lineSpacing(10)
                         .lineLimit(nil)
                     
-                    Spacer().frame(height: appState.onBoardingTest ? 100 : 24)
+                    Spacer().frame(height: appState.onBoardingTest ? size.height * 0.25 : 24)
                     
                     Text("The_power_of_declarations", comment: "Intro scene extra tip")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
