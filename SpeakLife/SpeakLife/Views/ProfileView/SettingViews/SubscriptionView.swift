@@ -20,15 +20,15 @@ struct Benefit: Identifiable  {
         
 //        Benefit(text: "Unlock all features"),
        // Benefit(text: "Build your spirit by meditating on God's love for you"),
+        Benefit(text: "5000+ library of affirmations"),
         Benefit(text: "Daily Devotional's to grow with Jesus"),
         Benefit(text: "Unlimited curated notifications"),
-       // Benefit(text: "30+ categories to declare victory with God's promises"),
-        Benefit(text: "Declare victory and gratitude every area of your life"),
+        Benefit(text: "25+ categories to declare victory with God's promises"),
         Benefit(text: "Personalize your experience and create your own theme"),
        // Benefit(text: "Unlock all Jesus Devotionals"),
 //        Benefit(text: "Categories for any situation"),
 //        Benefit(text: "Unlock all themes"),
-        Benefit(text: "Unlock everything"),
+      //  Benefit(text: "Unlock everything"),
        // Benefit(text:"Proverbs 18:21: Words have immense power; they can shape your reality and influence your future. Think of them as tools that can build or destroy."),
 
       //  Benefit(text:"Mark 11:23: Your convictions, voiced out loud, hold incredible power. If you truly believe and verbalize your goals or aspirations, no obstacle is too big to overcome, not even metaphorical mountains."),

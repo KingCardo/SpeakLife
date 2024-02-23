@@ -73,7 +73,7 @@ struct PersonalizationLoadingView: View {
                 VStack(spacing: 10) {
                     CustomSpinnerView()
                     Spacer()
-                        .frame(height: 90)
+                        .frame(height: 110)
                     
                     Text("Hang tight, while we build your speak life plan")
                         .font(.headline)
