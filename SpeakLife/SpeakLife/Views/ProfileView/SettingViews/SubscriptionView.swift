@@ -86,7 +86,7 @@ struct DiscountSubscriptionView: View {
     var body: some View {
         ZStack {
             GeometryReader { geometry in
-                Image("desertSky")
+                Image(onboardingBGImage)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
@@ -312,7 +312,7 @@ struct SubscriptionView: View {
         ZStack {
             GeometryReader { geometry in
                 
-                Image(appState.isOnboarded ? "sandOcean" : "desertSky")
+                Image(appState.isOnboarded ? "sandOcean" : onboardingBGImage)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
@@ -618,7 +618,7 @@ struct StarRatingView: View {
        }
        
        func starColor(for index: Int) -> Color {
-           return Constants.DAMidBlue //index <= Int(rating) ? .yellow : .gray
+           return Constants.gold //index <= Int(rating) ? .yellow : .gray
        }
     
     func animateStar(at index: Int) {

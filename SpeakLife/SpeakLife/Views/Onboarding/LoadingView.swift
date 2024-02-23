@@ -61,7 +61,7 @@ struct PersonalizationLoadingView: View {
         ZStack {
             
             if appState.onBoardingTest {
-                Image("desertSky")
+                Image(onboardingBGImage)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)

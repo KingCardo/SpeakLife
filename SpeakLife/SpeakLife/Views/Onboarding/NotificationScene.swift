@@ -109,7 +109,7 @@ struct NotificationOnboarding:  View {
         }
         .frame(width: size.width, height: size.height)
         .background(
-            Image(appState.onBoardingTest ? "desertSky" : "declarationBackground")
+            Image(appState.onBoardingTest ? onboardingBGImage : "declarationBackground")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)

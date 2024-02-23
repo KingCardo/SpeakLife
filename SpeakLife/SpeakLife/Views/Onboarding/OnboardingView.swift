@@ -8,6 +8,7 @@
 import SwiftUI
 import FirebaseAnalytics
 
+let onboardingBGImage = "desertSky"
 
 struct OnboardingView: View  {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
