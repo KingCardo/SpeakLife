@@ -61,7 +61,7 @@ struct PersonalizationLoadingView: View {
         ZStack {
             
             if appState.onBoardingTest {
-                Image("cross")
+                Image("desertSky")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
@@ -73,7 +73,7 @@ struct PersonalizationLoadingView: View {
                 VStack(spacing: 10) {
                     CustomSpinnerView()
                     Spacer()
-                        .frame(height: 16)
+                        .frame(height: 90)
                     
                     Text("Hang tight, while we build your speak life plan")
                         .font(.headline)

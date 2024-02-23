@@ -50,7 +50,7 @@ struct IntroScene: View {
                         .lineSpacing(10)
                         .lineLimit(nil)
                     
-                    Spacer().frame(height: 24)
+                    Spacer().frame(height: appState.onBoardingTest ? 100 : 24)
                     
                     Text("The_power_of_declarations", comment: "Intro scene extra tip")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
@@ -84,7 +84,7 @@ struct IntroScene: View {
         }
         .frame(width: size.width, height: size.height)
         .background(
-            Image(appState.onBoardingTest ? "lion" : "declarationBackground")
+            Image(appState.onBoardingTest ? "desertSky" : "declarationBackground")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)

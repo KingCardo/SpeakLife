@@ -50,7 +50,7 @@ struct PersonalizationScene: View {
                         .lineSpacing(10)
                         .lineLimit(nil)
                     
-                    Spacer().frame(height: 24)
+                    Spacer().frame(height: appState.onBoardingTest ? 150 : 24)
                     
                     Text("Let's start with a couple questions to personalize your experience.", comment: "Intro scene extra tip")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
@@ -84,7 +84,7 @@ struct PersonalizationScene: View {
         }
         .frame(width: size.width, height: size.height)
         .background(
-            Image(appState.onBoardingTest ? "lakeHills" : "declarationBackground")
+            Image(appState.onBoardingTest ? "desertSky" : "declarationBackground")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)

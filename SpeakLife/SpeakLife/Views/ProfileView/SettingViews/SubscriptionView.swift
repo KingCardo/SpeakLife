@@ -312,7 +312,7 @@ struct SubscriptionView: View {
         ZStack {
             GeometryReader { geometry in
                 
-                Image("sandOcean")
+                Image(appState.isOnboarded ? "sandOcean" : "desertSky")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height * 1.2)

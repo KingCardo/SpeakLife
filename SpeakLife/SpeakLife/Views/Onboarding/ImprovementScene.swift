@@ -73,7 +73,7 @@ struct ImprovementScene: View {
             .scrollIndicators(.hidden)
             .frame(width: size.width, height: size.height)
             .background(
-                Image(appState.onBoardingTest ? "landingView1" : "declarationBackground")
+                Image(appState.onBoardingTest ? "desertSky" : "declarationBackground")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)

@@ -772,11 +772,8 @@
             "text": "God is connecting me with the right people.",
             "isFavorite": false,
             "category": "destiny"
-        },{
-            "text": "I will always be kind.",
-            "isFavorite": false,
-            "category": "identity"
-        },{
+        },
+        {
             "text": "I don't allow situations to control my emotions.",
             "isFavorite": false,
             "category": "destiny"
@@ -4460,6 +4457,22 @@
                 "category": "forgiveness"
             },
             {
+                "text": "In peace I will lie down and sleep, for God alone keeps me safe.",
+                "book": "Psalm 4:8",
+                "isFavorite": false,
+                "category": "godsprotection"
+            },
+            {
+                "text": "I have more than 10 thousand angels watching over me.",
+                "isFavorite": false,
+                "category": "godsprotection"
+            },
+            {
+                "text": "Jesus is my shield and safe place where no evil will prosper.",
+                "isFavorite": false,
+                "category": "godsprotection"
+            },
+            {
                 "text": "In Jesus' name, I am surrounded by a wall of fire, no harm can touch me.",
                 "isFavorite": false,
                 "category": "godsprotection"
@@ -6357,6 +6370,11 @@
                         "category": "grace"
                     },
                     {
+                        "text": "The battle is the Lord's.",
+                        "isFavorite": false,
+                        "category": "hardtimes"
+                    },
+                    {
                         "text": "I can do everything through Christ, who gives me strength.",
                         "book": "Philippians 4:13",
                         "isFavorite": false,
@@ -7710,6 +7728,16 @@
                                 "text": "Thank you Jesus for the harvest of blessings that sprout from seeds of hope.",
                                 "isFavorite": false,
                                 "category": "hope"
+                            },
+                            {
+                                "text": "I am fully loved and approved by Jesus.",
+                                "isFavorite": false,
+                                "category": "identity"
+                            },
+                            {
+                                "text": "I will always be kind.",
+                                "isFavorite": false,
+                                "category": "identity"
                             },
                             {
                                 "text": "Therefore, if anyone is in Christ, he is a new creation. The old has passed away" ,
@@ -10498,6 +10526,16 @@
                                     "text": "Thank you Jesus for turning my trials into triumphs, showcasing Your glory.",
                                     "isFavorite": false,
                                     "category": "perseverance"
+                                },
+                                {
+                                    "text": "I prosper in everything I do.",
+                                    "isFavorite": false,
+                                    "category": "wealth"
+                                },
+                                {
+                                    "text": "I am blessed, prosperous and favored by God.",
+                                    "isFavorite": false,
+                                    "category": "wealth"
                                 },
                                 {
                                     "text": "In Jesus' name, I am blessed with abundance, my cup overflows with His provision.",

@@ -25,7 +25,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case peace
     case wealth
    // case selfcontrol
-   // case wisdom
+ //   case wisdom
     case grace
     case loneliness
   //  case motivation
@@ -70,6 +70,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .marriage,
         .peace,
         .perseverance,
+      //  .wisdom,
         .wealth,
     ]
     
