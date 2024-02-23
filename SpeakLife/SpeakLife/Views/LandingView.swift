@@ -11,7 +11,7 @@ struct LandingView: View {
     var body: some View {
         ZStack(alignment: .center) {
            
-            Image("lakeHills")
+            Image(onboardingBGImage)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
         
