@@ -264,8 +264,8 @@ struct SubscriptionView: View {
     @State private var textOpacity: Double = 0
     let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect() // Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
-    var firstSelection = InAppId.Subscription.speakLife1YR19
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR29
+    var firstSelection = InAppId.Subscription.speakLife1YR29
     var thirdSelection = InAppId.Subscription.speakLife1YR29
     var secondSelection = InAppId.Subscription.speakLife1MO4
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
