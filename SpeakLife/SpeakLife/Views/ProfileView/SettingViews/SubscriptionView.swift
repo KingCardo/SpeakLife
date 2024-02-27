@@ -20,11 +20,12 @@ struct Benefit: Identifiable  {
         
 //        Benefit(text: "Unlock all features"),
        // Benefit(text: "Build your spirit by meditating on God's love for you"),
-        Benefit(text: "5000+ library of affirmations"),
-        Benefit(text: "Daily Devotional's to grow with Jesus"),
-        Benefit(text: "Unlimited curated notifications"),
-        Benefit(text: "25+ categories to declare victory with God's promises"),
-        Benefit(text: "Personalize your experience and create your own theme"),
+//        Benefit(text: "5000+ library of affirmations"),
+//        Benefit(text: "Daily Devotional's to grow with Jesus"),
+//        Benefit(text: "Unlimited curated notifications"),
+//        Benefit(text: "Unlock powerful prayers over your life"),
+//        Benefit(text: "25+ categories to declare victory with God's promises"),
+//        Benefit(text: "Personalize your experience and create your own theme"),
        // Benefit(text: "Unlock all Jesus Devotionals"),
 //        Benefit(text: "Categories for any situation"),
 //        Benefit(text: "Unlock all themes"),
@@ -39,11 +40,12 @@ struct Benefit: Identifiable  {
       //  Benefit(text: "Dive deeper into your relationship with Jesus, our goal is to support you in cultivating a vibrant, growing relationship with Christ, every single day. Join us and embrace a life transformed by His word."),
 
        // Benefit(text: "Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
-        //        Benefit(text: "Bible Affirmations for all of life's journey"),
-        //        Benefit(text: "Categories for any situation"),
-        //        Benefit(text: "Create your own affirmations"),
-        //        Benefit(text: "Reminders to transform your mindset"),
-        //        Benefit(text: "Unlock all prayers")
+                Benefit(text: "Bible Affirmations for all of life's journey"),
+                Benefit(text: "Daily Devotional's to grow with Jesus"),
+                Benefit(text: "Categories for any situation"),
+                Benefit(text: "Create your own affirmations"),
+                Benefit(text: "Reminders to transform your mindset"),
+                Benefit(text: "Unlock all prayers")
         
     ]
     
@@ -264,9 +266,8 @@ struct SubscriptionView: View {
     @State private var textOpacity: Double = 0
     let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect() // Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR29
-    var firstSelection = InAppId.Subscription.speakLife1YR29
-    var thirdSelection = InAppId.Subscription.speakLife1YR29
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
+    var firstSelection = InAppId.Subscription.speakLife1YR19
     var secondSelection = InAppId.Subscription.speakLife1MO4
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
@@ -522,46 +523,46 @@ struct SubscriptionView: View {
         .padding([.leading, .trailing], 20)
     }
     
-    func yearlyNoTrialCTABox() -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(Color.gray, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == thirdSelection ? Constants.DAMidBlue : .clear))
-                .frame(height: 60)
-            
-            HStack {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("\(thirdSelection.ctaDurationTitle)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                        Text("\(thirdSelection.ctaPriceTitle)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
-                            .bold()
-                    }
-                    Text("Abundant savings. Billed annually.")
-                        .font(.caption)
-                }
-                .foregroundStyle(currentSelection == thirdSelection ? .white : .black)
-                .padding(.leading)
-                
-                Spacer()
-                
-                ZStack {
-                    Capsule()
-                        .fill(Constants.specialRateColor)
-                        .frame(width: 100, height: 30)
-                    
-                    Text("Special Rate")
-                            .font(.callout)
-                            .foregroundColor(.white)
-                }
-                .padding(.trailing)
-            }
-            
-        }
-        
-        .padding([.leading, .trailing], 20)
-    }
+//    func yearlyNoTrialCTABox() -> some View {
+//        ZStack {
+//            RoundedRectangle(cornerRadius: 10)
+//                .strokeBorder(Color.gray, lineWidth: 1)
+//                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == thirdSelection ? Constants.DAMidBlue : .clear))
+//                .frame(height: 60)
+//            
+//            HStack {
+//                VStack(alignment: .leading) {
+//                    HStack {
+//                        Text("\(thirdSelection.ctaDurationTitle)")
+//                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+//                        Text("\(thirdSelection.ctaPriceTitle)")
+//                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
+//                            .bold()
+//                    }
+//                    Text("Abundant savings. Billed annually.")
+//                        .font(.caption)
+//                }
+//                .foregroundStyle(currentSelection == thirdSelection ? .white : .black)
+//                .padding(.leading)
+//                
+//                Spacer()
+//                
+//                ZStack {
+//                    Capsule()
+//                        .fill(Constants.specialRateColor)
+//                        .frame(width: 100, height: 30)
+//                    
+//                    Text("Special Rate")
+//                            .font(.callout)
+//                            .foregroundColor(.white)
+//                }
+//                .padding(.trailing)
+//            }
+//            
+//        }
+//        
+//        .padding([.leading, .trailing], 20)
+//    }
     
     func monthlySelectionBox() -> some View {
         ZStack {
@@ -593,6 +594,7 @@ struct SubscriptionView: View {
 
 
 struct StarRatingView: View {
+    @EnvironmentObject var appState: AppState
     let rating: Double // Assuming the rating is out of 5
     @State private var starAnimations: [Bool] = Array(repeating: false, count: 5)
 
@@ -618,7 +620,7 @@ struct StarRatingView: View {
        }
        
        func starColor(for index: Int) -> Color {
-           return Constants.gold //index <= Int(rating) ? .yellow : .gray
+           return appState.isOnboarded ? Constants.DAMidBlue : Constants.gold //index <= Int(rating) ? .yellow : .gray
        }
     
     func animateStar(at index: Int) {

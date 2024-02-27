@@ -7,6 +7,92 @@
 
 import SwiftUI
 
+struct IntroTipScene: View {
+    
+    @EnvironmentObject var appState: AppState
+    
+    let size: CGSize
+    let callBack: (() -> Void)
+    
+    var body: some  View {
+        introTipScene(size: size)
+    }
+    
+    private func introTipScene(size: CGSize) -> some View  {
+        VStack {
+            
+            if appState.onBoardingTest {
+                Spacer()
+            } else {
+                Spacer().frame(height: 90)
+                
+                Image("declarationsIllustration")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 235, height: size.height * 0.25)
+            }
+           
+            
+            Spacer().frame(height: 40)
+            VStack {
+                Text(appState.onBoardingTest ? "SpeakLife" : "DECLARATIONS", comment: "Intro scene title label")
+                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 40, relativeTo: .title))
+                    .fontWeight(.semibold)
+                    .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
+                
+                Spacer().frame(height: 16)
+                
+                VStack {
+                    Text("In the Bible, God tells us to call those things that are not as though they are!" , comment: "Intro scene tip")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
+                        .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(10)
+                        .lineLimit(nil)
+                    
+                    Spacer().frame(height: appState.onBoardingTest ? size.height * 0.25 : 24)
+                    
+                    Text("God's promises are received by faith! If we have faith like Abraham you will be certain to receive it!", comment: "Intro scene extra tip")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
+                        .foregroundColor(appState.onBoardingTest ? .white :Constants.DALightBlue)
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(10)
+                        .foregroundColor(Color(red: 119, green: 142, blue: 180, opacity: 1))
+                        .lineLimit(nil)
+                }
+                .frame(width: size.width * 0.8)
+            }
+            Spacer()
+            
+            Button(action: callBack) {
+                HStack {
+                    Text("Begin_transformation", comment: "Intro scene start label")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
+                        .fontWeight(.medium)
+                        .frame(width: size.width * 0.91 ,height: 50)
+                }.padding()
+            }
+            .frame(width: size.width * 0.87 ,height: 50)
+            .background(Constants.DAMidBlue)
+            
+            .foregroundColor(.white)
+            .cornerRadius(8)
+            .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+            
+            Spacer()
+                .frame(width: 5, height: size.height * 0.07)
+        }
+        .frame(width: size.width, height: size.height)
+        .background(
+            Image(appState.onBoardingTest ? onboardingBGImage : "declarationBackground")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+        )
+        
+    }
+}
+
 struct IntroScene: View {
     
     @EnvironmentObject var appState: AppState
@@ -91,8 +177,6 @@ struct IntroScene: View {
         )
         
     }
-    
-    
 }
 
 

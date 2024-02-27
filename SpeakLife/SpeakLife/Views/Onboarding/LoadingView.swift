@@ -75,7 +75,7 @@ struct PersonalizationLoadingView: View {
                     Spacer()
                         .frame(height: 110)
                     
-                    Text("Hang tight, while we build your speak life plan")
+                    Text("Hang tight, while we build your Speak Life plan")
                         .font(.headline)
                         .foregroundColor(.white)
                 }

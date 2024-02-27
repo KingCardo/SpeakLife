@@ -55,6 +55,9 @@ struct OnboardingView: View  {
                 IntroScene(size: geometry.size, callBack: advance)
                     .tag(Tab.intro)
                 
+                IntroTipScene(size: geometry.size, callBack: advance)
+                    .tag(Tab.tip)
+                
                 NotificationOnboarding(size: geometry.size) {
                     advance()
                 }
@@ -201,8 +204,12 @@ struct OnboardingView: View  {
                     Analytics.logEvent("ImprovementScreenDone", parameters: nil)
                 case .intro:
                     impactMed.impactOccurred()
-                    selection = .notification
+                    selection = .tip
                     Analytics.logEvent("IntroScreenDone", parameters: nil)
+                case .tip:
+                    impactMed.impactOccurred()
+                    selection = .notification
+                    Analytics.logEvent("IntroTipScreenDone", parameters: nil)
                 case .benefits:
                     selection = .notification
                     Analytics.logEvent("BenefitScreenDone", parameters: nil)

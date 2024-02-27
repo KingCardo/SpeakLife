@@ -14,6 +14,7 @@ enum Tab {
     case habit
     case improvement
     case intro
+    case tip
     case benefits
     case notification
     case widgets

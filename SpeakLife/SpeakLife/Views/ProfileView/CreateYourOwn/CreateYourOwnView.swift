@@ -217,7 +217,7 @@ struct AffirmationAlertView: View {
                     .disabled(disabled)
                     
                     Button("Cancel") {
-                        dismissX()
+                        dismiss()
                     }
                     .padding()
                     .frame(maxWidth: .infinity)
