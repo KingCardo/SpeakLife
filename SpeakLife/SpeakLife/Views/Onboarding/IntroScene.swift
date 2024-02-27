@@ -35,7 +35,7 @@ struct IntroTipScene: View {
             
             Spacer().frame(height: 40)
             VStack {
-                Text(appState.onBoardingTest ? "SpeakLife" : "DECLARATIONS", comment: "Intro scene title label")
+                Text("Daily Transformation", comment: "Intro scene title label")
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 40, relativeTo: .title))
                     .fontWeight(.semibold)
                     .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
@@ -66,7 +66,7 @@ struct IntroTipScene: View {
             
             Button(action: callBack) {
                 HStack {
-                    Text("Begin_transformation", comment: "Intro scene start label")
+                    Text("Continue", comment: "Intro scene start label")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .fontWeight(.medium)
                         .frame(width: size.width * 0.91 ,height: 50)

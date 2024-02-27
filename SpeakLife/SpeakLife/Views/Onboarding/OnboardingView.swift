@@ -71,8 +71,8 @@ struct OnboardingView: View  {
                     .tag(Tab.widgets)
                 }
                 
-                loadingView(geometry: geometry)
-                    .tag(Tab.loading)
+//                loadingView(geometry: geometry)
+//                    .tag(Tab.loading)
                 
                 
                 subscriptionScene(size: geometry.size)
@@ -275,11 +275,11 @@ struct OnboardingView: View  {
                         withAnimation {
                            // advance()
                             if appState.onBoardingTest {
-                                if isDonePersonalization {
+                               // if isDonePersonalization {
                                     selection = .subscription
-                                } else {
-                                    selection = .loading
-                                }
+//                                } else {
+//                                    selection = .loading
+//                                }
                             } else {
                                 selection = .widgets
                             }
@@ -292,11 +292,11 @@ struct OnboardingView: View  {
             
             withAnimation {
                 if appState.onBoardingTest {
-                    if isDonePersonalization {
+                   // if isDonePersonalization {
                         selection = .subscription
-                    } else {
-                        selection = .loading
-                    }
+//                    } else {
+//                        selection = .loading
+//                    }
                 } else {
                     selection = .widgets
                 }
