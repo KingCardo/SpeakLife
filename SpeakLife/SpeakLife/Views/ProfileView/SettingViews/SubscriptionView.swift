@@ -19,17 +19,17 @@ struct Benefit: Identifiable  {
     static var premiumBenefits: [Benefit] = [
         
 //        Benefit(text: "Unlock all features"),
-       // Benefit(text: "Build your spirit by meditating on God's love for you"),
-//        Benefit(text: "5000+ library of affirmations"),
-//        Benefit(text: "Daily Devotional's to grow with Jesus"),
+        Benefit(text: "Build your spirit by meditating on God's love for you"),
+        Benefit(text: "5000+ library of affirmations"),
+        Benefit(text: "Daily Devotional's to grow with Jesus"),
 //        Benefit(text: "Unlimited curated notifications"),
 //        Benefit(text: "Unlock powerful prayers over your life"),
 //        Benefit(text: "25+ categories to declare victory with God's promises"),
 //        Benefit(text: "Personalize your experience and create your own theme"),
        // Benefit(text: "Unlock all Jesus Devotionals"),
-//        Benefit(text: "Categories for any situation"),
+        Benefit(text: "Categories for any situation"),
 //        Benefit(text: "Unlock all themes"),
-      //  Benefit(text: "Unlock everything"),
+        Benefit(text: "Unlock everything"),
        // Benefit(text:"Proverbs 18:21: Words have immense power; they can shape your reality and influence your future. Think of them as tools that can build or destroy."),
 
       //  Benefit(text:"Mark 11:23: Your convictions, voiced out loud, hold incredible power. If you truly believe and verbalize your goals or aspirations, no obstacle is too big to overcome, not even metaphorical mountains."),
@@ -40,12 +40,12 @@ struct Benefit: Identifiable  {
       //  Benefit(text: "Dive deeper into your relationship with Jesus, our goal is to support you in cultivating a vibrant, growing relationship with Christ, every single day. Join us and embrace a life transformed by His word."),
 
        // Benefit(text: "Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
-                Benefit(text: "Bible Affirmations for all of life's journey"),
-                Benefit(text: "Daily Devotional's to grow with Jesus"),
-                Benefit(text: "Categories for any situation"),
-                Benefit(text: "Create your own affirmations"),
-                Benefit(text: "Reminders to transform your mindset"),
-                Benefit(text: "Unlock all prayers")
+//                Benefit(text: "Bible Affirmations for all of life's journey"),
+//                Benefit(text: "Daily Devotional's to grow with Jesus"),
+//                Benefit(text: "Categories for any situation"),
+//                Benefit(text: "Create your own affirmations"),
+//                Benefit(text: "Reminders to transform your mindset"),
+//                Benefit(text: "Unlock all prayers")
         
     ]
     

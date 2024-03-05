@@ -12,8 +12,9 @@ import Combine
 final class DeclarationViewModel: ObservableObject {
     
     // MARK: - Properties
+    @EnvironmentObject var appState: AppState
     
-    @AppStorage("selectedCategory") var selectedCategoryString = "destiny"
+    @AppStorage("selectedCategory") var selectedCategoryString = "general"
     
     @AppStorage("backgroundMusicEnabled") var backgroundMusicEnabled = true
     
@@ -58,6 +59,14 @@ final class DeclarationViewModel: ObservableObject {
         }
     }
     
+    @Published var general: [Declaration] = [] {
+        didSet  {
+            if selectedCategory == .general {
+                declarations = general.shuffled()
+            }
+        }
+    }
+    
     @Published var createOwn: [Declaration] = [] {
         didSet {
             if selectedCategory == .myOwn {
@@ -85,7 +94,7 @@ final class DeclarationViewModel: ObservableObject {
     private var allDeclarations: [Declaration] = []
     
     var selectedCategories = Set<DeclarationCategory>()
-    
+   
     private let service: APIService
     
     private let notificationManager: NotificationManager
@@ -97,8 +106,9 @@ final class DeclarationViewModel: ObservableObject {
         self.service = apiService
         self.notificationManager = notificationManager
         
-        fetchDeclarations()
-        fetchSelectedCategories()
+        fetchSelectedCategories() { [weak self] in
+            self?.fetchDeclarations()
+        }
         
         NotificationHandler.shared.callback = { [weak self] content in
             self?.setDeclaration(content.body, category: content.title)
@@ -258,6 +268,9 @@ final class DeclarationViewModel: ObservableObject {
     func fetchDeclarations(for category: DeclarationCategory, completion: @escaping(([Declaration]) -> Void)) {
         if let declarations = allDeclarationsDict[category] {
             completion(declarations)
+        } else if category == .general {
+            refreshGeneral(categories: selectedCategories)
+            completion(general)
         }  else if category == .favorites {
             refreshFavorites()
             completion(favorites)
@@ -271,12 +284,14 @@ final class DeclarationViewModel: ObservableObject {
         }
     }
     
-    func fetchSelectedCategories()  {
-        service.declarationCategories { selectedCategories, error in
+    func fetchSelectedCategories(completion: @escaping () -> Void?)  {
+        service.declarationCategories { [weak self] selectedCategories, error in
             if let error = error {
                 print(error)
             }
-            self.selectedCategories = selectedCategories
+           // self?.refreshGeneral(categories: selectedCategories)
+            self?.selectedCategories = selectedCategories
+            completion()
         }
     }
     
@@ -288,6 +303,27 @@ final class DeclarationViewModel: ObservableObject {
             }
         }
     }
+    
+    func refreshGeneral(categories: Set<DeclarationCategory>) {
+        var tempGen: [Declaration] = []
+        for category in categories {
+            let affirmations = allDeclarations.filter { $0.category == category }
+            tempGen.append(contentsOf: affirmations)
+        }
+        general = tempGen
+        print(general.count, "RWRW general")
+        
+//        if general.isEmpty {
+//            fetchFromOnboarding()
+//        }
+    }
+    
+//    func fetchFromOnboarding() {
+//        let selectedCategories = appState.selectedNotificationCategories.compactMap { DeclarationCategory(rawValue: String($0)) }
+//            .compactMap { $0 }
+//        let set: Set<DeclarationCategory> = Set(selectedCategories)
+//        refreshGeneral(categories: set)
+//    }
     
     func setDeclaration(_ content: String,  category: String)  {
         var contentData = content

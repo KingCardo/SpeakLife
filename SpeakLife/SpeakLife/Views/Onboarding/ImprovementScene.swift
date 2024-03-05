@@ -93,7 +93,9 @@ class ImprovementViewModel: ObservableObject {
             categories.append("guilt")
             categories.append("forgiveness")
         }
-        categories.append("destiny")
+        if !categories.contains("destiny") {
+            categories.append("destiny")
+        }
         return categories.joined(separator: ",")
     }
     

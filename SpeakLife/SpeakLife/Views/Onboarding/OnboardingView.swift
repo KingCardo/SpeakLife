@@ -201,6 +201,7 @@ struct OnboardingView: View  {
                     impactMed.impactOccurred()
                     selection = .intro
                     appState.selectedNotificationCategories = improvementViewModel.selectedCategories
+                    decodeCategories(improvementViewModel.selectedExperiences)
                     Analytics.logEvent("ImprovementScreenDone", parameters: nil)
                 case .intro:
                     impactMed.impactOccurred()
@@ -221,10 +222,7 @@ struct OnboardingView: View  {
                     selection = .widgets
                     
                 case .subscription:
-                    let categoryString = appState.selectedNotificationCategories.components(separatedBy: ",").first ?? "destiny"
-                    if let category = DeclarationCategory(categoryString) {
-                        viewModel.choose(category) { _ in }
-                    }
+                    viewModel.choose(.general) { _ in }
                     moveToDiscount()
                     //dismissOnboarding()
                     Analytics.logEvent("SubscriptionScreenDone", parameters: nil)
@@ -246,6 +244,21 @@ struct OnboardingView: View  {
                 }
         //    }
         }
+    }
+    
+    private func decodeCategories(_ categories: [Improvements]) {
+        var temp = Set<DeclarationCategory>()
+        for category in categories {
+            if let decCategory = DeclarationCategory(category.selectedCategory) {
+                temp.insert(decCategory)
+            }
+        }
+        
+        if !temp.contains(.destiny) {
+            temp.insert(.destiny)
+        }
+        viewModel.selectedCategories = temp
+        viewModel.save(temp)
     }
     
     private func askNotificationPermission()  {

@@ -82,6 +82,7 @@ struct NotificationOnboarding:  View {
                     appState.endTimeIndex = valueIndex
                 }
                 .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
+               
                 .frame(width: size.width * 0.87 ,height: size.height * 0.09)
                 }
 
