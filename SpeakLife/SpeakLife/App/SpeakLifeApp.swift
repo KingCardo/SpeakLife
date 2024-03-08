@@ -42,6 +42,10 @@ struct SpeakLifeApp: App {
                                     declarationStore.choose(category) { _ in }
                                 }
                             }
+                            let arrayOfString = appState.selectedNotificationCategories.split(separator: ",").map { String($0)}
+                            let improvements = arrayOfString.compactMap { Improvements(rawValue: $0)}
+                            print(improvements.count, "RWRW")
+                            decodeCategories(improvements)
                         }
                     }
                 }
@@ -78,6 +82,21 @@ struct SpeakLifeApp: App {
                 break
             }
         }
+    }
+    
+    private func decodeCategories(_ categories: [Improvements]) {
+        var temp = Set<DeclarationCategory>()
+        for category in categories {
+            if let decCategory = DeclarationCategory(category.selectedCategory) {
+                temp.insert(decCategory)
+            }
+        }
+        
+        if !temp.contains(.destiny) {
+            temp.insert(.destiny)
+        }
+        declarationStore.selectedCategories = temp
+        declarationStore.save(temp)
     }
     
     private func resetNotifications() {

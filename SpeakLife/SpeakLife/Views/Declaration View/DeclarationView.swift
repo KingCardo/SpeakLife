@@ -153,7 +153,9 @@ struct DeclarationView: View {
                 if appState.offerDiscount {
                     DiscountSubscriptionView(size: UIScreen.main.bounds.size)
                 } else {
-                    SubscriptionView(size: UIScreen.main.bounds.size)
+                    GeometryReader { geometry in
+                        SubscriptionView(size: geometry.size)
+                                }
                 }
             }
             

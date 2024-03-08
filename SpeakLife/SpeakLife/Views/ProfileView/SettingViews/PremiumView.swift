@@ -20,7 +20,7 @@ struct PremiumView: View {
                 if appState.offerDiscount {
                     DiscountSubscriptionView(size: UIScreen.main.bounds.size)
                 } else {
-                    SubscriptionView(size: UIScreen.main.bounds.size)
+                    SubscriptionView(size: geometry.size)
                 }
             } else {
                 NavigationView {

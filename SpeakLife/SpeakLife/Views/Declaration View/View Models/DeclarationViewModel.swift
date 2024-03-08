@@ -297,9 +297,10 @@ final class DeclarationViewModel: ObservableObject {
     
     func save(_ selectedCategories: Set<DeclarationCategory>) {
         self.selectedCategories = selectedCategories
-        service.save(selectedCategories: selectedCategories) { success in
-            if success {
-                
+        service.save(selectedCategories: selectedCategories) { [weak self] success in
+            if success && self?.selectedCategory == .general {
+                guard let selectedCategories = self?.selectedCategories else { return }
+                self?.refreshGeneral(categories: selectedCategories)
             }
         }
     }
@@ -311,19 +312,7 @@ final class DeclarationViewModel: ObservableObject {
             tempGen.append(contentsOf: affirmations)
         }
         general = tempGen
-        print(general.count, "RWRW general")
-        
-//        if general.isEmpty {
-//            fetchFromOnboarding()
-//        }
     }
-    
-//    func fetchFromOnboarding() {
-//        let selectedCategories = appState.selectedNotificationCategories.compactMap { DeclarationCategory(rawValue: String($0)) }
-//            .compactMap { $0 }
-//        let set: Set<DeclarationCategory> = Set(selectedCategories)
-//        refreshGeneral(categories: set)
-//    }
     
     func setDeclaration(_ content: String,  category: String)  {
         var contentData = content

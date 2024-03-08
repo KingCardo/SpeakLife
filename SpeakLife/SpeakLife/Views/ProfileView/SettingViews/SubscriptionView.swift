@@ -264,7 +264,10 @@ struct SubscriptionView: View {
     ]
     @State private var currentTestimonialIndex: Int = 0
     @State private var textOpacity: Double = 0
-    let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect() // Adjust time as needed
+    let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect()
+    let linearGradient = LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, .cyan]),
+                                        startPoint: .top,
+                                        endPoint: .bottom)// Adjust time as needed
     
     @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
     var firstSelection = InAppId.Subscription.speakLife1YR19
@@ -302,7 +305,7 @@ struct SubscriptionView: View {
                     .foregroundColor(.white)
                     .scaledToFit()
                 Text(benefit.text, comment: "Benefit text")
-                    .font(.caption)
+                    .font(.callout)
                    // .minimumScaleFactor(0.5)
                 Spacer()
             }.padding(.horizontal)
@@ -318,7 +321,7 @@ struct SubscriptionView: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
                     .edgesIgnoringSafeArea([.top])
-            }
+            
            
             ScrollView {
                 VStack  {
@@ -354,11 +357,11 @@ struct SubscriptionView: View {
                             yearlyCTABox()
                         }
                         
-//                        Button {
-//                            currentSelection = thirdSelection
-//                        } label: {
-//                            yearlyNoTrialCTABox()
-//                        }
+                        //                        Button {
+                        //                            currentSelection = thirdSelection
+                        //                        } label: {
+                        //                            yearlyNoTrialCTABox()
+                        //                        }
                         
                         Button {
                             currentSelection = secondSelection
@@ -368,9 +371,13 @@ struct SubscriptionView: View {
                         
                         
                     }
+                    .frame(width: geometry.size.width * 0.93)
                     
+                    continueButton(gradient: linearGradient)
+                        .frame(width: geometry.size.width * 0.8)
                     
                     goPremiumStack(size: size)
+                        .frame(width: geometry.size.width * 0.8)
                     
                     Spacer()
                         .frame(height: 16)
@@ -381,12 +388,10 @@ struct SubscriptionView: View {
                         .frame(height: 16)
                     
                     TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
-                                    .id(currentTestimonialIndex)
+                        .id(currentTestimonialIndex)
+
                     
-//                    Spacer()
-//                        .frame(height: 48)
-                    
-                    
+                }
             
                 }
             }
@@ -431,8 +436,11 @@ struct SubscriptionView: View {
                                             endPoint: .bottom)
         
         return VStack {
-            
-            continueButton(gradient: linearGradient)
+//            HStack {
+//                Spacer()
+//                continueButton(gradient: linearGradient)
+//               // Spacer()
+//            }
             
             HStack {
                 Button(action: restore) {
