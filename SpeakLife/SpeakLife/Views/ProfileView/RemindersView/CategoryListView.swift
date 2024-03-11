@@ -44,8 +44,14 @@ struct CategoryListView: View  {
     
     var body: some View  {
         NavigationView {
-            List(categoryList.categories, id: \.id) { category in
+            VStack {
+                Spacer()
+                    .frame(height: 8)
+                Text("Selection's will personalize your general feed")
+                    .foregroundColor(.primary)
+                List(categoryList.categories, id: \.id) { category in
                     CategoryListCell(category: category, categoryList: categoryList)
+                }
             }
            
             .navigationTitle(Text("Choose Categories", comment: "choose categories"))

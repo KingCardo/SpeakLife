@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 class Theme: Identifiable, Codable {
     
     enum Mode: String, Codable {
@@ -21,6 +22,18 @@ class Theme: Identifiable, Codable {
     var id = UUID()
     var mode: Mode
     let blurEffect: Bool
+    
+    var fontColor: Color {
+        switch fontColorString {
+        case "white": return Color.white
+        case "green": return .green
+        case "black" : return .black
+        case "gold": return Constants.gold
+        case "slBlue": return Constants.DAMidBlue
+        default: return .white
+        }
+    }
+    let fontColorString: String
     var image: Image {
         Image(backgroundImageString)
     }
@@ -34,13 +47,15 @@ class Theme: Identifiable, Codable {
         return nil
     }
     
-    init(_ backgroundImageString: String, mode: Mode = .dark, isPremium: Bool = true, blurEffect: Bool = false, userSelectedImageData: Data? = nil) {
+    init(_ backgroundImageString: String, mode: Mode = .dark, isPremium: Bool = true, blurEffect: Bool = false, userSelectedImageData: Data? = nil, fontColorString: String = "white") {
         self.backgroundImageString = backgroundImageString
         self.mode = mode
         self.isPremium = isPremium
         self.blurEffect = blurEffect
         self.userSelectedImageData = userSelectedImageData
+        self.fontColorString = fontColorString
     }
+
     
     func setUserSelectedImage(image: UIImage) {
         if let imageData = image.jpegData(compressionQuality: 0.5) {
@@ -73,7 +88,7 @@ class Theme: Identifiable, Codable {
     
     static var all: [Theme] = [autumnTrees, cross, lion, lakeHills, sunset1,sunset2,sunset3,sunset4,sunset5,sunset6,moonlight1,longroadtraveled, landingView1, landingView2, highway, forestwinter, lakeMountain, sandOcean, citynight, woodnight, rainbow, space, stars, summerbeach, moon, canyons,luxurydrive,beautifulsky, desertsky, gorgeousmoon, plantgreen, fogroad, greenplants, talltrees, jungleflower, shadowrose]
     
-    private static let autumnTrees = Theme("autumntrees", isPremium: false, blurEffect: true)
+    private static let autumnTrees = Theme("autumntrees", isPremium: false, blurEffect: true, fontColorString: "white")
     private static let cross = Theme("cross", isPremium: false)
     private static let lion = Theme("lion", mode: .light, isPremium: false)
     static let longroadtraveled = Theme("longroadtraveled")
@@ -104,11 +119,11 @@ class Theme: Identifiable, Codable {
     static let woodnight = Theme("woodnight",blurEffect: true)
     static let forestwinter = Theme("forestwinter",blurEffect: false)
     static let sunset1 = Theme("sunset1",blurEffect: false)
-    static let sunset2 = Theme("sunset2",blurEffect: true)
+    static let sunset2 = Theme("sunset2",blurEffect: false)
     static let sunset3 = Theme("sunset3",blurEffect: false)
-    static let sunset4 = Theme("sunset4",blurEffect: true)
-    static let sunset5 = Theme("sunset5",blurEffect: true)
-    static let sunset6 = Theme("sunset6",blurEffect: true)
+    static let sunset4 = Theme("sunset4",blurEffect: false)
+    static let sunset5 = Theme("sunset5",blurEffect: false)
+    static let sunset6 = Theme("sunset6",blurEffect: false)
     static let moonlight1 = Theme("moonlight1",blurEffect: false)
 //    static let sunset8 = Theme("sunset8",blurEffect: false)
 //    static let sunset9 = Theme("sunset9",blurEffect: false)

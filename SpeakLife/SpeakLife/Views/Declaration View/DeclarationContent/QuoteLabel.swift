@@ -19,7 +19,6 @@ struct QuoteLabel: View {
             .lineLimit(nil)
             .font(themeViewModel.selectedFont)
             .minimumScaleFactor(0.4)
-            .foregroundColor(.white)
             .padding()
     }
 }

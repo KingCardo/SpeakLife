@@ -146,6 +146,7 @@ struct DeclarationContentView: View {
             Spacer()
             
             QuoteLabel(themeViewModel: themeViewModel, quote: declaration.text)
+                .foregroundColor(themeViewModel.selectedTheme.fontColor)
                 .frame(width: geometry.size.width * 0.98, height:  geometry.size.height * 0.40)
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
             

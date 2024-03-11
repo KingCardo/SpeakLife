@@ -299,7 +299,6 @@ final class DeclarationViewModel: ObservableObject {
         self.selectedCategories = selectedCategories
         service.save(selectedCategories: selectedCategories) { [weak self] success in
             if success && self?.selectedCategory == .general {
-                guard let selectedCategories = self?.selectedCategories else { return }
                 self?.refreshGeneral(categories: selectedCategories)
             }
         }

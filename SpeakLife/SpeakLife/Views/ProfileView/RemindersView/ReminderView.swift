@@ -31,7 +31,7 @@ struct ReminderView: View {
     var body: some View {
         GeometryReader { geometry in
                 ScrollView  {
-                    Text("Set up your daily reminders to make your declaration fit your daily routine", comment: "setup reminder")
+                    Text("Set up your daily reminders to make your declaration's fit your daily routine", comment: "setup reminder")
                         .foregroundColor(colorScheme == .dark ? .white : .black)
                         .font(.caption)
                         .padding()
