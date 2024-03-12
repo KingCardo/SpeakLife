@@ -96,6 +96,10 @@ struct IntroTipScene: View {
 struct IntroScene: View {
     
     @EnvironmentObject var appState: AppState
+    let headerText: String
+    let bodyText: String
+    let footerText: String
+    let buttonTitle: String
     
     let size: CGSize
     let callBack: (() -> Void)
@@ -121,7 +125,7 @@ struct IntroScene: View {
             
             Spacer().frame(height: 40)
             VStack {
-                Text(appState.onBoardingTest ? "SpeakLife" : "DECLARATIONS", comment: "Intro scene title label")
+                Text(headerText)
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 40, relativeTo: .title))
                     .fontWeight(.semibold)
                     .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
@@ -129,7 +133,7 @@ struct IntroScene: View {
                 Spacer().frame(height: 16)
                 
                 VStack {
-                    Text("Read_and_repeat" , comment: "Intro scene instructions")
+                    Text(bodyText)
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
@@ -138,8 +142,8 @@ struct IntroScene: View {
                     
                     Spacer().frame(height: appState.onBoardingTest ? size.height * 0.25 : 24)
                     
-                    Text("The_power_of_declarations", comment: "Intro scene extra tip")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
+                    Text(footerText)
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .title2))
                         .foregroundColor(appState.onBoardingTest ? .white :Constants.DALightBlue)
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
@@ -152,7 +156,7 @@ struct IntroScene: View {
             
             Button(action: callBack) {
                 HStack {
-                    Text("Begin_transformation", comment: "Intro scene start label")
+                    Text(buttonTitle)
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .fontWeight(.medium)
                         .frame(width: size.width * 0.91 ,height: 50)

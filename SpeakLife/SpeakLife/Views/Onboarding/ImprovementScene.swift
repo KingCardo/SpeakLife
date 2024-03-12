@@ -113,6 +113,7 @@ enum Improvements: String, CaseIterable {
    // case joy = "Be happy and content"
     case gratitude = "Grow in gratitude"
     case stress = "Reduce Stress & Anxiety"
+    case praise = "Magnify the Lord"
     case grace = "Learn how forgiven you are"
     case love = "Bask in Jesus Love for you"
     case health = "Maintain or restore your health"
@@ -123,12 +124,15 @@ enum Improvements: String, CaseIterable {
   //  case wealth = "Wealth"
     case peace = "Remain and live in peace"
     
+    
     var selectedCategory: String {
         switch self {
         case .stress:
             "fear"
         case .grace:
             "grace"
+        case .praise:
+            "praise"
         case .love:
             "love"
         case .destiny:

@@ -52,8 +52,14 @@ struct OnboardingView: View  {
                 ImprovementScene(size: geometry.size, callBack: advance, viewModel: improvementViewModel)
                     .tag(Tab.improvement)
                 
-                IntroScene(size: geometry.size, callBack: advance)
+                IntroScene(headerText: appState.onBoardingTest ? "SpeakLife" : "DECLARATIONS", bodyText: "Favorite, create your own, and Speak affirmations out loud at least 3 times but as many times as you need to a day to begin transforming your mind and life.", footerText: "The power comes from speaking and meditating so you believe and watch the Lord bring it to pass.", buttonTitle: "Begin transformation", size: geometry.size, callBack: advance)
                     .tag(Tab.intro)
+                
+                IntroScene(headerText: "The enemy", bodyText: "satan comes to steal, kill, and destroy. He wants to steal the truth, word of God from your heart, your health, joy, peace and much more!", footerText: "But we have weapons to take offense", buttonTitle: "Fight back", size: geometry.size, callBack: advance)
+                    .tag(Tab.foe)
+                
+                IntroScene(headerText: "Your Savior", bodyText: "Jesus, came so you can have life abundantly, prosper and be in great health. So as God's children we must fight the enemy", footerText: "and not let him steal from us. Time to fight back everyday by speaking life. The power is in your hands.", buttonTitle: "Claim what's mine!", size: geometry.size, callBack: advance)
+                    .tag(Tab.life)
                 
                 IntroTipScene(size: geometry.size, callBack: advance)
                     .tag(Tab.tip)
@@ -205,8 +211,18 @@ struct OnboardingView: View  {
                     Analytics.logEvent("ImprovementScreenDone", parameters: nil)
                 case .intro:
                     impactMed.impactOccurred()
-                    selection = .tip
+                    selection = .foe
                     Analytics.logEvent("IntroScreenDone", parameters: nil)
+                    
+                case .foe:
+                    impactMed.impactOccurred()
+                    selection = .life
+                    Analytics.logEvent("IntroFoeDone", parameters: nil)
+                    
+                case .life:
+                    impactMed.impactOccurred()
+                    selection = .tip
+                    Analytics.logEvent("IntroLifeDone", parameters: nil)
                 case .tip:
                     impactMed.impactOccurred()
                     selection = .notification

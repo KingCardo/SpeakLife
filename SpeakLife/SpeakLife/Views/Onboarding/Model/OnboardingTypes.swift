@@ -15,6 +15,8 @@ enum Tab {
     case improvement
     case intro
     case tip
+    case foe
+    case life
     case benefits
     case notification
     case widgets

@@ -45,6 +45,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case identity
     case marriage
     case general
+    case praise
     
     
     static var categoryOrder: [DeclarationCategory] = [
@@ -69,6 +70,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .joy,
         .loneliness,
         .love,
+        .praise,
         .marriage,
         .peace,
         .perseverance,
@@ -113,7 +115,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     var isPremium: Bool {
         switch self {
-        case .general, .destiny, .favorites, .myOwn : return false
+        case .general, .destiny, .favorites, .myOwn, .praise, .health : return false
         default: return true
         }
     }
