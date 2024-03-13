@@ -46,6 +46,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case marriage
     case general
     case praise
+    case heaven
     
     
     static var categoryOrder: [DeclarationCategory] = [
@@ -65,6 +66,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .guidance,
         .hardtimes,
         .health,
+        .heaven,
         .hope,
         .identity,
         .joy,
@@ -92,6 +94,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         case .depression: return "Conquer Depression"
         case .fear: return "Fear Not!"
         case .addiction: return "Crush Addiction"
+        case .heaven: return "Heavenly Thinking"
         default:  return self.rawValue.capitalized
         }
     }
