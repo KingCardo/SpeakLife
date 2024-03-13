@@ -28,7 +28,7 @@ struct PrayerView: View {
                                 sectionView(for: index)
                                     .padding()
                                     .onTapGesture {
-                                        let prayerCategory = prayerViewModel.sectionData[index].title.rawValue
+                                        let prayerCategory = prayerViewModel.sectionData[index].title
                                         Analytics.logEvent("\(prayerCategory) prayer tapped", parameters: nil)
                                     }
                             }
@@ -57,11 +57,11 @@ struct PrayerView: View {
                 if prayer.isPremium && !subscriptionStore.isPremium {
                     premiumPrayerRow(prayer)
                 } else {
-                    standardPrayerRow(prayer)
+                    standardPrayerRow(prayer, index: index)
                 }
             }
         } label: {
-            Text(prayerViewModel.sectionData[index].title.rawValue.uppercased())
+            Text(prayerViewModel.sectionData[index].title.uppercased())
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .title))
                 .padding()
         }
@@ -74,8 +74,8 @@ struct PrayerView: View {
         }
     }
     
-    private func standardPrayerRow(_ prayer: Prayer) -> some View {
-        NavigationLink(destination: PrayerDetailView(prayer: prayer.prayerText) { Gradients().cyanPurple }) {
+    private func standardPrayerRow(_ prayer: Prayer, index: Int) -> some View {
+        NavigationLink(destination: PrayerDetailView(prayer: prayer.prayerText, showConfetti: index == 0) { Gradients().cyanPurple }) {
             prayerRowView(prayer)
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                 .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)

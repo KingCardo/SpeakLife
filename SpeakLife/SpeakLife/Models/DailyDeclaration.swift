@@ -35,7 +35,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case forgiveness
     case godsprotection
     case guidance
-  //  case rest
+    case rest
    // case guilt
     case joy
    
@@ -71,6 +71,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .loneliness,
         .love,
         .praise,
+        .rest,
         .marriage,
         .peace,
         .perseverance,

@@ -14,9 +14,11 @@ struct PrayerDetailView<InjectedView: View>: View {
     var gradient: InjectedView
     let createYourOwn: Declaration?
     var isCreatedOwn = false
+    var showConfetti = false
 
-    init(prayer: String, @ViewBuilder content: () -> InjectedView) {
+    init(prayer: String, showConfetti: Bool, @ViewBuilder content: () -> InjectedView) {
         self.prayer = prayer
+        self.showConfetti = showConfetti
         self.gradient = content()
         self.createYourOwn = nil
     }
@@ -69,16 +71,23 @@ struct PrayerDetailView<InjectedView: View>: View {
     }
     
     var prayerView: some View {
-        ScrollView {
-            
-            Text(prayer)
-                .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
-                .lineSpacing(4)
-                .padding(.horizontal, 32)
-                .foregroundColor(.black)
-                .frame(width: UIScreen.main.bounds.width)
-            
-            Spacer()
+        
+        ZStack {
+            ScrollView {
+                
+                Text(prayer)
+                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
+                    .lineSpacing(4)
+                    .padding(.horizontal, 32)
+                    .foregroundColor(.black)
+                    .frame(width: UIScreen.main.bounds.width)
+                
+                Spacer()
+            }
+            if showConfetti {
+                ConfettiView()
+                    .edgesIgnoringSafeArea(.all)
+            }
         }
     }
 }

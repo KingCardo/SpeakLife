@@ -11,7 +11,7 @@ import SwiftUI
 
 struct SectionData: Identifiable {
     let id = UUID()
-    let title: DeclarationCategory
+    let title: String//DeclarationCategory
     let items: [Prayer]
     var isExpanded: Bool = false
 }
@@ -52,16 +52,36 @@ final class PrayerViewModel: ObservableObject {
             let prayers = prayers.filter { $0.category == category }
             DispatchQueue.main.async { [weak self] in
                 if !prayers.isEmpty {
-                    self?.sectionData.append(SectionData(title: category, items: prayers))
+                    self?.sectionData.append(SectionData(title: category.categoryTitle, items: prayers))
                 }
             }
         }
         DispatchQueue.main.async { [weak self] in
-            self?.sectionData.insert(SectionData(title: .godsprotection, items: [Prayer(prayerText: psalm91NLT, category: .godsprotection, isPremium: false)]), at: 0)
+            self?.sectionData.insert(SectionData(title: "God's Protection", items: [Prayer(prayerText: psalm91NLT, category: .godsprotection, isPremium: false)]), at: 0)
+        }
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.sectionData.insert(SectionData(title: "Salvation Prayer", items: [Prayer(prayerText: salvationPrayer, category: .godsprotection, isPremium: false)]), at: 0)
         }
     }
 }
+let salvationPrayer = """
 
+Lord Jesus
+
+I repent of all my sins past, present, and future
+
+Come into my heart and be my Lord and Savior!
+
+Thank you for dying for my sins and welcoming me into your Kingdom
+
+where I can live with you for eternity!
+
+
+
+
+You are now born again ✝️🎊🥳
+"""
 let psalm91NLT = """
 Psalm 91
 
