@@ -31,17 +31,17 @@ struct PrayerDetailView<InjectedView: View>: View {
     }
     
     var body: some View {
-        GeometryReader { geometry in
-            
-            if isCreatedOwn {
-                isCreatedOwnView
-            } else {
-                prayerView
-            }
-                
-               
+        content
+            .background(gradient)
+    }
+    
+    @ViewBuilder
+    var content: some View {
+        if isCreatedOwn {
+            isCreatedOwnView
+        } else {
+            prayerView
         }
-        .background(gradient)
     }
     
     var isCreatedOwnView: some View {
@@ -79,7 +79,7 @@ struct PrayerDetailView<InjectedView: View>: View {
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                     .lineSpacing(4)
                     .padding(.horizontal, 32)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .frame(width: UIScreen.main.bounds.width)
                 
                 Spacer()

@@ -12319,17 +12319,7 @@
             "category": "health"
         },
         {
-            "text": "I raise my voice in joyful praise to the Lord, my Savior!",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
             "text": "The Lord is my strength and shield. My heart trusts in Him, and I find help. My spirit overflows with joy, and I will sing His praise!",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "Sing a new song to the Lord, for He has done amazing things! His right hand and His holy arm have brought Him victory.",
             "isFavorite": false,
             "category": "praise"
         },
@@ -12359,11 +12349,6 @@
             "category": "praise"
         },
         {
-            "text": "The heavens declare the glory of God; the skies proclaim the work of His hands.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
             "text": "My soul boasts in the Lord; the humble will hear and be glad.",
             "isFavorite": false,
             "category": "praise"
@@ -12380,16 +12365,6 @@
         },
         {
             "text": "I waited patiently for the Lord; He turned to me and heard my cry.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "Sing a new song to the Lord, for He has done wonderful deeds.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "The Lord is good to all; He has compassion on all He has made.",
             "isFavorite": false,
             "category": "praise"
         },
@@ -12417,13 +12392,13 @@
             "category": "praise"
         },
         {
-            "text": "The Lord is our strength and our shield; his faithful love is our defense.",
+            "text": "The Lord is my strength and my shield; his faithful love is my defense.",
             "book": "Isaiah 59:17",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "The Lord reigns forever! He has established his throne in heaven for judgment.",
+            "text": "The Lord reigns forever!",
             "book": "Isaiah 66:1",
             "isFavorite": false,
             "category": "praise"
@@ -12437,36 +12412,6 @@
         {
             "text": "You are my God, my Savior, and my hope is in you all day long.",
             "book": "Isaiah 38:15",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "He tends his flock like a shepherd, gathering the lambs in his arms and carrying them close to his heart.",
-            "book": "Isaiah 40:11",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "The mountains may depart and the hills collapse, but the Lord's love is unshakeable and His covenant of peace unbroken.",
-            "book": "Isaiah 54:10",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "Do not fear, for the Lord is with you; He will strengthen and help you.",
-            "book": "Isaiah 41:10",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "Those who hope in the Lord will renew their strength and soar on wings like eagles.",
-            "book": "Isaiah 40:31",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "The Lord God Almighty is with us; the God of Jacob is our fortress.",
-            "book": "Isaiah 8:14",
             "isFavorite": false,
             "category": "praise"
         },
@@ -12531,12 +12476,6 @@
             "category": "praise"
         },
         {
-            "text": "Let everything that has breath praise the Lord. Praise the Lord.",
-            "book": "Psalm 150:6",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
             "text": "But I will hope continually and will praise you yet more and more.",
             "book": "Psalm 71:14",
             "isFavorite": false,
@@ -12561,26 +12500,14 @@
             "category": "praise"
         },
         {
-            "text": "My mouth is filled with your praise, declaring your splendor all day long.",
+            "text": "My mouth is filled with your praise, declaring your brilliance all day long.",
             "book": "Psalm 71:8",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "Praise the Lord! Praise God in his sanctuary; praise him in his mighty heavens.",
-            "book": "Psalm 150:1",
             "isFavorite": false,
             "category": "praise"
         },
         {
             "text": "I will praise you, Lord, among the nations; I will sing of you among the peoples.",
             "book": "Psalm 108:3",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "Sing to the Lord a new song; sing to the Lord, all the earth.",
-            "book": "Psalm 96:1",
             "isFavorite": false,
             "category": "praise"
         },
@@ -12620,11 +12547,6 @@
             "category": "praise"
         },
         {
-            "text": "God's grace is sufficient for me; I sing His praises.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
             "text": "Every day, I will bless the Lord and sing His praises.",
             "isFavorite": false,
             "category": "praise"
@@ -12660,22 +12582,12 @@
             "category": "praise"
         },
         {
-            "text": "I praise the Lord, for He is good; His love endures forever.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
             "text": "The Lord is my rock; I praise His mighty works.",
             "isFavorite": false,
             "category": "praise"
         },
         {
             "text": "I praise You for I am fearfully and wonderfully made.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "Let everything that has breath praise the Lord.",
             "isFavorite": false,
             "category": "praise"
         },
@@ -12690,37 +12602,12 @@
             "category": "praise"
         },
         {
-            "text": "I praise the Lord, for He has heard my cry for mercy.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "With my whole being, I will exalt the Lord.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "I will praise the name of God with a song.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
             "text": "My soul magnifies the Lord, and my spirit rejoices in God my Savior.",
             "isFavorite": false,
             "category": "praise"
         },
         {
             "text": "Great is the Lord! He is most worthy of praise!",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "I call upon the Lord, who is worthy to be praised.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "I praise the Lord; for He has been good to me.",
             "isFavorite": false,
             "category": "praise"
         },
@@ -12751,26 +12638,6 @@
         },
         {
             "text": "For the Lord is the great God, the great King above all gods.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "I will praise You, Lord, among the nations; I will sing of You among the peoples.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "From the rising of the sun to its setting, the name of the Lord is to be praised.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "Oh, give thanks to the Lord, for He is good, for His steadfast love endures forever.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "Blessed be the name of the Lord from this time forth and forevermore.",
             "isFavorite": false,
             "category": "praise"
         },
@@ -12930,22 +12797,12 @@
             "category": "praise"
         },
         {
-            "text": "Your love, O Lord, governs the universe and my life with perfect balance.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
             "text": "To the King eternal, immortal, invisible, the only God, I give honor and glory.",
             "isFavorite": false,
             "category": "praise"
         },
         {
             "text": "I stand in wonder of Your wisdom, Lord, that laid the earth's foundations.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "I praise You, Jesus, who reigns with kindness and mercy in my heart.",
             "isFavorite": false,
             "category": "praise"
         },
@@ -12976,11 +12833,6 @@
         },
         {
             "text": "In Your kingdom, Jesus, I find refuge and strength every day.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "Your rule, O God, is marked by love, truth, and righteousness in my journey.",
             "isFavorite": false,
             "category": "praise"
         },
@@ -13089,12 +12941,6 @@
             "category": "praise"
         },
         {
-            "text": "Sing to the King of kings and Lord of lords",
-            "book": "1 Timothy 6:15",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
             "text": "Give the Lord the glory he deserves! Worship the Lord in the splendor of his holiness",
             "book": "1 Chronicles 16:29",
             "isFavorite": false,
@@ -13113,20 +12959,8 @@
             "category": "praise"
         },
         {
-            "text": "For yours is the kingdom and the power and the glory forever. Amen",
-            "book": "Matthew 6:13",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
             "text": "He is clothed with majesty and splendor",
             "book": "Psalm 93:1",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "The heavens declare the glory of God; the skies proclaim the work of his hands",
-            "book": "Psalm 19:1",
             "isFavorite": false,
             "category": "praise"
         },
@@ -13221,22 +13055,12 @@
             "category": "praise"
         },
         {
-            "text": "In Your forgiveness, Jesus, I find new beginnings; I thank You.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
             "text": "Jesus, You are the vine; I am connected to You, bearing fruit.",
             "isFavorite": false,
             "category": "praise"
         },
         {
             "text": "Lord Jesus, in Your promises, I find assurance; I cling to You.",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "Jesus, Your word is a lamp to my feet; I follow Your path.",
             "isFavorite": false,
             "category": "praise"
         },
@@ -13265,20 +13089,8 @@
             "category": "praise"
         },
         {
-            "text": "I am healed by Your stripes, Jesus",
+            "text": "Thank you Jesus I am healed by Your stripes",
             "book": "Isaiah 53:5",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "Jesus, You are my light and my salvation",
-            "book": "Psalm 57:1",
-            "isFavorite": false,
-            "category": "praise"
-        },
-        {
-            "text": "In You, Jesus, I am fearfully and wonderfully made",
-            "book": "Psalm 139:14",
             "isFavorite": false,
             "category": "praise"
         },
@@ -14212,7 +14024,166 @@
             "isFavorite": false,
             "category": "heaven"
         },
-        
+        {
+            "text": "The battle is the Lord's.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank You, Jesus, for Your unwavering faithfulness, Your promises always come true.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank You, Jesus, for Your endless compassion, You understand and heal my deepest wounds.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank You, Jesus, for Your magnificent creation, a testament to Your power and artistry.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank You, Jesus, for Your all-encompassing presence, You are with me always, everywhere.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank You, Jesus, for Your glorious victory over death, offering me hope for eternal life.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank You, Jesus, for Your unwavering justice, You bring righteousness and truth to the world.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank You, Jesus, for Your infinite grace, You forgive my sins and offer me a new beginning.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank You, Jesus, for Your majestic voice, guiding me through scripture and prayer.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank You, Jesus, for Your boundless mercy, Your forgiveness knows no limits.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for being so strong and keeping me safe.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for your big love that wraps around me every day.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for being super powerful and helping me when I'm scared.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for your smart ways that guide me right.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for holding me tight with your mighty hands.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for loving me a lot, even when I mess up.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for being my superhero who's always there.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for your huge heart that's full of kindness.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for your wisdom that lights up the dark.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for being so strong, nothing can beat you.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for your endless love that makes me feel special.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for your wisdom that helps me make good choices.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for being my rock that I can always count on.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for your big love that never ends.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for being so wise, you know everything.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for your strength that picks me up when I fall.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for loving me more than I can imagine.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for your power that makes the impossible possible.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for your wisdom that guide me every day.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank you, Jesus, for being the biggest and best friend I could have.",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank You, Jesus, for being the most important King ever, You deserve all the praise!",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "Thank You, Jesus, for Your bigness, You can handle anything that comes my way.",
+            "isFavorite": false,
+            "category": "praise"
+        },
         
     ]
 }

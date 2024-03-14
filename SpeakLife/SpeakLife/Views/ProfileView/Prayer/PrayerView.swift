@@ -75,7 +75,7 @@ struct PrayerView: View {
     }
     
     private func standardPrayerRow(_ prayer: Prayer, index: Int) -> some View {
-        NavigationLink(destination: PrayerDetailView(prayer: prayer.prayerText, showConfetti: index == 0) { Gradients().cyanPurple }) {
+        NavigationLink(destination: PrayerDetailView(prayer: prayer.prayerText, showConfetti: index == 0) { Image("sunset3") }) {
             prayerRowView(prayer)
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                 .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)

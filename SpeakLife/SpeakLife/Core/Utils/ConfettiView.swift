@@ -41,12 +41,12 @@ struct ConfettiView: UIViewRepresentable {
         view.layer.addSublayer(emitter)
         emitter.birthRate = 0 // Initially turned off
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            emitter.birthRate = 1 // Turn on after 5 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            emitter.birthRate = 1 // Turn on after 10 seconds
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 12) {
-            emitter.birthRate = 0 // Turn on after 5 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+            emitter.birthRate = 0 // Turn off after 15 seconds
         }
         return view
     }

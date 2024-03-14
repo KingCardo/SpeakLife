@@ -452,7 +452,7 @@ struct PrivacyPolicyView: View {
                 
                 Text("5. Contact Us")
                     .font(.subheadline)
-                Text("* If you have any questions about our Privacy Policy, please contact us at speaklifebibleapp@gmail.com.")
+                Text("* If you have any questions about our Privacy Policy, please contact us at speaklife@diosesaqui.com.")
                     .font(.body)
                    
             }
