@@ -58,7 +58,7 @@ struct OnboardingView: View  {
                 IntroScene(headerText: "The enemy", bodyText: "satan comes to steal, kill, and destroy. He wants to steal the truth, word of God from your heart, your health, joy, peace and much more!", footerText: "But we have weapons to take offense. Jesus gave us authority over all power of the enemy! Luke 10:19", buttonTitle: "Fight back", size: geometry.size, callBack: advance)
                     .tag(Tab.foe)
                 
-                IntroScene(headerText: "Your Savior", bodyText: "Jesus, came so you can have life abundantly, prosper and be in great health. So as God's children we must fight the enemy", footerText: "and not let him steal from us. Time to fight back everyday by speaking life. The power is in your hands.", buttonTitle: "Claim what's mine!", size: geometry.size, callBack: advance)
+                IntroScene(headerText: "Your Savior", bodyText: "Jesus, came so you can have life abundantly, prosper and be in great health. So as God's children we must fight the enemy", footerText: "and not let him steal from us. Time to fight back everyday by speaking life. Jesus already conquered for us, we have to keep it.", buttonTitle: "Claim what's mine!", size: geometry.size, callBack: advance)
                     .tag(Tab.life)
                 
                 IntroTipScene(size: geometry.size, callBack: advance)

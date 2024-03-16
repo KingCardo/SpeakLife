@@ -18,8 +18,5 @@ struct WarriorView: View {
             PrayerView()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .onAppear {
-            Analytics.logEvent(Event.ninetyOnePsalmTapped, parameters: nil)
-        }
     }
 }

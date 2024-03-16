@@ -19,7 +19,8 @@ struct Benefit: Identifiable  {
     static var premiumBenefits: [Benefit] = [
         
 //        Benefit(text: "Unlock all features"),
-        Benefit(text: "Build your spirit by meditating on God's love for you"),
+//        Benefit(text: "Build your spirit by meditating on God's love for you"),
+        Benefit(text: "First 3 days are free"),
         Benefit(text: "5000+ library of affirmations"),
         Benefit(text: "Daily Devotional's to grow with Jesus"),
 //        Benefit(text: "Unlimited curated notifications"),
@@ -30,6 +31,7 @@ struct Benefit: Identifiable  {
         Benefit(text: "Categories for any situation"),
 //        Benefit(text: "Unlock all themes"),
         Benefit(text: "Unlock everything"),
+     //   Benefit(text: "#"),
        // Benefit(text:"Proverbs 18:21: Words have immense power; they can shape your reality and influence your future. Think of them as tools that can build or destroy."),
 
       //  Benefit(text:"Mark 11:23: Your convictions, voiced out loud, hold incredible power. If you truly believe and verbalize your goals or aspirations, no obstacle is too big to overcome, not even metaphorical mountains."),
@@ -316,7 +318,7 @@ struct SubscriptionView: View {
         ZStack {
             GeometryReader { geometry in
                 
-                Image(appState.isOnboarded ? "sandOcean" : onboardingBGImage)
+                Image(onboardingBGImage)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
@@ -328,7 +330,7 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 60)
                     VStack(alignment: .center) {
-                        Text("Unlock SpeakLife for free", comment: "unlock everything premium view")
+                        Text("Unlock SpeakLife", comment: "unlock everything premium view")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 28))
                             .fontWeight(.bold)
                             .foregroundColor(.white)

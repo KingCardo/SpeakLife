@@ -97,6 +97,11 @@ class ImprovementViewModel: ObservableObject {
         if categories.contains("peace") {
             categories.append("rest")
         }
+        
+        if categories.contains("stress") {
+            categories.append("rest")
+            categories.append("peace")
+        }
         if !categories.contains("destiny") {
             categories.append("destiny")
         }
@@ -116,17 +121,17 @@ class ImprovementViewModel: ObservableObject {
 enum Improvements: String, CaseIterable { 
    // case joy = "Be happy and content"
     case gratitude = "Grow in gratitude"
-    case stress = "Reduce Stress & Anxiety"
-    case praise = "Magnify the Lord"
+    case stress = "Remove Stress & Anxiety"
+   // case praise = "Magnify the Lord"
     case grace = "Learn how forgiven you are"
-    case love = "Bask in Jesus Love for you"
-    case health = "Maintain or restore your health"
-    case destiny = "Move closer to your destiny"
-  //  case safety = "Protection and safety"
+    case love = "Soak in Jesus Love for you"
+    case health = "Rejuvenate your health"
+    case destiny = "Manifest your destiny"
+    case safety = "Protection and safety"
    // case guilt = "Be free from guilt and condemnation"
-    case loneliness = "Feeling alone"
+    case loneliness = "Feeling lonely"
   //  case wealth = "Wealth"
-    case peace = "Remain and live in peace"
+   // case peace = "Remain and live in peace"
     
     
     var selectedCategory: String {
@@ -135,16 +140,16 @@ enum Improvements: String, CaseIterable {
             "fear"
         case .grace:
             "grace"
-        case .praise:
-            "praise"
+//        case .praise:
+//            "praise"
         case .love:
             "love"
         case .destiny:
             "destiny"
         case .health:
             "health"
-       // case .safety:
-        //    "godsprotection"
+        case .safety:
+            "godsprotection"
 //        case .guilt:
 //            "guilt"
 //        case .joy:
@@ -155,8 +160,8 @@ enum Improvements: String, CaseIterable {
             "loneliness"
 //        case .wealth:
 //            "wealth"
-        case .peace:
-            "peace"
+//        case .peace:
+//            "peace"
         }
     }
 }
