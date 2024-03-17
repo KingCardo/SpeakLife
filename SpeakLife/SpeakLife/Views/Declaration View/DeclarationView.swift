@@ -87,8 +87,8 @@ struct DeclarationView: View {
                                             presentTimerBottomSheet()
                                         }
                                         .sheet(isPresented: $isPresentingBottomSheet) {
-                                            BottomSheet(isShown: $isPresentingBottomSheet)
-                                                .presentationDetents([.fraction(0.4)])
+                                            StreakInfoBottomSheet(isShown: $isPresentingBottomSheet)
+                                                .presentationDetents([.fraction(0.5)])
                                                 .preferredColorScheme(.light)
                                         }
                                     } else {

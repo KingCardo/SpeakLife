@@ -15,10 +15,20 @@ struct DayCompletion: Codable {
 
 final class StreakViewModel: ObservableObject {
     @Published var weekCompletions: [DayCompletion] = []
+    
+    @AppStorage("currentStreak") var currentStreak = 0
+    @AppStorage("longestStreak") var longestStreak = 0
+    
+    @Published var titleText: String = ""
+    @Published var subTitleText: String = ""
        
        init() {
            setupWeekCompletions()
            NotificationCenter.default.addObserver(self, selector: #selector(eventCompletedReceived), name: Notification.Name("StreakCompleted"), object: nil)
+           let titleText = currentStreak == 1 ? "\(currentStreak) day" : "\(currentStreak) days"
+           let subTitleText = longestStreak == 1 ? "\(longestStreak) day" : "\(longestStreak) days"
+           self.titleText = "\(titleText)"
+           self.subTitleText = "\(subTitleText)"
        }
     
     deinit {
@@ -111,8 +121,7 @@ struct StreakSheet: View {
     @Binding var isShown: Bool
     @ObservedObject var streakViewModel: StreakViewModel
     
-    @AppStorage("currentStreak") var currentStreak = 0
-    @AppStorage("longestStreak") var longestStreak = 0
+    
     
     let titleFont = Font.custom("AppleSDGothicNeo-Regular", size: 26, relativeTo: .title)
     let bodyFont = Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body)
@@ -127,11 +136,11 @@ struct StreakSheet: View {
                         .font(titleFont)
                    
             HStack {
-                Text("\(currentStreak) days ")
+                Text(streakViewModel.titleText)
                     .font(bodyFont)
                 Image(systemName: "bolt.fill")
                     .resizable()
-                    .frame(width: 20, height: 20)
+                    .frame(width: 15, height: 20)
             }
                    Spacer()
                     .frame(height: 8)
@@ -140,11 +149,11 @@ struct StreakSheet: View {
                 Text("Longest Streak 🎊")
                     .font(titleFont)
                 HStack {
-                Text("\(longestStreak) days")
+                    Text(streakViewModel.subTitleText)
                     .font(bodyFont)
                     Image(systemName: "bolt.fill")
                         .resizable()
-                        .frame(width: 20, height: 20)
+                        .frame(width: 15, height: 20)
                 }
             }
         }

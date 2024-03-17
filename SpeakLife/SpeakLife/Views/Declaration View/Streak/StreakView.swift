@@ -101,11 +101,16 @@ struct CountdownTimerView: View {
             viewModel.saveRemainingTime()
             streakViewModel.saveToUserDefaults()
         }
-//        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-//           // viewModel.loadRemainingTime()
-//            viewModel.setupMidnightReset()
-//            viewModel.startTimer()
-//        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            viewModel.loadRemainingTime()
+            viewModel.setupMidnightReset()
+            viewModel.startTimer()
+        }
+        
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
+            viewModel.saveRemainingTime()
+            streakViewModel.saveToUserDefaults()
+        }
         .onTapGesture {
             action?()
         }

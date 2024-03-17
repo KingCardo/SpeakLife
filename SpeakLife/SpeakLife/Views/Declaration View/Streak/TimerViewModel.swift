@@ -22,7 +22,7 @@ final class TimerViewModel: ObservableObject {
     @Published private(set) var timeRemaining: Int = 0
     @Published private(set) var isActive = false
     @Published var timer: Timer? = nil
-    var cancellables = Set<AnyCancellable>()
+   // var cancellables = Set<AnyCancellable>()
 
     
     init() {
@@ -59,11 +59,6 @@ final class TimerViewModel: ObservableObject {
                 self.timeRemaining -= 1
             } else {
                 UserDefaults.standard.removeObject(forKey: "timestamp")
-                NotificationCenter.default.publisher(for: Notification.Name("StreakCompleted"))
-                    .sink { [weak self] _ in
-                       
-                    }
-                    .store(in: &cancellables)
                 isComplete = true
                 saveCompletionDate()
                 currentStreak += 1
@@ -139,6 +134,7 @@ final class TimerViewModel: ObservableObject {
         if checkIfCompletedToday() {
             isComplete = true
             isActive = false
+            NotificationCenter.default.post(name: Notification.Name("StreakCompleted"), object: nil)
             return
         } else if let savedTimeRemaining = UserDefaults.standard.value(forKey: "timeRemaining") as? Int {
             // Adjust the remaining time based on how much time has passed since the app was last open

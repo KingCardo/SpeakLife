@@ -42,7 +42,7 @@
 		45CF271A2B4E52EF00BC8968 /* HabitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF27192B4E52EF00BC8968 /* HabitScene.swift */; };
 		45CF271C2B4E530300BC8968 /* ImprovementScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF271B2B4E530300BC8968 /* ImprovementScene.swift */; };
 		45ED72C42BA10B3500F5F5E3 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED72C32BA10B3500F5F5E3 /* ConfettiView.swift */; };
-		45ED72C62BA64C3F00F5F5E3 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED72C52BA64C3F00F5F5E3 /* BottomSheet.swift */; };
+		45ED72C62BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED72C52BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift */; };
 		7A00721828F8ED4A00965AF7 /* declarations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A00721728F8ED4A00965AF7 /* declarations.json */; };
 		7A00721D2908D50800965AF7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		7A278F9B288915DE0084BB57 /* SpeakLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */; };
@@ -203,7 +203,7 @@
 		45CF27192B4E52EF00BC8968 /* HabitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitScene.swift; sourceTree = "<group>"; };
 		45CF271B2B4E530300BC8968 /* ImprovementScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprovementScene.swift; sourceTree = "<group>"; };
 		45ED72C32BA10B3500F5F5E3 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
-		45ED72C52BA64C3F00F5F5E3 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		45ED72C52BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakInfoBottomSheet.swift; sourceTree = "<group>"; };
 		7A00721728F8ED4A00965AF7 /* declarations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = declarations.json; sourceTree = "<group>"; };
 		7A278F97288915DE0084BB57 /* SpeakLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakLifeApp.swift; sourceTree = "<group>"; };
@@ -638,7 +638,7 @@
 				7AA8709928DACCB700134ADB /* View Models */,
 				7AA8709C28DACCB700134ADB /* DeclarationContent */,
 				7AA870A028DACCB700134ADB /* ThemeChooserViews */,
-				45ED72C52BA64C3F00F5F5E3 /* BottomSheet.swift */,
+				45ED72C52BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift */,
 			);
 			path = "Declaration View";
 			sourceTree = "<group>";
@@ -1052,7 +1052,7 @@
 				7AA8709528DACCA800134ADB /* FontPickerController.swift in Sources */,
 				7AA8708028DACC8300134ADB /* NotificationHandler.swift in Sources */,
 				7AA870D628DACCB700134ADB /* CreateYourOwnView.swift in Sources */,
-				45ED72C62BA64C3F00F5F5E3 /* BottomSheet.swift in Sources */,
+				45ED72C62BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift in Sources */,
 				7A60143F294E382700CD2103 /* SubscriptionStore.swift in Sources */,
 				7ABA50C529E4D818002699F1 /* Prayer.swift in Sources */,
 				7AA8707E28DACC8300134ADB /* APIService.swift in Sources */,
