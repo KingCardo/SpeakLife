@@ -54,15 +54,18 @@ struct GoldBadgeView: View {
 final class TimerViewModel: ObservableObject {
     static let totalDuration = 10 * 60
     
+    @AppStorage("currentStreak") var currentStreak = 0
+    @AppStorage("longestStreak") var longestStreak = 0
+    @AppStorage("lastCompletedStreak") var lastCompletedStreak: Date?
+    
     @Published private(set) var isComplete = false
-    @Published private(set) var timeRemaining: Int
+    @Published private(set) var timeRemaining: Int = 0
     @Published private(set) var isActive = false
     @Published var timer: Timer? = nil
     
-    init(timeRemaining: Int = TimerViewModel.totalDuration, isActive: Bool = false, timer: Timer? = nil) {
-        self.timeRemaining = timeRemaining
-        self.isActive = isActive
-        self.timer = timer
+    init() {
+        loadRemainingTime()
+        checkAndUpdateCompletionDate()
     }
     
     func setupMidnightReset() {
@@ -79,20 +82,93 @@ final class TimerViewModel: ObservableObject {
         timeRemaining = TimerViewModel.totalDuration // Reset to 10 minutes
         stopTimer()
         startTimer()
+        checkAndUpdateCompletionDate()
     }
     
     func runCountdownTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
             guard let self = self else { return }
+            if checkIfCompletedToday() {
+                isComplete = true
+                isActive = false
+                return
+            }
             if self.timeRemaining > 0 {
                 self.timeRemaining -= 1
             } else {
+                UserDefaults.standard.removeObject(forKey: "timestamp")
                 isComplete = true
+                saveCompletionDate()
+                currentStreak += 1
+                if currentStreak > longestStreak {
+                    longestStreak += 1
+                }
                 timer.invalidate()
                 self.isActive = false
                 // Prepare for the next day's reset if needed, or set up another logic as per your requirement
                 self.setupMidnightReset()
             }
+        }
+    }
+    
+    func saveCompletionDate() {
+        lastCompletedStreak = Date()
+    }
+    
+    lazy var calendar: Calendar = {
+        var calendar = Calendar.current
+        calendar.timeZone = .autoupdatingCurrent
+        calendar.locale = .autoupdatingCurrent
+        return calendar
+    }()
+        
+    func checkIfCompletedToday() -> Bool {
+        guard let completionDate = lastCompletedStreak else { return false }
+        let currentDate = Date()
+        
+        return completionDate < calendar.startOfDay(for: currentDate)
+    }
+    
+    func midnightOfTomorrow(after date: Date) -> Date? {
+           if let nextDay = calendar.date(byAdding: .day, value: 1, to: date) {
+               return calendar.startOfDay(for: nextDay)
+           }
+           return nil
+       }
+       
+       func checkIfMidnightOfTomorrowHasPassed() -> Bool {
+           guard let lastCompletionDate = lastCompletedStreak,
+                 let midnightAfterCompletion = midnightOfTomorrow(after: lastCompletionDate) else {
+               return false
+           }
+           
+           return Date() > midnightAfterCompletion
+       }
+    
+    func checkAndUpdateCompletionDate() {
+        
+        if checkIfMidnightOfTomorrowHasPassed(){
+            // to do: notify user
+            lastCompletedStreak = nil
+            currentStreak = 0
+        }
+    }
+    
+    func saveRemainingTime() {
+       // let timestamp = Date().timeIntervalSince1970
+        UserDefaults.standard.set(timeRemaining, forKey: "timeRemaining")
+    }
+    
+    func loadRemainingTime() {
+        if checkIfCompletedToday() {
+            isComplete = true
+            isActive = false
+            return
+        } else if let savedTimeRemaining = UserDefaults.standard.value(forKey: "timeRemaining") as? Int {
+            // Adjust the remaining time based on how much time has passed since the app was last open
+            timeRemaining = savedTimeRemaining
+        } else {
+            timeRemaining = TimerViewModel.totalDuration
         }
     }
     
@@ -156,16 +232,22 @@ struct CountdownTimerView: View {
         .frame(width: 50, height: 50)
         
         .onAppear {
+            viewModel.loadRemainingTime()
             viewModel.setupMidnightReset()
             viewModel.startTimer()
         }
         .onDisappear {
-            viewModel.stopTimer()
+            viewModel.saveRemainingTime()
+        }
+        
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willTerminateNotification)) { _ in
+            viewModel.saveRemainingTime()
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-            viewModel.stopTimer()
+            viewModel.saveRemainingTime()
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            viewModel.loadRemainingTime()
             viewModel.setupMidnightReset()
             viewModel.startTimer()
         }

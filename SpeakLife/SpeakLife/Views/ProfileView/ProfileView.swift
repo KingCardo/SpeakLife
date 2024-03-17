@@ -34,6 +34,7 @@ struct ProfileView: View {
     
     @State var isPresentingManageSubscriptionView = false
     @State var isPresentingContentView = false
+    @State var isPresentingBottomSheet = false
     @State private var showShareSheet = false
     let url = URL(string:APP.Product.urlID)
 
@@ -67,11 +68,9 @@ struct ProfileView: View {
             }
             
             Section(header: Text("Yours").font(.caption)) {
-                
+                streakRow
+    
                 HStack {
-                    
-                   
-                    
                     AbbasLoveRow
                     if appState.abbasLoveAdded {
                         Badge()
@@ -201,6 +200,26 @@ struct ProfileView: View {
                             .frame(width: 8)
                             .foregroundColor(Constants.DAMidBlue)
                     })
+        }
+    }
+    
+    @MainActor
+    private var streakRow: some View {
+        ZStack {
+            Button("") {
+                isPresentingContentView = true
+            }
+            HStack {
+                Image(systemName: "flame.fill")
+                    .foregroundColor(Constants.DAMidBlue)
+                
+                Text("Streak")
+                
+            }
+        }.sheet(isPresented: $isPresentingBottomSheet) {
+            BottomSheet(isShown: $isPresentingBottomSheet)
+                .presentationDetents([.medium, .fraction(0.4)])
+                .preferredColorScheme(.light)
         }
     }
     

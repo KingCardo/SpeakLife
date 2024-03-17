@@ -12,11 +12,15 @@ struct BottomSheet: View {
     
     var body: some View {
         VStack {
-            Text("Daily affirmation goal")
+            Image("declarationsIllustration")
+                .resizable()
+                .frame(width: 90, height: 90)
+            
+            Text("Speak Life Daily")
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 26, relativeTo: .title))
                 .padding()
                 .foregroundColor(.black)
-            Text("Practice speaking life and meditate for 10 minutes a day to build a habit. It will significantly improve your life!")
+            Text("Practice speaking life and meditating for 10 minutes a day to build a habit. It will significantly improve your life!")
                 .lineLimit(nil)
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
                 .padding([.leading,.trailing])

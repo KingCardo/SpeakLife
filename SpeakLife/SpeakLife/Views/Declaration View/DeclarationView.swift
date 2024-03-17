@@ -11,6 +11,7 @@ import StoreKit
 import UIKit
 import FirebaseAnalytics
 import GoogleMobileAds
+import Combine
 
 
 struct DeclarationView: View {
@@ -39,9 +40,24 @@ struct DeclarationView: View {
     @State private var isPresentingBottomSheet = false
     @StateObject var timerViewModel = TimerViewModel()
     @State private var timeRemaining: Int = 0
+    
+    @State var isPresenting: Bool = false
+    
+    private var cancellables = Set<AnyCancellable>()
+    
 
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
+    init() {
+        
+//        $isPresentingPremiumView
+//                    .map { isPresentingPremium -> Bool in
+//                        // Combine the Bool values in some way
+//                        return isPresentingPremium // Assuming `self.isPresenting` is meant to track another presentation state
+//                    }
+//                    .assign(to: $isPresenting)
+//                    .store(in: &cancellables)
+
+    }
     
     @State private var timeElapsed = 0
     
@@ -72,7 +88,7 @@ struct DeclarationView: View {
                                         }
                                         .sheet(isPresented: $isPresentingBottomSheet) {
                                             BottomSheet(isShown: $isPresentingBottomSheet)
-                                                .presentationDetents([.medium, .fraction(0.3)])
+                                                .presentationDetents([.medium])
                                                 .preferredColorScheme(.light)
                                         }
                                     } else {
@@ -111,7 +127,7 @@ struct DeclarationView: View {
                             .foregroundColor(.black.opacity(0.4))
                             .edgesIgnoringSafeArea(.all)
                             .onTapGesture {
-                                withAnimation {
+                                withAnimation(.easeOut) {
                                     self.isPresentingBottomSheet = false
                                 }
                             }
