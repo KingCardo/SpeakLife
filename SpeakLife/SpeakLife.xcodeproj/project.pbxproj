@@ -28,6 +28,9 @@
 		458510DC2B15C37B00230EE5 /* BibleStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510DB2B15C37B00230EE5 /* BibleStudyView.swift */; };
 		458510DE2B16B29400230EE5 /* BibleStudyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510DD2B16B29400230EE5 /* BibleStudyViewModel.swift */; };
 		458510E02B16B2B000230EE5 /* BibleStudyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510DF2B16B2B000230EE5 /* BibleStudyService.swift */; };
+		458B6B1D2BA6D58D0001BEFE /* StreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B6B1C2BA6D58D0001BEFE /* StreakView.swift */; };
+		458B6B1F2BA6D5CF0001BEFE /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B6B1E2BA6D5CF0001BEFE /* TimerViewModel.swift */; };
+		458B6B212BA6E3EC0001BEFE /* StreakDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B6B202BA6E3EC0001BEFE /* StreakDetails.swift */; };
 		45C7481B2B5357D40011D8F6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		45C7481C2B5357D40011D8F6 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 7AF18C7F29FD1E20005A6E31 /* GoogleMobileAds */; };
 		45C7481F2B55B4B80011D8F6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 45C7481E2B55B4B80011D8F6 /* FacebookCore */; };
@@ -188,6 +191,9 @@
 		458510DB2B15C37B00230EE5 /* BibleStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleStudyView.swift; sourceTree = "<group>"; };
 		458510DD2B16B29400230EE5 /* BibleStudyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleStudyViewModel.swift; sourceTree = "<group>"; };
 		458510DF2B16B2B000230EE5 /* BibleStudyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleStudyService.swift; sourceTree = "<group>"; };
+		458B6B1C2BA6D58D0001BEFE /* StreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakView.swift; sourceTree = "<group>"; };
+		458B6B1E2BA6D5CF0001BEFE /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		458B6B202BA6E3EC0001BEFE /* StreakDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakDetails.swift; sourceTree = "<group>"; };
 		45C748222B5802C60011D8F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45C748242B5802CA0011D8F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45C7482C2B5BBF9A0011D8F6 /* romanticpiano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = romanticpiano.mp3; sourceTree = "<group>"; };
@@ -353,6 +359,16 @@
 				458510DF2B16B2B000230EE5 /* BibleStudyService.swift */,
 			);
 			path = BibleStudy;
+			sourceTree = "<group>";
+		};
+		458B6B1B2BA6D57F0001BEFE /* Streak */ = {
+			isa = PBXGroup;
+			children = (
+				458B6B1C2BA6D58D0001BEFE /* StreakView.swift */,
+				458B6B1E2BA6D5CF0001BEFE /* TimerViewModel.swift */,
+				458B6B202BA6E3EC0001BEFE /* StreakDetails.swift */,
+			);
+			path = Streak;
 			sourceTree = "<group>";
 		};
 		45C748282B5BBE4D0011D8F6 /* Audio */ = {
@@ -615,6 +631,7 @@
 		7AA8709728DACCB700134ADB /* Declaration View */ = {
 			isa = PBXGroup;
 			children = (
+				458B6B1B2BA6D57F0001BEFE /* Streak */,
 				7AA870B728DACCB700134ADB /* DeclarationView.swift */,
 				7AA8709828DACCB700134ADB /* IntentsBarView.swift */,
 				7AA870B628DACCB700134ADB /* CategoryChooserView.swift */,
@@ -974,6 +991,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				458B6B1F2BA6D5CF0001BEFE /* TimerViewModel.swift in Sources */,
 				7AA8706C28DACC4E00134ADB /* Theme.swift in Sources */,
 				458510D52B13C77000230EE5 /* WebView.swift in Sources */,
 				7AA8709628DACCA800134ADB /* String+Extension.swift in Sources */,
@@ -1004,6 +1022,7 @@
 				4571AA412B88A2A800067FD5 /* RemoteAPIClient.swift in Sources */,
 				7AF18C962A0CC532005A6E31 /* DevotionalView.swift in Sources */,
 				7AA870D828DACCB700134ADB /* CategoryChooserView.swift in Sources */,
+				458B6B212BA6E3EC0001BEFE /* StreakDetails.swift in Sources */,
 				7A278F9B288915DE0084BB57 /* SpeakLifeApp.swift in Sources */,
 				7AA870C528DACCB700134ADB /* QuoteLabel.swift in Sources */,
 				7AA870DB28DACCB700134ADB /* OnboardingTypes.swift in Sources */,
@@ -1011,6 +1030,7 @@
 				7AA8706D28DACC4E00134ADB /* Reminder.swift in Sources */,
 				45CF271C2B4E530300BC8968 /* ImprovementScene.swift in Sources */,
 				7AA8709228DACCA700134ADB /* ToggleStyle.swift in Sources */,
+				458B6B1D2BA6D58D0001BEFE /* StreakView.swift in Sources */,
 				7AA870D928DACCB700134ADB /* DeclarationView.swift in Sources */,
 				7ABA50C329E4D52B002699F1 /* PrayerView.swift in Sources */,
 				7AA870C428DACCB700134ADB /* DeclarationViewModel.swift in Sources */,

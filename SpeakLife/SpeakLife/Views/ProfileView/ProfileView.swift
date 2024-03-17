@@ -25,6 +25,7 @@ struct ProfileView: View {
     
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var declarationStore: DeclarationViewModel
+    @EnvironmentObject var streakViewModel: StreakViewModel
     @EnvironmentObject var appState: AppState
     
     @State var result: Result<MFMailComposeResult, Error>? = nil
@@ -215,7 +216,7 @@ struct ProfileView: View {
                 
             }
         }.sheet(isPresented: $isPresentingBottomSheet) {
-            StreakSheet(isShown: $isPresentingBottomSheet)
+            StreakSheet(isShown: $isPresentingBottomSheet, streakViewModel: streakViewModel)
                 .presentationDetents([.medium, .fraction(0.4)])
                 .preferredColorScheme(.light)
         }

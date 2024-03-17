@@ -19,7 +19,8 @@ struct SpeakLifeApp: App {
     @StateObject var themeStore = ThemeViewModel()
     @StateObject var subscriptionStore = SubscriptionStore()
     @StateObject var devotionalViewModel = DevotionalViewModel()
-   // @StateObject var timeTracker = TimeTrackerViewModel()
+    @StateObject var streakViewModel = StreakViewModel()
+    @StateObject var timerViewModel = TimerViewModel()
     @State var isShowingLanding = true
     
     private let fourDaysInSeconds: Double = 345600
@@ -32,6 +33,8 @@ struct SpeakLifeApp: App {
                 .environmentObject(themeStore)
                 .environmentObject(subscriptionStore)
                 .environmentObject(devotionalViewModel)
+                .environmentObject(streakViewModel)
+                .environmentObject(timerViewModel)
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now()) {
                         withAnimation {
