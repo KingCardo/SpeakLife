@@ -51,12 +51,16 @@ struct GoldBadgeView: View {
     }
 }
 
+import UserNotifications
+
 final class TimerViewModel: ObservableObject {
     static let totalDuration = 10 * 60
     
     @AppStorage("currentStreak") var currentStreak = 0
     @AppStorage("longestStreak") var longestStreak = 0
     @AppStorage("lastCompletedStreak") var lastCompletedStreak: Date?
+    
+    @AppStorage("newStreakNotification") var newStreakNotification = false
     
     @Published private(set) var isComplete = false
     @Published private(set) var timeRemaining: Int = 0
@@ -66,6 +70,9 @@ final class TimerViewModel: ObservableObject {
     init() {
         loadRemainingTime()
         checkAndUpdateCompletionDate()
+        if !newStreakNotification {
+            registerStreakNotification()
+        }
     }
     
     func setupMidnightReset() {
@@ -148,14 +155,13 @@ final class TimerViewModel: ObservableObject {
     func checkAndUpdateCompletionDate() {
         
         if checkIfMidnightOfTomorrowHasPassed(){
-            // to do: notify user
+            scheduleNotificationForMidnightTomorrow()
             lastCompletedStreak = nil
             currentStreak = 0
         }
     }
     
     func saveRemainingTime() {
-       // let timestamp = Date().timeIntervalSince1970
         UserDefaults.standard.set(timeRemaining, forKey: "timeRemaining")
     }
     
@@ -197,6 +203,70 @@ final class TimerViewModel: ObservableObject {
         let minutes = time / 60
         let seconds = time % 60
         return String(format: "%02d:%02d", minutes, seconds)
+    }
+    
+    let speakLifeArray:[String] = ["Time to put them to use ⚔️🗣️",
+                                   "The quest awaits! 🗺️⚔️ Ready to jump back in?",
+                                   "Adventure calls! 🌄 Your journey resumes now.",
+                                   "🛡️⚒️ Gear up and dive back in.",
+                                   "Legends don't rest for too long! 🌟 It's time to claim your ground.",
+                                   "The spiritual realm misses its hero! 🏰 Return to your adventure now.",
+                                   "Too quiet without you! 🌿👣 Let's stir things up again.",
+                                   "Your saga awaits its next chapter! 📖✨ Unpause your journey.",
+                                   "Ready for another round? 🔄 The adventure never stops!",
+                                   "It's comeback time! 🎉",
+                                   "The heavens whisper your name! 🍃🗣️ Heed the call and return.",
+                                   "Feeling the call of adventure? 🏞️ It's time to respond!",
+                                   "Your destiny isn't written yet! 🌌 Continue your epic quest.",
+                                   "A hero's work is never done! ⚔️🛡️ Keep fighting.",
+                                   "The path remains! 🚶‍♂️🌲 Venture forward.",
+                                   "Epic moments await! 🌠 Seize your destiny once more."
+
+    ]
+    
+    func scheduleNotificationForMidnightTomorrow() {
+        let content = UNMutableNotificationContent()
+        content.title = "Speaking life is a weapon"
+        content.body = speakLifeArray.shuffled().first ?? "Time to put them to use ⚔️🗣️"
+        content.sound = UNNotificationSound.default
+
+        var dateComponents = DateComponents()
+        dateComponents.hour = 0  // Midnight
+        dateComponents.minute = 0
+
+        // Increment day by 1 to schedule for tomorrow
+        if let tomorrow = Calendar.current.date(byAdding: .hour, value: 7, to: Date()) {
+            dateComponents.day = Calendar.current.component(.day, from: tomorrow)
+            dateComponents.month = Calendar.current.component(.month, from: tomorrow)
+            dateComponents.year = Calendar.current.component(.year, from: tomorrow)
+        }
+
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Error scheduling notification: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func registerStreakNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "New Streak 🔥"
+        content.body = "Speaking Life just got easier, let's start a streak."
+        content.sound = UNNotificationSound.default
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400, repeats: false)
+
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Error scheduling notification: \(error.localizedDescription)")
+            }
+        }
     }
 }
 

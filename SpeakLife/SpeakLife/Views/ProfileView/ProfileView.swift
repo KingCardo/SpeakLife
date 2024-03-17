@@ -37,8 +37,6 @@ struct ProfileView: View {
     @State var isPresentingBottomSheet = false
     @State private var showShareSheet = false
     let url = URL(string:APP.Product.urlID)
-
- //   let resources = ["romanticpiano","peacefulplace"]
     
     
     init() {
@@ -207,7 +205,7 @@ struct ProfileView: View {
     private var streakRow: some View {
         ZStack {
             Button("") {
-                isPresentingContentView = true
+                isPresentingBottomSheet = true
             }
             HStack {
                 Image(systemName: "flame.fill")
@@ -217,7 +215,7 @@ struct ProfileView: View {
                 
             }
         }.sheet(isPresented: $isPresentingBottomSheet) {
-            BottomSheet(isShown: $isPresentingBottomSheet)
+            StreakSheet(isShown: $isPresentingBottomSheet)
                 .presentationDetents([.medium, .fraction(0.4)])
                 .preferredColorScheme(.light)
         }

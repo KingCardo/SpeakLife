@@ -88,7 +88,7 @@ struct DeclarationView: View {
                                         }
                                         .sheet(isPresented: $isPresentingBottomSheet) {
                                             BottomSheet(isShown: $isPresentingBottomSheet)
-                                                .presentationDetents([.medium])
+                                                .presentationDetents([.fraction(0.4)])
                                                 .preferredColorScheme(.light)
                                         }
                                     } else {
@@ -121,19 +121,6 @@ struct DeclarationView: View {
                         }
                     }
                 }
-                if isPresentingBottomSheet {
-                    withAnimation(.easeIn) {
-                        Rectangle()
-                            .foregroundColor(.black.opacity(0.4))
-                            .edgesIgnoringSafeArea(.all)
-                            .onTapGesture {
-                                withAnimation(.easeOut) {
-                                    self.isPresentingBottomSheet = false
-                                }
-                            }
-                    }
-                }
-               
             }
         }
             
