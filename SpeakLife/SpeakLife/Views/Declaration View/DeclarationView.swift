@@ -36,7 +36,8 @@ struct DeclarationView: View {
     @State var showDailyDevotion = false
     @State private var isPresentingPremiumView = false
     @State private var isPresentingDiscountView = false
-    
+    @State private var isPresentingBottomSheet = false
+    @StateObject var timerViewModel = TimerViewModel()
     @State private var timeRemaining: Int = 0
 
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -65,6 +66,20 @@ struct DeclarationView: View {
                               
                                 HStack {
                                     Spacer()
+                                    if !timerViewModel.isComplete {
+                                        CountdownTimerView(viewModel: timerViewModel) {
+                                            presentTimerBottomSheet()
+                                        }
+                                        .sheet(isPresented: $isPresentingBottomSheet) {
+                                            BottomSheet(isShown: $isPresentingBottomSheet)
+                                                .presentationDetents([.medium, .fraction(0.3)])
+                                                .preferredColorScheme(.light)
+                                        }
+                                    } else {
+                                        GoldBadgeView()
+                                    }
+                                    Spacer()
+                                        .frame(width: 8)
                                     
                                     CapsuleImageButton(title: "crown.fill") {
                                         premiumView()
@@ -90,6 +105,19 @@ struct DeclarationView: View {
                         }
                     }
                 }
+                if isPresentingBottomSheet {
+                    withAnimation(.easeIn) {
+                        Rectangle()
+                            .foregroundColor(.black.opacity(0.4))
+                            .edgesIgnoringSafeArea(.all)
+                            .onTapGesture {
+                                withAnimation {
+                                    self.isPresentingBottomSheet = false
+                                }
+                            }
+                    }
+                }
+               
             }
         }
             
@@ -163,6 +191,10 @@ struct DeclarationView: View {
                 MailView(isShowing: $isShowingMailView, result: self.$result, origin: .review)
             }
         
+    }
+    
+    private func presentTimerBottomSheet()  {
+        self.isPresentingBottomSheet = true
     }
     
         

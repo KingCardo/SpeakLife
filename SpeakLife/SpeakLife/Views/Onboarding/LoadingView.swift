@@ -7,39 +7,170 @@
 
 import SwiftUI
 
+struct GoldBadgeView: View {
+    @State private var animate = false
+    @State private var isVisible = true
 
-struct CustomSpinnerView: View {
-    @State private var progress: CGFloat = 0.0
+    var body: some View {
+        ZStack {
+            // Sparkle effect
+            ForEach(0..<8) { i in
+                Image(systemName: "star.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 10, height: 10)
+                    .foregroundColor(.yellow)
+                    .opacity(animate ? 0 : 1) // Start fully visible and fade out
+                    .offset(y: animate ? -30 : -20) // Move the stars outward as they fade
+                    .rotationEffect(Angle(degrees: Double(i) * 45))
+                    .animation(.easeOut(duration: 0.5).delay(Double(i) * 0.1), value: animate) // Staggered animation for each star
+            }
+
+            Circle()
+                .fill(LinearGradient(gradient: Gradient(colors: [Color.yellow, Color.orange]), startPoint: .topLeading, endPoint: .bottomTrailing))
+                .frame(width: 50, height: 50)
+                .scaleEffect(animate ? 1 : 0)
+
+            Image(systemName: "star.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 25, height: 25)
+                .foregroundColor(.white)
+        }
+        .opacity(isVisible ? 1 : 0)
+        .onAppear {
+            withAnimation(.easeOut(duration: 0.5)) {
+                animate = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                withAnimation {
+                    isVisible = false
+                }
+            }
+        }
+    }
+}
+
+final class TimerViewModel: ObservableObject {
+    static let totalDuration = 10 * 60
+    
+    @Published private(set) var isComplete = false
+    @Published private(set) var timeRemaining: Int
+    @Published private(set) var isActive = false
+    @Published var timer: Timer? = nil
+    
+    init(timeRemaining: Int = TimerViewModel.totalDuration, isActive: Bool = false, timer: Timer? = nil) {
+        self.timeRemaining = timeRemaining
+        self.isActive = isActive
+        self.timer = timer
+    }
+    
+    func setupMidnightReset() {
+        let now = Date()
+        let calendar = Calendar.current
+        if let midnight = calendar.nextDate(after: now, matching: DateComponents(hour: 0, minute: 0, second: 0), matchingPolicy: .nextTime) {
+            let midnightResetTimer = Timer(fireAt: midnight, interval: 0, target: self, selector: #selector(resetTimerAtMidnight), userInfo: nil, repeats: false)
+            RunLoop.main.add(midnightResetTimer, forMode: .common)
+        }
+    }
+    
+    @objc func resetTimerAtMidnight() {
+        isComplete = false
+        timeRemaining = TimerViewModel.totalDuration // Reset to 10 minutes
+        stopTimer()
+        startTimer()
+    }
+    
+    func runCountdownTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
+            guard let self = self else { return }
+            if self.timeRemaining > 0 {
+                self.timeRemaining -= 1
+            } else {
+                isComplete = true
+                timer.invalidate()
+                self.isActive = false
+                // Prepare for the next day's reset if needed, or set up another logic as per your requirement
+                self.setupMidnightReset()
+            }
+        }
+    }
+    
+    func startTimer() {
+        if !isActive {
+            isActive = true
+            runCountdownTimer()
+        }
+    }
+    
+    func stopTimer() {
+        isActive = false
+        timer?.invalidate()
+        timer = nil
+    }
+    
+
+    
+    func progress(for timeRemaining: Int) -> CGFloat {
+        let totalTime = 10 * 60
+        let float = CGFloat(timeRemaining) / CGFloat(totalTime)
+        return float
+    }
+    
+    func timeString(time: Int) -> String {
+        let minutes = time / 60
+        let seconds = time % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
+}
+
+
+struct CountdownTimerView: View {
+    var action: (() -> Void)?
+    
+    @ObservedObject var viewModel: TimerViewModel
+
+    init(viewModel: TimerViewModel, action: (() -> Void)?) {
+        self.viewModel = viewModel
+        self.action = action
+    }
     
     var body: some View {
         ZStack {
             Circle()
-                .stroke(lineWidth: 15)
+                .stroke(lineWidth: 5)
                 .opacity(0.3)
                 .foregroundColor(Constants.DAMidBlue)
             
             Circle()
-                .trim(from: 0, to: progress)
-                .stroke(style: StrokeStyle(lineWidth: 15, lineCap: .round))
+                .trim(from: 0, to: viewModel.progress(for: viewModel.timeRemaining))
+                .stroke(style: StrokeStyle(lineWidth: 5, lineCap: .round))
                 .foregroundColor(Constants.DAMidBlue)
                 .rotationEffect(Angle(degrees: -90))
-                .animation(.easeInOut(duration: 2), value: progress)
+                .animation(.easeInOut(duration: 2), value: viewModel.timeRemaining)
             
-            Text("\(Int(progress * 100))%")
-                .font(.largeTitle)
-                .bold()
+            Text(viewModel.timeString(time: viewModel.timeRemaining))
+                .font(.caption)
                 .foregroundColor(Color.white)
         }
-        .frame(width: 200, height: 200)
+        .frame(width: 50, height: 50)
+        
         .onAppear {
-            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
-                withAnimation {
-                    self.progress += 0.02
-                    if self.progress >= 1.0 {
-                        timer.invalidate()
-                    }
-                }
-            }
+            viewModel.setupMidnightReset()
+            viewModel.startTimer()
+        }
+        .onDisappear {
+            viewModel.stopTimer()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+            viewModel.stopTimer()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            viewModel.setupMidnightReset()
+            viewModel.startTimer()
+        }
+        .onTapGesture {
+            action?()
         }
     }
 }
@@ -51,12 +182,12 @@ struct PersonalizationLoadingView: View {
     @EnvironmentObject var appState: AppState
     let size: CGSize
     let callBack: (() -> Void)
- 
+    
     @State private var checkedFirst = false
     @State private var checkedSecond = false
     @State private var checkedThird = false
     let delay: Double = Double.random(in: 6...7)
-
+    
     var body: some View {
         ZStack {
             
@@ -71,7 +202,7 @@ struct PersonalizationLoadingView: View {
             }
             VStack(spacing: 10) {
                 VStack(spacing: 10) {
-                    CustomSpinnerView()
+//                    CustomSpinnerView(timeRemaining: <#Int#>, action: <#(() -> Void)?#>)
                     Spacer()
                         .frame(height: 110)
                     
@@ -106,7 +237,7 @@ struct PersonalizationLoadingView: View {
                 .frame(maxWidth: .infinity, alignment: appState.onBoardingTest ? .center : .leading)
                 .padding()
             }
-        
+            
             .ignoresSafeArea()
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
@@ -123,7 +254,7 @@ struct BulletPointView: View {
     let text: String
     @Binding var isHighlighted: Bool
     let delay: Double // delay for the animation
-
+    
     var body: some View {
         HStack {
             Image(systemName: isHighlighted ? "checkmark.circle.fill" : "circle")
