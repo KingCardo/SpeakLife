@@ -79,7 +79,7 @@ struct DiscountSubscriptionView: View {
 //    @State private var timeRemaining: Int = 0
    
     
-    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR9) {
+    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR15) {
         self.size = size
         self.currentSelection = currentSelection
     }
@@ -275,8 +275,8 @@ struct SubscriptionView: View {
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
-    var firstSelection = InAppId.Subscription.speakLife1YR19
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR29
+    var firstSelection = InAppId.Subscription.speakLife1YR29
     var secondSelection = InAppId.Subscription.speakLife1MO4
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
