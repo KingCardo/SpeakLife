@@ -135,6 +135,7 @@ struct Welcome: Codable {
 struct Declaration: Codable, Identifiable, Hashable {
     let text: String
     var book: String? = nil
+    var affirmationText: String? = nil
     var category: DeclarationCategory = .faith
     var isFavorite: Bool = false
     var id: String {

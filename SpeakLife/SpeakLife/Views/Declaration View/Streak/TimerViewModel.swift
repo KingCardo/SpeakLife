@@ -14,6 +14,7 @@ final class TimerViewModel: ObservableObject {
     
     @AppStorage("currentStreak") var currentStreak = 0
     @AppStorage("longestStreak") var longestStreak = 0
+    @AppStorage("totalDaysCompleted") var totalDaysCompleted = 0
     @AppStorage("lastCompletedStreak") var lastCompletedStreak: Date?
     
     @AppStorage("newStreakNotification") var newStreakNotification = false
@@ -33,21 +34,21 @@ final class TimerViewModel: ObservableObject {
         }
     }
     
-    func setupMidnightReset() {
-        let now = Date()
-        if let midnight = calendar.nextDate(after: now, matching: DateComponents(hour: 0, minute: 0, second: 0), matchingPolicy: .nextTime) {
-            let midnightResetTimer = Timer(fireAt: midnight, interval: 0, target: self, selector: #selector(resetTimerAtMidnight), userInfo: nil, repeats: false)
-            RunLoop.main.add(midnightResetTimer, forMode: .common)
-        }
-    }
+//    func setupMidnightReset() {
+//        let now = Date()
+//        if let midnight = calendar.nextDate(after: now, matching: DateComponents(hour: 0, minute: 0, second: 0), matchingPolicy: .nextTime) {
+//            let midnightResetTimer = Timer(fireAt: midnight, interval: 0, target: self, selector: #selector(resetTimerAtMidnight), userInfo: nil, repeats: false)
+//            RunLoop.main.add(midnightResetTimer, forMode: .common)
+//        }
+//    }
     
-    @objc func resetTimerAtMidnight() {
-        isComplete = false
-        timeRemaining = TimerViewModel.totalDuration // Reset to 10 minutes
-        stopTimer()
-        startTimer()
-        checkAndUpdateCompletionDate()
-    }
+//    @objc func resetTimerAtMidnight() {
+//        isComplete = false
+//        timeRemaining = TimerViewModel.totalDuration // Reset to 10 minutes
+//      //  stopTimer()
+//       // startTimer()
+//       // checkAndUpdateCompletionDate()
+//    }
     
     func runCountdownTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
@@ -58,17 +59,20 @@ final class TimerViewModel: ObservableObject {
             } else if self.timeRemaining > 0 {
                 self.timeRemaining -= 1
             } else {
-                UserDefaults.standard.removeObject(forKey: "timestamp")
+                UserDefaults.standard.removeObject(forKey: "timeRemaining")
+                timeRemaining = 0
                 isComplete = true
                 saveCompletionDate()
                 currentStreak += 1
+                totalDaysCompleted += 1
                 if currentStreak > longestStreak {
                     longestStreak += 1
                 }
+                NotificationCenter.default.post(name: Notification.Name("StreakCompleted"), object: nil)
                 timer.invalidate()
                 self.isActive = false
                 // Prepare for the next day's reset if needed, or set up another logic as per your requirement
-                self.setupMidnightReset()
+               // self.setupMidnightReset()
             }
         }
     }
@@ -89,6 +93,7 @@ final class TimerViewModel: ObservableObject {
         let currentDate = Date()
         let calendar = Calendar.current
 
+        print(completionDate, "RWRW")
         // Start of the current day
         let startOfToday = calendar.startOfDay(for: currentDate)
 
@@ -101,32 +106,32 @@ final class TimerViewModel: ObservableObject {
     }
     
     func midnightOfTomorrow(after date: Date) -> Date? {
-           if let nextDay = calendar.date(byAdding: .day, value: 1, to: date) {
-               return calendar.startOfDay(for: nextDay)
-           }
-           return nil
-       }
-       
-       func checkIfMidnightOfTomorrowHasPassed() -> Bool {
-           guard let lastCompletionDate = lastCompletedStreak,
-                 let midnightAfterCompletion = midnightOfTomorrow(after: lastCompletionDate) else {
-               return false
-           }
-           
-           return Date() > midnightAfterCompletion
-       }
+        if let nextDay = calendar.date(byAdding: .day, value: 1, to: date) {
+            return calendar.startOfDay(for: nextDay)
+        }
+        return nil
+    }
+    
+    func checkIfMidnightOfTomorrowHasPassedSinceLastCompletedStreak() -> Bool {
+        guard let lastCompletionDate = lastCompletedStreak,
+              let midnightAfterCompletion = midnightOfTomorrow(after: lastCompletionDate) else {
+            return false
+        }
+        print(midnightAfterCompletion, "RWRW midnight")
+        return Date() > midnightAfterCompletion
+    }
     
     func checkAndUpdateCompletionDate() {
         
-        if checkIfMidnightOfTomorrowHasPassed() {
+        if checkIfMidnightOfTomorrowHasPassedSinceLastCompletedStreak() {
             scheduleNotificationForMidnightTomorrow()
-            lastCompletedStreak = nil
             currentStreak = 0
         }
     }
     
     func saveRemainingTime() {
         UserDefaults.standard.set(timeRemaining, forKey: "timeRemaining")
+        stopTimer()
        
     }
     
@@ -135,8 +140,10 @@ final class TimerViewModel: ObservableObject {
             isComplete = true
             isActive = false
             NotificationCenter.default.post(name: Notification.Name("StreakCompleted"), object: nil)
+            timeRemaining = TimerViewModel.totalDuration
+            UserDefaults.standard.removeObject(forKey: "timeRemaining")
             return
-        } else if let savedTimeRemaining = UserDefaults.standard.value(forKey: "timeRemaining") as? Int {
+        } else if let savedTimeRemaining = UserDefaults.standard.value(forKey: "timeRemaining") as? Int, savedTimeRemaining > 2 {
             // Adjust the remaining time based on how much time has passed since the app was last open
             timeRemaining = savedTimeRemaining
         } else {
@@ -161,11 +168,8 @@ final class TimerViewModel: ObservableObject {
     }
     
     
-    
-
-    
     func progress(for timeRemaining: Int) -> CGFloat {
-        let totalTime = 10 * 60
+        let totalTime = TimerViewModel.totalDuration
         let float = CGFloat(timeRemaining) / CGFloat(totalTime)
         return float
     }

@@ -18,28 +18,26 @@ final class StreakViewModel: ObservableObject {
     
     @AppStorage("currentStreak") var currentStreak = 0
     @AppStorage("longestStreak") var longestStreak = 0
+    @AppStorage("totalDaysCompleted") var totalDaysCompleted = 0
     
     @Published var titleText: String = ""
     @Published var subTitleText: String = ""
+    @Published var subTitleDetailText: String = ""
        
        init() {
-           setupWeekCompletions()
+           loadFromUserDefaults()
+          // setupWeekCompletions()
            NotificationCenter.default.addObserver(self, selector: #selector(eventCompletedReceived), name: Notification.Name("StreakCompleted"), object: nil)
-           let titleText = currentStreak == 1 ? "\(currentStreak) day" : "\(currentStreak) days"
-           let subTitleText = longestStreak == 1 ? "\(longestStreak) day" : "\(longestStreak) days"
-           self.titleText = "\(titleText)"
-           self.subTitleText = "\(subTitleText)"
        }
     
     deinit {
-
-           NotificationCenter.default.removeObserver(self)
-       }
-
-       @objc private func eventCompletedReceived() {
-           completeEvent()
-       }
-       
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func eventCompletedReceived() {
+        completeEvent()
+    }
+    
        private func setupWeekCompletions() {
            let calendar = Calendar.current
            let today = calendar.startOfDay(for: Date())
@@ -57,8 +55,8 @@ final class StreakViewModel: ObservableObject {
        func updateCompletionStatus(for date: Date, isCompleted: Bool) {
            if let index = weekCompletions.firstIndex(where: { $0.date == date }) {
                weekCompletions[index].isCompleted = isCompleted
+               saveToUserDefaults()
            }
-           saveToUserDefaults()
        }
        
        // Call this method when an event is completed
@@ -81,10 +79,29 @@ final class StreakViewModel: ObservableObject {
     }
 
     func loadFromUserDefaults() {
+        let titleText = currentStreak == 1 ? "\(currentStreak) day" : "\(currentStreak) days"
+        let subTitleText = longestStreak == 1 ? "\(longestStreak) day" : "\(longestStreak) days"
+        let subTitleDetailText = totalDaysCompleted == 1 ? "\(totalDaysCompleted) day" : "\(totalDaysCompleted) days"
+        self.titleText = "\(titleText)"
+        self.subTitleText = "\(subTitleText)"
+        self.subTitleDetailText = "\(subTitleDetailText)"
+        
         if let savedCompletions = UserDefaults.standard.object(forKey: "weekCompletions") as? Data {
             let decoder = JSONDecoder()
             if let loadedCompletions = try? decoder.decode([DayCompletion].self, from: savedCompletions) {
-                weekCompletions = loadedCompletions
+                let calendar = Calendar.current
+                let today = calendar.startOfDay(for: Date())
+                let weekStart = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: today))!
+                
+                weekCompletions = (0..<7).compactMap { offset in
+                    let currentDate = calendar.date(byAdding: .day, value: offset, to: weekStart)!
+                    print(currentDate, "RWRW", loadedCompletions[offset].date, loadedCompletions[offset].isCompleted)
+                    if let loaded = loadedCompletions.first(where: { $0.date == currentDate }) {
+                        return loaded
+                    } else {
+                        return DayCompletion(date: currentDate, isCompleted: false)
+                    }
+                }
             }
         }
     }
@@ -121,8 +138,6 @@ struct StreakSheet: View {
     @Binding var isShown: Bool
     @ObservedObject var streakViewModel: StreakViewModel
     
-    
-    
     let titleFont = Font.custom("AppleSDGothicNeo-Regular", size: 26, relativeTo: .title)
     let bodyFont = Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body)
 
@@ -131,8 +146,8 @@ struct StreakSheet: View {
         ZStack{
             Gradients().purple
             VStack {
-                StreakView(streak: streakViewModel.weekCompletions.map {$0.isCompleted})
-                    Text("Current Streak 🔥")
+                StreakView(streak: streakViewModel.weekCompletions.map { $0.isCompleted })
+                    Text("Current streak 🔥")
                         .font(titleFont)
                    
             HStack {
@@ -146,7 +161,7 @@ struct StreakSheet: View {
                     .frame(height: 8)
                 
                 
-                Text("Longest Streak 🎊")
+                Text("Longest streak 🥇")
                     .font(titleFont)
                 HStack {
                     Text(streakViewModel.subTitleText)
@@ -155,11 +170,21 @@ struct StreakSheet: View {
                         .resizable()
                         .frame(width: 15, height: 20)
                 }
+                
+                Text("Total days completed 📈")
+                    .font(titleFont)
+                HStack {
+                    Text(streakViewModel.subTitleDetailText)
+                    .font(bodyFont)
+//                    Image(systemName: "bolt.fill")
+//                        .resizable()
+//                        .frame(width: 15, height: 20)
+                }
             }
         }
         .foregroundColor(.white)
         .onAppear {
-            streakViewModel.loadFromUserDefaults()
+          //  streakViewModel.loadFromUserDefaults()
         }
        
     }

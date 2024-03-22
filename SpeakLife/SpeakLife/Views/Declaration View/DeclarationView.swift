@@ -38,15 +38,15 @@ struct DeclarationView: View {
     @State private var isPresentingPremiumView = false
     @State private var isPresentingDiscountView = false
     @State private var isPresentingBottomSheet = false
-    @StateObject var timerViewModel = TimerViewModel()
-    @State private var timeRemaining: Int = 0
+    @EnvironmentObject var timerViewModel: TimerViewModel
+   /// @State private var timeRemaining: Int = 0
     
     @State var isPresenting: Bool = false
     
     private var cancellables = Set<AnyCancellable>()
     
 
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     init() {
         
 //        $isPresentingPremiumView
@@ -78,7 +78,7 @@ struct DeclarationView: View {
                 if appState.showIntentBar {
                     if !appState.showScreenshotLabel {
                         VStack() {
-                            if !subscriptionStore.isPremium {
+                           
                               
                                 HStack {
                                     Spacer()
@@ -94,6 +94,7 @@ struct DeclarationView: View {
                                     } else {
                                         GoldBadgeView()
                                     }
+                                    if !subscriptionStore.isPremium {
                                     Spacer()
                                         .frame(width: 8)
                                     
@@ -106,11 +107,11 @@ struct DeclarationView: View {
                                     } content: {
                                         PremiumView()
                                     }
-                                     .padding(.trailing)
+                                    
                                     
                                 }
                                 
-                            }
+                            } .padding(.trailing)
  
                                 Spacer()
                                 if appState.showIntentBar {
@@ -171,6 +172,7 @@ struct DeclarationView: View {
                 shareCounter += 1
                 premiumCount += 1
                 shareApp()
+                
             }
             
             .alert("Help us spread SpeakLife?", isPresented: $share) {
@@ -217,53 +219,6 @@ struct DeclarationView: View {
     }
     
     
-    var discountLabel: some View {
-        VStack {
-            if appState.offerDiscount && !subscriptionStore.isPremium {
-                Text("Special gift for you! 👉")
-                    .font(.callout)
-                Text("\(timeString(from: timeRemaining)) left")
-                    .font(.caption)
-            }
-        }
-        .onAppear {
-            if appState.discountEndTime == nil {
-                appState.discountEndTime = Date().addingTimeInterval(4 * 60 * 60)
-            }
-            initializeTimer()
-        }
-        .onReceive(timer) { _ in
-            updateTimer()
-        }
-    }
-    
-    private func initializeTimer() {
-        if let endTime = appState.discountEndTime, Date() < endTime, !subscriptionStore.isPremium {
-            appState.offerDiscount = true
-            timeRemaining = Int(endTime.timeIntervalSinceNow)
-        } else {
-            appState.offerDiscount = false
-        }
-    }
-    
-    private func updateTimer() {
-        guard timeRemaining != 0 else { return }
-        if let endTime = appState.discountEndTime, Date() < endTime {
-               timeRemaining = Int(endTime.timeIntervalSinceNow)
-           } else {
-               appState.offerDiscount = false
-               timeRemaining = 0
-               timer.upstream.connect().cancel() // Stop the timer
-           }
-       }
-    
-    func timeString(from totalSeconds: Int) -> String {
-        let hours = totalSeconds / 3600
-        let minutes = (totalSeconds % 3600) / 60
-        let seconds = totalSeconds % 60
-        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-    }
-    
     
     private func shareSpeakLife()  {
         DispatchQueue.main.async {
@@ -293,7 +248,7 @@ struct DeclarationView: View {
             print("Build number: \(buildNumber)")
         }
         let currentDate = Date()
-        if reviewTry < 3 && appState.lastReviewRequestSetDate == nil {
+        if reviewTry <= 3 && appState.lastReviewRequestSetDate == nil {
             DispatchQueue.main.async {
                 if let scene = UIApplication.shared.connectedScenes
                     .first(where: { $0.activationState == .foregroundActive })

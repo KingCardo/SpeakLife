@@ -13,6 +13,8 @@ struct PremiumView: View {
     
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+        
     
     var body: some View {
         GeometryReader { geometry in
@@ -36,6 +38,34 @@ struct PremiumView: View {
                     .navigationTitle(LocalizedStringKey("Manage Subscription"))
                 }
             }
+        }.onAppear {
+            if appState.discountEndTime == nil {
+                appState.discountEndTime = Date().addingTimeInterval(4 * 60 * 60)
+            }
+            initializeTimer()
+        }
+        .onReceive(timer) { _ in
+            updateTimer()
+        }
+    }
+    
+    private func updateTimer() {
+        guard appState.timeRemaining != 0 else { return }
+        if let endTime = appState.discountEndTime, Date() < endTime {
+            appState.timeRemaining = Int(endTime.timeIntervalSinceNow)
+           } else {
+               appState.offerDiscount = false
+               appState.timeRemaining = 0
+               timer.upstream.connect().cancel() // Stop the timer
+           }
+       }
+    
+    private func initializeTimer() {
+        if let endTime = appState.discountEndTime, Date() < endTime, !subscriptionStore.isPremium {
+            appState.offerDiscount = true
+            appState.timeRemaining = Int(endTime.timeIntervalSinceNow)
+        } else {
+            appState.offerDiscount = false
         }
     }
 }

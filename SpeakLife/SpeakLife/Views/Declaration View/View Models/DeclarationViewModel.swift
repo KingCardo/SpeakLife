@@ -26,6 +26,8 @@ final class DeclarationViewModel: ObservableObject {
         }
     }
     
+    @Published var showVerse = true
+    
     @Published var selectedTab = 0
 //    {
 //        didSet {
@@ -148,6 +150,15 @@ final class DeclarationViewModel: ObservableObject {
     
     func setCurrent(_ declaration: Declaration) {
         currentDeclaration = declaration
+        showVerse = true
+    }
+    
+    func toggleDeclaration(_ declaration: Declaration) {
+        guard let indexOf = declarations.firstIndex(where: { $0.id == declaration.id } ) else {
+            return
+        }
+        
+        showVerse.toggle()
     }
     
     // MARK: - Favorites

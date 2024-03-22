@@ -1,7 +1,7 @@
 {
     "prayers": [
         {
-            "prayerText": "Lord Jesus, I lift Your name high, celebrating the boundless faith You instill in us. Your teachings and sacrifice fill my heart with unshakeable faith and gratitude. Thank You for guiding me on a path of righteousness, where my faith is constantly strengthened. In moments of doubt, Your word provides the clarity and conviction I need. I declare victory in faith, overcoming life’s hurdles with the strength You provide. Praise to You, Lord, for the gift of faith that empowers and sustains me. Let my life be a testament to Your glory, a journey marked by unwavering trust in Your divine plan.",
+            "prayerText": "Lord Jesus, I lift Your name high, celebrating the boundless faith You instill in me. Your teachings and sacrifice fill my heart with unshakeable faith and gratitude. Thank You for guiding me on a path of righteousness, where my faith is constantly strengthened. In moments of doubt, Your word provides the clarity and conviction I need. I declare victory in faith, overcoming life’s hurdles with the strength You provide. Praise to You, Lord, for the gift of faith that empowers and sustains me. Let my life be a testament to Your glory, a journey marked by unwavering trust in Your divine plan.",
             "isPremium": false,
             "category": "faith"
         },
@@ -13,21 +13,6 @@
         {
             "prayerText": "Dear God, Your endless love and mercy fuel my faith, filling me with gratitude and hope. I am eternally thankful for the joy of Your salvation, which strengthens my faith every day. Your promises in the Bible serve as a constant reminder of Your faithfulness and power. I rejoice in the victory of faith, which allows me to face life's challenges with confidence and grace. Praise to You, Lord, for the firm foundation of faith on which I stand. May my life reflect the strength of this faith, shining Your light and love in all I do.",
             "isPremium": false,
-            "category": "faith"
-        },
-        {
-            "prayerText": "Lord Jesus, in Your magnificent name, I find the pinnacle of faith. I am deeply thankful for the unwavering trust You instill in my heart. Your life serves as the ultimate example of faithfulness, guiding me to live a life rooted in trust and devotion. In the face of life’s trials, my faith in You remains steadfast and strong. I proclaim victory over doubt, embracing the certainty and assurance found in Your word. Praise to You, Lord, for the unshakeable faith that leads me through life's journey, a beacon of hope and light in every step.",
-            "isPremium": true,
-            "category": "faith"
-        },
-        {
-            "prayerText": "Heavenly Father, I celebrate the gift of faith that You have lovingly bestowed upon me. Each day, I am grateful for the moments of revelation and understanding that deepen my faith. In Your divine wisdom, You guide my path, strengthening my trust in Your plan. I declare triumph over life’s uncertainties, anchored in the faith You nurture within me. Praise be to You, Lord, for the confidence and boldness that my faith in You provides. May my journey of faith inspire others, as I walk in the light of Your love and truth.",
-            "isPremium": true,
-            "category": "faith"
-        },
-        {
-            "prayerText": "Dear God, Your constant presence in my life is the foundation of my ever-growing faith. Thank You for the lessons of trust and reliance that shape my spiritual walk. In Jesus, I see the perfect embodiment of faith, a guide to emulate in all aspects of life. I am victorious in faith, overcoming challenges and fears with the strength You provide. Praise to You, Lord, for the gift of faith, a precious treasure that enriches and empowers my life. Let my faith be a living testimony to Your grace and a source of encouragement to those around me.",
-            "isPremium": true,
             "category": "faith"
         },
         {
@@ -66,16 +51,6 @@
             "category": "gratitude"
         },
         {
-            "prayerText": "Heavenly Father, in Jesus' name, I express my deepest thanks for Your unending blessings. Each day, You reveal Your love and kindness, for which I am eternally thankful. Your hand in my life is a constant source of joy and gratitude. I celebrate the richness of life You have given me, recognizing Your divine presence in every detail. Praise to You, Lord, for the gift of gratitude, which keeps my heart focused on Your glory. May my life resonate with thankfulness, drawing others to Your love.",
-            "isPremium": true,
-            "category": "gratitude"
-        },
-        {
-            "prayerText": "Dear God, Your majesty and love fill me with a deep and lasting gratitude. Thank You for the beauty of creation, the joy of relationships, and the gift of Your son, Jesus. In every challenge, I find reasons to be thankful, for Your guidance is unfailing. I declare my life a living hymn of thanks to You. Praise to You, Lord, for the countless blessings that fill my days. Let my spirit of gratitude be a testament to Your endless love and mercy.",
-            "isPremium": true,
-            "category": "gratitude"
-        },
-        {
             "prayerText": "Lord Jesus, I adore Your name and thank You for the gift of health and vitality. In Your love, I find the strength to pursue wellness in body and spirit. I am grateful for every breath and every moment of vigor. Your healing hand guides me, ensuring my well-being in all aspects of life. I declare victory over illness, confident in the health You provide. Praise to You, Lord, for the joy of living a healthy life, a testament to Your nurturing care. May my journey in health reflect Your glory and inspire others to seek Your grace in their wellbeing.",
             "isPremium": false,
             "category": "health"
@@ -91,36 +66,9 @@
             "category": "health"
         },
         {
-            "prayerText": "Lord Jesus, I magnify Your name for the gift of life and health. Thank you for Your healing power and for sustaining me. I declare victory in maintaining great health and praise You for Your constant care and protection.",
-            "isPremium": false,
-            "category": "health"
-        },
-        {
             "prayerText": "Lord Jesus, I exalt You for the health and well-being You grace upon my life. Your loving care sustains me, and I am profoundly grateful for every sign of wellness in my body and mind. In Your mercy, I find strength and renewal, sustaining my health in ways that amaze me daily. I claim victory over any physical challenge, trusting in Your power to heal and restore. Praise to You, Lord, for Your unfailing support in my journey towards complete health. May my life be a testimony of Your healing power, inspiring others to trust in Your love for their well-being.",
             "isPremium": true,
             "category": "health"
-        },
-        {
-            "prayerText": "Heavenly Father, in adoration, I acknowledge the perfect health You bestow upon me through Jesus Christ. I thank You for the vitality and energy that flow from Your divine presence. In every heartbeat, I sense Your loving care, guiding me towards a life of health and joy. I stand victorious over sickness, empowered by faith in Your healing touch. Praise be to You, Lord, for the gift of robust health and the assurance of Your protective embrace. Let my health be a reflection of Your glory, a beacon of hope for those seeking healing and strength.",
-            "isPremium": true,
-            "category": "health"
-        },
-        {
-            "prayerText":
-            "Dear God, Your hand in my life brings health that fills me with gratitude. In every moment of wellness, I see Your love and care. Thank You for the strength and vitality that are gifts from Your grace. I declare with faith that my health is shielded by Your power. Praise to You, Lord, for the blessings of good health and the joy it brings. May my journey in health glorify You and encourage others to seek Your healing touch in their lives.",
-            "isPremium": true,
-            "category": "health"
-        },
-        
-        {
-            "prayerText": "Heavenly Father, I magnify Your name for Your abundant blessings. Thank you for Your providence and the wealth You bring into our lives. I declare victory over scarcity and praise You for opening the doors of prosperity.",
-            "isPremium": false,
-            "category": "wealth"
-        },
-        {
-            "prayerText": "Lord Jesus, I am filled with gratitude for the richness of Your love and the material blessings You provide. In faith, I walk towards greater wealth and prosperity, knowing You are my guide and provider.",
-            "isPremium": false,
-            "category": "wealth"
         },
         {
             "prayerText": "Lord Jesus, I magnify Your name for the abundant blessings You've bestowed upon me. I am deeply grateful for the wealth and prosperity that flow from Your hand. In Your wisdom, You have provided for my needs and more, teaching me to use these blessings responsibly. I declare victory over scarcity and lack, trusting in Your provision. Praise to You, Lord, for the financial stability and opportunities You have granted me. May my wealth be a tool for Your glory, used to spread love and generosity.",
@@ -143,70 +91,19 @@
             "category": "wealth"
         },
         {
-            "prayerText": "Heavenly Father, I adore You for the wealth You have generously bestowed upon me. Each financial blessing is a testament to Your faithfulness and provision. I am committed to using these resources to honor You and to serve others. I declare victory in financial integrity, guided by Your wisdom. Praise be to You, Lord, for the privilege of wealth and the joy of sharing it. Let my prosperity be a beacon of Your love, spreading blessings and hope.",
-            "isPremium": true,
-            "category": "wealth"
-        },
-        {
-            "prayerText": "Dear God, I am eternally grateful for the financial security and abundance You provide. Your blessings enable me to be a blessing to others. In stewardship of wealth, I seek to mirror Your generosity and kindness. I proclaim victory in overcoming materialism, focusing instead on spiritual riches. Praise to You, Lord, for the earthly riches and the wisdom to use them well. May my life reflect Your glory through generous giving, helping to build a world that honors You.",
-            "isPremium": true,
-            "category": "wealth"
-        },
-        
-        {
-            "prayerText": "Lord Jesus, I magnify Your name for the strength and hope You provide. Thank you for Your grace that empowers us to overcome addiction. I declare victory over every bondage and praise You for the freedom You offer.",
+            "prayerText": "Lord Jesus, I magnify Your name for the strength and hope You provide. Thank you for Your grace that empowers us to overcome addiction. I declare victory over every bondage and praise You for the freedom You offer. I praise You for the deliverance and restoration that are found in Your embrace. All praise to You, Lord, for Your mercy and healing power.",
             "isPremium": false,
             "category": "addiction"
         },
         {
-            "prayerText": "Heavenly Father, in Jesus' name, I express my deepest gratitude for Your healing touch. In the face of addiction, Your love remains steadfast. I praise You for the deliverance and restoration that are found in Your embrace.",
-            "isPremium": false,
-            "category": "addiction"
-        },
-        {
-            "prayerText": "Dear God, thank You for Your unfailing support and the strength to conquer addiction. I am grateful for Your presence that guides us towards recovery and wholeness. All praise to You, Lord, for Your mercy and healing power.",
-            "isPremium": false,
-            "category": "addiction"
-        },
-        {
-            "prayerText": "Almighty God, Your love breaks every chain of addiction. I am thankful for the freedom and victory You provide. I declare that through Your power, we are liberated from all dependencies. Praise be to You for Your redemptive love.",
+            "prayerText": "Almighty God, Your love breaks every chain of addiction. I am thankful for the freedom and victory You provide. I declare that through Your power, we are liberated from all dependencies. Praise be to You for Your redemptive love. thank You for the promise of renewal and recovery. In faith, I claim victory over addiction and its effects. All praise to You, Lord, for You are the source of strength and the path to true freedom.",
             "isPremium": true,
             "category": "addiction"
         },
         {
-            "prayerText": "Father, thank You for the promise of renewal and recovery. In faith, I claim victory over addiction and its effects. All praise to You, Lord, for You are the source of strength and the path to true freedom.",
+            "prayerText": "Lord Jesus, I glorify Your name for the hope and resilience You instill in us. Thank you for guiding those battling addiction towards a life of sobriety and peace. I praise You for the transformative power of Your love. I declare a life of freedom from addiction in Your holy name. I praise You, Lord, for Your enduring presence and grace.",
             "isPremium": true,
             "category": "addiction"
-        },
-        {
-            "prayerText": "Lord Jesus, I glorify Your name for the hope and resilience You instill in us. Thank you for guiding those battling addiction towards a life of sobriety and peace. I praise You for the transformative power of Your love.",
-            "isPremium": true,
-            "category": "addiction"
-        },
-        {
-            "prayerText": "Heavenly Father, Your word speaks of liberation and healing. I am grateful for the strength and courage You impart in the journey of overcoming addiction. I celebrate the victory in Your name and give You all the honor.",
-            "isPremium": true,
-            "category": "addiction"
-        },
-        {
-            "prayerText": "Dear God, thank You for the resilience and determination to fight addiction. In Your name, I declare a life free from the chains of dependency. Praise to You, Lord, for Your faithfulness and the healing You provide.",
-            "isPremium": true,
-            "category": "addiction"
-        },
-        {
-            "prayerText": "Lord, I am immensely grateful for the journey towards sobriety and the strength You provide. I declare a life of freedom from addiction in Your holy name. I praise You, Lord, for Your enduring presence and support.",
-            "isPremium": true,
-            "category": "addiction"
-        },
-        {
-            "prayerText": "Almighty God, thank You for the blessing of recovery and the strength to overcome addiction. By faith, I walk in liberty and wellness. Praise be to You, Lord, for Your continuous grace and the deliverance You offer.",
-            "isPremium": true,
-            "category": "addiction"
-        },
-        {
-            "prayerText": "Lord Jesus, I magnify Your name for guiding me through every challenge. Thank you for the blessings and the lessons learned along the way. I declare victory in gratitude for everything I have and have been through.",
-            "isPremium": false,
-            "category": "gratitude"
         },
         {
             "prayerText": "Lord Jesus, I adore Your holy presence and rejoice in the love You pour into my life. I am overwhelmed with gratitude for the unending love that You show me every day. Your love brings light into my darkest moments and warmth into my heart. Thank You for the gift of Your unconditional love, a love that knows no bounds. I celebrate the victory of receiving Your love, which fills me with peace and joy. Praise to You, Lord, for the grace and mercy You provide. May my life reflect the depth of Your love, sharing it with everyone I meet.",
@@ -219,21 +116,12 @@
             "category": "love"
         },
         {
-            "prayerText": "Dear God, I bask in the warmth of Your love, a love so pure and life-changing. I am deeply grateful for the love Jesus has shown, a love that has transformed my heart. Thank You for showing me what true love is and for filling my life with Your presence. Your love gives me hope and strength every day. I am victorious because of Your love, a love that reassures and comforts me. Praise to You, Lord, for the boundless love You bestow. May my life forever sing praises of Your love, touching the lives of others with its power.",
-            "isPremium": false,
-            "category": "love"
-        },{
-            "prayerText": "Lord Jesus, I exalt You for the profound love You bestow upon me. In Your love, I find an oasis of peace, a haven where I am truly understood and cherished. Thank You for the unceasing love that comforts and uplifts me. In receiving Your love, I am empowered to face all of life’s challenges with grace and strength. I proclaim victory through Your love, which brings light into every aspect of my existence. Praise to You, Lord, for the transformative power of Your love, which shapes my life and guides my path.",
+            "prayerText": "Dear God, I bask in the warmth of Your love, a love so pure and life-changing. I am deeply grateful for the love Jesus has shown, a love that has transformed my heart. Thank You for showing me what true love is and for filling my life with Your presence. Your love gives me hope and strength every day. I am victorious because of Your love, a love that reassures and comforts me. Thank You for the unceasing love that comforts and uplifts me. In receiving Your love, I am empowered to face all of life’s challenges with grace and strength. I proclaim victory through Your love, which brings light into every aspect of my existence. Praise to You, Lord, for the transformative power of Your love, which shapes my life and guides my path.",
             "isPremium": true,
             "category": "love"
         },
         {
-            "prayerText": "Heavenly Father, Your love, as shown through Jesus, is my guiding star. I am eternally grateful for the boundless love that fills my heart and soul. Each day, Your love renews my spirit and gives me hope. I embrace Your love as my most treasured possession, finding in it the key to true happiness and fulfillment. I declare victory in the love of Jesus, a love that overcomes all obstacles. Praise be to You, Lord, for the endless love that flows from Your heart, enriching and blessing my life.",
-            "isPremium": true,
-            "category": "love"
-        },
-        {
-            "prayerText": "Dear God, I am humbled and grateful for the love You show me through Jesus. This love is a constant reminder of Your grace and goodness. In moments of doubt or fear, Your love is a reassuring presence, offering solace and strength. I celebrate the victory of love in my life, a victory that leads to peace and joy. Praise to You, Lord, for the love that sustains me, a love that is both a shelter and a source of courage. May the love of Jesus be ever present in my heart, guiding my every action and thought.",
+            "prayerText": "Heavenly Father, Your love, as shown through Jesus, is my guiding star. I am eternally grateful for the boundless love that fills my heart and soul. Each day, Your love renews my spirit and gives me hope. I embrace Your love as my most treasured possession, finding in it the key to true happiness and fulfillment. I declare victory in the love of Jesus, a love that overcomes all obstacles. his love is a constant reminder of Your grace and goodness. In moments of doubt or fear, Your love is a reassuring presence, offering solace and strength. I celebrate the victory of love in my life, a victory that leads to peace and joy. Praise to You, Lord, for the love that sustains me, a love that is both a shelter and a source of courage. May the love of Jesus be ever present in my heart, guiding my every action and thought.",
             "isPremium": true,
             "category": "love"
         },

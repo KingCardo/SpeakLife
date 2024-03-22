@@ -26,6 +26,7 @@ struct HomeView: View {
     @EnvironmentObject var themeStore: ThemeViewModel
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
+    @EnvironmentObject var timerViewModel: TimerViewModel
     @Binding var isShowingLanding: Bool
   //  @StateObject private var viewModel = FacebookTrackingViewModel()
 
@@ -35,68 +36,83 @@ struct HomeView: View {
             if isShowingLanding {
                 LandingView()
             } else if appState.isOnboarded {
-                TabView {
-                    DeclarationView()
-                        .id(appState.rootViewId)
-                        .tabItem {
-                            Image(systemName: "house.fill")
-                                .renderingMode(.original)
-                            Text("Home")
-                        }
-                    
-                    DevotionalView(viewModel:devotionalViewModel)
-                        .tabItem {
-                            if #available(iOS 17, *) {
-                                Image(systemName: "book.pages.fill")
-                                    .renderingMode(.original)
-                            } else {
-                                Image(systemName: "book.fill")
-                                    .renderingMode(.original)
-                            }
-                            Text("Devotionals")
-                        }
-                    
-                    CreateYourOwnView()
-                        .tabItem {
-                            Image(systemName: "plus.bubble.fill")
-                                .renderingMode(.original)
-                            Text("Yours")
-                        }
-                    
-                    WarriorView()
-                        .tabItem {
-                            if #available(iOS 17, *) {
-                                Image(systemName: "bolt.shield.fill")
-                                    .renderingMode(.original)
-                            } else {
-                                Image(systemName: "bolt.shield")
-                                    .renderingMode(.original)
-                            }
-                            Text("Prayers")
-                        }
-                   
-                    
-                    ProfileView()
-                        .tabItem {
-                            Image(systemName: "line.3.horizontal")
-                                .renderingMode(.original)
-                            Text("More")
-                        }
-                }
-                .hideTabBar(if: appState.showScreenshotLabel)
-                .accentColor(Constants.DAMidBlue)
+                homeView
+            } else {
+                OnboardingView()
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var homeView: some View {
+        if appState.onBoardingTest {
+            DeclarationView()
+                .id(appState.rootViewId)
                 .onAppear {
-                    UIScrollView.appearance().isScrollEnabled = true
+                   // UIScrollView.appearance().isScrollEnabled = true
                     if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
                         AudioPlayerService.shared.playSound(files: resources)
                     }
                 }
                 .environment(\.colorScheme, .dark)
+        } else {
+            TabView {
+                DeclarationView()
+                    .id(appState.rootViewId)
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                            .renderingMode(.original)
+                        Text("Home")
+                    }
                 
-            
-            } else {
-                OnboardingView()
+                DevotionalView(viewModel:devotionalViewModel)
+                    .tabItem {
+                        if #available(iOS 17, *) {
+                            Image(systemName: "book.pages.fill")
+                                .renderingMode(.original)
+                        } else {
+                            Image(systemName: "book.fill")
+                                .renderingMode(.original)
+                        }
+                        Text("Devotionals")
+                    }
+                
+                CreateYourOwnView()
+                    .tabItem {
+                        Image(systemName: "plus.bubble.fill")
+                            .renderingMode(.original)
+                        Text("Yours")
+                    }
+                
+                WarriorView()
+                    .tabItem {
+                        if #available(iOS 17, *) {
+                            Image(systemName: "bolt.shield.fill")
+                                .renderingMode(.original)
+                        } else {
+                            Image(systemName: "bolt.shield")
+                                .renderingMode(.original)
+                        }
+                        Text("Prayers")
+                    }
+               
+                
+                ProfileView()
+                    .tabItem {
+                        Image(systemName: "line.3.horizontal")
+                            .renderingMode(.original)
+                        Text("More")
+                    }
             }
+            .hideTabBar(if: appState.showScreenshotLabel)
+            .accentColor(Constants.DAMidBlue)
+            .onAppear {
+                UIScrollView.appearance().isScrollEnabled = true
+                if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
+                    AudioPlayerService.shared.playSound(files: resources)
+                }
+            }
+            .environment(\.colorScheme, .dark)
         }
     }
     

@@ -20,7 +20,7 @@ struct StreakInfoBottomSheet: View {
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 26, relativeTo: .title))
                 .padding()
                 .foregroundColor(.black)
-            Text("Practice speaking life and meditating for 10 minutes a day to build a habit. Preferably free of distractions. It will significantly improve your life!")
+            Text("Practice speaking life, imagining, meditating for 10 minutes a day to build a habit. Preferably free of distractions. It will significantly improve your life!")
                 .lineLimit(nil)
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
                 .padding([.leading,.trailing])

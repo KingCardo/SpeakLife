@@ -24,7 +24,7 @@ struct GoldBadgeView: View {
                     .opacity(animate ? 0 : 1) // Start fully visible and fade out
                     .offset(y: animate ? -30 : -20) // Move the stars outward as they fade
                     .rotationEffect(Angle(degrees: Double(i) * 45))
-                    .animation(.easeOut(duration: 0.5).delay(Double(i) * 0.1), value: animate) // Staggered animation for each star
+                    .animation(.easeOut(duration: 1.0).delay(Double(i) * 0.1), value: animate) // Staggered animation for each star
             }
 
             Circle()
@@ -85,31 +85,23 @@ struct CountdownTimerView: View {
         
         .onAppear {
             viewModel.loadRemainingTime()
-            viewModel.setupMidnightReset()
             viewModel.startTimer()
         }
         .onDisappear {
             viewModel.saveRemainingTime()
-            streakViewModel.saveToUserDefaults()
         }
         
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willTerminateNotification)) { _ in
             viewModel.saveRemainingTime()
-            streakViewModel.saveToUserDefaults()
         }
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-            viewModel.saveRemainingTime()
-            streakViewModel.saveToUserDefaults()
-        }
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+        
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
             viewModel.loadRemainingTime()
-            viewModel.setupMidnightReset()
             viewModel.startTimer()
         }
         
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
             viewModel.saveRemainingTime()
-            streakViewModel.saveToUserDefaults()
         }
         .onTapGesture {
             action?()

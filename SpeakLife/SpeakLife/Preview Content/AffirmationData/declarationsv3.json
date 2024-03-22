@@ -6993,7 +6993,6 @@
         },
         {
             "text": "I declare every cell and organ is renewed and functions in perfection.",
-            "book": "Romans 8:11",
             "isFavorite": false,
             "category": "health"
         },
@@ -7765,30 +7764,6 @@
             "category": "identity"
         },
         {
-            "text": "I have been crucified with Christ and I no longer live, but Christ lives in me. The life I now live in the body, I live by faith in the Son of God, who loved me and gave himself for me.",
-            "book": "Galatians 2:20",
-            "isFavorite": false,
-            "category": "identity"
-        },
-        {
-            "text": "But you are a chosen people, a royal priesthood, a holy nation, God’s special possession, that you may declare the praises of him who called you out of darkness into his wonderful light.",
-            "book": "1 Peter 2:9",
-            "isFavorite": false,
-            "category": "identity"
-        },
-        {
-            "text": "For you created my inmost being; you knit me together in my mother’s womb.",
-            "book": "Psalms 139:13",
-            "isFavorite": false,
-            "category": "identity"
-        },
-        {
-            "text": "So God created mankind in his own image, in the image of God he created them; male and female he created them.",
-            "book": "Genesis 1:27",
-            "isFavorite": false,
-            "category": "identity"
-        },
-        {
             "text": "For we are God’s handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do.",
             "book": "Ephesians 2:10",
             "isFavorite": false,
@@ -7807,12 +7782,6 @@
             "category": "identity"
         },
         {
-            "text": "You are all sons of God through faith in Christ Jesus.",
-            "book": "Galatians 3:26",
-            "isFavorite": false,
-            "category": "identity"
-        },
-        {
             "text": "The Spirit himself testifies with our spirit that we are God’s children.",
             "book": "Romans 8:16",
             "isFavorite": false,
@@ -7821,12 +7790,6 @@
         {
             "text": "But to all who believed him and accepted him, he gave the right to become children of God.",
             "book": "John 1:12",
-            "isFavorite": false,
-            "category": "identity"
-        },
-        {
-            "text": "For in Christ Jesus you are all sons of God, through faith.",
-            "book": "Galatians 3:26",
             "isFavorite": false,
             "category": "identity"
         },
@@ -7875,12 +7838,6 @@
         {
             "text": "To him who overcomes, I will give the right to sit with me on my throne, just as I overcame and sat down with my Father on his throne.",
             "book": "Revelation 3:21",
-            "isFavorite": false,
-            "category": "identity"
-        },
-        {
-            "text": "They will be called oaks of righteousness, a planting of the LORD for the display of his splendor.",
-            "book": "Isaiah 61:3",
             "isFavorite": false,
             "category": "identity"
         },
@@ -8174,12 +8131,12 @@
             "category": "identity"
         },
         {
-            "text": "Thank you Jesus for the divine protection that guards my new identity in You.",
+            "text": "Thank you Jesus for the divine protection that is apart of my new identity in You.",
             "isFavorite": false,
             "category": "identity"
         },
         {
-            "text": "Thank you Jesus for the hope and future that are secured in my identity as Your follower.",
+            "text": "Thank you Jesus for the hope and future that are secured in my identity as Your child.",
             "isFavorite": false,
             "category": "identity"
         },
@@ -8190,11 +8147,6 @@
         },
         {
             "text": "Thank you Jesus for the joy of salvation, a cornerstone of my identity in You.",
-            "isFavorite": false,
-            "category": "identity"
-        },
-        {
-            "text": "Thank you Jesus for empowering me to walk in the fullness of my identity as Your child.",
             "isFavorite": false,
             "category": "identity"
         },
@@ -11211,7 +11163,6 @@
         {"text": "Accept the way God does things, for who can straighten what he has made crooked?", "book": "Ecclesiastes 7:13", "isFavorite": false, "category": "wisdom"},
         {"text": "Enjoy prosperity while you can, but when hard times strike, realize that both come from God.", "book": "Ecclesiastes 7:14", "isFavorite": false, "category": "wisdom"},
         {"text": "Don't long for 'the good old days.' This is not wise.", "book": "Ecclesiastes 7:10", "isFavorite": false, "category": "wisdom"},
-        {"text": "Laughter is silly. What good does it do to seek pleasure?", "book": "Ecclesiastes 2:2", "isFavorite": false, "category": "wisdom"},
         {"text": "But as I looked at everything I had worked so hard to accomplish, it was all so meaningless—like chasing the wind.", "book": "Ecclesiastes 2:11", "isFavorite": false, "category": "wisdom"},
         {"text": "Wisdom is better than foolishness, just as light is better than darkness.", "book": "Ecclesiastes 2:13", "isFavorite": false, "category": "wisdom"},
         {"text": "I came to hate all my hard work here on earth, for I must leave to others everything I have earned.", "book": "Ecclesiastes 2:18", "isFavorite": false, "category": "wisdom"},
@@ -12237,7 +12188,7 @@
             "category": "health"
         },
         {
-            "text": "Thank You Jesus, for my immune system a warrior against all threats!",
+            "text": "Thank You Jesus, for my immune system is strong and defending against all threats!",
             "isFavorite": false,
             "category": "health"
         },
@@ -13155,7 +13106,7 @@
             "category": "praise"
         },
         {
-            "text": "I am a vessel of constant renewal, my body regenerates with each breath",
+            "text": "My body regenerates with each breath",
             "isFavorite": false,
             "category": "health"
         },
@@ -13181,11 +13132,6 @@
         },
         {
             "text": "With each healthy choice, I empower my body's natural process of regeneration",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am strong and resilient, my body thrives on continuous renewal",
             "isFavorite": false,
             "category": "health"
         },
@@ -13350,11 +13296,6 @@
             "category": "rest"
         },
         {
-            "text": "Thank You, Jesus, for calming my heart. You're always in control.",
-            "isFavorite": false,
-            "category": "rest"
-        },
-        {
             "text": "Thank You, Jesus, for making me feel safe. You're always there for me.",
             "isFavorite": false,
             "category": "rest"
@@ -13508,11 +13449,6 @@
             "text": "Thank you, Jesus, for the peace that comes from trusting you.",
             "isFavorite": false,
             "category": "rest"
-        },
-        {
-            "text": "I am committed to a lifestyle that promotes my highest well-being.",
-            "isFavorite": false,
-            "category": "health"
         },
         {
             "text": "Come to me, all you who are weary and burdened, and I will give you rest.",
@@ -13905,7 +13841,7 @@
             "category": "heaven"
         },
         {
-            "text": "To be absent from the body and to be present with the Lord.",
+            "text": "To be absent from the body is to be present with the Lord.",
             "book": "2 Corinthians 5:8",
             "isFavorite": false,
             "category": "heaven"
@@ -14393,6 +14329,328 @@
             "text": "Thank You, Jesus, for Your bigness, You can handle anything that comes my way.",
             "isFavorite": false,
             "category": "praise"
+        },
+        {
+            "text": "The blessing of the LORD brings wealth, without painful toil for it.",
+            "book": "Proverbs 10:22",
+            "affirmationText": "I am grateful for the blessings and abundance that flow into my life effortlessly, knowing that they are gifts from the Divine.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Lazy hands make for poverty, but diligent hands bring wealth.",
+            "book": "Proverbs 10:4",
+            "affirmationText": "I embrace diligence and hard work, trusting that they pave the path to abundance and prosperity in my life.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Wealth is worthless in the day of wrath, but righteousness delivers from death.",
+            "book": "Proverbs 11:4",
+            "affirmationText": "I value righteousness and integrity above material wealth, knowing they provide true security and peace.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "A generous person will prosper; whoever refreshes others will be refreshed.",
+            "book": "Proverbs 11:25",
+            "affirmationText": "I practice generosity, confident that it not only enriches others' lives but also brings prosperity and refreshment to my own.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Those who trust in their riches will fall, but the righteous will thrive like a green leaf.",
+            "book": "Proverbs 11:28",
+            "affirmationText": "I place my trust not in material wealth, but in living righteously, knowing this brings true prosperity and vitality.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Dishonest money dwindles away, but whoever gathers money little by little makes it grow.",
+            "book": "Proverbs 13:11",
+            "affirmationText": "I commit to earning and saving with integrity, building my wealth steadily and honestly.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "A good person leaves an inheritance for their children’s children, but a sinner’s wealth is stored up for the righteous.",
+            "book": "Proverbs 13:22",
+            "affirmationText": "I aim to create a legacy of abundance for future generations, investing in what endures beyond my lifetime.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "The wealth of the wise is their crown, but the folly of fools yields folly.",
+            "book": "Proverbs 14:24",
+            "affirmationText": "I seek wisdom above all, knowing it enriches my life and crowns me with true wealth.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "The house of the righteous contains great treasure, but the income of the wicked brings ruin.",
+            "book": "Proverbs 15:6",
+            "affirmationText": "I nurture righteousness in my heart and home, confident it fills my life with invaluable treasures.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Better a little with righteousness than much gain with injustice.",
+            "book": "Proverbs 16:8",
+            "affirmationText": "I choose righteousness and fairness in all my dealings, knowing these are the foundation of lasting prosperity.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "How much better to get wisdom than gold, to get insight rather than silver!",
+            "book": "Proverbs 16:16",
+            "affirmationText": "I prioritize gaining wisdom and insight, for they are more precious than any material wealth I could acquire.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "A person can do nothing better than to eat and drink and find satisfaction in their own toil. This too, I see, is from the hand of God.",
+            "book": "Ecclesiastes 2:24",
+            "affirmationText": "I find deep satisfaction and joy in my work and the simple pleasures of life, recognizing them as blessings from God.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "He is like a tree planted by streams of water, which yields its fruit in season and whose leaf does not wither—whatever they do prospers.",
+            "book": "Psalm 1:3",
+            "affirmationText": "I am rooted and nourished in divine abundance, flourishing and prospering in all my endeavors, grounded in the flow of grace.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "The Lord is my shepherd, I lack nothing.",
+            "book": "Psalm 23:1",
+            "affirmationText": "I trust in the Lord to provide for all my needs, knowing I am cared for and will never lack anything essential.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "You prepare a table before me in the presence of my enemies. You anoint my head with oil; my cup overflows.",
+            "book": "Psalm 23:5",
+            "affirmationText": "I am blessed with abundance even in challenging times, and my life overflows with the richness of God's blessings.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "The lions may grow weak and hungry, but those who seek the Lord lack no good thing.",
+            "book": "Psalm 34:10",
+            "affirmationText": "In my pursuit of the Divine, I am assured of all good things and lack nothing, for God's provision is perfect and complete.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Take delight in the Lord, and he will give you the desires of your heart.",
+            "book": "Psalm 37:4",
+            "affirmationText": "As I find joy and fulfillment in my relationship with God, my deepest desires align with divine will and are graciously fulfilled.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "But the meek will inherit the land and enjoy peace and prosperity.",
+            "book": "Psalm 37:11",
+            "affirmationText": "With humility and gentleness, I open myself to inherit God's blessings, enjoying peace and prosperity in my life.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "The Lord knows the days of the blameless, and their inheritance will endure forever. They will not be disgraced in the time of evil, and in the days of famine they will have abundance.",
+            "book": "Psalm 37:18-19",
+            "affirmationText": "I am assured of a lasting inheritance and divine provision, even in times of scarcity, for the Lord sustains the blameless.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "But I am like an olive tree flourishing in the house of God; I trust in God’s unfailing love for ever and ever.",
+            "book": "Psalm 52:8",
+            "affirmationText": "Rooted in the house of God, I flourish like an olive tree, sustained by the unfailing love of the Divine, growing ever stronger and more fruitful.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "You crown the year with your bounty, and your carts overflow with abundance.",
+            "book": "Psalm 65:11",
+            "affirmationText": "Each year is crowned with God's bounty; my life is filled to overflowing with the abundance of His provision and grace.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "For the Lord God is a sun and shield; the Lord bestows favor and honor; no good thing does he withhold from those whose walk is blameless.",
+            "book": "Psalm 84:11",
+            "affirmationText": "God is my protector and source of all good, bestowing favor and honor upon me, generously providing all that I need as I walk in integrity.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Surely, Lord, you bless the righteous; you surround them with your favor as with a shield.",
+            "book": "Psalm 5:12",
+            "affirmationText": "I am enveloped in the favor of the Lord, protected and blessed in all areas of my life, radiating righteousness.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "They will spend their days in prosperity, and their descendants will inherit the land.",
+            "book": "Psalm 25:13",
+            "affirmationText": "My days are filled with prosperity, and I am assured of a blessed inheritance for my descendants, securing a legacy of abundance.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "They feast on the abundance of your house; you give them drink from your river of delights.",
+            "book": "Psalm 36:8",
+            "affirmationText": "I am nourished and delighted by the abundance of God's provision, feasting in His presence and drinking from the endless river of His delights.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "You let people ride over our heads; we went through fire and water, but you brought us to a place of abundance.",
+            "book": "Psalm 66:12",
+            "affirmationText": "Despite life's trials and challenges, I am guided to a place of abundance and restoration, emerging stronger and more blessed.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "May the mountains bring prosperity to the people, the hills the fruit of righteousness.",
+            "book": "Psalm 72:3",
+            "affirmationText": "I am surrounded by the prosperity that flows like a mighty mountain and the righteousness that grows like the fruit of the hills.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "May grain abound throughout the land; on the tops of the hills may it sway. May the crops flourish like Lebanon and thrive like the grass of the field.",
+            "book": "Psalm 72:16",
+            "affirmationText": "I envision abundance flowing like grain across the land, with prosperity and growth surrounding me as lush and vibrant as the fields of Lebanon.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "The Lord will indeed give what is good, and our land will yield its harvest.",
+            "book": "Psalm 85:12",
+            "affirmationText": "I trust in the Lord's goodness, confidently awaiting the bountiful harvest that is promised to our land, knowing that divine provision is assured.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "The children of your servants will live in your presence; their descendants will be established before you.",
+            "book": "Psalm 102:28",
+            "affirmationText": "I am comforted and joyful knowing that future generations, the descendants of the faithful, will be firmly established and flourish in God's presence.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "How many are your works, Lord! In wisdom you made them all; the earth is full of your creatures... all creatures look to you to give them their food at the proper time.",
+            "book": "Psalm 104:24-28",
+            "affirmationText": "I am in awe of the abundance and diversity of God's creation, trusting that He provides for all at the perfect time, and I am part of this divine provision.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "For he satisfies the thirsty and fills the hungry with good things.",
+            "book": "Psalm 107:9",
+            "affirmationText": "I am grateful that God quenches my thirst and satisfies my hunger with good things, ensuring that my needs and desires are met with generosity.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "They sow fields and plant vineyards that yield a fruitful harvest; he blesses them, and they multiply greatly, and he does not let their livestock diminish.",
+            "book": "Psalm 107:37-38",
+            "affirmationText": "I rejoice in the fruitfulness of my endeavors, as God blesses my efforts with abundance, causing my resources and endeavors to multiply greatly.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "He raises the poor from the dust and lifts the needy from the ash heap; he seats them with princes, with the princes of his people.",
+            "book": "Psalm 113:7-8",
+            "affirmationText": "I am uplifted by the power of God, who transforms circumstances, elevating those in need to places of honor and abundance.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "He will bless those who fear the Lord—small and great alike.",
+            "book": "Psalm 115:13",
+            "affirmationText": "I am blessed by the Lord alongside all who revere Him, from the least to the greatest, sharing in the abundance of His gracious favor.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Lord, save us! Lord, grant us success!",
+            "book": "Psalm 118:25",
+            "affirmationText": "I call upon the Lord for salvation and success, trusting in His mighty power to grant prosperity and victory in all my pursuits.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "You will eat the fruit of your labor; blessings and prosperity will be yours.",
+            "book": "Psalm 128:2",
+            "affirmationText": "I savor the rewards of my hard work, enjoying the blessings and prosperity that flow from my efforts, knowing that they are gifts from God.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Heal me, O Lord, and I will be healed; save me and I will be saved, for you are the one I praise.",
+            "book": "Jeremiah 17:14",
+            "affirmationText": "I am enveloped in God's healing presence, restoring my health and saving me, as I lift my voice in praise and gratitude.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.",
+            "book": "Isaiah 41:10",
+            "affirmationText": "In moments of fear or weakness, I am reassured and strengthened by God's unwavering presence, knowing He is always by my side, offering His divine support.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness. By his wounds you have been healed.",
+            "book": "1 Peter 2:24",
+            "affirmationText": "Through the sacrifice of Jesus, I am healed and empowered to live a life of righteousness, finding wholeness in His redemptive wounds.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Behold, I will bring it health and healing; I will heal them and reveal to them abundance of peace and truth.",
+            "book": "Jeremiah 33:6",
+            "affirmationText": "I am assured of God's promise to bring health and healing into my life, revealing the depths of peace and truth in the process.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.",
+            "book": "Isaiah 53:5",
+            "affirmationText": "In the suffering of Christ, I find healing for my soul and body, knowing that His ultimate sacrifice has brought me peace and wholeness.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The Lord sustains them on their sickbed and restores them from their bed of illness.",
+            "book": "Psalm 41:3",
+            "affirmationText": "Even in times of illness, I am comforted and sustained by the Lord, who lovingly restores my health and lifts me from my bed of suffering.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Praise the Lord, my soul, and forget not all his benefits—who forgives all your sins and heals all your diseases, who redeems your life from the pit and crowns you with love and compassion.",
+            "book": "Psalm 103:2-4",
+            "affirmationText": "I am filled with gratitude for the Lord's unending blessings: the forgiveness of sins, the healing of diseases, and the redemption of my life, crowned with His love and compassion.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "And the prayer offered in faith will make the sick person well; the Lord will raise them up. If they have sinned, they will be forgiven.",
+            "book": "James 5:15",
+            "affirmationText": "I believe in the power of prayer, offered in faith, to restore health. I trust in the Lord's promise to uplift the sick and offer forgiveness.",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Dear friend, I pray that you may enjoy good health and that all may go well with you, even as your soul is getting along well.",
+            "book": "3 John 1:2",
+            "affirmationText": "I am blessed with good health and prosperity, mirroring the wellness of my soul, as I walk in harmony with God's will for my life.",
+            "isFavorite": false,
+            "category": "health"
         },
         
     ]

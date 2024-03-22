@@ -87,6 +87,8 @@ struct DeclarationContentView: View {
             .tabViewStyle(.page(indexDisplayMode: .never))
             .onChange(of: viewModel.selectedTab) { newIndex in
                 askForReview()
+                let declaration = viewModel.declarations[newIndex]
+                viewModel.setCurrent(declaration)
             }
             .frame(width: geometry.size.height, height: geometry.size.width)
             .rotationEffect(.degrees(90), anchor: .topLeading)
@@ -105,7 +107,7 @@ struct DeclarationContentView: View {
     
     private func askForReview() {
         reviewCounter += 1
-        if reviewCounter % 5 == 0 {
+        if reviewCounter % 7 == 0 {
             viewModel.requestReview = true
         }
     }
@@ -139,18 +141,17 @@ struct DeclarationContentView: View {
         
     }
     
-    
     private func quoteLabel(_ declaration: Declaration, _ geometry: GeometryProxy) -> some View  {
         
         VStack {
             Spacer()
             
-            QuoteLabel(themeViewModel: themeViewModel, quote: declaration.text)
+            QuoteLabel(themeViewModel: themeViewModel, quote: viewModel.showVerse ? declaration.text : declaration.affirmationText ?? "")
                 .foregroundColor(themeViewModel.selectedTheme.fontColor)
-                .frame(width: geometry.size.width * 0.98, height:  geometry.size.height * 0.40)
+                .frame(width: geometry.size.width * 0.98, height:  geometry.size.height * 0.30)
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
             
-            Text(declaration.book ?? "")
+            Text(viewModel.showVerse ? declaration.book ?? "" : "")
                 .foregroundColor(.white)
                 .font(themeViewModel.selectedFontForBook ?? .caption)
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
@@ -199,12 +200,25 @@ struct DeclarationContentView: View {
                     Analytics.logEvent(Event.favoriteTapped, parameters: ["declaration": declaration.text])
                     Selection.shared.selectionFeedback()
                 }
+                
+                if declaration.affirmationText != nil {
+                    CapsuleImageButton(title: viewModel.showVerse ?? true ? "arrowshape.zigzag.forward" : "arrowshape.zigzag.right.fill") {
+                        withAnimation {
+                            toggleDeclaration(declaration)
+                        }
+                        Selection.shared.selectionFeedback()
+                    }
+                }
             }
             .foregroundColor(.white)
         }
     }
     private func setCurrentDelcaration(declaration: Declaration) {
         viewModel.setCurrent(declaration)
+    }
+    
+    private func toggleDeclaration(_ declaration: Declaration) {
+        viewModel.toggleDeclaration(declaration)
     }
     
     

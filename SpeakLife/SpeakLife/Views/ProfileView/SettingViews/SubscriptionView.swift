@@ -20,17 +20,17 @@ struct Benefit: Identifiable  {
         
 //        Benefit(text: "Unlock all features"),
 //        Benefit(text: "Build your spirit by meditating on God's love for you"),
-        Benefit(text: "First 3 days are free"),
-        Benefit(text: "5000+ library of affirmations"),
-        Benefit(text: "Daily Devotional's to grow with Jesus"),
-//        Benefit(text: "Unlimited curated notifications"),
+      //  Benefit(text: "First 3 days are free"),
+   //     Benefit(text: "5000+ library of affirmations"),
+     //   Benefit(text: "Daily Devotional's to grow with Jesus"),
+    //    Benefit(text: "Unlimited curated notifications"),
 //        Benefit(text: "Unlock powerful prayers over your life"),
-//        Benefit(text: "25+ categories to declare victory with God's promises"),
-//        Benefit(text: "Personalize your experience and create your own theme"),
+      //  Benefit(text: "25+ categories to declare victory with God's promises"),
+      //  Benefit(text: "Personalize your experience and create your own theme"),
        // Benefit(text: "Unlock all Jesus Devotionals"),
-        Benefit(text: "Categories for any situation"),
+   //     Benefit(text: "Categories for any situation"),
 //        Benefit(text: "Unlock all themes"),
-        Benefit(text: "Unlock everything"),
+      //  Benefit(text: "Unlock everything"),
      //   Benefit(text: "#"),
        // Benefit(text:"Proverbs 18:21: Words have immense power; they can shape your reality and influence your future. Think of them as tools that can build or destroy."),
 
@@ -42,19 +42,19 @@ struct Benefit: Identifiable  {
       //  Benefit(text: "Dive deeper into your relationship with Jesus, our goal is to support you in cultivating a vibrant, growing relationship with Christ, every single day. Join us and embrace a life transformed by His word."),
 
        // Benefit(text: "Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
-//                Benefit(text: "Bible Affirmations for all of life's journey"),
-//                Benefit(text: "Daily Devotional's to grow with Jesus"),
-//                Benefit(text: "Categories for any situation"),
-//                Benefit(text: "Create your own affirmations"),
-//                Benefit(text: "Reminders to transform your mindset"),
-//                Benefit(text: "Unlock all prayers")
+                Benefit(text: "Bible Affirmations for all of life's journey"),
+                Benefit(text: "Daily Devotional's to grow with Jesus"),
+                Benefit(text: "Categories for any situation"),
+                Benefit(text: "Create your own affirmations"),
+                Benefit(text: "Reminders to transform your mindset"),
+                Benefit(text: "Unlock all prayers")
         
     ]
     
     static var discountBenefits: [Benefit] = [
         
         Benefit(text: "Unlock all features"),
-        Benefit(text: "Enjoy 60% off discount"),
+        Benefit(text: "Enjoy 50% off discount"),
         Benefit(text: "Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
         //        Benefit(text: "Daily Morning Jesus Devotionals"),
         //        Benefit(text: "Create your own affirmations"),
@@ -71,10 +71,13 @@ struct DiscountSubscriptionView: View {
     var currentSelection = InAppId.Subscription.speakLife1YR9
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
+    @EnvironmentObject var appState: AppState
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
-    let percentOffText: String = "50% Off SpeakLife Premium"
+    let percentOffText: String = "50% Off SpeakLife"
+//    @State private var timeRemaining: Int = 0
+   
     
     init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR9) {
         self.size = size
@@ -106,12 +109,10 @@ struct DiscountSubscriptionView: View {
                     .scaleEffect(2)
             }
         }
+        
         .alert(isPresented: $isShowingError, content: {
             Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
         })
-        //        SubscriptionView(benefits: Benefit.discountBenefits, size: size, currentSelection: InAppId.Subscription.speakLife1YR19, gradient: Gradients().redCyan, isDiscount: true) {
-        //            callback?()
-        //        }
     }
     
     func discountView(completion: @escaping(() -> Void)) -> some View {
@@ -122,14 +123,10 @@ struct DiscountSubscriptionView: View {
 //                .foregroundStyle(.white)
 //            Spacer()
 //                .frame(height: 16)
+            discountLabel
+            Spacer()
+                .frame(height: 16)
             
-            ZStack {
-                Capsule()
-                    .fill(Constants.gold)
-                    .frame(width: 100, height: 30)
-                Text("Premium").textCase(.uppercase)
-                    .font(.subheadline)
-            }
             
             Spacer()
                 .frame(height: 32)
@@ -138,49 +135,62 @@ struct DiscountSubscriptionView: View {
                 .font(.largeTitle)
                 .foregroundStyle(.white)
             
-            Text(percentOffText)
-                .textCase(.uppercase)
-                .font(.headline)
-                .foregroundStyle(.white)
-            Spacer()
-                .frame(height: 16)
-
-            
-            Text("\(currentSelection.title) Cancel anytime")
-                .font(.caption)
-                .foregroundStyle(.white)
-            
+            HStack {
+                Text(percentOffText)
+                    .textCase(.uppercase)
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                
+                ZStack {
+                    Capsule()
+                        .fill(Constants.gold)
+                        .frame(width: 100, height: 30)
+                    Text("Premium").textCase(.uppercase)
+                        .font(.subheadline)
+                }
+            }
+ 
             Spacer()
                 .frame(height:  UIScreen.main.bounds.height * 0.03)
-            
-//            selectionBox(currentSelection: currentSelection)
-//            Spacer()
-//                .frame(height: 32)
             
             Text("Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
                 .font(.body)
                 .foregroundStyle(.white)
                 .padding([.leading, .trailing, .top])
-           
-            
-//            Text(currentSelection.title)
-//                .font(.callout)
-//                .foregroundStyle(.white)
-            
+
             Spacer()
                 .frame(height: UIScreen.main.bounds.height * 0.20)
             
+            Text("\(currentSelection.title) Cancel anytime")
+                .font(.headline)
+                .foregroundStyle(.white)
+            Spacer()
+                .frame(height: 16)
             
             continueButton {
                 completion()
             }
-            
-//            Spacer()
-//                .frame(height: 16)
-            
-            
-            
         }
+    }
+    
+    var discountLabel: some View {
+        VStack {
+            if appState.offerDiscount && !subscriptionStore.isPremium {
+                Text("Special gift for you!")
+                    .font(.title)
+                Text("\(timeString(from: appState.timeRemaining)) left")
+                    .font(.body)
+            }
+        }.foregroundColor(.white)
+    }
+    
+    
+    
+    func timeString(from totalSeconds: Int) -> String {
+        let hours = totalSeconds / 3600
+        let minutes = (totalSeconds % 3600) / 60
+        let seconds = totalSeconds % 60
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
     
     func selectionBox(currentSelection: InAppId.Subscription) -> some View {
@@ -630,7 +640,7 @@ struct StarRatingView: View {
        }
        
        func starColor(for index: Int) -> Color {
-           return appState.isOnboarded ? Constants.DAMidBlue : Constants.gold //index <= Int(rating) ? .yellow : .gray
+           return Constants.gold
        }
     
     func animateStar(at index: Int) {

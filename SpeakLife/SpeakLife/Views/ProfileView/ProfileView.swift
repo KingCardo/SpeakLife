@@ -27,6 +27,7 @@ struct ProfileView: View {
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var streakViewModel: StreakViewModel
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var devotionalViewModel: DevotionalViewModel
     
     @State var result: Result<MFMailComposeResult, Error>? = nil
     private let appVersion = "App version: \(APP.Version.stringNumber)"
@@ -35,6 +36,7 @@ struct ProfileView: View {
     
     @State var isPresentingManageSubscriptionView = false
     @State var isPresentingContentView = false
+    @State var isPresentingPrayerRequestView = false
     @State var isPresentingBottomSheet = false
     @State private var showShareSheet = false
     let url = URL(string:APP.Product.urlID)
@@ -50,6 +52,8 @@ struct ProfileView: View {
         if #available(iOS 16.0, *) {
             NavigationStack {
                 content
+                .navigationBarTitle("SpeakLife", displayMode: .inline)
+                
             }
         } else {
             NavigationView {
@@ -67,7 +71,13 @@ struct ProfileView: View {
             }
             
             Section(header: Text("Yours").font(.caption)) {
-                streakRow
+               
+                if appState.onBoardingTest {
+                    createYourOwnRow
+                    devotionalsRow
+                    streakRow
+                    prayerRow
+                }
     
                 HStack {
                     AbbasLoveRow
@@ -75,7 +85,7 @@ struct ProfileView: View {
                         Badge()
                     }
                 }
-               // createYourOwnRow
+                
             
                 remindersRow
                 favoritesRow
@@ -86,6 +96,7 @@ struct ProfileView: View {
                 shareRow
                 reviewRow
                 feedbackRow
+                prayerRequestRow
               //  prayerRow
                 //newFeaturesRow
             }
@@ -110,8 +121,8 @@ struct ProfileView: View {
                 AudioPlayerService.shared.pauseMusic()
             }
         }
-            .foregroundColor(colorScheme == .dark ? .white : .black)
-            .navigationBarTitle(Text("SpeakLife"))
+            .foregroundColor(.white)//colorScheme == .dark ? .white : .black)
+            //.navigationBarTitle(Text("SpeakLife"))
         )
         .alert(isPresented: $declarationStore.errorAlert) {
             Alert(
@@ -127,6 +138,7 @@ struct ProfileView: View {
             .onAppear {
                 Analytics.logEvent(Event.profileTapped, parameters: nil)
             }
+            .environment(\.colorScheme, .dark)
     }
     
     private var subscriptionRow:  some View {
@@ -162,25 +174,25 @@ struct ProfileView: View {
         EmptyView()
     }
     
-//    @MainActor
-//    private var prayerRow: some View {
-//        HStack {
-//            Image(systemName: "hands.sparkles.fill")
-//                .foregroundColor(Constants.DAMidBlue)
-//            NavigationLink(LocalizedStringKey("Prayers"), destination: LazyView(PrayerView()))
-//                .opacity(0)
-//                .background(
-//                    HStack {
-//                        Text("Prayer", comment:  "Prayers row title")
-//                        Spacer()
-//                        Image(systemName: "chevron.right")
-//                            .resizable()
-//                            .aspectRatio(contentMode: .fit)
-//                            .frame(width: 8)
-//                            .foregroundColor(Constants.DAMidBlue)
-//                    })
-//        }
-//    }
+    @MainActor
+    private var prayerRow: some View {
+        HStack {
+            Image(systemName: "hands.sparkles.fill")
+                .foregroundColor(Constants.DAMidBlue)
+            NavigationLink(LocalizedStringKey("Prayers"), destination: LazyView(WarriorView()))
+                .opacity(0)
+                .background(
+                    HStack {
+                        Text("Prayers", comment:  "Prayers row title")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 8)
+                            .foregroundColor(Constants.DAMidBlue)
+                    })
+        }
+    }
     
     @MainActor
     private var tipsRow: some View {
@@ -217,7 +229,7 @@ struct ProfileView: View {
             }
         }.sheet(isPresented: $isPresentingBottomSheet) {
             StreakSheet(isShown: $isPresentingBottomSheet, streakViewModel: streakViewModel)
-                .presentationDetents([.medium, .fraction(0.4)])
+                .presentationDetents([.medium, .fraction(0.5)])
                 .preferredColorScheme(.light)
         }
     }
@@ -282,6 +294,26 @@ struct ProfileView: View {
         }
     }
     
+    @MainActor
+    private var devotionalsRow: some View {
+        HStack {
+            Image(systemName: "book.pages.fill")
+                .foregroundColor(Constants.DAMidBlue)
+            NavigationLink(LocalizedStringKey("Create Your Own"), destination: LazyView( DevotionalView(viewModel: devotionalViewModel)))
+                .opacity(0)
+                .background(
+                    HStack {
+                        Text("Devotionals", comment: "")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 8)
+                            .foregroundColor(Constants.DAMidBlue)
+                    })
+        }
+    }
+    
     private var shareRow: some View {
         SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.and.arrow.up.fill", title: "Share SpeakLife", viewToPresent: EmptyView()) {
             shareApp()
@@ -298,26 +330,7 @@ struct ProfileView: View {
         SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "star.bubble.fill", title: "Leave us a Review", viewToPresent: EmptyView(), url: "\(APP.Product.urlID)?action=write-review") {
         }
     }
-    
-    @MainActor
-    private var trackerRow: some View {
-        HStack {
-            Image(systemName: "hourglass")
-                .foregroundColor(Constants.DAMidBlue)
-            NavigationLink(LocalizedStringKey("Tracker"), destination: LazyView(TrackerView()))
-                .opacity(0)
-                .background(
-                    HStack {
-                        Text("Meditation Tracker", comment:  "Prayers row title")
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 8)
-                            .foregroundColor(Constants.DAMidBlue)
-                    })
-        }
-    }
+
     
     @MainActor
     @ViewBuilder
@@ -329,15 +342,15 @@ struct ProfileView: View {
         }
     }
     
-//    @MainActor
-//    @ViewBuilder
-//    private var prayerRow: some View {
-//        if MFMailComposeViewController.canSendMail() {
-//            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "highlighter", title: "Prayer Request", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .profile))) {
-//                presentContentView()
-//            }
-//        }
-//    }
+    @MainActor
+    @ViewBuilder
+    private var prayerRequestRow: some View {
+        if MFMailComposeViewController.canSendMail() {
+            SettingsRow(isPresentingContentView: $isPresentingPrayerRequestView, imageTitle: "highlighter", title: "Prayer Request", viewToPresent: LazyView(MailView(isShowing: $isPresentingPrayerRequestView, result: self.$result, origin: .profile))) {
+                presentPrayerRequestView()
+            }
+        }
+    }
     
     private var warriorView: some View {
         HStack {
@@ -412,6 +425,11 @@ struct ProfileView: View {
     @MainActor
     private func presentContentView() {
         self.isPresentingContentView = true
+    }
+    
+    @MainActor
+    private func presentPrayerRequestView() {
+        self.isPresentingPrayerRequestView = true
     }
     
     private func shareApp() {
