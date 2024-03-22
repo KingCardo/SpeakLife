@@ -45,20 +45,6 @@ struct DeclarationView: View {
     
     private var cancellables = Set<AnyCancellable>()
     
-
-    
-    init() {
-        
-//        $isPresentingPremiumView
-//                    .map { isPresentingPremium -> Bool in
-//                        // Combine the Bool values in some way
-//                        return isPresentingPremium // Assuming `self.isPresenting` is meant to track another presentation state
-//                    }
-//                    .assign(to: $isPresenting)
-//                    .store(in: &cancellables)
-
-    }
-    
     @State private var timeElapsed = 0
     
     func declarationContent(_ geometry: GeometryProxy) -> some View {
@@ -78,8 +64,6 @@ struct DeclarationView: View {
                 if appState.showIntentBar {
                     if !appState.showScreenshotLabel {
                         VStack() {
-                           
-                              
                                 HStack {
                                     Spacer()
                                     if !timerViewModel.isComplete {

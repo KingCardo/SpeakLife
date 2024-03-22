@@ -14,10 +14,10 @@ final class ThemeViewModel: ObservableObject {
     @AppStorage("theme") var theme = Theme.lakeHills.encode()!
     @AppStorage("fontString") var fontString = "AppleSDGothicNeo-Regular" {
         didSet {
-            selectedFont = .custom(fontString, size: 38)
+            selectedFont = .custom(fontString, size: fontSize)
         }
     }
-    
+    let fontSize: CGFloat = 30
     @Published var selectedImage: UIImage? = nil
     @Published var backgroundImage: Image? = nil
     @Published var showUserSelectedImage = false
@@ -28,7 +28,7 @@ final class ThemeViewModel: ObservableObject {
     // MARK: Properties
     
     @Published var selectedTheme: Theme = .longroadtraveled
-    @Published var selectedFont: Font = .custom("AppleSDGothicNeo-Regular", size: 38) {
+    @Published var selectedFont: Font = .custom("AppleSDGothicNeo-Regular", size: 30) {
         didSet  {
             updateSelectedFontForBook()
         }
@@ -37,7 +37,7 @@ final class ThemeViewModel: ObservableObject {
     @Published var selectedFontForBook: Font?
     
     private func updateSelectedFontForBook() {
-        selectedFontForBook = .custom(fontString, size: 24)
+        selectedFontForBook = .custom(fontString, size: 22)
     }
     
     
@@ -87,7 +87,7 @@ final class ThemeViewModel: ObservableObject {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 self.selectedTheme = theme
-                self.selectedFont = .custom(self.fontString, size: 38)
+                self.selectedFont = .custom(self.fontString, size: fontSize)
                 self.selectedImage = theme.userSelectedImage
             }
         }

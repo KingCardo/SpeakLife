@@ -148,7 +148,7 @@ struct DeclarationContentView: View {
             
             QuoteLabel(themeViewModel: themeViewModel, quote: viewModel.showVerse ? declaration.text : declaration.affirmationText ?? "")
                 .foregroundColor(themeViewModel.selectedTheme.fontColor)
-                .frame(width: geometry.size.width * 0.98, height:  geometry.size.height * 0.30)
+                .frame(width: geometry.size.width * 0.98, height:  geometry.size.height * 0.25)
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
             
             Text(viewModel.showVerse ? declaration.book ?? "" : "")
