@@ -117,12 +117,6 @@ struct DiscountSubscriptionView: View {
     
     func discountView(completion: @escaping(() -> Void)) -> some View {
         VStack {
-//            Text("SpeakLife")
-//                .font(Constants.titleFont)
-//                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-//                .foregroundStyle(.white)
-//            Spacer()
-//                .frame(height: 16)
             discountLabel
             Spacer()
                 .frame(height: 16)
@@ -176,7 +170,7 @@ struct DiscountSubscriptionView: View {
     var discountLabel: some View {
         VStack {
             if appState.offerDiscount && !subscriptionStore.isPremium {
-                Text("Special gift for you!")
+                Text("Special gift for you \(appState.userName)!")
                     .font(.title)
                 Text("\(timeString(from: appState.timeRemaining)) left")
                     .font(.body)

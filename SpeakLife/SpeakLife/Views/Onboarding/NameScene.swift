@@ -12,7 +12,6 @@ struct NameScene: View {
     
     let size: CGSize
     let callBack: (() -> Void)
-    @AppStorage("userName") private var userName = ""
     @State private var keyboardHeight: CGFloat = 0
    // @State private var isTextFieldFocused: Bool = false
    
@@ -48,7 +47,7 @@ struct NameScene: View {
                             
                             Spacer().frame(height: 24)
                             
-                            TextField("Enter your name", text: $userName)
+                            TextField("Enter your name", text: $appState.userName)
                                 .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                               //  .textFieldStyle(CustomTextFieldStyle())
                                 .padding()  // Adds padding inside the TextField
@@ -78,9 +77,9 @@ struct NameScene: View {
                                 .frame(width: size.width * 0.91 ,height: 50)
                         }.padding()
                     }
-                    .disabled(userName.isEmpty)
+                    .disabled(appState.userName.isEmpty)
                     .frame(width: size.width * 0.87 ,height: 50)
-                    .background(userName.isEmpty ? Constants.DAMidBlue.opacity(0.5): Constants.DAMidBlue)
+                    .background(appState.userName.isEmpty ? Constants.DAMidBlue.opacity(0.5): Constants.DAMidBlue)
                     
                     .foregroundColor(.white)
                     .cornerRadius(8)

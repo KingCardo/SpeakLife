@@ -40,7 +40,7 @@ struct PremiumView: View {
             }
         }.onAppear {
             if appState.discountEndTime == nil {
-                appState.discountEndTime = Date().addingTimeInterval(4 * 60 * 60)
+                appState.discountEndTime = Date().addingTimeInterval(2 * 60 * 60)
             }
             initializeTimer()
         }

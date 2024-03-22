@@ -35,6 +35,7 @@ final class AppState: ObservableObject {
     @AppStorage("lastRequestedRatingVersion") var lastRequestedRatingVersion: String?
     @AppStorage("helpUs") var helpUsGrowCount = 0
     @AppStorage("timeRemaining") var timeRemaining = 0
+    @AppStorage("userName") var userName = ""
    
 }
 
