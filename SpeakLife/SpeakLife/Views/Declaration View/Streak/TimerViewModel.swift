@@ -139,6 +139,7 @@ final class TimerViewModel: ObservableObject {
     }
     
     func loadRemainingTime() {
+        checkAndUpdateCompletionDate()
         
         if checkIfCompletedToday() {
             isComplete = true
