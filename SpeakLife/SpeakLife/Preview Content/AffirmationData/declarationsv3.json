@@ -2251,7 +2251,7 @@
         },
         {
             "text": "For it is by believing in your heart that you are made right with God, and it is by openly declaring your faith that you are saved.",
-            "book": "Romans 10:10 NLT",
+            "book": "Romans 10:10 ",
             "isFavorite": false,
             "category": "faith"
         },
@@ -2271,7 +2271,7 @@
             "category": "faith"
         },{
             "text": "If you openly declare that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved.",
-            "book": "Romans 10:9 NLT",
+            "book": "Romans 10:9 ",
             "isFavorite": false,
             "category": "faith"
         },{
@@ -2337,7 +2337,7 @@
             "category": "confidence"
         },{
             "text": "Now faith is being sure we will get what we hope for. It is being sure of what we cannot see.",
-            "book": "Hebrews 11:1 NLV",
+            "book": "Hebrews 11:1",
             "isFavorite": false,
             "category": "confidence"
         },{
@@ -3141,43 +3141,43 @@
         },
         {
             "text": "Don’t you realize that your body is the temple of the Holy Spirit, who lives in you and was given to you by God? You do not belong to yourself, for God bought you with a high price. So you must honor God with your body.",
-            "book": "1 Corinthians 6:19 NLT",
+            "book": "1 Corinthians 6:19",
             "isFavorite": false,
             "category": "addiction"
         },
         {
             "text": "We must act all the time as if it were day. Keep away from wild parties and do not be drunk. Keep yourself free from sex sins and bad actions. Do not fight or be jealous. Let every part of you belong to the Lord Jesus Christ. Do not allow your weak thoughts to lead you into sinful actions.",
-            "book": "Romans 13:13-14 NLV",
+            "book": "Romans 13:13-14",
             "isFavorite": false,
             "category": "addiction"
         },
         {
             "text": "If we claim we have no sin, we are only fooling ourselves and not living in the truth. But if we confess our sins to him, he is faithful and just to forgive us our sins and to cleanse us from all wickedness.",
-            "book": "1 John 1:8-9 NLT",
+            "book": "1 John 1:8-9 ",
             "isFavorite": false,
             "category": "addiction"
         },
         {
             "text": "He comforts us in all our troubles so that we can comfort others. When they are troubled, we will be able to give them the same comfort God has given us.",
-            "book": "2 Corinthians 1:4 NLT",
+            "book": "2 Corinthians 1:4",
             "isFavorite": false,
             "category": "addiction"
         },
         {
             "text": "Don’t let evil conquer you, but conquer evil by doing good.",
-            "book": "Romans 12:21 NLT",
+            "book": "Romans 12:21",
             "isFavorite": false,
             "category": "addiction"
         },
         {
             "text": "But the Holy Spirit produces this kind of fruit in our lives: love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control. There is no law against these things!",
-            "book": "Galatians 5:22-23 NLT",
+            "book": "Galatians 5:22-23",
             "isFavorite": false,
             "category": "addiction"
         },
         {
             "text": "The temptations in your life are no different from what others experience. And God is faithful. He will not allow the temptation to be more than you can stand. When you are tempted, he will show you a way out so that you can endure.",
-            "book": "1 Corinthians 10:13 NLT",
+            "book": "1 Corinthians 10:13",
             "isFavorite": false,
             "category": "addiction"
         },
@@ -3189,13 +3189,13 @@
         },
         {
             "text": "So give yourselves to God. Stand against the devil and he will run away from you.",
-            "book": "James 4:7 NLV",
+            "book": "James 4:7 ",
             "isFavorite": false,
             "category": "addiction"
         },
         {
             "text": "I can do all things because Christ gives me the strength.",
-            "book": "Philippians 4:13 NLV",
+            "book": "Philippians 4:13 ",
             "isFavorite": false,
             "category": "addiction"
         },
@@ -4412,11 +4412,6 @@
             "category": "forgiveness"
         },
         {
-            "text": "I am a beacon of His love and forgiveness, shining brightly in the darkness.",
-            "isFavorite": false,
-            "category": "forgiveness"
-        },
-        {
             "text": "I am healed from my inner wounds, forgiven and made whole.",
             "isFavorite": false,
             "category": "forgiveness"
@@ -4644,7 +4639,7 @@
         },
         {
             "text": "The Lord keeps watch over you as you come and go, both now and forever.",
-            "book": "Psalm 121:8 NLT",
+            "book": "Psalm 121:8 ",
             "isFavorite": false,
             "category": "godsprotection"
         },
@@ -4682,7 +4677,7 @@
         },
         {
             "text": "I make the Lord my refuge, the Most High is my shelter, no evil will conquer me; no plague will come near my home.",
-            "book": "Psalm 91:9-10 NLT",
+            "book": "Psalm 91:9-10 ",
             "isFavorite": false,
             "category": "godsprotection"
         },
@@ -6556,7 +6551,7 @@
         },
         {
             "text": "The little troubles we suffer now for a short time are making us ready for the great things God is going to give us forever.",
-            "book": "2 Corinthians 4:17 NLV",
+            "book": "2 Corinthians 4:17 ",
             "isFavorite": false,
             "category": "hardtimes"
         },
@@ -6881,16 +6876,6 @@
             "category": "health"
         },
         {
-            "text": "In Jesus' name, I live a balanced life, eating well and staying active.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "In Jesus' name, I stand strong against any health problem, never giving up.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "In Jesus' name, I keep a happy heart and mind, which keeps me healthy.",
             "isFavorite": false,
             "category": "health"
@@ -6936,12 +6921,7 @@
             "category": "health"
         },
         {
-            "text": "In Jesus' name, I thank You for every healthy day.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "In Jesus' name, just like the blind man who received sight, I believe in healing for my body.",
+            "text": "In Jesus' name, I thank You for great health every day.",
             "isFavorite": false,
             "category": "health"
         },
@@ -6961,7 +6941,7 @@
             "category": "health"
         },
         {
-            "text": "In Jesus' name, just as Peter walked on water by faith, I step out believing in health against all odds.",
+            "text": "In Jesus' name, just as Peter walked on water by faith, I step out believing I am healed against all odds.",
             "isFavorite": false,
             "category": "health"
         },
@@ -6971,22 +6951,12 @@
             "category": "health"
         },
         {
-            "text": "In Jesus' name, like the deaf man who was made to hear, I listen for His voice guiding me to wellness.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "In Jesus' name, as the man with the withered hand was restored, I see strength returning to my body.",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "In Jesus' name, like the feeding of the 5000, I trust Him to provide for my health abundantly.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am full of vitality, as the same spirit that raised Jesus lives in me.",
+            "text": "I am full of vitality, because the same spirit that raised Jesus from the dead lives in me.",
             "book": "Romans 8:11",
             "isFavorite": false,
             "category": "health"
@@ -6997,7 +6967,7 @@
             "category": "health"
         },
         {
-            "text": "I am in good health, even as my soul prospers.",
+            "text": "I am in great health, even as my soul prospers.",
             "book": "3 John 1:2",
             "isFavorite": false,
             "category": "health"
@@ -7039,7 +7009,7 @@
             "category": "health"
         },
         {
-            "text": "God's word heals, protects, and restores me all the days of my life",
+            "text": "God's word heals, protects, and restores me all the days of my life.",
             "isFavorite": false,
             "category": "health"
         },
@@ -7079,12 +7049,6 @@
         {
             "text": "Praise the LORD, my soul, and forget not all his benefits— who forgives all your sins and heals all your diseases.",
             "book": "Psalms 103:2-3",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "'For I will restore health to you and heal you of your wounds,' says the LORD.",
-            "book": "Jeremiah 33:6",
             "isFavorite": false,
             "category": "health"
         },
@@ -7144,6 +7108,7 @@
         },
         {
             "text": "Fear not, for I am with you; be not dismayed, for I am your God. I will strengthen you, I will help you, I will uphold you with my righteous right hand.",
+            "affirmationText": "I will not fear, You are with me, You are my God! You will strengthen me, help me, and uphold me!",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
@@ -7264,11 +7229,6 @@
             "category": "health"
         },
         {
-            "text": "Thank you Jesus for the steadfast faith that leads to physical and spiritual wellness.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "Thank you Jesus for guiding me to healthy choices and a life of abundance.",
             "isFavorite": false,
             "category": "health"
@@ -7285,11 +7245,6 @@
         },
         {
             "text": "Thank you Jesus for the battles you've won for me, securing my health and peace.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Thank you Jesus for the promise of renewal, in body, mind, and spirit.",
             "isFavorite": false,
             "category": "health"
         },
@@ -8984,7 +8939,7 @@
         },
         {
             "text": "But God had so much loving-kindness. He loved us with such a great love. Even when we were dead because of our sins, He made us alive by what Christ did for us. You have been saved from the punishment of sin by His loving-favor." ,
-            "book": "Ephesians 2:4-5 NLV",
+            "book": "Ephesians 2:4-5 ",
             "isFavorite": false,
             "category": "love"
         },
@@ -9950,17 +9905,12 @@
             "category": "peace"
         },
         {
-            "text": "Thank you Jesus for your peace that feels like a warm hug when I'm stressed.",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
             "text": "Thank you Jesus for being my quiet place when everything else is loud.",
             "isFavorite": false,
             "category": "peace"
         },
         {
-            "text": "Thank you Jesus for giving me peace when my to-do list seems overwhelming.",
+            "text": "Thank you Jesus for giving me peace when my life list seems overwhelming.",
             "isFavorite": false,
             "category": "peace"
         },
@@ -9976,11 +9926,6 @@
         },
         {
             "text": "Thank you Jesus for helping me find peace in nature and the small moments.",
-            "isFavorite": false,
-            "category": "peace"
-        },
-        {
-            "text": "Thank you Jesus for peace at the dinner table, even when we're all so different.",
             "isFavorite": false,
             "category": "peace"
         },
@@ -10495,7 +10440,7 @@
             "category": "wealth"
         },
         {
-            "text": "In Jesus' name, I thrive in abundance, every need met according to His riches.",
+            "text": "In Jesus' name, I thrive in abundance.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -10520,17 +10465,7 @@
             "category": "wealth"
         },
         {
-            "text": "In Jesus' name, I unlock the treasures of wisdom and wealth, guided by His light.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "In Jesus' name, I am surrounded by favor, doors of opportunity swinging wide open.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "In Jesus' name, I steward my blessings wisely, creating a legacy of abundance.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -10560,32 +10495,27 @@
             "category": "wealth"
         },
         {
-            "text": "In Jesus' name, I rise above economic challenges, sustained by His unending abundance.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "In Jesus' name, I am a testimony of His generosity, my life a reflection of His wealth.",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "In Jesus' name, I am rich in every way, my spirit enriched and my storehouses full.",
+            "text": "In Jesus' name, I am rich in every way, my spirit enriched and my bank accounts full.",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "In Jesus' name, I experience the joy of abundance, my path lit with the riches of His grace.",
+            "text": "In Jesus' name, my future is filled with abundance.",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "In Jesus' name, I am anointed for prosperity, every endeavor touched by His hand of blessing.",
+            "text": "In Jesus' name, I am anointed for prosperity.",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "In Jesus' name, wealth and honor accompany me, for I dwell in the house of the Lord.",
+            "text": "In Jesus' name, wealth and honor accompany me, I live in the house of the Lord.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -10615,51 +10545,31 @@
             "category": "wealth"
         },
         {
-            "text": "In Jesus' name, I receive the provision of Elijah, sustained miraculously in times of scarcity.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "In Jesus' name, I experience the multiplication of the loaves and fishes, witnessing abundance in scarcity.",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "In Jesus' name, I am like the Shunammite woman, rewarded for my generosity with divine abundance.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "In Jesus' name, I tap into the blessings of Deuteronomy 28, obeying the Lord and reaping the rewards.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "In Jesus' name, I embrace the promise of Malachi 3:10, bringing my tithe and seeing the windows of heaven open.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "Give, and you will receive. Your gift will return to you in full—pressed down, shaken together to make room for more, running over, and poured into your lap. The amount you give will determine the amount you get back.",
-            "book": "Luke 6:38 NLT",
+            "book": "Luke 6:38 ",
             "isFavorite": false,
             "category": "wealth"
         },
         {
             "text": "And it is a good thing to receive wealth from God and the good health to enjoy it. To enjoy your work and accept your lot in life—this is indeed a gift from God.",
-            "book": "Ecclesiastes 5:19 NLT",
+            "book": "Ecclesiastes 5:19 ",
             "isFavorite": false,
             "category": "wealth"
         },
         {
             "text": "He who walks with wise men will be wise, but the one who walks with fools will be destroyed.",
-            "book": "Proverbs 13:20 NLV",
+            "book": "Proverbs 13:20 ",
             "isFavorite": false,
             "category": "wealth"
         },
         {
             "text": "My leaves never wither, and I prosper in all I do.",
-            "book": "Psalm 1:3 NLT",
+            "book": "Psalm 1:3 ",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -10678,18 +10588,6 @@
         {
             "text": "I seek first the kingdom of God and his righteousness, and all these things will be added to me.",
             "book": "Matthew 6:33",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "I give, and it will be given to me. A good measure, pressed down, shaken together and running over, will be poured into my lap.",
-            "book": "Luke 6:38",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "The earth is the Lord's, and everything in it, the world, and all who live in it.",
-            "book": "Psalm 24:1",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -10738,17 +10636,7 @@
             "category": "wealth"
         },
         {
-            "text": "Thank you Jesus for Your favor that brings wealth and adds no sorrow with it.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "Thank you Jesus for teaching me to be a steward of the riches You entrust to me.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Thank you Jesus for the assurance that my needs are met according to Your glorious riches.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -10763,22 +10651,7 @@
             "category": "wealth"
         },
         {
-            "text": "Thank you Jesus for empowering me to lend to many and borrow from none.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "Thank you Jesus for the prosperity that follows obedience to Your commands.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Thank you Jesus for the joy and generosity that flow from Your abundance.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Thank you Jesus for making me a channel of Your blessings, spreading wealth where there's need.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -10809,11 +10682,6 @@
         },
         {
             "text": "Thank you Jesus for the fruitful harvest that rewards my hard work and faith in You.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Thank you Jesus for the satisfaction and contentment found in Your provision.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -10850,12 +10718,6 @@
         },
         {
             "text": "Trust in my abundance; I provide more than you can ask or imagine.",
-            "book": "Jesus",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Seek first my kingdom, and all these things will be given to you as well.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "wealth"
@@ -10898,12 +10760,6 @@
         },
         {
             "text": "Follow my path, and I will make your ways prosperous.",
-            "book": "Jesus",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "I bless the work of your hands; commit your plans to me, and they will succeed.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "wealth"
@@ -11099,34 +10955,6 @@
         {"text": "I have life in Jesus' name through believing that He is the Christ, the Son of God.", "isFavorite": false, "category": "faith"},
         {"text": "I am no longer a slave to fear, for I am God's child, born of His Spirit.", "isFavorite": false, "category": "faith"},
         {"text": "I am loved by the Good Shepherd, who lays down His life for me.", "isFavorite": false, "category": "faith"},
-        {"text": "I am more than a conqueror through Him who loves me.", "isFavorite": false, "category": "wisdom"},
-        {"text": "I am strong and courageous; I will not be afraid or discouraged.", "isFavorite": false, "category": "wisdom"},
-        {"text": "I am equipped for every good work, prepared in advance for me to do.", "isFavorite": false, "category": "wisdom"},
-        {"text": "I am a warrior of light, dispelling darkness wherever I go.", "isFavorite": false, "category": "wisdom"},
-        {"text": "I am steadfast, immovable, always excelling in the Lord’s work.", "isFavorite": false, "category": "wisdom"},
-        {"text": "I am wise, understanding the Lord’s will in all situations.", "isFavorite": false, "category": "wisdom"},
-        {"text": "I am shielded by God’s power, standing firm in the faith.", "isFavorite": false, "category": "wisdom"},
-        {"text": "I am renewed day by day, inwardly growing stronger.", "isFavorite": false, "category": "wisdom"},
-        {"text": "I am a temple of the Holy Spirit, sanctified and honorable.", "isFavorite": false, "category": "wisdom"},
-        {"text": "I am rooted and established in love, comprehending its vastness.", "isFavorite": false, "category": "wisdom"},
-        {"text": "I am led by the Spirit, not conforming to the patterns of this world.", "isFavorite": false, "category": "wisdom"},
-        {"text": "I am a disciple of truth, my path lit by the Word.", "isFavorite": false, "category": "wisdom"},
-        {"text": "I am a peacemaker, carrying the blessing of the children of God.", "isFavorite": false, "category": "wisdom"},
-        {"text": "I am chosen, royal, holy, declaring the praises of Him who called me.", "isFavorite": false, "category": "wisdom"},
-        {"text": "I am fearless in the face of adversity, for my God is with me.", "isFavorite": false, "category": "wisdom"},
-        {"text": "But do people know where to find wisdom? Where can they find understanding?", "book": "Job 28:12", "isFavorite": false, "category": "wisdom"},
-        {"text": "God alone understands the way to wisdom; he knows where it can be found.", "book": "Job 28:23", "isFavorite": false, "category": "wisdom"},
-        {"text": "The fear of the Lord is true wisdom; to forsake evil is real understanding.", "book": "Job 28:28", "isFavorite": false, "category": "wisdom"},
-        {"text": "Can you solve the mysteries of God? Can you discover everything about the Almighty?", "book": "Job 11:7", "isFavorite": false, "category": "wisdom"},
-        {"text": "Such knowledge is higher than the heavens—and who are you? It is deeper than the underworld—what do you know?", "book": "Job 11:8", "isFavorite": false, "category": "wisdom"},
-        {"text": "Wisdom belongs to the aged, and understanding to the old.", "book": "Job 12:12", "isFavorite": false, "category": "wisdom"},
-        {"text": "But true wisdom and power are found in God; counsel and understanding are his.", "book": "Job 12:13", "isFavorite": false, "category": "wisdom"},
-        {"text": "What he destroys cannot be rebuilt. When he puts someone in prison, there is no escape.", "book": "Job 12:14", "isFavorite": false, "category": "wisdom"},
-        {"text": "He leads counselors away, stripped of good judgment; wise judges become fools.", "book": "Job 12:17", "isFavorite": false, "category": "wisdom"},
-        {"text": "He pours disgrace upon princes and disarms the strong.", "book": "Job 12:21", "isFavorite": false, "category": "wisdom"},
-        {"text": "He uncovers mysteries hidden in darkness; he brings light to the deepest gloom.", "book": "Job 12:22", "isFavorite": false, "category": "wisdom"},
-        {"text": "He builds up nations, and he destroys them. He expands nations, and he abandons them.", "book": "Job 12:23", "isFavorite": false, "category": "wisdom"},
-        {"text": "No one knows where to find it, for it is not found among the living.", "book": "Job 28:13", "isFavorite": false, "category": "wisdom"},
         {"text": "It cannot be bought with gold. It cannot be purchased with silver.", "book": "Job 28:15", "isFavorite": false, "category": "wisdom"},
         {"text": "Wisdom is more valuable than gold and crystal. It cannot be purchased with jewels mounted in fine gold.", "book": "Job 28:17", "isFavorite": false, "category": "wisdom"},
         {"text": "Coral and jasper are worthless in trying to get it. The price of wisdom is far above rubies.", "book": "Job 28:18", "isFavorite": false, "category": "wisdom"},
@@ -11135,7 +10963,7 @@
         {"text": "He decided how hard the winds should blow and how much rain should fall.", "book": "Job 28:25", "isFavorite": false, "category": "wisdom"},
         {"text": "He made the laws for the rain and laid out a path for the lightning.", "book": "Job 28:26", "isFavorite": false, "category": "wisdom"},
         {"text": "Fear of the Lord is the foundation of true knowledge, but fools despise wisdom and discipline.", "book": "Proverbs 1:7", "isFavorite": false, "category": "wisdom"},
-        {"text": "What you learn from [wisdom] will crown you with grace and be a chain of honor around your neck.", "book": "Proverbs 1:9", "isFavorite": false, "category": "wisdom"},
+        {"text": "What you learn from wisdom will crown you with grace and be a chain of honor around your neck.", "book": "Proverbs 1:9", "isFavorite": false, "category": "wisdom"},
         {"text": "My child, if sinners entice you, turn your back on them!", "book": "Proverbs 1:10", "isFavorite": false, "category": "wisdom"},
         {"text": "Wisdom shouts in the streets. She cries out in the public square.", "book": "Proverbs 1:20", "isFavorite": false, "category": "wisdom"},
         {"text": "Listen to my counsel. I’ll share my heart with you and make you wise.", "book": "Proverbs 1:23", "isFavorite": false, "category": "wisdom"},
@@ -11166,7 +10994,6 @@
         {"text": "But as I looked at everything I had worked so hard to accomplish, it was all so meaningless—like chasing the wind.", "book": "Ecclesiastes 2:11", "isFavorite": false, "category": "wisdom"},
         {"text": "Wisdom is better than foolishness, just as light is better than darkness.", "book": "Ecclesiastes 2:13", "isFavorite": false, "category": "wisdom"},
         {"text": "I came to hate all my hard work here on earth, for I must leave to others everything I have earned.", "book": "Ecclesiastes 2:18", "isFavorite": false, "category": "wisdom"},
-        {"text": "So I decided there is nothing better than to enjoy food and drink and to find satisfaction in work.", "book": "Ecclesiastes 2:24", "isFavorite": false, "category": "wisdom"},
         {"text": "God gives wisdom, knowledge, and joy to those who please him.", "book": "Ecclesiastes 2:26", "isFavorite": false, "category": "wisdom"},
         {"text": "No matter how much we see, we are never satisfied. No matter how much we hear, we are not content.", "book": "Ecclesiastes 1:8", "isFavorite": false, "category": "wisdom"},
         {"text": "History merely repeats itself. It has all been done before. Nothing under the sun is truly new.", "book": "Ecclesiastes 1:9", "isFavorite": false, "category": "wisdom"},
@@ -11183,11 +11010,9 @@
         {"text": "Accept the way God does things, for who can straighten what he has made crooked?", "book": "Ecclesiastes 7:13", "isFavorite": false, "category": "wisdom"},
         {"text": "Enjoy prosperity while you can, but when hard times strike, realize that both come from God.", "book": "Ecclesiastes 7:14", "isFavorite": false, "category": "wisdom"},
         {"text": "Don't long for 'the good old days.' This is not wise.", "book": "Ecclesiastes 7:10", "isFavorite": false, "category": "wisdom"},
-        {"text": "Laughter is silly. What good does it do to seek pleasure?", "book": "Ecclesiastes 2:2", "isFavorite": false, "category": "wisdom"},
         {"text": "But as I looked at everything I had worked so hard to accomplish, it was all so meaningless—like chasing the wind.", "book": "Ecclesiastes 2:11", "isFavorite": false, "category": "wisdom"},
         {"text": "Wisdom is better than foolishness, just as light is better than darkness.", "book": "Ecclesiastes 2:13", "isFavorite": false, "category": "wisdom"},
         {"text": "I came to hate all my hard work here on earth, for I must leave to others everything I have earned.", "book": "Ecclesiastes 2:18", "isFavorite": false, "category": "wisdom"},
-        {"text": "So I decided there is nothing better than to enjoy food and drink and to find satisfaction in work.", "book": "Ecclesiastes 2:24", "isFavorite": false, "category": "wisdom"},
         {"text": "God gives wisdom, knowledge, and joy to those who please him.", "book": "Ecclesiastes 2:26", "isFavorite": false, "category": "wisdom"},
         {"text": "No matter how much we see, we are never satisfied. No matter how much we hear, we are not content.", "book": "Ecclesiastes 1:8", "isFavorite": false, "category": "wisdom"},
         {"text": "History merely repeats itself. It has all been done before. Nothing under the sun is truly new.", "book": "Ecclesiastes 1:9", "isFavorite": false, "category": "wisdom"},
@@ -12265,11 +12090,6 @@
             "category": "health"
         },
         {
-            "text": "Thank You Jesus, for Your love radiates through me, a beacon of vibrant health!",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "The Lord is my strength and shield. My heart trusts in Him, and I find help. My spirit overflows with joy, and I will sing His praise!",
             "isFavorite": false,
             "category": "praise"
@@ -13116,32 +12936,7 @@
             "category": "health"
         },
         {
-            "text": "I am filled with life force, fueling my body's natural ability to rejuvenate",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "Every moment, my body releases what no longer serves me and welcomes vibrant renewal",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "I am grateful for my body's incredible capacity to heal and restore itself",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "With each healthy choice, I empower my body's natural process of regeneration",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I radiate vibrant health, a testament to my body's ongoing process of renewal",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I embrace the natural rhythm of renewal, allowing my body to flourish",
             "isFavorite": false,
             "category": "health"
         },
@@ -13151,27 +12946,7 @@
             "category": "health"
         },
         {
-            "text": "With each sunrise, I awaken a renewed sense of vitality within my body",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "I listen to my body's wisdom, nurturing its natural process of renewal",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am filled with optimism, knowing my body possesses the power to constantly renew",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I celebrate my body's incredible journey of renewal, growing stronger with each passing day",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "My breath is a source of life force, promoting continuous renewal within my body",
             "isFavorite": false,
             "category": "health"
         },
@@ -13196,17 +12971,7 @@
             "category": "health"
         },
         {
-            "text": "I am nurturing my body with love and care.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am grateful for my body's innate ability to heal.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am supporting my body's renewal with positive thoughts and actions.",
+            "text": "I am grateful for my body's ability to heal.",
             "isFavorite": false,
             "category": "health"
         },
@@ -13221,27 +12986,12 @@
             "category": "health"
         },
         {
-            "text": "I am constantly improving my physical well-being.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
             "text": "I am in tune with my body's needs and respond with loving care.",
             "isFavorite": false,
             "category": "health"
         },
         {
             "text": "I am blessed with a resilient and rejuvenating body.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am creating a healthy and harmonious balance in my life.",
-            "isFavorite": false,
-            "category": "health"
-        },
-        {
-            "text": "I am optimizing my health with every choice I make.",
             "isFavorite": false,
             "category": "health"
         },
@@ -14380,20 +14130,6 @@
             "category": "wealth"
         },
         {
-            "text": "The wealth of the wise is their crown, but the folly of fools yields folly.",
-            "book": "Proverbs 14:24",
-            "affirmationText": "I seek wisdom above all, knowing it enriches my life and crowns me with true wealth.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "The house of the righteous contains great treasure, but the income of the wicked brings ruin.",
-            "book": "Proverbs 15:6",
-            "affirmationText": "I nurture righteousness in my heart and home, confident it fills my life with invaluable treasures.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "Better a little with righteousness than much gain with injustice.",
             "book": "Proverbs 16:8",
             "affirmationText": "I choose righteousness and fairness in all my dealings, knowing these are the foundation of lasting prosperity.",
@@ -14404,13 +14140,6 @@
             "text": "How much better to get wisdom than gold, to get insight rather than silver!",
             "book": "Proverbs 16:16",
             "affirmationText": "I prioritize gaining wisdom and insight, for they are more precious than any material wealth I could acquire.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "A person can do nothing better than to eat and drink and find satisfaction in their own toil. This too, I see, is from the hand of God.",
-            "book": "Ecclesiastes 2:24",
-            "affirmationText": "I find deep satisfaction and joy in my work and the simple pleasures of life, recognizing them as blessings from God.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -14471,27 +14200,6 @@
             "category": "wealth"
         },
         {
-            "text": "You crown the year with your bounty, and your carts overflow with abundance.",
-            "book": "Psalm 65:11",
-            "affirmationText": "Each year is crowned with God's bounty; my life is filled to overflowing with the abundance of His provision and grace.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "For the Lord God is a sun and shield; the Lord bestows favor and honor; no good thing does he withhold from those whose walk is blameless.",
-            "book": "Psalm 84:11",
-            "affirmationText": "God is my protector and source of all good, bestowing favor and honor upon me, generously providing all that I need as I walk in integrity.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "Surely, Lord, you bless the righteous; you surround them with your favor as with a shield.",
-            "book": "Psalm 5:12",
-            "affirmationText": "I am enveloped in the favor of the Lord, protected and blessed in all areas of my life, radiating righteousness.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "They will spend their days in prosperity, and their descendants will inherit the land.",
             "book": "Psalm 25:13",
             "affirmationText": "My days are filled with prosperity, and I am assured of a blessed inheritance for my descendants, securing a legacy of abundance.",
@@ -14499,30 +14207,9 @@
             "category": "wealth"
         },
         {
-            "text": "They feast on the abundance of your house; you give them drink from your river of delights.",
-            "book": "Psalm 36:8",
-            "affirmationText": "I am nourished and delighted by the abundance of God's provision, feasting in His presence and drinking from the endless river of His delights.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "You let people ride over our heads; we went through fire and water, but you brought us to a place of abundance.",
             "book": "Psalm 66:12",
             "affirmationText": "Despite life's trials and challenges, I am guided to a place of abundance and restoration, emerging stronger and more blessed.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "May the mountains bring prosperity to the people, the hills the fruit of righteousness.",
-            "book": "Psalm 72:3",
-            "affirmationText": "I am surrounded by the prosperity that flows like a mighty mountain and the righteousness that grows like the fruit of the hills.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "May grain abound throughout the land; on the tops of the hills may it sway. May the crops flourish like Lebanon and thrive like the grass of the field.",
-            "book": "Psalm 72:16",
-            "affirmationText": "I envision abundance flowing like grain across the land, with prosperity and growth surrounding me as lush and vibrant as the fields of Lebanon.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -14592,7 +14279,7 @@
         {
             "text": "Heal me, O Lord, and I will be healed; save me and I will be saved, for you are the one I praise.",
             "book": "Jeremiah 17:14",
-            "affirmationText": "I am enveloped in God's healing presence, restoring my health and saving me, as I lift my voice in praise and gratitude.",
+            "affirmationText": "I am surrounded by God's healing presence, restoring my health and saving me, as I lift my voice in praise and thanksgiving.",
             "isFavorite": false,
             "category": "health"
         },

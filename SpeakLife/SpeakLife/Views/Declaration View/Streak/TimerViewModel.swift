@@ -16,6 +16,7 @@ final class TimerViewModel: ObservableObject {
     @AppStorage("longestStreak") var longestStreak = 0
     @AppStorage("totalDaysCompleted") var totalDaysCompleted = 0
     @AppStorage("lastCompletedStreak") var lastCompletedStreak: Date?
+    @AppStorage("lastStartedStreak") var lastStartedStreak: Date?
     
     @AppStorage("newStreakNotification") var newStreakNotification = false
     
@@ -23,7 +24,6 @@ final class TimerViewModel: ObservableObject {
     @Published private(set) var timeRemaining: Int = 0
     @Published private(set) var isActive = false
     @Published var timer: Timer? = nil
-   // var cancellables = Set<AnyCancellable>()
 
     
     init() {
@@ -68,6 +68,7 @@ final class TimerViewModel: ObservableObject {
                 if currentStreak > longestStreak {
                     longestStreak += 1
                 }
+                lastStartedStreak = nil
                 NotificationCenter.default.post(name: Notification.Name("StreakCompleted"), object: nil)
                 timer.invalidate()
                 self.isActive = false
@@ -93,12 +94,11 @@ final class TimerViewModel: ObservableObject {
         let currentDate = Date()
         let calendar = Calendar.current
 
-        print(completionDate, "RWRW")
         // Start of the current day
         let startOfToday = calendar.startOfDay(for: currentDate)
 
         // Start of the next day
-        guard let startOfTomorrow = calendar.date(byAdding: .day, value: 1, to: startOfToday) else { return false }
+        guard let startOfTomorrow = calendar.date(byAdding: .day, value: 2, to: startOfToday) else { return false }
 
         // Check if the completion date is within today's range
         let completed = completionDate >= startOfToday && completionDate < startOfTomorrow
@@ -117,7 +117,6 @@ final class TimerViewModel: ObservableObject {
               let midnightAfterCompletion = midnightOfTomorrow(after: lastCompletionDate) else {
             return false
         }
-        print(midnightAfterCompletion, "RWRW midnight")
         return Date() > midnightAfterCompletion
     }
     
@@ -136,6 +135,7 @@ final class TimerViewModel: ObservableObject {
     }
     
     func loadRemainingTime() {
+        
         if checkIfCompletedToday() {
             isComplete = true
             isActive = false
@@ -143,11 +143,12 @@ final class TimerViewModel: ObservableObject {
             timeRemaining = TimerViewModel.totalDuration
             UserDefaults.standard.removeObject(forKey: "timeRemaining")
             return
-        } else if let savedTimeRemaining = UserDefaults.standard.value(forKey: "timeRemaining") as? Int, savedTimeRemaining > 2 {
+        } else if let savedTimeRemaining = UserDefaults.standard.value(forKey: "timeRemaining") as? Int, savedTimeRemaining > 2, let lastStartedStreak = lastStartedStreak, Calendar.current.isDateInToday(lastStartedStreak) {
             // Adjust the remaining time based on how much time has passed since the app was last open
             timeRemaining = savedTimeRemaining
         } else {
             timeRemaining = TimerViewModel.totalDuration
+            lastStartedStreak = Date()
         }
     }
     
