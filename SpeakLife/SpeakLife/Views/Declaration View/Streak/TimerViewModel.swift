@@ -59,23 +59,27 @@ final class TimerViewModel: ObservableObject {
             } else if self.timeRemaining > 0 {
                 self.timeRemaining -= 1
             } else {
-                UserDefaults.standard.removeObject(forKey: "timeRemaining")
-                timeRemaining = 0
-                isComplete = true
-                saveCompletionDate()
-                currentStreak += 1
-                totalDaysCompleted += 1
-                if currentStreak > longestStreak {
-                    longestStreak += 1
-                }
-                lastStartedStreak = nil
-                NotificationCenter.default.post(name: Notification.Name("StreakCompleted"), object: nil)
+                completeMeditation()
                 timer.invalidate()
-                self.isActive = false
                 // Prepare for the next day's reset if needed, or set up another logic as per your requirement
                // self.setupMidnightReset()
             }
         }
+    }
+    
+    func completeMeditation() {
+        UserDefaults.standard.removeObject(forKey: "timeRemaining")
+        timeRemaining = 0
+        isComplete = true
+        saveCompletionDate()
+        currentStreak += 1
+        totalDaysCompleted += 1
+        if currentStreak > longestStreak {
+            longestStreak += 1
+        }
+        lastStartedStreak = nil
+        NotificationCenter.default.post(name: Notification.Name("StreakCompleted"), object: nil)
+        self.isActive = false
     }
     
     func saveCompletionDate() {
@@ -98,7 +102,7 @@ final class TimerViewModel: ObservableObject {
         let startOfToday = calendar.startOfDay(for: currentDate)
 
         // Start of the next day
-        guard let startOfTomorrow = calendar.date(byAdding: .day, value: 2, to: startOfToday) else { return false }
+        guard let startOfTomorrow = calendar.date(byAdding: .day, value: 1, to: startOfToday) else { return false }
 
         // Check if the completion date is within today's range
         let completed = completionDate >= startOfToday && completionDate < startOfTomorrow
@@ -106,7 +110,7 @@ final class TimerViewModel: ObservableObject {
     }
     
     func midnightOfTomorrow(after date: Date) -> Date? {
-        if let nextDay = calendar.date(byAdding: .day, value: 1, to: date) {
+        if let nextDay = calendar.date(byAdding: .day, value: 2, to: date) {
             return calendar.startOfDay(for: nextDay)
         }
         return nil
