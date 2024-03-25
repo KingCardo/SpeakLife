@@ -28,7 +28,7 @@ struct HomeView: View {
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
     @EnvironmentObject var timerViewModel: TimerViewModel
     @Binding var isShowingLanding: Bool
-  //  @StateObject private var viewModel = FacebookTrackingViewModel()
+    @StateObject private var viewModel = FacebookTrackingViewModel()
 
     
     var body: some View {
@@ -49,7 +49,7 @@ struct HomeView: View {
             DeclarationView()
                 .id(appState.rootViewId)
                 .onAppear {
-                   // UIScrollView.appearance().isScrollEnabled = true
+                    viewModel.requestPermission()
                     if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
                         AudioPlayerService.shared.playSound(files: resources)
                     }
@@ -107,6 +107,7 @@ struct HomeView: View {
             .hideTabBar(if: appState.showScreenshotLabel)
             .accentColor(Constants.DAMidBlue)
             .onAppear {
+                viewModel.requestPermission()
                 UIScrollView.appearance().isScrollEnabled = true
                 if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
                     AudioPlayerService.shared.playSound(files: resources)

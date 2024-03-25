@@ -33,7 +33,6 @@
 		458B6B1F2BA6D5CF0001BEFE /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B6B1E2BA6D5CF0001BEFE /* TimerViewModel.swift */; };
 		458B6B212BA6E3EC0001BEFE /* StreakDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B6B202BA6E3EC0001BEFE /* StreakDetails.swift */; };
 		45C7481B2B5357D40011D8F6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */; };
-		45C7481C2B5357D40011D8F6 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 7AF18C7F29FD1E20005A6E31 /* GoogleMobileAds */; };
 		45C7481F2B55B4B80011D8F6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 45C7481E2B55B4B80011D8F6 /* FacebookCore */; };
 		45C748232B5802C60011D8F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45C748222B5802C60011D8F6 /* GoogleService-Info.plist */; };
 		45C7482D2B5BBF9A0011D8F6 /* romanticpiano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45C7482C2B5BBF9A0011D8F6 /* romanticpiano.mp3 */; };
@@ -311,7 +310,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45C7481C2B5357D40011D8F6 /* GoogleMobileAds in Frameworks */,
 				45C7481B2B5357D40011D8F6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				45C7481F2B55B4B80011D8F6 /* FacebookCore in Frameworks */,
 				7AF18C8029FD1E20005A6E31 /* (null) in Frameworks */,
@@ -842,7 +840,6 @@
 			name = SpeakLife;
 			packageProductDependencies = (
 				7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */,
-				7AF18C7F29FD1E20005A6E31 /* GoogleMobileAds */,
 				7AF18CA12A0DB126005A6E31 /* SwiftUICharts */,
 				45C7481E2B55B4B80011D8F6 /* FacebookCore */,
 			);
@@ -901,7 +898,6 @@
 			mainGroup = 7A278F8E288915DE0084BB57;
 			packageReferences = (
 				7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				7AF18C7E29FD1E20005A6E31 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				7AF18CA02A0DB126005A6E31 /* XCRemoteSwiftPackageReference "ChartView" */,
 				45C7481D2B55B4B80011D8F6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
@@ -1297,7 +1293,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 280;
+				CURRENT_PROJECT_VERSION = 281;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1333,7 +1329,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 280;
+				CURRENT_PROJECT_VERSION = 281;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1478,14 +1474,6 @@
 				minimumVersion = 10.0.0;
 			};
 		};
-		7AF18C7E29FD1E20005A6E31 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 10.6.0;
-			};
-		};
 		7AF18CA02A0DB126005A6E31 /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
@@ -1506,11 +1494,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsWithoutAdIdSupport;
-		};
-		7AF18C7F29FD1E20005A6E31 /* GoogleMobileAds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7AF18C7E29FD1E20005A6E31 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
-			productName = GoogleMobileAds;
 		};
 		7AF18CA12A0DB126005A6E31 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;

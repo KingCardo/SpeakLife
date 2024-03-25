@@ -9,7 +9,6 @@ import UIKit
 import BackgroundTasks
 import FirebaseCore
 import FirebaseAnalytics
-import GoogleMobileAds
 import UserNotifications
 import FacebookCore
 import AppTrackingTransparency

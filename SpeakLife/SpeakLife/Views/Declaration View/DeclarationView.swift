@@ -10,7 +10,7 @@ import MessageUI
 import StoreKit
 import UIKit
 import FirebaseAnalytics
-import GoogleMobileAds
+//import GoogleMobileAds
 import Combine
 
 
