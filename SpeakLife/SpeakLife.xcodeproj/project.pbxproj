@@ -831,6 +831,7 @@
 				7A278F95288915DE0084BB57 /* Resources */,
 				7A7BEBE62913574F008D08A3 /* Embed Foundation Extensions */,
 				45C748202B57FEFC0011D8F6 /* ShellScript */,
+				4558DB532BB214910073BDB8 /* Update Frameworks version */,
 			);
 			buildRules = (
 			);
@@ -952,6 +953,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4558DB532BB214910073BDB8 /* Update Frameworks version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update Frameworks version";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TARGET_MIN_OS_VERSION=\"16.0\"\nFRAMEWORKS_DIR=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\n\nupdate_framework_plists() {\n  local path=\"$1\"\n  echo \"Updating Info.plist files in $path\"\n  \n  find \"$path\" -name Info.plist | while read plist; do\n    local normalized_plist_path=$(realpath \"$plist\")\n    \n    echo \"Updating $normalized_plist_path\"\n    /usr/libexec/PlistBuddy -c \"Add :MinimumOSVersion string $TARGET_MIN_OS_VERSION\" \"$plist\" &>/dev/null || /usr/libexec/PlistBuddy -c \"Set :MinimumOSVersion $TARGET_MIN_OS_VERSION\" \"$plist\"\n    \n    if [ $? -eq 0 ]; then\n      echo \"Successfully set MinimumOSVersion to $TARGET_MIN_OS_VERSION in $normalized_plist_path\"\n    else\n      echo \"Failed to set MinimumOSVersion in $normalized_plist_path\"\n    fi\n  done\n}\n\nupdate_framework_plists \"$FRAMEWORKS_DIR\"\n";
+		};
 		45C748202B57FEFC0011D8F6 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1293,7 +1312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 281;
+				CURRENT_PROJECT_VERSION = 284;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1313,9 +1332,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.42;
+				MARKETING_VERSION = 2.43;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1329,7 +1352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 281;
+				CURRENT_PROJECT_VERSION = 284;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1349,9 +1372,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.42;
+				MARKETING_VERSION = 2.43;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1462,8 +1489,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 14.1.0;
+				kind = exactVersion;
+				version = 16.3.1;
 			};
 		};
 		7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {

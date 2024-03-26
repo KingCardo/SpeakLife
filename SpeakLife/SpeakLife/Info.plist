@@ -87,5 +87,7 @@
 	<string>ca6d6cdf360624116b189dfccc35eba5</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>We kindly request your permission to track installations to improve our advertising campaigns.</string>
+	<key>MinimumOSVersion</key>
+	<string>16.0</string>
 </dict>
 </plist>

@@ -88,6 +88,8 @@ struct DeclarationView: View {
                                     }.sheet(isPresented: $isPresentingPremiumView) {
                                         self.isPresentingPremiumView = false
                                         Analytics.logEvent(Event.tryPremiumAbandoned, parameters: nil)
+                                        timerViewModel.loadRemainingTime()
+                                        timerViewModel.startTimer()
                                     } content: {
                                         PremiumView()
                                     }
@@ -188,6 +190,7 @@ struct DeclarationView: View {
     
         
         private func premiumView()  {
+            timerViewModel.saveRemainingTime()
             self.isPresentingPremiumView = true
             Analytics.logEvent(Event.tryPremiumTapped, parameters: nil)
         }

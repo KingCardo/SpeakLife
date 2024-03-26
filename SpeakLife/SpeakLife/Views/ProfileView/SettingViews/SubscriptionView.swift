@@ -76,7 +76,7 @@ struct DiscountSubscriptionView: View {
     @State var isShowingError: Bool = false
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     let percentOffText: String = "50% Off SpeakLife"
-//    @State private var timeRemaining: Int = 0
+   // @State private var timeRemaining: Int = 0
    
     
     init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR15) {
@@ -103,6 +103,7 @@ struct DiscountSubscriptionView: View {
             discountView() {
                 callback?()
             }
+            
             if declarationStore.isPurchasing {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
@@ -172,7 +173,7 @@ struct DiscountSubscriptionView: View {
             if appState.offerDiscount && !subscriptionStore.isPremium {
                 Text("Special gift for you \(appState.userName)!")
                     .font(.title)
-                Text("\(timeString(from: appState.timeRemaining)) left")
+                Text("\(timeString(from: appState.timeRemainingForDiscount)) left")
                     .font(.body)
             }
         }.foregroundColor(.white)

@@ -44,26 +44,27 @@ struct PremiumView: View {
             }
             initializeTimer()
         }
-        .onReceive(timer) { _ in
+        .onReceive(timer) { timer in
             updateTimer()
         }
     }
     
     private func updateTimer() {
-        guard appState.timeRemaining != 0 else { return }
+        guard appState.timeRemainingForDiscount != 0 else { return }
         if let endTime = appState.discountEndTime, Date() < endTime {
-            appState.timeRemaining = Int(endTime.timeIntervalSinceNow)
+            appState.timeRemainingForDiscount = Int(endTime.timeIntervalSinceNow)
            } else {
                appState.offerDiscount = false
-               appState.timeRemaining = 0
-               timer.upstream.connect().cancel() // Stop the timer
+               appState.timeRemainingForDiscount = 0
+               timer.upstream.connect().cancel()
+               // Stop the timer
            }
        }
     
     private func initializeTimer() {
         if let endTime = appState.discountEndTime, Date() < endTime, !subscriptionStore.isPremium {
             appState.offerDiscount = true
-            appState.timeRemaining = Int(endTime.timeIntervalSinceNow)
+            appState.timeRemainingForDiscount = Int(endTime.timeIntervalSinceNow)
         } else {
             appState.offerDiscount = false
         }
