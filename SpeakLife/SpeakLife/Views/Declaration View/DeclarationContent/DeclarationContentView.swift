@@ -56,8 +56,10 @@ struct DeclarationContentView: View {
                         if isFavorite {
                             withAnimation(.spring(response: 0.34, dampingFraction: 0.8, blendDuration: 0.5)) {
                                 HeartView()
-                                    .scaleEffect(1.2)
+                                    .scaleEffect(1.4)
+                                    .rotationEffect(.degrees(360))
                                     .transition(.scale)
+                                    .shadow(color: .red.opacity(0.7), radius: 10, x: 0, y: 0)
                             }
                             
                             .rotationEffect(Angle(degrees: -degrees))

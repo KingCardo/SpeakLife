@@ -11,6 +11,9 @@
 		450720DB2BAFFB4A0029EE2B /* TimerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450720DA2BAFFB4A0029EE2B /* TimerViewModelTests.swift */; };
 		453172B42B2D274800388AD4 /* BenefitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453172B32B2D274800388AD4 /* BenefitScene.swift */; };
 		453478F12B9D29CC0012C2C0 /* declarationsv4.json in Resources */ = {isa = PBXBuildFile; fileRef = 453478F02B9D29CC0012C2C0 /* declarationsv4.json */; };
+		4558DB552BB3E85E0073BDB8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4558DB542BB3E85E0073BDB8 /* FirebaseAnalytics */; };
+		4558DB572BB3E85E0073BDB8 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4558DB562BB3E85E0073BDB8 /* FirebaseCrashlytics */; };
+		4558DB592BB3E85E0073BDB8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4558DB582BB3E85E0073BDB8 /* FirebaseStorage */; };
 		456885262B390FF4007B1EBB /* WarriorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456885252B390FF4007B1EBB /* WarriorView.swift */; };
 		456885282B395F66007B1EBB /* declarationsv3.json in Resources */ = {isa = PBXBuildFile; fileRef = 456885272B395F66007B1EBB /* declarationsv3.json */; };
 		4568852A2B428D77007B1EBB /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456885292B428D77007B1EBB /* NotificationManagerTests.swift */; };
@@ -310,10 +313,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4558DB552BB3E85E0073BDB8 /* FirebaseAnalytics in Frameworks */,
 				45C7481B2B5357D40011D8F6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				4558DB592BB3E85E0073BDB8 /* FirebaseStorage in Frameworks */,
 				45C7481F2B55B4B80011D8F6 /* FacebookCore in Frameworks */,
 				7AF18C8029FD1E20005A6E31 /* (null) in Frameworks */,
 				7AF18CA22A0DB126005A6E31 /* SwiftUICharts in Frameworks */,
+				4558DB572BB3E85E0073BDB8 /* FirebaseCrashlytics in Frameworks */,
 				7A00721D2908D50800965AF7 /* (null) in Frameworks */,
 				7A7BEBCD2913536B008D08A3 /* StoreKit.framework in Frameworks */,
 			);
@@ -843,6 +849,9 @@
 				7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				7AF18CA12A0DB126005A6E31 /* SwiftUICharts */,
 				45C7481E2B55B4B80011D8F6 /* FacebookCore */,
+				4558DB542BB3E85E0073BDB8 /* FirebaseAnalytics */,
+				4558DB562BB3E85E0073BDB8 /* FirebaseCrashlytics */,
+				4558DB582BB3E85E0073BDB8 /* FirebaseStorage */,
 			);
 			productName = SpeakLife;
 			productReference = 7A278F97288915DE0084BB57 /* SpeakLife.app */;
@@ -1312,7 +1321,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 284;
+				CURRENT_PROJECT_VERSION = 285;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1332,7 +1341,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.43;
+				MARKETING_VERSION = 2.44;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1352,7 +1361,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 284;
+				CURRENT_PROJECT_VERSION = 285;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1372,7 +1381,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.43;
+				MARKETING_VERSION = 2.44;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1512,6 +1521,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4558DB542BB3E85E0073BDB8 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		4558DB562BB3E85E0073BDB8 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		4558DB582BB3E85E0073BDB8 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		45C7481E2B55B4B80011D8F6 /* FacebookCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 45C7481D2B55B4B80011D8F6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;

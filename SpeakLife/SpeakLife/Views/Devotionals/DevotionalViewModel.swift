@@ -93,8 +93,18 @@ final class DevotionalViewModel: ObservableObject {
     }
     
     func fetchDevotional() async {
-       
-        if let devotional = await service.fetchDevotionForToday().first {
+        
+        if let devotional = service.devotionals.first {
+            DispatchQueue.main.async { [weak self] in
+                self?.devotional = devotional
+            }
+            setDevotionalDictionary()
+        } else if let devotional = await service.fetchDevotionForToday(needsSync: false).first {
+            DispatchQueue.main.async { [weak self] in
+                self?.devotional = devotional
+            }
+            setDevotionalDictionary()
+        } else if let devotional = await service.fetchDevotionForToday(needsSync: false).first {
             DispatchQueue.main.async { [weak self] in
                 self?.devotional = devotional
             }
@@ -112,7 +122,7 @@ final class DevotionalViewModel: ObservableObject {
             return
         }
         if self.devotionals.isEmpty {
-            let devotionals = await service.fetchAllDevotionals()
+            let devotionals = await service.fetchAllDevotionals(needsSync: false)
             self.devotionals = devotionals
         }
             let now = Date()

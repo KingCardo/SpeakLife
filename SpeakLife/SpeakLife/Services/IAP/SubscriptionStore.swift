@@ -47,7 +47,7 @@ final class SubscriptionStore: ObservableObject {
         cancellable = $subscriptionGroupStatus
             .map { $0 }
             .sink { [weak self] value in
-                self?.isPremium = value == .subscribed
+                self?.isPremium = true //value == .subscribed
             }
     }
 

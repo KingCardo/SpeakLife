@@ -47,6 +47,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case general
     case praise
     case heaven
+    case purity
     
     
     static var categoryOrder: [DeclarationCategory] = [
@@ -72,6 +73,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .joy,
         .loneliness,
         .love,
+        .purity,
         .praise,
         .rest,
         .marriage,
@@ -95,6 +97,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         case .fear: return "Fear Not!"
         case .addiction: return "Crush Addiction"
         case .heaven: return "Heavenly Thinking"
+        case .purity: return "Purity"
         default:  return self.rawValue.capitalized
         }
     }
@@ -119,7 +122,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     var isPremium: Bool {
         switch self {
-        case .general, .destiny, .favorites, .myOwn, .praise, .health : return false
+        case .general, .destiny, .favorites, .myOwn, .praise, .health, .purity : return false
         default: return true
         }
     }
@@ -128,6 +131,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
 // MARK: - Welcome
 struct Welcome: Codable {
     let count: Int
+    let version: Int?
     let declarations: [Declaration]
 }
 

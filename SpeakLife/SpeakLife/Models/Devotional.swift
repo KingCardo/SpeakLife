@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct WelcomeDevotional: Decodable {
+struct WelcomeDevotional: Codable {
+    let version: Int
     let devotionals: [Devotional]
 }
 
-struct Devotional: Decodable, Identifiable {
+struct Devotional: Codable, Identifiable {
     let date: Date
     let title: String
     let devotionalText: String

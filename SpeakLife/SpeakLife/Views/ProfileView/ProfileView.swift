@@ -297,8 +297,16 @@ struct ProfileView: View {
     @MainActor
     private var devotionalsRow: some View {
         HStack {
-            Image(systemName: "book.pages.fill")
-                .foregroundColor(Constants.DAMidBlue)
+            if #available(iOS 17, *) {
+                Image(systemName: "book.pages.fill")
+                    .renderingMode(.original)
+                    .foregroundColor(Constants.DAMidBlue)
+            } else {
+                Image(systemName: "book.fill")
+                    .renderingMode(.original)
+                    .foregroundColor(Constants.DAMidBlue)
+            }
+                
             NavigationLink(LocalizedStringKey("Create Your Own"), destination: LazyView( DevotionalView(viewModel: devotionalViewModel)))
                 .opacity(0)
                 .background(

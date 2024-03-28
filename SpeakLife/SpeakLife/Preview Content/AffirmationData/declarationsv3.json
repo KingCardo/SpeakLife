@@ -1,5 +1,6 @@
 {
     "count": 1,
+    "version": 1,
     "declarations": [
         {
             "text": "I am blessed in my coming in and blessed going out.",
@@ -14338,6 +14339,132 @@
             "affirmationText": "I am blessed with good health and prosperity, mirroring the wellness of my soul, as I walk in harmony with God's will for my life.",
             "isFavorite": false,
             "category": "health"
+        },
+        {
+            "text": "Put to death therefore what is earthly in you: sexual immorality, impurity, passion, evil desire, and covetousness, which is idolatry.",
+            "book": "Colossians 3:5",
+            "affirmationText": "I renounce all earthly desires that lead to impurity, embracing a life filled with righteousness and godly passion.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "For this is the will of God, your sanctification: that you abstain from sexual immorality;",
+            "book": "1 Thessalonians 4:3",
+            "affirmationText": "I am committed to living a life that aligns with God's will for me.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "Make no provision for the flesh, to gratify its desires.",
+            "book": "Romans 13:14",
+            "affirmationText": "I am mindful not to provide opportunities for my fleshly desires to be gratified, choosing instead to walk in the Spirit.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "Do not conform to the pattern of this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what God's will is—his good, pleasing, and perfect will.",
+            "book": "Romans 12:2",
+            "affirmationText": "I am not swayed by worldly patterns but am transformed by the renewal of my mind, discerning and embracing God's will for my life.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "For you were once darkness, but now you are light in the Lord. Walk as children of light",
+            "book": "Ephesians 5:8",
+            "affirmationText": "Transformed by the Lord, I walk as a child of light, shining brightly and avoiding the shadows of impurity.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "But since sexual immorality is occurring, each man should have sexual relations with his own wife, and each woman with her own husband.",
+            "book": "1 Corinthians 7:2",
+            "affirmationText": "I uphold the sanctity of marriage, keeping my commitments pure and honoring the covenant between my spouse and me.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "Do you not know that your bodies are temples of the Holy Spirit, who is in you, whom you have received from God? You are not your own",
+            "book": "1 Corinthians 6:19",
+            "affirmationText": "My body is a sacred temple for the Holy Spirit; I honor it with purity and respect, acknowledging that I belong to God.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "Run from sexual immorality. All other sins a person commits are outside the body, but whoever sins sexually, sins against their own body.",
+            "book": "1 Corinthians 6:18",
+            "affirmationText": "I choose to flee from any form of sexual immorality, respecting my body as a temple of the Holy Spirit.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "Keep to a path far from her, do not go near the door of her house, lest you lose your honor to others and your dignity to one who is cruel.",
+            "book": "Proverbs 5:8-9",
+            "affirmationText": "I maintain a safe distance from temptations, preserving my honor and dignity by walking in wisdom and purity.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "Can a man scoop fire into his lap without his clothes being burned?",
+            "book": "Proverbs 6:27",
+            "affirmationText": "I acknowledge the consequences of playing with temptation and choose instead to pursue a life of purity and integrity.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "Let your fountain be blessed, and rejoice in the wife of your youth.",
+            "book": "Proverbs 5:18",
+            "affirmationText": "I cherish and find joy in my lifelong commitments, celebrating the blessings they bring into my life.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "Why, my son, be intoxicated with another man’s wife? Why embrace the bosom of a wayward woman?",
+            "book": "Proverbs 5:20",
+            "affirmationText": "I resist the allure of forbidden relationships, staying true to my values and those I've committed to love.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "Whoever walks in integrity walks securely, but whoever takes crooked paths will be found out.",
+            "book": "Proverbs 10:9",
+            "affirmationText": "I walk in integrity, secure in my path, unlike those who choose deceit and eventually face exposure.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "You were bought at a price. Therefore honor God with your bodies.",
+            "book": "1 Corinthians 6:20",
+            "affirmationText": "Recognizing the price paid for my redemption, I honor God with my body and my choices.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "The wife does not have authority over her own body but yields it to her husband. In the same way, the husband does not have authority over his own body but yields it to his wife.",
+            "book": "1 Corinthians 7:4",
+            "affirmationText": "In our unity, my spouse and I honor one another, understanding our mutual commitment to love and purity.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "If your right eye causes you to stumble, gouge it out and throw it away. It is better for you to lose one part of your body than for your whole body to be thrown into hell.",
+            "book": "Matthew 5:29",
+            "affirmationText": "I take decisive action against any temptation, prioritizing my spiritual well-being and commitment to live a pure life.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "Blessed are the pure in heart, for they will see God.",
+            "book": "Matthew 5:8",
+            "affirmationText": "I strive for purity in heart, knowing that this brings me closer to seeing and experiencing God in my life.",
+            "isFavorite": false,
+            "category": "purity"
+        },
+        {
+            "text": "Turn from evil and do good; seek peace and pursue it.",
+            "book": "Psalm 34:14",
+            "affirmationText": "I actively turn away from evil, choosing instead to do good and to pursue peace in all areas of my life.",
+            "isFavorite": false,
+            "category": "purity"
         },
         
     ]

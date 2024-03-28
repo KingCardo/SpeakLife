@@ -8,11 +8,15 @@
 import Foundation
 import Combine
 import SwiftUI
+import FirebaseStorage
 
 final class LocalAPIClient: APIService {
     
     @AppStorage("declarationCountFile") var declarationCountFile = 0
     @AppStorage("declarationCountBE") var declarationCountBE = 0
+    
+    @AppStorage("remoteVersion") var remoteVersion = 0
+    @AppStorage("localVersion") var localVersion = 0
     
     func declarations(completion: @escaping([Declaration], APIError?, Bool) -> Void) {
         
@@ -117,6 +121,22 @@ final class LocalAPIClient: APIService {
         } catch {
             print(error, "RWRW")
             completion([],APIError.failedDecode, false)
+        }
+    }
+    
+    func downloadDeclarations(completion: @escaping((Data?, Error?) -> Void))  {
+        let storage = Storage.storage()
+        let jsonRef = storage.reference(withPath: "declarationsv3.json")
+
+        // Download the file into memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        jsonRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                completion(nil, error)
+                print("Error downloading JSON file: \(error)")
+            } else if let jsonData = data {
+                completion(jsonData, nil)
+                print("JSON download successful, data length: \(jsonData.count)")
+            }
         }
     }
     
