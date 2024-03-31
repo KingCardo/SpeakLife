@@ -157,7 +157,9 @@ struct DeclarationView: View {
                 reviewCounter += 1
                 shareCounter += 1
                 premiumCount += 1
-                shareApp()
+                shareApp() 
+                timerViewModel.loadRemainingTime()
+                timerViewModel.startTimer()
                 
             }
             
@@ -177,9 +179,24 @@ struct DeclarationView: View {
                                 }
                 }
             }
+            .onDisappear {
+                timerViewModel.saveRemainingTime()
+            }
             
             .sheet(isPresented: $isShowingMailView) {
                 MailView(isShowing: $isShowingMailView, result: self.$result, origin: .review)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willTerminateNotification)) { _ in
+                timerViewModel.saveRemainingTime()
+            }
+            
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+                timerViewModel.loadRemainingTime()
+                timerViewModel.startTimer()
+            }
+            
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
+                timerViewModel.saveRemainingTime()
             }
         
     }

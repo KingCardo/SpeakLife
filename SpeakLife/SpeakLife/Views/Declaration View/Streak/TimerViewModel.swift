@@ -151,9 +151,11 @@ final class TimerViewModel: ObservableObject {
         } else if let savedTimeRemaining = UserDefaults.standard.value(forKey: "timeRemaining") as? Int, savedTimeRemaining > 2, let lastStartedStreak = lastStartedStreak, Calendar.current.isDateInToday(lastStartedStreak) {
             // Adjust the remaining time based on how much time has passed since the app was last open
             timeRemaining = savedTimeRemaining
+            isComplete = false
         } else {
             timeRemaining = TimerViewModel.totalDuration
             lastStartedStreak = Date()
+            isComplete = false
         }
     }
     

@@ -63,7 +63,7 @@ struct CategoryButtonRow: View  {
     @ViewBuilder
     private var contentView: some View {
         if !subscriptionStore.isPremium {
-            PremiumView()
+            SubscriptionView(size:  UIScreen.main.bounds.size)
         } else {
             CategoryListView(categoryList: CategoryListViewModel(declarationStore))
         }

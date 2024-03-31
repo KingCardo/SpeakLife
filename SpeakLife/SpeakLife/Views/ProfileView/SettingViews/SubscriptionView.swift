@@ -68,14 +68,14 @@ struct DiscountSubscriptionView: View {
     
     let size: CGSize
     var callback: (() -> Void)?
-    var currentSelection = InAppId.Subscription.speakLife1YR9
+    var currentSelection = InAppId.Subscription.speakLife1YR15
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
-    let percentOffText: String = "50% Off SpeakLife"
+    var percentOffText: String = "25% Off SpeakLife"
    // @State private var timeRemaining: Int = 0
    
     
@@ -84,7 +84,7 @@ struct DiscountSubscriptionView: View {
         self.currentSelection = currentSelection
     }
     
-    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR9,  callback: (() -> Void)?) {
+    init(size: CGSize, currentSelection: InAppId.Subscription = .speakLife1YR15, callback: (() -> Void)?) {
         self.size = size
         self.currentSelection = currentSelection
         self.callback = callback
@@ -276,8 +276,8 @@ struct SubscriptionView: View {
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR29
-    var firstSelection = InAppId.Subscription.speakLife1YR29
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
+    var firstSelection = InAppId.Subscription.speakLife1YR19
     var secondSelection = InAppId.Subscription.speakLife1MO4
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     

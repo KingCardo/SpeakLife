@@ -83,26 +83,7 @@ struct CountdownTimerView: View {
         }
         .frame(width: 50, height: 50)
         
-        .onAppear {
-            viewModel.loadRemainingTime()
-            viewModel.startTimer()
-        }
-        .onDisappear {
-            viewModel.saveRemainingTime()
-        }
-        
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willTerminateNotification)) { _ in
-            viewModel.saveRemainingTime()
-        }
-        
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
-            viewModel.loadRemainingTime()
-            viewModel.startTimer()
-        }
-        
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
-            viewModel.saveRemainingTime()
-        }
+       
         .onTapGesture {
             action?()
         }

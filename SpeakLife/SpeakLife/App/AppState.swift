@@ -36,7 +36,9 @@ final class AppState: ObservableObject {
     @AppStorage("helpUs") var helpUsGrowCount = 0
     @Published var timeRemainingForDiscount = 0
     @AppStorage("userName") var userName = ""
-   
+    @AppStorage("firstSelection") var firstSelection = ""
+    @AppStorage("discountSelection") var discountSelection = ""
+    @AppStorage("discountPercentage") var discountPercentage = ""
 }
 
 extension Date: RawRepresentable {

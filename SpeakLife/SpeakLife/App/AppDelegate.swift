@@ -19,10 +19,12 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     var declarationStore: DeclarationViewModel?
     var updateAppState: (() -> Void)?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        
+    override init() {
         FirebaseApp.configure()
-            
+    }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+                    
         ApplicationDelegate.shared.application(
             application,
             didFinishLaunchingWithOptions: launchOptions

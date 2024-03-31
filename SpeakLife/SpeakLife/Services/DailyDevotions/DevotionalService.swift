@@ -27,7 +27,7 @@ final class DevotionalServiceClient: DevotionalService {
     
     func fetchDevotionForToday(needsSync: Bool) async -> [Devotional] {
         
-        if !devotionals.isEmpty { return devotionals }
+        if !devotionals.isEmpty, !needsSync { return devotionals }
         
         guard let data = await fetch(needsSync: needsSync) else { return [] }
         
@@ -73,7 +73,7 @@ final class DevotionalServiceClient: DevotionalService {
     
     func fetchAllDevotionals(needsSync: Bool) async -> [Devotional] {
         
-        if !devotionals.isEmpty { return devotionals }
+        if !devotionals.isEmpty, !needsSync { return devotionals }
        
         guard let data = await fetch(needsSync: needsSync) else { return [] }
         

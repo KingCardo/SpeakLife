@@ -116,7 +116,7 @@ final class LocalAPIClient: APIService {
     
     private func fetchDeclarationData(tryLocal: Bool, completion: @escaping(Data?) -> Void?) {
         
-        if hasBeenThirtyDaysSinceLastFetch(), tryLocal {
+        if hasBeenThirtyDaysSinceLastFetch(), !tryLocal {
             downloadDeclarations { data, error in
                     completion(data)
             }
@@ -133,7 +133,7 @@ final class LocalAPIClient: APIService {
     
     private func loadFromBackEnd(completion: @escaping([Declaration], APIError?, Bool) ->  Void) {
         
-        fetchDeclarationData(tryLocal: true) { [weak self] data in
+        fetchDeclarationData(tryLocal: false) { [weak self] data in
             if let data = data {
                 do {
                     let welcome = try JSONDecoder().decode(Welcome.self, from: data)
@@ -151,7 +151,7 @@ final class LocalAPIClient: APIService {
                     completion([],APIError.failedDecode, false)
                 }
             } else {
-                self?.fetchDeclarationData(tryLocal: false) { data in
+                self?.fetchDeclarationData(tryLocal: true) { data in
                     if let data = data {
                         do {
                             let welcome = try JSONDecoder().decode(Welcome.self, from: data)
