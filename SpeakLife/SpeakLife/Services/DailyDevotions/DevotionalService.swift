@@ -20,7 +20,7 @@ final class DevotionalServiceClient: DevotionalService {
     internal var devotionals: [Devotional] = []
     
     init() {
-        loadRemoteDevotionals { devotionals in
+        loadFromFileDevotionals { devotionals in
             self.devotionals = devotionals
         }
     }
@@ -136,7 +136,7 @@ final class DevotionalServiceClient: DevotionalService {
         }
     }
     
-    private func loadRemoteDevotionals(completion: @escaping([Devotional]) -> Void) {
+    private func loadFromFileDevotionals(completion: @escaping([Devotional]) -> Void) {
         let documentDirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileURL = documentDirURL.appendingPathComponent("remoteDevotionals").appendingPathExtension("json")
         

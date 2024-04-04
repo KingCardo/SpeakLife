@@ -8,7 +8,7 @@
 import SwiftUI
 import FacebookCore
 
-let resources: [MusicResources] = [.romanticPiano, .peacefulplace, .returntosurface, .sethpiano]
+let resources: [MusicResources] = [.romanticPiano, .peacefulplace, .returntosurface, .sethpiano, .washed, .rainstorm, .everpresent]
 
 struct MusicResources {
     let name: String
@@ -18,6 +18,9 @@ struct MusicResources {
     static let peacefulplace = MusicResources(name: "peacefulplace", type: "mp3")
     static let returntosurface = MusicResources(name: "returntosurface", type: "mp3")
     static let sethpiano = MusicResources(name: "sethpiano", type: "mp3")
+    static let washed = MusicResources(name: "washed", type: "mp3")
+    static let rainstorm = MusicResources(name: "rainstorm", type: "mp3")
+    static let everpresent = MusicResources(name: "everpresent", type: "mp3")
 }
 
 struct HomeView: View {
