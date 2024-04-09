@@ -204,7 +204,7 @@ struct DeclarationContentView: View {
                 }
                 
                 if declaration.affirmationText != nil {
-                    CapsuleImageButton(title: viewModel.showVerse ?? true ? "arrowshape.zigzag.forward" : "arrowshape.zigzag.right.fill") {
+                    CapsuleImageButton(title: viewModel.showVerse ? "arrowshape.zigzag.forward" : "arrowshape.zigzag.right.fill") {
                         withAnimation {
                             toggleDeclaration(declaration)
                         }
