@@ -273,7 +273,6 @@ struct OnboardingView: View  {
         if !temp.contains(.destiny) {
             temp.insert(.destiny)
         }
-        viewModel.selectedCategories = temp
         viewModel.save(temp)
     }
     

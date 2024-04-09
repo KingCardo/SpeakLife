@@ -95,7 +95,11 @@ final class DeclarationViewModel: ObservableObject {
     
     private var allDeclarations: [Declaration] = []
     
-    var selectedCategories = Set<DeclarationCategory>()
+    private(set) var selectedCategories = Set<DeclarationCategory>() {
+        didSet {
+            print(selectedCategories, "RWRW changed")
+        }
+    }
    
     private let service: APIService
     
@@ -154,7 +158,7 @@ final class DeclarationViewModel: ObservableObject {
     }
     
     func toggleDeclaration(_ declaration: Declaration) {
-        guard let indexOf = declarations.firstIndex(where: { $0.id == declaration.id } ) else {
+        guard let _ = declarations.firstIndex(where: { $0.id == declaration.id } ) else {
             return
         }
         

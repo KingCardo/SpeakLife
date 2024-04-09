@@ -438,7 +438,7 @@ struct SubscriptionView: View {
     
     private func goPremiumStack(size: CGSize) -> some View  {
         let gradient = Gradient(colors: [Constants.DAMidBlue, .cyan])
-        let linearGradient = LinearGradient(gradient: gradient,
+        _ = LinearGradient(gradient: gradient,
                                             startPoint: .top,
                                             endPoint: .bottom)
         

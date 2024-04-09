@@ -41,7 +41,6 @@ final class PodcastService: ObservableObject {
                     return
                 }
             }
-            print(response as? HTTPURLResponse, "RWRW")
             // TOD): error handle show alert
             print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
         }.resume()

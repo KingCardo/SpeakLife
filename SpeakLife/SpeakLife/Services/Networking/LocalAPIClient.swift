@@ -147,7 +147,6 @@ final class LocalAPIClient: APIService {
                         
                         let array = Array(declarations)
                         let needsSync = array.count != self?.declarationCountBE
-                        print(array.count, self?.declarationCountBE, "RWRW count")
                         print(needsSync, "RWRW  needs sync")
                         self?.declarationCountBE = array.count
                         completion(array, nil, needsSync)
@@ -168,7 +167,6 @@ final class LocalAPIClient: APIService {
                         
                         let array = Array(declarations)
                         let needsSync = array.count != self?.declarationCountBE
-                        print(array.count, self?.declarationCountBE, "RWRW count")
                         print(needsSync, "RWRW  needs sync")
                         self?.declarationCountBE = array.count
                         completion(array, nil, needsSync)

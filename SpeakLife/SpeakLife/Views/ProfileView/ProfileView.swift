@@ -101,7 +101,7 @@ struct ProfileView: View {
                 //newFeaturesRow
             }
             .sheet(isPresented: $showShareSheet, content: {
-                ShareSheet(activityItems: ["Check out SpeakLife - Bible Affirmations app that'll transform your life!", url])
+                ShareSheet(activityItems: ["Check out SpeakLife - Bible Affirmations app that'll transform your life!", url as Any])
             })
             
             Section(header: Text("Other".uppercased()).font(.caption)) {
