@@ -181,47 +181,6 @@ final class LocalAPIClient: APIService {
             }
         }
     }
-        
-//        fetchDeclarationData(tryLocal: false) { [weak self] data in
-//            if let data = data {
-//                do {
-//                    let welcome = try JSONDecoder().decode(Welcome.self, from: data)
-//                    let declarations = Set(welcome.declarations)
-//                    
-//                    let array = Array(declarations)
-//                    let needsSync = array.count != self?.declarationCountBE
-//                    print(array.count, self?.declarationCountBE, "RWRW count")
-//                    print(needsSync, "RWRW  needs sync")
-//                    self?.declarationCountBE = array.count
-//                    completion(array, nil, needsSync)
-//                    return
-//                } catch {
-//                    print(error, "RWRW")
-//                    completion([],APIError.failedDecode, false)
-//                }
-//            } else {
-//                self?.fetchDeclarationData(tryLocal: true) { data in
-//                    if let data = data {
-//                        do {
-//                            let welcome = try JSONDecoder().decode(Welcome.self, from: data)
-//                            let declarations = Set(welcome.declarations)
-//                            
-//                            let array = Array(declarations)
-//                            let needsSync = array.count != self?.declarationCountBE
-//                            print(array.count, self?.declarationCountBE, "RWRW count")
-//                            print(needsSync, "RWRW  needs sync")
-//                            self?.declarationCountBE = array.count
-//                            completion(array, nil, needsSync)
-//                            return
-//                        } catch {
-//                            print(error, "RWRW")
-//                            completion([],APIError.failedDecode, false)
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
     
     func downloadDeclarations(completion: @escaping((Data?, Error?) -> Void))  {
         let storage = Storage.storage()

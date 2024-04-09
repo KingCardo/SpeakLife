@@ -31,6 +31,7 @@ struct CategoryListCell: View  {
             
             if categoryList.selectedCategories.contains(category) {
                 Image(systemName: "checkmark")
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
             }
         }
             Button(action: categoryCheck) {
