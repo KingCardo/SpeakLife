@@ -73,16 +73,17 @@ struct ReminderView: View {
                                                                  categories: nil)
                 
             } else {
-            NotificationManager.shared.registerNotifications(count: appState.notificationCount,
-                                                             startTime: appState.startTimeIndex,
-                                                             endTime: appState.endTimeIndex,
-                                                             categories: declarationViewModel.selectedCategories) {
-                declarationViewModel.errorAlert.toggle()
-                
+                NotificationManager.shared.registerNotifications(count: appState.notificationCount,
+                                                                 startTime: appState.startTimeIndex,
+                                                                 endTime: appState.endTimeIndex,
+                                                                 categories: declarationViewModel.selectedCategories) {
+            
+                }
             }
-            }
+            appState.lastNotificationSetDate = Date()
+        } else {
+            declarationViewModel.errorAlert.toggle()
         }
-        appState.lastNotificationSetDate = Date()
     }
     private func scheduleNotificationRequest() {
 

@@ -126,9 +126,9 @@ struct ProfileView: View {
         )
         .alert(isPresented: $declarationStore.errorAlert) {
             Alert(
-                title: Text("Error", comment: "notifications not enough"),
-                message: Text("Failed to register notifications", comment: "go to settings"),
-                dismissButton: .default(Text("Try again", comment: "settings alert"), action: {})
+                title: Text("Failed to register notifications", comment: "notifications not enough"),
+                message: Text("not enough in selected category", comment: "go to settings"),
+                dismissButton: .default(Text("Choose more", comment: "settings alert"), action: {})
             )
         }
     }

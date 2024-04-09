@@ -21,7 +21,7 @@ final class DevotionalViewModel: ObservableObject {
     
     var devotionals: [Devotional] = []
     
-    var devotionValue = 0
+    @Published var devotionValue = 0
     
     var devotional: Devotional? {
         didSet {
@@ -94,17 +94,12 @@ final class DevotionalViewModel: ObservableObject {
     
     func fetchDevotional() async {
         
-        if let devotional = service.devotionals.first {
+        if let devotional = await service.fetchDevotionForToday(needsSync: false).first {
             DispatchQueue.main.async { [weak self] in
                 self?.devotional = devotional
             }
             setDevotionalDictionary()
-        } else if let devotional = await service.fetchDevotionForToday(needsSync: false).first {
-            DispatchQueue.main.async { [weak self] in
-                self?.devotional = devotional
-            }
-            setDevotionalDictionary()
-        } else if let devotional = await service.fetchDevotionForToday(needsSync: false).first {
+        } else if let devotional = await service.fetchDevotionForToday(needsSync: true).first {
             DispatchQueue.main.async { [weak self] in
                 self?.devotional = devotional
             }

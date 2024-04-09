@@ -3,16 +3,20 @@
     "version": 1,
     "declarations": [
         {
+            "text": "I am blessed because I walk with God.",
+            "book": "Psalm 1:1",
+            "isFavorite": false,
+            "category": "destiny"
+        },
+        {
             "text": "I am blessed in my coming in and blessed going out.",
             "isFavorite": false,
             "category": "destiny"
         },
-        {"text": "I am empowered by God's grace, equipping me to fulfill my destiny.", "isFavorite": false, "category": "destiny"},
         {"text": "I am a victorious warrior, walking confidently into my destiny.", "isFavorite": false, "category": "destiny"},
         {"text": "I am on a journey to fulfill my destiny, guided by God's perfect plan.", "isFavorite": false, "category": "destiny"},
         {"text": "I am not limited by circumstances; I am empowered to fulfill my destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "I am a warrior for righteousness, advancing God's kingdom through my destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "I am unshaken by adversity, for my destiny is secure in Christ.", "isFavorite": false, "category": "destiny"},
+        {"text": "I am unshaken by adversity, my destiny is secure in Jesus.", "isFavorite": false, "category": "destiny"},
         {"text": "I am called to a purpose greater than myself; I will fulfill my destiny.", "isFavorite": false, "category": "destiny"},
         {"text": "I am a vessel of God's grace, destined to bring His love to the world.", "isFavorite": false, "category": "destiny"},
         {"text": "I am a warrior of faith, conquering obstacles on the path to my destiny.", "isFavorite": false, "category": "destiny"},
@@ -1283,7 +1287,7 @@
         },
         {
             "text": "The Lord is gracious and righteous; our God is full of compassion.",
-            "book": "Psalms 116:5",
+            "book": "Psalm 116:5",
             "isFavorite": false,
             "category": "grace"
         },
@@ -2630,7 +2634,7 @@
         },
         {
             "text": "The LORD is close to the brokenhearted and saves those who are crushed in spirit.",
-            "book": "Psalms 34:18",
+            "book": "Psalm 34:18",
             "isFavorite": false,
             "category": "depression"
         },
@@ -2654,7 +2658,7 @@
         },
         {
             "text": "The LORD is my shepherd, I lack nothing. He makes me lie down in green pastures, he leads me beside quiet waters, he refreshes my soul.",
-            "book": "Psalms 23:1-3",
+            "book": "Psalm 23:1-3",
             "isFavorite": false,
             "category": "depression"
         },
@@ -2678,13 +2682,13 @@
         },
         {
             "text": "Why, my soul, are you downcast? Why so disturbed within me? Put your hope in God, for I will yet praise him, my Savior and my God.",
-            "book": "Psalms 42:11",
+            "book": "Psalm 42:11",
             "isFavorite": false,
             "category": "depression"
         },
         {
             "text": "He heals the brokenhearted and binds up their wounds.",
-            "book": "Psalms 147:3",
+            "book": "Psalm 147:3",
             "isFavorite": false,
             "category": "depression"
         },
@@ -2738,7 +2742,7 @@
         },
         {
             "text": "The righteous cry out, and the LORD hears them; he delivers them from all their troubles.",
-            "book": "Psalms 34:17",
+            "book": "Psalm 34:17",
             "isFavorite": false,
             "category": "depression"
         },
@@ -2750,13 +2754,13 @@
         },
         {
             "text": "Weeping may stay for the night, but rejoicing comes in the morning.",
-            "book": "Psalms 30:5",
+            "book": "Psalm 30:5",
             "isFavorite": false,
             "category": "depression"
         },
         {
             "text": "My comfort in my suffering is this: Your promise preserves my life.",
-            "book": "Psalms 119:50",
+            "book": "Psalm 119:50",
             "isFavorite": false,
             "category": "depression"
         },
@@ -3477,7 +3481,7 @@
         },
         {
             "text": "The LORD is my light and my salvation—whom shall I fear? The LORD is the stronghold of my life—of whom shall I be afraid?",
-            "book": "Psalms 27:1",
+            "book": "Psalm 27:1",
             "isFavorite": false,
             "category": "fear"
         },
@@ -3489,13 +3493,13 @@
         },
         {
             "text": "I sought the LORD, and he answered me; he delivered me from all my fears.",
-            "book": "Psalms 34:4",
+            "book": "Psalm 34:4",
             "isFavorite": false,
             "category": "fear"
         },
         {
             "text": "Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me.",
-            "book": "Psalms 23:4",
+            "book": "Psalm 23:4",
             "isFavorite": false,
             "category": "fear"
         },
@@ -3519,7 +3523,7 @@
         },
         {
             "text": "When I am afraid, I put my trust in you.",
-            "book": "Psalms 56:3",
+            "book": "Psalm 56:3",
             "isFavorite": false,
             "category": "fear"
         },
@@ -3537,7 +3541,7 @@
         },
         {
             "text": "The LORD is with me; I will not be afraid. What can mere mortals do to me?",
-            "book": "Psalms 118:6",
+            "book": "Psalm 118:6",
             "isFavorite": false,
             "category": "fear"
         },
@@ -3609,19 +3613,19 @@
         },
         {
             "text": "God is our refuge and strength, an ever-present help in trouble.",
-            "book": "Psalms 46:1",
+            "book": "Psalm 46:1",
             "isFavorite": false,
             "category": "fear"
         },
         {
             "text": "I sought the Lord, and he answered me; he delivered me from all my fears.",
-            "book": "Psalms 34:4",
+            "book": "Psalm 34:4",
             "isFavorite": false,
             "category": "fear"
         },
         {
             "text": "The angel of the LORD encamps around those who fear him, and he delivers them.",
-            "book": "Psalms 34:7",
+            "book": "Psalm 34:7",
             "isFavorite": false,
             "category": "fear"
         },
@@ -3639,7 +3643,7 @@
         },
         {
             "text": "The righteous person may have many troubles, but the LORD delivers him from them all.",
-            "book": "Psalms 34:19",
+            "book": "Psalm 34:19",
             "isFavorite": false,
             "category": "fear"
         },
@@ -3663,7 +3667,7 @@
         },
         {
             "text": "The Lord is on my side; I will not fear. What can man do to me?",
-            "book": "Psalms 118:6",
+            "book": "Psalm 118:6",
             "isFavorite": false,
             "category": "fear"
         },
@@ -4052,7 +4056,7 @@
         },
         {
             "text": "Blessed is the one whose transgressions are forgiven, whose sins are covered.",
-            "book": "Psalms 32:1",
+            "book": "Psalm 32:1",
             "isFavorite": false,
             "category": "forgiveness"
         },
@@ -4719,13 +4723,13 @@
         },
         {
             "text": "The LORD is my rock, my fortress, and my savior; my God is my rock, in whom I find protection. He is my shield, the power that saves me, and my place of safety.",
-            "book": "Psalms 18:2",
+            "book": "Psalm 18:2",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
             "text": "Those who live in the shelter of the Most High will find rest in the shadow of the Almighty.",
-            "book": "Psalms 91:1",
+            "book": "Psalm 91:1",
             "isFavorite": false,
             "category": "godsprotection"
         },
@@ -4737,19 +4741,19 @@
         },
         {
             "text": "For you are my hiding place; you protect me from trouble. You surround me with songs of victory.",
-            "book": "Psalms 32:7",
+            "book": "Psalm 32:7",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
             "text": "God is our refuge and strength, always ready to help in times of trouble.",
-            "book": "Psalms 46:1",
+            "book": "Psalm 46:1",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
             "text": "The LORD keeps you from all harm and watches over your life. The LORD keeps watch over you as you come and go, both now and forever.",
-            "book": "Psalms 121:7-8",
+            "book": "Psalm 121:7-8",
             "isFavorite": false,
             "category": "godsprotection"
         },
@@ -4767,7 +4771,7 @@
         },
         {
             "text": "The angel of the LORD encamps around those who fear him, and he rescues them.",
-            "book": "Psalms 34:7",
+            "book": "Psalm 34:7",
             "isFavorite": false,
             "category": "godsprotection"
         },
@@ -4779,7 +4783,7 @@
         },
         {
             "text": "For he will order his angels to protect you wherever you go.",
-            "book": "Psalms 91:11",
+            "book": "Psalm 91:11",
             "isFavorite": false,
             "category": "godsprotection"
         },
@@ -4797,7 +4801,7 @@
         },
         {
             "text": "My victory and honor come from God alone. He is my refuge, a rock where no enemy can reach me.",
-            "book": "Psalms 62:7",
+            "book": "Psalm 62:7",
             "isFavorite": false,
             "category": "godsprotection"
         },
@@ -4809,43 +4813,43 @@
         },
         {
             "text": "But you, O LORD, are a shield around me; you are my glory, the one who holds my head high.",
-            "book": "Psalms 3:3",
+            "book": "Psalm 3:3",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
             "text": "He will cover you with his feathers. He will shelter you with his wings. His faithful promises are your armor and protection.",
-            "book": "Psalms 91:4",
+            "book": "Psalm 91:4",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
             "text": "The LORD is a shelter for the oppressed, a refuge in times of trouble.",
-            "book": "Psalms 9:9",
+            "book": "Psalm 9:9",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
             "text": "Give your burdens to the LORD, and he will take care of you. He will not permit the godly to slip and fall.",
-            "book": "Psalms 55:22",
+            "book": "Psalm 55:22",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
             "text": "Though I walk in the midst of trouble, you preserve my life. You stretch out your hand against the anger of my foes; with your right hand you save me.",
-            "book": "Psalms 138:7",
+            "book": "Psalm 138:7",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
             "text": "You are my hiding place; you protect me from trouble. You surround me with songs of victory.",
-            "book": "Psalms 32:7",
+            "book": "Psalm 32:7",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
             "text": "Those who live in the shelter of the Most High will find rest in the shadow of the Almighty.",
-            "book": "Psalms 91:1",
+            "book": "Psalm 91:1",
             "isFavorite": false,
             "category": "godsprotection"
         },
@@ -4857,13 +4861,13 @@
         },
         {
             "text": "For he will rescue you from every trap and protect you from deadly disease.",
-            "book": "Psalms 91:3",
+            "book": "Psalm 91:3",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
             "text": "The LORD is my strength and my shield; my heart trusts in him, and he helps me. My heart leaps for joy, and with my song I praise him.",
-            "book": "Psalms 28:7",
+            "book": "Psalm 28:7",
             "isFavorite": false,
             "category": "godsprotection"
         },
@@ -5459,7 +5463,7 @@
         },
         {
             "text": "Give thanks to the LORD and proclaim his greatness. Let the whole world know what he has done.",
-            "book": "Psalms 105:1",
+            "book": "Psalm 105:1",
             "isFavorite": false,
             "category": "gratitude"
         },
@@ -5471,7 +5475,7 @@
         },
         {
             "text": "I will praise you, LORD, with all my heart; I will tell of all the marvelous things you have done.",
-            "book": "Psalms 9:1",
+            "book": "Psalm 9:1",
             "isFavorite": false,
             "category": "gratitude"
         },
@@ -5483,7 +5487,7 @@
         },
         {
             "text": "Give thanks to the LORD, for he is good! His faithful love endures forever.",
-            "book": "Psalms 107:1",
+            "book": "Psalm 107:1",
             "isFavorite": false,
             "category": "gratitude"
         },
@@ -5507,25 +5511,25 @@
         },
         {
             "text": "Enter his gates with thanksgiving; go into his courts with praise. Give thanks to him and praise his name.",
-            "book": "Psalms 100:4",
+            "book": "Psalm 100:4",
             "isFavorite": false,
             "category": "gratitude"
         },
         {
             "text": "I will thank the LORD because he is just; I will sing praise to the name of the LORD Most High.",
-            "book": "Psalms 7:17",
+            "book": "Psalm 7:17",
             "isFavorite": false,
             "category": "gratitude"
         },
         {
             "text": "Let them praise the LORD for his great love and for the wonderful things he has done for them.",
-            "book": "Psalms 107:8",
+            "book": "Psalm 107:8",
             "isFavorite": false,
             "category": "gratitude"
         },
         {
             "text": "Then I will praise God’s name with singing, and I will honor him with thanksgiving.",
-            "book": "Psalms 69:30",
+            "book": "Psalm 69:30",
             "isFavorite": false,
             "category": "gratitude"
         },
@@ -5548,8 +5552,8 @@
             "category": "gratitude"
         },
         {
-            "text": "Let us come to him with thanksgiving. Let us sing psalms of praise to him.",
-            "book": "Psalms 95:2",
+            "text": "Let us come to him with thanksgiving. Let us sing Psalm of praise to him.",
+            "book": "Psalm 95:2",
             "isFavorite": false,
             "category": "gratitude"
         },
@@ -5773,7 +5777,7 @@
         },
         {
             "text": "I will instruct you and teach you in the way you should go; I will counsel you with my loving eye on you.",
-            "book": "Psalms 32:8",
+            "book": "Psalm 32:8",
             "isFavorite": false,
             "category": "guidance"
         },
@@ -5785,13 +5789,13 @@
         },
         {
             "text": "Your word is a lamp for my feet, a light on my path.",
-            "book": "Psalms 119:105",
+            "book": "Psalm 119:105",
             "isFavorite": false,
             "category": "guidance"
         },
         {
             "text": "He guides the humble in what is right and teaches them his way.",
-            "book": "Psalms 25:9",
+            "book": "Psalm 25:9",
             "isFavorite": false,
             "category": "guidance"
         },
@@ -5803,31 +5807,31 @@
         },
         {
             "text": "For this God is our God for ever and ever; he will be our guide even to the end.",
-            "book": "Psalms 48:14",
+            "book": "Psalm 48:14",
             "isFavorite": false,
             "category": "guidance"
         },
         {
             "text": "Show me your ways, LORD, teach me your paths.",
-            "book": "Psalms 25:4",
+            "book": "Psalm 25:4",
             "isFavorite": false,
             "category": "guidance"
         },
         {
             "text": "Guide me in your truth and teach me, for you are God my Savior, and my hope is in you all day long.",
-            "book": "Psalms 25:5",
+            "book": "Psalm 25:5",
             "isFavorite": false,
             "category": "guidance"
         },
         {
             "text": "He will not let your foot slip—he who watches over you will not slumber.",
-            "book": "Psalms 121:3",
+            "book": "Psalm 121:3",
             "isFavorite": false,
             "category": "guidance"
         },
         {
             "text": "The steps of a good man are ordered by the LORD: and he delighteth in his way.",
-            "book": "Psalms 37:23",
+            "book": "Psalm 37:23",
             "isFavorite": false,
             "category": "guidance"
         },
@@ -5845,37 +5849,37 @@
         },
         {
             "text": "Lead me, LORD, in your righteousness because of my enemies—make your way straight before me.",
-            "book": "Psalms 5:8",
+            "book": "Psalm 5:8",
             "isFavorite": false,
             "category": "guidance"
         },
         {
             "text": "The LORD is my shepherd, I lack nothing. He makes me lie down in green pastures, he leads me beside quiet waters.",
-            "book": "Psalms 23:1-2",
+            "book": "Psalm 23:1-2",
             "isFavorite": false,
             "category": "guidance"
         },
         {
             "text": "You guide me with your counsel, and afterward you will take me into glory.",
-            "book": "Psalms 73:24",
+            "book": "Psalm 73:24",
             "isFavorite": false,
             "category": "guidance"
         },
         {
             "text": "Teach me to do your will, for you are my God; may your good Spirit lead me on level ground.",
-            "book": "Psalms 143:10",
+            "book": "Psalm 143:10",
             "isFavorite": false,
             "category": "guidance"
         },
         {
             "text": "May the favor of the Lord our God rest on us; establish the work of our hands for us—yes, establish the work of our hands.",
-            "book": "Psalms 90:17",
+            "book": "Psalm 90:17",
             "isFavorite": false,
             "category": "guidance"
         },
         {
             "text": "Trust in the LORD and do good; dwell in the land and enjoy safe pasture.",
-            "book": "Psalms 37:3",
+            "book": "Psalm 37:3",
             "isFavorite": false,
             "category": "guidance"
         },
@@ -5893,7 +5897,7 @@
         },
         {
             "text": "May he give you the desire of your heart and make all your plans succeed.",
-            "book": "Psalms 20:4",
+            "book": "Psalm 20:4",
             "isFavorite": false,
             "category": "guidance"
         },
@@ -6217,7 +6221,7 @@
         },
         {
             "text": "He has removed our sins as far from us as the east is from the west.",
-            "book": "Psalms 103:12",
+            "book": "Psalm 103:12",
             "isFavorite": false,
             "category": "grace"
         },
@@ -6378,7 +6382,7 @@
         },
         {
             "text": "God is our refuge and strength, an ever-present help in trouble.",
-            "book": "Psalms 46:1",
+            "book": "Psalm 46:1",
             "isFavorite": false,
             "category": "hardtimes"
         },
@@ -6390,7 +6394,7 @@
         },
         {
             "text": "The LORD is close to the brokenhearted and saves those who are crushed in spirit.",
-            "book": "Psalms 34:18",
+            "book": "Psalm 34:18",
             "isFavorite": false,
             "category": "hardtimes"
         },
@@ -6408,7 +6412,7 @@
         },
         {
             "text": "Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me.",
-            "book": "Psalms 23:4",
+            "book": "Psalm 23:4",
             "isFavorite": false,
             "category": "hardtimes"
         },
@@ -6468,7 +6472,7 @@
         },
         {
             "text": "You are my hiding place; you will protect me from trouble and surround me with songs of deliverance.",
-            "book": "Psalms 32:7",
+            "book": "Psalm 32:7",
             "isFavorite": false,
             "category": "hardtimes"
         },
@@ -6504,7 +6508,7 @@
         },
         {
             "text": "The righteous person faces many troubles, but the LORD comes to the rescue each time.",
-            "book": "Psalms 34:19",
+            "book": "Psalm 34:19",
             "isFavorite": false,
             "category": "hardtimes"
         },
@@ -7043,13 +7047,13 @@
         },
         {
             "text": "Then they cried to the LORD in their trouble, and he saved them from their distress.",
-            "book": "Psalms 107:19",
+            "book": "Psalm 107:19",
             "isFavorite": false,
             "category": "health"
         },
         {
             "text": "Praise the LORD, my soul, and forget not all his benefits— who forgives all your sins and heals all your diseases.",
-            "book": "Psalms 103:2-3",
+            "book": "Psalm 103:2-3",
             "isFavorite": false,
             "category": "health"
         },
@@ -7284,7 +7288,7 @@
         },
         {
             "text": "Be strong and take heart, all you who hope in the LORD.",
-            "book": "Psalms 31:24",
+            "book": "Psalm 31:24",
             "isFavorite": false,
             "category": "hope"
         },
@@ -7296,7 +7300,7 @@
         },
         {
             "text": "I wait for the LORD, my whole being waits, and in his word I put my hope.",
-            "book": "Psalms 130:5",
+            "book": "Psalm 130:5",
             "isFavorite": false,
             "category": "hope"
         },
@@ -7308,7 +7312,7 @@
         },
         {
             "text": "And now, Lord, what do I wait for? My hope is in You.",
-            "book": "Psalms 39:7",
+            "book": "Psalm 39:7",
             "isFavorite": false,
             "category": "hope"
         },
@@ -7320,7 +7324,7 @@
         },
         {
             "text": "You are my refuge and my shield; I have put my hope in your word.",
-            "book": "Psalms 119:114",
+            "book": "Psalm 119:114",
             "isFavorite": false,
             "category": "hope"
         },
@@ -7362,13 +7366,13 @@
         },
         {
             "text": "This is my comfort in my affliction, that your promise gives me life.",
-            "book": "Psalms 119:50",
+            "book": "Psalm 119:50",
             "isFavorite": false,
             "category": "hope"
         },
         {
             "text": "Why, my soul, are you downcast? Why so disturbed within me? Put your hope in God, for I will yet praise him, my Savior and my God.",
-            "book": "Psalms 42:11",
+            "book": "Psalm 42:11",
             "isFavorite": false,
             "category": "hope"
         },
@@ -7404,13 +7408,13 @@
         },
         {
             "text": "Remember your word to your servant, for you have given me hope.",
-            "book": "Psalms 119:49",
+            "book": "Psalm 119:49",
             "isFavorite": false,
             "category": "hope"
         },
         {
             "text": "But the eyes of the LORD are on those who fear him, on those whose hope is in his unfailing love.",
-            "book": "Psalms 33:18",
+            "book": "Psalm 33:18",
             "isFavorite": false,
             "category": "hope"
         },
@@ -7817,7 +7821,7 @@
         },
         {
             "text": "But you, LORD, are a shield around me, my glory, the One who lifts my head high.",
-            "book": "Psalms 3:3",
+            "book": "Psalm 3:3",
             "isFavorite": false,
             "category": "identity"
         },
@@ -8148,7 +8152,7 @@
         },
         {
             "text": "This is the day the LORD has made; we will rejoice and be glad in it.",
-            "book": "Psalms 118:24",
+            "book": "Psalm 118:24",
             "isFavorite": false,
             "category": "joy"
         },
@@ -8160,7 +8164,7 @@
         },
         {
             "text": "You make known to me the path of life; in your presence there is fullness of joy; at your right hand are pleasures forevermore.",
-            "book": "Psalms 16:11",
+            "book": "Psalm 16:11",
             "isFavorite": false,
             "category": "joy"
         },
@@ -8208,37 +8212,37 @@
         },
         {
             "text": "Those who sow with tears will reap with songs of joy.",
-            "book": "Psalms 126:5",
+            "book": "Psalm 126:5",
             "isFavorite": false,
             "category": "joy"
         },
         {
             "text": "Shout for joy to the LORD, all the earth, burst into jubilant song with music",
-            "book": "Psalms 98:4",
+            "book": "Psalm 98:4",
             "isFavorite": false,
             "category": "joy"
         },
         {
             "text": "But let all who take refuge in you be glad; let them ever sing for joy. Spread your protection over them, that those who love your name may rejoice in you.",
-            "book": "Psalms 5:11",
+            "book": "Psalm 5:11",
             "isFavorite": false,
             "category": "joy"
         },
         {
             "text": "Clap your hands, all you nations; shout to God with cries of joy.",
-            "book": "Psalms 47:1",
+            "book": "Psalm 47:1",
             "isFavorite": false,
             "category": "joy"
         },
         {
             "text": "For you, LORD, have made me glad through your work; I will sing for joy at the works of your hands.",
-            "book": "Psalms 92:4",
+            "book": "Psalm 92:4",
             "isFavorite": false,
             "category": "joy"
         },
         {
             "text": "Let the righteous rejoice in the LORD and take refuge in him; let all the upright in heart praise him!",
-            "book": "Psalms 64:10",
+            "book": "Psalm 64:10",
             "isFavorite": false,
             "category": "joy"
         },
@@ -9836,7 +9840,7 @@
         },
         {
             "text": "Turn from evil and do good; seek peace and pursue it.",
-            "book": "Psalms 34:14",
+            "book": "Psalm 34:14",
             "isFavorite": false,
             "category": "peace"
         },
@@ -9848,7 +9852,7 @@
         },
         {
             "text": "The LORD gives strength to his people; the LORD blesses his people with peace.",
-            "book": "Psalms 29:11",
+            "book": "Psalm 29:11",
             "isFavorite": false,
             "category": "peace"
         },
@@ -10421,7 +10425,77 @@
             "category": "perseverance"
         },
         {
+            "text": "I am able to achieve anything I desire.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am gifted and anointed.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am created to live abundantly and prosperous.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "This is the day of breakthrough.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am thriving.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "The time of increase is now.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Prosperity is apart of my new identity.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "God has given me the power and ability to get and stay wealthy.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I refuse to be poor.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "Money comes to me easily.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am wise with my time and resources.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am very rich and wealthy.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
             "text": "I prosper in everything I do.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I have no lack in my life.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "God delights in my prosperity.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -10606,7 +10680,7 @@
         },
         {
             "text": "Delight yourself in the LORD, and he will give you the desires of your heart.",
-            "book": "Psalms 37:4",
+            "book": "Psalm 37:4",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -10870,7 +10944,7 @@
         {"text": "I am renewed in the spirit of my mind, putting on the new self created to be like God.", "isFavorite": false, "category": "grace"},
         {"text": "I am kind to others, tenderhearted, forgiving as God in Christ forgave me.", "isFavorite": false, "category": "grace"},
         {"text": "I am an imitator of God, living a life of love just as Christ loved us.", "isFavorite": false, "category": "grace"},
-        {"text": "I am filled with the Spirit, speaking to others with psalms, hymns, and spiritual songs.", "isFavorite": false, "category": "grace"},
+        {"text": "I am filled with the Spirit, speaking to others with Psalm, hymns, and spiritual songs.", "isFavorite": false, "category": "grace"},
         {"text": "I am giving thanks always for everything to God the Father in the name of our Lord Jesus Christ.", "isFavorite": false, "category": "grace"},
         {"text": "I am given the privilege and authority to share God's deeds, bringing glory to His name.", "isFavorite": false, "category": "grace"},
         {"text": "I am among those called to belong to Jesus Christ, loved by God.", "isFavorite": false, "category": "grace"},
@@ -11079,7 +11153,6 @@
         {"text": "I am a peacemaker, carrying the blessing of the children of God.", "isFavorite": false, "category": "wisdom"},
         {"text": "I am chosen, royal, holy, declaring the praises of Him who called me.", "isFavorite": false, "category": "wisdom"},
         {"text": "I am fearless in the face of adversity, for my God is with me.", "isFavorite": false, "category": "wisdom"},
-        {"text": "May God our Father and the Lord Jesus Christ give you grace and peace.", "book": "Ephesians 1:2", "isFavorite": false, "category": "grace"},
         {"text": "All praise to God, who has blessed us with every spiritual blessing in the heavenly realms because we are united with Christ.", "book": "Ephesians 1:3", "isFavorite": false, "category": "grace"},
         {"text": "God decided in advance to adopt us into his own family by bringing us to himself through Jesus Christ.", "book": "Ephesians 1:5", "isFavorite": false, "category": "grace"},
         {"text": "We praise God for the glorious grace he has poured out on us who belong to his dear Son.", "book": "Ephesians 1:6", "isFavorite": false, "category": "grace"},
@@ -14466,6 +14539,7 @@
             "isFavorite": false,
             "category": "purity"
         },
+       
         
     ]
 }

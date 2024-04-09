@@ -127,7 +127,7 @@ final class TimerViewModel: ObservableObject {
     func checkAndUpdateCompletionDate() {
         
         if checkIfMidnightOfTomorrowHasPassedSinceLastCompletedStreak() {
-            scheduleNotificationForMidnightTomorrow()
+                scheduleNotificationForMidnightTomorrow()
             currentStreak = 0
         }
     }

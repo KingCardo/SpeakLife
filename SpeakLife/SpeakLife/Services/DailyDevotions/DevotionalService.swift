@@ -20,14 +20,13 @@ final class DevotionalServiceClient: DevotionalService {
     internal var devotionals: [Devotional] = []
     
     init() {
-        loadFromFileDevotionals { devotionals in
-            self.devotionals = devotionals
-        }
+//        loadFromFileDevotionals { devotionals in
+//            self.devotionals = devotionals
+//        }
     }
     
     func fetchDevotionForToday(needsSync: Bool) async -> [Devotional] {
         
-        if !devotionals.isEmpty, !needsSync { return devotionals }
         
         guard let data = await fetch(needsSync: needsSync) else { return [] }
         
@@ -72,8 +71,6 @@ final class DevotionalServiceClient: DevotionalService {
     }
     
     func fetchAllDevotionals(needsSync: Bool) async -> [Devotional] {
-        
-        if !devotionals.isEmpty, !needsSync { return devotionals }
        
         guard let data = await fetch(needsSync: needsSync) else { return [] }
         

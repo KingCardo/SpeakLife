@@ -14,6 +14,7 @@ final class LocalAPIClient: APIService {
     
     @AppStorage("declarationCountFile") var declarationCountFile = 0
     @AppStorage("declarationCountBE") var declarationCountBE = 0
+    @AppStorage("firstInstallDate") var firstInstallDate: Date?
     
     @AppStorage("remoteVersion") var remoteVersion = 0
     @AppStorage("localVersion") var localVersion = 0
@@ -105,13 +106,17 @@ final class LocalAPIClient: APIService {
     }
     
     func hasBeenThirtyDaysSinceLastFetch() -> Bool {
+        guard let firstInstallDate = firstInstallDate else {
+            firstInstallDate = Date()
+            return false
+        }
         guard let lastFetchDate = UserDefaults.standard.object(forKey: "lastFetchDate") as? Date else {
             return true
         }
         
         let thirtyDaysAgo = Calendar.current.date(byAdding: .day, value: -30, to: Date())
         
-        return lastFetchDate <= (thirtyDaysAgo ?? Date())
+        return lastFetchDate <= (thirtyDaysAgo ?? Date()) && firstInstallDate <= (thirtyDaysAgo ?? Date())
     }
     
     private func fetchDeclarationData(tryLocal: Bool, completion: @escaping(Data?) -> Void?) {
@@ -133,46 +138,90 @@ final class LocalAPIClient: APIService {
     
     private func loadFromBackEnd(completion: @escaping([Declaration], APIError?, Bool) ->  Void) {
         
-        fetchDeclarationData(tryLocal: false) { [weak self] data in
-            if let data = data {
-                do {
-                    let welcome = try JSONDecoder().decode(Welcome.self, from: data)
-                    let declarations = Set(welcome.declarations)
-                    
-                    let array = Array(declarations)
-                    let needsSync = array.count != self?.declarationCountBE
-                    print(array.count, self?.declarationCountBE, "RWRW count")
-                    print(needsSync, "RWRW  needs sync")
-                    self?.declarationCountBE = array.count
-                    completion(array, nil, needsSync)
-                    return
-                } catch {
-                    print(error, "RWRW")
-                    completion([],APIError.failedDecode, false)
+        if hasBeenThirtyDaysSinceLastFetch() {
+            fetchDeclarationData(tryLocal: true) { [weak self] data in
+                if let data = data {
+                    do {
+                        let welcome = try JSONDecoder().decode(Welcome.self, from: data)
+                        let declarations = Set(welcome.declarations)
+                        
+                        let array = Array(declarations)
+                        let needsSync = array.count != self?.declarationCountBE
+                        print(array.count, self?.declarationCountBE, "RWRW count")
+                        print(needsSync, "RWRW  needs sync")
+                        self?.declarationCountBE = array.count
+                        completion(array, nil, needsSync)
+                        return
+                    } catch {
+                        print(error, "RWRW")
+                        completion([],APIError.failedDecode, false)
+                    }
                 }
-            } else {
-                self?.fetchDeclarationData(tryLocal: true) { data in
-                    if let data = data {
-                        do {
-                            let welcome = try JSONDecoder().decode(Welcome.self, from: data)
-                            let declarations = Set(welcome.declarations)
-                            
-                            let array = Array(declarations)
-                            let needsSync = array.count != self?.declarationCountBE
-                            print(array.count, self?.declarationCountBE, "RWRW count")
-                            print(needsSync, "RWRW  needs sync")
-                            self?.declarationCountBE = array.count
-                            completion(array, nil, needsSync)
-                            return
-                        } catch {
-                            print(error, "RWRW")
-                            completion([],APIError.failedDecode, false)
-                        }
+            }
+            
+        } else {
+            fetchDeclarationData(tryLocal: false) { [weak self] data in
+                if let data = data {
+                    do {
+                        let welcome = try JSONDecoder().decode(Welcome.self, from: data)
+                        let declarations = Set(welcome.declarations)
+                        
+                        let array = Array(declarations)
+                        let needsSync = array.count != self?.declarationCountBE
+                        print(array.count, self?.declarationCountBE, "RWRW count")
+                        print(needsSync, "RWRW  needs sync")
+                        self?.declarationCountBE = array.count
+                        completion(array, nil, needsSync)
+                        return
+                    } catch {
+                        print(error, "RWRW")
+                        completion([],APIError.failedDecode, false)
                     }
                 }
             }
         }
     }
+        
+//        fetchDeclarationData(tryLocal: false) { [weak self] data in
+//            if let data = data {
+//                do {
+//                    let welcome = try JSONDecoder().decode(Welcome.self, from: data)
+//                    let declarations = Set(welcome.declarations)
+//                    
+//                    let array = Array(declarations)
+//                    let needsSync = array.count != self?.declarationCountBE
+//                    print(array.count, self?.declarationCountBE, "RWRW count")
+//                    print(needsSync, "RWRW  needs sync")
+//                    self?.declarationCountBE = array.count
+//                    completion(array, nil, needsSync)
+//                    return
+//                } catch {
+//                    print(error, "RWRW")
+//                    completion([],APIError.failedDecode, false)
+//                }
+//            } else {
+//                self?.fetchDeclarationData(tryLocal: true) { data in
+//                    if let data = data {
+//                        do {
+//                            let welcome = try JSONDecoder().decode(Welcome.self, from: data)
+//                            let declarations = Set(welcome.declarations)
+//                            
+//                            let array = Array(declarations)
+//                            let needsSync = array.count != self?.declarationCountBE
+//                            print(array.count, self?.declarationCountBE, "RWRW count")
+//                            print(needsSync, "RWRW  needs sync")
+//                            self?.declarationCountBE = array.count
+//                            completion(array, nil, needsSync)
+//                            return
+//                        } catch {
+//                            print(error, "RWRW")
+//                            completion([],APIError.failedDecode, false)
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     func downloadDeclarations(completion: @escaping((Data?, Error?) -> Void))  {
         let storage = Storage.storage()

@@ -159,7 +159,7 @@ struct DevotionalView: View {
     
     @ViewBuilder
     private var forwardDevotionalButton: some View {
-        if viewModel.devotionValue < 1 {
+        if viewModel.devotionValue < 0 {
             Button {
                 Task {
                     viewModel.devotionValue += 1

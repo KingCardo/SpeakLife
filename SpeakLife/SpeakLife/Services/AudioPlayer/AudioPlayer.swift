@@ -49,7 +49,7 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
 
 
     func playSound(files: [MusicResources]) {
-        self.audioFiles = files
+        self.audioFiles = files.shuffled()
         self.currentFileIndex = 0
         let type = audioFiles[currentFileIndex].type
         playFile(type: type)
