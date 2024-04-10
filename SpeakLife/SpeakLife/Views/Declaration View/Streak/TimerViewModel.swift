@@ -77,7 +77,6 @@ final class TimerViewModel: ObservableObject {
         if currentStreak > longestStreak {
             longestStreak += 1
         }
-        lastStartedStreak = nil
         NotificationCenter.default.post(name: Notification.Name("StreakCompleted"), object: nil)
         self.isActive = false
     }
@@ -142,11 +141,6 @@ final class TimerViewModel: ObservableObject {
         checkAndUpdateCompletionDate()
         
         if checkIfCompletedToday() {
-            isComplete = true
-            isActive = false
-            NotificationCenter.default.post(name: Notification.Name("StreakCompleted"), object: nil)
-            timeRemaining = TimerViewModel.totalDuration
-            UserDefaults.standard.removeObject(forKey: "timeRemaining")
             return
         } else if let savedTimeRemaining = UserDefaults.standard.value(forKey: "timeRemaining") as? Int, savedTimeRemaining > 2, let lastStartedStreak = lastStartedStreak, Calendar.current.isDateInToday(lastStartedStreak) {
             // Adjust the remaining time based on how much time has passed since the app was last open
