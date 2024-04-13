@@ -198,6 +198,9 @@ struct DeclarationView: View {
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
                 timerViewModel.saveRemainingTime()
             }
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                timerViewModel.saveRemainingTime()
+            }
         
     }
     

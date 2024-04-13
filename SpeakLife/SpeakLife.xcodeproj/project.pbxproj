@@ -38,6 +38,7 @@
 		4590BF9A2BBEF09500CF4F54 /* everpresent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4590BF972BBEF09500CF4F54 /* everpresent.mp3 */; };
 		4590BF9B2BBEF09500CF4F54 /* rainstorm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4590BF982BBEF09500CF4F54 /* rainstorm.mp3 */; };
 		4590BF9C2BBEF09500CF4F54 /* washed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4590BF992BBEF09500CF4F54 /* washed.mp3 */; };
+		4590BF9E2BCA4F1A00CF4F54 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4590BF9D2BCA4F1A00CF4F54 /* FeatureView.swift */; };
 		45C7481B2B5357D40011D8F6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		45C7481F2B55B4B80011D8F6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 45C7481E2B55B4B80011D8F6 /* FacebookCore */; };
 		45C748232B5802C60011D8F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45C748222B5802C60011D8F6 /* GoogleService-Info.plist */; };
@@ -204,6 +205,7 @@
 		4590BF972BBEF09500CF4F54 /* everpresent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = everpresent.mp3; sourceTree = "<group>"; };
 		4590BF982BBEF09500CF4F54 /* rainstorm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rainstorm.mp3; sourceTree = "<group>"; };
 		4590BF992BBEF09500CF4F54 /* washed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = washed.mp3; sourceTree = "<group>"; };
+		4590BF9D2BCA4F1A00CF4F54 /* FeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
 		45C748222B5802C60011D8F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45C748242B5802CA0011D8F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45C7482C2B5BBF9A0011D8F6 /* romanticpiano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = romanticpiano.mp3; sourceTree = "<group>"; };
@@ -711,6 +713,7 @@
 				7AA870A528DACCB700134ADB /* SubscriptionView.swift */,
 				7AA870A628DACCB700134ADB /* PremiumView.swift */,
 				7AA870A728DACCB700134ADB /* SettingsRow.swift */,
+				4590BF9D2BCA4F1A00CF4F54 /* FeatureView.swift */,
 			);
 			path = SettingViews;
 			sourceTree = "<group>";
@@ -1122,6 +1125,7 @@
 				7AA870CD28DACCB700134ADB /* ProfileView.swift in Sources */,
 				7AA870DC28DACCB700134ADB /* TimeSlots.swift in Sources */,
 				7ABA50CB29E63178002699F1 /* PrayerServiceClient.swift in Sources */,
+				4590BF9E2BCA4F1A00CF4F54 /* FeatureView.swift in Sources */,
 				7AF18C8829FF8CEE005A6E31 /* TipsView.swift in Sources */,
 				458510D72B15935100230EE5 /* HideTabModifier.swift in Sources */,
 				7AF18C8C2A08CE92005A6E31 /* SpeechSynthesizer.swift in Sources */,
@@ -1333,7 +1337,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 298;
+				CURRENT_PROJECT_VERSION = 300;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1373,7 +1377,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 298;
+				CURRENT_PROJECT_VERSION = 300;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;

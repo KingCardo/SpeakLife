@@ -25,7 +25,7 @@ struct ShimmerButton: View {
                 .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true), value: pulsate)
 
             LinearGradient(gradient: Gradient(colors: [.clear, .white.opacity(0.5), .clear]), startPoint: .leading, endPoint: .trailing)
-                .frame(width: UIScreen.main.bounds.width * 0.90, height: 50)
+                .frame(width: UIScreen.main.bounds.width * 0.85, height: 50)
                 .offset(x: animationOffset - UIScreen.main.bounds.width / 2)
         }
         .background(LinearGradient(gradient: Gradient(colors: colors), startPoint: .leading, endPoint: .trailing))

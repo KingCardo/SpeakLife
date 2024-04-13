@@ -18,21 +18,6 @@ struct Benefit: Identifiable  {
     
     static var premiumBenefits: [Benefit] = [
         
-//        Benefit(text: "Unlock all features"),
-//        Benefit(text: "Build your spirit by meditating on God's love for you"),
-      //  Benefit(text: "First 3 days are free"),
-   //     Benefit(text: "5000+ library of affirmations"),
-     //   Benefit(text: "Daily Devotional's to grow with Jesus"),
-    //    Benefit(text: "Unlimited curated notifications"),
-//        Benefit(text: "Unlock powerful prayers over your life"),
-      //  Benefit(text: "25+ categories to declare victory with God's promises"),
-      //  Benefit(text: "Personalize your experience and create your own theme"),
-       // Benefit(text: "Unlock all Jesus Devotionals"),
-   //     Benefit(text: "Categories for any situation"),
-//        Benefit(text: "Unlock all themes"),
-      //  Benefit(text: "Unlock everything"),
-     //   Benefit(text: "#"),
-       // Benefit(text:"Proverbs 18:21: Words have immense power; they can shape your reality and influence your future. Think of them as tools that can build or destroy."),
 
       //  Benefit(text:"Mark 11:23: Your convictions, voiced out loud, hold incredible power. If you truly believe and verbalize your goals or aspirations, no obstacle is too big to overcome, not even metaphorical mountains."),
 
@@ -335,7 +320,7 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 60)
                     VStack(alignment: .center) {
-                        Text("Unlock SpeakLife", comment: "unlock everything premium view")
+                        Text("Unlock SpeakLife Premium", comment: "unlock everything premium view")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 28))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -346,9 +331,11 @@ struct SubscriptionView: View {
                     
                     HStack {
                         StarRatingView(rating: 4.8)
-                    }.padding([.leading,.trailing, .bottom],20)
+                    }.padding([.leading,.trailing],20)
                     
-                    benefitRows
+                    FeatureView()
+                        .frame(width: geometry.size.width * 0.93)
+                   // benefitRows
                         .foregroundColor(.white)
                     
                     
@@ -371,12 +358,11 @@ struct SubscriptionView: View {
                             monthlySelectionBox()
                         }
                         
-                        
                     }
                     .frame(width: geometry.size.width * 0.93)
                     
                     continueButton(gradient: linearGradient)
-                        .frame(width: geometry.size.width * 0.8)
+                        .frame(width: geometry.size.width * 0.93)
                     
                     goPremiumStack(size: size)
                         .frame(width: geometry.size.width * 0.8)
