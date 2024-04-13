@@ -1,6 +1,6 @@
 {
     "count": 1,
-    "version": 1,
+    "version": 2,
     "declarations": [
         {
             "text": "I am blessed because I walk with God.",
@@ -1146,12 +1146,12 @@
             "category": "destiny"
         },
         {
-            "text": "In Jesus' name, I walk in boundless grace, triumphing over every challenge.",
+            "text": "Grace is undeserved favor.",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "In Jesus' name, I am cloaked in grace, shielded from the arrows of the enemy.",
+            "text": "I am grateful for new grace everyday.",
             "isFavorite": false,
             "category": "grace"
         },
@@ -1166,7 +1166,7 @@
             "category": "grace"
         },
         {
-            "text": "In Jesus' name, grace fuels my faith, empowering me to conquer mountains.",
+            "text": "In Jesus' name, grace empowers me to conquer mountains.",
             "isFavorite": false,
             "category": "grace"
         },
@@ -1190,8 +1190,7 @@
             "category": "grace"
         },
         {
-            "text": "For the grace of God has appeared, bringing salvation for all people.",
-            "book": "Titus 2:11",
+            "text": "I am constantly receiving and giving grace that God has given me.",
             "isFavorite": false,
             "category": "grace"
         },
@@ -1551,12 +1550,6 @@
         },
         {
             "text": "I am the resurrection and the life. The one who believes in me will live, even though they die.",
-            "book": "Jesus",
-            "isFavorite": false,
-            "category": "grace"
-        },
-        {
-            "text": "So therefore, any one of you who does not renounce all that he has cannot be my disciple.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
@@ -8967,7 +8960,7 @@
             "category": "love"
         },
         {
-            "text": "For as high as the heavens are above the earth, so great is his love for those who worship him" ,
+            "text": "For as high as the heavens are above the earth, so great is his love for those who worship him." ,
             "book": "Psalm 103:11 ",
             "isFavorite": false,
             "category": "love"
@@ -9797,6 +9790,101 @@
             "category": "marriage"
         },
         {
+            "text": "I radiate tranquility amidst chaos.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I find calm in the storm of life.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I stand strong in the face of adversity.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I spread peace wherever I go.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I find harmony in every situation.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I wield compassion as my greatest weapon.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I maintain peace in the midst of turmoil.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am unshaken by the storms of life.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I spreading harmony with every step I take.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I triumph over chaos with grace and calm.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I radiate calmness in all situations.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am a tranquil warrior, maintaining peace in the face of adversity.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am illuminating the path to peace for others.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am unyielding in the pursuit of inner peace.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am mastering the art of peaceful living.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am unshaken by the chaos of the world.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I defeat chaos with a calm spirit.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I shine bright in a world filled with turmoil.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I remain at peace in all situations.",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
             "text": "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
             "book": "John 14:27",
             "isFavorite": false,
@@ -10175,6 +10263,56 @@
             "category": "peace"
         },
         {
+            "text": "I am a relentless warrior, unstoppable in the face of adversity.",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I am a resilient champion, rising stronger with every challenge.",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I conquer obstacles with unwavering determination.",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I am a fierce warrior, embracing struggle as fuel for my victory.",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I am a relentless fighter, refusing to give up in the face of difficulty.",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I am a tenacious warrior, pushing forward with unwavering resolve.",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I bounce back from every setback with resilience.",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I am an unstoppable force, forging ahead with unbreakable determination.",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I am a mighty warrior, facing every trial with courage.",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I am an unwavering champion, persisting until victory is mine.",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
             "text": "I remain patient in hardships and faithful in prayer.",
             "book": "Romans 12:12",
             "isFavorite": false,
@@ -10423,6 +10561,166 @@
             "text": "Thank you Jesus for turning my trials into triumphs, showcasing Your glory.",
             "isFavorite": false,
             "category": "perseverance"
+        },
+        {
+            "text": "I am the architect of my wealth and success.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am a magnet for prosperity and abundance.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am unstoppable, destined for financial greatness.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am a warrior of wealth, conquering all obstacles.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am abundantly blessed with riches and success.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am the master of my financial destiny.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am worthy of infinite abundance and prosperity.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am a warrior of wealth, forging my path to prosperity.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am bold, fearless, and destined to thrive in wealth.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am surrounded by opportunities to amass wealth.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am a vessel of abundance, overflowing with riches.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am a conqueror, seizing every chance for prosperity.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am the commander of my financial empire.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am destined for wealth beyond measure.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am driven, fueled by determination.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am a warrior of wealth, rising from every setback.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am the embodiment of financial prosperity.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am a force to be reckoned with in the realm of wealth.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am the architect of abundance, building my fortune.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am unstoppable, my wealth knows no bounds.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am a warrior of prosperity, claiming victory in wealth.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am empowered to attract wealth effortlessly.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am destined for abundance in every aspect of my life.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am the commander of my financial destiny, leading with courage.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I'm a money champion, winning big and sharing my success with others!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I'm a money genius, solving problems and making bank!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I'm like a money magnet, attracting wealth and good luck wherever I go!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I'm a cash champion, winning at life and stacking up my riches!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I'm a wealth warrior, fighting for my dreams and making them real!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I'm a money master, counting my coins and making them multiply!",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I find new ways to make money and be successful.",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I'm not afraid of anything and I can do whatever I want to be rich!",
+            "isFavorite": false,
+            "category": "wealth"
         },
         {
             "text": "I am able to achieve anything I desire.",
@@ -11055,7 +11353,6 @@
         {"text": "Joyful are those who listen to me, watching for me daily at my gates.", "book": "Proverbs 8:34", "isFavorite": false, "category": "wisdom"},
         {"text": "For whoever finds me finds life and receives favor from the Lord.", "book": "Proverbs 8:35", "isFavorite": false, "category": "wisdom"},
         {"text": "But those who miss me injure themselves. All who hate me love death.", "book": "Proverbs 8:36", "isFavorite": false, "category": "wisdom"},
-        {"text": "Their purpose is to teach people wisdom and discipline, to help them understand the insights of the wise.", "book": "Proverbs 1:2", "isFavorite": false, "category": "wisdom"},
         {"text": "Their purpose is to teach people to live disciplined and successful lives, to help them do what is right, just, and fair.", "book": "Proverbs 1:3", "isFavorite": false, "category": "wisdom"},
         {"text": "These proverbs will give insight to the simple, knowledge and discernment to the young.", "book": "Proverbs 1:4", "isFavorite": false, "category": "wisdom"},
         {"text": "For everything there is a season, a time for every activity under heaven.", "book": "Ecclesiastes 3:1", "isFavorite": false, "category": "wisdom"},
@@ -11068,32 +11365,12 @@
         {"text": "Don't long for 'the good old days.' This is not wise.", "book": "Ecclesiastes 7:10", "isFavorite": false, "category": "wisdom"},
         {"text": "But as I looked at everything I had worked so hard to accomplish, it was all so meaningless—like chasing the wind.", "book": "Ecclesiastes 2:11", "isFavorite": false, "category": "wisdom"},
         {"text": "Wisdom is better than foolishness, just as light is better than darkness.", "book": "Ecclesiastes 2:13", "isFavorite": false, "category": "wisdom"},
-        {"text": "I came to hate all my hard work here on earth, for I must leave to others everything I have earned.", "book": "Ecclesiastes 2:18", "isFavorite": false, "category": "wisdom"},
         {"text": "God gives wisdom, knowledge, and joy to those who please him.", "book": "Ecclesiastes 2:26", "isFavorite": false, "category": "wisdom"},
         {"text": "No matter how much we see, we are never satisfied. No matter how much we hear, we are not content.", "book": "Ecclesiastes 1:8", "isFavorite": false, "category": "wisdom"},
         {"text": "History merely repeats itself. It has all been done before. Nothing under the sun is truly new.", "book": "Ecclesiastes 1:9", "isFavorite": false, "category": "wisdom"},
         {"text": "The greater my wisdom, the greater my grief. To increase knowledge only increases sorrow.", "book": "Ecclesiastes 1:18", "isFavorite": false, "category": "wisdom"},
         {"text": "Control your temper, for anger labels you a fool.", "book": "Ecclesiastes 7:9", "isFavorite": false, "category": "wisdom"},
-        {"text": "Everything is wearisome beyond description.", "book": "Ecclesiastes 1:8", "isFavorite": false, "category": "wisdom"},
         {"text": "I observed everything going on under the sun, and really, it is all meaningless—like chasing the wind.", "book": "Ecclesiastes 1:14", "isFavorite": false, "category": "wisdom"},
-        
-        {"text": "For everything there is a season, a time for every activity under heaven.", "book": "Ecclesiastes 3:1", "isFavorite": false, "category": "wisdom"},
-        {"text": "A good reputation is more valuable than costly perfume.", "book": "Ecclesiastes 7:1", "isFavorite": false, "category": "wisdom"},
-        {"text": "Sorrow is better than laughter, for sadness has a refining influence on us.", "book": "Ecclesiastes 7:3", "isFavorite": false, "category": "wisdom"},
-        {"text": "Finishing is better than starting. Patience is better than pride.", "book": "Ecclesiastes 7:8", "isFavorite": false, "category": "wisdom"},
-        {"text": "Wisdom is even better when you have money.", "book": "Ecclesiastes 7:11", "isFavorite": false, "category": "wisdom"},
-        {"text": "Accept the way God does things, for who can straighten what he has made crooked?", "book": "Ecclesiastes 7:13", "isFavorite": false, "category": "wisdom"},
-        {"text": "Enjoy prosperity while you can, but when hard times strike, realize that both come from God.", "book": "Ecclesiastes 7:14", "isFavorite": false, "category": "wisdom"},
-        {"text": "Don't long for 'the good old days.' This is not wise.", "book": "Ecclesiastes 7:10", "isFavorite": false, "category": "wisdom"},
-        {"text": "But as I looked at everything I had worked so hard to accomplish, it was all so meaningless—like chasing the wind.", "book": "Ecclesiastes 2:11", "isFavorite": false, "category": "wisdom"},
-        {"text": "Wisdom is better than foolishness, just as light is better than darkness.", "book": "Ecclesiastes 2:13", "isFavorite": false, "category": "wisdom"},
-        {"text": "I came to hate all my hard work here on earth, for I must leave to others everything I have earned.", "book": "Ecclesiastes 2:18", "isFavorite": false, "category": "wisdom"},
-        {"text": "God gives wisdom, knowledge, and joy to those who please him.", "book": "Ecclesiastes 2:26", "isFavorite": false, "category": "wisdom"},
-        {"text": "No matter how much we see, we are never satisfied. No matter how much we hear, we are not content.", "book": "Ecclesiastes 1:8", "isFavorite": false, "category": "wisdom"},
-        {"text": "History merely repeats itself. It has all been done before. Nothing under the sun is truly new.", "book": "Ecclesiastes 1:9", "isFavorite": false, "category": "wisdom"},
-        {"text": "The greater my wisdom, the greater my grief. To increase knowledge only increases sorrow.", "book": "Ecclesiastes 1:18", "isFavorite": false, "category": "wisdom"},
-        {"text": "Control your temper, for anger labels you a fool.", "book": "Ecclesiastes 7:9", "isFavorite": false, "category": "wisdom"},
-        {"text": "Trust in the Lord with all your heart and lean not on your own understanding.", "book": "Proverbs 3:5", "isFavorite": false, "category": "wisdom"},
         {"text": "In all your ways submit to him, and he will make your paths straight.", "book": "Proverbs 3:6", "isFavorite": false, "category": "wisdom"},
         {"text": "The fear of the Lord is the beginning of wisdom, and knowledge of the Holy One is understanding.", "book": "Proverbs 9:10", "isFavorite": false, "category": "wisdom"},
         {"text": "Pride goes before destruction, a haughty spirit before a fall.", "book": "Proverbs 16:18", "isFavorite": false, "category": "wisdom"},
@@ -11101,7 +11378,6 @@
         {"text": "Commit to the Lord whatever you do, and he will establish your plans.", "book": "Proverbs 16:3", "isFavorite": false, "category": "wisdom"},
         {"text": "A man’s heart plans his course, but the Lord determines his steps.", "book": "Proverbs 16:9", "isFavorite": false, "category": "wisdom"},
         {"text": "Better a little with righteousness than vast revenues without justice.", "book": "Proverbs 16:8", "isFavorite": false, "category": "wisdom"},
-        {"text": "The path of the righteous is like the morning sun, shining ever brighter till the full light of day.", "book": "Proverbs 4:18", "isFavorite": false, "category": "wisdom"},
         {"text": "Where there is no vision, the people perish: but he that keepeth the law, happy is he.", "book": "Proverbs 29:18", "isFavorite": false, "category": "wisdom"},
         {"text": "A wise son brings joy to his father, but a foolish son brings grief to his mother.", "book": "Proverbs 10:1", "isFavorite": false, "category": "wisdom"},
         {"text": "Even a fool who keeps silent is considered wise; when he closes his lips, he is deemed intelligent.", "book": "Proverbs 17:28", "isFavorite": false, "category": "wisdom"},
@@ -11117,14 +11393,6 @@
         {"text": "He uncovers mysteries hidden in darkness; he brings light to the deepest gloom.", "book": "Job 12:22", "isFavorite": false, "category": "wisdom"},
         {"text": "He builds up nations, and he destroys them. He expands nations, and he abandons them.", "book": "Job 12:23", "isFavorite": false, "category": "wisdom"},
         {"text": "No one knows where to find it, for it is not found among the living.", "book": "Job 28:13", "isFavorite": false, "category": "wisdom"},
-        {"text": "It cannot be bought with gold. It cannot be purchased with silver.", "book": "Job 28:15", "isFavorite": false, "category": "wisdom"},
-        {"text": "Wisdom is more valuable than gold and crystal. It cannot be purchased with jewels mounted in fine gold.", "book": "Job 28:17", "isFavorite": false, "category": "wisdom"},
-        {"text": "Coral and jasper are worthless in trying to get it. The price of wisdom is far above rubies.", "book": "Job 28:18", "isFavorite": false, "category": "wisdom"},
-        {"text": "It’s worth more than the purest gold.", "book": "Job 28:19", "isFavorite": false, "category": "wisdom"},
-        {"text": "It is hidden from the eyes of all humanity. Even the sharp-eyed birds in the sky cannot discover it.", "book": "Job 28:21", "isFavorite": false, "category": "wisdom"},
-        {"text": "He decided how hard the winds should blow and how much rain should fall.", "book": "Job 28:25", "isFavorite": false, "category": "wisdom"},
-        {"text": "Trust in me with all your heart, and lean not on your own understanding.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
-        {"text": "Seek first the kingdom of God and His righteousness, and all these things will be added to you.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
         {"text": "Let your 'Yes' be 'Yes,' and your 'No,' 'No.' Anything more comes from the evil one.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
         {"text": "Do not worry about tomorrow, for tomorrow will worry about itself. Each day has enough trouble of its own.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
         {"text": "Love your neighbor as yourself. There is no commandment greater than these.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
@@ -11153,6 +11421,56 @@
         {"text": "I am a peacemaker, carrying the blessing of the children of God.", "isFavorite": false, "category": "wisdom"},
         {"text": "I am chosen, royal, holy, declaring the praises of Him who called me.", "isFavorite": false, "category": "wisdom"},
         {"text": "I am fearless in the face of adversity, for my God is with me.", "isFavorite": false, "category": "wisdom"},
+        {
+            "text": "I am a wise warrior, choosing my path with clarity and courage.",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I am the architect of my destiny, making bold and wise decisions.",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I am empowered by wisdom, navigating life's twists and turns with grace.",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I am the guardian of my destiny, making wise choices that shape my future.",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I am a wise leader, inspiring greatness through my wise decisions.",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I am the master of my fate, choosing wisdom over impulse.",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I am a wise navigator, charting a course to greatness with every choice.",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I am a warrior of discernment, choosing wisely amidst life's challenges.",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I am empowered by wisdom, making choices that lead to triumph and victory.",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I transform challenges into opportunities with wisdom.",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
         {"text": "All praise to God, who has blessed us with every spiritual blessing in the heavenly realms because we are united with Christ.", "book": "Ephesians 1:3", "isFavorite": false, "category": "grace"},
         {"text": "God decided in advance to adopt us into his own family by bringing us to himself through Jesus Christ.", "book": "Ephesians 1:5", "isFavorite": false, "category": "grace"},
         {"text": "We praise God for the glorious grace he has poured out on us who belong to his dear Son.", "book": "Ephesians 1:6", "isFavorite": false, "category": "grace"},
@@ -14510,6 +14828,101 @@
             "affirmationText": "Recognizing the price paid for my redemption, I honor God with my body and my choices.",
             "isFavorite": false,
             "category": "purity"
+        },
+        {
+            "text": "I am committed to the strength and longevity of our marriage.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am fiercely dedicated to the success of our union.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am a resilient spouse, weathering storms and triumphing in the joys of our marriage.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am nurturing and protecting the love that binds us together.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am fiercely defending the sanctity of our marriage.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I fight to keep our marriage strong and vibrant.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am laying the foundation for a lifelong partnership filled with love and understanding.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am working hand in hand with my spouse to create a marriage that stands the test of time.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am a reliable companion, walking beside my partner with unwavering love and support.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am upholding the sacred vows of our marriage with unwavering commitment.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am nurturing our love with kindness and understanding.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am a champion of forgiveness, embracing grace and understanding in our journey as spouses.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am fostering a deep and meaningful connection with my partner.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am bringing joy and humor into our marriage every day.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am working with my partner to create a life filled with love and happiness.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am a champion of communication, fostering open and honest dialogue with my partner to strengthen our bond.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am building a marriage that will stand as a testament to our God, love and commitment.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am a warrior of gratitude, expressing appreciation for the blessings of love and companionship in our marriage.",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "I am evolving and thriving together with my partner in our journey as spouses.",
+            "isFavorite": false,
+            "category": "marriage"
         },
         {
             "text": "The wife does not have authority over her own body but yields it to her husband. In the same way, the husband does not have authority over his own body but yields it to his wife.",

@@ -276,9 +276,9 @@ struct SubscriptionView: View {
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
-    var firstSelection = InAppId.Subscription.speakLife1YR19
-    var secondSelection = InAppId.Subscription.speakLife1MO4
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR15
+    var firstSelection = InAppId.Subscription.speakLife1YR15
+    var secondSelection = InAppId.Subscription.speakLife1MO2
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let size: CGSize

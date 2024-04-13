@@ -19,11 +19,7 @@ final class DevotionalServiceClient: DevotionalService {
     
     internal var devotionals: [Devotional] = []
     
-    init() {
-//        loadFromFileDevotionals { devotionals in
-//            self.devotionals = devotionals
-//        }
-    }
+    init() { }
     
     func fetchDevotionForToday(needsSync: Bool) async -> [Devotional] {
         

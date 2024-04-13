@@ -140,8 +140,6 @@ enum Improvements: String, CaseIterable {
             "fear"
         case .grace:
             "grace"
-//        case .praise:
-//            "praise"
         case .love:
             "love"
         case .destiny:
@@ -150,18 +148,10 @@ enum Improvements: String, CaseIterable {
             "health"
         case .safety:
             "godsprotection"
-//        case .guilt:
-//            "guilt"
-//        case .joy:
-//            "joy"
         case .gratitude:
             "gratitude"
         case .loneliness:
             "loneliness"
-//        case .wealth:
-//            "wealth"
-//        case .peace:
-//            "peace"
         }
     }
 }
