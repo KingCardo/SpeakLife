@@ -63,8 +63,10 @@ struct InAppId: Codable {
             case .speakLife1YR49: return "Yearly"
             case .speakLife1YR39: return "Yearly"
             case .speakLife1YR29, .speakLife1YR19: return "Yearly"
+            case .speakLife1MO2: return "Monthly"
             case .speakLife1MO4: return "Monthly"
             case .speakLife1MO9: return "Monthly"
+            case .speakLife1YR15: return "Yearly"
             default: return ""
             }
         }
@@ -74,6 +76,7 @@ struct InAppId: Codable {
             case .speakLife1YR39: return "$3.33/mo. - Save 65%"
             case .speakLife1YR29: return "$2.49/mo. - Save 50%"
             case .speakLife1YR19: return "$1.66/mo. - Save 65%"
+            case .speakLife1YR15: return "1.25/mo. - Save 60%"
             default: return ""
             }
         }
@@ -87,6 +90,7 @@ struct InAppId: Codable {
             case .speakLife1YR15: return "$14.99"
             case .speakLife1MO9: return "$9.99"
             case .speakLife1MO4: return "$4.99"
+            case .speakLife1MO2: return "$2.99"
             default: return ""
             }
         }

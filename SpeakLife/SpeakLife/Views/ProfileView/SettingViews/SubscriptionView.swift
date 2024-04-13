@@ -363,12 +363,7 @@ struct SubscriptionView: View {
                         } label: {
                             yearlyCTABox()
                         }
-                        
-                        //                        Button {
-                        //                            currentSelection = thirdSelection
-                        //                        } label: {
-                        //                            yearlyNoTrialCTABox()
-                        //                        }
+
                         
                         Button {
                             currentSelection = secondSelection
@@ -537,47 +532,7 @@ struct SubscriptionView: View {
         
         .padding([.leading, .trailing], 20)
     }
-    
-//    func yearlyNoTrialCTABox() -> some View {
-//        ZStack {
-//            RoundedRectangle(cornerRadius: 10)
-//                .strokeBorder(Color.gray, lineWidth: 1)
-//                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == thirdSelection ? Constants.DAMidBlue : .clear))
-//                .frame(height: 60)
-//            
-//            HStack {
-//                VStack(alignment: .leading) {
-//                    HStack {
-//                        Text("\(thirdSelection.ctaDurationTitle)")
-//                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-//                        Text("\(thirdSelection.ctaPriceTitle)")
-//                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
-//                            .bold()
-//                    }
-//                    Text("Abundant savings. Billed annually.")
-//                        .font(.caption)
-//                }
-//                .foregroundStyle(currentSelection == thirdSelection ? .white : .black)
-//                .padding(.leading)
-//                
-//                Spacer()
-//                
-//                ZStack {
-//                    Capsule()
-//                        .fill(Constants.specialRateColor)
-//                        .frame(width: 100, height: 30)
-//                    
-//                    Text("Special Rate")
-//                            .font(.callout)
-//                            .foregroundColor(.white)
-//                }
-//                .padding(.trailing)
-//            }
-//            
-//        }
-//        
-//        .padding([.leading, .trailing], 20)
-//    }
+
     
     func monthlySelectionBox() -> some View {
         ZStack {
