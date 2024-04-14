@@ -13,13 +13,13 @@ struct Feature {
     var isAvailableInPro: Bool
 }
 
-// Define a reusable view for a feature row
 struct FeatureRow: View {
     var feature: Feature
 
     var body: some View {
         HStack {
             Text(feature.name)
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
             Spacer()
             HStack {
             if feature.isAvailableInFree {
@@ -31,9 +31,7 @@ struct FeatureRow: View {
                     .frame(width: 24)
                 if feature.isAvailableInPro {
                     Image(systemName: "checkmark")
-                        .padding(.trailing, 8) // Adjust padding to align with text
-                        //.background(Color.green.opacity(0.3)) // Add background layer
-                        
+                        .padding(.trailing, 8)
                 }
             }
         }
@@ -57,11 +55,11 @@ struct FeatureView: View {
             HStack {
                 Spacer()
                 Text("Free")
-                    .font(.callout)
+                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
                 Spacer()
                     .frame(width: 16)
                 Text("Pro")
-                    .font(.title3)
+                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
 
             }
             .padding()

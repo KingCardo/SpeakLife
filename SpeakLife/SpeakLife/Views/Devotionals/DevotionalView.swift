@@ -41,12 +41,7 @@ struct DevotionalView: View {
                     Alert(title: Text(viewModel.errorString))
                 }
         } else {
-            VStack {
-                Text("Oops. To continue using our services uninterrupted, please subscribe to our premium plan.")
-                    .font(.callout)
-                    .padding()
                 SubscriptionView(size: UIScreen.main.bounds.size)
-            }
         }
     }
     

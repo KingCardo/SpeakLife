@@ -2302,7 +2302,118 @@
             "isFavorite": false,
             "category": "faith",
             "book": "John 5:24"
-        },{
+        },
+        {
+            "text": "I am a warrior of imagination.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a champion of innovation.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a vessel of inspiration.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am wielding the brush of creativity to paint my destiny.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a conqueror of limitations.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am full of originality, illuminating the path of creativity with my unique vision.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I sculpt masterpieces from the clay of my creativity.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a warrior of design, crafting beauty from the chaos of my creativity.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a visionary leader.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a creator of possibilities.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a champion of expression, articulating truth through the language of my creativity.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a pioneer of ideas, exploring uncharted territories with the compass of my creativity.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a beacon of innovation, illuminating the darkness with the brilliance of my creativity.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a master of transformation, reshaping reality with the magic of my creativity.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a visionary architect.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a creator of beauty, infusing the world with the radiance of my creative spirit.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a warrior of the mind, harnessing the limitless potential of my creativity to shape destiny.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I dream the impossible and making it real through my creativity.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a master of thinking outside the box, solving problems in creative ways.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a bright spark of ideas, making cool stuff happen with my creativity.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a creative explorer, trying out new ways to do things.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
+            "text": "I am a creative genius, coming up with awesome ideas all the time.",
+            "isFavorite": false,
+            "category": "creativity"
+        },
+        {
             "text": "I Trust in the LORD with all my heart and lean not on my own understanding.",
             "book": "Proverbs 3:5 ",
             "isFavorite": false,
@@ -14952,7 +15063,222 @@
             "isFavorite": false,
             "category": "purity"
         },
-       
+        {
+            "text": "I am full of love, radiating positivity and compassion in all my interactions.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a warrior of empathy, understanding and supporting my partner with unwavering strength.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a champion of communication, expressing my thoughts and feelings with clarity and honesty.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a master of growth, constantly evolving and improving to become the best partner I can be.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a guardian of trust, honoring my commitments and building a foundation of loyalty.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a pillar of strength, offering support and stability through life's challenges.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a warrior of respect, valuing my partner's opinions and boundaries with reverence.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a beacon of integrity, acting with honesty and integrity.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a champion of kindness, showing compassion and generosity to my partner and others.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a master of patience, understanding that good things take time and effort to flourish.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a guardian of boundaries, respecting my own needs and boundaries while honoring those of my partner.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a pillar of support, offering encouragement and guidance to my partner in times of need.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a warrior of forgiveness, letting go of past grievances and embracing a future filled with love and understanding.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a champion of compromise, finding common ground and solutions that benefit both me and my partner.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a master of empathy, understanding and sharing in my partner's joys and sorrows.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a pillar of understanding, listening with an open heart and mind to my partner's thoughts and feelings.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a warrior of romance, keeping the spark alive with gestures of love and affection.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a champion of commitment, dedicated to building a strong and lasting bond with my partner.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a master of self-love, recognizing my own worth and embracing my strengths and weaknesses.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a guardian of honesty, speaking my truth with courage and integrity in all my relationships.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a pillar of stability, providing a safe and secure foundation for my partner to lean on.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a warrior of patience, trusting in the timing of destiny to bring the perfect partner into my life.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a champion of discernment, recognizing the worth of waiting for a love that matches my soul's desires.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a master of self-respect, refusing to settle for anything less than the deep connection I deserve.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a guardian of boundaries, safeguarding my heart until it finds its rightful counterpart.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am nurturing my own happiness until it intertwines with another's in perfect harmony.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I believe in the God's plan to deliver the ideal partner into my life when the time is right.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a champion of patience, knowing that true love is worth the wait and the journey it takes to find it.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I bounce back from temporary disappointments in pursuit of lasting fulfillment.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I believe that the right person is out there, searching for me as I am for them.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a pillar of wisdom, understanding that rushing into love only leads to heartache, while waiting ensures a bond built on solid ground.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I recognize my own value and refusing to settle for anything less than extraordinary love.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a champion of authenticity, embracing my true self and waiting for a love that accepts me completely.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a master of perseverance, enduring the trials of solitude until my match arrives.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am full of optimism, maintaining a hopeful heart and an open mind as I await the arrival of my soulmate.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I trust in the God's divine timing to orchestrate a love story beyond my wildest dreams.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I use my time of waiting to grow, evolve, and become the person my future partner deserves.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I know that my worth is not defined by my relationship status and that waiting for the right person is a testament to my strength.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a champion of intuition, listening to the whispers of my heart and patiently waiting for love's perfect melody to join in harmony.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a master of self-reflection, using this period of waiting to delve deep into my desires, values, and aspirations for a future partnership.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I nurture my mind, body, and soul so that I am ready to give and receive love when the right person comes along.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "I am a pillar of independence, thriving in my own company and finding joy in the journey of self-discovery as I wait for love's perfect timing.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        {
+            "text": "The right person will come into my life at the perfect time.",
+            "isFavorite": false,
+            "category": "relationships"
+        },
+        
         
     ]
 }

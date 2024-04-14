@@ -48,6 +48,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case praise
     case heaven
     case purity
+    case creativity
+    case relationships
     
     
     static var categoryOrder: [DeclarationCategory] = [
@@ -58,6 +60,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .grace,
         .faith,
         .addiction,
+        .creativity,
         .confidence,
         .depression,
         .fear,
@@ -76,6 +79,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .purity,
         .praise,
         .rest,
+        .relationships,
         .marriage,
         .peace,
         .perseverance,
