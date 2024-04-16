@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Feature {
     var name: String
+    var subtitle: String
     var isAvailableInFree: Bool
     var isAvailableInPro: Bool
 }
@@ -18,19 +19,23 @@ struct FeatureRow: View {
 
     var body: some View {
         HStack {
-            Text(feature.name)
-                .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
+            VStack(alignment: .leading) {
+                Text(feature.name)
+                    .font(Font.custom("AppleSDGothicNeo-Regular-Bold", size: 18, relativeTo: .body))
+                Text(feature.subtitle)
+                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
+            }
             Spacer()
             HStack {
             if feature.isAvailableInFree {
-                Image(systemName: "checkmark")
+                Image(systemName: "checkmark.seal.fill")
             } else {
                 Image(systemName: "lock")
             }
             Spacer()
                     .frame(width: 24)
                 if feature.isAvailableInPro {
-                    Image(systemName: "checkmark")
+                    Image(systemName: "checkmark.seal.fill")
                         .padding(.trailing, 8)
                 }
             }
@@ -42,12 +47,12 @@ struct FeatureRow: View {
 struct FeatureView: View {
     // This could be fetched from a ViewModel in a real-world app
     let features: [Feature] = [
-        Feature(name: "Daily devotional's", isAvailableInFree: false, isAvailableInPro: true),
-        Feature(name: "Unlock all categories", isAvailableInFree: false, isAvailableInPro: true),
-        Feature(name: "Create your own", isAvailableInFree: true, isAvailableInPro: true),
-        Feature(name: "Unlimited reminders", isAvailableInFree: false, isAvailableInPro: true),
-        Feature(name: "Unlimited themes", isAvailableInFree: false, isAvailableInPro: true),
-        Feature(name: "Unlock all prayers", isAvailableInFree: false, isAvailableInPro: true),
+        Feature(name: "Daily devotional's", subtitle: "Enjoy time with Jesus", isAvailableInFree: false, isAvailableInPro: true),
+        Feature(name: "Unlock all categories", subtitle: "Over 30+ for life situations", isAvailableInFree: false, isAvailableInPro: true),
+        Feature(name: "Create your own", subtitle: "Fulfill your destiny", isAvailableInFree: true, isAvailableInPro: true),
+        Feature(name: "Unlimited reminders", subtitle: "Renew your mind", isAvailableInFree: false, isAvailableInPro: true),
+        Feature(name: "Unlimited themes", subtitle: "Regularly added backgrounds and music", isAvailableInFree: false, isAvailableInPro: true),
+       // Feature(name: "Unlock all prayers",  subtitle: "Quiet the lies", isAvailableInFree: false, isAvailableInPro: true),
     ]
 
     var body: some View {

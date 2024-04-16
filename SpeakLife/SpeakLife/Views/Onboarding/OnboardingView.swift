@@ -41,7 +41,7 @@ struct OnboardingView: View  {
                     .tag(Tab.personalization)
                 
         
-                NameScene(size:  geometry.size, callBack: advance)
+                NameScene(size: geometry.size, callBack: advance)
                         .tag(Tab.name)
                 
                 if !appState.onBoardingTest {
@@ -52,14 +52,15 @@ struct OnboardingView: View  {
                 ImprovementScene(size: geometry.size, callBack: advance, viewModel: improvementViewModel)
                     .tag(Tab.improvement)
                 
-                IntroScene(headerText: appState.onBoardingTest ? "SpeakLife" : "DECLARATIONS", bodyText: "Favorite, create your own, and Speak affirmations out loud at least 3 times but as many times as you need to a day to begin transforming your mind and life.", footerText: "The power comes from speaking and meditating so you believe and watch the Lord bring it to pass.", buttonTitle: "Begin transformation", size: geometry.size, callBack: advance)
-                    .tag(Tab.intro)
                 
-                IntroScene(headerText: "The enemy", bodyText: "satan comes to steal, kill, and destroy. He wants to steal the truth, word of God from your heart, your health, joy, peace and much more!", footerText: "But we have weapons to take offense. Jesus gave us authority over all power of the enemy! Luke 10:19", buttonTitle: "Fight back", size: geometry.size, callBack: advance)
-                    .tag(Tab.foe)
-                
-                IntroScene(headerText: "Your Savior", bodyText: "Jesus, came so you can have life abundantly, prosper and be in great health. So as God's children we must fight the enemy", footerText: "and not let him steal from us. Time to fight back everyday by speaking life. Jesus already conquered for us, we have to keep it.", buttonTitle: "Claim what's mine!", size: geometry.size, callBack: advance)
-                    .tag(Tab.life)
+//                IntroScene(headerText: appState.onBoardingTest ? "SpeakLife" : "DECLARATIONS", bodyText: "Favorite, create your own, and Speak affirmations out loud at least 3 times but as many times as you need to a day to begin transforming your mind and life.", footerText: "The power comes from speaking and meditating so you believe and watch the Lord bring it to pass.", buttonTitle: "Begin transformation", size: geometry.size, callBack: advance)
+//                    .tag(Tab.intro)
+//                
+//                IntroScene(headerText: "The enemy", bodyText: "satan comes to steal, kill, and destroy. He wants to steal the truth, word of God from your heart, your health, joy, peace and much more!", footerText: "But we have weapons to take offense. Jesus gave us authority over all power of the enemy! Luke 10:19", buttonTitle: "Fight back", size: geometry.size, callBack: advance)
+//                    .tag(Tab.foe)
+//                
+//                IntroScene(headerText: "Your Savior", bodyText: "Jesus, came so you can have life abundantly, prosper and be in great health. So as God's children we must fight the enemy", footerText: "and not let him steal from us. Time to fight back everyday by speaking life. Jesus already conquered for us, we have to keep it.", buttonTitle: "Claim what's mine!", size: geometry.size, callBack: advance)
+//                    .tag(Tab.life)
                 
                 IntroTipScene(size: geometry.size, callBack: advance)
                     .tag(Tab.tip)
@@ -205,7 +206,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("HabitScreenDone", parameters: nil)
                 case .improvement:
                     impactMed.impactOccurred()
-                    selection = .intro
+                    selection = .tip//.intro
                     appState.selectedNotificationCategories = improvementViewModel.selectedCategories
                     decodeCategories(improvementViewModel.selectedExperiences)
                     Analytics.logEvent("ImprovementScreenDone", parameters: nil)

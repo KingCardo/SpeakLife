@@ -39,15 +39,15 @@ struct PremiumView: View {
                 }
             }
         }
-//        .onAppear {
-//            if appState.discountEndTime == nil {
-//                appState.discountEndTime = Date().addingTimeInterval(2 * 60 * 60)
-//            }
-//            initializeTimer()
-//        }
-//        .onReceive(timer) { timer in
-//            updateTimer()
-//        }
+        .onAppear {
+            if appState.discountEndTime == nil {
+                appState.discountEndTime = Date().addingTimeInterval(2 * 60 * 60)
+            }
+            initializeTimer()
+        }
+        .onReceive(timer) { timer in
+            updateTimer()
+        }
     }
     
     private func updateTimer() {

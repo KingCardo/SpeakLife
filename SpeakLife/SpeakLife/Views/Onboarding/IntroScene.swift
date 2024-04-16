@@ -10,6 +10,8 @@ import SwiftUI
 struct IntroTipScene: View {
     
     @EnvironmentObject var appState: AppState
+    @State private var currentTestimonialIndex: Int = 0
+    let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect()
     
     let size: CGSize
     let callBack: (() -> Void)
@@ -50,9 +52,9 @@ struct IntroTipScene: View {
                         .lineSpacing(10)
                         .lineLimit(nil)
                     
-                    Spacer().frame(height: appState.onBoardingTest ? size.height * 0.25 : 24)
+                    Spacer().frame(height: appState.onBoardingTest ? size.height * 0.05 : 24)
                     
-                    Text("God's promises are received by faith! If we have faith like Abraham you will be certain to receive it!", comment: "Intro scene extra tip")
+                    Text("God's promises are received by faith! If we have faith the size of a mustard seed you will be certain to receive it!", comment: "Intro scene extra tip")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white :Constants.DALightBlue)
                         .multilineTextAlignment(.center)
@@ -61,6 +63,9 @@ struct IntroTipScene: View {
                         .lineLimit(nil)
                 }
                 .frame(width: size.width * 0.8)
+                
+                                    TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
+                                        .id(currentTestimonialIndex)
             }
             Spacer()
             
@@ -89,9 +94,30 @@ struct IntroTipScene: View {
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
         )
+                    .onReceive(timer) { _ in
+                        withAnimation(.easeInOut) {
+                            let nextIndex = (currentTestimonialIndex + 1) % testimonials.count
+                            currentTestimonialIndex = nextIndex
+                        }
+                    }
+        
+                .onDisappear {
+                    timer.upstream.connect().cancel()
+                }
         
     }
 }
+
+let testimonials: [Testimonial] = [
+    Testimonial(id: 1, text: "This app has transformed my daily routine, bringing peace and inspiration to every day.", author: "Alex J.", details: "UK"),
+    Testimonial(id: 2, text: "A truly uplifting experience every time I use this app. Highly recommended for anyone seeking daily motivation.", author: "Caleb W.", details: "USA"),
+    Testimonial(id: 3, text: "I've found solace and strength in the daily affirmations. It's a part of my morning ritual now!", author: "Samantha F.", details: "USA"),
+    Testimonial(id: 4, text: "I love creating my own affirmations and saying them thruout the day!", author: "Rahul P.", details: "India"),
+    Testimonial(id: 5, text: "Every morning, I look forward to the daily affirmations and devotionals. They set a positive tone for my day and remind me of the strength within.", author: " Michael T.", details: "Australia"),
+    Testimonial(id: 6, text: "This app has been a true companion in my spiritual journey. The personalized scriptures have helped me find answers and peace in difficult times!", author: "Khalil P.", details: "Singapore"),
+    Testimonial(id: 7, text: "I never realized how impactful daily devotionals could be until I started using this app. It's like having a personal guide to navigate life's ups and downs.", author: "Emily C.", details: "United Kingdom"),
+    Testimonial(id: 8, text: "Integrating this app into my daily routine has been transformative. The affirmations and prayers provide a moment of peace and reflection that enriches my whole day.", author: "Maria S.", details: "Philippines")
+]
 
 struct IntroScene: View {
     

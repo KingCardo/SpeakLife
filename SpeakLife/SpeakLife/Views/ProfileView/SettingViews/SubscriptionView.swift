@@ -11,6 +11,7 @@ import StoreKit
 struct Benefit: Identifiable  {
     
     var text: LocalizedStringKey = ""
+    var subText: LocalizedStringKey = ""
     
     var id: String {
         "\(text)"
@@ -27,12 +28,12 @@ struct Benefit: Identifiable  {
       //  Benefit(text: "Dive deeper into your relationship with Jesus, our goal is to support you in cultivating a vibrant, growing relationship with Christ, every single day. Join us and embrace a life transformed by His word."),
 
        // Benefit(text: "Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
-                Benefit(text: "Bible Affirmations for all of life's journey"),
-                Benefit(text: "Daily Devotional's to grow with Jesus"),
-                Benefit(text: "Categories for any situation"),
-                Benefit(text: "Create your own affirmations"),
-                Benefit(text: "Reminders to transform your mindset"),
-                Benefit(text: "Unlock all prayers")
+                Benefit(text: "Bible Affirmations for all of life's journey", subText: "Experience true peace"),
+                Benefit(text: "Daily Devotional's", subText: "Spend time with Jesus"),
+                Benefit(text: "Unlock all categories", subText: "Over 30+ for life situations"),
+                Benefit(text: "Create your own", subText: "Fulfill your destiny"),
+                Benefit(text: "Unlimited reminders", subText: "Renew your mind"),
+                Benefit(text: "Unlimited themes", subText: "Regularly added backgrounds and music")
         
     ]
     
@@ -60,7 +61,7 @@ struct DiscountSubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
-    var percentOffText: String = "25% Off SpeakLife"
+    var percentOffText: String = "25% Off SpeakLife yearly"
    // @State private var timeRemaining: Int = 0
    
     
@@ -232,7 +233,7 @@ struct DiscountSubscriptionView: View {
     
     func continueButton(completion: @escaping(() -> Void)) -> some View {
        // ShimmerButton(buttonTitle: currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe", action: makePurchase)
-        return ShimmerButton(colors: [Constants.DAMidBlue, Constants.gold], buttonTitle: "Get 50% Off", action: makePurchase)
+        return ShimmerButton(colors: [Constants.DAMidBlue, Constants.gold], buttonTitle: "Continue", action: makePurchase)
     }
 }
 
@@ -243,27 +244,17 @@ struct SubscriptionView: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
-    
-    let testimonials: [Testimonial] = [
-        Testimonial(id: 1, text: "This app has transformed my daily routine, bringing peace and inspiration to every day.", author: "Alex J.", details: "UK"),
-        Testimonial(id: 2, text: "A truly uplifting experience every time I use this app. Highly recommended for anyone seeking daily motivation.", author: "Caleb W.", details: "USA"),
-        Testimonial(id: 3, text: "I've found solace and strength in the daily affirmations. It's a part of my morning ritual now!", author: "Samantha F.", details: "USA"),
-        Testimonial(id: 4, text: "I love creating my own affirmations and saying them thruout the day!", author: "Rahul P.", details: "India"),
-        Testimonial(id: 5, text: "Every morning, I look forward to the daily affirmations and devotionals. They set a positive tone for my day and remind me of the strength within.", author: " Michael T.", details: "Australia"),
-        Testimonial(id: 6, text: "This app has been a true companion in my spiritual journey. The personalized scriptures have helped me find answers and peace in difficult times!", author: "Khalil P.", details: "Singapore"),
-        Testimonial(id: 7, text: "I never realized how impactful daily devotionals could be until I started using this app. It's like having a personal guide to navigate life's ups and downs.", author: "Emily C.", details: "United Kingdom"),
-        Testimonial(id: 8, text: "Integrating this app into my daily routine has been transformative. The affirmations and prayers provide a moment of peace and reflection that enriches my whole day.", author: "Maria S.", details: "Philippines")
-    ]
-    @State private var currentTestimonialIndex: Int = 0
+  
+   
     @State private var textOpacity: Double = 0
-    let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect()
+    
     let linearGradient = LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, .cyan]),
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR15
-    var firstSelection = InAppId.Subscription.speakLife1YR15
-    var secondSelection = InAppId.Subscription.speakLife1MO2
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
+    var firstSelection = InAppId.Subscription.speakLife1YR19
+    var secondSelection = InAppId.Subscription.speakLife1MO4
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let size: CGSize
@@ -273,7 +264,7 @@ struct SubscriptionView: View {
     
     var ctaText: String
     
-    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
+    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, ctaText: String = "7 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
         self.benefits = benefits
         self.size = size
         self.ctaText = ctaText
@@ -296,8 +287,12 @@ struct SubscriptionView: View {
                     .frame(width: 25, height: 25)
                     .foregroundColor(.white)
                     .scaledToFit()
-                Text(benefit.text, comment: "Benefit text")
-                    .font(.callout)
+                VStack(alignment: .leading) {
+                    Text(benefit.text, comment: "Benefit text")
+                        .font(.body)
+                    Text(benefit.subText, comment: "Benefit subtext")
+                        .font(.caption)
+                }
                    // .minimumScaleFactor(0.5)
                 Spacer()
             }.padding(.horizontal)
@@ -306,8 +301,9 @@ struct SubscriptionView: View {
     
     private func goPremiumView(size: CGSize) -> some View  {
         ZStack {
+          
             GeometryReader { geometry in
-                
+               
                 Image(onboardingBGImage)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -316,77 +312,64 @@ struct SubscriptionView: View {
             
            
             ScrollView {
-                VStack  {
-                    Spacer()
-                        .frame(height: 60)
-                    VStack(alignment: .center) {
-                        Text("Unlock SpeakLife Premium", comment: "unlock everything premium view")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 28))
-                            .fontWeight(.bold)
+               
+                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
+                        Spacer()
+                            .frame(height: 60)
+                        VStack(alignment: .center) {
+                            Text("Unlock SpeakLife Premium", comment: "unlock everything premium view")
+                                .font(Font.custom("AppleSDGothicNeo-Regular", size: 28))
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                            
+                        }
+                        Spacer()
+                            .frame(height: 24)
+                        
+                        HStack {
+                            StarRatingView(rating: 4.8)
+                        }.padding([.leading,.trailing],20)
+                        
+                        FeatureView()
+                           // .frame(width: geometry.size.width * 0.93)
+                        // benefitRows
                             .foregroundColor(.white)
+                    
+//                        Spacer()
+//                            .frame(height: 48)
                         
-                    }
-                    Spacer()
-                        .frame(height: 24)
-                    
-                    HStack {
-                        StarRatingView(rating: 4.8)
-                    }.padding([.leading,.trailing],20)
-                    
-                    FeatureView()
-                        .frame(width: geometry.size.width * 0.93)
-                   // benefitRows
-                        .foregroundColor(.white)
-                    
-                    
-                    Spacer()
-                        .frame(height: 24)
-                    
-                    
-                    VStack {
                         
-                        Button {
-                            currentSelection = firstSelection
-                        } label: {
-                            yearlyCTABox()
-                        }
-
+                                            Spacer()
+                                                .frame(height: 24)
                         
-                        Button {
-                            currentSelection = secondSelection
-                        } label: {
-                            monthlySelectionBox()
-                        }
                         
-                    }
-                    .frame(width: geometry.size.width * 0.93)
-                    
-                    continueButton(gradient: linearGradient)
-                        .frame(width: geometry.size.width * 0.93)
-                    
-                    goPremiumStack(size: size)
-                        .frame(width: geometry.size.width * 0.8)
+                                            VStack {
+                        
+                                                Button {
+                                                    currentSelection = firstSelection
+                                                } label: {
+                                                    yearlyCTABox()
+                                                }
+                        
+                        
+                                                Button {
+                                                    currentSelection = secondSelection
+                                                } label: {
+                                                    monthlySelectionBox()
+                                                }
+                        
+                                            }
+                        
+                        goPremiumStack(size: size)
                     
                     Spacer()
                         .frame(height: 16)
                     
                     costDescription
                     
-                    Spacer()
-                        .frame(height: 16)
-                    
-                    TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
-                        .id(currentTestimonialIndex)
-
                     
                 }
             
-                }
-            }
-            .onReceive(timer) { _ in
-                withAnimation(.easeInOut) {
-                    let nextIndex = (currentTestimonialIndex + 1) % testimonials.count
-                    currentTestimonialIndex = nextIndex
                 }
             }
             if declarationStore.isPurchasing {
@@ -395,14 +378,11 @@ struct SubscriptionView: View {
                     .scaleEffect(2)
             }
         }
-        .onDisappear {
-            timer.upstream.connect().cancel()
-        }
     }
     
     @ViewBuilder
     var costDescription: some View {
-            HStack(spacing: 2) {
+            VStack(spacing: 4) {
                 if currentSelection == firstSelection {
                     Text(ctaText)
                 }
@@ -410,9 +390,11 @@ struct SubscriptionView: View {
                 Text(currentSelection.title + ".")
                 
                 Text("Cancel anytime.")
+                    .font(Font.custom("Roboto-Regular", size: 14, relativeTo: .callout))
+                .foregroundColor(.gray)
                 
             }
-            .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .callout))
+            .font(Font.custom("Roboto-Regular", size: 14, relativeTo: .title))
         .foregroundColor(.white)
     }
     
@@ -424,11 +406,11 @@ struct SubscriptionView: View {
                                             endPoint: .bottom)
         
         return VStack {
-//            HStack {
-//                Spacer()
-//                continueButton(gradient: linearGradient)
-//               // Spacer()
-//            }
+            HStack {
+                Spacer()
+                continueButton(gradient: linearGradient)
+                Spacer()
+            }
             
             HStack {
                 Button(action: restore) {
@@ -464,7 +446,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Start 3-Day Free Trial" : "Subscribe", action: makePurchase)
+        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Continue" : "Subscribe", action: makePurchase)
     }
     
     private func restore() {
