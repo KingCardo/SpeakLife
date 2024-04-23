@@ -63,15 +63,39 @@ struct NameScene: View {
                             
                             Spacer().frame(height: 40)
                             
-                            Section(header: Text("Please select your age")) {
-                                               Picker("Age", selection: $selectedAge) {
-                                                   ForEach(ageRange, id: \.self) {
-                                                       Text("\($0)").tag($0)
-                                                   }
-                                               }
-                                               .pickerStyle(WheelPickerStyle())
-                                               .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)// You can choose other styles like Inline, Menu, etc.
-                                           }.foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
+//                            NavigationView {
+//                                Form {
+//                                    Section(header: Text("Please select your age").foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)) {
+//                                        List(ageRange, id: \.self) { age in
+//                                            HStack {
+//                                                Text("\(age)")
+//                                                    .onTapGesture {
+//                                                        self.selectedAge = age
+//                                                        // self.showConfirmation = true  // Optional: trigger confirmation/alert here if needed
+//                                                    }
+//                                                Spacer()
+//                                                if age == selectedAge {
+//                                                    Image(systemName: "checkmark")
+//                                                        .foregroundColor(.blue)
+//                                                }
+//                                            }
+//                                            .contentShape(Rectangle())  // Makes the whole row tappable
+//                                            .foregroundColor(appState.onBoardingTest ? .black : Constants.DALightBlue)
+//                                        }
+//                                    }.frame(height: size.width * 0.5)
+//                            
+//                                }
+//                            }
+                            
+//                            Section(header: Text("Please select your age")) {
+//                                               Picker("Age", selection: $selectedAge) {
+//                                                   ForEach(ageRange, id: \.self) {
+//                                                       Text("\($0)").tag($0)
+//                                                   }
+//                                               }
+//                                               .pickerStyle(InlinePickerStyle())
+//                                               .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)// You can choose other styles like Inline, Menu, etc.
+//                                           }.foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                             
                         }
                         .frame(width: size.width * 0.9)
@@ -79,7 +103,7 @@ struct NameScene: View {
                     Spacer()
                     
                     Button("Skip") {
-                        Analytics.logEvent("UserAge", parameters: ["age":selectedAge])
+                      //  Analytics.logEvent("UserAge", parameters: ["age":selectedAge])
                         callBack()
                     }
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .caption))
