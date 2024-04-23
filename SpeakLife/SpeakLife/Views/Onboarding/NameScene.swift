@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct NameScene: View {
     @EnvironmentObject var appState: AppState
@@ -13,6 +14,8 @@ struct NameScene: View {
     let size: CGSize
     let callBack: (() -> Void)
     @State private var keyboardHeight: CGFloat = 0
+    @State private var selectedAge = 25
+    private let ageRange = 12...100
    // @State private var isTextFieldFocused: Bool = false
    
     
@@ -57,12 +60,26 @@ struct NameScene: View {
                                         .stroke(appState.onBoardingTest ? .white : Constants.DALightBlue, lineWidth: 1)  // Adds a border to the RoundedRectangle
                                 )
                                 .shadow(color: appState.onBoardingTest ? .white : Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+                            
+                            Spacer().frame(height: 40)
+                            
+                            Section(header: Text("Please select your age")) {
+                                               Picker("Age", selection: $selectedAge) {
+                                                   ForEach(ageRange, id: \.self) {
+                                                       Text("\($0)").tag($0)
+                                                   }
+                                               }
+                                               .pickerStyle(WheelPickerStyle())
+                                               .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)// You can choose other styles like Inline, Menu, etc.
+                                           }.foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
+                            
                         }
                         .frame(width: size.width * 0.9)
                     }
                     Spacer()
                     
                     Button("Skip") {
+                        Analytics.logEvent("UserAge", parameters: ["age":selectedAge])
                         callBack()
                     }
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .caption))

@@ -234,11 +234,11 @@ struct AffirmationAlertView: View {
         }
     }
     
-    private func dismissX() {
-        withAnimation {
-            showAlert.toggle()
-        }
-    }
+//    private func dismissX() {
+//        withAnimation {
+//            showAlert.toggle()
+//        }
+//    }
     
     private func dismiss() {
         withAnimation {

@@ -1161,12 +1161,12 @@
             "category": "grace"
         },
         {
-            "text": "In Jesus' name, I stand firm in grace, unshaken by the storms of life.",
+            "text": "I stand firm in Jesus, unshaken by the storms of life.",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "In Jesus' name, grace empowers me to conquer mountains.",
+            "text": "Jesus empowers me to conquer mountains.",
             "isFavorite": false,
             "category": "grace"
         },
@@ -1298,7 +1298,7 @@
         },
         {
             "text": "For if by the one man's offense death reigned through the one, much more those who receive abundance of grace and of the gift of righteousness will reign in life through the One, Jesus Christ.",
-            "book": "Romans 5:17 NKJV",
+            "book": "Romans 5:17",
             "isFavorite": false,
             "category": "grace"
         },
@@ -1384,7 +1384,7 @@
             "text": "In me, you will find rest for your soul, for my yoke is easy and my burden is light.",
             "book": "Jesus",
             "isFavorite": false,
-            "category": "grace"
+            "category": "rest"
         },
         {
             "text": "Abide in me, and I in you. As the branch cannot bear fruit by itself, unless it abides in the vine, neither can you, unless you abide in me.",
@@ -1408,13 +1408,7 @@
             "text": "Come to me, all who labor and are heavy laden, and I will give you rest.",
             "book": "Jesus",
             "isFavorite": false,
-            "category": "grace"
-        },
-        {
-            "text": "I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing.",
-            "book": "Jesus",
-            "isFavorite": false,
-            "category": "grace"
+            "category": "rest"
         },
         {
             "text": "Let not your hearts be troubled. Believe in God; believe also in me.",
@@ -1480,31 +1474,13 @@
             "text": "Your faith has made you well; go in peace, and be healed of your disease.",
             "book": "Jesus",
             "isFavorite": false,
-            "category": "grace"
-        },
-        {
-            "text": "I came not to call the righteous, but sinners.",
-            "book": "Jesus",
-            "isFavorite": false,
-            "category": "grace"
-        },
-        {
-            "text": "Take my yoke upon you, and learn from me, for I am gentle and lowly in heart, and you will find rest for your souls.",
-            "book": "Jesus",
-            "isFavorite": false,
-            "category": "grace"
-        },
-        {
-            "text": "You did not choose me, but I chose you and appointed you that you should go and bear fruit and that your fruit should abide.",
-            "book": "Jesus",
-            "isFavorite": false,
-            "category": "grace"
+            "category": "health"
         },
         {
             "text": "In my Father's house are many rooms. If it were not so, would I have told you that I go to prepare a place for you?",
             "book": "Jesus",
             "isFavorite": false,
-            "category": "grace"
+            "category": "heaven"
         },
         {
             "text": "I tell you, her sins, which are many, are forgiven—for she loved much. But he who is forgiven little, loves little.",
@@ -6265,17 +6241,17 @@
         {
             "text": "Thank you Jesus for the promise of heaven, where every tear will be wiped away.",
             "isFavorite": false,
-            "category": "grace"
+            "category": "heaven"
         },
         {
             "text": "Thank you Jesus for the path You've paved to heaven, triumphing over the grave.",
             "isFavorite": false,
-            "category": "grace"
+            "category": "heaven"
         },
         {
             "text": "Thank you Jesus for the crown of life waiting in heaven, a reward for the faithful.",
             "isFavorite": false,
-            "category": "grace"
+            "category": "heaven"
         },
         {
             "text": "Thank you Jesus for your compass that always points me to truth.",
@@ -11318,7 +11294,6 @@
         {"text": "I am a beloved child of God, reborn by His will and grace.", "isFavorite": false, "category": "grace"},
         {"text": "I am filled with unfailing love and faithfulness, reflecting the glory of God's one and only Son.", "isFavorite": false, "category": "grace"},
         {"text": "I am the recipient of endless blessings, grace upon grace, from His fullness.", "isFavorite": false, "category": "grace"},
-        {"text": "I am embraced by God's unfailing love and faithfulness, revealed through Jesus Christ.", "isFavorite": false, "category": "grace"},
         {"text": "I am recognized and cherished by God, even when the world may not see me.", "isFavorite": false, "category": "grace"},
         {"text": "I am called to be a witness to the Light, leading others to believe through my testimony.", "isFavorite": false, "category": "grace"},
         {"text": "I am cleansed and redeemed, a testament to the Lamb of God who takes away the sins of the world.", "isFavorite": false, "category": "grace"},
@@ -11330,8 +11305,7 @@
         {"text": "I am living in the completeness of life, holding onto the promise of eternal joy through Christ.", "isFavorite": false, "category": "grace"},
         {"text": "I am sustained by the living water Jesus gives, quenching my deepest thirst and granting me eternal life.", "isFavorite": false, "category": "grace"},
         {"text": "I am nourished by doing God's will, finding my true purpose and fulfillment in His work.", "isFavorite": false, "category": "grace"},
-        {"text": "I am assured of resurrection and life through Jesus, overcoming death and despair.", "isFavorite": false, "category": "grace"},
-        {"text": "I am called to love and demonstrate it through adherence to Jesus' teachings.", "isFavorite": false, "category": "grace"},
+        {"text": "I am assured of resurrection and life through Jesus, defeating death.", "isFavorite": false, "category": "grace"},
         {"text": "I am guided by the Way, the Truth, and the Life, finding my path to the Father through Jesus.", "isFavorite": false, "category": "grace"},
         {"text": "I am filled with Jesus' joy, striving for a joy that is complete and mature.", "isFavorite": false, "category": "grace"},
         {"text": "I am blessed with grace and peace from God our Father and the Lord Jesus Christ.", "isFavorite": false, "category": "grace"},
@@ -11345,58 +11319,46 @@
         {"text": "I am marked with the seal of the Holy Spirit, guaranteeing my inheritance.", "isFavorite": false, "category": "grace"},
         {"text": "I am saved by God's grace through faith, not by my works, so I cannot boast.", "isFavorite": false, "category": "grace"},
         {"text": "I am God's masterpiece, created anew in Christ Jesus to do the good things He planned for me.", "isFavorite": false, "category": "grace"},
-        {"text": "I am brought near to God through the blood of Christ, once far away.", "isFavorite": false, "category": "grace"},
-        {"text": "I am a member of God's household, built on the foundation of the apostles and prophets.", "isFavorite": false, "category": "grace"},
-        {"text": "I am a dwelling in which God lives by His Spirit, being built together with others.", "isFavorite": false, "category": "grace"},
         {"text": "I am equipped for works of service to build up the body of Christ.", "isFavorite": false, "category": "grace"},
         {"text": "I am growing to become a mature body, fully developed in the fullness of Christ.", "isFavorite": false, "category": "grace"},
         {"text": "I am renewed in the spirit of my mind, putting on the new self created to be like God.", "isFavorite": false, "category": "grace"},
         {"text": "I am kind to others, tenderhearted, forgiving as God in Christ forgave me.", "isFavorite": false, "category": "grace"},
         {"text": "I am an imitator of God, living a life of love just as Christ loved us.", "isFavorite": false, "category": "grace"},
         {"text": "I am filled with the Spirit, speaking to others with Psalm, hymns, and spiritual songs.", "isFavorite": false, "category": "grace"},
-        {"text": "I am giving thanks always for everything to God the Father in the name of our Lord Jesus Christ.", "isFavorite": false, "category": "grace"},
-        {"text": "I am given the privilege and authority to share God's deeds, bringing glory to His name.", "isFavorite": false, "category": "grace"},
         {"text": "I am among those called to belong to Jesus Christ, loved by God.", "isFavorite": false, "category": "grace"},
-        {"text": "I am graced with peace from God our Father and the Lord Jesus Christ.", "isFavorite": false, "category": "grace"},
-        {"text": "I am thankful for the faith that is being discussed all over the world.", "isFavorite": false, "category": "grace"},
         {"text": "I am constantly in God's prayers, day and night.", "isFavorite": false, "category": "grace"},
-        {"text": "I am longed to be visited to receive spiritual gifts that strengthen.", "isFavorite": false, "category": "grace"},
         {"text": "I am eager to be encouraged in faith and also be an encouragement.", "isFavorite": false, "category": "grace"},
         {"text": "I am not ashamed of the Good News about Christ, for it is God's power at work.", "isFavorite": false, "category": "grace"},
         {"text": "I am made right in God's sight by faith, a gift of God's grace.", "isFavorite": false, "category": "grace"},
         {"text": "I am given different gifts by God's grace to do certain things well.", "isFavorite": false, "category": "grace"},
         {"text": "I am called to use my gift of prophecy to speak out with as much faith as God has given me.", "isFavorite": false, "category": "grace"},
-        {"text": "I am encouraged to serve others well if my gift is serving.", "isFavorite": false, "category": "grace"},
-        {"text": "I am inspired to teach well if my gift is being a teacher.", "isFavorite": false, "category": "grace"},
-        {"text": "I am motivated to encourage others if my gift is to encourage.", "isFavorite": false, "category": "grace"},
-        {"text": "I am urged to give generously if my gift is giving.", "isFavorite": false, "category": "grace"},
-        {"text": "I am entrusted with leadership and take it seriously as my gift.", "isFavorite": false, "category": "grace"},
-        {"text": "I am glad to show kindness to others as a demonstration of my gift.", "isFavorite": false, "category": "grace"},
-        {"text": "I am committed to loving genuinely, hating what is wrong, and holding tightly to what is good.", "isFavorite": false, "category": "grace"},
-        {"text": "I am devoted to loving others with genuine affection and taking delight in honoring them.", "isFavorite": false, "category": "grace"},
-        {"text": "I am determined never to be lazy, but to work hard and serve the Lord enthusiastically.", "isFavorite": false, "category": "grace"},
-        {"text": "I am resolved not to let evil conquer me, but to conquer evil by doing good.", "isFavorite": false, "category": "grace"},
-        {"text": "I am reminded to promote a life that reflects wholesome teaching.", "isFavorite": false, "category": "grace"},
-        {"text": "I am encouraged to live wisely, with self-control, and filled with love and patience.", "isFavorite": false, "category": "grace"},
-        {"text": "I am instructed to honor God with my life, teaching what is good.", "isFavorite": false, "category": "grace"},
-        {"text": "I am taught to love my family and live purely, doing good.", "isFavorite": false, "category": "grace"},
-        {"text": "I am called to reflect integrity and seriousness in my actions.", "isFavorite": false, "category": "grace"},
-        {"text": "I am graced with salvation, bringing hope and redemption.", "isFavorite": false, "category": "grace"},
-        {"text": "I am guided to turn from godless living and sinful pleasures, embracing wisdom.", "isFavorite": false, "category": "grace"},
+        {"text": "I am encouraged to serve others well if my gift is serving.", "isFavorite": false, "category": "identity"},
+        {"text": "I am inspired to teach well if my gift is being a teacher.", "isFavorite": false, "category": "identity"},
+        {"text": "I am motivated to encourage others if my gift is to encourage.", "isFavorite": false, "category": "identity"},
+        {"text": "I am urged to give generously if my gift is giving.", "isFavorite": false, "category": "identity"},
+        {"text": "I am entrusted with leadership and take it seriously as my gift.", "isFavorite": false, "category": "identity"},
+        {"text": "I am glad to show kindness to others as a demonstration of my gift.", "isFavorite": false, "category": "identity"},
+        {"text": "I am committed to loving genuinely, hating what is wrong, and holding tightly to what is good.", "isFavorite": false, "category": "identity"},
+        {"text": "I am devoted to loving others with genuine affection and taking delight in honoring them.", "isFavorite": false, "category": "identity"},
+        {"text": "I am determined never to be lazy, but to work hard and serve the Lord enthusiastically.", "isFavorite": false, "category": "identity"},
+        {"text": "I am resolved not to let evil conquer me, but to conquer evil by doing good.", "isFavorite": false, "category": "identity"},
+        {"text": "I am reminded to promote a life that reflects wholesome teaching.", "isFavorite": false, "category": "identity"},
+        {"text": "I am encouraged to live wisely, with self-control, and filled with love and patience.", "isFavorite": false, "category": "identity"},
+        {"text": "I am instructed to honor God with my life, teaching what is good.", "isFavorite": false, "category": "identity"},
+        {"text": "I am taught to love my family and live purely, doing good.", "isFavorite": false, "category": "identity"},
+        {"text": "I am called to reflect integrity and seriousness in my actions.", "isFavorite": false, "category": "identity"},
+        {"text": "I am guided to turn from godless living and sinful pleasures, embracing wisdom.", "isFavorite": false, "category": "identity"},
         {"text": "I am looking forward with hope to the day of Jesus Christ's glory.", "isFavorite": false, "category": "grace"},
         {"text": "I am freed from every kind of sin, cleansed and made wholly committed to doing good.", "isFavorite": false, "category": "grace"},
         {"text": "I am reminded to submit and be ready to do what is good.", "isFavorite": false, "category": "grace"},
-        {"text": "I am gentle, showing true humility to everyone.", "isFavorite": false, "category": "grace"},
+        {"text": "I am gentle, showing true humility to everyone.", "isFavorite": false, "category": "identity"},
         {"text": "I am saved by His mercy, washed clean, and given new life through the Holy Spirit.", "isFavorite": false, "category": "grace"},
         {"text": "I am generously blessed with the Spirit through Jesus Christ, my Savior.", "isFavorite": false, "category": "grace"},
         {"text": "I am declared righteous because of His grace, confident of inheriting eternal life.", "isFavorite": false, "category": "grace"},
         {"text": "I am devoted to doing good, knowing these teachings are beneficial for everyone.", "isFavorite": false, "category": "grace"},
         {"text": "I am discouraged from getting involved in foolish discussions that are a waste of time.", "isFavorite": false, "category": "grace"},
-        {"text": "I am wary of those causing divisions, focusing instead on unity and peace.", "isFavorite": false, "category": "grace"},
-        {"text": "I am committed to meeting the urgent needs of others, ensuring I am productive in God's work.", "isFavorite": false, "category": "grace"},
-        {"text": "I send and receive greetings with love, knowing God's grace is with us all.", "isFavorite": false, "category": "grace"},
         {"text": "I am a part of a community that values trustworthy, good deeds, making God's teaching attractive.", "isFavorite": false, "category": "grace"},
-        {"text": "I am encouraged to live with integrity, seriousness, and a commitment to truth in my teachings.", "isFavorite": false, "category": "grace"},
+        {"text": "I am encouraged to live with integrity, seriousness, and a commitment to truth in my teachings.", "isFavorite": false, "category": "identity"},
         {"text": "I am empowered by the Holy Spirit to be a witness of Jesus everywhere.", "isFavorite": false, "category": "grace"},
         {"text": "I am chosen to spread the message of God's grace, building up and securing an inheritance among the sanctified.", "isFavorite": false, "category": "grace"},
         {"text": "I am entrusted with the task of sharing the Good News about God's wonderful grace.", "isFavorite": false, "category": "grace"},
@@ -11405,11 +11367,6 @@
         {"text": "I am filled with God's grace and power, performing acts of kindness and miracles among people.", "isFavorite": false, "category": "grace"},
         {"text": "I am equipped with wisdom and the Spirit, speaking with boldness and conviction.", "isFavorite": false, "category": "grace"},
         {"text": "I am a witness to God's grace at work, even among those who oppose the Gospel.", "isFavorite": false, "category": "grace"},
-        {"text": "I am a recipient of God's grace, which is sufficient for all my needs.", "isFavorite": false, "category": "grace"},
-        {"text": "I am called to share God's grace in both word and deed, impacting lives around me.", "isFavorite": false, "category": "grace"},
-        {"text": "I am a vessel of God's grace, bringing hope and light to those in darkness.", "isFavorite": false, "category": "grace"},
-        {"text": "I am strengthened by God's grace to endure trials and tribulations.", "isFavorite": false, "category": "grace"},
-        {"text": "I am covered by the grace of God, which leads me to repentance and salvation.", "isFavorite": false, "category": "grace"},
         {"text": "I am transformed by the renewing power of God's grace, becoming more like Christ each day.", "isFavorite": false, "category": "grace"},
         {"text": "I am saved through faith by the grace of God, a gift that I receive with humility.", "isFavorite": false, "category": "grace"},
         {"text": "I am walking in the newness of life, graced with a divine purpose and destiny.", "isFavorite": false, "category": "grace"},

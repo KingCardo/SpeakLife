@@ -10,7 +10,7 @@ import UserNotifications
 import Combine
 
 final class TimerViewModel: ObservableObject {
-    static let totalDuration = 10 * 60
+    static let totalDuration = 5 * 60
     
     @AppStorage("currentStreak") var currentStreak = 0
     @AppStorage("longestStreak") var longestStreak = 0

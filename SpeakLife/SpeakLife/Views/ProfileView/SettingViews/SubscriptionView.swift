@@ -264,7 +264,7 @@ struct SubscriptionView: View {
     
     var ctaText: String
     
-    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, ctaText: String = "7 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
+    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
         self.benefits = benefits
         self.size = size
         self.ctaText = ctaText
@@ -331,14 +331,9 @@ struct SubscriptionView: View {
                         }.padding([.leading,.trailing],20)
                         
                         FeatureView()
-                           // .frame(width: geometry.size.width * 0.93)
-                        // benefitRows
+
                             .foregroundColor(.white)
-                    
-//                        Spacer()
-//                            .frame(height: 48)
-                        
-                        
+                
                                             Spacer()
                                                 .frame(height: 24)
                         

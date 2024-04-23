@@ -22,6 +22,8 @@ struct FeatureRow: View {
             VStack(alignment: .leading) {
                 Text(feature.name)
                     .font(Font.custom("AppleSDGothicNeo-Regular-Bold", size: 18, relativeTo: .body))
+                Spacer()
+                        .frame(height: 2)
                 Text(feature.subtitle)
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
             }

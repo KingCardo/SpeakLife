@@ -105,6 +105,7 @@ class ImprovementViewModel: ObservableObject {
         if !categories.contains("destiny") {
             categories.append("destiny")
         }
+        categories.append("identity")
         return categories.joined(separator: ",")
     }
     
