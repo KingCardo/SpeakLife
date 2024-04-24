@@ -42,6 +42,9 @@ struct HomeView: View {
                 homeView
             } else {
                 OnboardingView()
+                    .onAppear {
+                        viewModel.requestPermission()
+                    }
             }
         }
     }

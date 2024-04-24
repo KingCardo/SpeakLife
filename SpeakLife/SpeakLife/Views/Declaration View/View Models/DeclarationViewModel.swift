@@ -132,7 +132,7 @@ final class DeclarationViewModel: ObservableObject {
             self.choose(self.selectedCategory) { _ in }
             self.favorites = self.getFavorites()
             self.createOwn = self.getCreateOwn()
-            self.errorMessage = error?.localizedDescription
+           // self.errorMessage = error?.localizedDescription
             
             if neededSync {
                 self.showNewAlertMessage = true
@@ -284,6 +284,7 @@ final class DeclarationViewModel: ObservableObject {
         if let declarations = allDeclarationsDict[category] {
             completion(declarations)
         } else if category == .general {
+            print(selectedCategories, "RWRW")
             refreshGeneral(categories: selectedCategories)
             completion(general)
         }  else if category == .favorites {

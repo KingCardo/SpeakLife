@@ -66,7 +66,7 @@ struct DeclarationView: View {
                         VStack() {
                                 HStack {
                                     Spacer()
-                                    if !timerViewModel.checkIfCompletedToday() {
+                                    if !timerViewModel.completedToday {
                                         CountdownTimerView(viewModel: timerViewModel) {
                                             presentTimerBottomSheet()
                                         }
@@ -291,61 +291,3 @@ struct DeclarationView: View {
         }
     }
 }
-
-//struct MusicButtonView: View {
-//    @State private var lastButtonTap = Date()
-//    @State private var opacity = 0.0
-//    
-//    @EnvironmentObject var themeStore: ThemeViewModel
-//    @EnvironmentObject var viewModel: DeclarationViewModel
-//    
-//    let resources: [String]
-//    let ofType: String
-//    
-//    @State var isPlaying = true
-//    
-//    var body: some View {
-//        
-//        Button(action: buttonTapped) {
-//                   Image(systemName: isPlaying ? "pause.circle" : "play.circle")
-//                       .resizable()
-//                       .frame(width: 50, height: 50)
-//                       .background(themeStore.selectedTheme.mode == .dark ? Constants.backgroundColor : Constants.backgroundColorLight)
-//                       .clipShape(Circle())
-//                       .overlay(Circle().fill(Color.black.opacity(opacity)))
-//                       .shadow(color: .gray, radius: 10, x: 0, y: 0)
-//        }
-//        .onAppear {
-//            AudioPlayerService.shared.playSound(files: resources, type: ofType)
-//            resetOverlayTimer()
-//        }
-//    }
-    
-    
-//    private func buttonTapped() {
-//        lastButtonTap = Date()
-//        withAnimation {
-//            isPlaying.toggle()
-//            opacity = 0.0 // Reset opacity to full
-//        }
-//        resetOverlayTimer()
-//        
-//        if isPlaying {
-//            AudioPlayerService.shared.playSound(files: resources, type: ofType)
-//            
-//        } else {
-//            AudioPlayerService.shared.pauseMusic()
-//        }
-//        
-//    }
-    
-//    private func resetOverlayTimer() {
-//           DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//               if -lastButtonTap.timeIntervalSinceNow >= 3 {
-//                   withAnimation {
-//                       opacity = 0.3
-//                   }
-//               }
-//           }
-//       }
-//}

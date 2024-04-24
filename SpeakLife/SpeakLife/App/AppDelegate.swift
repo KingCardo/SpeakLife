@@ -29,6 +29,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
             application,
             didFinishLaunchingWithOptions: launchOptions
         )
+       
         registerNotificationHandler()
         registerBGTask()
         Analytics.logEvent(Event.SessionStarted, parameters: nil)

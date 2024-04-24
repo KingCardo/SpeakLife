@@ -274,6 +274,7 @@ struct OnboardingView: View  {
         if !temp.contains(.destiny) {
             temp.insert(.destiny)
         }
+        print(temp, "RWRW temp categories")
         viewModel.save(temp)
     }
     

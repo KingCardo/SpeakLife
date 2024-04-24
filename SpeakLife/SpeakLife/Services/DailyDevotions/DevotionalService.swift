@@ -103,7 +103,7 @@ final class DevotionalServiceClient: DevotionalService {
                 print("Error downloading JSON file: \(error)")
             } else if let jsonData = data {
                 completion(jsonData, nil)
-                print("JSON download successful, data length: \(jsonData.count)")
+                print("JSON download successful, data length devotionals: \(jsonData.count)")
             }
         }
     }

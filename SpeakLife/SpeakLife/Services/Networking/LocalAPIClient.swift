@@ -20,6 +20,9 @@ final class LocalAPIClient: APIService {
     @AppStorage("localVersion") var localVersion = 0
     
     func declarations(completion: @escaping([Declaration], APIError?, Bool) -> Void) {
+        if firstInstallDate == nil {
+            firstInstallDate = Date()
+        }
         
         self.loadFromBackEnd() { [weak self] declarations, error, needsSync in
             var favorites: [Declaration] = []
@@ -106,26 +109,27 @@ final class LocalAPIClient: APIService {
     }
     
     func hasBeenThirtyDaysSinceLastFetch() -> Bool {
-        guard let firstInstallDate = firstInstallDate else {
-            firstInstallDate = Date()
-            return false
-        }
+        // Retrieve the last fetch date; if none exists, assume the fetch is needed.
         guard let lastFetchDate = UserDefaults.standard.object(forKey: "lastFetchDate") as? Date else {
             return true
         }
-        
-        let thirtyDaysAgo = Calendar.current.date(byAdding: .day, value: -30, to: Date())
-        
-        return lastFetchDate <= (thirtyDaysAgo ?? Date()) && firstInstallDate <= (thirtyDaysAgo ?? Date())
+
+        // Compute the date 30 days ago from today.
+        let thirtyDaysAgo = Calendar.current.date(byAdding: .day, value: -30, to: Date())!
+
+        // Return true if the last fetch was on or before 30 days ago.
+        return lastFetchDate <= thirtyDaysAgo && (firstInstallDate ?? Date()) >= thirtyDaysAgo
     }
+    
     
     private func fetchDeclarationData(tryLocal: Bool, completion: @escaping(Data?) -> Void?) {
         
-        if hasBeenThirtyDaysSinceLastFetch(), !tryLocal {
-            downloadDeclarations { data, error in
-                    completion(data)
-            }
-        } else {
+        //TODO: fix remote download
+//        if hasBeenThirtyDaysSinceLastFetch(), !tryLocal {
+//            downloadDeclarations { data, error in
+//                    completion(data)
+//            }
+//        } else {
             guard
                 let url = Bundle.main.url(forResource: "declarationsv3", withExtension: "json"),
                 let data = try? Data(contentsOf: url) else {
@@ -133,7 +137,7 @@ final class LocalAPIClient: APIService {
                 return
             }
             completion(data)
-        }
+       // }
     }
     
     private func loadFromBackEnd(completion: @escaping([Declaration], APIError?, Bool) ->  Void) {
@@ -217,7 +221,8 @@ final class LocalAPIClient: APIService {
             let data = try? JSONEncoder().encode(selectedCategories)
         else {
             completion(false)
-            fatalError("Unable to Load Notification categories")
+            return
+           // fatalError("Unable to Load Notification categories")
         }
         
         do  {
