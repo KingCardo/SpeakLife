@@ -55,7 +55,7 @@ struct HomeView: View {
             DeclarationView()
                 .id(appState.rootViewId)
                 .onAppear {
-                    viewModel.requestPermission()
+                    UIScrollView.appearance().isScrollEnabled = true
                     if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
                         AudioPlayerService.shared.playSound(files: resources)
                     }
