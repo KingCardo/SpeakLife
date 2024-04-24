@@ -146,14 +146,16 @@ final class TimerViewModel: ObservableObject {
             // Adjust the remaining time based on how much time has passed since the app was last open
             timeRemaining = savedTimeRemaining
             isComplete = false
+            startTimer()
         } else {
             timeRemaining = TimerViewModel.totalDuration
             lastStartedStreak = Date()
             isComplete = false
+            startTimer()
         }
     }
     
-    func startTimer() {
+    private func startTimer() {
         if checkIfCompletedToday() {
             return
         }

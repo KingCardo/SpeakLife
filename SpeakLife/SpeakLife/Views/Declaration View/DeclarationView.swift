@@ -89,7 +89,6 @@ struct DeclarationView: View {
                                         self.isPresentingPremiumView = false
                                         Analytics.logEvent(Event.tryPremiumAbandoned, parameters: nil)
                                         timerViewModel.loadRemainingTime()
-                                        timerViewModel.startTimer()
                                     } content: {
                                         PremiumView()
                                     }
@@ -159,7 +158,6 @@ struct DeclarationView: View {
                 premiumCount += 1
                 shareApp() 
                 timerViewModel.loadRemainingTime()
-                timerViewModel.startTimer()
                 
             }
             
@@ -192,7 +190,6 @@ struct DeclarationView: View {
             
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
                 timerViewModel.loadRemainingTime()
-                timerViewModel.startTimer()
             }
             
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in

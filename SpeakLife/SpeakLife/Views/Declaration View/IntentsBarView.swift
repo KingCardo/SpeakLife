@@ -70,7 +70,6 @@ struct IntentsBarView: View {
                 self.appState.newCategoriesAddedv4 = false
                 if appState.onBoardingTest {
                     timerViewModel.loadRemainingTime()
-                    timerViewModel.startTimer()
                 }
             }
         }, content: {
@@ -91,7 +90,6 @@ struct IntentsBarView: View {
                 self.isPresentingThemeChooser = false
                 if appState.onBoardingTest {
                     timerViewModel.loadRemainingTime()
-                    timerViewModel.startTimer()
                 }
             } content: {
                 ThemeChooserView(themesViewModel: themeViewModel)
@@ -104,7 +102,6 @@ struct IntentsBarView: View {
                 }.sheet(isPresented: $isPresentingProfileView, onDismiss: {
                     self.isPresentingProfileView = false
                     timerViewModel.loadRemainingTime()
-                    timerViewModel.startTimer()
                 }, content: {
                     ProfileView()
                 })
@@ -129,7 +126,6 @@ struct IntentsBarView: View {
             withAnimation {
                 if appState.onBoardingTest {
                     timerViewModel.loadRemainingTime()
-                    timerViewModel.startTimer()
                 }
             }
         } content: {
