@@ -66,7 +66,7 @@ struct DeclarationView: View {
                         VStack() {
                                 HStack {
                                     Spacer()
-                                    if !timerViewModel.completedToday {
+                                    if !timerViewModel.checkIfCompletedToday() {
                                         CountdownTimerView(viewModel: timerViewModel) {
                                             presentTimerBottomSheet()
                                         }

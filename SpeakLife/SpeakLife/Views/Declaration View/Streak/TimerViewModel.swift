@@ -24,7 +24,6 @@ final class TimerViewModel: ObservableObject {
     @Published private(set) var timeRemaining: Int = 0
     @Published private(set) var isActive = false
     @Published var timer: Timer? = nil
-    @Published var completedToday = false
 
     
     init() {
@@ -106,7 +105,6 @@ final class TimerViewModel: ObservableObject {
 
         // Check if the completion date is within today's range
         let completed = completionDate >= startOfToday && completionDate < startOfTomorrow
-        completedToday = completed
         return completed
     }
     
