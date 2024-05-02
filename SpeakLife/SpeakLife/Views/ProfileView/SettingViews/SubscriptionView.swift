@@ -406,6 +406,8 @@ struct SubscriptionView: View {
                 continueButton(gradient: linearGradient)
                 Spacer()
             }
+            Spacer()
+            .frame(height: 8)
             
             HStack {
                 Button(action: restore) {
@@ -413,6 +415,16 @@ struct SubscriptionView: View {
                         .font(.caption2)
                         .foregroundColor(Color.blue)
                 }
+                
+                    Spacer()
+                    .frame(width: 16)
+                
+                Link(destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!) {
+                    Text("Terms & Conditions")
+                        .font(.caption2)
+                        .foregroundColor(Color.blue)
+                }
+
             }
         }
     }
@@ -453,6 +465,7 @@ struct SubscriptionView: View {
             isShowingError = true
         }
     }
+
     
     func yearlyCTABox() -> some View {
         ZStack {
