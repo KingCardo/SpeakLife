@@ -45,7 +45,7 @@ struct IntroTipScene: View {
                 Spacer().frame(height: 16)
                 
                 VStack {
-                    Text("In the Bible, God tells us to call those things that are not as though they are!" , comment: "Intro scene tip")
+                    Text("The devil is always at work seeking who he may devour!" , comment: "Intro scene tip")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
@@ -54,7 +54,7 @@ struct IntroTipScene: View {
                     
                     Spacer().frame(height: appState.onBoardingTest ? size.height * 0.05 : 24)
                     
-                    Text("God's promises are received by faith! If we have faith the size of a mustard seed you will be certain to receive it!", comment: "Intro scene extra tip")
+                    Text("We're in a spiritual war. Be confident and victorious by speaking blessings like Jesus did. Mark 11:23*", comment: "Intro scene extra tip")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white :Constants.DALightBlue)
                         .multilineTextAlignment(.center)

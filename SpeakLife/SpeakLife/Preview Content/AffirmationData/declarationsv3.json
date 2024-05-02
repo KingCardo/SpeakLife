@@ -4835,7 +4835,7 @@
             "text": "The LORD keeps you from all harm and watches over your life. The LORD keeps watch over you as you come and go, both now and forever.",
             "book": "Psalm 121:7-8",
             "isFavorite": false,
-            "category": "godsprotection"
+            "category": "health"
         },
         {
             "text": "No weapon formed against you shall prosper, And every tongue which rises against you in judgment You shall condemn.",
@@ -7774,6 +7774,26 @@
             "category": "identity"
         },
         {
+            "text": "I am a new creation.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "The old me is dead and gone.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "The new me is unstoppable.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "Jesus paid the full price for my new identity.",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
             "text": "Therefore, if anyone is in Christ, he is a new creation. The old has passed away" ,
             "book": "2 Corinthians 5:17",
             "isFavorite": false,
@@ -7798,20 +7818,8 @@
             "category": "identity"
         },
         {
-            "text": "Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!",
-            "book": "2 Corinthians 5:17",
-            "isFavorite": false,
-            "category": "identity"
-        },
-        {
             "text": "For we are God’s handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do.",
             "book": "Ephesians 2:10",
-            "isFavorite": false,
-            "category": "identity"
-        },
-        {
-            "text": "Yet to all who did receive him, to those who believed in his name, he gave the right to become children of God.",
-            "book": "John 1:12",
             "isFavorite": false,
             "category": "identity"
         },
@@ -7836,12 +7844,6 @@
         {
             "text": "Do not lie to each other, since you have taken off your old self with its practices and have put on the new self, which is being renewed in knowledge in the image of its Creator.",
             "book": "Colossians 3:9-10",
-            "isFavorite": false,
-            "category": "identity"
-        },
-        {
-            "text": "As many of you as were baptized into Christ have put on Christ.",
-            "book": "Galatians 3:27",
             "isFavorite": false,
             "category": "identity"
         },
@@ -7932,12 +7934,6 @@
         },
         {
             "text": "I am complete in Christ, lacking nothing.",
-            "isFavorite": false,
-            "category": "identity"
-        },
-        {
-            "text": "You are a new creation in Me; the old has passed away, behold the new has come.",
-            "book": "Jesus",
             "isFavorite": false,
             "category": "identity"
         },
@@ -8040,6 +8036,11 @@
         {
             "text": "You are a temple of the Holy Spirit, sanctified and indwelt by My presence.",
             "book": "Jesus",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a child of the King",
             "isFavorite": false,
             "category": "identity"
         },
@@ -8191,7 +8192,12 @@
             "category": "identity"
         },
         {
-            "text": "Thank you Jesus for the unending love that defines my identity and worth in Your eyes.",
+            "text": "I am an overcomer in every situation",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am victorious in Jesus",
             "isFavorite": false,
             "category": "identity"
         },
@@ -10765,11 +10771,6 @@
             "category": "wealth"
         },
         {
-            "text": "I am the commander of my financial destiny, leading with courage.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "I'm a money champion, winning big and sharing my success with others!",
             "isFavorite": false,
             "category": "wealth"
@@ -11101,7 +11102,7 @@
             "category": "wealth"
         },
         {
-            "text": "Thank you Jesus for the legacy of wealth and righteousness I can build for my family.",
+            "text": "Thank you Jesus for the legacy of wealth I can build for my family.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -15301,7 +15302,261 @@
             "text": "I free myself from the chains of a toxic relationship and reclaim my autonomy and happiness.",
             "isFavorite": false,
             "category": "relationships"
-        }
+        },
+        {
+            "text": "I don't worry about anything, because I pray about everything.",
+            "isFavorite": false,
+            "category": "fear"
+        },
+        {
+            "text": "I will always be with you, don't be afraid.",
+            "isFavorite": false,
+            "category": "fear",
+            "book": "Jesus"
+        },
+        {
+            "text": "I will strengthen you and help you.",
+            "isFavorite": false,
+            "category": "godsprotection",
+            "book": "Jesus"
+        },
+        {
+            "text": "Keep alert at all times.",
+            "isFavorite": false,
+            "category": "wisdom",
+            "book": "Jesus"
+        },
+        {
+            "text": "Don't worry about tomorrow, tomorrow will bring it's own worries.",
+            "isFavorite": false,
+            "category": "wisdom",
+            "book": "Jesus"
+        },
+        {
+            "text": "I am leaving you with a gift-peace of mind and heart.",
+            "isFavorite": false,
+            "category": "peace",
+            "book": "Jesus"
+        },
+        {
+            "text": "The peace I give is a gift the world can't give you.",
+            "isFavorite": false,
+            "category": "peace",
+            "book": "Jesus"
+        },
+        {
+            "text": "Give attention to my words, keep them in your heart, they are life and health to all your flesh.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "I am the Lord the heals you.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "I will give you a long life.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "I will never fail you or leave you.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "I get stronger everyday.",
+            "isFavorite": false,
+            "category": "health",
+        },
+        {
+            "text": "My promises can never fail.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "Give your burdens to the Lord, and he will take care of you.",
+            "isFavorite": false,
+            "affirmationText": "I give all my problems to God and He takes care of them.",
+            "category": "health",
+            "book": "Psalm 55:22"
+        },
+        {
+            "text": "A thousand may fall at my side, and ten thousand at my right hand, but it will not come near me.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Psalm 55:22"
+        },
+        {
+            "text": "My youth is renewed like the eagles.",
+            "isFavorite": false,
+            "category": "health",
+        },
+        {
+            "text": "My promises don't come back empty.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "He sent out his word and healed them, snatching them from the door of death.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Psalm 107:20"
+        },
+        {
+            "text": "I will not die; I will live to tell what God has done.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Psalm 118:17"
+        },
+        {
+            "text": "The Lord himself watches over me.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Psalm 121:5"
+        },
+        {
+            "text": "I will remain in joy and patiently wait for my health to return.",
+            "isFavorite": false,
+            "category": "health",
+        },
+        {
+            "text": "I will keep my mind on Jesus the one who I can trust 100%.",
+            "isFavorite": false,
+            "category": "health",
+        },
+        {
+            "text": "He gives power to the weak and strength to the powerless.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Isaiah 40:29"
+        },
+        {
+            "text": "Those who trust in the Lord will find new strength.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Isaiah 40:31"
+        },
+        {
+            "text": "Don't be afraid. I am here to help you.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "My healing will spring forth speedily.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Isaiah 58:8"
+        },
+        {
+            "text": "I am healed and made whole by Jesus stripes.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Isaiah 53:5"
+        },
+        {
+            "text": "I am blessed because I trust and hope in the Lord.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jermeiah 17:7"
+        },
+        {
+            "text": "I prosper even in times of drought.",
+            "isFavorite": false,
+            "category": "wealth",
+            "book": "Jermeiah 17:8"
+        },
+        {
+            "text": "My abundance can't be stopped.",
+            "isFavorite": false,
+            "category": "wealth",
+            "book": "Jermeiah 17:8"
+        },
+        {
+            "text": "Nothing is to hard for God, I know I am healed.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jermeiah 32:27"
+        },
+        {
+            "text": "I will restore to you the years that the swarming locust has eaten.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Joel 2:25"
+        },
+        {
+            "text": "I am the healer of all diseases. Be cleansed.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "I already carried all of your sins and diseases. It is finished.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "If you believe I can heal you, it will be done.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "I have great compassion for you.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "Believe you receive what you're asking for and you will have them.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "You are loosed from your infirmity.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "Come boldly to me, I will help you in your time of need.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "I will not in any way fail you.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "God will never give up on me or leave me.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Hebrews 13:5"
+        },
+        {
+            "text": "Jesus is my healer.",
+            "isFavorite": false,
+            "category": "health",
+        },
+        {
+            "text": "I will have a good long life.",
+            "isFavorite": false,
+            "category": "health",
+        },
+        
+       
         
         
     ]
