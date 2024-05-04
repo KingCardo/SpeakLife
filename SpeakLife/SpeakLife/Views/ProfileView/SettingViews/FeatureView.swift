@@ -50,7 +50,7 @@ struct FeatureView: View {
     // This could be fetched from a ViewModel in a real-world app
     let features: [Feature] = [
         Feature(name: "Daily devotional's", subtitle: "Walk with Jesus and receive your miracle", isAvailableInFree: false, isAvailableInPro: true),
-        Feature(name: "Unlock all categories", subtitle: "Receive, complete healing, peace, and joy thru right believing", isAvailableInFree: false, isAvailableInPro: true),
+        Feature(name: "Unlock all categories", subtitle: "Receive complete healing, peace, and joy thru right believing", isAvailableInFree: false, isAvailableInPro: true),
         Feature(name: "Create your own", subtitle: "Take control of your destiny", isAvailableInFree: true, isAvailableInPro: true),
         Feature(name: "Unlimited reminders", subtitle: "Receive God's promises thruout the day", isAvailableInFree: false, isAvailableInPro: true),
         Feature(name: "Unlimited themes", subtitle: "Only the finest", isAvailableInFree: false, isAvailableInPro: true),
