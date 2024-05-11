@@ -158,7 +158,6 @@ struct DeclarationView: View {
                 premiumCount += 1
                 shareApp() 
                 timerViewModel.loadRemainingTime()
-                
             }
             
             .alert("Help us spread SpeakLife?", isPresented: $share) {

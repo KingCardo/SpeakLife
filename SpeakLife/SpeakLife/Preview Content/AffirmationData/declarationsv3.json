@@ -13,33 +13,116 @@
             "isFavorite": false,
             "category": "destiny"
         },
-        {"text": "I am a victorious warrior, walking confidently into my destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "I am on a journey to fulfill my destiny, guided by God's perfect plan.", "isFavorite": false, "category": "destiny"},
-        {"text": "I am not limited by circumstances; I am empowered to fulfill my destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "I am unshaken by adversity, my destiny is secure in Jesus.", "isFavorite": false, "category": "destiny"},
-        {"text": "I am called to a purpose greater than myself; I will fulfill my destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "I am a vessel of God's grace, destined to bring His love to the world.", "isFavorite": false, "category": "destiny"},
-        {"text": "I am a warrior of faith, conquering obstacles on the path to my destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "I am an heir of God's promises, walking boldly into my destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "I am a light in the darkness, leading others toward their destinies.", "isFavorite": false, "category": "destiny"},
-        {"text": "Jesus is the Rescuer, saving me from a life without destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "Jesus is the Door, opening the way to my destined future.", "isFavorite": false, "category": "destiny"},
-        {"text": "Jesus is the Great I Am, declaring the fulfillment of my destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "Jesus is the King of Kings, ruling over my destiny with sovereignty.", "isFavorite": false, "category": "destiny"},
-        {"text": "Thank you, Jesus, for being the Word of God, speaking truth into my destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "Jesus is the Great Intercessor, praying for the fulfillment of my destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "Thank you, Jesus, for being the Prince of Peace, calming every storm on my destiny's voyage.", "isFavorite": false, "category": "destiny"},
-        {"text": "Jesus is the Mighty Warrior, fighting battles for my destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "Jesus is the Alpha and Omega, orchestrating every detail of my destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "Jesus is the Rock on which I stand, unshaken on my journey to destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "Jesus is the Author and Finisher of my faith, ensuring the fulfillment of my destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "Thank you, Jesus, for being my Redeemer and restoring my destiny.", "isFavorite": false, "category": "destiny"},
-        {"text": "'For I know the plans I have for you,' declares the Lord, 'plans to prosper you and not to harm you, plans to give you hope and a future.'", "book": "Jeremiah 29:11", "isFavorite": false, "category": "destiny"},
-        {"text": "Many are the plans in a person's heart, but it is the Lord's purpose that prevails.", "book": "Proverbs 19:21", "isFavorite": false, "category": "destiny"},
-        {"text": "Take delight in the Lord, and he will give you the desires of your heart.", "book": "Psalm 37:4", "isFavorite": false, "category": "destiny"},
-        {"text": "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.", "isFavorite": false, "category": "destiny"},
-        {"text": "In all your ways acknowledge him, and he will make your paths straight.", "isFavorite": false, "category": "destiny"},
-        {"text": "I will instruct you and teach you in the way you should go; I will counsel you with my loving eye on you.", "isFavorite": false, "category": "destiny"},
+        {
+            "text": "I am a victorious warrior, walking confidently into my destiny.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            
+            "text": "I am on a journey to fulfill my destiny, guided by God's perfect plan.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "I am not limited by circumstances; I am empowered to fulfill my destiny.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "I am unshaken by adversity, my destiny is secure in Jesus.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "I am called to a purpose greater than myself; I will fulfill my destiny.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "I am a vessel of God's grace, destined to bring His love to the world.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "I am a warrior of faith, conquering obstacles on the path to my destiny.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "I am an heir of God's promises, walking boldly into my destiny.",
+            "isFavorite": false, 
+            "category": "destiny"},
+        {
+            "text": "I am a light in the darkness, leading others toward their destinies.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "Jesus is the Rescuer, saving me from a life without destiny.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "Jesus is the Door, opening the way to my destined future.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "Jesus is the Great I Am, declaring the fulfillment of my destiny.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "Jesus is the King of Kings, ruling over my destiny with sovereignty.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "Thank you, Jesus, for being the Word of God, speaking truth into my destiny.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "Jesus is the Great Intercessor, praying for the fulfillment of my destiny.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "Thank you, Jesus, for being the Prince of Peace, calming every storm on my destiny's voyage.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "Jesus is the Mighty Warrior, fighting battles for my destiny.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "Jesus is the Alpha and Omega, orchestrating every detail of my destiny.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "Jesus is the Rock on which I stand, unshaken on my journey to destiny.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "Jesus is the Author and Finisher of my faith, ensuring the fulfillment of my destiny.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "Thank you, Jesus, for being my Redeemer and restoring my destiny.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "'For I know the plans I have for you,' declares the Lord, 'plans to prosper you and not to harm you, plans to give you hope and a future.'",
+            "book": "Jeremiah 29:11", 
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "Many are the plans in a person's heart, but it is the Lord's purpose that prevails.", "book": "Proverbs 19:21",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "Take delight in the Lord, and he will give you the desires of your heart.", "book": "Psalm 37:4",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "In all your ways acknowledge him, and he will make your paths straight.",
+            "isFavorite": false,
+            "category": "destiny"},
+        {
+            "text": "I will instruct you and teach you in the way you should go; I will counsel you with my loving eye on you.",
+            "isFavorite": false,
+            "category": "destiny"},
         {
             "text": "Whatever I do prospers, I am like a tree planted by the water.",
             "isFavorite": false,
