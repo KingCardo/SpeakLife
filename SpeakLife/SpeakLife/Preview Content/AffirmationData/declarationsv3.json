@@ -23,7 +23,7 @@
             "isFavorite": false,
             "category": "destiny"},
         {
-            "text": "I am not limited by circumstances; I am empowered to fulfill my destiny.",
+            "text": "I am not limited by circumstances, I am empowered to fulfill my destiny.",
             "isFavorite": false,
             "category": "destiny"},
         {
@@ -31,7 +31,7 @@
             "isFavorite": false,
             "category": "destiny"},
         {
-            "text": "I am called to a purpose greater than myself; I will fulfill my destiny.",
+            "text": "I am called to a purpose greater than myself, I will fulfill my destiny.",
             "isFavorite": false,
             "category": "destiny"},
         {
@@ -120,7 +120,7 @@
             "isFavorite": false,
             "category": "destiny"},
         {
-            "text": "I will instruct you and teach you in the way you should go; I will counsel you with my loving eye on you.",
+            "text": "I will instruct you and teach you in the way you should go, I will counsel you with my loving eye on you.",
             "isFavorite": false,
             "category": "destiny"},
         {
@@ -279,6 +279,12 @@
             "text": "I speak back to every circumstance that doesn't line up with my destiny.",
             "isFavorite": false,
             "category": "destiny"
+        },
+        {
+            "text": "There is no condemnation for you who believes in me.",
+            "isFavorite": false,
+            "category": "grace",
+            "book": "Jesus"
         },
         {
             "text": "Jesus conquered hell just for me.",
@@ -1255,7 +1261,7 @@
         },
         {
             
-            "text": "For by grace you have been saved through faith. And this is not your own doing; it is the gift of God.",
+            "text": "For by grace you have been saved through faith. And this is not your own doing, it is the gift of God.",
             "book": "Ephesians 2:8",
             "isFavorite": false,
             "category": "grace"
@@ -1314,12 +1320,6 @@
             "category": "grace"
         },
         {
-            "text": "Grace and peace be multiplied to you in the knowledge of God and of Jesus our Lord.",
-            "book": "2 Peter 1:2",
-            "isFavorite": false,
-            "category": "grace"
-        },
-        {
             "text": "But to each one of us grace has been given as Christ apportioned it.",
             "book": "Ephesians 4:7",
             "isFavorite": false,
@@ -1368,7 +1368,7 @@
             "category": "grace"
         },
         {
-            "text": "The Lord is gracious and righteous; our God is full of compassion.",
+            "text": "The Lord is gracious and righteous, our God is full of compassion.",
             "book": "Psalm 116:5",
             "isFavorite": false,
             "category": "grace"
@@ -1410,7 +1410,7 @@
             "category": "grace"
         },
         {
-            "text": "For the law was given through Moses; grace and truth came through Jesus Christ.",
+            "text": "For the law was given through Moses, grace and truth came through Jesus Christ.",
             "book": "John 1:17",
             "isFavorite": false,
             "category": "grace"
@@ -1446,7 +1446,7 @@
             "category": "grace"
         },
         {
-            "text": "The Lord longs to be gracious to you; therefore he will rise up to show you compassion.",
+            "text": "The Lord longs to be gracious to you, therefore he will rise up to show you compassion.",
             "book": "Isaiah 30:18",
             "isFavorite": false,
             "category": "grace"
@@ -1476,16 +1476,16 @@
             "category": "grace"
         },
         {
-            "text": "Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you.",
+            "text": "Ask, and it will be given to you, seek, and you will find, knock, and it will be opened to you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "Do not worry about your life, what you will eat or drink; or about your body, what you will wear. Is not life more than food, and the body more than clothes?",
+            "text": "Do not worry about your life, what you will eat or drink, or about your body, what you will wear. Is not life more than food, and the body more than clothes?",
             "book": "Jesus",
             "isFavorite": false,
-            "category": "grace"
+            "category": "hardtimes"
         },
         {
             "text": "Come to me, all who labor and are heavy laden, and I will give you rest.",
@@ -1494,22 +1494,22 @@
             "category": "rest"
         },
         {
-            "text": "Let not your hearts be troubled. Believe in God; believe also in me.",
+            "text": "Let not your hearts be troubled. Believe in God, believe also in me.",
             "book": "Jesus",
             "isFavorite": false,
-            "category": "grace"
+            "category": "faith"
         },
         {
-            "text": "Peace I leave with you; my peace I give to you. Not as the world gives do I give to you. Let not your hearts be troubled, neither let them be afraid.",
+            "text": "Peace I leave with you, my peace I give to you. Not as the world gives do I give to you. Let not your hearts be troubled, neither let them be afraid.",
             "book": "Jesus",
             "isFavorite": false,
-            "category": "grace"
+            "category": "peace"
         },
         {
             "text": "I have told you these things, so that in me you may have peace. In this world you will have trouble. But take heart! I have overcome the world.",
             "book": "Jesus",
             "isFavorite": false,
-            "category": "grace"
+            "category": "peace"
         },
         {
             "text": "Whoever comes to me I will never cast out.",
@@ -1527,7 +1527,7 @@
             "text": "With man this is impossible, but with God all things are possible.",
             "book": "Jesus",
             "isFavorite": false,
-            "category": "grace"
+            "category": "hope"
         },
         {
             "text": "I am the way, and the truth, and the life. No one comes to the Father except through me.",
@@ -1554,7 +1554,7 @@
             "category": "grace"
         },
         {
-            "text": "Your faith has made you well; go in peace, and be healed of your disease.",
+            "text": "Your faith has made you well, go in peace, and be healed of your disease.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
@@ -1572,7 +1572,7 @@
             "category": "grace"
         },
         {
-            "text": "Everyone who gloirifes himself will be humbled, and he who humbles himself will be glorified.",
+            "text": "Everyone who glorifes himself will be humbled, and he who humbles himself will be glorified.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
@@ -1596,7 +1596,7 @@
             "category": "grace"
         },
         {
-            "text": "Freely you have received; freely give.",
+            "text": "Freely you have received, freely give.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
@@ -1636,7 +1636,7 @@
             "category": "grace"
         },
         {
-            "text": "Thank you Jesus for Your blood silences my accusers.",
+            "text": "Thank you Jesus for helping me keep my eyes on your finished work.",
             "isFavorite": false,
             "category": "grace"
         },
@@ -1735,9 +1735,21 @@
             "isFavorite": false,
             "category": "grace"
         },
-        {"text": "I am more than a conqueror through Him who loves me.", "isFavorite": false, "category": "grace"},
-        {"text": "I am the righteousness of God in Christ, justified by faith and walking in peace.", "isFavorite": false, "category": "grace"},
-        {"text": "Through Jesus' grace, I am redeemed and live in victory.", "isFavorite": false, "category": "grace"},
+        {
+            "text": "I am more than a conqueror through Him who loves me.",
+            "isFavorite": false,
+            "category": "grace"
+        },
+        {
+            "text": "I am the righteousness of God in Christ, justified by faith and walking in peace.",
+            "isFavorite": false,
+            "category": "grace"
+        },
+        {
+            "text": "Through Jesus' grace, I am redeemed and live in victory.",
+            "isFavorite": false,
+            "category": "grace"
+        },
         {
             "text": "And whatever you ask in prayer, you will receive, if you have faith.",
             "book": "Matthew 21:22",
@@ -1769,7 +1781,7 @@
             "category": "faith"
         },
         {
-            "text": "For by grace you have been saved through faith. And this is not your own doing; it is the gift of God.",
+            "text": "For by grace you have been saved through faith. And this is not your own doing, it is the gift of God.",
             "book": "Ephesians 2:8",
             "isFavorite": false,
             "category": "faith"
@@ -1901,7 +1913,7 @@
             "category": "faith"
         },
         {
-            "text": "And Jesus said to him, 'Go your way; your faith has made you well.' And immediately he recovered his sight and followed him on the way.",
+            "text": "And Jesus said to him, 'Go your way, your faith has made you well.' And immediately he recovered his sight and followed him on the way.",
             "book": "Mark 10:52",
             "isFavorite": false,
             "category": "faith"
@@ -1913,19 +1925,13 @@
             "category": "faith"
         },
         {
-            "text": "Because you are sons, God has sent the Spirit of his Son into our hearts, crying, 'Abba! Father!'",
-            "book": "Galatians 4:6",
-            "isFavorite": false,
-            "category": "faith"
-        },
-        {
             "text": "Jesus said to him, 'If you can! All things are possible for one who believes.'",
             "book": "Mark 9:23",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast.",
+            "text": "And this is not your own doing, it is the gift of God, not a result of works, so that no one may boast.",
             "book": "Ephesians 2:8-9",
             "isFavorite": false,
             "category": "faith"
@@ -1944,7 +1950,7 @@
         },
         
         {
-            "text": "Your faith has healed you; go in peace.",
+            "text": "Your faith has healed you, go in peace.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "faith"
@@ -1956,7 +1962,7 @@
             "category": "faith"
         },
         {
-            "text": "Let not your heart be troubled; believe in God, believe also in me.",
+            "text": "Let not your heart be troubled, believe in God, believe also in me.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "faith"
@@ -1980,19 +1986,19 @@
             "category": "faith"
         },
         {
-            "text": "Do not be afraid; only believe.",
+            "text": "Do not be afraid, only believe.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "Receive your sight; your faith has healed you.",
+            "text": "Receive your sight, your faith has healed you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "Your faith is great; let it be done for you as you wish.",
+            "text": "Your faith is great, let it be done for you as you wish.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "faith"
@@ -2052,7 +2058,7 @@
             "category": "faith"
         },
         {
-            "text": "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.",
+            "text": "Ask and it will be given to you, seek and you will find, knock and the door will be opened to you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "faith"
@@ -2070,7 +2076,7 @@
             "category": "faith"
         },
         {
-            "text": "Peace I leave with you; my peace I give you. Not as the world gives do I give to you. Let not your hearts be troubled, neither let them be afraid.",
+            "text": "Peace I leave with you, my peace I give you. Not as the world gives do I give to you. Let not your hearts be troubled, neither let them be afraid.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "faith"
@@ -2106,25 +2112,25 @@
             "category": "faith"
         },
         {
-            "text": "Remain in me, as I also remain in you. No branch can bear fruit by itself; it must remain in the vine. Neither can you bear fruit unless you remain in me.",
+            "text": "Remain in me, as I also remain in you. No branch can bear fruit by itself, it must remain in the vine. Neither can you bear fruit unless you remain in me.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.",
+            "text": "I am the vine, you are the branches. If you remain in me and I in you, you will bear much fruit, apart from me you can do nothing.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "Do not let your hearts be troubled. You believe in God; believe also in me.",
+            "text": "Do not let your hearts be troubled. You believe in God, believe also in me.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "faith"
         },
         {
-            "text": "My Father’s house has many rooms; if that were not so, would I have told you that I am going there to prepare a place for you?",
+            "text": "My Father’s house has many rooms, if that were not so, would I have told you that I am going there to prepare a place for you?",
             "book": "Jesus",
             "isFavorite": false,
             "category": "faith"
@@ -2352,7 +2358,7 @@
             "category": "faith",
             "book": "1 John 5:4"
         },{
-            "text": "Jesus is my unwavering connection to the Father; when I believe and pray, all things are possible.",
+            "text": "Jesus is my unwavering connection to the Father, when I believe and pray, all things are possible.",
             "isFavorite": false,
             "category": "faith",
             "book": "Matthew 21:22"
@@ -2483,7 +2489,7 @@
             "isFavorite": false,
             "category": "confidence"
         },{
-            "text": "The LORD is on my side; I will not fear. What can man do to me?",
+            "text": "The LORD is on my side, I will not fear. What can man do to me?",
             "book": "Psalm 118:6",
             "isFavorite": false,
             "category": "confidence"
@@ -2584,7 +2590,7 @@
             "category": "confidence"
         },
         {
-            "text": "In me, you may have peace. In the world you will have tribulation. But take heart; I have overcome the world.",
+            "text": "In me, you may have peace. In the world you will have tribulation. But take heart, I have overcome the world.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "confidence"
@@ -2596,13 +2602,13 @@
             "category": "confidence"
         },
         {
-            "text": "Do not let your hearts be troubled. Trust in God; trust also in me.",
+            "text": "Do not let your hearts be troubled. Trust in God, trust also in me.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "confidence"
         },
         {
-            "text": "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.",
+            "text": "Ask and it will be given to you, seek and you will find, knock and the door will be opened to you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "confidence"
@@ -2626,7 +2632,7 @@
             "category": "confidence"
         },
         {
-            "text": "I have given you authority to trample on snakes and scorpions and to overcome all the power of the enemy; nothing will harm you.",
+            "text": "I have given you authority to trample on snakes and scorpions and to overcome all the power of the enemy, nothing will harm you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "confidence"
@@ -2650,19 +2656,19 @@
             "category": "confidence"
         },
         {
-            "text": "Peace I leave with you; my peace I give you. Not as the world gives do I give to you. Do not let your hearts be troubled and do not be afraid.",
+            "text": "Peace I leave with you, my peace I give you. Not as the world gives do I give to you. Do not let your hearts be troubled and do not be afraid.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "confidence"
         },
         {
-            "text": "I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.",
+            "text": "I am the vine, you are the branches. If you remain in me and I in you, you will bear much fruit, apart from me you can do nothing.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "confidence"
         },
         {
-            "text": "Take heart, daughter; your faith has made you well.",
+            "text": "Take heart, daughter, your faith has made you well.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "confidence"
@@ -2674,13 +2680,13 @@
             "category": "confidence"
         },
         {
-            "text": "Do not be afraid; just believe.",
+            "text": "Do not be afraid, just believe.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "confidence"
         },
         {
-            "text": "I tell you, do not worry about your life, what you will eat; or about your body, what you will wear.",
+            "text": "I tell you, do not worry about your life, what you will eat, or about your body, what you will wear.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "confidence"
@@ -2832,7 +2838,7 @@
             "category": "depression"
         },
         {
-            "text": "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
+            "text": "Peace I leave with you, my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
             "book": "John 14:27",
             "isFavorite": false,
             "category": "depression"
@@ -2856,7 +2862,7 @@
             "category": "depression"
         },
         {
-            "text": "But those who hope in the LORD will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.",
+            "text": "But those who hope in the LORD will renew their strength. They will soar on wings like eagles, they will run and not grow weary, they will walk and not be faint.",
             "book": "Isaiah 40:31",
             "isFavorite": false,
             "category": "depression"
@@ -2868,7 +2874,7 @@
             "category": "depression"
         },
         {
-            "text": "So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.",
+            "text": "So do not fear, for I am with you, do not be dismayed, for I am your God. I will strengthen you and help you, I will uphold you with my righteous right hand.",
             "book": "Isaiah 41:10",
             "isFavorite": false,
             "category": "depression"
@@ -2898,13 +2904,13 @@
             "category": "depression"
         },
         {
-            "text": "Be strong and courageous. Do not be afraid or terrified because of them, for the LORD your God goes with you; he will never leave you nor forsake you.",
+            "text": "Be strong and courageous. Do not be afraid or terrified because of them, for the LORD your God goes with you, he will never leave you nor forsake you.",
             "book": "Deuteronomy 31:6",
             "isFavorite": false,
             "category": "depression"
         },
         {
-            "text": "The righteous cry out, and the LORD hears them; he delivers them from all their troubles.",
+            "text": "The righteous cry out, and the LORD hears them, he delivers them from all their troubles.",
             "book": "Psalm 34:17",
             "isFavorite": false,
             "category": "depression"
@@ -2934,13 +2940,13 @@
             "category": "depression"
         },
         {
-            "text": "My peace I give to you; not as the world gives do I give to you. Let not your hearts be troubled, neither let them be afraid.",
+            "text": "My peace I give to you, not as the world gives do I give to you. Let not your hearts be troubled, neither let them be afraid.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "depression"
         },
         {
-            "text": "In the world you will have tribulation. But take heart; I have overcome the world.",
+            "text": "In the world you will have tribulation. But take heart, I have overcome the world.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "depression"
@@ -2958,7 +2964,7 @@
             "category": "depression"
         },
         {
-            "text": "Do not let your hearts be troubled. Trust in God; trust also in me.",
+            "text": "Do not let your hearts be troubled. Trust in God, trust also in me.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "depression"
@@ -2970,7 +2976,7 @@
             "category": "depression"
         },
         {
-            "text": "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.",
+            "text": "Ask and it will be given to you, seek and you will find, knock and the door will be opened to you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "depression"
@@ -2994,7 +3000,7 @@
             "category": "depression"
         },
         {
-            "text": "I am the bread of life; whoever comes to me shall not hunger, and whoever believes in me shall never thirst.",
+            "text": "I am the bread of life, whoever comes to me shall not hunger, and whoever believes in me shall never thirst.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "depression"
@@ -3006,13 +3012,13 @@
             "category": "depression"
         },
         {
-            "text": "Your faith has made you well; go in peace.",
+            "text": "Your faith has made you well, go in peace.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "depression"
         },
         {
-            "text": "Take heart, daughter; your faith has healed you.",
+            "text": "Take heart, daughter, your faith has healed you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "depression"
@@ -3030,13 +3036,13 @@
             "category": "depression"
         },
         {
-            "text": "I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing.",
+            "text": "I am the vine, you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "depression"
         },
         {
-            "text": "Peace I leave with you; my peace I give to you. Let not your hearts be troubled, neither let them be afraid.",
+            "text": "Peace I leave with you, my peace I give to you. Let not your hearts be troubled, neither let them be afraid.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "depression"
@@ -3060,7 +3066,7 @@
             "category": "depression"
         },
         {
-            "text": "Therefore I tell you, do not worry about your life, what you will eat; or about your body, what you will wear.",
+            "text": "Therefore I tell you, do not worry about your life, what you will eat, or about your body, what you will wear.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "depression"
@@ -3072,7 +3078,7 @@
             "category": "depression"
         },
         {
-            "text": "Indeed, the very hairs of your head are all numbered. Don't be afraid; you are worth more than many sparrows.",
+            "text": "Indeed, the very hairs of your head are all numbered. Don't be afraid, you are worth more than many sparrows.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "depression"
@@ -3090,13 +3096,13 @@
             "category": "depression"
         },
         {
-            "text": "In me, you may have peace. In the world, you will have tribulation, but take courage; I have overcome the world.",
+            "text": "In me, you may have peace. In the world, you will have tribulation, but take courage, I have overcome the world.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "depression"
         },
         {
-            "text": "Let your heart be not troubled; believe in God, believe also in me.",
+            "text": "Let your heart be not troubled, believe in God, believe also in me.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "depression"
@@ -3120,13 +3126,13 @@
             "category": "depression"
         },
         {
-            "text": "Trust in me with all your heart; I will direct your paths and light your way.",
+            "text": "Trust in me with all your heart, I will direct your paths and light your way.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "depression"
         },
         {
-            "text": "You are precious in my sight. I have called you by name; you are mine.",
+            "text": "You are precious in my sight. I have called you by name, you are mine.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "depression"
@@ -3415,7 +3421,7 @@
             "category": "addiction"
         },
         {
-            "text": "The old has passed away; behold, the new has come. I am a new creation in Christ.",
+            "text": "The old has passed away, behold, the new has come. I am a new creation in Christ.",
             "book": "2 Corinthians 5:17",
             "isFavorite": false,
             "category": "addiction"
@@ -3529,13 +3535,13 @@
             "category": "addiction"
         },
         {
-            "text": "You are a new creation in me; the old has passed away. Walk in your new identity.",
+            "text": "You are a new creation in me, the old has passed away. Walk in your new identity.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "addiction"
         },
         {
-            "text": "Do not be discouraged by setbacks; I am patient and persistent in delivering you.",
+            "text": "Do not be discouraged by setbacks, I am patient and persistent in delivering you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "addiction"
@@ -3649,19 +3655,19 @@
             "category": "fear"
         },
         {
-            "text": "So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.",
+            "text": "So do not fear, for I am with you, do not be dismayed, for I am your God. I will strengthen you and help you, I will uphold you with my righteous right hand.",
             "book": "Isaiah 41:10",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "I sought the LORD, and he answered me; he delivered me from all my fears.",
+            "text": "I sought the LORD, and he answered me, he delivered me from all my fears.",
             "book": "Psalm 34:4",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me.",
+            "text": "Even though I walk through the darkest valley, I will fear no evil, for you are with me, your rod and your staff, they comfort me.",
             "book": "Psalm 23:4",
             "isFavorite": false,
             "category": "fear"
@@ -3673,13 +3679,13 @@
             "category": "fear"
         },
         {
-            "text": "Be strong and courageous. Do not be afraid or terrified because of them, for the LORD your God goes with you; he will never leave you nor forsake you.",
+            "text": "Be strong and courageous. Do not be afraid or terrified because of them, for the LORD your God goes with you, he will never leave you nor forsake you.",
             "book": "Deuteronomy 31:6",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
+            "text": "Peace I leave with you, my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
             "book": "John 14:27",
             "isFavorite": false,
             "category": "fear"
@@ -3703,13 +3709,13 @@
             "category": "fear"
         },
         {
-            "text": "The LORD is with me; I will not be afraid. What can mere mortals do to me?",
+            "text": "The LORD is with me, I will not be afraid. What can mere mortals do to me?",
             "book": "Psalm 118:6",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "Say to those with fearful hearts, 'Be strong, do not fear; your God will come, he will come with vengeance; with divine retribution he will come to save you.'",
+            "text": "Say to those with fearful hearts, 'Be strong, do not fear, your God will come, he will come with vengeance, with divine retribution he will come to save you.'",
             "book": "Isaiah 35:4",
             "isFavorite": false,
             "category": "fear"
@@ -3721,25 +3727,25 @@
             "category": "fear"
         },
         {
-            "text": "But now, this is what the LORD says— he who created you, Jacob, he who formed you, Israel: 'Do not fear, for I have redeemed you; I have summoned you by name; you are mine.'",
+            "text": "But now, this is what the LORD says— he who created you, Jacob, he who formed you, Israel: 'Do not fear, for I have redeemed you, I have summoned you by name, you are mine.'",
             "book": "Isaiah 43:1",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the LORD your God will be with you wherever you go.",
+            "text": "Have I not commanded you? Be strong and courageous. Do not be afraid, do not be discouraged, for the LORD your God will be with you wherever you go.",
             "book": "Joshua 1:9",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "Trust in the LORD with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
+            "text": "Trust in the LORD with all your heart and lean not on your own understanding, in all your ways submit to him, and he will make your paths straight.",
             "book": "Proverbs 3:5-6",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "The LORD is my helper; I will not be afraid. What can man do to me?",
+            "text": "The LORD is my helper, I will not be afraid. What can man do to me?",
             "book": "Hebrews 13:6",
             "isFavorite": false,
             "category": "fear"
@@ -3757,7 +3763,7 @@
             "category": "fear"
         },
         {
-            "text": "Be on your guard; stand firm in the faith; be courageous; be strong.",
+            "text": "Be on your guard, stand firm in the faith, be courageous, be strong.",
             "book": "1 Corinthians 16:13",
             "isFavorite": false,
             "category": "fear"
@@ -3769,7 +3775,7 @@
             "category": "fear"
         },
         {
-            "text": "Fear not, for I have redeemed you; I have called you by name, you are mine.",
+            "text": "Fear not, for I have redeemed you, I have called you by name, you are mine.",
             "book": "Isaiah 43:1",
             "isFavorite": false,
             "category": "fear"
@@ -3781,7 +3787,7 @@
             "category": "fear"
         },
         {
-            "text": "I sought the Lord, and he answered me; he delivered me from all my fears.",
+            "text": "I sought the Lord, and he answered me, he delivered me from all my fears.",
             "book": "Psalm 34:4",
             "isFavorite": false,
             "category": "fear"
@@ -3793,7 +3799,7 @@
             "category": "fear"
         },
         {
-            "text": "But even if you should suffer for what is right, you are blessed. 'Do not fear their threats; do not be frightened.'",
+            "text": "But even if you should suffer for what is right, you are blessed. 'Do not fear their threats, do not be frightened.'",
             "book": "1 Peter 3:14",
             "isFavorite": false,
             "category": "fear"
@@ -3823,13 +3829,13 @@
             "category": "fear"
         },
         {
-            "text": "Be strong and very courageous. Be careful to obey all the law my servant Moses gave you; do not turn from it to the right or to the left, that you may be successful wherever you go.",
+            "text": "Be strong and very courageous. Be careful to obey all the law my servant Moses gave you, do not turn from it to the right or to the left, that you may be successful wherever you go.",
             "book": "Joshua 1:7",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "The Lord is on my side; I will not fear. What can man do to me?",
+            "text": "The Lord is on my side, I will not fear. What can man do to me?",
             "book": "Psalm 118:6",
             "isFavorite": false,
             "category": "fear"
@@ -3853,7 +3859,7 @@
             "category": "fear"
         },
         {
-            "text": "Peace I leave with you; my peace I give you.",
+            "text": "Peace I leave with you, my peace I give you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "fear"
@@ -3865,13 +3871,13 @@
             "category": "fear"
         },
         {
-            "text": "Do not be afraid; only believe.",
+            "text": "Do not be afraid, only believe.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.",
+            "text": "I am the vine, you are the branches. If you remain in me and I in you, you will bear much fruit, apart from me you can do nothing.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "fear"
@@ -3883,49 +3889,49 @@
             "category": "fear"
         },
         {
-            "text": "My grace is your fortress; under my wings, you'll find refuge from fear.",
+            "text": "My grace is your fortress, under my wings, you'll find refuge from fear.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "Stand firm in your faith, and let not fear sway you; I am with you.",
+            "text": "Stand firm in your faith, and let not fear sway you, I am with you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "As I stilled the sea, I will quiet your fears; trust in my mighty power.",
+            "text": "As I stilled the sea, I will quiet your fears, trust in my mighty power.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "Do not fear the unknown; I go before you always.",
+            "text": "Do not fear the unknown, I go before you always.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "I am your shield and great reward; fear has no place in my kingdom.",
+            "text": "I am your shield and great reward, fear has no place in my kingdom.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "In every trial, remember I am with you, a mighty Savior who delights in you.",
+            "text": "In every trial, remember I am with you, the mighty Savior who delights in you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "My love for you will cast out all fear; abide in my love and be fearless.",
+            "text": "My love for you will cast out all fear, abide in my love and be fearless.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "I am your stronghold in times of trouble; why should you fear?",
+            "text": "I am your stronghold in times of trouble, why should you fear?",
             "book": "Jesus",
             "isFavorite": false,
             "category": "fear"
@@ -3937,13 +3943,13 @@
             "category": "fear"
         },
         {
-            "text": "I have declared victory over death; let not fear of the end dismay you.",
+            "text": "I have declared victory over death, let not fear of the end dismay you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "My power is made perfect in your weakness; in me, you can bravely face all fears.",
+            "text": "My power is made perfect in your weakness, in me, you can bravely face all fears.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "fear"
@@ -3955,7 +3961,7 @@
             "category": "fear"
         },
         {
-            "text": "I am the Prince of Peace; in my presence, fear has no dominion.",
+            "text": "I am the Prince of Peace, in my presence, fear has no dominion.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "fear"
@@ -3973,7 +3979,7 @@
             "category": "fear"
         },
         {
-            "text": "I am your rock, your fortress, and your deliverer; in me, you should fear nothing.",
+            "text": "I am your rock, your fortress, and your deliverer, in me, you should fear nothing.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "fear"
@@ -4398,25 +4404,25 @@
             "category": "forgiveness"
         },
         {
-            "text": "Don’t fear, my child, I have forgiven you; walk in freedom.",
+            "text": "Don’t fear, my child, I have forgiven you, walk in freedom.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
         },
         {
-            "text": "Your sins are washed away; you are new in my eyes.",
+            "text": "Your sins are washed away, you are new in my eyes.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
         },
         {
-            "text": "I remember your sins no more; you are free from your past.",
+            "text": "I remember your sins no more, you are free from your past.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
         },
         {
-            "text": "My grace covers all your mistakes; you are loved beyond measure.",
+            "text": "My grace covers all your mistakes, you are loved beyond measure.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
@@ -4428,73 +4434,73 @@
             "category": "forgiveness"
         },
         {
-            "text": "Let go of your burdens; I have taken them upon myself.",
+            "text": "Let go of your burdens, I have taken them upon myself.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
         },
         {
-            "text": "You are not defined by your faults; my love redefines you.",
+            "text": "You are not defined by your faults, my love redefines you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
         },
         {
-            "text": "Come to me with your regrets; I'll replace them with my peace.",
+            "text": "Come to me with your regrets, I'll replace them with my peace.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
         },
         {
-            "text": "My blood was shed for your freedom; embrace the life I give.",
+            "text": "My blood was shed for your freedom, embrace the life I give.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
         },
         {
-            "text": "You are precious to me; I have called you by name, forgiven.",
+            "text": "You are precious to me, I have called you by name, forgiven.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
         },
         {
-            "text": "In me, find solace for your soul; my forgiveness is complete.",
+            "text": "In me, find solace for your soul, my forgiveness is complete.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
         },
         {
-            "text": "Rise up, forgiven one; your faith has made you whole.",
+            "text": "Rise up, forgiven one, your faith has made you whole.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
         },
         {
-            "text": "Release your guilt; I've embraced you with my redeeming love.",
+            "text": "Release your guilt, I've embraced you with my redeeming love.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
         },
         {
-            "text": "Your heart is my home; let my forgiveness dwell within you.",
+            "text": "Your heart is my home, let my forgiveness dwell within you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
         },
         {
-            "text": "Walk in the liberty I've given you; your chains are broken.",
+            "text": "Walk in the liberty I've given you, your chains are broken.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
         },
         {
-            "text": "I see your repentance; I respond with boundless forgiveness.",
+            "text": "I see your repentance, I respond with boundless forgiveness.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
         },
         {
-            "text": "Fear not your flaws; my love is greater than all sin.",
+            "text": "Fear not your flaws, my love is greater than all sin.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
@@ -4506,7 +4512,7 @@
             "category": "forgiveness"
         },
         {
-            "text": "You are not held captive by your errors; my forgiveness sets you free.",
+            "text": "You are not held captive by your errors, my forgiveness sets you free.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "forgiveness"
@@ -4766,7 +4772,7 @@
             "category": "godsprotection"
         },
         {
-            "text": "In Jesus' name, I take comfort in Psalm 23, knowing the Lord is my shepherd; I shall not want, even in the darkest valley.",
+            "text": "In Jesus' name, I take comfort in Psalm 23, knowing the Lord is my shepherd, I shall not want, even in the darkest valley.",
             "isFavorite": false,
             "category": "godsprotection"
         },
@@ -4844,7 +4850,7 @@
             "category": "godsprotection"
         },
         {
-            "text": "I make the Lord my refuge, the Most High is my shelter, no evil will conquer me; no plague will come near my home.",
+            "text": "I make the Lord my refuge, the Most High is my shelter, no evil will conquer me, no plague will come near my home.",
             "book": "Psalm 91:9-10 ",
             "isFavorite": false,
             "category": "godsprotection"
@@ -4873,19 +4879,19 @@
             "isFavorite": false,
             "category": "godsprotection"
         },{
-            "text": "The righteous cry out, and the Lord hears them; he delivers them from all their troubles. The Lord is close to the brokenhearted and saves those who are crushed in spirit.",
+            "text": "The righteous cry out, and the Lord hears them, he delivers them from all their troubles. The Lord is close to the brokenhearted and saves those who are crushed in spirit.",
             "book": "Psalm 34:17-18 ",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
-            "text": "You are my refuge and my shield; I have put my hope in your word.",
+            "text": "You are my refuge and my shield, I have put my hope in your word.",
             "book": "Psalm 119:114 ",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
-            "text": "The LORD is my rock, my fortress, and my savior; my God is my rock, in whom I find protection. He is my shield, the power that saves me, and my place of safety.",
+            "text": "The LORD is my rock, my fortress, and my savior, my God is my rock, in whom I find protection. He is my shield, the power that saves me, and my place of safety.",
             "book": "Psalm 18:2",
             "isFavorite": false,
             "category": "godsprotection"
@@ -4897,13 +4903,13 @@
             "category": "godsprotection"
         },
         {
-            "text": "But the Lord is faithful; he will strengthen you and guard you from the evil one.",
+            "text": "But the Lord is faithful, he will strengthen you and guard you from the evil one.",
             "book": "2 Thessalonians 3:3",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
-            "text": "For you are my hiding place; you protect me from trouble. You surround me with songs of victory.",
+            "text": "For you are my hiding place, you protect me from trouble. You surround me with songs of victory.",
             "book": "Psalm 32:7",
             "isFavorite": false,
             "category": "godsprotection"
@@ -4939,7 +4945,7 @@
             "category": "godsprotection"
         },
         {
-            "text": "The name of the LORD is a strong fortress; the godly run to him and are safe.",
+            "text": "The name of the LORD is a strong fortress, the godly run to him and are safe.",
             "book": "Proverbs 18:10",
             "isFavorite": false,
             "category": "godsprotection"
@@ -4975,7 +4981,7 @@
             "category": "godsprotection"
         },
         {
-            "text": "But you, O LORD, are a shield around me; you are my glory, the one who holds my head high.",
+            "text": "But you, O LORD, are a shield around me, you are my glory, the one who holds my head high.",
             "book": "Psalm 3:3",
             "isFavorite": false,
             "category": "godsprotection"
@@ -4999,13 +5005,13 @@
             "category": "godsprotection"
         },
         {
-            "text": "Though I walk in the midst of trouble, you preserve my life. You stretch out your hand against the anger of my foes; with your right hand you save me.",
+            "text": "Though I walk in the midst of trouble, you preserve my life. You stretch out your hand against the anger of my foes, with your right hand you save me.",
             "book": "Psalm 138:7",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
-            "text": "You are my hiding place; you protect me from trouble. You surround me with songs of victory.",
+            "text": "You are my hiding place, you protect me from trouble. You surround me with songs of victory.",
             "book": "Psalm 32:7",
             "isFavorite": false,
             "category": "godsprotection"
@@ -5029,7 +5035,7 @@
             "category": "godsprotection"
         },
         {
-            "text": "The LORD is my strength and my shield; my heart trusts in him, and he helps me. My heart leaps for joy, and with my song I praise him.",
+            "text": "The LORD is my strength and my shield, my heart trusts in him, and he helps me. My heart leaps for joy, and with my song I praise him.",
             "book": "Psalm 28:7",
             "isFavorite": false,
             "category": "godsprotection"
@@ -5256,7 +5262,7 @@
             "category": "godsprotection"
         },
         {
-            "text": "Trust in me; I will keep you safe in my loving arms.",
+            "text": "Trust in me, I will keep you safe in my loving arms.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "godsprotection"
@@ -5268,7 +5274,7 @@
             "category": "godsprotection"
         },
         {
-            "text": "Let not your heart be troubled; my peace I give to you.",
+            "text": "Let not your heart be troubled, my peace I give to you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "godsprotection"
@@ -5286,7 +5292,7 @@
             "category": "godsprotection"
         },
         {
-            "text": "I have overcome the world; in me, you will find victory.",
+            "text": "I have overcome the world, in me, you will find victory.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "godsprotection"
@@ -5298,7 +5304,7 @@
             "category": "godsprotection"
         },
         {
-            "text": "I am your fortress; nothing can harm you under my watch.",
+            "text": "I am your fortress, nothing can harm you under my watch.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "godsprotection"
@@ -5328,19 +5334,19 @@
             "category": "godsprotection"
         },
         {
-            "text": "Call on me in trouble; I will be there to rescue you.",
+            "text": "Call on me in trouble, I will be there to rescue you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
-            "text": "My love for you is a fortress; it keeps fear at bay.",
+            "text": "My love for you is a fortress, it keeps fear at bay.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "godsprotection"
         },
         {
-            "text": "You are never alone; my presence surrounds you always.",
+            "text": "You are never alone, my presence surrounds you always.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "godsprotection"
@@ -5358,7 +5364,7 @@
             "category": "godsprotection"
         },
         {
-            "text": "Lean on me; I will uphold you with my righteous hand.",
+            "text": "Lean on me, I will uphold you with my righteous hand.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "godsprotection"
@@ -5394,7 +5400,7 @@
             "category": "godsprotection"
         },
         {
-            "text": "Rest in my promise of protection; I am always with you.",
+            "text": "Rest in my promise of protection, I am always with you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "godsprotection"
@@ -5415,7 +5421,7 @@
             "category": "destiny"
         },
         {
-            "text": "I am never alone; Jesus is with me, helping me win my battles.",
+            "text": "I am never alone, Jesus is with me, helping me win my battles.",
             "isFavorite": false,
             "category": "destiny"
         },
@@ -5460,7 +5466,7 @@
             "category": "destiny"
         },
         {
-            "text": "I am not stopped by hard times; they only make me stronger.",
+            "text": "I am not stopped by hard times, they only make me stronger.",
             "isFavorite": false,
             "category": "destiny"
         },
@@ -5637,7 +5643,7 @@
             "category": "gratitude"
         },
         {
-            "text": "I will praise you, LORD, with all my heart; I will tell of all the marvelous things you have done.",
+            "text": "I will praise you, LORD, with all my heart, I will tell of all the marvelous things you have done.",
             "book": "Psalm 9:1",
             "isFavorite": false,
             "category": "gratitude"
@@ -5667,19 +5673,19 @@
             "category": "gratitude"
         },
         {
-            "text": "Don’t worry about anything; instead, pray about everything. Tell God what you need, and thank him for all he has done.",
+            "text": "Don’t worry about anything, instead, pray about everything. Tell God what you need, and thank him for all he has done.",
             "book": "Philippians 4:6",
             "isFavorite": false,
             "category": "gratitude"
         },
         {
-            "text": "Enter his gates with thanksgiving; go into his courts with praise. Give thanks to him and praise his name.",
+            "text": "Enter his gates with thanksgiving, go into his courts with praise. Give thanks to him and praise his name.",
             "book": "Psalm 100:4",
             "isFavorite": false,
             "category": "gratitude"
         },
         {
-            "text": "I will thank the LORD because he is just; I will sing praise to the name of the LORD Most High.",
+            "text": "I will thank the LORD because he is just, I will sing praise to the name of the LORD Most High.",
             "book": "Psalm 7:17",
             "isFavorite": false,
             "category": "gratitude"
@@ -5939,13 +5945,13 @@
             "category": "guidance"
         },
         {
-            "text": "I will instruct you and teach you in the way you should go; I will counsel you with my loving eye on you.",
+            "text": "I will instruct you and teach you in the way you should go, I will counsel you with my loving eye on you.",
             "book": "Psalm 32:8",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "The LORD will guide you always; he will satisfy your needs in a sun-scorched land and will strengthen your frame.",
+            "text": "The LORD will guide you always, he will satisfy your needs in a sun-scorched land and will strengthen your frame.",
             "book": "Isaiah 58:11",
             "isFavorite": false,
             "category": "guidance"
@@ -5963,13 +5969,13 @@
             "category": "guidance"
         },
         {
-            "text": "Whether you turn to the right or to the left, your ears will hear a voice behind you, saying, 'This is the way; walk in it.'",
+            "text": "Whether you turn to the right or to the left, your ears will hear a voice behind you, saying, 'This is the way, walk in it.'",
             "book": "Isaiah 30:21",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "For this God is our God for ever and ever; he will be our guide even to the end.",
+            "text": "For this God is our God for ever and ever, he will be our guide even to the end.",
             "book": "Psalm 48:14",
             "isFavorite": false,
             "category": "guidance"
@@ -6029,31 +6035,31 @@
             "category": "guidance"
         },
         {
-            "text": "Teach me to do your will, for you are my God; may your good Spirit lead me on level ground.",
+            "text": "Teach me to do your will, for you are my God, may your good Spirit lead me on level ground.",
             "book": "Psalm 143:10",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "May the favor of the Lord our God rest on us; establish the work of our hands for us—yes, establish the work of our hands.",
+            "text": "May the favor of the Lord our God rest on us, establish the work of our hands for us—yes, establish the work of our hands.",
             "book": "Psalm 90:17",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "Trust in the LORD and do good; dwell in the land and enjoy safe pasture.",
+            "text": "Trust in the LORD and do good, dwell in the land and enjoy safe pasture.",
             "book": "Psalm 37:3",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "I will lead the blind by ways they have not known, along unfamiliar paths I will guide them; I will turn the darkness into light before them and make the rough places smooth.",
+            "text": "I will lead the blind by ways they have not known, along unfamiliar paths I will guide them, I will turn the darkness into light before them and make the rough places smooth.",
             "book": "Isaiah 42:16",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "Keep this Book of the Law always on your lips; meditate on it day and night, so that you may be careful to do everything written in it. Then you will be prosperous and successful.",
+            "text": "Keep this Book of the Law always on your lips, meditate on it day and night, so that you may be careful to do everything written in it. Then you will be prosperous and successful.",
             "book": "Joshua 1:8",
             "isFavorite": false,
             "category": "guidance"
@@ -6077,7 +6083,7 @@
             "category": "guidance"
         },
         {
-            "text": "Trust in Me; I will direct your paths to righteousness.",
+            "text": "Trust in Me, I will direct your paths to righteousness.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
@@ -6089,25 +6095,25 @@
             "category": "guidance"
         },
         {
-            "text": "Lean not on your understanding; My wisdom will guide you.",
+            "text": "Lean not on your understanding, My wisdom will guide you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "I am the light; let Me illuminate your path in darkness.",
+            "text": "I am the light, let Me illuminate your path in darkness.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "Listen for My voice; I will whisper the way to go.",
+            "text": "Listen for My voice, I will whisper the way to go.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "In uncertainty, seek Me; I will provide clarity and peace.",
+            "text": "In uncertainty, seek Me, I will provide clarity and peace.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
@@ -6119,13 +6125,13 @@
             "category": "guidance"
         },
         {
-            "text": "I will light your lamp; darkness will not overcome you.",
+            "text": "I will light your lamp, darkness will not overcome you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "Call upon Me in times of trouble; I will show you the way out.",
+            "text": "Call upon Me in times of trouble, I will show you the way out.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
@@ -6137,19 +6143,19 @@
             "category": "guidance"
         },
         {
-            "text": "My words are a lamp to your feet; walk in My teachings.",
+            "text": "My words are a lamp to your feet, walk in My teachings.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "I will guide you with My eye; keep your focus on Me.",
+            "text": "I will guide you with My eye, keep your focus on Me.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "Do not fear the unknown; My hand will lead you safely.",
+            "text": "Do not fear the unknown, My hand will lead you safely.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
@@ -6161,13 +6167,13 @@
             "category": "guidance"
         },
         {
-            "text": "My Spirit will guide you into all truth; trust in His promptings.",
+            "text": "My Spirit will guide you into all truth, trust in His promptings.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "I will make your paths straight; walk in faith, not by sight.",
+            "text": "I will make your paths straight, walk in faith, not by sight.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
@@ -6179,7 +6185,7 @@
             "category": "guidance"
         },
         {
-            "text": "I am the Good Shepherd; follow Me for guidance and protection.",
+            "text": "I am the Good Shepherd, follow Me for guidance and protection.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
@@ -6197,31 +6203,31 @@
             "category": "guidance"
         },
         {
-            "text": "My plans for you are good; trust Me to lead you to your destiny.",
+            "text": "My plans for you are good, trust Me to lead you to your destiny.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "I am always before you; I will show you the path of life.",
+            "text": "I am always before you, I will show you the path of life.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "In every decision, consult Me; I will give you wise counsel.",
+            "text": "In every decision, consult Me, I will give you wise counsel.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "My guidance is a gift; receive it with an open heart.",
+            "text": "My guidance is a gift, receive it with an open heart.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
         },
         {
-            "text": "I will guide you to peace and fulfillment; rest in My will.",
+            "text": "I will guide you to peace and fulfillment, rest in My will.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "guidance"
@@ -6395,13 +6401,13 @@
             "category": "grace"
         },
         {
-            "text": "For everyone has sinned; we all fall short of God’s glorious standard.",
+            "text": "For everyone has sinned, we all fall short of God’s glorious standard.",
             "book": "Romans 3:23",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "This means that anyone who belongs to Christ has become a new person. The old life is gone; a new life has begun!",
+            "text": "This means that anyone who belongs to Christ has become a new person. The old life is gone, a new life has begun!",
             "book": "2 Corinthians 5:17",
             "isFavorite": false,
             "category": "grace"
@@ -6413,121 +6419,109 @@
             "category": "grace"
         },
         {
-            "text": "I have redeemed you; your sins are washed away by my grace.",
+            "text": "I have redeemed you, your sins are washed away by my grace.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "Do not dwell on past mistakes; I offer you forgiveness and a fresh start.",
+            "text": "Do not dwell on past mistakes, I offer you forgiveness and a fresh start.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "I do not condemn you; go and sin no more, for I am with you.",
+            "text": "I do not condemn you, go and sin no more, for I am with you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "My grace is greater than your sins; trust in my forgiveness.",
+            "text": "My grace is greater than your sins, trust in my forgiveness.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "You are a new creation in me; let go of guilt and embrace my love.",
+            "text": "You are a new creation in me, let go of guilt and embrace my love.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "In me, there is no condemnation; find freedom from sin-consciousness.",
+            "text": "In me, there is no condemnation, find freedom from sin-consciousness.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "I bore your sins on the cross; you are forgiven and free.",
+            "text": "I bore your sins on the cross, you are forgiven and free.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "Your sins are cast into the depths of the sea; remember them no more.",
+            "text": "Your sins are cast into the depths of the sea, remember them no more.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "I love you despite your flaws; do not carry the burden of guilt.",
+            "text": "I love you despite your flaws, do not carry the burden of guilt.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "I offer you grace, not condemnation; let go of guilt and embrace my love.",
+            "text": "I offer you grace, not condemnation, let go of guilt and embrace my love.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "Your past does not define you; I offer you a future of hope and grace.",
+            "text": "Your past does not define you, I offer you a future of hope and grace.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "I have paid the price for your sins; accept my forgiveness and live in freedom.",
+            "text": "I have paid the price for your sins, accept my forgiveness and live in freedom.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "Guilt and shame have no place in my love; come to me and find peace.",
+            "text": "Guilt and shame have no place in my love, come to me and find peace.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "I offer you a clean slate; do not be sin-conscious, but grace-conscious.",
+            "text": "I offer you a clean slate, do not be sin-conscious, but grace-conscious.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "I have paid the price for your sins; walk in the freedom of my forgiveness.",
+            "text": "I have paid the price for your sins, walk in the freedom of my forgiveness.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "I am the way to righteousness; do not carry the weight of guilt any longer.",
+            "text": "I am the way to righteousness, do not carry the weight of guilt any longer.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "I have removed your sins as far as the east is from the west; be free from guilt.",
+            "text": "Your sins are forgiven, do not let guilt rob you of my peace and joy.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
         },
         {
-            "text": "I offer you grace upon grace; release the burden of sin-consciousness.",
-            "book": "Jesus",
-            "isFavorite": false,
-            "category": "grace"
-        },
-        {
-            "text": "Your sins are forgiven; do not let guilt rob you of my peace and joy.",
-            "book": "Jesus",
-            "isFavorite": false,
-            "category": "grace"
-        },
-        {
-            "text": "I have redeemed you with my precious blood; leave guilt behind and follow me.",
+            "text": "I have redeemed you with my precious blood, leave guilt behind and follow me.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "grace"
@@ -6568,37 +6562,37 @@
             "category": "hardtimes"
         },
         {
-            "text": "We are hard pressed on every side, but not crushed; perplexed, but not in despair.",
+            "text": "We are hard pressed on every side, but not crushed, perplexed, but not in despair.",
             "book": "2 Corinthians 4:8",
             "isFavorite": false,
             "category": "hardtimes"
         },
         {
-            "text": "Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me.",
+            "text": "Even though I walk through the darkest valley, I will fear no evil, for you are with me, your rod and your staff, they comfort me.",
             "book": "Psalm 23:4",
             "isFavorite": false,
             "category": "hardtimes"
         },
         {
-            "text": "The LORD himself goes before you and will be with you; he will never leave you nor forsake you. Do not be afraid; do not be discouraged.",
+            "text": "The LORD himself goes before you and will be with you, he will never leave you nor forsake you. Do not be afraid, do not be discouraged.",
             "book": "Deuteronomy 31:8",
             "isFavorite": false,
             "category": "hardtimes"
         },
         {
-            "text": "But those who hope in the LORD will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.",
+            "text": "But those who hope in the LORD will renew their strength. They will soar on wings like eagles, they will run and not grow weary, they will walk and not be faint.",
             "book": "Isaiah 40:31",
             "isFavorite": false,
             "category": "hardtimes"
         },
         {
-            "text": "Be strong and courageous. Do not be afraid or terrified because of them, for the LORD your God goes with you; he will never leave you nor forsake you.",
+            "text": "Be strong and courageous. Do not be afraid or terrified because of them, for the LORD your God goes with you, he will never leave you nor forsake you.",
             "book": "Deuteronomy 31:6",
             "isFavorite": false,
             "category": "hardtimes"
         },
         {
-            "text": "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
+            "text": "Peace I leave with you, my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
             "book": "John 14:27",
             "isFavorite": false,
             "category": "hardtimes"
@@ -6634,7 +6628,7 @@
             "category": "hardtimes"
         },
         {
-            "text": "You are my hiding place; you will protect me from trouble and surround me with songs of deliverance.",
+            "text": "You are my hiding place, you will protect me from trouble and surround me with songs of deliverance.",
             "book": "Psalm 32:7",
             "isFavorite": false,
             "category": "hardtimes"
@@ -6682,7 +6676,7 @@
             "category": "hardtimes"
         },
         {
-            "text": "When you pass through the waters, I will be with you; and through the rivers, they shall not overwhelm you; when you walk through fire you shall not be burned, and the flame shall not consume you.",
+            "text": "When you pass through the waters, I will be with you, and through the rivers, they shall not overwhelm you, when you walk through fire you shall not be burned, and the flame shall not consume you.",
             "book": "Isaiah 43:2",
             "isFavorite": false,
             "category": "hardtimes"
@@ -6706,7 +6700,7 @@
             "category": "hardtimes"
         },
         {
-            "text": "Cast your cares on the LORD and he will sustain you; he will never let the righteous be shaken.",
+            "text": "Cast your cares on the LORD and he will sustain you, he will never let the righteous be shaken.",
             "book": "Psalm 55:22",
             "isFavorite": false,
             "category": "hardtimes"
@@ -6742,13 +6736,13 @@
             "category": "hardtimes"
         },
         {
-            "text": "Let not your heart be troubled; my grace is sufficient for you.",
+            "text": "Let not your heart be troubled, my grace is sufficient for you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hardtimes"
         },
         {
-            "text": "In your weakness, my power is made perfect; lean on me.",
+            "text": "In your weakness, my power is made perfect, lean on me.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hardtimes"
@@ -6760,7 +6754,7 @@
             "category": "hardtimes"
         },
         {
-            "text": "Trust in me with all your heart; I will direct your paths.",
+            "text": "Trust in me with all your heart, I will direct your paths.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hardtimes"
@@ -6778,13 +6772,13 @@
             "category": "hardtimes"
         },
         {
-            "text": "Do not be afraid; I am your shield, your very great reward.",
+            "text": "Do not be afraid, I am your shield, your very great reward.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hardtimes"
         },
         {
-            "text": "I will never leave you nor forsake you; you are not alone.",
+            "text": "I will never leave you nor forsake you, you are not alone.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hardtimes"
@@ -6796,13 +6790,13 @@
             "category": "hardtimes"
         },
         {
-            "text": "My peace I give to you; let not your hearts be troubled.",
+            "text": "My peace I give to you, let not your hearts be troubled.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hardtimes"
         },
         {
-            "text": "Be of good cheer; I have overcome the world for you.",
+            "text": "Be of good cheer, I have overcome the world for you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hardtimes"
@@ -6814,31 +6808,31 @@
             "category": "hardtimes"
         },
         {
-            "text": "In me, you may have peace; take heart, I have overcome your troubles.",
+            "text": "In me, you may have peace, take heart, I have overcome your troubles.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hardtimes"
         },
         {
-            "text": "I am the light of the world; whoever follows me will not walk in darkness.",
+            "text": "I am the light of the world, whoever follows me will not walk in darkness.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hardtimes"
         },
         {
-            "text": "Ask, and it will be given to you; seek, and you will find; knock, and the door will be opened.",
+            "text": "Ask, and it will be given to you, seek, and you will find, knock, and the door will be opened.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hardtimes"
         },
         {
-            "text": "My yoke is easy and my burden is light; I will help you carry your load.",
+            "text": "My yoke is easy and my burden is light, I will help you carry your load.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hardtimes"
         },
         {
-            "text": "I will give you the keys of the Kingdom of Heaven; whatever you bind on earth shall be bound in heaven.",
+            "text": "I will give you the keys of the Kingdom of Heaven, whatever you bind on earth shall be bound in heaven.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hardtimes"
@@ -6850,13 +6844,13 @@
             "category": "hardtimes"
         },
         {
-            "text": "I am the way, the truth, and the life; follow me for guidance and salvation.",
+            "text": "I am the way, the truth, and the life, follow me for guidance and salvation.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hardtimes"
         },
         {
-            "text": "I have called you by name; you are mine. When you go through deep waters, I will be with you.",
+            "text": "I have called you by name, you are mine. When you go through deep waters, I will be with you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hardtimes"
@@ -7233,31 +7227,31 @@
             "category": "health"
         },
         {
-            "text": "Your faith has made you well; go in peace, free from suffering.",
+            "text": "Your faith has made you well, go in peace, free from suffering.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "I am the Lord who heals you; lean on my promises of healing.",
+            "text": "I am the Lord who heals you, lean on my promises of healing.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "Be of good cheer; your sickness will not end in death, but for the glory of God.",
+            "text": "Be of good cheer, your sickness will not end in death, but for the glory of God.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "Rise, take up your bed and walk; your faith has made you whole.",
+            "text": "Rise, take up your bed and walk, your faith has made you whole.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "Believe in my healing power; it is my will for you to be well.",
+            "text": "Believe in my healing power, it is my will for you to be well.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
@@ -7269,62 +7263,62 @@
             "category": "health"
         },
         {
-            "text": "By my stripes, you are healed; hold onto my promise of redemption.",
+            "text": "By my stripes, you are healed, hold onto my promise of redemption.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "Fear not, for I am with you; be not dismayed, for I am your God. I will strengthen you, I will help you, I will uphold you with my righteous right hand.",
+            "text": "Fear not, for I am with you, be not dismayed, for I am your God. I will strengthen you, I will help you, I will uphold you with my righteous right hand.",
             "affirmationText": "I will not fear, You are with me, You are my God! You will strengthen me, help me, and uphold me!",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "I will restore you to health and heal your wounds; trust in my compassionate touch.",
+            "text": "I will restore you to health and heal your wounds, trust in my compassionate touch.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "Ask, and it will be given to you; seek healing, and you shall find.",
+            "text": "Ask, and it will be given to you, seek healing, and you shall find.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "I came that they may have life and have it abundantly; embrace the fullness of health.",
+            "text": "I came that they may have life and have it abundantly, embrace the fullness of health.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "Peace be with you; let my peace settle in your heart, mind, and body.",
+            "text": "Peace be with you, let my peace settle in your heart, mind, and body.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "Take heart, my child; I have the authority to heal and to save.",
+            "text": "Take heart, my child, I have the authority to heal and to save.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "In me, you will find strength; I am your fortress in times of weakness.",
+            "text": "In me, you will find strength, I am your fortress in times of weakness.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "I will renew your strength; you will soar on wings like eagles.",
+            "text": "I will renew your strength, you will soar on wings like eagles.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "Believe in the power of prayer; through faith, you will receive healing.",
+            "text": "Believe in the power of prayer, through faith, you will receive healing.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
@@ -7336,7 +7330,7 @@
             "category": "health"
         },
         {
-            "text": "Let my joy be your strength; in me, you will find healing and happiness.",
+            "text": "Let my joy be your strength, in me, you will find healing and happiness.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "health"
@@ -7432,7 +7426,7 @@
             "category": "health"
         },
         {
-            "text": "But those who hope in the LORD will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.",
+            "text": "But those who hope in the LORD will renew their strength. They will soar on wings like eagles, they will run and not grow weary, they will walk and not be faint.",
             "book": "Isaiah 40:31",
             "isFavorite": false,
             "category": "hope"
@@ -7486,7 +7480,7 @@
             "category": "hope"
         },
         {
-            "text": "You are my refuge and my shield; I have put my hope in your word.",
+            "text": "You are my refuge and my shield, I have put my hope in your word.",
             "book": "Psalm 119:114",
             "isFavorite": false,
             "category": "hope"
@@ -7564,7 +7558,7 @@
             "category": "hope"
         },
         {
-            "text": "Though he slay me, yet will I hope in him; I will surely defend my ways to his face.",
+            "text": "Though he slay me, yet will I hope in him, I will surely defend my ways to his face.",
             "book": "Job 13:15",
             "isFavorite": false,
             "category": "hope"
@@ -7594,7 +7588,7 @@
             "category": "hope"
         },
         {
-            "text": "Trust in My plan for you; it's filled with hope and a bright future.",
+            "text": "Trust in My plan for you, it's filled with hope and a bright future.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hope"
@@ -7618,7 +7612,7 @@
             "category": "hope"
         },
         {
-            "text": "Let not your heart be troubled; in Me, you have everlasting hope.",
+            "text": "Let not your heart be troubled, in Me, you have everlasting hope.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hope"
@@ -7630,7 +7624,7 @@
             "category": "hope"
         },
         {
-            "text": "Believe in My promises; they are your anchor of hope in any sea.",
+            "text": "Believe in My promises, they are your anchor of hope in any sea.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hope"
@@ -7648,13 +7642,13 @@
             "category": "hope"
         },
         {
-            "text": "I am the resurrection and the life; in Me, hope is always alive.",
+            "text": "I am the resurrection and the life, in Me, hope is always alive.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hope"
         },
         {
-            "text": "Your hope in Me will not be disappointed; I keep My word.",
+            "text": "Your hope in Me will not be disappointed, I keep My word.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hope"
@@ -7714,7 +7708,7 @@
             "category": "hope"
         },
         {
-            "text": "I am the source of all hope; drink deeply from My well of life.",
+            "text": "I am the source of all hope, drink deeply from My well of life.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "hope"
@@ -7889,7 +7883,7 @@
             "category": "identity"
         },
         {
-            "text": "So God created man in his own image, in the image of God he created him; male and female he created them." ,
+            "text": "So God created man in his own image, in the image of God he created him, male and female he created them." ,
             "book": "Genesis 1:27",
             "isFavorite": false,
             "category": "identity"
@@ -8045,7 +8039,7 @@
             "category": "identity"
         },
         {
-            "text": "In Me, you have received a spirit of sonship; you can call God your Father.",
+            "text": "In Me, you have received a spirit of sonship, you can call God your Father.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "identity"
@@ -8057,7 +8051,7 @@
             "category": "identity"
         },
         {
-            "text": "You are set free; whom I set free is free indeed, embracing true liberty in Me.",
+            "text": "You are set free, whom I set free is free indeed, embracing true liberty in Me.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "identity"
@@ -8320,19 +8314,19 @@
             "category": "joy"
         },
         {
-            "text": "This is the day the LORD has made; we will rejoice and be glad in it.",
+            "text": "This is the day the LORD has made, we will rejoice and be glad in it.",
             "book": "Psalm 118:24",
             "isFavorite": false,
             "category": "joy"
         },
         {
-            "text": "Though you have not seen him, you love him; and even though you do not see him now, you believe in him and are filled with an inexpressible and glorious joy.",
+            "text": "Though you have not seen him, you love him, and even though you do not see him now, you believe in him and are filled with an inexpressible and glorious joy.",
             "book": "1 Peter 1:8",
             "isFavorite": false,
             "category": "joy"
         },
         {
-            "text": "You make known to me the path of life; in your presence there is fullness of joy; at your right hand are pleasures forevermore.",
+            "text": "You make known to me the path of life, in your presence there is fullness of joy, at your right hand are pleasures forevermore.",
             "book": "Psalm 16:11",
             "isFavorite": false,
             "category": "joy"
@@ -8392,31 +8386,31 @@
             "category": "joy"
         },
         {
-            "text": "But let all who take refuge in you be glad; let them ever sing for joy. Spread your protection over them, that those who love your name may rejoice in you.",
+            "text": "But let all who take refuge in you be glad, let them ever sing for joy. Spread your protection over them, that those who love your name may rejoice in you.",
             "book": "Psalm 5:11",
             "isFavorite": false,
             "category": "joy"
         },
         {
-            "text": "Clap your hands, all you nations; shout to God with cries of joy.",
+            "text": "Clap your hands, all you nations, shout to God with cries of joy.",
             "book": "Psalm 47:1",
             "isFavorite": false,
             "category": "joy"
         },
         {
-            "text": "For you, LORD, have made me glad through your work; I will sing for joy at the works of your hands.",
+            "text": "For you, LORD, have made me glad through your work, I will sing for joy at the works of your hands.",
             "book": "Psalm 92:4",
             "isFavorite": false,
             "category": "joy"
         },
         {
-            "text": "Let the righteous rejoice in the LORD and take refuge in him; let all the upright in heart praise him!",
+            "text": "Let the righteous rejoice in the LORD and take refuge in him, let all the upright in heart praise him!",
             "book": "Psalm 64:10",
             "isFavorite": false,
             "category": "joy"
         },
         {
-            "text": "I will greatly rejoice in the LORD, my soul shall be joyful in my God; for he has clothed me with the garments of salvation, he has covered me with the robe of righteousness.",
+            "text": "I will greatly rejoice in the LORD, my soul shall be joyful in my God, for he has clothed me with the garments of salvation, he has covered me with the robe of righteousness.",
             "book": "Isaiah 61:10",
             "isFavorite": false,
             "category": "joy"
@@ -8440,7 +8434,7 @@
             "category": "joy"
         },
         {
-            "text": "I rejoice in God's love and faithfulness; His joy fills my heart.",
+            "text": "I rejoice in God's love and faithfulness, His joy fills my heart.",
             "book": "Psalm 89:1",
             "isFavorite": false,
             "category": "joy"
@@ -8464,7 +8458,7 @@
             "category": "joy"
         },
         {
-            "text": "I am the Alpha and Omega, the beginning and the end; in Me, your joy is complete.",
+            "text": "I am the Alpha and Omega, the beginning and the end, in Me, your joy is complete.",
             "book": "Revelation 21:6",
             "isFavorite": false,
             "category": "joy"
@@ -8536,7 +8530,7 @@
             "category": "joy"
         },
         {
-            "text": "Let not your hearts be troubled; in Me, you have everlasting joy.",
+            "text": "Let not your hearts be troubled, in Me, you have everlasting joy.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "joy"
@@ -8614,7 +8608,7 @@
             "category": "joy"
         },
         {
-            "text": "In Me, you have victory over every trial; let your joy be your anthem.",
+            "text": "In Me, you have victory over every trial, let your joy be your anthem.",
             "book": "Romans 8:37",
             "isFavorite": false,
             "category": "joy"
@@ -8724,7 +8718,7 @@
             "category": "joy"
         },
         {
-            "text": "I am your shepherd; in Me, you lack nothing, including joy.",
+            "text": "I am your shepherd, in Me, you lack nothing, including joy.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "joy"
@@ -8742,7 +8736,7 @@
             "category": "loneliness"
         },
         {
-            "text": "Fear not, for I am with you; be not dismayed, for I am your God.",
+            "text": "Fear not, for I am with you, be not dismayed, for I am your God.",
             "book": "Isaiah 41:10",
             "isFavorite": false,
             "category": "loneliness"
@@ -8760,13 +8754,13 @@
             "category": "loneliness"
         },
         {
-            "text": "I will not leave you as orphans; I will come to you.",
+            "text": "I will not leave you as orphans, I will come to you.",
             "book": "John 14:18",
             "isFavorite": false,
             "category": "loneliness"
         },
         {
-            "text": "Be strong and courageous. Do not be afraid; do not be discouraged.",
+            "text": "Be strong and courageous. Do not be afraid, do not be discouraged.",
             "book": "Joshua 1:9",
             "isFavorite": false,
             "category": "loneliness"
@@ -8784,13 +8778,13 @@
             "category": "loneliness"
         },
         {
-            "text": "Never will I leave you; never will I forsake you.",
+            "text": "Never will I leave you, never will I forsake you.",
             "book": "Hebrews 13:5",
             "isFavorite": false,
             "category": "loneliness"
         },
         {
-            "text": "The Lord is my helper; I will not be afraid.",
+            "text": "The Lord is my helper, I will not be afraid.",
             "book": "Hebrews 13:6",
             "isFavorite": false,
             "category": "loneliness"
@@ -8802,7 +8796,7 @@
             "category": "loneliness"
         },
         {
-            "text": "Call on Me in the day of trouble; I will deliver you.",
+            "text": "Call on Me in the day of trouble, I will deliver you.",
             "book": "Psalm 50:15",
             "isFavorite": false,
             "category": "loneliness"
@@ -8850,7 +8844,7 @@
             "category": "loneliness"
         },
         {
-            "text": "Peace I leave with you; my peace I give you.",
+            "text": "Peace I leave with you, my peace I give you.",
             "book": "John 14:27",
             "isFavorite": false,
             "category": "loneliness"
@@ -8886,7 +8880,7 @@
             "category": "loneliness"
         },
         {
-            "text": "You are never alone; My presence envelops you like a warm embrace.",
+            "text": "You are never alone, My presence envelops you like a warm embrace.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "loneliness"
@@ -8940,7 +8934,7 @@
             "category": "loneliness"
         },
         {
-            "text": "I understand solitude; I am here to fill your heart with divine companionship.",
+            "text": "I understand solitude, I am here to fill your heart with divine companionship.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "loneliness"
@@ -8964,7 +8958,7 @@
             "category": "loneliness"
         },
         {
-            "text": "I am your shepherd; you shall not want for companionship.",
+            "text": "I am your shepherd, you shall not want for companionship.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "loneliness"
@@ -9130,7 +9124,7 @@
             "category": "love"
         },
         {
-            "text": "Give thanks to the Lord, for he is good; his love endures forever.",
+            "text": "Give thanks to the Lord, for he is good, his love endures forever.",
             "book": "1 Chronicles 16:34 ",
             "isFavorite": false,
             "category": "love"
@@ -9226,7 +9220,7 @@
             "category": "love"
         },
         {
-            "text": "You are never alone; I am with you in every season.",
+            "text": "You are never alone, I am with you in every season.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "love"
@@ -9238,7 +9232,7 @@
             "category": "love"
         },
         {
-            "text": "I rejoice over you with singing; you are My beloved.",
+            "text": "I rejoice over you with singing, you are My beloved.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "love"
@@ -9256,7 +9250,7 @@
             "category": "love"
         },
         {
-            "text": "Come to Me with your burdens; I will give you rest.",
+            "text": "Come to Me with your burdens, I will give you rest.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "love"
@@ -9280,7 +9274,7 @@
             "category": "love"
         },
         {
-            "text": "I have called you by name; you are Mine.",
+            "text": "I have called you by name, you are Mine.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "love"
@@ -9292,19 +9286,19 @@
             "category": "love"
         },
         {
-            "text": "Trust in My unfailing love; it is your shield and rampart.",
+            "text": "Trust in My unfailing love, it is your shield and rampart.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "love"
         },
         {
-            "text": "I delight in you; My love will never fail you.",
+            "text": "I delight in you, My love will never fail you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "love"
         },
         {
-            "text": "I have engraved you on the palms of My hands; you are always before Me.",
+            "text": "I have engraved you on the palms of My hands, you are always before Me.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "love"
@@ -9316,7 +9310,7 @@
             "category": "love"
         },
         {
-            "text": "I am your shepherd; under My care, you will lack nothing.",
+            "text": "I am your shepherd, under My care, you will lack nothing.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "love"
@@ -9588,13 +9582,13 @@
             "category": "marriage"
         },
         {
-            "text": "Your marriage is a partnership; work together as I work with you.",
+            "text": "Your marriage is a partnership, work together as I work with you.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "marriage"
         },
         {
-            "text": "I am the source of your marriage's strength; lean on me in times of trouble.",
+            "text": "I am the source of your marriage's strength, lean on me in times of trouble.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "marriage"
@@ -9605,7 +9599,7 @@
             "category": "marriage"
         },
         {
-            "text": "I am the cornerstone of your marriage; build it upon me, and it will not fall.",
+            "text": "I am the cornerstone of your marriage, build it upon me, and it will not fall.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "marriage"
@@ -9617,7 +9611,7 @@
             "category": "marriage"
         },
         {
-            "text": "Your marriage is a reflection of my love for the church; make it a glorious one.",
+            "text": "Your marriage is a reflection of my love for the church, make it a glorious one.",
             "isFavorite": false,
             "category": "marriage"
         },
@@ -9628,7 +9622,7 @@
             "category": "marriage"
         },
         {
-            "text": "Prayer is the foundation of a strong marriage; seek my guidance in all things.",
+            "text": "Prayer is the foundation of a strong marriage, seek my guidance in all things.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "marriage"
@@ -9639,13 +9633,13 @@
             "category": "marriage"
         },
         {
-            "text": "I am the center of your marriage; keep me at the center of your hearts.",
+            "text": "I am the center of your marriage, keep me at the center of your hearts.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "marriage"
         },
         {
-            "text": "Keep the flame of passion alive in your marriage; I designed it to be passionate and pure.",
+            "text": "Keep the flame of passion alive in your marriage, I designed it to be passionate and pure.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "marriage"
@@ -9858,7 +9852,7 @@
             "category": "marriage"
         },
         {
-            "text": "Many waters cannot quench love; rivers cannot sweep it away. If one were to give all the wealth of one’s house for love, it would be utterly scorned.",
+            "text": "Many waters cannot quench love, rivers cannot sweep it away. If one were to give all the wealth of one’s house for love, it would be utterly scorned.",
             "book": "Song of Solomon 8:7",
             "isFavorite": false,
             "category": "marriage"
@@ -9894,13 +9888,13 @@
             "category": "marriage"
         },
         {
-            "text": "Let love and faithfulness never leave you; bind them around your neck, write them on the tablet of your heart.",
+            "text": "Let love and faithfulness never leave you, bind them around your neck, write them on the tablet of your heart.",
             "book": "Proverbs 3:3",
             "isFavorite": false,
             "category": "marriage"
         },
         {
-            "text": "Be completely humble and gentle; be patient, bearing with one another in love.",
+            "text": "Be completely humble and gentle, be patient, bearing with one another in love.",
             "book": "Ephesians 4:2",
             "isFavorite": false,
             "category": "marriage"
@@ -10061,7 +10055,7 @@
             "category": "peace"
         },
         {
-            "text": "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
+            "text": "Peace I leave with you, my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
             "book": "John 14:27",
             "isFavorite": false,
             "category": "peace"
@@ -10103,7 +10097,7 @@
             "category": "peace"
         },
         {
-            "text": "Turn from evil and do good; seek peace and pursue it.",
+            "text": "Turn from evil and do good, seek peace and pursue it.",
             "book": "Psalm 34:14",
             "isFavorite": false,
             "category": "peace"
@@ -10115,7 +10109,7 @@
             "category": "peace"
         },
         {
-            "text": "The LORD gives strength to his people; the LORD blesses his people with peace.",
+            "text": "The LORD gives strength to his people, the LORD blesses his people with peace.",
             "book": "Psalm 29:11",
             "isFavorite": false,
             "category": "peace"
@@ -10139,7 +10133,7 @@
             "category": "peace"
         },
         {
-            "text": "But the wisdom that comes from heaven is first of all pure; then peace-loving, considerate, submissive, full of mercy and good fruit, impartial and sincere.",
+            "text": "But the wisdom that comes from heaven is first of all pure, then peace-loving, considerate, submissive, full of mercy and good fruit, impartial and sincere.",
             "book": "James 3:17",
             "isFavorite": false,
             "category": "peace"
@@ -10151,7 +10145,7 @@
             "category": "peace"
         },
         {
-            "text": "Finally, brothers and sisters, rejoice! Strive for full restoration, encourage one another, be of one mind, live in peace; and the God of love and peace will be with you.",
+            "text": "Finally, brothers and sisters, rejoice! Strive for full restoration, encourage one another, be of one mind, live in peace, and the God of love and peace will be with you.",
             "book": "2 Corinthians 13:11",
             "isFavorite": false,
             "category": "peace"
@@ -10290,13 +10284,13 @@
             "category": "peace"
         },
         {
-            "text": "Let not your heart be troubled; my peace is with you always.",
+            "text": "Let not your heart be troubled, my peace is with you always.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "peace"
         },
         {
-            "text": "In your worries, find refuge in Me; I am your peace.",
+            "text": "In your worries, find refuge in Me, I am your peace.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "peace"
@@ -10308,13 +10302,13 @@
             "category": "peace"
         },
         {
-            "text": "In the chaos, seek My face; I am your island of peace.",
+            "text": "In the chaos, seek My face, I am your island of peace.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "peace"
         },
         {
-            "text": "When you feel overwhelmed, whisper My name; I'll bring you peace.",
+            "text": "When you feel overwhelmed, whisper My name, I'll bring you peace.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "peace"
@@ -10332,19 +10326,19 @@
             "category": "peace"
         },
         {
-            "text": "Release your fears to Me; in exchange, I offer you peace.",
+            "text": "Release your fears to Me, in exchange, I offer you peace.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "peace"
         },
         {
-            "text": "Walk with Me in nature; I'll show you the path to peace.",
+            "text": "Walk with Me in nature, I'll show you the path to peace.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "peace"
         },
         {
-            "text": "In the midst of your trials, cling to Me; I am your peace.",
+            "text": "In the midst of your trials, cling to Me, I am your peace.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "peace"
@@ -10368,7 +10362,7 @@
             "category": "peace"
         },
         {
-            "text": "Let go of what you cannot control; find peace in My sovereignty.",
+            "text": "Let go of what you cannot control, find peace in My sovereignty.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "peace"
@@ -10380,13 +10374,13 @@
             "category": "peace"
         },
         {
-            "text": "Seek peace in your relationships through Me; I am the bridge builder.",
+            "text": "Seek peace in your relationships through Me, I am the bridge builder.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "peace"
         },
         {
-            "text": "In the quiet moments, listen for Me; I speak peace to your soul.",
+            "text": "In the quiet moments, listen for Me, I speak peace to your soul.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "peace"
@@ -10577,7 +10571,7 @@
             "category": "perseverance"
         },
         {
-            "text": "But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.",
+            "text": "But those who hope in the Lord will renew their strength. They will soar on wings like eagles, they will run and not grow weary, they will walk and not be faint.",
             "book": "Isaiah 40:31 ",
             "isFavorite": false,
             "category": "perseverance"
@@ -10774,7 +10768,7 @@
             "category": "wealth"
         },
         {
-            "text": "I am a warrior of wealth, forging my path to prosperity.",
+            "text": "I am a warrior of wealth, creating my path to prosperity.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -10794,7 +10788,7 @@
             "category": "wealth"
         },
         {
-            "text": "I am a conqueror, seizing every chance for prosperity.",
+            "text": "I am a conqueror, seizing every opportunity.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -10824,11 +10818,6 @@
             "category": "wealth"
         },
         {
-            "text": "I am a force to be reckoned with in the realm of wealth.",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
             "text": "I am the architect of abundance, building my fortune.",
             "isFavorite": false,
             "category": "wealth"
@@ -10839,12 +10828,12 @@
             "category": "wealth"
         },
         {
-            "text": "I am a warrior of prosperity, claiming victory in wealth.",
+            "text": "I am a thriving, claiming abundance.",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "I am empowered to attract wealth effortlessly.",
+            "text": "I attract wealth effortlessly.",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -10864,22 +10853,17 @@
             "category": "wealth"
         },
         {
-            "text": "I'm like a money magnet, attracting wealth and good luck wherever I go!",
+            "text": "I'm like a money magnet, attracting wealth wherever I go!",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "I'm a cash champion, winning at life and stacking up my riches!",
+            "text": "I'm winning at life and stacking up my riches!",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "I'm a wealth warrior, fighting for my dreams and making them real!",
-            "isFavorite": false,
-            "category": "wealth"
-        },
-        {
-            "text": "I'm a money master, counting my coins and making them multiply!",
+            "text": "I'm fighting for my dreams and making them real!",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -10889,7 +10873,7 @@
             "category": "wealth"
         },
         {
-            "text": "I'm not afraid of anything and I can do whatever I want to be rich!",
+            "text": "I'm not afraid of anything and I can do whatever it takes!",
             "isFavorite": false,
             "category": "wealth"
         },
@@ -11261,13 +11245,13 @@
             "category": "wealth"
         },
         {
-            "text": "Trust in my abundance; I provide more than you can ask or imagine.",
+            "text": "Trust in my abundance, I provide more than you can ask or imagine.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "I delight in your prosperity and well-being; walk in my ways.",
+            "text": "I delight in your prosperity and well-being, walk in my ways.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "wealth"
@@ -11279,7 +11263,7 @@
             "category": "wealth"
         },
         {
-            "text": "Your faithfulness is rewarded in my kingdom; expect my blessings.",
+            "text": "Your faithfulness is rewarded in my kingdom, expect my blessings.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "wealth"
@@ -11291,13 +11275,13 @@
             "category": "wealth"
         },
         {
-            "text": "I am your provider; look to me for your needs.",
+            "text": "I am your provider, look to me for your needs.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "Do not worry about tomorrow; I am your shepherd, you shall not want.",
+            "text": "Do not worry about tomorrow, I am your shepherd, you shall not want.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "wealth"
@@ -11309,7 +11293,7 @@
             "category": "wealth"
         },
         {
-            "text": "I open doors no one can shut; trust in my timing for your prosperity.",
+            "text": "I open doors no one can shut, trust in my timing for your prosperity.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "wealth"
@@ -11321,13 +11305,13 @@
             "category": "wealth"
         },
         {
-            "text": "I am with you in your endeavors; let my wisdom lead your financial decisions.",
+            "text": "I am with you in your endeavors, let my wisdom lead your financial decisions.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "In me, you find true riches; let your treasure be in what is eternal.",
+            "text": "In me, you find true riches, let your treasure be in what is eternal.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "wealth"
@@ -11339,7 +11323,7 @@
             "category": "wealth"
         },
         {
-            "text": "Your generosity reflects my love; in giving, you unlock my blessings.",
+            "text": "Your generosity reflects my love, in giving, you unlock my blessings.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "wealth"
@@ -11363,13 +11347,13 @@
             "category": "wealth"
         },
         {
-            "text": "Trust in my provision; I dress the lilies, how much more will I care for you?",
+            "text": "Trust in my provision, I dress the lilies, how much more will I care for you?",
             "book": "Jesus",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "I rejoice in your success and well-being; your prosperity brings me glory.",
+            "text": "I rejoice in your success and well-being, your prosperity brings me glory.",
             "book": "Jesus",
             "isFavorite": false,
             "category": "wealth"
@@ -11459,21 +11443,15 @@
         {"text": "I am living in the abundance of God's grace, experiencing His favor in all areas of my life.", "isFavorite": false, "category": "grace"},
         {"text": "I am confident in my identity in Christ, secured and established by God's grace.", "isFavorite": false, "category": "grace"},
         {"text": "I am looking forward to the return of Jesus, sustained by the grace of God until that glorious day.", "isFavorite": false, "category": "grace"},
-        {"text": "I believe in the miraculous signs as evidence that God is with Jesus, strengthening my faith.", "isFavorite": false, "category": "faith"},
-        {"text": "I am born again, seeing the Kingdom of God through spiritual rebirth.", "isFavorite": false, "category": "faith"},
-        {"text": "I enter the Kingdom of God by being born of water and the Spirit.", "isFavorite": false, "category": "faith"},
-        {"text": "I am given birth to spiritual life by the Holy Spirit.", "isFavorite": false, "category": "faith"},
-        {"text": "I am not surprised by the necessity of being born again to see God's Kingdom.", "isFavorite": false, "category": "faith"},
-        {"text": "I understand that the Spirit's movement is mysterious, yet I trust in its guidance.", "isFavorite": false, "category": "faith"},
+        {"text": "I am born again and have a new spirit.", "isFavorite": false, "category": "faith"},
         {"text": "I am assured by Jesus' promise that those who believe in Him will have eternal life.", "isFavorite": false, "category": "faith"},
         {"text": "I am loved by God so much that He gave His only Son for my salvation.", "isFavorite": false, "category": "faith"},
         {"text": "I am blessed for believing without seeing, embracing faith in Jesus.", "isFavorite": false, "category": "faith"},
-        {"text": "I follow Jesus, the light of the world, and will not walk in darkness.", "isFavorite": false, "category": "faith"},
+        {"text": "I follow Jesus, the light of the world.", "isFavorite": false, "category": "faith"},
         {"text": "I am set free by the truth of Jesus' teachings.", "isFavorite": false, "category": "faith"},
         {"text": "I abide in Jesus, the true vine, and bear much fruit in faith.", "isFavorite": false, "category": "faith"},
         {"text": "I trust in Jesus, who overcame the world, to bring me peace amidst tribulation.", "isFavorite": false, "category": "faith"},
         {"text": "I believe that Jesus is in the Father, and I am in Jesus, and He is in me.", "isFavorite": false, "category": "faith"},
-        {"text": "I am sent by Jesus just as He was sent by the Father.", "isFavorite": false, "category": "faith"},
         {"text": "I receive the Holy Spirit whom Jesus sends from the Father.", "isFavorite": false, "category": "faith"},
         {"text": "I see the works of Jesus and believe in Him, doing even greater works in His name.", "isFavorite": false, "category": "faith"},
         {"text": "I am comforted by Jesus, the Prince of Peace, who calms my troubled heart.", "isFavorite": false, "category": "faith"},
@@ -11532,7 +11510,7 @@
         {"text": "Better a little with righteousness than vast revenues without justice.", "book": "Proverbs 16:8", "isFavorite": false, "category": "wisdom"},
         {"text": "Where there is no vision, the people perish: but he that keepeth the law, happy is he.", "book": "Proverbs 29:18", "isFavorite": false, "category": "wisdom"},
         {"text": "A wise son brings joy to his father, but a foolish son brings grief to his mother.", "book": "Proverbs 10:1", "isFavorite": false, "category": "wisdom"},
-        {"text": "Even a fool who keeps silent is considered wise; when he closes his lips, he is deemed intelligent.", "book": "Proverbs 17:28", "isFavorite": false, "category": "wisdom"},
+        {"text": "Even a fool who keeps silent is considered wise, when he closes his lips, he is deemed intelligent.", "book": "Proverbs 17:28", "isFavorite": false, "category": "wisdom"},
         {"text": "The tongue of the wise adorns knowledge, but the mouth of the fool gushes folly.", "book": "Proverbs 15:2", "isFavorite": false, "category": "wisdom"},
         {"text": "He who walks with the wise grows wise, but a companion of fools suffers harm.", "book": "Proverbs 13:20", "isFavorite": false, "category": "wisdom"},
         {"text": "A cheerful heart is good medicine, but a crushed spirit dries up the bones.", "book": "Proverbs 17:22", "isFavorite": false, "category": "wisdom"},
@@ -11541,25 +11519,25 @@
         {"text": "Better to live on a corner of the roof than share a house with a quarrelsome wife.", "book": "Proverbs 21:9", "isFavorite": false, "category": "wisdom"},
         {"text": "The fear of the Lord is a fountain of life, turning a person from the snares of death.", "book": "Proverbs 14:27", "isFavorite": false, "category": "wisdom"},
         {"text": "A friend loves at all times, and a brother is born for a time of adversity.", "book": "Proverbs 17:17", "isFavorite": false, "category": "wisdom"},
-        {"text": "Without wood a fire goes out; without gossip a quarrel dies down.", "book": "Proverbs 26:20", "isFavorite": false, "category": "wisdom"},
-        {"text": "He uncovers mysteries hidden in darkness; he brings light to the deepest gloom.", "book": "Job 12:22", "isFavorite": false, "category": "wisdom"},
+        {"text": "Without wood a fire goes out, without gossip a quarrel dies down.", "book": "Proverbs 26:20", "isFavorite": false, "category": "wisdom"},
+        {"text": "He uncovers mysteries hidden in darkness, he brings light to the deepest gloom.", "book": "Job 12:22", "isFavorite": false, "category": "wisdom"},
         {"text": "He builds up nations, and he destroys them. He expands nations, and he abandons them.", "book": "Job 12:23", "isFavorite": false, "category": "wisdom"},
         {"text": "No one knows where to find it, for it is not found among the living.", "book": "Job 28:13", "isFavorite": false, "category": "wisdom"},
         {"text": "Let your 'Yes' be 'Yes,' and your 'No,' 'No.' Anything more comes from the evil one.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
         {"text": "Do not worry about tomorrow, for tomorrow will worry about itself. Each day has enough trouble of its own.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
         {"text": "Love your neighbor as yourself. There is no commandment greater than these.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
         {"text": "If anyone wants to be first, he must be the very last, and the servant of all.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
-        {"text": "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
+        {"text": "Ask and it will be given to you, seek and you will find, knock and the door will be opened to you.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
         {"text": "Let your light shine before others, that they may see your good deeds and glorify your Father in heaven.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
         {"text": "Forgive, and you will be forgiven.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
         {"text": "With man this is impossible, but with God all things are possible.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
         {"text": "Take heart! I have overcome the world.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
         {"text": "Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be poured into your lap.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
-        {"text": "Do not let your hearts be troubled. You believe in God; believe also in me.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
+        {"text": "Do not let your hearts be troubled. You believe in God, believe also in me.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
         {"text": "I am the way and the truth and the life. No one comes to the Father except through me.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
-        {"text": "Remain in me, as I also remain in you. No branch can bear fruit by itself; it must remain in the vine. Neither can you bear fruit unless you remain in me.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
+        {"text": "Remain in me, as I also remain in you. No branch can bear fruit by itself, it must remain in the vine. Neither can you bear fruit unless you remain in me.", "book": "Jesus", "isFavorite": false, "category": "wisdom"},
         {"text": "I am more than a conqueror through Him who loves me.", "isFavorite": false, "category": "wisdom"},
-        {"text": "I am strong and courageous; I will not be afraid or discouraged.", "isFavorite": false, "category": "wisdom"},
+        {"text": "I am strong and courageous, I will not be afraid or discouraged.", "isFavorite": false, "category": "wisdom"},
         {"text": "I am equipped for every good work, prepared in advance for me to do.", "isFavorite": false, "category": "wisdom"},
         {"text": "I am a warrior of light, dispelling darkness wherever I go.", "isFavorite": false, "category": "wisdom"},
         {"text": "I am steadfast, immovable, always excelling in the Lord’s work.", "isFavorite": false, "category": "wisdom"},
@@ -11628,7 +11606,7 @@
         {"text": "We praise God for the glorious grace he has poured out on us who belong to his dear Son.", "book": "Ephesians 1:6", "isFavorite": false, "category": "grace"},
         {"text": "He is so rich in kindness and grace that he purchased our freedom with the blood of his Son and forgave our sins.", "book": "Ephesians 1:7", "isFavorite": false, "category": "grace"},
         {"text": "God has showered his kindness on us, along with all wisdom and understanding.", "book": "Ephesians 1:8", "isFavorite": false, "category": "grace"},
-        {"text": "God saved you by his grace when you believed. And you can't take credit for this; it is a gift from God.", "book": "Ephesians 2:8", "isFavorite": false, "category": "grace"},
+        {"text": "God saved you by his grace when you believed. And you can't take credit for this, it is a gift from God.", "book": "Ephesians 2:8", "isFavorite": false, "category": "grace"},
         {"text": "Salvation is not a reward for the good things we have done, so none of us can boast about it.", "book": "Ephesians 2:9", "isFavorite": false, "category": "grace"},
         {"text": "We are God's masterpiece. He has created us anew in Christ Jesus, so we can do the good things he planned for us long ago.", "book": "Ephesians 2:10", "isFavorite": false, "category": "grace"},
         {"text": "But now you have been united with Christ Jesus. Once you were far away from God, but now you have been brought near to him through the blood of Christ.", "book": "Ephesians 2:13", "isFavorite": false, "category": "grace"},
@@ -12074,7 +12052,7 @@
             "category": "fear"
         },
         {
-            "text": "He will cover me with his feathers, and shelter me with his wings; his faithful promises are my armor and protection.",
+            "text": "He will cover me with his feathers, and shelter me with his wings, his faithful promises are my armor and protection.",
             "book": "Psalm 91:4",
             "isFavorite": false,
             "category": "fear"
@@ -12086,13 +12064,13 @@
             "category": "fear"
         },
         {
-            "text": "I am loved because the Lord is my light and my salvation, whom shall I fear? the Lord is the strength of my life; of whom shall I be afraid?",
+            "text": "I am loved because the Lord is my light and my salvation, whom shall I fear? the Lord is the strength of my life, of whom shall I be afraid?",
             "book": "Psalm 27:1",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "I am optimistic because the Lord is good, a stronghold in the day of trouble; he knows those who take refuge in him.",
+            "text": "I am optimistic because the Lord is good, a stronghold in the day of trouble, he knows those who take refuge in him.",
             "book": "Nahum 1:7",
             "isFavorite": false,
             "category": "fear"
@@ -12113,7 +12091,7 @@
         },
         
         {
-            "text": "I am free because the Lord is my rock, my fortress and my deliverer; my God, my rock, in whom I take refuge, my shield and the horn of my salvation, my stronghold and my refuge.",
+            "text": "I am free because the Lord is my rock, my fortress and my deliverer, my God, my rock, in whom I take refuge, my shield and the horn of my salvation, my stronghold and my refuge.",
             "book": "Psalm 18:2",
             "isFavorite": false,
             "category": "fear"
@@ -12125,7 +12103,7 @@
             "category": "fear"
         },
         {
-            "text": "I am hopeful because the Lord goes before me and will be with me; He will never leave nor forsake me. Do not be afraid; do not be discouraged, for the Lord your God is with you wherever you go.",
+            "text": "I am hopeful because the Lord goes before me and will be with me, He will never leave nor forsake me. Do not be afraid, do not be discouraged, for the Lord your God is with you wherever you go.",
             "book": "Isaiah 41:10",
             "isFavorite": false,
             "category": "fear"
@@ -12137,33 +12115,33 @@
             "category": "fear"
         },
         {
-            "text": "I am confident because fear not, for I have redeemed you; I have called you by name; you are mine.",
+            "text": "I am confident because fear not, for I have redeemed you, I have called you by name, you are mine.",
             "book": "Isaiah 43:1",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "I am at peace because the Lord is my everlasting light, and my God my salvation; He will make my feet like deer’s feet, and he will set me on my high places.",
+            "text": "I am at peace because the Lord is my everlasting light, and my God my salvation, He will make my feet like deer’s feet, and he will set me on my high places.",
             "book": "Habakkuk 3:19",
             "isFavorite": false,
             "category": "fear"
         },
         {
-            "text": "I am strong because the Lord is my strength and my shield; my heart trusts in him, and I am helped; therefore my heart greatly rejoices, and with my song I will praise him.",
+            "text": "I am strong because the Lord is my strength and my shield, my heart trusts in him, and I am helped, therefore my heart greatly rejoices, and with my song I will praise him.",
             "book": "Psalm 28:7",
             "isFavorite": false,
             "category": "fear"
         },
         
         {
-            "text": "I am determined because when you pass through the waters, I will be with you; and through the rivers, they will not overflow you. When you walk through the fire, you will not be burned, and the flame will not consume you.",
+            "text": "I am determined because when you pass through the waters, I will be with you, and through the rivers, they will not overflow you. When you walk through the fire, you will not be burned, and the flame will not consume you.",
             "book": "Isaiah 43:2",
             "isFavorite": false,
             "category": "fear"
         },
         
         {
-            "text": "I am hopeful because even the youths shall faint and be weary, and the young men shall stumble and fall, but those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary; they will walk and not faint.",
+            "text": "I am hopeful because even the youths shall faint and be weary, and the young men shall stumble and fall, but those who hope in the Lord will renew their strength. They will soar on wings like eagles, they will run and not grow weary, they will walk and not faint.",
             "book": "Isaiah 40:30-31",
             "isFavorite": false,
             "category": "fear"
@@ -12177,7 +12155,7 @@
         },
         
         {
-            "text": "I am protected because He will tend his flock like a shepherd; he will gather the lambs in his arms, and carry them in his bosom, and gently lead those who are with young.",
+            "text": "I am protected because He will tend his flock like a shepherd, he will gather the lambs in his arms, and carry them in his bosom, and gently lead those who are with young.",
             "book": "Isaiah 40:11",
             "isFavorite": false,
             "category": "fear"
@@ -12293,7 +12271,7 @@
             "category": "fear"
         },
         {
-            "text": "I am hopeful because the Lord your God himself goes before you; he will never leave you nor forsake you. Do not be afraid; do not be discouraged.",
+            "text": "I am hopeful because the Lord your God himself goes before you, he will never leave you nor forsake you. Do not be afraid, do not be discouraged.",
             "book": "Joshua 1:5",
             "isFavorite": false,
             "category": "fear"
@@ -12327,7 +12305,7 @@
         },
         
         {
-            "text": "I am trusting because the Lord is my rock, my fortress and my deliverer; my God, my rock, in whom I take refuge, my shield and the horn of my salvation, my stronghold and my refuge.",
+            "text": "I am trusting because the Lord is my rock, my fortress and my deliverer, my God, my rock, in whom I take refuge, my shield and the horn of my salvation, my stronghold and my refuge.",
             "book": "Psalm 18:2",
             "isFavorite": false,
             "category": "fear"
@@ -12387,7 +12365,7 @@
             "category": "love"
         },
         {
-            "text": "You are cherished, for I am the vine; you are the branches. Whoever abides in me and I in him, he it is who bears much fruit, for apart from me you can do nothing.",
+            "text": "You are cherished, for I am the vine, you are the branches. Whoever abides in me and I in him, he it is who bears much fruit, for apart from me you can do nothing.",
             "book": "John 15:5",
             "isFavorite": false,
             "category": "love"
@@ -12646,37 +12624,37 @@
             "category": "praise"
         },
         {
-            "text": "The Lord is my shepherd; I have everything I need.",
+            "text": "The Lord is my shepherd, I have everything I need.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Give thanks to the Lord, for He is good; His love endures forever.",
+            "text": "Give thanks to the Lord, for He is good, His love endures forever.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "My soul boasts in the Lord; the humble will hear and be glad.",
+            "text": "My soul boasts in the Lord, the humble will hear and be glad.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "I will sing the Lord’s praise forever; my mouth will proclaim His faithfulness to all generations.",
+            "text": "I will sing the Lord’s praise forever, my mouth will proclaim His faithfulness to all generations.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "The Lord is my rock, my fortress and my deliverer; my God is my rock, in whom I take refuge, my shield and the horn of my salvation, my stronghold, my refuge, my Savior.",
+            "text": "The Lord is my rock, my fortress and my deliverer, my God is my rock, in whom I take refuge, my shield and the horn of my salvation, my stronghold, my refuge, my Savior.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "I waited patiently for the Lord; He turned to me and heard my cry.",
+            "text": "I waited patiently for the Lord, He turned to me and heard my cry.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Let the heavens rejoice, let the earth be glad; let the sea resound, and all that fills it; let the field exult, and all that grows in it.",
+            "text": "Let the heavens rejoice, let the earth be glad, let the sea resound, and all that fills it, let the field exult, and all that grows in it.",
             "isFavorite": false,
             "category": "praise"
         },
@@ -12699,7 +12677,7 @@
             "category": "praise"
         },
         {
-            "text": "The Lord is my strength and my shield; his faithful love is my defense.",
+            "text": "The Lord is my strength and my shield, his faithful love is my defense.",
             "book": "Isaiah 59:17",
             "isFavorite": false,
             "category": "praise"
@@ -12735,49 +12713,49 @@
             "category": "praise"
         },
         {
-            "text": "Look to the Lord and His strength; seek His face always.",
+            "text": "Look to the Lord and His strength, seek His face always.",
             "book": "Isaiah 40:29",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Give thanks to the Lord, for he is good; his love endures forever.",
+            "text": "Give thanks to the Lord, for he is good, his love endures forever.",
             "book": "1 Chronicles 16:34",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "This is the day the Lord has made; let us rejoice and be glad in it.",
+            "text": "This is the day the Lord has made, let us rejoice and be glad in it.",
             "book": "Psalm 118:24",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "The Lord is my strength and my shield; my heart trusts in him, and he helps me.",
+            "text": "The Lord is my strength and my shield, my heart trusts in him, and he helps me.",
             "book": "Psalm 28:7",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Great is the Lord and most worthy of praise; his greatness no one can fathom.",
+            "text": "Great is the Lord and most worthy of praise, his greatness no one can fathom.",
             "book": "Psalm 145:3",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "I will praise you, Lord, with all my heart; I will tell of all the marvelous things you have done.",
+            "text": "I will praise you, Lord, with all my heart, I will tell of all the marvelous things you have done.",
             "book": "Psalm 9:1",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Praise the Lord, my soul; all my inmost being, praise his holy name.",
+            "text": "Praise the Lord, my soul, all my inmost being, praise his holy name.",
             "book": "Psalm 103:1",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "I will praise the Lord all my life; I will sing praise to my God as long as I live.",
+            "text": "I will praise the Lord all my life, I will sing praise to my God as long as I live.",
             "book": "Psalm 146:2",
             "isFavorite": false,
             "category": "praise"
@@ -12795,7 +12773,7 @@
             "category": "praise"
         },
         {
-            "text": "You are my God, and I will praise you; you are my God, and I will exalt you.",
+            "text": "You are my God, and I will praise you, you are my God, and I will exalt you.",
             "book": "Psalm 118:28",
             "isFavorite": false,
             "category": "praise"
@@ -12813,7 +12791,7 @@
             "category": "praise"
         },
         {
-            "text": "I will praise you, Lord, among the nations; I will sing of you among the peoples.",
+            "text": "I will praise you, Lord, among the nations, I will sing of you among the peoples.",
             "book": "Psalm 108:3",
             "isFavorite": false,
             "category": "praise"
@@ -12825,19 +12803,19 @@
             "category": "praise"
         },
         {
-            "text": "The Lord is my strength and my defense; he has become my salvation.",
+            "text": "The Lord is my strength and my defense, he has become my salvation.",
             "book": "Psalm 118:14",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "For great is the Lord and most worthy of praise; he is to be feared above all gods.",
+            "text": "For great is the Lord and most worthy of praise, he is to be feared above all gods.",
             "book": "1 Chronicles 16:25",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Enter his gates with thanksgiving and his courts with praise; give thanks to him and praise his name.",
+            "text": "Enter his gates with thanksgiving and his courts with praise, give thanks to him and praise his name.",
             "book": "Psalm 100:4",
             "isFavorite": false,
             "category": "praise"
@@ -12864,17 +12842,17 @@
             "category": "praise"
         },
         {
-            "text": "The Lord is my strength; I praise His holy name.",
+            "text": "The Lord is my strength, I praise His holy name.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "I rejoice in the Lord always; again I say, rejoice!",
+            "text": "I rejoice in the Lord always, again I say, rejoice!",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "In God's presence, there's fullness of joy; I praise Him!",
+            "text": "In God's presence, there's fullness of joy, I praise Him!",
             "isFavorite": false,
             "category": "praise"
         },
@@ -12889,7 +12867,7 @@
             "category": "praise"
         },
         {
-            "text": "The Lord is my rock; I praise His mighty works.",
+            "text": "The Lord is my rock, I praise His mighty works.",
             "isFavorite": false,
             "category": "praise"
         },
@@ -12919,12 +12897,12 @@
             "category": "praise"
         },
         {
-            "text": "I will declare Your greatness, my God and King; I will praise You forever and ever.",
+            "text": "I will declare Your greatness, my God and King, I will praise You forever and ever.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Lord, You are my God; I will exalt You and praise Your name.",
+            "text": "Lord, You are my God, I will exalt You and praise Your name.",
             "isFavorite": false,
             "category": "praise"
         },
@@ -12934,7 +12912,7 @@
             "category": "praise"
         },
         {
-            "text": "I will praise the Lord, who counsels me; even at night, my heart instructs me.",
+            "text": "I will praise the Lord, who counsels me, even at night, my heart instructs me.",
             "isFavorite": false,
             "category": "praise"
         },
@@ -13084,12 +13062,12 @@
             "category": "praise"
         },
         {
-            "text": "You, Lord, are clothed with majesty; You are the master artist of the universe.",
+            "text": "You, Lord, are clothed with majesty, You are the master artist of the universe.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Your throne, O God, is eternal; Your kingdom within my heart is everlasting.",
+            "text": "Your throne, O God, is eternal, Your kingdom within my heart is everlasting.",
             "isFavorite": false,
             "category": "praise"
         },
@@ -13230,13 +13208,13 @@
             "category": "praise"
         },
         {
-            "text": "Your throne has been established from ancient times; you exist from eternity!",
+            "text": "Your throne has been established from ancient times, you exist from eternity!",
             "book": "Psalm 93:2",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "The Lord reigns forever; he has established his throne for justice",
+            "text": "The Lord reigns forever, he has established his throne for justice",
             "book": "Psalm 9:7",
             "isFavorite": false,
             "category": "praise"
@@ -13254,13 +13232,13 @@
             "category": "praise"
         },
         {
-            "text": "Let all the earth fear the Lord; let all the people of the world tremble before him",
+            "text": "Let all the earth fear the Lord, let all the people of the world tremble before him",
             "book": "Psalm 33:8",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "The Lord is my king and my God; in him I will trust",
+            "text": "The Lord is my king and my God, in him I will trust",
             "book": "Psalm 91:2",
             "isFavorite": false,
             "category": "praise"
@@ -13282,92 +13260,92 @@
             "category": "praise"
         },
         {
-            "text": "Lord Jesus, Your love is boundless; I stand in awe of You.",
+            "text": "Lord Jesus, Your love is boundless, I stand in awe of You.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Jesus, You are the way, the truth, and the life; I follow You.",
+            "text": "Jesus, You are the way, the truth, and the life, I follow You.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "In You, Jesus, I find grace and truth; I honor You.",
+            "text": "In You, Jesus, I find grace and truth, I honor You.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Jesus, You are the light of the world; I reflect Your light.",
+            "text": "Jesus, You are the light of the world, I reflect Your light.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Lord, You are my shepherd; I shall not want, for You guide me.",
+            "text": "Lord, You are my shepherd, I shall not want, for You guide me.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Jesus, by Your stripes, I am healed; I praise Your mighty power.",
+            "text": "Jesus, by Your stripes, I am healed, I praise Your mighty power.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "In Your resurrection, Jesus, I find hope; You are my victory.",
+            "text": "In Your resurrection, Jesus, I find hope, You are my victory.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Jesus, Your peace surpasses understanding; I rest in You.",
+            "text": "Jesus, Your peace surpasses understanding, I rest in You.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "In the storms, Jesus, You are my anchor; I trust in You.",
+            "text": "In the storms, Jesus, You are my anchor, I trust in You.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Jesus, You are the bread of life; I am nourished by You.",
+            "text": "Jesus, You are the bread of life, I am nourished by You.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Your kingdom, Jesus, is eternal; I rejoice in Your reign.",
+            "text": "Your kingdom, Jesus, is eternal, I rejoice in Your reign.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Jesus, You are the cornerstone; my life is built on You.",
+            "text": "Jesus, You are the cornerstone, my life is built on You.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "In You, Jesus, all things hold together; I depend on You.",
+            "text": "In You, Jesus, all things hold together, I depend on You.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Jesus, Your love never fails; I am secure in Your embrace.",
+            "text": "Jesus, Your love never fails, I am secure in Your embrace.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "You, Jesus, are my redeemer; I am free because of You.",
+            "text": "You, Jesus, are my redeemer, I am free because of You.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Jesus, You are the lion and the lamb; I worship Your majesty.",
+            "text": "Jesus, You are the lion and the lamb, I worship Your majesty.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Jesus, You are the vine; I am connected to You, bearing fruit.",
+            "text": "Jesus, You are the vine, I am connected to You, bearing fruit.",
             "isFavorite": false,
             "category": "praise"
         },
         {
-            "text": "Lord Jesus, in Your promises, I find assurance; I cling to You.",
+            "text": "Lord Jesus, in Your promises, I find assurance, I cling to You.",
             "isFavorite": false,
             "category": "praise"
         },
@@ -13444,7 +13422,7 @@
             "category": "praise"
         },
         {
-            "text": "Jesus, You are the bread of life; whoever comes to me will never go hungry",
+            "text": "Jesus, You are the bread of life, whoever comes to me will never go hungry",
             "book": "John 6:35",
             "isFavorite": false,
             "category": "praise"
@@ -13767,7 +13745,7 @@
             "category": "rest"
         },
         {
-            "text": "It is in vain that you rise up early and go late to rest, eating the bread of anxious toil; for he gives to his beloved sleep.",
+            "text": "It is in vain that you rise up early and go late to rest, eating the bread of anxious toil, for he gives to his beloved sleep.",
             "book": "Psalm 127:2",
             "isFavorite": false,
             "category": "rest"
@@ -13821,13 +13799,13 @@
             "category": "rest"
         },
         {
-            "text": "I lay down and slept; I woke again, for the Lord sustained me.",
+            "text": "I lay down and slept, I woke again, for the Lord sustained me.",
             "book": "Psalm 3:5",
             "isFavorite": false,
             "category": "rest"
         },
         {
-            "text": "Yes, my soul, find rest in God; my hope comes from him.",
+            "text": "Yes, my soul, find rest in God, my hope comes from him.",
             "book": "Psalm 62:5",
             "isFavorite": false,
             "category": "rest"
@@ -13869,7 +13847,7 @@
             "category": "rest"
         },
         {
-            "text": "In returning and rest you shall be saved; in quietness and in trust shall be your strength",
+            "text": "In returning and rest you shall be saved, in quietness and in trust shall be your strength",
             "book": "Isaiah 30:15",
             "isFavorite": false,
             "category": "rest"
@@ -13900,7 +13878,7 @@
             "category": "rest"
         },
         {
-            "text": "I wait for the Lord; He is my hope and my salvation",
+            "text": "I wait for the Lord, He is my hope and my salvation",
             "isFavorite": false,
             "category": "rest"
         },
@@ -14193,7 +14171,7 @@
             "category": "heaven"
         },
         {
-            "text": "This world is not our permanent home; we are looking forward to a home yet to come.",
+            "text": "This world is not our permanent home, we are looking forward to a home yet to come.",
             "book": "Hebrews 13:14",
             "isFavorite": false,
             "category": "heaven"
@@ -14427,7 +14405,7 @@
             "category": "heaven"
         },
         {
-            "text": "I am beyond defeat; heaven's gates are open for me.",
+            "text": "I am beyond defeat, heaven's gates are open for me.",
             "isFavorite": false,
             "category": "heaven"
         },
@@ -14638,7 +14616,7 @@
             "category": "wealth"
         },
         {
-            "text": "A generous person will prosper; whoever refreshes others will be refreshed.",
+            "text": "A generous person will prosper, whoever refreshes others will be refreshed.",
             "book": "Proverbs 11:25",
             "affirmationText": "I practice generosity, confident that it not only enriches others' lives but also brings prosperity and refreshment to my own.",
             "isFavorite": false,
@@ -14694,7 +14672,7 @@
             "category": "wealth"
         },
         {
-            "text": "You prepare a table before me in the presence of my enemies. You anoint my head with oil; my cup overflows.",
+            "text": "You prepare a table before me in the presence of my enemies. You anoint my head with oil, my cup overflows.",
             "book": "Psalm 23:5",
             "affirmationText": "I am blessed with abundance even in challenging times, and my life overflows with the richness of God's blessings.",
             "isFavorite": false,
@@ -14729,7 +14707,7 @@
             "category": "wealth"
         },
         {
-            "text": "But I am like an olive tree flourishing in the house of God; I trust in God’s unfailing love for ever and ever.",
+            "text": "But I am like an olive tree flourishing in the house of God, I trust in God’s unfailing love for ever and ever.",
             "book": "Psalm 52:8",
             "affirmationText": "Rooted in the house of God, I flourish like an olive tree, sustained by the unfailing love of the Divine, growing ever stronger and more fruitful.",
             "isFavorite": false,
@@ -14743,7 +14721,7 @@
             "category": "wealth"
         },
         {
-            "text": "You let people ride over our heads; we went through fire and water, but you brought us to a place of abundance.",
+            "text": "You let people ride over our heads, we went through fire and water, but you brought us to a place of abundance.",
             "book": "Psalm 66:12",
             "affirmationText": "Despite life's trials and challenges, I am guided to a place of abundance and restoration, emerging stronger and more blessed.",
             "isFavorite": false,
@@ -14757,14 +14735,14 @@
             "category": "wealth"
         },
         {
-            "text": "The children of your servants will live in your presence; their descendants will be established before you.",
+            "text": "The children of your servants will live in your presence, their descendants will be established before you.",
             "book": "Psalm 102:28",
             "affirmationText": "I am comforted and joyful knowing that future generations, the descendants of the faithful, will be firmly established and flourish in God's presence.",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "How many are your works, Lord! In wisdom you made them all; the earth is full of your creatures... all creatures look to you to give them their food at the proper time.",
+            "text": "How many are your works, Lord! In wisdom you made them all, the earth is full of your creatures... all creatures look to you to give them their food at the proper time.",
             "book": "Psalm 104:24-28",
             "affirmationText": "I am in awe of the abundance and diversity of God's creation, trusting that He provides for all at the perfect time, and I am part of this divine provision.",
             "isFavorite": false,
@@ -14778,14 +14756,14 @@
             "category": "wealth"
         },
         {
-            "text": "They sow fields and plant vineyards that yield a fruitful harvest; he blesses them, and they multiply greatly, and he does not let their livestock diminish.",
+            "text": "They sow fields and plant vineyards that yield a fruitful harvest, he blesses them, and they multiply greatly, and he does not let their livestock diminish.",
             "book": "Psalm 107:37-38",
             "affirmationText": "I rejoice in the fruitfulness of my endeavors, as God blesses my efforts with abundance, causing my resources and endeavors to multiply greatly.",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "He raises the poor from the dust and lifts the needy from the ash heap; he seats them with princes, with the princes of his people.",
+            "text": "He raises the poor from the dust and lifts the needy from the ash heap, he seats them with princes, with the princes of his people.",
             "book": "Psalm 113:7-8",
             "affirmationText": "I am uplifted by the power of God, who transforms circumstances, elevating those in need to places of honor and abundance.",
             "isFavorite": false,
@@ -14806,21 +14784,21 @@
             "category": "wealth"
         },
         {
-            "text": "You will eat the fruit of your labor; blessings and prosperity will be yours.",
+            "text": "You will eat the fruit of your labor, blessings and prosperity will be yours.",
             "book": "Psalm 128:2",
             "affirmationText": "I savor the rewards of my hard work, enjoying the blessings and prosperity that flow from my efforts, knowing that they are gifts from God.",
             "isFavorite": false,
             "category": "wealth"
         },
         {
-            "text": "Heal me, O Lord, and I will be healed; save me and I will be saved, for you are the one I praise.",
+            "text": "Heal me, O Lord, and I will be healed, save me and I will be saved, for you are the one I praise.",
             "book": "Jeremiah 17:14",
             "affirmationText": "I am surrounded by God's healing presence, restoring my health and saving me, as I lift my voice in praise and thanksgiving.",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.",
+            "text": "So do not fear, for I am with you, do not be dismayed, for I am your God. I will strengthen you and help you, I will uphold you with my righteous right hand.",
             "book": "Isaiah 41:10",
             "affirmationText": "In moments of fear or weakness, I am reassured and strengthened by God's unwavering presence, knowing He is always by my side, offering His divine support.",
             "isFavorite": false,
@@ -14834,14 +14812,14 @@
             "category": "health"
         },
         {
-            "text": "Behold, I will bring it health and healing; I will heal them and reveal to them abundance of peace and truth.",
+            "text": "Behold, I will bring it health and healing, I will heal them and reveal to them abundance of peace and truth.",
             "book": "Jeremiah 33:6",
             "affirmationText": "I am assured of God's promise to bring health and healing into my life, revealing the depths of peace and truth in the process.",
             "isFavorite": false,
             "category": "health"
         },
         {
-            "text": "But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.",
+            "text": "But he was pierced for our transgressions, he was crushed for our iniquities, the punishment that brought us peace was on him, and by his wounds we are healed.",
             "book": "Isaiah 53:5",
             "affirmationText": "In the suffering of Christ, I find healing for my soul and body, knowing that His ultimate sacrifice has brought me peace and wholeness.",
             "isFavorite": false,
@@ -14862,7 +14840,7 @@
             "category": "health"
         },
         {
-            "text": "And the prayer offered in faith will make the sick person well; the Lord will raise them up. If they have sinned, they will be forgiven.",
+            "text": "And the prayer offered in faith will make the sick person well, the Lord will raise them up. If they have sinned, they will be forgiven.",
             "book": "James 5:15",
             "affirmationText": "I believe in the power of prayer, offered in faith, to restore health. I trust in the Lord's promise to uplift the sick and offer forgiveness.",
             "isFavorite": false,
@@ -14883,7 +14861,7 @@
             "category": "purity"
         },
         {
-            "text": "For this is the will of God, your sanctification: that you abstain from sexual immorality;",
+            "text": "For this is the will of God, your sanctification: that you abstain from sexual immorality,",
             "book": "1 Thessalonians 4:3",
             "affirmationText": "I am committed to living a life that aligns with God's will for me.",
             "isFavorite": false,
@@ -14920,7 +14898,7 @@
         {
             "text": "Do you not know that your bodies are temples of the Holy Spirit, who is in you, whom you have received from God? You are not your own",
             "book": "1 Corinthians 6:19",
-            "affirmationText": "My body is a sacred temple for the Holy Spirit; I honor it with purity and respect, acknowledging that I belong to God.",
+            "affirmationText": "My body is a sacred temple for the Holy Spirit, I honor it with purity and respect, acknowledging that I belong to God.",
             "isFavorite": false,
             "category": "purity"
         },
@@ -15090,7 +15068,7 @@
             "category": "purity"
         },
         {
-            "text": "Turn from evil and do good; seek peace and pursue it.",
+            "text": "Turn from evil and do good, seek peace and pursue it.",
             "book": "Psalm 34:14",
             "affirmationText": "I actively turn away from evil, choosing instead to do good and to pursue peace in all areas of my life.",
             "isFavorite": false,
@@ -15440,6 +15418,18 @@
             "book": "Jesus"
         },
         {
+            "text": "I forgave all your sins.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
+            "text": "Don't be sin conscious, I remember them nomore.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Jesus"
+        },
+        {
             "text": "I will never fail you or leave you.",
             "isFavorite": false,
             "category": "health",
@@ -15487,7 +15477,7 @@
             "book": "Psalm 107:20"
         },
         {
-            "text": "I will not die; I will live to tell what God has done.",
+            "text": "I will not die, I will live to tell what God has done.",
             "isFavorite": false,
             "category": "health",
             "book": "Psalm 118:17"
