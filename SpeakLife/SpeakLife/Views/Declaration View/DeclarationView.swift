@@ -85,7 +85,8 @@ struct DeclarationView: View {
                                     CapsuleImageButton(title: "crown.fill") {
                                         premiumView()
                                         Selection.shared.selectionFeedback()
-                                    }.sheet(isPresented: $isPresentingPremiumView) {
+                                    }.foregroundStyle(Constants.gold)
+                                    .sheet(isPresented: $isPresentingPremiumView) {
                                         self.isPresentingPremiumView = false
                                         Analytics.logEvent(Event.tryPremiumAbandoned, parameters: nil)
                                         timerViewModel.loadRemainingTime()
