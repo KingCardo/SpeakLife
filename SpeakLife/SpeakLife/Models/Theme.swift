@@ -86,7 +86,7 @@ class Theme: Identifiable, Codable {
         }
     }
     
-    static var all: [Theme] = [autumnTrees, cross, lion, lakeHills, sunset1,sunset2,sunset3,sunset4,sunset5,sunset6,moonlight1,longroadtraveled, landingView1, landingView2, highway, forestwinter, lakeMountain, sandOcean, citynight, woodnight, rainbow, space, stars, summerbeach, moon, canyons,luxurydrive,beautifulsky, desertsky, gorgeousmoon, plantgreen, fogroad, greenplants, talltrees, jungleflower, shadowrose]
+    static var all: [Theme] = [autumnTrees, cross, lion, lakeHills,gorgeous, icegreenmountain, chicago,aurora, safari, kitty, meercat, taicitylights, sunset1,sunset2,sunset3,sunset4,sunset5,moonlight1,longroadtraveled, landingView1, landingView2, highway, forestwinter, lakeMountain, sandOcean, citynight, woodnight, rainbow, space, stars, summerbeach, moon, canyons,luxurydrive,beautifulsky, desertsky, gorgeousmoon, plantgreen, fogroad, greenplants]
     
     private static let autumnTrees = Theme("autumntrees", isPremium: false, blurEffect: true, fontColorString: "white")
     private static let cross = Theme("cross", isPremium: false)
@@ -98,7 +98,7 @@ class Theme: Identifiable, Codable {
     private static let stars = Theme("stars", mode: .light)
     private static let summerbeach = Theme("summerbeach", blurEffect: true)
     private static let canyons = Theme("canyons")
-    private static let talltrees = Theme("talltrees",  mode: .light)
+    private static let talltrees = Theme("talltrees",  mode: .light, blurEffect: true)
     private static let luxurydrive = Theme("luxurydrive")
     private static let beautifulsky = Theme("beautifulsky")
     private static let desertsky = Theme("desertSky", mode: .light, blurEffect: true)
@@ -107,8 +107,6 @@ class Theme: Identifiable, Codable {
     private static let fogroad = Theme("fogroad", blurEffect: true)
     private static let greenplants = Theme("greenPlants",blurEffect: true)
     private static let trippy = Theme("trippy",blurEffect: true)
-    private static let shadowrose = Theme("shadowrose",blurEffect: false)
-    private static let jungleflower = Theme("jungleflower",blurEffect: true)
     private static let landingView1 = Theme("landingView1",blurEffect: true)
     static let landingView2 = Theme("landingView2",blurEffect: true)
     static let highway = Theme("highway",blurEffect: true)
@@ -121,12 +119,17 @@ class Theme: Identifiable, Codable {
     static let sunset1 = Theme("sunset1",blurEffect: false)
     static let sunset2 = Theme("sunset2",blurEffect: false)
     static let sunset3 = Theme("sunset3",blurEffect: false)
-    static let sunset4 = Theme("sunset4",blurEffect: false)
+    static let sunset4 = Theme("sunset4",blurEffect: true)
     static let sunset5 = Theme("sunset5",blurEffect: false)
-    static let sunset6 = Theme("sunset6",blurEffect: false)
     static let moonlight1 = Theme("moonlight1",blurEffect: false)
-//    static let sunset8 = Theme("sunset8",blurEffect: false)
-//    static let sunset9 = Theme("sunset9",blurEffect: false)
+    static let icegreenmountain = Theme("icegreenmountain",blurEffect: true)
+    static let chicago = Theme("chicago",blurEffect: false)
+    static let gorgeous = Theme("gorgeous",blurEffect: true)//, fontColorString: "gold")
+    static let kitty = Theme("kitty",blurEffect: true)
+    static let meercat = Theme("meercat",blurEffect: true)
+    static let taicitylights = Theme("taicitylights",blurEffect: true)
+    static let safari = Theme("safari",blurEffect: true)
+    static let aurora = Theme("aurora",blurEffect: false)
 }
 
 
