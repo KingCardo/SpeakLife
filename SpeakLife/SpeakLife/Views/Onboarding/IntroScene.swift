@@ -20,6 +20,8 @@ struct IntroTipScene: View {
         introTipScene(size: size)
     }
     
+   
+    
     private func introTipScene(size: CGSize) -> some View  {
         VStack {
             
@@ -45,7 +47,7 @@ struct IntroTipScene: View {
                 Spacer().frame(height: 16)
                 
                 VStack {
-                    Text("The devil is always at work seeking who he may devour!" , comment: "Intro scene tip")
+                    Text("Are You Ready to Speak Life?" , comment: "Intro scene tip")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
@@ -54,7 +56,9 @@ struct IntroTipScene: View {
                     
                     Spacer().frame(height: appState.onBoardingTest ? size.height * 0.05 : 24)
                     
-                    Text("We're in a spiritual war. Be confident and victorious by speaking blessings like Jesus did. Mark 11:23*", comment: "Intro scene extra tip")
+                    
+                    // Begin your day with words that open doors and defy obstacles, just as Jesus did."
+                    Text("Step into the realm where words are swords fighting battles. Equip yourself with the art of speaking blessings and change your world.", comment: "Intro scene extra tip")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white :Constants.DALightBlue)
                         .multilineTextAlignment(.center)
@@ -71,7 +75,7 @@ struct IntroTipScene: View {
             
             Button(action: callBack) {
                 HStack {
-                    Text("Continue", comment: "Intro scene start label")
+                    Text("Let's go", comment: "Intro scene start label")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .fontWeight(.medium)
                         .frame(width: size.width * 0.91 ,height: 50)

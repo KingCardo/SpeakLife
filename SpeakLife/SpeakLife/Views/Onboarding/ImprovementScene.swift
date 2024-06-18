@@ -53,7 +53,7 @@ struct ImprovementScene: View {
                 
                 Button(action: callBack) {
                     HStack {
-                        Text("Continue", comment: "Intro scene start label")
+                        Text("Transform me", comment: "Intro scene start label")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                             .fontWeight(.medium)
                             .frame(width: size.width * 0.91 ,height: 50)

@@ -51,11 +51,12 @@ struct FeatureView: View {
    // Renew your mind thru right believing
     // This could be fetched from a ViewModel in a real-world app
     let features: [Feature] = [
-        Feature(name: "Daily devotional's", subtitle: "Receive Jesus's love and be victorious from guilt, anxiety, and fear.", isAvailableInFree: false, isAvailableInPro: true),
-        Feature(name: "Unlock all categories", subtitle: "Declare and manifest a long, prosperous, peaceful life for you and your family.", isAvailableInFree: false, isAvailableInPro: true),
-        Feature(name: "Create your own", subtitle: "Declare and fulfill your God given dreams & destiny", isAvailableInFree: true, isAvailableInPro: true),
-        Feature(name: "Unlimited reminders", subtitle: "Receive scripture & God's promises thruout the day", isAvailableInFree: false, isAvailableInPro: true),
-        Feature(name: "Unlimited themes", subtitle: "Only the finest", isAvailableInFree: false, isAvailableInPro: true),
+        Feature(name: "Daily devotional's", subtitle: "Transform every day with Jesus's love: overcome guilt, anxiety, and fear with powerful daily devotionals designed to fortify your spirit and renew your perspective."/*Receive Jesus's love and be victorious from guilt, anxiety, and fear."*/, isAvailableInFree: false, isAvailableInPro: true),
+        Feature(name: "Unlock all categories", subtitle: "Access every category and unleash the power to manifest a life of prosperity, peace, and health for yourself and your loved ones. Start declaring your blessings today!"/*Declare and manifest a long, prosperous, peaceful life for you and your family."*/, isAvailableInFree: false, isAvailableInPro: true),
+        Feature(name: "Create your own", subtitle: "Empower yourself to declare and achieve your God-given destiny. Create personalized affirmations that resonate with your deepest dreams and spiritual aspirations."/*Declare and fulfill your God given dreams & destiny"*/, isAvailableInFree: true, isAvailableInPro: true),
+        Feature(name: "Unlimited reminders", subtitle: "Stay spiritually connected and inspired throughout your day with unlimited reminders of scripture and God’s promises. Keep your faith strong and your heart uplifted no matter where you are."
+/*Receive scripture & God's promises thruout the day"*/, isAvailableInFree: false, isAvailableInPro: true),
+        Feature(name: "Unlimited themes", subtitle: "Elevate your spiritual journey with an array of exclusive, beautifully designed themes that enhance your daily devotional experience. Engage with scripture in an environment that inspires and uplifts."/*Only the finest"*/, isAvailableInFree: false, isAvailableInPro: true),
        // Feature(name: "Unlock all prayers",  subtitle: "Quiet the lies", isAvailableInFree: false, isAvailableInPro: true),
     ]
 
