@@ -169,7 +169,7 @@ struct DeclarationView: View {
                 }
             }
             .sheet(isPresented: $viewModel.showDiscountView) {
-                if appState.offerDiscount {
+                if appState.offerDiscountTry < 3 {
                     DiscountSubscriptionView(size: UIScreen.main.bounds.size)
                 } else {
                     GeometryReader { geometry in

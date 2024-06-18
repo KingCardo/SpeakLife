@@ -112,9 +112,6 @@ struct DiscountSubscriptionView: View {
             Spacer()
                 .frame(height: 32)
             
-            Text("One Time Offer")
-                .font(.largeTitle)
-                .foregroundStyle(.white)
             
             HStack {
                 Text(percentOffText)
@@ -244,6 +241,8 @@ struct SubscriptionView: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
+    @State private var currentTestimonialIndex: Int = 0
+    let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect()
   
    
     @State private var textOpacity: Double = 0
@@ -255,6 +254,7 @@ struct SubscriptionView: View {
     @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
     var firstSelection = InAppId.Subscription.speakLife1YR19
     var secondSelection = InAppId.Subscription.speakLife1MO4
+  //  var thirdSelection = InAppId.Subscription.speakLifeLifetime
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let size: CGSize
@@ -277,6 +277,16 @@ struct SubscriptionView: View {
             .alert(isPresented: $isShowingError, content: {
                 Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
             })
+//            .onReceive(timer) { _ in
+//                withAnimation(.easeInOut) {
+//                    let nextIndex = (currentTestimonialIndex + 1) % testimonials.count
+//                    currentTestimonialIndex = nextIndex
+//                }
+//            }
+//
+//        .onDisappear {
+//            timer.upstream.connect().cancel()
+      //  }
     }
     
     private var benefitRows: some View {
@@ -314,48 +324,54 @@ struct SubscriptionView: View {
             ScrollView {
                
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
-                        Spacer()
-                            .frame(height: 60)
-                        VStack(alignment: .center) {
-                            Text("Unlock SpeakLife Premium", comment: "unlock everything premium view")
-                                .font(Font.custom("AppleSDGothicNeo-Regular", size: 28))
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                            
-                        }
-                        Spacer()
-                            .frame(height: 24)
-                        
-                        HStack {
-                            StarRatingView(rating: 4.8)
-                        }.padding([.leading,.trailing],20)
-                        
-                        FeatureView()
-
+                    Spacer()
+                        .frame(height: 60)
+                    VStack(alignment: .center) {
+                        Text("Unlock SpeakLife Premium", comment: "unlock everything premium view")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 28))
+                            .fontWeight(.bold)
                             .foregroundColor(.white)
-                
-                                            Spacer()
-                                                .frame(height: 24)
+                        
+                    }
+                    Spacer()
+                        .frame(height: 24)
+                    
+                    HStack {
+                        StarRatingView(rating: 4.8)
+                    }.padding([.leading,.trailing],20)
+                    
+                    FeatureView()
+                    
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                        .frame(height: 24)
+                    
+                    
+                    VStack {
+                        
+                        Button {
+                            currentSelection = firstSelection
+                        } label: {
+                            yearlyCTABox()
+                        }
                         
                         
-                                            VStack {
+                        Button {
+                            currentSelection = secondSelection
+                        } label: {
+                            monthlySelectionBox()
+                        }
                         
-                                                Button {
-                                                    currentSelection = firstSelection
-                                                } label: {
-                                                    yearlyCTABox()
-                                                }
+                        //                                                Button {
+                        //                                                    currentSelection = thirdSelection
+                        //                                                } label: {
+                        //                                                    lifetimeSelectionBox()
+                        //                                                }
                         
-                        
-                                                Button {
-                                                    currentSelection = secondSelection
-                                                } label: {
-                                                    monthlySelectionBox()
-                                                }
-                        
-                                            }
-                        
-                        goPremiumStack(size: size)
+                    }
+                    
+                    goPremiumStack(size: size)
                     
                     Spacer()
                         .frame(height: 16)
@@ -363,8 +379,10 @@ struct SubscriptionView: View {
                     costDescription
                     
                     
+//                    TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
+//                        .id(currentTestimonialIndex)
+                    
                 }
-            
                 }
             }
             if declarationStore.isPurchasing {
@@ -384,9 +402,11 @@ struct SubscriptionView: View {
                 
                 Text(currentSelection.title + ".")
                 
-                Text("Cancel anytime.")
-                    .font(Font.custom("Roboto-Regular", size: 14, relativeTo: .callout))
-                .foregroundColor(.gray)
+                if currentSelection == firstSelection ||  currentSelection == secondSelection {
+                    Text("Cancel anytime.")
+                        .font(Font.custom("Roboto-Regular", size: 14, relativeTo: .callout))
+                        .foregroundColor(.gray)
+                }
                 
             }
             .font(Font.custom("Roboto-Regular", size: 14, relativeTo: .title))
@@ -536,6 +556,33 @@ struct SubscriptionView: View {
         
         .padding([.leading, .trailing], 20)
     }
+    
+//    func lifetimeSelectionBox() -> some View {
+//        ZStack {
+//            RoundedRectangle(cornerRadius: 10)
+//                .strokeBorder(Color.gray, lineWidth: 1)
+//                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == thirdSelection ? Constants.DAMidBlue : .clear))
+//                .frame(height: 60)
+//            
+//            HStack {
+//                VStack(alignment: .leading, spacing: 6) {
+//                    HStack {
+//                        Text("\(thirdSelection.ctaDurationTitle)")
+//                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+//                        Text("\(thirdSelection.ctaPriceTitle)")
+//                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
+//                            .bold()
+//                    }
+//                }
+//                .foregroundStyle(.white)
+//                .padding(.leading)
+//                
+//                Spacer()
+//            }
+//        }
+//        
+//        .padding([.leading, .trailing], 20)
+//    }
 }
 
 

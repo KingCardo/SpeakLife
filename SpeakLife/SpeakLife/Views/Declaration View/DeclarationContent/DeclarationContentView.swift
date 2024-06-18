@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseAnalytics
+import UIKit
 
 struct DeclarationContentView: View {
     
@@ -227,6 +228,10 @@ struct DeclarationContentView: View {
     private func favorite(_ declaration: Declaration) {
         viewModel.favorite(declaration: declaration)
         viewModel.requestReview.toggle()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            appState.offerDiscountTry += 1
+            viewModel.showDiscountView.toggle()
+        }
     }
 }
 

@@ -37,8 +37,20 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(scheduleNotificationRequest), name: UIApplication.didEnterBackgroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(scheduleNotificationRequest), name: resyncNotification, object: nil)
         NotificationHandler.shared.callback = { [weak self] content in
-            self?.declarationStore?.setDeclaration(content.body, category: content.title)
+            DispatchQueue.main.async { [weak self] in
+                self?.declarationStore?.setDeclaration(content.body, category: content.title)
+            }
         }
+
+        
+//        if let notification = launchOptions?[.localNotification] as? [String: AnyObject] {
+//               let aps = notification["aps"] as? [String: AnyObject]
+//               let title = aps?["alert"]?["title"] as? String ?? ""
+//               let body = aps?["alert"]?["body"] as? String ?? ""
+//            DispatchQueue.main.async { [weak self] in
+//                self?.declarationStore?.setDeclaration(body, category: title)
+//            }
+//           }
 //        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
 //            if granted {
 //                application.registerForRemoteNotifications()

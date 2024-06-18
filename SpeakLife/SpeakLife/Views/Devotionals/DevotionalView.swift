@@ -14,6 +14,7 @@ struct DevotionalView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: DevotionalViewModel
     @EnvironmentObject var declarationViewModel: DeclarationViewModel
+    @EnvironmentObject var appState: AppState
     @State private var scrollToTop = false
     @State private var share = false
     
@@ -176,6 +177,10 @@ struct DevotionalView: View {
             share.toggle()
             declarationViewModel.requestReview.toggle()
             Analytics.logEvent(Event.devotionalShared, parameters: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                appState.offerDiscountTry += 1
+                declarationViewModel.showDiscountView.toggle()
+            }
         } label: {
             Image(systemName: "square.and.arrow.up")
                 .resizable()

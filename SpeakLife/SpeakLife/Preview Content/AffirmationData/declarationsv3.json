@@ -15532,25 +15532,25 @@
             "text": "I am blessed because I trust and hope in the Lord.",
             "isFavorite": false,
             "category": "health",
-            "book": "Jermeiah 17:7"
+            "book": "Jeremiah 17:7"
         },
         {
             "text": "I prosper even in times of drought.",
             "isFavorite": false,
             "category": "wealth",
-            "book": "Jermeiah 17:8"
+            "book": "Jeremiah 17:8"
         },
         {
             "text": "My abundance can't be stopped.",
             "isFavorite": false,
             "category": "wealth",
-            "book": "Jermeiah 17:8"
+            "book": "Jeremiah 17:8"
         },
         {
             "text": "Nothing is to hard for God, I know I am healed.",
             "isFavorite": false,
             "category": "health",
-            "book": "Jermeiah 32:27"
+            "book": "Jeremiah 32:27"
         },
         {
             "text": "I will restore to you the years that the swarming locust has eaten.",
@@ -15623,11 +15623,238 @@
             "category": "health",
         },
         {
-            "text": "Since did not spare even his own Son, but gave him up for us all, won't he also freely give us everything else?",
+            "text": "Since he did not spare even his own Son, but gave him up for us all, won't he also freely give us everything else?",
             "isFavorite": false,
             "category": "health",
-            "book": "Hebrews 13:5"
+            "book": "Romans 8:32"
         },
+        {
+            "text": "It is good to give thanks to the Lord, to sing praises to the Most High.",
+            "isFavorite": false,
+            "category": "gratitude",
+            "book": "Psalms 92:1"
+        },
+        {
+            "text": "It is good to proclaim your unfailing love in the morning, your faithfulness in the evening.",
+            "isFavorite": false,
+            "category": "gratitude",
+            "book": "Psalms 92:2"
+        },
+        {
+            "text": "You thrill me, Lord with all you have done for me!",
+            "isFavorite": false,
+            "category": "gratitude",
+            "book": "Psalms 92:4"
+        },
+        {
+            "text": "But you, O Lord, will be exalted forever.",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 92:8"
+        },
+        {
+            "text": "You have made me as strong as an wild ox.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Psalms 92:10"
+        },
+        {
+            "text": "The godly will flourish like palm trees.",
+            "isFavorite": false,
+            "category": "wealth",
+            "book": "Psalms 92:12"
+        },
+        {
+            "text": "Even in old age I will produce fruit, I will remain vital and green.",
+            "isFavorite": false,
+            "category": "wealth",
+            "book": "Psalms 92:14"
+        },
+        {
+            "text": "The Lord is my rock!",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 92:15"
+        },
+        {
+            "text": "The Lord is my rock!",
+            "isFavorite": false,
+            "category": "godsprotection",
+            "book": "Psalms 92:15"
+        },
+        {
+            "text": "There is no evil in him!",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 92:15"
+        },
+        {
+            "text": "The Lord is king! He is robed in majesty!",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 93:1"
+        },
+        {
+            "text": "Your reign, Lord, is holy forever and ever.",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 93:5"
+        },
+        {
+            "text": "Joyful are those you discipline, Lord, you teach me with instructions.",
+            "isFavorite": false,
+            "category": "wisdom",
+            "book": "Psalms 94:12"
+        },
+        {
+            "text": "When doubt fills my mind, your comfort gives me hope and joy.",
+            "isFavorite": false,
+            "category": "hope",
+            "book": "Psalms 94:19"
+        },
+        {
+            "text": "The Lord is my fortress, my God is my mighty rock.",
+            "isFavorite": false,
+            "category": "fear",
+            "book": "Psalms 94:19"
+        },
+        {
+            "text": "Come, let us worship and bow down. Let us kneel before the Lord our maker",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 95:6"
+        },
+        {
+            "text": "I will shout joyfully and praise the Rock of my salvation.",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 95:1"
+        },
+        {
+            "text": "I will tell everyone of the amazing things God does.",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 96:3"
+        },
+        {
+            "text": "Great is the Lord! He is most worthy of praise!",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 96:4"
+        },
+        {
+            "text": "He is to be feared above all gods.",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 96:4"
+        },
+        {
+            "text": "The Lord reigns!",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 96:10"
+        },
+        {
+            "text": "The Lord is king!",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 97:1"
+        },
+        {
+            "text": "The Lord is supreme over all the earth.",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 97:9"
+        },
+        {
+            "text": "I will rejoice in the Lord and praise his holy name!",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 97:12"
+        },
+        {
+            "text": "The Lord is good. His unfailing love continues forever.",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 100:5"
+        },
+        {
+            "text": "I will lead a life of integrity.",
+            "isFavorite": false,
+            "category": "wisdom",
+            "book": "Psalms 101:2"
+        },
+        {
+            "text": "I refuse to look at anything vile and vulgar.",
+            "isFavorite": false,
+            "category": "wisdom",
+            "book": "Psalms 101:3"
+        },
+        {
+            "text": "I reject perverse ideas and stay away from all evil.",
+            "isFavorite": false,
+            "category": "wisdom",
+            "book": "Psalms 101:4"
+        },
+        {
+            "text": "I search for faithful people to be my companions.",
+            "isFavorite": false,
+            "category": "wisdom",
+            "book": "Psalms 101:6"
+        },
+        {
+            "text": "Liars will not stay in my presence.",
+            "isFavorite": false,
+            "category": "wisdom",
+            "book": "Psalms 101:7"
+        },
+        {
+            "text": "Let all that I am praise the Lord.",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 104:1"
+        },
+        {
+            "text": "I will praise God to my last breathe!",
+            "isFavorite": false,
+            "category": "praise",
+            "book": "Psalms 104:33"
+        },
+        {
+            "text": "Let all my thoughts be pleasing to him.",
+            "isFavorite": false,
+            "category": "wisdom",
+            "book": "Psalms 104:34"
+        },
+        {
+            "text": "I will continually seek the Lord.",
+            "isFavorite": false,
+            "category": "wisdom",
+            "book": "Psalms 105:4"
+        },
+        {
+            "text": "Until the time came to fulfill his dreams, the Lord tested Joseph's character.",
+            "isFavorite": false,
+            "category": "wisdom",
+            "book": "Psalms 105:19"
+        },
+        {
+            "text": "I am attractive.",
+            "isFavorite": false,
+            "category": "identity",
+        },
+        {
+            "text": "I am limitless because God is in me.",
+            "isFavorite": false,
+            "category": "identity",
+        },
+        {
+            "text": "He sent out his word and healed them, snatching them from the door of death.",
+            "isFavorite": false,
+            "category": "health",
+            "book": "Psalms 107:20"
+        },
+        
         
        
         

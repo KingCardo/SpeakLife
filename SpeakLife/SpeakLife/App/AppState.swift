@@ -31,6 +31,7 @@ final class AppState: ObservableObject {
     @AppStorage("resetNotifications") var resetNotifications = true
     @AppStorage("lastReviewRequestSetDatev1") var lastReviewRequestSetDate: Date?
     @AppStorage("offerDiscount") var offerDiscount = false
+    @AppStorage("offerDiscountTry") var offerDiscountTry = 0
     @AppStorage("discountEndTime") var discountEndTime: Date?
     @AppStorage("lastRequestedRatingVersion") var lastRequestedRatingVersion: String?
     @AppStorage("helpUs") var helpUsGrowCount = 0

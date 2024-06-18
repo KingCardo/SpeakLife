@@ -344,8 +344,14 @@ final class DeclarationViewModel: ObservableObject {
             self.choose(declaration)
             print("choose dec")
         } else {
-            guard let declaration = allDeclarations.filter ({ $0.text == contentText }).first else {
-                print("failed to create dec rwrw find")
+            let contentPrefix: String
+            if let periodIndex = content.firstIndex(of: ".") {
+                contentPrefix = String(content[..<periodIndex])
+            } else {
+                contentPrefix = content  // Use full content if no period is found
+            }
+            guard let declaration = allDeclarations.first(where: { $0.text.hasPrefix(contentPrefix) }) else {
+                print("Failed to find a matching declaration")
                 return
             }
             self.choose(declaration)

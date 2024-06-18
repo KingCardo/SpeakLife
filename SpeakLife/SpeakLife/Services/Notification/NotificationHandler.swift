@@ -18,8 +18,9 @@ final class NotificationHandler: NSObject, ObservableObject, UNUserNotificationC
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         
         let content = response.notification.request.content
-        callback?(content)
-        
+        DispatchQueue.main.async { [weak self] in
+            self?.callback?(content)
+        }
         completionHandler()
         
     }
@@ -30,7 +31,7 @@ final class NotificationHandler: NSObject, ObservableObject, UNUserNotificationC
 
         let content = notification.request.content
         callback?(content)
-        completionHandler([.sound, .banner])
+        completionHandler([.banner, .sound])
     }
 }
 

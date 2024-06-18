@@ -17,6 +17,7 @@ struct InAppId: Codable {
             self.rawValue
         }
         
+        case speakLifeLifetime = "SpeakLifeLifetime"
         case speakLife1YR99 = "SpeakLife1YR99"
         case speakLife1YR49 = "SpeakLife1YR49"
         case speakLife1YR39 = "SpeakLife1YR39"
@@ -30,6 +31,7 @@ struct InAppId: Codable {
         
         var currentPrice: String {
             switch self {
+            case .speakLifeLifetime: return "$99.99"
             case .speakLife1YR99: return "$99.99"
             case .speakLife1YR49: return "$49.99"
             case .speakLife1YR39: return "$39.99"
@@ -45,6 +47,7 @@ struct InAppId: Codable {
         
         var title: String {
             switch self {
+            case .speakLifeLifetime: return "$99.99 for Life"
             case .speakLife1YR99: return "$99.99/year"
             case .speakLife1YR49: return "$49.99/year"
             case .speakLife1YR39: return "$39.99/year"
@@ -60,6 +63,7 @@ struct InAppId: Codable {
         
         var ctaDurationTitle: String {
             switch self {
+            case .speakLifeLifetime: return "Lifetime"
             case .speakLife1YR49: return "Yearly"
             case .speakLife1YR39: return "Yearly"
             case .speakLife1YR29, .speakLife1YR19: return "Yearly"
@@ -83,6 +87,7 @@ struct InAppId: Codable {
         
         var ctaPriceTitle: String {
             switch self {
+            case .speakLifeLifetime: return "$99.99"
             case .speakLife1YR49: return "$49.99"
             case .speakLife1YR39: return "$39.99"
             case .speakLife1YR29: return "$29.99"
