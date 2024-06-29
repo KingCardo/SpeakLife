@@ -62,8 +62,21 @@ struct OnboardingView: View  {
 //                IntroScene(headerText: "Your Savior", bodyText: "Jesus, came so you can have life abundantly, prosper and be in great health. So as God's children we must fight the enemy", footerText: "and not let him steal from us. Time to fight back everyday by speaking life. Jesus already conquered for us, we have to keep it.", buttonTitle: "Claim what's mine!", size: geometry.size, callBack: advance)
 //                    .tag(Tab.life)
                 
-                IntroTipScene(size: geometry.size, callBack: advance)
+                IntroTipScene(title: "Daily Transformation",
+                              bodyText: "Are You Ready to Speak Life?",
+                              subtext: "Enter a realm where your voice is your greatest weapon. Master the art of speaking blessings and reshape your reality.",
+                              ctaText: "Let's go",
+                              showTestimonials: true,
+                              size: geometry.size, callBack: advance)
                     .tag(Tab.tip)
+                
+                IntroTipScene(title: "Negative thoughts",
+                              bodyText: "Struggling with Negative Thoughts, Anxiety, or Fear?",
+                              subtext: "Transform your mind by replacing negativity with empowering affirmations. Flood your mind with good thoughts and watch the darkness fade away!",
+                              ctaText: "Transform me",
+                              showTestimonials: false,
+                              size: geometry.size, callBack: advance)
+                    .tag(Tab.mindset)
                 
                 NotificationOnboarding(size: geometry.size) {
                     advance()
@@ -226,8 +239,12 @@ struct OnboardingView: View  {
                     Analytics.logEvent("IntroLifeDone", parameters: nil)
                 case .tip:
                     impactMed.impactOccurred()
-                    selection = .notification
+                    selection = .mindset
                     Analytics.logEvent("IntroTipScreenDone", parameters: nil)
+                case .mindset:
+                    impactMed.impactOccurred()
+                    selection = .notification
+                    Analytics.logEvent("IntroMindsetScreenDone", parameters: nil)
                 case .benefits:
                     selection = .notification
                     Analytics.logEvent("BenefitScreenDone", parameters: nil)

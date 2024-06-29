@@ -178,8 +178,10 @@ struct DevotionalView: View {
             declarationViewModel.requestReview.toggle()
             Analytics.logEvent(Event.devotionalShared, parameters: nil)
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                appState.offerDiscountTry += 1
-                declarationViewModel.showDiscountView.toggle()
+                if !subscriptionStore.isPremium {
+                    appState.offerDiscountTry += 1
+                    declarationViewModel.showDiscountView.toggle()
+                }
             }
         } label: {
             Image(systemName: "square.and.arrow.up")

@@ -15,6 +15,7 @@ enum Tab {
     case improvement
     case intro
     case tip
+    case mindset
     case foe
     case life
     case benefits

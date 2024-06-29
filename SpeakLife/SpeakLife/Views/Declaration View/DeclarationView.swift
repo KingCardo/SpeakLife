@@ -161,7 +161,7 @@ struct DeclarationView: View {
                 timerViewModel.loadRemainingTime()
             }
             
-            .alert("Help us spread SpeakLife?", isPresented: $share) {
+            .alert("Know anyone that can benefit from SpeakLife?", isPresented: $share) {
                 Button("Yes, I'll share with friends!") {
                     shareSpeakLife()
                 }
@@ -169,7 +169,8 @@ struct DeclarationView: View {
                 }
             }
             .sheet(isPresented: $viewModel.showDiscountView) {
-                if appState.offerDiscountTry < 3 {
+            
+                if appState.offerDiscountTry < 2, !subscriptionStore.isPremium {
                     DiscountSubscriptionView(size: UIScreen.main.bounds.size)
                 } else {
                     GeometryReader { geometry in

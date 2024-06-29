@@ -13,6 +13,12 @@ struct IntroTipScene: View {
     @State private var currentTestimonialIndex: Int = 0
     let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect()
     
+    let title: String
+    let bodyText: String
+    let subtext: String
+    let ctaText: String
+    let showTestimonials: Bool
+    
     let size: CGSize
     let callBack: (() -> Void)
     
@@ -39,7 +45,7 @@ struct IntroTipScene: View {
             
             Spacer().frame(height: 40)
             VStack {
-                Text("Daily Transformation", comment: "Intro scene title label")
+                Text(title)
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 40, relativeTo: .title))
                     .fontWeight(.semibold)
                     .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
@@ -47,7 +53,7 @@ struct IntroTipScene: View {
                 Spacer().frame(height: 16)
                 
                 VStack {
-                    Text("Are You Ready to Speak Life?" , comment: "Intro scene tip")
+                    Text(bodyText)
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
@@ -58,7 +64,7 @@ struct IntroTipScene: View {
                     
                     
                     // Begin your day with words that open doors and defy obstacles, just as Jesus did."
-                    Text("Step into the realm where words are swords fighting battles. Equip yourself with the art of speaking blessings and change your world.", comment: "Intro scene extra tip")
+                    Text(subtext)
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white :Constants.DALightBlue)
                         .multilineTextAlignment(.center)
@@ -67,15 +73,16 @@ struct IntroTipScene: View {
                         .lineLimit(nil)
                 }
                 .frame(width: size.width * 0.8)
-                
-                                    TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
-                                        .id(currentTestimonialIndex)
+                if showTestimonials {
+                    TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
+                        .id(currentTestimonialIndex)
+                }
             }
             Spacer()
             
             Button(action: callBack) {
                 HStack {
-                    Text("Let's go", comment: "Intro scene start label")
+                    Text(ctaText)
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .fontWeight(.medium)
                         .frame(width: size.width * 0.91 ,height: 50)

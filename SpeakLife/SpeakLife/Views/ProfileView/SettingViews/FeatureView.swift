@@ -19,13 +19,17 @@ struct FeatureRow: View {
 
     var body: some View {
         HStack {
+            Spacer()
+                .frame(width: 16)
+            Image(systemName: "checkmark.seal.fill")
+                .padding(.trailing, 8)
             VStack(alignment: .leading) {
                 Text(feature.name)
                     .font(Font.custom("AppleSDGothicNeo-Regular-Bold", size: 18, relativeTo: .body))
-                Spacer()
-                        .frame(height: 2)
-                Text(feature.subtitle)
-                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
+//                Spacer()
+//                        .frame(height: 2)
+//                Text(feature.subtitle)
+//                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
             }
             Spacer()
           //  HStack {
@@ -37,8 +41,8 @@ struct FeatureRow: View {
          //   Spacer()
             //        .frame(width: 24)
             //    if feature.isAvailableInPro {
-                    Image(systemName: "checkmark.seal.fill")
-                        .padding(.trailing, 8)
+//                    Image(systemName: "checkmark.seal.fill")
+//                        .padding(.trailing, 8)
               //  }
            //}
         }
@@ -51,12 +55,13 @@ struct FeatureView: View {
    // Renew your mind thru right believing
     // This could be fetched from a ViewModel in a real-world app
     let features: [Feature] = [
-        Feature(name: "Daily devotional's", subtitle: "Transform every day with Jesus's love: overcome guilt, anxiety, and fear with powerful daily devotionals designed to fortify your spirit and renew your perspective."/*Receive Jesus's love and be victorious from guilt, anxiety, and fear."*/, isAvailableInFree: false, isAvailableInPro: true),
-        Feature(name: "Unlock all categories", subtitle: "Access every category and unleash the power to manifest a life of prosperity, peace, and health for yourself and your loved ones. Start declaring your blessings today!"/*Declare and manifest a long, prosperous, peaceful life for you and your family."*/, isAvailableInFree: false, isAvailableInPro: true),
-        Feature(name: "Create your own", subtitle: "Empower yourself to declare and achieve your God-given destiny. Create personalized affirmations that resonate with your deepest dreams and spiritual aspirations."/*Declare and fulfill your God given dreams & destiny"*/, isAvailableInFree: true, isAvailableInPro: true),
-        Feature(name: "Unlimited reminders", subtitle: "Stay spiritually connected and inspired throughout your day with unlimited reminders of scripture and God’s promises. Keep your faith strong and your heart uplifted no matter where you are."
-/*Receive scripture & God's promises thruout the day"*/, isAvailableInFree: false, isAvailableInPro: true),
-        Feature(name: "Unlimited themes", subtitle: "Elevate your spiritual journey with an array of exclusive, beautifully designed themes that enhance your daily devotional experience. Engage with scripture in an environment that inspires and uplifts."/*Only the finest"*/, isAvailableInFree: false, isAvailableInPro: true),
+        Feature(name: "3000+ library of affirmations", subtitle: "Access every category and unleash the power to manifest a life of prosperity, peace, and health for yourself and your loved ones."/* Start declaring your blessings today!**Declare and manifest a long, prosperous, peaceful life for you and your family."*/, isAvailableInFree: false, isAvailableInPro: true),
+        Feature(name: "365+ Daily devotional's", subtitle: "Transform every day with Jesus's love: overcome guilt, anxiety, and fear with powerful daily devotionals."/*Receive Jesus's love and be victorious from guilt, anxiety, and fear."*/, isAvailableInFree: false, isAvailableInPro: true),
+      //  Feature(name: "3000* library of affirmations", subtitle: "Access every category and unleash the power to manifest a life of prosperity, peace, and health for yourself and your loved ones."/* Start declaring your blessings today!**Declare and manifest a long, prosperous, peaceful life for you and your family."*/, isAvailableInFree: false, isAvailableInPro: true),
+        Feature(name: "Create your own", subtitle: "Empower yourself and create personalized affirmations that resonate with your deepest dreams and spiritual aspirations."/*Declare and fulfill your God given dreams & destiny"*/, isAvailableInFree: true, isAvailableInPro: true),
+        Feature(name: "Unlimited reminders", subtitle: "Stay spiritually connected and inspired throughout your day with unlimited reminders of scripture and God’s promises. Keep your faith strong and your heart uplifted no matter where you are."/*
+*Receive scripture & God's promises thruout the day"*/, isAvailableInFree: false, isAvailableInPro: true),
+        Feature(name: "40+ background themes", subtitle: "Elevate your spiritual journey with an array of exclusive, beautifully designed themes that enhance your daily devotional experience."/* Engage with scripture in an environment that inspires and uplifts.Only the finest"*/, isAvailableInFree: false, isAvailableInPro: true),
        // Feature(name: "Unlock all prayers",  subtitle: "Quiet the lies", isAvailableInFree: false, isAvailableInPro: true),
     ]
 

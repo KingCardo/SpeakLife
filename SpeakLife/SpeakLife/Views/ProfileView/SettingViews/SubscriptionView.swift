@@ -55,13 +55,14 @@ struct DiscountSubscriptionView: View {
     let size: CGSize
     var callback: (() -> Void)?
     var currentSelection = InAppId.Subscription.speakLife1YR15
+    var percentOffText: String = "75% Off - $0.04 cents a day"
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
-    var percentOffText: String = "25% Off SpeakLife yearly"
+    
    // @State private var timeRemaining: Int = 0
    
     
@@ -131,7 +132,7 @@ struct DiscountSubscriptionView: View {
             Spacer()
                 .frame(height:  UIScreen.main.bounds.height * 0.03)
             
-            Text("Romans 4:17: This speaks to the power of belief and speaking things into existence. Just as God brought forth creation from nothingness, your faith and words have the potential to bring about change and create new realities.")
+            Text("Unlock the power of positivity at a fraction of the price! For a limited time only, enjoy a special discount on our premium subscription. Transform your daily routine with exclusive access to all our affirmations, personalized features, and more. Don’t miss out—upgrade today and start living your best life!")
                 .font(.body)
                 .foregroundStyle(.white)
                 .padding([.leading, .trailing, .top])
