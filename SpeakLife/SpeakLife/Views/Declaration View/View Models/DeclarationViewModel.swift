@@ -180,8 +180,7 @@ final class DeclarationViewModel: ObservableObject {
         
         
         service.save(declarations: allDeclarations) { [weak self] success in
-            guard let self = self else { return }
-            self.refreshGeneral(categories: self.selectedCategories)
+            self?.fetchDeclarations()
         }
     }
     

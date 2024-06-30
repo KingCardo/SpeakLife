@@ -82,21 +82,7 @@ struct SpeakLifeApp: App {
             }
         }
     }
-    
-//    private func decodeCategories(_ categories: [Improvements]) {
-//        var temp = Set<DeclarationCategory>()
-//        for category in categories {
-//            if let decCategory = DeclarationCategory(category.selectedCategory) {
-//                temp.insert(decCategory)
-//            }
-//        }
-//        
-//        if !temp.contains(.destiny) {
-//            temp.insert(.destiny)
-//        }
-//       // declarationStore.selectedCategories = temp
-//        declarationStore.save(temp)
-//    }
+
     
     private func resetNotifications() {
         let categories = Set(appState.selectedNotificationCategories.components(separatedBy: ",").compactMap({ DeclarationCategory($0) }))

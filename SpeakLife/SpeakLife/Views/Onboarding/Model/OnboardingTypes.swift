@@ -7,10 +7,12 @@
 
 import Foundation
 
-enum Tab {
+enum Tab: String {
     
     case personalization
     case name
+    case age
+    case gender
     case habit
     case improvement
     case intro

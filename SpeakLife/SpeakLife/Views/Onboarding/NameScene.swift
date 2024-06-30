@@ -62,41 +62,7 @@ struct NameScene: View {
                                 .shadow(color: appState.onBoardingTest ? .white : Constants.DAMidBlue, radius: 8, x: 0, y: 10)
                             
                             Spacer().frame(height: 40)
-                            
-//                            NavigationView {
-//                                Form {
-//                                    Section(header: Text("Please select your age").foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)) {
-//                                        List(ageRange, id: \.self) { age in
-//                                            HStack {
-//                                                Text("\(age)")
-//                                                    .onTapGesture {
-//                                                        self.selectedAge = age
-//                                                        // self.showConfirmation = true  // Optional: trigger confirmation/alert here if needed
-//                                                    }
-//                                                Spacer()
-//                                                if age == selectedAge {
-//                                                    Image(systemName: "checkmark")
-//                                                        .foregroundColor(.blue)
-//                                                }
-//                                            }
-//                                            .contentShape(Rectangle())  // Makes the whole row tappable
-//                                            .foregroundColor(appState.onBoardingTest ? .black : Constants.DALightBlue)
-//                                        }
-//                                    }.frame(height: size.width * 0.5)
-//                            
-//                                }
-//                            }
-                            
-//                            Section(header: Text("Please select your age")) {
-//                                               Picker("Age", selection: $selectedAge) {
-//                                                   ForEach(ageRange, id: \.self) {
-//                                                       Text("\($0)").tag($0)
-//                                                   }
-//                                               }
-//                                               .pickerStyle(InlinePickerStyle())
-//                                               .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)// You can choose other styles like Inline, Menu, etc.
-//                                           }.foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
-                            
+                                                        
                         }
                         .frame(width: size.width * 0.9)
                     }
@@ -139,5 +105,148 @@ struct CustomTextFieldStyle: TextFieldStyle {
     func _body(configuration: TextField<_Label>) -> some View {
         configuration
             .foregroundColor(Color.white) // Change the text color
+    }
+}
+
+struct AgeCollectionView: View {
+    let size: CGSize
+    let callBack: (() -> Void)
+    
+    let ageRanges = ["18 - 25", "26 - 35", "36 - 45", "46 - 55", "56 - 65", "66 and above"]
+        
+        // State to track the selected age range
+    @State private var selectedAgeRange: String = ""
+    
+    
+    var body: some View {
+        ZStack {
+            Image(onboardingBGImage)
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+            
+
+            VStack {
+                Spacer().frame(height: size.height / 4)
+                VStack {
+                    Text("Please select your age range:" , comment: "collect age range")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(10)
+                        .lineLimit(nil)
+                    
+                    Spacer().frame(height: 24)
+                    
+                    ForEach(ageRanges, id: \.self) { ageRange in
+                        Button(action: {
+                            // Set the selected age range
+                            self.selectedAgeRange = ageRange
+                        }) {
+                            HStack {
+                                Text(ageRange)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                Spacer()
+                            }
+                            .background(self.selectedAgeRange == ageRange ? Color.blue : Color.clear)
+                            .cornerRadius(10)
+                        }
+                        .padding(.horizontal)
+                    }
+                    
+                    
+                    Spacer()
+                    Button("Continue") {
+                        Analytics.logEvent("UserAge", parameters: ["age":selectedAgeRange])
+                        callBack()
+                    }
+                    .disabled(selectedAgeRange.isEmpty)
+                    .frame(width: size.width * 0.87 ,height: 50)
+                    .background(selectedAgeRange.isEmpty ? Constants.DAMidBlue.opacity(0.5): Constants.DAMidBlue)
+                    
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
+                    .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+                    Spacer()
+                        .frame(width: 5, height: size.height * 0.07)
+                }
+            }
+            
+            .frame(width: size.width * 0.9)
+        }
+        Spacer()
+    }
+}
+
+
+struct GenderCollectionView: View {
+    let size: CGSize
+    let callBack: (() -> Void)
+    
+    let genders = ["Male", "Female"]
+    
+    // State to track the selected gender
+    @State private var selectedGender: String = ""
+    
+    
+    var body: some View {
+        ZStack {
+            Image(onboardingBGImage)
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+            
+            VStack {
+                Spacer().frame(height: size.height / 4)
+                
+                VStack {
+                    Text("Please select your gender:" , comment: "collect gender")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(10)
+                        .lineLimit(nil)
+                    
+                    Spacer().frame(height: 24)
+                    
+                    ForEach(genders, id: \.self) { gender in
+                        Button(action: {
+                            self.selectedGender = gender
+                        }) {
+                            HStack {
+                                Text(gender)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                Spacer()
+                            }
+                            .background(self.selectedGender == gender ? Color.blue : Color.clear)
+                            .cornerRadius(10)
+                        }
+                        .padding(.horizontal)
+                    }
+                    
+                    
+                    Spacer()
+                    
+                    Button("Continue") {
+                        Analytics.logEvent("UserGender", parameters: ["gender":selectedGender])
+                        callBack()
+                    }
+                    .disabled(selectedGender.isEmpty)
+                    .frame(width: size.width * 0.87 ,height: 50)
+                    .background(selectedGender.isEmpty ? Constants.DAMidBlue.opacity(0.5): Constants.DAMidBlue)
+                    // .background(Constants.DAMidBlue)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
+                    .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+                    Spacer()
+                        .frame(width: 5, height: size.height * 0.07)
+                    
+                    }
+            }
+            .frame(width: size.width * 0.9)
+        }
+        Spacer()
     }
 }

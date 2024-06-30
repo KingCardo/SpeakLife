@@ -197,12 +197,12 @@ struct DeclarationContentView: View {
                 }
                 
                 
-                CapsuleImageButton(title: "hand.thumbsdown") {
-                    withAnimation {
-                        dislike(declaration)
-                    }
-                    Selection.shared.selectionFeedback()
-                }
+//                CapsuleImageButton(title: "hand.thumbsdown") {
+//                    withAnimation {
+//                        dislike(declaration)
+//                    }
+//                    Selection.shared.selectionFeedback()
+//                }
                 
                 if declaration.affirmationText != nil {
                     CapsuleImageButton(title: viewModel.showVerse ? "arrowshape.zigzag.forward" : "arrowshape.zigzag.right.fill") {

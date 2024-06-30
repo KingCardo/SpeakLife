@@ -80,7 +80,7 @@ struct DiscountSubscriptionView: View {
     var body: some View {
         ZStack {
             GeometryReader { geometry in
-                Image(onboardingBGImage)
+                Image("moonlight1")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
@@ -252,8 +252,8 @@ struct SubscriptionView: View {
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR19
-    var firstSelection = InAppId.Subscription.speakLife1YR19
+    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR29
+    var firstSelection = InAppId.Subscription.speakLife1YR29
     var secondSelection = InAppId.Subscription.speakLife1MO4
   //  var thirdSelection = InAppId.Subscription.speakLifeLifetime
     let impactMed = UIImpactFeedbackGenerator(style: .soft)

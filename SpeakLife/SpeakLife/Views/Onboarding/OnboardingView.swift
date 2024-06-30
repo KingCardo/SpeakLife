@@ -20,6 +20,7 @@ struct OnboardingView: View  {
     @State var showLastChanceAlert = false
     @State var isDonePersonalization = false
     @StateObject var improvementViewModel = ImprovementViewModel()
+    @AppStorage("onboardingTab") var onboardingTab = Tab.personalization.rawValue
    
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
@@ -44,6 +45,12 @@ struct OnboardingView: View  {
                 NameScene(size: geometry.size, callBack: advance)
                         .tag(Tab.name)
                 
+                AgeCollectionView(size: geometry.size, callBack: advance)
+                        .tag(Tab.age)
+                
+                GenderCollectionView(size: geometry.size, callBack: advance)
+                        .tag(Tab.gender)
+                
                 if !appState.onBoardingTest {
                     HabitScene(size: geometry.size, callBack: advance)
                         .tag(Tab.habit)
@@ -59,24 +66,24 @@ struct OnboardingView: View  {
 //                IntroScene(headerText: "The enemy", bodyText: "satan comes to steal, kill, and destroy. He wants to steal the truth, word of God from your heart, your health, joy, peace and much more!", footerText: "But we have weapons to take offense. Jesus gave us authority over all power of the enemy! Luke 10:19", buttonTitle: "Fight back", size: geometry.size, callBack: advance)
 //                    .tag(Tab.foe)
 //                
-//                IntroScene(headerText: "Your Savior", bodyText: "Jesus, came so you can have life abundantly, prosper and be in great health. So as God's children we must fight the enemy", footerText: "and not let him steal from us. Time to fight back everyday by speaking life. Jesus already conquered for us, we have to keep it.", buttonTitle: "Claim what's mine!", size: geometry.size, callBack: advance)
-//                    .tag(Tab.life)
+                IntroScene(headerText: "Your Savior", bodyText: "Jesus, came so you can have life abundantly, prosper and be in great health. So as God's children we must fight the enemy", footerText: "and not let him steal from us. Time to fight back everyday by speaking life. Jesus already conquered for us, we have to keep it.", buttonTitle: "Claim what's mine!", size: geometry.size, callBack: advance)
+                    .tag(Tab.life)
                 
                 IntroTipScene(title: "Daily Transformation",
                               bodyText: "Are You Ready to Speak Life?",
-                              subtext: "Enter a realm where your voice is your greatest weapon. Master the art of speaking blessings and reshape your reality.",
+                              subtext: "Enter a realm where your voice is your greatest weapon. Master the art of speaking and activating the promises from God, full of blessings, health and reshaping your destiny.",
                               ctaText: "Let's go",
                               showTestimonials: true,
                               size: geometry.size, callBack: advance)
                     .tag(Tab.tip)
-                
-                IntroTipScene(title: "Negative thoughts",
-                              bodyText: "Struggling with Negative Thoughts, Anxiety, or Fear?",
-                              subtext: "Transform your mind by replacing negativity with empowering affirmations. Flood your mind with good thoughts and watch the darkness fade away!",
-                              ctaText: "Transform me",
-                              showTestimonials: false,
-                              size: geometry.size, callBack: advance)
-                    .tag(Tab.mindset)
+//                
+//                IntroTipScene(title: "Negative thoughts",
+//                              bodyText: "Struggling with Negative Thoughts, Anxiety, or Fear?",
+//                              subtext: "Transform your mind by replacing negativity with empowering affirmations. Flood your mind with good thoughts and watch the darkness fade away!",
+//                              ctaText: "Transform me",
+//                              showTestimonials: false,
+//                              size: geometry.size, callBack: advance)
+//                    .tag(Tab.mindset)
                 
                 NotificationOnboarding(size: geometry.size) {
                     advance()
@@ -122,6 +129,7 @@ struct OnboardingView: View  {
         }
         
         .onAppear {
+            setSelection()
             if viewModel.backgroundMusicEnabled {
                 AudioPlayerService.shared.playSound(files: resources)
             }
@@ -133,6 +141,11 @@ struct OnboardingView: View  {
     
     private var foregroundColor: Color {
         colorScheme == .dark ? .white : Constants.DEABlack
+    }
+    
+    private func setSelection() {
+        guard let tab = Tab(rawValue: onboardingTab) else { return }
+        selection = tab
     }
     
     // MARK: - Private Views
@@ -209,44 +222,65 @@ struct OnboardingView: View  {
                 switch selection {
                 case .personalization:
                     impactMed.impactOccurred()
-                    selection = /*.improvement*/ .name
+                    selection = .name
+                    onboardingTab = selection.rawValue
                     Analytics.logEvent("WelcomeScreenDone", parameters: nil)
                 case .name:
-                    selection = appState.onBoardingTest ? .improvement : .habit
+                    impactMed.impactOccurred()
+                    selection = appState.onBoardingTest ? .age : .habit
+                    onboardingTab = selection.rawValue
                     Analytics.logEvent("NameScreenDone", parameters: nil)
+                case .age:
+                    impactMed.impactOccurred()
+                    selection = appState.onBoardingTest ? .gender : .habit
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("AgeScreenDone", parameters: nil)
+                case .gender:
+                    impactMed.impactOccurred()
+                    selection = appState.onBoardingTest ? .improvement : .habit
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("GenderScreenDone", parameters: nil)
                 case .habit:
                     selection = .improvement
+                    onboardingTab = selection.rawValue
                     Analytics.logEvent("HabitScreenDone", parameters: nil)
                 case .improvement:
                     impactMed.impactOccurred()
-                    selection = .tip//.intro
+                    selection = .life//.intro
+                    onboardingTab = selection.rawValue
                     appState.selectedNotificationCategories = improvementViewModel.selectedCategories
                     decodeCategories(improvementViewModel.selectedExperiences)
                     Analytics.logEvent("ImprovementScreenDone", parameters: nil)
                 case .intro:
                     impactMed.impactOccurred()
                     selection = .foe
+                    onboardingTab = selection.rawValue
                     Analytics.logEvent("IntroScreenDone", parameters: nil)
                     
                 case .foe:
                     impactMed.impactOccurred()
                     selection = .life
+                    onboardingTab = selection.rawValue
                     Analytics.logEvent("IntroFoeDone", parameters: nil)
                     
                 case .life:
                     impactMed.impactOccurred()
                     selection = .tip
+                    onboardingTab = selection.rawValue
                     Analytics.logEvent("IntroLifeDone", parameters: nil)
                 case .tip:
                     impactMed.impactOccurred()
-                    selection = .mindset
+                    selection = .notification
+                    onboardingTab = selection.rawValue
                     Analytics.logEvent("IntroTipScreenDone", parameters: nil)
                 case .mindset:
                     impactMed.impactOccurred()
                     selection = .notification
+                    onboardingTab = selection.rawValue
                     Analytics.logEvent("IntroMindsetScreenDone", parameters: nil)
                 case .benefits:
                     selection = .notification
+                    onboardingTab = selection.rawValue
                     Analytics.logEvent("BenefitScreenDone", parameters: nil)
                 case .notification:
                     impactMed.impactOccurred()
@@ -254,6 +288,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("NotificationScreenDone", parameters: nil)
                 case .useCase:
                     selection = .widgets
+                    onboardingTab = selection.rawValue
                     
                 case .subscription:
                     viewModel.choose(.general) { _ in }
@@ -324,6 +359,7 @@ struct OnboardingView: View  {
                             if appState.onBoardingTest {
                                // if isDonePersonalization {
                                     selection = .subscription
+                                    onboardingTab = selection.rawValue
 //                                } else {
 //                                    selection = .loading
 //                                }
@@ -341,6 +377,7 @@ struct OnboardingView: View  {
                 if appState.onBoardingTest {
                    // if isDonePersonalization {
                         selection = .subscription
+                    onboardingTab = selection.rawValue
 //                    } else {
 //                        selection = .loading
 //                    }
