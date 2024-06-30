@@ -151,5 +151,15 @@ struct Declaration: Codable, Identifiable, Hashable {
         text + category.rawValue
     }
     
+    enum CodingKeys: String, CodingKey {
+            case text
+            case book
+            case affirmationText
+            case category
+            case isFavorite
+        }
+    
+    var disliked: Bool = false
+    
     var lastEdit: Date?
 }

@@ -165,6 +165,26 @@ final class DeclarationViewModel: ObservableObject {
         showVerse.toggle()
     }
     
+    func dislike(declaration: Declaration) {
+        guard let indexOf = declarations.firstIndex(where: { $0.id == declaration.id } ) else {
+            return
+        }
+        
+        
+        declarations[indexOf]
+            .disliked
+            .toggle()
+        
+        guard let index = allDeclarations.firstIndex(where: { $0.id == declaration.id }) else { return }
+        allDeclarations[index] = declarations[indexOf]
+        
+        
+        service.save(declarations: allDeclarations) { [weak self] success in
+            guard let self = self else { return }
+            self.refreshGeneral(categories: self.selectedCategories)
+        }
+    }
+    
     // MARK: - Favorites
     
     func favorite(declaration: Declaration) {
@@ -281,10 +301,10 @@ final class DeclarationViewModel: ObservableObject {
     }
     
     func fetchDeclarations(for category: DeclarationCategory, completion: @escaping(([Declaration]) -> Void)) {
-        if let declarations = allDeclarationsDict[category] {
-            completion(declarations)
+        if var declarations = allDeclarationsDict[category] {
+            let liked = declarations.filter { $0.disliked == false }
+            completion(liked)
         } else if category == .general {
-            print(selectedCategories, "RWRW")
             refreshGeneral(categories: selectedCategories)
             completion(general)
         }  else if category == .favorites {
@@ -295,8 +315,9 @@ final class DeclarationViewModel: ObservableObject {
             completion(createOwn)
         } else {
             let declarations = allDeclarations.filter { $0.category == category }
-            allDeclarationsDict[category] = declarations
-            completion(declarations)
+            let liked = declarations.filter { $0.disliked == false }
+            allDeclarationsDict[category] = liked
+            completion(liked)
         }
     }
     
@@ -324,6 +345,7 @@ final class DeclarationViewModel: ObservableObject {
         var tempGen: [Declaration] = []
         for category in categories {
             let affirmations = allDeclarations.filter { $0.category == category }
+                .filter { $0.disliked == false }
             tempGen.append(contentsOf: affirmations)
         }
         general = tempGen

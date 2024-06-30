@@ -197,10 +197,10 @@ struct DeclarationContentView: View {
                 }
                 
                 
-                CapsuleImageButton(title: declaration.isFavorite ? "heart.fill" : "heart") {
-                    favorite(declaration)
-                    self.isFavorite = declaration.isFavorite ? false : true
-                    Analytics.logEvent(Event.favoriteTapped, parameters: ["declaration": declaration.text])
+                CapsuleImageButton(title: "hand.thumbsdown") {
+                    withAnimation {
+                        dislike(declaration)
+                    }
                     Selection.shared.selectionFeedback()
                 }
                 
@@ -211,6 +211,13 @@ struct DeclarationContentView: View {
                         }
                         Selection.shared.selectionFeedback()
                     }
+                }
+                
+                CapsuleImageButton(title: declaration.isFavorite ? "heart.fill" : "heart") {
+                    favorite(declaration)
+                    self.isFavorite = declaration.isFavorite ? false : true
+                    Analytics.logEvent(Event.favoriteTapped, parameters: ["declaration": declaration.text])
+                    Selection.shared.selectionFeedback()
                 }
             }
             .foregroundColor(.white)
@@ -234,6 +241,10 @@ struct DeclarationContentView: View {
                 viewModel.showDiscountView.toggle()
             }
         }
+    }
+    
+    private func dislike(_ declaration: Declaration) {
+        viewModel.dislike(declaration: declaration)
     }
 }
 
