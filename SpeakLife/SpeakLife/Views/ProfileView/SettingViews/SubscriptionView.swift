@@ -410,7 +410,7 @@ struct SubscriptionView: View {
                 }
                 
             }
-            .font(Font.custom("Roboto-Regular", size: 14, relativeTo: .title))
+            .font(Font.custom("Roboto-Regular", size: 18, relativeTo: .title))
         .foregroundColor(.white)
     }
     
