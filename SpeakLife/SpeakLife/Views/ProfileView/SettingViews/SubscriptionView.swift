@@ -7,6 +7,7 @@
 
 import SwiftUI
 import StoreKit
+import FirebaseAnalytics
 
 struct Benefit: Identifiable  {
     
@@ -252,8 +253,10 @@ struct SubscriptionView: View {
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription = InAppId.Subscription.speakLife1YR29
-    var firstSelection = InAppId.Subscription.speakLife1YR29
+    @State var currentSelection: InAppId.Subscription? // = InAppId.Subscription.speakLife1YR29
+    var firstSelection : InAppId.Subscription {
+        appState.subscriptionTestnineteen ? InAppId.Subscription.speakLife1YR19 : InAppId.Subscription.speakLife1YR29
+    }  //InAppId.Subscription.speakLife1YR29
     var secondSelection = InAppId.Subscription.speakLife1MO4
   //  var thirdSelection = InAppId.Subscription.speakLifeLifetime
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
@@ -263,12 +266,17 @@ struct SubscriptionView: View {
     let benefits: [Benefit]
     var isDiscount = false
     
-    var ctaText: String
+    var ctaText: String? {
+        if currentSelection == firstSelection {
+            return appState.subscriptionTestnineteen ? "3 days free, then" : "7 days free, then"
+        }
+        return nil
+    }
     
     init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
         self.benefits = benefits
         self.size = size
-        self.ctaText = ctaText
+       // self.ctaText = ctaText
         self.isDiscount = isDiscount
     }
     
@@ -398,10 +406,10 @@ struct SubscriptionView: View {
     var costDescription: some View {
             VStack(spacing: 4) {
                 if currentSelection == firstSelection {
-                    Text(ctaText)
+                    Text(ctaText ?? "")
                 }
                 
-                Text(currentSelection.title + ".")
+                Text(currentSelection?.title ?? "" + ".")
                 
                 if currentSelection == firstSelection ||  currentSelection == secondSelection {
                     Text("Cancel anytime.")
@@ -410,7 +418,7 @@ struct SubscriptionView: View {
                 }
                 
             }
-            .font(Font.custom("Roboto-Regular", size: 18, relativeTo: .title))
+            .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .title))
         .foregroundColor(.white)
     }
     
@@ -452,14 +460,16 @@ struct SubscriptionView: View {
     
     func buy() async {
         do {
+            guard let currentSelection = currentSelection else { return }
             if let _ = try await subscriptionStore.purchaseWithID([currentSelection.rawValue]) {
+                Analytics.logEvent(currentSelection.rawValue, parameters: nil)
                 callback?()
             }
         } catch StoreError.failedVerification {
             errorTitle = "Your purchase could not be verified by the App Store."
             isShowingError = true
         } catch {
-            print("Failed purchase for \(currentSelection.rawValue): \(error)")
+            print("Failed purchase for \(currentSelection?.rawValue): \(error)")
         }
     }
     

@@ -35,7 +35,7 @@ struct HomeView: View {
     @Binding var isShowingLanding: Bool
     @StateObject private var viewModel = FacebookTrackingViewModel()
 
-    
+    let data = [true, false]
     var body: some View {
         Group {
             if isShowingLanding {
@@ -54,7 +54,8 @@ struct HomeView: View {
             DeclarationView()
                 .id(appState.rootViewId)
                 .onAppear {
-                  //  viewModel.requestPermission()
+                    appState.subscriptionTestnineteen = data.randomElement() ?? false
+                    viewModel.requestPermission()
                     UIScrollView.appearance().isScrollEnabled = true
                     if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
                         AudioPlayerService.shared.playSound(files: resources)

@@ -40,6 +40,7 @@ final class AppState: ObservableObject {
     @AppStorage("firstSelection") var firstSelection = ""
     @AppStorage("discountSelection") var discountSelection = ""
     @AppStorage("discountPercentage") var discountPercentage = ""
+    @AppStorage("subscriptionTest") var subscriptionTestnineteen = false
 }
 
 extension Date: RawRepresentable {

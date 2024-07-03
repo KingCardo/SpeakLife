@@ -186,33 +186,33 @@ final class TimerViewModel: ObservableObject {
         return String(format: "%02d:%02d", minutes, seconds)
     }
     
-    let speakLifeArray:[String] = ["Time to put them to use ⚔️🗣️",
-                                   "The quest awaits! 🗺️⚔️ Ready to jump back in?",
-                                   "Adventure calls! 🌄 Your journey resumes now.",
-                                   "🛡️⚒️ Gear up and dive back in.",
+    let speakLifeArray:[String] = ["Time to activate God's promises ⚔️🗣️",
+                                   " 🗺️⚔️ Ready to SpeakLife?",
+                                   "It's time! 🌄 Your destiny awaits. Speak life.",
+                                   "We missed you.🛡️⚒️ Gear up and Speak life.",
                                    "Legends don't rest for too long! 🌟 It's time to claim your ground.",
-                                   "The spiritual realm misses its hero! 🏰 Return to your adventure now.",
+                                   "The spiritual realm misses its hero! 🏰 Speak life.",
                                    "Too quiet without you! 🌿👣 Let's stir things up again.",
-                                   "Your saga awaits its next chapter! 📖✨ Unpause your journey.",
-                                   "Ready for another round? 🔄 The adventure never stops!",
-                                   "It's comeback time! 🎉",
-                                   "The heavens whisper your name! 🍃🗣️ Heed the call and return.",
-                                   "Feeling the call of adventure? 🏞️ It's time to respond!",
-                                   "Your destiny isn't written yet! 🌌 Continue your epic quest.",
-                                   "A hero's work is never done! ⚔️🛡️ Keep fighting.",
-                                   "The path remains! 🚶‍♂️🌲 Venture forward.",
-                                   "Epic moments await! 🌠 Seize your destiny once more."
+                                   "Your saga awaits its next chapter! 📖✨ Speak life.",
+                                   " 🔄 The adventure never stops! Speak life.",
+                                   "It's comeback time! 🎉 Speak life!",
+                                   "The heavens whisper your name! 🍃🗣️ Speak life.",
+                                   "Feeling the call of adventure? 🏞️ It's time to Speak life",
+                                   "Your destiny isn't written yet! 🌌  Speak life.",
+                                   "A hero's work is never done! ⚔️🛡️ Speak life.",
+                                   "The path remains! 🚶‍♂️🌲 Speak life",
+                                   "Epic moments await! 🌠 Speak life"
 
     ]
     
     func scheduleNotificationForMidnightTomorrow() {
         let content = UNMutableNotificationContent()
         content.title = "Speaking life is a weapon"
-        content.body = speakLifeArray.shuffled().first ?? "Time to put them to use ⚔️🗣️"
+        content.body = speakLifeArray.shuffled().first ??  "We missed you.🛡️⚒️ Gear up and Speak life."
         content.sound = UNNotificationSound.default
 
         var dateComponents = DateComponents()
-        dateComponents.hour = 0  // Midnight
+        dateComponents.hour = 7  
         dateComponents.minute = 0
 
         // Increment day by 1 to schedule for tomorrow

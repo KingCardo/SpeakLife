@@ -160,8 +160,17 @@ struct AgeCollectionView: View {
                 }
                 
                 Spacer()
+                
+                Button("Skip") {
+                    callBack()
+                }
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .caption))
+                .fontWeight(.medium)
+                .frame(width: size.width * 0.30 ,height: 25)
                 Button("Continue") {
-                    Analytics.logEvent(selectedAgeRange, parameters: nil)
+                    if selectedAgeRange.count > 2 {
+                        Analytics.logEvent(selectedAgeRange, parameters: nil)
+                    }
                     //Analytics.logEvent("UserAge", parameters: ["age":selectedAgeRange])
                     callBack()
                 }
@@ -235,9 +244,17 @@ struct GenderCollectionView: View {
                 
                 
                 Spacer()
+                Button("Skip") {
+                    callBack()
+                }
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .caption))
+                .fontWeight(.medium)
+                .frame(width: size.width * 0.30 ,height: 25)
                 
                 Button("Continue") {
-                    Analytics.logEvent(selectedGender, parameters: nil)//"UserGender", parameters: ["gender":])
+                    if selectedGender.count > 2 {
+                        Analytics.logEvent(selectedGender, parameters: nil)
+                    }//"UserGender", parameters: ["gender":])
                     callBack()
                 }
                 .disabled(selectedGender.isEmpty)
