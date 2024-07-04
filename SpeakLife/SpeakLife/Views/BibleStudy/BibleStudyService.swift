@@ -31,6 +31,31 @@ class BibleReadingPlanAPIClient {
     init(networkService: NetworkRequestable) {
         self.networkService = networkService
     }
+    
+    func fetchBibleStories() {
+        let headers = [
+            "x-rapidapi-key": "333338f3f3msh5c99f092f9c14dcp18867ejsna643d6e58f43",
+            "x-rapidapi-host": "iq-bible.p.rapidapi.com"
+        ]
+        let request = NSMutableURLRequest(url: NSURL(string: "https://iq-bible.p.rapidapi.com/GetStories?language=english")! as URL,
+                                                cachePolicy: .useProtocolCachePolicy,
+                                            timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                print(error as Any)
+            } else {
+                let httpResponse = response as? HTTPURLResponse
+                if httpResponse?.statusCode == 200, let data = data {
+                    let welcome = try? JSONDecoder().decode(BibleStories.self, from: data)
+                }
+            }
+        })
+        
+        dataTask.resume()
+    }
 
     func fetchBibleReadingPlan(completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
         let headers = [

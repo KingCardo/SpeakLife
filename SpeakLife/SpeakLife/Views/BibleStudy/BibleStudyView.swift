@@ -8,13 +8,13 @@
 import SwiftUI
 
 
-//struct BibleStudyView: View {
-//    
-//    @StateObject var viewModel = BibleStudyViewModel()
-//    
-//    var body: some View {
-//        Text("hmm")
-//    }
-//}
+struct BibleStudyView: View {
+    
+    @StateObject var viewModel = BibleStudyViewModel()
+    
+    var body: some View {
+        Text("hmm")
+    }
+}
 
 

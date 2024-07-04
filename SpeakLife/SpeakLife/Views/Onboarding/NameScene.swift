@@ -139,23 +139,26 @@ struct AgeCollectionView: View {
                         
                         Spacer().frame(height: 24)
                         
-                        ForEach(ageRanges, id: \.self) { ageRange in
-                            Button(action: {
-                                // Set the selected age range
-                                self.selectedAgeRange = ageRange
-                            }) {
-                                HStack {
-                                    Text(ageRange)
-                                        .foregroundColor(.white)
-                                        .padding()
-                                    Spacer()
-                                }
-                                .background(self.selectedAgeRange == ageRange ? Color.blue : Color.clear)
-                                .cornerRadius(10)
+                            ForEach(ageRanges, id: \.self) { ageRange in
+                               
+                                Button(action: {
+                                    // Set the selected age range
+                                    self.selectedAgeRange = ageRange
+                                }) {
+                                        HStack {
+                                            Text(ageRange)
+                                                .foregroundColor(.white)
+                                                .padding()
+                                            Spacer()
+                                        }
+                                        .background(self.selectedAgeRange == ageRange ? Constants.DAMidBlue.opacity(0.8) : Constants.DAMidBlue.opacity(0.3))
+                                       // .background(self.selectedAgeRange == ageRange ? Color.blue : Color.white.opacity(0.3))
+                                        .cornerRadius(10)
+                                    }
+                                .padding(.horizontal)
                             }
-                            .padding(.horizontal)
-                        }
-                        .frame(width: size.width * 0.9)
+                            .frame(width: size.width * 0.9)
+                        
                     }
                 }
                 

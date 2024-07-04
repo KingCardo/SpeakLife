@@ -76,6 +76,8 @@ struct IntroTipScene: View {
                 if showTestimonials {
                     TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
                         .id(currentTestimonialIndex)
+                } else {
+                    Spacer().frame(height: size.height * 0.40)
                 }
             }
             Spacer()

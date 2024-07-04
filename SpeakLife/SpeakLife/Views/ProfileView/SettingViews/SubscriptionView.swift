@@ -323,7 +323,7 @@ struct SubscriptionView: View {
           
             GeometryReader { geometry in
                
-                Image(onboardingBGImage)
+                Image("moonlight1")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
