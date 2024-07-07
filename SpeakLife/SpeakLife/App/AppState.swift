@@ -23,7 +23,7 @@ final class AppState: ObservableObject {
     @AppStorage("notificationCount") var notificationCount = 10
     @AppStorage("startTimeNotification") var startTimeNotification = ""
     @AppStorage("endTimeNotification") var endTimeNotification = ""
-    @AppStorage("startTimeIndex") var startTimeIndex = 16
+    @AppStorage("startTimeIndex") var startTimeIndex = 12
     @AppStorage("endTimeIndex") var endTimeIndex = 40
     @AppStorage("selectedNotificationCategories") var selectedNotificationCategories: String = ""
     @AppStorage("showScreenshotLabel") var showScreenshotLabel = false

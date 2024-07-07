@@ -71,7 +71,7 @@ struct OnboardingView: View  {
                 
                 IntroTipScene(title: "Daily Transformation",
                               bodyText: "Are You Ready to Speak Life?",
-                              subtext: "Enter a realm where your voice is your greatest weapon. Master the art of speaking and activating the promises of God, full of blessings, health and reshaping your destiny.",
+                              subtext: "Master the art of speaking and activating the promises of God, full of blessings, health and reshaping your destiny.",
                               ctaText: "Let's go",
                               showTestimonials: true,
                               size: geometry.size, callBack: advance)
