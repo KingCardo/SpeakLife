@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import TipKit
 
 @main
 struct SpeakLifeApp: App {
@@ -82,6 +83,34 @@ struct SpeakLifeApp: App {
             }
         }
     }
+    
+//    init() {
+//        // Optional configure tips for testing.
+//        setupTipsForTesting()
+//
+//        // Configure and load all tips in the app.
+//        try? Tips.configure()
+//    }
+
+    // Various way to override tip eligibility for testing.
+    // Note: These must be called before `Tips.configure()`.
+//    private func setupTipsForTesting() {
+//        do {
+//            // Show all defined tips in the app.
+//            // try? Tips.showAllTipsForTesting()
+//
+//            // Show some tips, but not all.
+//            // try? Tips.showTipsForTesting([tip1, tip2, tip3])
+//
+//            // Hide all tips defined in the app.
+//            // try? Tips.hideAllTipsForTesting()
+//
+//            // Purge all TipKit-related data.
+//            try Tips.resetDatastore()
+//        } catch {
+//            print(error)
+//        }
+//    }
 
     
     private func resetNotifications() {

@@ -6,7 +6,11 @@
 //
 
 import SwiftUI
+import UIKit
 
+func assetExists(named assetName: String) -> Bool {
+    return UIImage(named: assetName) != nil
+}
 struct CategoryListCell: View  {
     @Environment(\.colorScheme) var colorScheme
     
@@ -17,12 +21,14 @@ struct CategoryListCell: View  {
     var body: some  View  {
         ZStack  {
         HStack {
-            Image(category.imageString)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 70, height: 70)
-                .clipShape(Circle())
-                .padding([.trailing])
+           
+                Image(category.imageString)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 70, height: 70)
+                    .clipShape(Circle())
+                    .padding([.trailing])
+            
             
             Text(category.categoryTitle)
                 .font(Font.custom("Roboto-SemiBold", size: 20, relativeTo: .title))
