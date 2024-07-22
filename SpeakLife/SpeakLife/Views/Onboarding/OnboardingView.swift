@@ -326,9 +326,16 @@ struct OnboardingView: View  {
         if !temp.contains(.destiny) {
             temp.insert(.destiny)
         }
+        
+        if categories.contains(.gospel) {
+            temp.insert(DeclarationCategory("matthew")!)
+            temp.insert(DeclarationCategory("psalms")!)
+            temp.insert(DeclarationCategory("proverbs")!)
+        }
         print(temp, "RWRW temp categories")
         viewModel.save(temp)
     }
+    
     
     private func askNotificationPermission()  {
         

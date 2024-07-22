@@ -159,6 +159,9 @@ struct DeclarationView: View {
                 premiumCount += 1
                 shareApp() 
                 timerViewModel.loadRemainingTime()
+                if !subscriptionStore.isPremium {
+                    viewModel.showDiscountView.toggle()
+                }
             }
             
             .alert("Know anyone that can benefit from SpeakLife?", isPresented: $share) {

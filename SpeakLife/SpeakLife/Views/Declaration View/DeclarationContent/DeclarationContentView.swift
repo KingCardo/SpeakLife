@@ -235,12 +235,12 @@ struct DeclarationContentView: View {
     private func favorite(_ declaration: Declaration) {
         viewModel.favorite(declaration: declaration)
         viewModel.requestReview.toggle()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            if !subscriptionStore.isPremium {
-                appState.offerDiscountTry += 1
-                viewModel.showDiscountView.toggle()
-            }
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            if !subscriptionStore.isPremium {
+//                appState.offerDiscountTry += 1
+//                viewModel.showDiscountView.toggle()
+//            }
+//        }
     }
     
     private func dislike(_ declaration: Declaration) {

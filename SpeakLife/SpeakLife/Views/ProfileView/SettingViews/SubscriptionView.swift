@@ -9,6 +9,8 @@ import SwiftUI
 import StoreKit
 import FirebaseAnalytics
 
+let subscriptionImage = "sunset3"
+
 struct Benefit: Identifiable  {
     
     var text: LocalizedStringKey = ""
@@ -81,7 +83,7 @@ struct DiscountSubscriptionView: View {
     var body: some View {
         ZStack {
             GeometryReader { geometry in
-                Image("moonlight1")
+                Image(subscriptionImage)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
@@ -323,7 +325,7 @@ struct SubscriptionView: View {
           
             GeometryReader { geometry in
                
-                Image("moonlight1")
+                Image(subscriptionImage)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height * 1.2)

@@ -50,6 +50,8 @@ struct ImprovementScene: View {
                 
                 ImprovementSelectionListView(viewModel: viewModel)
                 .frame(width: size.width * 0.9)
+                Spacer()
+                .frame(height: 200)
                 
                 Button(action: callBack) {
                     HStack {
@@ -105,6 +107,12 @@ class ImprovementViewModel: ObservableObject {
         if !categories.contains("destiny") {
             categories.append("destiny")
         }
+        
+        if categories.contains("gospel") {
+            categories.append("matthew")
+            categories.append("psalms")
+            categories.append("proverbs")
+        }
         categories.append("identity")
         return categories.joined(separator: ",")
     }
@@ -119,24 +127,28 @@ class ImprovementViewModel: ObservableObject {
     }
 }
 
-enum Improvements: String, CaseIterable { 
+enum Improvements: String, CaseIterable {
+    
    // case joy = "Be happy and content"
-    case gratitude = "Grow in gratitude"
+    case gospel = "New Testament - Gospel"
+    case gratitude = "Gratitude"
     case stress = "Remove Stress & Anxiety"
    // case praise = "Magnify the Lord"
-    case grace = "Learn how forgiven you are"
-    case love = "Soak in Jesus Love for you"
-    case health = "Rejuvenate your health"
-    case destiny = "Manifest your destiny"
-    case safety = "Protection and safety"
+    case grace = "God's Grace"
+    case love = "Jesus Love"
+    case health = "Health"
+    case destiny = "Destiny"
+    case safety = "God's protection"
    // case guilt = "Be free from guilt and condemnation"
     case loneliness = "Feeling lonely"
   //  case wealth = "Wealth"
-   // case peace = "Remain and live in peace"
+    case peace = "Peace"
     
     
     var selectedCategory: String {
         switch self {
+        case .gospel:
+            "gospel"
         case .stress:
             "fear"
         case .grace:
@@ -153,6 +165,8 @@ enum Improvements: String, CaseIterable {
             "gratitude"
         case .loneliness:
             "loneliness"
+        case .peace:
+            "peace"
         }
     }
 }
@@ -162,29 +176,50 @@ struct ImprovementSelectionListView: View {
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     var body: some View {
-        VStack {
-            
-            ForEach(Improvements.allCases, id: \.self) { experience in
-                Button(action: {
-                    impactMed.impactOccurred()
-                    viewModel.selectExperience(experience)
-                }) {
-                    HStack {
-                        Text(experience.rawValue)
-                            .foregroundColor(.white)
-                        Spacer()
-                        if viewModel.selectedExperiences.contains(experience) {
-                            Image(systemName: "checkmark")
-                                .foregroundColor(.white)
+        newBody
+//        VStack {
+//            
+//            ForEach(Improvements.allCases, id: \.self) { experience in
+//                Button(action: {
+//                    impactMed.impactOccurred()
+//                    viewModel.selectExperience(experience)
+//                }) {
+//                    HStack {
+//                        Text(experience.rawValue)
+//                            .foregroundColor(.white)
+//                        Spacer()
+//                        if viewModel.selectedExperiences.contains(experience) {
+//                            Image(systemName: "checkmark")
+//                                .foregroundColor(.white)
+//                        }
+//                    }
+//                }
+//                .padding()
+//                .background(Constants.DAMidBlue.opacity(viewModel.selectedExperiences.contains(experience) ? 0.8 : 0.3))
+//                .cornerRadius(10)
+//            }
+//        }
+//        .padding()
+    }
+    
+    var newBody: some View {
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))], spacing: 10) {
+                ForEach(Improvements.allCases, id: \.self) { interest in
+                    Text(interest.rawValue)
+                        .font(.system(size: 14))
+                        .padding(8)
+                        .background(Constants.DAMidBlue.opacity(viewModel.selectedExperiences.contains(interest) ? 0.8 : 0.3))
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                        .fixedSize(horizontal: true, vertical: false)
+                        .onTapGesture {
+                            viewModel.selectExperience(interest)
                         }
-                    }
                 }
-                .padding()
-                .background(Constants.DAMidBlue.opacity(viewModel.selectedExperiences.contains(experience) ? 0.8 : 0.3))
-                .cornerRadius(10)
             }
+            .padding()
         }
-        .padding()
     }
 }
 

@@ -77,6 +77,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .myOwn,
         .psalms,
         .proverbs,
+        .matthew,
         .destiny,
         .grace,
         .faith,
@@ -148,8 +149,12 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     
     var imageString: String {
-        return self.rawValue.lowercased()
-       
+        switch self {
+        case .matthew, .psalms,.proverbs, .mark, .luke, .john:
+            return "wisdom"
+        default:
+            return self.rawValue.lowercased()
+        }
     }
     
     var categoryTitle: String {
@@ -167,7 +172,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     var isPremium: Bool {
         switch self {
-        case .general, .destiny, .favorites, .myOwn, .grace, .love, .health, .purity, .proverbs : return false
+        case .general, .destiny, .favorites, .myOwn, .grace, .love, .health, .purity, .matthew : return false
         default: return true
         }
     }

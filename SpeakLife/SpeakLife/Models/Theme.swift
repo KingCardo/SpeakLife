@@ -86,7 +86,7 @@ class Theme: Identifiable, Codable {
         }
     }
     
-    static var all: [Theme] = [gorgeous,safari,aurora,sunset3,icegreenmountain, chicago,autumnTrees, cross, lion, lakeHills, kitty, meercat, taicitylights, sunset1,sunset2,sunset4,sunset5,moonlight1,longroadtraveled, landingView1, landingView2, highway, forestwinter, lakeMountain, sandOcean, citynight, woodnight, rainbow, space, stars, summerbeach, moon, canyons,luxurydrive,beautifulsky, desertsky, gorgeousmoon, plantgreen, fogroad, greenplants]
+    static var all: [Theme] = [gorgeous,safari,aurora,sunset3,icegreenmountain, chicago,autumnTrees, cross, lion, lakeHills, taicitylights, sunset1,sunset2,sunset4,sunset5,moonlight1,longroadtraveled, landingView1, landingView2, highway, forestwinter, lakeMountain, sandOcean, citynight, woodnight, rainbow, space, stars, summerbeach, moon, canyons,luxurydrive,beautifulsky, desertsky, gorgeousmoon, plantgreen, fogroad, greenplants]
     
     private static let autumnTrees = Theme("autumntrees", isPremium: false, blurEffect: true, fontColorString: "white")
     private static let cross = Theme("cross", isPremium: false)

@@ -90,7 +90,7 @@ struct FeatureView: View {
             
             ForEach(features, id: \.name) { feature in
                 FeatureRow(feature: feature)
-                Spacer().frame(width: 4)
+                Spacer().frame(height: 10)
             }
             
         }

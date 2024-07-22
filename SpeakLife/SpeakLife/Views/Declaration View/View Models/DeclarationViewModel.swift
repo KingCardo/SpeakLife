@@ -274,6 +274,10 @@ final class DeclarationViewModel: ObservableObject {
     // MARK: - Declarations
     
     func choose(_ category: DeclarationCategory, completion: @escaping(Bool) -> Void) {
+        if category == .general {
+            refreshGeneral(categories: selectedCategories)
+            return
+        }
         fetchDeclarations(for: category) { [weak self] declarations in
             guard declarations.count > 0 else {
                 self?.errorMessage = "Oops, you need to add one to this category first!"
@@ -344,7 +348,6 @@ final class DeclarationViewModel: ObservableObject {
         var tempGen: [Declaration] = []
         for category in categories {
             let affirmations = allDeclarations.filter { $0.category == category }
-                .filter { $0.disliked == false }
             tempGen.append(contentsOf: affirmations)
         }
         general = tempGen

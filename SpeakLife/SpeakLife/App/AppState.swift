@@ -68,4 +68,9 @@ extension Date: RawRepresentable {
         dateFormatter.dateStyle = .medium
         return dateFormatter.string(from: self)
     }
+    
+    var isDateToday: Bool {
+        let calendar = Calendar.current
+        return calendar.isDateInToday(self)
+    }
 }
