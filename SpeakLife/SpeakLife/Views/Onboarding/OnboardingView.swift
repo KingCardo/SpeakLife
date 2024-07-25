@@ -101,6 +101,15 @@ struct OnboardingView: View  {
 //                loadingView(geometry: geometry)
 //                    .tag(Tab.loading)
                 
+//                HelpUsGrowView(viewModel: HelpUsGrowViewModel(model: HelpUsGrowModel(
+//                           title: "Help Us Grow!",
+//                           message: "Your feedback is invaluable to us. Ratings are vital to spreading the app to people in need.",
+//                           buttonText: "Rate Us"
+//                ))) {
+//                    advance()
+//                }
+//                .tag(Tab.helpGrow)
+                
                 
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
@@ -290,6 +299,10 @@ struct OnboardingView: View  {
                     selection = .widgets
                     onboardingTab = selection.rawValue
                     
+                case .helpGrow:
+                    selection = .subscription
+                    onboardingTab = selection.rawValue
+//                    
                 case .subscription:
                     viewModel.choose(.general) { _ in }
                     moveToDiscount()

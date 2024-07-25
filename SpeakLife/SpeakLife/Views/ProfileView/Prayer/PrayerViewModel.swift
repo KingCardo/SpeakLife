@@ -87,34 +87,34 @@ Psalm 91
 
  I live under the protection of the Most High, and I find rest in the shadow of the Almighty.
     
-    This I declare about the Lord: He alone is my refuge, my place of safety; He is my God, and I trust Him.
+    This I declare about you Lord: You alone are my refuge, my place of safety; You are my God, and I trust in You.
     
-    For He rescues me from every trap and protects me from deadly disease.
+    You rescue me from every trap and protects me from all deadly diseases.
     
-    He covers me with His feathers. Under His wings, I find refuge. His faithful promises are my armor and protection.
+    You cover me with Your feathers and shelter me with your wings, Your faithful promises are my armor and protection.
     
     I am not afraid of the terrors of the night, nor the arrow that flies in the day.
     
-    I do not dread the disease that stalks in darkness, nor the disaster that strikes at midday.
+    I do not dread the disease that stalks in darkness, nor the sudden death that strikes at noon.
     
-    Though a thousand fall at my side, though ten thousand are dying around me, these evils will not touch me.
+    A thousand fall at my side, and ten thousand are dying around me, these evils will not touch me.
     
-    I open my eyes, and I see how the wicked are punished.
+    I will keep my eyes open, and see how the wicked are punished.
     
-    I have made the Lord my refuge; the Most High is my shelter.
+    I have made the Lord my refuge; the Most High my shelter.
     
     No evil will conquer me; no plague will come near my home.
     
-    For He orders His angels to protect me wherever I go.
+    For You have ordered Your angels to protect me wherever I go.
     
-    They lift me up with their hands, so I won’t even hurt my foot on a stone.
+    They lift me up with their hands, I won’t even hurt my foot on a stone.
     
     I will trample upon lions and cobras; I will crush fierce lions and serpents under my feet!
     
-    The Lord says, 'I rescue those who love me. I protect those who trust in my name.
+    The Lord will rescue me because I love him. You will protect me because I trust in Your name.
     
-    When they call on me, I will answer; I will be with them in trouble. I will rescue and honor them.
+    When I call on You, You will answer; You will be with me in trouble. You will rescue and honor me.
     
-    I will reward them with a long life and give them my salvation.'
+    You will reward me with a long life and give me your salvation.'
 
 """

@@ -13,6 +13,10 @@ import FirebaseAnalytics
 //import GoogleMobileAds
 import Combine
 
+enum SelectedView {
+    case first, second, third
+}
+
 
 struct DeclarationView: View {
     
@@ -39,6 +43,8 @@ struct DeclarationView: View {
     @State private var isPresentingDiscountView = false
     @State private var isPresentingBottomSheet = false
     @EnvironmentObject var timerViewModel: TimerViewModel
+    @State private var showMenu = false
+    @State private var selectedView: SelectedView?
    /// @State private var timeRemaining: Int = 0
     
     @State var isPresenting: Bool = false
@@ -58,27 +64,39 @@ struct DeclarationView: View {
     }
     
     var body: some View {
+      //  NavigationView {
         GeometryReader { geometry in
+           
             ZStack {
                 declarationContent(geometry)
                 if appState.showIntentBar {
+                     
                     if !appState.showScreenshotLabel {
+                       
                         VStack() {
-                                HStack {
-                                    Spacer()
-                                    if !timerViewModel.checkIfCompletedToday() {
-                                        CountdownTimerView(viewModel: timerViewModel) {
-                                            presentTimerBottomSheet()
-                                        }
-                                        .sheet(isPresented: $isPresentingBottomSheet) {
-                                            StreakInfoBottomSheet(isShown: $isPresentingBottomSheet)
-                                                .presentationDetents([.fraction(0.5)])
-                                                .preferredColorScheme(.light)
-                                        }
-                                    } else {
-                                        GoldBadgeView()
+                           
+                            HStack {
+//                                HStack {
+//                                    MenuButton(showMenu: $showMenu)
+//                                     Spacer()
+//                                }
+//                                .padding()
+//                                .frame(height: geometry.size.height * 0.10)
+//
+                                Spacer()
+                                if !timerViewModel.checkIfCompletedToday() {
+                                    CountdownTimerView(viewModel: timerViewModel) {
+                                        presentTimerBottomSheet()
                                     }
-                                    if !subscriptionStore.isPremium {
+                                    .sheet(isPresented: $isPresentingBottomSheet) {
+                                        StreakInfoBottomSheet(isShown: $isPresentingBottomSheet)
+                                            .presentationDetents([.fraction(0.5)])
+                                            .preferredColorScheme(.light)
+                                    }
+                                } else {
+                                    GoldBadgeView()
+                                }
+                                if !subscriptionStore.isPremium {
                                     Spacer()
                                         .frame(width: 8)
                                     
@@ -86,28 +104,29 @@ struct DeclarationView: View {
                                         premiumView()
                                         Selection.shared.selectionFeedback()
                                     }.foregroundStyle(Constants.gold)
-                                    .sheet(isPresented: $isPresentingPremiumView) {
-                                        self.isPresentingPremiumView = false
-                                        Analytics.logEvent(Event.tryPremiumAbandoned, parameters: nil)
-                                        timerViewModel.loadRemainingTime()
-                                    } content: {
-                                        PremiumView()
-                                    }
+                                        .sheet(isPresented: $isPresentingPremiumView) {
+                                            self.isPresentingPremiumView = false
+                                            Analytics.logEvent(Event.tryPremiumAbandoned, parameters: nil)
+                                            timerViewModel.loadRemainingTime()
+                                        } content: {
+                                            PremiumView()
+                                        }
                                     
                                     
                                 }
                                 
                             } .padding(.trailing)
- 
-                                Spacer()
-                                if appState.showIntentBar {
-                                    IntentsBarView(viewModel: viewModel, themeViewModel: themeViewModel)
-                                        .frame(height: geometry.size.height * 0.10)
-                                    
-                                }
+                            
+                            Spacer()
+                           if appState.showIntentBar {
+                                 IntentsBarView(viewModel: viewModel, themeViewModel: themeViewModel)
+                               .frame(height: geometry.size.height * 0.10)
+
                         }
                     }
+                    }
                 }
+           // .navigationBarHidden(true)
             }
         }
             
@@ -159,9 +178,9 @@ struct DeclarationView: View {
                 premiumCount += 1
                 shareApp() 
                 timerViewModel.loadRemainingTime()
-                if !subscriptionStore.isPremium {
-                    viewModel.showDiscountView.toggle()
-                }
+//                if !subscriptionStore.isPremium {
+//                    viewModel.showDiscountView.toggle()
+//                }
             }
             
             .alert("Know anyone that can benefit from SpeakLife?", isPresented: $share) {
@@ -174,8 +193,8 @@ struct DeclarationView: View {
             .sheet(isPresented: $viewModel.showDiscountView) {
             
                 if appState.offerDiscountTry < 2, !subscriptionStore.isPremium {
-                    DiscountSubscriptionView(size: UIScreen.main.bounds.size)
-                } else {
+//                    DiscountSubscriptionView(size: UIScreen.main.bounds.size)
+//                } else {
                     GeometryReader { geometry in
                         SubscriptionView(size: geometry.size)
                                 }
@@ -244,17 +263,11 @@ struct DeclarationView: View {
     }
     
     func requestReview() {
-        if appState.helpUsGrowCount == 0 {
-            showReview()
-            appState.helpUsGrowCount += 1
-        }
+        showReview()
     }
     
     private func showReview() {
-        
-        if let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
-            print("Build number: \(buildNumber)")
-        }
+     
         let currentDate = Date()
         if reviewTry <= 3 && appState.lastReviewRequestSetDate == nil {
             DispatchQueue.main.async {
@@ -267,9 +280,6 @@ struct DeclarationView: View {
                     appState.lastReviewRequestSetDate = Date()
                     Analytics.logEvent(Event.leaveReviewShown, parameters: nil)
                     
-//                    if let appVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
-//                        appState.lastRequestedRatingVersion = "\(appVersion)\(buildNumber)"
-//                    }
                 }
             }
         } else if let lastReviewSetDate = appState.lastReviewRequestSetDate,
@@ -285,13 +295,6 @@ struct DeclarationView: View {
                     Analytics.logEvent(Event.leaveReviewShown, parameters: nil)
                 }
             }
-        }
-    }
-    
-    private func sendEmail() {
-        reviewTry += 3
-        if MFMailComposeViewController.canSendMail() {
-            isShowingMailView = true
         }
     }
 }

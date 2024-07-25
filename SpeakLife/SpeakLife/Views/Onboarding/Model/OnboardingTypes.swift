@@ -23,6 +23,7 @@ enum Tab: String {
     case benefits
     case notification
     case widgets
+    case helpGrow
     case useCase
     case loading
     case subscription

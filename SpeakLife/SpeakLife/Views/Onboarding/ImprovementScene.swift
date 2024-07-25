@@ -113,7 +113,6 @@ class ImprovementViewModel: ObservableObject {
             categories.append("psalms")
             categories.append("proverbs")
         }
-        categories.append("identity")
         return categories.joined(separator: ",")
     }
     
