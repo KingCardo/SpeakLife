@@ -17087,12 +17087,6 @@
             "book": "Proverbs 15:28"
         },
         {
-            "text": "",
-            "isFavorite": false,
-            "category": "matthew",
-            "book": "Matthew 15:28"
-        },
-        {
             "text": "It is written, Man shall not live by bread alone, but by every word that comes from the mouth of God.",
             "isFavorite": false,
             "category": "matthew",
@@ -17222,7 +17216,7 @@
             "book": "Matthew 6:19"
         },
         {
-            "text": "Store up for yourself treasures in heaven, where moths and verman can't destrpy, and where thieves can't break in and steal.",
+            "text": "Store up for yourself treasures in heaven, where moths and verman can't destroy, and where thieves can't break in and steal.",
             "isFavorite": false,
             "category": "matthew",
             "book": "Matthew 6:20"
@@ -17409,7 +17403,7 @@
             "book": "Matthew 10:28"
         },
         {
-            "text": "'A single sparrow can't fall wihout your Father knowing it. And the hairs on your head are all numbered. So don't be afraid, you are more valuable to God than a whole flock of sparrows.'",
+            "text": "'A single sparrow can't fall without your Father knowing it. And the hairs on your head are all numbered. So don't be afraid, you are more valuable to God than a whole flock of sparrows.'",
             "isFavorite": false,
             "category": "matthew",
             "book": "Matthew 10:29-31"
@@ -17491,6 +17485,48 @@
             "isFavorite": false,
             "category": "matthew",
             "book": "Matthew 13:44"
+        },
+        {
+            "text": "Jesus took the five loaves and two fish, looked up toward heaven, and blessed them. They all ate as much as they wanted, and afterward, the disciples picked up twelve baskets of leftovers.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 14:19,20"
+        },
+        {
+            "text": "They begged him to let the sick touch at least the fringe of his robe, all who touched him were healed.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 14:36"
+        },
+        {
+            "text": "'It's not what goes into your mouth that defiles you, you are defiled by the words that come out of your mouth.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 15:11"
+        },
+        {
+            "text": "'Every plant not planted by my heavenly Father will be uprooted, so ignore them. They are like the blind leading the blind, if one blind guides another, they will both fall into a ditch.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 15:13-14"
+        },
+        {
+            "text": "'From the heart comes evil thoughts, murder, adultery, all sexual immorality, theft, lying and slander. This is what defiles you. Eating with unwashed hands will never defile you.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 15:19-20"
+        },
+        {
+            "text": "'Dear woman, your faith is great. Your request is granted.' And her daughter was instantly healed.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 15:28"
+        },
+        {
+            "text": "A vast crowd brought to him people who were lame, blind, crippled, mute and many others. They laid them before Jesus, and he healed them ALL.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 15:30"
         },
         
         
