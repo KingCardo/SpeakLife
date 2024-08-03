@@ -342,6 +342,10 @@ struct OnboardingView: View  {
         
         if categories.contains(.gospel) {
             temp.insert(DeclarationCategory("matthew")!)
+            temp.insert(DeclarationCategory("mark")!)
+        }
+        
+        if categories.contains(.psalms) {
             temp.insert(DeclarationCategory("psalms")!)
             temp.insert(DeclarationCategory("proverbs")!)
         }

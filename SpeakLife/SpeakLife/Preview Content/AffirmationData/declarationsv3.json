@@ -17528,8 +17528,528 @@
             "category": "matthew",
             "book": "Matthew 15:30"
         },
-        
-        
+        {
+            "text": "'Whatever you forbid on earth will be forbidden in heaven, and whatever you permit on earth will be permitted in heaven'.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 16:19"
+        },
+        {
+            "text": "'If any of you wants to be my follower, you must give up your own way, take up your cross and follow me'.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 16:24"
+        },
+        {
+            "text": "'If you try to hang on to your life, you will lose it. But if you give up your life for my sake, you will save it'.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 16:25"
+        },
+        {
+            "text": "'What do you benefit if you gain the whole world but lose your own soul?'.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 16:26"
+        },
+        {
+            "text": "'If you had faith even as small as a mustard seed, you could say to this mountain, Move from here to there, and it would move. Nothing would be impossible'.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 17:20"
+        },
+        {
+            "text": "'Anyone who becomes as [humble, forgiving, and trusting] as this little child is the greatest in the Kingdom of Heaven'.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 18:4"
+        },
+        {
+            "text": "'Temptations are inevitable, but what sorrow awaits the person who does the tempting.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 18:7"
+        },
+        {
+            "text": "'If your hand or foot causes you to sin, cut it off and throw it away. It's better to enter eternal life with only one hand or foot than to be thrown into eternal fire'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 18:8"
+        },
+        {
+            "text": "'If your eye causes you to sin, gouge it out and throw it away. It's better to enter eternal life with only one eye than to have two eyes and be thrown into the fire of hell.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 18:9"
+        },
+        {
+            "text": "'Your heavenly Father's will is that not one of these little ones should perish.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 18:14"
+        },
+        {
+            "text": "'If two of you agree here on earth concerning anything you ask, my Father in heaven will do it for you.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 18:19"
+        },
+        {
+            "text": "'Where two or three gather together as my followers, I am there among them.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 18:20"
+        },
+        {
+            "text": "Lord, how often should I forgive someone who sins against me? Seven times? Jesus replied, 'No, not seven times, but seventy times seven.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 18:21-22"
+        },
+        {
+            "text": "'God made them male and female. This is why a man leaves his mother and father and is joined to his wife and are united into one. Since they are no longer two but one, let no one split apart what God has joined together.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 19:4-6"
+        },
+        {
+            "text": "'Let the children come to me, The Kingdom of Heaven belongs to those who are like these children.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 19:14"
+        },
+        {
+            "text": "'Humanly speaking, it is impossible. But with God everything is possible.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 19:26"
+        },
+        {
+            "text": "'Those who are last now will be first then, and those who are first will be last.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 20:16"
+        },
+        {
+            "text": "'They will hand him over to the Romans to be mocked, flogged with a whip, and crucified. But on the third day he will be raised from the dead.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 20:19"
+        },
+        {
+            "text": "'For even the Son of Man came not to be served but to serve others and to give his life as a ransom for many.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 20:28"
+        },
+        {
+            "text": "'Jesus felt sorry for them and touched their eyes. Instantly they could see! Then they followed him.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 20:28"
+        },
+        {
+            "text": "'You can pray for anything, and if you have faith, you will receive it.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 21:22"
+        },
+        {
+            "text": "'When the dead rise, they will neither marry or be given in marriage. They will be like angels in heaven.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 22:30"
+        },
+        {
+            "text": "'You must love the Lord your God with all your heart, all your soul, and all your mind. This is the first and greatest commandment. A second is equally important: Love your neighbor as yourself.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 22:37-39"
+        },
+        {
+            "text": "'Do not call any one on earth father, only God in heaven is your Father. Don't let anyone call you Teacher, you have only one teacher, the Messiah.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 23:9-10"
+        },
+        {
+            "text": "'Those who exalt themselves will be humbled, and those who humble themselves will be exalted.'",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 23:9-10"
+        },
+        {
+            "text": "The one who endures to the end will be saved.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 24:13"
+        },
+        {
+            "text": "he will send out his angels with the mighty blast of a trumpet, and they will gather his chosen ones from all over the world.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 24:31"
+        },
+        {
+            "text": "People didn't realize what was going to happen until the flood came and swept them all away. That is the way it will be when the Son of Man comes.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 24:39"
+        },
+        {
+            "text": "Be on alert, prepared, ready, you do not know the day or hour when Jesus will return.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 25:13"
+        },
+        {
+            "text": "Whatever you do for the least of these brothers or sisters of mine, you did for me.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 25:40"
+        },
+        {
+            "text": "My Father, if it is possible, let this cup of suffering be taken away from me. Yet I want your will to be done, not mine.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 26:39"
+        },
+        {
+            "text": "Those who use the sword will die by the sword.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 26:52"
+        },
+        {
+            "text": "In the future you will see the Son of Man seated in place of power at God's right hand and coming on the clouds of heaven.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 26:52"
+        },
+        {
+            "text": "Jesus has been given all authority in heaven and on earth.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 28:18"
+        },
+        {
+            "text": "Be sure of this: I am with you always, even to the end of the age.",
+            "isFavorite": false,
+            "category": "matthew",
+            "book": "Matthew 28:20"
+        },
+        {
+            "text": "You are my dearly loved Son, and you bring me great joy.",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 1:11"
+        },
+        {
+            "text": "The Kingdom of God is near! Repent of your sins and believe the Good News!",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 1:15"
+        },
+        {
+            "text": "Come, follow me, and I will show you how to fish for people!",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 1:17"
+        },
+        {
+            "text": "What sort of new teaching is this? It has such authority! Even evil spirits obey his orders!",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 1:27"
+        },
+        {
+            "text": "Jesus healed many people who were sick with various diseases, and he cast out many demons.",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 1:34"
+        },
+        {
+            "text": "'I am willing, be healed!' Instantly the leprosy disappeared, and the man was healed.",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 1:41-42"
+        },
+        {
+            "text": "My child, your sins are forgiven.",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 2:5"
+        },
+        {
+            "text": "Then Jesus turned to the paralyzed man and said, 'Stand up, pick up your mat, and go home!'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 2:10-11"
+        },
+        {
+            "text": "'Follow me and be my disciple'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 2:14"
+        },
+        {
+            "text": "'Healthy people don't need a doctor-sick people do. I have come to call not those who think they are righteous, but those who know they are sinners.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 2:17"
+        },
+        {
+            "text": "'The Sabbath was made to meet the needs of people, not people to meet the requirements of the Sabbath.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 2:27"
+        },
+        {
+            "text": "'Anyone who does God's will is my brother and sister and mother.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 3:35"
+        },
+        {
+            "text": "'The farmer plants seed by taking God's word to others.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 4:14"
+        },
+        {
+            "text": "'The seed that fell on footpath represents those who hear the message, only to have Satan come at once and take it away.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 4:15"
+        },
+        {
+            "text": "'The seed on rocky soil represents those who hear the message and receive it with joy. But since they don't have deep roots, they dont last long. They fall away as soon as they have problems or are persecuted for believing God's word.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 4:16-17"
+        },
+        {
+            "text": "'The seed that fell among thorns represents others who hear God'sword, but all too quickly the message is crowded out by worries of this life, lure of weath, and desire for other things, so no fruit is produced.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 4:18-19"
+        },
+        {
+            "text": "'The seed that fell on good soil represents those who hear and accept God's word and produce a harvest of thirty, sixty, or even a hundred times as much as had been planted.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 4:20"
+        },
+        {
+            "text": "'Pay close attention to what you hear. The closer you listen, the more understanding will be given - and you will receive even more.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 4:24"
+        },
+        {
+            "text": "'To those who listen to my teaching, more understanding will be given. But for those who are not listening, even what little understanding they have will be taken away from them.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 4:25"
+        },
+        {
+            "text": "The Kingdom of God is like a mustard seed planted in the ground. It is the smallest of all seeeds, but it becomes the largest of all garden plants, it grows long branches, and birds can make nests in its shade.",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 4:30-32"
+        },
+        {
+            "text": "'Silence! Be Still!' Suddenly the wind stopped, and there was a great calm.",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 4:39"
+        },
+        {
+            "text": "'Why are you afraid? Do you still have no faith?'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 4:40"
+        },
+        {
+            "text": "'Go home to your family, and tell them everything the Lord has done for you and how merciful he has been.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 5:19"
+        },
+        {
+            "text": "'Daughter, your faith has made you well. Go in peace. Your suffering is over.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 5:34"
+        },
+        {
+            "text": "'Don't be afraid. Just have faith.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 5:36"
+        },
+        {
+            "text": "'If any place refuses to welcome you or listen to you, shake its dust from your feet as you leave to show that you have abandoned those people to their fate.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 6:11"
+        },
+        {
+            "text": "He had compassion on them because they were like sheep without a shepherd.",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 6:34"
+        },
+        {
+            "text": "Jesus took the five loaves and two fish, looked up toward heaven, he gave thanks and broke the loaves. He also divided the fish for everyone to share. They all ate as much as they wanted. A total of 5,000 men and their families were fed.",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 6:41-42,44"
+        },
+        {
+            "text": "'Don't be afraid. Take courage! I am here!'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 6:50"
+        },
+        {
+            "text": "'It's not what goes into your body that defiles you; you are defiled by what comes from your heart.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 7:15"
+        },
+        {
+            "text": "Looking up to heaven, Jesus said 'Be opened!' Instantly the man could hear perfectly, and his tongue was freed so he could speak plainly!",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 7:34-35"
+        },
+        {
+            "text": "His sight was completely restored, he could see everything clearly.",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 8:25"
+        },
+        {
+            "text": "'You are seeing things merely from a humam point of view, not from God's.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 8:33"
+        },
+        {
+            "text": "'If any of you wants to be my follower, you must give up your own way, take up your cross and follow me.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 8:34"
+        },
+        {
+            "text": "'If you try to hang on to your life, you will lose it. But if you give up your life for my sake and for the sake of the Good News, you will save it.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 8:35"
+        },
+        {
+            "text": "'What do you benefit if you gain the whole world but lose your own soul? Is anything worth more than your soul?'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 8:36-37"
+        },
+        {
+            "text": "'If anyone is ashamed of me and my message in these adulterous and sinful days, the Son of Man will be ashamed of that person when he returns in the glory of his Father with the holy angels.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 8:38"
+        },
+        {
+            "text": "'What do you mean, if I can?' Jesus asked. 'Anything is possible if a person believes.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 9:23"
+        },
+        {
+            "text": "'Whoever wants to be first must take last place and be the servant of everyone else.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 9:35"
+        },
+        {
+            "text": "'For everyone will be tested with fire.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 9:49"
+        },
+        {
+            "text": "'You must have the qualities of salt among yourselves and live in peace with each other.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 9:50"
+        },
+        {
+            "text": "'Whoever divorces his wife and marries someone else commits adultery against her. And if a woman divorces her husband and marries someone else, she commits adultery.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 10:11-12"
+        },
+        {
+            "text": "'Let the children come to me. Don't stop them! For the Kingdom of God belongs to those who are like these children.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 10:14"
+        },
+        {
+            "text": "'Humanly speaking, it is impossible. But not with God. Everything is possible with God.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 10:27"
+        },
+        {
+            "text": "'The Son of Man came not to be served but to serve others and to give his life as a ransom for many.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 10:45"
+        },
+        {
+            "text": "'Go, your faith has healed you.' Instantly the man could see, and he followed Jesus down the road.",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 10:52"
+        },
+        {
+            "text": "'You must really believe in your heart it will happen. I tell you, you can pray for anything, and if you believe that you've received it, it will be yours.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 11:23-24"
+        },
+        {
+            "text": "'When you are praying, first forgive anyone you are holding a grudge against, so that your Father in heaven will forgive your sins too.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 11:25"
+        },
+        {
+            "text": "'I AM. You will see the Son of Man seated in place of power at God's right hand and coming on the clouds of heaven.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 14:62"
+        },
+        {
+            "text": "He isn't here! He is risen from the dead!",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 16:6"
+        },
+        {
+            "text": "Go into all the world and preach the Good News to everyone. Anyone who believes and is baptized will be saved. But anyone who refuses to believe will be condemned.",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 16:15-16"
+        },
+        {
+            "text": "'In my name they will drive out demons, and speak in new tongues, they will pick up serpents, and if they drink anything deadly, it will not hurt them, they will lay hands on the sick, and they will get well.'",
+            "isFavorite": false,
+            "category": "mark",
+            "book": "Mark 16:17-18"
+        },
         
         
         

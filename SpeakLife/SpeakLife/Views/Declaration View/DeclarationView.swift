@@ -283,7 +283,7 @@ struct DeclarationView: View {
                 }
             }
         } else if let lastReviewSetDate = appState.lastReviewRequestSetDate,
-                  currentDate.timeIntervalSince(lastReviewSetDate) >= 2 * 7 * 24 * 60 * 60,
+                  currentDate.timeIntervalSince(lastReviewSetDate) >= 5 * 60,
                   reviewTry < 3 {
             DispatchQueue.main.async {
                 if let scene = UIApplication.shared.connectedScenes

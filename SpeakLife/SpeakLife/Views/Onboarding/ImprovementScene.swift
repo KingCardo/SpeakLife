@@ -110,6 +110,10 @@ class ImprovementViewModel: ObservableObject {
         
         if categories.contains("gospel") {
             categories.append("matthew")
+            categories.append("mark")
+        }
+        
+        if categories.contains("psalms") {
             categories.append("psalms")
             categories.append("proverbs")
         }
@@ -130,6 +134,7 @@ enum Improvements: String, CaseIterable {
     
    // case joy = "Be happy and content"
     case gospel = "New Testament - Gospel"
+    case psalms = "Psalms & Proverbs"
     case gratitude = "Gratitude"
     case stress = "Remove Stress & Anxiety"
    // case praise = "Magnify the Lord"
@@ -148,6 +153,8 @@ enum Improvements: String, CaseIterable {
         switch self {
         case .gospel:
             "gospel"
+        case .psalms:
+            "psalms"
         case .stress:
             "fear"
         case .grace:

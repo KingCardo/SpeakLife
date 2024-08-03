@@ -78,6 +78,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .psalms,
         .proverbs,
         .matthew,
+        .mark,
         .destiny,
         .grace,
         .faith,

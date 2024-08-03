@@ -70,6 +70,7 @@ struct FeatureView: View {
         Feature(name: "Create your own", subtitle: "Empower yourself and create personalized affirmations."/*Declare and fulfill your God given dreams & destiny"*/, isAvailableInFree: true, isAvailableInPro: true),
         Feature(name: "Unlimited reminders", subtitle: "Stay spiritually connected and inspired throughout your day."/*
 *Receive scripture & God's promises thruout the day"*/, isAvailableInFree: false, isAvailableInPro: true),
+        Feature(name: "Grow in faith", subtitle: "Those who delight in the Lord and meditate day and night prosper in everything they do! Psalm 1:2-3", isAvailableInFree: false, isAvailableInPro: false)
       //  Feature(name: "40+ background themes", subtitle: "Stay motivated and inspired to meditate"/*Elevate your spiritual journey with an array of exclusive, beautifully designed themes that enhance your daily devotional experience. Engage with scripture in an environment that inspires and uplifts.Only the finest*/, isAvailableInFree: false, isAvailableInPro: true),
        // Feature(name: "Unlock all prayers",  subtitle: "Quiet the lies", isAvailableInFree: false, isAvailableInPro: true),
     ]
