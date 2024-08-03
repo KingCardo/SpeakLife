@@ -58,7 +58,7 @@ struct DiscountSubscriptionView: View {
     let size: CGSize
     var callback: (() -> Void)?
     var currentSelection = InAppId.Subscription.speakLife1YR15
-    var percentOffText: String = "75% Off - $0.04 cents a day"
+    var percentOffText: String = "70% Off - $0.04 cents a day"
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
@@ -257,10 +257,10 @@ struct SubscriptionView: View {
     
     @State var currentSelection: InAppId.Subscription? // = InAppId.Subscription.speakLife1YR29
     var firstSelection : InAppId.Subscription {
-        appState.subscriptionTestnineteen ? InAppId.Subscription.speakLife1YR19 : InAppId.Subscription.speakLife1YR29
+        InAppId.Subscription.speakLife1YR29
+       // appState.subscriptionTestnineteen ? InAppId.Subscription.speakLife1YR19 : InAppId.Subscription.speakLife1YR49
     }  //InAppId.Subscription.speakLife1YR29
-    var secondSelection = InAppId.Subscription.speakLife1MO4
-  //  var thirdSelection = InAppId.Subscription.speakLifeLifetime
+    var secondSelection = InAppId.Subscription.speakLife1MO9
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let size: CGSize
@@ -269,10 +269,11 @@ struct SubscriptionView: View {
     var isDiscount = false
     
     var ctaText: String? {
-        if currentSelection == firstSelection {
-            return appState.subscriptionTestnineteen ? "3 days free, then" : "7 days free, then"
-        }
-        return nil
+        "7 days free, then"
+//        if currentSelection == firstSelection {
+//            return appState.subscriptionTestnineteen ? "3 days free, then" : "7 days free, then"
+//        }
+//        return nil
     }
     
     init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
@@ -288,16 +289,6 @@ struct SubscriptionView: View {
             .alert(isPresented: $isShowingError, content: {
                 Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
             })
-//            .onReceive(timer) { _ in
-//                withAnimation(.easeInOut) {
-//                    let nextIndex = (currentTestimonialIndex + 1) % testimonials.count
-//                    currentTestimonialIndex = nextIndex
-//                }
-//            }
-//
-//        .onDisappear {
-//            timer.upstream.connect().cancel()
-      //  }
     }
     
     private var benefitRows: some View {
@@ -338,7 +329,7 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 60)
                     VStack(alignment: .center) {
-                        Text("Unlock SpeakLife Premium", comment: "unlock everything premium view")
+                        Text("Make Meditating a Priority", comment: "unlock everything premium view")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 28))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -373,12 +364,12 @@ struct SubscriptionView: View {
                         } label: {
                             monthlySelectionBox()
                         }
-                        
-                        //                                                Button {
-                        //                                                    currentSelection = thirdSelection
-                        //                                                } label: {
-                        //                                                    lifetimeSelectionBox()
-                        //                                                }
+//                        
+//                                                                        Button {
+//                                                                            currentSelection = thirdSelection
+//                                                                        } label: {
+//                                                                            lifetimeSelectionBox()
+//                                                                        }
                         
                     }
                     
