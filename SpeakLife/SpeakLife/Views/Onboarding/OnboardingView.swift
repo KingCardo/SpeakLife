@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseAnalytics
 
-let onboardingBGImage = "desertSky"//"desertSky"
+let onboardingBGImage = "moonlight1"//"desertSky"
 
 struct OnboardingView: View  {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
@@ -79,7 +79,7 @@ struct OnboardingView: View  {
                 
                 IntroTipScene(title: "Meditation",
                               bodyText: "involves deep reflection on specific spiritual truths, scriptures",
-                              subtext: "Those who delight in the Lord and meditate day and night prosper in everything they do! Psalm 1:2-3*",
+                              subtext: "Romans 12:2 Don’t copy the behavior and customs of this world, but let God transform you into a new person by changing the way you think. Then you will learn to know God’s will for you, which is good and pleasing and perfect.",
                               ctaText: "Transform me",
                               showTestimonials: false,
                               size: geometry.size, callBack: advance)
@@ -343,6 +343,8 @@ struct OnboardingView: View  {
         if categories.contains(.gospel) {
             temp.insert(DeclarationCategory("matthew")!)
             temp.insert(DeclarationCategory("mark")!)
+            temp.insert(DeclarationCategory("luke")!)
+            temp.insert(DeclarationCategory("john")!)
         }
         
         if categories.contains(.psalms) {
@@ -438,6 +440,7 @@ struct OnboardingView: View  {
         withAnimation {
             appState.isOnboarded = true
             Analytics.logEvent(Event.onBoardingFinished, parameters: nil)
+            viewModel.requestReview.toggle()
            // viewModel.helpUsGrowAlert = true
         }
         

@@ -282,7 +282,19 @@ struct DeclarationView: View {
                     
                 }
             }
-        } else if let lastReviewSetDate = appState.lastReviewRequestSetDate,
+        } else if reviewTry <= 2, let lastReviewSetDate = appState.lastReviewRequestSetDate {
+            DispatchQueue.main.async {
+                if let scene = UIApplication.shared.connectedScenes
+                    .first(where: { $0.activationState == .foregroundActive })
+                    as? UIWindowScene {
+                    SKStoreReviewController.requestReview(in: scene)
+                    reviewTry += 1
+                    appState.lastReviewRequestSetDate = Date()
+                    Analytics.logEvent(Event.leaveReviewShown, parameters: nil)
+                }
+            }
+        }
+            else if let lastReviewSetDate = appState.lastReviewRequestSetDate,
                   currentDate.timeIntervalSince(lastReviewSetDate) >= 5 * 60,
                   reviewTry < 3 {
             DispatchQueue.main.async {

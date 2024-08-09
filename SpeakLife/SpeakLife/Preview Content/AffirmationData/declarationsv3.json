@@ -11793,7 +11793,7 @@
             "category": "fear"
         },
         {
-            "text": "I am strong because have I not commanded you? Be strong and courageous. Do not be frightened, and do not be dismayed, for the Lord your God is with you wherever you go.",
+            "text": "Be strong and courageous. Do not be frightened, and do not be dismayed, for the Lord your God is with you wherever you go.",
             "book": "Joshua 1:9",
             "isFavorite": false,
             "category": "fear"
@@ -15419,7 +15419,7 @@
             "book": "Psalms 1:6"
         },
         {
-            "text": "I will tell of the decree: The Lord said to me, 'You are my Son; today I have become your father.'",
+            "text": "I will tell of the decree: The Lord said to me, 'You are my Son; today I have become your father.  - Jesus",
             "isFavorite": false,
             "category": "psalms",
             "book": "Psalms 2:7"
@@ -15851,7 +15851,7 @@
             "book": "Psalms 41:12"
         },
         {
-            "text": "As for me, I said, 'Lord, be merciful to me; heal me, for I have sinned against you.'",
+            "text": "As for me, I said, 'Lord, be merciful to me; heal me, for I have sinned against you.  - Jesus",
             "isFavorite": false,
             "category": "psalms",
             "book": "Psalms 41:4"
@@ -17715,12 +17715,6 @@
             "book": "Matthew 26:39"
         },
         {
-            "text": "Those who use the sword will die by the sword.",
-            "isFavorite": false,
-            "category": "matthew",
-            "book": "Matthew 26:52"
-        },
-        {
             "text": "In the future you will see the Son of Man seated in place of power at God's right hand and coming on the clouds of heaven.",
             "isFavorite": false,
             "category": "matthew",
@@ -18050,7 +18044,402 @@
             "category": "mark",
             "book": "Mark 16:17-18"
         },
-        
+        {
+            "text": "For the word of God will never fail.",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 1:37"
+        },
+        {
+            "text": "You are blessed because you believed that the Lord would do what he said.",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 1:45"
+        },
+        {
+            "text": "The Mighty One is holy, and he has done great things for me.",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 1:49"
+        },
+        {
+            "text": "Now we will be saved from our enemies and from all who hate us.",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 1:71 "
+        },
+        {
+            "text": "Jesus grew in wisdom and in stature and in favor with God and all the people.",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 2:52"
+        },
+        {
+            "text": "'It is written: Man shall not live on bread alone.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 4:4"
+        },
+        {
+            "text": "'It is written: Worship the Lord your God and serve him only.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 4:8"
+        },
+        {
+            "text": "'It is written: Do not put the Lord your God to the test.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 4:12"
+        },
+        {
+            "text": "'I must proclaim the Good News of the Kingdom of God to the other towns, because that is why I was sent.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 4:43"
+        },
+        {
+            "text": "Jesus often withdrew to the wilderness for prayer.",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 5:16"
+        },
+        {
+            "text": "Jesus reached out and touched the diseased man. 'I am willing, Be healed!'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 5:13"
+        },
+        {
+            "text": "Seeing their faith, Jesus said to the man, 'Young man, your sins are forgiven'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 5:20"
+        },
+        {
+            "text": "'Follow me and be my disciple'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 5:27"
+        },
+        {
+            "text": "'No one tears a piece out of a new garment to patch an old one. The new garment would be ruined, and the new patch wouldn't even match the old garment.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 5:36"
+        },
+        {
+            "text": "They had come to hear him and to be healed of their diseases; and those troubled by evil spirits were healed.",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:18"
+        },
+        {
+            "text": "Everyone tried to touch him, because healing power went out from him, and he healed everyone.",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:19"
+        },
+        {
+            "text": "God blesses you who weep now, for in due time you will laugh.",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:21"
+        },
+        {
+            "text": "'Bless those who curse you. Pray for those who hurt you.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:28"
+        },
+        {
+            "text": "'Give to anyone who asks; and when things are stolen from you, don't try to get them back.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:30"
+        },
+        {
+            "text": "'Do to others as you would like them to do to you.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:31"
+        },
+        {
+            "text": "'Love your enemies! Do good to those who hate you.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:27"
+        }, 
+        {
+            "text": "'You must be compassionate, just as your Father is compassionate.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:36"
+        },
+        {
+            "text": "'If someone demands your coat, offer your shirt also.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:29"
+        },
+        {
+            "text": "'Do not judge others, and you will not be judged.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:37"
+        },
+        {
+            "text": "'Do not condemn others, or it will all come back against you. Forgive others, and you will be forgiven.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:37"
+        },
+        {
+            "text": "'Give, and you will receive. Your gift will return to you in full-pressed down, shaken together to make room for more, running over, and poured into your lap.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:38"
+        },
+        {
+            "text": "'The amount you give will determine the amount you get back.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:38"
+        },
+        {
+            "text": "'Can one blind person lead another? Won't they both fall into a ditch?'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:39"
+        },
+        {
+            "text": "'A good tree can't produce bad fruit, and a bad tree can't produce good fruit.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:43"
+        },
+        {
+            "text": "'Anyone who hears and doesn't obey is like a person who builds a house right on the ground, without a foundation. When the floods sweep down against the house, it will collapse into a heap of ruins.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 6:49"
+        },
+        {
+            "text": "Just say the word from where you are, and my servant will be healed. 'I tell you, I haven't seen faith like this in all Israel!' When they returned to his house, they found the slave completely healed.",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 7:7,9-10"
+        },
+        {
+            "text": "'Young man, I tell you, get up.' Then the dead boy sat up and began to talk! And Jesus gave him back to his mother.",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 7:14-15"
+        },
+        {
+            "text": "Jesus cured many people of their diseases, illnesses, and evil spirits, and he restored sight to many who were blind.",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 7:21"
+        },
+        {
+            "text": "'I tell you, of all who have ever lived, none is greater than John. Yet even the least person in the Kingdom of God is greater than he is!'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 7:28"
+        },
+        {
+            "text": "'Your faith has saved you; go in peace.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 7:50"
+        },
+        {
+            "text": "'The seed that fell on good soil represent honest, good-hearted people who hear God's word, cling to it, and patiently produce a huge harvest.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 8:15"
+        },
+        {
+            "text": "The boat was filling with water and they were in real danger. The disciples went and woke him up, shouting, Master, Master, we're going to drown! When Jesus woke up, he rebuked the wind and raging waves. Suddenly the storm stopped and all was calm.",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 8:23-24"
+        },
+        {
+            "text": "The disciples were terrified and amazed. When he gives a command, even the wind and waves obey him!",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 8:25"
+        },
+        {
+            "text": "He went all through the town proclaiming the great things Jesus had done for him.",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 8:39"
+        },
+        {
+            "text": "'Don't be afraid. Just have faith, and she will be healed.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 8:50"
+        },
+        {
+            "text": "'I have given you authority to trample on snakes and scorpions and to overcome all the power of the enemy; nothing will harm you.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 10:19"
+        },
+        {
+            "text": "'Don't rejoice that the spirits submit to you, but rejoice that your names are written in heaven.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 10:20"
+        },
+        {
+            "text": "'Mary has chosen what is better, and it will not be taken away from her.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 10:42"
+        },
+        {
+            "text": "'Anyone who acknowledges me publicly here on earth, the Son of Man will also acknowledge in the presence of God's angels.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 12:9"
+        },
+        {
+            "text": "'Yes, a person is a fool to store up earthly wealth but not have a rich relationship with God.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 12:21"
+        },
+        {
+            "text": "'Can all your worries add a single moment to your life?'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 12:25"
+        },
+        {
+            "text": "'Seek the Kingdom of God above all else, and he will give you everything you need.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 12:31"
+        },
+        {
+            "text": "'Don't be afraid or anxious. It's your Father's good pleasure to give you the kingdom.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 12:32"
+        },
+        {
+            "text": "'If you are faithful in little things, you will be faithful in large ones.'",
+            "isFavorite": false,
+            "category": "luke",
+            "book": "Luke 16:10"
+        },
+        {
+            "text": "Through him all things were made; without him nothing was made that has been made.",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 1:3"
+        },
+        {
+            "text": "The law was given through Moses, but God's unfailing love and faithfulness came through Jesus Christ.",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 1:17"
+        },
+        {
+            "text": "The light shines in the darkness, and the darkness can never extinguish it.",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 1:5"
+        },
+        {
+            "text": "I saw the Holy Spirit descending like a dove from heaven and resting upon him.",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 1:32"
+        },
+        {
+            "text": "'For God so loved the world. He gave his one and only Son, so that everyone who believes in him will not perish but have eternal life.'",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 3:16"
+        },
+        {
+            "text": "'God sent his Son into the world not to judge the world, but to save the world through him.'",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 3:17"
+        },
+        {
+            "text": "'There is no judgment against anyone who believes in him. - Jesus",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 3:18"
+        },
+        {
+            "text": "He must become greater and greater, and I must become less and less.",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 3:30"
+        },
+        {
+            "text": "He has come from above and is greater than anyone else.",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 3:31"
+        },
+        {
+            "text": "Anyone who believes in God's Son has eternal life.",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 3:36"
+        },
+        {
+            "text": "Those who drink the water I give will never be thirsty again. It becomes a fresh, bubbling spring within them, giving them eternal life. - Jesus",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 4:14"
+        },
+        {
+            "text": "Would you like to get well? Stand up, pick up your mat, and walk! - Jesus",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 5:6,8"
+        },
+        {
+            "text": "I tell you the truth, those who listen to my message and believe in God who sent me have eternal life. They will never be condemned for their sins, but they have already passed from death into life. - Jesus",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 5:24"
+        },
+        {
+            "text": "Don't be afraid. I am here! - Jesus",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 6:20"
+        },
+        {
+            "text": "The Spirit alone gives eternal life. Human effort accomplishes nothing.",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 6:63"
+        },
+        {
+            "text": "Let the one who has never sinned throw the first stone. - Jesus",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 8:7"
+        },
+        {
+            "text": "I am the light of the world. If you follow me, you won't have to walk in darkness, because you will have the light that leads to life. - Jesus",
+            "isFavorite": false,
+            "category": "john",
+            "book": "John 8:12"
+        },
         
         
     ]
