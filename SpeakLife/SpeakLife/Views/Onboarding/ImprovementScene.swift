@@ -21,10 +21,10 @@ struct ImprovementScene: View {
     
     private func improvementView(size: CGSize) -> some View  {
         ScrollView {
-            Spacer().frame(height: 45)
+            Spacer().frame(height: 30)
                
                 VStack {
-                    Text("What would you like to improve first?", comment: "Intro scene title label")
+                    Text("What would you like to practice first?", comment: "Intro scene title label")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 24, relativeTo: .title))
                         .fontWeight(.semibold)
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)

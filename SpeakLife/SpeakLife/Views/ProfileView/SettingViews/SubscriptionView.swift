@@ -9,7 +9,7 @@ import SwiftUI
 import StoreKit
 import FirebaseAnalytics
 
-let subscriptionImage = "sunset3"
+let subscriptionImage = "moonlight1"
 
 struct Benefit: Identifiable  {
     

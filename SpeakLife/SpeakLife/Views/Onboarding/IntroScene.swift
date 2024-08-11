@@ -32,7 +32,7 @@ struct IntroTipScene: View {
         VStack {
             
             if appState.onBoardingTest {
-                Spacer()
+                Spacer().frame(height: 30)
             } else {
                 Spacer().frame(height: 90)
                 
@@ -43,7 +43,7 @@ struct IntroTipScene: View {
             }
            
             
-            Spacer().frame(height: 40)
+          //  Spacer().frame(height: 40)
             VStack {
                 Text(title)
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 40, relativeTo: .title))

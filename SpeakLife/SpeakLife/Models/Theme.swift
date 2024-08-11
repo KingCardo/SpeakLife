@@ -121,7 +121,7 @@ class Theme: Identifiable, Codable {
     static let sunset3 = Theme("sunset3",blurEffect: false)
     static let sunset4 = Theme("sunset4",blurEffect: true)
     static let sunset5 = Theme("sunset5",blurEffect: false)
-    static let moonlight1 = Theme("moonlight1",blurEffect: false)
+    static let moonlight1 = Theme("moonlight1",isPremium: false)
     static let icegreenmountain = Theme("icegreenmountain",blurEffect: true)
     static let chicago = Theme("chicago",blurEffect: false)
     static let gorgeous = Theme("gorgeous",blurEffect: true)//, fontColorString: "gold")

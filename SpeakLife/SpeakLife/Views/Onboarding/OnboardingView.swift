@@ -77,8 +77,8 @@ struct OnboardingView: View  {
                               size: geometry.size, callBack: advance)
                     .tag(Tab.tip)
                 
-                IntroTipScene(title: "Jesus",
-                              bodyText: "is the solution to ALL of your problems",
+                IntroTipScene(title: "Meditation",
+                              bodyText: "A deeper revelation of Jesus love for you is the solution to ALL of your problems",
                               subtext: "As you meditate on how much you are already forgiven and blessed because of Jesus sacrifice for ALL your sins, begin to receive and develop an intimate relationship with him. He wants to be your best friend!",//"Romans 12:2 Don’t copy the behavior and customs of this world, but let God transform you into a new person by changing the way you think. Then you will learn to know God’s will for you, which is good and pleasing and perfect.",
                               ctaText: "Transform me",
                               showTestimonials: false,

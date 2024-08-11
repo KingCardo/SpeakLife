@@ -21,7 +21,7 @@ struct NotificationOnboarding:  View {
         VStack {
             
             if appState.onBoardingTest {
-                Spacer().frame(height: 150)
+                Spacer().frame(height: 30)
             } else {
                 Spacer().frame(height: 50)
                 
