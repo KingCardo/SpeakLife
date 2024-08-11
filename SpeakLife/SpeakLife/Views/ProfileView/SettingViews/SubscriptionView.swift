@@ -255,7 +255,7 @@ struct SubscriptionView: View {
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription? // = InAppId.Subscription.speakLife1YR29
+    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR29
     var firstSelection : InAppId.Subscription {
         InAppId.Subscription.speakLife1YR29
        // appState.subscriptionTestnineteen ? InAppId.Subscription.speakLife1YR19 : InAppId.Subscription.speakLife1YR49
@@ -411,7 +411,7 @@ struct SubscriptionView: View {
                 }
                 
             }
-            .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .title))
+            .font(Font.custom("Roboto-Regular", size: 14, relativeTo: .callout))
         .foregroundColor(.white)
     }
     
@@ -477,7 +477,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Get Started" : "Continue", action: makePurchase)
+        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe", action: makePurchase)
     }
     
     private func restore() {
@@ -517,13 +517,13 @@ struct SubscriptionView: View {
                 
                 ZStack {
                     Capsule()
-                        .fill(Constants.specialRateColor)
-                        .frame(width: 100, height: 30)
+                        .fill(Constants.traditionalGold)
+                        .frame(width: 130, height: 30)
                     
-                    Text("Best Value")
-                        .font(.callout)
+                    Text("7-Day Free Trial")
+                        .font(.caption)
                         .bold()
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                 }
                 .padding(.trailing)
             }

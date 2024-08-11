@@ -17,7 +17,7 @@ struct ShimmerButton: View {
 
     var body: some View {
         ZStack {
-            Button(buttonTitle.uppercased(), action: action)
+            Button(buttonTitle, action: action)
                 .font(.subheadline)
                 .bold()
                 .foregroundColor(.white)
