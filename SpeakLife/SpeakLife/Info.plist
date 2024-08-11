@@ -89,5 +89,7 @@
 	<string>We kindly request your permission to track installations to improve our advertising campaigns.</string>
 	<key>MinimumOSVersion</key>
 	<string>16.0</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>

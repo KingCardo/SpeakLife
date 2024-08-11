@@ -344,7 +344,7 @@ struct ProfileView: View {
     @ViewBuilder
     private var feedbackRow: some View {
         if MFMailComposeViewController.canSendMail() {
-            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.grid.3x1.folder.fill.badge.plus", title: "Report an issue", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .review))) {
+            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.grid.3x1.folder.fill.badge.plus", title: "Contact us", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .review))) {
                 presentContentView()
             }
         }
@@ -354,7 +354,7 @@ struct ProfileView: View {
     @ViewBuilder
     private var prayerRequestRow: some View {
         if MFMailComposeViewController.canSendMail() {
-            SettingsRow(isPresentingContentView: $isPresentingPrayerRequestView, imageTitle: "highlighter", title: "Prayer Request", viewToPresent: LazyView(MailView(isShowing: $isPresentingPrayerRequestView, result: self.$result, origin: .profile))) {
+            SettingsRow(isPresentingContentView: $isPresentingPrayerRequestView, imageTitle: "highlighter", title: "Request a scholarship", viewToPresent: LazyView(MailView(isShowing: $isPresentingPrayerRequestView, result: self.$result, origin: .profile))) {
                 presentPrayerRequestView()
             }
         }

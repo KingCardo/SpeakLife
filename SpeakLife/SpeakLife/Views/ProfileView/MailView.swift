@@ -22,7 +22,7 @@ struct MailView: UIViewControllerRepresentable {
     
     var title: String {
         switch origin {
-        case .profile: return "Prayer Request"
+        case .profile: return "Scholarship request"
         case .review: return "Report an issue \(appVersion)"
         case .newFeatures: return "Request new feature"
         }
@@ -61,11 +61,7 @@ struct MailView: UIViewControllerRepresentable {
     func makeUIViewController(context: UIViewControllerRepresentableContext<MailView>) -> MFMailComposeViewController {
         let vc = MFMailComposeViewController()
         vc.setSubject(NSLocalizedString(title, comment: "mail title"))
-        if origin == .profile {
-            vc.setToRecipients(["speaklifebibleapp@gmail.com"])
-        } else {
             vc.setToRecipients(["speaklife@diosesaqui.com"])
-        }
         vc.mailComposeDelegate = context.coordinator
         return vc
     }
