@@ -77,12 +77,13 @@ struct DeclarationContentView: View {
                     
                     .tag(index)
                     .sheet(isPresented: $showShareSheet) {
+                        let url = URL(string: "\(APP.Product.urlID)")!
                         if let image = image {
                             Image(uiImage: image)
                                 .resizable()
                                 .scaledToFit()
                         }
-                        ShareSheet(activityItems: [image as Any])
+                        ShareSheet(activityItems: [image as Any, url, "Check out SpeakLife - Bible Meditation and email speaklife@diosesaqui.com for 30 day free pass"])
                     }
                     
                 }

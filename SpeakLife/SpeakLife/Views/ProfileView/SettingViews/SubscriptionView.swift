@@ -9,7 +9,7 @@ import SwiftUI
 import StoreKit
 import FirebaseAnalytics
 
-let subscriptionImage = "moonlight1"
+let subscriptionImage = "moonlight2"
 
 struct Benefit: Identifiable  {
     
@@ -88,6 +88,10 @@ struct DiscountSubscriptionView: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
                     .edgesIgnoringSafeArea(.top)
+                    .overlay(
+                        Rectangle()
+                            .fill(Color.black.opacity(0.5))
+                    )
             }
             
             discountView() {
@@ -315,13 +319,15 @@ struct SubscriptionView: View {
         ZStack {
           
             GeometryReader { geometry in
-               
                 Image(subscriptionImage)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
                     .edgesIgnoringSafeArea([.top])
-            
+                    .overlay(
+                        Rectangle()
+                            .fill(Color.black.opacity(0.5))
+                    )
            
             ScrollView {
                

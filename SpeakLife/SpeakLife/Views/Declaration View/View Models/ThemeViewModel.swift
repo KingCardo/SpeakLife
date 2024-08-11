@@ -11,7 +11,7 @@ import Combine
 
 final class ThemeViewModel: ObservableObject {
     
-    @AppStorage("theme") var theme = Theme.moonlight1.encode()!
+    @AppStorage("theme") var theme = Theme.moonlight2.encode()!
     @AppStorage("fontString") var fontString = "AppleSDGothicNeo-Regular" {
         didSet {
             selectedFont = .custom(fontString, size: fontSize)
@@ -27,7 +27,7 @@ final class ThemeViewModel: ObservableObject {
     
     // MARK: Properties
     
-    @Published var selectedTheme: Theme = .moonlight1
+    @Published var selectedTheme: Theme = .moonlight2
     @Published var selectedFont: Font = .custom("AppleSDGothicNeo-Regular", size: 30) {
         didSet  {
             updateSelectedFontForBook()

@@ -86,7 +86,7 @@ class Theme: Identifiable, Codable {
         }
     }
     
-    static var all: [Theme] = [gorgeous,safari,aurora,sunset3,icegreenmountain, chicago,autumnTrees, cross, lion, lakeHills, taicitylights, sunset1,sunset2,sunset4,sunset5,moonlight1,longroadtraveled, landingView1, landingView2, highway, forestwinter, lakeMountain, sandOcean, citynight, woodnight, rainbow, space, stars, summerbeach, moon, canyons,luxurydrive,beautifulsky, desertsky, gorgeousmoon, plantgreen, fogroad, greenplants]
+    static var all: [Theme] = [sunset3,moonlight2, cross, aurora,lion, lakeHills, gorgeous,desertsky,moon, beautifulsky, safari,icegreenmountain, stars, forestwinter, lakeMountain, chicago,autumnTrees, taicitylights, sunset1,sunset2,sunset4,sunset5,longroadtraveled, landingView1, landingView2, highway,  sandOcean, citynight, woodnight, rainbow, space, summerbeach, canyons,luxurydrive, gorgeousmoon, plantgreen, fogroad, greenplants]
     
     private static let autumnTrees = Theme("autumntrees", isPremium: false, blurEffect: true, fontColorString: "white")
     private static let cross = Theme("cross", isPremium: false)
@@ -121,7 +121,7 @@ class Theme: Identifiable, Codable {
     static let sunset3 = Theme("sunset3",blurEffect: false)
     static let sunset4 = Theme("sunset4",blurEffect: true)
     static let sunset5 = Theme("sunset5",blurEffect: false)
-    static let moonlight1 = Theme("moonlight1",isPremium: false)
+    static let moonlight2 = Theme("moonlight2",isPremium: false)
     static let icegreenmountain = Theme("icegreenmountain",blurEffect: true)
     static let chicago = Theme("chicago",blurEffect: false)
     static let gorgeous = Theme("gorgeous",blurEffect: true)//, fontColorString: "gold")
