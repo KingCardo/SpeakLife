@@ -332,10 +332,11 @@ struct SubscriptionView: View {
                         .frame(height: 60)
                     VStack(alignment: .center) {
                         Text("Be victorious in all areas of life with meditation.", comment: "unlock everything premium view")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 24))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .lineLimit(2)
+                            .padding([.leading, .trailing])
                         
                     }
                     Spacer()
@@ -512,7 +513,6 @@ struct SubscriptionView: View {
             }
             
             HStack {
-             //   VStack(alignment: .leading) {
                 VStack(alignment: .leading, spacing: 2) {
                         Text("\(firstSelection.ctaDurationTitle)")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
@@ -560,7 +560,6 @@ struct SubscriptionView: View {
                 .foregroundStyle(.white)
                 .padding([.leading, .trailing])
                 
-                Spacer()
             }
         }
         

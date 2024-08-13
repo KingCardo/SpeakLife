@@ -19,7 +19,7 @@ struct FeatureRow: View {
     var feature: Feature
 
     var body: some View {
-        HStack {
+        HStack(alignment: .top) {
             Spacer()
                 .frame(width: 16)
             Image(systemName: "checkmark.seal.fill")
