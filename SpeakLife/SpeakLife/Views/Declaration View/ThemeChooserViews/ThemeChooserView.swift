@@ -40,6 +40,7 @@ struct ThemeChooserView: View {
                         .fontWeight(.semibold)
                     Image(systemName: "photo.fill")
                 }
+                .foregroundStyle(Color.blue)
             }
         }
         .padding()
@@ -83,6 +84,7 @@ struct ThemeChooserView: View {
                 textHeader
                 
                 fontChooser(size: size)
+                    
                 
                 selectCustomImageView
                 
@@ -176,7 +178,7 @@ struct ThemeChooserView: View {
     private func fontChooser(size: CGSize) -> some View {
         if hideFontPicker {
             Text(themesViewModel.fontString)
-                .foregroundColor(colorScheme  ==  .dark ? .white : .black)
+                .foregroundStyle(Color.blue)
                 .onTapGesture {
                     withAnimation {
                         self.hideFontPicker = false
