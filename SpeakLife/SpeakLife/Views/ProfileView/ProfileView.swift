@@ -52,8 +52,6 @@ struct ProfileView: View {
         if #available(iOS 16.0, *) {
             NavigationStack {
                 content
-                .navigationBarTitle("SpeakLife", displayMode: .inline)
-                
             }
         } else {
             NavigationView {
@@ -76,6 +74,9 @@ struct ProfileView: View {
                         .edgesIgnoringSafeArea(.all)
                 )
             VStack {
+                Text("SpeakLife")
+                    .font(.title)
+                Spacer().frame(height: 8)
                 List {
                     Section(header: Text("Premium".uppercased()).font(.caption)) {
                         subscriptionRow
