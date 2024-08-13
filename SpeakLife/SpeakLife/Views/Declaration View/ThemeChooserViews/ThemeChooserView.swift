@@ -119,7 +119,7 @@ struct ThemeChooserView: View {
                 .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .overlay(
                     Rectangle()
-                        .fill(Color.black.opacity(0.7))
+                        .fill(Color.black.opacity(0.5))
                 )
                         )
                // Gradients().trio)
