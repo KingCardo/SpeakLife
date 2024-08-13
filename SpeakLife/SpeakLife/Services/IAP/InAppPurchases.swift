@@ -76,6 +76,16 @@ struct InAppId: Codable {
             }
         }
         
+        var markDownValue: String {
+            switch self {
+            case .speakLife1YR49: return "$79.99"
+            case .speakLife1YR39: return "$79.99"
+            case .speakLife1YR29: return "$59.99"
+            case .speakLife1YR19: return "$59.99"
+            default: return ""
+            }
+        }
+        
         var subTitle: String {
             switch self {
             case .speakLife1YR49: return "$4.17/mo"

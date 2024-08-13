@@ -18,10 +18,11 @@ struct ShimmerButton: View {
     var body: some View {
         ZStack {
             Button(buttonTitle, action: action)
-                .font(.subheadline)
+                .font(Font.custom("Roboto-Regular", size: 18, relativeTo: .title))
+                //.font(.subheadline)
                 .bold()
                 .foregroundColor(.white)
-                .scaleEffect(pulsate ? 1.05 : 1.0) // Pulsating effect
+                //.scaleEffect(pulsate ? 1.05 : 1.0) // Pulsating effect
                 .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true), value: pulsate)
 
             LinearGradient(gradient: Gradient(colors: [.clear, .white.opacity(0.5), .clear]), startPoint: .leading, endPoint: .trailing)

@@ -113,7 +113,16 @@ struct ThemeChooserView: View {
             } content: {
                 PremiumView()
             }
-            .background(Gradients().trio)
+            .background(Image(onboardingBGImage)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                .overlay(
+                    Rectangle()
+                        .fill(Color.black.opacity(0.7))
+                )
+                        )
+               // Gradients().trio)
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
                 self.isPresentingPremiumView = false
                 self.showingImagePicker = false

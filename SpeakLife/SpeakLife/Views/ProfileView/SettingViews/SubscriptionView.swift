@@ -331,7 +331,8 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 60)
                     VStack(alignment: .center) {
-                        Text("Be victorious in all areas of life with meditation.", comment: "unlock everything premium view")
+                        Text("Make Meditation a Priority and become Victorious.", comment: "unlock everything premium view")
+                            .multilineTextAlignment(.center)
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 24))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -499,7 +500,7 @@ struct SubscriptionView: View {
                 Spacer()
                 
                 ZStack {
-                    Capsule()
+                    RoundedRectangle(cornerRadius: 8)
                         .fill(Constants.traditionalGold)
                         .frame(width: 80, height: 30)
                     
@@ -508,15 +509,15 @@ struct SubscriptionView: View {
                         .bold()
                         .foregroundColor(.black)
                 }
-                .padding(.trailing)
-                .offset(x: 0, y: -32)
+              //  .padding(.trailing)
+                .offset(x: -10, y: -32)
             }
             
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
                         Text("\(firstSelection.ctaDurationTitle)")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                        Text("$49.99")
+                    Text(firstSelection.markDownValue)
                             .strikethrough(true, color: .white)
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 14)) +
                         Text(" \(firstSelection.ctaPriceTitle)")

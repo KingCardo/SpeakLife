@@ -18,7 +18,7 @@ struct DevotionalView: View {
     @State private var scrollToTop = false
     @State private var share = false
     
-    let spacing: CGFloat = 20
+    let spacing: CGFloat = 70
     
     var body: some View {
         contentView
@@ -30,7 +30,7 @@ struct DevotionalView: View {
     
     @ViewBuilder
     var contentView: some  View {
-        if subscriptionStore.isPremium {
+        if subscriptionStore.isPremium || !viewModel.devotionalLimitReached {
             devotionalView
                 .onAppear {
                     Analytics.logEvent(Event.devotionalTapped, parameters: nil)
@@ -48,18 +48,27 @@ struct DevotionalView: View {
     
     var devotionalView: some View {
         ZStack {
-            Gradients().purple
+        
+            Image(onboardingBGImage)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                .overlay(
+                    Rectangle()
+                        .fill(Color.black.opacity(0.7))
+                )
             ScrollViewReader { scrollView in
                 ScrollView {
                     VStack {
-                        
+                        Spacer()
+                            .frame(height: 40)
                         if !subscriptionStore.isPremium {
                             Text("\(viewModel.devotionalsLeft) more free devotionals left")
-                                .padding()
+                               // .padding()
                         }
                         
                         Spacer()
-                            .frame(height: spacing)
+                            .frame(height: 20)//spacing)
                         dateLabel
                         
                         titleLabel
@@ -73,12 +82,13 @@ struct DevotionalView: View {
                     }
                     .id("titleID")
                     .padding(.horizontal, 24)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     
                     .sheet(isPresented: $share) {
                         ShareSheet(activityItems: [viewModel.devotionalText as String,  URL(string: "\(APP.Product.urlID)")! as URL])
                     }
                 }
+                .padding([.top, .bottom], 40)
                 .onChange(of: scrollToTop) { value in
                     if value {
                         scrollView.scrollTo("titleID", anchor: .top)
