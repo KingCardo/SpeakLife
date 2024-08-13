@@ -63,13 +63,16 @@ struct FeatureView: View {
     // This could be fetched from a ViewModel in a real-world app
     let features: [Feature] = [
        // Feature(name:  appState.subscriptionTestnineteen ? "3 days free, then" : "7 days free, then", subtitle: "Cancel anytime before trial ends."/* Start declaring your blessings today!**Declare and manifest a long, prosperous, peaceful life for you and your family."*/, isAvailableInFree: false, isAvailableInPro: true),
+       
         Feature(name: "Prosperity", subtitle: "Those who delight in the Lord and meditate day and night prosper in everything they do! Psalm 1:2-3", isAvailableInFree: false, isAvailableInPro: false),
         Feature(name: "Life & Health", subtitle: "Let my words penetrate deep into your heart, they bring life to those who find them, and healing to their whole body. Proverbs 4:21,22", isAvailableInFree: false, isAvailableInPro: false),
         Feature(name: "Inner Peace & Joy", subtitle: "3000+ affirmations to declare and activate a life of prosperity, peace, and health for yourself and your loved ones."/* Start declaring your blessings today!**Declare and manifest a long, prosperous, peaceful life for you and your family."*/, isAvailableInFree: false, isAvailableInPro: true),
         Feature(name: "Guidance & Wisdom", subtitle: "Daily Devotionals to receive Jesus' grace and love for you and be victorious."/*Receive Jesus's love and be victorious from guilt, anxiety, and fear."*/, isAvailableInFree: false, isAvailableInPro: true),
+        
      //   Feature(name: "30+ categories to choose from", subtitle: ""/* Engage with scripture in an environment that inspires and uplifts.Only the finest"*/, isAvailableInFree: false, isAvailableInPro: true),
       //  Feature(name: "3000* library of affirmations", subtitle: "Access every category and unleash the power to manifest a life of prosperity, peace, and health for yourself and your loved ones."/* Start declaring your blessings today!**Declare and manifest a long, prosperous, peaceful life for you and your family."*/, isAvailableInFree: false, isAvailableInPro: true),
-        Feature(name: "Spiritual Growth", subtitle: "Create your own affirmations to empower your God given destiny."/*Declare and fulfill your God given dreams & destiny"*/, isAvailableInFree: true, isAvailableInPro: true),
+        //Feature(name: "Destiny", subtitle: "Create your own affirmations to achieve your God given destiny."/*Declare and fulfill your God given dreams & destiny"*/, isAvailableInFree: true, isAvailableInPro: true),
+      //  Feature(name: "Spiritual Growth", subtitle: "If anyone says to this mountain, ‘Go, throw yourself into the sea,’ and does not doubt in their heart but believes that what they say will happen, it will be done for them. Mark 11:23", isAvailableInFree: false, isAvailableInPro: true)
   //      Feature(name: "Unlimited reminders", subtitle: "Stay spiritually connected and inspired throughout your day."/*
 //*Receive scripture & God's promises thruout the day"*/, isAvailableInFree: false, isAvailableInPro: true),
 //        Feature(name: "Grow in faith", subtitle: "Those who delight in the Lord and meditate day and night prosper in everything they do! Psalm 1:2-3", isAvailableInFree: false, isAvailableInPro: false),
