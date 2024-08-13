@@ -64,56 +64,78 @@ struct ProfileView: View {
     
     private var profileView: some View {
         navigationStack(content:
-                            List {
-            Section(header: Text("Premium".uppercased()).font(.caption)) {
-                subscriptionRow
-                bookLink
-            }
-            
-            Section(header: Text("Yours").font(.caption)) {
-               
-                if appState.onBoardingTest {
-                    createYourOwnRow
-                   // devotionalsRow
-                    streakRow
-                    prayerRow
-                }
-    
-                HStack {
-                    AbbasLoveRow
-                    if appState.abbasLoveAdded {
-                        Badge()
+                            ZStack {
+            Image(onboardingBGImage)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+                .edgesIgnoringSafeArea([.all])
+                .overlay(
+                    Rectangle()
+                        .fill(Color.black.opacity(0.5))
+                        .edgesIgnoringSafeArea(.all)
+                )
+            VStack {
+                List {
+                    Section(header: Text("Premium".uppercased()).font(.caption)) {
+                        subscriptionRow
+                        bookLink
+                    }
+                    
+                    
+                    Section(header: Text("Yours").font(.caption)) {
+                        
+                        if appState.onBoardingTest {
+                            createYourOwnRow
+                            // devotionalsRow
+                            streakRow
+                            prayerRow
+                        }
+                        
+                        HStack {
+                            AbbasLoveRow
+                            if appState.abbasLoveAdded {
+                                Badge()
+                            }
+                        }
+                        
+                        
+                        remindersRow
+                        favoritesRow
+                        soundsRow
+                    }
+
+                    
+                    Section(header: Text("SUPPORT").font(.caption)) {
+                        shareRow
+                        reviewRow
+                        feedbackRow
+                        prayerRequestRow
+                        
+                    }
+
+                    .sheet(isPresented: $showShareSheet, content: {
+                        ShareSheet(activityItems: ["Check out SpeakLife - Bible Affirmations app that'll transform your life!", url as Any])
+                    })
+                    
+                    Section(header: Text("Other".uppercased()).font(.caption)) {
+                        privacyPolicyRow
+                        termsConditionsRow
+                    }
+                    
+                    Section(footer: VStack {
+                        Text(appVersion).font(.footnote)//.font(.caption)
+                    }) {
+                        
                     }
                 }
+                .scrollContentBackground(.hidden)
                 
-            
-                remindersRow
-                favoritesRow
-                soundsRow
             }
-            
-            Section(header: Text("SUPPORT").font(.caption)) {
-                shareRow
-                reviewRow
-                feedbackRow
-                prayerRequestRow
-              //  prayerRow
-                //newFeaturesRow
-            }
-            .sheet(isPresented: $showShareSheet, content: {
-                ShareSheet(activityItems: ["Check out SpeakLife - Bible Affirmations app that'll transform your life!", url as Any])
-            })
-            
-            Section(header: Text("Other".uppercased()).font(.caption)) {
-                privacyPolicyRow
-                termsConditionsRow
-            }
-            
-            Section(footer: VStack {
-                Text(appVersion).font(.footnote)//.font(.caption)
-            }) {
-            }
+            .background(Color.clear)
+            .padding([.top, .bottom], 60)
         }
+
             .onChange(of: declarationStore.backgroundMusicEnabled) { newValue in
             if newValue {
                 AudioPlayerService.shared.playSound(files: resources)
