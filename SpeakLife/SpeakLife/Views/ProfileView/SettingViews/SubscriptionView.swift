@@ -262,8 +262,7 @@ struct SubscriptionView: View {
     @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR29
     var firstSelection : InAppId.Subscription {
         InAppId.Subscription.speakLife1YR29
-       // appState.subscriptionTestnineteen ? InAppId.Subscription.speakLife1YR19 : InAppId.Subscription.speakLife1YR49
-    }  //InAppId.Subscription.speakLife1YR29
+    }
     var secondSelection = InAppId.Subscription.speakLife1MO9
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
@@ -274,10 +273,7 @@ struct SubscriptionView: View {
     
     var ctaText: String? {
         "7 days free, then"
-//        if currentSelection == firstSelection {
-//            return appState.subscriptionTestnineteen ? "3 days free, then" : "7 days free, then"
-//        }
-//        return nil
+
     }
     
     init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
@@ -370,12 +366,6 @@ struct SubscriptionView: View {
                         } label: {
                             monthlySelectionBox()
                         }
-//                        
-//                                                                        Button {
-//                                                                            currentSelection = thirdSelection
-//                                                                        } label: {
-//                                                                            lifetimeSelectionBox()
-//                                                                        }
                         
                     }
                     
@@ -404,9 +394,9 @@ struct SubscriptionView: View {
     @ViewBuilder
     var costDescription: some View {
             VStack(spacing: 4) {
-                if currentSelection == firstSelection {
-                    Text(ctaText ?? "")
-                }
+//                if currentSelection == firstSelection {
+//                    Text(ctaText ?? "")
+//                }
                 
                 Text(currentSelection?.title ?? "" + ".")
                 
@@ -483,9 +473,9 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe", action: makePurchase)
+        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: "Subscribe" , action: makePurchase)
     }
-    
+   // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
     private func restore() {
         Task {
             declarationStore.isPurchasing = true
@@ -498,41 +488,50 @@ struct SubscriptionView: View {
 
     
     func yearlyCTABox() -> some View {
-        ZStack {
+        ZStack() {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
                 .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == firstSelection ? Constants.DAMidBlue : .clear))
                 .frame(height: 60)
             
             HStack {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("\(firstSelection.ctaDurationTitle)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                        Text("\(firstSelection.ctaPriceTitle)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
-                            .bold()
-                    }
-                    Text(firstSelection.subTitle)
-                        .font(.caption)
-                }
-                .foregroundStyle(.white)
-                .padding(.leading)
-                
                 Spacer()
                 
                 ZStack {
                     Capsule()
                         .fill(Constants.traditionalGold)
-                        .frame(width: 130, height: 30)
+                        .frame(width: 80, height: 30)
                     
-                    Text("7-Day Free Trial")
+                    Text("Best Deal")
                         .font(.caption)
                         .bold()
                         .foregroundColor(.black)
                 }
                 .padding(.trailing)
+                .offset(x: 0, y: -32)
             }
+            
+            HStack {
+             //   VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 2) {
+                        Text("\(firstSelection.ctaDurationTitle)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                        Text("$49.99")
+                            .strikethrough(true, color: .white)
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 14)) +
+                        Text(" \(firstSelection.ctaPriceTitle)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                            .bold()
+                       
+                    }
+                Spacer()
+                Text(firstSelection.subTitle)
+                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                    .bold()
+                   
+                }
+                .foregroundStyle(.white)
+                .padding([.leading, .trailing])
             
         }
         
@@ -548,17 +547,18 @@ struct SubscriptionView: View {
                 .frame(height: 60)
             
             HStack {
-                VStack(alignment: .leading, spacing: 6) {
+                VStack(alignment: .leading) {
                     HStack {
                         Text("\(secondSelection.ctaDurationTitle)")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                        Text("\(secondSelection.ctaPriceTitle)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
+                        Spacer()
+                        Text("\(secondSelection.subTitle)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
                             .bold()
                     }
                 }
                 .foregroundStyle(.white)
-                .padding(.leading)
+                .padding([.leading, .trailing])
                 
                 Spacer()
             }

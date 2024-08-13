@@ -84,6 +84,7 @@ struct InAppId: Codable {
             case .speakLife1YR19: return "$1.66/mo. - Save 65%"
             case .speakLife1YR15: return "1.25/mo. - Save 60%"
             case .speakLife1YR9: return "$0.83 cents/month"
+            case .speakLife1MO9: return "$9.99/mo"
             default: return ""
             }
         }
