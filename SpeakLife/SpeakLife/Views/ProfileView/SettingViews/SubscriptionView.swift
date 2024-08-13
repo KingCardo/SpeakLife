@@ -331,10 +331,11 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 60)
                     VStack(alignment: .center) {
-                        Text("Make Meditating a Priority", comment: "unlock everything premium view")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 28))
+                        Text("Be victorious in all areas of life with meditation.", comment: "unlock everything premium view")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
+                            .lineLimit(2)
                         
                     }
                     Spacer()
@@ -369,7 +370,7 @@ struct SubscriptionView: View {
                         
                     }
                     
-                    goPremiumStack(size: size)
+                    goPremiumStack()
                     
                     Spacer()
                         .frame(height: 16)
@@ -412,18 +413,16 @@ struct SubscriptionView: View {
     }
     
     
-    private func goPremiumStack(size: CGSize) -> some View  {
+    private func goPremiumStack() -> some View  {
         let gradient = Gradient(colors: [Constants.DAMidBlue, .cyan])
         _ = LinearGradient(gradient: gradient,
                                             startPoint: .top,
                                             endPoint: .bottom)
         
         return VStack {
-            HStack {
-                Spacer()
-                continueButton(gradient: linearGradient)
-                Spacer()
-            }
+        
+            continueButton(gradient: linearGradient)
+    
             Spacer()
             .frame(height: 8)
             
@@ -445,6 +444,7 @@ struct SubscriptionView: View {
 
             }
         }
+        .padding([.leading, .trailing], 20)
     }
     
     func buy() async {
@@ -544,7 +544,7 @@ struct SubscriptionView: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
                 .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == secondSelection ? Constants.DAMidBlue : .clear))
-                .frame(height: 60)
+                .frame(height: 40)
             
             HStack {
                 VStack(alignment: .leading) {

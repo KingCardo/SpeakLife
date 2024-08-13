@@ -26,10 +26,10 @@ struct FeatureRow: View {
                 .padding(.trailing, 8)
             VStack(alignment: .leading) {
                 Text(feature.name)
-                    .font(Font.custom("AppleSDGothicNeo-Regular-Bold", size: 18, relativeTo: .body))
+                    .font(Font.custom("AppleSDGothicNeo-Regular-Bold", size: 16, relativeTo: .body))
                // if !appState.subscriptionTestnineteen {
                     Spacer()
-                        .frame(height: 2)
+                        .frame(height: 4)
                     Text(feature.subtitle)
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
               //  }
