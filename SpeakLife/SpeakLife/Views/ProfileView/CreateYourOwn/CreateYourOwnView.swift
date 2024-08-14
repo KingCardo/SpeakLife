@@ -20,7 +20,15 @@ struct CreateYourOwnView: View {
     
     var body: some View {
         ZStack {
-            AnyView(Gradients().goldCyan)
+            Image(onboardingBGImage)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                .overlay(
+                    Rectangle()
+                        .fill(Color.black.opacity(0.5))
+                )
+                        
             configureView()
             
             if showAlert {

@@ -78,14 +78,14 @@ struct CategoryCell: View  {
         if category.isPremium && !subscriptionStore.isPremium {
             ZStack {
                 VisualEffectBlur(blurStyle: .systemMaterial)
-                    .frame(width: 32, height: 32)
+                    .frame(width: 18, height: 18)
                 
-                    .padding(20)
+                    .padding(10)
                     .blur(radius: 8)
                    
                 Image(systemName: "lock.fill")
-                    .font(.title)
-                    .frame(width: 25, height: 25)
+                    .font(.body)
+                    .frame(width: 12, height: 12)
           
             }
             
