@@ -274,10 +274,6 @@ final class DeclarationViewModel: ObservableObject {
     // MARK: - Declarations
     
     func choose(_ category: DeclarationCategory, completion: @escaping(Bool) -> Void) {
-        if category == .general {
-            refreshGeneral(categories: selectedCategories)
-            return
-        }
         fetchDeclarations(for: category) { [weak self] declarations in
             guard declarations.count > 0 else {
                 self?.errorMessage = "Oops, you need to add one to this category first!"
@@ -304,10 +300,7 @@ final class DeclarationViewModel: ObservableObject {
     }
     
     func fetchDeclarations(for category: DeclarationCategory, completion: @escaping(([Declaration]) -> Void)) {
-        if var declarations = allDeclarationsDict[category] {
-            let liked = declarations.filter { $0.disliked == false }
-            completion(liked)
-        } else if category == .general {
+            if category == .general {
             refreshGeneral(categories: selectedCategories)
             completion(general)
         }  else if category == .favorites {
@@ -329,7 +322,6 @@ final class DeclarationViewModel: ObservableObject {
             if let error = error {
                 print(error)
             }
-           // self?.refreshGeneral(categories: selectedCategories)
             self?.selectedCategories = selectedCategories
             completion()
         }

@@ -81,6 +81,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .mark,
         .luke,
         .john,
+        .romans,
         .destiny,
         .grace,
         .faith,
@@ -153,7 +154,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     var imageString: String {
         switch self {
-        case .matthew, .psalms,.proverbs, .mark, .luke, .john:
+        case .matthew, .psalms,.proverbs, .mark, .luke, .john, .romans:
             return "wisdom"
         default:
             return self.rawValue.lowercased()
@@ -175,7 +176,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     var isPremium: Bool {
         switch self {
-        case .general, .destiny, .favorites, .myOwn, .grace, .love, .health, .purity, .matthew, .mark, .luke, .john : return false
+        case .general, .destiny, .favorites, .myOwn, .grace, .love, .matthew, .mark, .luke, .john, .romans : return false
         default: return true
         }
     }
@@ -194,6 +195,7 @@ struct Declaration: Codable, Identifiable, Hashable {
     var book: String? = nil
     var affirmationText: String? = nil
     var category: DeclarationCategory = .faith
+    var categories: [DeclarationCategory] = []
     var isFavorite: Bool = false
     var id: String {
       // UUID().uuidString
