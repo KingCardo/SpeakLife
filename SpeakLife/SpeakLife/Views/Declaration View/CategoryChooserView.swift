@@ -112,12 +112,12 @@ struct CategoryChooserView: View {
                     
                         Text("Select one of the following categories to get powerful promises focused on your needs.", comment: "category reminder selection")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 18))
-                            .foregroundColor(.white)//)/colorScheme == .dark ?  .white : Constants.DALightBlue)
+                            .foregroundColor(.white)
                             .multilineTextAlignment(.center)
                             .lineSpacing(10)
                             .lineLimit(2)
                             .padding()
-                            .background(BlurView(style: .systemUltraThinMaterial))
+                            .background(BlurView(style: .systemUltraThinMaterialDark))
                             .cornerRadius(8)
                             
                     
