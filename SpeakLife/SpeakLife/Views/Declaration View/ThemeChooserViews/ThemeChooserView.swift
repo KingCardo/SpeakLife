@@ -164,9 +164,22 @@ struct ThemeChooserView: View {
                     .cornerRadius(4)
             }
             if isPremium && !subscriptionStore.isPremium {
-                Image(systemName: "lock.fill")
-                    .font(.title)
-                    .frame(width: 30, height: 30)
+                HStack {
+                    Spacer()
+                    VStack(alignment: .trailing) {
+                        ZStack {
+                            VisualEffectBlur(blurStyle: .systemMaterial)
+                                .frame(width: 18, height: 18)
+                            
+                                .padding(10)
+                                .blur(radius: 8)
+                            Image(systemName: "lock.fill")
+                                .font(.body)
+                                .frame(width: 16, height: 16)
+                        }
+                        Spacer()
+                    }
+                }.padding([.top, .trailing], 8)
             }
         }
         .frame(width: dimension * 0.45, height: dimension * 0.5)
