@@ -155,7 +155,7 @@ struct DiscountSubscriptionView: View {
             
             continueButton {
                 completion()
-            }
+            }.padding([.leading, .trailing])
         }
     }
     
@@ -285,7 +285,7 @@ struct SubscriptionView: View {
     
     var body: some View {
         goPremiumView(size: size)
-            .foregroundColor(colorScheme == .dark ? .white : Constants.DEABlack)
+            .foregroundColor(.white)
             .alert(isPresented: $isShowingError, content: {
                 Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
             })
