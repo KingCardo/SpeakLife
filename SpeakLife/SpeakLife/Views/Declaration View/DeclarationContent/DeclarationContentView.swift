@@ -77,13 +77,7 @@ struct DeclarationContentView: View {
                     
                     .tag(index)
                     .sheet(isPresented: $showShareSheet) {
-                        let url = URL(string: "\(APP.Product.urlID)")!
-                        if let image = image {
-                            Image(uiImage: image)
-                                .resizable()
-                                .scaledToFit()
-                        }
-                        ShareSheet(activityItems: [image as Any, url, "Check out SpeakLife - Bible Meditation and email speaklife@diosesaqui.com for 30 day free pass"])
+                        ShareSheet(activityItems: prepareShareItems())
                     }
                     
                 }
@@ -103,6 +97,13 @@ struct DeclarationContentView: View {
             }
         }
     }
+    
+    func prepareShareItems() -> [Any] {
+        guard let image = image else { return [] }
+        let message = "Check out SpeakLife - Bible Meditation and email speaklife@diosesaqui.com for a 30-day free pass. \n\(APP.Product.urlID)"
+        return [image, message]
+    }
+
     
     func requestReview() {
         viewModel.requestReview = true
@@ -178,7 +179,7 @@ struct DeclarationContentView: View {
                         appState.showScreenshotLabel = true
                         
                     }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
                         if let windowScene =  UIApplication.shared.connectedScenes.first as? UIWindowScene {
                             if let window = windowScene.windows.first {
                                 image = window.rootViewController?.view.toImage()

@@ -82,6 +82,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .luke,
         .john,
         .romans,
+      //  .corinthians1,
         .destiny,
         .grace,
         .faith,
@@ -154,7 +155,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     var imageString: String {
         switch self {
-        case .matthew, .psalms,.proverbs, .mark, .luke, .john, .romans:
+        case .matthew, .psalms,.proverbs, .mark, .luke, .john, .romans, .corinthians1:
             return "wisdom"
         default:
             return self.rawValue.lowercased()

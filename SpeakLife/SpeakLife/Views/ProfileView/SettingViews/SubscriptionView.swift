@@ -416,11 +416,11 @@ struct SubscriptionView: View {
     
     
     private func goPremiumStack() -> some View  {
-        let gradient = Gradient(colors: [Constants.DAMidBlue, .cyan])
-        _ = LinearGradient(gradient: gradient,
-                                            startPoint: .top,
-                                            endPoint: .bottom)
-        
+//        let gradient = Gradient(colors: [Constants.DAMidBlue, .cyan])
+//        _ = LinearGradient(gradient: gradient,
+//                                            startPoint: .top,
+//                                            endPoint: .bottom)
+//        
         return VStack {
         
             continueButton(gradient: linearGradient)

@@ -16,26 +16,15 @@ struct ShimmerButton: View {
    
 
     var body: some View {
-        ZStack {
-            Button(buttonTitle, action: action)
+        Button(action: action) {
+            Text(buttonTitle)
                 .font(Font.custom("Roboto-Regular", size: 18, relativeTo: .title))
-                //.font(.subheadline)
                 .bold()
                 .foregroundColor(.white)
-                //.scaleEffect(pulsate ? 1.05 : 1.0) // Pulsating effect
-                .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true), value: pulsate)
+                .frame(maxWidth: .infinity, minHeight: 50) // Ensures the button takes up the entire width and has a minimum height of 50
+                .background(LinearGradient(gradient: Gradient(colors: colors), startPoint: .leading, endPoint: .trailing))
+                .cornerRadius(30)
 
-            LinearGradient(gradient: Gradient(colors: [.clear, .white.opacity(0.5), .clear]), startPoint: .leading, endPoint: .trailing)
-                .frame(height: 50)
-                .offset(x: animationOffset - UIScreen.main.bounds.width / 2)
-        }
-        .background(LinearGradient(gradient: Gradient(colors: colors), startPoint: .leading, endPoint: .trailing))
-        .cornerRadius(15)
-        .onAppear {
-            withAnimation(Animation.linear(duration: 3.0).repeatForever()) {
-                animationOffset = UIScreen.main.bounds.width
-            }
-            pulsate = true
         }
     }
 }
