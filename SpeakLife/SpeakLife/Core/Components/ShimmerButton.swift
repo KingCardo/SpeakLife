@@ -23,7 +23,7 @@ struct ShimmerButton: View {
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, minHeight: 50) // Ensures the button takes up the entire width and has a minimum height of 50
                 .background(LinearGradient(gradient: Gradient(colors: colors), startPoint: .leading, endPoint: .trailing))
-                .cornerRadius(30)
+                .cornerRadius(25)
 
         }
     }
