@@ -21,6 +21,7 @@ struct OnboardingView: View  {
     @State var isDonePersonalization = false
     @StateObject var improvementViewModel = ImprovementViewModel()
     @AppStorage("onboardingTab") var onboardingTab = Tab.personalization.rawValue
+    @State private var isTextVisible = false
    
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
@@ -164,10 +165,11 @@ struct OnboardingView: View  {
             VStack  {
                 HStack  {
                     Button(action:  advance) {
-                        Text("CANCEL",  comment: "Cancel text for label")
-                            .font(.callout)
-                            .frame(height: 35)
+                        Image(systemName: "xmark.circle.fill")
+                            .resizable()
+                            .frame(width: 25, height: 25)
                             .foregroundColor(.white)
+                            .opacity(isTextVisible ? 1 : 0)
                         
                     }
                     Spacer()
@@ -177,7 +179,19 @@ struct OnboardingView: View  {
                 Spacer()
             }
         }
+        .onAppear {
+            revealText()
+        }
     }
+    
+    func revealText() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            withAnimation {
+                isTextVisible = true
+            }
+        }
+    }
+    
     
     private func discountScene(size: CGSize) -> some View  {
         
