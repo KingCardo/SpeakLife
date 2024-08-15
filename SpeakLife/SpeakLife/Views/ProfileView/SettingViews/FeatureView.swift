@@ -10,8 +10,6 @@ import SwiftUI
 struct Feature {
     var name: String
     var subtitle: String
-    var isAvailableInFree: Bool
-    var isAvailableInPro: Bool
     var imageName: String = "checkmark.seal.fill"
 }
 
@@ -31,27 +29,13 @@ struct FeatureRow: View {
             VStack(alignment: .leading) {
                 Text(feature.name)
                     .font(Font.custom("AppleSDGothicNeo-Regular-Bold", size: 16, relativeTo: .body))
-               // if !appState.subscriptionTestnineteen {
                     Spacer()
                         .frame(height: 4)
                     Text(feature.subtitle)
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
-              //  }
             }
             Spacer()
-          //  HStack {
-           // if feature.isAvailableInFree {
-           //     Image(systemName: "checkmark.seal.fill")
-//            } else {
-//                Image(systemName: "lock")
-//            }
-         //   Spacer()
-            //        .frame(width: 24)
-            //    if feature.isAvailableInPro {
-//                    Image(systemName: "checkmark.seal.fill")
-//                        .padding(.trailing, 8)
-              //  }
-           //}
+
         }
     }
 }
@@ -68,11 +52,11 @@ struct FeatureView: View {
     let features: [Feature] = [
        // Feature(name:  appState.subscriptionTestnineteen ? "3 days free, then" : "7 days free, then", subtitle: "Cancel anytime before trial ends."/* Start declaring your blessings today!**Declare and manifest a long, prosperous, peaceful life for you and your family."*/, isAvailableInFree: false, isAvailableInPro: true),
        
-        Feature(name: "Prosperity", subtitle: "Those who delight in the Lord and meditate day and night prosper in everything they do! Psalm 1:2-3", isAvailableInFree: false, isAvailableInPro: false, imageName: "infinity"),
-        Feature(name: "Inner Peace & Joy", subtitle: "3000+ affirmations to declare and activate a life of prosperity, peace, and health for yourself and your loved ones."/* Start declaring your blessings today!**Declare and manifest a long, prosperous, peaceful life for you and your family."*/, isAvailableInFree: false, isAvailableInPro: true, imageName: "sparkles"),
-        Feature(name: "Guidance & Wisdom", subtitle: "365+ Daily Devotionals to receive Jesus' grace and love for you and be victorious."/*Receive Jesus's love and be victorious from guilt, anxiety, and fear."*/, isAvailableInFree: false, isAvailableInPro: true, imageName: "book.pages.fill"),
-        Feature(name: "Life & Health", subtitle: "Let my words penetrate deep into your heart, they bring life to those who find them, and healing to their whole body. Proverbs 4:21,22", isAvailableInFree: false, isAvailableInPro: false, imageName: "bolt.heart.fill"),
-        Feature(name: "Unlock everything", subtitle: "", isAvailableInFree: false, isAvailableInPro: false),
+        Feature(name: "Prosperity", subtitle: "Those who delight in the Lord and meditate day and night prosper in everything they do! Psalm 1:2-3", imageName: "infinity"),
+        Feature(name: "Inner Peace & Joy", subtitle: "3000+ affirmations to declare and activate a life of prosperity, peace, and health for yourself and your loved ones."/* Start declaring your blessings today!**Declare and manifest a long, prosperous, peaceful life for you and your family."*/, imageName: "sparkles"),
+        Feature(name: "Guidance & Wisdom", subtitle: "365+ Daily Devotionals to receive Jesus' grace and love for you and be victorious."/*Receive Jesus's love and be victorious from guilt, anxiety, and fear."*/, imageName: "book.pages.fill"),
+        Feature(name: "Life & Health", subtitle: "Let my words penetrate deep into your heart, they bring life to those who find them, and healing to their whole body. Proverbs 4:21,22", imageName: "bolt.heart.fill"),
+        Feature(name: "Unlock everything", subtitle: ""),
         
      //   Feature(name: "30+ categories to choose from", subtitle: ""/* Engage with scripture in an environment that inspires and uplifts.Only the finest"*/, isAvailableInFree: false, isAvailableInPro: true),
       //  Feature(name: "3000* library of affirmations", subtitle: "Access every category and unleash the power to manifest a life of prosperity, peace, and health for yourself and your loved ones."/* Start declaring your blessings today!**Declare and manifest a long, prosperous, peaceful life for you and your family."*/, isAvailableInFree: false, isAvailableInPro: true),
@@ -88,18 +72,6 @@ struct FeatureView: View {
 
     var body: some View {
         VStack {
-//            HStack {
-//                Spacer()
-//                Text("Free")
-//                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
-//                Spacer()
-//                    .frame(width: 16)
-//                Text("Pro")
-//                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
-//
-//            }
-//            .padding()
-            
             ForEach(features, id: \.name) { feature in
                 FeatureRow(feature: feature)
                 Spacer().frame(height: 10)
