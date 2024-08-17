@@ -70,11 +70,12 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case peter1, peter2
     case john1, john2, john3, jude, revelation
     
-    
-    static var categoryOrder: [DeclarationCategory] = [
-        .general,
+    static var allCategories: [DeclarationCategory] = [
         .favorites,
         .myOwn,
+        .destiny,
+        .grace,
+        .faith,
         .psalms,
         .proverbs,
         .matthew,
@@ -82,7 +83,47 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .luke,
         .john,
         .romans,
-      //  .corinthians1,
+        .addiction,
+        .confidence,
+        .fear,
+        .forgiveness,
+        .godsprotection,
+        .gratitude,
+        .guidance,
+        .hardtimes,
+        .health,
+        .heaven,
+        .hope,
+        .identity,
+        .joy,
+        .loneliness,
+        .love,
+        .purity,
+        .praise,
+        .rest,
+        .relationships,
+        .marriage,
+        .peace,
+        .perseverance,
+        .wisdom,
+        .wealth,
+        ]
+    
+    static var bibleCategories: [DeclarationCategory] = [
+        .psalms,
+        .proverbs,
+        .matthew,
+        .mark,
+        .luke,
+        .john,
+        .romans,
+        ]
+    
+    
+    static var categoryOrder: [DeclarationCategory] = [
+        .general,
+        .favorites,
+        .myOwn,
         .destiny,
         .grace,
         .faith,

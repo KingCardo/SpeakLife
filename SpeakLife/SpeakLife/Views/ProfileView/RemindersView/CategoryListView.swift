@@ -12,7 +12,7 @@ final class CategoryListViewModel: ObservableObject {
     
     init(_ declarationStore: DeclarationViewModel) {
         self.declarationStore = declarationStore
-        self.categories = declarationStore.allCategories
+        self.categories = declarationStore.allcategories
         self.selectedCategories = declarationStore.selectedCategories
     }
     

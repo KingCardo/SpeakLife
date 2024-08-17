@@ -45,7 +45,11 @@ final class DeclarationViewModel: ObservableObject {
     
     private (set) var currentDeclaration: Declaration?
     
-    @Published var allCategories: [DeclarationCategory] = DeclarationCategory.categoryOrder
+    @Published var speaklifeCategories: [DeclarationCategory] = DeclarationCategory.categoryOrder
+    
+    @Published var allcategories: [DeclarationCategory] = DeclarationCategory.allCategories
+    
+    @Published var bibleCategories: [DeclarationCategory] = DeclarationCategory.bibleCategories
     
     private var allDeclarationsDict: [DeclarationCategory: [Declaration]] = [:]
     

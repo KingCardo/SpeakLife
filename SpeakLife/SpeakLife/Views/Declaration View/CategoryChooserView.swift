@@ -119,7 +119,8 @@ struct CategoryChooserView: View {
                             .padding()
                             .background(BlurView(style: .systemUltraThinMaterialDark))
                             .cornerRadius(8)
-                            
+                    
+                    bibleBookList(geometry: geometry)
                     
                     categoryList(geometry: geometry)
                     
@@ -141,28 +142,57 @@ struct CategoryChooserView: View {
         }
     }
     
+    private func bibleBookList(geometry: GeometryProxy) -> some View {
+        Section(header: Text("Bible Meditation's").font(Font.custom("AppleSDGothicNeo-Regular", size: 18))) {
+            ScrollView(.horizontal, showsIndicators: true) {
+                HStack(spacing: 12) {
+                    ForEach(viewModel.bibleCategories) { category in
+                        CategoryCell(size: geometry.size, category: category)
+                            .onTapGesture {
+                                if category.isPremium && !subscriptionStore.isPremium {
+                                    presentPremiumView = true
+                                } else {
+                                    viewModel.choose(category) { success in
+                                        if success {
+                                            Analytics.logEvent(Event.categoryChooserTapped, parameters: ["category": category.rawValue])
+                                            self.presentationMode.wrappedValue.dismiss()
+                                        }
+                                    }
+                                }
+                            }
+                            .sheet(isPresented: $presentPremiumView) {
+                                PremiumView()
+                            }
+                    }
+                }
+                .padding([.vertical, .leading, .trailing], 20)
+            }
+        }
+    }
+    
     private func categoryList(geometry: GeometryProxy) -> some View {
-      
-        LazyVGrid(columns: twoColumnGrid, spacing: 16) {
-            ForEach(viewModel.allCategories) { category in
-                
-                CategoryCell(size: geometry.size, category: category)
-                    .onTapGesture {
-                        if category.isPremium && !subscriptionStore.isPremium {
-                            presentPremiumView = true
-                        } else {
-                            viewModel.choose(category) { success in
-                                if success {
-                                    Analytics.logEvent(Event.categoryChooserTapped, parameters: ["category": category.rawValue])
-                                    self.presentationMode.wrappedValue.dismiss()
+        Section(header: Text("Bible Affirmation's").font(Font.custom("AppleSDGothicNeo-Regular", size: 18))) {
+            LazyVGrid(columns: twoColumnGrid, spacing: 16) {
+                ForEach(viewModel.speaklifeCategories) { category in
+                    
+                    CategoryCell(size: geometry.size, category: category)
+                        .onTapGesture {
+                            if category.isPremium && !subscriptionStore.isPremium {
+                                presentPremiumView = true
+                            } else {
+                                viewModel.choose(category) { success in
+                                    if success {
+                                        Analytics.logEvent(Event.categoryChooserTapped, parameters: ["category": category.rawValue])
+                                        self.presentationMode.wrappedValue.dismiss()
+                                    }
                                 }
                             }
                         }
-                    }
-                    .sheet(isPresented: $presentPremiumView) {
-                        PremiumView()
-                    }
-            }
-        }.padding()
+                        .sheet(isPresented: $presentPremiumView) {
+                            PremiumView()
+                        }
+                }
+            }.padding()
+        }
     }
 }

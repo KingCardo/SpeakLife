@@ -74,8 +74,15 @@ struct IntroTipScene: View {
                 }
                 .frame(width: size.width * 0.8)
                 if showTestimonials {
+                   
                     TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
                         .id(currentTestimonialIndex)
+                    Spacer().frame(height: 12)
+                    Text("Over 40K+ happy users")
+                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 25, relativeTo: .title))
+                        .foregroundStyle(Color.white)
+                   
+                  
                 } else {
                     Spacer().frame(height: size.height * 0.20)
                 }
