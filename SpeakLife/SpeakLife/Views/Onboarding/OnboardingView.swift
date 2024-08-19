@@ -444,7 +444,7 @@ struct OnboardingView: View  {
         withAnimation {
             appState.isOnboarded = true
             Analytics.logEvent(Event.onBoardingFinished, parameters: nil)
-            viewModel.requestReview.toggle()
+           // viewModel.requestReview.toggle()
            // viewModel.helpUsGrowAlert = true
         }
         

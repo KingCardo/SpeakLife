@@ -83,6 +83,10 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .luke,
         .john,
         .romans,
+        .corinthians1,
+        .corinthians2,
+        .galatians,
+        .ephesians,
         .addiction,
         .confidence,
         .fear,
@@ -117,6 +121,10 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .luke,
         .john,
         .romans,
+        .corinthians1,
+        .corinthians2,
+        .galatians,
+        .ephesians
         ]
     
     
@@ -195,9 +203,10 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     
     var imageString: String {
-        switch self {
-        case .matthew, .psalms,.proverbs, .mark, .luke, .john, .romans, .corinthians1:
+        if DeclarationCategory.bibleCategories.contains(self) {
             return "wisdom"
+        }
+        switch self {
         default:
             return self.rawValue.lowercased()
         }
@@ -218,7 +227,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     var isPremium: Bool {
         switch self {
-        case .general, .destiny, .favorites, .myOwn, .grace, .love, .matthew, .mark, .luke, .john, .romans : return false
+        case .general, .destiny, .favorites, .myOwn, .ephesians, .love, .galatians, .mark, .luke, .john, .romans : return false
         default: return true
         }
     }

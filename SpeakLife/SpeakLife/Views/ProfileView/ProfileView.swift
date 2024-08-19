@@ -377,7 +377,7 @@ struct ProfileView: View {
     @ViewBuilder
     private var prayerRequestRow: some View {
         if MFMailComposeViewController.canSendMail() {
-            SettingsRow(isPresentingContentView: $isPresentingPrayerRequestView, imageTitle: "highlighter", title: "Request a scholarship", viewToPresent: LazyView(MailView(isShowing: $isPresentingPrayerRequestView, result: self.$result, origin: .profile))) {
+            SettingsRow(isPresentingContentView: $isPresentingPrayerRequestView, imageTitle: "highlighter", title: "Receive a free year on us", viewToPresent: LazyView(MailView(isShowing: $isPresentingPrayerRequestView, result: self.$result, origin: .profile))) {
                 presentPrayerRequestView()
             }
         }
