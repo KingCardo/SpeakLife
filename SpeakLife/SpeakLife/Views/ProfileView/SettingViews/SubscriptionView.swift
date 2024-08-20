@@ -265,7 +265,7 @@ struct SubscriptionView: View {
     @State private var regionCode: String = "US"
     @State private var isCheaperPricingCountry = false
     
-    var secondSelection = InAppId.Subscription.speakLife1MO9
+    var secondSelection = InAppId.Subscription.speakLife1MO4
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let size: CGSize
@@ -503,9 +503,9 @@ struct SubscriptionView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Constants.traditionalGold)
-                        .frame(width: 80, height: 30)
+                        .frame(width: 110, height: 30)
                     
-                    Text("Best Deal")
+                    Text("7-Day free trial")
                         .font(.caption)
                         .bold()
                         .foregroundColor(.black)

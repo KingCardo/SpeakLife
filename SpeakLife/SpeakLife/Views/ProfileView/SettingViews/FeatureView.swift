@@ -54,8 +54,8 @@ struct FeatureView: View {
        
         Feature(name: "Prosperity", subtitle: "Those who delight in the Lord and meditate day and night prosper in everything they do! Psalm 1:2-3", imageName: "infinity"),
         Feature(name: "Inner Peace & Joy", subtitle: "3000+ affirmations to declare and activate a life of prosperity, peace, and health for yourself and your loved ones."/* Start declaring your blessings today!**Declare and manifest a long, prosperous, peaceful life for you and your family."*/, imageName: "sparkles"),
-        Feature(name: "Guidance & Wisdom", subtitle: "365+ Daily Devotionals to receive Jesus' grace and love for you and be victorious."/*Receive Jesus's love and be victorious from guilt, anxiety, and fear."*/, imageName: "book.pages.fill"),
-        Feature(name: "Life & Health", subtitle: "Let my words penetrate deep into your heart, they bring life to those who find them, and healing to their whole body. Proverbs 4:21,22", imageName: "bolt.heart.fill"),
+        Feature(name: "Guidance & Wisdom", subtitle: "365+ Daily Devotionals to receive Jesus' grace and love for you and be victorious."/*Receive Jesus's love and be victorious from guilt, anxiety, and fear."*/, imageName: "bolt.heart.fill"),
+     //   Feature(name: "Life & Health", subtitle: "Let my words penetrate deep into your heart, they bring life to those who find them, and healing to their whole body. Proverbs 4:21,22", imageName: "bolt.heart.fill"),
         Feature(name: "Unlock everything", subtitle: ""),
         
      //   Feature(name: "30+ categories to choose from", subtitle: ""/* Engage with scripture in an environment that inspires and uplifts.Only the finest"*/, isAvailableInFree: false, isAvailableInPro: true),
