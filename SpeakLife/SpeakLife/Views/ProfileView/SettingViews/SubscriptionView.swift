@@ -259,10 +259,12 @@ struct SubscriptionView: View {
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR29
-    var firstSelection : InAppId.Subscription {
-        InAppId.Subscription.speakLife1YR29
-    }
+    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR19
+    @State var firstSelection = InAppId.Subscription.speakLife1YR19
+    @State private var localizedPrice: String = "$19.00"
+    @State private var regionCode: String = "US"
+    @State private var isCheaperPricingCountry = false
+    
     var secondSelection = InAppId.Subscription.speakLife1MO9
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
@@ -289,6 +291,9 @@ struct SubscriptionView: View {
             .alert(isPresented: $isShowingError, content: {
                 Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
             })
+            .onAppear() {
+                localizePrice()
+            }
     }
     
     private var benefitRows: some View {
@@ -363,13 +368,14 @@ struct SubscriptionView: View {
                             yearlyCTABox()
                         }
                         
-                        
-                        Button {
-                            currentSelection = secondSelection
-                        } label: {
-                            monthlySelectionBox()
+                        if !isCheaperPricingCountry {
+                            Button {
+                                currentSelection = secondSelection
+                            } label: {
+                                monthlySelectionBox()
+                            }
+                            
                         }
-                        
                     }
                     
                     goPremiumStack()
@@ -397,9 +403,9 @@ struct SubscriptionView: View {
     @ViewBuilder
     var costDescription: some View {
             VStack(spacing: 4) {
-//                if currentSelection == firstSelection {
-//                    Text(ctaText ?? "")
-//                }
+                if currentSelection == firstSelection {
+                    Text(ctaText ?? "")
+                }
                 
                 Text(currentSelection?.title ?? "" + ".")
                 
@@ -416,11 +422,6 @@ struct SubscriptionView: View {
     
     
     private func goPremiumStack() -> some View  {
-//        let gradient = Gradient(colors: [Constants.DAMidBlue, .cyan])
-//        _ = LinearGradient(gradient: gradient,
-//                                            startPoint: .top,
-//                                            endPoint: .bottom)
-//        
         return VStack {
         
             continueButton(gradient: linearGradient)
@@ -513,26 +514,44 @@ struct SubscriptionView: View {
                 .offset(x: -10, y: -32)
             }
             
-            HStack {
-                VStack(alignment: .leading, spacing: 2) {
+            if isCheaperPricingCountry {
+                HStack {
+                    VStack(alignment: .leading, spacing: 2) {
                         Text("\(firstSelection.ctaDurationTitle)")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                    Text(firstSelection.markDownValue)
+                        Text(" \(localizedPrice)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                            .bold()
+                        
+                    }
+                    Spacer()
+                    
+                }
+                .foregroundStyle(.white)
+                .padding([.leading, .trailing])
+                
+            } else {
+                HStack {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("\(firstSelection.ctaDurationTitle)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                        Text(firstSelection.markDownValue)
                             .strikethrough(true, color: .white)
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 14)) +
                         Text(" \(firstSelection.ctaPriceTitle)")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
                             .bold()
-                       
+                        
                     }
-                Spacer()
-                Text(firstSelection.subTitle)
-                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                    .bold()
-                   
+                    Spacer()
+                    Text(firstSelection.subTitle)
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                        .bold()
+                    
                 }
                 .foregroundStyle(.white)
                 .padding([.leading, .trailing])
+            }
             
         }
         
@@ -567,6 +586,45 @@ struct SubscriptionView: View {
         .padding([.leading, .trailing], 20)
     }
     
+    func localizePrice() {
+           // Assume you have a function that returns the user's country code
+           let countryCode = getUserCountryCode()
+            regionCode = countryCode
+
+           switch countryCode {
+           case "GH":
+               isCheaperPricingCountry = true
+               localizedPrice = "$14.99"
+           case "KE":
+               isCheaperPricingCountry = true
+               localizedPrice = "$14.99"
+           case "UG":
+               isCheaperPricingCountry = true
+               localizedPrice = "$14.99"
+           case "TH":
+               isCheaperPricingCountry = true
+               localizedPrice = "฿249.00"
+           case "NG":
+               isCheaperPricingCountry = true
+               localizedPrice = "₦3,900"
+           case "PH":
+               isCheaperPricingCountry = true
+               localizedPrice = "₱499.00"
+           case "ZA":
+               isCheaperPricingCountry = true
+               localizedPrice = "R199.99"
+           default:
+               isCheaperPricingCountry = false
+               localizedPrice = "$19.00"
+           }
+       }
+
+       func getUserCountryCode() -> String {
+           // Example function to get user’s country code
+           // You could use Locale, or get this information from the user's account settings
+           return Locale.current.region?.identifier ?? "US"
+       }
+    
 //    func lifetimeSelectionBox() -> some View {
 //        ZStack {
 //            RoundedRectangle(cornerRadius: 10)
@@ -593,6 +651,8 @@ struct SubscriptionView: View {
 //        
 //        .padding([.leading, .trailing], 20)
 //    }
+    
+    
 }
 
 

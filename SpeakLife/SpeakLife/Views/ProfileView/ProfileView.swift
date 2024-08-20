@@ -28,6 +28,7 @@ struct ProfileView: View {
     @EnvironmentObject var streakViewModel: StreakViewModel
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     
     @State var result: Result<MFMailComposeResult, Error>? = nil
     private let appVersion = "App version: \(APP.Version.stringNumber)"
@@ -367,7 +368,7 @@ struct ProfileView: View {
     @ViewBuilder
     private var feedbackRow: some View {
         if MFMailComposeViewController.canSendMail() {
-            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "square.grid.3x1.folder.fill.badge.plus", title: "Contact us", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .review))) {
+            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "highlighter", title: "Contact us", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .review))) {
                 presentContentView()
             }
         }
@@ -376,8 +377,8 @@ struct ProfileView: View {
     @MainActor
     @ViewBuilder
     private var prayerRequestRow: some View {
-        if MFMailComposeViewController.canSendMail() {
-            SettingsRow(isPresentingContentView: $isPresentingPrayerRequestView, imageTitle: "highlighter", title: "Receive a free year on us", viewToPresent: LazyView(MailView(isShowing: $isPresentingPrayerRequestView, result: self.$result, origin: .profile))) {
+        if MFMailComposeViewController.canSendMail(), !subscriptionStore.isPremium {
+            SettingsRow(isPresentingContentView: $isPresentingPrayerRequestView, imageTitle: "gift.fill", title: "Receive a free year on us", viewToPresent: LazyView(MailView(isShowing: $isPresentingPrayerRequestView, result: self.$result, origin: .profile))) {
                 presentPrayerRequestView()
             }
         }

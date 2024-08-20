@@ -87,6 +87,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .corinthians2,
         .galatians,
         .ephesians,
+        .philippians,
         .addiction,
         .confidence,
         .fear,
@@ -124,7 +125,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .corinthians1,
         .corinthians2,
         .galatians,
-        .ephesians
+        .ephesians,
+        .philippians
         ]
     
     
