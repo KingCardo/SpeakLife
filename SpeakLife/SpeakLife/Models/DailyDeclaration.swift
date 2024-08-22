@@ -64,8 +64,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case romans
     case corinthians1, corinthians2
     case galatians, ephesians, philippians, colossians
-    case thessalonians1, thessalonians2
-    case timothy1, timothy2, titus, philemon
+//    case thessalonians1, thessalonians2
+//    case timothy1, timothy2, titus, philemon
     case hebrews, james
     case peter1, peter2
     case john1, john2, john3, jude, revelation
@@ -88,6 +88,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .galatians,
         .ephesians,
         .philippians,
+        .colossians,
+        .hebrews,
         .addiction,
         .confidence,
         .fear,
@@ -126,7 +128,9 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .corinthians2,
         .galatians,
         .ephesians,
-        .philippians
+        .philippians,
+        .colossians,
+        .hebrews
         ]
     
     

@@ -19252,8 +19252,114 @@
             "category": "philippians",
             "book": "Philippians 2:14",
         },
-        
-        
+        {
+            "text": "He has rescued us from the kingdom of darkness and transferred us into the Kingdom of his dear Son, who purchased our freedom and forgave our sins.",
+            "isFavorite": false,
+            "category": "colossians",
+            "book": "Colossians 1:13-14",
+        },
+        {
+            "text": "Christ is the visible image of the invisible God.",
+            "isFavorite": false,
+            "category": "colossians",
+            "book": "Colossians 1:15",
+        },
+        {
+            "text": "You have died with Christ, and he has set you free from the spiritual powers of this world.",
+            "isFavorite": false,
+            "category": "colossians",
+            "book": "Colossians 2:20",
+        },
+        {
+            "text": "Since God chose you to be the holy people he loves, you must clothe yourseleves with tenderhearted mercy, kindness, humility, gentleness, and patience.",
+            "isFavorite": false,
+            "category": "colossians",
+            "book": "Colossians 3:12",
+        },
+        {
+            "text": "Above all, clothe yourselves with love.",
+            "isFavorite": false,
+            "category": "colossians",
+            "book": "Colossians 3:14",
+        },
+        {
+            "text": "You are called to live in peace and always be thankful.",
+            "isFavorite": false,
+            "category": "colossians",
+            "book": "Colossians 3:15",
+        },
+        {
+            "text": "For you died to this life, and your real life is hidden with Christ in God.",
+            "isFavorite": false,
+            "category": "colossians",
+            "book": "Colossians 3:3",
+        },
+        {
+            "text": "This High Priest of ours understands our weaknesses, for he faced all of the same testings we do, yet he did not sin.",
+            "isFavorite": false,
+            "category": "hebrews",
+            "book": "Hebrews 4:15",
+        },
+        {
+            "text": "For every house is built by someone, but God is the builder of everything.",
+            "isFavorite": false,
+            "category": "hebrews",
+            "book": "Hebrews 3:4"
+        },
+        {
+            "text": "For the word of God is alive and active. Sharper than any double-edged sword, it penetrates even to dividing soul and spirit, joints and marrow; it judges the thoughts and attitudes of the heart.",
+            "isFavorite": false,
+            "category": "hebrews",
+            "book": "Hebrews 4:12"
+        },
+        {
+            "text": "Let us then approach God’s throne of grace with confidence, so that we may receive mercy and find grace to help us in our time of need.",
+            "isFavorite": false,
+            "category": "hebrews",
+            "book": "Hebrews 4:16"
+        },
+        {
+            "text": "Jesus Christ is the same yesterday and today and forever.",
+            "isFavorite": false,
+            "category": "hebrews",
+            "book": "Hebrews 13:8"
+        },
+        {
+            "text": "Now faith is confidence in what we hope for and assurance about what we do not see.",
+            "isFavorite": false,
+            "category": "hebrews",
+            "book": "Hebrews 11:1"
+        },
+        {
+            "text": "And without faith it is impossible to please God, because anyone who comes to him must believe that he exists and that he rewards those who earnestly seek him.",
+            "isFavorite": false,
+            "category": "hebrews",
+            "book": "Hebrews 11:6"
+        },
+        {
+            "text": "Let us hold unswervingly to the hope we profess, for he who promised is faithful.",
+            "isFavorite": false,
+            "category": "hebrews",
+            "book": "Hebrews 10:23"
+        },
+        {
+            "text": "For by one sacrifice he has made perfect forever those who are being made holy.",
+            "isFavorite": false,
+            "category": "hebrews",
+            "book": "Hebrews 10:14"
+        },
+        {
+            "text": "Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off everything that hinders and the sin that so easily entangles. And let us run with perseverance the race marked out for us.",
+            "isFavorite": false,
+            "category": "hebrews",
+            "book": "Hebrews 12:1"
+        },
+        {
+            "text": "No discipline seems pleasant at the time, but painful. Later on, however, it produces a harvest of righteousness and peace for those who have been trained by it.",
+            "isFavorite": false,
+            "category": "hebrews",
+            "book": "Hebrews 12:11"
+        }
         
         
     ]

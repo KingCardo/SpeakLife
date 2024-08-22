@@ -139,7 +139,7 @@ struct DiscountSubscriptionView: View {
             Spacer()
                 .frame(height:  UIScreen.main.bounds.height * 0.03)
             
-            Text("Unlock the power of positivity at a fraction of the price! For a limited time only, enjoy a special discount on our premium subscription. Transform your daily routine with exclusive access to all our affirmations, personalized features, and more. Don’t miss out—upgrade today and start living your best life!")
+            Text("Unlock exclusive savings on our premium content! Take advantage of our special offers and enjoy top-quality features at a fraction of the price. Limited-time discounts available—don’t miss out!")
                 .font(.body)
                 .foregroundStyle(.white)
                 .padding([.leading, .trailing, .top])
