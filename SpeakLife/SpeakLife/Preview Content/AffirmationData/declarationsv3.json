@@ -3,6 +3,30 @@
     "version": 2,
     "declarations": [
         {
+          "text": "No closed door can stop the fulfillment of the destiny I have prepared for you.",
+          "book": "- Jesus",
+          "isFavorite": false,
+          "category": "destiny"
+        },
+        {
+            "text": "I hold the keys to every door, and I will open the right ones for you.",
+            "book": "- Jesus",
+            "isFavorite": false,
+            "category": "destiny"
+        },
+        {
+            "text": "Closed doors are opportunities for My supernatural intervention in your life.",
+            "book": "- Jesus",
+            "isFavorite": false,
+            "category": "destiny"
+        },
+        {
+            "text": "I am the God of breakthroughs; trust me to break through every closed door for you.",
+            "book": "- Jesus",
+            "isFavorite": false,
+            "category": "destiny"
+        },
+        {
             "text": "I am blessed because I walk with God.",
             "book": "Psalm 1:1",
             "isFavorite": false,

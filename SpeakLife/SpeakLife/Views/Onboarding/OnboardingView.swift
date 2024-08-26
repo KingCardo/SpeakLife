@@ -14,6 +14,7 @@ struct OnboardingView: View  {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var viewModel: DeclarationViewModel
+    @EnvironmentObject var streakViewModel: StreakViewModel
     @Environment(\.colorScheme) var colorScheme
     
     @State var selection: Tab = .personalization
@@ -378,6 +379,7 @@ struct OnboardingView: View  {
                         if granted {
                             appState.notificationEnabled = true
                             registerNotifications()
+                            NotificationManager.shared.prepareDailyStreakNotification(with: appState.userName, streak: streakViewModel.currentStreak, hasCurrentStreak: streakViewModel.hasCurrentStreak)
                             
                         } else {
                             appState.notificationEnabled = false

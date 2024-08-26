@@ -61,6 +61,67 @@ final class NotificationManager: NSObject {
         newYearsReminder()
     }
     
+    func prepareDailyStreakNotification(with name: String = "Friend", streak: Int, hasCurrentStreak: Bool) {
+        let noStreakBody: [String] = ["Don’t forget to speak life today! God’s promises are waiting for you. ✨",
+                                   "Have you spoken God’s promises yet? Take a moment to activate them now. 🙏",
+                                   "A quick reminder: Speak life today and unlock God’s blessings over your day. 🌟",
+                                   "Your day isn’t complete without declaring God’s promises. Speak life now! 🗣️",
+                                   "Missed speaking life today? It’s not too late to declare God’s truth over your life. ⏳",
+                                   "Take a moment to speak God’s promises—there’s still time to activate His power today. ⏰",
+                                   "Don’t let today pass without speaking life. God’s promises are ready to be activated! 💬",
+                                   "A gentle nudge—have you declared God’s promises today? Speak life now! 🌱",
+                                   "Haven’t spoken life today? Your words can still activate God’s promises. 🕊️",
+                                   "Reminder: Speak life and let God’s promises guide the rest of your day. ✨",
+                                   ]
+        
+        let hasStreakBody: [String] = [
+            "Well done! You spoke life today and activated God’s promises. Keep it going! 🎉",
+            "Great job! Your words are bringing God’s promises to life. Keep the streak alive! 🔥",
+            "You did it! God’s promises are at work because you spoke life today. 🙌",
+            "Streak on fire! 🔥 Keep declaring God’s truth and watch the blessings flow.",
+            "Consistency is key! You’re unlocking God’s promises one day at a time. ✨",
+            "Another day, another victory! Keep speaking life and activating God’s power. 🎯",
+            "Congratulations! You’ve made today count by declaring God’s promises. Keep shining! 🌟",
+            "Your streak is going strong! Keep speaking life and watch God’s promises unfold. 💫",
+            "Amazing! You’re on a roll—keep declaring God’s truth and blessings. 🗣️",
+            "Way to go! Your commitment to speaking life is making a difference. 🙏",
+            "You’re unstoppable! Keep activating God’s promises daily. 🚀",
+            "Another day of speaking life—your streak is growing, and so are the blessings! 🌱",
+            "Great consistency! Keep declaring God’s promises and see the rewards. 🌈",
+            "You’re on the right path! Keep up the great work and watch God’s promises manifest. 🌟",
+            "Streak maintained! 🎉 Your faithfulness in speaking life is powerful. Keep it up!",
+        ]
+        
+        let body: String
+        
+        if hasCurrentStreak {
+            body = "Hey \(name),\(hasStreakBody.randomElement()!)"
+        } else {
+            body = "Hey \(name),\(noStreakBody.randomElement()!)"
+        }
+        
+        let content = UNMutableNotificationContent()
+        content.title = "SpeakLife"
+        content.body = body
+        content.sound = UNNotificationSound.default
+        
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.autoupdatingCurrent
+        dateComponents.timeZone = TimeZone.autoupdatingCurrent
+        dateComponents.hour = 20
+        
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: dateComponents, repeats: false)
+        let id = UUID().uuidString
+        
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        notificationCenter.add(request) { (error) in
+            if error != nil {
+                //  TODO: - handle error
+            }
+        }
+    }
+    
     func getNotificationData(for count: Int,
                                      categories: Set<DeclarationCategory>?)  ->  [NotificationProcessor.NotificationData] {
         var notificationData: [NotificationProcessor.NotificationData] = []

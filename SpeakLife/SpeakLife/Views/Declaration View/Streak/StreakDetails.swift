@@ -20,6 +20,10 @@ final class StreakViewModel: ObservableObject {
     @AppStorage("longestStreak") var longestStreak = 0
     @AppStorage("totalDaysCompleted") var totalDaysCompleted = 0
     
+    var hasCurrentStreak: Bool {
+        currentStreak > 0
+    }
+    
     @Published var titleText: String = ""
     @Published var subTitleText: String = ""
     @Published var subTitleDetailText: String = ""
