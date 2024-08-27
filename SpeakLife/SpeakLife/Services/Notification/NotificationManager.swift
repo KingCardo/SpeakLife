@@ -112,9 +112,10 @@ final class NotificationManager: NSObject {
         
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: dateComponents, repeats: false)
-        let id = UUID().uuidString
+        let id = "StreakReminder"
         
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+       
         notificationCenter.add(request) { (error) in
             if error != nil {
                 //  TODO: - handle error

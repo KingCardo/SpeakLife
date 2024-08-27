@@ -58,10 +58,9 @@ struct SpeakLifeApp: App {
                 appDelegate.appState = appState
                 appDelegate.declarationStore = declarationStore
                     
-//                if appState.notificationEnabled {
-//                    scheduleReminderNotification()
-//                    NotificationManager.shared.prepareDailyStreakNotification(with: appState.userName, streak: streakViewModel.currentStreak, hasCurrentStreak: streakViewModel.hasCurrentStreak)
-//                }
+                if appState.notificationEnabled {
+                    NotificationManager.shared.prepareDailyStreakNotification(with: appState.userName, streak: streakViewModel.currentStreak, hasCurrentStreak: streakViewModel.hasCurrentStreak)
+                }
                 
                 //reset for updated versions
                 if appState.notificationEnabled, appState.resetNotifications {
@@ -117,7 +116,6 @@ struct SpeakLifeApp: App {
     private func resetNotifications() {
         let categories = Set(appState.selectedNotificationCategories.components(separatedBy: ",").compactMap({ DeclarationCategory($0) }))
         NotificationManager.shared.registerNotifications(count: appState.notificationCount, startTime: appState.startTimeIndex, endTime: appState.endTimeIndex, categories: categories)
-        NotificationManager.shared.prepareDailyStreakNotification(with: appState.userName, streak: streakViewModel.currentStreak, hasCurrentStreak: streakViewModel.hasCurrentStreak)
         DispatchQueue.main.async {
             appState.lastNotificationSetDate = Date()
         }

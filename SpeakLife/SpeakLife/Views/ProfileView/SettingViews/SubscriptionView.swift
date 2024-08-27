@@ -250,7 +250,7 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     @State private var currentTestimonialIndex: Int = 0
-    let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect()
+   // let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect()
   
    
     @State private var textOpacity: Double = 0
@@ -259,8 +259,8 @@ struct SubscriptionView: View {
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR19
-    @State var firstSelection = InAppId.Subscription.speakLife1YR19
+    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR29
+    @State var firstSelection = InAppId.Subscription.speakLife1YR29
     @State private var localizedPrice: String = "$19.00"
     @State private var regionCode: String = "US"
     @State private var isCheaperPricingCountry = false
@@ -292,7 +292,7 @@ struct SubscriptionView: View {
                 Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
             })
             .onAppear() {
-                localizePrice()
+              //  localizePrice()
             }
     }
     
@@ -336,7 +336,7 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 60)
                     VStack(alignment: .center) {
-                        Text("Make Meditation a Priority and become Victorious.", comment: "unlock everything premium view")
+                        Text("Speak Life and Walk in Victory ✝️", comment: "unlock everything premium view")
                             .multilineTextAlignment(.center)
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 24))
                             .fontWeight(.bold)

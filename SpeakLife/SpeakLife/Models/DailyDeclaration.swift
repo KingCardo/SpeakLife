@@ -233,7 +233,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     var isPremium: Bool {
         switch self {
-        case .general, .destiny, .favorites, .myOwn, .ephesians, .love, .galatians, .mark, .luke, .john, .romans : return false
+        case .general, .destiny, .favorites, .myOwn, .ephesians, .love, .galatians, .matthew, .mark, .luke, .john, .romans : return false
         default: return true
         }
     }

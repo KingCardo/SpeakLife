@@ -27,6 +27,7 @@ enum Tab: String {
     case useCase
     case loading
     case subscription
+    case scholarship
     case discount
     
 }

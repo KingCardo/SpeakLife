@@ -62,20 +62,20 @@ struct OnboardingView: View  {
                     .tag(Tab.improvement)
                 
                 IntroTipScene(title: "Daily Transformation",
-                              bodyText: "Are You Ready to Speak Life?",
-                              subtext: "Master the art of speaking and activating the promises of God, full of blessings, health and reshaping your destiny.",
+                              bodyText: "Welcome to your new daily routine",
+                              subtext: "It's a simple thing, a few minutes every day speaking life and God's promises, but over time it will transform your life - if you let it.",
                               ctaText: "Let's go",
                               showTestimonials: true,
-                              size: geometry.size, callBack: advance)
+                              isScholarship: false, size: geometry.size, callBack: advance)
                     .tag(Tab.tip)
                 
-                IntroTipScene(title: "Meditation",
-                              bodyText: "Be like Jesus and Speak to your problems (mountains)",
-                              subtext: "Have faith in God. Truly I tell you, if anyone says to this mountain, ‘Go, throw yourself into the sea,’ and does not doubt in their heart but believes that what they say will happen, it will be done for them. Therefore I tell you, whatever you ask for in prayer, believe that you have received it, and it will be yours. Mark 11:22-24",//"Romans 12:2 Don’t copy the behavior and customs of this world, but let God transform you into a new person by changing the way you think. Then you will learn to know God’s will for you, which is good and pleasing and perfect.",
-                              ctaText: "Transform me",
-                              showTestimonials: false,
-                              size: geometry.size, callBack: advance)
-                    .tag(Tab.mindset)
+//                IntroTipScene(title: "Speak Life",
+//                              bodyText: "Be like Jesus and Speak to your problems (mountains)",
+//                              subtext: "Have faith in God. Truly I tell you, if anyone says to this mountain, ‘Go, throw yourself into the sea,’ and does not doubt in their heart but believes that what they say will happen, it will be done for them. Therefore I tell you, whatever you ask for in prayer, believe that you have received it, and it will be yours. Mark 11:22-24",//"Romans 12:2 Don’t copy the behavior and customs of this world, but let God transform you into a new person by changing the way you think. Then you will learn to know God’s will for you, which is good and pleasing and perfect.",
+//                              ctaText: "Transform me",
+//                              showTestimonials: false,
+//                              isScholarship: false, size: geometry.size, callBack: advance)
+//                    .tag(Tab.mindset)
                 
                 NotificationOnboarding(size: geometry.size) {
                     advance()
@@ -105,6 +105,9 @@ struct OnboardingView: View  {
                 
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
+                
+                scholarshipScene(size: geometry.size, advance: advance)
+                    .tag(Tab.scholarship)
                 
 //                discountScene(size: geometry.size)
 //                    .tag(Tab.discount)
@@ -183,6 +186,50 @@ struct OnboardingView: View  {
         .onAppear {
             revealText()
         }
+    }
+   
+    private func scholarshipScene(size: CGSize, advance: @escaping () -> Void) -> some View  {
+        
+        ZStack {
+            VStack {
+                Spacer().frame(height: 15)
+                IntroTipScene(title: "Scholarships Available!",
+                              bodyText: "",
+                              subtext: "SpeakLife is available to everyone regardless of financial circumstance. Pay what feels right or apply for a full scholarship. Each yearly subscription includes a one-week free trial, giving you the chance to fully experience SpeakLife and receive delight and victory.",
+                              ctaText: "Continue",
+                              showTestimonials: false,
+                              isScholarship: true, size: size, callBack: nil)
+            }
+            
+            VStack  {
+                HStack  {
+                    Button(action:  advance) {
+                        Image(systemName: "xmark.circle.fill")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(.white)
+                        
+                    }
+                    Spacer()
+                }
+                .padding()
+                
+                Spacer()
+            }
+            if viewModel.isPurchasing {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .scaleEffect(2)
+            }
+        }
+        .background {
+            Image(subscriptionImage)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: size.width, height: size.height * 1.2)
+                .edgesIgnoringSafeArea([.top])
+        }
+        
     }
     
     func revealText() {
@@ -284,7 +331,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("IntroLifeDone", parameters: nil)
                 case .tip:
                     impactMed.impactOccurred()
-                    selection = .mindset
+                    selection = .notification
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("IntroTipScreenDone", parameters: nil)
                 case .mindset:
@@ -309,11 +356,17 @@ struct OnboardingView: View  {
                     onboardingTab = selection.rawValue
 //                    
                 case .subscription:
-                    viewModel.choose(.general) { _ in }
-                    moveToDiscount()
-                    //dismissOnboarding()
                     Analytics.logEvent("SubscriptionScreenDone", parameters: nil)
+                    viewModel.choose(.general) { _ in }
+                    if subscriptionStore.isPremium {
+                        dismissOnboarding()
+                    } else {
+                        selection = .scholarship
+                    }
+                   
                     // selection = .widgets
+                case .scholarship:
+                    dismissOnboarding()
                 case .widgets:
                     if isDonePersonalization {
                         selection = .subscription
@@ -379,7 +432,7 @@ struct OnboardingView: View  {
                         if granted {
                             appState.notificationEnabled = true
                             registerNotifications()
-                            NotificationManager.shared.prepareDailyStreakNotification(with: appState.userName, streak: streakViewModel.currentStreak, hasCurrentStreak: streakViewModel.hasCurrentStreak)
+                           // NotificationManager.shared.prepareDailyStreakNotification(with: appState.userName, streak: streakViewModel.currentStreak, hasCurrentStreak: streakViewModel.hasCurrentStreak)
                             
                         } else {
                             appState.notificationEnabled = false

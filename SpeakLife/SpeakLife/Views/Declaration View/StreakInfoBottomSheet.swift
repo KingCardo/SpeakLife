@@ -20,7 +20,7 @@ struct StreakInfoBottomSheet: View {
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 26, relativeTo: .title))
                 .padding()
                 .foregroundColor(.black)
-            Text("Practice meditating on a certain scripture, saying it 7x a day activating the Word! Then you will reap what you sow 🌱")
+            Text("Practice affirming, imagining, and meditating on a certain scripture, saying it 7x a day activating the Word! Then you will reap what you sow 🌱")
                 .lineLimit(nil)
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
                 .padding([.leading,.trailing])

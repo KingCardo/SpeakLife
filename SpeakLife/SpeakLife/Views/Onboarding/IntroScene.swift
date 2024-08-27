@@ -9,21 +9,33 @@ import SwiftUI
 
 struct IntroTipScene: View {
     
+    @EnvironmentObject var viewModel: DeclarationViewModel
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
     @State private var currentTestimonialIndex: Int = 0
     let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect()
+    let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let title: String
     let bodyText: String
     let subtext: String
     let ctaText: String
     let showTestimonials: Bool
+    let isScholarship: Bool
     
     let size: CGSize
-    let callBack: (() -> Void)
+    let callBack: (() -> Void)?
+    var buyCallBack: (() -> Void)?
+    @State var errorTitle = ""
+    @State var isShowingError: Bool = false
+    
+    @State private var selectedOption = InAppId.Subscription.speakLife1YR29
     
     var body: some  View {
         introTipScene(size: size)
+            .alert(isPresented: $isShowingError, content: {
+                Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
+            })
     }
     
    
@@ -46,9 +58,10 @@ struct IntroTipScene: View {
           //  Spacer().frame(height: 40)
             VStack {
                 Text(title)
-                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 40, relativeTo: .title))
+                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 34, relativeTo: .title))
                     .fontWeight(.semibold)
                     .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
+                    .padding([.leading, .trailing], 4)
                 
                 Spacer().frame(height: 16)
                 
@@ -60,19 +73,40 @@ struct IntroTipScene: View {
                         .lineSpacing(10)
                         .lineLimit(nil)
                     
-                    Spacer().frame(height: appState.onBoardingTest ? size.height * 0.05 : 24)
+                    Spacer().frame(height: appState.onBoardingTest ? size.height * 0.04 : 24)
                     
                     
                     // Begin your day with words that open doors and defy obstacles, just as Jesus did."
                     Text(subtext)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
-                        .foregroundColor(appState.onBoardingTest ? .white :Constants.DALightBlue)
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
+                        .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
                         .foregroundColor(Color(red: 119, green: 142, blue: 180, opacity: 1))
                         .lineLimit(nil)
                 }
                 .frame(width: size.width * 0.8)
+                
+                
+                if isScholarship {
+                    Spacer().frame(height: size.height * 0.05)
+                    VStack {
+                        Text("Select an option")
+                            .foregroundStyle(Color.white)
+                            .font(.headline)
+                           // .padding()
+                    }
+                    Picker("subscriptionScholarship", selection: $selectedOption) {
+                        ForEach(InAppId.allInApp) { subscription in
+                            Text(subscription.scholarshipTitle)
+                                .tag(subscription)
+                                .foregroundStyle(Color.white)
+                        }
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                    .frame(height: 150)
+                   // .clipped()
+                }
                 if showTestimonials {
                    
                     TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
@@ -86,10 +120,19 @@ struct IntroTipScene: View {
                 } else {
                     Spacer().frame(height: size.height * 0.20)
                 }
+                
+               
+                
             }
             Spacer()
             
-            Button(action: callBack) {
+            Button {
+                if isScholarship {
+                    makePurchase()
+                } else {
+                    callBack?()
+                }
+            } label: {
                 HStack {
                     Text(ctaText)
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
@@ -124,7 +167,30 @@ struct IntroTipScene: View {
                 .onDisappear {
                     timer.upstream.connect().cancel()
                 }
-        
+
+    }
+    
+    private func makePurchase() {
+        impactMed.impactOccurred()
+        Task {
+            
+            viewModel.isPurchasing = true
+            await buy()
+            viewModel.isPurchasing = false
+        }
+    }
+    
+    func buy() async {
+        do {
+            if let _ = try await subscriptionStore.purchaseWithID([selectedOption.id]) {
+                callBack?()
+            }
+        } catch StoreError.failedVerification {
+            errorTitle = "Your purchase could not be verified by the App Store."
+            isShowingError = true
+        } catch {
+            print("Failed purchase for \(selectedOption.rawValue): \(error)")
+        }
     }
 }
 
