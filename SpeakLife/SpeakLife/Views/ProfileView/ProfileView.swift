@@ -71,7 +71,7 @@ struct ProfileView: View {
                 .edgesIgnoringSafeArea([.all])
                 .overlay(
                     Rectangle()
-                        .fill(Color.black.opacity(0.5))
+                        .fill(Color.black.opacity(0.2))
                         .edgesIgnoringSafeArea(.all)
                 )
             VStack {
@@ -81,6 +81,7 @@ struct ProfileView: View {
                 List {
                     Section(header: Text("Premium".uppercased()).font(.caption)) {
                         subscriptionRow
+                        patronRow
                         bookLink
                     }
                     
@@ -112,7 +113,7 @@ struct ProfileView: View {
                         shareRow
                         reviewRow
                         feedbackRow
-                        prayerRequestRow
+                        scholarshipView
                         
                     }
 
@@ -376,10 +377,52 @@ struct ProfileView: View {
     
     @MainActor
     @ViewBuilder
-    private var prayerRequestRow: some View {
+    private var scholarshipView: some View {
         if MFMailComposeViewController.canSendMail(), !subscriptionStore.isPremium {
             SettingsRow(isPresentingContentView: $isPresentingPrayerRequestView, imageTitle: "gift.fill", title: "Receive a free year on us", viewToPresent: LazyView(MailView(isShowing: $isPresentingPrayerRequestView, result: self.$result, origin: .profile))) {
                 presentPrayerRequestView()
+            }
+        }
+    }
+    @ViewBuilder
+    private var patronView: some View {
+            VStack {
+                Spacer().frame(height: UIScreen.main.bounds.size.height * 0.05)
+                IntroTipScene(title: "Pay What Feels Right",
+                              bodyText: "",
+                              subtext: "Please support our mission of delivering Jesus, daily peace, love, and transformation to a world in need. Unlocks all features.",
+                              ctaText: "Continue",
+                              showTestimonials: false,
+                              isScholarship: true, size: UIScreen.main.bounds.size, callBack: nil)
+            }
+            
+            if declarationStore.isPurchasing {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .scaleEffect(2)
+            }
+    }
+    
+    
+    @MainActor
+    @ViewBuilder
+    private var patronRow: some View {
+        if !subscriptionStore.isPremium {
+            HStack {
+                Image(systemName: "heart.fill")
+                    .foregroundColor(Constants.DAMidBlue)
+                NavigationLink(LocalizedStringKey("Become A Patron"), destination: patronView)
+                    .opacity(0)
+                    .background(
+                        HStack {
+                            Text("Become A Patron", comment:  "Patron row")
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 8)
+                                .foregroundColor(Constants.DAMidBlue)
+                        })
             }
         }
     }

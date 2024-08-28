@@ -327,7 +327,7 @@ struct SubscriptionView: View {
                     .edgesIgnoringSafeArea([.top])
                     .overlay(
                         Rectangle()
-                            .fill(Color.black.opacity(0.5))
+                            .fill(Color.black.opacity(0.2))
                     )
            
             ScrollView {

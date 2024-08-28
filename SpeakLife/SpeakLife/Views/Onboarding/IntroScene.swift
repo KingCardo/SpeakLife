@@ -54,8 +54,7 @@ struct IntroTipScene: View {
                     .frame(width: 235, height: size.height * 0.25)
             }
            
-            
-          //  Spacer().frame(height: 40)
+
             VStack {
                 Text(title)
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 34, relativeTo: .title))
@@ -75,8 +74,7 @@ struct IntroTipScene: View {
                     
                     Spacer().frame(height: appState.onBoardingTest ? size.height * 0.04 : 24)
                     
-                    
-                    // Begin your day with words that open doors and defy obstacles, just as Jesus did."
+            
                     Text(subtext)
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
@@ -85,7 +83,7 @@ struct IntroTipScene: View {
                         .foregroundColor(Color(red: 119, green: 142, blue: 180, opacity: 1))
                         .lineLimit(nil)
                 }
-                .frame(width: size.width * 0.8)
+                .frame(width: size.width * 0.9)
                 
                 
                 if isScholarship {
@@ -117,15 +115,13 @@ struct IntroTipScene: View {
                         .foregroundStyle(Color.white)
                    
                   
-                } else {
-                    Spacer().frame(height: size.height * 0.20)
                 }
-                
-               
-                
+         
+                  
+    
             }
-            Spacer()
-            
+    
+            Spacer().frame(height: size.height * 0.25)
             Button {
                 if isScholarship {
                     makePurchase()
