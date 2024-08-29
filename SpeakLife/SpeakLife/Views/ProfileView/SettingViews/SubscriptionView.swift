@@ -389,8 +389,7 @@ struct SubscriptionView: View {
                     ForEach(testimonials) { testimonial in
                         TestimonialView(testimonial: testimonial, size: size)
                     }
-//                    TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
-//                        .id(currentTestimonialIndex)
+
                     Spacer().frame(height: 100)
                     
                 }
@@ -402,10 +401,9 @@ struct SubscriptionView: View {
                 VStack {
                     Spacer()
                     ZStack {
-                        // White background
-                       // Gradients().cyanPurple
-                        Color.white
-                            .frame(maxWidth: .infinity)
+
+                        Color.black.opacity(0.9)
+                            .frame(width: UIScreen.main.bounds.width)
                             .frame(height: 80) // Double the height of the button
                             .cornerRadius(0)
                         continueButton(gradient: linearGradient)
@@ -653,34 +651,6 @@ struct SubscriptionView: View {
            return Locale.current.region?.identifier ?? "US"
        }
     
-//    func lifetimeSelectionBox() -> some View {
-//        ZStack {
-//            RoundedRectangle(cornerRadius: 10)
-//                .strokeBorder(Color.gray, lineWidth: 1)
-//                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == thirdSelection ? Constants.DAMidBlue : .clear))
-//                .frame(height: 60)
-//            
-//            HStack {
-//                VStack(alignment: .leading, spacing: 6) {
-//                    HStack {
-//                        Text("\(thirdSelection.ctaDurationTitle)")
-//                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-//                        Text("\(thirdSelection.ctaPriceTitle)")
-//                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
-//                            .bold()
-//                    }
-//                }
-//                .foregroundStyle(.white)
-//                .padding(.leading)
-//                
-//                Spacer()
-//            }
-//        }
-//        
-//        .padding([.leading, .trailing], 20)
-//    }
-    
-    
 }
 
 
@@ -747,17 +717,17 @@ struct TestimonialView: View {
                 .frame(height: 110)
                 .matchedGeometryEffect(id: "text", in: animationNamespace)
             
-            Text("- \(testimonial.author), \(testimonial.details)")
-                .font(.footnote)
-                .opacity(currentTextOpacity)
-                .frame(maxWidth: .infinity, alignment: .trailing) // Right-align author details
-                .padding([.horizontal, .bottom])
-                .matchedGeometryEffect(id: "author", in: animationNamespace)
-                .transition(.opacity)
+//            Text("- \(testimonial.author), \(testimonial.details)")
+//                .font(.footnote)
+//                .opacity(currentTextOpacity)
+//                .frame(maxWidth: .infinity, alignment: .trailing) // Right-align author details
+//                .padding([.horizontal, .bottom])
+//                .matchedGeometryEffect(id: "author", in: animationNamespace)
+//                .transition(.opacity)
         }
         .foregroundColor(.white)
         .padding()
-        .frame(width: size.width * 0.90, height: 200)
+        .frame(width: size.width * 0.90, height: size.height * 0.2)
         .background(Constants.DAMidBlue.opacity(0.9))
         .cornerRadius(20)
         .shadow(radius: 5)

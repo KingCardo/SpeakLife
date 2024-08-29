@@ -198,12 +198,12 @@ struct IntroTipScene: View {
 let testimonials: [Testimonial] = [
     Testimonial(id: 1, text: "This app has transformed my daily routine, bringing peace and inspiration to every day.", author: "Alex J.", details: "UK"),
     Testimonial(id: 2, text: "A truly uplifting experience every time I use this app. Highly recommended for anyone seeking daily motivation.", author: "Caleb W.", details: "USA"),
-    Testimonial(id: 3, text: "I've found solace and strength in the daily affirmations. It's a part of my morning ritual now!", author: "Samantha F.", details: "USA"),
-    Testimonial(id: 4, text: "I love creating my own affirmations and saying them thruout the day!", author: "Rahul P.", details: "India"),
-    Testimonial(id: 5, text: "Every morning, I look forward to the daily affirmations and devotionals. They set a positive tone for my day and remind me of the strength within.", author: " Michael T.", details: "Australia"),
-    Testimonial(id: 6, text: "This app has been a true companion in my spiritual journey. The personalized scriptures have helped me find answers and peace in difficult times!", author: "Khalil P.", details: "Singapore"),
-    Testimonial(id: 7, text: "I never realized how impactful daily devotionals could be until I started using this app. It's like having a personal guide to navigate life's ups and downs.", author: "Emily C.", details: "United Kingdom"),
-    Testimonial(id: 8, text: "Integrating this app into my daily routine has been transformative. The affirmations and prayers provide a moment of peace and reflection that enriches my whole day.", author: "Maria S.", details: "Philippines")
+    Testimonial(id: 3, text: "I really love this app and have been sharing it with my friends and family! I bought the subscription and am pleased with it. Great job!", author: "Samantha F.", details: "USA"),
+    Testimonial(id: 4, text: "Powerful affirmations. Loving it!! Everyone should give it a try", author: "Rahul P.", details: "India"),
+    Testimonial(id: 5, text: "The words are very inspiring!", author: " Michael T.", details: "Australia"),
+    Testimonial(id: 6, text: "They are so random but with purpose, I would be outside on a walk then a scripture appears. Glory to God for this app", author: "Khalil P.", details: "Singapore"),
+    Testimonial(id: 7, text: "I love the awesome backgrounds, the the categories you can pick to suit, God uses all things for the good of those that love Him and are Called.", author: "Emily C.", details: "United Kingdom"),
+    Testimonial(id: 8, text: "I absolutely love this app bc instead of scrolling on tiktok, Instagram etc. I can scroll here and learn about God even more.", author: "Maria S.", details: "Philippines")
 ]
 
 struct IntroScene: View {
