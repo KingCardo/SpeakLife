@@ -33,7 +33,7 @@ struct IntentsBarView: View {
         HStack(spacing: 8) {
             
             categoryChooserButton
-            devotionalButton
+           // devotionalButton
             Spacer()
             themeChooserButton
             
@@ -95,19 +95,19 @@ struct IntentsBarView: View {
                 ThemeChooserView(themesViewModel: themeViewModel)
             }
             
-            if appState.onBoardingTest {
-                CapsuleImageButton(title: "person.crop.circle") {
-                    profileButtonTapped()
-                    Selection.shared.selectionFeedback()
-                }.sheet(isPresented: $isPresentingProfileView, onDismiss: {
-                    self.isPresentingProfileView = false
-                    timerViewModel.loadRemainingTime()
-                }, content: {
-                    ProfileView()
-                })
+//            if appState.onBoardingTest {
+//                CapsuleImageButton(title: "person.crop.circle") {
+//                    profileButtonTapped()
+//                    Selection.shared.selectionFeedback()
+//                }.sheet(isPresented: $isPresentingProfileView, onDismiss: {
+//                    self.isPresentingProfileView = false
+//                    timerViewModel.loadRemainingTime()
+//                }, content: {
+//                    ProfileView()
+//                })
                 //.foregroundColor(.white)
               //  ProfileBarButton(viewModel: ProfileBarButtonViewModel())
-            }
+           // }
         }
     }
     

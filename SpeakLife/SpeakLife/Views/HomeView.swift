@@ -50,19 +50,19 @@ struct HomeView: View {
     
     @ViewBuilder
     var homeView: some View {
-        if appState.onBoardingTest {
-            DeclarationView()
-                .id(appState.rootViewId)
-                .onAppear {
-                    appState.subscriptionTestnineteen = data.randomElement() ?? false
-                    viewModel.requestPermission()
-                    UIScrollView.appearance().isScrollEnabled = true
-                    if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
-                        AudioPlayerService.shared.playSound(files: resources)
-                    }
-                }
-                .environment(\.colorScheme, .dark)
-        } else {
+//        if appState.onBoardingTest {
+//            DeclarationView()
+//                .id(appState.rootViewId)
+//                .onAppear {
+//                   // appState.subscriptionTestnineteen = data.randomElement() ?? false
+//                    viewModel.requestPermission()
+//                    UIScrollView.appearance().isScrollEnabled = true
+//                    if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
+//                        AudioPlayerService.shared.playSound(files: resources)
+//                    }
+//                }
+//                .environment(\.colorScheme, .dark)
+//        } else {
             TabView {
                 DeclarationView()
                     .id(appState.rootViewId)
@@ -121,7 +121,7 @@ struct HomeView: View {
                 }
             }
             .environment(\.colorScheme, .dark)
-        }
+      //  }
     }
     
 //    func requestReview() {

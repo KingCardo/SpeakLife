@@ -116,7 +116,12 @@ struct IntroTipScene: View {
                    
                   
                 }
+                Spacer().frame(height: 24)
+                Text("Over 40K+ happy users 🥳")
+                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 25, relativeTo: .title))
+                    .foregroundStyle(Color.white)
          
+                Spacer()
                   
     
             }

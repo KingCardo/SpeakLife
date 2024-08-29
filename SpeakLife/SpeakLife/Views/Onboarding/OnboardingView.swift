@@ -65,7 +65,7 @@ struct OnboardingView: View  {
                               bodyText: "Welcome to your new daily routine",
                               subtext: "It's a simple thing, a few minutes every day speaking life and God's promises, but over time it will transform your life - if you let it.",
                               ctaText: "Let's go",
-                              showTestimonials: true,
+                              showTestimonials: false,
                               isScholarship: false, size: geometry.size, callBack: advance)
                     .tag(Tab.tip)
                 

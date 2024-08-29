@@ -386,18 +386,46 @@ struct SubscriptionView: View {
                     costDescription
                     
                     
+                    ForEach(testimonials) { testimonial in
+                        TestimonialView(testimonial: testimonial, size: size)
+                    }
 //                    TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
 //                        .id(currentTestimonialIndex)
+                    Spacer().frame(height: 100)
                     
                 }
+                .padding(.bottom, 80)
+               
                 }
+
+           
+                VStack {
+                    Spacer()
+                    ZStack {
+                        // White background
+                       // Gradients().cyanPurple
+                        Color.white
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 80) // Double the height of the button
+                            .cornerRadius(0)
+                        continueButton(gradient: linearGradient)
+                            .padding(.horizontal, 40)
+                            
+                    }
+                   
+                }
+                  
+               
             }
+           
             if declarationStore.isPurchasing {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
                     .scaleEffect(2)
             }
         }
+        
+        .edgesIgnoringSafeArea(.bottom)
     }
     
     @ViewBuilder
@@ -424,7 +452,7 @@ struct SubscriptionView: View {
     private func goPremiumStack() -> some View  {
         return VStack {
         
-            continueButton(gradient: linearGradient)
+           
     
             Spacer()
             .frame(height: 8)
@@ -476,7 +504,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: "Subscribe" , action: makePurchase)
+        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Start My 7-Day Free Trial" : "Subscribe" , action: makePurchase)
     }
    // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
     private func restore() {
@@ -755,7 +783,7 @@ struct TestimonialTextView: View {
     }
 }
 
-struct Testimonial {
+struct Testimonial: Identifiable {
     var id: Int
     var text: String
     var author: String

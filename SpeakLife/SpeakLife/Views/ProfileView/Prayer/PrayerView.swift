@@ -18,8 +18,12 @@ struct PrayerView: View {
             NavigationView {
                 ZStack {
                     // Gradient background
-                    LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom)
-                        .edgesIgnoringSafeArea(.all)
+                    Image(onboardingBGImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: UIScreen.main.bounds.size.width)
+                       .edgesIgnoringSafeArea([.all])
+
 
                     // ScrollView with VStack for custom list-like layout
                     ScrollView {

@@ -88,7 +88,8 @@ struct DevotionalView: View {
                         ShareSheet(activityItems: [viewModel.devotionalText as String,  URL(string: "\(APP.Product.urlID)")! as URL])
                     }
                 }
-                .padding([.top, .bottom], 40)
+                .padding([.top], 40)
+                .padding([.bottom], 80)
                 .onChange(of: scrollToTop) { value in
                     if value {
                         scrollView.scrollTo("titleID", anchor: .top)
