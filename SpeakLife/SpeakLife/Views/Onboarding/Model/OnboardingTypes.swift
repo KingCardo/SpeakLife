@@ -29,5 +29,9 @@ enum Tab: String {
     case subscription
     case scholarship
     case discount
+    case transformedLife
+    case likeJesus
+    case liveVictorious
+    case unshakeableFaith
     
 }

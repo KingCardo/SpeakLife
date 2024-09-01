@@ -24,9 +24,10 @@ struct ImprovementScene: View {
             Spacer().frame(height: 30)
                
                 VStack {
-                    Text("What would you like to practice first?", comment: "Intro scene title label")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 24, relativeTo: .title))
+                    Text("What areas of life do you need victory over the devil?", comment: "Intro scene title label")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 28, relativeTo: .title))
                         .fontWeight(.semibold)
+                        .multilineTextAlignment(.center)
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
                         .padding()
                         .lineLimit(2)
@@ -34,8 +35,8 @@ struct ImprovementScene: View {
                     Spacer().frame(height: 16)
                     
                     VStack {
-                        Text("Select as many as you like" , comment: "Intro scene instructions")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
+                        Text("Select as many as you need" , comment: "Intro scene instructions")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .body))
                             .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                             .multilineTextAlignment(.center)
                             .lineSpacing(10)

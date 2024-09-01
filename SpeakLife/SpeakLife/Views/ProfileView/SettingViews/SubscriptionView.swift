@@ -265,7 +265,7 @@ struct SubscriptionView: View {
     @State private var regionCode: String = "US"
     @State private var isCheaperPricingCountry = false
     
-    var secondSelection = InAppId.Subscription.speakLife1MO4
+    var secondSelection = InAppId.Subscription.speakLifeLifetime
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let size: CGSize
@@ -328,6 +328,7 @@ struct SubscriptionView: View {
                     .overlay(
                         Rectangle()
                             .fill(Color.black.opacity(0.2))
+                            .edgesIgnoringSafeArea(.all)
                     )
            
             ScrollView {
@@ -355,6 +356,13 @@ struct SubscriptionView: View {
                     FeatureView()
                     
                         .foregroundColor(.white)
+                    
+                    Spacer()
+                        .frame(height: 24)
+                    
+                    Text("Over 40K+ happy users 🥳")
+                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 25, relativeTo: .title))
+                        .foregroundStyle(Color.white)
                     
                     Spacer()
                         .frame(height: 24)
@@ -401,11 +409,14 @@ struct SubscriptionView: View {
                 VStack {
                     Spacer()
                     ZStack {
-
-                        Color.black.opacity(0.9)
-                            .frame(width: UIScreen.main.bounds.width)
-                            .frame(height: 80) // Double the height of the button
-                            .cornerRadius(0)
+                        Image(onboardingBGImage)
+                            .resizable()
+                            .frame(width: size.width, height: 80)
+                            .overlay(
+                                Rectangle()
+                                    .fill(Color.black.opacity(0.2))
+                                    .edgesIgnoringSafeArea(.all)
+                            )
                         continueButton(gradient: linearGradient)
                             .padding(.horizontal, 40)
                             

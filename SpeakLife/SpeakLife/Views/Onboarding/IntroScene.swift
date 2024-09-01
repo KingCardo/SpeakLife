@@ -13,7 +13,7 @@ struct IntroTipScene: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
     @State private var currentTestimonialIndex: Int = 0
-    let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect()
+    //let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect()
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let title: String
@@ -42,23 +42,14 @@ struct IntroTipScene: View {
     
     private func introTipScene(size: CGSize) -> some View  {
         VStack {
-            
-            if appState.onBoardingTest {
-                Spacer().frame(height: 30)
-            } else {
-                Spacer().frame(height: 90)
-                
-                Image("declarationsIllustration")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 235, height: size.height * 0.25)
-            }
+            Spacer().frame(height: 30)
            
 
-            VStack {
+            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
                 Text(title)
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 34, relativeTo: .title))
                     .fontWeight(.semibold)
+                    .multilineTextAlignment(.center)
                     .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
                     .padding([.leading, .trailing], 4)
                 
@@ -66,7 +57,7 @@ struct IntroTipScene: View {
                 
                 VStack {
                     Text(bodyText)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
@@ -76,7 +67,7 @@ struct IntroTipScene: View {
                     
             
                     Text(subtext)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
@@ -86,53 +77,30 @@ struct IntroTipScene: View {
                 .frame(width: size.width * 0.9)
                 
                 
-                if isScholarship {
-                    Spacer().frame(height: size.height * 0.05)
-                    VStack {
-                        Text("Select an option")
-                            .foregroundStyle(Color.white)
-                            .font(.headline)
-                           // .padding()
-                    }
-                    Picker("subscriptionScholarship", selection: $selectedOption) {
-                        ForEach(InAppId.allInApp) { subscription in
-                            Text(subscription.scholarshipTitle)
-                                .tag(subscription)
-                                .foregroundStyle(Color.white)
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                    .frame(height: 150)
-                   // .clipped()
-                }
-                if showTestimonials {
-                   
-                    TestimonialView(testimonial: testimonials[currentTestimonialIndex], size: size)
-                        .id(currentTestimonialIndex)
-                    Spacer().frame(height: 12)
-                    Text("Over 40K+ happy users")
-                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 25, relativeTo: .title))
-                        .foregroundStyle(Color.white)
-                   
-                  
-                }
-                Spacer().frame(height: 24)
-                Text("Over 40K+ happy users 🥳")
-                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 25, relativeTo: .title))
-                    .foregroundStyle(Color.white)
-         
-                Spacer()
-                  
+//                if isScholarship {
+//                    Spacer().frame(height: size.height * 0.05)
+//                    VStack {
+//                        Text("Select an option")
+//                            .foregroundStyle(Color.white)
+//                            .font(.headline)
+//                           // .padding()
+//                    }
+//                    Picker("subscriptionScholarship", selection: $selectedOption) {
+//                        ForEach(InAppId.allInApp) { subscription in
+//                            Text(subscription.scholarshipTitle)
+//                                .tag(subscription)
+//                                .foregroundStyle(Color.white)
+//                        }
+//                    }
+//                    .pickerStyle(WheelPickerStyle())
+//                    .frame(height: 150)
+//                }
     
             }
     
-            Spacer().frame(height: size.height * 0.25)
+            Spacer()
             Button {
-                if isScholarship {
-                    makePurchase()
-                } else {
-                    callBack?()
-                }
+                callBack?()
             } label: {
                 HStack {
                     Text(ctaText)
@@ -153,45 +121,15 @@ struct IntroTipScene: View {
         }
         .frame(width: size.width, height: size.height)
         .background(
-            Image(appState.onBoardingTest ? onboardingBGImage : "declarationBackground")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all)
-        )
-                    .onReceive(timer) { _ in
-                        withAnimation(.easeInOut) {
-                            let nextIndex = (currentTestimonialIndex + 1) % testimonials.count
-                            currentTestimonialIndex = nextIndex
-                        }
-                    }
-        
-                .onDisappear {
-                    timer.upstream.connect().cancel()
-                }
-
-    }
-    
-    private func makePurchase() {
-        impactMed.impactOccurred()
-        Task {
-            
-            viewModel.isPurchasing = true
-            await buy()
-            viewModel.isPurchasing = false
-        }
-    }
-    
-    func buy() async {
-        do {
-            if let _ = try await subscriptionStore.purchaseWithID([selectedOption.id]) {
-                callBack?()
+            ZStack {
+                Image(appState.onBoardingTest ? onboardingBGImage : "declarationBackground")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+                Color.black.opacity(0.4)
+                    .edgesIgnoringSafeArea(.all)
             }
-        } catch StoreError.failedVerification {
-            errorTitle = "Your purchase could not be verified by the App Store."
-            isShowingError = true
-        } catch {
-            print("Failed purchase for \(selectedOption.rawValue): \(error)")
-        }
+        )
     }
 }
 
@@ -200,10 +138,10 @@ let testimonials: [Testimonial] = [
     Testimonial(id: 2, text: "A truly uplifting experience every time I use this app. Highly recommended for anyone seeking daily motivation.", author: "Caleb W.", details: "USA"),
     Testimonial(id: 3, text: "I really love this app and have been sharing it with my friends and family! I bought the subscription and am pleased with it. Great job!", author: "Samantha F.", details: "USA"),
     Testimonial(id: 4, text: "Powerful affirmations. Loving it!! Everyone should give it a try", author: "Rahul P.", details: "India"),
-    Testimonial(id: 5, text: "The words are very inspiring!", author: " Michael T.", details: "Australia"),
-    Testimonial(id: 6, text: "They are so random but with purpose, I would be outside on a walk then a scripture appears. Glory to God for this app", author: "Khalil P.", details: "Singapore"),
-    Testimonial(id: 7, text: "I love the awesome backgrounds, the the categories you can pick to suit, God uses all things for the good of those that love Him and are Called.", author: "Emily C.", details: "United Kingdom"),
-    Testimonial(id: 8, text: "I absolutely love this app bc instead of scrolling on tiktok, Instagram etc. I can scroll here and learn about God even more.", author: "Maria S.", details: "Philippines")
+//    Testimonial(id: 5, text: "The words are very inspiring!", author: " Michael T.", details: "Australia"),
+//    Testimonial(id: 6, text: "They are so random but with purpose, I would be outside on a walk then a scripture appears. Glory to God for this app", author: "Khalil P.", details: "Singapore"),
+    Testimonial(id: 7, text: "I love the awesome backgrounds, the categories you can pick to suit, God uses all things for the good of those that love Him and are Called.", author: "Emily C.", details: "United Kingdom"),
+    Testimonial(id: 8, text: "I absolutely love this app because instead of scrolling on tiktok, Instagram etc. I can scroll here and learn about God even more.", author: "Maria S.", details: "Philippines")
 ]
 
 struct IntroScene: View {

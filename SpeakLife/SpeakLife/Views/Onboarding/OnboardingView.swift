@@ -17,11 +17,11 @@ struct OnboardingView: View  {
     @EnvironmentObject var streakViewModel: StreakViewModel
     @Environment(\.colorScheme) var colorScheme
     
-    @State var selection: Tab = .personalization
+    @State var selection: Tab = .transformedLife
     @State var showLastChanceAlert = false
     @State var isDonePersonalization = false
     @StateObject var improvementViewModel = ImprovementViewModel()
-    @AppStorage("onboardingTab") var onboardingTab = Tab.personalization.rawValue
+    @AppStorage("onboardingTab") var onboardingTab = Tab.transformedLife.rawValue
     @State private var isTextVisible = false
    
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
@@ -40,18 +40,47 @@ struct OnboardingView: View  {
         GeometryReader { geometry in
             TabView(selection: $selection) {
                
-                PersonalizationScene(size: geometry.size, callBack: advance)
-                    .tag(Tab.personalization)
-                
-        
-                NameScene(size: geometry.size, callBack: advance)
-                        .tag(Tab.name)
-                
+//                PersonalizationScene(size: geometry.size, callBack: advance)
+//                    .tag(Tab.personalization)
+//                
+//        
+//                NameScene(size: geometry.size, callBack: advance)
+//                        .tag(Tab.name)
+//                
 //                AgeCollectionView(size: geometry.size, callBack: advance)
 //                        .tag(Tab.age)
 //                
 //                GenderCollectionView(size: geometry.size, callBack: advance)
 //                        .tag(Tab.gender)
+                IntroTipScene(title: "Daily Declarations for a Transformed Life",
+                              bodyText: "Embrace Your New Identity in Christ by Speaking Life Every Day",
+                              subtext: "As believers, we are called to renew our minds daily (Romans 12:2) and walk in the new identity Christ has given us. Speaking life isn’t just a one-time act; it’s a daily discipline that aligns us with God’s will and activates His promises. You are in charge of the process—declaring God’s truth over your life, your family, and your future. Jesus is responsible for the results, ensuring that every word you speak in faith bears fruit (John 15:7-8).",
+                              ctaText: "Let's go",
+                              showTestimonials: false,
+                              isScholarship: false, size: geometry.size, callBack: advance)
+                    .tag(Tab.transformedLife)
+                IntroTipScene(title: "Empowered to Speak Life Like Jesus",
+                              bodyText: "Overcome Life’s Trials by Declaring God’s Word Daily",
+                              subtext: "Just as Jesus spoke peace into the storm (Mark 4:39), you too can speak life into every challenge you face. The Word of God is a powerful weapon, sharper than any double-edged sword (Hebrews 4:12). Speak life into your day and experience the transformative power of God’s promises.",
+                              ctaText: "Continue",
+                              showTestimonials: false,
+                              isScholarship: false, size: geometry.size, callBack: advance)
+                    .tag(Tab.likeJesus)
+                IntroTipScene(title: "Speak Life, Live Victorious",
+                              bodyText: "Daily Habits for Success: Declare Your Faith and Watch Victory Unfold",
+                              subtext: "Consistency is key to unlocking the power of speaking life. Just as Daniel prayed three times a day (Daniel 6:10), setting aside a specific time each day to declare God’s promises can transform your life. Practice speaking these affirmations not just in quiet moments, but in real-life situations—when anxiety creeps in, when challenges arise, or when doubts whisper. By simply speaking your faith, you’re activating the victory that Jesus has already secured for you (Mark 11:23).",
+                              ctaText: "Continue",
+                              showTestimonials: false,
+                              isScholarship: false, size: geometry.size, callBack: advance)
+                    .tag(Tab.liveVictorious)
+                IntroTipScene(title: "Daily Affirmations for Unshakeable Faith",
+                              bodyText: "Conquer Your Fears and Doubts with the Power of God’s Word",
+                              subtext: "Jesus reminded us, 'If you have faith as small as a mustard seed... nothing will be impossible for you' (Matthew 17:20). Life’s challenges can shake your faith, but declaring God’s truth over your life can restore your confidence and peace.",
+                              ctaText: "Continue",
+                              showTestimonials: false,
+                              isScholarship: false, size: geometry.size, callBack: advance)
+                    .tag(Tab.unshakeableFaith)
+               
                 
                 if !appState.onBoardingTest {
                     HabitScene(size: geometry.size, callBack: advance)
@@ -61,13 +90,13 @@ struct OnboardingView: View  {
                 ImprovementScene(size: geometry.size, callBack: advance, viewModel: improvementViewModel)
                     .tag(Tab.improvement)
                 
-                IntroTipScene(title: "Daily Transformation",
-                              bodyText: "Welcome to your new daily routine",
-                              subtext: "It's a simple thing, a few minutes every day speaking life and God's promises, but over time it will transform your life - if you let it.",
-                              ctaText: "Let's go",
-                              showTestimonials: false,
-                              isScholarship: false, size: geometry.size, callBack: advance)
-                    .tag(Tab.tip)
+//                IntroTipScene(title: "Daily Transformation",
+//                              bodyText: "Welcome to your new daily routine",
+//                              subtext: "It's a simple thing, a few minutes every day speaking life and God's promises, but over time it will transform your life.",
+//                              ctaText: "Let's go",
+//                              showTestimonials: false,
+//                              isScholarship: false, size: geometry.size, callBack: advance)
+//                    .tag(Tab.tip)
                 
 //                IntroTipScene(title: "Speak Life",
 //                              bodyText: "Be like Jesus and Speak to your problems (mountains)",
@@ -106,8 +135,8 @@ struct OnboardingView: View  {
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
                 
-                scholarshipScene(size: geometry.size, advance: advance)
-                    .tag(Tab.scholarship)
+//                scholarshipScene(size: geometry.size, advance: advance)
+//                    .tag(Tab.scholarship)
                 
 //                discountScene(size: geometry.size)
 //                    .tag(Tab.discount)
@@ -307,7 +336,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("HabitScreenDone", parameters: nil)
                 case .improvement:
                     impactMed.impactOccurred()
-                    selection = .tip//.intro
+                    selection = .notification//.intro
                     onboardingTab = selection.rawValue
                     appState.selectedNotificationCategories = improvementViewModel.selectedCategories
                     decodeCategories(improvementViewModel.selectedExperiences)
@@ -358,11 +387,11 @@ struct OnboardingView: View  {
                 case .subscription:
                     Analytics.logEvent("SubscriptionScreenDone", parameters: nil)
                     viewModel.choose(.general) { _ in }
-                    if subscriptionStore.isPremium {
+                  //  if subscriptionStore.isPremium {
                         dismissOnboarding()
-                    } else {
-                        selection = .scholarship
-                    }
+//                    } else {
+//                        selection = .scholarship
+//                    }
                    
                     // selection = .widgets
                 case .scholarship:
@@ -381,6 +410,26 @@ struct OnboardingView: View  {
                     //    dismissOnboarding()
                 case .discount:
                     dismissOnboarding()
+                case .transformedLife:
+                    impactMed.impactOccurred()
+                    selection = .likeJesus
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("TransformedLifeScreenDone", parameters: nil)
+                case .likeJesus:
+                    impactMed.impactOccurred()
+                    selection = .liveVictorious
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("LikeJesusScreenDone", parameters: nil)
+                case .liveVictorious:
+                    impactMed.impactOccurred()
+                    selection = .unshakeableFaith
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("LiveVictoriousScreenDone", parameters: nil)
+                case .unshakeableFaith:
+                    impactMed.impactOccurred()
+                    selection = .improvement
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("UnshakeableFaithScreenDone", parameters: nil)
                 }
         //    }
         }

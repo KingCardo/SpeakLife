@@ -44,6 +44,9 @@ struct HomeView: View {
                 homeView
             } else {
                 OnboardingView()
+                    .onAppear {
+                    viewModel.requestPermission()
+                }
             }
         }
     }
@@ -114,7 +117,7 @@ struct HomeView: View {
             .hideTabBar(if: appState.showScreenshotLabel)
             .accentColor(Constants.DAMidBlue)
             .onAppear {
-                viewModel.requestPermission()
+               // viewModel.requestPermission()
                 UIScrollView.appearance().isScrollEnabled = true
                 if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
                     AudioPlayerService.shared.playSound(files: resources)
