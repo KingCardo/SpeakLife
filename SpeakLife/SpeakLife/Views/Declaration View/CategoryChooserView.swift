@@ -143,7 +143,7 @@ struct CategoryChooserView: View {
     }
     
     private func bibleBookList(geometry: GeometryProxy) -> some View {
-        Section(header: Text("Bible Book Meditation's").font(Font.custom("AppleSDGothicNeo-Regular", size: 18))) {
+        Section(header: Text("Bible Book Affirmation's").font(Font.custom("AppleSDGothicNeo-Regular", size: 18))) {
             ScrollView(.horizontal, showsIndicators: true) {
                 HStack(spacing: 12) {
                     ForEach(viewModel.bibleCategories) { category in
@@ -171,7 +171,7 @@ struct CategoryChooserView: View {
     }
     
     private func categoryList(geometry: GeometryProxy) -> some View {
-        Section(header: Text("SpeakLife Category Meditation's").font(Font.custom("AppleSDGothicNeo-Regular", size: 18))) {
+        Section(header: Text("SpeakLife Category Affirmation's").font(Font.custom("AppleSDGothicNeo-Regular", size: 18))) {
             LazyVGrid(columns: twoColumnGrid, spacing: 16) {
                 ForEach(viewModel.speaklifeCategories) { category in
                     

@@ -250,7 +250,7 @@ struct Welcome: Codable {
 struct Declaration: Codable, Identifiable, Hashable {
     let text: String
     var book: String? = nil
-    var affirmationText: String? = nil
+    var bibleVerseText: String? = nil
     var category: DeclarationCategory = .faith
     var categories: [DeclarationCategory] = []
     var isFavorite: Bool = false
@@ -262,7 +262,7 @@ struct Declaration: Codable, Identifiable, Hashable {
     enum CodingKeys: String, CodingKey {
             case text
             case book
-            case affirmationText
+            case bibleVerseText
             case category
             case isFavorite
         }

@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct StreakInfoBottomSheet: View {
+    @EnvironmentObject var streakViewModel: StreakViewModel
     @Binding var isShown: Bool
+    let titleFont = Font.custom("AppleSDGothicNeo-Regular", size: 26, relativeTo: .title)
+    let bodyFont = Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body)
     
     var body: some View {
         VStack {
@@ -25,6 +28,20 @@ struct StreakInfoBottomSheet: View {
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
                 .padding([.leading,.trailing])
                 .foregroundColor(.black)
+            Spacer()
+                .frame(height: 12)
+            VStack {
+                Text("Current streak 🔥")
+                    .font(bodyFont)
+                
+                HStack {
+                    Text(streakViewModel.titleText)
+                        .font(bodyFont)
+                    Image(systemName: "bolt.fill")
+                        .resizable()
+                        .frame(width: 15, height: 20)
+                }
+            }
             
             Button(action: {
                 self.isShown = false

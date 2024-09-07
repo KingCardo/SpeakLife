@@ -90,7 +90,7 @@ struct DeclarationView: View {
                                     }
                                     .sheet(isPresented: $isPresentingBottomSheet) {
                                         StreakInfoBottomSheet(isShown: $isPresentingBottomSheet)
-                                            .presentationDetents([.fraction(0.5)])
+                                            .presentationDetents([.fraction(0.6)])
                                             .preferredColorScheme(.light)
                                     }
                                 } else {

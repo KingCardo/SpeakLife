@@ -151,7 +151,7 @@ struct DeclarationContentView: View {
         VStack {
             Spacer()
             
-            QuoteLabel(themeViewModel: themeViewModel, quote: viewModel.showVerse ? declaration.text : declaration.affirmationText ?? "")
+            QuoteLabel(themeViewModel: themeViewModel, quote: viewModel.showVerse ? declaration.text : declaration.bibleVerseText ?? "")
                 .foregroundColor(themeViewModel.selectedTheme.fontColor)
                 .frame(width: geometry.size.width * 0.98, height:  geometry.size.height * 0.25)
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
@@ -206,7 +206,7 @@ struct DeclarationContentView: View {
 //                    Selection.shared.selectionFeedback()
 //                }
                 
-                if declaration.affirmationText != nil {
+                if declaration.bibleVerseText != nil {
                     CapsuleImageButton(title: viewModel.showVerse ? "arrowshape.zigzag.forward" : "arrowshape.zigzag.right.fill") {
                         withAnimation {
                             toggleDeclaration(declaration)

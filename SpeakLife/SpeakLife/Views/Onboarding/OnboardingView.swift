@@ -52,14 +52,14 @@ struct OnboardingView: View  {
 //                
 //                GenderCollectionView(size: geometry.size, callBack: advance)
 //                        .tag(Tab.gender)
-                IntroTipScene(title: "Daily Declarations for a Transformed Life",
+                IntroTipScene(title: "Daily Affirmations for a Transformed Life",
                               bodyText: "Embrace Your New Identity in Christ by Speaking Life Every Day",
                               subtext: "As believers, we are called to renew our minds daily (Romans 12:2) and walk in the new identity Christ has given us. Speaking life isn’t just a one-time act; it’s a daily discipline that aligns us with God’s will and activates His promises. You are in charge of the process—declaring God’s truth over your life, your family, and your future. Jesus is responsible for the results, ensuring that every word you speak in faith bears fruit (John 15:7-8).",
                               ctaText: "Let's go",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size, callBack: advance)
                     .tag(Tab.transformedLife)
-                IntroTipScene(title: "Empowered to Speak Life Like Jesus",
+                IntroTipScene(title: "Speak Life Like Jesus",
                               bodyText: "Overcome Life’s Trials by Declaring God’s Word Daily",
                               subtext: "Just as Jesus spoke peace into the storm (Mark 4:39), you too can speak life into every challenge you face. The Word of God is a powerful weapon, sharper than any double-edged sword (Hebrews 4:12). Speak life into your day and experience the transformative power of God’s promises.",
                               ctaText: "Continue",
@@ -73,7 +73,7 @@ struct OnboardingView: View  {
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size, callBack: advance)
                     .tag(Tab.liveVictorious)
-                IntroTipScene(title: "Daily Affirmations for Unshakeable Faith",
+                IntroTipScene(title: "Unshakeable Faith",
                               bodyText: "Conquer Your Fears and Doubts with the Power of God’s Word",
                               subtext: "Jesus reminded us, 'If you have faith as small as a mustard seed... nothing will be impossible for you' (Matthew 17:20). Life’s challenges can shake your faith, but declaring God’s truth over your life can restore your confidence and peace.",
                               ctaText: "Continue",
