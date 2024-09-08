@@ -57,7 +57,7 @@ struct IntroTipScene: View {
                 
                 VStack {
                     Text(bodyText)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .body))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 25, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)

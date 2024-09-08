@@ -66,20 +66,40 @@ struct OnboardingView: View  {
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size, callBack: advance)
                     .tag(Tab.likeJesus)
-                IntroTipScene(title: "Speak Life, Live Victorious",
-                              bodyText: "Daily Habits for Success: Declare Your Faith and Watch Victory Unfold",
-                              subtext: "Consistency is key to unlocking the power of speaking life. Just as Daniel prayed three times a day (Daniel 6:10), setting aside a specific time each day to declare God’s promises can transform your life. Practice speaking these affirmations not just in quiet moments, but in real-life situations—when anxiety creeps in, when challenges arise, or when doubts whisper. By simply speaking your faith, you’re activating the victory that Jesus has already secured for you (Mark 11:23).",
+                //                IntroTipScene(title: "Speak Life, Live Victorious",
+                //                              bodyText: "Daily Habits for Success: Declare Your Faith and Watch Victory Unfold",
+                //                              subtext: "Consistency is key to unlocking the power of speaking life. Just as Daniel prayed three times a day (Daniel 6:10), setting aside a specific time each day to declare God’s promises can transform your life. Practice speaking these affirmations not just in quiet moments, but in real-life situations—when anxiety creeps in, when challenges arise, or when doubts whisper. By simply speaking your faith, you’re activating the victory that Jesus has already secured for you (Mark 11:23).",
+                //                              ctaText: "Continue",
+                //                              showTestimonials: false,
+                //                              isScholarship: false, size: geometry.size, callBack: advance)
+                //                    .tag(Tab.liveVictorious)
+                //                IntroTipScene(title: "Unshakeable Faith",
+                //                              bodyText: "Conquer Your Fears and Doubts with the Power of God’s Word",
+                //                              subtext: "Jesus reminded us, 'If you have faith as small as a mustard seed... nothing will be impossible for you' (Matthew 17:20). Life’s challenges can shake your faith, but declaring God’s truth over your life can restore your confidence and peace.",
+                //                              ctaText: "Continue",
+                //                              showTestimonials: false,
+                //                              isScholarship: false, size: geometry.size, callBack: advance)
+                IntroTipScene(title: "Strengthened Faith and Spiritual Growth",
+                              bodyText: " A survey by Lifeway Research revealed that 65% of Christians who engage in daily Bible affirmations report feeling more connected to God and spiritually fulfilled.",
+                              subtext: "Affirmations rooted in Scripture enhance one's relationship with God, reminding users of their identity in Christ and His plans for their lives.",
                               ctaText: "Continue",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size, callBack: advance)
                     .tag(Tab.liveVictorious)
-                IntroTipScene(title: "Unshakeable Faith",
-                              bodyText: "Conquer Your Fears and Doubts with the Power of God’s Word",
-                              subtext: "Jesus reminded us, 'If you have faith as small as a mustard seed... nothing will be impossible for you' (Matthew 17:20). Life’s challenges can shake your faith, but declaring God’s truth over your life can restore your confidence and peace.",
+                IntroTipScene(title: "Reduced Stress and Anxiety",
+                              bodyText: "A research study published in the Health Psychology Journal showed a 35% reduction in stress levels for individuals who regularly practiced positive affirmations.",
+                              subtext: "Biblical affirmations help users refocus their minds on God’s peace and promises, which naturally alleviates stress and anxiety in day-to-day life.",
                               ctaText: "Continue",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size, callBack: advance)
                     .tag(Tab.unshakeableFaith)
+                IntroTipScene(title: "Increased Self-Worth and Confidence",
+                              bodyText: "A study from Carnegie Mellon University found that those who practice self-affirmations regularly experience up to a 30% increase in self-worth over time.",
+                              subtext: "By affirming one's identity in Christ, users can overcome self-doubt and insecurities, growing in confidence to tackle challenges.",
+                              ctaText: "Continue",
+                              showTestimonials: false,
+                              isScholarship: false, size: geometry.size, callBack: advance)
+                    .tag(Tab.confidence)
                
                 
                 if !appState.onBoardingTest {
@@ -427,9 +447,14 @@ struct OnboardingView: View  {
                     Analytics.logEvent("LiveVictoriousScreenDone", parameters: nil)
                 case .unshakeableFaith:
                     impactMed.impactOccurred()
-                    selection = .improvement
+                    selection = .confidence
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("UnshakeableFaithScreenDone", parameters: nil)
+                case .confidence:
+                    impactMed.impactOccurred()
+                    selection = .improvement
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("ConfidenceScreenDone", parameters: nil)
                 }
         //    }
         }

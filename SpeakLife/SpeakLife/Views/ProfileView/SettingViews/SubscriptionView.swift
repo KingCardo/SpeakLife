@@ -259,8 +259,8 @@ struct SubscriptionView: View {
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR29
-    @State var firstSelection = InAppId.Subscription.speakLife1YR29
+    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR19
+    @State var firstSelection = InAppId.Subscription.speakLife1YR19
     @State private var localizedPrice: String = "$19.00"
     @State private var regionCode: String = "US"
     @State private var isCheaperPricingCountry = false
@@ -369,6 +369,13 @@ struct SubscriptionView: View {
                     
                     
                     VStack {
+                        Button {
+                            currentSelection = secondSelection
+                        } label: {
+                            monthlySelectionBox()
+                        }
+                        Spacer()
+                            .frame(height: 12)
                         
                         Button {
                             currentSelection = firstSelection
@@ -376,14 +383,9 @@ struct SubscriptionView: View {
                             yearlyCTABox()
                         }
                         
-                        if !isCheaperPricingCountry {
-                            Button {
-                                currentSelection = secondSelection
-                            } label: {
-                                monthlySelectionBox()
-                            }
-                            
-                        }
+                      //  if !isCheaperPricingCountry {
+                         
+                      //  }
                     }
                     
                     goPremiumStack()

@@ -33,5 +33,6 @@ enum Tab: String {
     case likeJesus
     case liveVictorious
     case unshakeableFaith
+    case confidence
     
 }

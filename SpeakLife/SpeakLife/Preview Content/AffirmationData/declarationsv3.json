@@ -68,7 +68,7 @@
             "category": "destiny"},
         {
             "text": "I am an heir of God's promises, walking boldly into my destiny.",
-            "isFavorite": false, 
+            "isFavorite": false,
             "category": "destiny"},
         {
             "text": "I am a light in the darkness, leading others toward their destinies.",
@@ -124,7 +124,7 @@
             "category": "destiny"},
         {
             "text": "'For I know the plans I have for you,' declares the Lord, 'plans to prosper you and not to harm you, plans to give you hope and a future.'",
-            "book": "Jeremiah 29:11", 
+            "book": "Jeremiah 29:11",
             "isFavorite": false,
             "category": "destiny"},
         {
@@ -13402,38 +13402,8 @@
             "category": "heaven"
         },
         {
-            "text": "You have come to Mount Zion, to the heavenly Jerusalem.",
-            "book": "Hebrews 12:22",
-            "isFavorite": false,
-            "category": "heaven"
-        },
-        {
-            "text": "Lay up for yourselves treasures in heaven.",
-            "book": "Matthew 6:20",
-            "isFavorite": false,
-            "category": "heaven"
-        },
-        {
-            "text": "Blessed are the poor in spirit, for theirs is the kingdom of heaven.",
-            "book": "Matthew 5:3",
-            "isFavorite": false,
-            "category": "heaven"
-        },
-        {
             "text": "In keeping with his promise we are looking forward to a new heaven.",
             "book": "2 Peter 3:13",
-            "isFavorite": false,
-            "category": "heaven"
-        },
-        {
-            "text": "And I saw the holy city, new Jerusalem, coming down out of heaven.",
-            "book": "Revelation 21:2",
-            "isFavorite": false,
-            "category": "heaven"
-        },
-        {
-            "text": "Then I saw a new heaven and a new earth.",
-            "book": "Revelation 21:1",
             "isFavorite": false,
             "category": "heaven"
         },
@@ -13470,30 +13440,6 @@
         {
             "text": "Father, I want those you have given me to be with me where I am.",
             "book": "John 17:24",
-            "isFavorite": false,
-            "category": "heaven"
-        },
-        {
-            "text": "He will wipe every tear from their eyes.",
-            "book": "Revelation 21:4",
-            "isFavorite": false,
-            "category": "heaven"
-        },
-        {
-            "text": "For he was looking forward to the city with foundations, whose architect and builder is God.",
-            "book": "Hebrews 11:10",
-            "isFavorite": false,
-            "category": "heaven"
-        },
-        {
-            "text": "They desire a better country, that is, a heavenly one.",
-            "book": "Hebrews 11:16",
-            "isFavorite": false,
-            "category": "heaven"
-        },
-        {
-            "text": "The kingdom of heaven belongs to such as these.",
-            "book": "Matthew 19:14",
             "isFavorite": false,
             "category": "heaven"
         },
@@ -17652,7 +17598,7 @@
             "isFavorite": false,
             "category": "luke",
             "book": "Luke 6:27"
-        }, 
+        },
         {
             "text": "'You must be compassionate, just as your Father is compassionate.'",
             "isFavorite": false,
@@ -18468,7 +18414,7 @@
             "isFavorite": false,
             "category": "corinthians2",
             "book": "2 Corinthians 7:1"
-        }, 
+        },
         {
             "text": "A farmer who plants only a few seeds will get a small crop. But the one who plants generously will get a generous crop.",
             "isFavorite": false,
