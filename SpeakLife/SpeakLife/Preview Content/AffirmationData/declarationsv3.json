@@ -1,12 +1,12 @@
 {
     "count": 1,
-    "version": 2,
+    "version": 3,
     "declarations": [
         {
-          "text": "No closed door can stop the fulfillment of the destiny I have prepared for you.",
-          "book": "- Jesus",
-          "isFavorite": false,
-          "category": "destiny"
+            "text": "No closed door can stop the fulfillment of the destiny I have prepared for you.",
+            "book": "- Jesus",
+            "isFavorite": false,
+            "category": "destiny"
         },
         {
             "text": "I hold the keys to every door, and I will open the right ones for you.",
@@ -1617,6 +1617,181 @@
             "category": "faith"
         },
         {
+            "text": "God’s peace fills my heart and calms my soul, no matter what comes.",
+            "bibleVerseText": "And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.",
+            "book": "Philippians 4:7 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I trust in God and He keeps me in perfect peace.",
+            "bibleVerseText": "You will keep in perfect peace those whose minds are steadfast, because they trust in you.",
+            "book": "Isaiah 26:3 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I am calm and peaceful because God is always with me.",
+            "bibleVerseText": "The Lord is my shepherd; I shall not want. He makes me lie down in green pastures, he leads me beside still waters, he restores my soul.",
+            "book": "Psalm 23:1-3 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I cast all my worries on God and live in His peace.",
+            "bibleVerseText": "Cast all your anxiety on him because he cares for you.",
+            "book": "1 Peter 5:7 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I live in peace, trusting God with all my heart.",
+            "bibleVerseText": "Trust in the Lord with all your heart and lean not on your own understanding.",
+            "book": "Proverbs 3:5 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I have peace because God is in control of every situation.",
+            "bibleVerseText": "Be still and know that I am God.",
+            "book": "Psalm 46:10 (NLT)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "God’s peace reigns in my heart, no matter what I face.",
+            "bibleVerseText": "Let the peace of Christ rule in your hearts, since as members of one body you were called to peace.",
+            "book": "Colossians 3:15 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I remain calm and unshaken, knowing God is my refuge.",
+            "bibleVerseText": "The Lord gives strength to his people; the Lord blesses his people with peace.",
+            "book": "Psalm 29:11 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "God’s peace guards my heart and mind in every situation.",
+            "bibleVerseText": "Don’t worry about anything; instead, pray about everything. Tell God what you need, and thank him for all he has done.",
+            "book": "Philippians 4:6 (NLT)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I choose peace over fear because God is with me.",
+            "bibleVerseText": "Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me.",
+            "book": "Psalm 23:4 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I experience peace because I fix my thoughts on what is good and true.",
+            "bibleVerseText": "Fix your thoughts on what is true, and honorable, and right, and pure, and lovely, and admirable.",
+            "book": "Philippians 4:8 (NLT)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I have peace in my heart because I know God is my provider.",
+            "bibleVerseText": "The Lord is my shepherd, I lack nothing.",
+            "book": "Psalm 23:1 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I rest in God’s peace and His plans for my life.",
+            "bibleVerseText": "For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.",
+            "book": "Jeremiah 29:11 (ESV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I let go of my worries and live in the peace God provides.",
+            "bibleVerseText": "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
+            "book": "John 14:27 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I live in peace because God is always working for my good.",
+            "bibleVerseText": "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.",
+            "book": "Romans 8:28 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I choose to walk in peace and let go of my fears.",
+            "bibleVerseText": "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+            "book": "Philippians 4:6 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I embrace peace in my heart, knowing God’s love casts out fear.",
+            "bibleVerseText": "There is no fear in love. But perfect love drives out fear, because fear has to do with punishment.",
+            "book": "1 John 4:18 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I live in peace because I trust God with all my burdens.",
+            "bibleVerseText": "Come to me, all you who are weary and burdened, and I will give you rest.",
+            "book": "Matthew 11:28 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "God’s peace fills me as I keep my focus on Him.",
+            "bibleVerseText": "You will keep in perfect peace those whose minds are steadfast, because they trust in you.",
+            "book": "Isaiah 26:3 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I have peace knowing that God is always with me.",
+            "bibleVerseText": "The Lord is near. Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+            "book": "Philippians 4:5-6 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I choose peace and forgiveness in my relationships, knowing God forgives me.",
+            "bibleVerseText": "Bear with each other and forgive one another if any of you has a grievance against someone. Forgive as the Lord forgave you.",
+            "book": "Colossians 3:13 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I choose to let go of anger and embrace peace and patience.",
+            "bibleVerseText": "A hot-tempered person stirs up conflict, but the one who is patient calms a quarrel.",
+            "book": "Proverbs 15:18 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I find peace in God’s presence, and He renews my strength.",
+            "bibleVerseText": "But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.",
+            "book": "Isaiah 40:31 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I trust God’s perfect will for my life and live in peace.",
+            "bibleVerseText": "For God is not a God of disorder but of peace.",
+            "book": "1 Corinthians 14:33 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
+            "text": "I live in peace because I trust God with all my heart.",
+            "bibleVerseText": "Trust in the Lord with all your heart and lean not on your own understanding.",
+            "book": "Proverbs 3:5 (NIV)",
+            "isFavorite": false,
+            "category": "peace"
+        },
+        {
             "text": "Peace I leave with you, my peace I give to you. Not as the world gives do I give to you. Let not your hearts be troubled, neither let them be afraid.",
             "book": "Jesus",
             "isFavorite": false,
@@ -1681,6 +1856,181 @@
             "book": "Jesus",
             "isFavorite": false,
             "category": "heaven"
+        },
+        {
+            "text": "I seek wisdom, and God gives it to me generously.",
+            "bibleVerseText": "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you.",
+            "book": "James 1:5 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I trust in the Lord and His wisdom directs my path.",
+            "bibleVerseText": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
+            "book": "Proverbs 3:5-6 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "Wisdom brings peace and understanding to my life.",
+            "bibleVerseText": "For wisdom will enter your heart, and knowledge will fill you with joy.",
+            "book": "Proverbs 2:10 (NLT)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I gain wisdom by listening and learning from others.",
+            "bibleVerseText": "Let the wise listen and add to their learning, and let the discerning get guidance.",
+            "book": "Proverbs 1:5 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "God’s wisdom is pure and brings peace to my heart.",
+            "bibleVerseText": "But the wisdom from above is first of all pure. It is also peace loving, gentle at all times, and willing to yield to others.",
+            "book": "James 3:17 (NLT)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I walk with the wise and grow wiser every day.",
+            "bibleVerseText": "Walk with the wise and become wise; associate with fools and get in trouble.",
+            "book": "Proverbs 13:20 (NLT)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I treasure wisdom and it keeps me safe and secure.",
+            "bibleVerseText": "Wisdom will save you from the ways of wicked men, from men whose words are perverse.",
+            "book": "Proverbs 2:12 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I choose wisdom and live with peace and security.",
+            "bibleVerseText": "For through wisdom your days will be many, and years will be added to your life.",
+            "book": "Proverbs 9:11 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I honor the Lord, and with wisdom I gain true understanding.",
+            "bibleVerseText": "Fear of the Lord is the foundation of true wisdom. All who obey his commandments will grow in wisdom.",
+            "book": "Psalm 111:10 (NLT)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I guard my words with wisdom and speak life.",
+            "bibleVerseText": "The heart of the righteous weighs its answers, but the mouth of the wicked gushes evil.",
+            "book": "Proverbs 15:28 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I seek wisdom in every decision I make, trusting God’s guidance.",
+            "bibleVerseText": "Teach us to number our days, that we may gain a heart of wisdom.",
+            "book": "Psalm 90:12 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I value wisdom more than riches or gold.",
+            "bibleVerseText": "For wisdom is more precious than rubies, and nothing you desire can compare with her.",
+            "book": "Proverbs 8:11 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I walk in wisdom, avoiding foolishness in my life.",
+            "bibleVerseText": "Be very careful, then, how you live—not as unwise but as wise, making the most of every opportunity.",
+            "book": "Ephesians 5:15-16 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I receive wisdom that leads me to prosperity and peace.",
+            "bibleVerseText": "Blessed is the one who finds wisdom, and the one who gets understanding, for the gain from her is better than gain from silver and her profit better than gold.",
+            "book": "Proverbs 3:13-14 (ESV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I ask for wisdom in every situation, knowing God will guide me.",
+            "bibleVerseText": "The beginning of wisdom is this: Get wisdom. Though it cost all you have, get understanding.",
+            "book": "Proverbs 4:7 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I speak wisely and bring healing to those around me.",
+            "bibleVerseText": "The tongue of the wise brings healing.",
+            "book": "Proverbs 12:18 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I seek wisdom in God's word, and it leads me to life.",
+            "bibleVerseText": "For the Lord gives wisdom; from his mouth come knowledge and understanding.",
+            "book": "Proverbs 2:6 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I follow the path of wisdom, which leads to honor and success.",
+            "bibleVerseText": "The wise inherit honor, but fools get only shame.",
+            "book": "Proverbs 3:35 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I am wise and humble, recognizing that wisdom brings success.",
+            "bibleVerseText": "Pride leads to conflict; those who take advice are wise.",
+            "book": "Proverbs 13:10 (NLT)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I make wise choices that lead to life and peace.",
+            "bibleVerseText": "Wise choices will watch over you. Understanding will keep you safe.",
+            "book": "Proverbs 2:11 (NLT)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "God’s wisdom brings me safety and protection in every situation.",
+            "bibleVerseText": "Wisdom is a shelter as money is a shelter, but the advantage of knowledge is this: Wisdom preserves those who have it.",
+            "book": "Ecclesiastes 7:12 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I receive wisdom from above, and it guides my heart and actions.",
+            "bibleVerseText": "But the wisdom from above is first pure, then peaceable, gentle, open to reason, full of mercy and good fruits, impartial and sincere.",
+            "book": "James 3:17 (ESV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I choose wisdom over wealth, for wisdom is life-giving.",
+            "bibleVerseText": "How much better to get wisdom than gold, to get insight rather than silver!",
+            "book": "Proverbs 16:16 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I am wise and slow to speak, knowing my words carry power.",
+            "bibleVerseText": "The heart of the wise makes his speech judicious and adds persuasiveness to his lips.",
+            "book": "Proverbs 16:23 (ESV)",
+            "isFavorite": false,
+            "category": "wisdom"
+        },
+        {
+            "text": "I guard my heart with wisdom, for it is the source of my life.",
+            "bibleVerseText": "Above all else, guard your heart, for everything you do flows from it.",
+            "book": "Proverbs 4:23 (NIV)",
+            "isFavorite": false,
+            "category": "wisdom"
         },
         {
             "text": "Everyone who glorifes himself will be humbled, and he who humbles himself will be glorified.",
@@ -2563,259 +2913,434 @@
             "text": "The LORD is close to the brokenhearted and saves those who are crushed in spirit.",
             "book": "Psalm 34:18",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Cast all your anxiety on Him because He cares for you.",
             "book": "1 Peter 5:7",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
             "book": "Philippians 4:6",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, plans to give you hope and a future.",
             "book": "Jeremiah 29:11",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "The LORD is my shepherd, I lack nothing. He makes me lie down in green pastures, he leads me beside quiet waters, he refreshes my soul.",
             "book": "Psalm 23:1-3",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Peace I leave with you, my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
             "book": "John 14:27",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "I can do all this through him who gives me strength.",
             "book": "Philippians 4:13",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "He heals the brokenhearted and binds up their wounds.",
             "book": "Psalm 147:3",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "But those who hope in the LORD will renew their strength. They will soar on wings like eagles, they will run and not grow weary, they will walk and not be faint.",
             "book": "Isaiah 40:31",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "You will keep in perfect peace those whose minds are steadfast, because they trust in you.",
             "book": "Isaiah 26:3",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "So do not fear, for I am with you, do not be dismayed, for I am your God. I will strengthen you and help you, I will uphold you with my righteous right hand.",
             "book": "Isaiah 41:10",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "May the God of hope fill you with all joy and peace as you trust in him, so that you may overflow with hope by the power of the Holy Spirit.",
             "book": "Romans 15:13",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Trust in the LORD with all your heart and lean not on your own understanding.",
             "book": "Proverbs 3:5",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain, for the old order of things has passed away.",
             "book": "Revelation 21:4",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Be strong and courageous. Do not be afraid or terrified because of them, for the LORD your God goes with you, he will never leave you nor forsake you.",
             "book": "Deuteronomy 31:6",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "The righteous cry out, and the LORD hears them, he delivers them from all their troubles.",
             "book": "Psalm 34:17",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "But the Lord stood at my side and gave me strength.",
             "book": "2 Timothy 4:17",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Weeping may stay for the night, but rejoicing comes in the morning.",
             "book": "Psalm 30:5",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "My comfort in my suffering is this: Your promise preserves my life.",
             "book": "Psalm 119:50",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Come to me, all who are weary and burdened, and I will give you rest.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "My peace I give to you, not as the world gives do I give to you. Let not your hearts be troubled, neither let them be afraid.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "In the world you will have tribulation. But take heart, I have overcome the world.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "I am the light of the world. Whoever follows me will not walk in darkness, but will have the light of life.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "If you abide in me, and my words abide in you, ask whatever you wish, and it will be done for you.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Do not let your hearts be troubled. Trust in God, trust also in me.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "I have told you these things so that in me you may have peace.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Ask and it will be given to you, seek and you will find, knock and the door will be opened to you.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Let not your hearts be troubled, neither let them be afraid.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "I am the resurrection and the life. Whoever believes in me, though he die, yet shall he live.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Everyone who lives and believes in me shall never die. Do you believe this?",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "I am the bread of life, whoever comes to me shall not hunger, and whoever believes in me shall never thirst.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Whoever follows me will not walk in darkness, but will have the light of life.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Your faith has made you well, go in peace.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Take heart, daughter, your faith has healed you.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Do not be anxious about your life, what you will eat or what you will drink, nor about your body, what you will put on.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "I am the way, and the truth, and the life. No one comes to the Father except through me.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "I am the vine, you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "I tell you, my friends, do not be afraid of those who kill the body and after that can do no more.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Are not five sparrows sold for two pennies? Yet not one of them is forgotten by God.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Indeed, the very hairs of your head are all numbered. Don't be afraid, you are worth more than many sparrows.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "I am with you always, to the very end of the age. Do not be afraid.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "My joy I give to you, that your joy may be full. Your sorrow will turn into joy.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "You are precious in my sight. I have called you by name, you are mine.",
             "book": "Jesus",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
+        },
+        {
+            "text": "I work hard and receive the rewards of my efforts.",
+            "bibleVerseText": "Work brings profit, but mere talk leads to poverty!",
+            "book": "Proverbs 14:23 (NLT)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I honor the Lord with my wealth and He blesses me abundantly.",
+            "bibleVerseText": "Honor the Lord with your wealth, with the firstfruits of all your crops; then your barns will be filled to overflowing, and your vats will brim over with new wine.",
+            "book": "Proverbs 3:9-10 (NIV)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I seek wisdom, and with it comes wealth and honor.",
+            "bibleVerseText": "Wisdom offers you long life in her right hand, and riches and honor in her left.",
+            "book": "Proverbs 3:16 (NLT)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am diligent in my work, and I prosper because of it.",
+            "bibleVerseText": "Lazy people want much but get little, but those who work hard will prosper.",
+            "book": "Proverbs 13:4 (NLT)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I trust in the Lord, and He makes me flourish like a tree by the river.",
+            "bibleVerseText": "But blessed are those who trust in the Lord and have made the Lord their hope and confidence. They are like trees planted along a riverbank, with roots that reach deep into the water.",
+            "book": "Jeremiah 17:7-8 (NLT)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "God blesses the work of my hands and increases my wealth.",
+            "bibleVerseText": "The blessing of the Lord brings wealth, without painful toil for it.",
+            "book": "Proverbs 10:22 (NIV)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I give generously and receive abundantly.",
+            "bibleVerseText": "Give, and you will receive. Your gift will return to you in full—pressed down, shaken together to make room for more, running over, and poured into your lap.",
+            "book": "Luke 6:38 (NLT)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I reap generously because I sow generously.",
+            "bibleVerseText": "Remember this: Whoever sows sparingly will also reap sparingly, and whoever sows generously will also reap generously.",
+            "book": "2 Corinthians 9:6 (NIV)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am faithful with little, and God blesses me with much.",
+            "bibleVerseText": "If you are faithful in little things, you will be faithful in large ones.",
+            "book": "Luke 16:10 (NLT)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "God supplies all my needs according to His riches.",
+            "bibleVerseText": "And my God will meet all your needs according to the riches of his glory in Christ Jesus.",
+            "book": "Philippians 4:19 (NIV)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am rich in every way and generous on every occasion.",
+            "bibleVerseText": "You will be enriched in every way so that you can be generous on every occasion.",
+            "book": "2 Corinthians 9:11 (NIV)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I seek the kingdom of God first, and everything else is added to me.",
+            "bibleVerseText": "But seek first his kingdom and his righteousness, and all these things will be given to you as well.",
+            "book": "Matthew 6:33 (NIV)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I obey God's word, and He prospers me in all I do.",
+            "bibleVerseText": "Study this Book of Instruction continually. Meditate on it day and night so you will be sure to obey everything written in it. Only then will you prosper and succeed in all you do.",
+            "book": "Joshua 1:8 (NLT)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "God is my shepherd, I lack nothing.",
+            "bibleVerseText": "The Lord is my shepherd; I have all that I need.",
+            "book": "Psalm 23:1 (NLT)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I trust in the Lord and He fills my life with abundance.",
+            "bibleVerseText": "The righteous will flourish like a palm tree, they will grow like a cedar of Lebanon.",
+            "book": "Psalm 92:12 (NIV)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "God gives me the power to create wealth and establish His covenant.",
+            "bibleVerseText": "But remember the Lord your God, for it is he who gives you the ability to produce wealth.",
+            "book": "Deuteronomy 8:18 (NIV)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am blessed and fruitful in everything I do.",
+            "bibleVerseText": "You will be blessed when you come in and blessed when you go out.",
+            "book": "Deuteronomy 28:6 (NIV)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am like a tree planted by streams of water, bearing fruit in season.",
+            "bibleVerseText": "That person is like a tree planted by streams of water, which yields its fruit in season and whose leaf does not wither—whatever they do prospers.",
+            "book": "Psalm 1:3 (NIV)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I bring my tithes to God, and He opens the windows of heaven for me.",
+            "bibleVerseText": "Bring all the tithes into the storehouse, so there will be enough food in my Temple. If you do, says the Lord of Heaven’s Armies, I will open the windows of heaven for you. I will pour out a blessing so great you won’t have enough room to take it in!",
+            "book": "Malachi 3:10 (NLT)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "The Lord makes me rich, and I am not burdened with sorrow.",
+            "bibleVerseText": "The blessing of the Lord makes a person rich, and he adds no sorrow with it.",
+            "book": "Proverbs 10:22 (NLT)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I delight in God's Word, and He gives me the desires of my heart.",
+            "bibleVerseText": "Take delight in the Lord, and he will give you the desires of your heart.",
+            "book": "Psalm 37:4 (NIV)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I am generous, and I am blessed with even more.",
+            "bibleVerseText": "The generous will prosper; those who refresh others will themselves be refreshed.",
+            "book": "Proverbs 11:25 (NLT)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I trust in God, and He makes me successful.",
+            "bibleVerseText": "Commit your actions to the Lord, and your plans will succeed.",
+            "book": "Proverbs 16:3 (NLT)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I have everything I need because God supplies all my needs.",
+            "bibleVerseText": "The Lord is my shepherd; I lack nothing.",
+            "book": "Psalm 23:1 (NIV)",
+            "isFavorite": false,
+            "category": "wealth"
+        },
+        {
+            "text": "I sow in faith and reap a harvest of blessings.",
+            "bibleVerseText": "Those who plant in tears will harvest with shouts of joy.",
+            "book": "Psalm 126:5 (NLT)",
+            "isFavorite": false,
+            "category": "wealth"
         },
         {
             "text": "I am bearing fruit in every season, my leaf does not wither, and whatever I do prospers.",
@@ -2825,43 +3350,43 @@
         {
             "text": "I am joyful in hope, patient in affliction, faithful in prayer.",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "I am casting all my anxieties on Him, for He cares for me deeply.",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "I am standing on the promises of God, my solid foundation in every storm.",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "I am a child of God, fearfully and wonderfully made, destined for great things.",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "I am clothed with strength and dignity, and I laugh without fear of the future.",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "I am set free, for whom the Son sets free is free indeed.",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "I am more than a conqueror through Him who loves me.",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "Trust in the Lord with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.",
             "book": "Proverbs 3:5-6",
             "isFavorite": false,
-           "category": "peace"
+            "category": "peace"
         },
         {
             "text": "In Jesus' name, I am freed from every chain of addiction.",
@@ -6361,6 +6886,181 @@
             "category": "hardtimes"
         },
         {
+            "text": "By Jesus’ stripes, I am healed, and my body is whole.",
+            "bibleVerseText": "But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.",
+            "book": "Isaiah 53:5 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Jesus brings me health and healing; I refuse to be moved by symptoms.",
+            "bibleVerseText": "Heal me, Lord, and I will be healed; save me and I will be saved, for you are the one I praise.",
+            "book": "Jeremiah 17:14 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I walk in divine health because Jesus has made me whole.",
+            "bibleVerseText": "Dear friend, I pray that you may enjoy good health and that all may go well with you, even as your soul is getting along well.",
+            "book": "3 John 1:2 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "No matter what I feel, I declare Jesus as my healer.",
+            "bibleVerseText": "Praise the Lord, my soul, and forget not all his benefits—who forgives all your sins and heals all your diseases.",
+            "book": "Psalm 103:2-3 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Jesus gives me strength and renews my body daily.",
+            "bibleVerseText": "He gives strength to the weary and increases the power of the weak.",
+            "book": "Isaiah 40:29 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I trust in Jesus, and His healing power flows through me.",
+            "bibleVerseText": "But for you who revere my name, the sun of righteousness will rise with healing in its rays. And you will go out and frolic like well-fed calves.",
+            "book": "Malachi 4:2 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I reject sickness and stand in Jesus’ promise of abundant health.",
+            "bibleVerseText": "The thief comes only to steal and kill and destroy; I have come that they may have life, and have it to the full.",
+            "book": "John 10:10 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My body is healed by the power of Jesus, no matter what I feel.",
+            "bibleVerseText": "He sent out his word and healed them; he rescued them from the grave.",
+            "book": "Psalm 107:20 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I speak life over my body because Jesus has given me victory over sickness.",
+            "bibleVerseText": "For I will restore health to you, and your wounds I will heal, declares the Lord.",
+            "book": "Jeremiah 30:17 (ESV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am filled with health because Jesus lives in me.",
+            "bibleVerseText": "For in him we live and move and have our being.",
+            "book": "Acts 17:28 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I have faith in Jesus’ healing touch, and my body responds in health.",
+            "bibleVerseText": "Jesus said to her, 'Daughter, your faith has healed you. Go in peace and be freed from your suffering.'",
+            "book": "Mark 5:34 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "The life of Jesus brings me strength and healing every day.",
+            "bibleVerseText": "The Spirit of God, who raised Jesus from the dead, lives in you; and just as God raised Christ Jesus from the dead, he will give life to your mortal bodies by this same Spirit living within you.",
+            "book": "Romans 8:11 (NLT)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I walk in the fullness of health because Jesus is my healer.",
+            "bibleVerseText": "Surely he took up our pain and bore our suffering.",
+            "book": "Isaiah 53:4 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Jesus’ power overcomes every sickness and pain in my body.",
+            "bibleVerseText": "By his power God raised the Lord from the dead, and he will raise us also.",
+            "book": "1 Corinthians 6:14 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I live in divine health because Jesus has made me whole.",
+            "bibleVerseText": "But Jesus looked at them and said, 'With man this is impossible, but with God all things are possible.'",
+            "book": "Matthew 19:26 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "In Christ, I have perfect health, and sickness has no power over me.",
+            "bibleVerseText": "You restored me to health and let me live. Surely it was for my benefit that I suffered such anguish.",
+            "book": "Isaiah 38:16 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "No physical symptom can steal the health Jesus gave me.",
+            "bibleVerseText": "But he took our illnesses and bore our diseases.",
+            "book": "Matthew 8:17 (ESV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I speak health into my body, knowing Jesus already paid for my healing.",
+            "bibleVerseText": "And the prayer offered in faith will make the sick person well; the Lord will raise them up.",
+            "book": "James 5:15 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Jesus fills me with strength and health in every part of my body.",
+            "bibleVerseText": "But the Lord stood at my side and gave me strength.",
+            "book": "2 Timothy 4:17 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I walk in divine health because Jesus is alive in me.",
+            "bibleVerseText": "For I am the Lord who heals you.",
+            "book": "Exodus 15:26 (NLT)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "My body is healthy because Jesus’ life flows through me.",
+            "bibleVerseText": "The Lord sustains them on their sickbed and restores them from their bed of illness.",
+            "book": "Psalm 41:3 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I declare healing over every area of my life, for Jesus has made me whole.",
+            "bibleVerseText": "Is anyone among you sick? Let them call the elders of the church to pray over them and anoint them with oil in the name of the Lord.",
+            "book": "James 5:14 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I am healed in Jesus’ name, and no sickness can remain in my body.",
+            "bibleVerseText": "Lord, my God, I called to you for help, and you healed me.",
+            "book": "Psalm 30:2 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "I reject sickness and declare that Jesus’ health is mine.",
+            "bibleVerseText": "He heals the brokenhearted and binds up their wounds.",
+            "book": "Psalm 147:3 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
+            "text": "Jesus is my healer, and I am fully restored to health.",
+            "bibleVerseText": "Then your light will break forth like the dawn, and your healing will quickly appear.",
+            "book": "Isaiah 58:8 (NIV)",
+            "isFavorite": false,
+            "category": "health"
+        },
+        {
             "text": "In Jesus' name, I am healed completely, feeling strong and healthy.",
             "isFavorite": false,
             "category": "health"
@@ -6794,6 +7494,181 @@
             "category": "health"
         },
         {
+            "text": "I am filled with hope because God is my refuge.",
+            "bibleVerseText": "The Lord is good, a refuge in times of trouble. He cares for those who trust in him.",
+            "book": "Nahum 1:7 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "My hope in the Lord is unwavering, for He is always faithful.",
+            "bibleVerseText": "Let us hold unswervingly to the hope we profess, for he who promised is faithful.",
+            "book": "Hebrews 10:23 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I place my hope in God's word, knowing His promises never fail.",
+            "bibleVerseText": "I wait for the Lord, my whole being waits, and in his word I put my hope.",
+            "book": "Psalm 130:5 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I overflow with hope because God’s love fills my heart.",
+            "bibleVerseText": "May the God of hope fill you with all joy and peace as you trust in him, so that you may overflow with hope by the power of the Holy Spirit.",
+            "book": "Romans 15:13 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "No matter what I face, my hope is anchored in the Lord.",
+            "bibleVerseText": "We have this hope as an anchor for the soul, firm and secure.",
+            "book": "Hebrews 6:19 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I will not lose hope, for God’s strength sustains me.",
+            "bibleVerseText": "But those who hope in the Lord will renew their strength. They will soar on wings like eagles.",
+            "book": "Isaiah 40:31 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Even in tough times, I find hope in the Lord’s faithfulness.",
+            "bibleVerseText": "Because of the Lord’s great love we are not consumed, for his compassions never fail. They are new every morning; great is your faithfulness.",
+            "book": "Lamentations 3:22-23 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I choose hope, for the Lord is my salvation and strength.",
+            "bibleVerseText": "Surely God is my salvation; I will trust and not be afraid. The Lord, the Lord himself, is my strength and my defense.",
+            "book": "Isaiah 12:2 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Hope in the Lord fills my heart with peace and joy.",
+            "bibleVerseText": "But the eyes of the Lord are on those who fear him, on those whose hope is in his unfailing love.",
+            "book": "Psalm 33:18 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I will always hope, for God's plans for me are good.",
+            "bibleVerseText": "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
+            "book": "Jeremiah 29:11 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I rest in hope because God’s promises are true.",
+            "bibleVerseText": "Let your unfailing love be with us, Lord, even as we put our hope in you.",
+            "book": "Psalm 33:22 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "My hope is secure in Christ, and nothing can shake my faith.",
+            "bibleVerseText": "Now faith is confidence in what we hope for and assurance about what we do not see.",
+            "book": "Hebrews 11:1 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I find hope in God’s grace and mercy each new day.",
+            "bibleVerseText": "The Lord’s mercies are new every morning; great is your faithfulness.",
+            "book": "Lamentations 3:23 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Hope fills my heart because Jesus is my living hope.",
+            "bibleVerseText": "Praise be to the God and Father of our Lord Jesus Christ! In his great mercy he has given us new birth into a living hope through the resurrection of Jesus Christ from the dead.",
+            "book": "1 Peter 1:3 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I am filled with hope, for God never fails.",
+            "bibleVerseText": "For you have been my hope, Sovereign Lord, my confidence since my youth.",
+            "book": "Psalm 71:5 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Hope rises within me because God is my protector.",
+            "bibleVerseText": "Yes, my soul, find rest in God; my hope comes from him.",
+            "book": "Psalm 62:5 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I will not be shaken because my hope is in the Lord.",
+            "bibleVerseText": "Truly he is my rock and my salvation; he is my fortress, I will not be shaken.",
+            "book": "Psalm 62:6 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I live with hope, knowing God will never abandon me.",
+            "bibleVerseText": "But the Lord stood at my side and gave me strength.",
+            "book": "2 Timothy 4:17 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "My hope is eternal, rooted in the promises of God.",
+            "bibleVerseText": "And this is what he promised us—eternal life.",
+            "book": "1 John 2:25 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Hope fills my spirit, for God is my ever-present help.",
+            "bibleVerseText": "God is our refuge and strength, an ever-present help in trouble.",
+            "book": "Psalm 46:1 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I trust in the Lord, and my hope is steadfast in Him.",
+            "bibleVerseText": "Blessed is the one who trusts in the Lord, whose confidence is in him.",
+            "book": "Jeremiah 17:7 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I will always hope, for God’s plans for me are good and full of promise.",
+            "bibleVerseText": "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.",
+            "book": "Romans 8:28 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "My hope is in the Lord, and He will never fail me.",
+            "bibleVerseText": "The Lord delights in those who fear him, who put their hope in his unfailing love.",
+            "book": "Psalm 147:11 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "Hope rises within me, for God is my strength and my song.",
+            "bibleVerseText": "The Lord is my strength and my defense; he has become my salvation.",
+            "book": "Exodus 15:2 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
+            "text": "I find hope in God’s faithfulness, and He fills my life with peace.",
+            "bibleVerseText": "For the word of the Lord is right and true; he is faithful in all he does.",
+            "book": "Psalm 33:4 (NIV)",
+            "isFavorite": false,
+            "category": "hope"
+        },
+        {
             "text": "But those who hope in the LORD will renew their strength. They will soar on wings like eagles, they will run and not grow weary, they will walk and not be faint.",
             "book": "Isaiah 40:31",
             "isFavorite": false,
@@ -7207,6 +8082,181 @@
             "text": "Thank you Jesus for the harvest of blessings that sprout from seeds of hope.",
             "isFavorite": false,
             "category": "hope"
+        },
+        {
+            "text": "I am a new creation in Christ, free from my old self.",
+            "bibleVerseText": "Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!",
+            "book": "2 Corinthians 5:17 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am God’s masterpiece, created for good works in Christ.",
+            "bibleVerseText": "For we are God’s masterpiece. He has created us anew in Christ Jesus, so we can do the good things he planned for us long ago.",
+            "book": "Ephesians 2:10 (NLT)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am chosen by God, holy and dearly loved.",
+            "bibleVerseText": "Therefore, as God’s chosen people, holy and dearly loved, clothe yourselves with compassion, kindness, humility, gentleness and patience.",
+            "book": "Colossians 3:12 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "In Christ, I am free from condemnation and walk in His righteousness.",
+            "bibleVerseText": "Therefore, there is now no condemnation for those who are in Christ Jesus.",
+            "book": "Romans 8:1 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a child of God, loved and accepted by Him.",
+            "bibleVerseText": "See what great love the Father has lavished on us, that we should be called children of God! And that is what we are!",
+            "book": "1 John 3:1 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "In Christ, I have been set free from sin and am alive in God.",
+            "bibleVerseText": "In the same way, count yourselves dead to sin but alive to God in Christ Jesus.",
+            "book": "Romans 6:11 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a light in the world, shining God’s love and truth.",
+            "bibleVerseText": "You are the light of the world. A town built on a hill cannot be hidden.",
+            "book": "Matthew 5:14 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I have been redeemed by Christ and belong to Him.",
+            "bibleVerseText": "But now, this is what the Lord says— he who created you, Jacob, he who formed you, Israel: 'Do not fear, for I have redeemed you; I have summoned you by name; you are mine.'",
+            "book": "Isaiah 43:1 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a new person, created to be like God in true righteousness and holiness.",
+            "bibleVerseText": "Put on your new nature, created to be like God—truly righteous and holy.",
+            "book": "Ephesians 4:24 (NLT)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a co-heir with Christ, sharing in His inheritance.",
+            "bibleVerseText": "Now if we are children, then we are heirs—heirs of God and co-heirs with Christ.",
+            "book": "Romans 8:17 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am the temple of the Holy Spirit, and God’s Spirit lives in me.",
+            "bibleVerseText": "Do you not know that your bodies are temples of the Holy Spirit, who is in you, whom you have received from God? You are not your own.",
+            "book": "1 Corinthians 6:19 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am more than a conqueror through Christ who loves me.",
+            "bibleVerseText": "No, in all these things we are more than conquerors through him who loved us.",
+            "book": "Romans 8:37 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am forgiven, redeemed, and set free by the grace of God.",
+            "bibleVerseText": "In him we have redemption through his blood, the forgiveness of sins, in accordance with the riches of God’s grace.",
+            "book": "Ephesians 1:7 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "In Christ, I am a citizen of heaven, where I belong for eternity.",
+            "bibleVerseText": "But our citizenship is in heaven. And we eagerly await a Savior from there, the Lord Jesus Christ.",
+            "book": "Philippians 3:20 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am God’s beloved, adopted into His family forever.",
+            "bibleVerseText": "He predestined us for adoption to sonship through Jesus Christ, in accordance with his pleasure and will.",
+            "book": "Ephesians 1:5 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am strong in the Lord and in His mighty power.",
+            "bibleVerseText": "Finally, be strong in the Lord and in his mighty power.",
+            "book": "Ephesians 6:10 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am chosen by God to bear fruit that will last.",
+            "bibleVerseText": "You did not choose me, but I chose you and appointed you so that you might go and bear fruit—fruit that will last.",
+            "book": "John 15:16 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "In Christ, I am made righteous by faith and walk in His light.",
+            "bibleVerseText": "For in the gospel the righteousness of God is revealed—a righteousness that is by faith from first to last.",
+            "book": "Romans 1:17 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a branch of the true vine, and I bear much fruit in Jesus.",
+            "bibleVerseText": "I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit.",
+            "book": "John 15:5 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am a friend of God, and He reveals His will to me.",
+            "bibleVerseText": "I no longer call you servants, because a servant does not know his master’s business. Instead, I have called you friends.",
+            "book": "John 15:15 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I have been given the spirit of power, love, and self-discipline.",
+            "bibleVerseText": "For the Spirit God gave us does not make us timid, but gives us power, love, and self-discipline.",
+            "book": "2 Timothy 1:7 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am clothed in Christ, living in His righteousness and grace.",
+            "bibleVerseText": "For all of you who were baptized into Christ have clothed yourselves with Christ.",
+            "book": "Galatians 3:27 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "In Christ, I am complete, lacking nothing in Him.",
+            "bibleVerseText": "And in Christ you have been brought to fullness. He is the head over every power and authority.",
+            "book": "Colossians 2:10 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am free in Christ, walking in His truth and grace daily.",
+            "bibleVerseText": "So if the Son sets you free, you will be free indeed.",
+            "book": "John 8:36 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
+        },
+        {
+            "text": "I am alive in Christ, made new by His grace and love.",
+            "bibleVerseText": "For you died, and your life is now hidden with Christ in God.",
+            "book": "Colossians 3:3 (NIV)",
+            "isFavorite": false,
+            "category": "identity"
         },
         {
             "text": "I am fully loved and approved by Jesus.",
@@ -7645,6 +8695,181 @@
             "text": "I am victorious in Jesus",
             "isFavorite": false,
             "category": "identity"
+        },
+        {
+            "text": "I choose joy every day, knowing that God is my strength.",
+            "bibleVerseText": "The joy of the Lord is your strength.",
+            "book": "Nehemiah 8:10 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "My heart is filled with joy because I trust in God’s goodness.",
+            "bibleVerseText": "But let all who take refuge in you be glad; let them ever sing for joy.",
+            "book": "Psalm 5:11 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I rejoice in the Lord always, no matter what comes my way.",
+            "bibleVerseText": "Rejoice in the Lord always. I will say it again: Rejoice!",
+            "book": "Philippians 4:4 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "God fills me with joy and peace as I trust in Him.",
+            "bibleVerseText": "May the God of hope fill you with all joy and peace as you trust in him.",
+            "book": "Romans 15:13 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I find joy in the presence of the Lord, for He makes me whole.",
+            "bibleVerseText": "You make known to me the path of life; you will fill me with joy in your presence.",
+            "book": "Psalm 16:11 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I count it all joy, knowing trials produce perseverance and growth.",
+            "bibleVerseText": "Consider it pure joy, my brothers and sisters, whenever you face trials of many kinds.",
+            "book": "James 1:2 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "God’s love brings me joy, no matter what I face in life.",
+            "bibleVerseText": "Though you have not seen him, you love him; and even though you do not see him now, you believe in him and are filled with an inexpressible and glorious joy.",
+            "book": "1 Peter 1:8 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I rejoice because God has done great things in my life.",
+            "bibleVerseText": "The Lord has done great things for us, and we are filled with joy.",
+            "book": "Psalm 126:3 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "My joy is complete because I remain in Christ’s love.",
+            "bibleVerseText": "I have told you this so that my joy may be in you and that your joy may be complete.",
+            "book": "John 15:11 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I live in joy because the Holy Spirit fills my heart.",
+            "bibleVerseText": "For the kingdom of God is not a matter of eating and drinking, but of righteousness, peace, and joy in the Holy Spirit.",
+            "book": "Romans 14:17 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I sing with joy, for God is my salvation and my strength.",
+            "bibleVerseText": "Surely God is my salvation; I will trust and not be afraid. The Lord, the Lord himself, is my strength and my defense; he has become my salvation.",
+            "book": "Isaiah 12:2 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I have joy because God is always with me and He never fails.",
+            "bibleVerseText": "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.",
+            "book": "Joshua 1:9 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I choose joy in every circumstance, knowing God is in control.",
+            "bibleVerseText": "Rejoice always, pray continually, give thanks in all circumstances; for this is God’s will for you in Christ Jesus.",
+            "book": "1 Thessalonians 5:16-18 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I find joy in serving the Lord, for He blesses me abundantly.",
+            "bibleVerseText": "Serve the Lord with gladness! Come into his presence with singing!",
+            "book": "Psalm 100:2 (ASV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I delight in the Lord, and He gives me the desires of my heart.",
+            "bibleVerseText": "Take delight in the Lord, and he will give you the desires of your heart.",
+            "book": "Psalm 37:4 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "God fills me with joy as I praise His holy name.",
+            "bibleVerseText": "Rejoice in the Lord, O you righteous, and give thanks to his holy name!",
+            "book": "Psalm 97:12 (ESV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I live in joy because God’s promises never fail.",
+            "bibleVerseText": "For no matter how many promises God has made, they are 'Yes' in Christ. And so through him the 'Amen' is spoken by us to the glory of God.",
+            "book": "2 Corinthians 1:20 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I rejoice because God is my strength and shield, protecting me always.",
+            "bibleVerseText": "The Lord is my strength and my shield; my heart trusts in him, and he helps me. My heart leaps for joy, and with my song I praise him.",
+            "book": "Psalm 28:7 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I live in joy because I trust in God’s faithfulness every day.",
+            "bibleVerseText": "The Lord is good to those whose hope is in him, to the one who seeks him.",
+            "book": "Lamentations 3:25 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I find joy in God’s presence and I praise Him with all my heart.",
+            "bibleVerseText": "Sing and make music from your heart to the Lord, always giving thanks to God the Father for everything.",
+            "book": "Ephesians 5:19-20 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "My heart overflows with joy because I live in God’s love.",
+            "bibleVerseText": "Though the mountains be shaken and the hills be removed, yet my unfailing love for you will not be shaken.",
+            "book": "Isaiah 54:10 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I choose to live in joy and peace because God is my refuge.",
+            "bibleVerseText": "The Lord is my rock, my fortress and my deliverer; my God is my rock, in whom I take refuge.",
+            "book": "Psalm 18:2 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I rejoice in hope and live in the joy of the Lord every day.",
+            "bibleVerseText": "Rejoice in hope, be patient in tribulation, be constant in prayer.",
+            "book": "Romans 12:12 (ESV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I live in joy because I trust in God’s unchanging goodness.",
+            "bibleVerseText": "Jesus Christ is the same yesterday and today and forever.",
+            "book": "Hebrews 13:8 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
+        },
+        {
+            "text": "I am filled with joy because God is with me and for me.",
+            "bibleVerseText": "If God is for us, who can be against us?",
+            "book": "Romans 8:31 (NIV)",
+            "isFavorite": false,
+            "category": "joy"
         },
         {
             "text": "This is the day the Lord has made I will be happy and enjoy it.",
@@ -8096,6 +9321,146 @@
             "book": "Jesus",
             "isFavorite": false,
             "category": "joy"
+        },
+        {
+            "text": "I am never alone because Jesus is always with me, guiding my steps.",
+            "bibleVerseText": "And surely I am with you always, to the very end of the age.",
+            "book": "Matthew 28:20 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "Even when I feel alone, I trust that Jesus is always by my side.",
+            "bibleVerseText": "The Lord himself goes before you and will be with you; he will never leave you nor forsake you.",
+            "book": "Deuteronomy 31:8 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "Jesus is my constant companion, and His presence brings me peace.",
+            "bibleVerseText": "My presence will go with you, and I will give you rest.",
+            "book": "Exodus 33:14 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "I am never truly alone because Jesus walks with me through every situation.",
+            "bibleVerseText": "Even though I walk through the darkest valley, I will fear no evil, for you are with me.",
+            "book": "Psalm 23:4 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "Jesus is my friend, and He will never abandon me, no matter what.",
+            "bibleVerseText": "No one will be able to stand against you all the days of your life. As I was with Moses, so I will be with you; I will never leave you nor forsake you.",
+            "book": "Joshua 1:5 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "I find comfort in knowing that Jesus is always with me, even in the quiet moments.",
+            "bibleVerseText": "The Lord is near to all who call on him, to all who call on him in truth.",
+            "book": "Psalm 145:18 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "In every season, Jesus is with me, and I am never alone.",
+            "bibleVerseText": "Never will I leave you; never will I forsake you.",
+            "book": "Hebrews 13:5 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "Jesus is my closest friend, always near and ready to comfort me.",
+            "bibleVerseText": "The Lord is close to the brokenhearted and saves those who are crushed in spirit.",
+            "book": "Psalm 34:18 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "I am never alone, for Jesus lives in me and strengthens me daily.",
+            "bibleVerseText": "I have been crucified with Christ and I no longer live, but Christ lives in me.",
+            "book": "Galatians 2:20 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "Jesus is my source of comfort and companionship, filling my heart with peace.",
+            "bibleVerseText": "Come to me, all you who are weary and burdened, and I will give you rest.",
+            "book": "Matthew 11:28 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "I can never feel abandoned because Jesus is always holding me close.",
+            "bibleVerseText": "The Lord is my shepherd; I shall not want.",
+            "book": "Psalm 23:1 (ASV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "In moments of loneliness, I remember Jesus is always with me, bringing comfort and joy.",
+            "bibleVerseText": "You will fill me with joy in your presence, with eternal pleasures at your right hand.",
+            "book": "Psalm 16:11 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "Jesus is with me wherever I go, and His presence is my constant strength.",
+            "bibleVerseText": "So do not fear, for I am with you; do not be dismayed, for I am your God.",
+            "book": "Isaiah 41:10 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "I am never truly alone because Jesus is always near, offering His peace and comfort.",
+            "bibleVerseText": "Peace I leave with you; my peace I give you. I do not give to you as the world gives.",
+            "book": "John 14:27 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "Jesus is my ever-present help, and I can rest in His faithful presence.",
+            "bibleVerseText": "God is our refuge and strength, an ever-present help in trouble.",
+            "book": "Psalm 46:1 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "Even in solitude, Jesus is with me, offering His love and grace.",
+            "bibleVerseText": "The Lord your God is with you, the Mighty Warrior who saves. He will take great delight in you.",
+            "book": "Zephaniah 3:17 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "I trust that Jesus walks beside me through every season of life.",
+            "bibleVerseText": "When you pass through the waters, I will be with you; and when you pass through the rivers, they will not sweep over you.",
+            "book": "Isaiah 43:2 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "In moments of loneliness, I remember Jesus is my constant companion.",
+            "bibleVerseText": "I am with you and will watch over you wherever you go.",
+            "book": "Genesis 28:15 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "I find peace in knowing that Jesus never leaves me, even in the quietest times.",
+            "bibleVerseText": "The Lord watches over you—the Lord is your shade at your right hand.",
+            "book": "Psalm 121:5 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
+        },
+        {
+            "text": "I will never be lonely, for Jesus walks with me every step of the way.",
+            "bibleVerseText": "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future... will be able to separate us from the love of God that is in Christ Jesus our Lord.",
+            "book": "Romans 8:38-39 (NIV)",
+            "isFavorite": false,
+            "category": "loneliness"
         },
         {
             "text": "The Lord is near to the brokenhearted and saves the crushed in spirit.",
@@ -8814,6 +10179,181 @@
             "text": "Thank you Jesus for the love that writes my story of triumph.",
             "isFavorite": false,
             "category": "love"
+        },
+        {
+            "text": "God strengthens our marriage, and together we reflect His love.",
+            "bibleVerseText": "Though one may be overpowered, two can defend themselves. A cord of three strands is not quickly broken.",
+            "book": "Ecclesiastes 4:12 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "With God at the center, our love grows deeper every day.",
+            "bibleVerseText": "Above all, love each other deeply, because love covers over a multitude of sins.",
+            "book": "1 Peter 4:8 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Our marriage is built on the foundation of God’s love and grace.",
+            "bibleVerseText": "Unless the Lord builds the house, the builders labor in vain.",
+            "book": "Psalm 127:1 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "God’s love fills our hearts and strengthens our bond daily.",
+            "bibleVerseText": "Be devoted to one another in love. Honor one another above yourselves.",
+            "book": "Romans 12:10 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "We are patient, kind, and loving to each other, just as God is with us.",
+            "bibleVerseText": "Love is patient, love is kind. It does not envy, it does not boast, it is not proud.",
+            "book": "1 Corinthians 13:4 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Our marriage thrives because we keep God first in all we do.",
+            "bibleVerseText": "But seek first his kingdom and his righteousness, and all these things will be given to you as well.",
+            "book": "Matthew 6:33 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "We forgive each other quickly, just as God forgives us.",
+            "bibleVerseText": "Bear with each other and forgive one another if any of you has a grievance against someone. Forgive as the Lord forgave you.",
+            "book": "Colossians 3:13 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "With God’s guidance, we grow together in love and unity.",
+            "bibleVerseText": "Make every effort to keep the unity of the Spirit through the bond of peace.",
+            "book": "Ephesians 4:3 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Our love for each other reflects God’s endless love for us.",
+            "bibleVerseText": "We love because he first loved us.",
+            "book": "1 John 4:19 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "We speak words of love and encouragement to build each other up.",
+            "bibleVerseText": "Therefore encourage one another and build each other up, just as in fact you are doing.",
+            "book": "1 Thessalonians 5:11 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Our marriage flourishes because we pray together and seek God’s will.",
+            "bibleVerseText": "For where two or three gather in my name, there am I with them.",
+            "book": "Matthew 18:20 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "God’s peace rules in our home, and we are thankful for each other.",
+            "bibleVerseText": "Let the peace of Christ rule in your hearts, since as members of one body you were called to peace. And be thankful.",
+            "book": "Colossians 3:15 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Our love for each other grows deeper as we follow God’s path.",
+            "bibleVerseText": "Do everything in love.",
+            "book": "1 Corinthians 16:14 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "We serve each other with love, just as Christ serves the Church.",
+            "bibleVerseText": "Husbands, love your wives, just as Christ loved the church and gave himself up for her.",
+            "book": "Ephesians 5:25 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "We honor and respect each other, following God’s plan for marriage.",
+            "bibleVerseText": "Submit to one another out of reverence for Christ.",
+            "book": "Ephesians 5:21 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Our marriage is rooted in faith, and together we overcome all challenges.",
+            "bibleVerseText": "I can do all things through Christ who strengthens me.",
+            "book": "Philippians 4:13 (ASV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "God fills our marriage with joy, peace, and unconditional love.",
+            "bibleVerseText": "May the Lord make your love increase and overflow for each other and for everyone else.",
+            "book": "1 Thessalonians 3:12 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "We communicate openly and lovingly, guided by God’s wisdom.",
+            "bibleVerseText": "Let your conversation be always full of grace, seasoned with salt, so that you may know how to answer everyone.",
+            "book": "Colossians 4:6 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Our love is patient and kind, reflecting God’s perfect love.",
+            "bibleVerseText": "Love is patient, love is kind. It does not envy, it does not boast, it is not proud.",
+            "book": "1 Corinthians 13:4 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "We trust in God’s plan for our marriage and follow His lead.",
+            "bibleVerseText": "In all your ways submit to him, and he will make your paths straight.",
+            "book": "Proverbs 3:6 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "We put each other first, just as Christ put us first in His love.",
+            "bibleVerseText": "Do nothing out of selfish ambition or vain conceit. Rather, in humility value others above yourselves.",
+            "book": "Philippians 2:3 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "We are quick to listen, slow to speak, and slow to become angry.",
+            "bibleVerseText": "My dear brothers and sisters, take note of this: Everyone should be quick to listen, slow to speak and slow to become angry.",
+            "book": "James 1:19 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "God strengthens our marriage as we pray and seek Him together.",
+            "bibleVerseText": "Devote yourselves to prayer, being watchful and thankful.",
+            "book": "Colossians 4:2 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "We love each other as God has loved us, and our marriage flourishes.",
+            "bibleVerseText": "My command is this: Love each other as I have loved you.",
+            "book": "John 15:12 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
+        },
+        {
+            "text": "Our marriage is a reflection of God’s perfect love and grace.",
+            "bibleVerseText": "Therefore what God has joined together, let no one separate.",
+            "book": "Mark 10:9 (NIV)",
+            "isFavorite": false,
+            "category": "marriage"
         },
         {
             "text": "In Jesus' name, our marriage is strong and full of love, no problem too big to handle.",
@@ -9799,6 +11339,181 @@
             "book": "Jesus",
             "isFavorite": false,
             "category": "peace"
+        },
+        {
+            "text": "I remain strong and persevere through every challenge with God’s help.",
+            "bibleVerseText": "But the one who stands firm to the end will be saved.",
+            "book": "Matthew 24:13 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I trust God’s timing and keep moving forward in faith.",
+            "bibleVerseText": "Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up.",
+            "book": "Galatians 6:9 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I run the race with endurance, knowing God is my strength.",
+            "bibleVerseText": "And let us run with perseverance the race marked out for us, fixing our eyes on Jesus, the pioneer and perfecter of faith.",
+            "book": "Hebrews 12:1-2 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I am patient and steadfast, knowing that God is working in my life.",
+            "bibleVerseText": "Be joyful in hope, patient in affliction, faithful in prayer.",
+            "book": "Romans 12:12 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I face trials with faith, knowing perseverance builds my character.",
+            "bibleVerseText": "Consider it pure joy, my brothers and sisters, whenever you face trials of many kinds, because you know that the testing of your faith produces perseverance.",
+            "book": "James 1:2-3 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I persevere in prayer, trusting that God hears and answers.",
+            "bibleVerseText": "Rejoice in our confident hope. Be patient in trouble, and keep on praying.",
+            "book": "Romans 12:12 (NLT)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I stay strong through difficulties, knowing they lead to victory.",
+            "bibleVerseText": "Blessed is the one who perseveres under trial because, having stood the test, that person will receive the crown of life that the Lord has promised.",
+            "book": "James 1:12 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I keep my hope alive through every trial because God is faithful.",
+            "bibleVerseText": "Let us hold unswervingly to the hope we profess, for he who promised is faithful.",
+            "book": "Hebrews 10:23 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I am not discouraged because my perseverance brings results.",
+            "bibleVerseText": "Therefore, my dear brothers and sisters, stand firm. Let nothing move you. Always give yourselves fully to the work of the Lord, because you know that your labor in the Lord is not in vain.",
+            "book": "1 Corinthians 15:58 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I find strength in God’s Word to persevere through all things.",
+            "bibleVerseText": "For everything that was written in the past was written to teach us, so that through the endurance taught in the Scriptures and the encouragement they provide we might have hope.",
+            "book": "Romans 15:4 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I keep pressing forward, knowing that God’s plan is perfect.",
+            "bibleVerseText": "I press on to reach the end of the race and receive the heavenly prize for which God, through Christ Jesus, is calling us.",
+            "book": "Philippians 3:14 (NLT)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I stand firm in my faith, trusting God to sustain me through hardship.",
+            "bibleVerseText": "Be on your guard; stand firm in the faith; be courageous; be strong.",
+            "book": "1 Corinthians 16:13 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I can do all things through Christ, who gives me strength to persevere.",
+            "bibleVerseText": "I can do all things through Christ who strengthens me.",
+            "book": "Philippians 4:13 (ASV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I trust in God’s promises and persevere through every challenge.",
+            "bibleVerseText": "Let us hold fast the confession of our hope without wavering, for he who promised is faithful.",
+            "book": "Hebrews 10:23 (ASV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I remain steadfast, knowing that my perseverance brings great reward.",
+            "bibleVerseText": "So do not throw away your confidence; it will be richly rewarded.",
+            "book": "Hebrews 10:35 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I endure trials with patience, knowing they produce spiritual growth.",
+            "bibleVerseText": "Not only so, but we also glory in our sufferings, because we know that suffering produces perseverance.",
+            "book": "Romans 5:3 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I keep my eyes on Jesus, who is the source of my perseverance.",
+            "bibleVerseText": "Let us run with perseverance the race marked out for us, fixing our eyes on Jesus, the pioneer and perfecter of faith.",
+            "book": "Hebrews 12:1-2 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I do not grow weary in doing good, knowing God sees my perseverance.",
+            "bibleVerseText": "Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up.",
+            "book": "Galatians 6:9 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I persevere through every storm, knowing God will never leave me.",
+            "bibleVerseText": "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.",
+            "book": "Joshua 1:9 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I trust in God’s strength, which sustains me through every difficulty.",
+            "bibleVerseText": "The Lord is my strength and my defense; he has become my salvation.",
+            "book": "Exodus 15:2 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I find joy in perseverance because it leads to spiritual maturity.",
+            "bibleVerseText": "Let perseverance finish its work so that you may be mature and complete, not lacking anything.",
+            "book": "James 1:4 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I persevere, knowing that nothing can separate me from God’s love.",
+            "bibleVerseText": "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers ... will be able to separate us from the love of God.",
+            "book": "Romans 8:38-39 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I endure suffering with hope, knowing God is always with me.",
+            "bibleVerseText": "And the God of all grace, who called you to his eternal glory in Christ, after you have suffered a little while, will himself restore you and make you strong, firm, and steadfast.",
+            "book": "1 Peter 5:10 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I trust that every trial leads me closer to God’s perfect will.",
+            "bibleVerseText": "We know that in all things God works for the good of those who love him, who have been called according to his purpose.",
+            "book": "Romans 8:28 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
+        },
+        {
+            "text": "I stand firm in my faith, knowing God will reward my perseverance.",
+            "bibleVerseText": "Therefore, my dear brothers and sisters, stand firm. Let nothing move you. Always give yourselves fully to the work of the Lord.",
+            "book": "1 Corinthians 15:58 (NIV)",
+            "isFavorite": false,
+            "category": "perseverance"
         },
         {
             "text": "I am a relentless warrior, unstoppable in the face of adversity.",
@@ -11875,6 +13590,181 @@
             "text": "Thank You Jesus, for with You by my side, dis-ease has no place in my life!",
             "isFavorite": false,
             "category": "health"
+        },
+        {
+            "text": "I praise the Lord for His unfailing love and faithfulness.",
+            "bibleVerseText": "For the word of the Lord is right and true; he is faithful in all he does.",
+            "book": "Psalm 33:4 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I lift my voice to praise the Lord for His goodness and mercy.",
+            "bibleVerseText": "Give thanks to the Lord, for he is good; his love endures forever.",
+            "book": "1 Chronicles 16:34 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I will bless the Lord at all times for He is always faithful.",
+            "bibleVerseText": "I will bless the Lord at all times: his praise shall continually be in my mouth.",
+            "book": "Psalm 34:1 (ASV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "My heart rejoices in the Lord, for He has done great things.",
+            "bibleVerseText": "The Lord has done great things for us, and we are filled with joy.",
+            "book": "Psalm 126:3 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I praise the Lord, for His faithfulness reaches to the heavens.",
+            "bibleVerseText": "Your faithfulness reaches to the skies, O God.",
+            "book": "Psalm 36:5 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I thank and praise the Lord, for He is my strength and refuge.",
+            "bibleVerseText": "The Lord is my strength and my shield; my heart trusts in him, and he helps me.",
+            "book": "Psalm 28:7 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I will sing praises to the Lord, for He is worthy of all honor and glory.",
+            "bibleVerseText": "Great is the Lord and most worthy of praise; his greatness no one can fathom.",
+            "book": "Psalm 145:3 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I glorify the Lord for His goodness and praise His name forever.",
+            "bibleVerseText": "Praise the Lord. Give thanks to the Lord, for he is good; his love endures forever.",
+            "book": "Psalm 106:1 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I praise God, for His love and mercy never fail.",
+            "bibleVerseText": "Because of the Lord’s great love we are not consumed, for his compassions never fail.",
+            "book": "Lamentations 3:22 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I give thanks to the Lord with all my heart, for His love endures forever.",
+            "bibleVerseText": "I will give thanks to you, Lord, with all my heart; I will tell of all your wonderful deeds.",
+            "book": "Psalm 9:1 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I praise God for His faithfulness, which remains through all generations.",
+            "bibleVerseText": "For the Lord is good and his love endures forever; his faithfulness continues through all generations.",
+            "book": "Psalm 100:5 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I lift up my hands and sing praises to the Lord for His great mercy.",
+            "bibleVerseText": "I will praise you, Lord, with all my heart; before the gods I will sing your praise.",
+            "book": "Psalm 138:1 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I praise the Lord for He is my provider and sustainer.",
+            "bibleVerseText": "The Lord is my shepherd; I have all that I need.",
+            "book": "Psalm 23:1 (NLT)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I sing praises to God, for He has rescued me and set me free.",
+            "bibleVerseText": "He lifted me out of the pit of despair, out of the mud and the mire; he set my feet on solid ground and steadied me as I walked along.",
+            "book": "Psalm 40:2 (NLT)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I praise God with all my being, for His love and mercy never end.",
+            "bibleVerseText": "Praise the Lord, my soul; all my inmost being, praise his holy name.",
+            "book": "Psalm 103:1 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I rejoice in the Lord and praise Him for His goodness and grace.",
+            "bibleVerseText": "Let them give thanks to the Lord for his unfailing love and his wonderful deeds for mankind.",
+            "book": "Psalm 107:8 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I praise the Lord, for He is my rock and my salvation.",
+            "bibleVerseText": "The Lord is my rock, my fortress, and my savior; my God is my rock, in whom I find protection.",
+            "book": "Psalm 18:2 (NLT)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I give thanks to the Lord, for His love is everlasting and His grace abounds.",
+            "bibleVerseText": "Give thanks to the Lord, for he is good; his love endures forever.",
+            "book": "Psalm 118:1 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I praise the Lord, for His goodness and mercy follow me all my days.",
+            "bibleVerseText": "Surely your goodness and love will follow me all the days of my life, and I will dwell in the house of the Lord forever.",
+            "book": "Psalm 23:6 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I praise the Lord with all my heart, for He is always with me.",
+            "bibleVerseText": "The Lord is my strength and my song; he has given me victory.",
+            "book": "Exodus 15:2 (NLT)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I rejoice in the Lord and give thanks for His wonderful deeds.",
+            "bibleVerseText": "Give thanks to the Lord, for he is good; his love endures forever.",
+            "book": "Psalm 107:1 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I sing praises to the Lord, for His greatness is beyond understanding.",
+            "bibleVerseText": "Great is the Lord and most worthy of praise; his greatness no one can fathom.",
+            "book": "Psalm 145:3 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I will continually praise the Lord for His faithfulness and grace.",
+            "bibleVerseText": "I will sing of the Lord’s great love forever; with my mouth I will make your faithfulness known through all generations.",
+            "book": "Psalm 89:1 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I declare the goodness of the Lord and give Him all my praise.",
+            "bibleVerseText": "Sing to the Lord a new song, for he has done marvelous things.",
+            "book": "Psalm 98:1 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
+        },
+        {
+            "text": "I exalt the Lord for His unfailing love and never-ending mercy.",
+            "bibleVerseText": "The Lord is gracious and compassionate, slow to anger and rich in love.",
+            "book": "Psalm 145:8 (NIV)",
+            "isFavorite": false,
+            "category": "praise"
         },
         {
             "text": "The Lord is my strength and shield. My heart trusts in Him, and I find help. My spirit overflows with joy, and I will sing His praise!",
