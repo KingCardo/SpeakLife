@@ -26,6 +26,7 @@ struct InAppId: Codable {
         case speakLife1YR15 = "SpeakLife1YR15"
         case speakLife1YR9 = "SpeakLife1YR9"
         case speakLife1MO9 = "SpeakLife1MO9"
+        case speakLife1MO7 = "SpeakLife1MO7"
         case speakLife1MO4 = "SpeakLife1MO4"
         case speakLife1MO2 = "SpeakLife1MO2"
         
@@ -40,6 +41,7 @@ struct InAppId: Codable {
             case .speakLife1YR15: return "$14.99"
             case .speakLife1YR9: return "$9.99"
             case .speakLife1MO9: return "$9.99"
+            case .speakLife1MO7: return "$6.99"
             case .speakLife1MO4: return "$4.99"
             case .speakLife1MO2: return "$2.99"
             }
@@ -72,6 +74,7 @@ struct InAppId: Codable {
             case .speakLife1YR15: return "$14.99/year"
             case .speakLife1YR9: return "$9.99/year"
             case .speakLife1MO9: return "$9.99/month"
+            case .speakLife1MO7: return "$6.99/month"
             case .speakLife1MO4: return "$4.99/month"
             case .speakLife1MO2: return "$2.99/month"
             }
@@ -85,6 +88,7 @@ struct InAppId: Codable {
             case .speakLife1YR29, .speakLife1YR19: return "Yearly"
             case .speakLife1MO2: return "Monthly"
             case .speakLife1MO4: return "Monthly"
+            case .speakLife1MO7: return "Monthly"
             case .speakLife1YR9: return "Yearly"
             case .speakLife1MO9: return "Monthly"
             case .speakLife1YR15: return "Yearly"
@@ -112,6 +116,7 @@ struct InAppId: Codable {
             case .speakLife1YR15: return "1.25/mo. - Save 60%"
             case .speakLife1YR9: return "$0.83 cents/month"
             case .speakLife1MO9: return "$9.99/mo"
+            case .speakLife1MO7: return "$6.99/mo"
             case .speakLife1MO4: return "$4.99/mo"
             default: return ""
             }
@@ -127,6 +132,7 @@ struct InAppId: Codable {
             case .speakLife1YR15: return "$14.99"
             case .speakLife1YR9: return "$9.99"
             case .speakLife1MO9: return "$9.99"
+            case .speakLife1MO7: return "$6.99"
             case .speakLife1MO4: return "$4.99"
             case .speakLife1MO2: return "$2.99"
             default: return ""

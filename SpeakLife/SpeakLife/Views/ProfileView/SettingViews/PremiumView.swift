@@ -19,11 +19,7 @@ struct PremiumView: View {
     var body: some View {
         GeometryReader { geometry in
             if !subscriptionStore.isPremium {
-                if appState.offerDiscount {
-                    DiscountSubscriptionView(size: UIScreen.main.bounds.size)
-                } else {
                     SubscriptionView(size: geometry.size)
-                }
             } else {
                 NavigationView {
                     VStack {

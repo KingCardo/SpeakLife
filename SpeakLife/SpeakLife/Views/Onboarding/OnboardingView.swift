@@ -208,31 +208,6 @@ struct OnboardingView: View  {
     }
     
     
-    private func discountScene(size: CGSize) -> some View  {
-        
-        ZStack {
-            DiscountSubscriptionView(size: size) {
-                advance()
-            }
-            
-            VStack  {
-                HStack  {
-                    Button(action:  showAlertIfNeededAndDismissOnboarding) {
-                        Text("CANCEL",  comment: "Cancel text for label")
-                            .font(.callout)
-                            .frame(height: 35)
-                            .foregroundColor(.white)
-                        
-                    }
-                    Spacer()
-                }
-                .padding()
-                
-                Spacer()
-            }
-        }
-    }
-    
     func showAlertIfNeededAndDismissOnboarding() {
         if !subscriptionStore.isPremium {
             showLastChanceAlert = true
