@@ -25,15 +25,15 @@ struct FeatureRow: View {
             Image(systemName: feature.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 16, height: 16)
+                .frame(width: 20, height: 20)
                 .padding(.trailing, 8)
             VStack(alignment: .leading) {
                 Text(feature.name)
-                    .font(Font.custom("AppleSDGothicNeo-Regular-Bold", size: 16, relativeTo: .body))
+                    .font(Font.custom("AppleSDGothicNeo-Regular-Bold", size: 18, relativeTo: .body))
                     Spacer()
                         .frame(height: 4)
                     Text(feature.subtitle)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
             }
             Spacer()
 
@@ -49,13 +49,13 @@ struct FeatureView: View {
     var valueProps: [Feature] = []
     
     init(_ userValueProps: [Feature]) {
-        if self.userValueProps.count > 2 {
+        if self.userValueProps.count > 1 {
             let count = self.userValueProps.count
             let maximum = min(count, 4)
             let firstNElements = Array(self.userValueProps.prefix(maximum))
             valueProps = firstNElements
             valueProps.append(Feature(name: "Spiritual Growth", subtitle: "365+ Daily Devotionals to grow with Jesus", imageName: "book.fill"))
-        } else if userValueProps.count > 2 {
+        } else if userValueProps.count > 1 {
             self.userValueProps = userValueProps
             let count = userValueProps.count
             let maximum = min(count, 4)
@@ -79,7 +79,7 @@ struct FeatureView: View {
         VStack {
             ForEach(valueProps, id: \.name) { feature in
                 FeatureRow(feature: feature)
-                Spacer().frame(height: 10)
+                Spacer().frame(height: 15)
             }
             
         }

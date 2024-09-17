@@ -24,7 +24,7 @@ struct ImprovementScene: View {
             Spacer().frame(height: 30)
                
                 VStack {
-                    Text("What areas of life do you need victory over the devil?", comment: "Intro scene title label")
+                    Text("What brings you to SpeakLife?", comment: "Intro scene title label")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 28, relativeTo: .title))
                         .fontWeight(.semibold)
                         .multilineTextAlignment(.center)
@@ -35,7 +35,7 @@ struct ImprovementScene: View {
                     Spacer().frame(height: 16)
                     
                     VStack {
-                        Text("Select as many as you need" , comment: "Intro scene instructions")
+                        Text("We'll personalize your feed based on your goals." , comment: "Intro scene instructions")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .body))
                             .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                             .multilineTextAlignment(.center)

@@ -42,19 +42,19 @@ struct OnboardingView: View  {
             TabView(selection: $selection) {
 
                 IntroTipScene(title: "Daily Affirmations for a Transformed Life",
-                              bodyText: "Embrace Your New Identity in Christ by Speaking Life Every Day",
+                              bodyText: "",//"Embrace Your New Identity in Christ by Speaking Life Every Day",
                               subtext: "Speaking life isn’t just a one-time act; it’s a daily discipline that aligns us with God’s will and activates His promises. You are in charge of the process—declaring God’s truth over your life, your family, and your future. Jesus is responsible for the results, ensuring that every word you speak in faith bears fruit (John 15:7-8).",
                               ctaText: "Let's go",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size, callBack: advance)
                     .tag(Tab.transformedLife)
-                IntroTipScene(title: "Speak Life Like Jesus",
-                              bodyText: "Overcome Life’s Trials by Declaring God’s Word Daily",
-                              subtext: "Just as Jesus spoke peace into the storm (Mark 4:39), you too can speak life into every challenge you face. The Word of God is a powerful weapon, sharper than any double-edged sword (Hebrews 4:12). Speak life into your day and experience the transformative power of God’s promises.",
-                              ctaText: "Continue",
-                              showTestimonials: false,
-                              isScholarship: false, size: geometry.size, callBack: advance)
-                    .tag(Tab.likeJesus)
+//                IntroTipScene(title: "Speak Life Like Jesus",
+//                              bodyText: "Overcome Life’s Trials by Declaring God’s Word Daily",
+//                              subtext: "Just as Jesus spoke peace into the storm (Mark 4:39), you too can speak life into every challenge you face. The Word of God is a powerful weapon, sharper than any double-edged sword (Hebrews 4:12). Speak life into your day and experience the transformative power of God’s promises.",
+//                              ctaText: "Continue",
+//                              showTestimonials: false,
+//                              isScholarship: false, size: geometry.size, callBack: advance)
+//                    .tag(Tab.likeJesus)
      
                 if !appState.onBoardingTest {
                     HabitScene(size: geometry.size, callBack: advance)
@@ -318,7 +318,7 @@ struct OnboardingView: View  {
                     dismissOnboarding()
                 case .transformedLife:
                     impactMed.impactOccurred()
-                    selection = .likeJesus
+                    selection = .improvement
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("TransformedLifeScreenDone", parameters: nil)
                 case .likeJesus:

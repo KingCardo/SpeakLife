@@ -71,16 +71,14 @@ struct SubscriptionView: View {
             GeometryReader { geometry in
                 LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, Color.black]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
-           
-                ScrollView {
                     
                     VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
                         Spacer()
                             .frame(height: 60)
                         VStack(alignment: .center) {
-                            Text("Speak Life and Walk in Victory ✝️", comment: "unlock everything premium view")
+                            Text("Unlock SpeakLife for free", comment: "unlock everything premium view")
                                 .multilineTextAlignment(.center)
-                                .font(Font.custom("AppleSDGothicNeo-Regular", size: 24))
+                                .font(Font.custom("AppleSDGothicNeo-Regular", size: 26))
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
                                 .lineLimit(2)
@@ -95,52 +93,22 @@ struct SubscriptionView: View {
                         }.padding([.leading,.trailing],20)
                         
                         FeatureView(valueProps)
-                        
                             .foregroundColor(.white)
                         
-                        Spacer()
-                            .frame(height: 24)
-                        
-                        Text("Over 40K+ happy users 🥳")
-                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 25, relativeTo: .title))
-                            .foregroundStyle(Color.white)
-                        
-                        Spacer()
-                            .frame(height: 24)
-                        
-                        
-                        VStack {
-                            
-                            Button {
-                                currentSelection = firstSelection
-                            } label: {
-                                yearlyCTABox()
-                            }
+    
                             Spacer()
-                                .frame(height: 12)
-                            Button {
-                                currentSelection = secondSelection
-                            } label: {
-                                monthlySelectionBox()
-                            }
+                            Text("Over 40K+ happy users 🥳")
+                                .font(Font.custom("AppleSDGothicNeo-Bold", size: 25, relativeTo: .title))
+                                .foregroundStyle(Color.white)
+                            
+                            subscriptionStack
+                            
+                            goPremiumStack()
         
-                        }
-                        
-                        goPremiumStack()
-                        
-                        Spacer()
-                            .frame(height: 16)
-                        continueButton(gradient: linearGradient)
-                            .padding()
-                        
-                        costDescription
-                        
                         
                     }
-                    .padding(.bottom, 80)
                     
-                }
-            }
+            }.padding(.bottom, 30)
            
             if declarationStore.isPurchasing {
                 ProgressView()
@@ -151,6 +119,38 @@ struct SubscriptionView: View {
         
         .edgesIgnoringSafeArea(.bottom)
     }
+    
+    var subscriptionStack: some View {
+        VStack {
+            Text("Start your 7-day free trial today")
+                .font(Font.custom("AppleSDGothicNeo-Bold", size: 20))
+                .foregroundColor(Constants.gold)
+                .padding(.bottom, 4)
+            
+            Button {
+                makePurchase()
+            } label: {
+                Text("Try Free & Subscribe")
+                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 20))
+                    .foregroundColor(Constants.DAMidBlue)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(.white)
+                    .cornerRadius(25)
+            }
+            .padding(.horizontal)
+            
+            Text(firstSelection.title)
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 12, relativeTo: .callout))
+                .foregroundColor(.white)
+                .padding(.top, 4)
+        }
+        .padding(.vertical)
+        .background(Color(UIColor.systemBackground).opacity(0.2))
+        .cornerRadius(10)
+        .padding()
+    }
+              
     
     @ViewBuilder
     var costDescription: some View {
@@ -176,8 +176,6 @@ struct SubscriptionView: View {
     private func goPremiumStack() -> some View  {
         return VStack {
         
-           
-    
             Spacer()
             .frame(height: 8)
             
