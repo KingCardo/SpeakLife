@@ -255,7 +255,7 @@ struct Declaration: Codable, Identifiable, Hashable {
     var categories: [DeclarationCategory] = []
     var isFavorite: Bool = false
     var id: String {
-      // UUID().uuidString
+       //UUID().uuidString
         text + category.rawValue
     }
     

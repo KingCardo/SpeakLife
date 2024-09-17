@@ -138,15 +138,13 @@ enum Improvements: String, CaseIterable {
     case psalms = "Psalms & Proverbs"
     case gratitude = "Gratitude"
     case stress = "Remove Stress & Anxiety"
-   // case praise = "Magnify the Lord"
     case grace = "God's Grace"
     case love = "Jesus Love"
     case health = "Health"
     case destiny = "Destiny"
     case safety = "God's protection"
-   // case guilt = "Be free from guilt and condemnation"
     case loneliness = "Feeling lonely"
-  //  case wealth = "Wealth"
+    case wealth = "Wealth"
     case peace = "Peace"
     
     
@@ -174,6 +172,8 @@ enum Improvements: String, CaseIterable {
             "loneliness"
         case .peace:
             "peace"
+        case .wealth:
+            "wealth"
         }
     }
 }
@@ -184,29 +184,6 @@ struct ImprovementSelectionListView: View {
     
     var body: some View {
         newBody
-//        VStack {
-//            
-//            ForEach(Improvements.allCases, id: \.self) { experience in
-//                Button(action: {
-//                    impactMed.impactOccurred()
-//                    viewModel.selectExperience(experience)
-//                }) {
-//                    HStack {
-//                        Text(experience.rawValue)
-//                            .foregroundColor(.white)
-//                        Spacer()
-//                        if viewModel.selectedExperiences.contains(experience) {
-//                            Image(systemName: "checkmark")
-//                                .foregroundColor(.white)
-//                        }
-//                    }
-//                }
-//                .padding()
-//                .background(Constants.DAMidBlue.opacity(viewModel.selectedExperiences.contains(experience) ? 0.8 : 0.3))
-//                .cornerRadius(10)
-//            }
-//        }
-//        .padding()
     }
     
     var newBody: some View {

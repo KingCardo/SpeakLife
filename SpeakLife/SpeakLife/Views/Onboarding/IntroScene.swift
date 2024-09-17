@@ -13,7 +13,6 @@ struct IntroTipScene: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
     @State private var currentTestimonialIndex: Int = 0
-    //let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect()
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let title: String
@@ -75,26 +74,6 @@ struct IntroTipScene: View {
                         .lineLimit(nil)
                 }
                 .frame(width: size.width * 0.9)
-                
-                
-//                if isScholarship {
-//                    Spacer().frame(height: size.height * 0.05)
-//                    VStack {
-//                        Text("Select an option")
-//                            .foregroundStyle(Color.white)
-//                            .font(.headline)
-//                           // .padding()
-//                    }
-//                    Picker("subscriptionScholarship", selection: $selectedOption) {
-//                        ForEach(InAppId.allInApp) { subscription in
-//                            Text(subscription.scholarshipTitle)
-//                                .tag(subscription)
-//                                .foregroundStyle(Color.white)
-//                        }
-//                    }
-//                    .pickerStyle(WheelPickerStyle())
-//                    .frame(height: 150)
-//                }
     
             }
     
@@ -138,8 +117,6 @@ let testimonials: [Testimonial] = [
     Testimonial(id: 2, text: "A truly uplifting experience every time I use this app. Highly recommended for anyone seeking daily motivation.", author: "Caleb W.", details: "USA"),
     Testimonial(id: 3, text: "I really love this app and have been sharing it with my friends and family! I bought the subscription and am pleased with it. Great job!", author: "Samantha F.", details: "USA"),
     Testimonial(id: 4, text: "Powerful affirmations. Loving it!! Everyone should give it a try", author: "Rahul P.", details: "India"),
-//    Testimonial(id: 5, text: "The words are very inspiring!", author: " Michael T.", details: "Australia"),
-//    Testimonial(id: 6, text: "They are so random but with purpose, I would be outside on a walk then a scripture appears. Glory to God for this app", author: "Khalil P.", details: "Singapore"),
     Testimonial(id: 7, text: "I love the awesome backgrounds, the categories you can pick to suit, God uses all things for the good of those that love Him and are Called.", author: "Emily C.", details: "United Kingdom"),
     Testimonial(id: 8, text: "I absolutely love this app because instead of scrolling on tiktok, Instagram etc. I can scroll here and learn about God even more.", author: "Maria S.", details: "Philippines")
 ]
@@ -285,11 +262,6 @@ struct LoadingScene: View {
                         self.rotate = true
                         self.fadeInOut = true
                     }
-                //                    .scaleEffect(pulsate ? 1.4 : 0.9)
-                //                    .animation(Animation.easeInOut(duration: 0.8).repeatForever(autoreverses: true), value: pulsate)
-                //                    .onAppear {
-                //                        self.pulsate = true
-                //                    }
                 
             }
         }

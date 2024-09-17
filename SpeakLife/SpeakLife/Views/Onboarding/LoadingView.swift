@@ -34,7 +34,6 @@ struct PersonalizationLoadingView: View {
             }
             VStack(spacing: 10) {
                 VStack(spacing: 10) {
-//                    CustomSpinnerView(timeRemaining: <#Int#>, action: <#(() -> Void)?#>)
                     Spacer()
                         .frame(height: 110)
                     

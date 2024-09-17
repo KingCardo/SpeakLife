@@ -53,19 +53,6 @@ struct HomeView: View {
     
     @ViewBuilder
     var homeView: some View {
-//        if appState.onBoardingTest {
-//            DeclarationView()
-//                .id(appState.rootViewId)
-//                .onAppear {
-//                   // appState.subscriptionTestnineteen = data.randomElement() ?? false
-//                    viewModel.requestPermission()
-//                    UIScrollView.appearance().isScrollEnabled = true
-//                    if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
-//                        AudioPlayerService.shared.playSound(files: resources)
-//                    }
-//                }
-//                .environment(\.colorScheme, .dark)
-//        } else {
             TabView {
                 DeclarationView()
                     .id(appState.rootViewId)
@@ -117,20 +104,13 @@ struct HomeView: View {
             .hideTabBar(if: appState.showScreenshotLabel)
             .accentColor(Constants.DAMidBlue)
             .onAppear {
-               // viewModel.requestPermission()
                 UIScrollView.appearance().isScrollEnabled = true
                 if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
                     AudioPlayerService.shared.playSound(files: resources)
                 }
             }
             .environment(\.colorScheme, .dark)
-      //  }
     }
-    
-//    func requestReview() {
-//        declarationStore.requestReview.toggle()
-//        appState.helpUsGrowCount += 1
-//    }
 }
 
 

@@ -41,21 +41,6 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
                 self?.declarationStore?.setDeclaration(content.body, category: content.title)
             }
         }
-
-        
-//        if let notification = launchOptions?[.localNotification] as? [String: AnyObject] {
-//               let aps = notification["aps"] as? [String: AnyObject]
-//               let title = aps?["alert"]?["title"] as? String ?? ""
-//               let body = aps?["alert"]?["body"] as? String ?? ""
-//            DispatchQueue.main.async { [weak self] in
-//                self?.declarationStore?.setDeclaration(body, category: title)
-//            }
-//           }
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-//            if granted {
-//                application.registerForRemoteNotifications()
-//            }
-//        }
         
         return true
     }
@@ -130,16 +115,3 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         
     }
 }
-
-
-//extension AppDelegate: SKPaymentTransactionObserver {
-//    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-//        
-//    }
-//    
-//    func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
-//        // Handle the incoming purchase request
-//        // Return true if you are ready to process the payment; return false to defer it
-//        return true
-//    }
-//}

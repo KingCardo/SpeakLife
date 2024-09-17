@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct Feature {
+struct Feature: Codable, Identifiable {
+    var id = UUID()
     var name: String
     var subtitle: String
     var imageName: String = "checkmark.seal.fill"
@@ -42,11 +43,48 @@ struct FeatureRow: View {
 
 // Main subscription view
 struct FeatureView: View {
-    @EnvironmentObject var appState: AppState
-    var freeText: String {
-        appState.subscriptionTestnineteen ? "3 days free, then" : "7 days free, then"
+    //@EnvironmentObject var appState: AppState
+    @AppStorageCodable(key: "valueProps", defaultValue: [])
+    var userValueProps: [Feature]
+   // @AppStorageCodable(key: "valueProps", defaultValue: [])
+   // var userValueProps: [Feature]
+    var valueProps: [Feature] = []
+//    var freeText: String {
+//        appState.subscriptionTestnineteen ? "3 days free, then" : "7 days free, then"
+//    }
+    
+    init(_ userValueProps: [Feature]) {
+       // guard let userValueProps = userValueProps else { valueProps = features ; return }
+        
+        if self.userValueProps.count > 2 {
+            let count = self.userValueProps.count
+            let maximum = min(count, 4)
+            let firstNElements = Array(self.userValueProps.prefix(maximum))
+            valueProps = firstNElements
+            valueProps.append(Feature(name: "Spiritual Growth", subtitle: "365+ Daily Devotionals to grow with Jesus", imageName: "book.fill"))
+        } else if userValueProps.count > 2 {
+            self.userValueProps = userValueProps
+            let count = userValueProps.count
+            let maximum = min(count, 4)
+            let firstNElements = Array(userValueProps.prefix(maximum))
+            valueProps = firstNElements
+            valueProps.append(Feature(name: "Spiritual Growth", subtitle: "365+ Daily Devotionals to grow with Jesus", imageName: "book.fill"))
+        } else {
+            valueProps = features
+        }
     }
     
+//    init() {
+//        if userValueProps.isEmpty || userValueProps.count < 2 {
+//            valueProps = features
+//        } else {
+//            let count = userValueProps.count
+//            let maximum = min(count, 4)
+//            let firstNElements = Array(userValueProps.prefix(maximum))
+//            valueProps = firstNElements
+//            valueProps.append(Feature(name: "Spiritual Growth", subtitle: "365+ Daily Devotionals to grow with Jesus", imageName: "book.fill"))
+//        }
+//    }
    // Renew your mind thru right believing
     // This could be fetched from a ViewModel in a real-world app
     let features: [Feature] = [
@@ -54,7 +92,7 @@ struct FeatureView: View {
        
         Feature(name: "Prosperity", subtitle: "Those who delight in the Lord and meditate day and night prosper in everything they do! Psalm 1:2-3", imageName: "infinity"),
         Feature(name: "Inner Peace & Joy", subtitle: "Unlimited affirmations, Guided Prayers, and more to declare and activate a life of prosperity, peace, and health for yourself and your loved ones."/* Start declaring your blessings today!**Declare and manifest a long, prosperous, peaceful life for you and your family."*/, imageName: "sparkles"),
-        Feature(name: "Guidance & Wisdom", subtitle: "365+ Daily Devotionals to grow with Jesus"/*Receive Jesus's love and be victorious from guilt, anxiety, and fear."*/, imageName: "bolt.heart.fill"),
+        Feature(name: "Guidance & Wisdom", subtitle: "365+ Daily Devotionals to grow with Jesus"/*Receive Jesus's love and be victorious from guilt, anxiety, and fear."*/, imageName: "book.fill"),
      //   Feature(name: "Life & Health", subtitle: "Let my words penetrate deep into your heart, they bring life to those who find them, and healing to their whole body. Proverbs 4:21,22", imageName: "bolt.heart.fill"),
        // Feature(name: "Unlock everything", subtitle: ""),
         
@@ -72,7 +110,7 @@ struct FeatureView: View {
 
     var body: some View {
         VStack {
-            ForEach(features, id: \.name) { feature in
+            ForEach(valueProps, id: \.name) { feature in
                 FeatureRow(feature: feature)
                 Spacer().frame(height: 10)
             }

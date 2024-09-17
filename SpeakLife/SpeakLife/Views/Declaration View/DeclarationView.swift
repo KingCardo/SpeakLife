@@ -192,12 +192,12 @@ struct DeclarationView: View {
             }
             .sheet(isPresented: $viewModel.showDiscountView) {
             
-                if appState.offerDiscountTry < 2, !subscriptionStore.isPremium {
+               // if appState.offerDiscountTry < 2, !subscriptionStore.isPremium {
 //                    DiscountSubscriptionView(size: UIScreen.main.bounds.size)
 //                } else {
                     GeometryReader { geometry in
                         SubscriptionView(size: geometry.size)
-                                }
+                  //              }
                 }
             }
             .onDisappear {

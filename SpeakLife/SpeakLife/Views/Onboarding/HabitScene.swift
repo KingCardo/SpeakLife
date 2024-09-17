@@ -43,7 +43,6 @@ struct HabitScene: View {
                 .lineLimit(2)
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
                 .padding()
-              //  .foregroundColor(.white)
             
             Button(action: callBack) {
                 HStack {

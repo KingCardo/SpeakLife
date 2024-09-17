@@ -41,6 +41,28 @@ final class AppState: ObservableObject {
     @AppStorage("discountSelection") var discountSelection = ""
     @AppStorage("discountPercentage") var discountPercentage = ""
     @AppStorage("subscriptionTest") var subscriptionTestnineteen = false
+  
+}
+
+@propertyWrapper
+struct AppStorageCodable<T: Codable> {
+    let key: String
+    let defaultValue: T
+    var container: UserDefaults = .standard
+
+    var wrappedValue: T {
+        get {
+            guard let data = container.data(forKey: key) else {
+                return defaultValue
+            }
+            let decodedValue = try? JSONDecoder().decode(T.self, from: data)
+            return decodedValue ?? defaultValue
+        }
+        set {
+            let encodedData = try? JSONEncoder().encode(newValue)
+            container.set(encodedData, forKey: key)
+        }
+    }
 }
 
 extension Date: RawRepresentable {

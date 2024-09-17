@@ -265,9 +265,10 @@ struct SubscriptionView: View {
     @State private var regionCode: String = "US"
     @State private var isCheaperPricingCountry = false
     
-    var secondSelection = InAppId.Subscription.speakLifeLifetime
+    var secondSelection = InAppId.Subscription.speakLife1MO4
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
+    let valueProps: [Feature]
     let size: CGSize
     var callback: (() -> Void)?
     let benefits: [Benefit]
@@ -278,7 +279,8 @@ struct SubscriptionView: View {
 
     }
     
-    init(benefits: [Benefit] = Benefit.premiumBenefits, size: CGSize, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
+    init(benefits: [Benefit] = Benefit.premiumBenefits, valueProps: [Feature] = [], size: CGSize, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
+        self.valueProps = valueProps
         self.benefits = benefits
         self.size = size
        // self.ctaText = ctaText
@@ -320,16 +322,25 @@ struct SubscriptionView: View {
         ZStack {
           
             GeometryReader { geometry in
-                Image(subscriptionImage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
-                    .edgesIgnoringSafeArea([.top])
-                    .overlay(
-                        Rectangle()
-                            .fill(Color.black.opacity(0.2))
-                            .edgesIgnoringSafeArea(.all)
-                    )
+                LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, Color.black]), startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.all)
+                
+                // Custom Shape with Gradient
+//                CustomShape()
+//                    .fill(LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.8), Color.white.opacity(0.5)]), startPoint: .topLeading, endPoint: .bottomTrailing))
+//                    .frame(width: 200, height: 200)
+//                    .shadow(radius: 20)
+                
+//                Image(subscriptionImage)
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fill)
+//                    .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
+//                    .edgesIgnoringSafeArea([.top])
+//                    .overlay(
+//                        Rectangle()
+//                            .fill(Color.black.opacity(0.2))
+//                            .edgesIgnoringSafeArea(.all)
+//                    )
            
             ScrollView {
                
@@ -353,7 +364,7 @@ struct SubscriptionView: View {
                         StarRatingView(rating: 4.8)
                     }.padding([.leading,.trailing],20)
                     
-                    FeatureView()
+                    FeatureView(valueProps)
                     
                         .foregroundColor(.white)
                     
@@ -369,19 +380,21 @@ struct SubscriptionView: View {
                     
                     
                     VStack {
-                        Button {
-                            currentSelection = secondSelection
-                        } label: {
-                            monthlySelectionBox()
-                        }
-                        Spacer()
-                            .frame(height: 12)
                         
                         Button {
                             currentSelection = firstSelection
                         } label: {
                             yearlyCTABox()
                         }
+                        Spacer()
+                            .frame(height: 12)
+                        Button {
+                            currentSelection = secondSelection
+                        } label: {
+                            monthlySelectionBox()
+                        }
+                        
+                       
                         
                       //  if !isCheaperPricingCountry {
                          
@@ -392,15 +405,18 @@ struct SubscriptionView: View {
                     
                     Spacer()
                         .frame(height: 16)
+                    continueButton(gradient: linearGradient)
+                        .padding()
                     
                     costDescription
                     
                     
-                    ForEach(testimonials) { testimonial in
-                        TestimonialView(testimonial: testimonial, size: size)
-                    }
+//                    ForEach(testimonials) { testimonial in
+//                        TestimonialView(testimonial: testimonial, size: size)
+//                    }
 
-                    Spacer().frame(height: 100)
+                   // Spacer().frame(height: 100)
+                    
                     
                 }
                 .padding(.bottom, 80)
@@ -408,23 +424,23 @@ struct SubscriptionView: View {
                 }
 
            
-                VStack {
-                    Spacer()
-                    ZStack {
-                        Image(onboardingBGImage)
-                            .resizable()
-                            .frame(width: size.width, height: 80)
-                            .overlay(
-                                Rectangle()
-                                    .fill(Color.black.opacity(0.2))
-                                    .edgesIgnoringSafeArea(.all)
-                            )
-                        continueButton(gradient: linearGradient)
-                            .padding(.horizontal, 40)
+//                VStack {
+//                    Spacer()
+//                    ZStack {
+//                        Image(onboardingBGImage)
+//                            .resizable()
+//                            .frame(width: size.width, height: 80)
+//                            .overlay(
+//                                Rectangle()
+//                                    .fill(Color.black.opacity(0.2))
+//                                    .edgesIgnoringSafeArea(.all)
+//                            )
+//                        continueButton(gradient: linearGradient)
+//                            .padding(.horizontal, 40)
                             
-                    }
-                   
-                }
+//                    }
+//                   
+//                }
                   
                
             }
@@ -771,4 +787,21 @@ struct Testimonial: Identifiable {
     var text: String
     var author: String
     var details: String
+}
+
+
+struct CustomShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        // Custom shape drawing logic
+        // This example creates an arc-like shape
+        path.move(to: CGPoint(x: rect.minX, y: rect.midY))
+        path.addQuadCurve(to: CGPoint(x: rect.maxX, y: rect.midY), control: CGPoint(x: rect.midX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        path.closeSubpath()
+        
+        return path
+    }
 }

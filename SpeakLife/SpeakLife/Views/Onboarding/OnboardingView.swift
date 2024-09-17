@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseAnalytics
 
-let onboardingBGImage = "moonlight2"//"desertSky"
+let onboardingBGImage = "moonlight2"
 
 struct OnboardingView: View  {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
@@ -23,6 +23,7 @@ struct OnboardingView: View  {
     @StateObject var improvementViewModel = ImprovementViewModel()
     @AppStorage("onboardingTab") var onboardingTab = Tab.transformedLife.rawValue
     @State private var isTextVisible = false
+    @State var valueProps: [Feature] = []
    
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
@@ -39,22 +40,10 @@ struct OnboardingView: View  {
     var body: some View {
         GeometryReader { geometry in
             TabView(selection: $selection) {
-               
-//                PersonalizationScene(size: geometry.size, callBack: advance)
-//                    .tag(Tab.personalization)
-//                
-//        
-//                NameScene(size: geometry.size, callBack: advance)
-//                        .tag(Tab.name)
-//                
-//                AgeCollectionView(size: geometry.size, callBack: advance)
-//                        .tag(Tab.age)
-//                
-//                GenderCollectionView(size: geometry.size, callBack: advance)
-//                        .tag(Tab.gender)
+
                 IntroTipScene(title: "Daily Affirmations for a Transformed Life",
                               bodyText: "Embrace Your New Identity in Christ by Speaking Life Every Day",
-                              subtext: "As believers, we are called to renew our minds daily (Romans 12:2) and walk in the new identity Christ has given us. Speaking life isn’t just a one-time act; it’s a daily discipline that aligns us with God’s will and activates His promises. You are in charge of the process—declaring God’s truth over your life, your family, and your future. Jesus is responsible for the results, ensuring that every word you speak in faith bears fruit (John 15:7-8).",
+                              subtext: "Speaking life isn’t just a one-time act; it’s a daily discipline that aligns us with God’s will and activates His promises. You are in charge of the process—declaring God’s truth over your life, your family, and your future. Jesus is responsible for the results, ensuring that every word you speak in faith bears fruit (John 15:7-8).",
                               ctaText: "Let's go",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size, callBack: advance)
@@ -66,42 +55,7 @@ struct OnboardingView: View  {
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size, callBack: advance)
                     .tag(Tab.likeJesus)
-                //                IntroTipScene(title: "Speak Life, Live Victorious",
-                //                              bodyText: "Daily Habits for Success: Declare Your Faith and Watch Victory Unfold",
-                //                              subtext: "Consistency is key to unlocking the power of speaking life. Just as Daniel prayed three times a day (Daniel 6:10), setting aside a specific time each day to declare God’s promises can transform your life. Practice speaking these affirmations not just in quiet moments, but in real-life situations—when anxiety creeps in, when challenges arise, or when doubts whisper. By simply speaking your faith, you’re activating the victory that Jesus has already secured for you (Mark 11:23).",
-                //                              ctaText: "Continue",
-                //                              showTestimonials: false,
-                //                              isScholarship: false, size: geometry.size, callBack: advance)
-                //                    .tag(Tab.liveVictorious)
-                //                IntroTipScene(title: "Unshakeable Faith",
-                //                              bodyText: "Conquer Your Fears and Doubts with the Power of God’s Word",
-                //                              subtext: "Jesus reminded us, 'If you have faith as small as a mustard seed... nothing will be impossible for you' (Matthew 17:20). Life’s challenges can shake your faith, but declaring God’s truth over your life can restore your confidence and peace.",
-                //                              ctaText: "Continue",
-                //                              showTestimonials: false,
-                //                              isScholarship: false, size: geometry.size, callBack: advance)
-                IntroTipScene(title: "Strengthened Faith and Spiritual Growth",
-                              bodyText: " A survey by Lifeway Research revealed that 65% of Christians who engage in daily Bible affirmations report feeling more connected to God and spiritually fulfilled.",
-                              subtext: "Affirmations rooted in Scripture enhance one's relationship with God, reminding users of their identity in Christ and His plans for their lives.",
-                              ctaText: "Continue",
-                              showTestimonials: false,
-                              isScholarship: false, size: geometry.size, callBack: advance)
-                    .tag(Tab.liveVictorious)
-                IntroTipScene(title: "Reduced Stress and Anxiety",
-                              bodyText: "A research study published in the Health Psychology Journal showed a 35% reduction in stress levels for individuals who regularly practiced positive affirmations.",
-                              subtext: "Biblical affirmations help users refocus their minds on God’s peace and promises, which naturally alleviates stress and anxiety in day-to-day life.",
-                              ctaText: "Continue",
-                              showTestimonials: false,
-                              isScholarship: false, size: geometry.size, callBack: advance)
-                    .tag(Tab.unshakeableFaith)
-                IntroTipScene(title: "Increased Self-Worth and Confidence",
-                              bodyText: "A study from Carnegie Mellon University found that those who practice self-affirmations regularly experience up to a 30% increase in self-worth over time.",
-                              subtext: "By affirming one's identity in Christ, users can overcome self-doubt and insecurities, growing in confidence to tackle challenges.",
-                              ctaText: "Continue",
-                              showTestimonials: false,
-                              isScholarship: false, size: geometry.size, callBack: advance)
-                    .tag(Tab.confidence)
-               
-                
+     
                 if !appState.onBoardingTest {
                     HabitScene(size: geometry.size, callBack: advance)
                         .tag(Tab.habit)
@@ -109,22 +63,6 @@ struct OnboardingView: View  {
                 
                 ImprovementScene(size: geometry.size, callBack: advance, viewModel: improvementViewModel)
                     .tag(Tab.improvement)
-                
-//                IntroTipScene(title: "Daily Transformation",
-//                              bodyText: "Welcome to your new daily routine",
-//                              subtext: "It's a simple thing, a few minutes every day speaking life and God's promises, but over time it will transform your life.",
-//                              ctaText: "Let's go",
-//                              showTestimonials: false,
-//                              isScholarship: false, size: geometry.size, callBack: advance)
-//                    .tag(Tab.tip)
-                
-//                IntroTipScene(title: "Speak Life",
-//                              bodyText: "Be like Jesus and Speak to your problems (mountains)",
-//                              subtext: "Have faith in God. Truly I tell you, if anyone says to this mountain, ‘Go, throw yourself into the sea,’ and does not doubt in their heart but believes that what they say will happen, it will be done for them. Therefore I tell you, whatever you ask for in prayer, believe that you have received it, and it will be yours. Mark 11:22-24",//"Romans 12:2 Don’t copy the behavior and customs of this world, but let God transform you into a new person by changing the way you think. Then you will learn to know God’s will for you, which is good and pleasing and perfect.",
-//                              ctaText: "Transform me",
-//                              showTestimonials: false,
-//                              isScholarship: false, size: geometry.size, callBack: advance)
-//                    .tag(Tab.mindset)
                 
                 NotificationOnboarding(size: geometry.size) {
                     advance()
@@ -138,29 +76,9 @@ struct OnboardingView: View  {
                     }
                     .tag(Tab.widgets)
                 }
-                
-//                loadingView(geometry: geometry)
-//                    .tag(Tab.loading)
-                
-//                HelpUsGrowView(viewModel: HelpUsGrowViewModel(model: HelpUsGrowModel(
-//                           title: "Help Us Grow!",
-//                           message: "Your feedback is invaluable to us. Ratings are vital to spreading the app to people in need.",
-//                           buttonText: "Rate Us"
-//                ))) {
-//                    advance()
-//                }
-//                .tag(Tab.helpGrow)
-                
-                
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
-                
-//                scholarshipScene(size: geometry.size, advance: advance)
-//                    .tag(Tab.scholarship)
-                
-//                discountScene(size: geometry.size)
-//                    .tag(Tab.discount)
-                
+            
                 
             }
             .ignoresSafeArea()
@@ -211,7 +129,7 @@ struct OnboardingView: View  {
     private func subscriptionScene(size: CGSize) -> some View  {
         
         ZStack {
-            SubscriptionView(size: size) {
+            SubscriptionView(valueProps: valueProps, size: size) {
                 advance()
             }
             
@@ -360,6 +278,7 @@ struct OnboardingView: View  {
                     onboardingTab = selection.rawValue
                     appState.selectedNotificationCategories = improvementViewModel.selectedCategories
                     decodeCategories(improvementViewModel.selectedExperiences)
+                    valueProps = createValueProps(categories: improvementViewModel.selectedExperiences)
                     Analytics.logEvent("ImprovementScreenDone", parameters: nil)
                 case .intro:
                     impactMed.impactOccurred()
@@ -403,17 +322,10 @@ struct OnboardingView: View  {
                 case .helpGrow:
                     selection = .subscription
                     onboardingTab = selection.rawValue
-//                    
                 case .subscription:
                     Analytics.logEvent("SubscriptionScreenDone", parameters: nil)
                     viewModel.choose(.general) { _ in }
-                  //  if subscriptionStore.isPremium {
                         dismissOnboarding()
-//                    } else {
-//                        selection = .scholarship
-//                    }
-                   
-                    // selection = .widgets
                 case .scholarship:
                     dismissOnboarding()
                 case .widgets:
@@ -427,7 +339,6 @@ struct OnboardingView: View  {
                     Analytics.logEvent("LoadingScreenDone", parameters: nil)
                     selection = .subscription
                     isDonePersonalization = true
-                    //    dismissOnboarding()
                 case .discount:
                     dismissOnboarding()
                 case .transformedLife:
@@ -437,7 +348,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("TransformedLifeScreenDone", parameters: nil)
                 case .likeJesus:
                     impactMed.impactOccurred()
-                    selection = .liveVictorious
+                    selection = .improvement
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("LikeJesusScreenDone", parameters: nil)
                 case .liveVictorious:
@@ -456,7 +367,6 @@ struct OnboardingView: View  {
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("ConfidenceScreenDone", parameters: nil)
                 }
-        //    }
         }
     }
     
@@ -485,6 +395,40 @@ struct OnboardingView: View  {
         }
         print(temp, "RWRW temp categories")
         viewModel.save(temp)
+    }
+    
+    func createValueProps(categories: [Improvements]) -> [Feature]  {
+        guard categories.count > 1 else { return [] }
+        var props: [Feature] = []
+        for category in categories {
+            switch category {
+                
+            case .gospel, .psalms: break
+            case .gratitude:
+                props.append(Feature(name: "Gratitude", subtitle: "Unlock more joy in your life by practicing daily gratitude through God's word.", imageName: "hands.sparkles.fill"))
+            case .stress:
+                props.append(Feature(name: "Inner Peace & Joy", subtitle: "Find peace and calm with affirmations that release stress and anchor you in God's promises.", imageName: "wind"))
+            case .grace:
+                props.append(Feature(name: "God's Grace", subtitle: "Embrace God's unending grace and live free from guilt.", imageName: "sparkles"))
+            case .love:
+                props.append(Feature(name: "Jesus Love", subtitle: "Feel the depth of Jesus' love and let it transform your heart every day.", imageName: "bird.fill"))
+            case .health:
+                props.append(Feature(name: "Health", subtitle: "Speak God's healing and vitality into your life with affirmations for health.", imageName: "heart.fill"))
+            case .destiny:
+                props.append(Feature(name: "Destiny", subtitle: "Align with God's purpose for you and step boldly into your destiny.", imageName: "star.fill"))
+            case .safety:
+                props.append(Feature(name: "God's Protection", subtitle: "Rest in the assurance of God's protection with daily reminders of His care.", imageName: "shield.fill"))
+            case .loneliness:
+                props.append(Feature(name: "Feeling Lonely", subtitle: "Combat loneliness with affirmations that remind you of God's constant presence.", imageName: "person.2.fill"))
+            case .wealth:
+                props.append(Feature(name: "Wealth", subtitle: "Invite God's abundance into your life with affirmations rooted in His promises.", imageName: "creditcard.fill"))
+            case .peace:
+                props.append(Feature(name: "Peace", subtitle: "Experience God's peace that calms your mind and guards your heart.", imageName: "leaf.fill"))
+            }
+        }
+       
+        return props
+        
     }
     
     
@@ -516,12 +460,8 @@ struct OnboardingView: View  {
                         withAnimation {
                            // advance()
                             if appState.onBoardingTest {
-                               // if isDonePersonalization {
                                     selection = .subscription
                                     onboardingTab = selection.rawValue
-//                                } else {
-//                                    selection = .loading
-//                                }
                             } else {
                                 selection = .widgets
                             }
@@ -534,12 +474,8 @@ struct OnboardingView: View  {
             
             withAnimation {
                 if appState.onBoardingTest {
-                   // if isDonePersonalization {
                         selection = .subscription
                     onboardingTab = selection.rawValue
-//                    } else {
-//                        selection = .loading
-//                    }
                 } else {
                     selection = .widgets
                 }
@@ -560,21 +496,13 @@ struct OnboardingView: View  {
     
     private func moveToDiscount() {
         dismissOnboarding()
-//        if subscriptionStore.isPremium {
-//            dismissOnboarding()
-//        } else {
-//            withAnimation {
-//                selection = .discount
-//            }
-//        }
     }
     
     private func dismissOnboarding() {
         withAnimation {
             appState.isOnboarded = true
             Analytics.logEvent(Event.onBoardingFinished, parameters: nil)
-           // viewModel.requestReview.toggle()
-           // viewModel.helpUsGrowAlert = true
+
         }
         
     }
