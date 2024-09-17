@@ -28,8 +28,6 @@ final class PodcastService: ObservableObject {
     }
 
     func fetchPodcasts() {
-       // guard let url = URL(string: artist.url) else { return }
-        
         guard let url = URL(string: "https://podcasts.apple.com/us/podcast/joel-osteen-podcast/id137254859") else { return }
 
         URLSession.shared.dataTask(with: url) { data, response, error in

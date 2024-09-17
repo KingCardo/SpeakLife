@@ -250,7 +250,6 @@ struct SubscriptionView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     @State private var currentTestimonialIndex: Int = 0
-   // let timer = Timer.publish(every: 7, on: .main, in: .common).autoconnect()
   
    
     @State private var textOpacity: Double = 0
@@ -324,125 +323,75 @@ struct SubscriptionView: View {
             GeometryReader { geometry in
                 LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, Color.black]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
-                
-                // Custom Shape with Gradient
-//                CustomShape()
-//                    .fill(LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.8), Color.white.opacity(0.5)]), startPoint: .topLeading, endPoint: .bottomTrailing))
-//                    .frame(width: 200, height: 200)
-//                    .shadow(radius: 20)
-                
-//                Image(subscriptionImage)
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fill)
-//                    .frame(width: geometry.size.width, height: geometry.size.height * 1.2)
-//                    .edgesIgnoringSafeArea([.top])
-//                    .overlay(
-//                        Rectangle()
-//                            .fill(Color.black.opacity(0.2))
-//                            .edgesIgnoringSafeArea(.all)
-//                    )
            
-            ScrollView {
-               
-                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
-                    Spacer()
-                        .frame(height: 60)
-                    VStack(alignment: .center) {
-                        Text("Speak Life and Walk in Victory ✝️", comment: "unlock everything premium view")
-                            .multilineTextAlignment(.center)
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 24))
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .lineLimit(2)
-                            .padding([.leading, .trailing])
-                        
-                    }
-                    Spacer()
-                        .frame(height: 24)
+                ScrollView {
                     
-                    HStack {
-                        StarRatingView(rating: 4.8)
-                    }.padding([.leading,.trailing],20)
-                    
-                    FeatureView(valueProps)
-                    
-                        .foregroundColor(.white)
-                    
-                    Spacer()
-                        .frame(height: 24)
-                    
-                    Text("Over 40K+ happy users 🥳")
-                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 25, relativeTo: .title))
-                        .foregroundStyle(Color.white)
-                    
-                    Spacer()
-                        .frame(height: 24)
-                    
-                    
-                    VStack {
-                        
-                        Button {
-                            currentSelection = firstSelection
-                        } label: {
-                            yearlyCTABox()
+                    VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
+                        Spacer()
+                            .frame(height: 60)
+                        VStack(alignment: .center) {
+                            Text("Speak Life and Walk in Victory ✝️", comment: "unlock everything premium view")
+                                .multilineTextAlignment(.center)
+                                .font(Font.custom("AppleSDGothicNeo-Regular", size: 24))
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .lineLimit(2)
+                                .padding([.leading, .trailing])
+                            
                         }
                         Spacer()
-                            .frame(height: 12)
-                        Button {
-                            currentSelection = secondSelection
-                        } label: {
-                            monthlySelectionBox()
+                            .frame(height: 24)
+                        
+                        HStack {
+                            StarRatingView(rating: 4.8)
+                        }.padding([.leading,.trailing],20)
+                        
+                        FeatureView(valueProps)
+                        
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                            .frame(height: 24)
+                        
+                        Text("Over 40K+ happy users 🥳")
+                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 25, relativeTo: .title))
+                            .foregroundStyle(Color.white)
+                        
+                        Spacer()
+                            .frame(height: 24)
+                        
+                        
+                        VStack {
+                            
+                            Button {
+                                currentSelection = firstSelection
+                            } label: {
+                                yearlyCTABox()
+                            }
+                            Spacer()
+                                .frame(height: 12)
+                            Button {
+                                currentSelection = secondSelection
+                            } label: {
+                                monthlySelectionBox()
+                            }
+        
                         }
                         
-                       
+                        goPremiumStack()
                         
-                      //  if !isCheaperPricingCountry {
-                         
-                      //  }
+                        Spacer()
+                            .frame(height: 16)
+                        continueButton(gradient: linearGradient)
+                            .padding()
+                        
+                        costDescription
+                        
+                        
                     }
-                    
-                    goPremiumStack()
-                    
-                    Spacer()
-                        .frame(height: 16)
-                    continueButton(gradient: linearGradient)
-                        .padding()
-                    
-                    costDescription
-                    
-                    
-//                    ForEach(testimonials) { testimonial in
-//                        TestimonialView(testimonial: testimonial, size: size)
-//                    }
-
-                   // Spacer().frame(height: 100)
-                    
+                    .padding(.bottom, 80)
                     
                 }
-                .padding(.bottom, 80)
-               
-                }
-
-           
-//                VStack {
-//                    Spacer()
-//                    ZStack {
-//                        Image(onboardingBGImage)
-//                            .resizable()
-//                            .frame(width: size.width, height: 80)
-//                            .overlay(
-//                                Rectangle()
-//                                    .fill(Color.black.opacity(0.2))
-//                                    .edgesIgnoringSafeArea(.all)
-//                            )
-//                        continueButton(gradient: linearGradient)
-//                            .padding(.horizontal, 40)
-                            
-//                    }
-//                   
-//                }
-                  
-               
             }
            
             if declarationStore.isPurchasing {
@@ -745,14 +694,6 @@ struct TestimonialView: View {
                 .id(textKey)
                 .frame(height: 110)
                 .matchedGeometryEffect(id: "text", in: animationNamespace)
-            
-//            Text("- \(testimonial.author), \(testimonial.details)")
-//                .font(.footnote)
-//                .opacity(currentTextOpacity)
-//                .frame(maxWidth: .infinity, alignment: .trailing) // Right-align author details
-//                .padding([.horizontal, .bottom])
-//                .matchedGeometryEffect(id: "author", in: animationNamespace)
-//                .transition(.opacity)
         }
         .foregroundColor(.white)
         .padding()

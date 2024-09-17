@@ -197,7 +197,7 @@ struct AffirmationAlertView: View {
             Image(onboardingBGImage)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width:UIScreen.main.bounds.width)//, height: UIScreen.main.bounds.height * 0.8)
+                .frame(width:UIScreen.main.bounds.width)
                 .overlay(
                     Rectangle()
                         .fill(Color.black.opacity(0.5))
@@ -248,12 +248,6 @@ struct AffirmationAlertView: View {
             .padding(20)
         }
     }
-    
-//    private func dismissX() {
-//        withAnimation {
-//            showAlert.toggle()
-//        }
-//    }
     
     private func dismiss() {
         withAnimation {

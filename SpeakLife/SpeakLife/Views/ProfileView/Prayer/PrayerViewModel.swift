@@ -89,7 +89,7 @@ Psalm 91
     
     This I declare about you Lord: You alone are my refuge, my place of safety; You are my God, and I trust in You.
     
-    You rescue me from every trap and protects me from all deadly diseases.
+    You rescue me from every trap and protect me from all deadly diseases.
     
     You cover me with Your feathers and shelter me with your wings, Your faithful promises are my armor and protection.
     

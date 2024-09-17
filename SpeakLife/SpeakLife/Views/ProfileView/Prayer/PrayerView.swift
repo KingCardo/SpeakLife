@@ -39,7 +39,7 @@ struct PrayerView: View {
                         }
                     }
                     .navigationBarTitle("Powerful Prayers")
-                    .foregroundColor(.white /*colorScheme == .dark ? .white : Constants.DAMidBlue*/)
+                    .foregroundColor(.white)
                 }
                 .onAppear(perform: fetchPrayers)
                 .sheet(isPresented: $isPresentingManageSubscriptionView) {
