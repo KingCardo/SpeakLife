@@ -82,7 +82,7 @@ struct ProfileView: View {
                     Section(header: Text("Premium".uppercased()).font(.caption)) {
                         subscriptionRow
                        // patronRow
-                        bookLink
+                        //bookLink
                     }
                     
                     
@@ -113,7 +113,7 @@ struct ProfileView: View {
                         shareRow
                         reviewRow
                         feedbackRow
-                        scholarshipView
+                        //scholarshipView
                         
                     }
 
