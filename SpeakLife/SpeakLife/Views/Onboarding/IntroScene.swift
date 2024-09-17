@@ -24,7 +24,7 @@ struct IntroTipScene: View {
     
     let size: CGSize
     let callBack: (() -> Void)?
-    var buyCallBack: (() -> Void)?
+    var buyCallBack: ((InAppId.Subscription) -> Void)?
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
@@ -74,12 +74,34 @@ struct IntroTipScene: View {
                         .lineLimit(nil)
                 }
                 .frame(width: size.width * 0.9)
-    
+                if isScholarship {
+                    Spacer().frame(height: size.height * 0.05)
+                    VStack {
+                        Text("Select an option")
+                            .foregroundStyle(Color.white)
+                            .font(.headline)
+                        // .padding()
+                    }
+                    Picker("subscriptionScholarship", selection: $selectedOption) {
+                        ForEach(InAppId.allInApp) { subscription in
+                            Text(subscription.scholarshipTitle)
+                                .tag(subscription)
+                                .foregroundStyle(Color.white)
+                        }
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                    .frame(height: 150)
+                }
+                
             }
-    
+            
             Spacer()
             Button {
-                callBack?()
+                if isScholarship {
+                buyCallBack?(selectedOption)
+                } else {
+                    callBack?()
+                }
             } label: {
                 HStack {
                     Text(ctaText)
@@ -274,5 +296,3 @@ struct LoadingScene: View {
         }
     }
 }
-
-

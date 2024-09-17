@@ -81,16 +81,11 @@ struct HomeView: View {
                         Text("Yours")
                     }
                 
-                WarriorView()
+                AbbasLoveView()
                     .tabItem {
-                        if #available(iOS 17, *) {
-                            Image(systemName: "bolt.shield.fill")
+                    Image(systemName: "envelope.fill")
                                 .renderingMode(.original)
-                        } else {
-                            Image(systemName: "bolt.shield")
-                                .renderingMode(.original)
-                        }
-                        Text("Prayers")
+                        Text("Love letter")
                     }
                
                 

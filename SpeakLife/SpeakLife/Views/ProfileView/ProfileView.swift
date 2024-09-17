@@ -45,7 +45,7 @@ struct ProfileView: View {
     
     init() {
         Analytics.logEvent(Event.profileTapped, parameters: nil)
-    
+        
     }
     
     @ViewBuilder
@@ -81,7 +81,6 @@ struct ProfileView: View {
                 List {
                     Section(header: Text("Premium".uppercased()).font(.caption)) {
                         subscriptionRow
-                       // patronRow
                         //bookLink
                     }
                     
@@ -90,33 +89,24 @@ struct ProfileView: View {
                         
                         if appState.onBoardingTest {
                             createYourOwnRow
-                            // devotionalsRow
                             streakRow
                             prayerRow
                         }
-                        
-                        HStack {
-                            AbbasLoveRow
-                            if appState.abbasLoveAdded {
-                                Badge()
-                            }
-                        }
-                        
                         
                         remindersRow
                         favoritesRow
                         soundsRow
                     }
-
+                    
                     
                     Section(header: Text("SUPPORT").font(.caption)) {
                         shareRow
                         reviewRow
                         feedbackRow
-                        //scholarshipView
+                        
                         
                     }
-
+                    
                     .sheet(isPresented: $showShareSheet, content: {
                         ShareSheet(activityItems: ["Check out SpeakLife - Bible Affirmations app that'll transform your life!", url as Any])
                     })
@@ -127,7 +117,7 @@ struct ProfileView: View {
                     }
                     
                     Section(footer: VStack {
-                        Text(appVersion).font(.footnote)//.font(.caption)
+                        Text(appVersion).font(.footnote)
                     }) {
                         
                     }
@@ -138,16 +128,16 @@ struct ProfileView: View {
             .background(Color.clear)
             .padding([.top, .bottom], 60)
         }
-
+                        
             .onChange(of: declarationStore.backgroundMusicEnabled) { newValue in
-            if newValue {
-                AudioPlayerService.shared.playSound(files: resources)
-            } else {
-                AudioPlayerService.shared.pauseMusic()
+                if newValue {
+                    AudioPlayerService.shared.playSound(files: resources)
+                } else {
+                    AudioPlayerService.shared.pauseMusic()
+                }
             }
-        }
             .foregroundColor(.white)//colorScheme == .dark ? .white : .black)
-            //.navigationBarTitle(Text("SpeakLife"))
+                        //.navigationBarTitle(Text("SpeakLife"))
         )
         .alert(isPresented: $declarationStore.errorAlert) {
             Alert(
@@ -331,7 +321,7 @@ struct ProfileView: View {
                     .renderingMode(.original)
                     .foregroundColor(Constants.DAMidBlue)
             }
-                
+            
             NavigationLink(LocalizedStringKey("Create Your Own"), destination: LazyView( DevotionalView(viewModel: devotionalViewModel)))
                 .opacity(0)
                 .background(
@@ -363,7 +353,7 @@ struct ProfileView: View {
         SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "star.bubble.fill", title: "Help us grow leave a review", viewToPresent: EmptyView(), url: "\(APP.Product.urlID)?action=write-review") {
         }
     }
-
+    
     
     @MainActor
     @ViewBuilder
@@ -384,55 +374,13 @@ struct ProfileView: View {
             }
         }
     }
-    @ViewBuilder
-    private var patronView: some View {
-            VStack {
-                Spacer().frame(height: UIScreen.main.bounds.size.height * 0.05)
-                IntroTipScene(title: "Pay What Feels Right",
-                              bodyText: "",
-                              subtext: "Please support our mission of delivering Jesus, daily peace, love, and transformation to a world in need. Unlocks all features.",
-                              ctaText: "Continue",
-                              showTestimonials: false,
-                              isScholarship: true, size: UIScreen.main.bounds.size, callBack: nil)
-            }
-            
-            if declarationStore.isPurchasing {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle())
-                    .scaleEffect(2)
-            }
-    }
-    
-    
-    @MainActor
-    @ViewBuilder
-    private var patronRow: some View {
-        if !subscriptionStore.isPremium {
-            HStack {
-                Image(systemName: "heart.fill")
-                    .foregroundColor(Constants.DAMidBlue)
-                NavigationLink(LocalizedStringKey("Become A Patron"), destination: patronView)
-                    .opacity(0)
-                    .background(
-                        HStack {
-                            Text("Become A Patron", comment:  "Patron row")
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 8)
-                                .foregroundColor(Constants.DAMidBlue)
-                        })
-            }
-        }
-    }
     
     private var warriorView: some View {
         HStack {
             Image(systemName: "bolt.shield.fill")
                 .foregroundColor(Constants.DAMidBlue)
             NavigationLink(LocalizedStringKey("WarriorView"), destination: LazyView(WarriorView()))
-              //  .navigationBarTitle("Warrior's Prayer", displayMode: .inline)
+            //  .navigationBarTitle("Warrior's Prayer", displayMode: .inline)
                 .opacity(0)
                 .background(
                     HStack {
@@ -475,9 +423,9 @@ struct ProfileView: View {
                 Text("Background Music", comment: "terms n conditions")
                 Spacer()
                 Toggle("", isOn: declarationStore.$backgroundMusicEnabled)
-                        .padding()
+                    .padding()
             }
-        
+            
         }
     }
     
@@ -510,6 +458,7 @@ struct ProfileView: View {
     private func shareApp() {
         showShareSheet.toggle()
     }
+    
 }
 
 extension UIView {

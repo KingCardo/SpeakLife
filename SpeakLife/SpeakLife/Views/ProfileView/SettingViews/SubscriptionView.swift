@@ -32,6 +32,7 @@ struct SubscriptionView: View {
     @State private var localizedPrice: String = "$19.00"
     @State private var regionCode: String = "US"
     @State private var isCheaperPricingCountry = false
+    @State var chooseDifferentAmount = false
     
     var secondSelection = InAppId.Subscription.speakLife1MO4
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
@@ -107,8 +108,9 @@ struct SubscriptionView: View {
         
                         
                     }
-                    
-            }.padding(.bottom, 30)
+                    .padding(.bottom, 30)
+            }
+            
            
             if declarationStore.isPurchasing {
                 ProgressView()
@@ -116,8 +118,43 @@ struct SubscriptionView: View {
                     .scaleEffect(2)
             }
         }
-        
-        .edgesIgnoringSafeArea(.bottom)
+        .sheet(isPresented: $chooseDifferentAmount) {
+                    patronView
+        }
+    }
+    
+    @ViewBuilder
+    private var patronView: some View {
+        GeometryReader { reader in
+            ZStack {
+                // Main content
+                VStack {
+                    IntroTipScene(
+                        title: "Pay What Feels Right",
+                        bodyText: "",
+                        subtext: "Please support our mission of delivering Jesus, daily peace, love, and transformation to a world in need. Unlocks all features.",
+                        ctaText: "Continue",
+                        showTestimonials: false,
+                        isScholarship: true,
+                        size: reader.size,
+                        callBack: {},
+                        buyCallBack: { subscription in
+                            makePurchase(iap: subscription)
+                        }
+                    )
+                }
+
+                // ProgressView centered in the middle
+                if declarationStore.isPurchasing {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .scaleEffect(2)
+                        .frame(width: reader.size.width, height: reader.size.height)
+                        .background(Color.black.opacity(0.5)) // Optional: Dim the background
+                        .edgesIgnoringSafeArea(.all) // Optional: Make the background cover the full screen
+                }
+            }
+        }
     }
     
     var subscriptionStack: some View {
@@ -194,10 +231,20 @@ struct SubscriptionView: View {
                         .font(.caption2)
                         .foregroundColor(Color.blue)
                 }
-
+                Spacer()
+                .frame(width: 16)
+                Button(action: presentDifferentAmount) {
+                    Text("Different amount", comment: "different iap")
+                        .font(.caption2)
+                        .foregroundColor(Color.blue)
+                }
             }
         }
         .padding([.leading, .trailing], 20)
+    }
+    
+    func presentDifferentAmount() {
+        chooseDifferentAmount.toggle()
     }
     
     func buy() async {
@@ -211,16 +258,41 @@ struct SubscriptionView: View {
             errorTitle = "Your purchase could not be verified by the App Store."
             isShowingError = true
         } catch {
-            print("Failed purchase for \(currentSelection?.rawValue): \(error)")
+            errorTitle = error.localizedDescription
+            isShowingError = true
         }
     }
     
     private func makePurchase() {
         impactMed.impactOccurred()
         Task {
-            
             declarationStore.isPurchasing = true
             await buy()
+            declarationStore.isPurchasing = false
+        }
+    }
+    
+    func buy(_ iap: InAppId.Subscription) async {
+        do {
+            if let _ = try await subscriptionStore.purchaseWithID([iap.rawValue]) {
+                Analytics.logEvent(iap.rawValue, parameters: nil)
+            }
+        } catch StoreError.failedVerification {
+            print("error RWRW")
+            errorTitle = "Your purchase could not be verified by the App Store."
+            isShowingError = true
+        } catch {
+            print("Failed purchase for \(iap.rawValue): \(error)")
+            errorTitle = error.localizedDescription
+            isShowingError = true
+        }
+    }
+    
+    private func makePurchase(iap: InAppId.Subscription) {
+        impactMed.impactOccurred()
+        Task {
+            declarationStore.isPurchasing = true
+            await buy(iap)
             declarationStore.isPurchasing = false
         }
     }
