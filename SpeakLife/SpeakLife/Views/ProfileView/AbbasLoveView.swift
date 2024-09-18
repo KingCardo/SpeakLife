@@ -91,8 +91,7 @@ struct AbbasLoveView: View {
                     } label: {
                         Text("reset to beginning")
                     }
-
-            }
+                }
         }
         .background {
             ZStack {

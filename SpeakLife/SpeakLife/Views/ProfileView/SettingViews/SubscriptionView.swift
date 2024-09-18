@@ -231,12 +231,14 @@ struct SubscriptionView: View {
                         .font(.caption2)
                         .foregroundColor(Color.blue)
                 }
+                if appState.isOnboarded {
                 Spacer()
                 .frame(width: 16)
-                Button(action: presentDifferentAmount) {
-                    Text("Different amount", comment: "different iap")
-                        .font(.caption2)
-                        .foregroundColor(Color.blue)
+                    Button(action: presentDifferentAmount) {
+                        Text("Different amount", comment: "different iap")
+                            .font(.caption2)
+                            .foregroundColor(Color.blue)
+                    }
                 }
             }
         }

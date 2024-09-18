@@ -76,6 +76,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .destiny,
         .grace,
         .faith,
+        .genesis,
+        .exodus,
         .psalms,
         .proverbs,
         .matthew,
@@ -117,6 +119,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         ]
     
     static var bibleCategories: [DeclarationCategory] = [
+        .genesis,
+        .exodus,
         .psalms,
         .proverbs,
         .matthew,
@@ -233,7 +237,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     var isPremium: Bool {
         switch self {
-        case .general, .destiny, .favorites, .myOwn, .ephesians, .love, .health, .heaven, .psalms, .godsprotection, .praise, .galatians, .luke, .john, .romans : return false
+        case .general, .destiny, .favorites, .myOwn, .ephesians, .love, .health, .heaven, .genesis, .godsprotection, .praise, .galatians, .luke, .john, .romans : return false
         default: return true
         }
     }
