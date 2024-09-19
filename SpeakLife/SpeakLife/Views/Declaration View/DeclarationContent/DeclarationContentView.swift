@@ -12,8 +12,6 @@ import AVFoundation
 
 struct DeclarationContentView: View {
     
-    @StateObject private var speechSynthesizer = SpeechSynthesizer()
-    
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     @EnvironmentObject var appState: AppState
@@ -231,7 +229,7 @@ struct DeclarationContentView: View {
     
     private func affirm(_ declaration: Declaration, isAffirmation: Bool) {
         AudioPlayerService.shared.pauseMusic()
-        let text = isAffirmation ? "Repeat after me.\(declaration.text)" : declaration.bibleVerseText
+        let text = isAffirmation ? "Repeat after me, \(declaration.text)" : declaration.bibleVerseText
         coordinator.speakText(text!)
     }
     
