@@ -81,20 +81,25 @@ struct DeclarationContentView: View {
                         }
                         
                         if isFavorite {
-                            withAnimation(.spring(response: 0.34, dampingFraction: 0.8, blendDuration: 0.5)) {
-                                HeartView()
-                                    .scaleEffect(1.4)
-                                    .rotationEffect(.degrees(360))
-                                    .transition(.scale)
-                                    .shadow(color: .red.opacity(0.7), radius: 10, x: 0, y: 0)
+                            VStack {
+                                withAnimation(.spring(response: 0.34, dampingFraction: 0.8, blendDuration: 0.5)) {
+                                    Image(systemName: "heart.fill")
+                                        .font(.system(size: 150))
+                                        .foregroundStyle(Color.red.opacity(0.7))
+                                        .opacity(isFavorite ? 1 : 0)
+                                        .scaleEffect(isFavorite ? 1.0 : 0.5)
+                                        .rotationEffect(.degrees(360))
+                                    
+                                }
+                                Spacer()
+                                    .frame(height:geometry.size.height * 0.3)
                             }
                             
                             .rotationEffect(Angle(degrees: -degrees))
                             .onAppear {
-                                let delay = RunLoop.SchedulerTimeType(.init(timeIntervalSinceNow: 0.3))
-                                RunLoop.main.schedule(after: delay) {
-                                    withAnimation {
-                                        self.isFavorite = false
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                                    withAnimation(.easeInOut(duration: 0.6)) {
+                                        isFavorite = false // Fade out
                                     }
                                 }
                             }
@@ -223,7 +228,10 @@ struct DeclarationContentView: View {
                     isMenuExpanded = false
                 }
                 shareTapped(declaration: declaration) }),
-            AnyView(DeclarationMenuButton(iconName:  declaration.isFavorite ? "heart.fill" : "heart", label: "FAVORITE") { favoriteTapped(declaration: declaration) }),
+            AnyView(DeclarationMenuButton(iconName:  declaration.isFavorite ? "heart.fill" : "heart", label: "FAVORITE") {
+                favoriteTapped(declaration: declaration)
+
+            }),
             // AnyView(DeclarationMenuButton(iconName: "speaker.wave.2.fill", label: "SPEAK") { speakTapped(declaration: declaration)})
         ]
         
@@ -236,12 +244,6 @@ struct DeclarationContentView: View {
                 .offset(x: buttonVisibilities[index] ? 0 : -20) // Shift down slightly on exit
                 .opacity(buttonVisibilities[index] ? 1 : 0) // Fade out
                 .animation(.easeInOut, value: buttonVisibilities[index])
-            .onAppear {
-                                print("Button \(index) appeared RWRW")
-                            }
-                            .onDisappear {
-                                print("Button \(index) disappeared RWRW")
-                            }
                            )
         } else {
             return AnyView(EmptyView())
@@ -307,7 +309,7 @@ struct DeclarationContentView: View {
         // Hide the label after 2 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             appState.showScreenshotLabel = false
-            viewModel.requestReview.toggle()
+           // viewModel.requestReview.toggle()
         }
     }
     
@@ -339,12 +341,7 @@ struct DeclarationContentView: View {
                 CapsuleImageButton(title: "tray.and.arrow.up") {
                     shareTapped(declaration: declaration)
                 }
-                
-                
-//                CapsuleImageButton(title: "speaker.wave.2.fill") {
-//                    speakTapped(declaration: declaration)
-//                }
-    
+        
                 
                 if declaration.bibleVerseText != nil {
                     CapsuleImageButton(title: viewModel.showVerse ? "arrowshape.zigzag.forward" : "arrowshape.zigzag.right.fill") {
