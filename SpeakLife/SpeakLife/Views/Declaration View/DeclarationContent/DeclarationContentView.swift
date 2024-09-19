@@ -52,8 +52,9 @@ struct DeclarationContentView: View {
                                 width: geometry.size.width,
                                 height: geometry.size.height
                             )
-                            .offset(x: isMenuExpanded ? -geometry.size.width * 0.3 : 0)
+                            .offset(x: isMenuExpanded ? -geometry.size.width * 0.2 : 0)
                             .animation(.easeInOut, value: isMenuExpanded)
+                           
                         
                         
                         if !showShareSheet {
@@ -77,7 +78,6 @@ struct DeclarationContentView: View {
                                 width: geometry.size.width * 0.4,
                                 height: geometry.size.height * 0.1
                             )
-                            .transition(.move(edge: .trailing))
                         }
                         
                         if isFavorite {
@@ -162,15 +162,21 @@ struct DeclarationContentView: View {
             Spacer()
             //  intentStackButtons(declaration: declaration)
             CapsuleImageButton(title: isMenuExpanded ? "xmark" : "plus") {
-                withAnimation(.easeInOut) {
-                    if isMenuExpanded {
-                        hideButtonsInSequence() // Ensure buttons are hidden before collapsing
-                    } else {
+                if isMenuExpanded {
+                    hideButtonsInSequence {
+                        withAnimation(.easeInOut) {
+                            isMenuExpanded.toggle()
+                            rotationAngle = 0
+                            
+                        }
+                    }
+                } else {
+                    withAnimation(.easeInOut) {
                         getButtonVisibility(declaration: declaration)// Update button visibilities before showing
                         showButtonsInSequence()
+                        isMenuExpanded.toggle()
+                        rotationAngle = 180
                     }
-                    isMenuExpanded.toggle()
-                    rotationAngle = isMenuExpanded ? 135 : 0
                 }
             }
             .rotationEffect(.degrees(rotationAngle))
@@ -191,18 +197,24 @@ struct DeclarationContentView: View {
                 }
             }
         }
-        
-        // Hide buttons one by one with delay
-        func hideButtonsInSequence() {
-            for index in buttonVisibilities.indices.reversed() {
-                DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.1) { // Adjust the delay as needed
-                    withAnimation(.easeInOut) {
-                        print("Hiding button at index: \(index) RWRW")
-                        buttonVisibilities[index] = false
+    
+    func hideButtonsInSequence(completion: @escaping () -> Void) {
+            let totalButtons = buttonVisibilities.count
+            for index in buttonVisibilities.indices {
+                DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.1) {
+                    withAnimation {
+                        buttonVisibilities[totalButtons - 1 - index] = false
+                    }
+                    // Call the completion handler after the last animation
+                    if index == totalButtons - 1 {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            completion()
+                        }
                     }
                 }
             }
         }
+    
         
     func getButton(for index: Int, declaration: Declaration) -> some View {
         var buttons:[AnyView] = [
@@ -210,20 +222,31 @@ struct DeclarationContentView: View {
                 withAnimation(.easeInOut) {
                     isMenuExpanded = false
                 }
-            shareTapped(declaration: declaration) }),
+                shareTapped(declaration: declaration) }),
             AnyView(DeclarationMenuButton(iconName:  declaration.isFavorite ? "heart.fill" : "heart", label: "FAVORITE") { favoriteTapped(declaration: declaration) }),
-           // AnyView(DeclarationMenuButton(iconName: "speaker.wave.2.fill", label: "SPEAK") { speakTapped(declaration: declaration)})
+            // AnyView(DeclarationMenuButton(iconName: "speaker.wave.2.fill", label: "SPEAK") { speakTapped(declaration: declaration)})
         ]
         
         if declaration.bibleVerseText != nil {
             buttons.append(AnyView(DeclarationMenuButton(iconName: viewModel.showVerse ? "arrowshape.zigzag.forward" : "arrowshape.zigzag.right.fill", label: "VERSE") { showVerse(declaration: declaration) }))
         }
         if index < buttons.count {
-               return buttons[index]
-           } else {
-               return AnyView(EmptyView())
-           }
+            return AnyView(buttons[index]
+                .zIndex(Double(index))
+                .offset(x: buttonVisibilities[index] ? 0 : -20) // Shift down slightly on exit
+                .opacity(buttonVisibilities[index] ? 1 : 0) // Fade out
+                .animation(.easeInOut, value: buttonVisibilities[index])
+            .onAppear {
+                                print("Button \(index) appeared RWRW")
+                            }
+                            .onDisappear {
+                                print("Button \(index) disappeared RWRW")
+                            }
+                           )
+        } else {
+            return AnyView(EmptyView())
         }
+    }
     
     
     @ViewBuilder
@@ -242,12 +265,13 @@ struct DeclarationContentView: View {
     
     private func quoteLabel(_ declaration: Declaration, _ geometry: GeometryProxy) -> some View  {
         
-        VStack {
+        VStack(spacing: 1) {
             Spacer()
+                    .frame(height: geometry.size.height * 0.05)
             
             QuoteLabel(themeViewModel: themeViewModel, quote: viewModel.showVerse ? declaration.text : declaration.bibleVerseText ?? "")
                 .foregroundColor(themeViewModel.selectedTheme.fontColor)
-                .frame(width: geometry.size.width * 0.98, height:  geometry.size.height * 0.25)
+                .frame(width: geometry.size.width * 0.98)
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
             
             Text(declaration.book ?? "")
@@ -256,7 +280,7 @@ struct DeclarationContentView: View {
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
             
             Spacer()
-                .frame(height: geometry.size.height * 0.50)//(horizontalSizeClass == .compact && verticalSizeClass == .compact) ? geometry.size.height * 0.30 : geometry.size.height * 0.50)
+                .frame(height: geometry.size.height * 0.44)
         }.onAppear {
             Analytics.logEvent(Event.swipe_affirmation, parameters: nil)
         }
