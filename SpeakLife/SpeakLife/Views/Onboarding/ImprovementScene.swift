@@ -52,7 +52,7 @@ struct ImprovementScene: View {
                 ImprovementSelectionListView(viewModel: viewModel)
                 .frame(width: size.width * 0.9)
                 Spacer()
-                .frame(height: size.height * 0.35)
+                .frame(height: size.height * 0.25)
                 
                 Button(action: callBack) {
                     HStack {
