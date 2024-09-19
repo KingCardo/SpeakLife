@@ -92,6 +92,10 @@ class ImprovementViewModel: ObservableObject {
     
     var selectedCategories: String {
         var categories = selectedExperiences.map { $0.selectedCategory }
+        if categories.contains("oldTestament") {
+            categories.append("genesis")
+            categories.append("exodus")
+        }
         if categories.contains("grace") {
             categories.append("guilt")
             categories.append("forgiveness")
@@ -134,6 +138,7 @@ class ImprovementViewModel: ObservableObject {
 enum Improvements: String, CaseIterable {
     
    // case joy = "Be happy and content"
+    case oldTestament = "Old Testament"
     case gospel = "New Testament - Gospel"
     case psalms = "Psalms & Proverbs"
     case gratitude = "Gratitude"
@@ -150,6 +155,8 @@ enum Improvements: String, CaseIterable {
     
     var selectedCategory: String {
         switch self {
+        case .oldTestament:
+            "oldTestament"
         case .gospel:
             "gospel"
         case .psalms:

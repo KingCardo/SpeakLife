@@ -357,6 +357,11 @@ struct OnboardingView: View  {
             temp.insert(.destiny)
         }
         
+        if categories.contains(.oldTestament) {
+            temp.insert(DeclarationCategory("genesis")!)
+            temp.insert(DeclarationCategory("exodus")!)
+        }
+        
         if categories.contains(.gospel) {
             temp.insert(DeclarationCategory("matthew")!)
             temp.insert(DeclarationCategory("mark")!)
@@ -377,7 +382,7 @@ struct OnboardingView: View  {
         var props: [Feature] = []
         for category in categories {
             switch category {
-                
+            case .oldTestament: break
             case .gospel, .psalms: break
             case .gratitude:
                 props.append(Feature(name: "Gratitude", subtitle: "Unlock more joy in your life by practicing daily gratitude through God's word.", imageName: "hands.sparkles.fill"))
