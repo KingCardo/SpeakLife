@@ -27,11 +27,11 @@ struct DeclarationContentView: View {
     
     private let degrees: Double = 90
     
-    @StateObject private var coordinator = SpeechCoordinator()
+    //@StateObject private var coordinator = SpeechCoordinator()
     @State private var isMenuExpanded = false
     @State private var rotationAngle: Double = 0
-    @State private var buttonVisibilities: [Bool] = [false, false, false] 
-    @State private var numberOfItems: Int = 3
+    @State private var buttonVisibilities: [Bool] = [false, false]
+    @State private var numberOfItems: Int = 2
     
     
     init(themeViewModel: ThemeViewModel,
@@ -126,7 +126,7 @@ struct DeclarationContentView: View {
     
     func getButtonVisibility(declaration: Declaration) {
         print("Updated buttonVisibilities previous count: \(buttonVisibilities.count) RWRW")
-        numberOfItems = 3 // Default
+        numberOfItems = 2 // Default
             if declaration.bibleVerseText != nil {
                 numberOfItems += 1 // Add the "VERSE" button
             }
@@ -163,14 +163,14 @@ struct DeclarationContentView: View {
             //  intentStackButtons(declaration: declaration)
             CapsuleImageButton(title: isMenuExpanded ? "xmark" : "plus") {
                 withAnimation(.easeInOut) {
+                    if isMenuExpanded {
+                        hideButtonsInSequence() // Ensure buttons are hidden before collapsing
+                    } else {
+                        getButtonVisibility(declaration: declaration)// Update button visibilities before showing
+                        showButtonsInSequence()
+                    }
                     isMenuExpanded.toggle()
                     rotationAngle = isMenuExpanded ? 135 : 0
-                    if isMenuExpanded {
-                        getButtonVisibility(declaration: declaration)
-                        showButtonsInSequence()
-                    } else {
-                        hideButtonsInSequence()
-                    }
                 }
             }
             .rotationEffect(.degrees(rotationAngle))
@@ -196,7 +196,7 @@ struct DeclarationContentView: View {
         func hideButtonsInSequence() {
             for index in buttonVisibilities.indices.reversed() {
                 DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.1) { // Adjust the delay as needed
-                    withAnimation {
+                    withAnimation(.easeInOut) {
                         print("Hiding button at index: \(index) RWRW")
                         buttonVisibilities[index] = false
                     }
@@ -207,10 +207,12 @@ struct DeclarationContentView: View {
     func getButton(for index: Int, declaration: Declaration) -> some View {
         var buttons:[AnyView] = [
             AnyView(DeclarationMenuButton(iconName: "square.and.arrow.up", label: "SHARE") {
-            isMenuExpanded = false
+                withAnimation(.easeInOut) {
+                    isMenuExpanded = false
+                }
             shareTapped(declaration: declaration) }),
             AnyView(DeclarationMenuButton(iconName:  declaration.isFavorite ? "heart.fill" : "heart", label: "FAVORITE") { favoriteTapped(declaration: declaration) }),
-            AnyView(DeclarationMenuButton(iconName: "speaker.wave.2.fill", label: "SPEAK") { speakTapped(declaration: declaration)})
+           // AnyView(DeclarationMenuButton(iconName: "speaker.wave.2.fill", label: "SPEAK") { speakTapped(declaration: declaration)})
         ]
         
         if declaration.bibleVerseText != nil {
@@ -285,11 +287,11 @@ struct DeclarationContentView: View {
         }
     }
     
-    private func speakTapped(declaration: Declaration) {
-        affirm(declaration, isAffirmation: viewModel.showVerse)
-        Analytics.logEvent(Event.speechTapped, parameters: ["declaration": declaration.text])
-        Selection.shared.selectionFeedback()
-    }
+//    private func speakTapped(declaration: Declaration) {
+//        affirm(declaration, isAffirmation: viewModel.showVerse)
+//        Analytics.logEvent(Event.speechTapped, parameters: ["declaration": declaration.text])
+//        Selection.shared.selectionFeedback()
+//    }
     
     private func showVerse(declaration: Declaration) {
         withAnimation {
@@ -315,9 +317,9 @@ struct DeclarationContentView: View {
                 }
                 
                 
-                CapsuleImageButton(title: "speaker.wave.2.fill") {
-                    speakTapped(declaration: declaration)
-                }
+//                CapsuleImageButton(title: "speaker.wave.2.fill") {
+//                    speakTapped(declaration: declaration)
+//                }
     
                 
                 if declaration.bibleVerseText != nil {
@@ -334,11 +336,11 @@ struct DeclarationContentView: View {
         }
     }
     
-    private func affirm(_ declaration: Declaration, isAffirmation: Bool) {
-        AudioPlayerService.shared.pauseMusic()
-        let text = isAffirmation ? "Repeat after me, \(declaration.text)" : declaration.bibleVerseText
-        coordinator.speakText(text!)
-    }
+//    private func affirm(_ declaration: Declaration, isAffirmation: Bool) {
+//        AudioPlayerService.shared.pauseMusic()
+//        let text = isAffirmation ? "Repeat after me, \(declaration.text)" : declaration.bibleVerseText
+//        coordinator.speakText(text!)
+//    }
     
     private func setCurrentDelcaration(declaration: Declaration) {
         viewModel.setCurrent(declaration)
