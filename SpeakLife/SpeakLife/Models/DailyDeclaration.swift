@@ -83,6 +83,11 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .deuteronomy,
         .joshua,
         .judges,
+        .ruth,
+        .samuel1,
+        .samuel2,
+        .kings1,
+        .kings2,
         .psalms,
         .proverbs,
         .matthew,
@@ -131,6 +136,11 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .deuteronomy,
         .joshua,
         .judges,
+        .ruth,
+        .samuel1,
+        .samuel2,
+        .kings1,
+        .kings2,
         .psalms,
         .proverbs,
         .matthew,
@@ -198,6 +208,10 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         case .purity: return "Purity"
         case .corinthians1: return "1 Corinthians"
         case .corinthians2: return "2 Corinthians"
+        case .samuel1: return "1 Samuel"
+        case .samuel2: return "2 Samuel"
+        case .kings1: return "1 Kings"
+        case .kings2: return "2 Kings"
         default:  return self.rawValue.capitalized
         }
     }

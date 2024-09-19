@@ -60,7 +60,7 @@ struct DeclarationContentView: View {
                         if !showShareSheet {
                             intentVstack(declaration: viewModel.declarations[viewModel.selectedTab], geometry)
                                 .rotationEffect(Angle(degrees: -degrees))
-                               // .allowsHitTesting(true)
+                    
                             if isMenuExpanded {
                                 
                                 VStack(spacing: 2) {
@@ -69,7 +69,8 @@ struct DeclarationContentView: View {
                                     ForEach(buttonVisibilities.indices, id: \.self) { index in
                                         if buttonVisibilities[index] {
                                             getButton(for: index, declaration: viewModel.declarations[viewModel.selectedTab])
-                                                .transition(.move(edge: .bottom).combined(with: .opacity))
+                                                .transition(.move(edge: .trailing))
+            
                                         }
                                     }
                                 }

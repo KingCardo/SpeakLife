@@ -35,7 +35,8 @@ struct CategoryCell: View  {
     @ViewBuilder
     private func categoryCell(size: CGSize) -> some View  {
         
-        let dimension =  size.width *  0.4
+        let dimension =  size.width *  0.25
+        let dimensionHeight =  size.height *  0.10
         
         ZStack {
             colorScheme == .dark ? Constants.DEABlack : Color.white
@@ -68,7 +69,7 @@ struct CategoryCell: View  {
                 
             }
         }
-        .frame(width: dimension + 16, height: size.width * 0.52)
+        .frame(width: dimension + 16, height: size.width * 0.4)
         .cornerRadius(6)
         .shadow(color: Constants.lightShadow, radius: 8, x: 0, y: 4)
     }
@@ -102,7 +103,7 @@ struct CategoryChooserView: View {
     @ObservedObject var viewModel: DeclarationViewModel
     @State private var presentPremiumView  = false
     
-    var twoColumnGrid = [GridItem(.flexible()), GridItem(.flexible())]
+    var twoColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         GeometryReader { geometry in
@@ -144,8 +145,7 @@ struct CategoryChooserView: View {
     
     private func bibleBookList(geometry: GeometryProxy) -> some View {
         Section(header: Text("Bible Book Affirmation's").font(Font.custom("AppleSDGothicNeo-Regular", size: 18))) {
-            ScrollView(.horizontal, showsIndicators: true) {
-                HStack(spacing: 12) {
+            LazyVGrid(columns: twoColumnGrid, spacing: 16) {
                     ForEach(viewModel.bibleCategories) { category in
                         CategoryCell(size: geometry.size, category: category)
                             .onTapGesture {
@@ -164,9 +164,7 @@ struct CategoryChooserView: View {
                                 PremiumView()
                             }
                     }
-                }
-                .padding([.vertical, .leading, .trailing], 20)
-            }
+            }.padding()
         }
     }
     
