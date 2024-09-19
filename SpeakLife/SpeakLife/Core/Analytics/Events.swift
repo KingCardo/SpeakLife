@@ -13,6 +13,7 @@ struct Event {
     static let addYourOwnAbandoned = "addYourOwnAbandoned"
     static let reminders_categoriesTapped = "reminders_categoriesTapped"
     static let favoriteTapped = "favoriteTapped"
+    static let speechTapped = "speechTapped"
     static let onBoardingFinished = "onBoardingFinished"
     static let shareTapped = "shareTapped"
     static let remindersTapped = "remindersTapped"

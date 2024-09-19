@@ -79,6 +79,10 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .genesis,
         .exodus,
         .leviticus,
+        .numbers,
+        .deuteronomy,
+        .joshua,
+        .judges,
         .psalms,
         .proverbs,
         .matthew,
@@ -123,6 +127,10 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .genesis,
         .exodus,
         .leviticus,
+        .numbers,
+        .deuteronomy,
+        .joshua,
+        .judges,
         .psalms,
         .proverbs,
         .matthew,
@@ -188,6 +196,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         case .addiction: return "Crush Addiction"
         case .heaven: return "Heavenly Thinking"
         case .purity: return "Purity"
+        case .corinthians1: return "1 Corinthians"
+        case .corinthians2: return "2 Corinthians"
         default:  return self.rawValue.capitalized
         }
     }

@@ -87,4 +87,11 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
         }
         isPlaying = false
     }
+    
+    func playMusic() {
+        DispatchQueue.main.async { [weak self] in
+            self?.audioPlayer?.play()
+        }
+        isPlaying = true
+    }
 }

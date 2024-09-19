@@ -8,6 +8,7 @@
 import SwiftUI
 import FirebaseAnalytics
 import UIKit
+import AVFoundation
 
 struct DeclarationContentView: View {
     
@@ -28,6 +29,9 @@ struct DeclarationContentView: View {
     
     private let degrees: Double = 90
     
+    @StateObject private var coordinator = SpeechCoordinator()
+    
+    
     init(themeViewModel: ThemeViewModel,
          viewModel: DeclarationViewModel) {
         self.themeViewModel  = themeViewModel
@@ -46,8 +50,7 @@ struct DeclarationContentView: View {
                                 width: geometry.size.width,
                                 height: geometry.size.height
                             )
-                            
-                           
+                        
                         
                         if !showShareSheet {
                             intentVstack(declaration: declaration, geometry)
@@ -199,12 +202,12 @@ struct DeclarationContentView: View {
                 }
                 
                 
-//                CapsuleImageButton(title: "hand.thumbsdown") {
-//                    withAnimation {
-//                        dislike(declaration)
-//                    }
-//                    Selection.shared.selectionFeedback()
-//                }
+                CapsuleImageButton(title: "speaker.wave.2.fill") {
+                    affirm(declaration, isAffirmation: viewModel.showVerse)
+                    Analytics.logEvent(Event.speechTapped, parameters: ["declaration": declaration.text])
+                    Selection.shared.selectionFeedback()
+                }
+    
                 
                 if declaration.bibleVerseText != nil {
                     CapsuleImageButton(title: viewModel.showVerse ? "arrowshape.zigzag.forward" : "arrowshape.zigzag.right.fill") {
@@ -225,6 +228,13 @@ struct DeclarationContentView: View {
             .foregroundColor(.white)
         }
     }
+    
+    private func affirm(_ declaration: Declaration, isAffirmation: Bool) {
+        AudioPlayerService.shared.pauseMusic()
+        let text = isAffirmation ? "Repeat after me.\(declaration.text)" : declaration.bibleVerseText
+        coordinator.speakText(text!)
+    }
+    
     private func setCurrentDelcaration(declaration: Declaration) {
         viewModel.setCurrent(declaration)
     }
@@ -239,12 +249,6 @@ struct DeclarationContentView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             viewModel.requestReview.toggle()
         }
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//            if !subscriptionStore.isPremium {
-//                appState.offerDiscountTry += 1
-//                viewModel.showDiscountView.toggle()
-//            }
-//        }
     }
     
     private func dislike(_ declaration: Declaration) {
@@ -289,5 +293,41 @@ struct ShareSheet: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
         
+    }
+}
+
+
+import AVFoundation
+
+class SpeechCoordinator: NSObject, AVSpeechSynthesizerDelegate, ObservableObject {
+    let synthesizer = AVSpeechSynthesizer()
+    @Published var isSpeaking: Bool = false
+
+    override init() {
+        super.init()
+        configureAudioSession()
+        synthesizer.delegate = self
+    }
+    
+    func speakText(_ text: String) {
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        synthesizer.speak(utterance)
+        isSpeaking = true
+    }
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) { DispatchQueue.main.async {
+        AudioPlayerService.shared.playMusic()
+        self.isSpeaking = false
+        }
+    }
+    
+    func configureAudioSession() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers])
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("Failed to set up audio session: \(error)")
+        }
     }
 }
