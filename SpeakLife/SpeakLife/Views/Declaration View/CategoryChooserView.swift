@@ -65,7 +65,7 @@ struct CategoryCell: View  {
                 
                 Text(category.categoryTitle)
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
-                    .foregroundColor( colorScheme == .dark ? .white : Constants.DEABlack)
+                    .foregroundColor(colorScheme == .dark ? .white : Constants.DEABlack)
                 
             }
         }

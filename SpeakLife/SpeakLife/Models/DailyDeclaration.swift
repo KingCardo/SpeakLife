@@ -88,6 +88,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .samuel2,
         .kings1,
         .kings2,
+        .chronicles1,
+        .chronicles2,
         .psalms,
         .proverbs,
         .matthew,
@@ -141,6 +143,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .samuel2,
         .kings1,
         .kings2,
+        .chronicles1,
+        .chronicles2,
         .psalms,
         .proverbs,
         .matthew,
@@ -212,6 +216,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         case .samuel2: return "2 Samuel"
         case .kings1: return "1 Kings"
         case .kings2: return "2 Kings"
+        case .chronicles1: return "1 Chronicles"
+        case .chronicles2: return "2 Chronicles"
         default:  return self.rawValue.capitalized
         }
     }
