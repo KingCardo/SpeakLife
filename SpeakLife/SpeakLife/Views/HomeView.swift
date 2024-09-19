@@ -59,7 +59,8 @@ struct HomeView: View {
                     .tabItem {
                         Image(systemName: "house.fill")
                             .renderingMode(.original)
-                        Text("Home")
+                
+                      //  Text("Home")
                     }
                 
                 DevotionalView(viewModel:devotionalViewModel)
@@ -71,21 +72,21 @@ struct HomeView: View {
                             Image(systemName: "book.fill")
                                 .renderingMode(.original)
                         }
-                        Text("Devotionals")
+                       // Text("Devotionals")
                     }
                 
                 CreateYourOwnView()
                     .tabItem {
                         Image(systemName: "plus.bubble.fill")
                             .renderingMode(.original)
-                        Text("Yours")
+                       // Text("Yours")
                     }
                 
                 AbbasLoveView()
                     .tabItem {
                     Image(systemName: "envelope.fill")
                                 .renderingMode(.original)
-                        Text("Love letter")
+                      //  Text("Love letter")
                     }
                
                 
@@ -93,7 +94,7 @@ struct HomeView: View {
                     .tabItem {
                         Image(systemName: "line.3.horizontal")
                             .renderingMode(.original)
-                        Text("More")
+                      //  Text("More")
                     }
             }
             .hideTabBar(if: appState.showScreenshotLabel)

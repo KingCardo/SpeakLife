@@ -11,6 +11,8 @@
 		450720DB2BAFFB4A0029EE2B /* TimerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450720DA2BAFFB4A0029EE2B /* TimerViewModelTests.swift */; };
 		453172B42B2D274800388AD4 /* BenefitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453172B32B2D274800388AD4 /* BenefitScene.swift */; };
 		453478F12B9D29CC0012C2C0 /* declarationsv4.json in Resources */ = {isa = PBXBuildFile; fileRef = 453478F02B9D29CC0012C2C0 /* declarationsv4.json */; };
+		453A831E2C9BF18500398ECE /* DeclarationMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A831D2C9BF18500398ECE /* DeclarationMenuButton.swift */; };
+		453A83202C9BF1AE00398ECE /* SpeechCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A831F2C9BF1AE00398ECE /* SpeechCoordinator.swift */; };
 		453C35852C5092A800817FCC /* HelpUsGrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453C35842C5092A800817FCC /* HelpUsGrowView.swift */; };
 		453C35872C50B15900817FCC /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453C35862C50B15900817FCC /* MenuButtonView.swift */; };
 		4558DB552BB3E85E0073BDB8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4558DB542BB3E85E0073BDB8 /* FirebaseAnalytics */; };
@@ -187,6 +189,8 @@
 		450720DA2BAFFB4A0029EE2B /* TimerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModelTests.swift; sourceTree = "<group>"; };
 		453172B32B2D274800388AD4 /* BenefitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitScene.swift; sourceTree = "<group>"; };
 		453478F02B9D29CC0012C2C0 /* declarationsv4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv4.json; sourceTree = "<group>"; };
+		453A831D2C9BF18500398ECE /* DeclarationMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationMenuButton.swift; sourceTree = "<group>"; };
+		453A831F2C9BF1AE00398ECE /* SpeechCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechCoordinator.swift; sourceTree = "<group>"; };
 		453C35842C5092A800817FCC /* HelpUsGrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpUsGrowView.swift; sourceTree = "<group>"; };
 		453C35862C50B15900817FCC /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		456885252B390FF4007B1EBB /* WarriorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarriorView.swift; sourceTree = "<group>"; };
@@ -696,6 +700,8 @@
 				7AA8709F28DACCB700134ADB /* DeclarationContentView.swift */,
 				7AA8709D28DACCB700134ADB /* QuoteLabel.swift */,
 				7AA8709E28DACCB700134ADB /* HeartView.swift */,
+				453A831D2C9BF18500398ECE /* DeclarationMenuButton.swift */,
+				453A831F2C9BF1AE00398ECE /* SpeechCoordinator.swift */,
 			);
 			path = DeclarationContent;
 			sourceTree = "<group>";
@@ -1080,6 +1086,7 @@
 				4568BE912B64DB9100678565 /* NameScene.swift in Sources */,
 				7AA870D328DACCB700134ADB /* CategoryListCell.swift in Sources */,
 				7AF18C8A29FF9819005A6E31 /* Gradients.swift in Sources */,
+				453A83202C9BF1AE00398ECE /* SpeechCoordinator.swift in Sources */,
 				7AA8707D28DACC8300134ADB /* LocalAPIClient.swift in Sources */,
 				7AA8706E28DACC4E00134ADB /* DailyDeclaration.swift in Sources */,
 				458510DC2B15C37B00230EE5 /* BibleStudyView.swift in Sources */,
@@ -1149,6 +1156,7 @@
 				45C748302B5BC4330011D8F6 /* AudioPlayer.swift in Sources */,
 				45CF27182B4E52C900BC8968 /* Personalization.swift in Sources */,
 				7AF46FC52A41326100A45C01 /* AbbasLoveView.swift in Sources */,
+				453A831E2C9BF18500398ECE /* DeclarationMenuButton.swift in Sources */,
 				7AF18C982A0CC541005A6E31 /* DevotionalViewModel.swift in Sources */,
 				7AA870CD28DACCB700134ADB /* ProfileView.swift in Sources */,
 				7AA870DC28DACCB700134ADB /* TimeSlots.swift in Sources */,
@@ -1365,7 +1373,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 488;
+				CURRENT_PROJECT_VERSION = 491;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1405,7 +1413,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 488;
+				CURRENT_PROJECT_VERSION = 491;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;

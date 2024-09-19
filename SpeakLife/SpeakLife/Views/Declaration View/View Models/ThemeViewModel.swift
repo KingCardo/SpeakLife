@@ -37,7 +37,7 @@ final class ThemeViewModel: ObservableObject {
     @Published var selectedFontForBook: Font?
     
     private func updateSelectedFontForBook() {
-        selectedFontForBook = .custom(fontString, size: 22)
+        selectedFontForBook = .custom(fontString, size: 18)
     }
     
     

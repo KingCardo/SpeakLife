@@ -28,6 +28,10 @@ struct DeclarationContentView: View {
     private let degrees: Double = 90
     
     @StateObject private var coordinator = SpeechCoordinator()
+    @State private var isMenuExpanded = false
+    @State private var rotationAngle: Double = 0
+    @State private var buttonVisibilities: [Bool] = [false, false, false] 
+    @State private var numberOfItems: Int = 3
     
     
     init(themeViewModel: ThemeViewModel,
@@ -48,11 +52,32 @@ struct DeclarationContentView: View {
                                 width: geometry.size.width,
                                 height: geometry.size.height
                             )
+                            .offset(x: isMenuExpanded ? -geometry.size.width * 0.3 : 0)
+                            .animation(.easeInOut, value: isMenuExpanded)
                         
                         
                         if !showShareSheet {
                             intentVstack(declaration: declaration, geometry)
                                 .rotationEffect(Angle(degrees: -degrees))
+                        }
+                        
+                        if isMenuExpanded {
+                            VStack(spacing: 2) {
+                                Spacer()
+                                    .frame(height:geometry.size.height * 0.2)
+                                ForEach(buttonVisibilities.indices, id: \.self) { index in
+                                    if buttonVisibilities[index] {
+                                        getButton(for: index, declaration: declaration)
+                                            .transition(.move(edge: .bottom).combined(with: .opacity))
+                                    }
+                                }
+                            }
+                            .rotationEffect(Angle(degrees: -degrees))
+                            .frame(
+                                width: geometry.size.width * 0.4,
+                                height: geometry.size.height * 0.1
+                            )
+                            .transition(.move(edge: .trailing))
                         }
                         
                         if isFavorite {
@@ -99,6 +124,16 @@ struct DeclarationContentView: View {
         }
     }
     
+    func getButtonVisibility(declaration: Declaration) {
+        print("Updated buttonVisibilities previous count: \(buttonVisibilities.count) RWRW")
+        numberOfItems = 3 // Default
+            if declaration.bibleVerseText != nil {
+                numberOfItems += 1 // Add the "VERSE" button
+            }
+        buttonVisibilities = Array(repeating: false, count: numberOfItems)
+        print("Updated buttonVisibilities count: \(buttonVisibilities.count) RWRW")
+    }
+    
     func prepareShareItems() -> [Any] {
         guard let image = image else { return [] }
         let message = "Check out SpeakLife - Bible Meditation and email speaklife@diosesaqui.com for a 30-day free pass. \n\(APP.Product.urlID)"
@@ -125,13 +160,69 @@ struct DeclarationContentView: View {
             screenshotLabel()
             
             Spacer()
-            intentStackButtons(declaration: declaration)
+            //  intentStackButtons(declaration: declaration)
+            CapsuleImageButton(title: isMenuExpanded ? "xmark" : "plus") {
+                withAnimation(.easeInOut) {
+                    isMenuExpanded.toggle()
+                    rotationAngle = isMenuExpanded ? 135 : 0
+                    if isMenuExpanded {
+                        getButtonVisibility(declaration: declaration)
+                        showButtonsInSequence()
+                    } else {
+                        hideButtonsInSequence()
+                    }
+                }
+            }
+            .rotationEffect(.degrees(rotationAngle))
+            .animation(.easeInOut, value: rotationAngle)
+
             Spacer()
-                .frame(height: horizontalSizeClass == .compact ? geometry.size.height * 0.15 : geometry.size.height * 0.30)
+                .frame(height: horizontalSizeClass == .compact ? geometry.size.height * 0.10 : geometry.size.height * 0.25)
+        }
+    }
+    
+    func showButtonsInSequence() {
+            for index in buttonVisibilities.indices {
+                DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.1) { // Adjust the delay as needed
+                    withAnimation {
+                        print("Animating button at index: \(index) RWRW")
+                        buttonVisibilities[index] = true
+                    }
+                }
+            }
         }
         
+        // Hide buttons one by one with delay
+        func hideButtonsInSequence() {
+            for index in buttonVisibilities.indices.reversed() {
+                DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.1) { // Adjust the delay as needed
+                    withAnimation {
+                        print("Hiding button at index: \(index) RWRW")
+                        buttonVisibilities[index] = false
+                    }
+                }
+            }
+        }
         
-    }
+    func getButton(for index: Int, declaration: Declaration) -> some View {
+        var buttons:[AnyView] = [
+            AnyView(DeclarationMenuButton(iconName: "square.and.arrow.up", label: "SHARE") {
+            isMenuExpanded = false
+            shareTapped(declaration: declaration) }),
+            AnyView(DeclarationMenuButton(iconName:  declaration.isFavorite ? "heart.fill" : "heart", label: "FAVORITE") { favoriteTapped(declaration: declaration) }),
+            AnyView(DeclarationMenuButton(iconName: "speaker.wave.2.fill", label: "SPEAK") { speakTapped(declaration: declaration)})
+        ]
+        
+        if declaration.bibleVerseText != nil {
+            buttons.append(AnyView(DeclarationMenuButton(iconName: viewModel.showVerse ? "arrowshape.zigzag.forward" : "arrowshape.zigzag.right.fill", label: "VERSE") { showVerse(declaration: declaration) }))
+        }
+        if index < buttons.count {
+               return buttons[index]
+           } else {
+               return AnyView(EmptyView())
+           }
+        }
+    
     
     @ViewBuilder
     private func screenshotLabel() -> some View {
@@ -158,15 +249,60 @@ struct DeclarationContentView: View {
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
             
             Text(declaration.book ?? "")
-                .foregroundColor(.white)
+                .foregroundColor(.white.opacity(0.9))
                 .font(themeViewModel.selectedFontForBook ?? .caption)
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
             
             Spacer()
-                .frame(height: (horizontalSizeClass == .compact && verticalSizeClass == .compact) ? geometry.size.height * 0.15 : geometry.size.height * 0.35)
+                .frame(height: geometry.size.height * 0.50)//(horizontalSizeClass == .compact && verticalSizeClass == .compact) ? geometry.size.height * 0.30 : geometry.size.height * 0.50)
         }.onAppear {
             Analytics.logEvent(Event.swipe_affirmation, parameters: nil)
         }
+    }
+    
+    private func shareTapped(declaration: Declaration) {
+        viewModel.setCurrent(declaration)
+        withAnimation {
+            appState.showScreenshotLabel = true
+            
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            if let windowScene =  UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                if let window = windowScene.windows.first {
+                    image = window.rootViewController?.view.toImage()
+                    self.showShareSheet = true
+                }
+            }
+            
+        }
+        
+        Analytics.logEvent(Event.shareTapped, parameters: ["share": declaration.text])
+        Selection.shared.selectionFeedback()
+        // Hide the label after 2 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            appState.showScreenshotLabel = false
+            viewModel.requestReview.toggle()
+        }
+    }
+    
+    private func speakTapped(declaration: Declaration) {
+        affirm(declaration, isAffirmation: viewModel.showVerse)
+        Analytics.logEvent(Event.speechTapped, parameters: ["declaration": declaration.text])
+        Selection.shared.selectionFeedback()
+    }
+    
+    private func showVerse(declaration: Declaration) {
+        withAnimation {
+            toggleDeclaration(declaration)
+        }
+        Selection.shared.selectionFeedback()
+    }
+    
+    private func favoriteTapped(declaration: Declaration) {
+        favorite(declaration)
+        self.isFavorite = declaration.isFavorite ? false : true
+        Analytics.logEvent(Event.favoriteTapped, parameters: ["declaration": declaration.text])
+        Selection.shared.selectionFeedback()
     }
     
     @ViewBuilder
@@ -175,52 +311,23 @@ struct DeclarationContentView: View {
             HStack(spacing: 24) {
                 
                 CapsuleImageButton(title: "tray.and.arrow.up") {
-                    viewModel.setCurrent(declaration)
-                    withAnimation {
-                        appState.showScreenshotLabel = true
-                        
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        if let windowScene =  UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                            if let window = windowScene.windows.first {
-                                image = window.rootViewController?.view.toImage()
-                                self.showShareSheet = true
-                            }
-                        }
-                        
-                    }
-                    
-                    Analytics.logEvent(Event.shareTapped, parameters: ["share": declaration.text])
-                    Selection.shared.selectionFeedback()
-                    // Hide the label after 2 seconds
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        appState.showScreenshotLabel = false
-                        viewModel.requestReview.toggle()
-                    }
+                    shareTapped(declaration: declaration)
                 }
                 
                 
                 CapsuleImageButton(title: "speaker.wave.2.fill") {
-                    affirm(declaration, isAffirmation: viewModel.showVerse)
-                    Analytics.logEvent(Event.speechTapped, parameters: ["declaration": declaration.text])
-                    Selection.shared.selectionFeedback()
+                    speakTapped(declaration: declaration)
                 }
     
                 
                 if declaration.bibleVerseText != nil {
                     CapsuleImageButton(title: viewModel.showVerse ? "arrowshape.zigzag.forward" : "arrowshape.zigzag.right.fill") {
-                        withAnimation {
-                            toggleDeclaration(declaration)
-                        }
-                        Selection.shared.selectionFeedback()
+                        showVerse(declaration: declaration)
                     }
                 }
                 
                 CapsuleImageButton(title: declaration.isFavorite ? "heart.fill" : "heart") {
-                    favorite(declaration)
-                    self.isFavorite = declaration.isFavorite ? false : true
-                    Analytics.logEvent(Event.favoriteTapped, parameters: ["declaration": declaration.text])
-                    Selection.shared.selectionFeedback()
+                    favoriteTapped(declaration: declaration)
                 }
             }
             .foregroundColor(.white)
@@ -295,37 +402,3 @@ struct ShareSheet: UIViewControllerRepresentable {
 }
 
 
-import AVFoundation
-
-class SpeechCoordinator: NSObject, AVSpeechSynthesizerDelegate, ObservableObject {
-    let synthesizer = AVSpeechSynthesizer()
-    @Published var isSpeaking: Bool = false
-
-    override init() {
-        super.init()
-        configureAudioSession()
-        synthesizer.delegate = self
-    }
-    
-    func speakText(_ text: String) {
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        synthesizer.speak(utterance)
-        isSpeaking = true
-    }
-    
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) { DispatchQueue.main.async {
-        AudioPlayerService.shared.playMusic()
-        self.isSpeaking = false
-        }
-    }
-    
-    func configureAudioSession() {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers])
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch {
-            print("Failed to set up audio session: \(error)")
-        }
-    }
-}
