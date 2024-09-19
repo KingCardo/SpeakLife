@@ -42,6 +42,7 @@ struct DeclarationContentView: View {
     
     var body: some View {
         GeometryReader { geometry in
+            ZStack {
             TabView(selection: $viewModel.selectedTab) {
                 ForEach(Array(viewModel.declarations.enumerated()), id: \.element.id) { index, declaration in
                     ZStack {
@@ -56,28 +57,29 @@ struct DeclarationContentView: View {
                             .animation(.easeInOut, value: isMenuExpanded)
                            
                         
-                        
                         if !showShareSheet {
-                            intentVstack(declaration: declaration, geometry)
+                            intentVstack(declaration: viewModel.declarations[viewModel.selectedTab], geometry)
                                 .rotationEffect(Angle(degrees: -degrees))
-                        }
-                        
-                        if isMenuExpanded {
-                            VStack(spacing: 2) {
-                                Spacer()
-                                    .frame(height:geometry.size.height * 0.2)
-                                ForEach(buttonVisibilities.indices, id: \.self) { index in
-                                    if buttonVisibilities[index] {
-                                        getButton(for: index, declaration: declaration)
-                                            .transition(.move(edge: .bottom).combined(with: .opacity))
+                               // .allowsHitTesting(true)
+                            if isMenuExpanded {
+                                
+                                VStack(spacing: 2) {
+                                    Spacer()
+                                        .frame(height:geometry.size.height * 0.2)
+                                    ForEach(buttonVisibilities.indices, id: \.self) { index in
+                                        if buttonVisibilities[index] {
+                                            getButton(for: index, declaration: viewModel.declarations[viewModel.selectedTab])
+                                                .transition(.move(edge: .bottom).combined(with: .opacity))
+                                        }
                                     }
                                 }
+                                .opacity(isMenuExpanded ? 1 : 0)
+                                .rotationEffect(Angle(degrees: -degrees))
+                                .frame(
+                                    width: geometry.size.width * 0.35,
+                                    height: geometry.size.height * 0.06
+                                )
                             }
-                            .rotationEffect(Angle(degrees: -degrees))
-                            .frame(
-                                width: geometry.size.width * 0.4,
-                                height: geometry.size.height * 0.1
-                            )
                         }
                         
                         if isFavorite {
@@ -115,9 +117,11 @@ struct DeclarationContentView: View {
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             .onChange(of: viewModel.selectedTab) { newIndex in
+                isMenuExpanded = false
                 askForReview()
                 let declaration = viewModel.declarations[newIndex]
                 viewModel.setCurrent(declaration)
+                
             }
             .frame(width: geometry.size.height, height: geometry.size.width)
             .rotationEffect(.degrees(90), anchor: .topLeading)
@@ -125,6 +129,7 @@ struct DeclarationContentView: View {
            
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
                 self.showShareSheet = false
+            }
             }
         }
     }
