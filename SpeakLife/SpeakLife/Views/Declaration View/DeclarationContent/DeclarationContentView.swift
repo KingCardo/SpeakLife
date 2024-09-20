@@ -27,7 +27,7 @@ struct DeclarationContentView: View {
     
     private let degrees: Double = 90
     
-    //@StateObject private var coordinator = SpeechCoordinator()
+    @StateObject private var coordinator = SpeechCoordinator()
     @State private var isMenuExpanded = false
     @State private var rotationAngle: Double = 0
     @State private var buttonVisibilities: [Bool] = [false, false]
@@ -53,7 +53,7 @@ struct DeclarationContentView: View {
                                 width: geometry.size.width,
                                 height: geometry.size.height
                             )
-                            .offset(x: isMenuExpanded ? -geometry.size.width * 0.2 : 0)
+                            .offset(x: isMenuExpanded ? -geometry.size.width * 0.18 : 0)
                             .animation(.easeInOut, value: isMenuExpanded)
                            
                         
@@ -137,7 +137,7 @@ struct DeclarationContentView: View {
     
     func getButtonVisibility(declaration: Declaration) {
         print("Updated buttonVisibilities previous count: \(buttonVisibilities.count) RWRW")
-        numberOfItems = 2 // Default
+        numberOfItems = 3 // Default
             if declaration.bibleVerseText != nil {
                 numberOfItems += 1 // Add the "VERSE" button
             }
@@ -319,11 +319,11 @@ struct DeclarationContentView: View {
         }
     }
     
-//    private func speakTapped(declaration: Declaration) {
-//        affirm(declaration, isAffirmation: viewModel.showVerse)
-//        Analytics.logEvent(Event.speechTapped, parameters: ["declaration": declaration.text])
-//        Selection.shared.selectionFeedback()
-//    }
+    private func speakTapped(declaration: Declaration) {
+        affirm(declaration, isAffirmation: viewModel.showVerse)
+        Analytics.logEvent(Event.speechTapped, parameters: ["declaration": declaration.text])
+        Selection.shared.selectionFeedback()
+    }
     
     private func showVerse(declaration: Declaration) {
         withAnimation {
@@ -363,11 +363,14 @@ struct DeclarationContentView: View {
         }
     }
     
-//    private func affirm(_ declaration: Declaration, isAffirmation: Bool) {
-//        AudioPlayerService.shared.pauseMusic()
-//        let text = isAffirmation ? "Repeat after me, \(declaration.text)" : declaration.bibleVerseText
-//        coordinator.speakText(text!)
-//    }
+    private func affirm(_ declaration: Declaration, isAffirmation: Bool) {
+        AudioPlayerService.shared.pauseMusic()
+        let text = isAffirmation ? declaration.text : declaration.bibleVerseText
+        if isAffirmation {
+            coordinator.speakText("Repeat after me")
+        }
+        coordinator.speakText(text!)
+    }
     
     private func setCurrentDelcaration(declaration: Declaration) {
         viewModel.setCurrent(declaration)

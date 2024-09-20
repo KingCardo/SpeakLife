@@ -386,7 +386,7 @@ struct OnboardingView: View  {
         var props: [Feature] = []
         for category in categories {
             switch category {
-            case .oldTestament: props.append(Feature(name: "God's identity", subtitle: "Learn more about God's true identity and faaithfulness", imageName: "book.fill"))
+            case .oldTestament: props.append(Feature(name: "God's identity", subtitle: "Learn more about God's true identity and faithfulness", imageName: "book.fill"))
             case .gospel, .psalms: break
             case .gratitude:
                 props.append(Feature(name: "Gratitude", subtitle: "Unlock more joy in your life by practicing daily gratitude through God's word.", imageName: "hands.sparkles.fill"))
