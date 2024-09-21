@@ -112,7 +112,7 @@ struct AgeCollectionView: View {
     let size: CGSize
     let callBack: (() -> Void)
     
-    let ageRanges = ["18 - 25", "26 - 35", "36 - 45", "46 - 55", "56 - 65", "66 and above"]
+    let ageRanges = ["13 - 17","18 - 24", "25 - 34", "35 - 44", "45 - 54", "55+"]
     
     // State to track the selected age range
     @State private var selectedAgeRange: String = ""
@@ -128,9 +128,12 @@ struct AgeCollectionView: View {
             VStack {
                 
                 VStack {
-                    Spacer().frame(height: size.height / 4)
+                    Spacer().frame(height: size.height * 0.15)
                     VStack {
-                        Text("Please select your age range:" , comment: "collect age range")
+                        Text("How old are you?" , comment: "collect age range")
+                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .body))
+                            .foregroundColor(.white)
+                        Text("Your age is used to personalize your content" , comment: "collect age range")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)

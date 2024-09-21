@@ -121,10 +121,8 @@ struct CategoryChooserView: View {
                             .background(BlurView(style: .systemUltraThinMaterialDark))
                             .cornerRadius(8)
                     
-                    bibleBookList(geometry: geometry)
-                    
                     categoryList(geometry: geometry)
-                    
+                    bibleBookList(geometry: geometry)
                 }
                 .background(
                     Image(onboardingBGImage)
