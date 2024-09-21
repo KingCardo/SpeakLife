@@ -259,8 +259,8 @@ struct DeclarationContentView: View {
     
     @ViewBuilder
     private func screenshotLabel() -> some View {
-        if appState.showScreenshotLabel, !subscriptionStore.isPremium {
-            Text("@speaklife.bibleapp")
+        if viewModel.showScreenShotLabel, !subscriptionStore.isPremium {
+            Text("@speaklife.affirmationsapp")
                 .font(.caption)
                 .foregroundColor(Color.white)
                 .padding()

@@ -150,6 +150,7 @@ struct OfferPageView: View {
         do {
             if let _ = try await subscriptionStore.purchaseWithID([iap.rawValue]) {
                 Analytics.logEvent(iap.rawValue, parameters: nil)
+                callBack()
             }
         } catch StoreError.failedVerification {
             print("error RWRW")

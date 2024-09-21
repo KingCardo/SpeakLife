@@ -155,7 +155,7 @@ struct AgeCollectionView: View {
                                             Spacer()
                                         }
                                         .background(self.selectedAgeRange == ageRange ? Constants.DAMidBlue.opacity(0.8) : Constants.DAMidBlue.opacity(0.3))
-                                       // .background(self.selectedAgeRange == ageRange ? Color.blue : Color.white.opacity(0.3))
+                                    
                                         .cornerRadius(10)
                                     }
                                 .padding(.horizontal)
@@ -177,7 +177,6 @@ struct AgeCollectionView: View {
                     if selectedAgeRange.count > 2 {
                         Analytics.logEvent(selectedAgeRange, parameters: nil)
                     }
-                    //Analytics.logEvent("UserAge", parameters: ["age":selectedAgeRange])
                     callBack()
                 }
                 .disabled(selectedAgeRange.isEmpty)
@@ -188,7 +187,7 @@ struct AgeCollectionView: View {
                 .cornerRadius(8)
                 .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
                 Spacer()
-                    .frame(width: 5, height: size.height * 0.07)
+                    .frame(width: 5, height: size.height * 0.10)
             }
         }
         

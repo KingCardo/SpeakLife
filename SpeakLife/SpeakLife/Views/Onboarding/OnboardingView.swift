@@ -49,15 +49,22 @@ struct OnboardingView: View  {
                               isScholarship: false, size: geometry.size, callBack: advance)
                     .tag(Tab.transformedLife)
                 
+                
+                IntroTipScene(title: "Speak Life Like Jesus",
+                              bodyText: "Time to declare",
+                              subtext: """
+🌈 God's promises for every situation of life.
+\n📖 Grow your relationship with devotionals and verses.
+\n🙏 Prayers for you and your families health, protection, and destiny.
+\n📝 Create your own affirmations to team up with Jesus.
+""",
+                              ctaText: "Continue",
+                              showTestimonials: false,
+                              isScholarship: false, size: geometry.size, callBack: advance)
+                    .tag(Tab.likeJesus)
+                
                 AgeCollectionView(size: geometry.size, callBack: advance)
                                     .tag(Tab.age)
-//                IntroTipScene(title: "Speak Life Like Jesus",
-//                              bodyText: "Overcome Life’s Trials by Declaring God’s Word Daily",
-//                              subtext: "Just as Jesus spoke peace into the storm (Mark 4:39), you too can speak life into every challenge you face. The Word of God is a powerful weapon, sharper than any double-edged sword (Hebrews 4:12). Speak life into your day and experience the transformative power of God’s promises.",
-//                              ctaText: "Continue",
-//                              showTestimonials: false,
-//                              isScholarship: false, size: geometry.size, callBack: advance)
-//                    .tag(Tab.likeJesus)
      
                 if !appState.onBoardingTest {
                     HabitScene(size: geometry.size, callBack: advance)
@@ -331,12 +338,12 @@ struct OnboardingView: View  {
                     dismissOnboarding()
                 case .transformedLife:
                     impactMed.impactOccurred()
-                    selection = .age
+                    selection = .likeJesus
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("TransformedLifeScreenDone", parameters: nil)
                 case .likeJesus:
                     impactMed.impactOccurred()
-                    selection = .improvement
+                    selection = .age
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("LikeJesusScreenDone", parameters: nil)
                 case .liveVictorious:
