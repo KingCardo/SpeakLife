@@ -76,13 +76,7 @@ struct DeclarationView: View {
                         VStack() {
                            
                             HStack {
-//                                HStack {
-//                                    MenuButton(showMenu: $showMenu)
-//                                     Spacer()
-//                                }
-//                                .padding()
-//                                .frame(height: geometry.size.height * 0.10)
-//
+
                                 Spacer()
                                 if !timerViewModel.checkIfCompletedToday() {
                                     CountdownTimerView(viewModel: timerViewModel) {
@@ -191,13 +185,8 @@ struct DeclarationView: View {
                 }
             }
             .sheet(isPresented: $viewModel.showDiscountView) {
-            
-               // if appState.offerDiscountTry < 2, !subscriptionStore.isPremium {
-//                    DiscountSubscriptionView(size: UIScreen.main.bounds.size)
-//                } else {
                     GeometryReader { geometry in
                         SubscriptionView(size: geometry.size)
-                  //              }
                 }
             }
             .onDisappear {
