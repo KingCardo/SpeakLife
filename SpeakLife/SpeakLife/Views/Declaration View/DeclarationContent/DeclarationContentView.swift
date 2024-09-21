@@ -259,7 +259,7 @@ struct DeclarationContentView: View {
     
     @ViewBuilder
     private func screenshotLabel() -> some View {
-        if viewModel.showScreenShotLabel, !subscriptionStore.isPremium {
+        if appState.showScreenshotLabel, !subscriptionStore.isPremium {
             Text("@speaklife.affirmationsapp")
                 .font(.caption)
                 .foregroundColor(Color.white)
