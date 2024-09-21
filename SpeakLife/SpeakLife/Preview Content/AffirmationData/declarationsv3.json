@@ -17294,13 +17294,6 @@
             "category": "psalms"
         },
         {
-            "text": "I am fearfully and wonderfully made by God.",
-            "bibleVerseText": "I praise you because I am fearfully and wonderfully made; your works are wonderful, I know that full well.",
-            "book": "Psalm 139:14",
-            "isFavorite": false,
-            "category": "psalms"
-        },
-        {
             "text": "The Lord forgives all my sins and heals all my diseases.",
             "bibleVerseText": "Praise the LORD, my soul, and forget not all his benefits—who forgives all your sins and heals all your diseases.",
             "book": "Psalm 103:2-3",
@@ -22447,13 +22440,6 @@
     "category": "leviticus"
   },
   {
-    "text": "I am made holy through God's love and my obedience to Him.",
-    "bibleVerseText": "Keep my commands and follow them. I am the Lord.",
-    "book": "Leviticus 22:31",
-    "isFavorite": false,
-    "category": "leviticus"
-  },
-  {
     "text": "God’s love and care are with me always, guiding my every step.",
     "bibleVerseText": "I will walk among you and be your God, and you will be my people.",
     "book": "Leviticus 26:12",
@@ -23570,13 +23556,6 @@
     "text": "I lift my eyes to the Lord, my helper and my strength.",
     "bibleVerseText": "I lift up my eyes to the mountains—where does my help come from? My help comes from the Lord, the Maker of heaven and earth.",
     "book": "Psalms 121:1-2",
-    "isFavorite": false,
-    "category": "psalms"
-  },
-  {
-    "text": "I delight in the Lord, and He gives me the desires of my heart.",
-    "bibleVerseText": "Take delight in the Lord, and he will give you the desires of your heart.",
-    "book": "Psalms 37:4",
     "isFavorite": false,
     "category": "psalms"
   },
