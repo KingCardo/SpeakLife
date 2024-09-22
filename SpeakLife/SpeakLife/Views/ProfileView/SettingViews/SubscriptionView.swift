@@ -138,10 +138,7 @@ struct OfferPageView: View {
             })
             
             if declarationStore.isPurchasing {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle())
-                    .foregroundColor(.white)
-                    .scaleEffect(3)
+                RotatingLoadingImageView()
             }
         }
     }
@@ -276,9 +273,7 @@ struct SubscriptionView: View {
             
             
             if declarationStore.isPurchasing {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle())
-                    .scaleEffect(2)
+                RotatingLoadingImageView()
             }
         }
         .sheet(isPresented: $chooseDifferentAmount) {
@@ -309,12 +304,7 @@ struct SubscriptionView: View {
                 
                 // ProgressView centered in the middle
                 if declarationStore.isPurchasing {
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle())
-                        .scaleEffect(2)
-                        .frame(width: reader.size.width, height: reader.size.height)
-                        .background(Color.black.opacity(0.5)) // Optional: Dim the background
-                        .edgesIgnoringSafeArea(.all) // Optional: Make the background cover the full screen
+                    RotatingLoadingImageView()
                 }
             }
         }
@@ -441,6 +431,7 @@ struct SubscriptionView: View {
         do {
             if let _ = try await subscriptionStore.purchaseWithID([iap.rawValue]) {
                 Analytics.logEvent(iap.rawValue, parameters: nil)
+                callback?()
             }
         } catch StoreError.failedVerification {
             print("error RWRW")
@@ -727,5 +718,37 @@ struct CustomShape: Shape {
         path.closeSubpath()
         
         return path
+    }
+}
+
+
+struct RotatingLoadingImageView: View {
+    @State private var isAnimating = false
+    
+    var body: some View {
+        ZStack {
+            // Background or other views here, if needed
+            
+            // Circular Image with rotation animation
+            Image(uiImage: UIImage(named: "AppIcon") ?? UIImage()) // Replace this with your image
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150, height: 150) // Set your desired size
+                .clipShape(Circle())
+                .scaleEffect(isAnimating ? 1.2 : 1.0)
+                .opacity(isAnimating ? 0.8 : 1.0) // Opacity transition
+                .shadow(color: isAnimating ? Color.blue.opacity(0.7) : Color.purple.opacity(0.7), radius: 20, x: 0, y: 0) // Change the scale
+                .animation(Animation.easeInOut(duration: 1.0).repeatForever(autoreverses: true), value: isAnimating)
+                .onAppear {
+                    isAnimating = true // Start the animation when the view appears
+                }
+        }
+        .padding()
+    }
+}
+
+struct RotatingLoadingImageView_Previews: PreviewProvider {
+    static var previews: some View {
+        RotatingLoadingImageView() // Display a live preview of ContentView in Xcode
     }
 }
