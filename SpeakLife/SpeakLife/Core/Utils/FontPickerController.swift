@@ -59,7 +59,7 @@ struct FontPickerView: UIViewControllerRepresentable {
         
         func fontPickerViewControllerDidPickFont(_ viewController: UIFontPickerViewController) {
             if let fontDescriptor = viewController.selectedFontDescriptor {
-                let font = UIFont(descriptor: fontDescriptor, size: 17)
+                let font = UIFont(descriptor: fontDescriptor, size: 30)
                 let fontName = fontDescriptor.postscriptName ?? "System"
                 parent.selectedFont = font
                 parent.themesViewModel.setFontName(fontName)

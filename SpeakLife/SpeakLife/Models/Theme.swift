@@ -86,11 +86,12 @@ class Theme: Identifiable, Codable {
         }
     }
     
-    static var all: [Theme] = [countryNightSky, mountainLandscape,majesticNight,pinkHueMountain, sunsetMountain, starryNight,peacefulMountainNight, sunset3,moonlight2,cross,aurora,lion, lakeHills,desertsky,moon, beautifulsky, safari, stars, forestwinter, lakeMountain, longroadtraveled, landingView1, highway,  sandOcean, citynight, woodnight, rainbow, luxurydrive]
+    static var all: [Theme] = [countryNightSky, mountainLandscape,majesticNight,pinkHueMountain, forestSunrise, sunsetMountain, starryNight,peacefulMountainNight, sunset3,moonlight2,cross,aurora,lion, lakeHills,desertsky,moon, beautifulsky, safari, stars, forestwinter, lakeMountain, longroadtraveled, landingView1, highway,  sandOcean, citynight, woodnight, rainbow, luxurydrive]
     
     private static let countryNightSky = Theme("countryNightSky", blurEffect: true)
     private static let mountainLandscape = Theme("mountainLandscape")
     private static let majesticNight = Theme("majesticNight")
+    private static let forestSunrise = Theme("forestSunrise", blurEffect: true)
     private static let pinkHueMountain = Theme("pinkHueMountain", blurEffect: true)
     private static let sunsetMountain = Theme("sunsetMountain", blurEffect: true)
     private static let starryNight = Theme("starryNight", blurEffect: true)

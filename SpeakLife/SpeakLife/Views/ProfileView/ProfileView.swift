@@ -75,8 +75,14 @@ struct ProfileView: View {
                         .edgesIgnoringSafeArea(.all)
                 )
             VStack {
-                Text("SpeakLife")
-                    .font(.title)
+                Spacer().frame(height: 8)
+                Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 90, height: 90)
+                    .clipShape(Circle())
+                    .offset(x: 0, y: 0)
+
                 Spacer().frame(height: 8)
                 List {
                     Section(header: Text("Premium".uppercased()).font(.caption)) {
@@ -118,9 +124,11 @@ struct ProfileView: View {
                     
                     Section(footer: VStack {
                         Text(appVersion).font(.footnote)
+                        Spacer().frame(height: 8)
                     }) {
                         
                     }
+                   
                 }
                 .scrollContentBackground(.hidden)
                 
