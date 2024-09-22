@@ -8,21 +8,22 @@
 import SwiftUI
 
 
-struct FontChooserView: View {
-    
-    @Environment(\.presentationMode) var presentationMode
-    
-    @ObservedObject var themeViewModel: ThemeViewModel
-    
-    var hideFontPicker: ((Bool) -> Void)
-    
-    var body: some View {
-            FontChooser() { selectedFont, fontName in
-                themeViewModel.setFontName(fontName)
-                themeViewModel.choose(selectedFont)
-                withAnimation {
-                hideFontPicker(true)
-                }
-            }
-    }
-}
+//struct FontChooserView: View {
+//    
+//    @Environment(\.presentationMode) var presentationMode
+//    
+//    @ObservedObject var themeViewModel: ThemeViewModel
+//    @Binding var isPresented: Bool
+//    
+//    var hideFontPicker: ((Bool) -> Void)
+//    
+//    var body: some View {
+//            FontChooser(isPresented: $isPresented) { selectedFont, fontName in
+//                themeViewModel.setFontName(fontName)
+//                themeViewModel.choose(selectedFont)
+//                withAnimation {
+//                hideFontPicker(true)
+//                }
+//            }
+//    }
+//}

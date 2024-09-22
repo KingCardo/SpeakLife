@@ -11,11 +11,11 @@ struct ThemeChooserView: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var themesViewModel: ThemeViewModel
-    @State private var isPresentingFontChooser = false
     @Environment(\.colorScheme) var colorScheme
-    @State var hideFontPicker = true
     @State private var showingImagePicker = false
     @State private var isPresentingPremiumView = false
+    @State private var selectedFont: UIFont?
+    @State private var showFontPicker = false
     
     var twoColumnGrid = [GridItem(.flexible()), GridItem(.flexible())]
     
@@ -107,6 +107,10 @@ struct ThemeChooserView: View {
                     }
                 }.padding()
             }
+            .sheet(isPresented: $showFontPicker) {
+                FontPickerView(themesViewModel: themesViewModel, selectedFont: $selectedFont, isPresented: $showFontPicker)
+
+            }
             .sheet(isPresented: $showingImagePicker) {
                 ImagePicker(selectedImage: $themesViewModel.selectedImage)
             }
@@ -124,7 +128,6 @@ struct ThemeChooserView: View {
                         .fill(Color.black.opacity(0.5))
                 )
                         )
-               // Gradients().trio)
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
                 self.isPresentingPremiumView = false
                 self.showingImagePicker = false
@@ -138,11 +141,6 @@ struct ThemeChooserView: View {
             .onDisappear {
                 DispatchQueue.global(qos: .userInitiated).async {
                     themesViewModel.save()
-                }
-            }
-            .onTapGesture {
-                withAnimation(.easeInOut) {
-                    self.hideFontPicker = true
                 }
             }
         }
@@ -189,20 +187,17 @@ struct ThemeChooserView: View {
     
     @ViewBuilder
     private func fontChooser(size: CGSize) -> some View {
-        if hideFontPicker {
+        if !showFontPicker {
             Text(themesViewModel.fontString)
                 .foregroundStyle(Color.blue)
                 .onTapGesture {
                     withAnimation {
-                        self.hideFontPicker = false
+                        self.showFontPicker = true
                     }
                 }
                 .padding()
-        } else {
-            FontChooserView(themeViewModel: themesViewModel) { hideFontPicker in
-                self.hideFontPicker = hideFontPicker
-            }
-            .frame(height: size.height * 0.25)
+
         }
     }
 }
+

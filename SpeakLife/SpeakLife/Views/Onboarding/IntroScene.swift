@@ -42,8 +42,7 @@ struct IntroTipScene: View {
     private func introTipScene(size: CGSize) -> some View  {
         VStack {
             Spacer().frame(height: 30)
-           
-
+        
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
                 Text(title)
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 34, relativeTo: .title))
@@ -52,7 +51,7 @@ struct IntroTipScene: View {
                     .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
                     .padding([.leading, .trailing], 4)
                 
-                Spacer().frame(height: 16)
+                Spacer().frame(height: 8)
                 
                 VStack {
                     Text(bodyText)
@@ -68,7 +67,7 @@ struct IntroTipScene: View {
                     Text(subtext)
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
-                        .multilineTextAlignment(.center)
+                        .multilineTextAlignment(.leading)
                         .lineSpacing(10)
                         .foregroundColor(Color(red: 119, green: 142, blue: 180, opacity: 1))
                         .lineLimit(nil)

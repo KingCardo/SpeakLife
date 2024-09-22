@@ -8,57 +8,68 @@
 import UIKit
 import SwiftUI
 
-struct FontChooser: UIViewControllerRepresentable {
+import SwiftUI
+import UIKit
+
+struct FontPickerView: UIViewControllerRepresentable {
     
-    // MARK: - Properties
-    
-    var selectedFontChosen: (Font, String) -> ()
-    
-    // MARK: - Methods
-    
-    func makeUIViewController(context: Context) -> UIFontPickerViewController {
-        let configuration = UIFontPickerViewController.Configuration()
-        configuration.includeFaces = true
-        
-        let vc = UIFontPickerViewController(configuration: configuration)
-        vc.delegate = context.coordinator
-        return vc
-    }
-    
-    func updateUIViewController(_ uiViewController: UIFontPickerViewController, context: Context) {
-        
-    }
-    
-    typealias UIViewControllerType = UIFontPickerViewController
+    @ObservedObject var themesViewModel: ThemeViewModel
+    @Binding var selectedFont: UIFont?
+    @Binding var isPresented: Bool // To manage dismissal
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(self) { fontDescriptor in
-            
-            let uiFont = UIFont(descriptor: fontDescriptor, size: 38)
-            let font = Font(uiFont)
-            selectedFontChosen(font, uiFont.fontName)
-        }
+        Coordinator(self)
+    }
+    
+    func makeUIViewController(context: Context) -> UINavigationController {
+        // Create a container view controller to hold the font picker and cancel button
+        let navController = UINavigationController()
+        
+        // Create and configure the font picker
+        let fontPicker = UIFontPickerViewController()
+        fontPicker.delegate = context.coordinator
+        
+        // Add a "Done" button to the navigation bar
+        fontPicker.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Done",
+            style: .done,
+            target: context.coordinator,
+            action: #selector(context.coordinator.dismissFontPicker)
+        )
+        
+        // Set the font picker as the root view controller of the navigation controller
+        navController.viewControllers = [fontPicker]
+        return navController
+    }
+    
+    func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
+        // No need to update, this is a static view controller
     }
     
     class Coordinator: NSObject, UIFontPickerViewControllerDelegate {
+        var parent: FontPickerView
         
-        var parent: FontChooser
-        private let onFontPick: (UIFontDescriptor) -> Void
-        
-        init(_ parent: FontChooser, onFontPick: @escaping(UIFontDescriptor) -> Void) {
+        init(_ parent: FontPickerView) {
             self.parent = parent
-            self.onFontPick = onFontPick
         }
         
+        @objc func dismissFontPicker() {
+                parent.isPresented = false // Dismiss the font picker when Done is tapped
+            }
         
         func fontPickerViewControllerDidPickFont(_ viewController: UIFontPickerViewController) {
-            guard let descriptor = viewController.selectedFontDescriptor else { return }
-            onFontPick(descriptor)
+            if let fontDescriptor = viewController.selectedFontDescriptor {
+                let font = UIFont(descriptor: fontDescriptor, size: 17)
+                let fontName = fontDescriptor.postscriptName ?? "System"
+                parent.selectedFont = font
+                parent.themesViewModel.setFontName(fontName)
+                parent.themesViewModel.choose(Font(font))
+            }
+            parent.isPresented = false // Dismiss after selection
         }
-        
+
         func fontPickerViewControllerDidCancel(_ viewController: UIFontPickerViewController) {
-            
+            parent.isPresented = false // Dismiss when cancelled
         }
     }
 }
-

@@ -136,7 +136,7 @@ final class DeclarationViewModel: ObservableObject {
             self.choose(self.selectedCategory) { _ in }
             self.favorites = self.getFavorites()
             self.createOwn = self.getCreateOwn()
-           // self.errorMessage = error?.localizedDescription
+            self.errorMessage = error?.localizedDescription
             
             if neededSync {
                 self.showNewAlertMessage = true

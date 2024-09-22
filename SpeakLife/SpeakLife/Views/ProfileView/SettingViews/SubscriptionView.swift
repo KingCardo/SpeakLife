@@ -50,7 +50,7 @@ struct OfferPageView: View {
                     .padding(.vertical, 8)
                     .background(
                         Capsule()
-                            .fill(LinearGradient(gradient: Gradient(colors: [Color.purple, Color.pink]), startPoint: .leading, endPoint: .trailing))
+                            .fill(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))
                     )
                 VStack {
                     Text("50% off")
@@ -114,7 +114,7 @@ struct OfferPageView: View {
                         .font(.system(size: 18, weight: .bold))
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.purple, Color.pink]), startPoint: .leading, endPoint: .trailing))
+                        .background(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
@@ -132,7 +132,7 @@ struct OfferPageView: View {
                 Spacer()
             }
             .padding()
-            .background(Color.black.opacity(0.8))
+            .background(Gradients().cyanBlue)//Constants.DAMidBlue.opacity(0.8))
             .alert(isPresented: $isShowingError, content: {
                 Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
             })
@@ -361,7 +361,7 @@ struct SubscriptionView: View {
             
             Text(currentSelection?.title ?? "" + ".")
             
-            if currentSelection == firstSelection ||  currentSelection == secondSelection {
+            if currentSelection == firstSelection { //}||  currentSelection == secondSelection {
                 Text("Cancel anytime.")
                     .font(Font.custom("Roboto-Regular", size: 14, relativeTo: .callout))
                     .foregroundColor(.gray)
@@ -546,32 +546,32 @@ struct SubscriptionView: View {
     }
     
     
-    func monthlySelectionBox() -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(Color.gray, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == secondSelection ? Constants.DAMidBlue : .clear))
-                .frame(height: 40)
-            
-            HStack {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("\(secondSelection.ctaDurationTitle)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                        Spacer()
-                        Text("\(secondSelection.subTitle)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                            .bold()
-                    }
-                }
-                .foregroundStyle(.white)
-                .padding([.leading, .trailing])
-                
-            }
-        }
-        
-        .padding([.leading, .trailing], 20)
-    }
+//    func monthlySelectionBox() -> some View {
+//        ZStack {
+//            RoundedRectangle(cornerRadius: 10)
+//                .strokeBorder(Color.gray, lineWidth: 1)
+//                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == secondSelection ? Constants.DAMidBlue : .clear))
+//                .frame(height: 40)
+//            
+//            HStack {
+//                VStack(alignment: .leading) {
+//                    HStack {
+//                        Text("\(secondSelection.ctaDurationTitle)")
+//                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+//                        Spacer()
+//                        Text("\(secondSelection.subTitle)")
+//                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+//                            .bold()
+//                    }
+//                }
+//                .foregroundStyle(.white)
+//                .padding([.leading, .trailing])
+//                
+//            }
+//        }
+//        
+//        .padding([.leading, .trailing], 20)
+//    }
     
     func localizePrice() {
         // Assume you have a function that returns the user's country code

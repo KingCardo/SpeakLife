@@ -128,7 +128,7 @@ struct AgeCollectionView: View {
             VStack {
                 
                 VStack {
-                    Spacer().frame(height: size.height * 0.15)
+                    Spacer().frame(height: size.height * 0.10)
                     VStack {
                         Text("How old are you?" , comment: "collect age range")
                             .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .body))
