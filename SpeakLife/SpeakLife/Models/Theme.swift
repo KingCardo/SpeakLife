@@ -86,7 +86,7 @@ class Theme: Identifiable, Codable {
         }
     }
     
-    static var all: [Theme] = [countryNightSky, mountainLandscape,majesticNight,pinkHueMountain, forestSunrise, sunsetMountain, starryNight,peacefulMountainNight, sunset3,moonlight2,cross,aurora,lion, lakeHills,desertsky,moon, beautifulsky, safari, stars, forestwinter, lakeMountain, longroadtraveled, landingView1, highway,  sandOcean, citynight, woodnight, rainbow, luxurydrive]
+    static var all: [Theme] = [countryNightSky, mountainLandscape,majesticNight,pinkHueMountain, forestSunrise, sunsetMountain, starryNight,peacefulMountainNight,lakeTrees,sereneMountain,grassyField,tranquilSunset, breathTakingSunset,calmLake, sunset3,moonlight2,cross,aurora,lion, lakeHills,desertsky,moon, safari, stars, forestwinter, lakeMountain, landingView1, highway,]
     
     private static let countryNightSky = Theme("countryNightSky", blurEffect: true)
     private static let mountainLandscape = Theme("mountainLandscape")
@@ -96,6 +96,12 @@ class Theme: Identifiable, Codable {
     private static let sunsetMountain = Theme("sunsetMountain", blurEffect: true)
     private static let starryNight = Theme("starryNight", blurEffect: true)
     private static let peacefulMountainNight = Theme("peacefulMountainNight", blurEffect: true)
+    private static let lakeTrees = Theme("lakeTrees", blurEffect: true)
+    private static let sereneMountain = Theme("sereneMountain", blurEffect: true)
+    private static let grassyField = Theme("grassyField", blurEffect: true)
+    private static let tranquilSunset = Theme("tranquilSunset", blurEffect: true)
+    private static let breathTakingSunset = Theme("breathTakingSunset", blurEffect: true)
+    private static let calmLake = Theme("calmLake", blurEffect: true)
     private static let autumnTrees = Theme("autumntrees", isPremium: false, blurEffect: true, fontColorString: "white")
     private static let cross = Theme("cross", isPremium: false)
     private static let lion = Theme("lion", mode: .light, isPremium: false)
