@@ -75,15 +75,20 @@ struct ProfileView: View {
                         .edgesIgnoringSafeArea(.all)
                 )
             VStack {
-                Spacer().frame(height: 8)
-                Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 90, height: 90)
-                    .clipShape(Circle())
-                    .offset(x: 0, y: 0)
-
-                Spacer().frame(height: 8)
+                VStack {
+            Spacer().frame(height: 8)
+            Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 70, height: 70)
+                .clipShape(Circle())
+                .offset(x: 0, y: 0)
+                    
+                    Text("SpeakLife")
+                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .title))
+            
+            Spacer().frame(height: 8)
+        }
                 List {
                     Section(header: Text("Premium".uppercased()).font(.caption)) {
                         subscriptionRow
