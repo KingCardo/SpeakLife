@@ -411,7 +411,7 @@ struct OnboardingView: View  {
             case .gratitude:
                 props.append(Feature(name: "Gratitude", subtitle: "Unlock more joy in your life by practicing daily gratitude through God's word.", imageName: "hands.sparkles.fill"))
             case .stress:
-                props.append(Feature(name: "Inner Peace & Joy", subtitle: "Find peace and calm with affirmations that release stress and anchor you in God's promises.", imageName: "wind"))
+                props.append(Feature(name: "Peace & Joy", subtitle: "Find peace and calm with affirmations that release stress and anchor you in God's promises.", imageName: "wind"))
             case .grace:
                 props.append(Feature(name: "God's Grace", subtitle: "Embrace God's unending grace and live free from guilt.", imageName: "sparkles"))
             case .love:
@@ -423,7 +423,7 @@ struct OnboardingView: View  {
             case .safety:
                 props.append(Feature(name: "God's Protection", subtitle: "Rest in the assurance of God's protection with daily reminders of His care.", imageName: "shield.fill"))
             case .loneliness:
-                props.append(Feature(name: "Feeling Lonely", subtitle: "Combat loneliness with affirmations that remind you of God's constant presence.", imageName: "person.2.fill"))
+                props.append(Feature(name: "Feeling Lonely", subtitle: "Combat feeling lonely with promises that remind you of God's constant presence.", imageName: "person.2.fill"))
             case .wealth:
                 props.append(Feature(name: "Wealth", subtitle: "Invite God's abundance into your life with affirmations rooted in His promises.", imageName: "creditcard.fill"))
             case .peace:

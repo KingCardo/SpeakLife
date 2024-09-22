@@ -239,13 +239,13 @@ struct SubscriptionView: View {
                 
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
                     Spacer()
-                        .frame(height: 30)
+                        .frame(height: 15)
                     VStack(alignment: .center) {
         
                     Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100)
+                        .frame(width: 90, height: 90)
                         .clipShape(Circle())
                         .offset(x: 0, y: 0)
                             
@@ -255,23 +255,24 @@ struct SubscriptionView: View {
                         
                     }
                     Spacer()
-                        .frame(height: 24)
+                        .frame(height: 12)
                     
-                    HStack {
-                        StarRatingView(rating: 4.8)
-                    }.padding([.leading,.trailing],20)
                     
                     FeatureView(valueProps)
                         .foregroundColor(.white)
                     
                     
-                    Spacer()
-                    Text("Over 40K+ happy users 🥳")
-                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 25, relativeTo: .title))
-                        .foregroundStyle(Color.white)
+                   Spacer()
                     
+                    VStack {
+                        Text("Over 40K+ happy users 🥳")
+                             .font(Font.custom("AppleSDGothicNeo-Bold", size: 20, relativeTo: .title))
+                            .foregroundStyle(Color.white)
+                        StarRatingView(rating: 4.8)
+                      
+                    }
                     Spacer()
-                        .frame(height: 24)
+                        .frame(height: 20)
                     
                     
                     VStack {

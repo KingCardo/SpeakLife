@@ -33,7 +33,7 @@ struct FeatureRow: View {
                     Spacer()
                         .frame(height: 4)
                     Text(feature.subtitle)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
             }
             Spacer()
 
