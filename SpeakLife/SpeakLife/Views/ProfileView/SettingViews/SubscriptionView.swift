@@ -163,9 +163,13 @@ struct OfferPageView: View {
     private func makePurchase(iap: InAppId.Subscription) {
         impactMed.impactOccurred()
         Task {
-            declarationStore.isPurchasing = true
+            withAnimation {
+                declarationStore.isPurchasing = true
+            }
             await buy(iap)
-            declarationStore.isPurchasing = false
+            withAnimation {
+                declarationStore.isPurchasing = false
+            }
         }
     }
 }
@@ -194,7 +198,7 @@ struct SubscriptionView: View {
     @State private var isCheaperPricingCountry = false
     @State var chooseDifferentAmount = false
     
-    var secondSelection = InAppId.Subscription.speakLife1MO4
+    var secondSelection = InAppId.Subscription.speakLife1MO7
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let valueProps: [Feature]
@@ -235,15 +239,19 @@ struct SubscriptionView: View {
                 
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
                     Spacer()
-                        .frame(height: 60)
+                        .frame(height: 30)
                     VStack(alignment: .center) {
-                        Text("Unlock SpeakLife for free", comment: "unlock everything premium view")
-                            .multilineTextAlignment(.center)
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 26))
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .lineLimit(2)
-                            .padding([.leading, .trailing])
+        
+                    Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
+                        .offset(x: 0, y: 0)
+                            
+                        Text("SpeakLife")
+                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .title))
+        
                         
                     }
                     Spacer()
@@ -262,7 +270,28 @@ struct SubscriptionView: View {
                         .font(Font.custom("AppleSDGothicNeo-Bold", size: 25, relativeTo: .title))
                         .foregroundStyle(Color.white)
                     
-                    subscriptionStack
+                    Spacer()
+                        .frame(height: 24)
+                    
+                    
+                    VStack {
+                        
+                        Button {
+                            currentSelection = firstSelection
+                        } label: {
+                            yearlyCTABox()
+                        }
+                        Spacer()
+                            .frame(height: 12)
+                        Button {
+                            currentSelection = secondSelection
+                        } label: {
+                            monthlySelectionBox()
+                        }
+    
+                    }
+                  
+                   // subscriptionStack
                     
                     goPremiumStack()
                     
@@ -365,7 +394,7 @@ struct SubscriptionView: View {
     
     private func goPremiumStack() -> some View  {
         return VStack {
-            
+            continueButton(gradient:  LinearGradient(gradient: Gradient(colors: [.cyan, .black]), startPoint: .top, endPoint: .bottom))
             Spacer()
                 .frame(height: 8)
             
@@ -421,9 +450,13 @@ struct SubscriptionView: View {
     private func makePurchase() {
         impactMed.impactOccurred()
         Task {
-            declarationStore.isPurchasing = true
+            withAnimation {
+                declarationStore.isPurchasing = true
+            }
             await buy()
-            declarationStore.isPurchasing = false
+            withAnimation {
+                declarationStore.isPurchasing = false
+            }
         }
     }
     
@@ -447,14 +480,18 @@ struct SubscriptionView: View {
     private func makePurchase(iap: InAppId.Subscription) {
         impactMed.impactOccurred()
         Task {
-            declarationStore.isPurchasing = true
+            withAnimation {
+                declarationStore.isPurchasing = true
+            }
             await buy(iap)
-            declarationStore.isPurchasing = false
+            withAnimation {
+                declarationStore.isPurchasing = false
+            }
         }
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Start My 7-Day Free Trial" : "Subscribe" , action: makePurchase)
+        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Start your 7-day free trial today" : "Subscribe" , action: makePurchase)
     }
     // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
     private func restore() {
@@ -537,32 +574,32 @@ struct SubscriptionView: View {
     }
     
     
-//    func monthlySelectionBox() -> some View {
-//        ZStack {
-//            RoundedRectangle(cornerRadius: 10)
-//                .strokeBorder(Color.gray, lineWidth: 1)
-//                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == secondSelection ? Constants.DAMidBlue : .clear))
-//                .frame(height: 40)
-//            
-//            HStack {
-//                VStack(alignment: .leading) {
-//                    HStack {
-//                        Text("\(secondSelection.ctaDurationTitle)")
-//                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-//                        Spacer()
-//                        Text("\(secondSelection.subTitle)")
-//                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-//                            .bold()
-//                    }
-//                }
-//                .foregroundStyle(.white)
-//                .padding([.leading, .trailing])
-//                
-//            }
-//        }
-//        
-//        .padding([.leading, .trailing], 20)
-//    }
+    func monthlySelectionBox() -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(Color.gray, lineWidth: 1)
+                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == secondSelection ? Constants.DAMidBlue : .clear))
+                .frame(height: 40)
+            
+            HStack {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("\(secondSelection.ctaDurationTitle)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                        Spacer()
+                        Text("\(secondSelection.subTitle)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                            .bold()
+                    }
+                }
+                .foregroundStyle(.white)
+                .padding([.leading, .trailing])
+                
+            }
+        }
+        
+        .padding([.leading, .trailing], 20)
+    }
     
     func localizePrice() {
         // Assume you have a function that returns the user's country code

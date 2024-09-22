@@ -46,16 +46,17 @@ struct DeclarationContentView: View {
             TabView(selection: $viewModel.selectedTab) {
                 ForEach(Array(viewModel.declarations.enumerated()), id: \.element.id) { index, declaration in
                     ZStack {
-                        quoteLabel(declaration, geometry)
-                            .padding()
-                            .rotationEffect(Angle(degrees: -degrees))
-                            .frame(
-                                width: geometry.size.width,
-                                height: geometry.size.height
-                            )
-                            .offset(x: isMenuExpanded ? -geometry.size.width * 0.18 : 0)
-                            .animation(.easeInOut, value: isMenuExpanded)
-                           
+                            quoteLabel(declaration, geometry)
+                                .padding()
+                                .rotationEffect(Angle(degrees: -degrees))
+                                .frame(
+                                    width: geometry.size.width,
+                                    height: geometry.size.height
+                                )
+                                .offset(x: isMenuExpanded ? -geometry.size.width * 0.18 : 0)
+                                .animation(.easeInOut, value: isMenuExpanded)
+
+
                         
                         if !showShareSheet {
                             intentVstack(declaration: viewModel.declarations[viewModel.selectedTab], geometry)
@@ -124,10 +125,10 @@ struct DeclarationContentView: View {
                 viewModel.setCurrent(declaration)
                 
             }
+                
             .frame(width: geometry.size.height, height: geometry.size.width)
             .rotationEffect(.degrees(90), anchor: .topLeading)
             .offset(x: geometry.size.width)
-           
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
                 self.showShareSheet = false
             }
@@ -192,10 +193,11 @@ struct DeclarationContentView: View {
             }
             .rotationEffect(.degrees(rotationAngle))
             .animation(.easeInOut, value: rotationAngle)
-
+            
             Spacer()
                 .frame(height: horizontalSizeClass == .compact ? geometry.size.height * 0.10 : geometry.size.height * 0.25)
         }
+        
     }
     
     func showButtonsInSequence() {
