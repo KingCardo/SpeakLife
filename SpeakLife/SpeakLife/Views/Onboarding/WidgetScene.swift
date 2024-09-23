@@ -18,26 +18,26 @@ struct WidgetScene: View {
     private func widgetScene(size: CGSize)  -> some View {
         
         VStack {
-            Spacer().frame(height: 90)
+            Spacer().frame(height: 30)
+            
+            Text("Add a widget to your home screen", comment: "Widget scene add widget text")
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 34, relativeTo: .title))
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
             
             Image("widget")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 235, height: size.height * 0.25)
+                .frame(width: 235, height: size.height * 0.3)
             
-            Spacer().frame(height: 40)
+            Spacer().frame(height:  size.height * 0.1)
             VStack {
-                Text("Add a widget to your home screen", comment: "Widget scene add widget text")
-                    .font(Font.custom("Roboto-SemiBold", size: 22, relativeTo: .title))
-                    .fontWeight(.semibold)
-                    .foregroundColor(Constants.DEABlack)
-                
-                Spacer().frame(height: 16)
+               
                 
                 VStack {
                     Text("From the Home Screen, press down on an empty area until the apps wiggle.", comment: "widget scene add instructions")
-                        .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .body))
-                        .foregroundColor(Constants.DALightBlue)
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
+                        .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
                         .lineLimit(nil)
@@ -45,11 +45,10 @@ struct WidgetScene: View {
                     Spacer().frame(height: 24)
                     
                     Text("Then tap the + button in upper corner to add a widget.", comment: "widget scene additional instructions")
-                        .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .body))
-                        .foregroundColor(Constants.DALightBlue)
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
-                        .foregroundColor(Color(red: 119, green: 142, blue: 180, opacity: 1))
+                        .foregroundColor(.white)
                         .lineLimit(nil)
                 }
                 .frame(width: size.width * 0.8)
@@ -76,9 +75,10 @@ struct WidgetScene: View {
         }
         .frame(width: size.width, height: size.height)
         .background(
-            Image("declarationBackground")
+            Image(onboardingBGImage)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         )
     }
 }

@@ -46,7 +46,12 @@ struct OnboardingView: View  {
                               subtext: "Speaking life isn’t just a one-time act; it’s a daily discipline that aligns us with God’s will, and activates His promises. Are you ready to walk in your new identity, and authority Jesus died to give you?",
                               ctaText: "Let's go",
                               showTestimonials: false,
-                              isScholarship: false, size: geometry.size, callBack: advance)
+                              isScholarship: false, size: geometry.size) 
+                {
+                  //  withAnimation {
+                        advance()
+                 //   }
+                }
                     .tag(Tab.transformedLife)
                 
                 
@@ -56,41 +61,56 @@ struct OnboardingView: View  {
 🌈 God's promises for every situation of life.
 \n📖 Grow your relationship with devotionals and verses.
 \n🙏 Prayers for you and your families health, protection, and destiny.
-\n📝 Create your own affirmations to team up with Jesus.
+\n📝 Create your own affirmations to partner with Jesus.
 """,
                               ctaText: "Continue",
                               showTestimonials: false,
-                              isScholarship: false, size: geometry.size, callBack: advance)
+                              isScholarship: false, size: geometry.size) {
+                    withAnimation {
+                        advance()
+                    }
+                }
                     .tag(Tab.likeJesus)
                 
-                AgeCollectionView(size: geometry.size, callBack: advance)
-                                    .tag(Tab.age)
-     
-                if !appState.onBoardingTest {
-                    HabitScene(size: geometry.size, callBack: advance)
-                        .tag(Tab.habit)
+                AgeCollectionView(size: geometry.size) {
+                    withAnimation {
+                        advance()
+                    }
                 }
+                    .tag(Tab.age)
+               
                 
-                ImprovementScene(size: geometry.size, callBack: advance, viewModel: improvementViewModel)
+    
+                
+                ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
+                    withAnimation {
+                        advance()
+                    }
+                }
                     .tag(Tab.improvement)
                 
+                
+                WidgetScene(size: geometry.size) {
+                    withAnimation {
+                        advance()
+                    }
+                }
+                .tag(Tab.widgets)
+                
                 NotificationOnboarding(size: geometry.size) {
-                    advance()
+                    withAnimation {
+                        advance()
+                    }
                 }
                 .tag(Tab.notification)
 
-                
-                if !appState.onBoardingTest {
-                    WidgetScene(size: geometry.size) {
-                        advance()
-                    }
-                    .tag(Tab.widgets)
-                }
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
                 
                 OfferPageView() {
-                    advance()
+                    withAnimation {
+                        advance()
+                    }
                 }
                     .tag(Tab.discount)
             
@@ -101,19 +121,7 @@ struct OnboardingView: View  {
             .font(.headline)
         }
         .preferredColorScheme(.light)
-        .alert(isPresented: $showLastChanceAlert) {
-            Alert(
-                           title: Text("Last chance to save 50%"),
-                           message: Text("Are you sure you want to pass?"),
-                           primaryButton: .default(Text("Yes I'm sure")) {
-                               dismissOnboarding()
-                           },
-                           secondaryButton: .cancel(Text("Cancel")) {
-                               
-                           }
-                       )
-        }
-        
+      
         .onAppear {
             setSelection()
             if viewModel.backgroundMusicEnabled {
@@ -145,7 +153,9 @@ struct OnboardingView: View  {
         
         ZStack {
             SubscriptionView(valueProps: valueProps, size: size) {
-                advance()
+                withAnimation {
+                    advance()
+                }
             }
             
             VStack  {
@@ -236,7 +246,7 @@ struct OnboardingView: View  {
     private func advance() {
        // DispatchQueue.main.async {
            
-            withAnimation {
+           // withAnimation {
                 switch selection {
                 case .personalization:
                     impactMed.impactOccurred()
@@ -264,7 +274,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("HabitScreenDone", parameters: nil)
                 case .improvement:
                     impactMed.impactOccurred()
-                    selection = .notification//.intro
+                    selection = .widgets//.intro
                     onboardingTab = selection.rawValue
                     appState.selectedNotificationCategories = improvementViewModel.selectedCategories
                     decodeCategories(improvementViewModel.selectedExperiences)
@@ -323,12 +333,11 @@ struct OnboardingView: View  {
                 case .scholarship:
                     dismissOnboarding()
                 case .widgets:
-                    if isDonePersonalization {
-                        selection = .subscription
-                    } else {
-                        selection = .loading
-                    }
-                    
+                    impactMed.impactOccurred()
+                    selection = .notification
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("WidgetsScreenDone", parameters: nil)
+    
                 case .loading:
                     Analytics.logEvent("LoadingScreenDone", parameters: nil)
                     selection = .subscription
@@ -362,7 +371,7 @@ struct OnboardingView: View  {
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("ConfidenceScreenDone", parameters: nil)
                 }
-        }
+       // }
     }
     
     private func decodeCategories(_ categories: [Improvements]) {

@@ -12,8 +12,8 @@ struct ImprovementScene: View {
     @EnvironmentObject var appState: AppState
     
     let size: CGSize
-    let callBack: (() -> Void)
     @ObservedObject var viewModel: ImprovementViewModel
+    let callBack: (() -> Void)
     
     var body: some  View {
         improvementView(size: size)
