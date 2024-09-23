@@ -551,10 +551,7 @@ struct SubscriptionView: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text("\(firstSelection.ctaDurationTitle)")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                        Text(firstSelection.markDownValue)
-                            .strikethrough(true, color: .white)
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 14)) +
-                        Text(" \(firstSelection.ctaPriceTitle)")
+                        Text("\(firstSelection.ctaPriceTitle)")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
                             .bold()
                         
