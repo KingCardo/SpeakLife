@@ -75,10 +75,11 @@ struct AbbasLoveView: View {
         GeometryReader { proxy in
                 
                 ScrollView {
+                    Spacer().frame(height: proxy.size.height * 0.05)
                     Text("Heavenly Father's Love Letter")
                         .font(.custom("AppleSDGothicNeo-Bold", size: 28))
-                        .italic()
                         .padding()
+                    Spacer().frame(height: proxy.size.height * 0.1)
                     PageView(views:
                                 pageContentViews
                     )
@@ -90,6 +91,7 @@ struct AbbasLoveView: View {
                         }
                     } label: {
                         Text("reset to beginning")
+                            .foregroundStyle(Color.white)
                     }
                 }
         }
