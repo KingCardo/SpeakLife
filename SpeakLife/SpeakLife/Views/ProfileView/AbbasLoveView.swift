@@ -76,7 +76,7 @@ struct AbbasLoveView: View {
                 
                 ScrollView {
                     Text("Heavenly Father's Love Letter")
-                        .font(.title)
+                        .font(.custom("AppleSDGothicNeo-Bold", size: 28))
                         .italic()
                         .padding()
                     PageView(views:
@@ -95,7 +95,7 @@ struct AbbasLoveView: View {
         }
         .background {
             ZStack {
-                Image("loveletter2")
+                Image("lakeTrees")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)

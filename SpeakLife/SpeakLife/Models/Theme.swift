@@ -86,10 +86,13 @@ class Theme: Identifiable, Codable {
         }
     }
     
-    static var all: [Theme] = [JesusOnCross,JesusOnWater, JesusHeaven,twinAngels,warriorAngel,heavenly,glowingAngels,radiantAngel, starryNight,lakeTrees,countryNightSky,peacefulMountainNight,majesticNight, mountainLandscape, pinkHueMountain, forestSunrise,sunsetMountain,sereneMountain,calmLake,tranquilSunset, breathTakingSunset,grassyField, sunset3,moonlight2,desertsky,moon,  stars, forestwinter]
+    static var all: [Theme] = [JesusOnWater,JesusHealing,JesusOnCross,JesusRisen, JesusPraying, JesusHeaven,twinAngels,warriorAngel,heavenly,glowingAngels,radiantAngel, starryNight,lakeTrees,countryNightSky,peacefulMountainNight,majesticNight, mountainLandscape, pinkHueMountain, forestSunrise,sunsetMountain,sereneMountain,calmLake,tranquilSunset, breathTakingSunset,grassyField, sunset3,moonlight2,desertsky]
     
     private static let JesusOnCross = Theme("JesusOnCross", blurEffect: true)
     private static let JesusOnWater = Theme("JesusOnWater", blurEffect: true)
+    private static let JesusHealing = Theme("JesusHealing", blurEffect: true)
+    private static let JesusPraying = Theme("JesusPraying", blurEffect: true)
+    private static let JesusRisen = Theme("JesusRisen", blurEffect: true)
     private static let twinAngels = Theme("twinAngels", blurEffect: true)
     private static let warriorAngel = Theme("warriorAngel", blurEffect: true)
     private static let countryNightSky = Theme("countryNightSky", blurEffect: true)
