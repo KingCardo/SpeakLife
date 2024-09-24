@@ -86,7 +86,7 @@ class Theme: Identifiable, Codable {
         }
     }
     
-    static var all: [Theme] = [JesusOnCross,JesusOnWater, twinAngels,warriorAngel, majesticNight, mountainLandscape, starryNight,peacefulMountainNight,countryNightSky, lakeTrees, pinkHueMountain, forestSunrise,sunsetMountain,sereneMountain,calmLake,tranquilSunset, breathTakingSunset,grassyField, sunset3,moonlight2,desertsky,moon,  stars, forestwinter,lakeHills, lakeMountain, safari,lion]
+    static var all: [Theme] = [JesusOnCross,JesusOnWater, JesusHeaven,twinAngels,warriorAngel,heavenly,glowingAngels,radiantAngel, starryNight,lakeTrees,countryNightSky,peacefulMountainNight,majesticNight, mountainLandscape, pinkHueMountain, forestSunrise,sunsetMountain,sereneMountain,calmLake,tranquilSunset, breathTakingSunset,grassyField, sunset3,moonlight2,desertsky,moon,  stars, forestwinter]
     
     private static let JesusOnCross = Theme("JesusOnCross", blurEffect: true)
     private static let JesusOnWater = Theme("JesusOnWater", blurEffect: true)
@@ -94,6 +94,10 @@ class Theme: Identifiable, Codable {
     private static let warriorAngel = Theme("warriorAngel", blurEffect: true)
     private static let countryNightSky = Theme("countryNightSky", blurEffect: true)
     private static let mountainLandscape = Theme("mountainLandscape")
+    private static let heavenly = Theme("heavenly", blurEffect: true)
+    private static let glowingAngels = Theme("glowingAngels", blurEffect: true)
+    private static let radiantAngel = Theme("radiantAngel", blurEffect: true)
+    private static let JesusHeaven = Theme("JesusHeaven", blurEffect: true)
     private static let majesticNight = Theme("majesticNight")
     private static let forestSunrise = Theme("forestSunrise", blurEffect: true)
     private static let pinkHueMountain = Theme("pinkHueMountain", blurEffect: true)
@@ -136,7 +140,7 @@ class Theme: Identifiable, Codable {
     static let forestwinter = Theme("forestwinter",blurEffect: false)
     static let sunset1 = Theme("sunset1",blurEffect: false)
     static let sunset2 = Theme("sunset2",blurEffect: false)
-    static let sunset3 = Theme("sunset3",blurEffect: false)
+    static let sunset3 = Theme("sunset3",isPremium: false,blurEffect: false)
     static let sunset4 = Theme("sunset4",blurEffect: true)
     static let sunset5 = Theme("sunset5",blurEffect: false)
     static let moonlight2 = Theme("moonlight2",isPremium: false)

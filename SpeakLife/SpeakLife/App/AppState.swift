@@ -19,6 +19,7 @@ final class AppState: ObservableObject {
     @AppStorage("abbasLoveAdded") var abbasLoveAdded = true
     @AppStorage("newTrackerAdded") var newTrackerAdded = true
     @AppStorage("lastNotificationSetDate") var lastNotificationSetDate = Date()
+    @AppStorage("lastSharedAttemptDate") var lastSharedAttemptDate = Date()
     @AppStorage("notificationEnabled") var notificationEnabled = false
     @AppStorage("notificationCount") var notificationCount = 10
     @AppStorage("startTimeNotification") var startTimeNotification = ""

@@ -217,17 +217,19 @@ struct DeclarationView: View {
         self.isPresentingBottomSheet = true
     }
     
-        
-        private func premiumView()  {
-            timerViewModel.saveRemainingTime()
-            self.isPresentingPremiumView = true
-            Analytics.logEvent(Event.tryPremiumTapped, parameters: nil)
-        }
+    
+    private func premiumView()  {
+        timerViewModel.saveRemainingTime()
+        self.isPresentingPremiumView = true
+        Analytics.logEvent(Event.tryPremiumTapped, parameters: nil)
+    }
     
     
     private func shareApp() {
-        if shareCounter > 3 && shared < 3 {
+        let currentDate = Date()
+        if shareCounter > 3 && shared < 2 && currentDate.timeIntervalSince(appState.lastSharedAttemptDate) >= 12 * 60 * 60 {
             share = true
+            appState.lastSharedAttemptDate = currentDate
         }
     }
     
