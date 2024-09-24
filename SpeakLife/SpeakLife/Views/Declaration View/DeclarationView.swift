@@ -226,12 +226,9 @@ struct DeclarationView: View {
     
     
     private func shareApp() {
-#if !DEBUG
         if shareCounter > 3 && shared < 3 {
             share = true
-            shareCounter = 0
         }
-#endif
     }
     
     
