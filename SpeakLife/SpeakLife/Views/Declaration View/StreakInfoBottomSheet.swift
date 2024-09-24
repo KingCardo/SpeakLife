@@ -15,15 +15,17 @@ struct StreakInfoBottomSheet: View {
     
     var body: some View {
         VStack {
-            Image("declarationsIllustration")
+            Image("thingsToSay")
                 .resizable()
-                .frame(width: 90, height: 90)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100, height: 100)
+                .clipShape(Circle())
             
             Text("Speak Life Daily")
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 26, relativeTo: .title))
                 .padding()
                 .foregroundColor(.black)
-            Text("Practice affirming, imagining, and meditating on a certain scripture, saying it 7x a day activating the Word! Then you will reap what you sow 🌱")
+            Text("Practice speaking, imagining, and meditating on a certain scripture, saying it 7x a day activating the Word! Then you will reap what you sow 🌱")
                 .lineLimit(nil)
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
                 .padding([.leading,.trailing])
@@ -39,6 +41,7 @@ struct StreakInfoBottomSheet: View {
                         .font(bodyFont)
                     Image(systemName: "bolt.fill")
                         .resizable()
+                        .foregroundStyle(Constants.traditionalGold)
                         .frame(width: 15, height: 20)
                 }
             }

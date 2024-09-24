@@ -84,7 +84,9 @@ struct DeclarationView: View {
                                     }
                                     .sheet(isPresented: $isPresentingBottomSheet) {
                                         StreakInfoBottomSheet(isShown: $isPresentingBottomSheet)
-                                            .presentationDetents([.fraction(0.6)])
+                                            
+                                            .presentationDetents([.fraction(0.55)])
+                                          //  .background(Gradients().cyanWhite.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/))
                                             .preferredColorScheme(.light)
                                     }
                                 } else {
