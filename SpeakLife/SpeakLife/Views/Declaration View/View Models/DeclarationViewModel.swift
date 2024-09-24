@@ -169,24 +169,6 @@ final class DeclarationViewModel: ObservableObject {
         showVerse.toggle()
     }
     
-    func dislike(declaration: Declaration) {
-        guard let indexOf = declarations.firstIndex(where: { $0.id == declaration.id } ) else {
-            return
-        }
-        
-        
-        declarations[indexOf]
-            .disliked
-            .toggle()
-        
-        guard let index = allDeclarations.firstIndex(where: { $0.id == declaration.id }) else { return }
-        allDeclarations[index] = declarations[indexOf]
-        
-        
-        service.save(declarations: allDeclarations) { [weak self] success in
-            self?.fetchDeclarations()
-        }
-    }
     
     // MARK: - Favorites
     
@@ -315,9 +297,8 @@ final class DeclarationViewModel: ObservableObject {
             completion(createOwn)
         } else {
             let declarations = allDeclarations.filter { $0.category == category }
-            let liked = declarations.filter { $0.disliked == false }
-            allDeclarationsDict[category] = liked
-            completion(liked)
+            allDeclarationsDict[category] = declarations
+            completion(declarations)
         }
     }
     

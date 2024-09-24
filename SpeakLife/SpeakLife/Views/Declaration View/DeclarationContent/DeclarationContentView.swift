@@ -389,10 +389,6 @@ struct DeclarationContentView: View {
             viewModel.requestReview.toggle()
         }
     }
-    
-    private func dislike(_ declaration: Declaration) {
-        viewModel.dislike(declaration: declaration)
-    }
 }
 
 extension View {

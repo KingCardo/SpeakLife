@@ -284,7 +284,5 @@ struct Declaration: Codable, Identifiable, Hashable {
             case isFavorite
         }
     
-    var disliked: Bool = false
-    
     var lastEdit: Date?
 }
