@@ -68,11 +68,11 @@ struct InAppId: Codable {
         var title: String {
             switch self {
             case .speakLifeLifetime: return "$99.99 for Life billed today"
-            case .speakLife1YR99: return "Then $8.33/month, billed annually at $99.99/year. Cancel anytime."
-            case .speakLife1YR49: return "Then $4.16/month, billed annually at $49.99/year. Cancel anytime."
-            case .speakLife1YR39: return "Then $3.33/month, billed annually at $39.99/year. Cancel anytime."
-            case .speakLife1YR29: return "Then $2.49/month, billed annually at $29.99/year. Cancel anytime."
-            case .speakLife1YR19: return "Then $1.67/month, billed annually at $19.99/year. Cancel anytime."
+            case .speakLife1YR99: return "$$99.99/year. Cancel anytime."
+            case .speakLife1YR49: return "$49.99/year. Cancel anytime."
+            case .speakLife1YR39: return "$39.99/year. Cancel anytime."
+            case .speakLife1YR29: return "$29.99/year. Cancel anytime."
+            case .speakLife1YR19: return "$19.99/year. Cancel anytime."
             case .speakLife1YR15: return "$14.99/year"
             case .speakLife1YR9: return "$9.99/year"
             case .speakLife1MO9: return "$9.99/month"

@@ -86,7 +86,7 @@ class Theme: Identifiable, Codable {
         }
     }
     
-    static var all: [Theme] = [JesusOnWater,JesusHealing,JesusOnCross,JesusRisen, JesusPraying, JesusHeaven,twinAngels,warriorAngel,heavenly,glowingAngels,radiantAngel, starryNight,lakeTrees,countryNightSky,peacefulMountainNight,majesticNight, mountainLandscape, pinkHueMountain, forestSunrise,sunsetMountain,sereneMountain,calmLake,tranquilSunset, breathTakingSunset,grassyField, sunset3,moonlight2,desertsky]
+    static var all: [Theme] = [JesusOnWater,JesusHealing,JesusOnCross,JesusRisen, JesusPraying, JesusHeaven,twinAngels,warriorAngel,heavenly,glowingAngels,radiantAngel, starryNight,lakeTrees,countryNightSky,peacefulMountainNight,majesticNight, mountainLandscape, pinkHueMountain, forestSunrise,sunsetMountain,sereneMountain,calmLake,tranquilSunset, breathTakingSunset,flowingRiver, sunset3,moonlight2,desertsky]
     
     private static let JesusOnCross = Theme("JesusOnCross", blurEffect: true)
     private static let JesusOnWater = Theme("JesusOnWater", blurEffect: true)
@@ -109,7 +109,7 @@ class Theme: Identifiable, Codable {
     private static let peacefulMountainNight = Theme("peacefulMountainNight", blurEffect: true)
     private static let lakeTrees = Theme("lakeTrees", blurEffect: true)
     private static let sereneMountain = Theme("sereneMountain", blurEffect: true)
-    private static let grassyField = Theme("grassyField", blurEffect: true)
+    private static let flowingRiver = Theme("flowingRiver", blurEffect: true)
     private static let tranquilSunset = Theme("tranquilSunset", blurEffect: true)
     private static let breathTakingSunset = Theme("breathTakingSunset", blurEffect: true)
     private static let calmLake = Theme("calmLake", blurEffect: true)

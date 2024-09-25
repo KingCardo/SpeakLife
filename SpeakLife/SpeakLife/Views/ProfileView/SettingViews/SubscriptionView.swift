@@ -15,8 +15,8 @@ import SwiftUI
 
 // ViewModel to manage data for the view
 class OfferViewModel: ObservableObject {
-    @Published var originalPrice: String = "$39.99/year"
-    @Published var monthlyPrice: String = "$3.33/month"
+    @Published var originalPrice: String = "$29.99/year"
+    @Published var monthlyPrice: String = "$2.49/month"
     @Published var discountedPrice: String = "$19.99/year"
     @Published var discountedMonthlyPrice: String = "$1.67/month"
 }
@@ -53,7 +53,7 @@ struct OfferPageView: View {
                             .fill(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))
                     )
                 VStack {
-                    Text("50% off")
+                    Text("33% off")
                         .font(Font.custom("AppleSDGothicNeo-Bold", size: 48, relativeTo: .title))
                         .foregroundColor(.white)
                     
@@ -191,14 +191,14 @@ struct SubscriptionView: View {
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR39
-    @State var firstSelection = InAppId.Subscription.speakLife1YR39
+    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR29
+    @State var firstSelection = InAppId.Subscription.speakLife1YR29
     @State private var localizedPrice: String = "$19.00"
     @State private var regionCode: String = "US"
     @State private var isCheaperPricingCountry = false
     @State var chooseDifferentAmount = false
     
-    var secondSelection = InAppId.Subscription.speakLife1MO7
+    var secondSelection = InAppId.Subscription.speakLife1MO4
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let valueProps: [Feature]
@@ -207,7 +207,7 @@ struct SubscriptionView: View {
     var isDiscount = false
     
     var ctaText: String? {
-        "7 days free, then"
+        "3 days free, then"
         
     }
     
@@ -342,7 +342,7 @@ struct SubscriptionView: View {
     
     var subscriptionStack: some View {
         VStack {
-            Text("Start your 7-day free trial today")
+            Text("Try for free 🙏")
                 .font(Font.custom("AppleSDGothicNeo-Bold", size: 20))
                 .foregroundColor(Constants.gold)
                 .padding(.bottom, 4)
@@ -381,14 +381,14 @@ struct SubscriptionView: View {
             
             Text(currentSelection?.title ?? "" + ".")
             
-            if currentSelection == firstSelection { //}||  currentSelection == secondSelection {
+            if currentSelection == secondSelection {
                 Text("Cancel anytime.")
-                    .font(Font.custom("Roboto-Regular", size: 14, relativeTo: .callout))
+                    .font(Font.custom("Roboto-Regular", size: 12, relativeTo: .callout))
                     .foregroundColor(.gray)
             }
             
         }
-        .font(Font.custom("Roboto-Regular", size: 14, relativeTo: .callout))
+        .font(Font.custom("Roboto-Regular", size: 12, relativeTo: .callout))
         .foregroundColor(.white)
     }
     
@@ -396,8 +396,10 @@ struct SubscriptionView: View {
     private func goPremiumStack() -> some View  {
         return VStack {
             continueButton(gradient:  LinearGradient(gradient: Gradient(colors: [.cyan, .black]), startPoint: .top, endPoint: .bottom))
+            costDescription
             Spacer()
                 .frame(height: 8)
+            
             
             HStack {
                 Button(action: restore) {
@@ -492,7 +494,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Start your 7-day free trial today" : "Subscribe" , action: makePurchase)
+        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Start your 3-day free trial today" : "Subscribe" , action: makePurchase)
     }
     // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
     private func restore() {
@@ -521,7 +523,7 @@ struct SubscriptionView: View {
                         .fill(Constants.traditionalGold)
                         .frame(width: 110, height: 30)
                     
-                    Text("7-Day free trial")
+                    Text("3-Day free trial")
                         .font(.caption)
                         .bold()
                         .foregroundColor(.black)

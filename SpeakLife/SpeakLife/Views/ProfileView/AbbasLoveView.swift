@@ -122,7 +122,7 @@ struct PageContent: View {
     var body: some View {
         VStack {
             Text(verse)
-                .font(.custom("AppleSDGothicNeo-Regular", size: 24))
+                .font(.custom("AppleSDGothicNeo-Bold", size: 24))
                 .padding()
             Spacer()
                 .frame(height: 20)
