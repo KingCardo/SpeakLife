@@ -31,7 +31,7 @@ struct DeclarationView: View {
     
     @AppStorage("review.counter") private var reviewCounter = 0
     @AppStorage("share.counter") private var shareCounter = 0
-    @AppStorage("review.try") private var reviewTry = 0
+    @AppStorage("review.try") private var reviewTry = 1
     @AppStorage("shared.count") private var shared = 0
     @AppStorage("premium.count") private var premiumCount = 0
     @State var result: Result<MFMailComposeResult, Error>? = nil
@@ -272,7 +272,7 @@ struct DeclarationView: View {
                     
                 }
             }
-        } else if reviewTry <= 2, let lastReviewSetDate = appState.lastReviewRequestSetDate {
+        } else if reviewTry <= 1, let lastReviewSetDate = appState.lastReviewRequestSetDate, currentDate.timeIntervalSince(lastReviewSetDate) >= 4 * 60 {
             DispatchQueue.main.async {
                 if let scene = UIApplication.shared.connectedScenes
                     .first(where: { $0.activationState == .foregroundActive })
@@ -285,7 +285,7 @@ struct DeclarationView: View {
             }
         }
             else if let lastReviewSetDate = appState.lastReviewRequestSetDate,
-                  currentDate.timeIntervalSince(lastReviewSetDate) >= 5 * 60,
+                  currentDate.timeIntervalSince(lastReviewSetDate) >= 10 * 60,
                   reviewTry < 3 {
             DispatchQueue.main.async {
                 if let scene = UIApplication.shared.connectedScenes

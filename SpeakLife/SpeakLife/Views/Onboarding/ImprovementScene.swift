@@ -71,7 +71,7 @@ struct ImprovementScene: View {
                 .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
                 
                 Spacer()
-                    .frame(width: 5, height: size.height * 0.07)
+                    .frame(width: 5, height: size.height * 0.13)
             }
             .scrollIndicators(.hidden)
             .frame(width: size.width, height: size.height)

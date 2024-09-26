@@ -173,6 +173,7 @@ struct AgeCollectionView: View {
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .caption))
                 .fontWeight(.medium)
                 .frame(width: size.width * 0.30 ,height: 25)
+                
                 Button("Continue") {
                     if selectedAgeRange.count > 2 {
                         Analytics.logEvent(selectedAgeRange, parameters: nil)
@@ -187,7 +188,7 @@ struct AgeCollectionView: View {
                 .cornerRadius(8)
                 .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
                 Spacer()
-                    .frame(width: 5, height: size.height * 0.10)
+                    .frame(width: 5, height: size.height * 0.13)
             }
         }
         

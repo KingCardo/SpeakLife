@@ -232,80 +232,80 @@ struct SubscriptionView: View {
     
     private func goPremiumView(size: CGSize) -> some View  {
         ZStack {
-            
             GeometryReader { geometry in
-                LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, Color.black]), startPoint: .top, endPoint: .bottom)
-                    .edgesIgnoringSafeArea(.all)
-                
-                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
-                    Spacer()
-                        .frame(height: 15)
-                    VStack(alignment: .center) {
-        
-                    Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 90, height: 90)
-                        .clipShape(Circle())
-                        .offset(x: 0, y: 0)
+                //ScrollView {
+                    LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, Color.black]), startPoint: .top, endPoint: .bottom)
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
+                        Spacer()
+                            .frame(height: 12)
+                        VStack(alignment: .center) {
                             
-                        Text("SpeakLife")
-                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .title))
-        
-                        
-                    }
-                    Spacer()
-                        .frame(height: 12)
-                    
-                    
-                    FeatureView(valueProps)
-                        .foregroundColor(.white)
-                    
-                    
-                   Spacer()
-                    
-                    VStack {
-                        Text("Over 40K+ happy users 🥳")
-                             .font(Font.custom("AppleSDGothicNeo-Bold", size: 20, relativeTo: .title))
-                            .foregroundStyle(Color.white)
-                        StarRatingView(rating: 4.8)
-                      
-                    }
-                    Spacer()
-                        .frame(height: 20)
-                    
-                    
-                    VStack {
-                        
-                        Button {
-                            currentSelection = firstSelection
-                        } label: {
-                            yearlyCTABox()
+                            Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, height: 80)
+                                .clipShape(Circle())
+                                .offset(x: 0, y: 0)
+                            
+                            Text("SpeakLife")
+                                .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .title))
+                            
+                            
                         }
                         Spacer()
                             .frame(height: 12)
-                        Button {
-                            currentSelection = secondSelection
-                        } label: {
-                            monthlySelectionBox()
+                        
+                        
+                        FeatureView(valueProps)
+                            .foregroundColor(.white)
+                        
+                        
+                        Spacer()
+                        
+                        VStack {
+                            Text("Over 40K+ happy users 🥳")
+                                .font(Font.custom("AppleSDGothicNeo-Bold", size: 20, relativeTo: .title))
+                                .foregroundStyle(Color.white)
+                            StarRatingView(rating: 4.8)
+                            
                         }
-    
+                        Spacer()
+                            .frame(height: 12)
+                        
+                        
+                        VStack {
+                            
+                            Button {
+                                currentSelection = firstSelection
+                            } label: {
+                                yearlyCTABox()
+                            }
+                            Spacer()
+                                .frame(height: 8)
+                            Button {
+                                currentSelection = secondSelection
+                            } label: {
+                                monthlySelectionBox()
+                            }
+                            
+                        }
+                        
+                        // subscriptionStack
+                        
+                        goPremiumStack()
+                        
+                        
                     }
-                  
-                   // subscriptionStack
-                    
-                    goPremiumStack()
-                    
-                    
                 }
-                .padding(.bottom, 30)
+                
+                
+                if declarationStore.isPurchasing {
+                    RotatingLoadingImageView()
+                }
             }
-            
-            
-            if declarationStore.isPurchasing {
-                RotatingLoadingImageView()
-            }
-        }
+         //   }
         .sheet(isPresented: $chooseDifferentAmount) {
             patronView
         }

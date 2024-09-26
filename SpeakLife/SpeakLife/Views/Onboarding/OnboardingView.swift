@@ -7,8 +7,130 @@
 
 import SwiftUI
 import FirebaseAnalytics
-
+import StoreKit
 let onboardingBGImage = "moonlight2"
+
+
+
+import SwiftUI
+
+struct RatingView: View {
+    let size: CGSize
+    let callBack: (() -> Void)
+
+    var body: some View {
+        VStack {
+            
+            Text("SpeakLife")
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 24, relativeTo: .title))
+                .foregroundStyle(.white)
+                .padding(.top, 20)
+            
+            Spacer()
+
+            ZStack {
+                // Background circle layers
+                Circle()
+                    .strokeBorder(Constants.DAMidBlue.opacity(0.3), lineWidth: 4)
+                    .frame(width: 260, height: 260)
+                
+                Circle()
+                    .strokeBorder(Constants.DAMidBlue.opacity(0.2), lineWidth: 4)
+                    .frame(width: 200, height: 200)
+                
+                Circle()
+                    .fill(Constants.DAMidBlue.opacity(0.3))
+                    .frame(width: 140, height: 140)
+                    
+
+                HStack(spacing: 10) {
+                    // Outer left star (small)
+                    Image(systemName: "star.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(Color.yellow)
+                        .shadow(color: .yellow.opacity(0.5), radius: 5, x: 0, y: 0)
+                    
+                    // Middle-left star (medium)
+                    Image(systemName: "star.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(Color.yellow)
+                        .shadow(color: .yellow.opacity(0.5), radius: 5, x: 0, y: 0)
+                    
+                    // Center star (large)
+                    Image(systemName: "star.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(Color.yellow)
+                        .shadow(color: .yellow.opacity(0.5), radius: 5, x: 0, y: 0)
+                    
+                    // Middle-right star (medium)
+                    Image(systemName: "star.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(Color.yellow)
+                        .shadow(color: .yellow.opacity(0.5), radius: 5, x: 0, y: 0)
+                    
+                    // Outer right star (small)
+                    Image(systemName: "star.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(Color.yellow)
+                        .shadow(color: .yellow.opacity(0.5), radius: 5, x: 0, y: 0)
+                }
+                
+            }
+            .padding(.bottom, 40)
+            
+            Text("Help us make the world more like Jesus!")
+                .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .body))
+                .foregroundStyle(.white)
+                .padding(10)
+            
+            // Subtext about app review
+            Text("Your app store review helps spread the word and grow the SpeakLife community!")
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
+                .foregroundStyle(.white)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 40)
+            
+            Spacer()
+            
+            // Rate Us button
+            Button(action: {
+               callBack()
+            }) {
+                Text("Rate us")
+                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
+                    .frame(width: size.width * 0.87 ,height: 50)
+                    .background(Constants.DAMidBlue)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
+                    .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+            }
+            .padding(.horizontal, 20)
+        
+            Spacer()
+                .frame(width: 5, height: size.height * 0.07)
+        }
+        .background(
+            ZStack {
+                Image(onboardingBGImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+                Color.black.opacity(0.3)
+                    .edgesIgnoringSafeArea(.all)
+            })
+    }
+       
+}
 
 struct OnboardingView: View  {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
@@ -87,7 +209,13 @@ struct OnboardingView: View  {
                         advance()
                     }
                 }
-                    .tag(Tab.improvement)
+                .tag(Tab.improvement)
+                
+                RatingView(size: geometry.size) {
+                    withAnimation {
+                        advance()
+                    }
+                }.tag(Tab.review)
                 
                 
                 WidgetScene(size: geometry.size) {
@@ -103,6 +231,8 @@ struct OnboardingView: View  {
                     }
                 }
                 .tag(Tab.notification)
+                
+             
 
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
@@ -274,7 +404,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("HabitScreenDone", parameters: nil)
                 case .improvement:
                     impactMed.impactOccurred()
-                    selection = .widgets//.intro
+                    selection = .review//.intro
                     onboardingTab = selection.rawValue
                     appState.selectedNotificationCategories = improvementViewModel.selectedCategories
                     decodeCategories(improvementViewModel.selectedExperiences)
@@ -370,6 +500,20 @@ struct OnboardingView: View  {
                     selection = .improvement
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("ConfidenceScreenDone", parameters: nil)
+                case .review:
+                    impactMed.impactOccurred()
+                    selection = .widgets
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("ReviewScreenDone", parameters: nil)
+                    DispatchQueue.main.async {
+                        if let scene = UIApplication.shared.connectedScenes
+                            .first(where: { $0.activationState == .foregroundActive })
+                            as? UIWindowScene {
+                            SKStoreReviewController.requestReview(in: scene)
+                        }
+                    }
+                    appState.lastReviewRequestSetDate = Date()
+                   
                 }
        // }
     }

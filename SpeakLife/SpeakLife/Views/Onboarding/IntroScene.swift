@@ -126,7 +126,7 @@ struct IntroTipScene: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
-                Color.black.opacity(0.4)
+                Color.black.opacity(0.3)
                     .edgesIgnoringSafeArea(.all)
             }
         )
