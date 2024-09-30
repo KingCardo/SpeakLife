@@ -43,15 +43,25 @@ struct CategoryCell: View  {
             
             VStack {
                 ZStack(alignment: .topTrailing) {
-                    Gradients().random
-                        .scaledToFill()
-                        .frame(width: dimension, height: dimension)
-                        .clipped()
-                        .cornerRadius(4)
-                    lockIcon
+                    if assetExists(named: category.imageString) {
+                        Image(category.imageString)
+                            .resizable().scaledToFill()
+                            .frame(width: dimension, height: dimension)
+                            .clipped()
+                            .cornerRadius(4)
+                        
+                        lockIcon
+                        
+                    } else {
+                        Gradients().random
+                            .scaledToFill()
+                            .frame(width: dimension, height: dimension)
+                            .clipped()
+                            .cornerRadius(4)
+                        lockIcon
+                    }
                 }
-                
-                
+        
                 
                 Text(category.categoryTitle)
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
