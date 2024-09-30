@@ -24,7 +24,6 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case health
     case peace
     case wealth
-   // case selfcontrol
     case wisdom
     case grace
     case loneliness
@@ -35,11 +34,10 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case godsprotection
     case guidance
     case rest
-   // case guilt
     case joy
     
     case hardtimes
-    // case discipline
+    case parenting
     case perseverance
     case identity
     case marriage
@@ -120,8 +118,9 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .joy,
         .loneliness,
         .love,
-        .purity,
+        .parenting,
         .praise,
+        .purity,
         .rest,
         .relationships,
         .marriage,
@@ -186,16 +185,16 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .joy,
         .loneliness,
         .love,
-        .purity,
-        .praise,
-        .rest,
-        .relationships,
         .marriage,
+        .parenting,
         .peace,
         .perseverance,
-        .wisdom,
+        .praise,
+        .purity,
+        .relationships,
+        .rest,
         .wealth,
-        
+        .wisdom
     ]
     
     
@@ -220,6 +219,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         case .kings2: return "2 Kings"
         case .chronicles1: return "1 Chronicles"
         case .chronicles2: return "2 Chronicles"
+        case .parenting: return "Raising children"
         default:  return self.rawValue.capitalized
         }
     }

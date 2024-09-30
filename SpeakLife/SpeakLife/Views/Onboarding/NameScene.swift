@@ -168,6 +168,7 @@ struct AgeCollectionView: View {
                 Spacer()
                 
                 Button("Skip") {
+                    Analytics.logEvent("AgeRangeSkipped", parameters: nil)
                     callBack()
                 }
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .caption))
@@ -176,7 +177,7 @@ struct AgeCollectionView: View {
                 
                 Button("Continue") {
                     if selectedAgeRange.count > 2 {
-                        Analytics.logEvent(selectedAgeRange, parameters: nil)
+                        Analytics.logEvent("AgeRange", parameters: ["ageRange": selectedAgeRange])
                     }
                     callBack()
                 }

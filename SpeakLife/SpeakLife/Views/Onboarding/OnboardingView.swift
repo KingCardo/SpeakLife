@@ -237,12 +237,12 @@ struct OnboardingView: View  {
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
                 
-                OfferPageView() {
-                    withAnimation {
-                        advance()
-                    }
-                }
-                    .tag(Tab.discount)
+//                OfferPageView() {
+//                    withAnimation {
+//                        advance()
+//                    }
+//                }
+//                    .tag(Tab.discount)
             
                 
             }
@@ -454,12 +454,14 @@ struct OnboardingView: View  {
                     onboardingTab = selection.rawValue
                 case .subscription:
                     Analytics.logEvent("SubscriptionScreenDone", parameters: nil)
-                    if subscriptionStore.isPremium {
-                        viewModel.choose(.general) { _ in }
-                        dismissOnboarding()
-                    } else {
-                        selection = .discount
-                    }
+                    viewModel.choose(.general) { _ in }
+                    dismissOnboarding()
+//                    if subscriptionStore.isPremium {
+//                        viewModel.choose(.general) { _ in }
+//                        dismissOnboarding()
+//                    } else {
+//                        selection = .discount
+//                    }
                 case .scholarship:
                     dismissOnboarding()
                 case .widgets:

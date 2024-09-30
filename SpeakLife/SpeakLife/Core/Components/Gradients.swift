@@ -9,11 +9,11 @@ import SwiftUI
 
 struct Gradients {
     
-    let colors: [Color] = [.cyan, .purple, .white, .red]
+    let colors: [Color] = [.cyan, .purple, .white, .red, .orange, .pink, .indigo]
     
     func randomColors() -> [Color] {
             let shuffledColors = colors.shuffled()
-            let array = Array(shuffledColors.prefix(2))
+            let array = Array(shuffledColors.prefix(3))
             return array
         }
     
