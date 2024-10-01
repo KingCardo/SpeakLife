@@ -197,7 +197,9 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .wisdom
     ]
     
-    
+    var isBibleBook: Bool {
+        return DeclarationCategory.bibleCategories.contains(where: { $0 == self } )
+    }
     var id: String {
          self.rawValue
     }

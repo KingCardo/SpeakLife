@@ -284,7 +284,7 @@ struct DeclarationContentView: View {
                 .frame(width: geometry.size.width * 0.98)
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
             
-            Text(declaration.book ?? "")
+            Text(viewModel.subtitle(declaration))
                 .foregroundColor(.white.opacity(0.9))
                 .font(themeViewModel.selectedFontForBook ?? .caption)
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)

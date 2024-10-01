@@ -33,16 +33,45 @@ struct StreakInfoBottomSheet: View {
             Spacer()
                 .frame(height: 12)
             VStack {
-                Text("Current streak 🔥")
-                    .font(bodyFont)
+                HStack {
+                    Text("Current streak")
+                        .font(bodyFont)
+                    
+                    HStack {
+                        Text(streakViewModel.titleText)
+                            .font(bodyFont)
+                        Image(systemName: "flame")
+                            .resizable()
+                            .foregroundStyle(.orange)
+                            .frame(width: 15, height: 20)
+                    }
+                }
                 
                 HStack {
-                    Text(streakViewModel.titleText)
+                    Text("Longest streak")
                         .font(bodyFont)
-                    Image(systemName: "bolt.fill")
-                        .resizable()
-                        .foregroundStyle(Constants.traditionalGold)
-                        .frame(width: 15, height: 20)
+                    
+                    HStack {
+                        Text(streakViewModel.subTitleText)
+                            .font(bodyFont)
+                        Image(systemName: "bolt.fill")
+                            .resizable()
+                            .foregroundStyle(Constants.traditionalGold)
+                            .frame(width: 15, height: 20)
+                    }
+                }
+                HStack {
+                    Text("Total Days Speaking Life")
+                        .font(bodyFont)
+                    
+                    HStack {
+                        Text(streakViewModel.subTitleDetailText)
+                            .font(bodyFont)
+                        Image(systemName: "star.fill")
+                            .resizable()
+                            .foregroundStyle(Constants.traditionalGold)
+                            .frame(width: 20, height: 20)
+                    }
                 }
             }
             

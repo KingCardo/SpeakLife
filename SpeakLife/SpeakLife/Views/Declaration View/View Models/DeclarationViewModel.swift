@@ -29,11 +29,6 @@ final class DeclarationViewModel: ObservableObject {
     @Published var showVerse = true
     
     @Published var selectedTab = 0
-//    {
-//        didSet {
-//            print(declarations.map { $0.text })
-//        }
-//    }
     
     @Published var errorAlert = false
     
@@ -167,6 +162,18 @@ final class DeclarationViewModel: ObservableObject {
         }
         
         showVerse.toggle()
+    }
+    
+    func subtitle(_ declaration: Declaration) -> String {
+        if selectedCategory.isBibleBook {
+            if showVerse {
+                return declaration.book == "Jesus" ? "Jesus" : ""
+            } else {
+                return declaration.book ?? ""
+            }
+        } else {
+            return declaration.book ?? ""
+        }
     }
     
     
