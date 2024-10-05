@@ -62,26 +62,26 @@ struct DeclarationContentView: View {
                             intentVstack(declaration: viewModel.declarations[viewModel.selectedTab], geometry)
                                 .rotationEffect(Angle(degrees: -degrees))
                     
-                            if isMenuExpanded {
-                                
-                                VStack(spacing: 2) {
-                                    Spacer()
-                                        .frame(height:geometry.size.height * 0.2)
-                                    ForEach(buttonVisibilities.indices, id: \.self) { index in
-                                        if buttonVisibilities[index] {
-                                            getButton(for: index, declaration: viewModel.declarations[viewModel.selectedTab])
-                                                .transition(.move(edge: .trailing))
-            
-                                        }
-                                    }
-                                }
-                                .opacity(isMenuExpanded ? 1 : 0)
-                                .rotationEffect(Angle(degrees: -degrees))
-                                .frame(
-                                    width: geometry.size.width * 0.35,
-                                    height: geometry.size.height * 0.06
-                                )
-                            }
+//                            if isMenuExpanded {
+//                                
+//                                VStack(spacing: 2) {
+//                                    Spacer()
+//                                        .frame(height:geometry.size.height * 0.2)
+//                                    ForEach(buttonVisibilities.indices, id: \.self) { index in
+//                                        if buttonVisibilities[index] {
+//                                            getButton(for: index, declaration: viewModel.declarations[viewModel.selectedTab])
+//                                                .transition(.move(edge: .trailing))
+//            
+//                                        }
+//                                    }
+//                                }
+//                                .opacity(isMenuExpanded ? 1 : 0)
+//                                .rotationEffect(Angle(degrees: -degrees))
+//                                .frame(
+//                                    width: geometry.size.width * 0.35,
+//                                    height: geometry.size.height * 0.06
+//                                )
+//                            }
                         }
                         
                         if isFavorite {
@@ -148,8 +148,8 @@ struct DeclarationContentView: View {
     
     func prepareShareItems() -> [Any] {
         guard let image = image else { return [] }
-        let message = "Check out SpeakLife - Bible Meditation and email speaklife@diosesaqui.com for a 30-day free pass. \n\(APP.Product.urlID)"
-        return [image, message]
+     //   let message = "Check out SpeakLife - Bible Meditation and email speaklife@diosesaqui.com for a 30-day free pass. \n\(APP.Product.urlID)"
+        return [image]//, message]
     }
 
     
@@ -172,28 +172,28 @@ struct DeclarationContentView: View {
             screenshotLabel()
             
             Spacer()
-            //  intentStackButtons(declaration: declaration)
-            CapsuleImageButton(title: isMenuExpanded ? "xmark" : "plus") {
-                if isMenuExpanded {
-                    hideButtonsInSequence {
-                        withAnimation(.easeInOut) {
-                            isMenuExpanded.toggle()
-                            rotationAngle = 0
-                            
-                        }
-                    }
-                } else {
-                    withAnimation(.easeInOut) {
-                        getButtonVisibility(declaration: declaration)// Update button visibilities before showing
-                        showButtonsInSequence()
-                        isMenuExpanded.toggle()
-                        rotationAngle = 180
-                    }
-                }
-            }
-            .rotationEffect(.degrees(rotationAngle))
-            .animation(.easeInOut, value: rotationAngle)
-            
+            intentStackButtons(declaration: declaration)
+//            CapsuleImageButton(title: isMenuExpanded ? "xmark" : "plus") {
+//                if isMenuExpanded {
+//                    hideButtonsInSequence {
+//                        withAnimation(.easeInOut) {
+//                            isMenuExpanded.toggle()
+//                            rotationAngle = 0
+//                            
+//                        }
+//                    }
+//                } else {
+//                    withAnimation(.easeInOut) {
+//                        getButtonVisibility(declaration: declaration)// Update button visibilities before showing
+//                        showButtonsInSequence()
+//                        isMenuExpanded.toggle()
+//                        rotationAngle = 180
+//                    }
+//                }
+//            }
+//            .rotationEffect(.degrees(rotationAngle))
+//            .animation(.easeInOut, value: rotationAngle)
+//            
             Spacer()
                 .frame(height: horizontalSizeClass == .compact ? geometry.size.height * 0.10 : geometry.size.height * 0.25)
         }
@@ -349,6 +349,10 @@ struct DeclarationContentView: View {
                 CapsuleImageButton(title: "tray.and.arrow.up") {
                     shareTapped(declaration: declaration)
                 }
+                
+                CapsuleImageButton(title: declaration.isFavorite ? "heart.fill" : "heart") {
+                    favoriteTapped(declaration: declaration)
+                }
         
                 
                 if declaration.bibleVerseText != nil {
@@ -357,9 +361,6 @@ struct DeclarationContentView: View {
                     }
                 }
                 
-                CapsuleImageButton(title: declaration.isFavorite ? "heart.fill" : "heart") {
-                    favoriteTapped(declaration: declaration)
-                }
             }
             .foregroundColor(.white)
         }

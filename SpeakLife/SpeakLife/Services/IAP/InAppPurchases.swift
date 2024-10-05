@@ -29,6 +29,7 @@ struct InAppId: Codable {
         case speakLife1MO7 = "SpeakLife1MO7"
         case speakLife1MO4 = "SpeakLife1MO4"
         case speakLife1MO2 = "SpeakLife1MO2"
+        case speakLife1WK5 = "SpeakLife1Wk5"
         
         var currentPrice: String {
             switch self {
@@ -44,6 +45,7 @@ struct InAppId: Codable {
             case .speakLife1MO7: return "$6.99"
             case .speakLife1MO4: return "$4.99"
             case .speakLife1MO2: return "$2.99"
+            case .speakLife1WK5: return "$4.99"
             }
         }
         
@@ -61,6 +63,7 @@ struct InAppId: Codable {
             case .speakLife1MO4: return "$4.99/month 💜"
                 
             case .speakLife1MO2: return "$2.99/month 💜"
+            case .speakLife1WK5: return "$4.99/week 💜"
             default: return ""
             }
         }
@@ -79,6 +82,7 @@ struct InAppId: Codable {
             case .speakLife1MO7: return "$6.99/month"
             case .speakLife1MO4: return "$4.99/month"
             case .speakLife1MO2: return "$2.99/month"
+            case .speakLife1WK5: return "$4.99/week"
             }
         }
         
@@ -87,13 +91,14 @@ struct InAppId: Codable {
             case .speakLifeLifetime: return "Lifetime"
             case .speakLife1YR49: return "Yearly"
             case .speakLife1YR39: return "Yearly"
-            case .speakLife1YR29, .speakLife1YR19: return "Yearly"
+            case .speakLife1YR29: return "$29.99/yearly"
             case .speakLife1MO2: return "Monthly"
             case .speakLife1MO4: return "Monthly"
             case .speakLife1MO7: return "Monthly"
             case .speakLife1YR9: return "Yearly"
             case .speakLife1MO9: return "Monthly"
             case .speakLife1YR15: return "Yearly"
+            case .speakLife1WK5: return "$4.99/weekly"
             default: return ""
             }
         }
@@ -120,6 +125,7 @@ struct InAppId: Codable {
             case .speakLife1MO9: return "$9.99/mo"
             case .speakLife1MO7: return "$6.99/mo"
             case .speakLife1MO4: return "$4.99/mo"
+            case .speakLife1WK5: return "$4.99/wk"
             default: return ""
             }
         }
@@ -129,7 +135,7 @@ struct InAppId: Codable {
             case .speakLifeLifetime: return "$99.99"
             case .speakLife1YR49: return "$49.99"
             case .speakLife1YR39: return "$39.99"
-            case .speakLife1YR29: return "$29.99"
+            case .speakLife1YR29: return "Billed Annually"
             case .speakLife1YR19: return "$19.99"
             case .speakLife1YR15: return "$14.99"
             case .speakLife1YR9: return "$9.99"
@@ -137,14 +143,15 @@ struct InAppId: Codable {
             case .speakLife1MO7: return "$6.99"
             case .speakLife1MO4: return "$4.99"
             case .speakLife1MO2: return "$2.99"
+            case .speakLife1WK5: return "Cancel anytime."
             default: return ""
             }
         }
     }
     
-    static let allInApp: [InAppId.Subscription] = [Subscription.speakLife1YR99, Subscription.speakLife1YR49, Subscription.speakLife1YR39, Subscription.speakLife1YR29, Subscription.speakLife1YR19,Subscription.speakLife1MO9,Subscription.speakLife1MO7, Subscription.speakLife1MO4, Subscription.speakLife1MO2]
+    static let allInApp: [InAppId.Subscription] = [Subscription.speakLife1YR99, Subscription.speakLife1YR49, Subscription.speakLife1YR39, Subscription.speakLife1YR29, Subscription.speakLife1YR19,Subscription.speakLife1WK5]
     
-    static let all: [String] = [Subscription.speakLife1YR99.id, Subscription.speakLife1YR49.id, Subscription.speakLife1YR39.id, Subscription.speakLife1YR29.id, Subscription.speakLife1YR19.id,Subscription.speakLife1MO9.id, Subscription.speakLife1MO7.id, Subscription.speakLife1MO4.id, Subscription.speakLife1MO2.id]
+    static let all: [String] = [Subscription.speakLife1YR99.id, Subscription.speakLife1YR49.id, Subscription.speakLife1YR39.id, Subscription.speakLife1YR29.id, Subscription.speakLife1YR19.id, Subscription.speakLife1WK5.id]
 }
 
 struct Messages {

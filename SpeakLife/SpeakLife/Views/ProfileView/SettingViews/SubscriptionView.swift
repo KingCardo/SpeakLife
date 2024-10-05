@@ -191,14 +191,14 @@ struct SubscriptionView: View {
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR29
-    @State var firstSelection = InAppId.Subscription.speakLife1YR29
+    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1WK5
+    @State var firstSelection = InAppId.Subscription.speakLife1WK5
     @State private var localizedPrice: String = "$19.00"
     @State private var regionCode: String = "US"
     @State private var isCheaperPricingCountry = false
     @State var chooseDifferentAmount = false
     
-    var secondSelection = InAppId.Subscription.speakLife1MO4
+    var secondSelection = InAppId.Subscription.speakLife1YR29
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let valueProps: [Feature]
@@ -396,7 +396,7 @@ struct SubscriptionView: View {
     private func goPremiumStack() -> some View  {
         return VStack {
             continueButton(gradient:  LinearGradient(gradient: Gradient(colors: [.cyan, .black]), startPoint: .top, endPoint: .bottom))
-            costDescription
+           // costDescription
             Spacer()
                 .frame(height: 8)
             
@@ -494,7 +494,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Start your 3-day free trial today" : "Subscribe" , action: makePurchase)
+        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Try 3-day free trial" : "Purchase" , action: makePurchase)
     }
     // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
     private func restore() {
@@ -537,9 +537,10 @@ struct SubscriptionView: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text("\(firstSelection.ctaDurationTitle)")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                        Text(" \(localizedPrice)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
                             .bold()
+                        Text(" \(localizedPrice)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
+                            
                         
                     }
                     Spacer()
@@ -553,15 +554,15 @@ struct SubscriptionView: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text("\(firstSelection.ctaDurationTitle)")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                        Text("\(firstSelection.ctaPriceTitle)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
                             .bold()
+                        Text("\(firstSelection.ctaPriceTitle)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
                         
                     }
                     Spacer()
-                    Text(firstSelection.subTitle)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                        .bold()
+//                    Text(firstSelection.subTitle)
+//                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+//                        .bold()
                     
                 }
                 .foregroundStyle(.white)
@@ -579,23 +580,25 @@ struct SubscriptionView: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
                 .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == secondSelection ? Constants.DAMidBlue : .clear))
-                .frame(height: 40)
+                .frame(height: 60)
             
             HStack {
                 VStack(alignment: .leading) {
-                    HStack {
-                        Text("\(secondSelection.ctaDurationTitle)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                    Text("\(secondSelection.ctaDurationTitle)")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                        .bold()
+                    Text("\(secondSelection.ctaPriceTitle)")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
+                       
+                }
                         Spacer()
                         Text("\(secondSelection.subTitle)")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
                             .bold()
-                    }
                 }
                 .foregroundStyle(.white)
                 .padding([.leading, .trailing])
                 
-            }
         }
         
         .padding([.leading, .trailing], 20)

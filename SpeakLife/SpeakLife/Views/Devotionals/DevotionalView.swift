@@ -123,7 +123,7 @@ struct DevotionalView: View {
             .fontWeight(.medium)
         
         Spacer()
-            .frame(height: 16)
+            .frame(height: 24)
     }
     
     @ViewBuilder
@@ -133,7 +133,7 @@ struct DevotionalView: View {
             .italic()
         
         Spacer()
-            .frame(height: spacing)
+            .frame(height: 24)
     }
     
     @ViewBuilder
