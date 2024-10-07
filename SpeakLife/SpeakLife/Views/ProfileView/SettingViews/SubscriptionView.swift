@@ -191,14 +191,14 @@ struct SubscriptionView: View {
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1WK5
-    @State var firstSelection = InAppId.Subscription.speakLife1WK5
+    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR29
+    @State var firstSelection = InAppId.Subscription.speakLife1YR29
     @State private var localizedPrice: String = "$19.00"
     @State private var regionCode: String = "US"
     @State private var isCheaperPricingCountry = false
     @State var chooseDifferentAmount = false
     
-    var secondSelection = InAppId.Subscription.speakLife1YR29
+    var secondSelection = InAppId.Subscription.speakLife1MO7
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let valueProps: [Feature]
@@ -239,7 +239,7 @@ struct SubscriptionView: View {
                     
                     VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
                         Spacer()
-                            .frame(height: 12)
+                            .frame(height: 24)
                         VStack(alignment: .center) {
                             
                             Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
@@ -255,24 +255,25 @@ struct SubscriptionView: View {
                             
                         }
                         Spacer()
-                            .frame(height: 12)
-                        
-                        
-                        FeatureView(valueProps)
-                            .foregroundColor(.white)
-                        
-                        
-                        Spacer()
-                        
+                            .frame(height: 24)
                         VStack {
-                            Text("Over 40K+ happy users 🥳")
-                                .font(Font.custom("AppleSDGothicNeo-Bold", size: 20, relativeTo: .title))
+                            Text("Your first week's on us 🥳")
+                                .font(Font.custom("AppleSDGothicNeo-Bold", size: 26, relativeTo: .title))
                                 .foregroundStyle(Color.white)
                             StarRatingView(rating: 4.8)
                             
                         }
                         Spacer()
-                            .frame(height: 12)
+                            .frame(height: 24)
+                        
+                        
+                        FeatureView(defaultProps: valueProps)
+                            .foregroundColor(.white)
+                        
+                        
+                       // Spacer()
+                        
+                       
                         
                         
                         VStack {
@@ -291,6 +292,7 @@ struct SubscriptionView: View {
                             }
                             
                         }
+                        Spacer()
                         
                         // subscriptionStack
                         
@@ -375,20 +377,11 @@ struct SubscriptionView: View {
     @ViewBuilder
     var costDescription: some View {
         VStack(spacing: 4) {
-            if currentSelection == firstSelection {
-                Text(ctaText ?? "")
-            }
-            
+
             Text(currentSelection?.title ?? "" + ".")
             
-            if currentSelection == secondSelection {
-                Text("Cancel anytime.")
-                    .font(Font.custom("Roboto-Regular", size: 12, relativeTo: .callout))
-                    .foregroundColor(.gray)
-            }
-            
         }
-        .font(Font.custom("Roboto-Regular", size: 12, relativeTo: .callout))
+        .font(Font.custom("Roboto-Regular", size: 14, relativeTo: .callout))
         .foregroundColor(.white)
     }
     
@@ -396,7 +389,9 @@ struct SubscriptionView: View {
     private func goPremiumStack() -> some View  {
         return VStack {
             continueButton(gradient:  LinearGradient(gradient: Gradient(colors: [.cyan, .black]), startPoint: .top, endPoint: .bottom))
-           // costDescription
+            Spacer()
+                .frame(height: 8)
+            costDescription
             Spacer()
                 .frame(height: 8)
             
@@ -494,7 +489,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "Try 3-day free trial" : "Purchase" , action: makePurchase)
+        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "SUBSCRIBE" : "SUBSCRIBE" , action: makePurchase)
     }
     // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
     private func restore() {
@@ -523,7 +518,7 @@ struct SubscriptionView: View {
                         .fill(Constants.traditionalGold)
                         .frame(width: 110, height: 30)
                     
-                    Text("3-Day free trial")
+                    Text("Best Value")
                         .font(.caption)
                         .bold()
                         .foregroundColor(.black)
@@ -555,7 +550,7 @@ struct SubscriptionView: View {
                         Text("\(firstSelection.ctaDurationTitle)")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
                             .bold()
-                        Text("\(firstSelection.ctaPriceTitle)")
+                        Text("\(firstSelection.subTitle)")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
                         
                     }
@@ -580,21 +575,21 @@ struct SubscriptionView: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
                 .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == secondSelection ? Constants.DAMidBlue : .clear))
-                .frame(height: 60)
+                .frame(height: 50)
             
             HStack {
                 VStack(alignment: .leading) {
                     Text("\(secondSelection.ctaDurationTitle)")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
                         .bold()
-                    Text("\(secondSelection.ctaPriceTitle)")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
+//                    Text("\(secondSelection.ctaPriceTitle)")
+//                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
                        
                 }
-                        Spacer()
-                        Text("\(secondSelection.subTitle)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                            .bold()
+                       Spacer()
+//                        Text("\(secondSelection.subTitle)")
+//                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+//                            .bold()
                 }
                 .foregroundStyle(.white)
                 .padding([.leading, .trailing])
@@ -666,7 +661,7 @@ struct StarRatingView: View {
             }
             Spacer()
                 .frame(height: 2)
-            Text(String(format: "%.1f/5 star rating", rating))
+            Text(String(format: "%.1f stars", rating))
                 .foregroundStyle(Color.white)
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .caption))
         }

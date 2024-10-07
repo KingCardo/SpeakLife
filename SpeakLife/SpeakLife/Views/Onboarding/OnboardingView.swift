@@ -282,7 +282,7 @@ struct OnboardingView: View  {
     private func subscriptionScene(size: CGSize) -> some View  {
         
         ZStack {
-            SubscriptionView(valueProps: valueProps, size: size) {
+            SubscriptionView(size: size) {
                 withAnimation {
                     advance()
                 }
@@ -408,7 +408,7 @@ struct OnboardingView: View  {
                     onboardingTab = selection.rawValue
                     appState.selectedNotificationCategories = improvementViewModel.selectedCategories
                     decodeCategories(improvementViewModel.selectedExperiences)
-                    valueProps = createValueProps(categories: improvementViewModel.selectedExperiences)
+                   // valueProps = createValueProps(categories: improvementViewModel.selectedExperiences)
                     Analytics.logEvent("ImprovementScreenDone", parameters: nil)
                 case .intro:
                     impactMed.impactOccurred()
