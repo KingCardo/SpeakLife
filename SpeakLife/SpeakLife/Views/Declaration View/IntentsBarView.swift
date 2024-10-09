@@ -38,6 +38,7 @@ struct IntentsBarView: View {
             themeChooserButton
             
         }
+        .opacity(appState.showScreenshotLabel ? 0 : 1)
         .padding()
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
             self.isPresentingThemeChooser = false

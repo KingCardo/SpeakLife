@@ -173,6 +173,7 @@ struct DeclarationContentView: View {
             
             Spacer()
             intentStackButtons(declaration: declaration)
+                .opacity(appState.showScreenshotLabel ? 0 : 1)
 //            CapsuleImageButton(title: isMenuExpanded ? "xmark" : "plus") {
 //                if isMenuExpanded {
 //                    hideButtonsInSequence {
@@ -302,7 +303,7 @@ struct DeclarationContentView: View {
             appState.showScreenshotLabel = true
             
         }
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
             if let windowScene =  UIApplication.shared.connectedScenes.first as? UIWindowScene {
                 if let window = windowScene.windows.first {
                     image = window.rootViewController?.view.toImage()
@@ -315,8 +316,10 @@ struct DeclarationContentView: View {
         Analytics.logEvent(Event.shareTapped, parameters: ["share": declaration.text])
         Selection.shared.selectionFeedback()
         // Hide the label after 2 seconds
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            appState.showScreenshotLabel = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            withAnimation {
+                appState.showScreenshotLabel = false
+            }
            // viewModel.requestReview.toggle()
         }
     }

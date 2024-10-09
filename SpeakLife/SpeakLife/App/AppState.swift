@@ -11,6 +11,7 @@ final class AppState: ObservableObject {
     @Published var rootViewId = UUID()
     @Published var showIntentBar = true
     @Published var onBoardingTest = true
+    @Published var showScreenshotLabel = false
     @AppStorage("onboarded") var isOnboarded = false
     @AppStorage("newPrayersAdded") var newPrayersAdded = true
     @AppStorage("newCategoriesAddedv4") var newCategoriesAddedv4 = true
@@ -27,7 +28,6 @@ final class AppState: ObservableObject {
     @AppStorage("startTimeIndex") var startTimeIndex = 12
     @AppStorage("endTimeIndex") var endTimeIndex = 40
     @AppStorage("selectedNotificationCategories") var selectedNotificationCategories: String = ""
-    @AppStorage("showScreenshotLabel") var showScreenshotLabel = false
     @AppStorage("abbasLoveLetterIndex") var loveLetterIndex = 0
     @AppStorage("resetNotifications") var resetNotifications = true
     @AppStorage("lastReviewRequestSetDatev1") var lastReviewRequestSetDate: Date?

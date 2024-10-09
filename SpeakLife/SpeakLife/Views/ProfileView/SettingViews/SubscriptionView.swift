@@ -294,7 +294,7 @@ struct SubscriptionView: View {
                         }
                         Spacer()
                         
-                        // subscriptionStack
+                       //  subscriptionStack
                         
                         goPremiumStack()
                         
@@ -344,10 +344,10 @@ struct SubscriptionView: View {
     
     var subscriptionStack: some View {
         VStack {
-            Text("Try for free 🙏")
-                .font(Font.custom("AppleSDGothicNeo-Bold", size: 20))
-                .foregroundColor(Constants.gold)
-                .padding(.bottom, 4)
+//            Text("Try for free 🙏")
+//                .font(Font.custom("AppleSDGothicNeo-Bold", size: 20))
+//                .foregroundColor(Constants.gold)
+//                .padding(.bottom, 4)
             
             Button {
                 makePurchase()
@@ -489,7 +489,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "SUBSCRIBE" : "SUBSCRIBE" , action: makePurchase)
+        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "TRY FOR FREE" : "SUBSCRIBE" , action: makePurchase)
     }
     // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
     private func restore() {

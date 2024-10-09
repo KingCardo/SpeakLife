@@ -69,9 +69,9 @@ struct DeclarationView: View {
            
             ZStack {
                 declarationContent(geometry)
-                if appState.showIntentBar {
+              //  if appState.showIntentBar {
                      
-                    if !appState.showScreenshotLabel {
+                  //  if !appState.showScreenshotLabel {
                        
                         VStack() {
                            
@@ -82,6 +82,9 @@ struct DeclarationView: View {
                                     CountdownTimerView(viewModel: timerViewModel) {
                                         presentTimerBottomSheet()
                                     }
+
+                                    .opacity(appState.showScreenshotLabel ? 0 : 1)
+                                    .allowsHitTesting(!appState.showScreenshotLabel)
                                     .sheet(isPresented: $isPresentingBottomSheet) {
                                         StreakInfoBottomSheet(isShown: $isPresentingBottomSheet)
                                             
@@ -99,7 +102,9 @@ struct DeclarationView: View {
                                     CapsuleImageButton(title: "crown.fill") {
                                         premiumView()
                                         Selection.shared.selectionFeedback()
-                                    }.foregroundStyle(Constants.gold)
+                                    }
+                                    .opacity(appState.showScreenshotLabel ? 0 : 1)
+                                    .foregroundStyle(Constants.gold)
                                         .sheet(isPresented: $isPresentingPremiumView) {
                                             self.isPresentingPremiumView = false
                                             Analytics.logEvent(Event.tryPremiumAbandoned, parameters: nil)
@@ -116,14 +121,15 @@ struct DeclarationView: View {
                             Spacer()
                            if appState.showIntentBar {
                                  IntentsBarView(viewModel: viewModel, themeViewModel: themeViewModel)
+                                   //.opacity(appState.showScreenshotLabel ? 0 : 1)
                                .frame(height: geometry.size.height * 0.10)
 
                         }
                     }
                     }
-                }
+              //  }
            // .navigationBarHidden(true)
-            }
+           // }
         }
             
             .background(
@@ -272,7 +278,7 @@ struct DeclarationView: View {
                     
                 }
             }
-        } else if reviewTry <= 1, let lastReviewSetDate = appState.lastReviewRequestSetDate, currentDate.timeIntervalSince(lastReviewSetDate) >= 4 * 60 {
+        } else if reviewTry <= 1, let lastReviewSetDate = appState.lastReviewRequestSetDate, currentDate.timeIntervalSince(lastReviewSetDate) >= 60 * 60 * 24 * 7 {
             DispatchQueue.main.async {
                 if let scene = UIApplication.shared.connectedScenes
                     .first(where: { $0.activationState == .foregroundActive })
@@ -285,7 +291,7 @@ struct DeclarationView: View {
             }
         }
             else if let lastReviewSetDate = appState.lastReviewRequestSetDate,
-                  currentDate.timeIntervalSince(lastReviewSetDate) >= 10 * 60,
+                  currentDate.timeIntervalSince(lastReviewSetDate) >= 60 * 60 * 24 * 14,
                   reviewTry < 3 {
             DispatchQueue.main.async {
                 if let scene = UIApplication.shared.connectedScenes
