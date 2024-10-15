@@ -12,7 +12,7 @@ import Combine
 final class ThemeViewModel: ObservableObject {
     
     @AppStorage("theme") var theme = Theme.moonlight2.encode()!
-    @AppStorage("fontString") var fontString = "AppleSDGothicNeo-Regular" {
+    @AppStorage("fontString") var fontString = "Cochin" {
         didSet {
             selectedFont = .custom(fontString, size: fontSize)
         }
@@ -28,7 +28,7 @@ final class ThemeViewModel: ObservableObject {
     // MARK: Properties
     
     @Published var selectedTheme: Theme = .moonlight2
-    @Published var selectedFont: Font = .custom("AppleSDGothicNeo-Regular", size: 30) {
+    @Published var selectedFont: Font = .custom("Cochin", size: 30) {
         didSet  {
             updateSelectedFontForBook()
         }

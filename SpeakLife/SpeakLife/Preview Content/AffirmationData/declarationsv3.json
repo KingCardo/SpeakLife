@@ -1259,7 +1259,7 @@
             "category": "destiny"
         },
         {
-            "text": "I am saved by grace through faith, and it is the gift of God.",
+            "text": "I am saved by grace through faith, and it is a gift from God.",
             "isFavorite": false,
             "category": "grace"
         },
@@ -1294,7 +1294,7 @@
             "category": "grace"
         },
         {
-            "text": "I do not earn God’s grace; it is freely given to me through Jesus.",
+            "text": "I can not earn God’s grace; it is freely given to me through Jesus.",
             "isFavorite": false,
             "category": "grace"
         },
@@ -27247,11 +27247,6 @@
     "category": "grace"
   },
   {
-    "text": "Because Jesus loves me, I am empowered by His grace.",
-    "isFavorite": false,
-    "category": "grace"
-  },
-  {
     "text": "Because Jesus loves me, I live in the freedom of His love.",
     "isFavorite": false,
     "category": "grace"
@@ -27277,11 +27272,6 @@
     "category": "grace"
   },
   {
-    "text": "Because Jesus loves me, I am free to be my true self.",
-    "isFavorite": false,
-    "category": "grace"
-  },
-  {
     "text": "Because Jesus loves me, I live in the joy of His grace.",
     "isFavorite": false,
     "category": "grace"
@@ -27297,12 +27287,7 @@
     "category": "grace"
   },
   {
-    "text": "Because Jesus loves me, I forgive myself as He forgives me.",
-    "isFavorite": false,
-    "category": "grace"
-  },
-  {
-    "text": "Because Jesus loves me, I embrace the gift of grace every day.",
+    "text": "Because Jesus loves me, I embrace the gift of righteousness every day.",
     "isFavorite": false,
     "category": "grace"
   },
@@ -27317,17 +27302,7 @@
     "category": "grace"
   },
   {
-    "text": "Because Jesus loves me, I am called to live in grace and truth.",
-    "isFavorite": false,
-    "category": "grace"
-  },
-  {
-    "text": "Because Jesus loves me, I embrace grace-filled relationships.",
-    "isFavorite": false,
-    "category": "grace"
-  },
-  {
-    "text": "Because Jesus loves me, I trust in His unending grace.",
+    "text": "Because Jesus loves me, I trust in His unlimited grace.",
     "isFavorite": false,
     "category": "grace"
   },
@@ -27337,12 +27312,7 @@
     "category": "grace"
   },
   {
-    "text": "Because Jesus loves me, I thrive in the freedom of His grace.",
-    "isFavorite": false,
-    "category": "grace"
-  },
-  {
-    "text": "Because Jesus loves me, I share grace with others.",
+    "text": "Because Jesus loves me, I give grace to others.",
     "isFavorite": false,
     "category": "grace"
   },
@@ -27353,11 +27323,6 @@
   },
   {
     "text": "Because Jesus loves me, I am always growing in His grace.",
-    "isFavorite": false,
-    "category": "grace"
-  },
-  {
-    "text": "Because Jesus loves me, I choose grace over judgment.",
     "isFavorite": false,
     "category": "grace"
   },

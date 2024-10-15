@@ -121,8 +121,10 @@ struct CategoryChooserView: View {
                             .background(BlurView(style: .systemUltraThinMaterialDark))
                             .cornerRadius(8)
                     
-                    categoryList(geometry: geometry)
+                    generalList(geometry: geometry)
                     bibleBookList(geometry: geometry)
+                    categoryList(geometry: geometry)
+                    
                 }
                 .background(
                     Image(onboardingBGImage)
@@ -145,6 +147,31 @@ struct CategoryChooserView: View {
         Section(header: Text("Bible Book Affirmation's").font(Font.custom("AppleSDGothicNeo-Regular", size: 18))) {
             LazyVGrid(columns: twoColumnGrid, spacing: 16) {
                     ForEach(viewModel.bibleCategories) { category in
+                        CategoryCell(size: geometry.size, category: category)
+                            .onTapGesture {
+                                if category.isPremium && !subscriptionStore.isPremium {
+                                    presentPremiumView = true
+                                } else {
+                                    viewModel.choose(category) { success in
+                                        if success {
+                                            Analytics.logEvent(Event.categoryChooserTapped, parameters: ["category": category.rawValue])
+                                            self.presentationMode.wrappedValue.dismiss()
+                                        }
+                                    }
+                                }
+                            }
+                            .sheet(isPresented: $presentPremiumView) {
+                                PremiumView()
+                            }
+                    }
+            }.padding()
+        }
+    }
+    
+    private func generalList(geometry: GeometryProxy) -> some View {
+        Section(header: Text("Yours").font(Font.custom("AppleSDGothicNeo-Regular", size: 18))) {
+            LazyVGrid(columns: twoColumnGrid, spacing: 16) {
+                    ForEach(viewModel.generalCategories) { category in
                         CategoryCell(size: geometry.size, category: category)
                             .onTapGesture {
                                 if category.isPremium && !subscriptionStore.isPremium {

@@ -528,10 +528,6 @@ struct OnboardingView: View  {
             }
         }
         
-        if !temp.contains(.destiny) {
-            temp.insert(.destiny)
-        }
-        
         if categories.contains(.oldTestament) {
             temp.insert(DeclarationCategory.genesis)
             temp.insert(DeclarationCategory.exodus)

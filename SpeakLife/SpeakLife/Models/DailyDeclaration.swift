@@ -162,11 +162,14 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .hebrews
         ]
     
-    
-    static var categoryOrder: [DeclarationCategory] = [
+    static var generalCategories: [DeclarationCategory] = [
         .general,
         .favorites,
         .myOwn,
+        ]
+    
+    
+    static var categoryOrder: [DeclarationCategory] = [
         .destiny,
         .grace,
         .faith,
@@ -252,7 +255,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     var isPremium: Bool {
         switch self {
-        case .general, .destiny, .favorites, .myOwn, .ephesians, .love, .health, .heaven, .genesis, .godsprotection, .proverbs, .luke : return false
+        case .general, .favorites, .myOwn, .ephesians, .love, .health, .grace, .genesis, .godsprotection, .proverbs, .luke : return false
         default: return true
         }
     }

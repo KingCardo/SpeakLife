@@ -121,7 +121,7 @@ struct DeclarationView: View {
                             Spacer()
                            if appState.showIntentBar {
                                  IntentsBarView(viewModel: viewModel, themeViewModel: themeViewModel)
-                                   //.opacity(appState.showScreenshotLabel ? 0 : 1)
+                                   .opacity(appState.showScreenshotLabel ? 0 : 1)
                                .frame(height: geometry.size.height * 0.10)
 
                         }

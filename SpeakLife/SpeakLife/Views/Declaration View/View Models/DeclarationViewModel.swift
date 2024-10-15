@@ -46,6 +46,8 @@ final class DeclarationViewModel: ObservableObject {
     
     @Published var bibleCategories: [DeclarationCategory] = DeclarationCategory.bibleCategories
     
+    @Published var generalCategories: [DeclarationCategory] = DeclarationCategory.generalCategories
+    
     private var allDeclarationsDict: [DeclarationCategory: [Declaration]] = [:]
     
     var selectedCategory: DeclarationCategory {
