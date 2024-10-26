@@ -42,6 +42,8 @@ final class AppState: ObservableObject {
     @AppStorage("discountSelection") var discountSelection = ""
     @AppStorage("discountPercentage") var discountPercentage = ""
     @AppStorage("subscriptionTest") var subscriptionTestnineteen = false
+    @AppStorage("firstOpen") var firstOpen = true
+    @AppStorage("showGiftViewCount") var showGiftViewCount = 0
   
 }
 

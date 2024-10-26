@@ -37,6 +37,9 @@ struct SpeakLifeApp: App {
                 .environmentObject(streakViewModel)
                 .environmentObject(timerViewModel)
                 .onAppear {
+                    if appState.firstOpen {
+                        appState.firstOpen = false
+                    }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         withAnimation {
                             isShowingLanding = false

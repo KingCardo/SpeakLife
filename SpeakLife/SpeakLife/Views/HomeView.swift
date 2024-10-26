@@ -32,8 +32,10 @@ struct HomeView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
     @EnvironmentObject var timerViewModel: TimerViewModel
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @Binding var isShowingLanding: Bool
     @StateObject private var viewModel = FacebookTrackingViewModel()
+    @State var showGiftView = false
 
     let data = [true, false]
     var body: some View {
@@ -99,13 +101,28 @@ struct HomeView: View {
             }
             .hideTabBar(if: appState.showScreenshotLabel)
             .accentColor(Constants.DAMidBlue)
+            .sheet(isPresented: $showGiftView, content: {
+                OfferPageView() {
+                    showGiftView = false
+                }
+            })
             .onAppear {
                 UIScrollView.appearance().isScrollEnabled = true
                 if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
                     AudioPlayerService.shared.playSound(files: resources)
                 }
+                if !subscriptionStore.isPremium && !appState.firstOpen {
+                    presentGiftView()
+                }
             }
             .environment(\.colorScheme, .dark)
+    }
+    
+    func presentGiftView() {
+        if appState.showGiftViewCount <= 5 {
+            showGiftView.toggle()
+            appState.showGiftViewCount += 1
+        }
     }
 }
 

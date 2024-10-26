@@ -88,7 +88,7 @@ final class NotificationManager: NSObject {
             "You’re unstoppable! Keep activating God’s promises daily. 🚀",
             "Another day of speaking life—your streak is growing, and so are the blessings! 🌱",
             "Great consistency! Keep declaring God’s promises and see the rewards. 🌈",
-            "You’re on the right path! Keep up the great work and watch God’s promises manifest. 🌟",
+            "You’re on the right path! Keep up the great work and watch God’s promises be fulfilled. 🌟",
             "Streak maintained! 🎉 Your faithfulness in speaking life is powerful. Keep it up!",
         ]
         

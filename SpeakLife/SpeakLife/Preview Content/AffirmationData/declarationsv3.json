@@ -30061,16 +30061,756 @@
     "isFavorite": false,
     "category": "wisdom"
   },
-
-
-
-
-
-
-
-
-
-
+    {
+      "text": "I expect to fulfill my destiny with clarity and purpose.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect my dreams to unfold in miraculous ways.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to hear God’s voice guiding me every step of the way.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to achieve great things beyond my wildest dreams.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect my life to align with God’s divine plan.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to take bold steps toward my aspirations.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to inspire others with my journey of faith.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to discover new opportunities that lead me to my destiny.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to overcome challenges with strength and grace.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to attract abundance and success in my life.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect my passion to fuel my purpose every day.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to remain open to God’s guidance and wisdom.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect my heart to be filled with hope and optimism.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to create a life that reflects my highest potential.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect my faith to propel me into new realms of possibility.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to embrace change as a vital part of my journey.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to connect deeply with my purpose and passion.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to share my gifts and talents with the world.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to live a life filled with joy and fulfillment.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to attract positive energy and opportunities.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to find purpose in every experience I encounter.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to experience divine timing in all that I do.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect my life to be a testament to God’s goodness.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to wake up every day inspired to chase my dreams.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to see my prayers manifest in my life.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+    {
+      "text": "I expect to leave a lasting legacy of faith and courage.",
+      "isFavorite": false,
+      "category": "destiny"
+    },
+      {
+        "text": "I declare that money is flowing into my life effortlessly.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that I am open to receiving abundant income from various sources.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that God’s faithfulness is manifesting in my financial life.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that my financial inheritance is being revealed to me.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that every day brings new financial opportunities.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that I am blessed with multiple streams of income.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that my faith in God is paving the way for financial blessings.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that unexpected money is coming into my life.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that I am a steward of God’s abundant resources.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that I am aligned with my purpose, attracting wealth effortlessly.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that my skills and talents are creating significant income.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that God's blessings are pouring into every area of my life.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that I receive divine guidance for my financial decisions.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that I am deserving of wealth and abundance.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that my financial goals are being achieved with ease.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that my heart is open to receive my divine inheritance.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that I attract prosperous relationships that enhance my income.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that I am a magnet for wealth and prosperity.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that God’s faithfulness guarantees my financial success.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that I am capable of creating wealth through my actions.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that I am grateful for the abundance that surrounds me.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that every financial need is met with overflow.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that I am equipped to manage my wealth wisely.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that I am stepping into my rightful place of financial abundance.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+      {
+        "text": "I declare that God's promises of prosperity are fulfilled in my life.",
+        "isFavorite": false,
+        "category": "wealth"
+      },
+        {
+          "text": "I expect to experience abundance in every aspect of my life.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to attract wealth and prosperity effortlessly.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect my resources to multiply beyond my imagination.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to receive blessings in unexpected ways.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to live in a state of financial freedom and security.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to share my abundance generously with others.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to cultivate a mindset of prosperity and growth.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to find opportunities that lead to greater wealth.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to be a magnet for abundance and success.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to enjoy a life overflowing with blessings.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect my talents and gifts to create financial abundance.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to see God’s provision in every area of my life.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect my financial dreams to come to fruition.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to cultivate gratitude for the abundance I have.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to live a life of luxury and comfort.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to thrive in all my financial endeavors.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to attract positive financial relationships.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect my hard work to be rewarded abundantly.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect my faith in God to guide me toward prosperity.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to enjoy the fruits of my labor with joy.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to live a life rich in experiences and opportunities.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to be surrounded by abundance and positivity.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect God’s favor to rest on my financial pursuits.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to receive unexpected financial blessings.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect my mindset of abundance to transform my reality.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+        {
+          "text": "I expect to step into my rightful place of prosperity.",
+          "isFavorite": false,
+          "category": "wealth"
+        },
+          {
+            "text": "I declare that I make great choices every day that align with my destiny.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I am guided to be in the right place at the right time.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I trust in God's perfect timing for my life.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that my decisions reflect my highest potential.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that every choice I make leads me closer to my goals.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I recognize opportunities when they arise.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I am open to divine guidance in my decisions.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I make choices that reflect my true purpose.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I am at the right place at the right time to receive blessings.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that my intuition guides me toward the best choices.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I embrace God's perfect timing in my journey.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I learn and grow from every choice I make.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I am surrounded by opportunities for greatness.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I trust the process of my unfolding destiny.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I seek wisdom in every decision I face.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I am empowered to create my own opportunities.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I am aligned with my divine purpose every day.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that my choices are in harmony with God’s will for me.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I recognize the signs of God's timing in my life.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I am grateful for the guidance I receive daily.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I trust in the timing of my blessings.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I make choices rooted in love and purpose.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I am destined for greatness and make choices that reflect that.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I declare that I see every day as an opportunity for growth and alignment.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+            {
+              "text": "I declare that I am in perfect health in every area of my body.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that God has already paid the price for my total healing.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that I resist and reject any lying symptoms in my body.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that my body is strong, vibrant, and full of energy.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that healing is my inheritance, and I receive it now.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that every cell in my body functions perfectly.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that I am aligned with God’s promise of health and wholeness.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that my immune system is strong and protects me.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that I am free from pain and discomfort.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that I nourish my body with healthy choices.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that I am filled with vitality and strength.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that God’s healing power flows through me now.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that I am worthy of a healthy and fulfilling life.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that I release any negative thoughts about my health.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that my body is a temple of health and wellness.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that I listen to my body and respond with love and care.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that my mind is at peace, supporting my body’s healing.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that I am grateful for my health and well-being.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that every organ in my body operates in harmony.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that I radiate health and positivity.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that I am a testimony of God’s healing power.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that I am surrounded by love and support for my health journey.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that I am resilient and overcome any health challenge.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that my body is restored and revitalized each day.",
+              "isFavorite": false,
+              "category": "health"
+            },
+            {
+              "text": "I declare that I embrace a lifestyle that promotes my health.",
+              "isFavorite": false,
+              "category": "health"
+            },
+              {
+                "text": "I expect to experience full recovery and vibrant health, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to get better every day, both physically and mentally, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to stay healthy and strong in every area of my life, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect my body to heal and restore itself completely, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to embrace each day with renewed energy and vitality, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect my mind and body to work in harmony for optimal health, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to cultivate habits that support my health and well-being, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to nourish my body with healthy foods and positive thoughts, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to be surrounded by support and encouragement on my health journey, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to feel strong, capable, and full of life, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect my immune system to protect and support me every day, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to engage in activities that enhance my health and happiness, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to release any negativity that hinders my healing process, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to enjoy restful sleep that rejuvenates my body and mind, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to be grateful for my health and the progress I make daily, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to thrive in a state of wellness and balance, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect my body to respond positively to care and attention, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to take proactive steps toward maintaining my health, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect my spirit to be uplifted as I focus on healing, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to cultivate inner peace that contributes to my well-being, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to be in tune with my body’s needs and respond accordingly, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect my journey to health to be filled with joy and discovery, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to shine with health and happiness every day, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              },
+              {
+                "text": "I expect to feel empowered by my commitment to my health, in Jesus' name.",
+                "isFavorite": false,
+                "category": "health"
+              }
 
 
 

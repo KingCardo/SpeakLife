@@ -35,7 +35,7 @@ struct TipsView: View {
             VStack {
                 Spacer()
                     .frame(height: 100)
-                Text("How to use and benefit from Speaklife to manifest your victory!🛡🗡")
+                Text("How to use and benefit from Speaklife to fulfill your victory!🛡🗡")
                     .font(.title)
                     .foregroundColor(.black)
                     .padding()

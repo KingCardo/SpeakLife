@@ -122,8 +122,9 @@ struct CategoryChooserView: View {
                             .cornerRadius(8)
                     
                     generalList(geometry: geometry)
-                    bibleBookList(geometry: geometry)
+                    
                     categoryList(geometry: geometry)
+                    bibleBookList(geometry: geometry)
                     
                 }
                 .background(
