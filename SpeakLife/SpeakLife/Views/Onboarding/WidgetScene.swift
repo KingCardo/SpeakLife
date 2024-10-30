@@ -21,8 +21,8 @@ struct WidgetScene: View {
             Spacer().frame(height: 30)
             
             Text("Add a widget to your home screen", comment: "Widget scene add widget text")
-                .font(Font.custom("AppleSDGothicNeo-Regular", size: 34, relativeTo: .title))
-                .fontWeight(.semibold)
+                .font(.system(size: 34, weight: .semibold, design: .rounded))
+                .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                 .foregroundColor(.white)
             
             Image("widget")
@@ -55,20 +55,15 @@ struct WidgetScene: View {
             }
             Spacer()
             
-            Button(action: callBack) {
-                HStack {
-                    Text("Got it!", comment: "Widget scene confirmation")
-                        .font(.body)
-                        .fontWeight(.medium)
-                        .frame(width: size.width * 0.91 ,height: 50)
-                }.padding()
-            }
-            .frame(width: size.width * 0.87 ,height: 50)
-            .background(Constants.DAMidBlue)
+            ShimmerButton(colors: [Constants.DAMidBlue, .cyan, Constants.DADarkBlue.opacity(0.6)], buttonTitle: "Got it!", action: callBack)
+            .frame(width: size.width * 0.87 ,height: 60)
+            .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+            
+            .background(Constants.DADarkBlue.opacity(0.6))
             
             .foregroundColor(.white)
-            .cornerRadius(8)
-            .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+            .cornerRadius(30)
+
             
             Spacer()
                 .frame(width: 5, height: size.height * 0.07)

@@ -113,10 +113,10 @@ struct OfferPageView: View {
                     Text("Claim offer now")
                         .font(.system(size: 18, weight: .bold))
                         .padding()
-                        .frame(maxWidth: .infinity)
+                        .frame(maxWidth: .infinity, maxHeight: 60)
                         .background(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))
                         .foregroundColor(.white)
-                        .cornerRadius(10)
+                        .cornerRadius(30)
                 }
                 .padding(.horizontal)
                 
@@ -234,7 +234,7 @@ struct SubscriptionView: View {
         ZStack {
             GeometryReader { geometry in
                 //ScrollView {
-                    LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, Color.black]), startPoint: .top, endPoint: .bottom)
+                LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, Color.black]), startPoint: .top, endPoint: .bottom)
                         .edgesIgnoringSafeArea(.all)
                     
                     VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
@@ -248,9 +248,11 @@ struct SubscriptionView: View {
                                 .frame(width: 80, height: 80)
                                 .clipShape(Circle())
                                 .offset(x: 0, y: 0)
+                                .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                             
                             Text("SpeakLife")
-                                .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .title))
+                                .font(.system(size: 34, weight: .semibold, design: .rounded))
+                                .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                             
                             
                         }
@@ -258,7 +260,7 @@ struct SubscriptionView: View {
                             .frame(height: 24)
                         VStack {
                             Text("Your first week's on us 🥳")
-                                .font(Font.custom("AppleSDGothicNeo-Bold", size: 26, relativeTo: .title))
+                                .font(Font.custom("AppleSDGothicNeo-Bold", size: 30, relativeTo: .title))
                                 .foregroundStyle(Color.white)
                             StarRatingView(rating: 4.8)
                             
@@ -270,12 +272,7 @@ struct SubscriptionView: View {
                         FeatureView(defaultProps: valueProps)
                             .foregroundColor(.white)
                         
-                        
-                       // Spacer()
-                        
-                       
-                        
-                        
+    
                         VStack {
                             
                             Button {
@@ -344,10 +341,6 @@ struct SubscriptionView: View {
     
     var subscriptionStack: some View {
         VStack {
-//            Text("Try for free 🙏")
-//                .font(Font.custom("AppleSDGothicNeo-Bold", size: 20))
-//                .foregroundColor(Constants.gold)
-//                .padding(.bottom, 4)
             
             Button {
                 makePurchase()
@@ -381,7 +374,7 @@ struct SubscriptionView: View {
             Text(currentSelection?.title ?? "" + ".")
             
         }
-        .font(Font.custom("Roboto-Regular", size: 14, relativeTo: .callout))
+        .font(Font.custom("Roboto-Regular", size: 12, relativeTo: .callout))
         .foregroundColor(.white)
     }
     
@@ -389,8 +382,9 @@ struct SubscriptionView: View {
     private func goPremiumStack() -> some View  {
         return VStack {
             continueButton(gradient:  LinearGradient(gradient: Gradient(colors: [.cyan, .black]), startPoint: .top, endPoint: .bottom))
+                .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 6)
             Spacer()
-                .frame(height: 8)
+                .frame(height: 10)
             costDescription
             Spacer()
                 .frame(height: 8)
@@ -399,7 +393,8 @@ struct SubscriptionView: View {
             HStack {
                 Button(action: restore) {
                     Text("Restore", comment: "restore iap")
-                        .font(.caption2)
+                        .font(.caption)
+                        .underline()
                         .foregroundColor(Color.blue)
                 }
                 
@@ -408,7 +403,8 @@ struct SubscriptionView: View {
                 
                 Link(destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!) {
                     Text("Terms & Conditions")
-                        .font(.caption2)
+                        .font(.caption)
+                        .underline()
                         .foregroundColor(Color.blue)
                 }
                 if appState.isOnboarded {
@@ -489,7 +485,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        ShimmerButton(colors: [Constants.DAMidBlue, .cyan], buttonTitle: currentSelection == firstSelection ? "TRY FOR FREE" : "SUBSCRIBE" , action: makePurchase)
+        ShimmerButton(colors: [Constants.DAMidBlue, .cyan,Constants.DADarkBlue.opacity(0.6) ], buttonTitle: currentSelection == firstSelection ? "TRY FOR FREE" : "SUBSCRIBE" , action: makePurchase)
     }
     // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
     private func restore() {
@@ -508,6 +504,7 @@ struct SubscriptionView: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
                 .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == firstSelection ? Constants.DAMidBlue : .clear))
+                .shadow(color: currentSelection == firstSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
                 .frame(height: 60)
             
             HStack {
@@ -516,7 +513,8 @@ struct SubscriptionView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Constants.traditionalGold)
-                        .frame(width: 110, height: 30)
+                        .frame(width: 90, height: 30)
+                        .cornerRadius(15)
                     
                     Text("Best Value")
                         .font(.caption)
@@ -575,6 +573,7 @@ struct SubscriptionView: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
                 .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == secondSelection ? Constants.DAMidBlue : .clear))
+                .shadow(color: currentSelection == secondSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
                 .frame(height: 50)
             
             HStack {
@@ -582,14 +581,9 @@ struct SubscriptionView: View {
                     Text("\(secondSelection.ctaDurationTitle)")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
                         .bold()
-//                    Text("\(secondSelection.ctaPriceTitle)")
-//                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
                        
                 }
                        Spacer()
-//                        Text("\(secondSelection.subTitle)")
-//                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-//                            .bold()
                 }
                 .foregroundStyle(.white)
                 .padding([.leading, .trailing])
@@ -652,8 +646,8 @@ struct StarRatingView: View {
                 ForEach(0..<5, id: \.self) { index in
                     Image(systemName: "star.fill")
                         .foregroundColor(self.starColor(for: index))
+                        .opacity(self.starAnimations[index] ? 0.7 : 1.0)
                         .scaleEffect(self.starAnimations[index] ? 1.2 : 1.0)
-                    // .opacity(self.starAnimations[index] ? 0.5 : 1.0)
                         .onAppear {
                             self.animateStar(at: index)
                         }

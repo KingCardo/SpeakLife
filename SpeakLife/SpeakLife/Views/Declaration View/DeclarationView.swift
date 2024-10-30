@@ -278,7 +278,7 @@ struct DeclarationView: View {
                     
                 }
             }
-        } else if reviewTry <= 1, let lastReviewSetDate = appState.lastReviewRequestSetDate, currentDate.timeIntervalSince(lastReviewSetDate) >= 60 * 60 * 24 * 7 {
+        } else if reviewTry <= 1, let lastReviewSetDate = appState.lastReviewRequestSetDate, currentDate.timeIntervalSince(lastReviewSetDate) >= 60 * 1 {
             DispatchQueue.main.async {
                 if let scene = UIApplication.shared.connectedScenes
                     .first(where: { $0.activationState == .foregroundActive })

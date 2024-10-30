@@ -17,13 +17,15 @@ import SwiftUI
 struct RatingView: View {
     let size: CGSize
     let callBack: (() -> Void)
+    @State private var showStars = [false, false, false, false, false]
 
     var body: some View {
         VStack {
             
             Text("SpeakLife")
-                .font(Font.custom("AppleSDGothicNeo-Regular", size: 24, relativeTo: .title))
-                .foregroundStyle(.white)
+                .font(.system(size: 34, weight: .semibold, design: .rounded))
+                .foregroundColor(.white)
+                .shadow(color: Color.white.opacity(0.5), radius: 4, x: 0, y: 2)
                 .padding(.top, 20)
             
             Spacer()
@@ -41,56 +43,38 @@ struct RatingView: View {
                 Circle()
                     .fill(Constants.DAMidBlue.opacity(0.3))
                     .frame(width: 140, height: 140)
-                    
-
-                HStack(spacing: 10) {
-                    // Outer left star (small)
-                    Image(systemName: "star.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(Color.yellow)
-                        .shadow(color: .yellow.opacity(0.5), radius: 5, x: 0, y: 0)
-                    
-                    // Middle-left star (medium)
-                    Image(systemName: "star.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40)
-                        .foregroundColor(Color.yellow)
-                        .shadow(color: .yellow.opacity(0.5), radius: 5, x: 0, y: 0)
-                    
-                    // Center star (large)
-                    Image(systemName: "star.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(Color.yellow)
-                        .shadow(color: .yellow.opacity(0.5), radius: 5, x: 0, y: 0)
-                    
-                    // Middle-right star (medium)
-                    Image(systemName: "star.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40)
-                        .foregroundColor(Color.yellow)
-                        .shadow(color: .yellow.opacity(0.5), radius: 5, x: 0, y: 0)
-                    
-                    // Outer right star (small)
-                    Image(systemName: "star.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(Color.yellow)
-                        .shadow(color: .yellow.opacity(0.5), radius: 5, x: 0, y: 0)
-                }
                 
-            }
-            .padding(.bottom, 40)
+                // Five-star rating with staggered fade-in animations
+                               HStack(spacing: 10) {
+                                   ForEach(0..<5) { index in
+                                       Image(systemName: "star.fill")
+                                           .resizable()
+                                           .aspectRatio(contentMode: .fit)
+                                           .frame(width: 30 + CGFloat(index % 3) * 10, height: 30 + CGFloat(index % 3) * 10)
+                                           .foregroundColor(Color.yellow)
+                                           .shadow(color: Color.yellow.opacity(0.5), radius: 5, x: 0, y: 0)
+                                           .opacity(showStars[index] ? 1 : 0)
+                                           .scaleEffect(showStars[index] ? 1 : 0.8)
+                                           .animation(Animation.spring(response: 0.5, dampingFraction: 0.6)
+                                                       .delay(0.1 * Double(index)), value: showStars[index])
+                                   }
+                               }
+                               .onAppear {
+                                   // Trigger the fade-in animation for each star
+                                   for i in 0..<5 {
+                                       DispatchQueue.main.asyncAfter(deadline: .now() + 0.1 * Double(i)) {
+                                           showStars[i] = true
+                                       }
+                                   }
+                               }
+                           }
+                           .padding(.bottom, 40)
+ 
             
             Text("Help us make the world more like Jesus!")
                 .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .body))
                 .foregroundStyle(.white)
+                .shadow(color: Color.black.opacity(0.3), radius: 4, x: 0, y: 2)
                 .padding(10)
             
             // Subtext about app review
@@ -102,18 +86,13 @@ struct RatingView: View {
             
             Spacer()
             
-            // Rate Us button
-            Button(action: {
-               callBack()
-            }) {
-                Text("Rate us")
-                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
-                    .frame(width: size.width * 0.87 ,height: 50)
-                    .background(Constants.DAMidBlue)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
-                    .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
-            }
+            ShimmerButton(colors: [Constants.DAMidBlue, .cyan, Constants.DADarkBlue.opacity(0.6)], buttonTitle: "Rate us", action: callBack)
+            .frame(width: size.width * 0.87 ,height: 60)
+            .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+
+            .scaleEffect(showStars[4] ? 1 : 0.95) // Button appears last
+                        .animation(Animation.spring(response: 0.4, dampingFraction: 0.5)
+                                    .delay(0.5), value: showStars[4])
             .padding(.horizontal, 20)
         
             Spacer()
@@ -125,7 +104,7 @@ struct RatingView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
-                Color.black.opacity(0.3)
+                Color.black.opacity(0.05)
                     .edgesIgnoringSafeArea(.all)
             })
     }
@@ -193,16 +172,7 @@ struct OnboardingView: View  {
                     }
                 }
                     .tag(Tab.likeJesus)
-                
-                AgeCollectionView(size: geometry.size) {
-                    withAnimation {
-                        advance()
-                    }
-                }
-                    .tag(Tab.age)
-               
-                
-    
+            
                 
                 ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
                     withAnimation {
@@ -236,14 +206,6 @@ struct OnboardingView: View  {
 
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
-                
-//                OfferPageView() {
-//                    withAnimation {
-//                        advance()
-//                    }
-//                }
-//                    .tag(Tab.discount)
-            
                 
             }
             .ignoresSafeArea()
@@ -293,7 +255,7 @@ struct OnboardingView: View  {
                     Button(action:  advance) {
                         Image(systemName: "xmark.circle.fill")
                             .resizable()
-                            .frame(width: 25, height: 25)
+                            .frame(width: 30, height: 30)
                             .foregroundColor(.white)
                             .opacity(isTextVisible ? 1 : 0)
                         
@@ -484,7 +446,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("TransformedLifeScreenDone", parameters: nil)
                 case .likeJesus:
                     impactMed.impactOccurred()
-                    selection = .age
+                    selection = .improvement
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("LikeJesusScreenDone", parameters: nil)
                 case .liveVictorious:

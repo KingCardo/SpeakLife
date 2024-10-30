@@ -25,8 +25,8 @@ struct ImprovementScene: View {
                
                 VStack {
                     Text("What brings you to SpeakLife?", comment: "Intro scene title label")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 28, relativeTo: .title))
-                        .fontWeight(.semibold)
+                        .font(.system(size: 34, weight: .semibold, design: .rounded))
+                        .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                         .multilineTextAlignment(.center)
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
                         .padding()
@@ -36,7 +36,7 @@ struct ImprovementScene: View {
                     
                     VStack {
                         Text("We'll personalize your feed based on your goals." , comment: "Intro scene instructions")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .body))
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 25, relativeTo: .body))
                             .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                             .multilineTextAlignment(.center)
                             .lineSpacing(10)
@@ -52,26 +52,21 @@ struct ImprovementScene: View {
                 ImprovementSelectionListView(viewModel: viewModel)
                 .frame(width: size.width * 0.9)
                 Spacer()
-                .frame(height: size.height * 0.25)
+                .frame(height: size.height * 0.15)
+            
+            ShimmerButton(colors: [Constants.DAMidBlue, .cyan, Constants.DADarkBlue.opacity(0.6)], buttonTitle: "Transform me", action: callBack)
+            .frame(width: size.width * 0.87 ,height: 60)
+            .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
                 
-                Button(action: callBack) {
-                    HStack {
-                        Text("Transform me", comment: "Intro scene start label")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
-                            .fontWeight(.medium)
-                            .frame(width: size.width * 0.91 ,height: 50)
-                    }.padding()
-                }
                 .disabled(viewModel.selectedExperiences.isEmpty)
-                .frame(width: size.width * 0.87 ,height: 50)
-                .background(viewModel.selectedExperiences.isEmpty ? Constants.DAMidBlue.opacity(0.5) : Constants.DAMidBlue)
+                .background(viewModel.selectedExperiences.isEmpty ? Constants.DAMidBlue.opacity(0.3) : Constants.DADarkBlue.opacity(0.6))
                 
                 .foregroundColor(.white)
-                .cornerRadius(8)
+                .cornerRadius(30)
                 .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
                 
-                Spacer()
-                    .frame(width: 5, height: size.height * 0.13)
+            Spacer()
+                .frame(width: 5, height: size.height * 0.07)
             }
             .scrollIndicators(.hidden)
             .frame(width: size.width, height: size.height)

@@ -35,21 +35,19 @@ struct FeatureRow: View {
     var feature: Feature
 
     var body: some View {
-        HStack(alignment: .top) {
+        HStack(alignment: .firstTextBaseline) {
             Spacer()
                 .frame(width: 16)
             Image(systemName: feature.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 14, height: 14)
+                .frame(width: 12, height: 12)
                 .padding(.trailing, 8)
             VStack(alignment: .leading) {
-//                Text(feature.name)
-//                    .font(Font.custom("AppleSDGothicNeo-Regular-Bold", size: 18, relativeTo: .body))
-//                    Spacer()
-                       // .frame(height: 4)
-                    Text(feature.subtitle)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
+                
+                Text(feature.subtitle)
+                    .font(.system(size: 18, weight: .semibold, design: .rounded))
+                
             }
             Spacer()
 

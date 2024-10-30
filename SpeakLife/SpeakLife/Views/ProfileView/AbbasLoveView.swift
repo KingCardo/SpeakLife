@@ -103,7 +103,7 @@ struct AbbasLoveView: View {
                     .edgesIgnoringSafeArea(.all)
     
                 Rectangle()
-                    .fill(Color.black.opacity(0.3))
+                    .fill(Color.black.opacity(0.1))
                     .edgesIgnoringSafeArea(.all)
             }
         }

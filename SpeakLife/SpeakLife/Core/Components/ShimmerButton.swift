@@ -21,9 +21,9 @@ struct ShimmerButton: View {
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .title))
                 .bold()
                 .foregroundColor(.white)
-                .frame(maxWidth: .infinity, minHeight: 50) // Ensures the button takes up the entire width and has a minimum height of 50
+                .frame(maxWidth: .infinity, minHeight: 60) // Ensures the button takes up the entire width and has a minimum height of 50
                 .background(LinearGradient(gradient: Gradient(colors: colors), startPoint: .leading, endPoint: .trailing))
-                .cornerRadius(25)
+                .cornerRadius(30)
 
         }
     }

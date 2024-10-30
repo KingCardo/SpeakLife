@@ -55,7 +55,7 @@ struct DevotionalView: View {
                 .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .overlay(
                     Rectangle()
-                        .fill(Color.black.opacity(0.3))
+                        .fill(Color.black.opacity(0.05))
                 )
             ScrollViewReader { scrollView in
                 ScrollView {

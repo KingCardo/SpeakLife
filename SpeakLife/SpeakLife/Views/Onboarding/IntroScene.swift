@@ -15,6 +15,11 @@ struct IntroTipScene: View {
     @State private var currentTestimonialIndex: Int = 0
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
+    @State private var showTitle = false
+    @State private var showBodyText = false
+    @State private var showSubtext = false
+    @State private var buttonTapped = false
+    
     let title: String
     let bodyText: String
     let subtext: String
@@ -45,76 +50,67 @@ struct IntroTipScene: View {
         
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
                 Text(title)
-                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 34, relativeTo: .title))
-                    .fontWeight(.semibold)
+                    .font(.system(size: 34, weight: .semibold, design: .rounded))
                     .multilineTextAlignment(.center)
                     .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
                     .padding([.leading, .trailing], 4)
+                    .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
+//                    .opacity(showTitle ? 1 : 0) // Initial opacity for fade-in
+//                    .onAppear {
+//                        withAnimation(Animation.easeIn(duration: 0.3).delay(0.2)) {
+//                            showTitle = true
+//                        }
+                //    }
                 
                 Spacer().frame(height: 8)
                 
                 VStack {
                     Text(bodyText)
+                       // .font(.body)
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 25, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
-                        .lineSpacing(10)
+                        .lineSpacing(12)
                         .lineLimit(nil)
+//                        .opacity(showBodyText ? 1 : 0) // Initial opacity for fade-in
+//                        .onAppear {
+//                            withAnimation(Animation.easeIn(duration: 2.0).delay(0.6)) {
+//                                showBodyText = true
+//                            }
+//                        }
                     
                     Spacer().frame(height: appState.onBoardingTest ? size.height * 0.04 : 24)
                     
             
                     Text(subtext)
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
-                        .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
+                        .foregroundColor(appState.onBoardingTest ? .white : Color(red: 119/255, green: 142/255, blue: 180/255))
+                       // .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.leading)
                         .lineSpacing(10)
-                        .foregroundColor(Color(red: 119, green: 142, blue: 180, opacity: 1))
+                      //  .foregroundColor(Color(red: 119, green: 142, blue: 180, opacity: 1))
                         .lineLimit(nil)
+//                        .opacity(showSubtext ? 1 : 0) // Initial opacity for fade-in
+//                        .onAppear {
+//                            withAnimation(Animation.easeIn(duration: 3.0).delay(1.0)) {
+//                                showSubtext = true
+//                            }
+//                        }
                 }
                 .frame(width: size.width * 0.9)
-                if isScholarship {
-                    Spacer().frame(height: size.height * 0.05)
-                    VStack {
-                        Text("Select an option")
-                            .foregroundStyle(Color.white)
-                            .font(.headline)
-                        // .padding()
-                    }
-                    Picker("subscriptionScholarship", selection: $selectedOption) {
-                        ForEach(InAppId.allInApp) { subscription in
-                            Text(subscription.scholarshipTitle)
-                                .tag(subscription)
-                                .foregroundStyle(Color.white)
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                    .frame(height: 150)
-                }
                 
             }
             
             Spacer()
-            Button {
-                if isScholarship {
-                buyCallBack?(selectedOption)
-                } else {
-                    callBack?()
-                }
-            } label: {
-                HStack {
-                    Text(ctaText)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
-                        .fontWeight(.medium)
-                        .frame(width: size.width * 0.91 ,height: 50)
-                }.padding()
-            }
-            .frame(width: size.width * 0.87 ,height: 50)
-            .background(Constants.DAMidBlue)
+            ShimmerButton(colors: [Constants.DAMidBlue, .cyan, Constants.DADarkBlue.opacity(0.6)], buttonTitle: ctaText, action: buttonTouched)
+            .frame(width: size.width * 0.87 ,height: 60)
+            .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
             
             .foregroundColor(.white)
-            .cornerRadius(8)
-            .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+            .cornerRadius(30)
+            .shadow(color: Constants.DAMidBlue.opacity(0.5), radius: 8, x: 0, y: 10)
+            .scaleEffect(buttonTapped ? 0.95 : 1.0)
+
             
             Spacer()
                 .frame(width: 5, height: size.height * 0.07)
@@ -126,10 +122,20 @@ struct IntroTipScene: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
-                Color.black.opacity(0.3)
+                    .brightness(0.05)
+                Color.black.opacity(0.05)
                     .edgesIgnoringSafeArea(.all)
             }
         )
+    }
+    
+    func buttonTouched() {
+        buttonTapped = true
+        withAnimation(.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0)) {
+            buttonTapped = false
+        }
+        
+        callBack?()
     }
 }
 

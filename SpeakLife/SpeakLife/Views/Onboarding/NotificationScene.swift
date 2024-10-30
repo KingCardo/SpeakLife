@@ -34,8 +34,8 @@ struct NotificationOnboarding:  View {
             
             VStack {
                 Text("Notification_settings", comment: "Notification onboarding title")
-                    .font(Font.custom("Roboto-SemiBold", size: 40, relativeTo: .title))
-                    .fontWeight(.semibold)
+                    .font(.system(size: 34, weight: .semibold, design: .rounded))
+                    .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                     .minimumScaleFactor(0.7)
                     .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
                 
@@ -43,7 +43,7 @@ struct NotificationOnboarding:  View {
                 
                 VStack {
                     Text("Setup_notifications", comment: "Setup notifications instructions")
-                        .font(Font.custom("Roboto-Regular", size: 16, relativeTo: .body))
+                        .font(.system(size: 16, weight: .semibold, design: .rounded))
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
@@ -91,18 +91,8 @@ struct NotificationOnboarding:  View {
                 
             }
             
-            Button(action: callBack) {
-                HStack {
-                    Text("Enable_notifications", comment: "turn on notifications")
-                        .font(.body)
-                        .fontWeight(.medium)
-                        .frame(width: size.width * 0.91 ,height: 50)
-                }.padding()
-            }
-            .frame(width: size.width * 0.87 ,height: 50)
-            .background(Constants.DAMidBlue)
-            .foregroundColor(.white)
-            .cornerRadius(8)
+            ShimmerButton(colors: [Constants.DAMidBlue, .cyan, Constants.DADarkBlue.opacity(0.6)], buttonTitle: "Turn on notifications", action: callBack)
+            .frame(width: size.width * 0.87 ,height: 60)
             .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
             
             Spacer()

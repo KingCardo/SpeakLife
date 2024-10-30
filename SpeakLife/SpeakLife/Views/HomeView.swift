@@ -44,6 +44,11 @@ struct HomeView: View {
                 LandingView()
             } else if appState.isOnboarded {
                 homeView
+                    .onAppear() {
+                        if appState.firstOpen {
+                            appState.firstOpen = false
+                        }
+                    }
             } else {
                 OnboardingView()
                     .onAppear {

@@ -61,27 +61,7 @@ struct DeclarationContentView: View {
                         if !showShareSheet {
                             intentVstack(declaration: viewModel.declarations[viewModel.selectedTab], geometry)
                                 .rotationEffect(Angle(degrees: -degrees))
-                    
-//                            if isMenuExpanded {
-//                                
-//                                VStack(spacing: 2) {
-//                                    Spacer()
-//                                        .frame(height:geometry.size.height * 0.2)
-//                                    ForEach(buttonVisibilities.indices, id: \.self) { index in
-//                                        if buttonVisibilities[index] {
-//                                            getButton(for: index, declaration: viewModel.declarations[viewModel.selectedTab])
-//                                                .transition(.move(edge: .trailing))
-//            
-//                                        }
-//                                    }
-//                                }
-//                                .opacity(isMenuExpanded ? 1 : 0)
-//                                .rotationEffect(Angle(degrees: -degrees))
-//                                .frame(
-//                                    width: geometry.size.width * 0.35,
-//                                    height: geometry.size.height * 0.06
-//                                )
-//                            }
+                
                         }
                         
                         if isFavorite {

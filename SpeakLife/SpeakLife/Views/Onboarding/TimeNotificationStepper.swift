@@ -39,7 +39,7 @@ struct StepperNotificationCountView: View {
                 Text("Alerts per day", comment: "alert count per day")
                 Spacer()
                 Text("\(value)X")
-                    .fontWeight(.light)
+                    .fontWeight(.medium)
                 Spacer()
                     .frame(width: 5, height: 1)
             }
@@ -53,7 +53,7 @@ struct StepperNotificationCountView: View {
     
         .accentColor(Constants.DALightBlue)
                 .padding()
-                .overlay(RoundedRectangle(cornerRadius: 10)
+                .overlay(RoundedRectangle(cornerRadius: 20)
                     .stroke(Constants.DAMidBlue, lineWidth: 1))
 
     }
@@ -89,7 +89,7 @@ struct TimeNotificationCountView<Content: View> : View {
                 
                 Spacer()
                 Text("\(timeSlots[value])")
-                    .fontWeight(.light)
+                    .fontWeight(.medium)
                 
                 Spacer()
                     .frame(width: 5, height: 1)
@@ -107,7 +107,7 @@ struct TimeNotificationCountView<Content: View> : View {
         
         .accentColor(Constants.DALightBlue)
         .padding()
-        .overlay(RoundedRectangle(cornerRadius: 10)
+        .overlay(RoundedRectangle(cornerRadius: 20)
         .stroke(Constants.DAMidBlue, lineWidth: 1))
         
     }
