@@ -5979,7 +5979,7 @@
             "category": "godsprotection"
         },
         {
-            "text": "In Jesus' name, no enemy plot can succeed, I am covered by His blood.",
+            "text": "In Jesus' name, no enemy attacks can succeed, I am covered by His blood.",
             "isFavorite": false,
             "category": "godsprotection"
         },
@@ -8025,12 +8025,12 @@
             "isFavorite": false,
             "category": "grace"
         },
-     {
+        {
             "text": "The battle is the Lord's.",
             "isFavorite": false,
             "category": "hardtimes"
         },
-     {
+        {
             "text": "Do not worry about your life, what you will eat or drink, or about your body, what you will wear. Is not life more than food, and the body more than clothes?",
             "book": "Jesus",
             "isFavorite": false,
@@ -8185,7 +8185,7 @@
   {
     "text": "I walk by faith, not by sight, knowing God guides me.",
     "bibleVerseText": "For we live by faith, not by sight.",
-    "book": "2 Corinthians 5:7 ",
+    "book": "2 Corinthians 5:7",
     "isFavorite": false,
     "category": "hardtimes"
   },

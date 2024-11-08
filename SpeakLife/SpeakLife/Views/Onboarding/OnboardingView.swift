@@ -368,7 +368,7 @@ struct OnboardingView: View  {
                     impactMed.impactOccurred()
                     selection = .review//.intro
                     onboardingTab = selection.rawValue
-                    appState.selectedNotificationCategories = improvementViewModel.selectedCategories
+                    
                     decodeCategories(improvementViewModel.selectedExperiences)
                    // valueProps = createValueProps(categories: improvementViewModel.selectedExperiences)
                     Analytics.logEvent("ImprovementScreenDone", parameters: nil)
@@ -511,42 +511,46 @@ struct OnboardingView: View  {
             temp.insert(DeclarationCategory.proverbs)
         }
         print(temp, "RWRW temp categories")
+        let categories = temp.map { $0.rawValue }.joined(separator: ",")
+        appState.selectedNotificationCategories = categories
+        print(appState.selectedNotificationCategories, "RWRW notification categories")
         viewModel.save(temp)
+
     }
     
-    func createValueProps(categories: [Improvements]) -> [Feature]  {
-        guard categories.count > 1 else { return [] }
-        var props: [Feature] = []
-        for category in categories {
-            switch category {
-            case .oldTestament: props.append(Feature(name: "God's identity", subtitle: "Learn more about God's true identity and faithfulness", imageName: "book.fill"))
-            case .gospel, .psalms: break
-            case .gratitude:
-                props.append(Feature(name: "Gratitude", subtitle: "Unlock more joy in your life by practicing daily gratitude through God's word.", imageName: "hands.sparkles.fill"))
-            case .stress:
-                props.append(Feature(name: "Peace & Joy", subtitle: "Find peace and calm with affirmations that release stress and anchor you in God's promises.", imageName: "wind"))
-            case .grace:
-                props.append(Feature(name: "God's Grace", subtitle: "Embrace God's unending grace and live free from guilt.", imageName: "sparkles"))
-            case .love:
-                props.append(Feature(name: "Jesus Love", subtitle: "Feel the depth of Jesus' love and let it transform your heart every day.", imageName: "bird.fill"))
-            case .health:
-                props.append(Feature(name: "Health", subtitle: "Speak God's healing and vitality into your life with affirmations for health.", imageName: "heart.fill"))
-            case .destiny:
-                props.append(Feature(name: "Destiny", subtitle: "Align with God's purpose for you and step boldly into your destiny.", imageName: "star.fill"))
-            case .safety:
-                props.append(Feature(name: "God's Protection", subtitle: "Rest in the assurance of God's protection with daily reminders of His care.", imageName: "shield.fill"))
-            case .loneliness:
-                props.append(Feature(name: "Feeling Lonely", subtitle: "Combat feeling lonely with promises that remind you of God's constant presence.", imageName: "person.2.fill"))
-            case .wealth:
-                props.append(Feature(name: "Wealth", subtitle: "Invite God's abundance into your life with affirmations rooted in His promises.", imageName: "creditcard.fill"))
-            case .peace:
-                props.append(Feature(name: "Peace", subtitle: "Experience God's peace that calms your mind and guards your heart.", imageName: "leaf.fill"))
-            }
-        }
-       
-        return props
-        
-    }
+//    func createValueProps(categories: [Improvements]) -> [Feature]  {
+//        guard categories.count > 1 else { return [] }
+//        var props: [Feature] = []
+//        for category in categories {
+//            switch category {
+//            case .oldTestament: props.append(Feature(name: "God's identity", subtitle: "Learn more about God's true identity and faithfulness", imageName: "book.fill"))
+//            case .gospel, .psalms: break
+//            case .gratitude:
+//                props.append(Feature(name: "Gratitude", subtitle: "Unlock more joy in your life by practicing daily gratitude through God's word.", imageName: "hands.sparkles.fill"))
+//            case .stress:
+//                props.append(Feature(name: "Peace & Joy", subtitle: "Find peace and calm with affirmations that release stress and anchor you in God's promises.", imageName: "wind"))
+//            case .grace:
+//                props.append(Feature(name: "God's Grace", subtitle: "Embrace God's unending grace and live free from guilt.", imageName: "sparkles"))
+//            case .love:
+//                props.append(Feature(name: "Jesus Love", subtitle: "Feel the depth of Jesus' love and let it transform your heart every day.", imageName: "bird.fill"))
+//            case .health:
+//                props.append(Feature(name: "Health", subtitle: "Speak God's healing and vitality into your life with affirmations for health.", imageName: "heart.fill"))
+//            case .destiny:
+//                props.append(Feature(name: "Destiny", subtitle: "Align with God's purpose for you and step boldly into your destiny.", imageName: "star.fill"))
+//            case .safety:
+//                props.append(Feature(name: "God's Protection", subtitle: "Rest in the assurance of God's protection with daily reminders of His care.", imageName: "shield.fill"))
+//            case .loneliness:
+//                props.append(Feature(name: "Feeling Lonely", subtitle: "Combat feeling lonely with promises that remind you of God's constant presence.", imageName: "person.2.fill"))
+//            case .wealth:
+//                props.append(Feature(name: "Wealth", subtitle: "Invite God's abundance into your life with affirmations rooted in His promises.", imageName: "creditcard.fill"))
+//            case .peace:
+//                props.append(Feature(name: "Peace", subtitle: "Experience God's peace that calms your mind and guards your heart.", imageName: "leaf.fill"))
+//            }
+//        }
+//       
+//        return props
+//        
+//    }
     
     
     private func askNotificationPermission()  {

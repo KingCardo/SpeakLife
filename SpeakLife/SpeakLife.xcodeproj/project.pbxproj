@@ -58,6 +58,8 @@
 		45CF271A2B4E52EF00BC8968 /* HabitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF27192B4E52EF00BC8968 /* HabitScene.swift */; };
 		45CF271C2B4E530300BC8968 /* ImprovementScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF271B2B4E530300BC8968 /* ImprovementScene.swift */; };
 		45D6402B2CD218AE006F05AD /* declarationsv5.json in Resources */ = {isa = PBXBuildFile; fileRef = 45D6402A2CD218AE006F05AD /* declarationsv5.json */; };
+		45D6402D2CD3668D006F05AD /* updates.json in Resources */ = {isa = PBXBuildFile; fileRef = 45D6402C2CD3668D006F05AD /* updates.json */; };
+		45D6402F2CD37810006F05AD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 45D6402E2CD37810006F05AD /* FirebaseFirestore */; };
 		45ED72C42BA10B3500F5F5E3 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED72C32BA10B3500F5F5E3 /* ConfettiView.swift */; };
 		45ED72C62BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED72C52BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift */; };
 		7A00721828F8ED4A00965AF7 /* declarations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A00721728F8ED4A00965AF7 /* declarations.json */; };
@@ -234,6 +236,7 @@
 		45CF27192B4E52EF00BC8968 /* HabitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitScene.swift; sourceTree = "<group>"; };
 		45CF271B2B4E530300BC8968 /* ImprovementScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprovementScene.swift; sourceTree = "<group>"; };
 		45D6402A2CD218AE006F05AD /* declarationsv5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv5.json; sourceTree = "<group>"; };
+		45D6402C2CD3668D006F05AD /* updates.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = updates.json; sourceTree = "<group>"; };
 		45ED72C32BA10B3500F5F5E3 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		45ED72C52BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakInfoBottomSheet.swift; sourceTree = "<group>"; };
 		7A00721728F8ED4A00965AF7 /* declarations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = declarations.json; sourceTree = "<group>"; };
@@ -344,6 +347,7 @@
 				4558DB552BB3E85E0073BDB8 /* FirebaseAnalytics in Frameworks */,
 				45C7481B2B5357D40011D8F6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				4558DB592BB3E85E0073BDB8 /* FirebaseStorage in Frameworks */,
+				45D6402F2CD37810006F05AD /* FirebaseFirestore in Frameworks */,
 				45C7481F2B55B4B80011D8F6 /* FacebookCore in Frameworks */,
 				7AF18C8029FD1E20005A6E31 /* (null) in Frameworks */,
 				7AF18CA22A0DB126005A6E31 /* SwiftUICharts in Frameworks */,
@@ -440,6 +444,7 @@
 				4583A4C42B0080440069C27D /* declarationsv2.json */,
 				453478F02B9D29CC0012C2C0 /* declarationsv4.json */,
 				45D6402A2CD218AE006F05AD /* declarationsv5.json */,
+				45D6402C2CD3668D006F05AD /* updates.json */,
 			);
 			path = AffirmationData;
 			sourceTree = "<group>";
@@ -894,6 +899,7 @@
 				4558DB542BB3E85E0073BDB8 /* FirebaseAnalytics */,
 				4558DB562BB3E85E0073BDB8 /* FirebaseCrashlytics */,
 				4558DB582BB3E85E0073BDB8 /* FirebaseStorage */,
+				45D6402E2CD37810006F05AD /* FirebaseFirestore */,
 			);
 			productName = SpeakLife;
 			productReference = 7A278F97288915DE0084BB57 /* SpeakLife.app */;
@@ -982,6 +988,7 @@
 				7A278FA2288915DF0084BB57 /* Preview Assets.xcassets in Resources */,
 				45C748322B5BC78F0011D8F6 /* peacefulplace.mp3 in Resources */,
 				45C748232B5802C60011D8F6 /* GoogleService-Info.plist in Resources */,
+				45D6402D2CD3668D006F05AD /* updates.json in Resources */,
 				7AA870E628DACFB800134ADB /* Localizable.strings in Resources */,
 				4568BE982B688C1D00678565 /* returntosurface.mp3 in Resources */,
 				4568BE992B688C1D00678565 /* sethpiano.mp3 in Resources */,
@@ -1377,7 +1384,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 563;
+				CURRENT_PROJECT_VERSION = 564;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1397,7 +1404,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.9917;
+				MARKETING_VERSION = 2.9918;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1417,7 +1424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 563;
+				CURRENT_PROJECT_VERSION = 564;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1437,7 +1444,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.9917;
+				MARKETING_VERSION = 2.9918;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1596,6 +1603,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 45C7481D2B55B4B80011D8F6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookCore;
+		};
+		45D6402E2CD37810006F05AD /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 		7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -50,9 +50,9 @@ struct ImprovementScene: View {
                 Spacer()
                 
                 ImprovementSelectionListView(viewModel: viewModel)
-                .frame(width: size.width * 0.9)
+                .frame(width: size.width * 0.9, height: size.height * 0.5)
                 Spacer()
-                .frame(height: size.height * 0.15)
+                .frame(height: size.height * 0.05)
             
             ShimmerButton(colors: [Constants.DAMidBlue, .cyan, Constants.DADarkBlue.opacity(0.6)], buttonTitle: "Transform me", action: callBack)
             .frame(width: size.width * 0.87 ,height: 60)
@@ -85,41 +85,6 @@ struct ImprovementScene: View {
 class ImprovementViewModel: ObservableObject {
     @Published var selectedExperiences: [Improvements] = []
     
-    var selectedCategories: String {
-        var categories = selectedExperiences.map { $0.selectedCategory }
-        if categories.contains("oldTestament") {
-            categories.append("genesis")
-            categories.append("exodus")
-        }
-        if categories.contains("grace") {
-            categories.append("guilt")
-            categories.append("forgiveness")
-        }
-        
-        if categories.contains("peace") {
-            categories.append("rest")
-        }
-        
-        if categories.contains("stress") {
-            categories.append("rest")
-            categories.append("peace")
-        }
-        if !categories.contains("destiny") {
-            categories.append("destiny")
-        }
-        
-        if categories.contains("gospel") {
-            categories.append("matthew")
-            categories.append("mark")
-        }
-        
-        if categories.contains("psalms") {
-            categories.append("psalms")
-            categories.append("proverbs")
-        }
-        return categories.joined(separator: ",")
-    }
-    
     func selectExperience(_ experience: Improvements) {
         if selectedExperiences.contains(experience) {
             selectedExperiences.removeAll(where: { $0 == experience })
@@ -146,6 +111,16 @@ enum Improvements: String, CaseIterable {
     case loneliness = "Feeling lonely"
     case wealth = "Wealth"
     case peace = "Peace"
+    case purity = "Purity"
+    case wisdom = "Wisdom"
+    case marriage = "Marriage"
+    case guidance = "Guidance"
+    case addiction = "Addiction"
+    case identity = "Identity"
+    case fear = "Fear"
+    case faith = "Faith"
+    case joy = "Joy"
+    case perseverance = "Perseverance"
     
     
     var selectedCategory: String {
@@ -176,6 +151,26 @@ enum Improvements: String, CaseIterable {
             "peace"
         case .wealth:
             "wealth"
+        case .purity:
+            "purity"
+        case .wisdom:
+            "wisdom"
+        case .marriage:
+            "marriage"
+        case .guidance:
+            "guidance"
+        case .addiction:
+            "addiction"
+        case .identity:
+            "identity"
+        case .fear:
+            "fear"
+        case .faith:
+            "faith"
+        case .joy:
+            "joy"
+        case .perseverance:
+            "perseverance"
         }
     }
 }
@@ -190,23 +185,89 @@ struct ImprovementSelectionListView: View {
     
     var newBody: some View {
         ScrollView {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))], spacing: 10) {
-                ForEach(Improvements.allCases, id: \.self) { interest in
-                    Text(interest.rawValue)
-                        .font(.system(size: 14))
-                        .padding(8)
-                        .background(Constants.DAMidBlue.opacity(viewModel.selectedExperiences.contains(interest) ? 0.8 : 0.3))
-                        .foregroundColor(.white)
-                        .cornerRadius(15)
-                        .fixedSize(horizontal: true, vertical: false)
-                        .onTapGesture {
-                            viewModel.selectExperience(interest)
-                        }
-                }
+            FlowLayout(items: Improvements.allCases, spacing: 2) { interest in
+                Text(interest.rawValue)
+                    .font(.system(size: 14))
+                    .foregroundColor(.white)
+                    .padding(8)
+                    .background(Constants.DAMidBlue.opacity(viewModel.selectedExperiences.contains(interest) ? 0.8 : 0.3))
+                    .cornerRadius(15)
+                    .onTapGesture {
+                        viewModel.selectExperience(interest)
+                    }
             }
             .padding()
         }
     }
 }
 
+struct FlowLayout<Content: View>: View {
+    let items: [Improvements]
+    let spacing: CGFloat
+    let content: (Improvements) -> Content
+    
+    @State private var totalHeight = CGFloat.zero
+    
+    init(items: [Improvements], spacing: CGFloat = 8, @ViewBuilder content: @escaping (Improvements) -> Content) {
+        self.items = items
+        self.spacing = spacing
+        self.content = content
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            GeometryReader { geometry in
+                self.generateContent(in: geometry)
+            }
+        }
+        .frame(height: totalHeight) // Set height based on content
+    }
+    
+    private func generateContent(in geometry: GeometryProxy) -> some View {
+        var width = CGFloat.zero
+        var height = CGFloat.zero
 
+        return ZStack(alignment: .topLeading) {
+            ForEach(items, id: \.self) { item in
+                content(item)
+                    .padding(8)
+                    .alignmentGuide(.leading, computeValue: { d in
+                        if (abs(width - d.width - spacing) > geometry.size.width) {
+                            width = 0
+                            height -= d.height + spacing
+                        }
+                        let result = width
+                        if item == items.last {
+                            width = 0 // Last item
+                        } else {
+                            width -= d.width + spacing
+                        }
+                        return result
+                    })
+                    .alignmentGuide(.top, computeValue: { _ in
+                        let result = height
+                        if item == items.last {
+                            height = 0 // Last item
+                        }
+                        return result
+                    })
+            }
+        }
+        .background(viewHeightReader($totalHeight)) // Tracks total height for layout
+    }
+    
+    private func viewHeightReader(_ binding: Binding<CGFloat>) -> some View {
+        GeometryReader { geo in
+            Color.clear
+                .preference(key: HeightPreferenceKey.self, value: geo.size.height)
+        }
+        .onPreferenceChange(HeightPreferenceKey.self) { binding.wrappedValue = $0 }
+    }
+}
+
+struct HeightPreferenceKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = max(value, nextValue())
+    }
+}

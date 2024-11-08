@@ -24,6 +24,9 @@ final class ThemeViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
+    let imageLoader = ImageLoader()
+    @Published var themeImages: [UIImage] = []
+    
     
     // MARK: Properties
     
@@ -42,6 +45,7 @@ final class ThemeViewModel: ObservableObject {
     
     
     init() {
+       // downloadThemeImages()
         load()
         cancellable = $selectedImage
             .sink { [weak self] image in
@@ -53,6 +57,25 @@ final class ThemeViewModel: ObservableObject {
                     self.showUserSelectedImage = false
                 }
             }
+    }
+    
+    func downloadThemeImages() {
+        if themeImages.isEmpty {
+            imageLoader.fetchImageMetadata { [weak self] imageData in
+                for data in imageData {
+                    self?.imageLoader.fetchImage(imageName: data.name, url: data.url) { image in
+                        if let image = image {
+                            self?.themeImages.append(image)
+                            print("Image \(data.name) is ready to use")
+                            // let imageName =
+                            // Use the image as needed (e.g., display it in an image view)
+                        } else {
+                            print("Failed to load image: \(data.name)")
+                        }
+                    }
+                }
+            }
+        }
     }
     
     var themes: [Theme] = Theme.all

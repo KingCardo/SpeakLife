@@ -15,6 +15,7 @@ final class LocalAPIClient: APIService {
     @AppStorage("declarationCountFile") var declarationCountFile = 0
     @AppStorage("declarationCountBE") var declarationCountBE = 0
     @AppStorage("firstInstallDate") var firstInstallDate: Date?
+    @AppStorage("lastRemoteFetchDate") var lastRemoteFetchDate: Date?
     
     @AppStorage("remoteVersion") var remoteVersion = 0
     @AppStorage("localVersion") var localVersion = 0
@@ -125,24 +126,47 @@ final class LocalAPIClient: APIService {
     private func fetchDeclarationData(tryLocal: Bool, completion: @escaping(Data?) -> Void?) {
         
         //TODO: fix remote download
-//        if hasBeenThirtyDaysSinceLastFetch(), !tryLocal {
-//            downloadDeclarations { data, error in
-//                    completion(data)
-//            }
-//        } else {
+        if !tryLocal {
+            downloadDeclarations { data, error in
+                completion(data)
+            }
+        } else {
             guard
-                let url = Bundle.main.url(forResource: "declarationsv3", withExtension: "json"),
+                let url = Bundle.main.url(forResource: "declarationsv5", withExtension: "json"),
                 let data = try? Data(contentsOf: url) else {
                 completion(nil)
                 return
             }
             completion(data)
-       // }
+        }
     }
     
     private func loadFromBackEnd(completion: @escaping([Declaration], APIError?, Bool) ->  Void) {
-        
-        if hasBeenThirtyDaysSinceLastFetch() {
+//        if lastRemoteFetchDate == nil || !(lastRemoteFetchDate?.isDateToday ?? false) {
+//            downloadUpdates { [weak self] needsUpdate, error in
+//                guard let self = self else { return }
+//                self.lastRemoteFetchDate = Date()
+//                if needsUpdate {
+//                    self.localVersion = self.remoteVersion
+//                    fetchDeclarationData(tryLocal: false) { [weak self] data in
+//                        if let data = data {
+//                            do {
+//                                let welcome = try JSONDecoder().decode(Welcome.self, from: data)
+//                                let declarations = Set(welcome.declarations)
+//                                
+//                                let array = Array(declarations)
+//                                self?.declarationCountBE = array.count
+//                                completion(array, nil, true)
+//                                return
+//                            } catch {
+//                                print(error, "RWRW")
+//                                completion([],APIError.failedDecode, false)
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        } else {
             fetchDeclarationData(tryLocal: true) { [weak self] data in
                 if let data = data {
                     do {
@@ -158,28 +182,29 @@ final class LocalAPIClient: APIService {
                     } catch {
                         print(error, "RWRW")
                         completion([],APIError.failedDecode, false)
-                    }
+                 //   }
                 }
             }
-            
-        } else {
-            fetchDeclarationData(tryLocal: false) { [weak self] data in
-                if let data = data {
-                    do {
-                        let welcome = try JSONDecoder().decode(Welcome.self, from: data)
-                        let declarations = Set(welcome.declarations)
-                        
-                        let array = Array(declarations)
-                        let needsSync = array.count != self?.declarationCountBE
-                        print(needsSync, "RWRW  needs sync")
-                        self?.declarationCountBE = array.count
-                        completion(array, nil, needsSync)
-                        return
-                    } catch {
-                        print(error, "RWRW")
-                        completion([],APIError.failedDecode, false)
-                    }
+        }
+    }
+    
+    func downloadUpdates(completion: @escaping((Bool, Error?) -> Void))  {
+        let storage = Storage.storage()
+        let jsonRef = storage.reference(withPath: "updates.json")
+
+        // Download the file into memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        jsonRef.getData(maxSize: 1 * 1024 * 1024) { [weak self] data, error in
+            if let error = error {
+                completion(false, error)
+                print("Error downloading JSON file: \(error)")
+            } else if let jsonData = data {
+                guard let self = self else { completion(false, nil)
+                    return
                 }
+                let version = try? JSONDecoder().decode(Updates.self, from: jsonData)
+                self.remoteVersion = version?.currentDeclarationVersion ?? 0
+                completion(self.remoteVersion > self.localVersion, nil)
+                print("JSON download successful, data length: \(jsonData.count)")
             }
         }
     }
@@ -188,8 +213,8 @@ final class LocalAPIClient: APIService {
         let storage = Storage.storage()
         let jsonRef = storage.reference(withPath: "declarationsv3.json")
 
-        // Download the file into memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-        jsonRef.getData(maxSize: 1 * 1024 * 1024) { [weak self] data, error in
+        // Download the file into memory with a maximum allowed size of 1MB (2 * 1024 * 1024 bytes)
+        jsonRef.getData(maxSize: 2 * 1024 * 1024) { [weak self] data, error in
             if let error = error {
                 completion(nil, error)
                 print("Error downloading JSON file: \(error)")

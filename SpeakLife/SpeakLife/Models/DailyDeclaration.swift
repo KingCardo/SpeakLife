@@ -112,7 +112,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .guidance,
         .hardtimes,
         .health,
-        .heaven,
+        //.heaven,
         .hope,
         .identity,
         .joy,
@@ -182,7 +182,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .guidance,
         .hardtimes,
         .health,
-        .heaven,
+     //   .heaven,
         .hope,
         .identity,
         .joy,
@@ -259,6 +259,10 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         default: return true
         }
     }
+}
+
+struct Updates: Codable {
+    let currentDeclarationVersion: Int?
 }
 
 // MARK: - Welcome

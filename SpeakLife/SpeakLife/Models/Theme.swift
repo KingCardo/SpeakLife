@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 class Theme: Identifiable, Codable {
     
     enum Mode: String, Codable {
@@ -160,3 +159,120 @@ class Theme: Identifiable, Codable {
 
 
 
+import FirebaseStorage
+import FirebaseFirestore
+import UIKit
+
+class ImageLoader {
+    let storage = Storage.storage()
+    
+    func downloadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data, error == nil else {
+                completion(nil)
+                return
+            }
+            completion(UIImage(data: data))
+        }.resume()
+    }
+    
+    func saveImageToDevice(image: UIImage, imageName: String) -> URL? {
+        guard let data = image.jpegData(compressionQuality: 1.0) else { return nil }
+        
+        let fileManager = FileManager.default
+        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentsURL.appendingPathComponent("\(imageName).jpg")
+        
+        do {
+            try data.write(to: fileURL)
+            print("Image saved to device at: \(fileURL)")
+            return fileURL
+        } catch {
+            print("Error saving image: \(error)")
+            return nil
+        }
+    }
+    
+    func loadImageFromDevice(imageName: String) -> UIImage? {
+        let fileManager = FileManager.default
+        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentsURL.appendingPathComponent("\(imageName).jpg")
+        
+        if fileManager.fileExists(atPath: fileURL.path) {
+            return UIImage(contentsOfFile: fileURL.path)
+        } else {
+            print("Image not found at path: \(fileURL.path)")
+            return nil
+        }
+    }
+    
+    func saveImageMetadataToFirestore(imageName: String, downloadURL: URL) {
+        let db = Firestore.firestore()
+        db.collection("userImages").addDocument(data: [
+            "name": imageName,
+            "url": downloadURL.absoluteString
+        ]) { error in
+            if let error = error {
+                print("Error saving metadata: \(error.localizedDescription)")
+            } else {
+                print("Metadata saved for image \(imageName)")
+            }
+        }
+    }
+    
+    func fetchImageMetadata(completion: @escaping ([(name: String, url: URL)]) -> Void) {
+        let db = Firestore.firestore()
+        db.collection("userImages").getDocuments { snapshot, error in
+            guard let documents = snapshot?.documents, error == nil else {
+                print("Error fetching metadata: \(String(describing: error))")
+                return
+            }
+            
+            var imageData: [(name: String, url: URL)] = []
+            
+            for document in documents {
+                let data = document.data()
+                if let name = data["name"] as? String,
+                   let urlString = data["url"] as? String,
+                   let url = URL(string: urlString) {
+                    imageData.append((name: name, url: url))
+                }
+            }
+            
+            completion(imageData)
+        }
+    }
+    
+    func downloadAndSaveImagesLocally(imageData: [(name: String, url: URL)]) {
+        for data in imageData {
+            downloadImage(from: data.url) { [weak self] image in
+                if let image = image {
+                    let savedURL = self?.saveImageToDevice(image: image, imageName: data.name)
+                    if let savedURL = savedURL {
+                        print("Image \(data.name) saved locally at \(savedURL)")
+                    }
+                }
+            }
+        }
+    }
+    
+    func fetchImage(imageName: String, url: URL, completion: @escaping (UIImage?) -> Void) {
+        // Check if the image exists locally
+        if let localImage = loadImageFromDevice(imageName: imageName) {
+            print("Loaded image from local storage: \(imageName)")
+            completion(localImage)
+        } else {
+            // Download the image from Firebase if not found locally
+            downloadImage(from: url) { [weak self] downloadedImage in
+                if let downloadedImage = downloadedImage {
+                    // Save the downloaded image locally for future use
+                    _ = self?.saveImageToDevice(image: downloadedImage, imageName: imageName)
+                    print("Downloaded and saved image: \(imageName)")
+                    completion(downloadedImage)
+                } else {
+                    completion(nil)
+                }
+            }
+        }
+    }
+}
