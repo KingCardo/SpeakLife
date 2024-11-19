@@ -78,12 +78,15 @@ struct AbbasLoveView: View {
                     Spacer().frame(height: proxy.size.height * 0.05)
                     Text("Heavenly Father's Love Letter")
                         .font(.custom("AppleSDGothicNeo-Bold", size: 28))
+                        .foregroundStyle(.white)
                         .padding()
                     Spacer().frame(height: proxy.size.height * 0.1)
                     PageView(views:
                                 pageContentViews
+                       
                     )
                     .frame(height: proxy.size.height * 0.66)
+                    .foregroundStyle(.white)
                     
                     Button {
                         withAnimation {

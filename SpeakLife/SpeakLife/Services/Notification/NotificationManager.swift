@@ -59,6 +59,7 @@ final class NotificationManager: NSObject {
         devotionalAffirmationReminder()
         christmasReminder()
         newYearsReminder()
+        thanksgivingReminder()
     }
     
     func prepareDailyStreakNotification(with name: String = "Friend", streak: Int, hasCurrentStreak: Bool) {
@@ -422,6 +423,34 @@ final class NotificationManager: NSObject {
         
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: comps, repeats: false)
+        
+        
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        notificationCenter.add(request) { (error) in
+            if error != nil {
+                //  TODO: - handle error
+            }
+        }
+    }
+    
+    private func thanksgivingReminder() {
+        let id = UUID().uuidString
+        let body = "Today, take a moment to reflect on God’s abundant blessings and His unwavering love. Let gratitude fill your heart and overflow with thankfulness. May His grace and love surround you and yours today and always. 🍂🦃" // Localize
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Happy Thanksgiving from SpeakLife!"
+        content.body = body
+        content.sound = UNNotificationSound.default
+        
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.autoupdatingCurrent
+        dateComponents.timeZone = TimeZone.autoupdatingCurrent
+        dateComponents.hour = 10
+        dateComponents.day = 28
+        dateComponents.month = 11
+        
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: dateComponents, repeats: false)
         
         
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)

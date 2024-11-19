@@ -15,10 +15,10 @@ import SwiftUI
 
 // ViewModel to manage data for the view
 class OfferViewModel: ObservableObject {
-    @Published var originalPrice: String = "$29.99/year"
-    @Published var monthlyPrice: String = "$2.49/month"
-    @Published var discountedPrice: String = "$14.99/year"
-    @Published var discountedMonthlyPrice: String = "$1.25/month"
+    @Published var originalPrice: String = "$39.99/year"
+    @Published var monthlyPrice: String = "$3.33/month"
+    @Published var discountedPrice: String = "$19.99/year"
+    @Published var discountedMonthlyPrice: String = "$1.67/month"
 }
 
 struct OfferPageView: View {
@@ -30,7 +30,7 @@ struct OfferPageView: View {
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     let callBack: (() -> Void)
     
-    @State var firstSelection = InAppId.Subscription.speakLife1YR15
+    @State var firstSelection = InAppId.Subscription.speakLife1YR19
     
     var body: some View {
         ZStack {
@@ -191,14 +191,16 @@ struct SubscriptionView: View {
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR19
-    @State var firstSelection = InAppId.Subscription.speakLife1YR19
+    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR39
+    @State var firstSelection = InAppId.Subscription.speakLife1YR39
     @State private var localizedPrice: String = "$19.00"
     @State private var regionCode: String = "US"
     @State private var isCheaperPricingCountry = false
     @State var chooseDifferentAmount = false
     
     var secondSelection = InAppId.Subscription.speakLife1MO4
+    
+    var thirdSelection = InAppId.Subscription.speakLifeLifetime
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let valueProps: [Feature]
@@ -275,6 +277,7 @@ struct SubscriptionView: View {
     
                         VStack {
                             
+                            
                             Button {
                                 currentSelection = firstSelection
                             } label: {
@@ -287,6 +290,12 @@ struct SubscriptionView: View {
                             } label: {
                                 monthlySelectionBox()
                             }
+                            
+//                            Button {
+//                                currentSelection = thirdSelection
+//                            } label: {
+//                                lifetimeSelectionBox()
+//                            }
                             
                         }
                         Spacer()
@@ -428,7 +437,8 @@ struct SubscriptionView: View {
     func buy() async {
         do {
             guard let currentSelection = currentSelection else { return }
-            if let _ = try await subscriptionStore.purchaseWithID([currentSelection.rawValue]) {
+            if let transaction = try await subscriptionStore.purchaseWithID([currentSelection.rawValue]) {
+                print(currentSelection, transaction.id, transaction.jsonRepresentation, transaction.productType, "RWRW")
                 Analytics.logEvent(currentSelection.rawValue, parameters: nil)
                 callback?()
             }
@@ -562,6 +572,31 @@ struct SubscriptionView: View {
                 .padding([.leading, .trailing])
             }
             
+        }
+        
+        .padding([.leading, .trailing], 20)
+    }
+    
+    func lifetimeSelectionBox() -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(Color.gray, lineWidth: 1)
+                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == thirdSelection ? Constants.DAMidBlue : .clear))
+                .shadow(color: currentSelection == thirdSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
+                .frame(height: 50)
+            
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("\(thirdSelection.ctaDurationTitle)")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                        .bold()
+                       
+                }
+                       Spacer()
+                }
+                .foregroundStyle(.white)
+                .padding([.leading, .trailing])
+                
         }
         
         .padding([.leading, .trailing], 20)

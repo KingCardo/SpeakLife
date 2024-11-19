@@ -29,6 +29,9 @@
 		457DF4AB2BDA3313006974C3 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 457DF4AA2BDA3313006974C3 /* PrivacyInfo.xcprivacy */; };
 		457DF4AE2BDCD5E5006974C3 /* mindful.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 457DF4AC2BDCD5E5006974C3 /* mindful.mp3 */; };
 		457DF4AF2BDCD5E5006974C3 /* somethinggreater.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 457DF4AD2BDCD5E5006974C3 /* somethinggreater.mp3 */; };
+		4582A9562CE690800077F555 /* AudioDeclarationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582A9552CE690800077F555 /* AudioDeclarationView.swift */; };
+		4582A9582CE690EF0077F555 /* AudioDeclarationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582A9572CE690EF0077F555 /* AudioDeclarationViewModel.swift */; };
+		4582A95A2CE691200077F555 /* AudioDeclarationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582A9592CE691200077F555 /* AudioDeclarationService.swift */; };
 		4583A4C52B0080440069C27D /* declarationsv2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4583A4C42B0080440069C27D /* declarationsv2.json */; };
 		458510CF2B12B74E00230EE5 /* PodcastsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510CE2B12B74E00230EE5 /* PodcastsListView.swift */; };
 		458510D12B12B77A00230EE5 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D02B12B77A00230EE5 /* Podcast.swift */; };
@@ -208,6 +211,9 @@
 		457DF4AA2BDA3313006974C3 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		457DF4AC2BDCD5E5006974C3 /* mindful.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mindful.mp3; sourceTree = "<group>"; };
 		457DF4AD2BDCD5E5006974C3 /* somethinggreater.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = somethinggreater.mp3; sourceTree = "<group>"; };
+		4582A9552CE690800077F555 /* AudioDeclarationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDeclarationView.swift; sourceTree = "<group>"; };
+		4582A9572CE690EF0077F555 /* AudioDeclarationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDeclarationViewModel.swift; sourceTree = "<group>"; };
+		4582A9592CE691200077F555 /* AudioDeclarationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDeclarationService.swift; sourceTree = "<group>"; };
 		4583A4C42B0080440069C27D /* declarationsv2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv2.json; sourceTree = "<group>"; };
 		458510CE2B12B74E00230EE5 /* PodcastsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsListView.swift; sourceTree = "<group>"; };
 		458510D02B12B77A00230EE5 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
@@ -380,6 +386,16 @@
 			path = SpeakLifeTests;
 			sourceTree = "<group>";
 		};
+		4582A9542CE690560077F555 /* AudioDeclarationView */ = {
+			isa = PBXGroup;
+			children = (
+				4582A9552CE690800077F555 /* AudioDeclarationView.swift */,
+				4582A9572CE690EF0077F555 /* AudioDeclarationViewModel.swift */,
+				4582A9592CE691200077F555 /* AudioDeclarationService.swift */,
+			);
+			path = AudioDeclarationView;
+			sourceTree = "<group>";
+		};
 		458510CD2B12B73000230EE5 /* Podcast */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,6 +555,7 @@
 		7AA8706528DACB3500134ADB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4582A9542CE690560077F555 /* AudioDeclarationView */,
 				458510D82B159B0D00230EE5 /* LandingView.swift */,
 				7A601440294E574500CD2103 /* HomeView.swift */,
 				7AA870B828DACCB700134ADB /* Onboarding */,
@@ -1097,10 +1114,13 @@
 				4568BE912B64DB9100678565 /* NameScene.swift in Sources */,
 				7AA870D328DACCB700134ADB /* CategoryListCell.swift in Sources */,
 				7AF18C8A29FF9819005A6E31 /* Gradients.swift in Sources */,
+				4582A9562CE690800077F555 /* AudioDeclarationView.swift in Sources */,
 				453A83202C9BF1AE00398ECE /* SpeechCoordinator.swift in Sources */,
 				7AA8707D28DACC8300134ADB /* LocalAPIClient.swift in Sources */,
 				7AA8706E28DACC4E00134ADB /* DailyDeclaration.swift in Sources */,
+				4582A9582CE690EF0077F555 /* AudioDeclarationViewModel.swift in Sources */,
 				458510DC2B15C37B00230EE5 /* BibleStudyView.swift in Sources */,
+				4582A95A2CE691200077F555 /* AudioDeclarationService.swift in Sources */,
 				7AA8707F28DACC8300134ADB /* NotificationManager.swift in Sources */,
 				7AA870E028DACCB700134ADB /* WidgetScene.swift in Sources */,
 				7AA8708128DACC8300134ADB /* NotificationProcessor.swift in Sources */,
@@ -1384,7 +1404,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 564;
+				CURRENT_PROJECT_VERSION = 577;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1404,7 +1424,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.9918;
+				MARKETING_VERSION = 2.9922;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1424,7 +1444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 564;
+				CURRENT_PROJECT_VERSION = 577;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1444,7 +1464,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.9918;
+				MARKETING_VERSION = 2.9922;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

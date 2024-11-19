@@ -33,7 +33,7 @@ struct InAppId: Codable {
         
         var currentPrice: String {
             switch self {
-            case .speakLifeLifetime: return "$99.99"
+            case .speakLifeLifetime: return "Free"
             case .speakLife1YR99: return "$99.99"
             case .speakLife1YR49: return "$49.99"
             case .speakLife1YR39: return "$39.99"
@@ -70,7 +70,7 @@ struct InAppId: Codable {
         
         var title: String {
             switch self {
-            case .speakLifeLifetime: return "$99.99 for Life billed today"
+            case .speakLifeLifetime: return "Free for life limited time offer."
             case .speakLife1YR99: return "$$99.99/year. Cancel anytime."
             case .speakLife1YR49: return "$49.99/year. Cancel anytime."
             case .speakLife1YR39: return "7 days free, then $39.99/year. Cancel anytime."
@@ -88,7 +88,7 @@ struct InAppId: Codable {
         
         var ctaDurationTitle: String {
             switch self {
-            case .speakLifeLifetime: return "Lifetime"
+            case .speakLifeLifetime: return "Lifetime free offer"
             case .speakLife1YR49: return "Yearly"
             case .speakLife1YR39: return "Yearly $39.99"
             case .speakLife1YR29: return "Yearly $29.99"
@@ -116,7 +116,7 @@ struct InAppId: Codable {
         
         var subTitle: String {
             switch self {
-            case .speakLifeLifetime: return "$99.99 for Life"
+            case .speakLifeLifetime: return "Free for Life"
             case .speakLife1YR49: return "$4.17/mo"
             case .speakLife1YR39: return "$3.33/mo - Save 67%"
             case .speakLife1YR29: return "$2.49/mo - Save 64%"
@@ -133,7 +133,7 @@ struct InAppId: Codable {
         
         var ctaPriceTitle: String {
             switch self {
-            case .speakLifeLifetime: return "$99.99"
+            case .speakLifeLifetime: return "$0.00"
             case .speakLife1YR49: return "$49.99"
             case .speakLife1YR39: return "$39.99"
             case .speakLife1YR29: return "Billed Annually"

@@ -174,7 +174,11 @@ final class DeclarationViewModel: ObservableObject {
                 return declaration.book ?? ""
             }
         } else {
-            return declaration.book ?? ""
+            if showVerse {
+                return declaration.book == "Jesus" ? "Jesus" : ""
+            } else {
+                return declaration.book ?? ""
+            }
         }
     }
     

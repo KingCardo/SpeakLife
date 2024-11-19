@@ -142,36 +142,65 @@ struct OnboardingView: View  {
         GeometryReader { geometry in
             TabView(selection: $selection) {
 
-                IntroTipScene(title: "Daily Affirmations for a Transformed Life",
+                IntroTipScene(title: "Faith Speaks",
                               bodyText: "",
-                              subtext: "Speaking life isn’t just a one-time act; it’s a daily discipline that aligns us with God’s will, and activates His promises. Are you ready to walk in your new identity, and authority Jesus died to give you?",
-                              ctaText: "Let's go",
+                              subtext: "Jesus taught us that words have power. When we speak life-filled words, we shape our lives and influence the world around us.",
+                              ctaText: "Start Speaking Life Today",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size) 
                 {
-                  //  withAnimation {
                         advance()
-                 //   }
                 }
                     .tag(Tab.transformedLife)
                 
-                
-                IntroTipScene(title: "Speak Life Like Jesus",
-                              bodyText: "Time to declare",
-                              subtext: """
-🌈 God's promises for every situation of life.
-\n📖 Grow your relationship with devotionals and verses.
-\n🙏 Prayers for you and your families health, protection, and destiny.
-\n📝 Create your own affirmations to partner with Jesus.
-""",
-                              ctaText: "Continue",
+                IntroTipScene(title: "Create Your World with Words",
+                              bodyText: "",
+                              subtext: "Just as God created the universe with His words, we can create change, peace, and blessings in our own lives by declaring His promises.",
+                              ctaText: "Begin Declaring God's Promises",
                               showTestimonials: false,
-                              isScholarship: false, size: geometry.size) {
-                    withAnimation {
+                              isScholarship: false, size: geometry.size)
+                {
                         advance()
-                    }
                 }
                     .tag(Tab.likeJesus)
+                IntroTipScene(title: "Speak Life into Your Circumstances",
+                              bodyText: "",
+                              subtext: "Jesus spoke to storms, healed with words, and commanded mountains to move. We, too, can speak faith and see transformation in our challenges.",
+                              ctaText: "Transform Your Challenges with Faith",
+                              showTestimonials: false,
+                              isScholarship: false, size: geometry.size)
+                {
+                        advance()
+                }
+                    .tag(Tab.liveVictorious)
+                IntroTipScene(title: "Activate God's Promises Daily",
+                              bodyText: "",
+                              subtext: "By declaring affirmations rooted in Scripture, you align your words with God's will, bringing His promises of love, peace, health, and abundance to life.",
+                              ctaText: "Align Your Words with God's Will",
+                              showTestimonials: false,
+                              isScholarship: false, size: geometry.size)
+                {
+                        advance()
+                }
+                    .tag(Tab.unshakeableFaith)
+                
+                
+//                IntroTipScene(title: "Speak Life Like Jesus",
+//                              bodyText: "Time to declare",
+//                              subtext: """
+//🌈 God's promises for every situation of life.
+//\n📖 Grow your relationship with devotionals and verses.
+//\n🙏 Prayers for you and your families health, protection, and destiny.
+//\n📝 Create your own affirmations to partner with Jesus.
+//""",
+//                              ctaText: "Continue",
+//                              showTestimonials: false,
+//                              isScholarship: false, size: geometry.size) {
+//                    withAnimation {
+//                        advance()
+//                    }
+//                }
+//                    .tag(Tab.likeJesus)
             
                 
                 ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
@@ -446,7 +475,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("TransformedLifeScreenDone", parameters: nil)
                 case .likeJesus:
                     impactMed.impactOccurred()
-                    selection = .improvement
+                    selection = .liveVictorious
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("LikeJesusScreenDone", parameters: nil)
                 case .liveVictorious:
@@ -456,7 +485,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("LiveVictoriousScreenDone", parameters: nil)
                 case .unshakeableFaith:
                     impactMed.impactOccurred()
-                    selection = .confidence
+                    selection = .improvement
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("UnshakeableFaithScreenDone", parameters: nil)
                 case .confidence:

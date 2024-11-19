@@ -40,6 +40,7 @@ struct DeclarationView: View {
     @State var isShowingMailView = false
     @State var showDailyDevotion = false
     @State private var isPresentingPremiumView = false
+    @State private var isPresentingAbbaLoveView = false
     @State private var isPresentingDiscountView = false
     @State private var isPresentingBottomSheet = false
     @EnvironmentObject var timerViewModel: TimerViewModel
@@ -71,11 +72,19 @@ struct DeclarationView: View {
                 declarationContent(geometry)
               //  if appState.showIntentBar {
                      
-                  //  if !appState.showScreenshotLabel {
+                    if !appState.showScreenshotLabel {
                        
                         VStack() {
                            
                             HStack {
+                                CapsuleImageButton(title: "envelope.fill") {
+                                    abbaLoveView()
+                                    Selection.shared.selectionFeedback()
+                                }
+                                .sheet(isPresented: $isPresentingAbbaLoveView) {
+                                    AbbasLoveView()
+                                       // .allowsHitTesting(!appState.showScreenshotLabel)
+                                }
 
                                 Spacer()
                                 if !timerViewModel.checkIfCompletedToday() {
@@ -89,7 +98,7 @@ struct DeclarationView: View {
                                         StreakInfoBottomSheet(isShown: $isPresentingBottomSheet)
                                             
                                             .presentationDetents([.fraction(0.55)])
-                                          //  .background(Gradients().cyanWhite.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/))
+
                                             .preferredColorScheme(.light)
                                     }
                                 } else {
@@ -116,7 +125,7 @@ struct DeclarationView: View {
                                     
                                 }
                                 
-                            } .padding(.trailing)
+                            } .padding([.leading,.trailing])
                             
                             Spacer()
                            if appState.showIntentBar {
@@ -127,7 +136,7 @@ struct DeclarationView: View {
                         }
                     }
                     }
-              //  }
+                }
            // .navigationBarHidden(true)
            // }
         }
@@ -230,6 +239,11 @@ struct DeclarationView: View {
         timerViewModel.saveRemainingTime()
         self.isPresentingPremiumView = true
         Analytics.logEvent(Event.tryPremiumTapped, parameters: nil)
+    }
+    
+    private func abbaLoveView()  {
+        timerViewModel.saveRemainingTime()
+        self.isPresentingAbbaLoveView = true
     }
     
     

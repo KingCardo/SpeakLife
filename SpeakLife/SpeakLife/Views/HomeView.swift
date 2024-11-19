@@ -67,8 +67,19 @@ struct HomeView: View {
                         Image(systemName: "house.fill")
                             .renderingMode(.original)
                 
-                      //  Text("Home")
                     }
+                
+//                DevotionalView(viewModel:devotionalViewModel)
+//                    .tabItem {
+//                        if #available(iOS 17, *) {
+//                            Image(systemName: "waveform")
+//                                .renderingMode(.original)
+//                        } else {
+//                            Image(systemName: "book.fill")
+//                                .renderingMode(.original)
+//                        }
+//                       // Text("Devotionals")
+//                    }
                 
                 DevotionalView(viewModel:devotionalViewModel)
                     .tabItem {
@@ -86,14 +97,6 @@ struct HomeView: View {
                     .tabItem {
                         Image(systemName: "plus.bubble.fill")
                             .renderingMode(.original)
-                       // Text("Yours")
-                    }
-                
-                AbbasLoveView()
-                    .tabItem {
-                    Image(systemName: "envelope.fill")
-                                .renderingMode(.original)
-                      //  Text("Love letter")
                     }
                
                 
@@ -101,7 +104,6 @@ struct HomeView: View {
                     .tabItem {
                         Image(systemName: "line.3.horizontal")
                             .renderingMode(.original)
-                      //  Text("More")
                     }
             }
             .hideTabBar(if: appState.showScreenshotLabel)
