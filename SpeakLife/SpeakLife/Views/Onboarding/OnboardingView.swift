@@ -153,10 +153,10 @@ struct OnboardingView: View  {
                 }
                     .tag(Tab.transformedLife)
                 
-                IntroTipScene(title: "Create Your World with Words",
+                IntroTipScene(title: "Jesus Spoke with Authority",
                               bodyText: "",
-                              subtext: "Just as God created the universe with His words, we can create change, peace, and blessings in our own lives by declaring His promises.",
-                              ctaText: "Begin Declaring God's Promises",
+                              subtext: "In the Bible, Jesus demonstrated the power of words. He spoke peace to storms, healed the sick with a command, and raised the dead by calling them forth. His words changed realities",
+                              ctaText: "Speak with Authority Like Jesus",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
                 {
@@ -165,7 +165,7 @@ struct OnboardingView: View  {
                     .tag(Tab.likeJesus)
                 IntroTipScene(title: "Speak Life into Your Circumstances",
                               bodyText: "",
-                              subtext: "Jesus spoke to storms, healed with words, and commanded mountains to move. We, too, can speak faith and see transformation in our challenges.",
+                              subtext: "Your words shape your reality. Speaking God's promises over your life brings peace in chaos, hope in darkness, and joy amidst struggles. Declare truth and see transformation.",
                               ctaText: "Transform Your Challenges with Faith",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
@@ -173,9 +173,9 @@ struct OnboardingView: View  {
                         advance()
                 }
                     .tag(Tab.liveVictorious)
-                IntroTipScene(title: "Activate God's Promises Daily",
+                IntroTipScene(title: "Real Transformations through Faith",
                               bodyText: "",
-                              subtext: "By declaring affirmations rooted in Scripture, you align your words with God's will, bringing His promises of love, peace, health, and abundance to life.",
+                              subtext: "Countless people have experienced breakthroughs by speaking God’s promises daily. From overcoming anxiety to finding healing, your words backed by faith can change everything.",
                               ctaText: "Align Your Words with God's Will",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
@@ -183,6 +183,17 @@ struct OnboardingView: View  {
                         advance()
                 }
                     .tag(Tab.unshakeableFaith)
+                
+                IntroTipScene(title: "Activate God's Promises Daily",
+                              bodyText: "",
+                              subtext: "By declaring affirmations rooted in Scripture, you align your words with God's will, bringing His promises of love, peace, health, and abundance to life.",
+                              ctaText: "I Am Ready",
+                              showTestimonials: false,
+                              isScholarship: false, size: geometry.size)
+                {
+                        advance()
+                }
+                    .tag(Tab.confidence)
                 
                 
 //                IntroTipScene(title: "Speak Life Like Jesus",
@@ -245,9 +256,9 @@ struct OnboardingView: View  {
       
         .onAppear {
             setSelection()
-            if viewModel.backgroundMusicEnabled {
-                AudioPlayerService.shared.playSound(files: resources)
-            }
+//            if viewModel.backgroundMusicEnabled {
+//                AudioPlayerService.shared.playSound(files: resources)
+//            }
             UIScrollView.appearance().isScrollEnabled = false
             setupAppearance()
             Analytics.logEvent(Event.freshInstall, parameters: nil)
@@ -274,9 +285,9 @@ struct OnboardingView: View  {
         
         ZStack {
             SubscriptionView(size: size) {
-                withAnimation {
+                //withAnimation {
                     advance()
-                }
+              //  }
             }
             
             VStack  {
@@ -485,7 +496,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("LiveVictoriousScreenDone", parameters: nil)
                 case .unshakeableFaith:
                     impactMed.impactOccurred()
-                    selection = .improvement
+                    selection = .confidence
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("UnshakeableFaithScreenDone", parameters: nil)
                 case .confidence:

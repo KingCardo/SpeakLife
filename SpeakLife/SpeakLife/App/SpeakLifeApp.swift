@@ -37,6 +37,9 @@ struct SpeakLifeApp: App {
                 .environmentObject(streakViewModel)
                 .environmentObject(timerViewModel)
                 .onAppear {
+                    if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
+                        AudioPlayerService.shared.playSound(files: resources)
+                    }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         withAnimation {
                             isShowingLanding = false

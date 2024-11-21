@@ -69,17 +69,16 @@ struct HomeView: View {
                 
                     }
                 
-//                DevotionalView(viewModel:devotionalViewModel)
-//                    .tabItem {
-//                        if #available(iOS 17, *) {
-//                            Image(systemName: "waveform")
-//                                .renderingMode(.original)
-//                        } else {
-//                            Image(systemName: "book.fill")
-//                                .renderingMode(.original)
-//                        }
-//                       // Text("Devotionals")
-//                    }
+                AudioDeclarationView()
+                    .tabItem {
+                        if #available(iOS 17, *) {
+                            Image(systemName: "waveform")
+                                .renderingMode(.original)
+                        } else {
+                            Image(systemName: "waveform")
+                                .renderingMode(.original)
+                        }
+                    }
                 
                 DevotionalView(viewModel:devotionalViewModel)
                     .tabItem {
@@ -115,12 +114,12 @@ struct HomeView: View {
             })
             .onAppear {
                 UIScrollView.appearance().isScrollEnabled = true
-                if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
-                    AudioPlayerService.shared.playSound(files: resources)
-                }
-                if !subscriptionStore.isPremium && !appState.firstOpen {
-                    presentGiftView()
-                }
+//                if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
+//                    AudioPlayerService.shared.playSound(files: resources)
+//                }
+//                if !subscriptionStore.isPremium && !appState.firstOpen {
+//                   // presentGiftView()
+//                }
             }
             .environment(\.colorScheme, .dark)
     }
