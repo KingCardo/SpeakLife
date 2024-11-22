@@ -19,7 +19,7 @@ class AudioPlayerViewModel: ObservableObject {
     private var timeObserver: Any?
     
     func loadAudio(from url: URL) {
-        resetPlayer()
+       // resetPlayer()
         AudioPlayerService.shared.pauseMusic()
         player = AVPlayer(url: url)
         
@@ -39,6 +39,7 @@ class AudioPlayerViewModel: ObservableObject {
                 self.duration = CMTimeGetSeconds(duration)
             }
         }
+        togglePlayPause()
     }
     
     func togglePlayPause() {
@@ -71,6 +72,7 @@ class AudioPlayerViewModel: ObservableObject {
         }
         player?.pause()
         player = nil
+        currentTime = 0
     }
     
     deinit {

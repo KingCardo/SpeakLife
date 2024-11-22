@@ -18726,6 +18726,24 @@
     "category": "praise"
   },
 {
+    "text": "The Lord is king forever and ever!",
+    "book": "Psalms 10:16",
+    "isFavorite": false,
+    "category": "praise"
+  },
+{
+    "text": "I will sing to the Lord because he is good to me.",
+    "book": "Psalms 13:6",
+    "isFavorite": false,
+    "category": "praise"
+  },
+{
+    "text": "The LORD lives! Praise to my Rock! May the God of my salvation be exalted!",
+    "book": "Psalms 18:46",
+    "isFavorite": false,
+    "category": "praise"
+  },
+{
     "text": "You made them only a little lower than God and crowned them with glory and honor.",
     "book": "Psalms 8:5",
     "isFavorite": false,
@@ -18736,6 +18754,54 @@
     "book": "Psalms 8:6",
     "isFavorite": false,
     "category": "identity"
+  },
+{
+    "text": "I know the LORD is always with me. I will not be shaken, for he is right beside me.",
+    "book": "Psalms 16:8",
+    "isFavorite": false,
+    "category": "loneliness"
+  },
+{
+    "text": "The LORD is my rock, my fortress, and my savior; my God is my rock, in who I find protection.",
+    "book": "Psalms 18:2",
+    "isFavorite": false,
+    "category": "godsprotection"
+  },
+{
+    "text": "He is my shield, the power that saves me, and my place of safety.",
+    "book": "Psalms 18:2",
+    "isFavorite": false,
+    "category": "godsprotection"
+  },
+{
+    "text": "God’s way is perfect. All the LORD’s promises prove true. He is a shield for all who look to him for protection.",
+    "book": "Psalms 18:30",
+    "isFavorite": false,
+    "category": "godsprotection"
+  },
+{
+    "text": "May he grant your heart’s desires and make all your plans succeed.",
+    "book": "Psalms 20:4",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+{
+    "text": "He guides me along right paths, bringing honor to his name.",
+    "book": "Psalms 23:3",
+    "isFavorite": false,
+    "category": "guidance"
+  },
+{
+    "text": "Even when I walk through the darkest valley, I will not be afraid, for you are close beside me.",
+    "book": "Psalms 23:4",
+    "isFavorite": false,
+    "category": "fear"
+  },
+{
+    "text": "Surely your goodness and unfailing love will pursue me all the days of my life, and I will live in the house of the LORD forever",
+    "book": "Psalms 23:6",
+    "isFavorite": false,
+    "category": "love"
   },
 
 

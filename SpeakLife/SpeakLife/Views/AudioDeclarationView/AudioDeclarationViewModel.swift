@@ -8,6 +8,81 @@
 import Foundation
 import FirebaseStorage
 
+let audioFiles: [AudioDeclaration] = [
+    AudioDeclaration(
+           id: "health.mp3",
+           title: "Healing Declarations",
+           subtitle: "Speaking Wholeness, Strength, and Restoration Through the Power of Faith",
+           duration: "4m",
+           imageUrl: "JesusHealing",
+           isPremium: false
+       ),
+    AudioDeclaration(
+           id: "peace.mp3",
+           title: "Peace Beyond Understanding",
+           subtitle: "Overcoming Anxiety, Stress, and Fear Through God’s Promisess",
+           duration: "3m",
+           imageUrl: "JesusPraying",
+           isPremium: false
+       ),
+    AudioDeclaration(
+           id: "warfare.mp3",
+           title: "Victory in Spiritual Warfare",
+           subtitle: "Declaring Authority and Triumph Over All Evil Through Christ",
+           duration: "3m",
+           imageUrl: "heavenly",
+           isPremium: false
+       ),
+    AudioDeclaration(
+           id: "prosperity.mp3",
+           title: "Abundance Declarations",
+           subtitle: "Unlocking Wealth, Prosperity, and Overflow Through Faith and Affirmation",
+           duration: "4m",
+           imageUrl: "JesusHeaven",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "identity.mp3",
+           title: "Identity in Christ",
+           subtitle: "Living in the Power of Your God-Given Identity",
+           duration: "4m",
+           imageUrl: "JesusOnCross",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "godsprotection.mp3",
+           title: "Protection Promises",
+           subtitle: "Speaking God’s Word for Safety and Peace Over Your Life",
+           duration: "4m",
+           imageUrl: "warriorAngel",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "longlife.mp3",
+           title: "Renewed Youth and Long Life Declaration",
+           subtitle: "Declarations for Long Life, Strength, and Youth Restored Through God’s Promises",
+           duration: "3m",
+           imageUrl: "JesusRisen",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "miracles.mp3",
+           title: "Breakthrough and Miracles",
+           subtitle: "Declaring the Power of God to Transform the Impossible",
+           duration: "3m",
+           imageUrl: "radiantAngel",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "restoration.mp3",
+           title: "Restoring Relationships in Christ",
+           subtitle: "Declaring Healing, Unity, and Love Over Marriages and Families",
+           duration: "3m",
+           imageUrl: "breathTakingSunset",
+           isPremium: true
+       ),
+]
+
 final class AudioDeclarationViewModel: ObservableObject {
     @Published var audioDeclarations: [AudioDeclaration]
     @Published var downloadProgress: Double? = nil // Optional to track progress
@@ -16,15 +91,7 @@ final class AudioDeclarationViewModel: ObservableObject {
     private let fileManager = FileManager.default
       
       init() {
-          self.audioDeclarations = [
-            AudioDeclaration(
-                   id: "SoundHelix-Song-1.mp3",
-                   title: "Sample Audio | SoundHelix",
-                   subtitle: "A publicly available audio file for testing purposes.",
-                   duration: "30m",
-                   imageUrl: "sample_image" // Replace with your local image name
-               )
-              ]
+          self.audioDeclarations = audioFiles
       }
     
     func fetchAudio(for item: AudioDeclaration, completion: @escaping (Result<URL, Error>) -> Void) {
@@ -75,11 +142,12 @@ final class AudioDeclarationViewModel: ObservableObject {
         }
   }
 
-struct AudioDeclaration: Identifiable{
+struct AudioDeclaration: Identifiable, Equatable {
       let id: String
       let title: String
       let subtitle: String
       let duration: String
       let imageUrl: String
+     let isPremium: Bool
     
 }

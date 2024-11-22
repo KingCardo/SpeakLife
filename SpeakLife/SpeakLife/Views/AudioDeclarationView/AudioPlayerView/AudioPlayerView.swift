@@ -146,6 +146,9 @@ struct AudioPlayerView: View {
             .onAppear {
                 viewModel.changePlaybackSpeed(to: 1.0) // Reset speed to default
             }
+            .onDisappear {
+                viewModel.resetPlayer()
+            }
     }
     
     private func formatTime(_ time: Double) -> String {

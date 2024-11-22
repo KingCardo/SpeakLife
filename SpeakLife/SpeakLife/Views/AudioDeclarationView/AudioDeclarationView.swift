@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UpNextCell: View {
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     let item: AudioDeclaration
     
     var body: some View {
@@ -16,39 +17,38 @@ struct UpNextCell: View {
             Image(item.imageUrl)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 80, height: 80)
+                .frame(width: 100, height: 120)
                 .cornerRadius(8)
                 .clipped()
             
             VStack(alignment: .leading, spacing: 8) {
                 // Title
                 Text(item.title)
-                    .font(.headline)
+                    .font(.subheadline)
                     .lineLimit(2)
                 
                 // Subtitle
                 Text(item.subtitle)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+                    .font(.caption)
+                    .foregroundColor(.white)
                     .lineLimit(3)
                 
-                // Play button with duration
-                HStack(spacing: 8) {
-                    Button(action: {
-                        // Handle play action here
-                    }) {
                         HStack(spacing: 4) {
                             Image(systemName: "play.fill")
                                 .font(.caption)
                             Text(item.duration)
                                 .font(.caption)
+                            if item.isPremium, !subscriptionStore.isPremium {
+                                Image(systemName: "lock")
+                                    .font(.caption)
+                            }
                         }
                         .foregroundColor(.primary)
                         .padding(6)
                         .background(Color(.systemGray6))
                         .cornerRadius(6)
-                    }
-                }
+                    //}
+              //  }
             }
             Spacer()
         }
@@ -64,32 +64,39 @@ struct ErrorWrapper: Identifiable {
 struct AudioDeclarationView: View {
     @StateObject private var viewModel = AudioDeclarationViewModel()
     @StateObject private var audioViewModel = AudioPlayerViewModel()
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @State private var selectedItem: AudioDeclaration? = nil
     @State private var audioURL: URL? = nil
     @State private var errorMessage: ErrorWrapper? = nil
+    @State private var isPresentingPremiumView = false
     
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Up Next")) {
+                Section {
+                  
                     ForEach(viewModel.audioDeclarations) { item in
                         Button(action: {
-                            viewModel.fetchAudio(for: item) { result in
-                                switch result {
-                                case .success(let url):
-                                    audioURL = url
-                                    selectedItem = item
-                                    viewModel.downloadProgress = nil
-                                case .failure(let error):
-                                    errorMessage = ErrorWrapper(message: "Failed to download audio: \(error.localizedDescription)")
-                                    viewModel.downloadProgress = nil
+                            if item.isPremium, !subscriptionStore.isPremium {
+                                isPresentingPremiumView = true
+                            } else {
+                                viewModel.fetchAudio(for: item) { result in
+                                    switch result {
+                                    case .success(let url):
+                                        audioURL = url
+                                        selectedItem = item
+                                        viewModel.downloadProgress = nil
+                                    case .failure(let error):
+                                        errorMessage = ErrorWrapper(message: "Failed to download audio: \(error.localizedDescription)")
+                                        viewModel.downloadProgress = nil
+                                    }
                                 }
                             }
                         }) {
                             UpNextCell(item: item)
+                           
                         }
-                        
-                        if let progress = viewModel.downloadProgress, progress > 0 {
+                        if let progress = viewModel.downloadProgress, progress > 0, item == selectedItem {
                             ProgressView(value: progress)
                                 .progressViewStyle(LinearProgressViewStyle())
                                 .padding(.top, 8)
@@ -100,6 +107,13 @@ struct AudioDeclarationView: View {
             }
             .listStyle(InsetGroupedListStyle())
             .navigationTitle("Audio Declarations")
+            .sheet(isPresented: $isPresentingPremiumView) {
+                self.isPresentingPremiumView = false
+            } content: {
+                GeometryReader { geometry in
+                    SubscriptionView(size: geometry.size)
+                }
+            }
             .alert(item: $errorMessage) { error in
                 Alert(
                     title: Text("Error"),
@@ -133,6 +147,7 @@ struct AudioDeclarationView: View {
                 AudioPlayerService.shared.playMusic()
             }
         }
+        
     }
 }
 
