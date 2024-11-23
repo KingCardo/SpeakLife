@@ -74,7 +74,6 @@ struct AudioDeclarationView: View {
         NavigationView {
             List {
                 Section {
-                  
                     ForEach(viewModel.audioDeclarations) { item in
                         Button(action: {
                             if item.isPremium, !subscriptionStore.isPremium {
@@ -85,21 +84,26 @@ struct AudioDeclarationView: View {
                                     case .success(let url):
                                         audioURL = url
                                         selectedItem = item
-                                        viewModel.downloadProgress = nil
+                                        viewModel.downloadProgress[item.id] = 0.0
                                     case .failure(let error):
                                         errorMessage = ErrorWrapper(message: "Failed to download audio: \(error.localizedDescription)")
-                                        viewModel.downloadProgress = nil
+                                        selectedItem = nil
+                                        viewModel.downloadProgress[item.id] = 0.0
                                     }
                                 }
+                               
                             }
                         }) {
+                            VStack {
                             UpNextCell(item: item)
+                            
+                                if let progress = viewModel.downloadProgress[item.id], progress > 0 {
+                                    ProgressView(value: progress)
+                                        .progressViewStyle(LinearProgressViewStyle())
+                                        .padding(.top, 8)
+                                }
+                            }
                            
-                        }
-                        if let progress = viewModel.downloadProgress, progress > 0, item == selectedItem {
-                            ProgressView(value: progress)
-                                .progressViewStyle(LinearProgressViewStyle())
-                                .padding(.top, 8)
                         }
                     }
                 }
@@ -128,24 +132,42 @@ struct AudioDeclarationView: View {
                 if let audioURL = audioURL {
                     AudioPlayerView(
                         viewModel: audioViewModel,
-                               audioTitle: item.title,
-                               audioSubtitle: item.subtitle,
-                               imageUrl: item.imageUrl,
-                               isLoading: Binding(
-                                get: { viewModel.downloadProgress != nil },
-                                set: { _ in } // No-op since progress drives isLoading
-                            ),
-                            progress: $viewModel.downloadProgress
+                        audioTitle: item.title,
+                        audioSubtitle: item.subtitle,
+                        imageUrl: item.imageUrl
+//                        isLoading: Binding(
+//                            get: { viewModel.downloadProgress[item.id] != nil },
+//                            set: { _ in } // No-op
+//                        ),
+//                        progress: Binding(
+//                            get: { viewModel.downloadProgress[item.id] ?? 0.0 },
+//                            set: { newValue in viewModel.downloadProgress[item.id] = newValue }
+//                        )
                     )
                     .onAppear {
                         audioViewModel.loadAudio(from: audioURL) // Initialize player
                     }
+                    .onDisappear {
+                        audioViewModel.resetPlayer()
+                        AudioPlayerService.shared.playMusic()
+                    }
+              //  }
+//                if let audioURL = audioURL {
+//                    AudioPlayerView(
+//                        viewModel: audioViewModel,
+//                               audioTitle: item.title,
+//                               audioSubtitle: item.subtitle,
+//                               imageUrl: item.imageUrl,
+//                               isLoading: Binding(
+//                                get: { viewModel.downloadProgress != nil },
+//                                set: { _ in } // No-op since progress drives isLoading
+//                            ),
+//                            progress: $viewModel.downloadProgress
+//                    )
+                    
                 }
             }
-            .onDisappear {
-                audioViewModel.resetPlayer()
-                AudioPlayerService.shared.playMusic()
-            }
+           
         }
         
     }

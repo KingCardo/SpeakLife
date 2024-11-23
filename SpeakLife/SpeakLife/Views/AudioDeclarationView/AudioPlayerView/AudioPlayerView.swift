@@ -11,26 +11,13 @@ struct AudioPlayerView: View {
     @ObservedObject var viewModel: AudioPlayerViewModel
     let audioTitle: String
     let audioSubtitle: String
-    let imageUrl: String // Local or remote image URL
-    @Binding var isLoading: Bool // Add loading state
-    @Binding var progress: Double? // Bind download progress
+    let imageUrl: String 
     
     var body: some View {
         ZStack {
             // Background Color
             Color.black.opacity(0.9)
                 .ignoresSafeArea()
-                if isLoading {
-                    VStack(spacing: 20) {
-                        Text("Downloading...")
-                            .font(.headline)
-                        if let progress = progress {
-                            ProgressView(value: progress)
-                                .progressViewStyle(LinearProgressViewStyle())
-                                .padding()
-                        }
-                    }
-                } else {
                     // Top section: Image and details
                     VStack(spacing: 30) {
                         Image(imageUrl) // Replace with actual remote image logic if needed
@@ -135,14 +122,6 @@ struct AudioPlayerView: View {
                     
                     //   Spacer()
                 }
-            }
-            .onChange(of: progress) { newProgress in
-                print("Progress in view: \(String(describing: progress)) RWRW")
-                if newProgress == 1.0 {
-                    isLoading = false
-                    print("Is loading: \(isLoading) RWRW")// Transition to player view on completion
-                }
-            }
             .onAppear {
                 viewModel.changePlaybackSpeed(to: 1.0) // Reset speed to default
             }

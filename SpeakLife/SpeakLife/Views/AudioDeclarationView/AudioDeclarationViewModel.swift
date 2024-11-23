@@ -10,7 +10,7 @@ import FirebaseStorage
 
 let audioFiles: [AudioDeclaration] = [
     AudioDeclaration(
-           id: "health.mp3",
+           id: "health1.mp3",
            title: "Healing Declarations",
            subtitle: "Speaking Wholeness, Strength, and Restoration Through the Power of Faith",
            duration: "4m",
@@ -23,7 +23,7 @@ let audioFiles: [AudioDeclaration] = [
            subtitle: "Overcoming Anxiety, Stress, and Fear Through God’s Promisess",
            duration: "3m",
            imageUrl: "JesusPraying",
-           isPremium: false
+           isPremium: true
        ),
     AudioDeclaration(
            id: "warfare.mp3",
@@ -31,7 +31,23 @@ let audioFiles: [AudioDeclaration] = [
            subtitle: "Declaring Authority and Triumph Over All Evil Through Christ",
            duration: "3m",
            imageUrl: "heavenly",
-           isPremium: false
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "psalm91.mp3",
+           title: "Psalm 91: A Shield of Protection",
+           subtitle: "Declaring God’s Faithful Promises of Safety and Refuge",
+           duration: "2m",
+           imageUrl: "pinkHueMountain",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "victorious.mp3",
+           title: "Living Victoriously in Christ",
+           subtitle: "Declaring Bible Verses to Walk in Victory Every Day",
+           duration: "3m",
+           imageUrl: "sereneMountain",
+           isPremium: true
        ),
     AudioDeclaration(
            id: "prosperity.mp3",
@@ -66,6 +82,22 @@ let audioFiles: [AudioDeclaration] = [
            isPremium: true
        ),
     AudioDeclaration(
+           id: "closer.mp3",
+           title: "Closer to God",
+           subtitle: "Declaring a Life of Intimacy with Him and Walking in the Spirit Every Day",
+           duration: "3m",
+           imageUrl: "flowingRiver",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "children.mp3",
+           title: "Blessing Our Children",
+           subtitle: "Declaring Safety, Wisdom, and Destiny Over Their Lives",
+           duration: "3m",
+           imageUrl: "calmLake",
+           isPremium: true
+       ),
+    AudioDeclaration(
            id: "miracles.mp3",
            title: "Breakthrough and Miracles",
            subtitle: "Declaring the Power of God to Transform the Impossible",
@@ -85,8 +117,7 @@ let audioFiles: [AudioDeclaration] = [
 
 final class AudioDeclarationViewModel: ObservableObject {
     @Published var audioDeclarations: [AudioDeclaration]
-    @Published var downloadProgress: Double? = nil // Optional to track progress
-   // @Published var downloadProgress: [String: Double] = [:]
+    @Published var downloadProgress: [String: Double] = [:]
     private let storage = Storage.storage()
     private let fileManager = FileManager.default
       
@@ -97,7 +128,7 @@ final class AudioDeclarationViewModel: ObservableObject {
     func fetchAudio(for item: AudioDeclaration, completion: @escaping (Result<URL, Error>) -> Void) {
            // Get the local URL for the file
            let localURL = cachedFileURL(for: item.id)
-            self.downloadProgress = 0.0
+           // self.downloadProgress[item.id] = 0.0
 
            // Check if the file exists locally
            if fileManager.fileExists(atPath: localURL.path) {
@@ -116,7 +147,7 @@ final class AudioDeclarationViewModel: ObservableObject {
         
         let downloadTask = storageRef.write(toFile: localURL) { url, error in
             DispatchQueue.main.async {
-                self.downloadProgress = nil // Reset progress when download completes
+                self.downloadProgress[item.id] = 0.0 // Reset progress when download completes
             }
             if let error = error {
                 completion(.failure(error))
@@ -127,9 +158,11 @@ final class AudioDeclarationViewModel: ObservableObject {
         }
         
         downloadTask.observe(.progress) { snapshot in
+           
             if let progress = snapshot.progress {
+                print("Download Progress: \(progress.fractionCompleted)")
                 DispatchQueue.main.async {
-                    self.downloadProgress = progress.fractionCompleted
+                    self.downloadProgress[item.id] = progress.fractionCompleted
                     
                 }
             }
