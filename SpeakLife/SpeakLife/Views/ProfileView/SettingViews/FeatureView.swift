@@ -46,7 +46,7 @@ struct FeatureRow: View {
             VStack(alignment: .leading) {
                 
                 Text(feature.subtitle)
-                    .font(.system(size: 18, weight: .semibold, design: .rounded))
+                    .font(.system(size: 14, weight: .semibold, design: .rounded))
                 
             }
             Spacer()
@@ -88,7 +88,7 @@ struct FeatureView: View {
     let allFeatures = [
         Feature(subtitle: "10,000+ library of God's promises and affirmations"),
         Feature(subtitle: "Audio declarations and prayers"),
-        Feature(subtitle: "Daily devotional's with Jesus"),
+        Feature(subtitle: "New devotional everyday"),
         Feature(subtitle: "Unlimited scripture reminders"),
         Feature(subtitle: "30+ customizable themes")
         ]

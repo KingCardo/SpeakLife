@@ -11,7 +11,7 @@ struct AudioPlayerView: View {
     @ObservedObject var viewModel: AudioPlayerViewModel
     let audioTitle: String
     let audioSubtitle: String
-    let imageUrl: String 
+    let imageUrl: String
     
     var body: some View {
         ZStack {

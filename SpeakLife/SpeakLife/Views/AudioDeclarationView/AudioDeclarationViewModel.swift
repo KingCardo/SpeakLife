@@ -26,6 +26,14 @@ let audioFiles: [AudioDeclaration] = [
            isPremium: true
        ),
     AudioDeclaration(
+           id: "gratitude.mp3",
+           title: "A Heart of Gratitude",
+           subtitle: "Declaring God’s Goodness and Faithfulness with Thankful Praise",
+           duration: "3m",
+           imageUrl: "desertSky",
+           isPremium: true
+       ),
+    AudioDeclaration(
            id: "warfare.mp3",
            title: "Victory in Spiritual Warfare",
            subtitle: "Declaring Authority and Triumph Over All Evil Through Christ",

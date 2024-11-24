@@ -268,7 +268,7 @@ struct SubscriptionView: View {
                             
                         }
                         Spacer()
-                            .frame(height: 24)
+                            .frame(height: 8)
                         
                         
                         FeatureView(defaultProps: valueProps)
