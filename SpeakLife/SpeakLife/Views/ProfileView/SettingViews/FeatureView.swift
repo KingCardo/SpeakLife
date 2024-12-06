@@ -88,6 +88,7 @@ struct FeatureView: View {
     let allFeatures = [
         Feature(subtitle: "10,000+ library of God's promises and affirmations"),
         Feature(subtitle: "Audio declarations and prayers"),
+        Feature(subtitle: "Bible Bedtime Stories"),
         Feature(subtitle: "New devotional everyday"),
         Feature(subtitle: "Unlimited scripture reminders"),
         Feature(subtitle: "30+ customizable themes")

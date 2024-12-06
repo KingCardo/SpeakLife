@@ -85,7 +85,7 @@ class Theme: Identifiable, Codable {
         }
     }
     
-    static var all: [Theme] = [JesusOnWater,JesusHealing,JesusOnCross,JesusRisen, JesusPraying, JesusHeaven,twinAngels,warriorAngel,heavenly,glowingAngels,radiantAngel, starryNight,lakeTrees,countryNightSky,peacefulMountainNight,majesticNight, mountainLandscape, pinkHueMountain, forestSunrise,sunsetMountain,sereneMountain,calmLake,tranquilSunset, breathTakingSunset,flowingRiver, sunset3,moonlight2,desertsky]
+    static var all: [Theme] = [JesusOnWater,JesusHealing,JesusOnCross,JesusRisen, JesusPraying, JesusHeaven,twinAngels,warriorAngel,heavenly,glowingAngels,radiantAngel, starryNight,lakeTrees,countryNightSky,peacefulMountainNight,majesticNight, mountainLandscape, pinkHueMountain, forestSunrise,sunsetMountain,sereneMountain,calmLake,tranquilSunset, breathTakingSunset,flowingRiver, sunset3,moonlight2,desertsky, sereneMountain2, sunriseLake2]
     
     private static let JesusOnCross = Theme("JesusOnCross", blurEffect: true)
     private static let JesusOnWater = Theme("JesusOnWater", blurEffect: true)
@@ -154,6 +154,8 @@ class Theme: Identifiable, Codable {
     static let taicitylights = Theme("taicitylights",blurEffect: true)
     static let safari = Theme("safari",blurEffect: true)
     static let aurora = Theme("aurora",blurEffect: false)
+    static let sunriseLake2 = Theme("sunriseLake2",blurEffect: true)
+    static let sereneMountain2 = Theme("sereneMountain2",blurEffect: true)
 }
 
 

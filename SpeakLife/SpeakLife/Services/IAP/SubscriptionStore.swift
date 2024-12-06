@@ -254,12 +254,13 @@ final class SubscriptionStore: ObservableObject {
             await updateCustomerProductStatus()
         }
         
-        cancellable = $subscriptionGroupStatus
-            .map { $0 }
-            .sink { [weak self] value in
-                // Update isPremium based on subscription state
-                self?.isPremium = (value == .subscribed) || !(self?.purchasedNonConsumables.isEmpty ?? true)
+        cancellable = Publishers.CombineLatest($subscriptionGroupStatus, $purchasedNonConsumables)
+            .sink { [weak self] subscriptionStatus, nonConsumables in
+                guard let self = self else { return }
+                // Update isPremium based on subscription state and purchased non-consumables
+                self.isPremium = (subscriptionStatus == .subscribed) || !nonConsumables.isEmpty
             }
+        
     }
 
     deinit {
@@ -409,9 +410,11 @@ final class SubscriptionStore: ObservableObject {
         // Update store properties
         self.purchasedSubscriptions = purchasedSubscriptions
         self.purchasedNonConsumables = purchasedNonConsumables
+        
+        subscriptionGroupStatus = try? await subscriptions.first?.subscription?.status.first?.state
 
         // Update isPremium flag
-        self.isPremium = !purchasedSubscriptions.isEmpty || !purchasedNonConsumables.isEmpty
+        //self.isPremium = !purchasedSubscriptions.isEmpty || !purchasedNonConsumables.isEmpty
     }
     
     func products(for ids: [String]) async -> [Product]? {

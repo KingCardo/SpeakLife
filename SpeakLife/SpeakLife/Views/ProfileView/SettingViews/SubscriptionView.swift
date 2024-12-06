@@ -200,7 +200,7 @@ struct SubscriptionView: View {
     
     var secondSelection = InAppId.Subscription.speakLife1MO4
     
-    var thirdSelection = InAppId.Subscription.speakLifeLifetime
+    var thirdSelection = InAppId.Subscription.speakLife1YR19
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let valueProps: [Feature]
@@ -233,9 +233,11 @@ struct SubscriptionView: View {
     
     
     private func goPremiumView(size: CGSize) -> some View  {
+       // ScrollView {
         ZStack {
+           
             GeometryReader { geometry in
-                //ScrollView {
+              
                 LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, Color.black]), startPoint: .top, endPoint: .bottom)
                         .edgesIgnoringSafeArea(.all)
                     
@@ -261,9 +263,10 @@ struct SubscriptionView: View {
                         Spacer()
                             .frame(height: 24)
                         VStack {
-                            Text("Your first week's on us 🥳")
-                                .font(Font.custom("AppleSDGothicNeo-Bold", size: 30, relativeTo: .title))
-                                .foregroundStyle(Color.white)
+                                Text("Join over 40k+ SpeakLifers")
+                                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 26, relativeTo: .title))
+                                    .foregroundStyle(Color.white)
+                            
                             StarRatingView(rating: 4.8)
                             
                         }
@@ -279,7 +282,7 @@ struct SubscriptionView: View {
                             
                             
                             Button {
-                                currentSelection = firstSelection
+                                currentSelection = appState.isOnboarded ? thirdSelection : firstSelection
                             } label: {
                                 yearlyCTABox()
                             }
@@ -291,11 +294,11 @@ struct SubscriptionView: View {
                                 monthlySelectionBox()
                             }
                             
-                            Button {
-                                currentSelection = thirdSelection
-                            } label: {
-                                lifetimeSelectionBox()
-                            }
+//                            Button {
+//                                currentSelection = thirdSelection
+//                            } label: {
+//                                lifetimeSelectionBox()
+//                            }
                             
                         }
                         Spacer()
@@ -307,13 +310,16 @@ struct SubscriptionView: View {
                         
                     }
                 }
+            .onAppear {
+                currentSelection = appState.isOnboarded ? thirdSelection : firstSelection
+            }
                 
                 
                 if declarationStore.isPurchasing {
                     RotatingLoadingImageView()
                 }
             }
-         //   }
+          //  }
         .sheet(isPresented: $chooseDifferentAmount) {
             patronView
         }
@@ -495,7 +501,11 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        ShimmerButton(colors: [Constants.DAMidBlue, .cyan,Constants.DADarkBlue.opacity(0.6) ], buttonTitle: currentSelection == firstSelection ? "TRY FOR FREE" : "SUBSCRIBE" , action: makePurchase)
+        var buttonTitle = appState.isOnboarded ?  "SUBSCRIBE" : "TRY FOR FREE"
+        if currentSelection == secondSelection {
+            buttonTitle = "SUBSCRIBE"
+        }
+        return ShimmerButton(colors: [Constants.traditionalGold, .indigo], buttonTitle: buttonTitle , action: makePurchase)
     }
     // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
     private func restore() {
@@ -513,8 +523,8 @@ struct SubscriptionView: View {
         ZStack() {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == firstSelection ? Constants.DAMidBlue : .clear))
-                .shadow(color: currentSelection == firstSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
+                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection ==  (appState.isOnboarded ? thirdSelection : firstSelection) ? Constants.DAMidBlue : .clear))
+                .shadow(color: currentSelection == (appState.isOnboarded ? thirdSelection : firstSelection) ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
                 .frame(height: 60)
             
             HStack {
@@ -526,7 +536,7 @@ struct SubscriptionView: View {
                         .frame(width: 90, height: 30)
                         .cornerRadius(15)
                     
-                    Text("Best Value")
+                    Text(appState.isOnboarded ? "Save 67%" : "Save 55%")
                         .font(.caption)
                         .bold()
                         .foregroundColor(.black)
@@ -535,7 +545,23 @@ struct SubscriptionView: View {
                 .offset(x: -10, y: -32)
             }
             
-            if isCheaperPricingCountry {
+            if appState.isOnboarded {
+                HStack {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("\(thirdSelection.ctaDurationTitle)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                            .bold()
+                        Text("\(thirdSelection.subTitle)")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
+                        
+                    }
+                    Spacer()
+                    
+                }
+                .foregroundStyle(.white)
+                .padding([.leading, .trailing])
+        
+            } else if isCheaperPricingCountry {
                 HStack {
                     VStack(alignment: .leading, spacing: 2) {
                         Text("\(firstSelection.ctaDurationTitle)")
@@ -612,10 +638,12 @@ struct SubscriptionView: View {
                 .frame(height: 50)
             
             HStack {
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 2) {
                     Text("\(secondSelection.ctaDurationTitle)")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
                         .bold()
+                    Text("\(secondSelection.subTitle)")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
                        
                 }
                        Spacer()

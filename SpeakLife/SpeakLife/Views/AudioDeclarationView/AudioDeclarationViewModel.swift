@@ -115,7 +115,7 @@ let audioFiles: [AudioDeclaration] = [
        ),
     AudioDeclaration(
            id: "restoration.mp3",
-           title: "Restoring Relationships in Christ",
+           title: "Restoring Relationships",
            subtitle: "Declaring Healing, Unity, and Love Over Marriages and Families",
            duration: "3m",
            imageUrl: "breathTakingSunset",
@@ -123,14 +123,27 @@ let audioFiles: [AudioDeclaration] = [
        ),
 ]
 
+let bedTimeFiles: [AudioDeclaration] = [
+    AudioDeclaration(
+           id: "beginning.mp3",
+           title: "In the Beginning",
+           subtitle: "Journey into God’s Perfect Creation",
+           duration: "9m",
+           imageUrl: "flowingRiver",
+           isPremium: false
+       ),
+    ]
+
 final class AudioDeclarationViewModel: ObservableObject {
     @Published var audioDeclarations: [AudioDeclaration]
+    @Published var bedtimeStories: [AudioDeclaration]
     @Published var downloadProgress: [String: Double] = [:]
     private let storage = Storage.storage()
     private let fileManager = FileManager.default
       
       init() {
           self.audioDeclarations = audioFiles
+          self.bedtimeStories = bedTimeFiles
       }
     
     func fetchAudio(for item: AudioDeclaration, completion: @escaping (Result<URL, Error>) -> Void) {
