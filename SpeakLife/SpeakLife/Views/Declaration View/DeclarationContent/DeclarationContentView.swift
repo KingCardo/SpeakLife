@@ -154,26 +154,6 @@ struct DeclarationContentView: View {
             Spacer()
             intentStackButtons(declaration: declaration)
                 .opacity(appState.showScreenshotLabel ? 0 : 1)
-//            CapsuleImageButton(title: isMenuExpanded ? "xmark" : "plus") {
-//                if isMenuExpanded {
-//                    hideButtonsInSequence {
-//                        withAnimation(.easeInOut) {
-//                            isMenuExpanded.toggle()
-//                            rotationAngle = 0
-//                            
-//                        }
-//                    }
-//                } else {
-//                    withAnimation(.easeInOut) {
-//                        getButtonVisibility(declaration: declaration)// Update button visibilities before showing
-//                        showButtonsInSequence()
-//                        isMenuExpanded.toggle()
-//                        rotationAngle = 180
-//                    }
-//                }
-//            }
-//            .rotationEffect(.degrees(rotationAngle))
-//            .animation(.easeInOut, value: rotationAngle)
 //            
             Spacer()
                 .frame(height: horizontalSizeClass == .compact ? geometry.size.height * 0.10 : geometry.size.height * 0.25)
@@ -293,12 +273,16 @@ struct DeclarationContentView: View {
             
         }
         
-        Analytics.logEvent(Event.shareTapped, parameters: ["share": declaration.text])
+        Analytics.logEvent(Event.shareTapped, parameters: ["share": declaration.text.prefix(100)])
         Selection.shared.selectionFeedback()
         // Hide the label after 2 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             withAnimation {
                 appState.showScreenshotLabel = false
+                appState.shareDiscountTry += 1
+                if !subscriptionStore.isPremium, appState.shareDiscountTry % 3 == 0 {
+                    viewModel.showDiscountView.toggle()
+                }
             }
            // viewModel.requestReview.toggle()
         }
@@ -320,8 +304,12 @@ struct DeclarationContentView: View {
     private func favoriteTapped(declaration: Declaration) {
         favorite(declaration)
         self.isFavorite = declaration.isFavorite ? false : true
-        Analytics.logEvent(Event.favoriteTapped, parameters: ["declaration": declaration.text])
+        Analytics.logEvent(Event.favoriteTapped, parameters: ["declaration": declaration.text.prefix(100)])
         Selection.shared.selectionFeedback()
+        appState.offerDiscountTry += 1
+        if !subscriptionStore.isPremium, appState.offerDiscountTry % 5 == 0 {
+            viewModel.showDiscountView.toggle()
+        }
     }
     
     @ViewBuilder

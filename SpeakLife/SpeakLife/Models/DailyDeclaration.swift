@@ -213,7 +213,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         case .hardtimes: return "Hard Times"
         case .godsprotection: return "God's Protection"
         case .fear: return "Fear Not!"
-        case .addiction: return "Crush Addiction"
+        case .addiction: return "Overcome Addiction"
         case .heaven: return "Heavenly Thinking"
         case .purity: return "Purity"
         case .corinthians1: return "1 Corinthians"

@@ -189,8 +189,8 @@ struct DevotionalView: View {
             declarationViewModel.requestReview.toggle()
             Analytics.logEvent(Event.devotionalShared, parameters: nil)
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                if !subscriptionStore.isPremium {
-                    appState.offerDiscountTry += 1
+                appState.shareDiscountTry += 1
+                if !subscriptionStore.isPremium, appState.shareDiscountTry % 2 == 0 {
                     declarationViewModel.showDiscountView.toggle()
                 }
             }

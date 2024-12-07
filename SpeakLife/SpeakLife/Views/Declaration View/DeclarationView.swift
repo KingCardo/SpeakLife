@@ -202,8 +202,8 @@ struct DeclarationView: View {
                 }
             }
             .sheet(isPresented: $viewModel.showDiscountView) {
-                    GeometryReader { geometry in
-                        SubscriptionView(size: geometry.size)
+                    OfferPageView() {
+                        viewModel.showDiscountView.toggle()
                 }
             }
             .onDisappear {

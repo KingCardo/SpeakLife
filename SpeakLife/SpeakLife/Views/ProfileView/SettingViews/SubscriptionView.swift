@@ -15,10 +15,10 @@ import SwiftUI
 
 // ViewModel to manage data for the view
 class OfferViewModel: ObservableObject {
-    @Published var originalPrice: String = "$39.99/year"
-    @Published var monthlyPrice: String = "$3.33/month"
-    @Published var discountedPrice: String = "$19.99/year"
-    @Published var discountedMonthlyPrice: String = "$1.67/month"
+    @Published var originalPrice: String = "$49.99/year"
+    @Published var monthlyPrice: String = "$4.16/month"
+    @Published var discountedPrice: String = "$29.99/year"
+    @Published var discountedMonthlyPrice: String = "$2.49/month"
 }
 
 struct OfferPageView: View {
@@ -30,7 +30,7 @@ struct OfferPageView: View {
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     let callBack: (() -> Void)
     
-    @State var firstSelection = InAppId.Subscription.speakLife1YR19
+    @State var firstSelection = InAppId.Subscription.speakLife1YR29
     
     var body: some View {
         ZStack {
@@ -53,7 +53,7 @@ struct OfferPageView: View {
                             .fill(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))
                     )
                 VStack {
-                    Text("50% off")
+                    Text("40% off")
                         .font(Font.custom("AppleSDGothicNeo-Bold", size: 48, relativeTo: .title))
                         .foregroundColor(.white)
                     
