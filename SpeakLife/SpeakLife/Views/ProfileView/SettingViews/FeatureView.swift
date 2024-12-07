@@ -86,6 +86,12 @@ struct FeatureView: View {
 //    }
     
     let allFeatures = [
+       // Feature(subtitle: "Unlock everything"),
+//        Feature(subtitle: ""),
+//        Feature(subtitle: "Start your day spiritually equipped with affirmations rooted in God’s Word—your shield against negativity."),
+//        Feature(subtitle: "Speak peace into your life with daily affirmations that calm your mind and align your heart with God’s promises."),
+//        Feature(subtitle: "Strengthen your faith daily with affirmations that remind you of God’s unchanging love and power."),
+//        Feature(subtitle: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future."),
         Feature(subtitle: "10,000+ library of God's promises and affirmations"),
         Feature(subtitle: "Audio declarations and prayers"),
         Feature(subtitle: "Bible Bedtime Stories"),

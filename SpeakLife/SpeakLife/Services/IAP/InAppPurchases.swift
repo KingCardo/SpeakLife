@@ -73,7 +73,7 @@ struct InAppId: Codable {
             case .speakLifeLifetime: return "$99.99 one time for life."
             case .speakLife1YR99: return "$99.99/year. Cancel anytime."
             case .speakLife1YR49: return "7 day free trial, then $49.99/year."
-            case .speakLife1YR39: return "$39.99/year. Cancel anytime."
+            case .speakLife1YR39: return "7 day free trial, then $39.99/year."
             case .speakLife1YR29: return "3 days free then $29.99/year."
             case .speakLife1YR19: return "$19.99/year. Cancel anytime."
             case .speakLife1YR15: return "$14.99/year"
@@ -118,7 +118,7 @@ struct InAppId: Codable {
             switch self {
             case .speakLifeLifetime: return "$99.99"
             case .speakLife1YR49: return "7 days free then $49.99 a year."
-            case .speakLife1YR39: return "billed yearly at $39.99"
+            case .speakLife1YR39: return "7 days free then $39.99 a year."
             case .speakLife1YR29: return "3 days free then $29.99 a year."
             case .speakLife1YR19: return "$1.66/mo. - Save 67%"
             case .speakLife1YR15: return "1.25/mo. - Save 60%"
@@ -134,7 +134,7 @@ struct InAppId: Codable {
         var ctaPriceTitle: String {
             switch self {
             case .speakLifeLifetime: return "$99.99"
-            case .speakLife1YR49: return "Billed Annually"
+            case .speakLife1YR49: return "$49.99"
             case .speakLife1YR39: return "$39.99"
             case .speakLife1YR29: return "Billed Annually"
             case .speakLife1YR19: return "$19.99"

@@ -191,8 +191,8 @@ struct SubscriptionView: View {
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR29
-    @State var firstSelection = InAppId.Subscription.speakLife1YR29
+    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR49
+    @State var firstSelection = InAppId.Subscription.speakLife1YR49
     @State private var localizedPrice: String = "$19.00"
     @State private var regionCode: String = "US"
     @State private var isCheaperPricingCountry = false
@@ -200,7 +200,7 @@ struct SubscriptionView: View {
     
     var secondSelection = InAppId.Subscription.speakLife1MO4
     
-    var thirdSelection = InAppId.Subscription.speakLife1YR19
+    var thirdSelection = InAppId.Subscription.speakLife1YR39
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let valueProps: [Feature]
@@ -533,10 +533,10 @@ struct SubscriptionView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Constants.traditionalGold)
-                        .frame(width: 90, height: 30)
+                        .frame(width: 100, height: 30)
                         .cornerRadius(15)
                     
-                    Text(appState.isOnboarded ? "Save 67%" : "Save 55%")
+                    Text("Most popular")
                         .font(.caption)
                         .bold()
                         .foregroundColor(.black)

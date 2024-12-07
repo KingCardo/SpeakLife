@@ -153,9 +153,9 @@ struct OnboardingView: View  {
                 }
                     .tag(Tab.transformedLife)
                 
-                IntroTipScene(title: "Jesus Spoke with Authority",
+                IntroTipScene(title: "Speak Life, Silence the Noise",
                               bodyText: "",
-                              subtext: "In the Bible, Jesus demonstrated the power of words. He spoke peace to storms, healed the sick with a command, and raised the dead by calling them forth. His words changed realities",
+                              subtext: "Replace the lies of the enemy with truth-filled affirmations that uplift your spirit and transform your mindset.",
                               ctaText: "Speak with Authority Like Jesus",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
@@ -163,9 +163,9 @@ struct OnboardingView: View  {
                         advance()
                 }
                     .tag(Tab.likeJesus)
-                IntroTipScene(title: "Speak Life into Your Circumstances",
+                IntroTipScene(title: "Armor Up for Life’s Battles",
                               bodyText: "",
-                              subtext: "Your words shape your reality. Speaking God's promises over your life brings peace in chaos, hope in darkness, and joy amidst struggles. Declare truth and see transformation.",
+                              subtext: "Start your day spiritually equipped with affirmations rooted in God’s Word—your shield against the enemy.",
                               ctaText: "Transform Your Challenges with Faith",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
@@ -173,9 +173,9 @@ struct OnboardingView: View  {
                         advance()
                 }
                     .tag(Tab.liveVictorious)
-                IntroTipScene(title: "Real Transformations through Faith",
+                IntroTipScene(title: "Speak God’s Promises Over Your Life",
                               bodyText: "",
-                              subtext: "Countless people have experienced breakthroughs by speaking God’s promises daily. From overcoming anxiety to finding healing, your words backed by faith can change everything.",
+                              subtext: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future.",
                               ctaText: "Align Your Words with God's Will",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
@@ -184,9 +184,9 @@ struct OnboardingView: View  {
                 }
                     .tag(Tab.unshakeableFaith)
                 
-                IntroTipScene(title: "Activate God's Promises Daily",
+                IntroTipScene(title: "Stay Rooted in Faith, No Matter What",
                               bodyText: "",
-                              subtext: "By declaring affirmations rooted in Scripture, you align your words with God's will, bringing His promises of love, peace, health, and abundance to life.",
+                              subtext: "Strengthen your faith daily with affirmations that remind you of God’s unchanging love and power.",
                               ctaText: "I Am Ready",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
