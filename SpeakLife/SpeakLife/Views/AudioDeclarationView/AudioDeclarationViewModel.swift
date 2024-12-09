@@ -65,6 +65,16 @@ let audioFiles: [AudioDeclaration] = [
            imageUrl: "JesusHeaven",
            isPremium: true
        ),
+    
+    AudioDeclaration(
+           id: "heartbreak.mp3",
+           title: "Healing for the Brokenhearted",
+           subtitle: "Declaring God’s Love and Restoration Over a Wounded Heart",
+           duration: "3m",
+           imageUrl: "sereneMountain2",
+           isPremium: false
+       ),
+    
     AudioDeclaration(
            id: "identity.mp3",
            title: "Identity in Christ",
@@ -131,6 +141,22 @@ let bedTimeFiles: [AudioDeclaration] = [
            duration: "9m",
            imageUrl: "flowingRiver",
            isPremium: false
+       ),
+    AudioDeclaration(
+           id: "noah.mp3",
+           title: "Noah and the Ark",
+           subtitle: "God’s Promise of Protection and Hope",
+           duration: "9m",
+           imageUrl: "noah",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "babel.mp3",
+           title: "The Tower of Babel",
+           subtitle: "God’s Plan for the Nations",
+           duration: "8m",
+           imageUrl: "babel",
+           isPremium: true
        ),
     ]
 
