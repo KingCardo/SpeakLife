@@ -191,16 +191,12 @@ struct SubscriptionView: View {
                                         startPoint: .top,
                                         endPoint: .bottom)// Adjust time as needed
     
-    @State var currentSelection: InAppId.Subscription? = InAppId.Subscription.speakLife1YR49
-    @State var firstSelection = InAppId.Subscription.speakLife1YR49
-    @State private var localizedPrice: String = "$19.00"
-    @State private var regionCode: String = "US"
-    @State private var isCheaperPricingCountry = false
+
+    @State var currentSelection: Product?
+    @State var firstSelection: Product?
+    @State var secondSelection: Product?
+
     @State var chooseDifferentAmount = false
-    
-    var secondSelection = InAppId.Subscription.speakLife1MO4
-    
-    var thirdSelection = InAppId.Subscription.speakLife1YR39
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     
     let valueProps: [Feature]
@@ -208,10 +204,6 @@ struct SubscriptionView: View {
     var callback: (() -> Void)?
     var isDiscount = false
     
-    var ctaText: String? {
-        "3 days free, then"
-        
-    }
     
     init(valueProps: [Feature] = [], size: CGSize, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
         self.valueProps = valueProps
@@ -227,99 +219,99 @@ struct SubscriptionView: View {
                 Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
             })
             .onAppear() {
-                //  localizePrice()
+                self.firstSelection = subscriptionStore.currentOfferedYearly
+                self.currentSelection = subscriptionStore.currentOfferedYearly
+                self.secondSelection = subscriptionStore.currentOfferedMonthly
             }
     }
     
     
     private func goPremiumView(size: CGSize) -> some View  {
-       // ScrollView {
+        // ScrollView {
         ZStack {
-           
+            
             GeometryReader { geometry in
-              
+                
                 LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, Color.black]), startPoint: .top, endPoint: .bottom)
-                        .edgesIgnoringSafeArea(.all)
-                    
-                    VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
-                        Spacer()
-                            .frame(height: 24)
-                        VStack(alignment: .center) {
-                            
-                            Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
-                                .clipShape(Circle())
-                                .offset(x: 0, y: 0)
-                                .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
-                            
-                            Text("SpeakLife")
-                                .font(.system(size: 34, weight: .semibold, design: .rounded))
-                                .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
-                            
-                            
-                        }
-                        Spacer()
-                            .frame(height: 24)
-                        VStack {
-                                Text("Join over 40k+ SpeakLifers")
-                                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 26, relativeTo: .title))
-                                    .foregroundStyle(Color.white)
-                            
-                            StarRatingView(rating: 4.8)
-                            
-                        }
-                        Spacer()
-                            .frame(height: 8)
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
+                    Spacer()
+                        .frame(height: 24)
+                    VStack(alignment: .center) {
                         
+                        Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 80, height: 80)
+                            .clipShape(Circle())
+                            .offset(x: 0, y: 0)
+                            .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                         
-                        FeatureView(defaultProps: valueProps)
-                            .foregroundColor(.white)
-                        
-    
-                        VStack {
-                            
-                            
-                            Button {
-                                currentSelection = appState.isOnboarded ? thirdSelection : firstSelection
-                            } label: {
-                                yearlyCTABox()
-                            }
-                            Spacer()
-                                .frame(height: 8)
-                            Button {
-                                currentSelection = secondSelection
-                            } label: {
-                                monthlySelectionBox()
-                            }
-                            
-//                            Button {
-//                                currentSelection = thirdSelection
-//                            } label: {
-//                                lifetimeSelectionBox()
-//                            }
-                            
-                        }
-                        Spacer()
-                        
-                       //  subscriptionStack
-                        
-                        goPremiumStack()
+                        Text("SpeakLife")
+                            .font(.system(size: 34, weight: .semibold, design: .rounded))
+                            .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                         
                         
                     }
+                    Spacer()
+                        .frame(height: 24)
+                    VStack {
+                        Text("Join over 40k+ SpeakLifers")
+                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 26, relativeTo: .title))
+                            .foregroundStyle(Color.white)
+                        
+                        StarRatingView(rating: 4.8)
+                        
+                    }
+                    Spacer()
+                        .frame(height: 8)
+                    
+                    
+                    FeatureView(defaultProps: valueProps)
+                        .foregroundColor(.white)
+                    
+                    
+                    VStack {
+                        
+                        
+                        Button {
+                            currentSelection = firstSelection
+                        } label: {
+                            yearlyCTABox()
+                        }
+                        Spacer()
+                            .frame(height: 8)
+                        Button {
+                            currentSelection = secondSelection
+                        } label: {
+                            monthlySelectionBox()
+                        }
+                        
+                        //                            Button {
+                        //                                currentSelection = thirdSelection
+                        //                            } label: {
+                        //                                lifetimeSelectionBox()
+                        //                            }
+                        
+                    }
+                    Spacer()
+                
+                    
+                    goPremiumStack()
+                    
+                    
                 }
+            }
             .onAppear {
-                currentSelection = appState.isOnboarded ? thirdSelection : firstSelection
+                currentSelection = firstSelection
             }
-                
-                
-                if declarationStore.isPurchasing {
-                    RotatingLoadingImageView()
-                }
+            
+            
+            if declarationStore.isPurchasing {
+                RotatingLoadingImageView()
             }
-          //  }
+        }
         .sheet(isPresented: $chooseDifferentAmount) {
             patronView
         }
@@ -341,7 +333,7 @@ struct SubscriptionView: View {
                         size: reader.size,
                         callBack: {},
                         buyCallBack: { subscription in
-                            makePurchase(iap: subscription)
+                            //makePurchase(iap: subscription)
                         }
                     )
                 }
@@ -370,7 +362,7 @@ struct SubscriptionView: View {
             }
             .padding(.horizontal)
             
-            Text(firstSelection.title)
+            Text(firstSelection?.displayName ?? "")
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 12, relativeTo: .callout))
                 .foregroundColor(.white)
                 .padding(.top, 4)
@@ -385,7 +377,6 @@ struct SubscriptionView: View {
     @ViewBuilder
     var costDescription: some View {
         VStack(spacing: 4) {
-
             Text(currentSelection?.title ?? "" + ".")
             
         }
@@ -422,15 +413,15 @@ struct SubscriptionView: View {
                         .underline()
                         .foregroundColor(Color.blue)
                 }
-//                if appState.isOnboarded {
-//                    Spacer()
-//                        .frame(width: 16)
-//                    Button(action: presentDifferentAmount) {
-//                        Text("Other", comment: "different iap")
-//                            .font(.caption2)
-//                            .foregroundColor(Color.blue)
-//                    }
-//                }
+                //                if appState.isOnboarded {
+                //                    Spacer()
+                //                        .frame(width: 16)
+                //                    Button(action: presentDifferentAmount) {
+                //                        Text("Other", comment: "different iap")
+                //                            .font(.caption2)
+                //                            .foregroundColor(Color.blue)
+                //                    }
+                //                }
             }
         }
         .padding([.leading, .trailing], 20)
@@ -443,9 +434,9 @@ struct SubscriptionView: View {
     func buy() async {
         do {
             guard let currentSelection = currentSelection else { return }
-            if let transaction = try await subscriptionStore.purchaseWithID([currentSelection.rawValue]) {
+            if let transaction = try await subscriptionStore.purchaseWithID([currentSelection.id]) {
                 print(currentSelection, transaction.id, transaction.jsonRepresentation, transaction.productType, "RWRW")
-                Analytics.logEvent(currentSelection.rawValue, parameters: nil)
+                Analytics.logEvent(currentSelection.id, parameters: nil)
                 callback?()
             }
         } catch StoreError.failedVerification {
@@ -470,10 +461,10 @@ struct SubscriptionView: View {
         }
     }
     
-    func buy(_ iap: InAppId.Subscription) async {
+    func buy(_ iap: Product) async {
         do {
-            if let _ = try await subscriptionStore.purchaseWithID([iap.rawValue]) {
-                Analytics.logEvent(iap.rawValue, parameters: nil)
+            if let _ = try await subscriptionStore.purchaseWithID([iap.id]) {
+                Analytics.logEvent(iap.id, parameters: nil)
                 callback?()
             }
         } catch StoreError.failedVerification {
@@ -481,13 +472,13 @@ struct SubscriptionView: View {
             errorTitle = "Your purchase could not be verified by the App Store."
             isShowingError = true
         } catch {
-            print("Failed purchase for \(iap.rawValue): \(error)")
+            print("Failed purchase for \(iap.id): \(error)")
             errorTitle = error.localizedDescription
             isShowingError = true
         }
     }
     
-    private func makePurchase(iap: InAppId.Subscription) {
+    private func makePurchase(iap: Product) {
         impactMed.impactOccurred()
         Task {
             withAnimation {
@@ -501,11 +492,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        var buttonTitle = appState.isOnboarded ?  "SUBSCRIBE" : "TRY FOR FREE"
-        if currentSelection == secondSelection {
-            buttonTitle = "SUBSCRIBE"
-        }
-        return ShimmerButton(colors: [Constants.traditionalGold, .indigo], buttonTitle: buttonTitle , action: makePurchase)
+        return ShimmerButton(colors: [Constants.traditionalGold, .indigo], buttonTitle: currentSelection == firstSelection ? "TRY FOR FREE" : "SUBSCRIBE" , action: makePurchase)
     }
     // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
     private func restore() {
@@ -523,8 +510,8 @@ struct SubscriptionView: View {
         ZStack() {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection ==  (appState.isOnboarded ? thirdSelection : firstSelection) ? Constants.DAMidBlue : .clear))
-                .shadow(color: currentSelection == (appState.isOnboarded ? thirdSelection : firstSelection) ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
+                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == firstSelection ? Constants.DAMidBlue : .clear))
+                .shadow(color: currentSelection == firstSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
                 .frame(height: 60)
             
             HStack {
@@ -545,88 +532,25 @@ struct SubscriptionView: View {
                 .offset(x: -10, y: -32)
             }
             
-            if appState.isOnboarded {
-                HStack {
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("\(thirdSelection.ctaDurationTitle)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                            .bold()
-                        Text("\(thirdSelection.subTitle)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
-                        
-                    }
-                    Spacer()
+            HStack {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(firstSelection?.ctaDurationTitle ?? "")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                        .bold()
+                    Text(firstSelection?.subTitle ?? "")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
                     
                 }
-                .foregroundStyle(.white)
-                .padding([.leading, .trailing])
-        
-            } else if isCheaperPricingCountry {
-                HStack {
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("\(firstSelection.ctaDurationTitle)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                            .bold()
-                        Text(" \(localizedPrice)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
-                            
-                        
-                    }
-                    Spacer()
-                    
-                }
+                Spacer()
+            }
                 .foregroundStyle(.white)
                 .padding([.leading, .trailing])
                 
-            } else {
-                HStack {
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("\(firstSelection.ctaDurationTitle)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                            .bold()
-                        Text("\(firstSelection.subTitle)")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
-                        
-                    }
-                    Spacer()
-//                    Text(firstSelection.subTitle)
-//                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-//                        .bold()
-                    
-                }
-                .foregroundStyle(.white)
-                .padding([.leading, .trailing])
-            }
-            
         }
         
         .padding([.leading, .trailing], 20)
     }
     
-    func lifetimeSelectionBox() -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(Color.gray, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == thirdSelection ? Constants.DAMidBlue : .clear))
-                .shadow(color: currentSelection == thirdSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
-                .frame(height: 50)
-            
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("\(thirdSelection.ctaDurationTitle)")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                        .bold()
-                       
-                }
-                       Spacer()
-                }
-                .foregroundStyle(.white)
-                .padding([.leading, .trailing])
-                
-        }
-        
-        .padding([.leading, .trailing], 20)
-    }
     
     
     func monthlySelectionBox() -> some View {
@@ -639,60 +563,21 @@ struct SubscriptionView: View {
             
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("\(secondSelection.ctaDurationTitle)")
+                    Text(secondSelection?.ctaDurationTitle ?? "")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
                         .bold()
-                    Text("\(secondSelection.subTitle)")
+                    Text(secondSelection?.subTitle ?? "")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
-                       
+                    
                 }
-                       Spacer()
-                }
-                .foregroundStyle(.white)
-                .padding([.leading, .trailing])
-                
+                Spacer()
+            }
+            .foregroundStyle(.white)
+            .padding([.leading, .trailing])
+            
         }
         
         .padding([.leading, .trailing], 20)
-    }
-    
-    func localizePrice() {
-        // Assume you have a function that returns the user's country code
-        let countryCode = getUserCountryCode()
-        regionCode = countryCode
-        
-        switch countryCode {
-        case "GH":
-            isCheaperPricingCountry = true
-            localizedPrice = "$14.99"
-        case "KE":
-            isCheaperPricingCountry = true
-            localizedPrice = "$14.99"
-        case "UG":
-            isCheaperPricingCountry = true
-            localizedPrice = "$14.99"
-        case "TH":
-            isCheaperPricingCountry = true
-            localizedPrice = "฿249.00"
-        case "NG":
-            isCheaperPricingCountry = true
-            localizedPrice = "₦3,900"
-        case "PH":
-            isCheaperPricingCountry = true
-            localizedPrice = "₱499.00"
-        case "ZA":
-            isCheaperPricingCountry = true
-            localizedPrice = "R199.99"
-        default:
-            isCheaperPricingCountry = false
-            localizedPrice = "$19.00"
-        }
-    }
-    
-    func getUserCountryCode() -> String {
-        // Example function to get user’s country code
-        // You could use Locale, or get this information from the user's account settings
-        return Locale.current.region?.identifier ?? "US"
     }
     
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import StoreKit
 
 struct InAppId: Codable {
     
@@ -150,9 +151,9 @@ struct InAppId: Codable {
         }
     }
     
-    static let allInApp: [InAppId.Subscription] = [Subscription.speakLifeLifetime, Subscription.speakLife1YR99, Subscription.speakLife1YR49, Subscription.speakLife1YR39, Subscription.speakLife1YR29, Subscription.speakLife1YR19,Subscription.speakLife1WK5]
+    static let allInApp: [InAppId.Subscription] = [Subscription.speakLifeLifetime, Subscription.speakLife1YR99, Subscription.speakLife1YR49, Subscription.speakLife1YR39, Subscription.speakLife1YR29, Subscription.speakLife1YR19,Subscription.speakLife1MO7, Subscription.speakLife1MO4]
     
-    static let all: [String] = [Subscription.speakLifeLifetime.id, Subscription.speakLife1YR99.id, Subscription.speakLife1YR49.id, Subscription.speakLife1YR39.id, Subscription.speakLife1YR29.id, Subscription.speakLife1YR19.id, Subscription.speakLife1WK5.id]
+    static let all: [String] = [Subscription.speakLifeLifetime.id, Subscription.speakLife1YR99.id, Subscription.speakLife1YR49.id, Subscription.speakLife1YR39.id, Subscription.speakLife1YR29.id, Subscription.speakLife1YR19.id, Subscription.speakLife1MO7.id, Subscription.speakLife1MO4.id]
 }
 
 struct Messages {
