@@ -62,6 +62,11 @@ struct ErrorWrapper: Identifiable {
     let message: String
 }
 
+enum Filter: String {
+    case declarations = "Declarations"
+    case bedtimeStories = "Bedtime Stories"
+}
+
 struct AudioDeclarationView: View {
     @StateObject private var viewModel = AudioDeclarationViewModel()
     @StateObject private var audioViewModel = AudioPlayerViewModel()
@@ -70,53 +75,44 @@ struct AudioDeclarationView: View {
     @State private var audioURL: URL? = nil
     @State private var errorMessage: ErrorWrapper? = nil
     @State private var isPresentingPremiumView = false
+    let filters: [Filter] = [.declarations, .bedtimeStories]
+    @State private var selectedFilter: Filter = .declarations
+    
+     var filteredContent: [AudioDeclaration] {
+        switch selectedFilter {
+        case .declarations:
+            return viewModel.audioDeclarations
+        case .bedtimeStories:
+            return viewModel.bedtimeStories
+        }
+    }
     
     
     var body: some View {
         GeometryReader { proxy in
             NavigationView {
-                List {
-//                        ScrollView(.horizontal, showsIndicators: false) {
-//                            HStack(spacing: 16) {
-                    Section("Declarations") {
-                                ForEach(viewModel.audioDeclarations) { item in
-                                    Button(action: {
-                                        if item.isPremium, !subscriptionStore.isPremium {
-                                            isPresentingPremiumView = true
-                                        } else {
-                                            viewModel.fetchAudio(for: item) { result in
-                                                switch result {
-                                                case .success(let url):
-                                                    audioURL = url
-                                                    selectedItem = item
-                                                    viewModel.downloadProgress[item.id] = 0.0
-                                                case .failure(let error):
-                                                    errorMessage = ErrorWrapper(message: "Failed to download audio: \(error.localizedDescription)")
-                                                    selectedItem = nil
-                                                    viewModel.downloadProgress[item.id] = 0.0
-                                                }
-                                            }
-                                            
-                                        }
-                                    }) {
-                                        VStack {
-                                            UpNextCell(item: item)
-                                                .frame(width: proxy.size.width * 0.8, height: proxy.size.height * 0.26)
-                        
-                                            if let progress = viewModel.downloadProgress[item.id], progress > 0 {
-                                                ProgressView(value: progress)
-                                                    .progressViewStyle(LinearProgressViewStyle())
-                                                    .padding(.top, 8)
-                                            }
-                                        }
-                                        
-                                    }
+                VStack {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 15) {
+                            ForEach(filters, id: \.self) { filter in
+                                Button(action: {
+                                    selectedFilter = filter
+                                }) {
+                                    Text(filter.rawValue)
+                                        .font(.headline)
+                                        .padding(.horizontal, 15)
+                                        .padding(.vertical, 10)
+                                        .background(selectedFilter == filter ? Constants.DAMidBlue : Color.gray.opacity(0.2))
+                                        .foregroundColor(selectedFilter == filter ? .white : .black)
+                                        .cornerRadius(20)
                                 }
                             }
-                       // }
-                        
-                    Section("Bedtime Stories") {
-                        ForEach(viewModel.bedtimeStories) { item in
+                        }
+                        .padding(.horizontal)
+                    }
+                    // .padding(.top)
+                    List {
+                        ForEach(filteredContent) { item in
                             Button(action: {
                                 if item.isPremium, !subscriptionStore.isPremium {
                                     isPresentingPremiumView = true
@@ -138,6 +134,7 @@ struct AudioDeclarationView: View {
                             }) {
                                 VStack {
                                     UpNextCell(item: item)
+                                        .frame(width: proxy.size.width * 0.8, height: proxy.size.height * 0.26)
                                     
                                     if let progress = viewModel.downloadProgress[item.id], progress > 0 {
                                         ProgressView(value: progress)
@@ -149,6 +146,7 @@ struct AudioDeclarationView: View {
                             }
                         }
                     }
+                }
                     
                 }
                 .listStyle(InsetGroupedListStyle())
@@ -193,5 +191,5 @@ struct AudioDeclarationView: View {
         }
         
     }
-}
+//}
 
