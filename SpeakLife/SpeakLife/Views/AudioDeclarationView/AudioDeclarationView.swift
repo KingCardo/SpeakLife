@@ -99,22 +99,22 @@ struct AudioDeclarationView: View {
                                     selectedFilter = filter
                                 }) {
                                     Text(filter.rawValue)
-                                        .font(.headline)
+                                        .font(.caption)
                                         .padding(.horizontal, 15)
                                         .padding(.vertical, 10)
                                         .background(selectedFilter == filter ? Constants.DAMidBlue : Color.gray.opacity(0.2))
-                                        .foregroundColor(selectedFilter == filter ? .white : .black)
+                                        .foregroundColor(.white)
                                         .cornerRadius(20)
                                 }
                             }
                         }
                         .padding(.horizontal)
                     }
-                    // .padding(.top)
+                     .padding(.top)
                     List {
                         ForEach(filteredContent) { item in
                             Button(action: {
-                                if item.isPremium, !subscriptionStore.isPremium {
+                                if item.isPremium, !subscriptionStore.isPremiumAllAccess {
                                     isPresentingPremiumView = true
                                 } else {
                                     viewModel.fetchAudio(for: item) { result in
@@ -150,7 +150,7 @@ struct AudioDeclarationView: View {
                     
                 }
                 .listStyle(InsetGroupedListStyle())
-                .navigationTitle("Audio")
+                .navigationTitle("Meditation")
                 .sheet(isPresented: $isPresentingPremiumView) {
                     self.isPresentingPremiumView = false
                 } content: {

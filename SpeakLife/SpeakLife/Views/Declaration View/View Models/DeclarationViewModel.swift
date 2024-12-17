@@ -167,19 +167,20 @@ final class DeclarationViewModel: ObservableObject {
     }
     
     func subtitle(_ declaration: Declaration) -> String {
-        if selectedCategory.isBibleBook {
-            if showVerse {
-                return declaration.book == "Jesus" ? "Jesus" : ""
-            } else {
-                return declaration.book ?? ""
-            }
-        } else {
-            if showVerse {
-                return declaration.book == "Jesus" ? "Jesus" : ""
-            } else {
-                return declaration.book ?? ""
-            }
-        }
+        return declaration.book ?? ""
+//        if selectedCategory.isBibleBook {
+//            if showVerse {
+//                return declaration.book ?? ""
+//            } else {
+//                return ""
+//            }
+//        } else {
+//            if showVerse {
+//                return declaration.book == "Jesus" ? "Jesus" : declaration.book
+//            } else {
+//                return declaration.book ?? ""
+//            }
+//        }
     }
     
     

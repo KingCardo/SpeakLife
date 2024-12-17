@@ -17,8 +17,8 @@ import SwiftUI
 class OfferViewModel: ObservableObject {
     @Published var originalPrice: String = "$49.99/year"
     @Published var monthlyPrice: String = "$4.16/month"
-    @Published var discountedPrice: String = "$29.99/year"
-    @Published var discountedMonthlyPrice: String = "$2.49/month"
+    @Published var discountedPrice: String = "$19.99/year"
+    @Published var discountedMonthlyPrice: String = "$1.67/month"
 }
 
 struct OfferPageView: View {
@@ -195,6 +195,7 @@ struct SubscriptionView: View {
     @State var currentSelection: Product?
     @State var firstSelection: Product?
     @State var secondSelection: Product?
+    @State var thirdSelection: Product?
 
     @State var chooseDifferentAmount = false
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
@@ -219,9 +220,10 @@ struct SubscriptionView: View {
                 Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
             })
             .onAppear() {
-                self.firstSelection = subscriptionStore.currentOfferedYearly
-                self.currentSelection = subscriptionStore.currentOfferedYearly
-                self.secondSelection = subscriptionStore.currentOfferedMonthly
+                self.firstSelection = subscriptionStore.currentOfferedPremium
+                self.currentSelection = subscriptionStore.currentOfferedPremium
+                self.secondSelection = subscriptionStore.currentOfferedYearly
+               // self.thirdSelection = subscriptionStore.currentOfferedMonthly
             }
     }
     
@@ -268,25 +270,28 @@ struct SubscriptionView: View {
                         .frame(height: 8)
                     
                     
-                    FeatureView(defaultProps: valueProps)
-                        .foregroundColor(.white)
-                    
+                  
+                  
                     
                     VStack {
-                        
-                        
                         Button {
                             currentSelection = firstSelection
                         } label: {
-                            yearlyCTABox()
+                            firstSelectionBox()
                         }
                         Spacer()
                             .frame(height: 8)
                         Button {
                             currentSelection = secondSelection
                         } label: {
-                            monthlySelectionBox()
+                            secondSelectionBox()
                         }
+                        
+//                        Button {
+//                            currentSelection = thirdSelection
+//                        } label: {
+//                            thirdSelectionBox()
+//                        }
                         
                         //                            Button {
                         //                                currentSelection = thirdSelection
@@ -295,6 +300,13 @@ struct SubscriptionView: View {
                         //                            }
                         
                     }
+                    
+                    FeatureView(currentSelection: $currentSelection)
+                        .foregroundColor(.white)
+                    
+                    
+                    
+                    
                     Spacer()
                 
                     
@@ -333,7 +345,7 @@ struct SubscriptionView: View {
                         size: reader.size,
                         callBack: {},
                         buyCallBack: { subscription in
-                            //makePurchase(iap: subscription)
+                            makePurchase(iap: subscription)
                         }
                     )
                 }
@@ -413,15 +425,15 @@ struct SubscriptionView: View {
                         .underline()
                         .foregroundColor(Color.blue)
                 }
-                //                if appState.isOnboarded {
-                //                    Spacer()
-                //                        .frame(width: 16)
-                //                    Button(action: presentDifferentAmount) {
-                //                        Text("Other", comment: "different iap")
-                //                            .font(.caption2)
-                //                            .foregroundColor(Color.blue)
-                //                    }
-                //                }
+//                if appState.isOnboarded {
+//                    Spacer()
+//                        .frame(width: 16)
+//                    Button(action: presentDifferentAmount) {
+//                        Text("Pick your price", comment: "different iap")
+//                            .font(.caption2)
+//                            .foregroundColor(Color.blue)
+//                    }
+//                }
             }
         }
         .padding([.leading, .trailing], 20)
@@ -491,8 +503,38 @@ struct SubscriptionView: View {
         }
     }
     
+    func buy(_ iap: InAppId.Subscription) async {
+        do {
+            if let _ = try await subscriptionStore.purchaseWithID([iap.rawValue]) {
+                Analytics.logEvent(iap.rawValue, parameters: nil)
+                callback?()
+            }
+        } catch StoreError.failedVerification {
+            print("error RWRW")
+            errorTitle = "Your purchase could not be verified by the App Store."
+            isShowingError = true
+        } catch {
+            print("Failed purchase for \(iap.rawValue): \(error)")
+            errorTitle = error.localizedDescription
+            isShowingError = true
+        }
+    }
+    
+    private func makePurchase(iap: InAppId.Subscription) {
+        impactMed.impactOccurred()
+        Task {
+            withAnimation {
+                declarationStore.isPurchasing = true
+            }
+            await buy(iap)
+            withAnimation {
+                declarationStore.isPurchasing = false
+            }
+        }
+    }
+    
     private func continueButton(gradient: LinearGradient) -> some View {
-        return ShimmerButton(colors: [Constants.traditionalGold, .indigo], buttonTitle: currentSelection == firstSelection ? "TRY FOR FREE" : "SUBSCRIBE" , action: makePurchase)
+        return ShimmerButton(colors: [Constants.traditionalGold, .indigo], buttonTitle: currentSelection?.ctaButtonTitle ?? "Subscribe", action: makePurchase)
     }
     // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
     private func restore() {
@@ -506,7 +548,7 @@ struct SubscriptionView: View {
     }
     
     
-    func yearlyCTABox() -> some View {
+    func firstSelectionBox() -> some View {
         ZStack() {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
@@ -553,7 +595,7 @@ struct SubscriptionView: View {
     
     
     
-    func monthlySelectionBox() -> some View {
+    func secondSelectionBox() -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
@@ -568,6 +610,33 @@ struct SubscriptionView: View {
                         .bold()
                     Text(secondSelection?.subTitle ?? "")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
+                    
+                }
+                Spacer()
+            }
+            .foregroundStyle(.white)
+            .padding([.leading, .trailing])
+            
+        }
+        
+        .padding([.leading, .trailing], 20)
+    }
+    
+    func thirdSelectionBox() -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(Color.gray, lineWidth: 1)
+                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == thirdSelection ? Constants.DAMidBlue : .clear))
+                .shadow(color: currentSelection == thirdSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
+                .frame(height: 50)
+            
+            HStack {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(secondSelection?.ctaDurationTitle ?? "")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                        .bold()
+                 //   Text(secondSelection?.subTitle ?? "")
+                  //      .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
                     
                 }
                 Spacer()

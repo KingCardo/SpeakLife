@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct Feature: Codable, Identifiable {
     var id = UUID()
@@ -58,13 +59,19 @@ struct FeatureRow: View {
 // Main subscription view
 struct FeatureView: View {
 
-   // @AppStorageCodable(key: "valueProps", defaultValue: [])
-   // var userValueProps: [Feature]
-    var valueProps: [Feature] = []
-    
-    init(defaultProps: [Feature]) {
-        valueProps = defaultProps
+    @Binding var currentSelection: Product?
+    //var valueProps: [Feature] = []
+    var valueProps: [Feature] {
+        if currentSelection?.id == currentPremiumID {
+            return allPremiumFeatures
+        }
+        return allFeatures
     }
+    
+    init(currentSelection: Binding<Product?>) {//, defaultProps: [Feature]) {
+           self._currentSelection = currentSelection // Use `_` to access the property wrapper
+          // self.valueProps = defaultProps
+       }
     
 //    init(_ userValueProps: [Feature]) {
 //        if self.userValueProps.count > 1 {
@@ -85,6 +92,21 @@ struct FeatureView: View {
 //        }
 //    }
     
+    let allPremiumFeatures = [
+       // Feature(subtitle: "Unlock everything"),
+//        Feature(subtitle: ""),
+//        Feature(subtitle: "Start your day spiritually equipped with affirmations rooted in God’s Word—your shield against negativity."),
+//        Feature(subtitle: "Speak peace into your life with daily affirmations that calm your mind and align your heart with God’s promises."),
+//        Feature(subtitle: "Strengthen your faith daily with affirmations that remind you of God’s unchanging love and power."),
+//        Feature(subtitle: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future."),
+        Feature(subtitle: "10,000+ affirmations for victory and transformation"),
+        Feature(subtitle: "Audio declarations to activate your faith"),
+        Feature(subtitle: "Bible Bedtime Stories for peaceful rest"),
+        Feature(subtitle: "Daily devotional to start each day"),
+        Feature(subtitle: "Unlimited scripture reminders"),
+       // Feature(subtitle: "30+ customizable themes")
+        ]
+    
     let allFeatures = [
        // Feature(subtitle: "Unlock everything"),
 //        Feature(subtitle: ""),
@@ -93,8 +115,6 @@ struct FeatureView: View {
 //        Feature(subtitle: "Strengthen your faith daily with affirmations that remind you of God’s unchanging love and power."),
 //        Feature(subtitle: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future."),
         Feature(subtitle: "10,000+ library of God's promises and affirmations"),
-        Feature(subtitle: "Audio declarations and prayers"),
-        Feature(subtitle: "Bible Bedtime Stories"),
         Feature(subtitle: "New devotional everyday"),
         Feature(subtitle: "Unlimited scripture reminders"),
         Feature(subtitle: "30+ customizable themes")
@@ -110,12 +130,12 @@ struct FeatureView: View {
 
     var body: some View {
         VStack {
-            ForEach(allFeatures) { feature in
+            ForEach(valueProps) { feature in
                 FeatureRow(feature: feature)
                 Spacer().frame(height: 15)
+                
             }
-            
         }
-        .padding()
-    }
+            .padding()
+        }
 }

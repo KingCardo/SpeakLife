@@ -23,10 +23,13 @@ public enum StoreError: Error {
     case failedVerification
 }
 
-let currentYearlyID = "SpeakLife1YR49"
+let currentYearlyID = "SpeakLife1YR29"
+let currentMonthlyID = "SpeakLife1MO7"
+let currentPremiumID = "SpeakLife1YR49"
 final class SubscriptionStore: ObservableObject {
 
     @Published var isPremium: Bool = false
+    @Published var isPremiumAllAccess: Bool = false
     @Published private(set) var subscriptions: [Product] = []
     @Published private(set) var nonConsumables: [Product] = [] // New list for non-consumables
     @Published private(set) var purchasedSubscriptions: [Product] = []
@@ -34,6 +37,7 @@ final class SubscriptionStore: ObservableObject {
     @Published private(set) var subscriptionGroupStatus: RenewalState?
     @Published var currentOfferedYearly: Product? = nil
     @Published var currentOfferedMonthly: Product? = nil
+    @Published var currentOfferedPremium: Product? = nil
    
     
     var updateListenerTask: Task<Void, Error>? = nil
@@ -55,11 +59,12 @@ final class SubscriptionStore: ObservableObject {
             await updateCustomerProductStatus()
         }
         
-        cancellable = Publishers.CombineLatest($subscriptionGroupStatus, $purchasedNonConsumables)
-            .sink { [weak self] subscriptionStatus, nonConsumables in
+        cancellable = Publishers.CombineLatest3($subscriptionGroupStatus, $purchasedNonConsumables, $purchasedSubscriptions)
+            .sink { [weak self] subscriptionStatus, nonConsumables, purchasedSubscriptions in
                 guard let self = self else { return }
                 // Update isPremium based on subscription state and purchased non-consumables
                 self.isPremium = (subscriptionStatus == .subscribed) || !nonConsumables.isEmpty
+                self.isPremiumAllAccess = (purchasedSubscriptions.first(where: { $0.id ==  currentPremiumID }) != nil) || !nonConsumables.isEmpty
             }
         
     }
@@ -102,12 +107,17 @@ final class SubscriptionStore: ObservableObject {
                 switch product.type {
                 case .autoRenewable:
                     newSubscriptions.append(product)
-                    if product.id == "SpeakLife1YR49" {
+                    if product.id == currentYearlyID {
                         currentOfferedYearly = product
                         print("Yearly set RWRW")
                     }
-                    if product.id == "SpeakLife1MO7" {
+                    if product.id == currentMonthlyID {
                         currentOfferedMonthly = product
+                        print("Monthly set RWRW")
+                    }
+                    
+                    if product.id == currentPremiumID {
+                        currentOfferedPremium = product
                         print("Monthly set RWRW")
                     }
                 case .nonConsumable:
@@ -249,23 +259,41 @@ extension Product {
     
     var title: String {
         if id == currentYearlyID {
-           return "Full access, 7 days free then \(displayPrice)/year."
+            return "7 days free then \(displayPrice)/year."
+        } else if id == currentPremiumID {
+            return "Full access, 7 days free then \(displayPrice)/year."
         } else {
-           return "\(displayPrice)/month. Cancel anytime."
+            return "\(displayPrice)/month. Cancel anytime."
         }
     }
     
     var ctaDurationTitle: String {
         if id == currentYearlyID {
-           return "Annual"
+            return "Pro"
+        } else if id == currentPremiumID {
+                return "Premium"
         } else {
            return "Monthly"
         }
     }
     
+    var ctaButtonTitle: String {
+        if id == currentYearlyID {
+            return "Start 1 week Free Trial"
+        } else if id == currentPremiumID {
+                return "Start 1 week Free Trial"
+        } else {
+           return "Subscribe"
+        }
+    }
+    
+    
+    
     var subTitle: String {
         if id == currentYearlyID {
-           return "7 days free then \(displayPrice)"
+           return "7 days free then \(displayPrice)/yr."
+        } else if id == currentPremiumID {
+                return "7 days free then \(displayPrice)/yr."
         } else {
            return "billed monthly at \(displayPrice)"
         }

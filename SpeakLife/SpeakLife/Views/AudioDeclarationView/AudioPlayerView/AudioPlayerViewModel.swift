@@ -13,7 +13,7 @@ class AudioPlayerViewModel: ObservableObject {
     @Published var currentTime: Double = 0
     @Published var duration: Double = 0
     @Published var playbackSpeed: Float = 1.0
-    //@Published var downloadProgress: [UUID: Double] = [:]
+    @Published var onRepeat = false
     
     private var player: AVPlayer?
     private var timeObserver: Any?
@@ -58,6 +58,24 @@ class AudioPlayerViewModel: ObservableObject {
         guard let player = player else { return }
         let targetTime = CMTime(seconds: time, preferredTimescale: 1)
         player.seek(to: targetTime)
+    }
+    
+    func repeatTrack() {
+        guard let player = player else { return }
+        onRepeat.toggle()
+        
+        // Observe when the audio finishes playing
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { [weak self] _ in
+            guard let self = self else { return }
+            
+            // Seek to the beginning of the track
+            self.player?.seek(to: CMTime.zero)
+            
+            // Play the track again
+            if self.isPlaying {
+                self.player?.play()
+            }
+        }
     }
     
     func changePlaybackSpeed(to speed: Float) {

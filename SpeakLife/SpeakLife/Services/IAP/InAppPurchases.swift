@@ -23,9 +23,6 @@ struct InAppId: Codable {
         case speakLife1YR49 = "SpeakLife1YR49"
         case speakLife1YR39 = "SpeakLife1YR39"
         case speakLife1YR29 = "SpeakLife1YR29"
-        case speakLife1YR19 = "SpeakLife1YR19"
-        case speakLife1YR15 = "SpeakLife1YR15"
-        case speakLife1YR9 = "SpeakLife1YR9"
         case speakLife1MO9 = "SpeakLife1MO9"
         case speakLife1MO7 = "SpeakLife1MO7"
         case speakLife1MO4 = "SpeakLife1MO4"
@@ -39,9 +36,6 @@ struct InAppId: Codable {
             case .speakLife1YR49: return "$49.99"
             case .speakLife1YR39: return "$39.99"
             case .speakLife1YR29: return "$29.99"
-            case .speakLife1YR19: return "$19.99"
-            case .speakLife1YR15: return "$14.99"
-            case .speakLife1YR9: return "$9.99"
             case .speakLife1MO9: return "$9.99"
             case .speakLife1MO7: return "$6.99"
             case .speakLife1MO4: return "$4.99"
@@ -56,13 +50,9 @@ struct InAppId: Codable {
             case .speakLife1YR49: return "$49.99/year 🔥"
             case .speakLife1YR39: return "$39.99/year 🔥"
             case .speakLife1YR29: return "$29.99/year 🥳"
-            case .speakLife1YR19: return "$19.99/year 🥳"
-            case .speakLife1YR15: return "$14.99/year 🥳"
             case .speakLife1MO9: return "$9.99/month 💜"
-                
             case .speakLife1MO7: return "$6.99/month 💜"
             case .speakLife1MO4: return "$4.99/month 💜"
-                
             case .speakLife1MO2: return "$2.99/month 💜"
             case .speakLife1WK5: return "$4.99/week 💜"
             default: return ""
@@ -76,9 +66,6 @@ struct InAppId: Codable {
             case .speakLife1YR49: return "7 day free trial, then $49.99/year."
             case .speakLife1YR39: return "7 day free trial, then $39.99/year."
             case .speakLife1YR29: return "3 days free then $29.99/year."
-            case .speakLife1YR19: return "$19.99/year. Cancel anytime."
-            case .speakLife1YR15: return "$14.99/year"
-            case .speakLife1YR9: return "7 days free, then $9.99/year. Cancel anytime."
             case .speakLife1MO9: return "$9.99/month. Cancel anytime."
             case .speakLife1MO7: return "7 days free, then $6.99/month. Cancel anytime."
             case .speakLife1MO4: return "$4.99/month. Billed today. Cancel anytime."
@@ -93,13 +80,10 @@ struct InAppId: Codable {
             case .speakLife1YR49: return "Yearly"
             case .speakLife1YR39: return "Yearly"
             case .speakLife1YR29: return "Yearly"
-            case .speakLife1YR19: return "Yearly $19.99"
             case .speakLife1MO2: return "Monthly"
             case .speakLife1MO4: return "Monthly"
             case .speakLife1MO7: return "Monthly $6.99"
-            case .speakLife1YR9: return "Yearly"
             case .speakLife1MO9: return "Monthly"
-            case .speakLife1YR15: return "Yearly"
             case .speakLife1WK5: return "$4.99 weekly"
             default: return ""
             }
@@ -110,7 +94,6 @@ struct InAppId: Codable {
             case .speakLife1YR49: return "$79.99"
             case .speakLife1YR39: return "$79.99"
             case .speakLife1YR29: return "$59.99"
-            case .speakLife1YR19: return "$59.99"
             default: return ""
             }
         }
@@ -121,9 +104,6 @@ struct InAppId: Codable {
             case .speakLife1YR49: return "7 days free then $49.99 a year."
             case .speakLife1YR39: return "7 days free then $39.99 a year."
             case .speakLife1YR29: return "3 days free then $29.99 a year."
-            case .speakLife1YR19: return "$1.66/mo. - Save 67%"
-            case .speakLife1YR15: return "1.25/mo. - Save 60%"
-            case .speakLife1YR9: return "$0.83 cents/month"
             case .speakLife1MO9: return "billed monthly at $9.99"
             case .speakLife1MO7: return "$6.99/mo"
             case .speakLife1MO4: return "$4.99/mo"
@@ -138,9 +118,6 @@ struct InAppId: Codable {
             case .speakLife1YR49: return "$49.99"
             case .speakLife1YR39: return "$39.99"
             case .speakLife1YR29: return "Billed Annually"
-            case .speakLife1YR19: return "$19.99"
-            case .speakLife1YR15: return "$14.99"
-            case .speakLife1YR9: return "$9.99"
             case .speakLife1MO9: return "$9.99"
             case .speakLife1MO7: return "$6.99"
             case .speakLife1MO4: return "$4.99"
@@ -151,9 +128,9 @@ struct InAppId: Codable {
         }
     }
     
-    static let allInApp: [InAppId.Subscription] = [Subscription.speakLifeLifetime, Subscription.speakLife1YR99, Subscription.speakLife1YR49, Subscription.speakLife1YR39, Subscription.speakLife1YR29, Subscription.speakLife1YR19,Subscription.speakLife1MO7, Subscription.speakLife1MO4]
+    static let allInApp: [InAppId.Subscription] = [Subscription.speakLife1YR99, Subscription.speakLife1YR49, Subscription.speakLife1YR39, Subscription.speakLife1YR29, Subscription.speakLife1MO7, Subscription.speakLife1MO4]
     
-    static let all: [String] = [Subscription.speakLifeLifetime.id, Subscription.speakLife1YR99.id, Subscription.speakLife1YR49.id, Subscription.speakLife1YR39.id, Subscription.speakLife1YR29.id, Subscription.speakLife1YR19.id, Subscription.speakLife1MO7.id, Subscription.speakLife1MO4.id]
+    static let all: [String] = [Subscription.speakLifeLifetime.id, Subscription.speakLife1YR99.id, Subscription.speakLife1YR49.id, Subscription.speakLife1YR39.id, Subscription.speakLife1YR29.id, Subscription.speakLife1MO7.id, Subscription.speakLife1MO4.id]
 }
 
 struct Messages {

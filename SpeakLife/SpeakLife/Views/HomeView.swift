@@ -107,11 +107,11 @@ struct HomeView: View {
             }
             .hideTabBar(if: appState.showScreenshotLabel)
             .accentColor(Constants.DAMidBlue)
-            .sheet(isPresented: $showGiftView, content: {
-                OfferPageView() {
-                    showGiftView = false
-                }
-            })
+//            .sheet(isPresented: $showGiftView, content: {
+//                OfferPageView() {
+//                    showGiftView = false
+//                }
+//            })
             .onAppear {
                 UIScrollView.appearance().isScrollEnabled = true
 //                if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {

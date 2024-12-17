@@ -67,14 +67,16 @@ struct AudioPlayerView: View {
                             .padding(.horizontal)
                             // Playback buttons
                             HStack(spacing: 50) {
+                                
                                 Button(action: {
                                     let newTime = max(viewModel.currentTime - 15, 0)
                                     viewModel.seek(to: newTime)
                                 }) {
                                     Image(systemName: "gobackward.15")
                                         .font(.title)
-                                        .frame(width: 60, height: 60)
-                                        .background(Circle().fill(Color(.systemGray6)))
+                                        .foregroundColor(.white)
+                                        .frame(width: 40, height: 40)
+                                       // .background(Circle().fill(Color(.systemGray6)))
                                         .shadow(radius: 5)
                                 }
                                 
@@ -82,9 +84,10 @@ struct AudioPlayerView: View {
                                     viewModel.togglePlayPause()
                                 }) {
                                     Image(systemName: viewModel.isPlaying ? "pause.circle.fill" : "play.circle.fill")
-                                        .font(.system(size: 70))
-                                        .frame(width: 80, height: 80)
-                                        .background(Circle().fill(Color(.systemGray6)))
+                                        .font(.system(size: 50))
+                                        .foregroundColor(.white)
+                                        .frame(width: 60, height: 60)
+                                      //  .background(Circle().fill(Color(.systemGray6)))
                                         .shadow(radius: 5)
                                 }
                                 
@@ -94,12 +97,24 @@ struct AudioPlayerView: View {
                                 }) {
                                     Image(systemName: "goforward.30")
                                         .font(.title)
-                                        .frame(width: 60, height: 60)
-                                        .background(Circle().fill(Color(.systemGray6)))
+                                        .foregroundColor(.white)
+                                        .frame(width: 40, height: 40)
+                                       // .background(Circle().fill(Color(.systemGray6)))
                                         .shadow(radius: 5)
                                 }
                             }
                             .padding(.top)
+                        }
+                        
+                        Button(action: {
+                            viewModel.repeatTrack()
+                        }) {
+                            Image(systemName: "repeat")
+                                .font(.title)
+                                .foregroundColor(viewModel.onRepeat ? Constants.DAMidBlue : .white)
+                                .frame(width: 40, height: 40)
+                               // .background(Circle().fill(Color(.systemGray6)))
+                                .shadow(radius: 5)
                         }
                         
                         // Playback speed control

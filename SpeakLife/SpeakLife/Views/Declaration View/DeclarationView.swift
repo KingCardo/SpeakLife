@@ -201,11 +201,11 @@ struct DeclarationView: View {
                 Button("No thanks") {
                 }
             }
-            .sheet(isPresented: $viewModel.showDiscountView) {
-                    OfferPageView() {
-                        viewModel.showDiscountView.toggle()
-                }
-            }
+//            .sheet(isPresented: $viewModel.showDiscountView) {
+//                    OfferPageView() {
+//                        viewModel.showDiscountView.toggle()
+//                }
+//            }
             .onDisappear {
                 timerViewModel.saveRemainingTime()
             }

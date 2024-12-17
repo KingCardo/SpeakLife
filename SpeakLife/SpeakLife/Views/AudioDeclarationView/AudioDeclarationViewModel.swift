@@ -158,6 +158,22 @@ let bedTimeFiles: [AudioDeclaration] = [
            imageUrl: "babel",
            isPremium: true
        ),
+    AudioDeclaration(
+           id: "abraham.mp3",
+           title: "Abraham’s Covenant",
+           subtitle: "A Story of Trust in God’s Promises",
+           duration: "8m",
+           imageUrl: "abraham",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "sodom.mp3",
+           title: "Sodom and Gomorrah",
+           subtitle: "A Story of Justice, Mercy, and God’s Sovereignty",
+           duration: "10m",
+           imageUrl: "sodom",
+           isPremium: true
+       ),
     ]
 
 final class AudioDeclarationViewModel: ObservableObject {
