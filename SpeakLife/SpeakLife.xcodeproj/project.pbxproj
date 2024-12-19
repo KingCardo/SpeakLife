@@ -35,9 +35,6 @@
 		4582A9582CE690EF0077F555 /* AudioDeclarationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582A9572CE690EF0077F555 /* AudioDeclarationViewModel.swift */; };
 		4582A95A2CE691200077F555 /* AudioDeclarationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582A9592CE691200077F555 /* AudioDeclarationService.swift */; };
 		4583A4C52B0080440069C27D /* declarationsv2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4583A4C42B0080440069C27D /* declarationsv2.json */; };
-		458510CF2B12B74E00230EE5 /* PodcastsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510CE2B12B74E00230EE5 /* PodcastsListView.swift */; };
-		458510D12B12B77A00230EE5 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D02B12B77A00230EE5 /* Podcast.swift */; };
-		458510D32B12B7A200230EE5 /* PodcastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D22B12B7A200230EE5 /* PodcastService.swift */; };
 		458510D52B13C77000230EE5 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D42B13C77000230EE5 /* WebView.swift */; };
 		458510D72B15935100230EE5 /* HideTabModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D62B15935100230EE5 /* HideTabModifier.swift */; };
 		458510D92B159B0D00230EE5 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458510D82B159B0D00230EE5 /* LandingView.swift */; };
@@ -219,9 +216,6 @@
 		4582A9572CE690EF0077F555 /* AudioDeclarationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDeclarationViewModel.swift; sourceTree = "<group>"; };
 		4582A9592CE691200077F555 /* AudioDeclarationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDeclarationService.swift; sourceTree = "<group>"; };
 		4583A4C42B0080440069C27D /* declarationsv2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv2.json; sourceTree = "<group>"; };
-		458510CE2B12B74E00230EE5 /* PodcastsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsListView.swift; sourceTree = "<group>"; };
-		458510D02B12B77A00230EE5 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
-		458510D22B12B7A200230EE5 /* PodcastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastService.swift; sourceTree = "<group>"; };
 		458510D42B13C77000230EE5 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		458510D62B15935100230EE5 /* HideTabModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideTabModifier.swift; sourceTree = "<group>"; };
 		458510D82B159B0D00230EE5 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
@@ -410,16 +404,6 @@
 			path = AudioDeclarationView;
 			sourceTree = "<group>";
 		};
-		458510CD2B12B73000230EE5 /* Podcast */ = {
-			isa = PBXGroup;
-			children = (
-				458510CE2B12B74E00230EE5 /* PodcastsListView.swift */,
-				458510D02B12B77A00230EE5 /* Podcast.swift */,
-				458510D22B12B7A200230EE5 /* PodcastService.swift */,
-			);
-			path = Podcast;
-			sourceTree = "<group>";
-		};
 		458510DA2B15C36500230EE5 /* BibleStudy */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,7 +560,6 @@
 				7AA8709728DACCB700134ADB /* Declaration View */,
 				7AF18C942A0CC518005A6E31 /* Devotionals */,
 				7AA870A328DACCB700134ADB /* ProfileView */,
-				458510CD2B12B73000230EE5 /* Podcast */,
 				458510DA2B15C36500230EE5 /* BibleStudy */,
 				456885252B390FF4007B1EBB /* WarriorView.swift */,
 				45BCBA9B2C372BB7001F28C4 /* TipView.swift */,
@@ -1113,7 +1096,6 @@
 				458510D52B13C77000230EE5 /* WebView.swift in Sources */,
 				7AA8709628DACCA800134ADB /* String+Extension.swift in Sources */,
 				458510DE2B16B29400230EE5 /* BibleStudyViewModel.swift in Sources */,
-				458510D32B12B7A200230EE5 /* PodcastService.swift in Sources */,
 				7AF18C8F2A0CBD03005A6E31 /* Devotional.swift in Sources */,
 				7AA870C228DACCB700134ADB /* IntentsBarView.swift in Sources */,
 				7AA870E428DACD1A00134ADB /* AppState.swift in Sources */,
@@ -1157,7 +1139,6 @@
 				7AA870C428DACCB700134ADB /* DeclarationViewModel.swift in Sources */,
 				45BCBA9C2C372BB7001F28C4 /* TipView.swift in Sources */,
 				7AA870CF28DACCB700134ADB /* MailView.swift in Sources */,
-				458510D12B12B77A00230EE5 /* Podcast.swift in Sources */,
 				7AF18C7D29FD1A67005A6E31 /* AdBanner.swift in Sources */,
 				453172B42B2D274800388AD4 /* BenefitScene.swift in Sources */,
 				457DC17E2CEEA92700C666D5 /* AudioPlayerView.swift in Sources */,
@@ -1168,7 +1149,6 @@
 				7ABA50C729E4D996002699F1 /* PrayerViewModel.swift in Sources */,
 				7AA870C828DACCB700134ADB /* FontChooserView.swift in Sources */,
 				7AA8709028DACCA700134ADB /* SelectionFeedback.swift in Sources */,
-				458510CF2B12B74E00230EE5 /* PodcastsListView.swift in Sources */,
 				7AA870CC28DACCB700134ADB /* SettingsRow.swift in Sources */,
 				458510E02B16B2B000230EE5 /* BibleStudyService.swift in Sources */,
 				7ABA50C929E4DE60002699F1 /* PrayerDetailView.swift in Sources */,

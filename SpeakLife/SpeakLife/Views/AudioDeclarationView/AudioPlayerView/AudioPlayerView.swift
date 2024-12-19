@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AudioPlayerView: View {
     @ObservedObject var viewModel: AudioPlayerViewModel
+    @EnvironmentObject var timerViewModel: TimerViewModel
     let audioTitle: String
     let audioSubtitle: String
     let imageUrl: String
@@ -44,16 +45,23 @@ struct AudioPlayerView: View {
                     // Playback controls
                         VStack(spacing: 16) {
                             // Slider for playback progress
-                            Slider(
-                                value: $viewModel.currentTime,
-                                in: 0...viewModel.duration,
-                                onEditingChanged: { isEditing in
-                                    if !isEditing {
-                                        viewModel.seek(to: viewModel.currentTime)
+                            if viewModel.duration > 0 {
+                                Slider(
+                                    value: $viewModel.currentTime,
+                                    in: 0...viewModel.duration,
+                                    onEditingChanged: { isEditing in
+                                        if !isEditing {
+                                            viewModel.seek(to: viewModel.currentTime)
+                                        }
                                     }
-                                }
-                            )
-                           
+                                )
+                            } else {
+                                Text("Loading...")
+                                    .foregroundColor(.white)
+                                    .font(.subheadline)
+                            }
+                
+                        
                             
                             // Time indicators
                             HStack {
@@ -138,10 +146,8 @@ struct AudioPlayerView: View {
                     //   Spacer()
                 }
             .onAppear {
-                viewModel.changePlaybackSpeed(to: 1.0) // Reset speed to default
-            }
-            .onDisappear {
-                viewModel.resetPlayer()
+                viewModel.changePlaybackSpeed(to: 1.0) 
+                timerViewModel.loadRemainingTime()// Reset speed to default
             }
     }
     
@@ -149,5 +155,61 @@ struct AudioPlayerView: View {
         let minutes = Int(time) / 60
         let seconds = Int(time) % 60
         return String(format: "%02d:%02d", minutes, seconds)
+    }
+}
+
+struct PersistentAudioBar: View {
+    //@EnvironmentObject var audioPlayerVM: AudioPlayerViewModel
+    @ObservedObject var viewModel: AudioPlayerViewModel
+
+    var body: some View {
+        HStack(spacing: 16){
+            Image(viewModel.imageUrl) 
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 50)
+                .frame(width: 50)
+                .cornerRadius(8)
+                .clipped()
+            
+            VStack(alignment: .leading, spacing: 4) {
+                            Text(viewModel.currentTrack)
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+
+                            Text(viewModel.subtitle)
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Button(action: {
+                viewModel.togglePlayPause()
+            }) {
+                Image(systemName: viewModel.isPlaying ? "pause.fill" : "play.fill")
+                    .foregroundColor(.primary)
+            }
+            Button(action: {
+                viewModel.resetPlayer()
+                viewModel.isBarVisible = false
+            }) {
+                Image(systemName: "xmark")
+                    .foregroundColor(.gray)
+            }
+
+        }
+        .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color(.systemGray6))
+                        .shadow(radius: 2)
+                )
+                .padding(.horizontal)
+
     }
 }

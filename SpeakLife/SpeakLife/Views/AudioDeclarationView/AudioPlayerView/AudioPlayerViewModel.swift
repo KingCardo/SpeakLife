@@ -14,19 +14,25 @@ class AudioPlayerViewModel: ObservableObject {
     @Published var duration: Double = 0
     @Published var playbackSpeed: Float = 1.0
     @Published var onRepeat = false
+    @Published var currentTrack: String = ""
+    @Published var subtitle: String = ""
+    @Published var imageUrl: String = ""
+    @Published var isBarVisible: Bool = false // Manage bar visibility
     
     private var player: AVPlayer?
     private var timeObserver: Any?
     
-    func loadAudio(from url: URL) {
-       // resetPlayer()
-        AudioPlayerService.shared.pauseMusic()
+    func loadAudio(from url: URL, isSameItem: Bool) {
+        
+        if isPlaying, isSameItem { return }
+        resetPlayer()
         player = AVPlayer(url: url)
         
         // Get the duration of the audio
         if let duration = player?.currentItem?.asset.duration {
             self.duration = CMTimeGetSeconds(duration)
         }
+        
         
         print("Loading audio from URL: \(url) RWRW")
         print("Player duration: \(CMTimeGetSeconds(player?.currentItem?.duration ?? CMTime.zero)) RWRW")
@@ -48,6 +54,7 @@ class AudioPlayerViewModel: ObservableObject {
         if isPlaying {
             player.pause()
         } else {
+            AudioPlayerService.shared.pauseMusic()
             player.play()
         }
         
@@ -82,6 +89,7 @@ class AudioPlayerViewModel: ObservableObject {
         playbackSpeed = speed
         player?.rate = speed
     }
+    
     func resetPlayer() {
         // Clean up any previous AVPlayer
         if let timeObserver = timeObserver {
@@ -94,8 +102,10 @@ class AudioPlayerViewModel: ObservableObject {
     }
     
     deinit {
-        AudioPlayerService.shared.playMusic()
-        // Remove time observer when deinitialized
+        if let timeObserver = timeObserver {
+            player?.removeTimeObserver(timeObserver)
+        }
         resetPlayer()
+        AudioPlayerService.shared.playMusic()
     }
 }

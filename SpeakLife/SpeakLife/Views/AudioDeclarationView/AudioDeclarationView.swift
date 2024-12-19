@@ -70,7 +70,9 @@ struct AudioDeclarationView: View {
     @StateObject private var viewModel = AudioDeclarationViewModel()
     @StateObject private var audioViewModel = AudioPlayerViewModel()
     @EnvironmentObject var subscriptionStore: SubscriptionStore
+    @EnvironmentObject var declarationStore: DeclarationViewModel
     @State private var selectedItem: AudioDeclaration? = nil
+    @State private var lastSelectedItem: AudioDeclaration?
     @State private var audioURL: URL? = nil
     @State private var errorMessage: ErrorWrapper? = nil
     @State private var isPresentingPremiumView = false
@@ -122,6 +124,9 @@ struct AudioDeclarationView: View {
                                             audioURL = url
                                             selectedItem = item
                                             viewModel.downloadProgress[item.id] = 0.0
+                                            audioViewModel.currentTrack = selectedItem?.title ?? ""
+                                            audioViewModel.subtitle = selectedItem?.subtitle ?? ""
+                                            audioViewModel.imageUrl = selectedItem?.imageUrl ?? ""
                                         case .failure(let error):
                                             errorMessage = ErrorWrapper(message: "Failed to download audio: \(error.localizedDescription)")
                                             selectedItem = nil
@@ -145,6 +150,20 @@ struct AudioDeclarationView: View {
                             }
                         }
                     }
+                    Spacer()
+                    if audioViewModel.isBarVisible {
+                        PersistentAudioBar(viewModel: audioViewModel)
+                            .onDisappear {
+                                if declarationStore.backgroundMusicEnabled {
+                                    AudioPlayerService.shared.playMusic()
+                                }
+                            }
+                            .onTapGesture {
+                                if let lastSelectedItem = lastSelectedItem {
+                                self.selectedItem = lastSelectedItem
+                            }
+                            }
+                    }
                 }
                     
                 }
@@ -165,8 +184,7 @@ struct AudioDeclarationView: View {
                     )
                 }
                 .sheet(item: $selectedItem, onDismiss: {
-                    selectedItem = nil
-                    audioURL = nil
+                    audioViewModel.isBarVisible = true
                 }) { item in
                     if let audioURL = audioURL {
                         AudioPlayerView(
@@ -176,11 +194,8 @@ struct AudioDeclarationView: View {
                             imageUrl: item.imageUrl
                         )
                         .onAppear {
-                            audioViewModel.loadAudio(from: audioURL) // Initialize player
-                        }
-                        .onDisappear {
-                            audioViewModel.resetPlayer()
-                            AudioPlayerService.shared.playMusic()
+                            audioViewModel.loadAudio(from: audioURL, isSameItem: lastSelectedItem == item)
+                            lastSelectedItem = item
                         }
                         
                     }
