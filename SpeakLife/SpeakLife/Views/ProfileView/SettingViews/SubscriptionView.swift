@@ -225,9 +225,9 @@ struct SubscriptionView: View {
             .onAppear() {
                 self.firstSelection = subscriptionStore.currentOfferedPremium
                 self.currentSelection = subscriptionStore.currentOfferedPremium
-                self.secondSelection = subscriptionStore.currentOfferedYearly
-                self.monthlyPremiumSelection = subscriptionStore.currentOfferedPremiumMonthly
-                self.monthlyProSelection = subscriptionStore.currentOfferedMonthly
+                self.secondSelection = subscriptionStore.currentOfferedPremiumMonthly
+//                self.monthlyPremiumSelection = subscriptionStore.currentOfferedPremiumMonthly
+//                self.monthlyProSelection = subscriptionStore.currentOfferedMonthly
             }
     }
     
@@ -270,58 +270,27 @@ struct SubscriptionView: View {
                         StarRatingView(rating: 4.8)
                         
                     }
+                    FeatureView(currentSelection: $currentSelection)
+                        .foregroundColor(.white)
                     Spacer()
                         .frame(height: 8)
                     
-                    
-                    HStack {
-                        Spacer()
-                        HStack {
-                            Text("Free trial")
-                                .font(.caption)
-                        Toggle("Monthly", isOn: $freeTrialEnabled)
-                            .labelsHidden()
-                            .toggleStyle(SwitchToggleStyle(tint: .blue))
-                            .onChange(of: freeTrialEnabled) { newValue in
-                                currentSelection = nil
-                            }
-                        }.padding(.trailing)
-                    }.padding()
-                    
                     VStack {
                         Button {
-                            currentSelection = freeTrialEnabled ? firstSelection: monthlyPremiumSelection
+                            currentSelection = firstSelection
                         } label: {
                             firstSelectionBox()
                         }
                         Spacer()
                             .frame(height: 8)
                         Button {
-                            currentSelection = freeTrialEnabled ? secondSelection : monthlyProSelection
+                            currentSelection = secondSelection
                         } label: {
                             secondSelectionBox()
                         }
                         
-//                        Button {
-//                            currentSelection = thirdSelection
-//                        } label: {
-//                            thirdSelectionBox()
-//                        }
-                        
-                        //                            Button {
-                        //                                currentSelection = thirdSelection
-                        //                            } label: {
-                        //                                lifetimeSelectionBox()
-                        //                            }
-                        
                     }
-                    
-                    FeatureView(currentSelection: $currentSelection)
-                        .foregroundColor(.white)
-                    
-                    
-                    
-                    
+        
                     Spacer()
                 
                     
@@ -551,7 +520,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        return ShimmerButton(colors: [Constants.traditionalGold, .indigo], buttonTitle: freeTrialEnabled ? currentSelection?.ctaButtonTitle ?? "Start 1 week Free Trial" : "Subscribe", action: makePurchase)
+        return ShimmerButton(colors: [Constants.traditionalGold, .indigo], buttonTitle: currentSelection?.ctaButtonTitle ?? "Subscribe", action: makePurchase)
             .opacity(currentSelection != nil ? 1 : 0.5)
     }
     // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
@@ -570,8 +539,8 @@ struct SubscriptionView: View {
         ZStack() {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill((currentSelection == firstSelection || currentSelection == monthlyPremiumSelection) ? Constants.DAMidBlue : .clear))
-                .shadow(color: (currentSelection == firstSelection || currentSelection == monthlyPremiumSelection) ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
+                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == firstSelection ? Constants.DAMidBlue : .clear))
+                .shadow(color: currentSelection == firstSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
                 .frame(height: 60)
             
             HStack {
@@ -579,11 +548,11 @@ struct SubscriptionView: View {
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
-                        .fill(freeTrialEnabled ? Constants.traditionalGold : Constants.flexibleOption)
+                        .fill(Constants.traditionalGold)
                         .frame(width: 110, height: 30)
                         .cornerRadius(15)
                     
-                    Text(freeTrialEnabled ? "🏆 Most popular" : "Most flexible")
+                    Text("🏆 Most popular")
                         .font(.caption)
                         .bold()
                         .foregroundColor(.black)
@@ -594,10 +563,10 @@ struct SubscriptionView: View {
             
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(freeTrialEnabled ? firstSelection?.ctaDurationTitle ?? "" : monthlyPremiumSelection?.ctaDurationTitle ?? "")
+                    Text(firstSelection?.ctaDurationTitle ?? "")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
                         .bold()
-                    Text(freeTrialEnabled ? firstSelection?.subTitle ?? "" : monthlyPremiumSelection?.subTitle ?? "")
+                    Text(firstSelection?.subTitle ?? "")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
                     
                 }
@@ -617,16 +586,16 @@ struct SubscriptionView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill((currentSelection == secondSelection || currentSelection == monthlyProSelection) ? Constants.DAMidBlue : .clear))
-                .shadow(color: (currentSelection == secondSelection || currentSelection == monthlyProSelection) ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
+                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == secondSelection ? Constants.DAMidBlue : .clear))
+                .shadow(color: currentSelection == secondSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
                 .frame(height: 50)
             
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(freeTrialEnabled ? secondSelection?.ctaDurationTitle ?? "" : monthlyProSelection?.ctaDurationTitle ?? "")
+                    Text(secondSelection?.ctaDurationTitle ?? "")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
                         .bold()
-                    Text(freeTrialEnabled ? secondSelection?.subTitle ?? "" : monthlyProSelection?.subTitle ?? "")
+                    Text(secondSelection?.subTitle ?? "")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
                     
                 }

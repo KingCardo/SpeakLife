@@ -62,9 +62,9 @@ struct FeatureView: View {
     @Binding var currentSelection: Product?
     //var valueProps: [Feature] = []
     var valueProps: [Feature] {
-        if currentSelection?.id == currentPremiumID || currentSelection?.id == currentMonthlyPremiumID {
-            return allPremiumFeatures
-        }
+//        if currentSelection?.id == currentPremiumID || currentSelection?.id == currentMonthlyPremiumID {
+//            return allPremiumFeatures
+//        }
         return allFeatures
     }
     
@@ -111,10 +111,12 @@ struct FeatureView: View {
 //        Feature(subtitle: "Speak peace into your life with daily affirmations that calm your mind and align your heart with God’s promises."),
 //        Feature(subtitle: "Strengthen your faith daily with affirmations that remind you of God’s unchanging love and power."),
 //        Feature(subtitle: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future."),
-        Feature(subtitle: "Unlimited scripture reminders"),
-        Feature(subtitle: "10,000+ affirmations and scripture"),
-        Feature(subtitle: "Daily devotional to start each day"),
-        Feature(subtitle: "30+ customizable themes")
+        Feature(subtitle: "Unlimited Daily Scripture Reminders"),
+        Feature(subtitle: "Start Each Day with a Spirit-Filled Devotional"),
+        Feature(subtitle: "Access 10,000+ Powerful Affirmations and Scriptures"),
+        Feature(subtitle: "Victory Through Audio Declarations"),
+        Feature(subtitle: "Peaceful Nights with Bible Bedtime Stories"),
+        Feature(subtitle: "30+ Customizable Themes for a Personal Touch")
         ]
     
     let features: [Feature] = [
