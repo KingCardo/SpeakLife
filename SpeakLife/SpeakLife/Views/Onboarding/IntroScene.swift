@@ -62,12 +62,12 @@ struct IntroTipScene: View {
 //                        }
                 //    }
                 
-                Spacer().frame(height: 8)
+                Spacer().frame(height: appState.onBoardingTest ? size.height * 0.04 : 24)
                 
                 VStack {
                     Text(bodyText)
                        // .font(.body)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 25, relativeTo: .body))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .body))
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
                         .lineSpacing(12)
@@ -83,10 +83,10 @@ struct IntroTipScene: View {
                     
             
                     Text(subtext)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .callout))
                         .foregroundColor(appState.onBoardingTest ? .white : Color(red: 119/255, green: 142/255, blue: 180/255))
                        // .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
-                        .multilineTextAlignment(.leading)
+                        .multilineTextAlignment(.center)
                         .lineSpacing(10)
                       //  .foregroundColor(Color(red: 119, green: 142, blue: 180, opacity: 1))
                         .lineLimit(nil)
@@ -98,6 +98,24 @@ struct IntroTipScene: View {
 //                        }
                 }
                 .frame(width: size.width * 0.9)
+                if isScholarship {
+                    Spacer().frame(height: size.height * 0.05)
+                    VStack {
+                        Text("Select an option")
+                            .foregroundStyle(Color.white)
+                            .font(.headline)
+                        // .padding()
+                    }
+                    Picker("subscriptionScholarship", selection: $selectedOption) {
+                        ForEach(InAppId.allInApp) { subscription in
+                            Text(subscription.scholarshipTitle)
+                                .tag(subscription)
+                                .foregroundStyle(Color.white)
+                        }
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                    .frame(height: 150)
+                }
                 
             }
             
@@ -134,8 +152,11 @@ struct IntroTipScene: View {
         withAnimation(.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0)) {
             buttonTapped = false
         }
-        
-        callBack?()
+        if isScholarship {
+        buyCallBack?(selectedOption)
+        } else {
+            callBack?()
+        }
     }
 }
 

@@ -184,6 +184,8 @@ struct SubscriptionView: View {
     @State var isShowingError: Bool = false
     @State private var currentTestimonialIndex: Int = 0
     
+    @State var freeTrialEnabled = false
+    
     
     @State private var textOpacity: Double = 0
     
@@ -195,7 +197,8 @@ struct SubscriptionView: View {
     @State var currentSelection: Product?
     @State var firstSelection: Product?
     @State var secondSelection: Product?
-    @State var thirdSelection: Product?
+    @State var monthlyPremiumSelection: Product?
+    @State var monthlyProSelection: Product?
 
     @State var chooseDifferentAmount = false
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
@@ -223,7 +226,8 @@ struct SubscriptionView: View {
                 self.firstSelection = subscriptionStore.currentOfferedPremium
                 self.currentSelection = subscriptionStore.currentOfferedPremium
                 self.secondSelection = subscriptionStore.currentOfferedYearly
-               // self.thirdSelection = subscriptionStore.currentOfferedMonthly
+                self.monthlyPremiumSelection = subscriptionStore.currentOfferedPremiumMonthly
+                self.monthlyProSelection = subscriptionStore.currentOfferedMonthly
             }
     }
     
@@ -270,19 +274,30 @@ struct SubscriptionView: View {
                         .frame(height: 8)
                     
                     
-                  
-                  
+                    HStack {
+                        Spacer()
+                        HStack {
+                            Text("Free trial")
+                                .font(.caption)
+                        Toggle("Monthly", isOn: $freeTrialEnabled)
+                            .labelsHidden()
+                            .toggleStyle(SwitchToggleStyle(tint: .blue))
+                            .onChange(of: freeTrialEnabled) { newValue in
+                                currentSelection = nil
+                            }
+                        }.padding(.trailing)
+                    }.padding()
                     
                     VStack {
                         Button {
-                            currentSelection = firstSelection
+                            currentSelection = freeTrialEnabled ? firstSelection: monthlyPremiumSelection
                         } label: {
                             firstSelectionBox()
                         }
                         Spacer()
                             .frame(height: 8)
                         Button {
-                            currentSelection = secondSelection
+                            currentSelection = freeTrialEnabled ? secondSelection : monthlyProSelection
                         } label: {
                             secondSelectionBox()
                         }
@@ -403,9 +418,9 @@ struct SubscriptionView: View {
                 .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 6)
             Spacer()
                 .frame(height: 10)
-            costDescription
-            Spacer()
-                .frame(height: 8)
+//            costDescription
+//            Spacer()
+//                .frame(height: 8)
             
             
             HStack {
@@ -449,7 +464,7 @@ struct SubscriptionView: View {
             if let transaction = try await subscriptionStore.purchaseWithID([currentSelection.id]) {
                 print(currentSelection, transaction.id, transaction.jsonRepresentation, transaction.productType, "RWRW")
                 Analytics.logEvent(currentSelection.id, parameters: nil)
-                callback?()
+               // callback?()
             }
         } catch StoreError.failedVerification {
             errorTitle = "Your purchase could not be verified by the App Store."
@@ -469,6 +484,7 @@ struct SubscriptionView: View {
             await buy()
             withAnimation {
                 declarationStore.isPurchasing = false
+                callback?()
             }
         }
     }
@@ -477,7 +493,6 @@ struct SubscriptionView: View {
         do {
             if let _ = try await subscriptionStore.purchaseWithID([iap.id]) {
                 Analytics.logEvent(iap.id, parameters: nil)
-                callback?()
             }
         } catch StoreError.failedVerification {
             print("error RWRW")
@@ -499,6 +514,7 @@ struct SubscriptionView: View {
             await buy(iap)
             withAnimation {
                 declarationStore.isPurchasing = false
+                callback?()
             }
         }
     }
@@ -507,7 +523,7 @@ struct SubscriptionView: View {
         do {
             if let _ = try await subscriptionStore.purchaseWithID([iap.rawValue]) {
                 Analytics.logEvent(iap.rawValue, parameters: nil)
-                callback?()
+                //callback?()
             }
         } catch StoreError.failedVerification {
             print("error RWRW")
@@ -529,12 +545,14 @@ struct SubscriptionView: View {
             await buy(iap)
             withAnimation {
                 declarationStore.isPurchasing = false
+                callback?()
             }
         }
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        return ShimmerButton(colors: [Constants.traditionalGold, .indigo], buttonTitle: currentSelection?.ctaButtonTitle ?? "Subscribe", action: makePurchase)
+        return ShimmerButton(colors: [Constants.traditionalGold, .indigo], buttonTitle: freeTrialEnabled ? currentSelection?.ctaButtonTitle ?? "Start 1 week Free Trial" : "Subscribe", action: makePurchase)
+            .opacity(currentSelection != nil ? 1 : 0.5)
     }
     // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
     private func restore() {
@@ -552,8 +570,8 @@ struct SubscriptionView: View {
         ZStack() {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == firstSelection ? Constants.DAMidBlue : .clear))
-                .shadow(color: currentSelection == firstSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
+                .background(RoundedRectangle(cornerRadius: 10).fill((currentSelection == firstSelection || currentSelection == monthlyPremiumSelection) ? Constants.DAMidBlue : .clear))
+                .shadow(color: (currentSelection == firstSelection || currentSelection == monthlyPremiumSelection) ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
                 .frame(height: 60)
             
             HStack {
@@ -561,11 +579,11 @@ struct SubscriptionView: View {
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
-                        .fill(Constants.traditionalGold)
-                        .frame(width: 100, height: 30)
+                        .fill(freeTrialEnabled ? Constants.traditionalGold : Constants.flexibleOption)
+                        .frame(width: 110, height: 30)
                         .cornerRadius(15)
                     
-                    Text("Most popular")
+                    Text(freeTrialEnabled ? "🏆 Most popular" : "Most flexible")
                         .font(.caption)
                         .bold()
                         .foregroundColor(.black)
@@ -576,10 +594,10 @@ struct SubscriptionView: View {
             
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(firstSelection?.ctaDurationTitle ?? "")
+                    Text(freeTrialEnabled ? firstSelection?.ctaDurationTitle ?? "" : monthlyPremiumSelection?.ctaDurationTitle ?? "")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
                         .bold()
-                    Text(firstSelection?.subTitle ?? "")
+                    Text(freeTrialEnabled ? firstSelection?.subTitle ?? "" : monthlyPremiumSelection?.subTitle ?? "")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
                     
                 }
@@ -599,16 +617,16 @@ struct SubscriptionView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == secondSelection ? Constants.DAMidBlue : .clear))
-                .shadow(color: currentSelection == secondSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
+                .background(RoundedRectangle(cornerRadius: 10).fill((currentSelection == secondSelection || currentSelection == monthlyProSelection) ? Constants.DAMidBlue : .clear))
+                .shadow(color: (currentSelection == secondSelection || currentSelection == monthlyProSelection) ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
                 .frame(height: 50)
             
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(secondSelection?.ctaDurationTitle ?? "")
+                    Text(freeTrialEnabled ? secondSelection?.ctaDurationTitle ?? "" : monthlyProSelection?.ctaDurationTitle ?? "")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
                         .bold()
-                    Text(secondSelection?.subTitle ?? "")
+                    Text(freeTrialEnabled ? secondSelection?.subTitle ?? "" : monthlyProSelection?.subTitle ?? "")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
                     
                 }
@@ -622,32 +640,32 @@ struct SubscriptionView: View {
         .padding([.leading, .trailing], 20)
     }
     
-    func thirdSelectionBox() -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(Color.gray, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == thirdSelection ? Constants.DAMidBlue : .clear))
-                .shadow(color: currentSelection == thirdSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
-                .frame(height: 50)
-            
-            HStack {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(secondSelection?.ctaDurationTitle ?? "")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                        .bold()
-                 //   Text(secondSelection?.subTitle ?? "")
-                  //      .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
-                    
-                }
-                Spacer()
-            }
-            .foregroundStyle(.white)
-            .padding([.leading, .trailing])
-            
-        }
-        
-        .padding([.leading, .trailing], 20)
-    }
+//    func thirdSelectionBox() -> some View {
+//        ZStack {
+//            RoundedRectangle(cornerRadius: 10)
+//                .strokeBorder(Color.gray, lineWidth: 1)
+//                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == thirdSelection ? Constants.DAMidBlue : .clear))
+//                .shadow(color: currentSelection == thirdSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
+//                .frame(height: 50)
+//            
+//            HStack {
+//                VStack(alignment: .leading, spacing: 2) {
+//                    Text(secondSelection?.ctaDurationTitle ?? "")
+//                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+//                        .bold()
+//                 //   Text(secondSelection?.subTitle ?? "")
+//                  //      .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
+//                    
+//                }
+//                Spacer()
+//            }
+//            .foregroundStyle(.white)
+//            .padding([.leading, .trailing])
+//            
+//        }
+//        
+//        .padding([.leading, .trailing], 20)
+//    }
     
 }
 
@@ -796,5 +814,139 @@ struct RotatingLoadingImageView: View {
 struct RotatingLoadingImageView_Previews: PreviewProvider {
     static var previews: some View {
         RotatingLoadingImageView() // Display a live preview of ContentView in Xcode
+    }
+}
+
+
+import SwiftUI
+
+struct SubscriptionPricingView: View {
+    @State private var selectedPlan: String = "Yearly Pro"
+
+    var body: some View {
+        VStack(spacing: 20) {
+            // Title
+            Text("Choose Your Plan")
+                .font(.title)
+                .fontWeight(.semibold)
+                .foregroundColor(.primary)
+
+            // Plan Options
+            VStack(spacing: 15) {
+                // Pro Plan (Yearly)
+                PlanOptionView(
+                    title: "Pro Yearly",
+                    subtitle: "Save 50% - $24.99/year",
+                    isBestValue: true,
+                    isSelected: selectedPlan == "Yearly Pro"
+                ) {
+                    selectedPlan = "Yearly Pro"
+                }
+
+                // Premium Plan (Yearly)
+                PlanOptionView(
+                    title: "Premium Yearly",
+                    subtitle: "Save 50% - $49.99/year",
+                    isBestValue: true,
+                    isSelected: selectedPlan == "Yearly Premium"
+                ) {
+                    selectedPlan = "Yearly Premium"
+                }
+
+                // Divider
+                Divider()
+                    .padding(.horizontal, 30)
+
+                // Pro Plan (Monthly)
+                PlanOptionView(
+                    title: "Pro Monthly",
+                    subtitle: "$3.99/month",
+                    isBestValue: false,
+                    isSelected: selectedPlan == "Monthly Pro"
+                ) {
+                    selectedPlan = "Monthly Pro"
+                }
+
+                // Premium Plan (Monthly)
+                PlanOptionView(
+                    title: "Premium Monthly",
+                    subtitle: "$7.99/month",
+                    isBestValue: false,
+                    isSelected: selectedPlan == "Monthly Premium"
+                ) {
+                    selectedPlan = "Monthly Premium"
+                }
+            }
+            .padding(.horizontal)
+
+            Spacer()
+
+            // Continue Button
+            Button(action: {
+                print("Selected Plan: \(selectedPlan)")
+            }) {
+                Text("Continue with \(selectedPlan)")
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(12)
+            }
+            .padding(.horizontal)
+        }
+        .padding()
+    }
+}
+
+// MARK: - PlanOptionView
+struct PlanOptionView: View {
+    var title: String
+    var subtitle: String
+    var isBestValue: Bool
+    var isSelected: Bool
+    var action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(title)
+                            .font(.headline)
+                            .foregroundColor(isSelected ? .blue : .primary)
+                        if isBestValue {
+                            Text("BEST VALUE")
+                                .font(.caption)
+                                .foregroundColor(.white)
+                                .padding(5)
+                                .background(Color.orange)
+                                .cornerRadius(5)
+                        }
+                    }
+                    Text(subtitle)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+                Spacer()
+                if isSelected {
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundColor(.blue)
+                } else {
+                    Image(systemName: "circle")
+                        .foregroundColor(.gray)
+                }
+            }
+            .padding()
+            .background(isSelected ? Color.blue.opacity(0.1) : Color(UIColor.secondarySystemBackground))
+            .cornerRadius(12)
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+}
+
+struct SubscriptionPricingView_Previews: PreviewProvider {
+    static var previews: some View {
+        SubscriptionPricingView()
     }
 }

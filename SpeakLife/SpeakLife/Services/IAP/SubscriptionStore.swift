@@ -24,8 +24,10 @@ public enum StoreError: Error {
 }
 
 let currentYearlyID = "SpeakLife1YR29"
-let currentMonthlyID = "SpeakLife1MO7"
+let currentMonthlyID = "SpeakLife1MO4"
+let currentMonthlyPremiumID = "SpeakLife1MO9"
 let currentPremiumID = "SpeakLife1YR49"
+let lifetimeID = "SpeakLifeLifetime"
 final class SubscriptionStore: ObservableObject {
 
     @Published var isPremium: Bool = false
@@ -38,6 +40,7 @@ final class SubscriptionStore: ObservableObject {
     @Published var currentOfferedYearly: Product? = nil
     @Published var currentOfferedMonthly: Product? = nil
     @Published var currentOfferedPremium: Product? = nil
+    @Published var currentOfferedPremiumMonthly: Product? = nil
    
     
     var updateListenerTask: Task<Void, Error>? = nil
@@ -64,7 +67,7 @@ final class SubscriptionStore: ObservableObject {
                 guard let self = self else { return }
                 // Update isPremium based on subscription state and purchased non-consumables
                 self.isPremium = (subscriptionStatus == .subscribed) || !nonConsumables.isEmpty
-                self.isPremiumAllAccess = (purchasedSubscriptions.first(where: { $0.id ==  currentPremiumID }) != nil) || !nonConsumables.isEmpty
+                self.isPremiumAllAccess = (purchasedSubscriptions.first(where: { $0.id ==  currentPremiumID }) != nil) || (purchasedSubscriptions.first(where: { $0.id ==  currentMonthlyPremiumID }) != nil) || !nonConsumables.isEmpty
             }
         
     }
@@ -113,6 +116,11 @@ final class SubscriptionStore: ObservableObject {
                     }
                     if product.id == currentMonthlyID {
                         currentOfferedMonthly = product
+                        print("Monthly set RWRW")
+                    }
+                    
+                    if product.id == currentMonthlyPremiumID {
+                        currentOfferedPremiumMonthly = product
                         print("Monthly set RWRW")
                     }
                     
@@ -269,11 +277,13 @@ extension Product {
     
     var ctaDurationTitle: String {
         if id == currentYearlyID {
-            return "Pro"
+            return "Pro - Save 50%"
         } else if id == currentPremiumID {
-                return "Premium"
+                return "Premium - Save 70%"
+        } else if id == currentMonthlyPremiumID {
+            return "Premium Monthly"
         } else {
-           return "Monthly"
+           return "Pro Monthly"
         }
     }
     
@@ -295,7 +305,7 @@ extension Product {
         } else if id == currentPremiumID {
                 return "7 days free then \(displayPrice)/yr."
         } else {
-           return "billed monthly at \(displayPrice)"
+           return "billed monthly at \(displayPrice). Cancel anytime."
         }
     }
 }

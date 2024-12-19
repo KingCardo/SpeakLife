@@ -128,9 +128,9 @@ struct InAppId: Codable {
         }
     }
     
-    static let allInApp: [InAppId.Subscription] = [Subscription.speakLife1YR99, Subscription.speakLife1YR49, Subscription.speakLife1YR39, Subscription.speakLife1YR29, Subscription.speakLife1MO7, Subscription.speakLife1MO4]
+    static let allInApp: [InAppId.Subscription] = [Subscription.speakLife1YR99, Subscription.speakLife1YR49, Subscription.speakLife1YR39, Subscription.speakLife1YR29, Subscription.speakLife1MO9,Subscription.speakLife1MO7, Subscription.speakLife1MO4]
     
-    static let all: [String] = [Subscription.speakLifeLifetime.id, Subscription.speakLife1YR99.id, Subscription.speakLife1YR49.id, Subscription.speakLife1YR39.id, Subscription.speakLife1YR29.id, Subscription.speakLife1MO7.id, Subscription.speakLife1MO4.id]
+    static let all: [String] = [Subscription.speakLifeLifetime.id, Subscription.speakLife1YR99.id, Subscription.speakLife1YR49.id, Subscription.speakLife1YR39.id, Subscription.speakLife1YR29.id, Subscription.speakLife1MO9.id, Subscription.speakLife1MO7.id, Subscription.speakLife1MO4.id]
 }
 
 struct Messages {

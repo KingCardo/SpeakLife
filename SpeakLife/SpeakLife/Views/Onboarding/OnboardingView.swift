@@ -122,7 +122,7 @@ struct OnboardingView: View  {
     @State var showLastChanceAlert = false
     @State var isDonePersonalization = false
     @StateObject var improvementViewModel = ImprovementViewModel()
-    @AppStorage("onboardingTab") var onboardingTab = Tab.transformedLife.rawValue
+    @AppStorage("onboardingTab") var onboardingTab = Tab.likeJesus.rawValue
     @State private var isTextVisible = false
     @State var valueProps: [Feature] = []
    
@@ -153,30 +153,30 @@ struct OnboardingView: View  {
                 }
                     .tag(Tab.transformedLife)
                 
-                IntroTipScene(title: "Speak Life, Silence the Noise",
-                              bodyText: "",
-                              subtext: "Replace the lies of the enemy with truth-filled affirmations that uplift your spirit and transform your mindset.",
-                              ctaText: "Speak with Authority Like Jesus",
+                IntroTipScene(title: "Affirmation Reminders",
+                              bodyText: "Stay Encouraged All Day Long with timely reminders of God’s promises to uplift and strengthen you, no matter where you are.",
+                              subtext: "Life gets busy, and it’s easy to lose focus. Our reminders deliver Scripture-based affirmations throughout the day to renew your mind and keep you anchored in God’s promises.",
+                              ctaText: "Stay Connected to Truth",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
                 {
                         advance()
                 }
                     .tag(Tab.likeJesus)
-                IntroTipScene(title: "Armor Up for Life’s Battles",
-                              bodyText: "",
-                              subtext: "Start your day spiritually equipped with affirmations rooted in God’s Word—your shield against the enemy.",
-                              ctaText: "Transform Your Challenges with Faith",
+                IntroTipScene(title: "Daily Devotionals",
+                              bodyText: "Start Your Day with Purpose to guide your faith journey and bring you closer to God’s Word",
+                              subtext: "Each day brings a new opportunity to grow closer to God. Discover devotionals that encourage, inspire, and provide practical guidance for your spiritual life.",
+                              ctaText: "Receive Daily Inspiration",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
                 {
                         advance()
                 }
                     .tag(Tab.liveVictorious)
-                IntroTipScene(title: "Speak God’s Promises Over Your Life",
-                              bodyText: "",
-                              subtext: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future.",
-                              ctaText: "Align Your Words with God's Will",
+                IntroTipScene(title: "Audio Declarations",
+                              bodyText: "Speak Life Over Your Day with Powerful audio declarations to activate God’s promises and shift your mindset.",
+                              subtext: "Your words carry power. Listen to and declare faith-filled promises that replace doubt with truth, fear with peace, and lack with abundance.",
+                              ctaText: "Activate God’s Promises",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
                 {
@@ -184,10 +184,10 @@ struct OnboardingView: View  {
                 }
                     .tag(Tab.unshakeableFaith)
                 
-                IntroTipScene(title: "Stay Rooted in Faith, No Matter What",
-                              bodyText: "",
-                              subtext: "Strengthen your faith daily with affirmations that remind you of God’s unchanging love and power.",
-                              ctaText: "I Am Ready",
+                IntroTipScene(title: "Audio Bible Bedtime Stories",
+                              bodyText: "Rest Peacefully in God’s Word, relax and unwind with calming audio Bible bedtime stories designed to bring peace to your nights.",
+                              subtext: "Let go of stress and fall asleep in God’s presence. Listen to peaceful Bible stories that soothe your mind, restore your heart, and bring deep, restful sleep.",
+                              ctaText: "End Your Day with Peace",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
                 {
