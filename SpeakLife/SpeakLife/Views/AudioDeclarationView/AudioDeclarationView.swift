@@ -45,7 +45,6 @@ struct UpNextCell: View {
                             }
                         }
                         .foregroundColor(.primary)
-                        .padding(6)
                         .background(Color(.systemGray6))
                         .cornerRadius(6)
                     //}

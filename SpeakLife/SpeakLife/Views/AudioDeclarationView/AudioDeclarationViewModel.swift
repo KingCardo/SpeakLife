@@ -10,7 +10,7 @@ import FirebaseStorage
 
 let audioFiles: [AudioDeclaration] = [
     AudioDeclaration(
-           id: "health1.mp3",
+           id: "healed.mp3",
            title: "Healing Declarations",
            subtitle: "Speaking Wholeness, Strength, and Restoration Through the Power of Faith",
            duration: "4m",
@@ -172,6 +172,54 @@ let bedTimeFiles: [AudioDeclaration] = [
            subtitle: "A Story of Justice, Mercy, and God’s Sovereignty",
            duration: "10m",
            imageUrl: "sodom",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "abrahamsacrifice.mp3",
+           title: "Abraham and Isaac",
+           subtitle: "Trusting God’s Perfect Plan",
+           duration: "8m",
+           imageUrl: "abrahamsacrifice",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "jacobsladder.mp3",
+           title: "Jacob’s Ladder",
+           subtitle: "God’s Promise and Presence",
+           duration: "8m",
+           imageUrl: "jacobsladder",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "joseph.mp3",
+           title: "Joseph and His Brothers",
+           subtitle: "From Betrayal to Forgiveness",
+           duration: "9m",
+           imageUrl: "joseph",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "mosesburningbush.mp3",
+           title: "Moses and the Burning Bush",
+           subtitle: "God’s Call to Lead",
+           duration: "9m",
+           imageUrl: "mosesburningbush",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "tenplagues.mp3",
+           title: "The Ten Plagues and the Exodus",
+           subtitle: "God’s Power and Deliverance",
+           duration: "9m",
+           imageUrl: "tenplagues",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "redsea.mp3",
+           title: "The Parting of the Red Sea",
+           subtitle: "God’s Power to Make a Way",
+           duration: "7m",
+           imageUrl: "redsea",
            isPremium: true
        ),
     ]
