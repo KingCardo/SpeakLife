@@ -115,7 +115,7 @@ struct AudioDeclarationView: View {
                     List {
                         ForEach(filteredContent) { item in
                             Button(action: {
-                                if item.isPremium, !subscriptionStore.isPremiumAllAccess {
+                                if item.isPremium, !subscriptionStore.isPremium {
                                     isPresentingPremiumView = true
                                 } else {
                                     viewModel.fetchAudio(for: item) { result in
