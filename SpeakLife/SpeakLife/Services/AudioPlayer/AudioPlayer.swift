@@ -20,7 +20,21 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
            super.init()
            NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
            NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-       }
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleInterruption),
+            name: AVAudioSession.interruptionNotification,
+            object: AVAudioSession.sharedInstance()
+        )
+        
+        do {
+            let audioSession = AVAudioSession.sharedInstance()
+            try audioSession.setCategory(.playback, mode: .default, options: [])
+            try audioSession.setActive(true)
+        } catch {
+            print("Failed to set up audio session: \(error)")
+        }
+    }
 
        deinit {
            NotificationCenter.default.removeObserver(self)
@@ -64,6 +78,7 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
                 audioPlayer?.delegate = self
                 DispatchQueue.main.async { [weak self] in
+                    self?.audioPlayer?.prepareToPlay()
                     self?.audioPlayer?.play()
                 }
                 isPlaying = true
@@ -93,5 +108,26 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
             self?.audioPlayer?.play()
         }
         isPlaying = true
+    }
+    
+    
+
+    @objc func handleInterruption(notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let typeValue = userInfo[AVAudioSessionInterruptionTypeKey] as? UInt,
+              let type = AVAudioSession.InterruptionType(rawValue: typeValue) else { return }
+
+        if type == .began {
+            // Audio session was interrupted
+            audioPlayer?.pause()
+        } else if type == .ended {
+            // Interruption ended
+            if let optionsValue = userInfo[AVAudioSessionInterruptionOptionKey] as? UInt {
+                let options = AVAudioSession.InterruptionOptions(rawValue: optionsValue)
+                if options.contains(.shouldResume) {
+                    audioPlayer?.play()
+                }
+            }
+        }
     }
 }

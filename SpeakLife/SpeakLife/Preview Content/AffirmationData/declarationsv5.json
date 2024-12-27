@@ -228,9 +228,159 @@
          "category": "destiny"
        },
        {
-         "text": "Let there be peace and confidence as I trust in God’s plan for my life.",
-         "isFavorite": false,
-         "category": "destiny"
+           "text": "Let there be peace and confidence as I trust in God’s plan for my life.",
+           "isFavorite": false,
+           "category": "destiny"
+       },
+       {
+           "text": "You are chosen and called to fulfill the purpose I have for you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "I am with you every step as you walk into your destiny.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "You have my strength to accomplish every plan I’ve set before you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "I have prepared a path for you to fulfill your destiny with joy.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "You are equipped with everything you need to complete your calling.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "Trust me, for I am guiding you into the future I’ve planned for you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "You are created for a purpose, and I will see it come to pass.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "I have great plans for you, plans to prosper and not to harm you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "You are never alone in your journey; I am by your side always.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "I will open doors no one can shut to bring you into your purpose.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "Your destiny is secure in me; trust my perfect timing.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "I am working all things together for your good and my glory.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "You are my masterpiece, created to do good works I’ve prepared for you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "Take heart; I have overcome the world, and I am with you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "You have my peace to guide you as you fulfill your purpose.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "I will strengthen you and uphold you as you step into your destiny.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "Your destiny is great because I have called you to walk in abundance.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "Do not fear, for I am with you; I will help you succeed.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "I am making a way in the wilderness and streams in the wasteland for you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "You are my beloved, and I will fulfill the good plans I have for you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "I have given you everything you need to walk boldly into your calling.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "You are victorious because I have overcome every obstacle before you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "I am the author and finisher of your faith; trust me with your journey.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "You are destined to thrive because I have called you by name.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
+       },
+       {
+           "text": "I will never leave you nor forsake you as you walk in your purpose.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "destiny"
        },
        {
          "text": "Let there be joy in every step as I walk in alignment with my destiny.",
@@ -2122,8 +2272,158 @@
          "category": "addiction"
        },
        {
-         "text": "I am fearless because Jesus is my strength and my shield.",
-         "isFavorite": false,
+           "text": "Do not fear, my beloved; I am with you always.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "You are safe in my arms; I will protect you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "Trust me, for I am greater than anything you fear.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "You are surrounded by my love, which casts out all fear.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "Take heart, my child; I have overcome the world for you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "I am your refuge and strength; you have nothing to fear.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "Lean on me, for I will calm every storm in your life.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "You are never alone; I walk with you through every trial.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "My peace is with you; let it guard your heart and mind.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "I am your solid rock; stand firm, for fear has no power over you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "You are strong in me; I will never let you fall.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "I am holding you close, my beloved; rest in my peace.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "Do not worry about tomorrow; I am already there, guiding you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "You are my precious child, and I will fight your battles.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "I am your shepherd; I will lead you to still waters and peace.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "You are brave, for I have given you a spirit of power and love.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "Let my peace fill your heart; fear has no place within you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "I am working all things for your good; trust me completely.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "I go before you and behind you; fear cannot follow you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "You are secure in my love; nothing can separate you from me.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "I am your light in the darkness; let go of your fear.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "You are my beloved, and I am your unshakable foundation.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "Let my grace fill your soul; fear cannot stand in my presence.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "You are victorious, my child, because I have defeated every fear.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+       {
+           "text": "Do not fear the unknown; I am the author of your story.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "fear"
+       },
+    {
+        "text": "I am fearless because Jesus is my strength and my shield.",
+        "isFavorite": false,
          "category": "fear"
        },
        {
@@ -2692,7 +2992,158 @@
                  "isFavorite": false,
                  "category": "confidence"
              },
-       {
+             {
+                 "text": "You are forgiven, my beloved, and your sins are washed away.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "I have removed your sins as far as the east is from the west.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "You are covered by my grace, and your past no longer defines you.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "I see you as blameless, clothed in my righteousness and love.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "Do not hold onto guilt; I have already paid the price for you.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "You are free from condemnation because my sacrifice is enough for you.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "Let go of your shame; I have made you clean and whole again.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "I love you unconditionally, and nothing can separate you from me.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "I am your redeemer; your sins are forgiven, and your future is bright.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "You are a new creation in me; the old has passed away forever.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "My grace is sufficient for you; my power is made perfect in your weakness.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "I have called you by name; you are mine, and you are forgiven.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "Do not dwell on your mistakes; I have already erased them from my sight.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "You are free to walk in my grace, leaving your past behind you.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "I am the light of the world; my forgiveness leads you to freedom.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "Your sins have been nailed to the cross; you are free indeed.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "I have forgiven you fully and completely; walk boldly in my love.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "You are healed by my sacrifice; my forgiveness restores your soul.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "You are precious to me, and my forgiveness is my gift to you.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "Do not carry the burden of your sins; I have taken them upon myself.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "You are worthy of my love; my forgiveness proves how much I care for you.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "I have forgiven you, and I will never remember your sins again.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "You are my beloved; my forgiveness opens the door to abundant life.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "Walk in peace, my child; my forgiveness has set you free forever.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             {
+                 "text": "I delight in you, my forgiven child, and I have great plans for you.",
+                 "isFavorite": false,
+                 "book": "Jesus",
+                 "category": "forgiveness"
+             },
+             
+             {
          "text": "I choose to forgive others, as Jesus has forgiven me completely.",
          "isFavorite": false,
          "category": "forgiveness"
@@ -2933,6 +3384,156 @@
          "category": "forgiveness"
        },
        {
+           "text": "You are always safe in my hands; I will never leave you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "I am your shield and defender; no harm can overtake you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "You are surrounded by my angels, guarding you day and night.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "I am your refuge in every storm; rest in my care.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "You are protected under my wings; I am your safe place.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "I will go before you and make your path secure.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "Do not fear, my beloved; I am your constant protector.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "You are shielded by my presence; no weapon formed against you will succeed.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "I watch over your coming and going, now and forever.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "You are hidden in me; no harm can touch your soul.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "I will fight for you; stand still and see my salvation.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "You are covered by my blood, a shield of protection over you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "I am the light that drives away all darkness around you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "You are safe in my care, for I am your good shepherd.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "No harm will overtake you, for I am your fortress.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "I am your strength and shield; trust me, and you will not be shaken.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "You are covered by my peace; nothing can disturb your soul.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "I am your rock and refuge; you can trust me completely.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "You are protected by my Word, a powerful shield around you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "I have commanded my angels to guard you in all your ways.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "You are secure in my love; nothing can harm your eternal soul.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "I have placed my hand upon you; you are forever safe with me.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "Do not worry about tomorrow; I have already secured your path.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "You are my beloved; I will keep you safe in every circumstance.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
+           "text": "Rest in my care, my child; my protection over you is unshakable.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "godsprotection"
+       },
+       {
          "text": "I am shielded by God’s unfailing protection and love.",
          "isFavorite": false,
          "category": "godsprotection"
@@ -3137,6 +3738,156 @@
                  "text": "God is my defender and fights my battles.",
                  "isFavorite": false,
                  "category": "godsprotection"
+       },
+       {
+           "text": "Give thanks, my child, for every blessing I have poured into your life.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Your heart is filled with gratitude, and it brings joy to me.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "You are blessed beyond measure; let your heart overflow with thanks.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Remember my goodness, my child, and be grateful for all I’ve done.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Gratitude unlocks peace in your soul; let it fill your heart today.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Be thankful in every circumstance, for I am always with you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "You are my beloved, and I delight in your heart of gratitude.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Every good gift you receive is from me; give thanks with joy.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Gratitude opens your eyes to see my blessings in every moment.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Be grateful for today; it is a gift I have lovingly given you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Let gratitude fill your prayers, for I am working all things for your good.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Your thankful heart pleases me, and I will pour out even more blessings.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Be thankful for my grace; it is sufficient for every need you have.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Gratitude invites my presence; let your heart remain thankful and joyful.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Every day is a gift from me; rejoice and give thanks in it.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "A grateful heart reflects my light; let it shine brightly in you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Give thanks for the small things; they are evidence of my care for you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "You are my child, and your gratitude draws you closer to my heart.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Be grateful for my mercy; it renews for you every single morning.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Thank me for your journey; every step is part of my perfect plan for you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Let thanksgiving overflow from your heart, for my love surrounds you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "You are richly blessed; let gratitude lift your soul and inspire your days.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "In your gratitude, my child, you will find peace and contentment in me.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Be thankful always, for I have poured out my blessings in abundance.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
+       },
+       {
+           "text": "Gratitude reflects your trust in me; keep your heart thankful and joyful.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "gratitude"
        },
        {
          "text": "I am grateful for God’s abundant blessings in my life.",
@@ -3439,6 +4190,156 @@
                  "text": "Thank you Jesus for your promise to never leave or forsake me.",
                  "isFavorite": false,
                  "category": "gratitude"
+     },
+     {
+         "text": "I am leading you along the perfect path for your life.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "Trust me, my child; I will direct your every step.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "You are not alone; I am walking with you always.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "Listen to my voice, and I will guide you in the right direction.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "I am the light shining on your path; follow me with confidence.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "You are safe under my guidance; I will not let you stumble.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "Keep your eyes on me, and I will lead you to abundance.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "You have my wisdom to make every decision in your life.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "Follow my peace; it is my way of directing your heart.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "I am with you, guiding you through every storm you face.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "You are under my care; I will never leave you confused or lost.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "When you seek me, I will show you the way forward.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "You are surrounded by my love, and I will guide you in peace.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "I have great plans for you; trust me to lead you into them.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "You have my Spirit within you; lean on me for every decision.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "I am opening doors for you that no one can shut.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "When you feel uncertain, I will steady your heart with my direction.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "You are under my watchful care; follow me without fear.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "I am the shepherd guiding you to green pastures and still waters.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "You are never lost, for I know exactly where to lead you.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "Rest in me, and I will make your path straight and clear.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "You have my wisdom to discern the right steps to take.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "You are safe in my hands, my child; I will guide you with love.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "I will provide clarity and peace as you follow my lead.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
+     },
+     {
+         "text": "You are on the path I’ve designed; trust me every step of the way.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "guidance"
      },
        {
          "text": "I am fully led by God’s divine wisdom in every decision I make.",
@@ -3751,7 +4652,157 @@
                  "isFavorite": false,
                  "category": "guidance"
      },
-       {
+     {
+         "text": "You are never alone; I am with you in every trial.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "Take heart, my beloved; I have already overcome the world.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "Your pain is not wasted; I am working it for your good.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "You are strong, for my strength is made perfect in your weakness.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "I am your refuge; run to me, and I will give you rest.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "You are safe in my care; I will carry you through every storm.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "I am holding you close; your tears matter to me.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "Your faith will not fail, for I am interceding for you.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "You are more than a conqueror through my love for you.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "I will give you peace that surpasses all understanding in hard times.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "You are my beloved; I will never let you go.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "I am making a way for you; trust my perfect timing.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "You are victorious, for I am fighting your battles.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "Your future is secure in me; do not be afraid of tomorrow.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "I will renew your strength; you will soar like eagles again.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "You are my masterpiece; I am shaping you through this season.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "I am your anchor in the storm; hold fast to my promises.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "You are never forgotten; I see you, and I am working on your behalf.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "I am your light in the darkness; keep your eyes on me.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "You are loved, and nothing in hard times can separate you from me.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "I am your healer; every wound you carry will be restored.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "You are resilient because my Spirit strengthens you daily.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "I am working all things for your good; trust me completely.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "You are precious to me; your struggles will never define you.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+     {
+         "text": "I am giving you joy that will rise above every trial you face.",
+         "isFavorite": false,
+         "book": "Jesus",
+         "category": "hardtimes"
+     },
+    {
          "text": "I am a warrior, strengthened by Jesus to overcome any obstacle.",
          "isFavorite": false,
          "category": "hardtimes"
@@ -4104,6 +5155,156 @@
          "book": "Jesus",
          "category": "hardtimes"
        },
+       {
+           "text": "You are never without hope, for I am your anchor.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "I have great plans for you; trust in my promises.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "Your future is bright because I hold it in my hands.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "You are my beloved; my hope fills your heart with peace.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "I am your light in the darkness; never lose hope.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "You are chosen for a purpose; hope will guide your path.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "I am working all things for your good; remain hopeful in me.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "You are my child; your hope in me will never be in vain.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "I am your constant hope; my love will never fail you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "Your hope in me is a firm foundation; trust and do not fear.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "I have overcome the world; let my victory fill you with hope.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "You are never forgotten; I am faithful to fulfill every promise.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "I am your unshakable hope; cling to me and find strength.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "Your hope is alive because I am alive and working in your life.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "I will restore everything you’ve lost; let hope rise within you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "You are never alone; my hope surrounds and sustains you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "I am making a way for you; hold on to hope in me.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "Your hope is secure in me; trust my timing and my plan.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "I am with you always; let hope fill your heart with joy.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "You are my treasure; I have prepared a hopeful future for you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "I am your refuge and strength; hope will carry you through.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "Your hope in me is a light that cannot be extinguished.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "I am holding you close; hope is alive in my love for you.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "You are victorious in me; let hope lead you to greater things.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
+       {
+           "text": "I am your unchanging hope; trust me to guide you into peace.",
+           "isFavorite": false,
+           "book": "Jesus",
+           "category": "hope"
+       },
          {
            "text": "I expect a future filled with God’s abundant blessings and favor.",
            "isFavorite": false,
@@ -4399,6 +5600,156 @@
             "category": "hope"
         },
   {
+    "text": "You are my beloved; I have called you by name.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are a new creation in me; the old is gone forever.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are my masterpiece, created for good works in my love.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are chosen, set apart, and precious in my sight.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are forgiven and redeemed; your past no longer defines you.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are my child, deeply loved and forever secure in me.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are victorious because I have overcome the world for you.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are clothed in righteousness; I see you as spotless and pure.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are my ambassador, carrying my love and truth to the world.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are strong and courageous, for I am always with you.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are complete in me; there is nothing missing or broken in you.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are my light in the world, shining brightly for my glory.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are free from condemnation; my grace has set you free.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are rooted and grounded in my love, unshakable and secure.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are my vessel, filled with my Spirit and overflowing with grace.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are my joy; I delight in who you are becoming in me.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are called to walk in purpose; I am guiding your every step.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are my temple; my Spirit lives in you and gives you strength.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are salt and light, bringing hope and truth wherever you go.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are chosen to bear fruit; I will make you flourish in me.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are my heir; every spiritual blessing in heaven belongs to you.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are my warrior, equipped with my power to overcome all challenges.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are my friend; I have made you part of my eternal family.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are fearfully and wonderfully made; I formed you with purpose.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
+    "text": "You are my treasure; I rejoice over you with singing and love.",
+    "isFavorite": false,
+    "book": "Jesus",
+    "category": "identity"
+  },
+  {
     "text": "I am a new creation, born anew in Christ’s love and purpose.",
     "isFavorite": false,
     "category": "identity"
@@ -4620,8 +5971,158 @@
     "book": "Ephesians 1:5",
     "category": "identity"
   },
- {
-            "text": "I choose joy every day, knowing that God is my strength.",
+  {
+      "text": "You are loved by me, so live in my joy every day.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "I give you joy that fills your heart and makes you smile.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "You are my child, and I want you to feel happy and free.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "I am always with you, so let your heart be full of joy.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "You can trust me, and my joy will fill your days with light.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "I give you peace and joy; hold on to it in your heart.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "You are my treasure, and I delight in seeing you happy and free.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "Let my joy lift you up when things feel hard.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "I have filled your life with blessings; let them bring you joy.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "You are my joy, and I rejoice over you every day.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "I made you to live in joy and share it with others.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "Let my love fill your heart with happiness and peace.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "You can trust me; my joy will never run out.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "I will always take care of you, so let your heart be glad.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "You are my child; my joy is your strength every day.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "I am giving you my joy; it will make your heart light and happy.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "You are safe with me; let that truth bring you great joy.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "I smile when I think of you; let my joy be yours too.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "You are precious to me; my joy is always with you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "I give you joy to fill your heart like a bright morning sun.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "You are my special child; let my joy fill your life today.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "I give you joy because I love you more than anything.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "Let your heart sing with joy because I am always with you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "You are my joy; my heart is happy just because of you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+  {
+      "text": "I am giving you a joy that nothing can take away.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "joy"
+  },
+    {
+        "text": "I choose joy every day, knowing that God is my strength.",
             "bibleVerseText": "The joy of the Lord is your strength.",
             "book": "Nehemiah 8:10 ",
             "isFavorite": false,
@@ -5112,6 +6613,156 @@
     "isFavorite": false,
     "category": "joy"
   },
+    {
+      "text": "You are never alone; I am always by your side.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "I am with you in every moment, even when you feel alone.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "You are my beloved; I will never leave you or forsake you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "I hold you close in my love; you are safe with me.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "You are my precious child, and my presence surrounds you always.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "I see you, I hear you, and I am with you forever.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "You are never out of my sight; I care deeply for you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "I walk with you through every valley; you are never alone.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "You are held in my hands, where loneliness cannot touch you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "I am your comforter; my love fills every empty space in your heart.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "You are my child, and my Spirit dwells within you always.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "I am closer than your breath; trust my presence in your life.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "You are loved by me; my love fills every lonely place in your heart.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "I am your rock and your refuge; you are never forgotten.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "You are my joy; I am with you even when others are not.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "I hear your prayers; I am working in your life even now.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "You are surrounded by my love; my peace fills your heart.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "I have called you by name; you are mine, and you are never alone.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "You are held in my arms; my love is all around you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "I am your shepherd; I guide you and keep you safe always.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "You are my treasure; I delight in you, and you are never forgotten.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "I will never abandon you; my love for you is eternal.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "You are my child; my Spirit brings you comfort and joy always.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "I am your faithful friend; I will never let you walk alone.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
+    {
+      "text": "You are wrapped in my love; my peace will never leave you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "loneliness"
+    },
  {
     "text": "Because Jesus loves me, I am never truly alone.",
     "isFavorite": false,
@@ -5284,7 +6935,157 @@
     "isFavorite": false,
     "category": "loneliness"
   },
- {
+  {
+      "text": "You are deeply loved by me, more than you can imagine.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "I have loved you with an everlasting love; you are mine forever.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "My love for you never fails, even on your hardest days.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "You are my precious child; I delight in who you are.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "I loved you first, and my love for you is always faithful.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "You are surrounded by my love, which will never leave you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "I rejoice over you with singing because you are my beloved.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "You are held in my love; nothing can separate you from me.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "I have chosen you to experience the fullness of my love.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "You are my masterpiece, and my love has made you whole.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "I gave my life for you because you are worth everything to me.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "You are always on my heart, and my love for you is endless.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "You are treasured, and I take great joy in loving you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "I have called you by name; you are loved and known by me.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "My love for you is stronger than any fear or doubt you feel.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "You are my child; my love is unshakable and always present.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "I created you with love, and I cherish every part of you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "You are wrapped in my love, and nothing can take that away.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "My love for you is perfect, and it casts out all your fears.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "You are never alone; my love is your constant companion.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "I love you as you are, and I am making you even more beautiful.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "You are precious to me, and I hold you close in my heart.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "I will never stop loving you, no matter what you face.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "You are my beloved, and my love for you will never end.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
+      "text": "I take great joy in you; my love is your strength and peace.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "love"
+  },
+  {
             "text": "For I am sure that neither death nor life, nor angels nor rulers, nor things present nor things to come, nor powers, nor height nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord.",
             "book": "Romans 8:38-39",
             "isFavorite": false,
@@ -6015,6 +7816,157 @@
         { "text": "God’s hand of protection ensures my children’s health and safety.", "bibleVerseText": "The gracious hand of our God is on everyone who looks to him.", "book": "Ezra 8:22", "isFavorite": false, "category": "parenting" },
 
         { "text": "My children will be healthy and free from harm, for God’s hand is upon them.", "bibleVerseText": "The hand of our God was on us, and He protected us from enemies.", "book": "Ezra 8:31", "isFavorite": false, "category": "parenting" },
+          {
+            "text": "You are safe with me; my peace is always with you.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "Let my peace fill your heart, no matter the storm.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "I am your peace; trust me in every situation.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "You are my child; my peace guards your heart and mind.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "You are never alone; my peace will calm every fear.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "I give you peace that the world cannot take away.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "You are held in my hands; let my peace surround you.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "I am your refuge; my peace will carry you through.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "You are loved by me; my peace will calm your soul.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "My peace is your strength; trust me and do not be afraid.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "You are my treasure; I will fill your life with peace.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "I am your shepherd; let my peace guide your steps.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "You are my beloved; my peace will quiet every storm in you.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "I am your light in the darkness; my peace is always near.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "You are my joy; my peace flows over you like a river.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "I have overcome the world; let my peace fill your heart.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "You are safe in my care; my peace is your resting place.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "I will never leave you; my peace will guard your soul.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "You are my child; my peace brings calm to every worry.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "I am working all things for your good; my peace is with you.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "You are never far from my love; my peace will sustain you.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "Let my peace guide your heart; I am always with you.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "You are held in my love; my peace calms every storm you face.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "I am your hope; my peace will give you courage to keep going.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+          {
+            "text": "You are my beloved; my peace is yours in every situation.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "peace"
+          },
+
  {
             "text": "I trust in God and He keeps me in perfect peace.",
             "bibleVerseText": "You will keep in perfect peace those whose minds are steadfast, because they trust in you.",
@@ -18659,6 +20611,1046 @@
     "isFavorite": false,
     "category": "chronicles2"
   },
+    {
+      "text": "You are blessed abundantly; I provide for every need you have.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "I am your shepherd; you will lack nothing in any situation.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "You are my beloved, and I have prepared abundance for you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "I am your source; trust me for prosperity in all you do.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "You are chosen to thrive; my blessings overflow in your life.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "I have opened doors of provision for you that no one can close.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "You are surrounded by my favor; abundance is always within reach.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "I am your provider; trust me, and you will never lack.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "You are my child; my goodness fills your life with wealth and joy.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "I delight in your prosperity; everything you do will succeed in me.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "You are my vessel; I pour out blessings for you to share with others.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "I give you strength to create wealth; your work is blessed by me.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "You are never forgotten; my abundant grace provides for you daily.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "I am leading you to green pastures; my abundance is always yours.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "You are blessed to be a blessing; my riches flow through you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "I am your anchor in every season; my abundance never runs out.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "You are my heir; my kingdom’s abundance belongs to you forever.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "I am giving you wisdom to manage my blessings with grace and purpose.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "You are planted by streams of living water; your life overflows with plenty.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "I am your unshakable foundation; prosperity follows your faith in me.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "You are loved; my abundance flows freely into your life daily.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "I supply all your needs according to my riches in glory.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "You are my delight; I rejoice in pouring blessings into your life.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "I am your constant provider; my storehouses are overflowing for you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+      "text": "You are favored by me; my abundance will chase after you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "wealth"
+    },
+    {
+        "text": "I work hard and receive the rewards of my efforts.",
+        "bibleVerseText": "Work brings profit, but mere talk leads to poverty!",
+        "book": "Proverbs 14:23 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I honor the Lord with my wealth and He blesses me abundantly.",
+        "bibleVerseText": "Honor the Lord with your wealth, with the firstfruits of all your crops; then your barns will be filled to overflowing, and your vats will brim over with new wine.",
+        "book": "Proverbs 3:9-10 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I seek wisdom, and with it comes wealth and honor.",
+        "bibleVerseText": "Wisdom offers you long life in her right hand, and riches and honor in her left.",
+        "book": "Proverbs 3:16 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am abundantly blessed with riches and success.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am worthy of abundance and prosperity.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am bold, fearless, and destined to thrive and prosper.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am destined for abundance in every aspect of my life.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I'm like a money magnet, attracting wealth wherever I go!",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I'm fighting for my dreams and making them real!",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I find new ways to make money and be successful.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I'm not afraid of anything and I can do whatever it takes!",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am able to achieve all my God-given dreams.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am gifted and anointed.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am created to live abundantly and prosperous.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "This is the day of breakthrough.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am thriving.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "The time of increase is now.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Prosperity is apart of my new identity.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "God has given me the power and ability to get and stay wealthy.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I refuse to be poor.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Money comes to me easily.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am wise with my time and resources.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am very rich and wealthy.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I prosper in everything I do.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I have no lack in my life.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "God delights in my prosperity.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am blessed, prosperous and favored by God.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I am blessed with abundance, my cup overflows with His provision.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I attract wealth and success, for He has plans to prosper me.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I thrive in abundance.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I am a magnet for divine blessings, drawing wealth from unexpected sources.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I walk in financial freedom, debts canceled by His grace.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I sow generously and reap bountifully, my investments multiplied.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, my work is rewarded with prosperity, my efforts crowned with success.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I am surrounded by favor, doors of opportunity swinging wide open.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I am empowered to build wealth, His spirit leading me to prosperity.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I live in the overflow, sharing generously from my abundance.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I claim victory over lack, living in the fullness of God's provision.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, my finances are secure, protected by His promises of provision.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I am aligned with the rhythm of abundance, prosperity flowing in my life.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I am a testimony of His generosity, my life a reflection of His wealth.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I am rich in every way, my spirit enriched and my bank accounts full.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, my future is filled with abundance.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I am anointed for prosperity.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, wealth and honor accompany me, I live in the house of the Lord.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I embrace the kingdom's economy, where abundance is my birthright.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I claim the blessings of Abraham, inheriting the promise of prosperity through faith.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I follow the wisdom of Proverbs, attracting wealth through diligence and integrity.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I am like Joseph, prospering in all I do, even in foreign lands.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I am blessed like Solomon, with wisdom that brings wealth and honor.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "In Jesus' name, I experience the multiplication of the loaves and fishes, witnessing abundance in scarcity.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "And it is a good thing to receive wealth from God and the good health to enjoy it. To enjoy your work and accept your lot in life—this is indeed a gift from God.",
+        "book": "Ecclesiastes 5:19 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "He who walks with wise men will be wise, but the one who walks with fools will be destroyed.",
+        "book": "Proverbs 13:20 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I seek first the kingdom of God and his righteousness, and all these things will be added to me.",
+        "book": "Matthew 6:33",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Delight yourself in the LORD, and he will give you the desires of your heart.",
+        "book": "Psalm 37:4",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "True humility and fear of the LORD lead to riches, honor, and long life.",
+        "book": "Proverbs 22:4",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for opening the floodgates of heaven to pour out Your blessings upon me.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for equipping me with the strength and wisdom to generate wealth.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for the abundant life You promised, filled with Your richness.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for guiding my steps towards prosperity in alignment with Your will.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for teaching me to be a steward of the riches You entrust to me.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for the legacy of wealth I can build for my family.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for the peace that comes with knowing my wealth is secure in You.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for the prosperity that follows obedience to Your commands.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for the wisdom to accumulate and manage wealth without losing my soul.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for the promise of prosperity when I delight myself in You.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for the richness of Your kingdom that I inherit as Your child.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for the honor of giving generously, mirroring Your giving heart.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for the security that comes from wealth built on Your foundation.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for the fruitful harvest that rewards my hard work and faith in You.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for the victories in financial battles, won through Your power and guidance.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for the grace that multiplies my resources, exceeding my expectations.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for the courage to dream big and pursue wealth with integrity.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for the privilege of living in abundance, reflecting Your kingdom on earth.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Thank you Jesus for setting me on a path of prosperity, marked by Your blessings and favor.",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I have come that you may have life, and have it to the full.",
+        "book": "Jesus",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Trust in my abundance, I provide more than you can ask or imagine.",
+        "book": "Jesus",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I delight in your prosperity and well-being, walk in my ways.",
+        "book": "Jesus",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I give you the power to create wealth, to establish my covenant.",
+        "book": "Jesus",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Your faithfulness is rewarded in my kingdom, expect my blessings.",
+        "book": "Jesus",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "Give, and it will be given to you, a good measure, pressed down, shaken together, running over.",
+        "book": "Jesus",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am your provider, look to me for your needs.",
+        "book": "Jesus",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+{
+"text": "God's blessings bring abundance into my life.",
+"bibleVerseText": "The blessing of the Lord makes a person rich, and he adds no sorrow with it.",
+"book": "Proverbs 10:22",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I trust in God's endless supply for my every need.",
+"bibleVerseText": "And my God will meet all your needs according to the riches of his glory in Christ Jesus.",
+"book": "Philippians 4:19",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I am growing in prosperity through God's grace.",
+"bibleVerseText": "And God is able to bless you abundantly, so that in all things at all times, having all that you need, you will abound in every good work.",
+"book": "2 Corinthians 9:8",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I am surrounded by God's favor and abundance.",
+"bibleVerseText": "Surely, Lord, you bless the righteous; you surround them with your favor as with a shield.",
+"book": "Psalm 5:12",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God's abundance flows into every area of my life.",
+"bibleVerseText": "The Lord will open the heavens, the storehouse of his bounty, to send rain on your land in season and to bless all the work of your hands.",
+"book": "Deuteronomy 28:12",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I honor God with my wealth and receive His blessings.",
+"bibleVerseText": "Honor the Lord with your wealth, with the firstfruits of all your crops; then your barns will be filled to overflowing, and your vats will brim over with new wine.",
+"book": "Proverbs 3:9-10",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God provides me with wisdom to create and sustain wealth.",
+"bibleVerseText": "By wisdom a house is built, and through understanding it is established; through knowledge its rooms are filled with rare and beautiful treasures.",
+"book": "Proverbs 24:3-4",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I trust God's plan for my prosperity and well-being.",
+"bibleVerseText": "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
+"book": "Jeremiah 29:11",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God blesses me with an abundant life.",
+"bibleVerseText": "I came that they may have life and have it abundantly.",
+"book": "John 10:10",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I receive God's peace and prosperity in my life.",
+"bibleVerseText": "The Lord gives his people strength. The Lord blesses them with peace.",
+"book": "Psalm 29:11",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I am grateful for the wealth that God provides.",
+"bibleVerseText": "You will be enriched in every way so that you can be generous on every occasion, and through us your generosity will result in thanksgiving to God.",
+"book": "2 Corinthians 9:11",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I am a channel for God's prosperity to flow.",
+"bibleVerseText": "Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be poured into your lap. For with the measure you use, it will be measured to you.",
+"book": "Luke 6:38",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God empowers me to succeed and prosper.",
+"bibleVerseText": "The Lord your God will make you most prosperous in all the work of your hands and in the fruit of your womb, the young of your livestock and the crops of your land.",
+"book": "Deuteronomy 30:9",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God's grace abounds, bringing me prosperity in all things.",
+"bibleVerseText": "And God is able to make all grace abound to you, so that always having all sufficiency in everything, you may have an abundance for every good deed.",
+"book": "2 Corinthians 9:8",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I live in God's abundance and receive His bountiful blessings.",
+"bibleVerseText": "The generous will themselves be blessed, for they share their food with the poor.",
+"book": "Proverbs 22:9",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God desires for me to live in abundance and fullness.",
+"bibleVerseText": "The thief comes only to steal and kill and destroy; I have come that they may have life, and have it to the full.",
+"book": "John 10:10",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God's plans for me include prosperity and hope.",
+"bibleVerseText": "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
+"book": "Jeremiah 29:11",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "The Lord blesses me and gives me an abundant life.",
+"bibleVerseText": "The blessing of the Lord makes a person rich, and he adds no sorrow with it.",
+"book": "Proverbs 10:22",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God provides for all my needs and more.",
+"bibleVerseText": "And my God will meet all your needs according to the riches of his glory in Christ Jesus.",
+"book": "Philippians 4:19",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God's abundance is available to me every day.",
+"bibleVerseText": "And God is able to bless you abundantly, so that in all things at all times, having all that you need, you will abound in every good work.",
+"book": "2 Corinthians 9:8",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God delights in my prosperity and success.",
+"bibleVerseText": "Take delight in the Lord, and he will give you the desires of your heart.",
+"book": "Psalm 37:4",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God's favor brings me prosperity and joy.",
+"bibleVerseText": "Surely, Lord, you bless the righteous; you surround them with your favor as with a shield.",
+"book": "Psalm 5:12",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God grants me the power to prosper and thrive.",
+"bibleVerseText": "But remember the Lord your God, for it is he who gives you the ability to produce wealth, and so confirms his covenant, which he swore to your ancestors, as it is today.",
+"book": "Deuteronomy 8:18",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God's grace overflows in my life, bringing abundance.",
+"bibleVerseText": "And God is able to make all grace abound to you, so that in all things at all times, having all that you need, you will abound in every good work.",
+"book": "2 Corinthians 9:8",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God opens doors to prosperity and success for me.",
+"bibleVerseText": "The Lord will open the heavens, the storehouse of his bounty, to send rain on your land in season and to bless all the work of your hands.",
+"book": "Deuteronomy 28:12",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I am planted in God's abundance and flourish.",
+"bibleVerseText": "The righteous will flourish like a palm tree, they will grow like a cedar of Lebanon; planted in the house of the Lord, they will flourish in the courts of our God.",
+"book": "Psalm 92:12-13",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God's prosperity flows freely into my life.",
+"bibleVerseText": "Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be poured into your lap. For with the measure you use, it will be measured to you.",
+"book": "Luke 6:38",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God desires to fill my life with good things.",
+"bibleVerseText": "You open your hand and satisfy the desires of every living thing.",
+"book": "Psalm 145:16",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God's abundance is my inheritance.",
+"bibleVerseText": "You will be enriched in every way so that you can be generous on every occasion, and through us your generosity will result in thanksgiving to God.",
+"book": "2 Corinthians 9:11",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "God's love for me brings prosperity and well-being.",
+"bibleVerseText": "Beloved, I pray that you may prosper in all things and be in health, just as your soul prospers.",
+"book": "3 John 1:2",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I command abundance to flow into my life by the power of God's Word.",
+"bibleVerseText": "The blessing of the Lord makes a person rich, and he adds no sorrow with it.",
+"book": "Proverbs 10:22",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I declare that prosperity is mine through Christ Jesus.",
+"bibleVerseText": "And my God will meet all your needs according to the riches of his glory in Christ Jesus.",
+"book": "Philippians 4:19",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I speak abundance into every area of my life by faith.",
+"bibleVerseText": "And God is able to bless you abundantly, so that in all things at all times, having all that you need, you will abound in every good work.",
+"book": "2 Corinthians 9:8",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I command the doors of prosperity to open for me now.",
+"bibleVerseText": "The Lord will open the heavens, the storehouse of his bounty, to send rain on your land in season and to bless all the work of your hands.",
+"book": "Deuteronomy 28:12",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I declare God's abundance is mine today and always.",
+"bibleVerseText": "The Lord is my shepherd; I have all that I need.",
+"book": "Psalm 23:1",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I speak blessings and wealth into my life with confidence.",
+"bibleVerseText": "Death and life are in the power of the tongue, and those who love it will eat its fruits.",
+"book": "Proverbs 18:21",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I command God's favor to bring me prosperity.",
+"bibleVerseText": "Surely, Lord, you bless the righteous; you surround them with your favor as with a shield.",
+"book": "Psalm 5:12",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I declare that the riches of God's kingdom are mine.",
+"bibleVerseText": "Seek the Kingdom of God above all else, and he will give you everything you need.",
+"book": "Luke 12:31",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I command financial breakthroughs to manifest in my life.",
+"bibleVerseText": "Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be poured into your lap.",
+"book": "Luke 6:38",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I speak abundance and success into existence.",
+"bibleVerseText": "You will be enriched in every way so that you can be generous on every occasion, and through us your generosity will result in thanksgiving to God.",
+"book": "2 Corinthians 9:11",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I declare that wealth flows into my life effortlessly.",
+"bibleVerseText": "The wealth of the rich is their fortified city; they imagine it a wall too high to scale.",
+"book": "Proverbs 18:11",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I command all forms of prosperity to come to me now.",
+"bibleVerseText": "And whatever you ask in prayer, you will receive, if you have faith.",
+"book": "Matthew 21:22",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I speak God's favor and abundance over my finances.",
+"bibleVerseText": "And God is able to make all grace abound to you, so that having all sufficiency in all things at all times, you may abound in every good work.",
+"book": "2 Corinthians 9:8",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I declare God's provision overflows in my life.",
+"bibleVerseText": "My cup overflows with blessings.",
+"book": "Psalm 23:5",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+"text": "I command prosperity to take root in my life.",
+"bibleVerseText": "But they delight in the law of the Lord, meditating on it day and night. They are like trees planted along the riverbank, bearing fruit each season. Their leaves never wither, and they prosper in all they do.",
+"book": "Psalm 1:2-3",
+"isFavorite": false,
+"category": "wealth"
+},
+{
+  "text": "I work hard and receive the rewards of my efforts.",
+   "bibleVerseText": "Work brings profit, but mere talk leads to poverty!",
+   "book": "Proverbs 14:23 ",
+   "isFavorite": false,
+   "category": "wealth"
+    },
+{
+        "text": "I honor the Lord with my wealth and He blesses me abundantly.",
+        "bibleVerseText": "Honor the Lord with your wealth, with the firstfruits of all your crops; then your barns will be filled to overflowing, and your vats will brim over with new wine.",
+        "book": "Proverbs 3:9-10 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am diligent in my work, and I prosper because of it.",
+        "bibleVerseText": "Lazy people want much but get little, but those who work hard will prosper.",
+        "book": "Proverbs 13:4 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I trust in the Lord, and He makes me flourish like a tree by the river.",
+        "bibleVerseText": "But blessed are those who trust in the Lord and have made the Lord their hope and confidence. They are like trees planted along a riverbank, with roots that reach deep into the water.",
+        "book": "Jeremiah 17:7-8 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "God blesses the work of my hands and increases my wealth.",
+        "bibleVerseText": "The blessing of the Lord brings wealth, without painful toil for it.",
+        "book": "Proverbs 10:22 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I give generously and receive abundantly.",
+        "bibleVerseText": "Give, and you will receive. Your gift will return to you in full—pressed down, shaken together to make room for more, running over, and poured into your lap.",
+        "book": "Luke 6:38 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I reap generously because I sow generously.",
+        "bibleVerseText": "Remember this: Whoever sows sparingly will also reap sparingly, and whoever sows generously will also reap generously.",
+        "book": "2 Corinthians 9:6 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am faithful with little, and God blesses me with much.",
+        "bibleVerseText": "If you are faithful in little things, you will be faithful in large ones.",
+        "book": "Luke 16:10 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am rich in every way and generous on every occasion.",
+        "bibleVerseText": "You will be enriched in every way so that you can be generous on every occasion.",
+        "book": "2 Corinthians 9:11 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I seek the kingdom of God first, and everything else is added to me.",
+        "bibleVerseText": "But seek first his kingdom and his righteousness, and all these things will be given to you as well.",
+        "book": "Matthew 6:33 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I obey God's word, and He prospers me in all I do.",
+        "bibleVerseText": "Study this Book of Instruction continually. Meditate on it day and night so you will be sure to obey everything written in it. Only then will you prosper and succeed in all you do.",
+        "book": "Joshua 1:8 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "God is my shepherd, I lack nothing.",
+        "bibleVerseText": "The Lord is my shepherd; I have all that I need.",
+        "book": "Psalm 23:1 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I trust in the Lord and He fills my life with abundance.",
+        "bibleVerseText": "The righteous will flourish like a palm tree, they will grow like a cedar of Lebanon.",
+        "book": "Psalm 92:12 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "God gives me the power to create wealth and establish His covenant.",
+        "bibleVerseText": "But remember the Lord your God, for it is he who gives you the ability to produce wealth.",
+        "book": "Deuteronomy 8:18 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am blessed and fruitful in everything I do.",
+        "bibleVerseText": "You will be blessed when you come in and blessed when you go out.",
+        "book": "Deuteronomy 28:6 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am like a tree planted by streams of water, bearing fruit in season.",
+        "bibleVerseText": "That person is like a tree planted by streams of water, which yields its fruit in season and whose leaf does not wither—whatever they do prospers.",
+        "book": "Psalm 1:3 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I bring my tithes to God, and He opens the windows of heaven for me.",
+        "bibleVerseText": "Bring all the tithes into the storehouse, so there will be enough food in my Temple. If you do, says the Lord of Heaven’s Armies, I will open the windows of heaven for you. I will pour out a blessing so great you won’t have enough room to take it in!",
+        "book": "Malachi 3:10 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "The Lord makes me rich and He is my source of happiness.",
+        "bibleVerseText": "The blessing of the Lord makes a person rich, and he adds no sorrow with it.",
+        "book": "Proverbs 10:22 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I delight in God's Word, and He gives me the desires of my heart.",
+        "bibleVerseText": "Take delight in the Lord, and he will give you the desires of your heart.",
+        "book": "Psalm 37:4 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I am generous, and I am blessed with even more.",
+        "bibleVerseText": "The generous will prosper; those who refresh others will themselves be refreshed.",
+        "book": "Proverbs 11:25 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
+    {
+        "text": "I trust in God, and He makes me successful.",
+        "bibleVerseText": "Commit your actions to the Lord, and your plans will succeed.",
+        "book": "Proverbs 16:3 ",
+        "isFavorite": false,
+        "category": "wealth"
+    },
 {
     "text": "Only ask, and I will give you the nations as your inheritance, the whole earth as your possession.",
     "book": "Psalms 2:8",
@@ -19278,6 +22270,131 @@
     "category": "psalms"
 },
   {
+    "text": "I am walking boldly in God’s purpose for my life.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I have divine guidance directing me toward my destiny.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I am equipped with strength to fulfill my calling.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I have God’s wisdom lighting the path to my future.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I am thriving in the purpose God has designed for me.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I am chosen and called to fulfill God’s plan for my life.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I have peace knowing my destiny is secure in God’s hands.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I am walking by faith into the destiny God has prepared for me.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I have the courage to pursue God’s purpose for my life.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I am filled with confidence in God’s perfect plan for my future.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I am aligning my steps with God’s divine purpose for me.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I have faith that God is opening doors to my destiny.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I am strong in the Lord, fulfilling my divine assignment.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I have unshakable hope in God’s promises for my future.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I am stepping into my destiny with joy and faith.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I have clarity and direction through God’s Spirit within me.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I am fulfilling my destiny with grace and determination.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I have favor and abundance as I pursue God’s purpose.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I am fully equipped to walk in God’s calling for my life.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I have faith that God’s timing is perfect for my destiny.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I am rooted in God’s truth, fulfilling my divine purpose.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I have strength to overcome every obstacle on the way to my destiny.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I am living a life of purpose, guided by God’s promises.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I have God’s blessings pouring over my journey toward my calling.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
+    "text": "I am moving forward in faith, fulfilling every part of my destiny.",
+    "isFavorite": false,
+    "category": "destiny"
+  },
+  {
     "text": "I am committed to taking bold steps toward my God-given dreams.",
     "isFavorite": false,
     "category": "destiny"
@@ -19377,6 +22494,131 @@
       "isFavorite": false,
       "category": "destiny"
   },
+    {
+      "text": "I am covered by Jesus’ abundant grace every day.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I have the fullness of Jesus’ grace in my life.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am walking in the unmerited favor of God’s grace.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I have peace because Jesus’ grace is always enough for me.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am strengthened by the grace of Jesus in every moment.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I have victory in life through the power of Jesus’ grace.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am forgiven and redeemed by the limitless grace of Jesus.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I have access to God’s blessings through Jesus’ grace.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am free from shame, embraced by the grace of Jesus.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I have new beginnings each day because of Jesus’ grace.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am confident in Jesus’ grace, which empowers me to overcome.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I have rest in my soul because Jesus’ grace sustains me.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am restored and renewed through the grace of Jesus Christ.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I have endless hope because Jesus’ grace is alive in me.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am overflowing with gratitude for the grace of Jesus.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I have the courage to move forward through Jesus’ grace.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am blessed with the richness of Jesus’ grace daily.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I have joy in my heart because of Jesus’ abundant grace.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am secure in Jesus’ grace, which will never leave me.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I have strength to face trials because Jesus’ grace carries me.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am thriving in life, covered by Jesus’ grace and love.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I have confidence because Jesus’ grace has made me whole.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am at peace knowing Jesus’ grace is sufficient for me.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I have been chosen to live in the freedom of Jesus’ grace.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am walking in God’s favor because of Jesus’ endless grace.",
+      "isFavorite": false,
+      "category": "grace"
+    },
   {
       "text": "I am living under God’s grace, no matter the choices I’ve made.",
       "isFavorite": false,
@@ -19477,6 +22719,131 @@
       "isFavorite": false,
       "category": "grace"
   },
+    {
+      "text": "I have unshakable faith that moves every mountain.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I am walking boldly in faith, trusting God’s power within me.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I have faith that nothing is impossible with God.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I am strengthened by faith to overcome every challenge.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I have faith that God is working everything for my good.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I am confident in God’s promises to move mountains for me.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I have faith as small as a mustard seed, and it is powerful.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I am walking by faith, not by sight, trusting God completely.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I have faith that God makes a way where there is no way.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I am fearless because my faith is anchored in Christ.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I have faith that God’s power within me can conquer all things.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I am holding onto faith, knowing God’s timing is perfect.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I have faith that every mountain will move in Jesus’ name.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I am filled with faith, knowing God is faithful to His Word.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I have faith that God equips me to overcome every obstacle.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I am declaring victory in faith, for God is my strength.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I have faith that moves mountains and opens doors of blessing.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I am rooted in faith, unshaken by the storms of life.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I have faith that God is bigger than any challenge I face.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I am walking in faith, trusting God’s perfect plan for me.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I have unwavering faith that opens doors no one can shut.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I am moving forward in faith, believing in God’s power to deliver.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I have faith that God’s miracles are working in my life now.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I am speaking to mountains, and they are moving by God’s power.",
+      "isFavorite": false,
+      "category": "faith"
+    },
+    {
+      "text": "I have faith that God’s grace is sufficient to carry me through.",
+      "isFavorite": false,
+      "category": "faith"
+    },
   {
       "text": "I am trusting Jesus to make a way where there seems to be no way.",
       "isFavorite": false,
@@ -20103,6 +23470,156 @@
       "category": "guidance"
   },
   {
+      "text": "You are healed by my stripes; walk in my wholeness.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "I have made you whole; your body is restored in me.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "You are strong in my power; sickness has no hold on you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "I am your healer; every part of you is being renewed.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "You are my beloved, and my healing flows through you today.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "I am restoring your body, mind, and soul to perfect peace.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "You are whole in me; my power is renewing your strength.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "I am breathing life into your body; every cell is being restored.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "You are free from pain, for my grace sustains you completely.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "I am renewing your energy; you are vibrant and alive in me.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "You are safe in my hands; I am bringing healing to your heart.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "I am the Lord who heals you; nothing is impossible for me.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "You are a temple of my Spirit, and I am making you whole.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "I am releasing my healing power in you; your restoration has begun.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "You are free from illness, for I am your source of life.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "I am your peace; my presence fills you with health and strength.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "You are covered by my love; every wound is being healed in me.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "I am restoring your soul and healing your brokenness completely.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "You are whole in my love; nothing is missing or broken in you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "I am removing every fear; trust my healing touch over your life.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "You are full of life, for I have overcome death for you.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "I am making all things new in you; receive my complete healing.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "You are healed in my name; walk in faith and strength today.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "I am pouring my grace over you; every need in your body is met.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
+      "text": "You are my beloved; my power is at work bringing you wholeness.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "health"
+  },
+  {
       "text": "I am experiencing the renewal of my youth, with every part of my body refreshed and restored.",
       "isFavorite": false,
       "category": "health"
@@ -20176,6 +23693,156 @@
       "text": "I am experiencing divine renewal, with my youth and every organ in my body restored to perfection.",
       "isFavorite": false,
       "category": "health"
+  },
+  {
+      "text": "You are my beloved; your place in heaven is secure with me.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "I have prepared a beautiful home for you in heaven.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "You are a citizen of heaven; your name is written in my book.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "I am the way to eternal life; trust in me completely.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "You are promised a place in heaven because you are mine.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "I have overcome death so you can live with me forever.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "You are walking the path to eternal joy in my presence.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "I am waiting for you with open arms in my heavenly kingdom.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "You are covered by my grace; heaven is your eternal reward.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "I have called you to an eternal inheritance that will never fade.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "You are loved, and nothing can separate you from my promise of heaven.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "I have gone to prepare a place for you; trust in my promise.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "You are destined for heaven, where there will be no more tears or pain.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "I am the resurrection and the life; through me, you will live forever.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "You are part of my eternal family; heaven is your true home.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "I have sealed you with my Spirit as a guarantee of your place in heaven.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "You are redeemed by my blood; heaven is your eternal destiny.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "I am your good shepherd, leading you to my heavenly kingdom.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "You are my treasure; your reward in heaven is beyond imagination.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "I have conquered the grave; you have eternal life through me.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "You are my beloved, and I will welcome you into everlasting joy.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "I have promised you a crown of life; remain faithful to me.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "You are chosen to inherit eternal glory in my kingdom.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "I am the door to heaven; those who enter through me are saved.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
+  },
+  {
+      "text": "You are my joy, and I eagerly await your arrival in heaven.",
+      "isFavorite": false,
+      "book": "Jesus",
+      "category": "heaven"
   },
   {
       "text": "I am eagerly awaiting the second coming of Jesus and the glory of Heaven that awaits me.",

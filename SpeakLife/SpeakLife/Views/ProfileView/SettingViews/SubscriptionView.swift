@@ -214,6 +214,7 @@ struct SubscriptionView: View {
         self.size = size
         // self.ctaText = ctaText
         self.isDiscount = isDiscount
+        self.callback = callback
     }
     
     var body: some View {

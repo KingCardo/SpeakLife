@@ -6,13 +6,32 @@
 	<array>
 		<string>com.speaklife.updateNotificationContent</string>
 	</array>
-	<key>UIBackgroundModes</key>
+	<key>CFBundleURLTypes</key>
 	<array>
-		<string>fetch</string>
-		<string>processing</string>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb904572920975437</string>
+			</array>
+		</dict>
 	</array>
+	<key>FacebookAppID</key>
+	<string>904572920975437</string>
+	<key>FacebookClientToken</key>
+	<string>ca6d6cdf360624116b189dfccc35eba5</string>
+	<key>FacebookDisplayName</key>
+	<string>SpeakLife: Bible Affirmations</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-4361689433807539~4974376840</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>MinimumOSVersion</key>
+	<string>16.0</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<string>cstr6suwn9.skadnetwork</string>
@@ -65,31 +84,11 @@
 		<string>3rd42ekr43.skadnetwork</string>
 		<string>3qcr597p9d.skadnetwork</string>
 	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>CFBundleURLTypes</key>
+	<key>UIBackgroundModes</key>
 	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb904572920975437</string>
-			</array>
-		</dict>
+		<string>audio</string>
+		<string>fetch</string>
+		<string>processing</string>
 	</array>
-	<key>FacebookAppID</key>
-	<string>904572920975437</string>
-	<key>FacebookDisplayName</key>
-	<string>SpeakLife: Bible Affirmations</string>
-	<key>FacebookClientToken</key>
-	<string>ca6d6cdf360624116b189dfccc35eba5</string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>We kindly request your permission to track installations to improve our advertising campaigns.</string>
-	<key>MinimumOSVersion</key>
-	<string>16.0</string>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
 </dict>
 </plist>

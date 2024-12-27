@@ -222,6 +222,14 @@ let bedTimeFiles: [AudioDeclaration] = [
            imageUrl: "redsea",
            isPremium: true
        ),
+    AudioDeclaration(
+           id: "david.mp3",
+           title: "David’s Journey",
+           subtitle: "From Shepherd to King",
+           duration: "8m",
+           imageUrl: "david",
+           isPremium: true
+       ),
     ]
 
 final class AudioDeclarationViewModel: ObservableObject {

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct UpNextCell: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
@@ -184,7 +185,9 @@ struct AudioDeclarationView: View {
                     )
                 }
                 .sheet(item: $selectedItem, onDismiss: {
-                    audioViewModel.isBarVisible = true
+                    withAnimation {
+                        audioViewModel.isBarVisible = true
+                    }
                 }) { item in
                     if let audioURL = audioURL {
                         AudioPlayerView(
@@ -196,6 +199,7 @@ struct AudioDeclarationView: View {
                         .onAppear {
                             audioViewModel.loadAudio(from: audioURL, isSameItem: lastSelectedItem == item)
                             lastSelectedItem = item
+                            Analytics.logEvent(item.id, parameters: nil)
                         }
                         
                     }

@@ -435,7 +435,7 @@ final class NotificationManager: NSObject {
     
     private func thanksgivingReminder() {
         let id = UUID().uuidString
-        let body = "Today, take a moment to reflect on God’s abundant blessings and His unwavering love. Let gratitude fill your heart and overflow with thankfulness. May His grace and love surround you and yours today and always. 🍂🦃" // Localize
+        let body = "Let gratitude fill your heart and overflow with thankfulness. May His grace and love surround you and yours today and always. 🍂🦃" // Localize
         
         let content = UNMutableNotificationContent()
         content.title = "Happy Thanksgiving from SpeakLife!"
@@ -446,7 +446,7 @@ final class NotificationManager: NSObject {
         dateComponents.calendar = Calendar.autoupdatingCurrent
         dateComponents.timeZone = TimeZone.autoupdatingCurrent
         dateComponents.hour = 10
-        dateComponents.day = 28
+        dateComponents.day = 27
         dateComponents.month = 11
         
         let trigger = UNCalendarNotificationTrigger(

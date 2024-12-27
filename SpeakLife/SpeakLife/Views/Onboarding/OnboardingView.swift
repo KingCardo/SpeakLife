@@ -242,7 +242,6 @@ struct OnboardingView: View  {
                 }
                 .tag(Tab.notification)
                 
-             
 
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
@@ -456,8 +455,10 @@ struct OnboardingView: View  {
                     onboardingTab = selection.rawValue
                 case .subscription:
                     Analytics.logEvent("SubscriptionScreenDone", parameters: nil)
-                    viewModel.choose(.general) { _ in }
-                    dismissOnboarding()
+                    viewModel.choose(.general) { _ in
+                        dismissOnboarding()
+                    }
+                   
 //                    if subscriptionStore.isPremium {
 //                        viewModel.choose(.general) { _ in }
 //                        dismissOnboarding()
@@ -663,7 +664,6 @@ struct OnboardingView: View  {
         withAnimation {
             appState.isOnboarded = true
             Analytics.logEvent(Event.onBoardingFinished, parameters: nil)
-
         }
         
     }

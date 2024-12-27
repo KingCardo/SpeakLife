@@ -53,8 +53,9 @@ class AudioPlayerViewModel: ObservableObject {
         
         if isPlaying {
             player.pause()
+            AudioPlayerService.shared.playMusic()
         } else {
-            AudioPlayerService.shared.pauseMusic()
+           AudioPlayerService.shared.pauseMusic()
             player.play()
         }
         
@@ -106,6 +107,6 @@ class AudioPlayerViewModel: ObservableObject {
             player?.removeTimeObserver(timeObserver)
         }
         resetPlayer()
-        AudioPlayerService.shared.playMusic()
+       // AudioPlayerService.shared.playMusic()
     }
 }
