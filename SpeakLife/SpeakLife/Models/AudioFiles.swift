@@ -238,11 +238,59 @@ let bedTimeFiles: [AudioDeclaration] = [
 // Gospel
 let gospelFiles: [AudioDeclaration] = [
     AudioDeclaration(
-           id: "beginning.mp3",
-           title: "In the Beginning",
-           subtitle: "Journey into God’s Perfect Creation",
-           duration: "9m",
-           imageUrl: "flowingRiver",
+           id: "jesusBeginningMatthew.mp3",
+           title: "The Beginning of Jesus’ Journey",
+           subtitle: "Matthew 1-3",
+           duration: "8m",
+           imageUrl: "jesusBeginningMatthew",
            isPremium: false
+       ),
+    AudioDeclaration(
+           id: "sermonMount.mp3",
+           title: "How Jesus Showed Us the Way to Live",
+           subtitle: "Matthew 4-7",
+           duration: "11m",
+           imageUrl: "sermonMount",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "jesusMiracles.mp3",
+           title: "Miracles That Show the Heart of the Savior",
+           subtitle: "Matthew 8-9",
+           duration: "11m",
+           imageUrl: "jesusMiracles",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "followJesus.mp3",
+           title: "Jesus’ Instructions, Miracles, and Parables of the Kingdom",
+           subtitle: "Matthew 10-13",
+           duration: "11m",
+           imageUrl: "followJesus",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "jesusTeachings.mp3",
+           title: "Jesus’ Miracles, Teachings, and Encounters on the Path to Jerusalem",
+           subtitle: "Matthew 14-20",
+           duration: "11m",
+           imageUrl: "jesusTeachings",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "finalTeachings.mp3",
+           title: "The Final Teachings of the King",
+           subtitle: "Matthew 21-25",
+           duration: "12m",
+           imageUrl: "finalTeachings",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "jesusVictory.mp3",
+           title: "The Passion and Victory of the King",
+           subtitle: "Matthew 26-28",
+           duration: "11m",
+           imageUrl: "jesusVictory",
+           isPremium: true
        ),
     ]

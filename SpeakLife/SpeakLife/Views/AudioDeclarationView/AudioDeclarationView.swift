@@ -26,6 +26,7 @@ struct UpNextCell: View {
                 // Title
                 Text(item.title)
                     .font(.subheadline)
+                    .minimumScaleFactor(0.8)
                     .lineLimit(2)
                 
                 // Subtitle
@@ -78,7 +79,7 @@ struct AudioDeclarationView: View {
     @State private var audioURL: URL? = nil
     @State private var errorMessage: ErrorWrapper? = nil
     @State private var isPresentingPremiumView = false
-    let filters: [Filter] = [.declarations, .bedtimeStories, .gospel]
+    let filters: [Filter] = [.declarations, .gospel, .bedtimeStories]
     @State private var selectedFilter: Filter = .declarations
     
      var filteredContent: [AudioDeclaration] {
@@ -112,7 +113,6 @@ struct AudioDeclarationView: View {
                                         .cornerRadius(20)
                                 }
                             }
-                            .padding(.horizontal)
                         }
                         .padding(.horizontal)
                     }
