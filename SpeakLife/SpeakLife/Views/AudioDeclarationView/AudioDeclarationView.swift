@@ -65,6 +65,7 @@ struct ErrorWrapper: Identifiable {
 enum Filter: String {
     case declarations = "Declarations"
     case bedtimeStories = "Bedtime Stories"
+    case gospel = "Gospel"
 }
 
 struct AudioDeclarationView: View {
@@ -77,7 +78,7 @@ struct AudioDeclarationView: View {
     @State private var audioURL: URL? = nil
     @State private var errorMessage: ErrorWrapper? = nil
     @State private var isPresentingPremiumView = false
-    let filters: [Filter] = [.declarations, .bedtimeStories]
+    let filters: [Filter] = [.declarations, .bedtimeStories, .gospel]
     @State private var selectedFilter: Filter = .declarations
     
      var filteredContent: [AudioDeclaration] {
@@ -86,6 +87,8 @@ struct AudioDeclarationView: View {
             return viewModel.audioDeclarations
         case .bedtimeStories:
             return viewModel.bedtimeStories
+        case .gospel:
+            return viewModel.gospelStories
         }
     }
     
@@ -109,6 +112,7 @@ struct AudioDeclarationView: View {
                                         .cornerRadius(20)
                                 }
                             }
+                            .padding(.horizontal)
                         }
                         .padding(.horizontal)
                     }
