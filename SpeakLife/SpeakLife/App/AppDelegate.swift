@@ -45,6 +45,20 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         return true
     }
     
+    func userNotificationCenter(
+            _ center: UNUserNotificationCenter,
+            didReceive response: UNNotificationResponse,
+            withCompletionHandler completionHandler: @escaping () -> Void
+        ) {
+            if response.actionIdentifier == "MANAGE_SUBSCRIPTION" {
+                // Navigate the user to the subscription management page
+                if let url = URL(string: "https://your-app-subscription-management-url.com") {
+                    UIApplication.shared.open(url)
+                }
+            }
+            completionHandler()
+        }
+    
     func application(
             _ app: UIApplication,
             open url: URL,

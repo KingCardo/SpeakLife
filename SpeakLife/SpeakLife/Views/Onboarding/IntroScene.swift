@@ -83,7 +83,7 @@ struct IntroTipScene: View {
                     
             
                     Text(subtext)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .callout))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .callout))
                         .foregroundColor(appState.onBoardingTest ? .white : Color(red: 119/255, green: 142/255, blue: 180/255))
                        // .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)

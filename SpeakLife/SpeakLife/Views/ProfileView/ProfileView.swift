@@ -101,7 +101,7 @@ struct ProfileView: View {
                         if appState.onBoardingTest {
                             createYourOwnRow
                             streakRow
-                            prayerRow
+                          // prayerRow
                         }
                         
                         remindersRow

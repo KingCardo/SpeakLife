@@ -433,6 +433,7 @@ struct SubscriptionView: View {
             guard let currentSelection = currentSelection else { return }
             if let transaction = try await subscriptionStore.purchaseWithID([currentSelection.id]) {
                 print(currentSelection, transaction.id, transaction.jsonRepresentation, transaction.productType, "RWRW")
+                NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
                 Analytics.logEvent(currentSelection.id, parameters: nil)
                // callback?()
             }
@@ -455,6 +456,7 @@ struct SubscriptionView: View {
             withAnimation {
                 declarationStore.isPurchasing = false
                 callback?()
+                
             }
         }
     }
@@ -462,6 +464,7 @@ struct SubscriptionView: View {
     func buy(_ iap: Product) async {
         do {
             if let _ = try await subscriptionStore.purchaseWithID([iap.id]) {
+                NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
                 Analytics.logEvent(iap.id, parameters: nil)
             }
         } catch StoreError.failedVerification {
@@ -492,6 +495,7 @@ struct SubscriptionView: View {
     func buy(_ iap: InAppId.Subscription) async {
         do {
             if let _ = try await subscriptionStore.purchaseWithID([iap.rawValue]) {
+                NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
                 Analytics.logEvent(iap.rawValue, parameters: nil)
                 //callback?()
             }

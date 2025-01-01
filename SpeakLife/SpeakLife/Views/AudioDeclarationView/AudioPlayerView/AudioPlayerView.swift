@@ -55,6 +55,16 @@ struct AudioPlayerView: View {
                                         }
                                     }
                                 )
+                                // Time indicators
+//                                HStack {
+//                                    Text(formatTime(viewModel.currentTime))
+//                                        .font(.caption)
+//                                    Spacer()
+//                                    Text(formatTime(viewModel.duration))
+//                                        .font(.caption)
+//                                }
+//                                .foregroundColor(.white)
+//                                .padding(.horizontal)
                             } else {
                                 Text("Loading...")
                                     .foregroundColor(.white)
@@ -62,15 +72,16 @@ struct AudioPlayerView: View {
                             }
                 
                         
-                            
-                            // Time indicators
-                            HStack {
-                                Text(formatTime(viewModel.currentTime))
-                                    .font(.caption)
-                                Spacer()
-                                Text(formatTime(viewModel.duration))
-                                    .font(.caption)
-                            }
+                        
+                                // Time indicators
+                                HStack {
+                                    Text(formatTime(viewModel.currentTime))
+                                        .font(.caption)
+                                    Spacer()
+                                    Text(formatTime(viewModel.duration))
+                                        .font(.caption)
+                                }
+                        
                             .foregroundColor(.white)
                             .padding(.horizontal)
                             // Playback buttons
@@ -94,7 +105,7 @@ struct AudioPlayerView: View {
                                     Image(systemName: viewModel.isPlaying ? "pause.circle.fill" : "play.circle.fill")
                                         .font(.system(size: 50))
                                         .foregroundColor(.white)
-                                        .frame(width: 60, height: 60)
+                                        .frame(width: 80, height: 80)
                                       //  .background(Circle().fill(Color(.systemGray6)))
                                         .shadow(radius: 5)
                                 }

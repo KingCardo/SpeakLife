@@ -173,7 +173,7 @@ struct OnboardingView: View  {
                         advance()
                 }
                     .tag(Tab.liveVictorious)
-                IntroTipScene(title: "Audio Declarations",
+                IntroTipScene(title: "Prayers that Move Mountains",
                               bodyText: "Speak Life Over Your Day with Powerful audio declarations to activate God’s promises and shift your mindset.",
                               subtext: "Your words carry power. Listen to and declare faith-filled promises that replace doubt with truth, fear with peace, and lack with abundance.",
                               ctaText: "Activate God’s Promises",

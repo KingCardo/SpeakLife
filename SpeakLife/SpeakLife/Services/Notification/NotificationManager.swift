@@ -57,9 +57,51 @@ final class NotificationManager: NSObject {
         morningAffirmationReminder()
         nightlyAffirmationReminder()
         devotionalAffirmationReminder()
+        prayersAffirmationReminder()
         christmasReminder()
         newYearsReminder()
         thanksgivingReminder()
+    }
+    
+    func scheduleTrialEndingReminder(subscriptionDate: Date) {
+        setupNotificationCategory()
+            let notificationCenter = UNUserNotificationCenter.current()
+            
+            // Calculate the fire date (5 days after subscription)
+            let fireDate = Calendar.current.date(byAdding: .day, value: 5, to: subscriptionDate) ?? Date()
+            let content = UNMutableNotificationContent()
+            content.title = "Your Trial is Ending Soon"
+            content.body = "Your 7-day trial ends in 2 days. If you don’t cancel, your subscription will renew automatically."
+            content.sound = .default
+            
+            // Create a trigger based on the calculated fire date
+            let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: fireDate)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+            
+            // Create and add the request
+            let request = UNNotificationRequest(identifier: "TrialEndingReminder", content: content, trigger: trigger)
+            notificationCenter.add(request) { error in
+                if let error = error {
+                    print("Error scheduling notification: \(error.localizedDescription)")
+                }
+            }
+        }
+    
+    func setupNotificationCategory() {
+        let manageAction = UNNotificationAction(
+            identifier: "MANAGE_SUBSCRIPTION",
+            title: "Manage Subscription",
+            options: [.foreground] // Opens the app when tapped
+        )
+        
+        let category = UNNotificationCategory(
+            identifier: "TRIAL_ENDING_CATEGORY",
+            actions: [manageAction],
+            intentIdentifiers: [],
+            options: []
+        )
+        
+        UNUserNotificationCenter.current().setNotificationCategories([category])
     }
     
     func prepareDailyStreakNotification(with name: String = "Friend", streak: Int, hasCurrentStreak: Bool) {
@@ -395,6 +437,31 @@ final class NotificationManager: NSObject {
         dateComponents.timeZone = TimeZone.autoupdatingCurrent
         dateComponents.hour = 8
         dateComponents.minute = 30
+        
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: dateComponents, repeats: true)
+        
+        
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        notificationCenter.add(request) { (error) in
+            if error != nil {
+                //  TODO: - handle error
+            }
+        }
+    }
+    private func prayersAffirmationReminder() {
+        let id = UUID().uuidString
+        let body = "Time to move mountains 🏔️, come pray along to start your day!" // Localize
+        
+        let content = UNMutableNotificationContent()
+        content.title = "SpeakLife"
+        content.body = body
+        content.sound = UNNotificationSound.default
+        
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.autoupdatingCurrent
+        dateComponents.timeZone = TimeZone.autoupdatingCurrent
+        dateComponents.hour = 8
         
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: dateComponents, repeats: true)

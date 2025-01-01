@@ -36,6 +36,8 @@ struct HomeView: View {
     @Binding var isShowingLanding: Bool
     @StateObject private var viewModel = FacebookTrackingViewModel()
     @State var showGiftView = false
+    @State private var isPresented = false
+    private let currentVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0.0"
 
     let data = [true, false]
     var body: some View {
@@ -106,6 +108,11 @@ struct HomeView: View {
                     }
             }
             .hideTabBar(if: appState.showScreenshotLabel)
+            .sheet(isPresented: $isPresented) {
+                WhatsNewBottomSheet(isPresented: $isPresented, version: currentVersion)
+                    .presentationDetents([.medium, .large])
+                                   .presentationDragIndicator(.visible)
+            }
             .accentColor(Constants.DAMidBlue)
 //            .sheet(isPresented: $showGiftView, content: {
 //                OfferPageView() {
@@ -113,6 +120,7 @@ struct HomeView: View {
 //                }
 //            })
             .onAppear {
+                checkForNewVersion()
                 UIScrollView.appearance().isScrollEnabled = true
 //                if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
 //                    AudioPlayerService.shared.playSound(files: resources)
@@ -129,6 +137,14 @@ struct HomeView: View {
             showGiftView.toggle()
             appState.showGiftViewCount += 1
         }
+    }
+    
+    private func checkForNewVersion() {
+        let lastVersion = UserDefaults.standard.string(forKey: "lastVersion") ?? "0.0.0"
+        if lastVersion != currentVersion {
+            isPresented = true
+            UserDefaults.standard.set(currentVersion, forKey: "lastVersion")
+       }
     }
 }
 

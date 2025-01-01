@@ -7,8 +7,9 @@
 
 import SwiftUI
 import AVFoundation
+import Combine
 
-class AudioPlayerViewModel: ObservableObject {
+final class AudioPlayerViewModel: ObservableObject {
     @Published var isPlaying: Bool = false
     @Published var currentTime: Double = 0
     @Published var duration: Double = 0
@@ -21,6 +22,17 @@ class AudioPlayerViewModel: ObservableObject {
     
     private var player: AVPlayer?
     private var timeObserver: Any?
+    private var cancellables = Set<AnyCancellable>()
+    
+    init() {
+        Publishers.CombineLatest($currentTime, $duration)
+            .sink { [weak self] currentTime, duration in
+                if currentTime == duration {
+                    self?.isPlaying = false
+                }
+            }
+            .store(in: &cancellables)
+    }
     
     func loadAudio(from url: URL, isSameItem: Bool) {
         
@@ -41,9 +53,9 @@ class AudioPlayerViewModel: ObservableObject {
         timeObserver = player?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1), queue: .main) { [weak self] time in
             guard let self = self else { return }
             self.currentTime = CMTimeGetSeconds(time)
-            if let duration = self.player?.currentItem?.duration {
-                self.duration = CMTimeGetSeconds(duration)
-            }
+//            if let duration = self.player?.currentItem?.duration {
+//                self.duration = CMTimeGetSeconds(duration)
+//            }
         }
         togglePlayPause()
     }

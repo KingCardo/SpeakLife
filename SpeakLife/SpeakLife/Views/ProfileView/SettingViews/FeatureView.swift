@@ -112,11 +112,11 @@ struct FeatureView: View {
 //        Feature(subtitle: "Strengthen your faith daily with affirmations that remind you of God’s unchanging love and power."),
 //        Feature(subtitle: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future."),
         Feature(subtitle: "Unlimited Daily Scripture Reminders"),
-        Feature(subtitle: "Start Each Day with a Spirit-Filled Devotional"),
-        Feature(subtitle: "Access 10,000+ Powerful Affirmations and Scriptures"),
-        Feature(subtitle: "Victory Through Audio Declarations"),
-        Feature(subtitle: "Peaceful Nights with Bible Bedtime Stories"),
-        Feature(subtitle: "30+ Customizable Themes for a Personal Touch")
+        Feature(subtitle: "Mountain-Moving Prayers"),
+        Feature(subtitle: "Empower Your Day with a Spirit-Filled Devotional"),
+        Feature(subtitle: "Unlock 10,000+ Powerful Affirmations and Scriptures"),
+        Feature(subtitle: "Drift Into Peaceful Sleep with Bible Bedtime Stories"),
+        Feature(subtitle: "Transform Your Experience with 30+ Customizable Themes")
         ]
     
     let features: [Feature] = [

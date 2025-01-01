@@ -64,7 +64,7 @@ struct ErrorWrapper: Identifiable {
 }
 
 enum Filter: String {
-    case declarations = "Declarations"
+    case declarations = "Mountain-Moving Prayers"
     case bedtimeStories = "Bedtime Stories"
     case gospel = "Gospel"
 }

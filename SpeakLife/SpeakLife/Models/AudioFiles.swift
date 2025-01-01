@@ -10,6 +10,15 @@ import Foundation
 // Declaration
 let audioFiles: [AudioDeclaration] = [
     AudioDeclaration(
+           id: "psalm91.mp3",
+           title: "Psalm 91: A Shield of Protection",
+           subtitle: "Declaring God’s Faithful Promises of Safety and Refuge",
+           duration: "2m",
+           imageUrl: "pinkHueMountain",
+           isPremium: false
+       ),
+    
+    AudioDeclaration(
            id: "healed.mp3",
            title: "Healing Declarations",
            subtitle: "Speaking Wholeness, Strength, and Restoration Through the Power of Faith",
@@ -41,14 +50,7 @@ let audioFiles: [AudioDeclaration] = [
            imageUrl: "heavenly",
            isPremium: true
        ),
-    AudioDeclaration(
-           id: "psalm91.mp3",
-           title: "Psalm 91: A Shield of Protection",
-           subtitle: "Declaring God’s Faithful Promises of Safety and Refuge",
-           duration: "2m",
-           imageUrl: "pinkHueMountain",
-           isPremium: true
-       ),
+   
     AudioDeclaration(
            id: "victorious.mp3",
            title: "Living Victoriously in Christ",
