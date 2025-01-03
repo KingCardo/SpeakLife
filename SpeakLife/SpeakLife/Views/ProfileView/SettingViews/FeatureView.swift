@@ -47,7 +47,7 @@ struct FeatureRow: View {
             VStack(alignment: .leading) {
                 
                 Text(feature.subtitle)
-                    .font(.system(size: 14, weight: .semibold, design: .rounded))
+                    .font(.system(size: 12, weight: .semibold, design: .rounded))
                 
             }
             Spacer()
@@ -111,12 +111,12 @@ struct FeatureView: View {
 //        Feature(subtitle: "Speak peace into your life with daily affirmations that calm your mind and align your heart with God’s promises."),
 //        Feature(subtitle: "Strengthen your faith daily with affirmations that remind you of God’s unchanging love and power."),
 //        Feature(subtitle: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future."),
-        Feature(subtitle: "Unlimited Daily Scripture Reminders"),
-        Feature(subtitle: "Mountain-Moving Prayers"),
-        Feature(subtitle: "Empower Your Day with a Spirit-Filled Devotional"),
-        Feature(subtitle: "Unlock 10,000+ Powerful Affirmations and Scriptures"),
-        Feature(subtitle: "Drift Into Peaceful Sleep with Bible Bedtime Stories"),
-        Feature(subtitle: "Transform Your Experience with 30+ Customizable Themes")
+        Feature(subtitle: "Daily Scripture Reminders to Uplift Your Day"),
+        Feature(subtitle: "Powerful Prayers That Move Mountains"),
+        Feature(subtitle: "Access 10,000+ Affirmations to Renew Your Mind"),
+        Feature(subtitle: "Daily Devotionals to start each day"),
+        Feature(subtitle: "Sleep Peacefully with Bible Bedtime Stories"),
+        Feature(subtitle: "Customize Your Experience with 30+ Themes")
         ]
     
     let features: [Feature] = [

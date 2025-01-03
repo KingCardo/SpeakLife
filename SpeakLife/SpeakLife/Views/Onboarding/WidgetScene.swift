@@ -20,7 +20,7 @@ struct WidgetScene: View {
         VStack {
             Spacer().frame(height: 30)
             
-            Text("Add a widget to your home screen", comment: "Widget scene add widget text")
+            Text("Stay Inspired—Add a Widget", comment: "Widget scene add widget text")
                 .font(.system(size: 34, weight: .semibold, design: .rounded))
                 .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                 .foregroundColor(.white)
@@ -35,7 +35,7 @@ struct WidgetScene: View {
                
                 
                 VStack {
-                    Text("From the Home Screen, press down on an empty area until the apps wiggle.", comment: "widget scene add instructions")
+                    Text("Long press your home screen until apps wiggle.", comment: "widget scene add instructions")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
@@ -44,7 +44,16 @@ struct WidgetScene: View {
                     
                     Spacer().frame(height: 24)
                     
-                    Text("Then tap the + button in upper corner to add a widget.", comment: "widget scene additional instructions")
+                    Text("Tap the '+' in the top corner.", comment: "widget scene additional instructions")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(10)
+                        .foregroundColor(.white)
+                        .lineLimit(nil)
+                    
+                    Spacer().frame(height: 24)
+                    
+                    Text("Search for SpeakLife and add the widget.", comment: "widget scene additional instructions")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
@@ -55,7 +64,7 @@ struct WidgetScene: View {
             }
             Spacer()
             
-            ShimmerButton(colors: [Constants.DAMidBlue, .cyan, Constants.DADarkBlue.opacity(0.6)], buttonTitle: "Got it!", action: callBack)
+            ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Got it!", action: callBack)
             .frame(width: size.width * 0.87 ,height: 60)
             .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
             

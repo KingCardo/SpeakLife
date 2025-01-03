@@ -264,8 +264,8 @@ struct SubscriptionView: View {
                     Spacer()
                         .frame(height: 24)
                     VStack {
-                        Text("Join over 40k+ SpeakLifers")
-                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 26, relativeTo: .title))
+                        Text("Join 40,000+ SpeakLifers Today!")
+                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .title))
                             .foregroundStyle(Color.white)
                         
                         StarRatingView(rating: 4.8)
@@ -374,7 +374,7 @@ struct SubscriptionView: View {
     @ViewBuilder
     var costDescription: some View {
         VStack(spacing: 4) {
-            Text(currentSelection?.title ?? "" + ".")
+            Text(currentSelection?.costDescription ?? "")
             
         }
         .font(Font.custom("Roboto-Regular", size: 12, relativeTo: .callout))
@@ -388,9 +388,9 @@ struct SubscriptionView: View {
                 .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 6)
             Spacer()
                 .frame(height: 10)
-//            costDescription
-//            Spacer()
-//                .frame(height: 8)
+            costDescription
+            Spacer()
+                .frame(height: 8)
             
             
             HStack {
@@ -525,7 +525,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        return ShimmerButton(colors: [Constants.traditionalGold, .indigo], buttonTitle: currentSelection?.ctaButtonTitle ?? "Subscribe", action: makePurchase)
+        return ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: currentSelection?.ctaButtonTitle ?? "Subscribe", action: makePurchase)
             .opacity(currentSelection != nil ? 1 : 0.5)
     }
     // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
@@ -543,7 +543,7 @@ struct SubscriptionView: View {
     func firstSelectionBox() -> some View {
         ZStack() {
             RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(Color.gray, lineWidth: 1)
+                .strokeBorder(Color.yellow, lineWidth: 1)
                 .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == firstSelection ? Constants.DAMidBlue : .clear))
                 .shadow(color: currentSelection == firstSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
                 .frame(height: 60)
@@ -563,16 +563,16 @@ struct SubscriptionView: View {
                         .foregroundColor(.black)
                 }
                 //  .padding(.trailing)
-                .offset(x: -10, y: -32)
+                .offset(x: -10, y: -36)
             }
             
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(firstSelection?.ctaDurationTitle ?? "")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
                         .bold()
                     Text(firstSelection?.subTitle ?? "")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 12))
                     
                 }
                 Spacer()
@@ -598,10 +598,10 @@ struct SubscriptionView: View {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(secondSelection?.ctaDurationTitle ?? "")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
                         .bold()
                     Text(secondSelection?.subTitle ?? "")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 12))
                     
                 }
                 Spacer()

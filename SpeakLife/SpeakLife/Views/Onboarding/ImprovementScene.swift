@@ -35,14 +35,14 @@ struct ImprovementScene: View {
                     Spacer().frame(height: 16)
                     
                     VStack {
-                        Text("We'll personalize your feed based on your goals." , comment: "Intro scene instructions")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 25, relativeTo: .body))
+                        Text("Let us guide you based on your goals. Choose what matters most to you." , comment: "Intro scene instructions")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                             .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                             .multilineTextAlignment(.center)
                             .lineSpacing(10)
                             .lineLimit(nil)
                         
-                        Spacer().frame(height: 24)
+                      //  Spacer().frame(height: 12)
                         
                     }
                     .frame(width: size.width * 0.8)
@@ -54,7 +54,7 @@ struct ImprovementScene: View {
                 Spacer()
                 .frame(height: size.height * 0.05)
             
-            ShimmerButton(colors: [Constants.DAMidBlue, .cyan, Constants.DADarkBlue.opacity(0.6)], buttonTitle: "Transform me", action: callBack)
+            ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Start My Journey", action: callBack)
             .frame(width: size.width * 0.87 ,height: 60)
             .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
                 
@@ -98,16 +98,18 @@ class ImprovementViewModel: ObservableObject {
 enum Improvements: String, CaseIterable {
     
    // case joy = "Be happy and content"
+    case stress = "Remove Stress & Anxiety"
+    case grace = "God's Grace"
+    case health = "Health"
+    case love = "Jesus Love"
+    case identity = "Identity"
+    case faith = "Faith"
+    case safety = "God's protection"
     case oldTestament = "Old Testament"
     case gospel = "New Testament - Gospel"
     case psalms = "Psalms & Proverbs"
     case gratitude = "Gratitude"
-    case stress = "Remove Stress & Anxiety"
-    case grace = "God's Grace"
-    case love = "Jesus Love"
-    case health = "Health"
     case destiny = "Destiny"
-    case safety = "God's protection"
     case loneliness = "Feeling lonely"
     case wealth = "Wealth"
     case peace = "Peace"
@@ -116,9 +118,9 @@ enum Improvements: String, CaseIterable {
     case marriage = "Marriage"
     case guidance = "Guidance"
     case addiction = "Addiction"
-    case identity = "Identity"
+    
     case fear = "Fear"
-    case faith = "Faith"
+   
     case joy = "Joy"
     case perseverance = "Perseverance"
     

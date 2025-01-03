@@ -86,7 +86,7 @@ struct RatingView: View {
             
             Spacer()
             
-            ShimmerButton(colors: [Constants.DAMidBlue, .cyan, Constants.DADarkBlue.opacity(0.6)], buttonTitle: "Rate us", action: callBack)
+            ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Rate us", action: callBack)
             .frame(width: size.width * 0.87 ,height: 60)
             .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
 
@@ -142,20 +142,20 @@ struct OnboardingView: View  {
         GeometryReader { geometry in
             TabView(selection: $selection) {
 
-                IntroTipScene(title: "Faith Speaks",
-                              bodyText: "",
-                              subtext: "Jesus taught us that words have power. When we speak life-filled words, we shape our lives and influence the world around us.",
-                              ctaText: "Start Speaking Life Today",
-                              showTestimonials: false,
-                              isScholarship: false, size: geometry.size) 
-                {
-                        advance()
-                }
-                    .tag(Tab.transformedLife)
+//                IntroTipScene(title: "Faith Speaks",
+//                              bodyText: "",
+//                              subtext: "Jesus taught us that words have power. When we speak life-filled words, we shape our lives and influence the world around us.",
+//                              ctaText: "Start Speaking Life Today",
+//                              showTestimonials: false,
+//                              isScholarship: false, size: geometry.size) 
+//                {
+//                        advance()
+//                }
+//                    .tag(Tab.transformedLife)
                 
-                IntroTipScene(title: "Affirmation Reminders",
-                              bodyText: "Stay Encouraged All Day Long with timely reminders of God’s promises to uplift and strengthen you, no matter where you are.",
-                              subtext: "Life gets busy, and it’s easy to lose focus. Our reminders deliver Scripture-based affirmations throughout the day to renew your mind and keep you anchored in God’s promises.",
+                IntroTipScene(title: "Receive Daily Affirmations to Renew Your Mind",
+                              bodyText: "🔔 Stay uplifted with reminders of God’s promises",
+                              subtext: "Start your free trial to stay connected to truth!",
                               ctaText: "Stay Connected to Truth",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
@@ -163,19 +163,19 @@ struct OnboardingView: View  {
                         advance()
                 }
                     .tag(Tab.likeJesus)
-                IntroTipScene(title: "Daily Devotionals",
-                              bodyText: "Start Your Day with Purpose to guide your faith journey and bring you closer to God’s Word",
-                              subtext: "Each day brings a new opportunity to grow closer to God. Discover devotionals that encourage, inspire, and provide practical guidance for your spiritual life.",
-                              ctaText: "Receive Daily Inspiration",
+                IntroTipScene(title: "Begin Your Day with Purpose and God’s Word",
+                              bodyText: "📖 Daily devotionals to inspire and guide you closer to Jesus.",
+                              subtext: "Receive daily inspiration",
+                              ctaText: "Receive Daily Wisdom",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
                 {
                         advance()
                 }
                     .tag(Tab.liveVictorious)
-                IntroTipScene(title: "Prayers that Move Mountains",
-                              bodyText: "Speak Life Over Your Day with Powerful audio declarations to activate God’s promises and shift your mindset.",
-                              subtext: "Your words carry power. Listen to and declare faith-filled promises that replace doubt with truth, fear with peace, and lack with abundance.",
+                IntroTipScene(title: "Speak Faith Over Your Day",
+                              bodyText: "🗣️ Powerful audio prayers to activate God’s promises.",
+                              subtext: "Replace doubt with truth and fear with peace",
                               ctaText: "Activate God’s Promises",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
@@ -184,9 +184,9 @@ struct OnboardingView: View  {
                 }
                     .tag(Tab.unshakeableFaith)
                 
-                IntroTipScene(title: "Audio Bible Bedtime Stories",
-                              bodyText: "Rest Peacefully in God’s Word, relax and unwind with calming audio Bible bedtime stories designed to bring peace to your nights.",
-                              subtext: "Let go of stress and fall asleep in God’s presence. Listen to peaceful Bible stories that soothe your mind, restore your heart, and bring deep, restful sleep.",
+                IntroTipScene(title: "End Your Day with Peaceful Rest in God",
+                              bodyText: "🌕 Listen to soothing Bible stories to calm your mind.",
+                              subtext: "Relax, recharge, and reconnect",
                               ctaText: "End Your Day with Peace",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)

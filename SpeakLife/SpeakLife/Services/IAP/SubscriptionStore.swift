@@ -279,9 +279,9 @@ extension Product {
         if id == currentYearlyID {
             return "Pro - Save 50%"
         } else if id == currentPremiumID {
-                return "Premium - Save 70%"
+                return "Annual - 7 days free then \(displayPrice)/yr."
         } else if id == currentMonthlyPremiumID {
-            return "Premium Monthly"
+            return "Monthly"
         } else {
            return "Pro Monthly"
         }
@@ -289,9 +289,9 @@ extension Product {
     
     var ctaButtonTitle: String {
         if id == currentYearlyID {
-            return "Start 1 week Free Trial"
+            return "Start My Free Trial Now"
         } else if id == currentPremiumID {
-                return "Start 1 week Free Trial"
+                return "Start My Free Trial Now"
         } else {
            return "Subscribe"
         }
@@ -303,9 +303,20 @@ extension Product {
         if id == currentYearlyID {
            return "7 days free then \(displayPrice)/yr."
         } else if id == currentPremiumID {
-                return "7 days free then \(displayPrice)/yr."
+                return "Save 70% with the Annual Plan."
         } else {
            return "billed monthly at \(displayPrice). Cancel anytime."
         }
+    }
+    
+    var costDescription: String {
+        return "No commitment. Cancel anytime."
+//        if id == currentYearlyID {
+//            return "7 days free then \(displayPrice)/year."
+//        } else if id == currentPremiumID {
+//            
+//        } else {
+//            return "\(displayPrice)/month. Cancel anytime."
+//        }
     }
 }

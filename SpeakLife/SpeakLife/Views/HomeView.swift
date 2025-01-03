@@ -110,7 +110,7 @@ struct HomeView: View {
             .hideTabBar(if: appState.showScreenshotLabel)
             .sheet(isPresented: $isPresented) {
                 WhatsNewBottomSheet(isPresented: $isPresented, version: currentVersion)
-                    .presentationDetents([.medium, .large])
+                    .presentationDetents([.medium])
                                    .presentationDragIndicator(.visible)
             }
             .accentColor(Constants.DAMidBlue)

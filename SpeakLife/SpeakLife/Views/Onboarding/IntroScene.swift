@@ -26,6 +26,7 @@ struct IntroTipScene: View {
     let ctaText: String
     let showTestimonials: Bool
     let isScholarship: Bool
+   // var imageName: String
     
     let size: CGSize
     let callBack: (() -> Void)?
@@ -90,12 +91,12 @@ struct IntroTipScene: View {
                         .lineSpacing(10)
                       //  .foregroundColor(Color(red: 119, green: 142, blue: 180, opacity: 1))
                         .lineLimit(nil)
-//                        .opacity(showSubtext ? 1 : 0) // Initial opacity for fade-in
-//                        .onAppear {
-//                            withAnimation(Animation.easeIn(duration: 3.0).delay(1.0)) {
-//                                showSubtext = true
-//                            }
-//                        }
+                        .opacity(showSubtext ? 1 : 0) // Initial opacity for fade-in
+                        .onAppear {
+                            withAnimation(Animation.easeIn(duration: 3.0).delay(1.0)) {
+                                showSubtext = true
+                            }
+                        }
                 }
                 .frame(width: size.width * 0.9)
                 if isScholarship {
@@ -120,7 +121,7 @@ struct IntroTipScene: View {
             }
             
             Spacer()
-            ShimmerButton(colors: [Constants.DAMidBlue, .cyan, Constants.DADarkBlue.opacity(0.6)], buttonTitle: ctaText, action: buttonTouched)
+            ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: ctaText, action: buttonTouched)
             .frame(width: size.width * 0.87 ,height: 60)
             .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
             

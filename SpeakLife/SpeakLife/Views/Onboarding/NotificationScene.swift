@@ -33,7 +33,7 @@ struct NotificationOnboarding:  View {
             }
             
             VStack {
-                Text("Notification_settings", comment: "Notification onboarding title")
+                Text("Stay Connected Throughout Your Days", comment: "Notification onboarding title")
                     .font(.system(size: 34, weight: .semibold, design: .rounded))
                     .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                     .minimumScaleFactor(0.7)
@@ -42,7 +42,7 @@ struct NotificationOnboarding:  View {
                 Spacer().frame(height: 16)
                 
                 VStack {
-                    Text("Setup_notifications", comment: "Setup notifications instructions")
+                    Text("Choose how often and when you’d like to be inspired.", comment: "Setup notifications instructions")
                         .font(.system(size: 16, weight: .semibold, design: .rounded))
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
@@ -91,7 +91,7 @@ struct NotificationOnboarding:  View {
                 
             }
             
-            ShimmerButton(colors: [Constants.DAMidBlue, .cyan, Constants.DADarkBlue.opacity(0.6)], buttonTitle: "Turn on notifications", action: callBack)
+            ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Save My Preferences", action: callBack)
             .frame(width: size.width * 0.87 ,height: 60)
             .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
             

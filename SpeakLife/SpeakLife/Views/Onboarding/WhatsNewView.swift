@@ -13,6 +13,7 @@ struct WhatsNewBottomSheet: View {
     let features = [
         "NEW Gospel Audio Stories",
         "NEW Bedtime Stories",
+        "Performance improvements",
     ]
 
     var body: some View {
