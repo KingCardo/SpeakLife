@@ -153,9 +153,9 @@ struct OnboardingView: View  {
 //                }
 //                    .tag(Tab.transformedLife)
                 
-                IntroTipScene(title: "Receive Daily Affirmations to Renew Your Mind",
-                              bodyText: "🔔 Stay uplifted with reminders of God’s promises",
-                              subtext: "Start your free trial to stay connected to truth!",
+                IntroTipScene(title: "Daily Affirmations to Renew Your Mind",
+                              bodyText: "Stay Encouraged All Day Long with timely reminders of God’s promises to uplift and strengthen you, no matter where you are.",
+                              subtext: "Life gets busy, and it’s easy to lose focus. Our reminders deliver Scripture-based affirmations throughout the day to renew your mind and keep you anchored in God’s promises.",
                               ctaText: "Stay Connected to Truth",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
@@ -164,8 +164,8 @@ struct OnboardingView: View  {
                 }
                     .tag(Tab.likeJesus)
                 IntroTipScene(title: "Begin Your Day with Purpose and God’s Word",
-                              bodyText: "📖 Daily devotionals to inspire and guide you closer to Jesus.",
-                              subtext: "Receive daily inspiration",
+                              bodyText: "Start Your Day with Purpose to guide your faith journey and bring you closer to Jesus.",
+                              subtext: "Each day brings a new opportunity to grow closer to God. Discover devotionals that encourage, inspire, and provide practical guidance for your spiritual life.",
                               ctaText: "Receive Daily Wisdom",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
@@ -173,9 +173,9 @@ struct OnboardingView: View  {
                         advance()
                 }
                     .tag(Tab.liveVictorious)
-                IntroTipScene(title: "Speak Faith Over Your Day",
-                              bodyText: "🗣️ Powerful audio prayers to activate God’s promises.",
-                              subtext: "Replace doubt with truth and fear with peace",
+                IntroTipScene(title: "Prayers that Move Mountains",
+                              bodyText: "Speak Life Over Your Day with Powerful audio declarations to activate God’s promises and shift your mindset.",
+                              subtext: "Your words carry power. Listen to and declare faith-filled promises that replace doubt with truth, fear with peace, and lack with abundance.",
                               ctaText: "Activate God’s Promises",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)
@@ -185,8 +185,8 @@ struct OnboardingView: View  {
                     .tag(Tab.unshakeableFaith)
                 
                 IntroTipScene(title: "End Your Day with Peaceful Rest in God",
-                              bodyText: "🌕 Listen to soothing Bible stories to calm your mind.",
-                              subtext: "Relax, recharge, and reconnect",
+                              bodyText: "Rest Peacefully in God’s Word, relax and unwind with calming audio Bible bedtime stories designed to bring peace to your nights.",
+                              subtext: "Let go of stress and fall asleep in God’s presence. Listen to peaceful Bible stories that soothe your mind, restore your heart, and bring deep, restful sleep.",
                               ctaText: "End Your Day with Peace",
                               showTestimonials: false,
                               isScholarship: false, size: geometry.size)

@@ -63,7 +63,7 @@ final class DevotionalViewModel: ObservableObject {
     private func setDevotionalDictionary(date: Date = Date()) {
 
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        let components = calendar.dateComponents([.month, .day], from: date)
         
         // means we added the date user looked at devotional already
         if let _ = devotionalDictionary[components] {
@@ -124,7 +124,7 @@ final class DevotionalViewModel: ObservableObject {
             let calendar = Calendar.current
         if let searchDate = calendar.date(byAdding: .day, value: value, to: now) {
         
-            let searchComponents = calendar.dateComponents([.year, .month, .day], from: searchDate)
+            let searchComponents = calendar.dateComponents([.month, .day], from: searchDate)
         
             let month = searchComponents.month
             let day = searchComponents.day

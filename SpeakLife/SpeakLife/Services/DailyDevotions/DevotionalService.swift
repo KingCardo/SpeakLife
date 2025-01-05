@@ -30,16 +30,16 @@ final class DevotionalServiceClient: DevotionalService {
         do {
             
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd-MM-yyyy"
+            dateFormatter.dateFormat = "dd-MM"
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .formatted(dateFormatter)
             
             let welcome = try decoder.decode(WelcomeDevotional.self, from: data)
             let devotionals = welcome.devotionals
             self.devotionals = devotionals
-            saveRemoteDevotionals { success in
-                print(success, "saved RWRW")
-            }
+//            saveRemoteDevotionals { success in
+//                print(success, "saved RWRW")
+//            }
             print(devotionals.count, "RWRW")
             
            
@@ -73,7 +73,7 @@ final class DevotionalServiceClient: DevotionalService {
         do {
             
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd-MM-yyyy"
+            dateFormatter.dateFormat = "dd-MM"
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .formatted(dateFormatter)
             

@@ -91,7 +91,7 @@ extension Date: RawRepresentable {
     func toSimpleDate() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current
-        dateFormatter.dateStyle = .medium
+        dateFormatter.dateFormat = "MMMM d"
         return dateFormatter.string(from: self)
     }
     
