@@ -197,7 +197,7 @@ struct SubscriptionView: View {
     @State var currentSelection: Product?
     @State var firstSelection: Product?
     @State var secondSelection: Product?
-    @State var monthlyPremiumSelection: Product?
+    @State var thirdSelection: Product?
     @State var monthlyProSelection: Product?
 
     @State var chooseDifferentAmount = false
@@ -227,6 +227,7 @@ struct SubscriptionView: View {
                 self.firstSelection = subscriptionStore.currentOfferedPremium
                 self.currentSelection = subscriptionStore.currentOfferedPremium
                 self.secondSelection = subscriptionStore.currentOfferedPremiumMonthly
+                self.thirdSelection = subscriptionStore.currentOfferedLifetime
 //                self.monthlyPremiumSelection = subscriptionStore.currentOfferedPremiumMonthly
 //                self.monthlyProSelection = subscriptionStore.currentOfferedMonthly
             }
@@ -288,6 +289,12 @@ struct SubscriptionView: View {
                             currentSelection = secondSelection
                         } label: {
                             secondSelectionBox()
+                        }
+                        
+                        Button {
+                            currentSelection = thirdSelection
+                        } label: {
+                            thirdSelectionBox()
                         }
                         
                     }
@@ -614,32 +621,32 @@ struct SubscriptionView: View {
         .padding([.leading, .trailing], 20)
     }
     
-//    func thirdSelectionBox() -> some View {
-//        ZStack {
-//            RoundedRectangle(cornerRadius: 10)
-//                .strokeBorder(Color.gray, lineWidth: 1)
-//                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == thirdSelection ? Constants.DAMidBlue : .clear))
-//                .shadow(color: currentSelection == thirdSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
-//                .frame(height: 50)
-//            
-//            HStack {
-//                VStack(alignment: .leading, spacing: 2) {
-//                    Text(secondSelection?.ctaDurationTitle ?? "")
-//                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-//                        .bold()
-//                 //   Text(secondSelection?.subTitle ?? "")
-//                  //      .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
-//                    
-//                }
-//                Spacer()
-//            }
-//            .foregroundStyle(.white)
-//            .padding([.leading, .trailing])
-//            
-//        }
-//        
-//        .padding([.leading, .trailing], 20)
-//    }
+    func thirdSelectionBox() -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(Color.gray, lineWidth: 1)
+                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == thirdSelection ? Constants.DAMidBlue : .clear))
+                .shadow(color: currentSelection == thirdSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
+                .frame(height: 50)
+            
+            HStack {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(thirdSelection?.ctaDurationTitle ?? "")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
+                        .bold()
+                    Text(thirdSelection?.subTitle ?? "")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
+                    
+                }
+                Spacer()
+            }
+            .foregroundStyle(.white)
+            .padding([.leading, .trailing])
+            
+        }
+        
+        .padding([.leading, .trailing], 20)
+    }
     
 }
 

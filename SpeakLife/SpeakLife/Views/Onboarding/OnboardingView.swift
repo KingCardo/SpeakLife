@@ -228,12 +228,12 @@ struct OnboardingView: View  {
                 }.tag(Tab.review)
                 
                 
-                WidgetScene(size: geometry.size) {
-                    withAnimation {
-                        advance()
-                    }
-                }
-                .tag(Tab.widgets)
+//                WidgetScene(size: geometry.size) {
+//                    withAnimation {
+//                        advance()
+//                    }
+//                }
+//                .tag(Tab.widgets)
                 
                 NotificationOnboarding(size: geometry.size) {
                     withAnimation {
@@ -507,7 +507,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("ConfidenceScreenDone", parameters: nil)
                 case .review:
                     impactMed.impactOccurred()
-                    selection = .widgets
+                    selection = .notification
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("ReviewScreenDone", parameters: nil)
                     DispatchQueue.main.async {

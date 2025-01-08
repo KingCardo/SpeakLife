@@ -10,7 +10,7 @@ import Foundation
 // Declaration
 let audioFiles: [AudioDeclaration] = [
     AudioDeclaration(
-           id: "psalm91.mp3",
+           id: "psalm911.mp3",
            title: "Psalm 91: A Shield of Protection",
            subtitle: "Declaring God’s Faithful Promises of Safety and Refuge",
            duration: "2m",
@@ -22,7 +22,7 @@ let audioFiles: [AudioDeclaration] = [
            id: "healed.mp3",
            title: "Healing Declarations",
            subtitle: "Speaking Wholeness, Strength, and Restoration Through the Power of Faith",
-           duration: "4m",
+           duration: "5m",
            imageUrl: "JesusHealing",
            isPremium: false
        ),
@@ -35,7 +35,7 @@ let audioFiles: [AudioDeclaration] = [
            isPremium: true
        ),
     AudioDeclaration(
-           id: "gratitude.mp3",
+           id: "gratitude1.mp3",
            title: "A Heart of Gratitude",
            subtitle: "Declaring God’s Goodness and Faithfulness with Thankful Praise",
            duration: "3m",
@@ -78,7 +78,7 @@ let audioFiles: [AudioDeclaration] = [
        ),
     
     AudioDeclaration(
-           id: "identity.mp3",
+           id: "identity1.mp3",
            title: "Identity in Christ",
            subtitle: "Living in the Power of Your God-Given Identity",
            duration: "4m",
@@ -86,7 +86,7 @@ let audioFiles: [AudioDeclaration] = [
            isPremium: true
        ),
     AudioDeclaration(
-           id: "godsprotection.mp3",
+           id: "godsprotection1.mp3",
            title: "Protection Promises",
            subtitle: "Speaking God’s Word for Safety and Peace Over Your Life",
            duration: "4m",
@@ -224,6 +224,14 @@ let bedTimeFiles: [AudioDeclaration] = [
            subtitle: "God’s Power to Make a Way",
            duration: "7m",
            imageUrl: "redsea",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "moses.mp3",
+           title: "Bread from Heaven and God’s Covenant",
+           subtitle: "God's Provision and the Ten Commandments",
+           duration: "10m",
+           imageUrl: "moses",
            isPremium: true
        ),
     AudioDeclaration(

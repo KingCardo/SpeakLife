@@ -38,6 +38,7 @@ final class SubscriptionStore: ObservableObject {
     @Published private(set) var purchasedNonConsumables: [Product] = [] // New list for purchased non-consumables
     @Published private(set) var subscriptionGroupStatus: RenewalState?
     @Published var currentOfferedYearly: Product? = nil
+    @Published var currentOfferedLifetime: Product? = nil
     @Published var currentOfferedMonthly: Product? = nil
     @Published var currentOfferedPremium: Product? = nil
     @Published var currentOfferedPremiumMonthly: Product? = nil
@@ -129,6 +130,9 @@ final class SubscriptionStore: ObservableObject {
                         print("Monthly set RWRW")
                     }
                 case .nonConsumable:
+                    if product.id == lifetimeID {
+                        currentOfferedLifetime = product
+                    }
                     newNonConsumables.append(product) // Handle non-consumables
                 default:
                     print("Unknown product type")
@@ -266,7 +270,9 @@ final class SubscriptionStore: ObservableObject {
 extension Product {
     
     var title: String {
-        if id == currentYearlyID {
+        if id == lifetimeID {
+            return "One time fee of \(displayPrice) for lifetime access."
+        } else if id == currentYearlyID {
             return "7 days free then \(displayPrice)/year."
         } else if id == currentPremiumID {
             return "Full access, 7 days free then \(displayPrice)/year."
@@ -276,7 +282,9 @@ extension Product {
     }
     
     var ctaDurationTitle: String {
-        if id == currentYearlyID {
+        if id == lifetimeID {
+            return "Lifetime"
+        } else if id == currentYearlyID {
             return "Pro - Save 50%"
         } else if id == currentPremiumID {
                 return "Annual - 7 days free then \(displayPrice)/yr."
@@ -300,7 +308,9 @@ extension Product {
     
     
     var subTitle: String {
-        if id == currentYearlyID {
+        if id == lifetimeID {
+            return "One time fee of \(displayPrice) for lifetime access."
+        } else if id == currentYearlyID {
            return "7 days free then \(displayPrice)/yr."
         } else if id == currentPremiumID {
                 return "Save 70% with the Annual Plan."
