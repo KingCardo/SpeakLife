@@ -27,8 +27,9 @@ final class AudioPlayerViewModel: ObservableObject {
     init() {
         Publishers.CombineLatest($currentTime, $duration)
             .sink { [weak self] currentTime, duration in
-                if currentTime == duration {
+                if (currentTime + 0.05) >= duration {
                     self?.isPlaying = false
+                    self?.player?.seek(to: CMTime.zero)
                 }
             }
             .store(in: &cancellables)

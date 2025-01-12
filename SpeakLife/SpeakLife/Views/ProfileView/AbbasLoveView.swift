@@ -76,7 +76,7 @@ struct AbbasLoveView: View {
                 
                 ScrollView {
                     Spacer().frame(height: proxy.size.height * 0.05)
-                    Text("Heavenly Father's Love Letter")
+                    Text("Heavenly Father's Love Letter 💌")
                         .font(.custom("AppleSDGothicNeo-Bold", size: 28))
                         .foregroundStyle(.white)
                         .padding()

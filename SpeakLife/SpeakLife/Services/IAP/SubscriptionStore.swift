@@ -313,7 +313,7 @@ extension Product {
         } else if id == currentYearlyID {
            return "7 days free then \(displayPrice)/yr."
         } else if id == currentPremiumID {
-                return "Save 70% with the Annual Plan."
+                return "Save 60% with the Annual Plan."
         } else {
            return "billed monthly at \(displayPrice). Cancel anytime."
         }

@@ -17,8 +17,8 @@ import SwiftUI
 class OfferViewModel: ObservableObject {
     @Published var originalPrice: String = "$49.99/year"
     @Published var monthlyPrice: String = "$4.16/month"
-    @Published var discountedPrice: String = "$19.99/year"
-    @Published var discountedMonthlyPrice: String = "$1.67/month"
+    @Published var discountedPrice: String = "$29.99/year"
+    @Published var discountedMonthlyPrice: String = "$2.49/month"
 }
 
 struct OfferPageView: View {
@@ -440,7 +440,7 @@ struct SubscriptionView: View {
             guard let currentSelection = currentSelection else { return }
             if let transaction = try await subscriptionStore.purchaseWithID([currentSelection.id]) {
                 print(currentSelection, transaction.id, transaction.jsonRepresentation, transaction.productType, "RWRW")
-                NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
+              //  NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
                 Analytics.logEvent(currentSelection.id, parameters: nil)
                // callback?()
             }
@@ -471,7 +471,7 @@ struct SubscriptionView: View {
     func buy(_ iap: Product) async {
         do {
             if let _ = try await subscriptionStore.purchaseWithID([iap.id]) {
-                NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
+               // NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
                 Analytics.logEvent(iap.id, parameters: nil)
             }
         } catch StoreError.failedVerification {
@@ -502,7 +502,7 @@ struct SubscriptionView: View {
     func buy(_ iap: InAppId.Subscription) async {
         do {
             if let _ = try await subscriptionStore.purchaseWithID([iap.rawValue]) {
-                NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
+               // NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
                 Analytics.logEvent(iap.rawValue, parameters: nil)
                 //callback?()
             }

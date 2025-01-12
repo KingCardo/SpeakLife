@@ -141,17 +141,6 @@ struct OnboardingView: View  {
     var body: some View {
         GeometryReader { geometry in
             TabView(selection: $selection) {
-
-//                IntroTipScene(title: "Faith Speaks",
-//                              bodyText: "",
-//                              subtext: "Jesus taught us that words have power. When we speak life-filled words, we shape our lives and influence the world around us.",
-//                              ctaText: "Start Speaking Life Today",
-//                              showTestimonials: false,
-//                              isScholarship: false, size: geometry.size) 
-//                {
-//                        advance()
-//                }
-//                    .tag(Tab.transformedLife)
                 
                 IntroTipScene(title: "Daily Affirmations to Renew Your Mind",
                               bodyText: "Stay Encouraged All Day Long with timely reminders of God’s promises to uplift and strengthen you, no matter where you are.",
@@ -194,24 +183,6 @@ struct OnboardingView: View  {
                         advance()
                 }
                     .tag(Tab.confidence)
-                
-                
-//                IntroTipScene(title: "Speak Life Like Jesus",
-//                              bodyText: "Time to declare",
-//                              subtext: """
-//🌈 God's promises for every situation of life.
-//\n📖 Grow your relationship with devotionals and verses.
-//\n🙏 Prayers for you and your families health, protection, and destiny.
-//\n📝 Create your own affirmations to partner with Jesus.
-//""",
-//                              ctaText: "Continue",
-//                              showTestimonials: false,
-//                              isScholarship: false, size: geometry.size) {
-//                    withAnimation {
-//                        advance()
-//                    }
-//                }
-//                    .tag(Tab.likeJesus)
             
                 
                 ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
@@ -226,14 +197,7 @@ struct OnboardingView: View  {
                         advance()
                     }
                 }.tag(Tab.review)
-                
-                
-//                WidgetScene(size: geometry.size) {
-//                    withAnimation {
-//                        advance()
-//                    }
-//                }
-//                .tag(Tab.widgets)
+            
                 
                 NotificationOnboarding(size: geometry.size) {
                     withAnimation {
@@ -245,6 +209,13 @@ struct OnboardingView: View  {
 
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
+                
+                OfferPageView() {
+                    withAnimation {
+                        advance()
+                    }
+                }
+                .tag(Tab.discount)
                 
             }
             .ignoresSafeArea()
@@ -455,16 +426,16 @@ struct OnboardingView: View  {
                     onboardingTab = selection.rawValue
                 case .subscription:
                     Analytics.logEvent("SubscriptionScreenDone", parameters: nil)
-                    viewModel.choose(.general) { _ in
-                        dismissOnboarding()
-                    }
-                   
-//                    if subscriptionStore.isPremium {
-//                        viewModel.choose(.general) { _ in }
+//                    viewModel.choose(.general) { _ in
 //                        dismissOnboarding()
-//                    } else {
-//                        selection = .discount
 //                    }
+                   
+                    if subscriptionStore.isPremium {
+                        viewModel.choose(.general) { _ in }
+                        dismissOnboarding()
+                    } else {
+                        selection = .discount
+                    }
                 case .scholarship:
                     dismissOnboarding()
                 case .widgets:

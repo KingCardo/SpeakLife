@@ -27,9 +27,26 @@ let audioFiles: [AudioDeclaration] = [
            isPremium: false
        ),
     AudioDeclaration(
+           id: "morningDeclaration.mp3",
+           title: "A Morning Declaration of Faith and Victory",
+           subtitle: "Speak Life Over Your Day Rooted in Jesus’ Love and Promises",
+           duration: "4m",
+           imageUrl: "morningDeclaration",
+           isPremium: false
+       ),
+
+    AudioDeclaration(
+           id: "unshakablePeace.mp3",
+           title: "A Declaration of Unshakable Peace",
+           subtitle: "Finding Rest in God’s Promises and Jesus’ Love",
+           duration: "4m",
+           imageUrl: "unshakablePeace",
+           isPremium: true
+       ),
+    AudioDeclaration(
            id: "peace.mp3",
            title: "Peace Beyond Understanding",
-           subtitle: "Overcoming Anxiety, Stress, and Fear Through God’s Promisess",
+           subtitle: "Overcoming Anxiety, Stress, and Fear Through God’s Promises",
            duration: "3m",
            imageUrl: "JesusPraying",
            isPremium: true
@@ -65,6 +82,14 @@ let audioFiles: [AudioDeclaration] = [
            subtitle: "Unlocking Wealth, Prosperity, and Overflow Through Faith and Affirmation",
            duration: "4m",
            imageUrl: "JesusHeaven",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "spiritualGrowth.mp3",
+           title: "A Declaration for Spiritual Growth",
+           subtitle: "Rooted in Jesus’ Redemption and Growing in God’s Promises",
+           duration: "8m",
+           imageUrl: "spiritualGrowth",
            isPremium: true
        ),
     
