@@ -67,6 +67,7 @@ enum Filter: String {
     case declarations = "Mountain-Moving Prayers"
     case bedtimeStories = "Bedtime Stories"
     case gospel = "Gospel"
+    case meditation = "Scripture Meditation's"
 }
 
 struct AudioDeclarationView: View {
@@ -79,7 +80,7 @@ struct AudioDeclarationView: View {
     @State private var audioURL: URL? = nil
     @State private var errorMessage: ErrorWrapper? = nil
     @State private var isPresentingPremiumView = false
-    let filters: [Filter] = [.declarations, .gospel, .bedtimeStories]
+    let filters: [Filter] = [.declarations, .meditation, .gospel, .bedtimeStories]
     @State private var selectedFilter: Filter = .declarations
     
      var filteredContent: [AudioDeclaration] {
@@ -90,6 +91,8 @@ struct AudioDeclarationView: View {
             return viewModel.bedtimeStories
         case .gospel:
             return viewModel.gospelStories
+        case .meditation:
+            return viewModel.meditations
         }
     }
     

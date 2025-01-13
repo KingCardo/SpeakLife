@@ -43,7 +43,7 @@ struct OfferPageView: View {
                         .shadow(color: Color.purple.opacity(0.5), radius: 20, x: 10, y: 10)
                         .cornerRadius(6)
                 
-                Text("Enjoy a special gift")
+                Text("One time offer!")
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .caption))
                     .foregroundColor(.white)
                     .padding(.horizontal, 20)

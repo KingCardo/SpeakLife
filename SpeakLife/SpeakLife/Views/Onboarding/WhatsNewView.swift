@@ -14,6 +14,7 @@ struct WhatsNewBottomSheet: View {
         "NEW Audio Morning Declaration",
         "NEW Audio Unshakable Peace Declaration",
         "NEW Audio Spiritual Growth Declaration",
+        "NEW Audio Meditations Category",
     ]
 
     var body: some View {

@@ -329,3 +329,72 @@ let gospelFiles: [AudioDeclaration] = [
            isPremium: true
        ),
     ]
+
+
+// Meditation files
+let meditationFiles: [AudioDeclaration] = [
+    AudioDeclaration(
+           id: "loveMeditations.mp3",
+           title: "The Heart of God’s Love",
+           subtitle: "Embrace God's Unfailing Love for You",
+           duration: "8m",
+           imageUrl: "loveMeditations",
+           isPremium: false
+       ),
+    AudioDeclaration(
+           id: "praiseMeditations.mp3",
+           title: "Lifting Up His Name in Praise",
+           subtitle: "Worship God with Joy and Reverence",
+           duration: "8m",
+           imageUrl: "praiseMeditations",
+           isPremium: false
+       ),
+    AudioDeclaration(
+           id: "protectionMeditations.mp3",
+           title: "Under the Shelter of God’s Wings",
+           subtitle: "Divine Protection and Peace",
+           duration: "7m",
+           imageUrl: "protectionMeditations",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "provisionsMeditations.mp3",
+           title: "Trusting in God’s Abundant Provision",
+           subtitle: "Rest in God’s Faithfulness and Sufficiency",
+           duration: "7m",
+           imageUrl: "provisionsMeditations",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "fearMeditations.mp3",
+           title: "Freedom from Fear and Anxiety",
+           subtitle: "Find Peace in God’s Promises",
+           duration: "9m",
+           imageUrl: "fearMeditations",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "strengthMeditations.mp3",
+           title: "Strength for the Journey",
+           subtitle: "Endurance and Perseverance in God’s Power",
+           duration: "8m",
+           imageUrl: "strengthMeditations",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "wisdomMeditations.mp3",
+           title: "Walking in God’s Wisdom",
+           subtitle: "Divine Guidance and Understanding",
+           duration: "7m",
+           imageUrl: "wisdomMeditations",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "healthMeditations.mp3",
+           title: "Restoring Wholeness Through God’s Promises",
+           subtitle: "A Scripture Meditation for Healing and Health",
+           duration: "7m",
+           imageUrl: "healthMeditations",
+           isPremium: true
+       ),
+    ]
