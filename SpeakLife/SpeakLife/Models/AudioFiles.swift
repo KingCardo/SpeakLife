@@ -350,6 +350,14 @@ let meditationFiles: [AudioDeclaration] = [
            isPremium: false
        ),
     AudioDeclaration(
+           id: "identityMeditations.mp3",
+           title: "Living in Your True Identity in Christ",
+           subtitle: "Embrace Who You Are in Jesus",
+           duration: "8m",
+           imageUrl: "identityMeditations",
+           isPremium: true
+       ),
+    AudioDeclaration(
            id: "protectionMeditations.mp3",
            title: "Under the Shelter of God’s Wings",
            subtitle: "Divine Protection and Peace",
@@ -363,6 +371,14 @@ let meditationFiles: [AudioDeclaration] = [
            subtitle: "Rest in God’s Faithfulness and Sufficiency",
            duration: "7m",
            imageUrl: "provisionsMeditations",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "restMeditations.mp3",
+           title: "Resting in God’s Peace and Strength",
+           subtitle: "Renewal and Refreshment in His Presence",
+           duration: "8m",
+           imageUrl: "restMeditations",
            isPremium: true
        ),
     AudioDeclaration(
@@ -397,4 +413,5 @@ let meditationFiles: [AudioDeclaration] = [
            imageUrl: "healthMeditations",
            isPremium: true
        ),
+    
     ]
