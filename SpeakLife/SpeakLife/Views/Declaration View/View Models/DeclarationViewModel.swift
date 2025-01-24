@@ -346,8 +346,8 @@ final class DeclarationViewModel: ObservableObject {
     
     func setDeclaration(_ content: String,  category: String)  {
         var contentData = content
-        contentData += " ~ " + category
-        let contentText = prefixString(content, until: "~").dropLast()
+        contentData += " - " + category
+        let contentText = prefixString(content, until: "-").dropLast()
         print(contentText, "RWRW")
         
         if let category = DeclarationCategory(category),

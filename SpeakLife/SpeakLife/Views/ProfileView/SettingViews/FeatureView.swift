@@ -38,12 +38,13 @@ struct FeatureRow: View {
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
             Spacer()
-                .frame(width: 16)
+                .frame(width: 4)
             Image(systemName: feature.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 12, height: 12)
                 .padding(.trailing, 8)
+                .foregroundColor(Constants.DAMidBlue)
             VStack(alignment: .leading) {
                 
                 Text(feature.subtitle)

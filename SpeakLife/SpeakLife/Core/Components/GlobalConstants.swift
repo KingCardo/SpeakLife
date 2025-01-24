@@ -24,5 +24,8 @@ struct Constants {
     static let specialRateColor = Color(red: 0.2, green: 0.7, blue: 0.3)
     static let flexibleOption = Color(red: 0.678, green: 0.847, blue: 0.902)
     static let titleFont = Font.custom("AppleSDGothicNeo-Regular", size: 38)
+    static let peach = Color(red: 1.0, green: 0.855, blue: 0.725)
+    static let lightBlue = Color(red: 0.529, green: 0.808, blue: 0.922)
+    static let brightYellow = Color(red: 1.0, green: 0.835, blue: 0.310)
 }
 

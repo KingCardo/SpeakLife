@@ -132,7 +132,7 @@ struct OfferPageView: View {
                 Spacer()
             }
             .padding()
-            .background(Gradients().cyanBlue)//Constants.DAMidBlue.opacity(0.8))
+            .background(Gradients().midBlue)//Constants.DAMidBlue.opacity(0.8))
             .alert(isPresented: $isShowingError, content: {
                 Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
             })
@@ -239,29 +239,37 @@ struct SubscriptionView: View {
         ZStack {
             
             GeometryReader { geometry in
-                
-                LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, Color.black]), startPoint: .top, endPoint: .bottom)
+            
+                LinearGradient(gradient: Gradient(colors: [Color.black]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
+               
                 
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
                     Spacer()
-                        .frame(height: 24)
-                    VStack(alignment: .center) {
-                        
-                        Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
+                        .frame(height: 2)
+                    ZStack {
+                        Image("desertSky")
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 80, height: 80)
-                            .clipShape(Circle())
-                            .offset(x: 0, y: 0)
-                            .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
-                        
-                        Text("SpeakLife")
-                            .font(.system(size: 34, weight: .semibold, design: .rounded))
-                            .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
-                        
-                        
+                            .frame(height: 150)
+                        VStack(alignment: .center) {
+                            
+                            Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, height: 80)
+                                .clipShape(Circle())
+                                .offset(x: 0, y: 0)
+                                .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
+                            
+                            Text("SpeakLife")
+                                .font(.system(size: 34, weight: .semibold, design: .rounded))
+                                .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
+                            
+                        }
                     }
+                    .edgesIgnoringSafeArea(.top)
+                    
+                 
                     Spacer()
                         .frame(height: 24)
                     VStack {
@@ -269,7 +277,7 @@ struct SubscriptionView: View {
                             .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .title))
                             .foregroundStyle(Color.white)
                         
-                        StarRatingView(rating: 4.8)
+                        StarRatingView(rating: 4.9)
                         
                     }
                     FeatureView(currentSelection: $currentSelection)
@@ -532,7 +540,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        return ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: currentSelection?.ctaButtonTitle ?? "Subscribe", action: makePurchase)
+        return ShimmerButton(colors: [Constants.gold, .purple], buttonTitle: currentSelection?.ctaButtonTitle ?? "Subscribe", action: makePurchase)
             .opacity(currentSelection != nil ? 1 : 0.5)
     }
     // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"

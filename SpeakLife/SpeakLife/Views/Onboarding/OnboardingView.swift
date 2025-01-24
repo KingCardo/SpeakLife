@@ -142,22 +142,26 @@ struct OnboardingView: View  {
         GeometryReader { geometry in
             TabView(selection: $selection) {
                 
-                IntroTipScene(title: "Daily Affirmations to Renew Your Mind",
-                              bodyText: "Stay Encouraged All Day Long with timely reminders of God’s promises to uplift and strengthen you, no matter where you are.",
-                              subtext: "Life gets busy, and it’s easy to lose focus. Our reminders deliver Scripture-based affirmations throughout the day to renew your mind and keep you anchored in God’s promises.",
-                              ctaText: "Stay Connected to Truth",
-                              showTestimonials: false,
-                              isScholarship: false, size: geometry.size)
+                IntroTipScene(
+                    title: "Daily Affirmations to Renew Your Mind",
+                    bodyText: "Renewing your mind daily is essential for living in alignment with God’s truth. ",
+                    subtext: "Start each day rooted in His promises to transform your thoughts and strengthen your faith.",
+                    ctaText: "Transform Your Mind Daily",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size)
                 {
                         advance()
                 }
                     .tag(Tab.likeJesus)
-                IntroTipScene(title: "Begin Your Day with Purpose and God’s Word",
-                              bodyText: "Start Your Day with Purpose to guide your faith journey and bring you closer to Jesus.",
-                              subtext: "Each day brings a new opportunity to grow closer to God. Discover devotionals that encourage, inspire, and provide practical guidance for your spiritual life.",
-                              ctaText: "Receive Daily Wisdom",
-                              showTestimonials: false,
-                              isScholarship: false, size: geometry.size)
+                IntroTipScene(
+                    title: "Begin Your Day with Devotionals",
+                    bodyText: "Grow spiritually every day by starting with devotionals that inspire and draw you closer to God.",
+                    subtext: "Each day is an opportunity to strengthen your faith and walk with Jesus through practical and encouraging devotionals.",
+                    ctaText: "Receive Daily Wisdom",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size)
                 {
                         advance()
                 }

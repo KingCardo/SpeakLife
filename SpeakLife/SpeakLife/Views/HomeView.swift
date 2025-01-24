@@ -12,17 +12,19 @@ let resources: [MusicResources] = [.somethinggreater, .mindful, .romanticPiano, 
 
 struct MusicResources {
     let name: String
+    let artist: String
     let type: String
+   
     
-    static let somethinggreater = MusicResources(name: "somethinggreater", type: "mp3")
-    static let mindful = MusicResources(name: "mindful", type: "mp3")
-    static let romanticPiano = MusicResources(name: "romanticpiano", type: "mp3")
-    static let peacefulplace = MusicResources(name: "peacefulplace", type: "mp3")
-    static let returntosurface = MusicResources(name: "returntosurface", type: "mp3")
-    static let sethpiano = MusicResources(name: "sethpiano", type: "mp3")
-    static let washed = MusicResources(name: "washed", type: "mp3")
-    static let rainstorm = MusicResources(name: "rainstorm", type: "mp3")
-    static let everpresent = MusicResources(name: "everpresent", type: "mp3")
+    static let somethinggreater = MusicResources(name: "somethinggreater", artist: "Caleb Fincher", type: "mp3")
+    static let mindful = MusicResources(name: "mindful", artist: "Zimpzon", type: "mp3")
+    static let romanticPiano = MusicResources(name: "romanticpiano", artist: "", type: "mp3")
+    static let peacefulplace = MusicResources(name: "peacefulplace", artist: "", type: "mp3")
+    static let returntosurface = MusicResources(name: "returntosurface", artist: "", type: "mp3")
+    static let sethpiano = MusicResources(name: "sethpiano", artist: "", type: "mp3")
+    static let washed = MusicResources(name: "washed", artist: "Brock Hewitt", type: "mp3")
+    static let rainstorm = MusicResources(name: "rainstorm", artist: "Brock Hewitt", type: "mp3")
+    static let everpresent = MusicResources(name: "everpresent", artist: "Brock Hewitt", type: "mp3")
 }
 
 struct HomeView: View {
