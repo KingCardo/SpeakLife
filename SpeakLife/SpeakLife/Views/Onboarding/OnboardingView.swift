@@ -122,7 +122,7 @@ struct OnboardingView: View  {
     @State var showLastChanceAlert = false
     @State var isDonePersonalization = false
     @StateObject var improvementViewModel = ImprovementViewModel()
-    @AppStorage("onboardingTab") var onboardingTab = Tab.likeJesus.rawValue
+    @AppStorage("onboardingTab") var onboardingTab = Tab.transformedLife.rawValue
     @State private var isTextVisible = false
     @State var valueProps: [Feature] = []
    
@@ -142,51 +142,64 @@ struct OnboardingView: View  {
         GeometryReader { geometry in
             TabView(selection: $selection) {
                 
-                IntroTipScene(
-                    title: "Daily Affirmations to Renew Your Mind",
-                    bodyText: "Renewing your mind daily is essential for living in alignment with God’s truth. ",
-                    subtext: "Start each day rooted in His promises to transform your thoughts and strengthen your faith.",
-                    ctaText: "Transform Your Mind Daily",
-                    showTestimonials: false,
-                    isScholarship: false,
-                    size: geometry.size)
-                {
-                        advance()
-                }
-                    .tag(Tab.likeJesus)
-                IntroTipScene(
-                    title: "Begin Your Day with Devotionals",
-                    bodyText: "Grow spiritually every day by starting with devotionals that inspire and draw you closer to God.",
-                    subtext: "Each day is an opportunity to strengthen your faith and walk with Jesus through practical and encouraging devotionals.",
-                    ctaText: "Receive Daily Wisdom",
-                    showTestimonials: false,
-                    isScholarship: false,
-                    size: geometry.size)
-                {
-                        advance()
-                }
-                    .tag(Tab.liveVictorious)
-                IntroTipScene(title: "Prayers that Move Mountains",
-                              bodyText: "Speak Life Over Your Day with Powerful audio declarations to activate God’s promises and shift your mindset.",
-                              subtext: "Your words carry power. Listen to and declare faith-filled promises that replace doubt with truth, fear with peace, and lack with abundance.",
-                              ctaText: "Activate God’s Promises",
-                              showTestimonials: false,
-                              isScholarship: false, size: geometry.size)
-                {
-                        advance()
-                }
-                    .tag(Tab.unshakeableFaith)
+//                IntroTipScene(
+//                    title: "Daily Affirmations to Renew Your Mind",
+//                    bodyText: "Renewing your mind daily is essential for living in alignment with God’s truth. ",
+//                    subtext: "Start each day rooted in His promises to transform your thoughts and strengthen your faith.",
+//                    ctaText: "Transform Your Mind Daily",
+//                    showTestimonials: false,
+//                    isScholarship: false,
+//                    size: geometry.size)
+//                {
+//                        advance()
+//                }
+//                    .tag(Tab.likeJesus)
+//                IntroTipScene(
+//                    title: "Begin Your Day with Devotionals",
+//                    bodyText: "Grow spiritually every day by starting with devotionals that inspire and draw you closer to God.",
+//                    subtext: "Each day is an opportunity to strengthen your faith and walk with Jesus through practical and encouraging devotionals.",
+//                    ctaText: "Receive Daily Wisdom",
+//                    showTestimonials: false,
+//                    isScholarship: false,
+//                    size: geometry.size)
+//                {
+//                        advance()
+//                }
+//                    .tag(Tab.liveVictorious)
+//                IntroTipScene(title: "Prayers that Move Mountains",
+//                              bodyText: "Speak Life Over Your Day with Powerful audio declarations to activate God’s promises and shift your mindset.",
+//                              subtext: "Your words carry power. Listen to and declare faith-filled promises that replace doubt with truth, fear with peace, and lack with abundance.",
+//                              ctaText: "Activate God’s Promises",
+//                              showTestimonials: false,
+//                              isScholarship: false, size: geometry.size)
+//                {
+//                        advance()
+//                }
+//                    .tag(Tab.unshakeableFaith)
                 
-                IntroTipScene(title: "End Your Day with Peaceful Rest in God",
-                              bodyText: "Rest Peacefully in God’s Word, relax and unwind with calming audio Bible bedtime stories designed to bring peace to your nights.",
-                              subtext: "Let go of stress and fall asleep in God’s presence. Listen to peaceful Bible stories that soothe your mind, restore your heart, and bring deep, restful sleep.",
-                              ctaText: "End Your Day with Peace",
-                              showTestimonials: false,
-                              isScholarship: false, size: geometry.size)
-                {
-                        advance()
+//                IntroTipScene(title: "End Your Day with Peaceful Rest in God",
+//                              bodyText: "Rest Peacefully in God’s Word, relax and unwind with calming audio Bible bedtime stories designed to bring peace to your nights.",
+//                              subtext: "Let go of stress and fall asleep in God’s presence. Listen to peaceful Bible stories that soothe your mind, restore your heart, and bring deep, restful sleep.",
+//                              ctaText: "End Your Day with Peace",
+//                              showTestimonials: false,
+//                              isScholarship: false, size: geometry.size)
+//                {
+//                        advance()
+//                }
+//                    .tag(Tab.confidence)
+                
+                IntroTipScene(
+                    title: "We're Glad You Found Us",
+                    bodyText: "Whatever you’re facing, God’s promises bring strength and calm.",
+                    subtext: "Favorite affirmations that resonate or create your own to speak daily and renew your heart and mind.",
+                    ctaText: "Discover Peace Today",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size
+                ) {
+                    advance()
                 }
-                    .tag(Tab.confidence)
+                    .tag(Tab.transformedLife)
             
                 
                 ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
@@ -457,7 +470,7 @@ struct OnboardingView: View  {
                     dismissOnboarding()
                 case .transformedLife:
                     impactMed.impactOccurred()
-                    selection = .likeJesus
+                    selection = .improvement
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("TransformedLifeScreenDone", parameters: nil)
                 case .likeJesus:
@@ -472,12 +485,12 @@ struct OnboardingView: View  {
                     Analytics.logEvent("LiveVictoriousScreenDone", parameters: nil)
                 case .unshakeableFaith:
                     impactMed.impactOccurred()
-                    selection = .confidence
+                    selection = .transformedLife
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("UnshakeableFaithScreenDone", parameters: nil)
                 case .confidence:
                     impactMed.impactOccurred()
-                    selection = .improvement
+                    selection = .transformedLife
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("ConfidenceScreenDone", parameters: nil)
                 case .review:

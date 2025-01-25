@@ -20,7 +20,7 @@ final class NotificationProcessor {
     }
     
     struct NotificationData {
-        let title: String
+        let book: String
         let body: String
     }
     
@@ -48,7 +48,7 @@ final class NotificationProcessor {
                 guard !shuffled.isEmpty else { return }
                 for number in 1...count {
                     let declaration = shuffled[number]
-                    let notificationData = NotificationData(title: declaration.book ?? "", body: declaration.text)
+                    let notificationData = NotificationData(book: declaration.book ?? "", body: declaration.text)
                     data.append(notificationData)
                 }
             } else {
@@ -85,7 +85,7 @@ final class NotificationProcessor {
         
         while localCount < count  {
             let declaration = categoryReminders[localCount]
-            let notificationData = NotificationData(title: declaration.book ?? "", body: declaration.text)
+            let notificationData = NotificationData(book: declaration.book ?? "", body: declaration.text)
             data.append(notificationData)
             localCount += 1
         }
