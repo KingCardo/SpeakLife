@@ -239,18 +239,22 @@ struct SubscriptionView: View {
         ZStack {
             
             GeometryReader { geometry in
-            
-                LinearGradient(gradient: Gradient(colors: [Color.black]), startPoint: .top, endPoint: .bottom)
-                    .edgesIgnoringSafeArea(.all)
+                if subscriptionStore.testGroup == 0 {
+                    LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, Color.black]), startPoint: .top, endPoint: .bottom)
+                        .edgesIgnoringSafeArea(.all)
+                } else {
+                    LinearGradient(gradient: Gradient(colors: [.orange, Color.purple]), startPoint: .top, endPoint: .bottom)
+                        .edgesIgnoringSafeArea(.all)
+                }
                
                 
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
                     Spacer()
-                        .frame(height: 2)
-                    ZStack {
-                        Image("desertSky")
-                            .resizable()
-                            .frame(height: 150)
+                        .frame(height: 24)
+//                    ZStack {
+//                        Image("desertSky")
+//                            .resizable()
+//                            .frame(height: 150)
                         VStack(alignment: .center) {
                             
                             Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
@@ -266,14 +270,14 @@ struct SubscriptionView: View {
                                 .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                             
                         }
-                    }
-                    .edgesIgnoringSafeArea(.top)
+//                    }
+//                    .edgesIgnoringSafeArea(.top)
                     
                  
                     Spacer()
                         .frame(height: 24)
                     VStack {
-                        Text("Join 40,000+ SpeakLifers Today!")
+                        Text("Join 50,000+ SpeakLifers Today!")
                             .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .title))
                             .foregroundStyle(Color.white)
                         
@@ -299,11 +303,11 @@ struct SubscriptionView: View {
                             secondSelectionBox()
                         }
                         
-                        Button {
-                            currentSelection = thirdSelection
-                        } label: {
-                            thirdSelectionBox()
-                        }
+//                        Button {
+//                            currentSelection = thirdSelection
+//                        } label: {
+//                            thirdSelectionBox()
+//                        }
                         
                     }
         
@@ -449,7 +453,7 @@ struct SubscriptionView: View {
             if let transaction = try await subscriptionStore.purchaseWithID([currentSelection.id]) {
                 print(currentSelection, transaction.id, transaction.jsonRepresentation, transaction.productType, "RWRW")
               //  NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
-                Analytics.logEvent(currentSelection.id, parameters: nil)
+                Analytics.logEvent(currentSelection.id, parameters: ["backgroundImage": subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2])
                // callback?()
             }
         } catch StoreError.failedVerification {
@@ -480,7 +484,7 @@ struct SubscriptionView: View {
         do {
             if let _ = try await subscriptionStore.purchaseWithID([iap.id]) {
                // NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
-                Analytics.logEvent(iap.id, parameters: nil)
+                Analytics.logEvent(iap.id, parameters: ["backgroundImage": subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2])
             }
         } catch StoreError.failedVerification {
             print("error RWRW")
@@ -511,7 +515,7 @@ struct SubscriptionView: View {
         do {
             if let _ = try await subscriptionStore.purchaseWithID([iap.rawValue]) {
                // NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
-                Analytics.logEvent(iap.rawValue, parameters: nil)
+                Analytics.logEvent(iap.rawValue, parameters: ["backgroundImage": subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2])
                 //callback?()
             }
         } catch StoreError.failedVerification {
@@ -569,10 +573,10 @@ struct SubscriptionView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Constants.traditionalGold)
-                        .frame(width: 110, height: 30)
+                        .frame(width: 90, height: 30)
                         .cornerRadius(15)
                     
-                    Text("🏆 Most popular")
+                    Text("🏆 67% OFF")
                         .font(.caption)
                         .bold()
                         .foregroundColor(.black)

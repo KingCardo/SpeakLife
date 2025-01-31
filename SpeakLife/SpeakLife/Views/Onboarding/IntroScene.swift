@@ -137,7 +137,7 @@ struct IntroTipScene: View {
         .frame(width: size.width, height: size.height)
         .background(
             ZStack {
-                Image(appState.onBoardingTest ? onboardingBGImage : "declarationBackground")
+                Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
@@ -171,7 +171,7 @@ let testimonials: [Testimonial] = [
 ]
 
 struct IntroScene: View {
-    
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
     let headerText: String
     let bodyText: String
@@ -251,7 +251,7 @@ struct IntroScene: View {
         }
         .frame(width: size.width, height: size.height)
         .background(
-            Image(appState.onBoardingTest ? onboardingBGImage : "declarationBackground")
+            Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
@@ -321,5 +321,193 @@ struct LoadingScene: View {
                 }
             }
         }
+    }
+}
+
+
+struct TestimonialScreen: View {
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
+    @EnvironmentObject var appState: AppState
+    let size: CGSize
+    let callBack: (() -> Void)
+    @State private var currentIndex = 0
+    
+    let testimonials = [
+        Testimony(author: "Purestarcep17", text: "I love Bible apps that give you access to more Bible knowledge and affirmations so as I was discovering all of wonderful things that were included in SpeakLife I decided that this was something I needed in my life and I am so glad that I did. Because it was so well put together and informative. I have shared it with many people. I thank God for you all."),
+        Testimony(author: "Emma R.", text: "I just found this App & everything I’ve read has been rooted in Scripture! I highly recommend getting this App to ensure (like myself) you are firmly rooted in the Truth & the Light of Christ in a World of Darkness, Selfishness, & Deceit! May we all find Peace, Grace, & Love by becoming everything our Heavenly Father designed us to be in this Life!"),
+        Testimony(author: "John K.", text: "I was fearful of losing my job and stumbled upon this app with God’s promises. I found one on how he would never leave me nor forsake me! I started saying it multiple times a day everyday! I ended up losing the job due to layoffs but got a new job paying 2x as much right before I was out of savings! Never missed a bill or anything! God is great! Thank you Speaklife!"),
+        Testimony(author: "Sophia M.", text: "I love how the app represents the WORD OF GOD and I appreciate the affirmations and peaceful quotes."),
+        Testimony(author: "Sophia M.", text: "The app is so centered on what we need in line with God’s promise over our life. I appreciate the idea behind this invention and great work,God inspiration and ideas never cease from the organization."),
+        Testimony(author: "Sophia M.", text: "SpeakLife has brought so much peace into my life. The reminders of God’s promises help me stay calm even on my toughest days."),
+        
+       
+    ]
+
+    var body: some View {
+        VStack {
+            Spacer().frame(height: 30)
+            VStack(spacing: 30) {
+                
+                Text("Here's what others are saying")
+                    .font(.system(size: 34, weight: .semibold, design: .rounded))
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 20) {
+                        TestimonialCard(testimonial: testimonials[0])
+                        TestimonialCard(testimonial: testimonials[1])
+                        TestimonialCard(testimonial: testimonials[2])
+                        TestimonialCard(testimonial: testimonials[3])
+                        TestimonialCard(testimonial: testimonials[4])
+                        TestimonialCard(testimonial: testimonials[5])
+                    }
+                    .padding(.horizontal, 20)
+                }
+                .frame(height: 300)
+                
+                
+                Spacer()
+                
+                ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Continue", action: callBack)
+                    .frame(width: size.width * 0.87, height: 60)
+                    .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+                    .cornerRadius(30)
+                
+                Spacer()
+                    .frame(height: size.height * 0.07)
+            }
+        }
+            .padding()
+            .frame(width: size.width, height: size.height)
+            .background(
+                Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+            )
+        }
+}
+
+struct Testimony: Identifiable {
+    let id = UUID()
+    let author: String
+    let text: String
+}
+
+struct TestimonialCard: View {
+
+    let testimonial: Testimony
+
+    var body: some View {
+        VStack(spacing: 20) {
+            Text("“\(testimonial.text)”")
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
+                .multilineTextAlignment(.center)
+                .foregroundColor(.black)
+                .padding(.horizontal, 20)
+
+//            Text("- \(testimonial.author)")
+//                .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .caption))
+//                .fontWeight(.semibold)
+//                .foregroundColor(.black)
+        }
+        .padding()
+        .background(
+            Color.white.opacity(0.9))
+        .cornerRadius(20)
+        .shadow(color: Color.black.opacity(0.4), radius: 10, x: 0, y: 5)
+        .frame(width: 260, height: 340)
+    }
+}
+
+
+import SwiftUI
+
+struct FeatureShowcaseScreen: View {
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
+    @EnvironmentObject var appState: AppState
+    let size: CGSize
+    let callBack: (() -> Void)
+    
+    var body: some View {
+        VStack {
+            Spacer().frame(height: 30)
+            VStack(spacing: 30) {
+                
+                Text("Discover the Key Features")
+                    .font(.system(size: 34, weight: .semibold, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 20) {
+                        FeatureCard(icon: "sparkles", title: "Personalized Affirmations", description: "Receive affirmations tailored to your needs for peace, strength, and purpose.")
+                        FeatureCard(icon: "hands.sparkles", title: "Guided Prayer & Devotionals", description: "Start your day with devotionals that remind you of God's grace and love.")
+                        FeatureCard(icon: "bell.badge", title: "Daily Reminders", description: "Stay consistent with daily notifications to help you stay spiritually grounded.")
+                        FeatureCard(icon: "headphones", title: "Audio Declarations & Bible Stories", description: "Listen to powerful declarations and Bible stories to inspire your faith anytime.")
+                    }
+                    .padding(.horizontal, 20)
+                }
+                .frame(height: 300)
+                Spacer()
+                
+                ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Continue", action: callBack)
+                    .frame(width: size.width * 0.87 ,height: 60)
+                    .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+                
+                    .foregroundColor(.white)
+                    .cornerRadius(30)
+                    .shadow(color: Constants.DAMidBlue.opacity(0.5), radius: 8, x: 0, y: 10)
+                
+                Spacer()
+                    .frame(width: 5, height: size.height * 0.07)
+            }
+        }
+        .padding()
+        .frame(width: size.width, height: size.height)
+        .background(
+                    Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
+                )
+    }
+}
+
+struct FeatureCard: View {
+    let icon: String
+    let title: String
+    let description: String
+
+    var body: some View {
+        VStack(spacing: 15) {
+            Spacer().frame(height: 6)
+            Image(systemName: icon)
+                .font(.system(size: 40, weight: .bold))
+                .foregroundColor(.white)
+
+            Text(title)
+                .font(.headline)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
+
+            Text(description)
+                .font(.body)
+                .foregroundColor(.white.opacity(0.9))
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 10)
+
+            Spacer()
+        }
+        .frame(width: 260, height: 280)
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color.indigo, Constants.DAMidBlue]), startPoint: .topLeading, endPoint: .bottomTrailing)
+        )
+        .cornerRadius(20)
+        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
+        .padding(.vertical, 10)
     }
 }

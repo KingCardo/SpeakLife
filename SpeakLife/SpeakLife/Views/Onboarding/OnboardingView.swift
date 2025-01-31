@@ -10,6 +10,7 @@ import FirebaseAnalytics
 import StoreKit
 let onboardingBGImage = "moonlight2"
 
+let onboardingBGImage2 = "pinkHueMountain"
 
 
 import SwiftUI
@@ -142,18 +143,55 @@ struct OnboardingView: View  {
         GeometryReader { geometry in
             TabView(selection: $selection) {
                 
-//                IntroTipScene(
-//                    title: "Daily Affirmations to Renew Your Mind",
-//                    bodyText: "Renewing your mind daily is essential for living in alignment with God’s truth. ",
-//                    subtext: "Start each day rooted in His promises to transform your thoughts and strengthen your faith.",
-//                    ctaText: "Transform Your Mind Daily",
-//                    showTestimonials: false,
-//                    isScholarship: false,
-//                    size: geometry.size)
-//                {
-//                        advance()
-//                }
-//                    .tag(Tab.likeJesus)
+                IntroTipScene(
+                    title: "Weclome, We're Glad You Found Us",
+                    bodyText: "Feeling overwhelmed or disconnected?",
+                    subtext: "Let God’s Word transform your life. Start today with daily prayers and affirmations rooted in Scripture.",
+                    ctaText: "Begin My Journey",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size
+                ) {
+                    advance()
+                }
+                    .tag(Tab.transformedLife)
+                
+                ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
+                    withAnimation {
+                        advance()
+                    }
+                }
+                .tag(Tab.improvement)
+                
+                IntroTipScene(
+                    title: "Life can be overwhelming",
+                    bodyText: "but God has already provided promises of peace, protection, and purpose. With SpeakLife, you can",
+                    subtext: "With SpeakLife, you can: \n- Hear God’s promises every day\n- Pray powerful, effective prayers\n- Find peace in moments of stress.",
+                    ctaText: "Discover My Daily Promises",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size)
+                {
+                        advance()
+                }
+                    .tag(Tab.likeJesus)
+                
+                FeatureShowcaseScreen(size: geometry.size) {
+                    advance()
+                }
+                    .tag(Tab.liveVictorious)
+                
+                NotificationOnboarding(size: geometry.size) {
+                    withAnimation {
+                        advance()
+                    }
+                }
+                .tag(Tab.notification)
+                
+                TestimonialScreen(size: geometry.size) {
+                    advance()
+                }
+                .tag(Tab.unshakeableFaith)
 //                IntroTipScene(
 //                    title: "Begin Your Day with Devotionals",
 //                    bodyText: "Grow spiritually every day by starting with devotionals that inspire and draw you closer to God.",
@@ -188,40 +226,19 @@ struct OnboardingView: View  {
 //                }
 //                    .tag(Tab.confidence)
                 
-                IntroTipScene(
-                    title: "We're Glad You Found Us",
-                    bodyText: "Whatever you’re facing, God’s promises bring strength and calm.",
-                    subtext: "Favorite affirmations that resonate or create your own to speak daily and renew your heart and mind.",
-                    ctaText: "Discover Peace Today",
-                    showTestimonials: false,
-                    isScholarship: false,
-                    size: geometry.size
-                ) {
-                    advance()
-                }
-                    .tag(Tab.transformedLife)
+               
             
                 
-                ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
-                    withAnimation {
-                        advance()
-                    }
-                }
-                .tag(Tab.improvement)
+               
+//                
+//                RatingView(size: geometry.size) {
+//                    withAnimation {
+//                        advance()
+//                    }
+//                }.tag(Tab.review)
+//            
                 
-                RatingView(size: geometry.size) {
-                    withAnimation {
-                        advance()
-                    }
-                }.tag(Tab.review)
-            
-                
-                NotificationOnboarding(size: geometry.size) {
-                    withAnimation {
-                        advance()
-                    }
-                }
-                .tag(Tab.notification)
+               
                 
 
                 subscriptionScene(size: geometry.size)
@@ -393,7 +410,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("HabitScreenDone", parameters: nil)
                 case .improvement:
                     impactMed.impactOccurred()
-                    selection = .review//.intro
+                    selection = .likeJesus//.intro
                     onboardingTab = selection.rawValue
                     
                     decodeCategories(improvementViewModel.selectedExperiences)
@@ -480,12 +497,12 @@ struct OnboardingView: View  {
                     Analytics.logEvent("LikeJesusScreenDone", parameters: nil)
                 case .liveVictorious:
                     impactMed.impactOccurred()
-                    selection = .unshakeableFaith
+                    selection = .notification
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("LiveVictoriousScreenDone", parameters: nil)
                 case .unshakeableFaith:
                     impactMed.impactOccurred()
-                    selection = .transformedLife
+                    selection = .subscription
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("UnshakeableFaithScreenDone", parameters: nil)
                 case .confidence:
@@ -610,7 +627,7 @@ struct OnboardingView: View  {
                         withAnimation {
                            // advance()
                             if appState.onBoardingTest {
-                                    selection = .subscription
+                                    selection = .unshakeableFaith
                                     onboardingTab = selection.rawValue
                             } else {
                                 selection = .widgets
@@ -624,7 +641,7 @@ struct OnboardingView: View  {
             
             withAnimation {
                 if appState.onBoardingTest {
-                        selection = .subscription
+                        selection = .unshakeableFaith
                     onboardingTab = selection.rawValue
                 } else {
                     selection = .widgets

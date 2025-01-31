@@ -45,7 +45,10 @@ final class AppState: ObservableObject {
     @AppStorage("subscriptionTest") var subscriptionTestnineteen = false
     @AppStorage("firstOpen") var firstOpen = true
     @AppStorage("showGiftViewCount") var showGiftViewCount = 0
+    @AppStorage("email") var email = ""
+    @AppStorage("hasEmail") var needEmail = true
   
+    
 }
 
 @propertyWrapper

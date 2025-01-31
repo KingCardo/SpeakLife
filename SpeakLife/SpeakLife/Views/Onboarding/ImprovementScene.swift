@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseAnalytics
 
 struct ImprovementScene: View {
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
     
     let size: CGSize
@@ -71,7 +72,7 @@ struct ImprovementScene: View {
             .scrollIndicators(.hidden)
             .frame(width: size.width, height: size.height)
             .background(
-                Image(appState.onBoardingTest ? onboardingBGImage : "declarationBackground")
+                Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)

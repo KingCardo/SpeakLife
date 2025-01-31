@@ -7,7 +7,6 @@
 
 import SwiftUI
 import FacebookCore
-
 let resources: [MusicResources] = [.somethinggreater, .mindful, .romanticPiano, .peacefulplace, .returntosurface, .sethpiano, .washed, .rainstorm, .everpresent]
 
 struct MusicResources {
@@ -39,6 +38,7 @@ struct HomeView: View {
     @StateObject private var viewModel = FacebookTrackingViewModel()
     @State var showGiftView = false
     @State private var isPresented = false
+    
     private let currentVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0.0"
 
     let data = [true, false]
@@ -115,6 +115,11 @@ struct HomeView: View {
                     .presentationDetents([.medium])
                                    .presentationDragIndicator(.visible)
             }
+//            .sheet(isPresented: $appState.needEmail) {
+//                EmailBottomSheet(isPresented: $appState.needEmail)
+//                    .presentationDetents([.medium])
+//                                   .presentationDragIndicator(.visible)
+//            }
             .accentColor(Constants.DAMidBlue)
 //            .sheet(isPresented: $showGiftView, content: {
 //                OfferPageView() {

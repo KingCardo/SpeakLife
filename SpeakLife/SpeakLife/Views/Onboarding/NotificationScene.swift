@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NotificationOnboarding:  View {
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
     
     let size: CGSize
@@ -37,6 +38,7 @@ struct NotificationOnboarding:  View {
                     .font(.system(size: 34, weight: .semibold, design: .rounded))
                     .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                     .minimumScaleFactor(0.7)
+                    .multilineTextAlignment(.center)
                     .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
                 
                 Spacer().frame(height: 16)
@@ -100,7 +102,7 @@ struct NotificationOnboarding:  View {
         }
         .frame(width: size.width, height: size.height)
         .background(
-            Image(appState.onBoardingTest ? onboardingBGImage : "declarationBackground")
+            Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)

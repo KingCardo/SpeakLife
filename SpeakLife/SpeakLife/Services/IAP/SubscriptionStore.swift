@@ -26,7 +26,7 @@ public enum StoreError: Error {
 let currentYearlyID = "SpeakLife1YR29"
 let currentMonthlyID = "SpeakLife1MO4"
 let currentMonthlyPremiumID = "SpeakLife1MO9"
-let currentPremiumID = "SpeakLife1YR49"
+let currentPremiumID = "SpeakLife1YR39"
 let lifetimeID = "SpeakLifeLifetime"
 final class SubscriptionStore: ObservableObject {
 
@@ -42,6 +42,7 @@ final class SubscriptionStore: ObservableObject {
     @Published var currentOfferedMonthly: Product? = nil
     @Published var currentOfferedPremium: Product? = nil
     @Published var currentOfferedPremiumMonthly: Product? = nil
+    @Published var testGroup = 0//Int.random(in: 0...1)
    
     
     var updateListenerTask: Task<Void, Error>? = nil
@@ -68,7 +69,7 @@ final class SubscriptionStore: ObservableObject {
                 guard let self = self else { return }
                 // Update isPremium based on subscription state and purchased non-consumables
                 self.isPremium = (subscriptionStatus == .subscribed) || !nonConsumables.isEmpty
-                self.isPremiumAllAccess = (purchasedSubscriptions.first(where: { $0.id ==  currentPremiumID }) != nil) || (purchasedSubscriptions.first(where: { $0.id ==  currentMonthlyPremiumID }) != nil) || !nonConsumables.isEmpty
+                self.isPremiumAllAccess = (purchasedSubscriptions.first(where: { $0.id == currentPremiumID }) != nil) || (purchasedSubscriptions.first(where: { $0.id ==  currentMonthlyPremiumID }) != nil) || !nonConsumables.isEmpty
             }
         
     }
@@ -313,13 +314,19 @@ extension Product {
         } else if id == currentYearlyID {
            return "7 days free then \(displayPrice)/yr."
         } else if id == currentPremiumID {
-                return "Save 60% with the Annual Plan."
+                return "For Just $0.11 cents a Day, Unlock Full Access!"
         } else {
            return "billed monthly at \(displayPrice). Cancel anytime."
         }
     }
     
+    
     var costDescription: String {
+        if id == currentPremiumID {
+                return "First 7 days free!"
+        } else {
+           return "No commitment. Cancel anytime."
+        }
         return "No commitment. Cancel anytime."
 //        if id == currentYearlyID {
 //            return "7 days free then \(displayPrice)/year."
