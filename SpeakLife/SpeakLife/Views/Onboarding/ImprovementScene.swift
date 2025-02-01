@@ -72,10 +72,14 @@ struct ImprovementScene: View {
             .scrollIndicators(.hidden)
             .frame(width: size.width, height: size.height)
             .background(
-                Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
+                ZStack {
+                    Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
+                    Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.05 : 0.2)
+                        .edgesIgnoringSafeArea(.all)
+                }
             )
         
     }

@@ -142,7 +142,7 @@ struct IntroTipScene: View {
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
                     .brightness(0.05)
-                Color.black.opacity(0.05)
+                Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.05 : 0.2)
                     .edgesIgnoringSafeArea(.all)
             }
         )
@@ -251,10 +251,14 @@ struct IntroScene: View {
         }
         .frame(width: size.width, height: size.height)
         .background(
-            Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all)
+            ZStack {
+                Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+                Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.05 : 0.2)
+                    .edgesIgnoringSafeArea(.all)
+            }
         )
         
     }
@@ -381,10 +385,14 @@ struct TestimonialScreen: View {
             .padding()
             .frame(width: size.width, height: size.height)
             .background(
-                Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
+                ZStack {
+                    Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
+                    Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.05 : 0.2)
+                        .edgesIgnoringSafeArea(.all)
+                }
             )
         }
 }
@@ -404,20 +412,14 @@ struct TestimonialCard: View {
             Text("“\(testimonial.text)”")
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
                 .multilineTextAlignment(.center)
-                .foregroundColor(.black)
+                .foregroundColor(.white)
                 .padding(.horizontal, 20)
-
-//            Text("- \(testimonial.author)")
-//                .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .caption))
-//                .fontWeight(.semibold)
-//                .foregroundColor(.black)
         }
-        .padding()
-        .background(
-            Color.white.opacity(0.9))
-        .cornerRadius(20)
-        .shadow(color: Color.black.opacity(0.4), radius: 10, x: 0, y: 5)
-        .frame(width: 260, height: 340)
+        .frame(width: 260, height: 300)
+            .padding()
+            .background(BlurView(style: .dark))
+            .cornerRadius(20)
+            .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)
     }
 }
 
@@ -440,6 +442,7 @@ struct FeatureShowcaseScreen: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
+                Spacer()
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
@@ -450,7 +453,7 @@ struct FeatureShowcaseScreen: View {
                     }
                     .padding(.horizontal, 20)
                 }
-                .frame(height: 300)
+                .frame(maxHeight: 350)
                 Spacer()
                 
                 ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Continue", action: callBack)
@@ -468,10 +471,14 @@ struct FeatureShowcaseScreen: View {
         .padding()
         .frame(width: size.width, height: size.height)
         .background(
-                    Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .edgesIgnoringSafeArea(.all)
+            ZStack {
+                Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+                Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.05 : 0.2)
+                    .edgesIgnoringSafeArea(.all)
+            }
                 )
     }
 }
@@ -482,32 +489,29 @@ struct FeatureCard: View {
     let description: String
 
     var body: some View {
-        VStack(spacing: 15) {
-            Spacer().frame(height: 6)
-            Image(systemName: icon)
-                .font(.system(size: 40, weight: .bold))
-                .foregroundColor(.white)
+        VStack(spacing: 18) {
+                    Image(systemName: icon)
+                        .font(.system(size: 40))
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Circle().fill(Color.blue.opacity(0.8)))
 
-            Text(title)
-                .font(.headline)
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-                .multilineTextAlignment(.center)
+                    Text(title)
+                        .font(.title2.bold())
+                        .foregroundColor(.white)
 
-            Text(description)
-                .font(.body)
-                .foregroundColor(.white.opacity(0.9))
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 10)
-
-            Spacer()
-        }
-        .frame(width: 260, height: 280)
-        .background(
-            LinearGradient(gradient: Gradient(colors: [Color.indigo, Constants.DAMidBlue]), startPoint: .topLeading, endPoint: .bottomTrailing)
-        )
-        .cornerRadius(20)
-        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
-        .padding(.vertical, 10)
-    }
+                    Text(description)
+                        .font(.body)
+                        .foregroundColor(.white.opacity(0.8))
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 8)
+                }
+            .frame(width: 260, height: 300)
+                .padding()
+                .background(BlurView(style: .dark))
+                .cornerRadius(20)
+                .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)
+                
+            }
 }
+

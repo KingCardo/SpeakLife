@@ -114,7 +114,7 @@ struct OfferPageView: View {
                         .font(.system(size: 18, weight: .bold))
                         .padding()
                         .frame(maxWidth: .infinity, maxHeight: 60)
-                        .background(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))
+                        .background(LinearGradient(gradient: Gradient(colors: [.orange, .yellow]), startPoint: .leading, endPoint: .trailing))
                         .foregroundColor(.white)
                         .cornerRadius(30)
                 }
@@ -243,7 +243,7 @@ struct SubscriptionView: View {
                     LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, Color.black]), startPoint: .top, endPoint: .bottom)
                         .edgesIgnoringSafeArea(.all)
                 } else {
-                    LinearGradient(gradient: Gradient(colors: [.orange, Color.purple]), startPoint: .top, endPoint: .bottom)
+                    LinearGradient(gradient: Gradient(colors: [Constants.DADarkBlue, Color.black.opacity(0.7)]), startPoint: .top, endPoint: .bottom)
                         .edgesIgnoringSafeArea(.all)
                 }
                
@@ -544,7 +544,7 @@ struct SubscriptionView: View {
     }
     
     private func continueButton(gradient: LinearGradient) -> some View {
-        return ShimmerButton(colors: [Constants.gold, .purple], buttonTitle: currentSelection?.ctaButtonTitle ?? "Subscribe", action: makePurchase)
+        return ShimmerButton(colors: [Color.orange, Color.yellow.opacity(0.8)], buttonTitle: currentSelection?.ctaButtonTitle ?? "Subscribe", action: makePurchase)
             .opacity(currentSelection != nil ? 1 : 0.5)
     }
     // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"

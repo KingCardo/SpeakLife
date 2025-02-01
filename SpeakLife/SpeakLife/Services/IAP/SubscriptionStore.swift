@@ -42,7 +42,7 @@ final class SubscriptionStore: ObservableObject {
     @Published var currentOfferedMonthly: Product? = nil
     @Published var currentOfferedPremium: Product? = nil
     @Published var currentOfferedPremiumMonthly: Product? = nil
-    @Published var testGroup = 0//Int.random(in: 0...1)
+    @Published var testGroup = Int.random(in: 0...1)
    
     
     var updateListenerTask: Task<Void, Error>? = nil
@@ -327,7 +327,7 @@ extension Product {
         } else {
            return "No commitment. Cancel anytime."
         }
-        return "No commitment. Cancel anytime."
+       
 //        if id == currentYearlyID {
 //            return "7 days free then \(displayPrice)/year."
 //        } else if id == currentPremiumID {

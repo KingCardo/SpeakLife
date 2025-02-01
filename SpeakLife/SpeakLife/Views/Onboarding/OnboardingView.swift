@@ -166,7 +166,7 @@ struct OnboardingView: View  {
                 IntroTipScene(
                     title: "Life can be overwhelming",
                     bodyText: "but God has already provided promises of peace, protection, and purpose. With SpeakLife, you can",
-                    subtext: "With SpeakLife, you can: \n- Hear God’s promises every day\n- Pray powerful, effective prayers\n- Find peace in moments of stress.",
+                    subtext: "\n- Hear God’s promises every day\n- Pray powerful, effective prayers\n- Find peace in moments of stress.",
                     ctaText: "Discover My Daily Promises",
                     showTestimonials: false,
                     isScholarship: false,
