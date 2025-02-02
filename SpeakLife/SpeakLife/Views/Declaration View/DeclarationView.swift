@@ -46,6 +46,7 @@ struct DeclarationView: View {
     @EnvironmentObject var timerViewModel: TimerViewModel
     @State private var showMenu = false
     @State private var selectedView: SelectedView?
+    @State var presentDevotionalSubscriptionView = false
    /// @State private var timeRemaining: Int = 0
     
     @State var isPresenting: Bool = false
@@ -120,7 +121,16 @@ struct DeclarationView: View {
                                             timerViewModel.loadRemainingTime()
                                         } content: {
                                             PremiumView()
-                                        }
+                                                .onDisappear {
+                                                    if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
+                                                        presentDevotionalSubscriptionView = true
+                                                    }
+                                                }
+                                        }.sheet(isPresented: $presentDevotionalSubscriptionView) {
+                                            DevotionalSubscriptionView() {
+                                                presentDevotionalSubscriptionView = false
+                                            }
+                                           }
                                     
                                     
                                 }
@@ -292,7 +302,7 @@ struct DeclarationView: View {
                     
                 }
             }
-        } else if reviewTry <= 1, let lastReviewSetDate = appState.lastReviewRequestSetDate, currentDate.timeIntervalSince(lastReviewSetDate) >= 60 * 1 {
+        } else if reviewTry <= 1, let lastReviewSetDate = appState.lastReviewRequestSetDate, currentDate.timeIntervalSince(lastReviewSetDate) >= 60 * 60 * 24 {
             DispatchQueue.main.async {
                 if let scene = UIApplication.shared.connectedScenes
                     .first(where: { $0.activationState == .foregroundActive })
@@ -305,7 +315,7 @@ struct DeclarationView: View {
             }
         }
             else if let lastReviewSetDate = appState.lastReviewRequestSetDate,
-                  currentDate.timeIntervalSince(lastReviewSetDate) >= 60 * 60 * 24 * 14,
+                  currentDate.timeIntervalSince(lastReviewSetDate) >= 60 * 60 * 24 * 5,
                   reviewTry < 3 {
             DispatchQueue.main.async {
                 if let scene = UIApplication.shared.connectedScenes

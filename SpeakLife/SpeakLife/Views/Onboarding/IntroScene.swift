@@ -337,8 +337,8 @@ struct TestimonialScreen: View {
     @State private var currentIndex = 0
     
     let testimonials = [
-        Testimony(author: "Purestarcep17", text: "I love Bible apps that give you access to more Bible knowledge and affirmations so as I was discovering all of wonderful things that were included in SpeakLife I decided that this was something I needed in my life and I am so glad that I did. Because it was so well put together and informative. I have shared it with many people. I thank God for you all."),
         Testimony(author: "Emma R.", text: "I just found this App & everything I’ve read has been rooted in Scripture! I highly recommend getting this App to ensure (like myself) you are firmly rooted in the Truth & the Light of Christ in a World of Darkness, Selfishness, & Deceit! May we all find Peace, Grace, & Love by becoming everything our Heavenly Father designed us to be in this Life!"),
+        Testimony(author: "Purestarcep17", text: "I love Bible apps that give you access to more Bible knowledge and affirmations so as I was discovering all of wonderful things that were included in SpeakLife I decided that this was something I needed in my life and I am so glad that I did. Because it was so well put together and informative. I have shared it with many people. I thank God for you all."),
         Testimony(author: "John K.", text: "I was fearful of losing my job and stumbled upon this app with God’s promises. I found one on how he would never leave me nor forsake me! I started saying it multiple times a day everyday! I ended up losing the job due to layoffs but got a new job paying 2x as much right before I was out of savings! Never missed a bill or anything! God is great! Thank you Speaklife!"),
         Testimony(author: "Sophia M.", text: "I love how the app represents the WORD OF GOD and I appreciate the affirmations and peaceful quotes."),
         Testimony(author: "Sophia M.", text: "The app is so centered on what we need in line with God’s promise over our life. I appreciate the idea behind this invention and great work,God inspiration and ideas never cease from the organization."),
@@ -356,6 +356,7 @@ struct TestimonialScreen: View {
                     .font(.system(size: 34, weight: .semibold, design: .rounded))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
+                Spacer()
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
@@ -378,11 +379,10 @@ struct TestimonialScreen: View {
                     .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
                     .cornerRadius(30)
                 
-                Spacer()
-                    .frame(height: size.height * 0.07)
             }
+            Spacer()
+                .frame(width: 5, height: size.height * 0.07)
         }
-            .padding()
             .frame(width: size.width, height: size.height)
             .background(
                 ZStack {
@@ -410,7 +410,7 @@ struct TestimonialCard: View {
     var body: some View {
         VStack(spacing: 20) {
             Text("“\(testimonial.text)”")
-                .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
                 .padding(.horizontal, 20)
@@ -464,11 +464,11 @@ struct FeatureShowcaseScreen: View {
                     .cornerRadius(30)
                     .shadow(color: Constants.DAMidBlue.opacity(0.5), radius: 8, x: 0, y: 10)
                 
-                Spacer()
-                    .frame(width: 5, height: size.height * 0.07)
+                
             }
+            Spacer()
+                .frame(width: 5, height: size.height * 0.07)
         }
-        .padding()
         .frame(width: size.width, height: size.height)
         .background(
             ZStack {

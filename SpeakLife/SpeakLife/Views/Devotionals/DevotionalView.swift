@@ -17,6 +17,7 @@ struct DevotionalView: View {
     @EnvironmentObject var appState: AppState
     @State private var scrollToTop = false
     @State private var share = false
+    @State var presentDevotionalSubscriptionView = false
     
     let spacing: CGFloat = 70
     
@@ -30,7 +31,7 @@ struct DevotionalView: View {
     
     @ViewBuilder
     var contentView: some  View {
-        if subscriptionStore.isPremium || !viewModel.devotionalLimitReached {
+        if subscriptionStore.isPremium || !viewModel.devotionalLimitReached || subscriptionStore.isInDevotionalPremium {
             devotionalView
                 .onAppear {
                     Analytics.logEvent(Event.devotionalTapped, parameters: nil)
@@ -42,7 +43,16 @@ struct DevotionalView: View {
                     Alert(title: Text(viewModel.errorString))
                 }
         } else {
-                SubscriptionView(size: UIScreen.main.bounds.size)
+            SubscriptionView(size: UIScreen.main.bounds.size)
+                .onDisappear {
+                    if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
+                        presentDevotionalSubscriptionView = true
+                    }
+                }.sheet(isPresented: $presentDevotionalSubscriptionView) {
+                    DevotionalSubscriptionView() {
+                        presentDevotionalSubscriptionView = false
+                    }
+                }
         }
     }
     
@@ -62,7 +72,7 @@ struct DevotionalView: View {
                     VStack {
                         Spacer()
                             .frame(height: 40)
-                        if !subscriptionStore.isPremium {
+                        if !subscriptionStore.isPremium && !subscriptionStore.isInDevotionalPremium {
                             Text("\(viewModel.devotionalsLeft) more free devotionals left")
                                // .padding()
                         }
@@ -188,12 +198,12 @@ struct DevotionalView: View {
             share.toggle()
             declarationViewModel.requestReview.toggle()
             Analytics.logEvent(Event.devotionalShared, parameters: nil)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                appState.shareDiscountTry += 1
-                if !subscriptionStore.isPremium, appState.shareDiscountTry % 2 == 0 {
-                    declarationViewModel.showDiscountView.toggle()
-                }
-            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                appState.shareDiscountTry += 1
+////                if !subscriptionStore.isPremium, appState.shareDiscountTry % 2 == 0 {
+////                    declarationViewModel.showDiscountView.toggle()
+////                }
+//            }
         } label: {
             Image(systemName: "square.and.arrow.up")
                 .resizable()

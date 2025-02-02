@@ -19,6 +19,7 @@
 		4558DB552BB3E85E0073BDB8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4558DB542BB3E85E0073BDB8 /* FirebaseAnalytics */; };
 		4558DB572BB3E85E0073BDB8 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4558DB562BB3E85E0073BDB8 /* FirebaseCrashlytics */; };
 		4558DB592BB3E85E0073BDB8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4558DB582BB3E85E0073BDB8 /* FirebaseStorage */; };
+		456585F32D4F62EE002F2709 /* DevotionalSubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456585F22D4F62EE002F2709 /* DevotionalSubscriptionView.swift */; };
 		456885262B390FF4007B1EBB /* WarriorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456885252B390FF4007B1EBB /* WarriorView.swift */; };
 		456885282B395F66007B1EBB /* declarationsv3.json in Resources */ = {isa = PBXBuildFile; fileRef = 456885272B395F66007B1EBB /* declarationsv3.json */; };
 		4568852A2B428D77007B1EBB /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456885292B428D77007B1EBB /* NotificationManagerTests.swift */; };
@@ -200,6 +201,7 @@
 		453A831F2C9BF1AE00398ECE /* SpeechCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechCoordinator.swift; sourceTree = "<group>"; };
 		453C35842C5092A800817FCC /* HelpUsGrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpUsGrowView.swift; sourceTree = "<group>"; };
 		453C35862C50B15900817FCC /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
+		456585F22D4F62EE002F2709 /* DevotionalSubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevotionalSubscriptionView.swift; sourceTree = "<group>"; };
 		456885252B390FF4007B1EBB /* WarriorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarriorView.swift; sourceTree = "<group>"; };
 		456885272B395F66007B1EBB /* declarationsv3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv3.json; sourceTree = "<group>"; };
 		456885292B428D77007B1EBB /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerTests.swift; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 				7AA870A328DACCB700134ADB /* ProfileView */,
 				458510DA2B15C36500230EE5 /* BibleStudy */,
 				456885252B390FF4007B1EBB /* WarriorView.swift */,
+				456585F22D4F62EE002F2709 /* DevotionalSubscriptionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1100,6 +1103,7 @@
 				7AA8709628DACCA800134ADB /* String+Extension.swift in Sources */,
 				458510DE2B16B29400230EE5 /* BibleStudyViewModel.swift in Sources */,
 				7AF18C8F2A0CBD03005A6E31 /* Devotional.swift in Sources */,
+				456585F32D4F62EE002F2709 /* DevotionalSubscriptionView.swift in Sources */,
 				7AA870C228DACCB700134ADB /* IntentsBarView.swift in Sources */,
 				7AA870E428DACD1A00134ADB /* AppState.swift in Sources */,
 				7AA870CB28DACCB700134ADB /* PremiumView.swift in Sources */,
@@ -1404,7 +1408,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 653;
+				CURRENT_PROJECT_VERSION = 659;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1425,7 +1429,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.26;
+				MARKETING_VERSION = 3.0.27;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1445,7 +1449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 653;
+				CURRENT_PROJECT_VERSION = 659;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1466,7 +1470,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.26;
+				MARKETING_VERSION = 3.0.27;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

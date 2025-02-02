@@ -10,7 +10,7 @@ import StoreKit
 import Combine
 import FirebaseAnalytics
 import FacebookCore
-
+import SwiftUI
 
 import StoreKit
 import Combine
@@ -28,6 +28,7 @@ let currentMonthlyID = "SpeakLife1MO4"
 let currentMonthlyPremiumID = "SpeakLife1MO9"
 let currentPremiumID = "SpeakLife1YR39"
 let lifetimeID = "SpeakLifeLifetime"
+let devotionals = "Devotional30Days"
 final class SubscriptionStore: ObservableObject {
 
     @Published var isPremium: Bool = false
@@ -42,7 +43,10 @@ final class SubscriptionStore: ObservableObject {
     @Published var currentOfferedMonthly: Product? = nil
     @Published var currentOfferedPremium: Product? = nil
     @Published var currentOfferedPremiumMonthly: Product? = nil
+    @Published var currentOfferedDevotionalPremium: Product? = nil
+    @Published var isInDevotionalPremium = false
     @Published var testGroup = Int.random(in: 0...1)
+    @AppStorage("lastDevotionalPurchase") var lastDevotionalPurchaseDate: Date?
    
     
     var updateListenerTask: Task<Void, Error>? = nil
@@ -68,14 +72,34 @@ final class SubscriptionStore: ObservableObject {
             .sink { [weak self] subscriptionStatus, nonConsumables, purchasedSubscriptions in
                 guard let self = self else { return }
                 // Update isPremium based on subscription state and purchased non-consumables
-                self.isPremium = (subscriptionStatus == .subscribed) || !nonConsumables.isEmpty
-                self.isPremiumAllAccess = (purchasedSubscriptions.first(where: { $0.id == currentPremiumID }) != nil) || (purchasedSubscriptions.first(where: { $0.id ==  currentMonthlyPremiumID }) != nil) || !nonConsumables.isEmpty
+                self.isInDevotionalPremium = checkIsDevotionalActive(nonConsumables: nonConsumables)
+                self.isPremium = (subscriptionStatus == .subscribed) || nonConsumables.contains( where: { $0 == self.currentOfferedLifetime })
             }
         
     }
 
     deinit {
         updateListenerTask?.cancel()
+    }
+    
+    func checkIsDevotionalActive(nonConsumables: [Product]) -> Bool {
+        if nonConsumables.contains( where: { $0 == self.currentOfferedDevotionalPremium }), let purchaseDate = lastDevotionalPurchaseDate {
+            return isWithin30Days(from: purchaseDate)
+        }
+        return false
+    }
+    
+    private func isWithin30Days(from date: Date) -> Bool {
+        // Get the current date
+        let currentDate = Date()
+        
+        // Calculate the date 30 days ago
+        guard let date30DaysAgo = Calendar.current.date(byAdding: .day, value: -30, to: currentDate) else {
+            return false
+        }
+        
+        // Check if the given date is after or on the date 30 days ago
+        return date >= date30DaysAgo
     }
     
     func listenForTransactions() -> Task<Void, Error> {
@@ -133,6 +157,9 @@ final class SubscriptionStore: ObservableObject {
                 case .nonConsumable:
                     if product.id == lifetimeID {
                         currentOfferedLifetime = product
+                    }
+                    if product.id == devotionals {
+                        currentOfferedDevotionalPremium = product
                     }
                     newNonConsumables.append(product) // Handle non-consumables
                 default:
@@ -323,7 +350,9 @@ extension Product {
     
     var costDescription: String {
         if id == currentPremiumID {
-                return "First 7 days free!"
+            return "🏆 Most Popular"
+        } else if id == lifetimeID {
+            return "Pay once, own it for life!"
         } else {
            return "No commitment. Cancel anytime."
         }

@@ -291,6 +291,12 @@ struct SubscriptionView: View {
                     
                     VStack {
                         Button {
+                            currentSelection = thirdSelection
+                        } label: {
+                            thirdSelectionBox()
+                        }
+                        
+                        Button {
                             currentSelection = firstSelection
                         } label: {
                             firstSelectionBox()
@@ -303,11 +309,7 @@ struct SubscriptionView: View {
                             secondSelectionBox()
                         }
                         
-//                        Button {
-//                            currentSelection = thirdSelection
-//                        } label: {
-//                            thirdSelectionBox()
-//                        }
+ 
                         
                     }
         
@@ -497,7 +499,7 @@ struct SubscriptionView: View {
         }
     }
     
-    private func makePurchase(iap: Product) {
+    func makePurchase(iap: Product) {
         impactMed.impactOccurred()
         Task {
             withAnimation {
@@ -573,10 +575,10 @@ struct SubscriptionView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Constants.traditionalGold)
-                        .frame(width: 90, height: 30)
+                        .frame(width: 70, height: 30)
                         .cornerRadius(15)
                     
-                    Text("🏆 67% OFF")
+                    Text("67% OFF")
                         .font(.caption)
                         .bold()
                         .foregroundColor(.black)
@@ -943,3 +945,5 @@ struct SubscriptionPricingView_Previews: PreviewProvider {
         SubscriptionPricingView()
     }
 }
+
+

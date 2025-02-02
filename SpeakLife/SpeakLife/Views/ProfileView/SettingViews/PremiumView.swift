@@ -14,6 +14,7 @@ struct PremiumView: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State var presentDevotionalSubscriptionView = false
         
     
     var body: some View {

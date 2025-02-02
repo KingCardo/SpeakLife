@@ -82,6 +82,7 @@ struct AudioDeclarationView: View {
     @State private var isPresentingPremiumView = false
     let filters: [Filter] = [.declarations, .meditation, .gospel, .bedtimeStories]
     @State private var selectedFilter: Filter = .declarations
+    @State var presentDevotionalSubscriptionView = false
     
      var filteredContent: [AudioDeclaration] {
         switch selectedFilter {
@@ -182,6 +183,11 @@ struct AudioDeclarationView: View {
                 } content: {
                     GeometryReader { geometry in
                         SubscriptionView(size: geometry.size)
+                            .onDisappear {
+                                if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
+                                    presentDevotionalSubscriptionView = true
+                                }
+                            }
                     }
                 }
                 .alert(item: $errorMessage) { error in
@@ -213,6 +219,11 @@ struct AudioDeclarationView: View {
                 }
                 
             }
+        .sheet(isPresented: $presentDevotionalSubscriptionView) {
+            DevotionalSubscriptionView() {
+                presentDevotionalSubscriptionView = false
+            }
+        }
         }
         
     }

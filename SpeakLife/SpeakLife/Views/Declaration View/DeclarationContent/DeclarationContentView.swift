@@ -280,11 +280,12 @@ struct DeclarationContentView: View {
             withAnimation {
                 appState.showScreenshotLabel = false
                 appState.shareDiscountTry += 1
-                if !subscriptionStore.isPremium, appState.shareDiscountTry % 3 == 0 {
-                    viewModel.showDiscountView.toggle()
-                }
+//                if !subscriptionStore.isPremium, appState.shareDiscountTry % 3 == 0 {
+//                    viewModel.showDiscountView.toggle()
+//                }
+                viewModel.requestReview.toggle()
             }
-           // viewModel.requestReview.toggle()
+            
         }
     }
     

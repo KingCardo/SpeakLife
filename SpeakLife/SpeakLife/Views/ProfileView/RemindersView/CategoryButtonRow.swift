@@ -12,6 +12,7 @@ struct CategoryButtonRow: View  {
     
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var declarationStore: DeclarationViewModel
+    @State var presentDevotionalSubscriptionView = false
     @State var isPresentingCategoryList = false
     @State var isPresentingPremiumView = false {
         didSet {
@@ -31,11 +32,18 @@ struct CategoryButtonRow: View  {
             Button(action: displayCategoryView) {
                 Image(systemName: "chevron.right")
             }
+            
             .sheet(isPresented: subscriptionStore.isPremium ? $isPresentingCategoryList : $isPresentingPremiumView, onDismiss: {
                 self.isPresentingPremiumView = false
                 self.isPresentingCategoryList = false
             }, content: {
                 contentView
+                    .sheet(isPresented: $presentDevotionalSubscriptionView) {
+                        DevotionalSubscriptionView() {
+                            presentDevotionalSubscriptionView = false
+                        }
+                       }
+                       
             })
             .padding()
         }
@@ -60,6 +68,12 @@ struct CategoryButtonRow: View  {
     private var contentView: some View {
         if !subscriptionStore.isPremium {
             SubscriptionView(size:  UIScreen.main.bounds.size)
+                .onDisappear {
+                    if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
+                        presentDevotionalSubscriptionView = true
+                    }
+                }
+                
         } else {
             CategoryListView(categoryList: CategoryListViewModel(declarationStore))
         }
