@@ -132,25 +132,24 @@ struct SubscriptionDetailsView: View {
         VStack(alignment: .center, spacing: 16) {
             Text(title)
                 .font(.title)
+                .foregroundColor(.black)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .multilineTextAlignment(.center)
+                
 
             Text(description)
                 .font(.body)
-                .foregroundColor(.secondary)
+                .foregroundColor(.gray)
 
             Text(disclaimer)
                 .font(.caption)
                 .foregroundColor(.gray)
         }
-        //.multilineTextAlignment(.center)
         .padding()
         .background(BlurView(style: .light))
         .cornerRadius(20)
         .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)
-//        .padding()
-//        .background(Color(UIColor.secondarySystemBackground))
-//        .cornerRadius(12)
+
     }
 }
 

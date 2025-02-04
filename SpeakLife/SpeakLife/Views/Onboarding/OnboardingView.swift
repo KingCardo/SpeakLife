@@ -16,6 +16,7 @@ let onboardingBGImage2 = "pinkHueMountain"
 import SwiftUI
 
 struct RatingView: View {
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     let size: CGSize
     let callBack: (() -> Void)
     @State private var showStars = [false, false, false, false, false]
@@ -79,7 +80,7 @@ struct RatingView: View {
                 .padding(10)
             
             // Subtext about app review
-            Text("Your app store review helps spread the word and grow the SpeakLife community!")
+            Text("Your app store review helps spread the Word and guide more people to Jesus!")
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
                 .foregroundStyle(.white)
                 .multilineTextAlignment(.center)
@@ -100,14 +101,16 @@ struct RatingView: View {
                 .frame(width: 5, height: size.height * 0.07)
         }
         .background(
-            ZStack {
-                Image(onboardingBGImage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
-                Color.black.opacity(0.05)
-                    .edgesIgnoringSafeArea(.all)
-            })
+                ZStack {
+                    Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
+                        .brightness(0.05)
+                    Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.05 : 0.2)
+                        .edgesIgnoringSafeArea(.all)
+                }
+                )
     }
        
 }
@@ -179,7 +182,13 @@ struct OnboardingView: View  {
                 FeatureShowcaseScreen(size: geometry.size) {
                     advance()
                 }
-                    .tag(Tab.liveVictorious)
+                .tag(Tab.liveVictorious)
+                
+                RatingView(size: geometry.size) {
+                    withAnimation {
+                        advance()
+                    }
+                }.tag(Tab.review)
                 
                 NotificationOnboarding(size: geometry.size) {
                     withAnimation {
@@ -497,7 +506,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("LikeJesusScreenDone", parameters: nil)
                 case .liveVictorious:
                     impactMed.impactOccurred()
-                    selection = .notification
+                    selection = .review
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("LiveVictoriousScreenDone", parameters: nil)
                 case .unshakeableFaith:

@@ -267,6 +267,22 @@ let bedTimeFiles: [AudioDeclaration] = [
            imageUrl: "david",
            isPremium: true
        ),
+    AudioDeclaration(
+           id: "jonah.mp3",
+           title: "Jonah’s Journey of God’s Mercy",
+           subtitle: "A Story of Obedience, Compassion, and Second Chances",
+           duration: "8m",
+           imageUrl: "jonah",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "ruth.mp3",
+           title: "Ruth’s Journey of Loyalty and Love",
+           subtitle: "A Story of Faithfulness, Redemption, and New Beginnings",
+           duration: "8m",
+           imageUrl: "ruth",
+           isPremium: true
+       ),
     ]
 
 
