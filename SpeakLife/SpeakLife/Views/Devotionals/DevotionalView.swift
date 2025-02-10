@@ -14,6 +14,7 @@ struct DevotionalView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: DevotionalViewModel
     @EnvironmentObject var declarationViewModel: DeclarationViewModel
+    @EnvironmentObject var config: AppConfigViewModel
     @EnvironmentObject var appState: AppState
     @State private var scrollToTop = false
     @State private var share = false
@@ -43,16 +44,25 @@ struct DevotionalView: View {
                     Alert(title: Text(viewModel.errorString))
                 }
         } else {
-            SubscriptionView(size: UIScreen.main.bounds.size)
-                .onDisappear {
-                    if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
-                        presentDevotionalSubscriptionView = true
+            
+            ScrollView {
+               
+                SubscriptionView(size: UIScreen.main.bounds.size)
+                    .onDisappear {
+                        if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
+                            if config.showDevotionalSubscription {
+                                presentDevotionalSubscriptionView = true
+                            }
+                        }
                     }
-                }.sheet(isPresented: $presentDevotionalSubscriptionView) {
-                    DevotionalSubscriptionView() {
-                        presentDevotionalSubscriptionView = false
-                    }
+                                .sheet(isPresented: $presentDevotionalSubscriptionView) {
+                                    DevotionalSubscriptionView() {
+                                        presentDevotionalSubscriptionView = false
+                                    }
+                 
                 }
+            }
+            .edgesIgnoringSafeArea(.top)
         }
     }
     

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2F740F6929D4017400E89E7F /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F740F6829D4017400E89E7F /* APIClientTests.swift */; };
 		450720DB2BAFFB4A0029EE2B /* TimerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450720DA2BAFFB4A0029EE2B /* TimerViewModelTests.swift */; };
+		4509556D2D5A94300098B327 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509556C2D5A94300098B327 /* AppConfig.swift */; };
+		4509556F2D5A95150098B327 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 4509556E2D5A95150098B327 /* FirebaseRemoteConfig */; };
+		450955712D5A95150098B327 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 450955702D5A95150098B327 /* FirebaseRemoteConfigSwift */; };
 		4512A37B2D3900DF0099A83A /* AudioPlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4512A37A2D3900DF0099A83A /* AudioPlayerDetailView.swift */; };
 		453172B42B2D274800388AD4 /* BenefitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453172B32B2D274800388AD4 /* BenefitScene.swift */; };
 		453478F12B9D29CC0012C2C0 /* declarationsv4.json in Resources */ = {isa = PBXBuildFile; fileRef = 453478F02B9D29CC0012C2C0 /* declarationsv4.json */; };
@@ -194,6 +197,7 @@
 		2F740F5E29D4014500E89E7F /* SpeakLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeakLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F740F6829D4017400E89E7F /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		450720DA2BAFFB4A0029EE2B /* TimerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModelTests.swift; sourceTree = "<group>"; };
+		4509556C2D5A94300098B327 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		4512A37A2D3900DF0099A83A /* AudioPlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerDetailView.swift; sourceTree = "<group>"; };
 		453172B32B2D274800388AD4 /* BenefitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitScene.swift; sourceTree = "<group>"; };
 		453478F02B9D29CC0012C2C0 /* declarationsv4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv4.json; sourceTree = "<group>"; };
@@ -352,6 +356,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4509556F2D5A95150098B327 /* FirebaseRemoteConfig in Frameworks */,
 				4558DB552BB3E85E0073BDB8 /* FirebaseAnalytics in Frameworks */,
 				45C7481B2B5357D40011D8F6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				4558DB592BB3E85E0073BDB8 /* FirebaseStorage in Frameworks */,
@@ -360,6 +365,7 @@
 				7AF18C8029FD1E20005A6E31 /* (null) in Frameworks */,
 				7AF18CA22A0DB126005A6E31 /* SwiftUICharts in Frameworks */,
 				4558DB572BB3E85E0073BDB8 /* FirebaseCrashlytics in Frameworks */,
+				450955712D5A95150098B327 /* FirebaseRemoteConfigSwift in Frameworks */,
 				7A00721D2908D50800965AF7 /* (null) in Frameworks */,
 				7A7BEBCD2913536B008D08A3 /* StoreKit.framework in Frameworks */,
 			);
@@ -550,6 +556,7 @@
 				7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */,
 				7AA870E128DACD1A00134ADB /* AppDelegate.swift */,
 				7AA870E228DACD1A00134ADB /* AppState.swift */,
+				4509556C2D5A94300098B327 /* AppConfig.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -920,6 +927,8 @@
 				4558DB562BB3E85E0073BDB8 /* FirebaseCrashlytics */,
 				4558DB582BB3E85E0073BDB8 /* FirebaseStorage */,
 				45D6402E2CD37810006F05AD /* FirebaseFirestore */,
+				4509556E2D5A95150098B327 /* FirebaseRemoteConfig */,
+				450955702D5A95150098B327 /* FirebaseRemoteConfigSwift */,
 			);
 			productName = SpeakLife;
 			productReference = 7A278F97288915DE0084BB57 /* SpeakLife.app */;
@@ -1194,6 +1203,7 @@
 				453A831E2C9BF18500398ECE /* DeclarationMenuButton.swift in Sources */,
 				7AF18C982A0CC541005A6E31 /* DevotionalViewModel.swift in Sources */,
 				7AA870CD28DACCB700134ADB /* ProfileView.swift in Sources */,
+				4509556D2D5A94300098B327 /* AppConfig.swift in Sources */,
 				7AA870DC28DACCB700134ADB /* TimeSlots.swift in Sources */,
 				7ABA50CB29E63178002699F1 /* PrayerServiceClient.swift in Sources */,
 				4590BF9E2BCA4F1A00CF4F54 /* FeatureView.swift in Sources */,
@@ -1408,7 +1418,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 662;
+				CURRENT_PROJECT_VERSION = 664;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1429,7 +1439,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.29;
+				MARKETING_VERSION = 3.0.30;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1449,7 +1459,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 662;
+				CURRENT_PROJECT_VERSION = 664;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1470,7 +1480,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.29;
+				MARKETING_VERSION = 3.0.30;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1610,6 +1620,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4509556E2D5A95150098B327 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		450955702D5A95150098B327 /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
 		4558DB542BB3E85E0073BDB8 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

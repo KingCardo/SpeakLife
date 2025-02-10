@@ -279,7 +279,7 @@ let bedTimeFiles: [AudioDeclaration] = [
            id: "ruth.mp3",
            title: "Ruth’s Journey of Loyalty and Love",
            subtitle: "A Story of Faithfulness, Redemption, and New Beginnings",
-           duration: "8m",
+           duration: "9m",
            imageUrl: "ruth",
            isPremium: true
        ),

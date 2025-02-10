@@ -117,6 +117,7 @@ struct RatingView: View {
 
 struct OnboardingView: View  {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
+    @EnvironmentObject var config: AppConfigViewModel
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var viewModel: DeclarationViewModel
     @EnvironmentObject var streakViewModel: StreakViewModel
@@ -148,8 +149,8 @@ struct OnboardingView: View  {
                 
                 IntroTipScene(
                     title: "Weclome, We're Glad You Found Us",
-                    bodyText: "Feeling overwhelmed or disconnected?",
-                    subtext: "Let God’s Word transform your life. Start today with daily prayers and affirmations rooted in Scripture.",
+                    bodyText: "Every physical ailment, lack, and disease is a manifestation of the spiritual darkness that seeks to hold us captive.",
+                    subtext: "Claim victory over your circumstances by declaring your divine identity—just as Jesus did—and watch the power of truth dispel the darkness at its root.",
                     ctaText: "Begin My Journey",
                     showTestimonials: false,
                     isScholarship: false,
@@ -473,7 +474,7 @@ struct OnboardingView: View  {
 //                        dismissOnboarding()
 //                    }
                    
-                    if subscriptionStore.isPremium {
+                    if subscriptionStore.isPremium || !config.showOneTimeSubscription {
                         viewModel.choose(.general) { _ in }
                         dismissOnboarding()
                     } else {

@@ -26,6 +26,7 @@ struct DeclarationView: View {
     @EnvironmentObject var themeViewModel: ThemeViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
+    @EnvironmentObject var config: AppConfigViewModel
     @EnvironmentObject var appState: AppState
     @Environment(\.presentationMode) var presentationMode
     
@@ -123,10 +124,13 @@ struct DeclarationView: View {
                                             PremiumView()
                                                 .onDisappear {
                                                     if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
-                                                        presentDevotionalSubscriptionView = true
+                                                        if config.showDevotionalSubscription {
+                                                            presentDevotionalSubscriptionView = true
+                                                        }
                                                     }
                                                 }
-                                        }.sheet(isPresented: $presentDevotionalSubscriptionView) {
+                                        }
+                                        .sheet(isPresented: $presentDevotionalSubscriptionView) {
                                             DevotionalSubscriptionView() {
                                                 presentDevotionalSubscriptionView = false
                                             }

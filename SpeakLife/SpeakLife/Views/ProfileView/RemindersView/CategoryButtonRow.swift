@@ -12,6 +12,7 @@ struct CategoryButtonRow: View  {
     
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var declarationStore: DeclarationViewModel
+    @EnvironmentObject var config: AppConfigViewModel
     @State var presentDevotionalSubscriptionView = false
     @State var isPresentingCategoryList = false
     @State var isPresentingPremiumView = false {
@@ -70,7 +71,9 @@ struct CategoryButtonRow: View  {
             SubscriptionView(size:  UIScreen.main.bounds.size)
                 .onDisappear {
                     if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
-                        presentDevotionalSubscriptionView = true
+                        if config.showDevotionalSubscription {
+                            presentDevotionalSubscriptionView = true
+                        }
                     }
                 }
                 

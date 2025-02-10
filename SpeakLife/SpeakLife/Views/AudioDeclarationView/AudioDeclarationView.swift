@@ -75,6 +75,7 @@ struct AudioDeclarationView: View {
     @StateObject private var audioViewModel = AudioPlayerViewModel()
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var declarationStore: DeclarationViewModel
+    @EnvironmentObject var config: AppConfigViewModel
     @State private var selectedItem: AudioDeclaration? = nil
     @State private var lastSelectedItem: AudioDeclaration?
     @State private var audioURL: URL? = nil
@@ -185,7 +186,9 @@ struct AudioDeclarationView: View {
                         SubscriptionView(size: geometry.size)
                             .onDisappear {
                                 if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
-                                    presentDevotionalSubscriptionView = true
+                                    if config.showDevotionalSubscription {
+                                        presentDevotionalSubscriptionView = true
+                                    }
                                 }
                             }
                     }

@@ -238,12 +238,12 @@ struct SubscriptionView: View {
         // ScrollView {
         ZStack {
             
-            GeometryReader { geometry in
+//            GeometryReader { geometry in
                 if subscriptionStore.testGroup == 0 {
                     LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, Color.black]), startPoint: .top, endPoint: .bottom)
                         .edgesIgnoringSafeArea(.all)
                 } else {
-                    LinearGradient(gradient: Gradient(colors: [Constants.DADarkBlue, Color.black.opacity(0.7)]), startPoint: .top, endPoint: .bottom)
+                    LinearGradient(gradient: Gradient(colors: [Constants.DADarkBlue, Color.black.opacity(0.9)]), startPoint: .top, endPoint: .bottom)
                         .edgesIgnoringSafeArea(.all)
                 }
                
@@ -319,7 +319,7 @@ struct SubscriptionView: View {
                     goPremiumStack()
                     
                     
-                }
+             //   }
             }
             .onAppear {
                 currentSelection = firstSelection

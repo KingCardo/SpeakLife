@@ -20,6 +20,7 @@ final class AudioPlayerViewModel: ObservableObject {
     @Published var imageUrl: String = ""
     @Published var isBarVisible: Bool = false // Manage bar visibility
     
+    
     private var player: AVPlayer?
     private var timeObserver: Any?
     private var cancellables = Set<AnyCancellable>()
@@ -116,9 +117,6 @@ final class AudioPlayerViewModel: ObservableObject {
     }
     
     deinit {
-        if let timeObserver = timeObserver {
-            player?.removeTimeObserver(timeObserver)
-        }
         resetPlayer()
        // AudioPlayerService.shared.playMusic()
     }
