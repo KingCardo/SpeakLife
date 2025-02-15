@@ -16,10 +16,10 @@ class AppConfigViewModel: ObservableObject {
     private var remoteConfig = RemoteConfig.remoteConfig()
 
     init() {
-        fetchRemoteConfig()
+       // fetchRemoteConfig()
     }
 
-    private func fetchRemoteConfig() {
+    func fetchRemoteConfig() {
         // Fetch the latest values from Firebase
         remoteConfig.fetchAndActivate { [weak self] status, error in
             guard let self = self else { return }

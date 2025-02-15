@@ -34,6 +34,7 @@ struct HomeView: View {
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
     @EnvironmentObject var timerViewModel: TimerViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
+    @EnvironmentObject var config: AppConfigViewModel
     @Binding var isShowingLanding: Bool
     @StateObject private var viewModel = FacebookTrackingViewModel()
     @State var showGiftView = false
@@ -151,6 +152,7 @@ struct HomeView: View {
         if lastVersion != currentVersion {
             isPresented = true
             UserDefaults.standard.set(currentVersion, forKey: "lastVersion")
+            config.fetchRemoteConfig()
        }
     }
 }

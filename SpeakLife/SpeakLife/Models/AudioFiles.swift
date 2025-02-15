@@ -431,3 +431,16 @@ let meditationFiles: [AudioDeclaration] = [
        ),
     
     ]
+
+
+// Devotional files
+let devotionalFiles: [AudioDeclaration] = [
+    AudioDeclaration(
+           id: "corinthians135.mp3",
+           title: "Love That Keeps No Record of Wrongs",
+           subtitle: "Walking in the Freedom of Forgiveness",
+           duration: "4m",
+           imageUrl: "devotional",
+           isPremium: false
+       ),
+    ]

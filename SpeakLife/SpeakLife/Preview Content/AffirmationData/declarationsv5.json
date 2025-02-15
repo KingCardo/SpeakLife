@@ -3,6 +3,131 @@
     "version": 3,
     "declarations": [
         {
+            "text": "I am walking in God's perfect plan for my life.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I choose to follow God's path with confidence.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I have a divine purpose that I fully embrace.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I trust that I am exactly where I need to be.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I attract wisdom to fulfill my God-given assignment.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I am equipped for every good work God has for me.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I thrive in the calling that was prepared for me.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I walk boldly in the assignment God has given me.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I receive divine guidance to complete my life's mission.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I have clarity and focus on what truly matters.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I choose to live fully in God's perfect will.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I am empowered to accomplish all that I am created for.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I trust in God’s timing for my life's purpose.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I am unstoppable in pursuing what God has prepared for me.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I walk in obedience, knowing my path is divinely ordered.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I embrace my unique journey with joy and confidence.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I have the strength to complete my divine assignment.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I choose to prioritize what God has called me to do.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I am fulfilling the reason I was created.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I attract opportunities that align with my God-given calling.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I walk in divine confidence, knowing my steps are guided.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I fully commit to the work God has given me.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I am aligned with God’s vision for my life.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I live intentionally, fulfilling all that is written for me.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+          {
+            "text": "I trust that I am making an eternal impact.",
+            "isFavorite": false,
+            "category": "destiny"
+          },
+        {
                  "text": "No closed door can stop the fulfillment of the destiny I have prepared for you.",
                  "book": "Jesus",
                  "isFavorite": false,
@@ -786,12 +911,6 @@
          "category": "faith"
        },
        {
-         "text": "For we live by believing and not by seeing.",
-         "isFavorite": false,
-         "book": "2 Corinthians 5:7",
-         "category": "faith"
-       },
-       {
          "text": "So faith comes from hearing, and hearing by the word of Christ.",
          "isFavorite": false,
          "book": "Romans 10:17",
@@ -872,30 +991,130 @@
          "category": "faith"
        },
        {
-         "text": "I am bold in my faith, for Jesus is the author of my strength.",
-         "isFavorite": false,
-         "category": "faith"
-       },
-       {
-         "text": "I am constantly growing, for Jesus leads me in faith each day.",
-         "isFavorite": false,
-         "category": "faith"
-       },
-       {
-         "text": "I am surrounded by grace, strengthened by faith in Jesus.",
-         "isFavorite": false,
-         "category": "faith"
-       },
-       {
-         "text": "I am empowered, for Christ within me is greater than any challenge.",
-         "isFavorite": false,
-         "category": "faith"
-       },
-       {
-         "text": "I am anchored in faith, for Jesus is my rock and my salvation.",
-         "isFavorite": false,
-         "category": "faith"
-       },
+           "text": "I trust in God's plan even when I don’t understand.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I choose to follow God’s lead with confidence.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I have peace knowing God is in control.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I walk boldly even when I can’t see the way.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I attract divine provision as I trust completely.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I am secure in God’s promises, no matter the circumstances.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I thrive by relying on God's unseen work in my life.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I walk in obedience, knowing God’s way is perfect.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I receive divine direction even when the path is unclear.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I have confidence that God is always working for my good.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I choose to trust beyond what my mind understands.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I am strengthened by God's truth, not my feelings.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I trust that God’s timing is always perfect.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I am confident that God will make a way for me.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I step forward, knowing God has gone before me.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I embrace the unknown because God is leading me.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I have strength to walk in obedience without hesitation.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I choose to believe beyond what I can see.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I am fearless because I know God never fails.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I trust in God’s unseen provision over my life.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I walk forward, knowing God's promises are true.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I attract miracles as I trust in God’s word.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I am confident that God’s way is always best.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I stand strong, knowing God’s hand is guiding me.",
+           "isFavorite": false,
+           "category": "faith"
+         },
+         {
+           "text": "I trust without hesitation because God is faithful.",
+           "isFavorite": false,
+           "category": "faith"
+         },
        {
          "text": "Let there be unwavering faith in my heart, Jesus is my rock.",
          "isFavorite": false,
@@ -2368,11 +2587,130 @@
            "category": "fear"
        },
        {
-           "text": "Let my peace fill your heart; fear has no place within you.",
+           "text": "I am secure in God's protection and love.",
            "isFavorite": false,
-           "book": "Jesus",
            "category": "fear"
-       },
+         },
+         {
+           "text": "I choose to stand firm, knowing God is with me.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I have unshakable confidence in God's promises.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I trust that no weapon formed against me will prosper.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I attract divine peace in every circumstance.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I am victorious, no matter what comes my way.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I thrive in the face of uncertainty, knowing God is faithful.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I walk in divine health and supernatural strength.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I receive God's peace that surpasses all understanding.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I have nothing to dread because God goes before me.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I choose to rest in God's protection and provision.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I am unshaken, knowing God has already won the battle.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I trust in God's plan even when I don’t understand.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I am held in perfect peace by the One who loves me.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I step boldly into each day with confidence in God.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I have the strength to face anything with joy.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I choose faith over uncertainty in all things.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I am covered by divine protection at all times.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I walk forward with boldness, knowing God is my shield.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I trust that nothing can separate me from God's love.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I am at peace, knowing my future is in God's hands.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I stand firm in the face of trials, knowing God is near.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I embrace life fully, knowing I am eternally secure.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I am free from worry, trusting God’s perfect will.",
+           "isFavorite": false,
+           "category": "fear"
+         },
+         {
+           "text": "I choose courage, knowing God strengthens me daily.",
+           "isFavorite": false,
+           "category": "fear"
+         },
        {
            "text": "I am working all things for your good; trust me completely.",
            "isFavorite": false,
@@ -2993,6 +3331,131 @@
                  "category": "confidence"
              },
              {
+                 "text": "I am washed clean by God’s love.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I choose to receive God’s mercy daily.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I have been made new by His sacrifice.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I trust that nothing separates me from God’s love.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I attract divine mercy that covers my past.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I am redeemed and restored by Jesus.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I thrive in the freedom of God’s grace.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I walk confidently, knowing I am made whole.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I receive God’s compassion, no matter my past.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I have peace knowing my mistakes are erased.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I choose to let go of guilt and embrace renewal.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I am made whole through the love of Christ.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I trust in the complete work of Jesus in me.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I am accepted by God, no matter my past.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I walk in newness, free from condemnation.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I embrace the love that covers all my wrongs.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I have been made righteous through Jesus’ sacrifice.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I choose to live in the fullness of God’s mercy.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I am completely covered by divine compassion.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I trust that my past is wiped away in Christ.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I walk in confidence, knowing I am made new.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I am free from shame because of His love.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I embrace the endless mercy of my Savior.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I have been fully restored by God’s kindness.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+               {
+                 "text": "I trust in God’s complete restoration of my heart.",
+                 "isFavorite": false,
+                 "category": "forgiveness"
+               },
+             {
                  "text": "You are forgiven, my beloved, and your sins are washed away.",
                  "isFavorite": false,
                  "book": "Jesus",
@@ -3384,6 +3847,131 @@
          "category": "forgiveness"
        },
        {
+          "text": "I am covered by God’s unfailing love.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I choose to rest in divine security.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I have full confidence that I am guarded by heaven.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I trust in the promises that keep me safe.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I attract divine peace that surrounds my life.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I am secure under the covering of my Savior.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I thrive under the shelter of God’s presence.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I walk in complete safety through every season.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I receive supernatural peace that shields my life.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I have no reason to worry, for I am kept by God.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I choose to dwell in the safety of His presence.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I am surrounded by divine strength and security.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I trust in the covering of the Almighty.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I am held in perfect peace every single day.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I step forward with confidence, knowing I am kept.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I have assurance that my future is secure in Him.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I choose to stand firm in divine security.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I am shielded from harm by divine promises.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I walk in unwavering confidence, knowing I am safe.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I trust that I will enjoy a long, blessed life.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I am covered under divine wings of peace.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I attract peace and strength that guard my steps.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I am confident that nothing can harm me.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I trust that goodness surrounds me always.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+        {
+          "text": "I have complete assurance of divine care every day.",
+          "isFavorite": false,
+          "category": "godsprotection"
+        },
+       {
            "text": "You are always safe in my hands; I will never leave you.",
            "isFavorite": false,
            "book": "Jesus",
@@ -3739,6 +4327,231 @@
                  "isFavorite": false,
                  "category": "godsprotection"
        },
+       {
+           "text": "I am overflowing with joy for all I have.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I choose to see the goodness in each day.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I have countless reasons to celebrate life today.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I trust that every blessing is a gift from above.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I attract more joy when I focus on my blessings.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I am content and fulfilled in every season.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I thrive when I recognize the beauty around me.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I walk in the awareness of God’s abundant provision.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I receive each moment as a precious gift.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I have more than enough to be joyful today.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I choose to focus on the good in every situation.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I am full of appreciation for what I have now.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I trust that every challenge brings hidden blessings.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I am constantly aware of how blessed I am.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I step into today with a heart wide open.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I have a mindset that sees the best in everything.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I embrace the goodness of this moment fully.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I am filled with deep appreciation for today.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I choose to reflect on what is already good.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I walk in the joy of knowing I am blessed.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I attract peace when I focus on what I have.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I am deeply aware of the love surrounding me.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I trust that every day holds a new blessing.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I have endless reasons to celebrate this moment.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+           "text": "I choose to be fully present and appreciative today.",
+           "isFavorite": false,
+           "category": "gratitude"
+         },
+         {
+             "text": "I am thankful for the breath in my lungs today.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I choose to celebrate the strength in my body.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I have the energy to enjoy this beautiful day.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I trust that my body is a gift from God.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I attract wellness and vitality with a joyful heart.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I am thriving because God sustains me daily.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I walk in divine health and renewal each day.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I receive every heartbeat as a precious blessing.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I have strength, and I cherish every moment of it.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I choose to honor my body as a divine creation.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I am full of appreciation for the gift of today.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I trust that every breath is filled with purpose.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I am filled with joy for the life I’ve been given.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I step into this day with a heart of appreciation.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I have the gift of movement, and I celebrate it.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I embrace my body’s ability to heal and restore.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I am deeply aware of the blessing of being alive.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I choose to focus on the health I enjoy today.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I am surrounded by divine strength and renewal.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
+           {
+             "text": "I trust that every day is a gift worth cherishing.",
+             "isFavorite": false,
+             "category": "gratitude"
+           },
        {
            "text": "Give thanks, my child, for every blessing I have poured into your life.",
            "isFavorite": false,
@@ -4191,6 +5004,131 @@
                  "isFavorite": false,
                  "category": "gratitude"
      },
+     {
+         "text": "I am walking the path set before me.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I choose to listen and follow divine direction.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I have clarity because I hear God’s leading.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I trust that each step I take is ordered.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I attract wisdom to walk in the right way.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I am confident that I am never alone.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I thrive because I follow the voice of truth.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I walk in alignment with heaven’s direction.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I receive divine instruction in every decision.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I have discernment to know which way to go.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I choose to be still and listen to wisdom.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I am led in peace and filled with assurance.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I trust that my journey is divinely directed.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I am positioned exactly where I need to be.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I step forward with boldness, knowing I am led.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I have confidence that I will not be misled.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I choose to move in the direction of truth.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I am walking in the wisdom prepared for me.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I embrace the stillness to hear divine instruction.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I trust that every step I take has purpose.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I walk with confidence, knowing I am not lost.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I attract divine clarity in every decision I make.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I am secure in the direction I am taking.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I trust in the gentle prompting that leads me.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
+       {
+         "text": "I have everything I need to walk the right path.",
+         "isFavorite": false,
+         "category": "guidance"
+       },
      {
          "text": "I am leading you along the perfect path for your life.",
          "isFavorite": false,
@@ -22494,28 +23432,258 @@
       "isFavorite": false,
       "category": "destiny"
   },
+  {
+      "text": "I am saved by God’s grace, not my works.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I choose to rely on God’s grace daily.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I have unlimited access to God’s grace.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I trust in God’s grace to sustain me.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I attract favor through God’s abundant grace.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am covered by grace in every situation.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I thrive because His grace empowers me.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I walk in freedom through God’s grace.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I receive grace upon grace every day.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I have peace knowing grace covers my past.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I choose grace over fear and doubt.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am strengthened by the grace of Jesus.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I trust in God’s grace to guide my steps.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am transformed by the power of grace.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I live with confidence knowing grace sustains me.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I embrace grace and walk in boldness.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am growing in grace and wisdom daily.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I have grace to overcome every obstacle.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I choose to extend grace as I receive it.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am blessed because grace surrounds me.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I walk by faith, covered in grace.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I attract blessings through God’s grace.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I am secure because grace never runs out.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I find rest in God’s amazing grace.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+      "text": "I trust in grace to lead me to victory.",
+      "isFavorite": false,
+      "category": "grace"
+    },
+    {
+        "text": "I am saved by God's unmerited kindness.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I choose to rely on divine mercy daily.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I have an endless supply of God's favor.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I trust in God's love to sustain me.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I attract blessings beyond my efforts.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I am covered in God’s divine kindness.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I thrive because His favor strengthens me.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I walk in the kindness that restores me.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I receive blessings beyond what I deserve.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I have peace knowing I am fully accepted.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I choose divine help over fear and doubt.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I am strengthened by God's endless mercy.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I trust in God's goodness to guide me.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I am transformed by His unlimited kindness.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I live with confidence knowing His love sustains me.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I embrace divine kindness and walk in freedom.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I am growing in wisdom and divine favor daily.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I have divine strength to overcome every challenge.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I choose to extend kindness as I receive it.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I am blessed because God's love surrounds me.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I walk by faith, covered in His goodness.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I attract favor and mercy in all I do.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I am secure because His love never runs out.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I find rest in God's unfailing kindness.",
+        "isFavorite": false,
+        "category": "grace"
+      },
+      {
+        "text": "I trust in His love to lead me to victory.",
+        "isFavorite": false,
+        "category": "grace"
+      },
     {
       "text": "I am covered by Jesus’ abundant grace every day.",
-      "isFavorite": false,
-      "category": "grace"
-    },
-    {
-      "text": "I have the fullness of Jesus’ grace in my life.",
-      "isFavorite": false,
-      "category": "grace"
-    },
-    {
-      "text": "I am walking in the unmerited favor of God’s grace.",
-      "isFavorite": false,
-      "category": "grace"
-    },
-    {
-      "text": "I have peace because Jesus’ grace is always enough for me.",
-      "isFavorite": false,
-      "category": "grace"
-    },
-    {
-      "text": "I am strengthened by the grace of Jesus in every moment.",
       "isFavorite": false,
       "category": "grace"
     },
@@ -22545,42 +23713,7 @@
       "category": "grace"
     },
     {
-      "text": "I am confident in Jesus’ grace, which empowers me to overcome.",
-      "isFavorite": false,
-      "category": "grace"
-    },
-    {
-      "text": "I have rest in my soul because Jesus’ grace sustains me.",
-      "isFavorite": false,
-      "category": "grace"
-    },
-    {
-      "text": "I am restored and renewed through the grace of Jesus Christ.",
-      "isFavorite": false,
-      "category": "grace"
-    },
-    {
       "text": "I have endless hope because Jesus’ grace is alive in me.",
-      "isFavorite": false,
-      "category": "grace"
-    },
-    {
-      "text": "I am overflowing with gratitude for the grace of Jesus.",
-      "isFavorite": false,
-      "category": "grace"
-    },
-    {
-      "text": "I have the courage to move forward through Jesus’ grace.",
-      "isFavorite": false,
-      "category": "grace"
-    },
-    {
-      "text": "I am blessed with the richness of Jesus’ grace daily.",
-      "isFavorite": false,
-      "category": "grace"
-    },
-    {
-      "text": "I have joy in my heart because of Jesus’ abundant grace.",
       "isFavorite": false,
       "category": "grace"
     },
@@ -23469,6 +24602,131 @@
       "isFavorite": false,
       "category": "guidance"
   },
+  {
+      "text": "I am strong, restored, and full of life.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I choose to see myself fully renewed each day.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I have divine strength flowing through my body.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I trust that my body is thriving in wholeness.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I attract vitality and renewal in every cell.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I am full of energy, life, and restoration.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I thrive because my body is divinely strengthened.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I walk in complete restoration and divine wellness.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I receive renewal and strength with every breath.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I have supernatural vitality flowing through me.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I choose to see myself whole and fully restored.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I am filled with divine life and vitality.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I trust that I am being made whole daily.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I am deeply renewed in every part of me.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I step into each day fully restored and vibrant.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I have the strength and endurance for every season.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I embrace the power of divine restoration within me.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I am walking in complete renewal and strength.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I choose to see my body flourishing with life.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I trust that my body aligns with divine wholeness.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I walk in supernatural renewal and divine strength.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I attract complete restoration in every part of me.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I am confident that my body is fully renewed.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I have unshakable strength and vibrant well-being.",
+      "isFavorite": false,
+      "category": "health"
+    },
+    {
+      "text": "I trust in the power of divine restoration.",
+      "isFavorite": false,
+      "category": "health"
+    },
   {
       "text": "You are healed by my stripes; walk in my wholeness.",
       "isFavorite": false,
