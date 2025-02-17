@@ -197,7 +197,7 @@ struct DeclarationContentView: View {
                     isMenuExpanded = false
                 }
                 shareTapped(declaration: declaration) }),
-            AnyView(DeclarationMenuButton(iconName:  declaration.isFavorite ? "heart.fill" : "heart", label: "FAVORITE") {
+            AnyView(DeclarationMenuButton(iconName:  (declaration.isFavorite ?? false) ? "heart.fill" : "heart", label: "FAVORITE") {
                 favoriteTapped(declaration: declaration)
 
             }),
@@ -304,7 +304,7 @@ struct DeclarationContentView: View {
     
     private func favoriteTapped(declaration: Declaration) {
         favorite(declaration)
-        self.isFavorite = declaration.isFavorite ? false : true
+        self.isFavorite = (declaration.isFavorite ?? false) ? false : true
         Analytics.logEvent(Event.favoriteTapped, parameters: ["declaration": declaration.text.prefix(100)])
         Selection.shared.selectionFeedback()
         appState.offerDiscountTry += 1
@@ -322,7 +322,7 @@ struct DeclarationContentView: View {
                     shareTapped(declaration: declaration)
                 }
                 
-                CapsuleImageButton(title: declaration.isFavorite ? "heart.fill" : "heart") {
+                CapsuleImageButton(title: (declaration.isFavorite ?? false) ? "heart.fill" : "heart") {
                     favoriteTapped(declaration: declaration)
                 }
         

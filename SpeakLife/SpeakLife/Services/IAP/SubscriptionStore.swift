@@ -147,12 +147,12 @@ final class SubscriptionStore: ObservableObject {
                     
                     if product.id == currentMonthlyPremiumID {
                         currentOfferedPremiumMonthly = product
-                        print("Monthly set RWRW")
+                        print("currentMonthlyPremiumID set RWRW")
                     }
                     
                     if product.id == currentPremiumID {
                         currentOfferedPremium = product
-                        print("Monthly set RWRW")
+                        print("currentPremiumID set RWRW")
                     }
                 case .nonConsumable:
                     if product.id == lifetimeID {

@@ -193,7 +193,7 @@ final class DeclarationViewModel: ObservableObject {
         
         
         declarations[indexOf]
-            .isFavorite
+            .isFavorite?
             .toggle()
         
         guard let index = allDeclarations.firstIndex(where: { $0.id == declaration.id }) else { return }

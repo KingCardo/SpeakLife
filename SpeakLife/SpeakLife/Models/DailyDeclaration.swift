@@ -62,7 +62,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case romans
     case corinthians1, corinthians2
     case galatians, ephesians, philippians, colossians
-//    case thessalonians1, thessalonians2
+    case thessalonians1, thessalonians2
 //    case timothy1, timothy2, titus, philemon
     case hebrews, james
     case peter1, peter2
@@ -103,6 +103,12 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .philippians,
         .colossians,
         .hebrews,
+        .james,
+        .peter1,
+        .peter2,
+        .thessalonians1,
+        .thessalonians2,
+        .revelation,
         .addiction,
         .confidence,
         .fear,
@@ -159,7 +165,13 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .ephesians,
         .philippians,
         .colossians,
-        .hebrews
+        .hebrews,
+        .james,
+        .peter1,
+        .peter2,
+        .thessalonians1,
+        .thessalonians2,
+        .revelation
         ]
     
     static var generalCategories: [DeclarationCategory] = [
@@ -225,6 +237,10 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         case .chronicles1: return "1 Chronicles"
         case .chronicles2: return "2 Chronicles"
         case .parenting: return "Raising children"
+        case .peter1: return "1 Peter"
+        case .peter2: return "2 Peter"
+        case .thessalonians1: return "1 Thessalonians"
+        case .thessalonians2: return "2 Thessalonians"
         default:  return self.rawValue.capitalized
         }
     }
@@ -279,7 +295,7 @@ struct Declaration: Codable, Identifiable, Hashable {
     var bibleVerseText: String? = nil
     var category: DeclarationCategory = .faith
     var categories: [DeclarationCategory] = []
-    var isFavorite: Bool = false
+    var isFavorite: Bool? = false
     var id: String {
        //UUID().uuidString
         text + category.rawValue
