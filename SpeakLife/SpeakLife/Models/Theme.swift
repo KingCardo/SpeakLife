@@ -85,8 +85,11 @@ class Theme: Identifiable, Codable {
         }
     }
     
-    static var all: [Theme] = [JesusOnWater,JesusHealing,JesusOnCross,JesusRisen, JesusPraying, JesusHeaven,twinAngels,warriorAngel,heavenly,glowingAngels,radiantAngel, starryNight,lakeTrees,countryNightSky,peacefulMountainNight,majesticNight, mountainLandscape, pinkHueMountain, forestSunrise,sunsetMountain,sereneMountain,calmLake,tranquilSunset, breathTakingSunset,flowingRiver, sunset3,moonlight2,desertsky, sereneMountain2, sunriseLake2]
+    static var all: [Theme] = [sunsetMountains3,mountainValley, doveSkies, JesusOnWater,JesusHealing,JesusOnCross,JesusRisen, JesusPraying, JesusHeaven,twinAngels,warriorAngel,heavenly,radiantAngel, starryNight,lakeTrees,countryNightSky,peacefulMountainNight,majesticNight, mountainLandscape, pinkHueMountain, forestSunrise,sunsetMountain,sereneMountain,calmLake, breathTakingSunset, sunset3,moonlight2,desertsky, flowingRiver,sereneMountain2]
     
+    private static let sunsetMountains3 = Theme("sunsetMountains3", blurEffect: true)
+    private static let mountainValley = Theme("mountainValley", blurEffect: true)
+    private static let doveSkies = Theme("doveSkies", blurEffect: true)
     private static let JesusOnCross = Theme("JesusOnCross", blurEffect: true)
     private static let JesusOnWater = Theme("JesusOnWater", blurEffect: true)
     private static let JesusHealing = Theme("JesusHealing", blurEffect: true)
@@ -97,7 +100,6 @@ class Theme: Identifiable, Codable {
     private static let countryNightSky = Theme("countryNightSky", blurEffect: true)
     private static let mountainLandscape = Theme("mountainLandscape")
     private static let heavenly = Theme("heavenly", blurEffect: true)
-    private static let glowingAngels = Theme("glowingAngels", blurEffect: true)
     private static let radiantAngel = Theme("radiantAngel", blurEffect: true)
     private static let JesusHeaven = Theme("JesusHeaven", blurEffect: true)
     private static let majesticNight = Theme("majesticNight")
@@ -109,7 +111,6 @@ class Theme: Identifiable, Codable {
     private static let lakeTrees = Theme("lakeTrees", blurEffect: true)
     private static let sereneMountain = Theme("sereneMountain", blurEffect: true)
     private static let flowingRiver = Theme("flowingRiver", blurEffect: true)
-    private static let tranquilSunset = Theme("tranquilSunset", blurEffect: true)
     private static let breathTakingSunset = Theme("breathTakingSunset", blurEffect: true)
     private static let calmLake = Theme("calmLake", blurEffect: true)
     private static let autumnTrees = Theme("autumntrees", isPremium: false, blurEffect: true, fontColorString: "white")
@@ -154,7 +155,6 @@ class Theme: Identifiable, Codable {
     static let taicitylights = Theme("taicitylights",blurEffect: true)
     static let safari = Theme("safari",blurEffect: true)
     static let aurora = Theme("aurora",blurEffect: false)
-    static let sunriseLake2 = Theme("sunriseLake2",blurEffect: true)
     static let sereneMountain2 = Theme("sereneMountain2",blurEffect: true)
 }
 
