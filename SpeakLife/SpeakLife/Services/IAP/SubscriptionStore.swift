@@ -45,7 +45,7 @@ final class SubscriptionStore: ObservableObject {
     @Published var currentOfferedPremiumMonthly: Product? = nil
     @Published var currentOfferedDevotionalPremium: Product? = nil
     @Published var isInDevotionalPremium = false
-    @Published var testGroup = Int.random(in: 0...1)
+    @Published var testGroup = 0//Int.random(in: 0...1)
     @AppStorage("lastDevotionalPurchase") var lastDevotionalPurchaseDate: Date?
    
     
