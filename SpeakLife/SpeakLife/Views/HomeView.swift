@@ -58,6 +58,7 @@ struct HomeView: View {
                 OnboardingView()
                     .onAppear {
                     viewModel.requestPermission()
+                    config.fetchRemoteConfig()
                 }
             }
         }
@@ -152,7 +153,7 @@ struct HomeView: View {
         if lastVersion != currentVersion {
             isPresented = true
             UserDefaults.standard.set(currentVersion, forKey: "lastVersion")
-            config.fetchRemoteConfig()
+            
        }
     }
 }

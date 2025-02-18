@@ -13,11 +13,6 @@ struct WhatsNewBottomSheet: View {
     let features = [
         "New Affirmations",
         "New Themes",
-        "New James Book affirmation category",
-        "New 1 Peter Book affirmation category",
-        "New 2 Peter Book affirmation category",
-        "New 1 Thessalonians Book affirmation category",
-        "New 2 Thessalonians Book affirmation category",
     ]
 
     var body: some View {
