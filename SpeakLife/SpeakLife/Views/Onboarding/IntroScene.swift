@@ -356,18 +356,20 @@ struct TestimonialScreen: View {
                     .font(.system(size: 34, weight: .semibold, design: .rounded))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
+                StarRatingView(rating: 4.9)
                 Spacer()
                 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
-                        TestimonialCard(testimonial: testimonials[0])
-                        TestimonialCard(testimonial: testimonials[1])
-                        TestimonialCard(testimonial: testimonials[2])
-                        TestimonialCard(testimonial: testimonials[3])
-                        TestimonialCard(testimonial: testimonials[4])
-                        TestimonialCard(testimonial: testimonials[5])
-                    }
-                    .padding(.horizontal, 20)
+                 
+                        HStack(spacing: 20) {
+                            TestimonialCard(testimonial: testimonials[0])
+                            TestimonialCard(testimonial: testimonials[1])
+                            TestimonialCard(testimonial: testimonials[2])
+                            TestimonialCard(testimonial: testimonials[3])
+                            TestimonialCard(testimonial: testimonials[4])
+                            TestimonialCard(testimonial: testimonials[5])
+                        }
+                        .padding(.horizontal, 20)
                 }
                 .frame(height: 300)
                 

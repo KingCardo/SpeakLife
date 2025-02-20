@@ -260,7 +260,7 @@ struct SubscriptionView: View {
                             Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
+                                .frame(width: 90, height: 90)
                                 .clipShape(Circle())
                                 .offset(x: 0, y: 0)
                                 .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
@@ -275,14 +275,15 @@ struct SubscriptionView: View {
                     
                  
                     Spacer()
-                        .frame(height: 24)
+                        .frame(height: 16)
                     VStack {
                         Text("Join 50,000+ SpeakLifers Today!")
                             .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .title))
                             .foregroundStyle(Color.white)
-                        
-                        StarRatingView(rating: 4.9)
-                        
+//                        Text("Giving is the key to abundance! 🌱✨ The Word says, 'Give, and it will be given to you—a good measure, pressed down, shaken together, and running over!' (Luke 6:38)")
+//                            .font(Font.custom("AppleSDGothicNeo", size: 12, relativeTo: .caption))
+//                            .foregroundStyle(Color.white)
+//                            .padding()
                     }
                     FeatureView(currentSelection: $currentSelection)
                         .foregroundColor(.white)
@@ -290,11 +291,11 @@ struct SubscriptionView: View {
                         .frame(height: 8)
                     
                     VStack {
-                        Button {
-                            currentSelection = thirdSelection
-                        } label: {
-                            thirdSelectionBox()
-                        }
+//                        Button {
+//                            currentSelection = thirdSelection
+//                        } label: {
+//                            thirdSelectionBox()
+//                        }
                         
                         Button {
                             currentSelection = firstSelection
@@ -687,7 +688,7 @@ struct StarRatingView: View {
                 .frame(height: 2)
             Text(String(format: "%.1f stars", rating))
                 .foregroundStyle(Color.white)
-                .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .caption))
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .caption))
         }
     }
     

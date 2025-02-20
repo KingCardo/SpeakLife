@@ -69,7 +69,7 @@ struct DevotionalView: View {
     var devotionalView: some View {
         ZStack {
         
-            Image(onboardingBGImage)
+            Image("moonlight2")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)

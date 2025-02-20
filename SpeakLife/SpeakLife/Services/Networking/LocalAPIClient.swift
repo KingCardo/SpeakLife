@@ -132,7 +132,7 @@ final class LocalAPIClient: APIService {
             }
         } else {
             guard
-                let url = Bundle.main.url(forResource: "declarationsv5", withExtension: "json"),
+                let url = Bundle.main.url(forResource: "declarationsv6", withExtension: "json"),
                 let data = try? Data(contentsOf: url) else {
                 completion(nil)
                 return

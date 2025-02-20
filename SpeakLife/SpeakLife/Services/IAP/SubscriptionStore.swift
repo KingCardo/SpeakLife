@@ -26,7 +26,7 @@ public enum StoreError: Error {
 let currentYearlyID = "SpeakLife1YR29"
 let currentMonthlyID = "SpeakLife1MO4"
 let currentMonthlyPremiumID = "SpeakLife1MO9"
-let currentPremiumID = "SpeakLife1YR39"
+let currentPremiumID = "SpeakLife1YR49"
 let lifetimeID = "SpeakLifeLifetime"
 let devotionals = "Devotional30Days"
 final class SubscriptionStore: ObservableObject {
@@ -341,7 +341,7 @@ extension Product {
         } else if id == currentYearlyID {
            return "7 days free then \(displayPrice)/yr."
         } else if id == currentPremiumID {
-                return "For Just $0.11 cents a Day, Unlock Full Access!"
+                return "For Just $0.14 cents a Day, Unlock Full Access!"
         } else {
            return "billed monthly at \(displayPrice). Cancel anytime."
         }

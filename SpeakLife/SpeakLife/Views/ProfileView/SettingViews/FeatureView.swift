@@ -44,7 +44,7 @@ struct FeatureRow: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 12, height: 12)
                 .padding(.trailing, 8)
-                .foregroundColor(Constants.DAMidBlue)
+                .foregroundColor(Constants.traditionalGold)
             VStack(alignment: .leading) {
                 
                 Text(feature.subtitle)
@@ -114,8 +114,8 @@ struct FeatureView: View {
 //        Feature(subtitle: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future."),
         Feature(subtitle: "Daily Scripture Reminders to Uplift Your Day"),
         Feature(subtitle: "Powerful Prayers That Move Mountains"),
-        Feature(subtitle: "Access 10,000+ Affirmations to Renew Your Mind"),
-        Feature(subtitle: "Daily Devotionals to start each day"),
+        Feature(subtitle: "10,000+ Affirmations to Renew Your Mind"),
+        Feature(subtitle: "Daily Devotional to start each day"),
         Feature(subtitle: "Sleep Peacefully with Bible Bedtime Stories"),
         Feature(subtitle: "Customize Your Experience with 30+ Themes")
         ]

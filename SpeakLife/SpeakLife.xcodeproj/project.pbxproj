@@ -49,6 +49,7 @@
 		458B6B1F2BA6D5CF0001BEFE /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B6B1E2BA6D5CF0001BEFE /* TimerViewModel.swift */; };
 		458B6B212BA6E3EC0001BEFE /* StreakDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B6B202BA6E3EC0001BEFE /* StreakDetails.swift */; };
 		458BBE702D1F8A3D0035985F /* AudioFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458BBE6F2D1F8A3D0035985F /* AudioFiles.swift */; };
+		458C756A2D64811000C4F2B8 /* declarationsv6.json in Resources */ = {isa = PBXBuildFile; fileRef = 458C75692D64811000C4F2B8 /* declarationsv6.json */; };
 		4590BF9A2BBEF09500CF4F54 /* everpresent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4590BF972BBEF09500CF4F54 /* everpresent.mp3 */; };
 		4590BF9B2BBEF09500CF4F54 /* rainstorm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4590BF982BBEF09500CF4F54 /* rainstorm.mp3 */; };
 		4590BF9C2BBEF09500CF4F54 /* washed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4590BF992BBEF09500CF4F54 /* washed.mp3 */; };
@@ -233,6 +234,7 @@
 		458B6B1E2BA6D5CF0001BEFE /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		458B6B202BA6E3EC0001BEFE /* StreakDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakDetails.swift; sourceTree = "<group>"; };
 		458BBE6F2D1F8A3D0035985F /* AudioFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFiles.swift; sourceTree = "<group>"; };
+		458C75692D64811000C4F2B8 /* declarationsv6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv6.json; sourceTree = "<group>"; };
 		4590BF972BBEF09500CF4F54 /* everpresent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = everpresent.mp3; sourceTree = "<group>"; };
 		4590BF982BBEF09500CF4F54 /* rainstorm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rainstorm.mp3; sourceTree = "<group>"; };
 		4590BF992BBEF09500CF4F54 /* washed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = washed.mp3; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 				4583A4C42B0080440069C27D /* declarationsv2.json */,
 				453478F02B9D29CC0012C2C0 /* declarationsv4.json */,
 				45D6402A2CD218AE006F05AD /* declarationsv5.json */,
+				458C75692D64811000C4F2B8 /* declarationsv6.json */,
 				45D6402C2CD3668D006F05AD /* updates.json */,
 			);
 			path = AffirmationData;
@@ -1016,6 +1019,7 @@
 				456885282B395F66007B1EBB /* declarationsv3.json in Resources */,
 				7A278FA2288915DF0084BB57 /* Preview Assets.xcassets in Resources */,
 				45C748322B5BC78F0011D8F6 /* peacefulplace.mp3 in Resources */,
+				458C756A2D64811000C4F2B8 /* declarationsv6.json in Resources */,
 				45C748232B5802C60011D8F6 /* GoogleService-Info.plist in Resources */,
 				45D6402D2CD3668D006F05AD /* updates.json in Resources */,
 				7AA870E628DACFB800134ADB /* Localizable.strings in Resources */,
