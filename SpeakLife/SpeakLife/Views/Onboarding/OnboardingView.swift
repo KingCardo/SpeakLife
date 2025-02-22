@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseAnalytics
 import StoreKit
-let onboardingBGImage = "oceanSunrise"
+let onboardingBGImage = "moonlight2"//"nightStarrySkies"//"oceanSunrise"
 
 let onboardingBGImage2 = "pinkHueMountain"
 
@@ -107,7 +107,7 @@ struct RatingView: View {
                         .aspectRatio(contentMode: .fill)
                         .edgesIgnoringSafeArea(.all)
                         .brightness(0.05)
-                    Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.2 : 0.2)
+                    Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.1 : 0.2)
                         .edgesIgnoringSafeArea(.all)
                 }
                 )

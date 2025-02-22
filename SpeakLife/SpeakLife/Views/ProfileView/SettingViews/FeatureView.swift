@@ -112,10 +112,12 @@ struct FeatureView: View {
 //        Feature(subtitle: "Speak peace into your life with daily affirmations that calm your mind and align your heart with God’s promises."),
 //        Feature(subtitle: "Strengthen your faith daily with affirmations that remind you of God’s unchanging love and power."),
 //        Feature(subtitle: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future."),
-        Feature(subtitle: "Daily Scripture Reminders to Uplift Your Day"),
-        Feature(subtitle: "Powerful Prayers That Move Mountains"),
+        
+       
         Feature(subtitle: "10,000+ Affirmations to Renew Your Mind"),
-        Feature(subtitle: "Daily Devotional to start each day"),
+        Feature(subtitle: "Jesus Devotional's to start each day"),
+        Feature(subtitle: "Powerful Prayers That Move Mountains"),
+        Feature(subtitle: "Daily Scripture Reminders to Uplift Your Day"),
         Feature(subtitle: "Sleep Peacefully with Bible Bedtime Stories"),
         Feature(subtitle: "Customize Your Experience with 30+ Themes")
         ]

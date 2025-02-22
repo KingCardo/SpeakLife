@@ -89,7 +89,7 @@ class Theme: Identifiable, Codable {
     
     private static let sunsetMountains3 = Theme("sunsetMountains3", blurEffect: true)
     private static let mountainValley = Theme("mountainValley", blurEffect: true)
-    private static let nightStarrySkies = Theme("nightStarrySkies", blurEffect: true)
+    static let nightStarrySkies = Theme("nightStarrySkies", blurEffect: true)
     private static let desertNight = Theme("desertNight", blurEffect: true)
     private static let starryNightLake = Theme("starryNightLake", blurEffect: true)
     private static let oceanSunrise = Theme("oceanSunrise", blurEffect: true)
@@ -113,7 +113,7 @@ class Theme: Identifiable, Codable {
     private static let majesticNight = Theme("majesticNight")
     private static let pinkHueMountain = Theme("pinkHueMountain", blurEffect: true)
     private static let sunsetMountain = Theme("sunsetMountain", blurEffect: true)
-    private static let starryNight = Theme("starryNight", blurEffect: true)
+    static let starryNight = Theme("starryNight", blurEffect: true)
     private static let peacefulMountainNight = Theme("peacefulMountainNight", blurEffect: true)
     private static let lakeTrees = Theme("lakeTrees", blurEffect: true)
     private static let sereneMountain = Theme("sereneMountain", blurEffect: true)

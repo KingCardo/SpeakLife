@@ -77,7 +77,7 @@ struct ImprovementScene: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .edgesIgnoringSafeArea(.all)
-                    Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.2 : 0.2)
+                    Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.1 : 0.2)
                         .edgesIgnoringSafeArea(.all)
                 }
             )

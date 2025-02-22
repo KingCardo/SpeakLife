@@ -142,7 +142,7 @@ struct IntroTipScene: View {
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
                     .brightness(0.05)
-                Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.2 : 0.2)
+                Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.1 : 0.2)
                     .edgesIgnoringSafeArea(.all)
             }
         )
@@ -256,7 +256,7 @@ struct IntroScene: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
-                Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.2 : 0.2)
+                Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.1 : 0.2)
                     .edgesIgnoringSafeArea(.all)
             }
         )
@@ -392,7 +392,7 @@ struct TestimonialScreen: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .edgesIgnoringSafeArea(.all)
-                    Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.2 : 0.2)
+                    Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.1 : 0.2)
                         .edgesIgnoringSafeArea(.all)
                 }
             )
@@ -478,7 +478,7 @@ struct FeatureShowcaseScreen: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
-                Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.2 : 0.2)
+                Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.1 : 0.2)
                     .edgesIgnoringSafeArea(.all)
             }
                 )

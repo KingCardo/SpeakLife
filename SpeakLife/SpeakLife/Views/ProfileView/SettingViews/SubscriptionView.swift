@@ -291,11 +291,11 @@ struct SubscriptionView: View {
                         .frame(height: 8)
                     
                     VStack {
-//                        Button {
-//                            currentSelection = thirdSelection
-//                        } label: {
-//                            thirdSelectionBox()
-//                        }
+                        Button {
+                            currentSelection = thirdSelection
+                        } label: {
+                            thirdSelectionBox()
+                        }
                         
                         Button {
                             currentSelection = firstSelection

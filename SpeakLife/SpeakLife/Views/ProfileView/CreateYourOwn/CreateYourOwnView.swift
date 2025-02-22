@@ -23,10 +23,10 @@ struct CreateYourOwnView: View {
             Image(onboardingBGImage)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width:UIScreen.main.bounds.width)
+                .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .overlay(
                     Rectangle()
-                        .fill(Color.black.opacity(0.5))
+                        .fill(Color.black.opacity(0.4))
                 )
                         
             configureView()
@@ -197,12 +197,14 @@ struct AffirmationAlertView: View {
             Image(onboardingBGImage)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width:UIScreen.main.bounds.width)
+                .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .overlay(
                     Rectangle()
-                        .fill(Color.black.opacity(0.5))
+                        .fill(Color.black.opacity(0.4))
                 )
                 .edgesIgnoringSafeArea(.all)
+            Spacer()
+                .frame(height: 30)
             
             // Alert card
             VStack(spacing: 20) {
@@ -243,6 +245,7 @@ struct AffirmationAlertView: View {
                 }
             }
             .padding()
+            .frame(height: UIScreen.main.bounds.height * 0.8)
             .cornerRadius(20)
             .shadow(radius: 10)
             .padding(20)

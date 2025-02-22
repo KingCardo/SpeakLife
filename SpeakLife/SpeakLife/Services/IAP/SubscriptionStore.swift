@@ -28,7 +28,7 @@ let currentMonthlyID = "SpeakLife1MO4"
 let currentMonthlyPremiumID = "SpeakLife1MO9"
 let currentPremiumID = "SpeakLife1YR49"
 let lifetimeID = "SpeakLifeLifetime"
-let devotionals = "Devotional30Days"
+let devotionals = "Devotionals30SL"
 final class SubscriptionStore: ObservableObject {
 
     @Published var isPremium: Bool = false
@@ -315,7 +315,7 @@ extension Product {
         } else if id == currentYearlyID {
             return "Pro - Save 50%"
         } else if id == currentPremiumID {
-                return "Annual - 7 days free then \(displayPrice)/yr."
+                return "Annual"
         } else if id == currentMonthlyPremiumID {
             return "Monthly"
         } else {
@@ -341,7 +341,7 @@ extension Product {
         } else if id == currentYearlyID {
            return "7 days free then \(displayPrice)/yr."
         } else if id == currentPremiumID {
-                return "For Just $0.14 cents a Day, Unlock Full Access!"
+                return "7 days free then \(displayPrice)/yr"
         } else {
            return "billed monthly at \(displayPrice). Cancel anytime."
         }
