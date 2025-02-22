@@ -123,7 +123,7 @@ struct OnboardingView: View  {
     @EnvironmentObject var streakViewModel: StreakViewModel
     @Environment(\.colorScheme) var colorScheme
     
-    @State var selection: Tab = .transformedLife
+    @State var selection: Tab = .improvement
     @State var showLastChanceAlert = false
     @State var isDonePersonalization = false
     @StateObject var improvementViewModel = ImprovementViewModel()
@@ -147,18 +147,18 @@ struct OnboardingView: View  {
         GeometryReader { geometry in
             TabView(selection: $selection) {
                 
-                IntroTipScene(
-                    title: "Weclome, We're Glad You Found Us",
-                    bodyText: "Every physical ailment, lack, and disease is a manifestation of the spiritual darkness that seeks to hold us captive.",
-                    subtext: "Claim victory over your circumstances by declaring your divine identity—just as Jesus did—and watch the power of truth dispel the darkness at its root.",
-                    ctaText: "Begin My Journey",
-                    showTestimonials: false,
-                    isScholarship: false,
-                    size: geometry.size
-                ) {
-                    advance()
-                }
-                    .tag(Tab.transformedLife)
+//                IntroTipScene(
+//                    title: "Weclome, We're Glad You Found Us",
+//                    bodyText: "Every physical ailment, lack, and disease is a manifestation of the spiritual darkness that seeks to hold us captive.",
+//                    subtext: "Claim victory over your circumstances by declaring your divine identity—just as Jesus did—and watch the power of truth dispel the darkness at its root.",
+//                    ctaText: "Begin My Journey",
+//                    showTestimonials: false,
+//                    isScholarship: false,
+//                    size: geometry.size
+//                ) {
+//                    advance()
+//                }
+//                    .tag(Tab.transformedLife)
                 
                 ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
                     withAnimation {
@@ -180,10 +180,23 @@ struct OnboardingView: View  {
                 }
                     .tag(Tab.likeJesus)
                 
+                IntroTipScene(
+                    title: "Truth sets you free",
+                    bodyText: "The enemy’s only weapon is deception. He plants false thoughts, making them seem like your own.",
+                    subtext: "\n- That’s why renewing your mind daily is essential—because the truth sets you free.",
+                    ctaText: "Renew My Mind",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size)
+                {
+                        advance()
+                }
+                    .tag(Tab.liveVictorious)
+                
                 FeatureShowcaseScreen(size: geometry.size) {
                     advance()
                 }
-                .tag(Tab.liveVictorious)
+                .tag(Tab.useCase)
                 
                 RatingView(size: geometry.size) {
                     withAnimation {
@@ -462,7 +475,7 @@ struct OnboardingView: View  {
                     askNotificationPermission()
                     Analytics.logEvent("NotificationScreenDone", parameters: nil)
                 case .useCase:
-                    selection = .widgets
+                    selection = .review
                     onboardingTab = selection.rawValue
                     
                 case .helpGrow:
@@ -507,7 +520,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("LikeJesusScreenDone", parameters: nil)
                 case .liveVictorious:
                     impactMed.impactOccurred()
-                    selection = .review
+                    selection = .useCase
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("LiveVictoriousScreenDone", parameters: nil)
                 case .unshakeableFaith:

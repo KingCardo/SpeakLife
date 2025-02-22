@@ -300,7 +300,7 @@ let gospelFiles: [AudioDeclaration] = [
            id: "sermonMount.mp3",
            title: "How Jesus Showed Us the Way to Live",
            subtitle: "Matthew 4-7",
-           duration: "11m",
+           duration: "8m",
            imageUrl: "sermonMount",
            isPremium: true
        ),

@@ -58,7 +58,6 @@ struct HomeView: View {
                 OnboardingView()
                     .onAppear {
                     viewModel.requestPermission()
-                    config.fetchRemoteConfig()
                 }
             }
         }
