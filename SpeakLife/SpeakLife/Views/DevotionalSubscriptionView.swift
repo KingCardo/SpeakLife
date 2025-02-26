@@ -39,7 +39,7 @@ struct DevotionalSubscriptionView: View {
             .padding()
         
         }
-        .background(.white)
+        .background(.black)
         .alert(isPresented: $isShowingError, content: {
             Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
         })
@@ -146,7 +146,7 @@ struct SubscriptionDetailsView: View {
                 .foregroundColor(.gray)
         }
         .padding()
-        .background(BlurView(style: .light))
+        .background(.white)
         .cornerRadius(20)
         .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)
 

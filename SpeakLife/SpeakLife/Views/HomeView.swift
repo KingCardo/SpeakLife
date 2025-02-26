@@ -179,19 +179,9 @@ class FacebookTrackingViewModel: ObservableObject {
     func requestPermission() {
         
         if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
-            TrackingManager.shared.requestTrackingPermission { status in
-                switch status {
-                case .notDetermined: Settings.shared.isAdvertiserTrackingEnabled = false
-                    Settings.shared.isAdvertiserIDCollectionEnabled = false
-                case .restricted: Settings.shared.isAdvertiserTrackingEnabled = false
-                    Settings.shared.isAdvertiserIDCollectionEnabled = false
-                case .denied: Settings.shared.isAdvertiserTrackingEnabled = false
-                    Settings.shared.isAdvertiserIDCollectionEnabled = false
-                case .authorized: Settings.shared.isAdvertiserTrackingEnabled = true
-                    Settings.shared.isAdvertiserIDCollectionEnabled = true
-                @unknown default: break
+            TrackingManager.shared.requestTrackingPermission { [weak self] status in
+                self?.trackingStatus = status
                 }
-            }
         }
     }
 }

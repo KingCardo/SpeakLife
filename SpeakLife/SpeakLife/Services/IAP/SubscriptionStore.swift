@@ -23,10 +23,10 @@ public enum StoreError: Error {
     case failedVerification
 }
 
-let currentYearlyID = "SpeakLife1YR29"
+let currentYearlyID = "SpeakLife1YR19"
 let currentMonthlyID = "SpeakLife1MO4"
 let currentMonthlyPremiumID = "SpeakLife1MO9"
-let currentPremiumID = "SpeakLife1YR49"
+let currentPremiumID = "SpeakLife1YR29"
 let lifetimeID = "SpeakLifeLifetime"
 let devotionals = "Devotionals30SL"
 final class SubscriptionStore: ObservableObject {
@@ -44,6 +44,8 @@ final class SubscriptionStore: ObservableObject {
     @Published var currentOfferedPremium: Product? = nil
     @Published var currentOfferedPremiumMonthly: Product? = nil
     @Published var currentOfferedDevotionalPremium: Product? = nil
+//    @Published var currentPremiumID: String?
+//    @Published var discountSubscription: String?
     @Published var isInDevotionalPremium = false
     @Published var testGroup = 0//Int.random(in: 0...1)
     @AppStorage("lastDevotionalPurchase") var lastDevotionalPurchaseDate: Date?
@@ -301,9 +303,9 @@ extension Product {
         if id == lifetimeID {
             return "One time fee of \(displayPrice) for lifetime access."
         } else if id == currentYearlyID {
-            return "7 days free then \(displayPrice)/year."
+            return "$\(price/12)/mo."
         } else if id == currentPremiumID {
-            return "Full access, 7 days free then \(displayPrice)/year."
+            return "$\(price/12)/mo."
         } else {
             return "\(displayPrice)/month. Cancel anytime."
         }
@@ -315,7 +317,7 @@ extension Product {
         } else if id == currentYearlyID {
             return "Pro - Save 50%"
         } else if id == currentPremiumID {
-                return "Annual"
+                return "Yearly"
         } else if id == currentMonthlyPremiumID {
             return "Monthly"
         } else {
@@ -341,20 +343,33 @@ extension Product {
         } else if id == currentYearlyID {
            return "7 days free then \(displayPrice)/yr."
         } else if id == currentPremiumID {
-                return "7 days free then \(displayPrice)/yr"
+            let twelve = Double(12)
+            let floatDecimal: Double = 100
+            let priceDouble = NSDecimalNumber(decimal: price).doubleValue
+
+            // Convert Float16 to Decimal
+
+            // Perform Decimal calculation
+            let priceDivided = priceDouble / twelve
+            let truncatedPrice = (priceDivided * floatDecimal).rounded(.down) / floatDecimal
+
+            // Convert to Double only after rounding down
+            let price = (truncatedPrice as Double)
+            let roundedPrice = String(format: "%.2f", price)
+                return "$\(roundedPrice)/mo."
         } else {
-           return "billed monthly at \(displayPrice). Cancel anytime."
+           return "\(displayPrice)/mo."
         }
     }
     
     
     var costDescription: String {
         if id == currentPremiumID {
-            return "🏆 Most Popular"
+            return "3 days free, then \(displayPrice) per year"
         } else if id == lifetimeID {
             return "Pay once, own it for life!"
         } else {
-           return "No commitment. Cancel anytime."
+           return "Just \(displayPrice) per month"
         }
        
 //        if id == currentYearlyID {

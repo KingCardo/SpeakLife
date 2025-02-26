@@ -576,11 +576,11 @@ struct SubscriptionView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Constants.traditionalGold)
-                        .frame(width: 70, height: 30)
+                        .frame(width: 90, height: 30)
                         .cornerRadius(15)
                     
-                    Text("67% OFF")
-                        .font(.caption)
+                    Text("3 DAYS FREE")
+                        .font(.caption2)
                         .bold()
                         .foregroundColor(.black)
                 }
