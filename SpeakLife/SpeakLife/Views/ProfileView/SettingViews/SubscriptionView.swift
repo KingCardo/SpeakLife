@@ -257,7 +257,7 @@ struct SubscriptionView: View {
                            
                         VStack(alignment: .center) {
                         
-                            Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
+                            Image("appIconDisplay")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 90, height: 90)

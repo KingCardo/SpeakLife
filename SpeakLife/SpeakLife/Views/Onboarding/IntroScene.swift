@@ -93,7 +93,7 @@ struct IntroTipScene: View {
                         .lineLimit(nil)
                         .opacity(showSubtext ? 1 : 0) // Initial opacity for fade-in
                         .onAppear {
-                            withAnimation(Animation.easeIn(duration: 3.0).delay(1.0)) {
+                            withAnimation(Animation.easeIn(duration: 1.0).delay(0.5)) {
                                 showSubtext = true
                             }
                         }

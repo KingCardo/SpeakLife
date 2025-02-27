@@ -127,7 +127,7 @@ struct OnboardingView: View  {
     @State var showLastChanceAlert = false
     @State var isDonePersonalization = false
     @StateObject var improvementViewModel = ImprovementViewModel()
-    @AppStorage("onboardingTab") var onboardingTab = Tab.transformedLife.rawValue
+    @AppStorage("onboardingTab") var onboardingTab = Tab.improvement.rawValue
     @State private var isTextVisible = false
     @State var valueProps: [Feature] = []
    

@@ -139,7 +139,7 @@ let audioFiles: [AudioDeclaration] = [
            title: "Blessing Our Children",
            subtitle: "Declaring Safety, Wisdom, and Destiny Over Their Lives",
            duration: "3m",
-           imageUrl: "calmLake",
+           imageUrl: "sunsetMountains3",
            isPremium: true
        ),
     AudioDeclaration(
@@ -147,7 +147,7 @@ let audioFiles: [AudioDeclaration] = [
            title: "Breakthrough and Miracles",
            subtitle: "Declaring the Power of God to Transform the Impossible",
            duration: "3m",
-           imageUrl: "radiantAngel",
+           imageUrl: "lakeSunset",
            isPremium: true
        ),
     AudioDeclaration(

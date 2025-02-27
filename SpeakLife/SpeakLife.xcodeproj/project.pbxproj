@@ -3,25 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2F740F6929D4017400E89E7F /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F740F6829D4017400E89E7F /* APIClientTests.swift */; };
 		450720DB2BAFFB4A0029EE2B /* TimerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450720DA2BAFFB4A0029EE2B /* TimerViewModelTests.swift */; };
 		4509556D2D5A94300098B327 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509556C2D5A94300098B327 /* AppConfig.swift */; };
-		4509556F2D5A95150098B327 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 4509556E2D5A95150098B327 /* FirebaseRemoteConfig */; };
-		450955712D5A95150098B327 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 450955702D5A95150098B327 /* FirebaseRemoteConfigSwift */; };
 		4512A37B2D3900DF0099A83A /* AudioPlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4512A37A2D3900DF0099A83A /* AudioPlayerDetailView.swift */; };
+		452D17D92D703E9E000AB1D1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 452D17D82D703E9E000AB1D1 /* FirebaseAnalytics */; };
+		452D17DB2D703E9E000AB1D1 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 452D17DA2D703E9E000AB1D1 /* FirebaseRemoteConfig */; };
+		452D17DD2D703E9E000AB1D1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 452D17DC2D703E9E000AB1D1 /* FirebaseStorage */; };
+		452D17DF2D703F3A000AB1D1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 452D17DE2D703F3A000AB1D1 /* FirebaseFirestore */; };
 		453172B42B2D274800388AD4 /* BenefitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453172B32B2D274800388AD4 /* BenefitScene.swift */; };
 		453478F12B9D29CC0012C2C0 /* declarationsv4.json in Resources */ = {isa = PBXBuildFile; fileRef = 453478F02B9D29CC0012C2C0 /* declarationsv4.json */; };
 		453A831E2C9BF18500398ECE /* DeclarationMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A831D2C9BF18500398ECE /* DeclarationMenuButton.swift */; };
 		453A83202C9BF1AE00398ECE /* SpeechCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A831F2C9BF1AE00398ECE /* SpeechCoordinator.swift */; };
 		453C35852C5092A800817FCC /* HelpUsGrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453C35842C5092A800817FCC /* HelpUsGrowView.swift */; };
 		453C35872C50B15900817FCC /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453C35862C50B15900817FCC /* MenuButtonView.swift */; };
-		4558DB552BB3E85E0073BDB8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4558DB542BB3E85E0073BDB8 /* FirebaseAnalytics */; };
-		4558DB572BB3E85E0073BDB8 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4558DB562BB3E85E0073BDB8 /* FirebaseCrashlytics */; };
-		4558DB592BB3E85E0073BDB8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4558DB582BB3E85E0073BDB8 /* FirebaseStorage */; };
 		456585F32D4F62EE002F2709 /* DevotionalSubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456585F22D4F62EE002F2709 /* DevotionalSubscriptionView.swift */; };
 		456885262B390FF4007B1EBB /* WarriorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456885252B390FF4007B1EBB /* WarriorView.swift */; };
 		456885282B395F66007B1EBB /* declarationsv3.json in Resources */ = {isa = PBXBuildFile; fileRef = 456885272B395F66007B1EBB /* declarationsv3.json */; };
@@ -56,7 +55,6 @@
 		4590BF9E2BCA4F1A00CF4F54 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4590BF9D2BCA4F1A00CF4F54 /* FeatureView.swift */; };
 		45B07A422D24D98300EA2F5D /* WhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B07A412D24D98300EA2F5D /* WhatsNewView.swift */; };
 		45BCBA9A2C360245001F28C4 /* BibleStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BCBA992C360245001F28C4 /* BibleStory.swift */; };
-		45C7481B2B5357D40011D8F6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		45C7481F2B55B4B80011D8F6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 45C7481E2B55B4B80011D8F6 /* FacebookCore */; };
 		45C748232B5802C60011D8F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45C748222B5802C60011D8F6 /* GoogleService-Info.plist */; };
 		45C7482D2B5BBF9A0011D8F6 /* romanticpiano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45C7482C2B5BBF9A0011D8F6 /* romanticpiano.mp3 */; };
@@ -66,7 +64,6 @@
 		45CF271A2B4E52EF00BC8968 /* HabitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF27192B4E52EF00BC8968 /* HabitScene.swift */; };
 		45CF271C2B4E530300BC8968 /* ImprovementScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF271B2B4E530300BC8968 /* ImprovementScene.swift */; };
 		45D6402B2CD218AE006F05AD /* declarationsv5.json in Resources */ = {isa = PBXBuildFile; fileRef = 45D6402A2CD218AE006F05AD /* declarationsv5.json */; };
-		45D6402F2CD37810006F05AD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 45D6402E2CD37810006F05AD /* FirebaseFirestore */; };
 		45ED72C42BA10B3500F5F5E3 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED72C32BA10B3500F5F5E3 /* ConfettiView.swift */; };
 		45ED72C62BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED72C52BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift */; };
 		7A00721828F8ED4A00965AF7 /* declarations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A00721728F8ED4A00965AF7 /* declarations.json */; };
@@ -356,16 +353,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4509556F2D5A95150098B327 /* FirebaseRemoteConfig in Frameworks */,
-				4558DB552BB3E85E0073BDB8 /* FirebaseAnalytics in Frameworks */,
-				45C7481B2B5357D40011D8F6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
-				4558DB592BB3E85E0073BDB8 /* FirebaseStorage in Frameworks */,
-				45D6402F2CD37810006F05AD /* FirebaseFirestore in Frameworks */,
 				45C7481F2B55B4B80011D8F6 /* FacebookCore in Frameworks */,
 				7AF18C8029FD1E20005A6E31 /* (null) in Frameworks */,
+				452D17D92D703E9E000AB1D1 /* FirebaseAnalytics in Frameworks */,
+				452D17DB2D703E9E000AB1D1 /* FirebaseRemoteConfig in Frameworks */,
 				7AF18CA22A0DB126005A6E31 /* SwiftUICharts in Frameworks */,
-				4558DB572BB3E85E0073BDB8 /* FirebaseCrashlytics in Frameworks */,
-				450955712D5A95150098B327 /* FirebaseRemoteConfigSwift in Frameworks */,
+				452D17DF2D703F3A000AB1D1 /* FirebaseFirestore in Frameworks */,
+				452D17DD2D703E9E000AB1D1 /* FirebaseStorage in Frameworks */,
 				7A00721D2908D50800965AF7 /* (null) in Frameworks */,
 				7A7BEBCD2913536B008D08A3 /* StoreKit.framework in Frameworks */,
 			);
@@ -910,8 +904,6 @@
 				7A278F94288915DE0084BB57 /* Frameworks */,
 				7A278F95288915DE0084BB57 /* Resources */,
 				7A7BEBE62913574F008D08A3 /* Embed Foundation Extensions */,
-				45C748202B57FEFC0011D8F6 /* ShellScript */,
-				4558DB532BB214910073BDB8 /* Update Frameworks version */,
 			);
 			buildRules = (
 			);
@@ -920,15 +912,12 @@
 			);
 			name = SpeakLife;
 			packageProductDependencies = (
-				7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				7AF18CA12A0DB126005A6E31 /* SwiftUICharts */,
 				45C7481E2B55B4B80011D8F6 /* FacebookCore */,
-				4558DB542BB3E85E0073BDB8 /* FirebaseAnalytics */,
-				4558DB562BB3E85E0073BDB8 /* FirebaseCrashlytics */,
-				4558DB582BB3E85E0073BDB8 /* FirebaseStorage */,
-				45D6402E2CD37810006F05AD /* FirebaseFirestore */,
-				4509556E2D5A95150098B327 /* FirebaseRemoteConfig */,
-				450955702D5A95150098B327 /* FirebaseRemoteConfigSwift */,
+				452D17D82D703E9E000AB1D1 /* FirebaseAnalytics */,
+				452D17DA2D703E9E000AB1D1 /* FirebaseRemoteConfig */,
+				452D17DC2D703E9E000AB1D1 /* FirebaseStorage */,
+				452D17DE2D703F3A000AB1D1 /* FirebaseFirestore */,
 			);
 			productName = SpeakLife;
 			productReference = 7A278F97288915DE0084BB57 /* SpeakLife.app */;
@@ -975,7 +964,6 @@
 				};
 			};
 			buildConfigurationList = 7A278F92288915DE0084BB57 /* Build configuration list for PBXProject "SpeakLife" */;
-			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -984,10 +972,11 @@
 			);
 			mainGroup = 7A278F8E288915DE0084BB57;
 			packageReferences = (
-				7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				7AF18CA02A0DB126005A6E31 /* XCRemoteSwiftPackageReference "ChartView" */,
 				45C7481D2B55B4B80011D8F6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				452D17D72D703E9E000AB1D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 7A278F98288915DE0084BB57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1045,49 +1034,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4558DB532BB214910073BDB8 /* Update Frameworks version */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Update Frameworks version";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "TARGET_MIN_OS_VERSION=\"16.0\"\nFRAMEWORKS_DIR=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\n\nupdate_framework_plists() {\n  local path=\"$1\"\n  echo \"Updating Info.plist files in $path\"\n  \n  find \"$path\" -name Info.plist | while read plist; do\n    local normalized_plist_path=$(realpath \"$plist\")\n    \n    echo \"Updating $normalized_plist_path\"\n    /usr/libexec/PlistBuddy -c \"Add :MinimumOSVersion string $TARGET_MIN_OS_VERSION\" \"$plist\" &>/dev/null || /usr/libexec/PlistBuddy -c \"Set :MinimumOSVersion $TARGET_MIN_OS_VERSION\" \"$plist\"\n    \n    if [ $? -eq 0 ]; then\n      echo \"Successfully set MinimumOSVersion to $TARGET_MIN_OS_VERSION in $normalized_plist_path\"\n    else\n      echo \"Failed to set MinimumOSVersion in $normalized_plist_path\"\n    fi\n  done\n}\n\nupdate_framework_plists \"$FRAMEWORKS_DIR\"\n";
-		};
-		45C748202B57FEFC0011D8F6 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
-				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
-				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2F740F5A29D4014400E89E7F /* Sources */ = {
@@ -1418,7 +1364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 684;
+				CURRENT_PROJECT_VERSION = 687;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1459,7 +1405,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 684;
+				CURRENT_PROJECT_VERSION = 687;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1593,20 +1539,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		452D17D72D703E9E000AB1D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.9.0;
+			};
+		};
 		45C7481D2B55B4B80011D8F6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 18.0.0;
-			};
-		};
-		7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
 			};
 		};
 		7AF18CA02A0DB126005A6E31 /* XCRemoteSwiftPackageReference "ChartView" */ = {
@@ -1620,45 +1566,30 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4509556E2D5A95150098B327 /* FirebaseRemoteConfig */ = {
+		452D17D82D703E9E000AB1D1 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseRemoteConfig;
-		};
-		450955702D5A95150098B327 /* FirebaseRemoteConfigSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseRemoteConfigSwift;
-		};
-		4558DB542BB3E85E0073BDB8 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 452D17D72D703E9E000AB1D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
 		};
-		4558DB562BB3E85E0073BDB8 /* FirebaseCrashlytics */ = {
+		452D17DA2D703E9E000AB1D1 /* FirebaseRemoteConfig */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
+			package = 452D17D72D703E9E000AB1D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
 		};
-		4558DB582BB3E85E0073BDB8 /* FirebaseStorage */ = {
+		452D17DC2D703E9E000AB1D1 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 452D17D72D703E9E000AB1D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		452D17DE2D703F3A000AB1D1 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 452D17D72D703E9E000AB1D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 		45C7481E2B55B4B80011D8F6 /* FacebookCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 45C7481D2B55B4B80011D8F6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookCore;
-		};
-		45D6402E2CD37810006F05AD /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		7A00721C2908D50800965AF7 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7A00721B2908D50800965AF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsWithoutAdIdSupport;
 		};
 		7AF18CA12A0DB126005A6E31 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
