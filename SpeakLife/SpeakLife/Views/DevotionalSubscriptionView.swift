@@ -41,12 +41,12 @@ struct DevotionalSubscriptionView: View {
         }
         .background(
             ZStack {
-                Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
-                    .brightness(0.05)
-                Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.1 : 0.2)
+//                Image("JesusHealing")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fill)
+//                    .edgesIgnoringSafeArea(.all)
+                 //   .brightness(0.05)
+                Color.black
                     .edgesIgnoringSafeArea(.all)
             }
             )

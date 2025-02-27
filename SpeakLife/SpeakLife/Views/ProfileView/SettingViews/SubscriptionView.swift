@@ -15,8 +15,8 @@ import SwiftUI
 
 // ViewModel to manage data for the view
 class OfferViewModel: ObservableObject {
-    @Published var originalPrice: String = "$49.99/year"
-    @Published var monthlyPrice: String = "$4.16/month"
+    @Published var originalPrice: String = "$29.99/year"
+    @Published var monthlyPrice: String = "$2.49/month"
     @Published var discountedPrice: String = "$19.99/year"
     @Published var discountedMonthlyPrice: String = "$1.67/month"
 }
@@ -53,7 +53,7 @@ struct OfferPageView: View {
                             .fill(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))
                     )
                 VStack {
-                    Text("40% off")
+                    Text("33% off")
                         .font(Font.custom("AppleSDGothicNeo-Bold", size: 48, relativeTo: .title))
                         .foregroundColor(.white)
                     
