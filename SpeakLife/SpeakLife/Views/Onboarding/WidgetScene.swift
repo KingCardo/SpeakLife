@@ -65,7 +65,7 @@ struct WidgetScene: View {
             Spacer()
             
             ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Got it!", action: callBack)
-            .frame(width: size.width * 0.87 ,height: 60)
+            .frame(width: size.width * 0.87 ,height: 50)
             .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
             
             .background(Constants.DADarkBlue.opacity(0.6))

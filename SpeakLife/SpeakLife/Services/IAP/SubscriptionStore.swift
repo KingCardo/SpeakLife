@@ -329,7 +329,7 @@ extension Product {
         if id == currentYearlyID {
             return "Start My Free Trial Now"
         } else if id == currentPremiumID {
-                return "Start My Free Trial Now"
+                return "Try Free & Subscribe"
         } else {
            return "Subscribe"
         }
@@ -365,11 +365,11 @@ extension Product {
     
     var costDescription: String {
         if id == currentPremiumID {
-            return "3 days free, then \(displayPrice) per year"
+            return "3 days free, then \(displayPrice) per year. Cancel anytime."
         } else if id == lifetimeID {
             return "Pay once, own it for life!"
         } else {
-           return "Just \(displayPrice) per month"
+           return "Just \(displayPrice) per month. Cancel anytime."
         }
        
 //        if id == currentYearlyID {

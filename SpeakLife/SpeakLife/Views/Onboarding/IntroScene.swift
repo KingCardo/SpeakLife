@@ -122,12 +122,12 @@ struct IntroTipScene: View {
             
             Spacer()
             ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: ctaText, action: buttonTouched)
-            .frame(width: size.width * 0.87 ,height: 60)
+            .frame(width: size.width * 0.87 ,height: 50)
             .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
             
-            .foregroundColor(.white)
+            //.foregroundColor(.white)
             .cornerRadius(30)
-            .shadow(color: Constants.DAMidBlue.opacity(0.5), radius: 8, x: 0, y: 10)
+            //.shadow(color: Constants.DAMidBlue.opacity(0.5), radius: 8, x: 0, y: 10)
             .scaleEffect(buttonTapped ? 0.95 : 1.0)
 
             
@@ -377,7 +377,7 @@ struct TestimonialScreen: View {
                 Spacer()
                 
                 ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Continue", action: callBack)
-                    .frame(width: size.width * 0.87, height: 60)
+                    .frame(width: size.width * 0.87, height: 50)
                     .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
                     .cornerRadius(30)
                 
@@ -459,7 +459,7 @@ struct FeatureShowcaseScreen: View {
                 Spacer()
                 
                 ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Continue", action: callBack)
-                    .frame(width: size.width * 0.87 ,height: 60)
+                    .frame(width: size.width * 0.87 ,height: 50)
                     .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
                 
                     .foregroundColor(.white)

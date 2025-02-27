@@ -39,7 +39,17 @@ struct DevotionalSubscriptionView: View {
             .padding()
         
         }
-        .background(.black)
+        .background(
+            ZStack {
+                Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+                    .brightness(0.05)
+                Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.1 : 0.2)
+                    .edgesIgnoringSafeArea(.all)
+            }
+            )
         .alert(isPresented: $isShowingError, content: {
             Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
         })
@@ -132,21 +142,21 @@ struct SubscriptionDetailsView: View {
         VStack(alignment: .center, spacing: 16) {
             Text(title)
                 .font(.title)
-                .foregroundColor(.black)
+                .foregroundColor(.white)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .multilineTextAlignment(.center)
                 
 
             Text(description)
                 .font(.body)
-                .foregroundColor(.gray)
+                .foregroundColor(.white)
 
             Text(disclaimer)
                 .font(.caption)
-                .foregroundColor(.gray)
+                .foregroundColor(.white)
         }
         .padding()
-        .background(.white)
+        .background(BlurView(style: .light))
         .cornerRadius(20)
         .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)
 

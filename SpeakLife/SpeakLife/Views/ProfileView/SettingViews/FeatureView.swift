@@ -42,7 +42,7 @@ struct FeatureRow: View {
             Image(systemName: feature.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 12, height: 12)
+                .frame(width: 10, height: 10)
                 .padding(.trailing, 8)
                 .foregroundColor(Constants.traditionalGold)
             VStack(alignment: .leading) {

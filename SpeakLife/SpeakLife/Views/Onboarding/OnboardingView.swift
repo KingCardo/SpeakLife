@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseAnalytics
 import StoreKit
-let onboardingBGImage = "moonlight2"//"nightStarrySkies"//"oceanSunrise"
+let onboardingBGImage = "desertSky"//moonlight2"
 
 let onboardingBGImage2 = "pinkHueMountain"
 
@@ -89,7 +89,7 @@ struct RatingView: View {
             Spacer()
             
             ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Rate us", action: callBack)
-            .frame(width: size.width * 0.87 ,height: 60)
+            .frame(width: size.width * 0.87 ,height: 50)
             .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
 
             .scaleEffect(showStars[4] ? 1 : 0.95) // Button appears last

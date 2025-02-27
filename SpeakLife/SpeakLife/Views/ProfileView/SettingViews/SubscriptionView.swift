@@ -17,8 +17,8 @@ import SwiftUI
 class OfferViewModel: ObservableObject {
     @Published var originalPrice: String = "$49.99/year"
     @Published var monthlyPrice: String = "$4.16/month"
-    @Published var discountedPrice: String = "$29.99/year"
-    @Published var discountedMonthlyPrice: String = "$2.49/month"
+    @Published var discountedPrice: String = "$19.99/year"
+    @Published var discountedMonthlyPrice: String = "$1.67/month"
 }
 
 struct OfferPageView: View {
@@ -113,8 +113,8 @@ struct OfferPageView: View {
                     Text("Claim offer now")
                         .font(.system(size: 18, weight: .bold))
                         .padding()
-                        .frame(maxWidth: .infinity, maxHeight: 60)
-                        .background(LinearGradient(gradient: Gradient(colors: [.orange, .yellow]), startPoint: .leading, endPoint: .trailing))
+                        .frame(maxWidth: .infinity, maxHeight: 50)
+                        .background(LinearGradient(gradient: Gradient(colors: [.indigo, .yellow]), startPoint: .leading, endPoint: .trailing))
                         .foregroundColor(.white)
                         .cornerRadius(30)
                 }
@@ -240,23 +240,23 @@ struct SubscriptionView: View {
             
 //            GeometryReader { geometry in
                 if subscriptionStore.testGroup == 0 {
-                    LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, Color.black]), startPoint: .top, endPoint: .bottom)
-                        .edgesIgnoringSafeArea(.all)
-                } else {
-                    LinearGradient(gradient: Gradient(colors: [Constants.DADarkBlue, Color.black.opacity(0.9)]), startPoint: .top, endPoint: .bottom)
+                    LinearGradient(gradient: Gradient(colors: [Color.black]), startPoint: .top, endPoint: .bottom)
                         .edgesIgnoringSafeArea(.all)
                 }
+//            else {
+//                    LinearGradient(gradient: Gradient(colors: [Constants.DADarkBlue, Color.black.opacity(0.9)]), startPoint: .top, endPoint: .bottom)
+//                        .edgesIgnoringSafeArea(.all)
+//                }
                
                 
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
-                    Spacer()
-                        .frame(height: 24)
-//                    ZStack {
-//                        Image("desertSky")
-//                            .resizable()
-//                            .frame(height: 150)
+
+                    ZStack {
+                        Image("headerSubscription")
+                            .resizable()
+                           
                         VStack(alignment: .center) {
-                            
+                        
                             Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -266,12 +266,11 @@ struct SubscriptionView: View {
                                 .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                             
                             Text("SpeakLife")
-                                .font(.system(size: 34, weight: .semibold, design: .rounded))
+                                .font(Font.custom("AppleSDGothicNeo-Bold", size: 30, relativeTo: .title))
                                 .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                             
                         }
-//                    }
-//                    .edgesIgnoringSafeArea(.top)
+                    } .frame(height: size.height * 0.25)
                     
                  
                     Spacer()
@@ -291,11 +290,11 @@ struct SubscriptionView: View {
                         .frame(height: 8)
                     
                     VStack {
-                        Button {
-                            currentSelection = thirdSelection
-                        } label: {
-                            thirdSelectionBox()
-                        }
+//                        Button {
+//                            currentSelection = thirdSelection
+//                        } label: {
+//                            thirdSelectionBox()
+//                        }
                         
                         Button {
                             currentSelection = firstSelection
@@ -399,7 +398,7 @@ struct SubscriptionView: View {
             Text(currentSelection?.costDescription ?? "")
             
         }
-        .font(Font.custom("Roboto-Regular", size: 12, relativeTo: .callout))
+        .font(Font.custom("AppleSDGothicNeo-Regular", size: 12))
         .foregroundColor(.white)
     }
     
@@ -545,9 +544,8 @@ struct SubscriptionView: View {
             }
         }
     }
-    
     private func continueButton(gradient: LinearGradient) -> some View {
-        return ShimmerButton(colors: [Color.orange, Color.yellow.opacity(0.8)], buttonTitle: currentSelection?.ctaButtonTitle ?? "Subscribe", action: makePurchase)
+        return ShimmerButton(colors: [.white], buttonTitle: currentSelection?.ctaButtonTitle ?? "Subscribe", action: makePurchase, textColor: .black)
             .opacity(currentSelection != nil ? 1 : 0.5)
     }
     // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
@@ -565,9 +563,9 @@ struct SubscriptionView: View {
     func firstSelectionBox() -> some View {
         ZStack() {
             RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(Color.yellow, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == firstSelection ? Constants.DAMidBlue : .clear))
-                .shadow(color: currentSelection == firstSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
+                .strokeBorder(currentSelection == firstSelection ? Constants.gold : Color.gray, lineWidth: 1)
+                .background(.clear)
+                .shadow(color: currentSelection == firstSelection ? Color.yellow.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
                 .frame(height: 60)
             
             HStack {
@@ -581,7 +579,6 @@ struct SubscriptionView: View {
                     
                     Text("3 DAYS FREE")
                         .font(.caption2)
-                        .bold()
                         .foregroundColor(.black)
                 }
                 //  .padding(.trailing)
@@ -612,9 +609,9 @@ struct SubscriptionView: View {
     func secondSelectionBox() -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(Color.gray, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == secondSelection ? Constants.DAMidBlue : .clear))
-                .shadow(color: currentSelection == secondSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
+                .strokeBorder(currentSelection == secondSelection ? Constants.gold : Color.gray, lineWidth: 1)
+                .background(.clear)
+                .shadow(color: currentSelection == secondSelection ? Color.yellow.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
                 .frame(height: 50)
             
             HStack {
@@ -639,9 +636,9 @@ struct SubscriptionView: View {
     func thirdSelectionBox() -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(Color.gray, lineWidth: 1)
-                .background(RoundedRectangle(cornerRadius: 10).fill(currentSelection == thirdSelection ? Constants.DAMidBlue : .clear))
-                .shadow(color: currentSelection == thirdSelection ? Color.white.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
+                .strokeBorder(currentSelection == thirdSelection ? Constants.gold : Color.gray, lineWidth: 1)
+                .background(.clear)
+                .shadow(color: currentSelection == thirdSelection ? Color.yellow.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
                 .frame(height: 50)
             
             HStack {

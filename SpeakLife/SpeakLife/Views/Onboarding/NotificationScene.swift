@@ -94,7 +94,7 @@ struct NotificationOnboarding:  View {
             }
             
             ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Save My Preferences", action: callBack)
-            .frame(width: size.width * 0.87 ,height: 60)
+            .frame(width: size.width * 0.87 ,height: 50)
             .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
             
             Spacer()
