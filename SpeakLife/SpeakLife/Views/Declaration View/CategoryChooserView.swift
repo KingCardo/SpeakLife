@@ -36,7 +36,6 @@ struct CategoryCell: View  {
     private func categoryCell(size: CGSize) -> some View  {
         
         let dimension =  size.width *  0.25
-        let dimensionHeight =  size.height *  0.10
         
         ZStack {
             colorScheme == .dark ? Constants.DEABlack : Color.white

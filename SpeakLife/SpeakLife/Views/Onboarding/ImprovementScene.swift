@@ -20,70 +20,64 @@ struct ImprovementScene: View {
         improvementView(size: size)
     }
     
-    private func improvementView(size: CGSize) -> some View  {
-        ScrollView {
-            Spacer().frame(height: 30)
-               
-                VStack {
-                    Text("What brings you to SpeakLife?", comment: "Intro scene title label")
-                        .font(.system(size: 34, weight: .semibold, design: .rounded))
-                        .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
-                        .padding()
-                        .lineLimit(2)
-                    
-                    Spacer().frame(height: 16)
-                    
-                    VStack {
-                        Text("Let us guide you based on your goals. Choose what matters most to you." , comment: "Intro scene instructions")
+    private func improvementView(size: CGSize) -> some View {
+        GeometryReader { proxy in // ✅ Ensures full height
+            VStack(spacing: 0) { // ✅ No extra spacing
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing: 20) {
+                        Spacer().frame(height: 30)
+
+                        Text("What brings you to SpeakLife?", comment: "Intro scene title label")
+                            .font(.system(size: 34, weight: .semibold, design: .rounded))
+                            .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
+                            .padding()
+                            .lineLimit(2)
+
+                        Text("Let us guide you based on your goals. Choose what matters most to you.", comment: "Intro scene instructions")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                             .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                             .multilineTextAlignment(.center)
                             .lineSpacing(10)
-                            .lineLimit(nil)
-                        
-                      //  Spacer().frame(height: 12)
-                        
+                            .frame(width: size.width * 0.8)
+
+                        ImprovementSelectionListView(viewModel: viewModel)
+                            .frame(width: size.width * 0.9, height: size.height * 0.5)
+
+                        Spacer() // ✅ Pushes button down inside ScrollView
                     }
-                    .frame(width: size.width * 0.8)
+                    .frame(minHeight: proxy.size.height * 0.7) // ✅ Ensures enough height
                 }
+
+                Spacer() // ✅ Ensures the button stays at the bottom
+                
+                // CTA Button
+                ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Start My Journey", action: callBack)
+                    .frame(width: size.width * 0.87, height: 50)
+                    .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+                    .disabled(viewModel.selectedExperiences.isEmpty)
+                    .background(viewModel.selectedExperiences.isEmpty ? Constants.DAMidBlue.opacity(0.3) : Constants.DADarkBlue.opacity(0.6))
+                    .foregroundColor(.white)
+                    .cornerRadius(30)
+                    .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+
                 Spacer()
-                
-                ImprovementSelectionListView(viewModel: viewModel)
-                .frame(width: size.width * 0.9, height: size.height * 0.5)
-                Spacer()
-                .frame(height: size.height * 0.05)
-            
-            ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Start My Journey", action: callBack)
-            .frame(width: size.width * 0.87 ,height: 50)
-            .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
-                
-                .disabled(viewModel.selectedExperiences.isEmpty)
-                .background(viewModel.selectedExperiences.isEmpty ? Constants.DAMidBlue.opacity(0.3) : Constants.DADarkBlue.opacity(0.6))
-                
-                .foregroundColor(.white)
-                .cornerRadius(30)
-                .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
-                
-            Spacer()
-                .frame(width: 5, height: size.height * 0.07)
+                    .frame(height: proxy.size.height * 0.05) // ✅ Ensures bottom spacing
             }
-            .scrollIndicators(.hidden)
-            .frame(width: size.width, height: size.height)
+            .frame(width: proxy.size.width, height: proxy.size.height) // ✅ Full screen constraint
             .background(
                 ZStack {
                     Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
+                        .scaledToFill()
                         .edgesIgnoringSafeArea(.all)
                     Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.1 : 0.2)
                         .edgesIgnoringSafeArea(.all)
                 }
             )
-        
+        }
     }
-    
     
 }
 

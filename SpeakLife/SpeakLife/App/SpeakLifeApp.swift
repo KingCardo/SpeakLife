@@ -22,6 +22,7 @@ struct SpeakLifeApp: App {
     @StateObject var devotionalViewModel = DevotionalViewModel()
     @StateObject var streakViewModel = StreakViewModel()
     @StateObject var timerViewModel = TimerViewModel()
+    @StateObject private var viewModel = FacebookTrackingViewModel()
     
     @State var isShowingLanding = true
     
@@ -37,7 +38,9 @@ struct SpeakLifeApp: App {
                 .environmentObject(devotionalViewModel)
                 .environmentObject(streakViewModel)
                 .environmentObject(timerViewModel)
+                .environmentObject(viewModel)
                 .onAppear {
+                    viewModel.requestPermission()
                     if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
                         AudioPlayerService.shared.playSound(files: resources)
                     }

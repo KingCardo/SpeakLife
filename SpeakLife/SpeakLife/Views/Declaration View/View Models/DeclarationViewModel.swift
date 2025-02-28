@@ -38,7 +38,7 @@ final class DeclarationViewModel: ObservableObject {
     
     @Published var helpUsGrowAlert = false
     
-    private (set) var currentDeclaration: Declaration?
+    private(set) var currentDeclaration: Declaration?
     
     @Published var speaklifeCategories: [DeclarationCategory] = DeclarationCategory.categoryOrder
     
@@ -345,7 +345,7 @@ final class DeclarationViewModel: ObservableObject {
     }
     
     func setDeclaration(_ content: String,  category: String)  {
-        var contentData = content
+        let contentData = content
        // contentData += " ~ " + category
         let contentText = prefixString(content, until: ".").dropLast()
         print(contentText, "RWRW")

@@ -115,12 +115,15 @@ struct DeclarationView: View {
                                     }
                                     .opacity(appState.showScreenshotLabel ? 0 : 1)
                                     .foregroundStyle(Constants.gold)
-                                        .sheet(isPresented: $isPresentingPremiumView) {
+                                   
+                                    .sheet(isPresented: $isPresentingPremiumView) {
                                             self.isPresentingPremiumView = false
                                             Analytics.logEvent(Event.tryPremiumAbandoned, parameters: nil)
                                             timerViewModel.loadRemainingTime()
                                         } content: {
                                             PremiumView()
+                                                .frame(height: UIScreen.main.bounds.height * 0.9)
+                    
                                                 .onDisappear {
                                                     if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
                                                         if subscriptionStore.showDevotionalSubscription {

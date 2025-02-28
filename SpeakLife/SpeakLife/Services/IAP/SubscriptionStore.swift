@@ -388,29 +388,34 @@ extension Product {
         } else if id == currentYearlyID {
            return "7 days free then \(displayPrice)/yr."
         } else if id == yearlyID {
-            let twelve = Double(12)
-            let floatDecimal: Double = 100
-            let priceDouble = NSDecimalNumber(decimal: price).doubleValue
-
-            // Convert Float16 to Decimal
-
-            // Perform Decimal calculation
-            let priceDivided = priceDouble / twelve
-            let truncatedPrice = (priceDivided * floatDecimal).rounded(.down) / floatDecimal
-
-            // Convert to Double only after rounding down
-            let price = (truncatedPrice as Double)
-            let roundedPrice = String(format: "%.2f", price)
-                return "$\(roundedPrice)/mo."
+            return getMonthlyAmount(price: price)
         } else {
            return "\(displayPrice)/mo."
         }
     }
     
+    func getMonthlyAmount(price: Decimal) -> String {
+        let twelve = Double(12)
+        let floatDecimal: Double = 100
+        let priceDouble = NSDecimalNumber(decimal: price).doubleValue
+
+        // Convert Float16 to Decimal
+
+        // Perform Decimal calculation
+        let priceDivided = priceDouble / twelve
+        let truncatedPrice = (priceDivided * floatDecimal).rounded(.down) / floatDecimal
+
+        // Convert to Double only after rounding down
+        let price = (truncatedPrice as Double)
+        let roundedPrice = String(format: "%.2f", price)
+            return "$\(roundedPrice)/mo."
+    }
+    
     
     var costDescription: String {
         if id == yearlyID {
-            return "7 days free, then \(displayPrice) per year. Cancel anytime."
+            let monthly = getMonthlyAmount(price: price)
+            return "Totally free for 7 days, then \(monthly) billed annually at \(displayPrice)/year. Cancel anytime."
         } else if id == lifetimeID {
             return "Pay once, own it for life!"
         } else {

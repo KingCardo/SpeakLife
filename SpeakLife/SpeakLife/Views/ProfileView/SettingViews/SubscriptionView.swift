@@ -396,6 +396,7 @@ struct SubscriptionView: View {
     var costDescription: some View {
         VStack(spacing: 4) {
             Text(currentSelection?.costDescription ?? "")
+                .multilineTextAlignment(.center)
             
         }
         .font(Font.custom("AppleSDGothicNeo-Regular", size: 12))

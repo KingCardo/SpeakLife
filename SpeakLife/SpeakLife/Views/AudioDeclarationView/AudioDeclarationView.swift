@@ -103,7 +103,7 @@ struct AudioDeclarationView: View {
     
     var body: some View {
         GeometryReader { proxy in
-            NavigationView {
+            NavigationStack {
                 VStack {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 15) {

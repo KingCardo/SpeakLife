@@ -34,8 +34,9 @@ struct HomeView: View {
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
     @EnvironmentObject var timerViewModel: TimerViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
+    @EnvironmentObject var viewModel: FacebookTrackingViewModel
     @Binding var isShowingLanding: Bool
-    @StateObject private var viewModel = FacebookTrackingViewModel()
+   
     @State var showGiftView = false
     @State private var isPresented = false
     
@@ -56,7 +57,7 @@ struct HomeView: View {
             } else {
                 OnboardingView()
                     .onAppear {
-                    viewModel.requestPermission()
+                        viewModel.requestPermission()
                 }
             }
         }
@@ -70,7 +71,7 @@ struct HomeView: View {
                     .tabItem {
                         Image(systemName: "house.fill")
                             .renderingMode(.original)
-                
+                        
                     }
                 
                 AudioDeclarationView()
@@ -83,6 +84,7 @@ struct HomeView: View {
                                 .renderingMode(.original)
                         }
                     }
+                    .edgesIgnoringSafeArea(.all)
                 
                 DevotionalView(viewModel:devotionalViewModel)
                     .tabItem {
@@ -93,7 +95,7 @@ struct HomeView: View {
                             Image(systemName: "book.fill")
                                 .renderingMode(.original)
                         }
-                       // Text("Devotionals")
+                        // Text("Devotionals")
                     }
                 
                 CreateYourOwnView()
@@ -101,7 +103,7 @@ struct HomeView: View {
                         Image(systemName: "plus.bubble.fill")
                             .renderingMode(.original)
                     }
-               
+                
                 
                 ProfileView()
                     .tabItem {
@@ -113,7 +115,7 @@ struct HomeView: View {
             .sheet(isPresented: $isPresented) {
                 WhatsNewBottomSheet(isPresented: $isPresented, version: currentVersion)
                     .presentationDetents([.medium])
-                                   .presentationDragIndicator(.visible)
+                    .presentationDragIndicator(.visible)
             }
 //            .sheet(isPresented: $appState.needEmail) {
 //                EmailBottomSheet(isPresented: $appState.needEmail)
@@ -121,20 +123,9 @@ struct HomeView: View {
 //                                   .presentationDragIndicator(.visible)
 //            }
             .accentColor(Constants.DAMidBlue)
-//            .sheet(isPresented: $showGiftView, content: {
-//                OfferPageView() {
-//                    showGiftView = false
-//                }
-//            })
             .onAppear {
                 checkForNewVersion()
                 UIScrollView.appearance().isScrollEnabled = true
-//                if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
-//                    AudioPlayerService.shared.playSound(files: resources)
-//                }
-//                if !subscriptionStore.isPremium && !appState.firstOpen {
-//                   // presentGiftView()
-//                }
             }
             .environment(\.colorScheme, .dark)
     }
@@ -173,20 +164,19 @@ class TrackingManager {
 }
 
 class FacebookTrackingViewModel: ObservableObject {
-    @Published var trackingStatus: ATTrackingManager.AuthorizationStatus = .notDetermined
     
     func requestPermission() {
         
         if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
             TrackingManager.shared.requestTrackingPermission { status in
                 switch status {
-                case .notDetermined: Settings.shared.isAdvertiserTrackingEnabled = false
+                case .notDetermined:
                     Settings.shared.isAdvertiserIDCollectionEnabled = false
-                case .restricted: Settings.shared.isAdvertiserTrackingEnabled = false
+                case .restricted:
                     Settings.shared.isAdvertiserIDCollectionEnabled = false
-                case .denied: Settings.shared.isAdvertiserTrackingEnabled = false
+                case .denied:
                     Settings.shared.isAdvertiserIDCollectionEnabled = false
-                case .authorized: Settings.shared.isAdvertiserTrackingEnabled = true
+                case .authorized:
                     Settings.shared.isAdvertiserIDCollectionEnabled = true
                 @unknown default: break
                 }
