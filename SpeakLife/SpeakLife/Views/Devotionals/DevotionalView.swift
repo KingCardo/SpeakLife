@@ -14,7 +14,6 @@ struct DevotionalView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: DevotionalViewModel
     @EnvironmentObject var declarationViewModel: DeclarationViewModel
-    @EnvironmentObject var config: AppConfigViewModel
     @EnvironmentObject var appState: AppState
     @State private var scrollToTop = false
     @State private var share = false
@@ -50,7 +49,7 @@ struct DevotionalView: View {
                 SubscriptionView(size: UIScreen.main.bounds.size)
                     .onDisappear {
                         if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
-                            if config.showDevotionalSubscription {
+                            if subscriptionStore.showDevotionalSubscription {
                                 presentDevotionalSubscriptionView = true
                             }
                         }

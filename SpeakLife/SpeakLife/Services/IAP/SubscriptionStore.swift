@@ -5,7 +5,6 @@
 //  Created by Riccardo Washington on 12/17/22.
 //
 
-import Foundation
 import StoreKit
 import Combine
 import FirebaseAnalytics
@@ -15,6 +14,9 @@ import SwiftUI
 import StoreKit
 import Combine
 
+import Firebase
+import FirebaseRemoteConfig
+
 typealias Transaction = StoreKit.Transaction
 typealias RenewalInfo = StoreKit.Product.SubscriptionInfo.RenewalInfo
 typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
@@ -22,7 +24,7 @@ typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
 public enum StoreError: Error {
     case failedVerification
 }
-
+var yearlyID = ""
 let currentYearlyID = "SpeakLife1YR19"
 let currentMonthlyID = "SpeakLife1MO4"
 let currentMonthlyPremiumID = "SpeakLife1MO9"
@@ -44,13 +46,17 @@ final class SubscriptionStore: ObservableObject {
     @Published var currentOfferedPremium: Product? = nil
     @Published var currentOfferedPremiumMonthly: Product? = nil
     @Published var currentOfferedDevotionalPremium: Product? = nil
-//    @Published var currentPremiumID: String?
-//    @Published var discountSubscription: String?
     @Published var isInDevotionalPremium = false
     @Published var testGroup = 0//Int.random(in: 0...1)
     @AppStorage("lastDevotionalPurchase") var lastDevotionalPurchaseDate: Date?
-   
     
+    @Published var showDevotionalSubscription = false
+    @Published var showOneTimeSubscription = false
+    
+    @Published var yearlySubscription = ""
+    @Published var discountSubscription = ""
+   
+    private var remoteConfig = RemoteConfig.remoteConfig()
     var updateListenerTask: Task<Void, Error>? = nil
     var cancellable: AnyCancellable?
 
@@ -61,13 +67,16 @@ final class SubscriptionStore: ObservableObject {
       
         // Start a transaction listener as close to app launch as possible
         updateListenerTask = listenForTransactions()
-
-        Task {
-            // During store initialization, request products from the App Store
-            await requestProducts()
-
-            // Deliver products that the customer purchases
-            await updateCustomerProductStatus()
+        
+        fetchRemoteConfig() { [weak self] in
+            
+            Task {
+                // During store initialization, request products from the App Store
+                await self?.requestProducts()
+                
+                // Deliver products that the customer purchases
+                await self?.updateCustomerProductStatus()
+            }
         }
         
         cancellable = Publishers.CombineLatest3($subscriptionGroupStatus, $purchasedNonConsumables, $purchasedSubscriptions)
@@ -82,6 +91,32 @@ final class SubscriptionStore: ObservableObject {
 
     deinit {
         updateListenerTask?.cancel()
+    }
+    
+    func fetchRemoteConfig(completion: @escaping() -> Void) {
+        
+        remoteConfig.fetchAndActivate { [weak self] status, error in
+            guard let self = self else { return }
+            if let error = error {
+                print("Remote Config fetch failed: \(error.localizedDescription)")
+                completion()
+                return
+            }
+            
+            self.updateConfigValues(completion: completion)
+        }
+    }
+    
+    private func updateConfigValues(completion: @escaping() -> Void) {
+        showDevotionalSubscription = remoteConfig["showDevotionalSubscription"].boolValue
+        showOneTimeSubscription = remoteConfig["showOneTimeSubscription"].boolValue
+        yearlySubscription = remoteConfig["currentPremiumID"].stringValue
+        discountSubscription = remoteConfig["discountID"].stringValue
+        yearlyID = yearlySubscription
+        print(discountSubscription, "RWRW")
+        print(yearlySubscription, "RWRW")
+        completion()
+
     }
     
     func checkIsDevotionalActive(nonConsumables: [Product]) -> Bool {
@@ -138,7 +173,7 @@ final class SubscriptionStore: ObservableObject {
                 switch product.type {
                 case .autoRenewable:
                     newSubscriptions.append(product)
-                    if product.id == currentYearlyID {
+                    if product.id == discountSubscription {
                         currentOfferedYearly = product
                         print("Yearly set RWRW")
                     }
@@ -152,7 +187,7 @@ final class SubscriptionStore: ObservableObject {
                         print("currentMonthlyPremiumID set RWRW")
                     }
                     
-                    if product.id == currentPremiumID {
+                    if product.id == yearlySubscription {
                         currentOfferedPremium = product
                         print("currentPremiumID set RWRW")
                     }
@@ -171,13 +206,23 @@ final class SubscriptionStore: ObservableObject {
 
             // Sort products by price
             subscriptions = sortByPrice(newSubscriptions)
-            nonConsumables = sortByPrice(newNonConsumables) 
+            nonConsumables = sortByPrice(newNonConsumables)
+            
+         //   setDiscountOff()
 
 // Set non-consumables
         } catch {
             print("Failed product request from the App Store server: \(error)")
         }
     }
+    
+//    func setDiscountOff() {
+//        if currentOfferedPremium?.type.rawValue == "SpeakLife1YR39" {
+//            discountOFF = "50% off"
+//        } else if currentOfferedPremium?.type.rawValue == "SpeakLife1YR49" {
+//            discountOFF = "60% off"
+//        }
+//    }
     
     func purchaseWithID(_ ids: [String]) async throws -> Transaction? {
         guard let id = ids.first else { return nil }
@@ -316,7 +361,7 @@ extension Product {
             return "Lifetime"
         } else if id == currentYearlyID {
             return "Pro - Save 50%"
-        } else if id == currentPremiumID {
+        } else if id == yearlyID {
                 return "Yearly"
         } else if id == currentMonthlyPremiumID {
             return "Monthly"
@@ -328,7 +373,7 @@ extension Product {
     var ctaButtonTitle: String {
         if id == currentYearlyID {
             return "Start My Free Trial Now"
-        } else if id == currentPremiumID {
+        } else if id == yearlyID {
                 return "Try Free & Subscribe"
         } else {
            return "Subscribe"
@@ -342,7 +387,7 @@ extension Product {
             return "One time fee of \(displayPrice) for lifetime access."
         } else if id == currentYearlyID {
            return "7 days free then \(displayPrice)/yr."
-        } else if id == currentPremiumID {
+        } else if id == yearlyID {
             let twelve = Double(12)
             let floatDecimal: Double = 100
             let priceDouble = NSDecimalNumber(decimal: price).doubleValue
@@ -364,20 +409,22 @@ extension Product {
     
     
     var costDescription: String {
-        if id == currentPremiumID {
-            return "3 days free, then \(displayPrice) per year. Cancel anytime."
+        if id == yearlyID {
+            return "7 days free, then \(displayPrice) per year. Cancel anytime."
         } else if id == lifetimeID {
             return "Pay once, own it for life!"
         } else {
-           return "Just \(displayPrice) per month. Cancel anytime."
+            return "Just \(displayPrice) per month. Cancel anytime."
         }
-       
-//        if id == currentYearlyID {
-//            return "7 days free then \(displayPrice)/year."
-//        } else if id == currentPremiumID {
-//            
-//        } else {
-//            return "\(displayPrice)/month. Cancel anytime."
-//        }
     }
+        
+//        var discountOff: String {
+//            if id == "SpeakLife1YR39" {
+//                return "50%"
+//            } else if id == "SpeakLife1YR49" {
+//                return "60%"
+//            } else {
+//                return ""
+//            }
+  //  }
 }

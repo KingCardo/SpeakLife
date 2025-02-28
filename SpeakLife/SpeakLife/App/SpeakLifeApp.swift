@@ -22,7 +22,6 @@ struct SpeakLifeApp: App {
     @StateObject var devotionalViewModel = DevotionalViewModel()
     @StateObject var streakViewModel = StreakViewModel()
     @StateObject var timerViewModel = TimerViewModel()
-    @StateObject var config = AppConfigViewModel()
     
     @State var isShowingLanding = true
     
@@ -31,7 +30,6 @@ struct SpeakLifeApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView(isShowingLanding: $isShowingLanding)
-                .environmentObject(config)
                 .environmentObject(appState)
                 .environmentObject(declarationStore)
                 .environmentObject(themeStore)

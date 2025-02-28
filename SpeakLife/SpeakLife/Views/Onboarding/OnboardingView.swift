@@ -117,17 +117,16 @@ struct RatingView: View {
 
 struct OnboardingView: View  {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
-    @EnvironmentObject var config: AppConfigViewModel
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var viewModel: DeclarationViewModel
     @EnvironmentObject var streakViewModel: StreakViewModel
     @Environment(\.colorScheme) var colorScheme
     
-    @State var selection: Tab = .improvement
+    @State var selection: Tab = .transformedLife
     @State var showLastChanceAlert = false
     @State var isDonePersonalization = false
     @StateObject var improvementViewModel = ImprovementViewModel()
-    @AppStorage("onboardingTab") var onboardingTab = Tab.improvement.rawValue
+    @AppStorage("onboardingTab") var onboardingTab = Tab.transformedLife.rawValue
     @State private var isTextVisible = false
     @State var valueProps: [Feature] = []
    
@@ -147,6 +146,16 @@ struct OnboardingView: View  {
         GeometryReader { geometry in
             TabView(selection: $selection) {
                 
+                IntroTipScene(
+                    title: "Welcome, Warrior of the Kingdom",
+                    bodyText: "Every battle—whether in your body, mind, or life—begins in the spiritual realm. The enemy seeks to steal, kill, and destroy but God has armed you with His Word to stand in victory.",
+                    subtext: "Speak His promises, wield your authority, and watch darkness flee. Your breakthrough begins with declaring truth.",
+                    ctaText: "Claim My Victory",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size
+                ) {
+                
 //                IntroTipScene(
 //                    title: "Weclome, We're Glad You Found Us",
 //                    bodyText: "Every physical ailment, lack, and disease is a manifestation of the spiritual darkness that seeks to hold us captive.",
@@ -156,9 +165,9 @@ struct OnboardingView: View  {
 //                    isScholarship: false,
 //                    size: geometry.size
 //                ) {
-//                    advance()
-//                }
-//                    .tag(Tab.transformedLife)
+                    advance()
+                }
+                    .tag(Tab.transformedLife)
                 
                 ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
                     withAnimation {
@@ -487,7 +496,7 @@ struct OnboardingView: View  {
 //                        dismissOnboarding()
 //                    }
                    
-                    if subscriptionStore.isPremium || !config.showOneTimeSubscription {
+                    if subscriptionStore.isPremium || !subscriptionStore.showOneTimeSubscription {
                         viewModel.choose(.general) { _ in }
                         dismissOnboarding()
                     } else {

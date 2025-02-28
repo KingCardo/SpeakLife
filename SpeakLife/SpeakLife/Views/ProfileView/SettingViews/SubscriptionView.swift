@@ -15,8 +15,8 @@ import SwiftUI
 
 // ViewModel to manage data for the view
 class OfferViewModel: ObservableObject {
-    @Published var originalPrice: String = "$29.99/year"
-    @Published var monthlyPrice: String = "$2.49/month"
+    @Published var originalPrice: String = "$49.99/year"
+    @Published var monthlyPrice: String = "$4.16/month"
     @Published var discountedPrice: String = "$19.99/year"
     @Published var discountedMonthlyPrice: String = "$1.67/month"
 }
@@ -53,7 +53,7 @@ struct OfferPageView: View {
                             .fill(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))
                     )
                 VStack {
-                    Text("33% off")
+                    Text("60% off")
                         .font(Font.custom("AppleSDGothicNeo-Bold", size: 48, relativeTo: .title))
                         .foregroundColor(.white)
                     
@@ -287,14 +287,9 @@ struct SubscriptionView: View {
                     FeatureView(currentSelection: $currentSelection)
                         .foregroundColor(.white)
                     Spacer()
-                        .frame(height: 8)
-                    
+                                            
                     VStack {
-//                        Button {
-//                            currentSelection = thirdSelection
-//                        } label: {
-//                            thirdSelectionBox()
-//                        }
+                       
                         
                         Button {
                             currentSelection = firstSelection
@@ -307,6 +302,11 @@ struct SubscriptionView: View {
                             currentSelection = secondSelection
                         } label: {
                             secondSelectionBox()
+                        }
+                        Button {
+                            currentSelection = thirdSelection
+                        } label: {
+                            thirdSelectionBox()
                         }
                         
  
@@ -574,10 +574,10 @@ struct SubscriptionView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Constants.traditionalGold)
-                        .frame(width: 90, height: 30)
+                        .frame(width: 100, height: 30)
                         .cornerRadius(15)
                     
-                    Text("3 DAYS FREE")
+                    Text("7-Day Free Trial")
                         .font(.caption2)
                         .foregroundColor(.black)
                 }
