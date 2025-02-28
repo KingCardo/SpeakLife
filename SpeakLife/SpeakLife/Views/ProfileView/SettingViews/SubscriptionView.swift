@@ -274,7 +274,7 @@ struct SubscriptionView: View {
                     
                  
                     Spacer()
-                        .frame(height: 16)
+                        .frame(height: 20)
                     VStack {
                         Text("Join 50,000+ SpeakLifers Today!")
                             .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .title))
