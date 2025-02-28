@@ -72,7 +72,7 @@ struct AppStorageCodable<T: Codable> {
     }
 }
 
-extension Date: RawRepresentable {
+extension Date: @retroactive RawRepresentable {
     private static let formatter = ISO8601DateFormatter()
     
     public var rawValue: String {

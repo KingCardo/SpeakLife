@@ -12,110 +12,6 @@ let onboardingBGImage = "desertSky"//moonlight2"
 
 let onboardingBGImage2 = "pinkHueMountain"
 
-
-import SwiftUI
-
-struct RatingView: View {
-    @EnvironmentObject var subscriptionStore: SubscriptionStore
-    let size: CGSize
-    let callBack: (() -> Void)
-    @State private var showStars = [false, false, false, false, false]
-
-    var body: some View {
-        GeometryReader { proxy in
-            VStack {
-                
-                Text("SpeakLife")
-                    .font(.system(size: 34, weight: .semibold, design: .rounded))
-                    .foregroundColor(.white)
-                    .shadow(color: Color.white.opacity(0.5), radius: 4, x: 0, y: 2)
-                    .padding(.top, 20)
-                
-                Spacer()
-                
-                ZStack {
-                    // Background circle layers
-                    Circle()
-                        .strokeBorder(Constants.DAMidBlue.opacity(0.3), lineWidth: 4)
-                        .frame(width: 260, height: 260)
-                    
-                    Circle()
-                        .strokeBorder(Constants.DAMidBlue.opacity(0.2), lineWidth: 4)
-                        .frame(width: 200, height: 200)
-                    
-                    Circle()
-                        .fill(Constants.DAMidBlue.opacity(0.3))
-                        .frame(width: 140, height: 140)
-                    
-                    // Five-star rating with staggered fade-in animations
-                    HStack(spacing: 10) {
-                        ForEach(0..<5) { index in
-                            Image(systemName: "star.fill")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 30 + CGFloat(index % 3) * 10, height: 30 + CGFloat(index % 3) * 10)
-                                .foregroundColor(Color.yellow)
-                                .shadow(color: Color.yellow.opacity(0.5), radius: 5, x: 0, y: 0)
-                                .opacity(showStars[index] ? 1 : 0)
-                                .scaleEffect(showStars[index] ? 1 : 0.8)
-                                .animation(Animation.spring(response: 0.5, dampingFraction: 0.6)
-                                    .delay(0.1 * Double(index)), value: showStars[index])
-                        }
-                    }
-                    .onAppear {
-                        // Trigger the fade-in animation for each star
-                        for i in 0..<5 {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1 * Double(i)) {
-                                showStars[i] = true
-                            }
-                        }
-                    }
-                }
-                .padding(.bottom, 40)
-                
-                Spacer()
-                
-                
-                Text("Help us make the world more like Jesus!")
-                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .body))
-                    .foregroundStyle(.white)
-                    .shadow(color: Color.black.opacity(0.3), radius: 4, x: 0, y: 2)
-                    .padding(10)
-                
-                // Subtext about app review
-                Text("Your app store review helps spread the Word and guide more people to Jesus!")
-                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
-                    .foregroundStyle(.white)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 40)
-                
-                Spacer()
-                
-                ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Rate us", action: callBack)
-                    .frame(width: size.width * 0.87 ,height: 50)
-                    .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
-                
-                    .scaleEffect(showStars[4] ? 1 : 0.95) // Button appears last
-                    .animation(Animation.spring(response: 0.4, dampingFraction: 0.5)
-                        .delay(0.5), value: showStars[4])
-                    .padding(.horizontal, 20)
-                
-                Spacer()
-                    .frame(width: 5, height: size.height * 0.07)
-            }
-            .frame(width: proxy.size.width, height: proxy.size.height)
-            .background(
-                Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
-                
-            )
-        }
-    }
-       
-}
-
 struct OnboardingView: View  {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
@@ -157,15 +53,6 @@ struct OnboardingView: View  {
                     size: geometry.size
                 ) {
                 
-//                IntroTipScene(
-//                    title: "Weclome, We're Glad You Found Us",
-//                    bodyText: "Every physical ailment, lack, and disease is a manifestation of the spiritual darkness that seeks to hold us captive.",
-//                    subtext: "Claim victory over your circumstances by declaring your divine identity—just as Jesus did—and watch the power of truth dispel the darkness at its root.",
-//                    ctaText: "Begin My Journey",
-//                    showTestimonials: false,
-//                    isScholarship: false,
-//                    size: geometry.size
-//                ) {
                     advance()
                 }
                     .tag(Tab.transformedLife)
@@ -293,9 +180,6 @@ struct OnboardingView: View  {
       
         .onAppear {
             setSelection()
-//            if viewModel.backgroundMusicEnabled {
-//                AudioPlayerService.shared.playSound(files: resources)
-//            }
             UIScrollView.appearance().isScrollEnabled = false
             setupAppearance()
             Analytics.logEvent(Event.freshInstall, parameters: nil)
@@ -596,40 +480,6 @@ struct OnboardingView: View  {
         viewModel.save(temp)
 
     }
-    
-//    func createValueProps(categories: [Improvements]) -> [Feature]  {
-//        guard categories.count > 1 else { return [] }
-//        var props: [Feature] = []
-//        for category in categories {
-//            switch category {
-//            case .oldTestament: props.append(Feature(name: "God's identity", subtitle: "Learn more about God's true identity and faithfulness", imageName: "book.fill"))
-//            case .gospel, .psalms: break
-//            case .gratitude:
-//                props.append(Feature(name: "Gratitude", subtitle: "Unlock more joy in your life by practicing daily gratitude through God's word.", imageName: "hands.sparkles.fill"))
-//            case .stress:
-//                props.append(Feature(name: "Peace & Joy", subtitle: "Find peace and calm with affirmations that release stress and anchor you in God's promises.", imageName: "wind"))
-//            case .grace:
-//                props.append(Feature(name: "God's Grace", subtitle: "Embrace God's unending grace and live free from guilt.", imageName: "sparkles"))
-//            case .love:
-//                props.append(Feature(name: "Jesus Love", subtitle: "Feel the depth of Jesus' love and let it transform your heart every day.", imageName: "bird.fill"))
-//            case .health:
-//                props.append(Feature(name: "Health", subtitle: "Speak God's healing and vitality into your life with affirmations for health.", imageName: "heart.fill"))
-//            case .destiny:
-//                props.append(Feature(name: "Destiny", subtitle: "Align with God's purpose for you and step boldly into your destiny.", imageName: "star.fill"))
-//            case .safety:
-//                props.append(Feature(name: "God's Protection", subtitle: "Rest in the assurance of God's protection with daily reminders of His care.", imageName: "shield.fill"))
-//            case .loneliness:
-//                props.append(Feature(name: "Feeling Lonely", subtitle: "Combat feeling lonely with promises that remind you of God's constant presence.", imageName: "person.2.fill"))
-//            case .wealth:
-//                props.append(Feature(name: "Wealth", subtitle: "Invite God's abundance into your life with affirmations rooted in His promises.", imageName: "creditcard.fill"))
-//            case .peace:
-//                props.append(Feature(name: "Peace", subtitle: "Experience God's peace that calms your mind and guards your heart.", imageName: "leaf.fill"))
-//            }
-//        }
-//       
-//        return props
-//        
-//    }
     
     
     private func askNotificationPermission()  {

@@ -14,6 +14,7 @@
 		452D17DB2D703E9E000AB1D1 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 452D17DA2D703E9E000AB1D1 /* FirebaseRemoteConfig */; };
 		452D17DD2D703E9E000AB1D1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 452D17DC2D703E9E000AB1D1 /* FirebaseStorage */; };
 		452D17DF2D703F3A000AB1D1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 452D17DE2D703F3A000AB1D1 /* FirebaseFirestore */; };
+		452D17E22D725F87000AB1D1 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452D17E12D725F84000AB1D1 /* RatingView.swift */; };
 		453172B42B2D274800388AD4 /* BenefitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453172B32B2D274800388AD4 /* BenefitScene.swift */; };
 		453478F12B9D29CC0012C2C0 /* declarationsv4.json in Resources */ = {isa = PBXBuildFile; fileRef = 453478F02B9D29CC0012C2C0 /* declarationsv4.json */; };
 		453A831E2C9BF18500398ECE /* DeclarationMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A831D2C9BF18500398ECE /* DeclarationMenuButton.swift */; };
@@ -191,6 +192,7 @@
 		2F740F6829D4017400E89E7F /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		450720DA2BAFFB4A0029EE2B /* TimerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModelTests.swift; sourceTree = "<group>"; };
 		4512A37A2D3900DF0099A83A /* AudioPlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerDetailView.swift; sourceTree = "<group>"; };
+		452D17E12D725F84000AB1D1 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		453172B32B2D274800388AD4 /* BenefitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitScene.swift; sourceTree = "<group>"; };
 		453478F02B9D29CC0012C2C0 /* declarationsv4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv4.json; sourceTree = "<group>"; };
 		453A831D2C9BF18500398ECE /* DeclarationMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationMenuButton.swift; sourceTree = "<group>"; };
@@ -798,6 +800,7 @@
 				45CF271B2B4E530300BC8968 /* ImprovementScene.swift */,
 				4568BE8E2B60EB1300678565 /* LoadingView.swift */,
 				453C35842C5092A800817FCC /* HelpUsGrowView.swift */,
+				452D17E12D725F84000AB1D1 /* RatingView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -1060,6 +1063,7 @@
 				7AA870E028DACCB700134ADB /* WidgetScene.swift in Sources */,
 				458BBE702D1F8A3D0035985F /* AudioFiles.swift in Sources */,
 				7AA8708128DACC8300134ADB /* NotificationProcessor.swift in Sources */,
+				452D17E22D725F87000AB1D1 /* RatingView.swift in Sources */,
 				7AA870D028DACCB700134ADB /* ReminderView.swift in Sources */,
 				45CF271A2B4E52EF00BC8968 /* HabitScene.swift in Sources */,
 				4571AA412B88A2A800067FD5 /* RemoteAPIClient.swift in Sources */,
@@ -1340,7 +1344,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 688;
+				CURRENT_PROJECT_VERSION = 690;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1381,7 +1385,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 688;
+				CURRENT_PROJECT_VERSION = 690;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;

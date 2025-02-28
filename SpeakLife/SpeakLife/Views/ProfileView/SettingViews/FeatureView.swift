@@ -114,10 +114,10 @@ struct FeatureView: View {
 //        Feature(subtitle: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future."),
         
        
-        Feature(subtitle: "10,000+ Affirmations to Renew Your Mind"),
-        Feature(subtitle: "Jesus Devotional's to start each day"),
+        Feature(subtitle: "10,000+ Affirmations to Activate God's Promises"),
+        Feature(subtitle: "Jesus Devotional's to learn how much your Loved & Forgiven"),
         Feature(subtitle: "Powerful Prayers That Move Mountains"),
-        Feature(subtitle: "Daily Scripture Reminders to Uplift Your Day"),
+        Feature(subtitle: "Daily Scripture Reminders to Grow in Wisdom"),
         Feature(subtitle: "Sleep Peacefully with Bible Bedtime Stories"),
         Feature(subtitle: "Customize Your Experience with 30+ Themes")
         ]

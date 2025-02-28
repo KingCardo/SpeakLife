@@ -66,50 +66,12 @@ struct HomeView: View {
     @ViewBuilder
     var homeView: some View {
             TabView {
-                DeclarationView()
-                    .id(appState.rootViewId)
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                            .renderingMode(.original)
-                        
-                    }
+                declarationView
+                audioView
+                devotionalView
+                createYourOwnView
+                profileView
                 
-                AudioDeclarationView()
-                    .tabItem {
-                        if #available(iOS 17, *) {
-                            Image(systemName: "waveform")
-                                .renderingMode(.original)
-                        } else {
-                            Image(systemName: "waveform")
-                                .renderingMode(.original)
-                        }
-                    }
-                    .edgesIgnoringSafeArea(.all)
-                
-                DevotionalView(viewModel:devotionalViewModel)
-                    .tabItem {
-                        if #available(iOS 17, *) {
-                            Image(systemName: "book.pages.fill")
-                                .renderingMode(.original)
-                        } else {
-                            Image(systemName: "book.fill")
-                                .renderingMode(.original)
-                        }
-                        // Text("Devotionals")
-                    }
-                
-                CreateYourOwnView()
-                    .tabItem {
-                        Image(systemName: "plus.bubble.fill")
-                            .renderingMode(.original)
-                    }
-                
-                
-                ProfileView()
-                    .tabItem {
-                        Image(systemName: "line.3.horizontal")
-                            .renderingMode(.original)
-                    }
             }
             .hideTabBar(if: appState.showScreenshotLabel)
             .sheet(isPresented: $isPresented) {
@@ -128,6 +90,59 @@ struct HomeView: View {
                 UIScrollView.appearance().isScrollEnabled = true
             }
             .environment(\.colorScheme, .dark)
+    }
+    
+    var declarationView: some View {
+        DeclarationView()
+            .id(appState.rootViewId)
+            .tabItem {
+                Image(systemName: "house.fill")
+                    .renderingMode(.original)
+                
+            }
+    }
+    
+    var audioView: some View {
+        AudioDeclarationView()
+            .tabItem {
+                if #available(iOS 17, *) {
+                    Image(systemName: "waveform")
+                        .renderingMode(.original)
+                } else {
+                    Image(systemName: "waveform")
+                        .renderingMode(.original)
+                }
+            }
+            .edgesIgnoringSafeArea(.all)
+    }
+    
+    var devotionalView: some View {
+        DevotionalView(viewModel:devotionalViewModel)
+            .tabItem {
+                if #available(iOS 17, *) {
+                    Image(systemName: "book.pages.fill")
+                        .renderingMode(.original)
+                } else {
+                    Image(systemName: "book.fill")
+                        .renderingMode(.original)
+                }
+            }
+    }
+    
+    var createYourOwnView: some View {
+        CreateYourOwnView()
+            .tabItem {
+                Image(systemName: "plus.bubble.fill")
+                    .renderingMode(.original)
+            }
+    }
+    
+    var profileView: some View {
+        ProfileView()
+            .tabItem {
+                Image(systemName: "line.3.horizontal")
+                    .renderingMode(.original)
+            }
     }
     
     func presentGiftView() {
