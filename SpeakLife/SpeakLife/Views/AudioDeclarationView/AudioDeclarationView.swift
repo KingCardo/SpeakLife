@@ -81,7 +81,7 @@ struct AudioDeclarationView: View {
     @State private var audioURL: URL? = nil
     @State private var errorMessage: ErrorWrapper? = nil
     @State private var isPresentingPremiumView = false
-    let filters: [Filter] = [.declarations, .meditation, .gospel, .bedtimeStories, .devotional]
+    let filters: [Filter] = [.declarations, .devotional, .meditation, .gospel, .bedtimeStories]
     @State private var selectedFilter: Filter = .declarations
     @State var presentDevotionalSubscriptionView = false
     

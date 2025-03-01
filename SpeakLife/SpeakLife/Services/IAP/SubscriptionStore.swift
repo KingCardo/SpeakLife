@@ -388,7 +388,8 @@ extension Product {
         } else if id == currentYearlyID {
            return "7 days free then \(displayPrice)/yr."
         } else if id == yearlyID {
-            return getMonthlyAmount(price: price)
+            let monthly = getMonthlyAmount(price: price)
+            return "\(monthly)mo."
         } else {
            return "\(displayPrice)/mo."
         }
@@ -408,14 +409,14 @@ extension Product {
         // Convert to Double only after rounding down
         let price = (truncatedPrice as Double)
         let roundedPrice = String(format: "%.2f", price)
-            return "$\(roundedPrice)/mo."
+            return "$\(roundedPrice)/"
     }
     
     
     var costDescription: String {
         if id == yearlyID {
             let monthly = getMonthlyAmount(price: price)
-            return "Totally free for 7 days, then \(monthly) billed annually at \(displayPrice)/year. Cancel anytime."
+            return "Totally free for 7 days, then \(monthly)month, billed annually at \(displayPrice)/year. Cancel anytime."
         } else if id == lifetimeID {
             return "Pay once, own it for life!"
         } else {

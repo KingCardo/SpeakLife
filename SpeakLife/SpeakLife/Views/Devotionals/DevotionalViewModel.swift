@@ -9,7 +9,7 @@ import SwiftUI
 
 final class DevotionalViewModel: ObservableObject {
     
-    @AppStorage ("devotionalDictionary") var devotionalDictionaryData = Data()
+    @AppStorage("devotionalDictionary") var devotionalDictionaryData = Data()
     
     @Published var devotionalText = ""
     @Published var devotionalDate = ""

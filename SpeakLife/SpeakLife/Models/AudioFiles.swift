@@ -436,11 +436,19 @@ let meditationFiles: [AudioDeclaration] = [
 // Devotional files
 let devotionalFiles: [AudioDeclaration] = [
     AudioDeclaration(
+           id: "john14-6.mp3",
+           title: "The Only Way to Life",
+           subtitle: "Walking in the Truth and Light of Jesus",
+           duration: "4m",
+           imageUrl: "devotional",
+           isPremium: false
+       ),
+    AudioDeclaration(
            id: "corinthians135.mp3",
            title: "Love That Keeps No Record of Wrongs",
            subtitle: "Walking in the Freedom of Forgiveness",
            duration: "4m",
            imageUrl: "devotional",
-           isPremium: false
+           isPremium: true
        ),
     ]

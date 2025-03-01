@@ -75,7 +75,7 @@ struct RatingView: View {
                     .padding(10)
                 
                 // Subtext about app review
-                Text("Your app store review helps spread the Word and guide more people to Jesus!")
+                Text("Your app store review helps spread the word and grow the SpeakLife community!")
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
                     .foregroundStyle(.white)
                     .multilineTextAlignment(.center)
