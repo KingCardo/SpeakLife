@@ -52,6 +52,7 @@ final class SubscriptionStore: ObservableObject {
     
     @Published var showDevotionalSubscription = false
     @Published var showOneTimeSubscription = false
+    @Published var showSubscription = false
     
     @Published var yearlySubscription = ""
     @Published var discountSubscription = ""
@@ -112,9 +113,8 @@ final class SubscriptionStore: ObservableObject {
         showOneTimeSubscription = remoteConfig["showOneTimeSubscription"].boolValue
         yearlySubscription = remoteConfig["currentPremiumID"].stringValue
         discountSubscription = remoteConfig["discountID"].stringValue
+        showSubscription = remoteConfig["showSubscription"].boolValue
         yearlyID = yearlySubscription
-        print(discountSubscription, "RWRW")
-        print(yearlySubscription, "RWRW")
         completion()
 
     }

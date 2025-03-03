@@ -86,11 +86,20 @@ struct CreateYourOwnView: View {
                     }
                    
                     .navigationBarTitle("Affirmations")
-                }
-                VStack {
-                    Spacer()
-                    addAffirmationsButton
-                        .padding()
+                    .toolbar {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                Button(action: {
+                                    showAffirmationAlert()
+                                }) {
+                                        Image(systemName: "plus")
+                                            .font(.system(size: 22, weight: .bold))
+                                            .frame(width: 30, height: 30)
+                                            .foregroundColor(Constants.DAMidBlue)
+
+                                }
+                            }
+                        }
+    
                 }
         }
     }

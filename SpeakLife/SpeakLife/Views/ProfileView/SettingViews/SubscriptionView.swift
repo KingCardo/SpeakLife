@@ -17,8 +17,8 @@ import SwiftUI
 class OfferViewModel: ObservableObject {
     @Published var originalPrice: String = "$49.99/year"
     @Published var monthlyPrice: String = "$4.16/month"
-    @Published var discountedPrice: String = "$19.99/year"
-    @Published var discountedMonthlyPrice: String = "$1.67/month"
+    @Published var discountedPrice: String = "$29.99/year"
+    @Published var discountedMonthlyPrice: String = "$2.49/month"
 }
 
 struct OfferPageView: View {
@@ -38,13 +38,13 @@ struct OfferPageView: View {
                     Image("gift")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 200, height: 200)
+                        .frame(width: 300, height: 300)
                         .padding(.top, 30)
                         .shadow(color: Color.purple.opacity(0.5), radius: 20, x: 10, y: 10)
                         .cornerRadius(6)
                 
                 Text("One time offer!")
-                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .caption))
+                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .caption))
                     .foregroundColor(.white)
                     .padding(.horizontal, 20)
                     .padding(.vertical, 8)
@@ -53,8 +53,8 @@ struct OfferPageView: View {
                             .fill(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))
                     )
                 VStack {
-                    Text("60% off")
-                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 48, relativeTo: .title))
+                    Text("40% off")
+                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 52, relativeTo: .title))
                         .foregroundColor(.white)
                     
                     Text("SpeakLife Premium")
@@ -114,7 +114,7 @@ struct OfferPageView: View {
                         .font(.system(size: 18, weight: .bold))
                         .padding()
                         .frame(maxWidth: .infinity, maxHeight: 50)
-                        .background(LinearGradient(gradient: Gradient(colors: [.indigo, .yellow]), startPoint: .leading, endPoint: .trailing))
+                        .background(LinearGradient(gradient: Gradient(colors: [.purple]), startPoint: .leading, endPoint: .trailing))
                         .foregroundColor(.white)
                         .cornerRadius(30)
                 }
@@ -124,7 +124,7 @@ struct OfferPageView: View {
                     callBack()
                 }) {
                     Text("Maybe later")
-                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 18, relativeTo: .body))
+                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 14, relativeTo: .body))
                         .padding()
                         .foregroundColor(.white)
                 }
@@ -132,7 +132,7 @@ struct OfferPageView: View {
                 Spacer()
             }
             .padding()
-            .background(Gradients().midBlue)//Constants.DAMidBlue.opacity(0.8))
+            .background(.black)//Gradients().purple)//Constants.DAMidBlue.opacity(0.8))
             .alert(isPresented: $isShowingError, content: {
                 Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
             })

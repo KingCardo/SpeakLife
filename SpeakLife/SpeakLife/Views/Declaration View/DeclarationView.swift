@@ -121,8 +121,10 @@ struct DeclarationView: View {
                                             Analytics.logEvent(Event.tryPremiumAbandoned, parameters: nil)
                                             timerViewModel.loadRemainingTime()
                                         } content: {
-                                            PremiumView()
-                                                .frame(height: UIScreen.main.bounds.height * 0.9)
+                                            //ScrollView {
+                                                PremiumView()
+                                                .frame(height: UIScreen.main.bounds.height * 0.95)
+                                           // }
                     
                                                 .onDisappear {
                                                     if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {

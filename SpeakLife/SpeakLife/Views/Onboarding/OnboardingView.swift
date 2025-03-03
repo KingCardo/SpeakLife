@@ -419,14 +419,22 @@ struct OnboardingView: View  {
                     Analytics.logEvent("LiveVictoriousScreenDone", parameters: nil)
                 case .unshakeableFaith:
                     impactMed.impactOccurred()
-                    selection = .subscription
-                    onboardingTab = selection.rawValue
+                    if subscriptionStore.showSubscription {
+                        selection = .subscription
+                        onboardingTab = selection.rawValue
+                    } else if subscriptionStore.showOneTimeSubscription {
+                        selection = .discount
+                        onboardingTab = selection.rawValue
+                    } else {
+                        dismissOnboarding()
+                    }
                     Analytics.logEvent("UnshakeableFaithScreenDone", parameters: nil)
                 case .confidence:
                     impactMed.impactOccurred()
                     selection = .transformedLife
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("ConfidenceScreenDone", parameters: nil)
+                   
                 case .review:
                     impactMed.impactOccurred()
                     selection = .notification
