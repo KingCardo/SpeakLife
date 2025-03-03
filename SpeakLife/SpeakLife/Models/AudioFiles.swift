@@ -439,7 +439,7 @@ let devotionalFiles: [AudioDeclaration] = [
            id: "john14-6.mp3",
            title: "The Only Way to Life",
            subtitle: "Walking in the Truth and Light of Jesus",
-           duration: "4m",
+           duration: "7m",
            imageUrl: "devotional",
            isPremium: false
        ),

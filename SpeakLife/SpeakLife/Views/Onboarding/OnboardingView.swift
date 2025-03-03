@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseAnalytics
 import StoreKit
-let onboardingBGImage = "desertSky"//moonlight2"
+let onboardingBGImage = "moonlight2"
 
 let onboardingBGImage2 = "pinkHueMountain"
 
@@ -45,8 +45,8 @@ struct OnboardingView: View  {
                 
                 IntroTipScene(
                     title: "Welcome, Warrior of the Kingdom",
-                    bodyText: "Every battle—whether in your body, mind, or life—begins in the spiritual realm. The enemy seeks to steal, kill, and destroy but God has armed you with His Word to stand in victory.",
-                    subtext: "Speak His promises, wield your authority, and watch darkness flee. Your breakthrough begins with declaring truth.",
+                    bodyText: "Faith comes by hearing, and what you speak shapes your reality. SpeakLife helps you declare God’s Word over your life, transforming fear into faith, doubt into confidence, and obstacles into victories.",
+                    subtext: "With powerful Bible-based affirmations, spoken in alignment with Scripture, you’ll build unshakable faith and experience breakthroughs in health, finances, peace, and purpose. Speak to your mountains—watch them move!",
                     ctaText: "Claim My Victory",
                     showTestimonials: false,
                     isScholarship: false,
