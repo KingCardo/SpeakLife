@@ -245,7 +245,7 @@ struct AffirmationAlertView: View {
                 }
             }
             .padding()
-            .frame(height: UIScreen.main.bounds.height * 0.8)
+            .frame(height: UIScreen.main.bounds.height * 0.5)
             .cornerRadius(20)
             .shadow(radius: 10)
             .padding(20)

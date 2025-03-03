@@ -166,7 +166,7 @@ struct AudioDeclarationView: View {
                     if audioViewModel.isBarVisible {
                         PersistentAudioBar(viewModel: audioViewModel)
                             .onDisappear {
-                                if declarationStore.backgroundMusicEnabled {
+                                if declarationStore.backgroundMusicEnabled, !audioViewModel.isPlaying {
                                     AudioPlayerService.shared.playMusic()
                                 }
                             }
