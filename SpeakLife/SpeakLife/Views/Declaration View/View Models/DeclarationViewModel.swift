@@ -191,13 +191,11 @@ final class DeclarationViewModel: ObservableObject {
             return
         }
         
-        
-        declarations[indexOf]
-            .isFavorite?
-            .toggle()
+        declarations[indexOf].isFavorite = !(declarations[indexOf].isFavorite ?? false)
         
         guard let index = allDeclarations.firstIndex(where: { $0.id == declaration.id }) else { return }
         allDeclarations[index] = declarations[indexOf]
+        print(allDeclarations[index], "RWRW")
         
         
         service.save(declarations: allDeclarations) { [weak self] success in
