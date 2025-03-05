@@ -44,9 +44,9 @@ struct OnboardingView: View  {
             TabView(selection: $selection) {
                 
                 IntroTipScene(
-                    title: "Welcome, Warrior of the Kingdom",
-                    bodyText: "Faith comes by hearing, and what you speak shapes your reality.",
-                    subtext: "SpeakLife helps you declare God’s Word over your life, transforming fear into faith, doubt into confidence, and obstacles into victories!",
+                    title: "God’s Promises Are for You—Claim Them Today!",
+                    bodyText: "You are a child of God, and His promises belong to you.",
+                    subtext: "SpeakLife helps you walk in His truth every day by declaring what He says about your life. If you believe His Word never fails, you're in the right place!",
                     ctaText: "Activate My Faith",
                     showTestimonials: false,
                     isScholarship: false,
@@ -57,17 +57,25 @@ struct OnboardingView: View  {
                 }
                     .tag(Tab.transformedLife)
                 
-                ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
-                    withAnimation {
+                IntroTipScene(
+                    title: "God’s Word in Your Mouth is Powerful!",
+                    bodyText: "The Bible says, ‘Life and death are in the power of the tongue’ (Proverbs 18:21). What you speak shapes your life.",
+                    subtext: "With SpeakLife, you’ll declare faith-filled affirmations over your future, shifting your reality to match God’s promises.",
+                    ctaText: "Renew My Mind",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size)
+                {
                         advance()
-                    }
                 }
-                .tag(Tab.improvement)
+                    .tag(Tab.mindset)
+                
+               
                 
                 IntroTipScene(
-                    title: "Life can be overwhelming",
-                    bodyText: "but God has already provided promises of peace, protection, and purpose. With SpeakLife, you can",
-                    subtext: "\n- Hear God’s promises every day\n- Pray powerful, effective prayers\n- Find peace in moments of stress.",
+                    title: "See the Shift—Speak, Believe, Receive!",
+                    bodyText: "Imagine waking up filled with peace, confidence, and purpose—knowing you’re walking in God’s best for you.",
+                    subtext: "SpeakLife helps thousands of believers renew their minds and experience breakthrough. The more you speak His Word, the more you see His power.",
                     ctaText: "Discover My Daily Promises",
                     showTestimonials: false,
                     isScholarship: false,
@@ -78,10 +86,10 @@ struct OnboardingView: View  {
                     .tag(Tab.likeJesus)
                 
                 IntroTipScene(
-                    title: "Truth sets you free",
-                    bodyText: "The enemy’s only weapon is deception. He plants false thoughts, making them seem like your own.",
-                    subtext: "\n- That’s why renewing your mind daily is essential—because the truth sets you free.",
-                    ctaText: "Renew My Mind",
+                    title: "Your Breakthrough Starts Now!",
+                    bodyText: "God’s promises are waiting for you to declare them! Every day is a new chance to walk in victory.",
+                    subtext: "Don’t let another moment pass—start speaking life now and step into God’s best for you!",
+                    ctaText: "Start Declaring Now!",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
@@ -90,10 +98,22 @@ struct OnboardingView: View  {
                 }
                     .tag(Tab.liveVictorious)
                 
+                ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
+                    withAnimation {
+                        advance()
+                    }
+                }
+                .tag(Tab.improvement)
+                
                 FeatureShowcaseScreen(size: geometry.size) {
                     advance()
                 }
                 .tag(Tab.useCase)
+                
+                TestimonialScreen(size: geometry.size) {
+                    advance()
+                }
+                .tag(Tab.unshakeableFaith)
                 
                 RatingView(size: geometry.size) {
                     withAnimation {
@@ -103,15 +123,12 @@ struct OnboardingView: View  {
                 
                 NotificationOnboarding(size: geometry.size) {
                     withAnimation {
-                        advance()
+                        askNotificationPermission()
                     }
                 }
                 .tag(Tab.notification)
                 
-                TestimonialScreen(size: geometry.size) {
-                    advance()
-                }
-                .tag(Tab.unshakeableFaith)
+               
 
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
@@ -236,7 +253,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("HabitScreenDone", parameters: nil)
                 case .improvement:
                     impactMed.impactOccurred()
-                    selection = .likeJesus//.intro
+                    selection = .useCase//.intro
                     onboardingTab = selection.rawValue
                     
                     decodeCategories(improvementViewModel.selectedExperiences)
@@ -266,7 +283,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("IntroTipScreenDone", parameters: nil)
                 case .mindset:
                     impactMed.impactOccurred()
-                    selection = .notification
+                    selection = .likeJesus
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("IntroMindsetScreenDone", parameters: nil)
                 case .benefits:
@@ -275,10 +292,18 @@ struct OnboardingView: View  {
                     Analytics.logEvent("BenefitScreenDone", parameters: nil)
                 case .notification:
                     impactMed.impactOccurred()
-                    askNotificationPermission()
+                    if subscriptionStore.showSubscription {
+                        selection = .subscription
+                        onboardingTab = selection.rawValue
+                    } else if subscriptionStore.showOneTimeSubscription {
+                        selection = .discount
+                        onboardingTab = selection.rawValue
+                    } else {
+                        dismissOnboarding()
+                    }
                     Analytics.logEvent("NotificationScreenDone", parameters: nil)
                 case .useCase:
-                    selection = .review
+                    selection = .unshakeableFaith
                     onboardingTab = selection.rawValue
                     
                 case .helpGrow:
@@ -313,7 +338,7 @@ struct OnboardingView: View  {
                     dismissOnboarding()
                 case .transformedLife:
                     impactMed.impactOccurred()
-                    selection = .improvement
+                    selection = .mindset
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("TransformedLifeScreenDone", parameters: nil)
                 case .likeJesus:
@@ -323,20 +348,12 @@ struct OnboardingView: View  {
                     Analytics.logEvent("LikeJesusScreenDone", parameters: nil)
                 case .liveVictorious:
                     impactMed.impactOccurred()
-                    selection = .useCase
+                    selection = .improvement
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("LiveVictoriousScreenDone", parameters: nil)
                 case .unshakeableFaith:
                     impactMed.impactOccurred()
-                    if subscriptionStore.showSubscription {
-                        selection = .subscription
-                        onboardingTab = selection.rawValue
-                    } else if subscriptionStore.showOneTimeSubscription {
-                        selection = .discount
-                        onboardingTab = selection.rawValue
-                    } else {
-                        dismissOnboarding()
-                    }
+                    selection = .review
                     Analytics.logEvent("UnshakeableFaithScreenDone", parameters: nil)
                 case .confidence:
                     impactMed.impactOccurred()
@@ -423,35 +440,12 @@ struct OnboardingView: View  {
                             appState.notificationEnabled = false
                             // return
                         }
-                        
                         withAnimation {
-                           // advance()
-                            if appState.onBoardingTest {
-                                    selection = .unshakeableFaith
-                                    onboardingTab = selection.rawValue
-                            } else {
-                                selection = .widgets
-                            }
+                            advance()
                         }
                     }
                 }
                 return
-            }
-            
-            
-            withAnimation {
-                if appState.onBoardingTest {
-                        selection = .unshakeableFaith
-                    onboardingTab = selection.rawValue
-                } else {
-                    selection = .widgets
-                }
-            }
-            
-            if settings.alertSetting == .enabled {
-                // Schedule an alert-only notification.
-            } else {
-                // Schedule a notification with a badge and sound.
             }
         }
     }
