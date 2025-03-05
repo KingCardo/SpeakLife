@@ -142,7 +142,7 @@ struct IntroTipScene: View {
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
                     .brightness(0.05)
-                Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.2 : 0.2)
+                Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.4 : 0.2)
                     .edgesIgnoringSafeArea(.all)
             }
         )

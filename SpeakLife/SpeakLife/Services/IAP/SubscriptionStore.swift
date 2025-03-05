@@ -25,6 +25,7 @@ public enum StoreError: Error {
     case failedVerification
 }
 var yearlyID = ""
+var monthlyID = ""
 let currentYearlyID = "SpeakLife1YR19"
 let currentMonthlyID = "SpeakLife1MO4"
 let currentMonthlyPremiumID = "SpeakLife1MO9"
@@ -55,6 +56,7 @@ final class SubscriptionStore: ObservableObject {
     @Published var showSubscription = false
     
     @Published var yearlySubscription = ""
+    @Published var monthlySubscription = ""
     @Published var discountSubscription = ""
     
     @Published var onboardingBGImage = "onboardingImage"
@@ -114,10 +116,12 @@ final class SubscriptionStore: ObservableObject {
         showDevotionalSubscription = remoteConfig["showDevotionalSubscription"].boolValue
         showOneTimeSubscription = remoteConfig["showOneTimeSubscription"].boolValue
         yearlySubscription = remoteConfig["currentPremiumID"].stringValue
+        monthlySubscription = remoteConfig["currentPremiumMonthly"].stringValue
         discountSubscription = remoteConfig["discountID"].stringValue
         showSubscription = remoteConfig["showSubscription"].boolValue
         onboardingBGImage = remoteConfig["onboardingImage"].stringValue
         yearlyID = yearlySubscription
+        monthlyID = monthlySubscription
         completion()
 
     }
@@ -178,21 +182,21 @@ final class SubscriptionStore: ObservableObject {
                     newSubscriptions.append(product)
                     if product.id == discountSubscription {
                         currentOfferedYearly = product
-                        print("Yearly set RWRW")
+                        print("discount set RWRW")
                     }
-                    if product.id == currentMonthlyID {
-                        currentOfferedMonthly = product
+                    if product.id == monthlySubscription {
+                        currentOfferedPremiumMonthly = product
                         print("Monthly set RWRW")
                     }
                     
-                    if product.id == currentMonthlyPremiumID {
-                        currentOfferedPremiumMonthly = product
-                        print("currentMonthlyPremiumID set RWRW")
-                    }
+//                    if product.id == monthlySubscription {
+//                        currentOfferedPremiumMonthly = product
+//                        print("currentMonthlyPremiumID set RWRW")
+//                    }
                     
                     if product.id == yearlySubscription {
                         currentOfferedPremium = product
-                        print("currentPremiumID set RWRW")
+                        print("yearly set RWRW")
                     }
                 case .nonConsumable:
                     if product.id == lifetimeID {
@@ -366,7 +370,7 @@ extension Product {
             return "Pro - Save 50%"
         } else if id == yearlyID {
                 return "Yearly"
-        } else if id == currentMonthlyPremiumID {
+        } else if id == monthlyID {
             return "Monthly"
         } else {
            return "Pro Monthly"
