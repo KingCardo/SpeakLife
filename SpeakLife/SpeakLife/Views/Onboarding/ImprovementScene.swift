@@ -23,7 +23,7 @@ struct ImprovementScene: View {
     private func improvementView(size: CGSize) -> some View {
         GeometryReader { proxy in // ✅ Ensures full height
             VStack(spacing: 0) { // ✅ No extra spacing
-                ScrollView(showsIndicators: false) {
+                ScrollView(showsIndicators: true) {
                     VStack(spacing: 20) {
                         Spacer().frame(height: 30)
 

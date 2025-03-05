@@ -14,15 +14,7 @@ struct TipSL: Identifiable, Equatable {
 }
 
 let onboardingTips = [
-   // Tip(title: "Speaking Bible affirmations ", text: "Every day nurtures a personal and intimate relationship with Jesus with a devotional experience."),
-    //Tip(title: "", text: "Daily devotionals reinforce our connection with Jesus, enhancing our faith through consistent reflection on His love and grace."),
-    TipSL(title: "", text: "Through our devotionals, we constantly tap into Jesus' grace, equipping us with a formidable strength that turns every challenge into a testimony of His victorious power in our lives.")
-    
-    /*Tip(title:"Rewiring Thought Patterns: ", tip: "Meditating on Jesus and right thoughts is ONLY way to replace bad thoughts."),
-     Tip(title: "Cultivating Optimism: ", tip:"Regularly speaking Bible affirmations transforms your mindset, which transform your life."),
-     Tip(title: "Enhanced Decision-Making: ",tip:"By reprogramming your thoughts with biblical values through daily affirmations, you step into God's grace and take action to your destiny."),
-     Tip(title: "Inner Peace: ",tip: "Biblical affirmations calm the mind, replacing anxiety and fear with tranquility and Jesus's love for you."),
-     Tip(title: "Speaking Bible affirmations ", tip: "every day nurtures a personal and intimate relationship with Jesus, so you can experience a profound sense of guidance, comfort and trust in your spiritual journey.")*/]
+    TipSL(title: "", text: "Through our devotionals, we constantly tap into Jesus' grace, equipping us with a formidable strength that turns every challenge into a testimony of His victorious power in our lives.")]
 
 struct BenefitScene: View {
     

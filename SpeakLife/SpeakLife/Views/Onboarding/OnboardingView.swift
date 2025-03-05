@@ -112,54 +112,6 @@ struct OnboardingView: View  {
                     advance()
                 }
                 .tag(Tab.unshakeableFaith)
-//                IntroTipScene(
-//                    title: "Begin Your Day with Devotionals",
-//                    bodyText: "Grow spiritually every day by starting with devotionals that inspire and draw you closer to God.",
-//                    subtext: "Each day is an opportunity to strengthen your faith and walk with Jesus through practical and encouraging devotionals.",
-//                    ctaText: "Receive Daily Wisdom",
-//                    showTestimonials: false,
-//                    isScholarship: false,
-//                    size: geometry.size)
-//                {
-//                        advance()
-//                }
-//                    .tag(Tab.liveVictorious)
-//                IntroTipScene(title: "Prayers that Move Mountains",
-//                              bodyText: "Speak Life Over Your Day with Powerful audio declarations to activate God’s promises and shift your mindset.",
-//                              subtext: "Your words carry power. Listen to and declare faith-filled promises that replace doubt with truth, fear with peace, and lack with abundance.",
-//                              ctaText: "Activate God’s Promises",
-//                              showTestimonials: false,
-//                              isScholarship: false, size: geometry.size)
-//                {
-//                        advance()
-//                }
-//                    .tag(Tab.unshakeableFaith)
-                
-//                IntroTipScene(title: "End Your Day with Peaceful Rest in God",
-//                              bodyText: "Rest Peacefully in God’s Word, relax and unwind with calming audio Bible bedtime stories designed to bring peace to your nights.",
-//                              subtext: "Let go of stress and fall asleep in God’s presence. Listen to peaceful Bible stories that soothe your mind, restore your heart, and bring deep, restful sleep.",
-//                              ctaText: "End Your Day with Peace",
-//                              showTestimonials: false,
-//                              isScholarship: false, size: geometry.size)
-//                {
-//                        advance()
-//                }
-//                    .tag(Tab.confidence)
-                
-               
-            
-                
-               
-//                
-//                RatingView(size: geometry.size) {
-//                    withAnimation {
-//                        advance()
-//                    }
-//                }.tag(Tab.review)
-//            
-                
-               
-                
 
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
@@ -233,49 +185,6 @@ struct OnboardingView: View  {
         }
     }
    
-    private func scholarshipScene(size: CGSize, advance: @escaping () -> Void) -> some View  {
-        
-        ZStack {
-            VStack {
-                Spacer().frame(height: 15)
-                IntroTipScene(title: "Scholarships Available!",
-                              bodyText: "",
-                              subtext: "SpeakLife is available to everyone regardless of financial circumstance. Pay what feels right or apply for a full scholarship. Each yearly subscription includes a one-week free trial, giving you the chance to fully experience SpeakLife and receive delight and victory.",
-                              ctaText: "Continue",
-                              showTestimonials: false,
-                              isScholarship: true, size: size, callBack: nil)
-            }
-            
-            VStack  {
-                HStack  {
-                    Button(action:  advance) {
-                        Image(systemName: "xmark.circle.fill")
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                            .foregroundColor(.white)
-                        
-                    }
-                    Spacer()
-                }
-                .padding()
-                
-                Spacer()
-            }
-            if viewModel.isPurchasing {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle())
-                    .scaleEffect(2)
-            }
-        }
-        .background {
-            Image(subscriptionImage)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: size.width, height: size.height * 1.2)
-                .edgesIgnoringSafeArea([.top])
-        }
-        
-    }
     
     func revealText() {
         DispatchQueue.main.asyncAfter(deadline: .now()) {

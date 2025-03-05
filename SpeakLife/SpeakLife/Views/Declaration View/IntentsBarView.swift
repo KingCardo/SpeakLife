@@ -94,20 +94,6 @@ struct IntentsBarView: View {
             } content: {
                 ThemeChooserView(themesViewModel: themeViewModel)
             }
-            
-//            if appState.onBoardingTest {
-//                CapsuleImageButton(title: "person.crop.circle") {
-//                    profileButtonTapped()
-//                    Selection.shared.selectionFeedback()
-//                }.sheet(isPresented: $isPresentingProfileView, onDismiss: {
-//                    self.isPresentingProfileView = false
-//                    timerViewModel.loadRemainingTime()
-//                }, content: {
-//                    ProfileView()
-//                })
-                //.foregroundColor(.white)
-              //  ProfileBarButton(viewModel: ProfileBarButtonViewModel())
-           // }
         }
     }
     

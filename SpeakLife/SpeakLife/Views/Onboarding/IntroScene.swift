@@ -448,7 +448,7 @@ struct FeatureShowcaseScreen: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
                         FeatureCard(icon: "sparkles", title: "Personalized Affirmations", description: "Receive affirmations in alignment with your new identity in Jesus.")
-                        FeatureCard(icon: "hands.sparkles", title: "Guided Prayer & Devotionals", description: "Start your day with devotionals that remind you of God's grace and love.")
+                        FeatureCard(icon: "hands.sparkles", title: "Guided Prayer & Devotionals", description: "Start your day with devotionals that teach you God's grace and love.")
                         FeatureCard(icon: "bell.badge", title: "Daily Reminders", description: "Daily notifications to help you grow in peace, joy, and wisdom.")
                         FeatureCard(icon: "headphones", title: "Audio Declarations & Bible Stories", description: "Follow along with powerful declarations and Bible stories to activate your faith anytime.")
                     }
@@ -459,11 +459,8 @@ struct FeatureShowcaseScreen: View {
                 
                 ShimmerButton(colors: [.blue], buttonTitle: "Continue", action: callBack)
                     .frame(width: size.width * 0.87 ,height: 50)
-                   // .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
-                
                     .foregroundColor(.white)
                     .cornerRadius(30)
-                  //  .shadow(color: Constants.DAMidBlue.opacity(0.5), radius: 8, x: 0, y: 10)
                 
                 
             }
