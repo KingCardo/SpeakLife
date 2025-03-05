@@ -129,16 +129,15 @@ struct OnboardingView: View  {
                 .tag(Tab.notification)
                 
                
-
-                subscriptionScene(size: geometry.size)
-                    .tag(Tab.subscription)
-                
                 OfferPageView() {
                     withAnimation {
                         advance()
                     }
                 }
                 .tag(Tab.discount)
+                
+                subscriptionScene(size: geometry.size)
+                    .tag(Tab.subscription)
                 
             }
             .ignoresSafeArea()
@@ -319,7 +318,8 @@ struct OnboardingView: View  {
                         viewModel.choose(.general) { _ in }
                         dismissOnboarding()
                     } else {
-                        selection = .discount
+                        dismissOnboarding()
+                        //selection = .discount
                     }
                 case .scholarship:
                     dismissOnboarding()
@@ -335,7 +335,12 @@ struct OnboardingView: View  {
                     isDonePersonalization = true
                 case .discount:
                     Analytics.logEvent("Discount", parameters: nil)
-                    dismissOnboarding()
+                    if subscriptionStore.showSubscription {
+                        selection = .subscription
+                        onboardingTab = selection.rawValue
+                    } else {
+                        dismissOnboarding()
+                    }
                 case .transformedLife:
                     impactMed.impactOccurred()
                     selection = .mindset

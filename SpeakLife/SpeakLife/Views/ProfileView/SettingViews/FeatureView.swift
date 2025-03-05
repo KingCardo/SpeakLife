@@ -60,7 +60,7 @@ struct FeatureRow: View {
 // Main subscription view
 struct FeatureView: View {
 
-    @Binding var currentSelection: Product?
+   // @Binding var currentSelection: Product?
     //var valueProps: [Feature] = []
     var valueProps: [Feature] {
 //        if currentSelection?.id == currentPremiumID || currentSelection?.id == currentMonthlyPremiumID {
@@ -69,10 +69,6 @@ struct FeatureView: View {
         return allFeatures
     }
     
-    init(currentSelection: Binding<Product?>) {//, defaultProps: [Feature]) {
-           self._currentSelection = currentSelection // Use `_` to access the property wrapper
-          // self.valueProps = defaultProps
-       }
     
 //    init(_ userValueProps: [Feature]) {
 //        if self.userValueProps.count > 1 {
@@ -114,12 +110,12 @@ struct FeatureView: View {
 //        Feature(subtitle: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future."),
         
        
-        Feature(subtitle: "10,000+ Affirmations to Activate God's Promises"),
-        Feature(subtitle: "Jesus Devotional's to learn how much your Loved & Forgiven"),
-        Feature(subtitle: "Powerful Prayers That Move Mountains"),
-        Feature(subtitle: "Daily Scripture Reminders to Grow in Wisdom"),
+        Feature(subtitle: "Access 10,000+ Affirmations to Activate God's Promises"),
+        Feature(subtitle: "Start Every Morning with Jesus Devotionals"),
+        Feature(subtitle: "Pray with Powerful, Mountain-Moving Prayers"),
+        Feature(subtitle: "Stay Encouraged with Daily Scripture Reminders"),
         Feature(subtitle: "Sleep Peacefully with Bible Bedtime Stories"),
-        Feature(subtitle: "Customize Your Experience with 30+ Themes")
+        Feature(subtitle: "Personalize with 30+ Beautiful Themes")
         ]
     
     let features: [Feature] = [

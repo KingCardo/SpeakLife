@@ -31,114 +31,110 @@ struct OfferPageView: View {
     let callBack: (() -> Void)
     
     var body: some View {
-        ZStack {
-            VStack(spacing: 20) {
-                    Image("gift")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 300, height: 300)
-                        .padding(.top, 30)
-                        .shadow(color: Color.purple.opacity(0.5), radius: 20, x: 10, y: 10)
-                        .cornerRadius(6)
-                
-                Text("One time offer!")
-                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .caption))
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 8)
-                    .background(
-                        Capsule()
-                            .fill(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))
-                    )
-                VStack {
-                    Text("40% off")
-                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 52, relativeTo: .title))
+            ZStack {
+                VStack(spacing: 20) {
+                    Text("One-Time Exclusive Offer!")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .caption))
                         .foregroundColor(.white)
-                    
-                    Text("SpeakLife Premium")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 30, relativeTo: .title))
-                        .foregroundColor(.white)
-                }
-                
-                HStack(spacing: 10) {
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 8)
+                        .background(
+                            Capsule()
+                                .fill(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))
+                        )
                     VStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .strokeBorder(Color.gray, lineWidth: 1)
-                            .frame(height: 90)
-                            .overlay(
-                                VStack(spacing: 4) {
-                                    Text("Original price")
-                                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .body))
-                                        .foregroundColor(.gray)
-                                    Text(viewModel.originalPrice)
-                                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .body))
-                                        .strikethrough()
-                                        .foregroundColor(.gray)
-                                    Text(viewModel.monthlyPrice)
-                                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
-                                        .foregroundColor(.gray)
-                                }
-                            )
+                        Text("40% off")
+                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 52, relativeTo: .title))
+                            .foregroundColor(.white)
+                        
+                        Text("SpeakLife Premium")
+                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 30, relativeTo: .title))
+                            .foregroundColor(.white)
                     }
                     
-                    VStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color.black.opacity(0.3))
-                            .frame(height: 90)
-                            .overlay(
-                                VStack(spacing: 4) {
-                                    Text("Your price now")
-                                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
-                                        .foregroundColor(.white)
-                                    Text(viewModel.discountedPrice)
-                                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 20, relativeTo: .body))
-                                        .foregroundColor(.white)
-                                    Text(viewModel.discountedMonthlyPrice)
-                                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
-                                        .foregroundColor(.white)
-                                }
-                            )
+                    FeatureView()
+                        .foregroundStyle(.white)
+                    HStack(spacing: 10) {
+                        VStack {
+                            RoundedRectangle(cornerRadius: 20)
+                                .strokeBorder(Color.gray, lineWidth: 1)
+                                .frame(height: 90)
+                                .overlay(
+                                    VStack(spacing: 4) {
+                                        Text("Original price")
+                                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .body))
+                                            .foregroundColor(.gray)
+                                        Text(viewModel.originalPrice)
+                                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .body))
+                                            .strikethrough()
+                                            .foregroundColor(.gray)
+                                        Text(viewModel.monthlyPrice)
+                                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
+                                            .foregroundColor(.gray)
+                                    }
+                                )
+                        }
+                        
+                        VStack {
+                            RoundedRectangle(cornerRadius: 20)
+                               // .strokeBorder(.purple, lineWidth: 1)
+                                .fill(Color.black.opacity(0.3))
+                                
+                                .frame(height: 90)
+                                .overlay(
+                                    VStack(spacing: 4) {
+                                        Text("Your price now")
+                                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
+                                            .foregroundColor(.white)
+                                        Text(viewModel.discountedPrice)
+                                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 20, relativeTo: .body))
+                                            .foregroundColor(.white)
+                                        Text(viewModel.discountedMonthlyPrice)
+                                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
+                                            .foregroundColor(.white)
+                                    }
+                                )
+                        }
                     }
+                    .padding(.top, 10)
+                    
+                    Spacer()
+                    
+                    // Claim button
+                    Button(action: {
+                        makePurchase(iap: subscriptionStore.discountSubscription)
+                    }) {
+                        Text("Claim My 40% Off Now")
+                            .font(.system(size: 18, weight: .bold))
+                            .padding()
+                            .frame(maxWidth: .infinity, maxHeight: 50)
+                            .background(LinearGradient(gradient: Gradient(colors: [.purple]), startPoint: .leading, endPoint: .trailing))
+                            .foregroundColor(.white)
+                            .cornerRadius(30)
+                    }
+                    .padding(.horizontal)
+                    
+                    Button(action: {
+                        callBack()
+                    }) {
+                        Text("No thanks")
+                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 14, relativeTo: .body))
+                            .padding()
+                            .foregroundColor(.white)
+                    }
+                    
+                    Spacer()
                 }
-                .padding(.top, 10)
+                .padding()
+                .background(.black)//Gradients().purple)//Constants.DAMidBlue.opacity(0.8))
+                .alert(isPresented: $isShowingError, content: {
+                    Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
+                })
                 
-                Spacer()
-                
-                // Claim button
-                Button(action: {
-                    makePurchase(iap: subscriptionStore.discountSubscription)
-                }) {
-                    Text("Claim offer now")
-                        .font(.system(size: 18, weight: .bold))
-                        .padding()
-                        .frame(maxWidth: .infinity, maxHeight: 50)
-                        .background(LinearGradient(gradient: Gradient(colors: [.purple]), startPoint: .leading, endPoint: .trailing))
-                        .foregroundColor(.white)
-                        .cornerRadius(30)
+                if declarationStore.isPurchasing {
+                    RotatingLoadingImageView()
                 }
-                .padding(.horizontal)
-                
-                Button(action: {
-                    callBack()
-                }) {
-                    Text("No thanks")
-                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 14, relativeTo: .body))
-                        .padding()
-                        .foregroundColor(.white)
-                }
-                
-                Spacer()
             }
-            .padding()
-            .background(.black)//Gradients().purple)//Constants.DAMidBlue.opacity(0.8))
-            .alert(isPresented: $isShowingError, content: {
-                Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
-            })
-            
-            if declarationStore.isPurchasing {
-                RotatingLoadingImageView()
-            }
-        }
     }
     
     func buy(_ iap: String) async {
@@ -282,7 +278,7 @@ struct SubscriptionView: View {
 //                            .foregroundStyle(Color.white)
 //                            .padding()
                     }
-                    FeatureView(currentSelection: $currentSelection)
+                    FeatureView()
                         .foregroundColor(.white)
                     Spacer()
                                             
