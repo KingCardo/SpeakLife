@@ -10,7 +10,7 @@ import SwiftUI
 
 
 struct PersonalizationLoadingView: View {
-    
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
     let size: CGSize
     let callBack: (() -> Void)
@@ -24,7 +24,7 @@ struct PersonalizationLoadingView: View {
         ZStack {
             
             if appState.onBoardingTest {
-                Image(onboardingBGImage)
+                Image(subscriptionStore.onboardingBGImage)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)

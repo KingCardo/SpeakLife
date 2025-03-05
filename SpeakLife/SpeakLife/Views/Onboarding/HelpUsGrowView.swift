@@ -37,6 +37,7 @@ class HelpUsGrowViewModel: ObservableObject {
 }
 
 struct HelpUsGrowView: View {
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
     @StateObject private var viewModel: HelpUsGrowViewModel
     let callBack: (() -> Void)
@@ -48,7 +49,7 @@ struct HelpUsGrowView: View {
 
     var body: some View {
         ZStack {
-            Image(onboardingBGImage)
+            Image(subscriptionStore.onboardingBGImage)
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()

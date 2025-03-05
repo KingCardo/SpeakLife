@@ -30,8 +30,6 @@ struct OfferPageView: View {
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     let callBack: (() -> Void)
     
-    @State var firstSelection = InAppId.Subscription.speakLife1YR29
-    
     var body: some View {
         ZStack {
             VStack(spacing: 20) {
@@ -70,14 +68,14 @@ struct OfferPageView: View {
                             .overlay(
                                 VStack(spacing: 4) {
                                     Text("Original price")
-                                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
+                                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .body))
                                         .foregroundColor(.gray)
                                     Text(viewModel.originalPrice)
-                                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
+                                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .body))
                                         .strikethrough()
                                         .foregroundColor(.gray)
                                     Text(viewModel.monthlyPrice)
-                                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
+                                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
                                         .foregroundColor(.gray)
                                 }
                             )
@@ -108,7 +106,7 @@ struct OfferPageView: View {
                 
                 // Claim button
                 Button(action: {
-                    makePurchase(iap: firstSelection)
+                    makePurchase(iap: subscriptionStore.discountSubscription)
                 }) {
                     Text("Claim offer now")
                         .font(.system(size: 18, weight: .bold))
@@ -123,7 +121,7 @@ struct OfferPageView: View {
                 Button(action: {
                     callBack()
                 }) {
-                    Text("Maybe later")
+                    Text("No thanks")
                         .font(Font.custom("AppleSDGothicNeo-Bold", size: 14, relativeTo: .body))
                         .padding()
                         .foregroundColor(.white)
@@ -143,10 +141,10 @@ struct OfferPageView: View {
         }
     }
     
-    func buy(_ iap: InAppId.Subscription) async {
+    func buy(_ iap: String) async {
         do {
-            if let _ = try await subscriptionStore.purchaseWithID([iap.rawValue]) {
-                Analytics.logEvent(iap.rawValue, parameters: nil)
+            if let _ = try await subscriptionStore.purchaseWithID([iap]) {
+                Analytics.logEvent(iap, parameters: nil)
                 callBack()
             }
         } catch StoreError.failedVerification {
@@ -154,13 +152,13 @@ struct OfferPageView: View {
             errorTitle = "Your purchase could not be verified by the App Store."
             isShowingError = true
         } catch {
-            print("Failed purchase for \(iap.rawValue): \(error)")
+            print("Failed purchase for \(iap): \(error)")
             errorTitle = error.localizedDescription
             isShowingError = true
         }
     }
     
-    private func makePurchase(iap: InAppId.Subscription) {
+    private func makePurchase(iap: String) {
         impactMed.impactOccurred()
         Task {
             withAnimation {
@@ -456,7 +454,7 @@ struct SubscriptionView: View {
             if let transaction = try await subscriptionStore.purchaseWithID([currentSelection.id]) {
                 print(currentSelection, transaction.id, transaction.jsonRepresentation, transaction.productType, "RWRW")
               //  NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
-                Analytics.logEvent(currentSelection.id, parameters: ["backgroundImage": subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2])
+                Analytics.logEvent(currentSelection.id, parameters: ["backgroundImage": subscriptionStore.testGroup == 0 ? subscriptionStore.onboardingBGImage : onboardingBGImage2])
                // callback?()
             }
         } catch StoreError.failedVerification {
@@ -487,7 +485,7 @@ struct SubscriptionView: View {
         do {
             if let _ = try await subscriptionStore.purchaseWithID([iap.id]) {
                // NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
-                Analytics.logEvent(iap.id, parameters: ["backgroundImage": subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2])
+                Analytics.logEvent(iap.id, parameters: ["backgroundImage": subscriptionStore.testGroup == 0 ? subscriptionStore.onboardingBGImage : onboardingBGImage2])
             }
         } catch StoreError.failedVerification {
             print("error RWRW")
@@ -518,7 +516,7 @@ struct SubscriptionView: View {
         do {
             if let _ = try await subscriptionStore.purchaseWithID([iap.rawValue]) {
                // NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
-                Analytics.logEvent(iap.rawValue, parameters: ["backgroundImage": subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2])
+                Analytics.logEvent(iap.rawValue, parameters: ["backgroundImage": subscriptionStore.testGroup == 0 ? subscriptionStore.onboardingBGImage : onboardingBGImage2])
                 //callback?()
             }
         } catch StoreError.failedVerification {

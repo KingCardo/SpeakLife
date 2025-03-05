@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PersonalizationScene: View {
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @StateObject private var faceBookTrackingViewModel = FacebookTrackingViewModel()
     
     let size: CGSize
@@ -84,7 +85,7 @@ struct PersonalizationScene: View {
         }
         .frame(width: size.width, height: size.height)
         .background(
-            Image(appState.onBoardingTest ? onboardingBGImage : "declarationBackground")
+            Image(appState.onBoardingTest ? subscriptionStore.onboardingBGImage : "declarationBackground")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)

@@ -9,7 +9,7 @@ import SwiftUI
 import FirebaseAnalytics
 
 struct CreateYourOwnView: View {
-    
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @Environment(\.colorScheme) var colorScheme
@@ -20,7 +20,7 @@ struct CreateYourOwnView: View {
     
     var body: some View {
         ZStack {
-            Image(onboardingBGImage)
+            Image(subscriptionStore.onboardingBGImage)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
@@ -192,6 +192,7 @@ struct CreateYourOwnView_Previews: PreviewProvider {
 
 
 struct AffirmationAlertView: View {
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     @Environment(\.colorScheme) var colorScheme
     @Binding var affirmationText: String
     @Binding var showAlert: Bool
@@ -203,7 +204,7 @@ struct AffirmationAlertView: View {
     
     var body: some View {
         ZStack {
-            Image(onboardingBGImage)
+            Image(subscriptionStore.onboardingBGImage)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)

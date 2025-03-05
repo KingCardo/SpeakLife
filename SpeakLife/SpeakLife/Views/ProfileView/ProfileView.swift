@@ -64,7 +64,7 @@ struct ProfileView: View {
     private var profileView: some View {
         navigationStack(content:
                             ZStack {
-            Image(onboardingBGImage)
+            Image(subscriptionStore.onboardingBGImage)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)

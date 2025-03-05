@@ -127,7 +127,7 @@ struct CategoryChooserView: View {
                     
                 }
                 .background(
-                    Image(onboardingBGImage)
+                    Image(subscriptionStore.onboardingBGImage)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                 )

@@ -119,7 +119,7 @@ struct ThemeChooserView: View {
             } content: {
                 PremiumView()
             }
-            .background(Image(onboardingBGImage)
+            .background(Image(subscriptionStore.onboardingBGImage)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)

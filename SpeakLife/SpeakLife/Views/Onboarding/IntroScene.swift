@@ -121,9 +121,9 @@ struct IntroTipScene: View {
             }
             
             Spacer()
-            ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: ctaText, action: buttonTouched)
+            ShimmerButton(colors: [.blue], buttonTitle: ctaText, action: buttonTouched)
             .frame(width: size.width * 0.87 ,height: 50)
-            .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+            //.shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
             
             //.foregroundColor(.white)
             .cornerRadius(30)
@@ -137,12 +137,12 @@ struct IntroTipScene: View {
         .frame(width: size.width, height: size.height)
         .background(
             ZStack {
-                Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
+                Image(subscriptionStore.testGroup == 0 ? subscriptionStore.onboardingBGImage : onboardingBGImage2)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
                     .brightness(0.05)
-                Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.1 : 0.2)
+                Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.2 : 0.2)
                     .edgesIgnoringSafeArea(.all)
             }
         )
@@ -240,7 +240,7 @@ struct IntroScene: View {
                 }.padding()
             }
             .frame(width: size.width * 0.87 ,height: 50)
-            .background(Constants.DAMidBlue)
+            .background(.blue)
             
             .foregroundColor(.white)
             .cornerRadius(8)
@@ -252,7 +252,7 @@ struct IntroScene: View {
         .frame(width: size.width, height: size.height)
         .background(
             ZStack {
-                Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
+                Image(subscriptionStore.testGroup == 0 ? subscriptionStore.onboardingBGImage : onboardingBGImage2)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
@@ -375,9 +375,9 @@ struct TestimonialScreen: View {
                 
                 Spacer()
                 
-                ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Continue", action: callBack)
+                ShimmerButton(colors: [.blue], buttonTitle: "Continue", action: callBack)
                     .frame(width: size.width * 0.87, height: 50)
-                    .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+                    //.shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
                     .cornerRadius(30)
                 
             }
@@ -387,7 +387,7 @@ struct TestimonialScreen: View {
             .frame(width: size.width, height: size.height)
             .background(
                 ZStack {
-                    Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
+                    Image(subscriptionStore.testGroup == 0 ? subscriptionStore.onboardingBGImage : onboardingBGImage2)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .edgesIgnoringSafeArea(.all)
@@ -447,23 +447,23 @@ struct FeatureShowcaseScreen: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
-                        FeatureCard(icon: "sparkles", title: "Personalized Affirmations", description: "Receive affirmations tailored to your needs for peace, strength, and purpose.")
+                        FeatureCard(icon: "sparkles", title: "Personalized Affirmations", description: "Receive affirmations in alignment with your new identity in Jesus.")
                         FeatureCard(icon: "hands.sparkles", title: "Guided Prayer & Devotionals", description: "Start your day with devotionals that remind you of God's grace and love.")
-                        FeatureCard(icon: "bell.badge", title: "Daily Reminders", description: "Stay consistent with daily notifications to help you stay spiritually grounded.")
-                        FeatureCard(icon: "headphones", title: "Audio Declarations & Bible Stories", description: "Listen to powerful declarations and Bible stories to inspire your faith anytime.")
+                        FeatureCard(icon: "bell.badge", title: "Daily Reminders", description: "Daily notifications to help you grow in peace, joy, and wisdom.")
+                        FeatureCard(icon: "headphones", title: "Audio Declarations & Bible Stories", description: "Follow along with powerful declarations and Bible stories to activate your faith anytime.")
                     }
                     .padding(.horizontal, 20)
                 }
                 .frame(maxHeight: 350)
                 Spacer()
                 
-                ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Continue", action: callBack)
+                ShimmerButton(colors: [.blue], buttonTitle: "Continue", action: callBack)
                     .frame(width: size.width * 0.87 ,height: 50)
-                    .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+                   // .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
                 
                     .foregroundColor(.white)
                     .cornerRadius(30)
-                    .shadow(color: Constants.DAMidBlue.opacity(0.5), radius: 8, x: 0, y: 10)
+                  //  .shadow(color: Constants.DAMidBlue.opacity(0.5), radius: 8, x: 0, y: 10)
                 
                 
             }
@@ -473,7 +473,7 @@ struct FeatureShowcaseScreen: View {
         .frame(width: size.width, height: size.height)
         .background(
             ZStack {
-                Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
+                Image(subscriptionStore.testGroup == 0 ? subscriptionStore.onboardingBGImage : onboardingBGImage2)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)

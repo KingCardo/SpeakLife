@@ -56,6 +56,8 @@ final class SubscriptionStore: ObservableObject {
     
     @Published var yearlySubscription = ""
     @Published var discountSubscription = ""
+    
+    @Published var onboardingBGImage = "onboardingImage"
    
     private var remoteConfig = RemoteConfig.remoteConfig()
     var updateListenerTask: Task<Void, Error>? = nil
@@ -114,6 +116,7 @@ final class SubscriptionStore: ObservableObject {
         yearlySubscription = remoteConfig["currentPremiumID"].stringValue
         discountSubscription = remoteConfig["discountID"].stringValue
         showSubscription = remoteConfig["showSubscription"].boolValue
+        onboardingBGImage = remoteConfig["onboardingImage"].stringValue
         yearlyID = yearlySubscription
         completion()
 

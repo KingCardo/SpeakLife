@@ -59,7 +59,7 @@ struct IntentsBarView: View {
                 Image(systemName: "square.grid.2x2.fill")
                     .font(.callout)
                 Text(viewModel.selectedCategory.categoryTitle)
-                    .font(.callout)
+                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .callout))
                 if appState.newCategoriesAddedv4 {
                     Badge()
                 }

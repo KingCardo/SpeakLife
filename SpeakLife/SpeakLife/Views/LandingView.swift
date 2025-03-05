@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct LandingView: View {
-    
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     var body: some View {
         ZStack(alignment: .center) {
-               Image(onboardingBGImage)
+            Image(subscriptionStore.onboardingBGImage)
                    .resizable()
                    .aspectRatio(contentMode: .fill)
                    .frame(maxWidth: .infinity, maxHeight: .infinity)

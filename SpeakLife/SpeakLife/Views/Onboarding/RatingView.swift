@@ -83,9 +83,9 @@ struct RatingView: View {
                 
                 Spacer()
                 
-                ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Rate us", action: callBack)
+                ShimmerButton(colors: [.blue], buttonTitle: "Rate us", action: callBack)
                     .frame(width: size.width * 0.87 ,height: 50)
-                    .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+                   // .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
                 
                     .scaleEffect(showStars[4] ? 1 : 0.95) // Button appears last
                     .animation(Animation.spring(response: 0.4, dampingFraction: 0.5)
@@ -97,7 +97,7 @@ struct RatingView: View {
             }
             .frame(width: proxy.size.width, height: proxy.size.height)
             .background(
-                Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
+                Image(subscriptionStore.testGroup == 0 ? subscriptionStore.onboardingBGImage : onboardingBGImage2)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)

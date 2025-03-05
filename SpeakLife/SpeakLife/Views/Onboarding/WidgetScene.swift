@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WidgetScene: View {
+    @EnvironmentObject var subscriptionStore: SubscriptionStore
     let size: CGSize
     let callBack: (() -> Void)
     
@@ -79,7 +80,7 @@ struct WidgetScene: View {
         }
         .frame(width: size.width, height: size.height)
         .background(
-            Image(onboardingBGImage)
+            Image(subscriptionStore.onboardingBGImage)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)

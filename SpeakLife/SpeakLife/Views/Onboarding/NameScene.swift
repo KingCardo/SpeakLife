@@ -25,10 +25,10 @@ struct NameScene: View {
     
     private func nameView(size: CGSize) -> some View  {
         ZStack {
-            Image(appState.onBoardingTest ? onboardingBGImage : "declarationBackground")
-                .resizable()
-                .scaledToFill()
-                .ignoresSafeArea()
+//            Image(appState.onBoardingTest ? onboardingBGImage : "declarationBackground")
+//                .resizable()
+//                .scaledToFill()
+//                .ignoresSafeArea()
             
             VStack {
                 
@@ -120,10 +120,10 @@ struct AgeCollectionView: View {
     
     var body: some View {
         ZStack {
-            Image(onboardingBGImage)
-                .resizable()
-                .scaledToFill()
-                .ignoresSafeArea()
+//            Image(onboardingBGImage)
+//                .resizable()
+//                .scaledToFill()
+//                .ignoresSafeArea()
             
             VStack {
                 
@@ -211,10 +211,10 @@ struct GenderCollectionView: View {
     
     var body: some View {
         ZStack {
-            Image(onboardingBGImage)
-                .resizable()
-                .scaledToFill()
-                .ignoresSafeArea()
+//            Image(onboardingBGImage)
+//                .resizable()
+//                .scaledToFill()
+//                .ignoresSafeArea()
             VStack {
                 
                 VStack {

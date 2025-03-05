@@ -93,9 +93,9 @@ struct NotificationOnboarding:  View {
                 
             }
             
-            ShimmerButton(colors: [Constants.DAMidBlue, .yellow], buttonTitle: "Save My Preferences", action: callBack)
+            ShimmerButton(colors: [.blue], buttonTitle: "Save My Preferences", action: callBack)
             .frame(width: size.width * 0.87 ,height: 50)
-            .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+           // .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
             
             Spacer()
                 .frame(width: 5, height: size.height * 0.07)
@@ -103,7 +103,7 @@ struct NotificationOnboarding:  View {
         .frame(width: size.width, height: size.height)
         .background(
             ZStack {
-                Image(subscriptionStore.testGroup == 0 ? onboardingBGImage : onboardingBGImage2)
+                Image(subscriptionStore.testGroup == 0 ? subscriptionStore.onboardingBGImage : onboardingBGImage2)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)

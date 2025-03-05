@@ -7855,12 +7855,6 @@
             "bibleVerseText": "It is God’s will that you should be sanctified: that you should avoid sexual immorality."
         },
         {
-            "text": "I guard my heart, for everything I do flows from it.",
-            "book": "Proverbs 4:23",
-            "category": "purity",
-            "bibleVerseText": "Above all else, guard your heart, for everything you do flows from it."
-        },
-        {
             "text": "I renew my mind daily, rejecting the patterns of the world.",
             "book": "Romans 12:2",
             "category": "purity",
@@ -15570,13 +15564,6 @@
             "text": "I seek wisdom, for it is more precious than jewels.",
             "bibleVerseText": "For wisdom is more precious than rubies, and nothing you desire can compare with her.",
             "book": "Proverbs 8:11",
-            "isFavorite": false,
-            "category": "proverbs"
-        },
-        {
-            "text": "I guard my heart, for it is the source of my life.",
-            "bibleVerseText": "Above all else, guard your heart, for everything you do flows from it.",
-            "book": "Proverbs 4:23",
             "isFavorite": false,
             "category": "proverbs"
         },

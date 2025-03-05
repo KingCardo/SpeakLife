@@ -18,7 +18,7 @@ struct PrayerView: View {
             NavigationView {
                 ZStack {
                     // Gradient background
-                    Image(onboardingBGImage)
+                    Image(subscriptionStore.onboardingBGImage)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: UIScreen.main.bounds.size.width)
