@@ -400,7 +400,7 @@ extension Product {
            return "7 days free then \(displayPrice)/yr."
         } else if id == yearlyID {
             let monthly = getMonthlyAmount(price: price)
-            return "\(monthly)mo."
+            return "First 7 days free, then \(displayPrice)/yr."
         } else {
            return "\(displayPrice)/mo."
         }
