@@ -497,6 +497,7 @@ struct FeatureCard: View {
                     Text(title)
                         .font(.title2.bold())
                         .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
 
                     Text(description)
                         .font(.body)

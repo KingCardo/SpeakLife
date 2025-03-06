@@ -96,10 +96,14 @@ struct RatingView: View {
             }
             .frame(width: proxy.size.width, height: proxy.size.height)
             .background(
-                Image(subscriptionStore.testGroup == 0 ? subscriptionStore.onboardingBGImage : onboardingBGImage2)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
+                ZStack {
+                    Image(subscriptionStore.testGroup == 0 ? subscriptionStore.onboardingBGImage : onboardingBGImage2)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
+                    Color.black.opacity(subscriptionStore.testGroup == 0 ? 0.4 : 0.2)
+                        .edgesIgnoringSafeArea(.all)
+                }
                 
             )
         }

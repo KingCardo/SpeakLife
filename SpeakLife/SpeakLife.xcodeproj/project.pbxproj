@@ -197,6 +197,7 @@
 		453478F02B9D29CC0012C2C0 /* declarationsv4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv4.json; sourceTree = "<group>"; };
 		453A831D2C9BF18500398ECE /* DeclarationMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationMenuButton.swift; sourceTree = "<group>"; };
 		453A831F2C9BF1AE00398ECE /* SpeechCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechCoordinator.swift; sourceTree = "<group>"; };
+		453BD6112D79865200BF39E0 /* SpeakLife.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpeakLife.entitlements; sourceTree = "<group>"; };
 		453C35842C5092A800817FCC /* HelpUsGrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpUsGrowView.swift; sourceTree = "<group>"; };
 		453C35862C50B15900817FCC /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		456585F22D4F62EE002F2709 /* DevotionalSubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevotionalSubscriptionView.swift; sourceTree = "<group>"; };
@@ -475,6 +476,7 @@
 		7A278F99288915DE0084BB57 /* SpeakLife */ = {
 			isa = PBXGroup;
 			children = (
+				453BD6112D79865200BF39E0 /* SpeakLife.entitlements */,
 				7A7BEBCA2913534E008D08A3 /* Info.plist */,
 				7AA8706428DACB2900134ADB /* App */,
 				7AA8706528DACB3500134ADB /* Views */,
@@ -1342,8 +1344,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 706;
+				CURRENT_PROJECT_VERSION = 707;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1383,8 +1386,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 706;
+				CURRENT_PROJECT_VERSION = 707;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
