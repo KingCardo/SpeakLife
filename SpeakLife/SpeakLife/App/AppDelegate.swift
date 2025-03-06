@@ -12,8 +12,9 @@ import FirebaseAnalytics
 import UserNotifications
 import FacebookCore
 import AppTrackingTransparency
+import FirebaseMessaging
 
-final class AppDelegate: NSObject, UIApplicationDelegate {
+final class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate {
     
     var appState: AppState?
     var declarationStore: DeclarationViewModel?
@@ -29,7 +30,8 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
             application,
             didFinishLaunchingWithOptions: launchOptions
         )
-       
+        application.registerForRemoteNotifications()
+        Messaging.messaging().delegate = self
         registerNotificationHandler()
         registerBGTask()
         Analytics.logEvent(Event.SessionStarted, parameters: nil)
@@ -43,6 +45,19 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+   
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        Messaging.messaging().token { token, error in
+          if let error = error {
+            print("Error fetching FCM registration token: \(error)")
+          } else if let token = token {
+            print("FCM registration token: \(token)")
+           
+          }
+        }
     }
     
     func userNotificationCenter(
@@ -127,5 +142,12 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         queue.addOperation(updateNotificationsOperation)
         queue.waitUntilAllOperationsAreFinished()
         
+    }
+}
+
+extension AppDelegate {
+    func application(application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+      Messaging.messaging().apnsToken = deviceToken
     }
 }

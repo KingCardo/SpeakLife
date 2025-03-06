@@ -52,6 +52,10 @@ struct OfferPageView: View {
                             .foregroundColor(.white)
                     }
                     
+                    if declarationStore.isPurchasing {
+                        RotatingLoadingImageView()
+                    }
+                    
                     FeatureView()
                         .foregroundStyle(.white)
                     HStack(spacing: 10) {
@@ -126,14 +130,18 @@ struct OfferPageView: View {
                     Spacer()
                 }
                 .padding()
-                .background(.black)//Gradients().purple)//Constants.DAMidBlue.opacity(0.8))
+                .background(.black)
                 .alert(isPresented: $isShowingError, content: {
                     Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
                 })
-                
-                if declarationStore.isPurchasing {
-                    RotatingLoadingImageView()
+                Button(action: restore) {
+                    Text("Restore", comment: "restore iap")
+                        .font(.caption)
+                        .underline()
+                        .foregroundColor(Color.blue)
                 }
+                
+                
             }
     }
     
@@ -164,6 +172,16 @@ struct OfferPageView: View {
             withAnimation {
                 declarationStore.isPurchasing = false
             }
+        }
+    }
+    
+    private func restore() {
+        Task {
+            declarationStore.isPurchasing = true
+            try? await AppStore.sync()
+            declarationStore.isPurchasing = false
+            errorTitle = "All purchases restored"
+            isShowingError = true
         }
     }
 }

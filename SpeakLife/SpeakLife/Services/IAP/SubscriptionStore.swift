@@ -54,6 +54,7 @@ final class SubscriptionStore: ObservableObject {
     @Published var showDevotionalSubscription = false
     @Published var showOneTimeSubscription = false
     @Published var showSubscription = false
+    @Published var showSubscriptionFirst = false
     
     @Published var yearlySubscription = ""
     @Published var monthlySubscription = ""
@@ -122,6 +123,7 @@ final class SubscriptionStore: ObservableObject {
         showSubscription = remoteConfig["showSubscription"].boolValue
         onboardingBGImage = remoteConfig["onboardingImage"].stringValue
         backgroundImage = remoteConfig["backgroundImage"].stringValue
+        showSubscriptionFirst = remoteConfig["showSubscriptionFirst"].boolValue
         yearlyID = yearlySubscription
         monthlyID = monthlySubscription
         completion()

@@ -128,16 +128,27 @@ struct OnboardingView: View  {
                 }
                 .tag(Tab.notification)
                 
-               
-                OfferPageView() {
-                    withAnimation {
-                        advance()
+                if subscriptionStore.showSubscriptionFirst {
+                    subscriptionScene(size: geometry.size)
+                        .tag(Tab.subscription)
+                    OfferPageView() {
+                        withAnimation {
+                            advance()
+                        }
                     }
+                    .tag(Tab.discount)
+                } else {
+                    OfferPageView() {
+                        withAnimation {
+                            advance()
+                        }
+                    }
+                    .tag(Tab.discount)
+                    subscriptionScene(size: geometry.size)
+                        .tag(Tab.subscription)
                 }
-                .tag(Tab.discount)
                 
-                subscriptionScene(size: geometry.size)
-                    .tag(Tab.subscription)
+               
                 
             }
             .ignoresSafeArea()
@@ -153,6 +164,7 @@ struct OnboardingView: View  {
             Analytics.logEvent(Event.freshInstall, parameters: nil)
         }
     }
+
     
     private var foregroundColor: Color {
         colorScheme == .dark ? .white : Constants.DEABlack
@@ -310,15 +322,12 @@ struct OnboardingView: View  {
                     onboardingTab = selection.rawValue
                 case .subscription:
                     Analytics.logEvent("SubscriptionScreenDone", parameters: nil)
-//                    viewModel.choose(.general) { _ in
-//                        dismissOnboarding()
-//                    }
-                   
                     if subscriptionStore.isPremium || !subscriptionStore.showOneTimeSubscription {
                         viewModel.choose(.general) { _ in }
                         dismissOnboarding()
                     } else {
-                        dismissOnboarding()
+                        selection = .discount
+                        //dismissOnboarding()
                         //selection = .discount
                     }
                 case .scholarship:
@@ -335,7 +344,7 @@ struct OnboardingView: View  {
                     isDonePersonalization = true
                 case .discount:
                     Analytics.logEvent("Discount", parameters: nil)
-                    if subscriptionStore.showSubscription {
+                    if subscriptionStore.showSubscription && !subscriptionStore.showSubscriptionFirst {
                         selection = .subscription
                         onboardingTab = selection.rawValue
                     } else {
