@@ -8,9 +8,10 @@
 import SwiftUI
 import FirebaseAnalytics
 import StoreKit
-//"moonlight2"
 
 let onboardingBGImage2 = "pinkHueMountain"
+
+import SwiftUI
 
 struct OnboardingView: View  {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
@@ -44,10 +45,15 @@ struct OnboardingView: View  {
             TabView(selection: $selection) {
                 
                 IntroTipScene(
-                    title: "God’s Promises Are for You—Claim Them Today!",
-                    bodyText: "You are a child of God, and His promises belong to you.",
-                    subtext: "SpeakLife helps you walk in His truth every day by declaring what He says about your life. If you believe His Word never fails, you're in the right place!",
-                    ctaText: "Activate My Faith",
+                    title: "You Are Like Jesus",
+                    bodyText:  """
+            “As He is, so are we in this world.” – 1 John 4:17
+
+            Jesus isn’t just your Savior—He’s your example. You were designed to walk in His wisdom, peace, and power. As you speak life daily, you’re renewing your mind and becoming more like Him.
+            """,
+                   /* As He is, so are we in this world. – 1 John 4:17. Jesus isn’t just your Savior—He’s your example. You were designed to walk in His wisdom, peace, and power.",*/
+                    subtext: "",
+                    ctaText: "Step Into Your Jesus Identity",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size
@@ -58,10 +64,14 @@ struct OnboardingView: View  {
                     .tag(Tab.transformedLife)
                 
                 IntroTipScene(
-                    title: "God’s Word in Your Mouth is Powerful!",
-                    bodyText: "The Bible says, ‘Life and death are in the power of the tongue’ (Proverbs 18:21). What you speak shapes your life.",
-                    subtext: "With SpeakLife, you’ll declare faith-filled affirmations over your future, shifting your reality to match God’s promises.",
-                    ctaText: "Renew My Mind",
+                    title: "Jesus Wants to Speak to You Daily",
+                    bodyText: """
+            “Draw near to God, and He will draw near to you.” – James 4:8
+
+            Jesus is speaking—are you listening? Declaring His Word tunes your heart to His voice and strengthens your relationship with Him.
+            """,
+                    subtext: "",
+                    ctaText: "Speak With Jesus",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
@@ -73,10 +83,14 @@ struct OnboardingView: View  {
                
                 
                 IntroTipScene(
-                    title: "See the Shift—Speak, Believe, Receive!",
-                    bodyText: "Imagine waking up filled with peace, confidence, and purpose—knowing you’re walking in God’s best for you.",
-                    subtext: "SpeakLife helps thousands of believers renew their minds and experience breakthrough. The more you speak His Word, the more you see His power.",
-                    ctaText: "Discover My Daily Promises",
+                    title: "Victory is Already Yours",
+                    bodyText: """
+            “It is finished.” – John 19:30
+
+            You don’t fight for victory—you fight from it! Jesus already won your healing, peace, and breakthrough. Declare it and walk in it.
+            """,
+                    subtext: "",
+                    ctaText: "Declare Your Victory",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
@@ -86,10 +100,16 @@ struct OnboardingView: View  {
                     .tag(Tab.likeJesus)
                 
                 IntroTipScene(
-                    title: "Your Breakthrough Starts Now!",
-                    bodyText: "God’s promises are waiting for you to declare them! Every day is a new chance to walk in victory.",
-                    subtext: "Don’t let another moment pass—start speaking life now and step into God’s best for you!",
-                    ctaText: "Start Declaring Now!",
+                    title: "Your Words Have Power",
+                    bodyText: """
+            “The words that I speak to you are spirit, and they are life.” – John 6:63
+
+            When Jesus spoke, storms stopped, sickness left, and the impossible became possible. That same power is in YOU. Your words shape your future.
+
+            Every time you declare God’s promises, you align with Heaven’s reality.
+            """,
+                    subtext: "",
+                    ctaText: "Start Speaking Life!",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
