@@ -413,34 +413,12 @@ struct OnboardingView: View  {
        // }
     }
     
-    private func decodeCategories(_ categories: [Improvements]) {
+    private func decodeCategories(_ categories: [DeclarationCategory]) {
         var temp = Set<DeclarationCategory>()
         for category in categories {
-            if let decCategory = DeclarationCategory(category.selectedCategory) {
-                temp.insert(decCategory)
-            }
+                temp.insert(category)
         }
-        
-        if categories.contains(.oldTestament) {
-            temp.insert(DeclarationCategory.genesis)
-            temp.insert(DeclarationCategory.exodus)
-            temp.insert(DeclarationCategory.leviticus)
-            temp.insert(DeclarationCategory.numbers)
-            temp.insert(DeclarationCategory.deuteronomy)
-            temp.insert(DeclarationCategory.joshua)
-        }
-        
-        if categories.contains(.gospel) {
-            temp.insert(DeclarationCategory.matthew)
-            temp.insert(DeclarationCategory.mark)
-            temp.insert(DeclarationCategory.luke)
-            temp.insert(DeclarationCategory.john)
-        }
-        
-        if categories.contains(.psalms) {
-            temp.insert(DeclarationCategory.psalms)
-            temp.insert(DeclarationCategory.proverbs)
-        }
+
         print(temp, "RWRW temp categories")
         let categories = temp.map { $0.rawValue }.joined(separator: ",")
         appState.selectedNotificationCategories = categories

@@ -82,96 +82,14 @@ struct ImprovementScene: View {
 }
 
 class ImprovementViewModel: ObservableObject {
-    @Published var selectedExperiences: [Improvements] = []
+    @Published var selectedExperiences: [DeclarationCategory] = []
     
-    func selectExperience(_ experience: Improvements) {
+    func selectExperience(_ experience: DeclarationCategory) {
         if selectedExperiences.contains(experience) {
             selectedExperiences.removeAll(where: { $0 == experience })
         } else {
             selectedExperiences.append(experience)
-            Analytics.logEvent(experience.selectedCategory, parameters: nil)
-        }
-    }
-}
-
-enum Improvements: String, CaseIterable {
-    
-   // case joy = "Be happy and content"
-    case stress = "Remove Stress & Anxiety"
-    case grace = "God's Grace"
-    case health = "Health"
-    case love = "Jesus Love"
-    case identity = "Identity"
-    case faith = "Faith"
-    case safety = "God's protection"
-    case oldTestament = "Old Testament"
-    case gospel = "New Testament - Gospel"
-    case psalms = "Psalms & Proverbs"
-    case gratitude = "Gratitude"
-    case destiny = "Destiny"
-    case loneliness = "Feeling lonely"
-    case wealth = "Wealth"
-    case peace = "Peace"
-    case purity = "Purity"
-    case wisdom = "Wisdom"
-    case marriage = "Marriage"
-    case guidance = "Guidance"
-    case addiction = "Addiction"
-    
-    case fear = "Fear"
-   
-    case joy = "Joy"
-    case perseverance = "Perseverance"
-    
-    
-    var selectedCategory: String {
-        switch self {
-        case .oldTestament:
-            "oldTestament"
-        case .gospel:
-            "gospel"
-        case .psalms:
-            "psalms"
-        case .stress:
-            "fear"
-        case .grace:
-            "grace"
-        case .love:
-            "love"
-        case .destiny:
-            "destiny"
-        case .health:
-            "health"
-        case .safety:
-            "godsprotection"
-        case .gratitude:
-            "gratitude"
-        case .loneliness:
-            "loneliness"
-        case .peace:
-            "peace"
-        case .wealth:
-            "wealth"
-        case .purity:
-            "purity"
-        case .wisdom:
-            "wisdom"
-        case .marriage:
-            "marriage"
-        case .guidance:
-            "guidance"
-        case .addiction:
-            "addiction"
-        case .identity:
-            "identity"
-        case .fear:
-            "fear"
-        case .faith:
-            "faith"
-        case .joy:
-            "joy"
-        case .perseverance:
-            "perseverance"
+            Analytics.logEvent(experience.rawValue, parameters: nil)
         }
     }
 }
@@ -186,8 +104,8 @@ struct ImprovementSelectionListView: View {
     
     var newBody: some View {
         ScrollView {
-            FlowLayout(items: Improvements.allCases, spacing: 2) { interest in
-                Text(interest.rawValue)
+            FlowLayout(items: DeclarationCategory.categoryOrder + DeclarationCategory.bibleCategories, spacing: 2) { interest in
+                Text(interest.name)
                     .font(.system(size: 14))
                     .foregroundColor(.white)
                     .padding(8)
@@ -203,13 +121,13 @@ struct ImprovementSelectionListView: View {
 }
 
 struct FlowLayout<Content: View>: View {
-    let items: [Improvements]
+    let items: [DeclarationCategory]
     let spacing: CGFloat
-    let content: (Improvements) -> Content
+    let content: (DeclarationCategory) -> Content
     
     @State private var totalHeight = CGFloat.zero
     
-    init(items: [Improvements], spacing: CGFloat = 8, @ViewBuilder content: @escaping (Improvements) -> Content) {
+    init(items: [DeclarationCategory], spacing: CGFloat = 8, @ViewBuilder content: @escaping (DeclarationCategory) -> Content) {
         self.items = items
         self.spacing = spacing
         self.content = content

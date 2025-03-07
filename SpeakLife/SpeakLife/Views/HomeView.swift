@@ -157,8 +157,14 @@ struct HomeView: View {
         if lastVersion != currentVersion {
             isPresented = true
             UserDefaults.standard.set(currentVersion, forKey: "lastVersion")
-            
        }
+        if currentVersion == "3.0.42" {
+            declarationStore.cleanUpSelectedCategories { selectedCategories in
+                let categoryString = selectedCategories.map { $0.name }.joined(separator: ",")
+                appState.selectedNotificationCategories = categoryString
+                declarationStore.save(selectedCategories)
+            }
+        }
     }
 }
 

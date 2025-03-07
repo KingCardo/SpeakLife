@@ -114,12 +114,26 @@ final class DeclarationViewModel: ObservableObject {
         self.notificationManager = notificationManager
         
         fetchSelectedCategories() { [weak self] in
-            self?.fetchDeclarations()
+            self?.cleanUpSelectedCategories() { [weak self] _ in
+                self?.fetchDeclarations()
+            }
         }
         
         NotificationHandler.shared.callback = { [weak self] content in
             self?.setDeclaration(content.body, category: content.title)
         }
+    }
+    
+    func cleanUpSelectedCategories(completion: (Set<DeclarationCategory>) -> Void) {
+        var temp = Set<DeclarationCategory>()
+        
+        for category in selectedCategories {
+            if DeclarationCategory.allCategories.contains(category) {
+                temp.insert(category)
+            }
+        }
+        selectedCategories = temp
+        completion(selectedCategories)
     }
     
     private func fetchDeclarations() {
@@ -131,7 +145,6 @@ final class DeclarationViewModel: ObservableObject {
             self.allDeclarations = declarations
             self.populateDeclarationsByCategory()
             self.choose(self.selectedCategory) { _ in }
-            self.refreshGeneral(categories: selectedCategories)
             self.favorites = self.getFavorites()
             self.createOwn = self.getCreateOwn()
             self.errorMessage = error?.localizedDescription
