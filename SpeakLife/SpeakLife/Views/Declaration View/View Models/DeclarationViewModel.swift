@@ -115,7 +115,14 @@ final class DeclarationViewModel: ObservableObject {
         
         fetchSelectedCategories() { [weak self] in
             self?.cleanUpSelectedCategories() { [weak self] _ in
-                self?.fetchDeclarations()
+                guard let self = self else { return }
+                if general.isEmpty {
+                    let destiny = self.allDeclarations.filter({ $0.category == .destiny })
+                    let identity = self.allDeclarations.filter({ $0.category == .identity })
+                    let love = self.allDeclarations.filter({ $0.category == .love })
+                    general = destiny + identity + love
+                }
+                self.fetchDeclarations()
             }
         }
         
@@ -287,15 +294,25 @@ final class DeclarationViewModel: ObservableObject {
     
     func choose(_ category: DeclarationCategory, completion: @escaping(Bool) -> Void) {
         fetchDeclarations(for: category) { [weak self] declarations in
+            guard let self = self else { return }
             guard declarations.count > 0 else {
-                self?.errorMessage = "Oops, you need to add one to this category first!"
+                if general.isEmpty {
+                    let destiny = self.allDeclarations.filter({ $0.category == .destiny })
+                    let identity = self.allDeclarations.filter({ $0.category == .identity })
+                    let love = self.allDeclarations.filter({ $0.category == .love })
+                    general = destiny + identity + love
+                    self.errorMessage = "Oops, Try again!"
+                    completion(false)
+                    return
+                }
+                self.errorMessage = "Oops, you need to add one to this category first!"
                 completion(false)
                 return
             }
-            self?.selectedCategoryString = category.rawValue
+            self.selectedCategoryString = category.rawValue
             let shuffled = declarations.shuffled()
-            self?.declarations = shuffled
-            self?.resetListToTop = true 
+            self.declarations = shuffled
+            self.resetListToTop = true
             completion(true)
         }
     }
