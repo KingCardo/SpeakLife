@@ -9,13 +9,18 @@ import SwiftUI
 
 struct Gradients {
     
-    let colors: [Color] = [.cyan, .purple, .white, .red, .orange, .pink, .indigo, .yellow, .green, .teal]
+    let colors: [Color] = [.cyan, .purple,.pink, .indigo, .teal, Constants.DAMidBlue]
     
     func randomColors() -> [Color] {
             let shuffledColors = colors.shuffled()
             let array = Array(shuffledColors.prefix(3))
             return array
         }
+    
+    func randomColor() -> Color {
+        let shuffledColors = colors.shuffled()
+        return shuffledColors.first!
+    }
     
     var purple: some View {
         LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -62,6 +67,10 @@ struct Gradients {
     }
     
     var goldCyan: some View { LinearGradient(gradient: Gradient(colors: [Constants.gold, .cyan]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            .edgesIgnoringSafeArea(.all)
+    }
+    
+    var randomGradient: some View { LinearGradient(gradient: Gradient(colors: [randomColor(), .black]), startPoint: .top, endPoint: .bottom)
             .edgesIgnoringSafeArea(.all)
     }
     
