@@ -35,30 +35,20 @@ struct CategoryCell: View  {
     @ViewBuilder
     private func categoryCell(size: CGSize) -> some View  {
         
-        let dimension =  size.width *  0.25
+        let dimension =  size.width *  0.40
         
         ZStack {
             colorScheme == .dark ? Constants.DEABlack : Color.white
             
             VStack {
                 ZStack(alignment: .topTrailing) {
-                    if assetExists(named: category.imageString) {
-                        Image(category.imageString)
-                            .resizable().scaledToFill()
-                            .frame(width: dimension, height: dimension)
-                            .clipped()
-                            .cornerRadius(4)
-                        
-                        lockIcon
-                        
-                    } else {
                         Gradients().random
                             .scaledToFill()
                             .frame(width: dimension, height: dimension)
                             .clipped()
                             .cornerRadius(4)
                         lockIcon
-                    }
+    
                 }
         
                 
@@ -68,7 +58,7 @@ struct CategoryCell: View  {
                 
             }
         }
-        .frame(width: dimension + 16, height: size.width * 0.4)
+        .frame(width: dimension + 16, height: size.height * 0.3)
         .cornerRadius(6)
         .shadow(color: Constants.lightShadow, radius: 8, x: 0, y: 4)
     }
@@ -102,7 +92,7 @@ struct CategoryChooserView: View {
     @ObservedObject var viewModel: DeclarationViewModel
     @State private var presentPremiumView  = false
     
-    var twoColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    var twoColumnGrid = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         GeometryReader { geometry in

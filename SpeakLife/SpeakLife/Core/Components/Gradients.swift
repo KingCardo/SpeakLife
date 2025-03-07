@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Gradients {
     
-    let colors: [Color] = [.cyan, .purple, .white, .red, .orange, .pink, .indigo]
+    let colors: [Color] = [.cyan, .purple, .white, .red, .orange, .pink, .indigo, .yellow, .green, .teal]
     
     func randomColors() -> [Color] {
             let shuffledColors = colors.shuffled()

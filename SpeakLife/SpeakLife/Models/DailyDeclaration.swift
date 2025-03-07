@@ -22,23 +22,18 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case fear
     case hope
     case health
-    case peace
     case wealth
     case wisdom
     case grace
-    case loneliness
   //  case motivation
     case addiction
     case confidence
-    case forgiveness
     case godsprotection
-    case guidance
     case rest
     case joy
     
     case hardtimes
     case parenting
-    case perseverance
     case identity
     case marriage
     case general
@@ -46,6 +41,15 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case heaven
     case purity
     case relationships
+    case warfare
+    case anxiety
+    case miracles
+    case favor
+    case work
+    case friendship
+    case innerHealing
+    case obedience
+    case spiritualGrowth
     case genesis, exodus, leviticus, numbers, deuteronomy
     case joshua, judges, ruth
     case samuel1, samuel2
@@ -110,28 +114,32 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .thessalonians2,
         .revelation,
         .addiction,
+        .anxiety,
         .confidence,
+        .favor,
         .fear,
-        .forgiveness,
+        .friendship,
         .godsprotection,
         .gratitude,
-        .guidance,
         .hardtimes,
         .health,
         .heaven,
         .hope,
         .identity,
+        .innerHealing,
         .joy,
-        .loneliness,
         .love,
+        .obedience,
         .parenting,
         .praise,
         .purity,
         .rest,
         .relationships,
         .marriage,
-        .peace,
-        .perseverance,
+        .miracles,
+        .spiritualGrowth,
+        .warfare,
+        .work,
         .wisdom,
         .wealth,
         ]
@@ -186,30 +194,35 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .grace,
         .faith,
         .addiction,
+        .anxiety,
         .confidence,
+        .favor,
         .fear,
-        .forgiveness,
+        .friendship,
         .godsprotection,
         .gratitude,
-        .guidance,
         .hardtimes,
         .health,
         .heaven,
         .hope,
         .identity,
+        .innerHealing,
         .joy,
-        .loneliness,
         .love,
         .marriage,
+        .miracles,
+        .obedience,
         .parenting,
-        .peace,
-        .perseverance,
         .praise,
         .purity,
         .relationships,
         .rest,
+        .spiritualGrowth,
+        .warfare,
         .wealth,
+        .work,
         .wisdom
+        
     ]
     
     var isBibleBook: Bool {
@@ -222,6 +235,20 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     var name: String {
         switch self {
        // case .selfcontrol: return "Self Control"
+        case .spiritualGrowth: return "Spiritual Growth"
+        case .obedience: return "Surrender & Obedience"
+        case .innerHealing: return "Emotional & Inner Healing"
+        case .friendship: return "Friendship & Support"
+        case .work: return "Work & Career"
+        case .favor: return "Favor & Blessings"
+        case .miracles: return "Miracles & Breakthroughs"
+        case .anxiety: return "Anxiety & Worry"
+        case .warfare: return "Warfare & Victory"
+        case .love: return "Love & Belonging"
+        case .rest: return "Peace & Rest"
+        case .hope: return "Hope & Endurance"
+        case .destiny: return "Purpose & Guidance"
+        case .grace: return "Grace & Forgiveness"
         case .hardtimes: return "Hard Times"
         case .godsprotection: return "God's Protection"
         case .fear: return "Fear Not!"

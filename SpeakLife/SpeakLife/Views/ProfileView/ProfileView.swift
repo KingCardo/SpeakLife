@@ -77,7 +77,7 @@ struct ProfileView: View {
             VStack {
                 VStack {
             Spacer().frame(height: 8)
-            Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
+            Image(uiImage: UIImage(named: "appIconDisplay") ?? UIImage())
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 70, height: 70)
