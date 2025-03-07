@@ -74,6 +74,10 @@ struct Gradients {
             .edgesIgnoringSafeArea(.all)
     }
     
+    var clearGradient: some View { LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom)
+            .edgesIgnoringSafeArea(.all)
+    }
+    
     
     
     var random: some View { LinearGradient(gradient: Gradient(colors: randomColors()), startPoint: .topLeading, endPoint: .bottomTrailing)

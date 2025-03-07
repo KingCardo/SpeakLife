@@ -131,6 +131,7 @@ final class DeclarationViewModel: ObservableObject {
             self.allDeclarations = declarations
             self.populateDeclarationsByCategory()
             self.choose(self.selectedCategory) { _ in }
+            self.refreshGeneral(categories: selectedCategories)
             self.favorites = self.getFavorites()
             self.createOwn = self.getCreateOwn()
             self.errorMessage = error?.localizedDescription

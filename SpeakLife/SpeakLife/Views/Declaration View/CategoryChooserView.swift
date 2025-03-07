@@ -41,13 +41,16 @@ struct CategoryCell: View  {
             
             ZStack(alignment: .topTrailing) {
                 if category.isBibleBook {
-                    Image("wisdom")
-                        .resizable().scaledToFill()
-                        .frame(width: dimension, height: dimension)
-                        .clipped()
-                        .cornerRadius(4)
-                    
-                    lockIcon
+                    ZStack {
+                        Image("JesusOnCross")
+                            .resizable().scaledToFill()
+                            .frame(width: dimension, height: dimension)
+                            .clipped()
+                            .cornerRadius(4)
+                        
+                        Gradients().clearGradient
+                        lockIcon
+                    }
                 } else {
                     Gradients().randomGradient
                         .scaledToFill()
@@ -59,21 +62,11 @@ struct CategoryCell: View  {
             }
             
             VStack {
-                if category.isBibleBook {
-                    Text(category.categoryTitle)
-                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 18))
-                        .foregroundColor(.white)
-                        .padding()
-                    Spacer()
-                } else {
-                    
                     Spacer()
                     Text(category.categoryTitle)
                         .font(Font.custom("AppleSDGothicNeo-Bold", size: 18))
                         .foregroundColor(.white)
                         .padding()
-                }
-                
             }
         }
         .frame(width: dimension, height: size.height * 0.22)
