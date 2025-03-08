@@ -32,6 +32,7 @@ let currentMonthlyPremiumID = "SpeakLife1MO9"
 let currentPremiumID = "SpeakLife1YR29"
 let lifetimeID = "SpeakLifeLifetime"
 let devotionals = "Devotionals30SL"
+let weeklyID = "SpeakLife1Wk5"
 final class SubscriptionStore: ObservableObject {
 
     @Published var isPremium: Bool = false
@@ -46,6 +47,7 @@ final class SubscriptionStore: ObservableObject {
     @Published var currentOfferedMonthly: Product? = nil
     @Published var currentOfferedPremium: Product? = nil
     @Published var currentOfferedPremiumMonthly: Product? = nil
+    @Published var currentOfferedWeekly: Product? = nil
     @Published var currentOfferedDevotionalPremium: Product? = nil
     @Published var isInDevotionalPremium = false
     @Published var testGroup = 0//Int.random(in: 0...1)
@@ -55,6 +57,7 @@ final class SubscriptionStore: ObservableObject {
     @Published var showOneTimeSubscription = false
     @Published var showSubscription = false
     @Published var showSubscriptionFirst = false
+    @Published var showYearlyOption = false
     
     @Published var yearlySubscription = ""
     @Published var monthlySubscription = ""
@@ -124,6 +127,7 @@ final class SubscriptionStore: ObservableObject {
         onboardingBGImage = remoteConfig["onboardingImage"].stringValue
         backgroundImage = remoteConfig["backgroundImage"].stringValue
         showSubscriptionFirst = remoteConfig["showSubscriptionFirst"].boolValue
+        showYearlyOption = remoteConfig["showYearlyOption"].boolValue
         yearlyID = yearlySubscription
         monthlyID = monthlySubscription
         completion()
@@ -193,10 +197,10 @@ final class SubscriptionStore: ObservableObject {
                         print("Monthly set RWRW")
                     }
                     
-//                    if product.id == monthlySubscription {
-//                        currentOfferedPremiumMonthly = product
-//                        print("currentMonthlyPremiumID set RWRW")
-//                    }
+                    if product.id == weeklyID {
+                        currentOfferedWeekly = product
+                        print("weekly set RWRW")
+                    }
                     
                     if product.id == yearlySubscription {
                         currentOfferedPremium = product
@@ -377,7 +381,7 @@ extension Product {
         } else if id == monthlyID {
             return "Monthly"
         } else {
-           return "Pro Monthly"
+           return "Weekly"
         }
     }
     
@@ -401,6 +405,8 @@ extension Product {
         } else if id == yearlyID {
             let monthly = getMonthlyAmount(price: price)
             return "First 7 days free, then \(displayPrice)/yr."
+        } else if id == weeklyID {
+            return "\(displayPrice)/wk."
         } else {
            return "\(displayPrice)/mo."
         }
@@ -430,6 +436,8 @@ extension Product {
             return "Totally free for 7 days, then \(monthly)month, billed annually at \(displayPrice)/year. Cancel anytime."
         } else if id == lifetimeID {
             return "Pay once, own it for life!"
+        } else if id == weeklyID {
+                return "\(displayPrice)/per week. Cancel anytime."
         } else {
             return "Just \(displayPrice) per month. Cancel anytime."
         }

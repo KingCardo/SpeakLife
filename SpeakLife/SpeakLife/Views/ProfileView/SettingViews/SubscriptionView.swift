@@ -210,7 +210,7 @@ struct SubscriptionView: View {
     @State var firstSelection: Product?
     @State var secondSelection: Product?
     @State var thirdSelection: Product?
-    @State var monthlyProSelection: Product?
+    @State var weeklySelection: Product?
 
     @State var chooseDifferentAmount = false
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
@@ -240,6 +240,7 @@ struct SubscriptionView: View {
                 self.currentSelection = subscriptionStore.currentOfferedPremium
                 self.secondSelection = subscriptionStore.currentOfferedPremiumMonthly
                 self.thirdSelection = subscriptionStore.currentOfferedLifetime
+                self.weeklySelection = subscriptionStore.currentOfferedWeekly
 //                self.monthlyPremiumSelection = subscriptionStore.currentOfferedPremiumMonthly
 //                self.monthlyProSelection = subscriptionStore.currentOfferedMonthly
             }
@@ -302,11 +303,18 @@ struct SubscriptionView: View {
                                             
                     VStack {
                        
-                        
-                        Button {
-                            currentSelection = firstSelection
-                        } label: {
-                            firstSelectionBox()
+                        if subscriptionStore.showYearlyOption {
+                            Button {
+                                currentSelection = firstSelection
+                            } label: {
+                                firstSelectionBox()
+                            }
+                        } else {
+                            Button {
+                                currentSelection = weeklySelection
+                            } label: {
+                                weeklySelectionBox()
+                            }
                         }
                         Spacer()
                             .frame(height: 8)
@@ -612,6 +620,33 @@ struct SubscriptionView: View {
                 .foregroundStyle(.white)
                 .padding([.leading, .trailing])
                 
+        }
+        
+        .padding([.leading, .trailing], 20)
+    }
+    
+    func weeklySelectionBox() -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(currentSelection == weeklySelection ? Constants.gold : Color.gray, lineWidth: 1)
+                .background(.clear)
+                .shadow(color: currentSelection == weeklySelection ? Color.yellow.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
+                .frame(height: 50)
+            
+            HStack {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(weeklySelection?.ctaDurationTitle ?? "")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
+                        .bold()
+                    Text(weeklySelection?.subTitle ?? "")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 12))
+                    
+                }
+                Spacer()
+            }
+            .foregroundStyle(.white)
+            .padding([.leading, .trailing])
+            
         }
         
         .padding([.leading, .trailing], 20)
