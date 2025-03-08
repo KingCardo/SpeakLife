@@ -60,7 +60,7 @@ final class SubscriptionStore: ObservableObject {
     @Published var monthlySubscription = ""
     @Published var discountSubscription = ""
     
-    @Published var onboardingBGImage = "onboardingImage"
+    @Published var onboardingBGImage = ""
     @Published var backgroundImage = "moonlight2"
    
     private var remoteConfig = RemoteConfig.remoteConfig()

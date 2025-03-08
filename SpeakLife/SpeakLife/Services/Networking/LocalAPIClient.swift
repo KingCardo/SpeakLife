@@ -132,8 +132,12 @@ final class LocalAPIClient: APIService {
             }
         } else {
             guard
-                let url = Bundle.main.url(forResource: "declarationsv6", withExtension: "json"),
-                let data = try? Data(contentsOf: url) else {
+                let url = Bundle.main.url(forResource: "declarationsv7", withExtension: "json") else {
+                print("cant find file rwrw")
+                return
+            }
+                guard let data = try? Data(contentsOf: url) else {
+                    print("cant make data rwrw")
                 completion(nil)
                 return
             }

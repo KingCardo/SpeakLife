@@ -15,10 +15,10 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     case destiny
     case faith
-    case love
+   
     case favorites
     case myOwn
-    case gratitude
+   
     case fear
     case hope
     case health
@@ -31,7 +31,6 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case godsprotection
     case rest
     case joy
-    
     case hardtimes
     case parenting
     case identity
@@ -40,7 +39,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case praise
     case heaven
     case purity
-    case relationships
+    case love
+    case gratitude
     case warfare
     case anxiety
     case miracles
@@ -134,7 +134,6 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .praise,
         .purity,
         .rest,
-        .relationships,
         .marriage,
         .miracles,
         .spiritualGrowth,
@@ -215,7 +214,6 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .parenting,
         .praise,
         .purity,
-        .relationships,
         .rest,
         .spiritualGrowth,
         .warfare,

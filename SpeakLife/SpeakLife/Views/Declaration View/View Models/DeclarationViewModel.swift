@@ -301,8 +301,9 @@ final class DeclarationViewModel: ObservableObject {
                     let identity = self.allDeclarations.filter({ $0.category == .identity })
                     let love = self.allDeclarations.filter({ $0.category == .love })
                     general = destiny + identity + love
-                    self.errorMessage = "Oops, Try again!"
-                    completion(false)
+                    self.selectedCategoryString = category.rawValue
+                    self.resetListToTop = true
+                    completion(true)
                     return
                 }
                 self.errorMessage = "Oops, you need to add one to this category first!"
