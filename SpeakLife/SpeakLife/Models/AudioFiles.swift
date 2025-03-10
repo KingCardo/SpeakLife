@@ -73,7 +73,7 @@ let audioFiles: [AudioDeclaration] = [
            title: "Living Victoriously in Christ",
            subtitle: "Declaring Bible Verses to Walk in Victory Every Day",
            duration: "3m",
-           imageUrl: "sereneMountain",
+           imageUrl: "sunsetMountain",
            isPremium: true
        ),
     AudioDeclaration(
@@ -98,7 +98,7 @@ let audioFiles: [AudioDeclaration] = [
            title: "Healing for the Brokenhearted",
            subtitle: "Declaring God’s Love and Restoration Over a Wounded Heart",
            duration: "3m",
-           imageUrl: "sereneMountain2",
+           imageUrl: "sunset3",
            isPremium: false
        ),
     

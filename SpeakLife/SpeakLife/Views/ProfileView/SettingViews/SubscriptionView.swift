@@ -323,10 +323,18 @@ struct SubscriptionView: View {
                         } label: {
                             secondSelectionBox()
                         }
-                        Button {
-                            currentSelection = thirdSelection
-                        } label: {
-                            thirdSelectionBox()
+                        if !subscriptionStore.showYearlyOption {
+                            Button {
+                                currentSelection = firstSelection
+                            } label: {
+                                firstSelectionBox()
+                            }
+                        } else{
+                            Button {
+                                currentSelection = thirdSelection
+                            } label: {
+                                thirdSelectionBox()
+                            }
                         }
                         
  
@@ -598,7 +606,7 @@ struct SubscriptionView: View {
                         .frame(width: 100, height: 30)
                         .cornerRadius(15)
                     
-                    Text("7-Day Free Trial")
+                    Text("Most Popular")
                         .font(.caption2)
                         .foregroundColor(.black)
                 }

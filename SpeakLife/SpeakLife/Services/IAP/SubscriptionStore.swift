@@ -386,10 +386,12 @@ extension Product {
     }
     
     var ctaButtonTitle: String {
-        if id == currentYearlyID {
+        if id == lifetimeID {
+            return "Get Lifetime Access"
+        } else if id == currentYearlyID {
             return "Start My Free Trial Now"
         } else if id == yearlyID {
-                return "Try Free & Subscribe"
+                return "Start Free Trial"
         } else {
            return "Subscribe"
         }

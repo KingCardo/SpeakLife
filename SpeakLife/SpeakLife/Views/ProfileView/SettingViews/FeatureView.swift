@@ -110,12 +110,12 @@ struct FeatureView: View {
 //        Feature(subtitle: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future."),
         
        
-        Feature(subtitle: "Access 10,000+ Affirmations to Activate God's Promises"),
+        Feature(subtitle: "Life-Changing Affirmations to Activate God's Promises"),
         Feature(subtitle: "Start Every Morning with Jesus Devotionals"),
-        Feature(subtitle: "Pray with Powerful, Mountain-Moving Prayers"),
+        Feature(subtitle: "Pray Boldly with Mountain-Moving Prayers"),
         Feature(subtitle: "Stay Encouraged with Daily Scripture Reminders"),
         Feature(subtitle: "Sleep Peacefully with Bible Bedtime Stories"),
-        Feature(subtitle: "Personalize with 30+ Beautiful Themes")
+        Feature(subtitle: "Customize Your Experience with 30+ Beautiful Themes")
         ]
     
     let features: [Feature] = [
