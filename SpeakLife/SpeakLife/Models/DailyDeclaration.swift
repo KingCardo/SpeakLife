@@ -245,7 +245,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         case .love: return "Love & Belonging"
         case .rest: return "Peace & Rest"
         case .hope: return "Hope & Endurance"
-        case .destiny: return "Purpose & Guidance"
+        case .destiny: return "Destiny"
         case .grace: return "Grace & Forgiveness"
         case .hardtimes: return "Hard Times"
         case .godsprotection: return "God's Protection"

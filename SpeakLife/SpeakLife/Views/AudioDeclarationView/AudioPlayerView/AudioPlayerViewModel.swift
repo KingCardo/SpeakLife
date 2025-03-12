@@ -19,10 +19,13 @@ final class AudioPlayerViewModel: ObservableObject {
     @Published var subtitle: String = ""
     @Published var imageUrl: String = ""
     @Published var isBarVisible: Bool = false // Manage bar visibility
-    
+
+    private var queue: [URL] = []
     
     private var player: AVPlayer?
     private var timeObserver: Any?
+    private var endObserver: NSObjectProtocol?  // Observer for track end
+    
     private var cancellables = Set<AnyCancellable>()
     
     init() {
@@ -37,9 +40,9 @@ final class AudioPlayerViewModel: ObservableObject {
     }
     
     func loadAudio(from url: URL, isSameItem: Bool) {
-        
         if isPlaying, isSameItem { return }
         resetPlayer()
+        
         player = AVPlayer(url: url)
         
         // Get the duration of the audio
@@ -47,18 +50,32 @@ final class AudioPlayerViewModel: ObservableObject {
             self.duration = CMTimeGetSeconds(duration)
         }
         
-        
-        print("Loading audio from URL: \(url) RWRW")
-        print("Player duration: \(CMTimeGetSeconds(player?.currentItem?.duration ?? CMTime.zero)) RWRW")
+        print("Loading audio from URL: \(url)")
+        print("Player duration: \(CMTimeGetSeconds(player?.currentItem?.duration ?? CMTime.zero))")
         
         // Add time observer for playback progress
         timeObserver = player?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1), queue: .main) { [weak self] time in
             guard let self = self else { return }
             self.currentTime = CMTimeGetSeconds(time)
-//            if let duration = self.player?.currentItem?.duration {
-//                self.duration = CMTimeGetSeconds(duration)
-//            }
         }
+        
+        // Add observer for when the audio finishes playing
+        endObserver = NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem, queue: .main) { [weak self] _ in
+            guard let self = self else { return }
+            
+            if self.onRepeat {
+                self.player?.seek(to: CMTime.zero)
+                self.player?.play()
+            } else if !self.queue.isEmpty {
+                // Get next URL from the queue and load it
+                let nextURL = self.queue.removeFirst()
+                self.loadAudio(from: nextURL, isSameItem: false)
+            } else {
+                self.isPlaying = false
+                self.player?.seek(to: CMTime.zero)
+            }
+        }
+        
         togglePlayPause()
     }
     
@@ -69,7 +86,7 @@ final class AudioPlayerViewModel: ObservableObject {
             player.pause()
             AudioPlayerService.shared.playMusic()
         } else {
-           AudioPlayerService.shared.pauseMusic()
+            AudioPlayerService.shared.pauseMusic()
             player.play()
         }
         
@@ -83,21 +100,7 @@ final class AudioPlayerViewModel: ObservableObject {
     }
     
     func repeatTrack() {
-        guard let player = player else { return }
         onRepeat.toggle()
-        
-        // Observe when the audio finishes playing
-        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { [weak self] _ in
-            guard let self = self else { return }
-            
-            // Seek to the beginning of the track
-            self.player?.seek(to: CMTime.zero)
-            
-            // Play the track again
-            if self.isPlaying {
-                self.player?.play()
-            }
-        }
     }
     
     func changePlaybackSpeed(to speed: Float) {
@@ -106,14 +109,32 @@ final class AudioPlayerViewModel: ObservableObject {
     }
     
     func resetPlayer() {
-        // Clean up any previous AVPlayer
+        // Remove time observer if exists
         if let timeObserver = timeObserver {
             player?.removeTimeObserver(timeObserver)
             self.timeObserver = nil
         }
+        // Remove the end-of-track observer if it exists
+        if let endObserver = endObserver {
+            NotificationCenter.default.removeObserver(endObserver)
+            self.endObserver = nil
+        }
         player?.pause()
         player = nil
         currentTime = 0
+    }
+    
+    func playNext(_ item: URL?) {
+        guard let item = item else { return }
+        // Inserts item at the beginning of the queue
+        queue.insert(item, at: 0)
+    }
+    
+    func addToQueue(_ item: URL?) {
+        guard let item = item else { return }
+        // Appends item to the end of the queue
+        queue.append(item)
+        print("\(item), added to queue")
     }
     
     deinit {

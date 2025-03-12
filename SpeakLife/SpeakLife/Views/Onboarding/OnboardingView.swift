@@ -66,12 +66,14 @@ struct OnboardingView: View  {
                 IntroTipScene(
                     title: "Jesus Wants to Speak to You Daily",
                     bodyText: """
-            “Draw near to God, and He will draw near to you.” – James 4:8
-
-            Jesus is speaking—are you listening? Declaring His Word tunes your heart to His voice and strengthens your relationship with Him.
+            Jesus is always speaking—are you planting His words in your heart?
+            
+            Every time you meditate on Scripture and declare His promises, you are sowing seeds of faith.
+            
+            As you nurture them daily, you’ll see a harvest of peace, breakthrough, and transformation in your life.
             """,
                     subtext: "",
-                    ctaText: "Speak With Jesus",
+                    ctaText: "Start Planting Seeds Today",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
