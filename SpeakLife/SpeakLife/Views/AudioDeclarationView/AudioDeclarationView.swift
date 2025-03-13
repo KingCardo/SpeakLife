@@ -57,34 +57,34 @@ struct UpNextCell: View {
                     
                 }
                 Spacer()
-                if subscriptionStore.isPremium {
-                    Button {
-                        viewModel.fetchAudio(for: item) { result in
-                            DispatchQueue.main.async {
-                                switch result {
-                                case .success(let url):
-                                    addToQueue(url)
-                                    withAnimation {
-                                        showToast = true
-                                    }
-                                    // Hide the toast after 2 seconds
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                        withAnimation {
-                                            showToast = false
-                                        }
-                                    }
-                                    downloadURL = url
-                                case .failure(let error):
-                                    print(error)
-                                }
-                            }
-                        }
-                    } label: {
-                        
-                        Image(systemName: "text.badge.plus")
-                            .frame(width: 20, height: 20)
-                    }
-                }
+//                if subscriptionStore.isPremium {
+//                    Button {
+//                        viewModel.fetchAudio(for: item) { result in
+//                            DispatchQueue.main.async {
+//                                switch result {
+//                                case .success(let url):
+//                                    addToQueue(url)
+//                                    withAnimation {
+//                                        showToast = true
+//                                    }
+//                                    // Hide the toast after 2 seconds
+//                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                                        withAnimation {
+//                                            showToast = false
+//                                        }
+//                                    }
+//                                    downloadURL = url
+//                                case .failure(let error):
+//                                    print(error)
+//                                }
+//                            }
+//                        }
+//                    } label: {
+//                        
+//                        Image(systemName: "text.badge.plus")
+//                            .frame(width: 20, height: 20)
+//                    }
+//                }
             }
             .padding()
             

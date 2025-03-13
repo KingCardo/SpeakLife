@@ -302,42 +302,51 @@ struct SubscriptionView: View {
                     Spacer()
                                             
                     VStack {
-                       
-                        if subscriptionStore.showYearlyOption {
-                            Button {
-                                currentSelection = firstSelection
-                            } label: {
-                                firstSelectionBox()
-                            }
-                        } else {
-                            Button {
-                                currentSelection = weeklySelection
-                            } label: {
-                                weeklySelectionBox()
-                            }
-                        }
-                        Spacer()
-                            .frame(height: 8)
-                        Button {
-                            currentSelection = secondSelection
-                        } label: {
-                            secondSelectionBox()
-                        }
-                        if !subscriptionStore.showYearlyOption {
-                            Button {
-                                currentSelection = firstSelection
-                            } label: {
-                                firstSelectionBox()
-                            }
-                        } else{
-                            Button {
-                                currentSelection = thirdSelection
-                            } label: {
-                                thirdSelectionBox()
-                            }
-                        }
                         
- 
+                        if subscriptionStore.onlyShowYearly {
+                            Button {
+                                currentSelection = firstSelection
+                            } label: {
+                                yearlyOnlySelectionBox()
+                            }
+        
+                        } else {
+                            
+                            if subscriptionStore.showYearlyOption {
+                                Button {
+                                    currentSelection = firstSelection
+                                } label: {
+                                    firstSelectionBox()
+                                }
+                            } else {
+                                Button {
+                                    currentSelection = weeklySelection
+                                } label: {
+                                    weeklySelectionBox()
+                                }
+                            }
+                            Spacer()
+                                .frame(height: 8)
+                            Button {
+                                currentSelection = secondSelection
+                            } label: {
+                                secondSelectionBox()
+                            }
+                            if !subscriptionStore.showYearlyOption {
+                                Button {
+                                    currentSelection = firstSelection
+                                } label: {
+                                    firstSelectionBox()
+                                }
+                            } else {
+                                Button {
+                                    currentSelection = thirdSelection
+                                } label: {
+                                    thirdSelectionBox()
+                                }
+                            }
+                            
+                        }
                         
                     }
         
@@ -628,6 +637,33 @@ struct SubscriptionView: View {
                 .foregroundStyle(.white)
                 .padding([.leading, .trailing])
                 
+        }
+        
+        .padding([.leading, .trailing], 20)
+    }
+    
+    func yearlyOnlySelectionBox() -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(currentSelection == firstSelection ? Constants.gold : Color.gray, lineWidth: 1)
+                .background(.clear)
+                .shadow(color: currentSelection == firstSelection ? Color.yellow.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
+                .frame(height: 50)
+            
+            HStack {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(firstSelection?.ctaDurationTitle ?? "")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
+                        .bold()
+                    Text(firstSelection?.subTitle ?? "")
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 12))
+                    
+                }
+                Spacer()
+            }
+            .foregroundStyle(.white)
+            .padding([.leading, .trailing])
+            
         }
         
         .padding([.leading, .trailing], 20)

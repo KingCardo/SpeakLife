@@ -17,7 +17,7 @@ final class AudioDeclarationViewModel: ObservableObject {
     @Published var downloadProgress: [String: Double] = [:]
     private let storage = Storage.storage()
     private let fileManager = FileManager.default
-      
+    
       init() {
           self.audioDeclarations = audioFiles
           self.bedtimeStories = bedTimeFiles
