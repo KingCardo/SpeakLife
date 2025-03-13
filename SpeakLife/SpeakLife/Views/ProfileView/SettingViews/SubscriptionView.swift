@@ -307,7 +307,7 @@ struct SubscriptionView: View {
                             Button {
                                 currentSelection = firstSelection
                             } label: {
-                                yearlyOnlySelectionBox()
+                                firstSelectionBox()
                             }
         
                         } else {
@@ -606,21 +606,24 @@ struct SubscriptionView: View {
                 .shadow(color: currentSelection == firstSelection ? Color.yellow.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
                 .frame(height: 60)
             
-            HStack {
-                Spacer()
+            if subscriptionStore.showMostPopularBadge {
                 
-                ZStack {
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(Constants.traditionalGold)
-                        .frame(width: 100, height: 30)
-                        .cornerRadius(15)
+                HStack {
+                    Spacer()
                     
-                    Text("Most Popular")
-                        .font(.caption2)
-                        .foregroundColor(.black)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Constants.traditionalGold)
+                            .frame(width: 100, height: 30)
+                            .cornerRadius(15)
+                        
+                        Text("Most Popular")
+                            .font(.caption2)
+                            .foregroundColor(.black)
+                    }
+                    //  .padding(.trailing)
+                    .offset(x: -10, y: -36)
                 }
-                //  .padding(.trailing)
-                .offset(x: -10, y: -36)
             }
             
             HStack {
@@ -642,32 +645,6 @@ struct SubscriptionView: View {
         .padding([.leading, .trailing], 20)
     }
     
-    func yearlyOnlySelectionBox() -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(currentSelection == firstSelection ? Constants.gold : Color.gray, lineWidth: 1)
-                .background(.clear)
-                .shadow(color: currentSelection == firstSelection ? Color.yellow.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
-                .frame(height: 50)
-            
-            HStack {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(firstSelection?.ctaDurationTitle ?? "")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
-                        .bold()
-                    Text(firstSelection?.subTitle ?? "")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 12))
-                    
-                }
-                Spacer()
-            }
-            .foregroundStyle(.white)
-            .padding([.leading, .trailing])
-            
-        }
-        
-        .padding([.leading, .trailing], 20)
-    }
     
     func weeklySelectionBox() -> some View {
         ZStack {
