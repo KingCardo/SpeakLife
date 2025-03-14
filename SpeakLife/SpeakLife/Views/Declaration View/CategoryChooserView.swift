@@ -44,7 +44,7 @@ struct CategoryCell: View  {
                     ZStack {
                         Image("JesusOnCross")
                             .resizable().scaledToFill()
-                            .frame(width: dimension, height: dimension)
+                            .frame(width: dimension, height: size.height * 0.22)
                             .clipped()
                             .cornerRadius(4)
                         
@@ -62,9 +62,9 @@ struct CategoryCell: View  {
             }
             
             VStack {
-                   // Spacer()
+                    Spacer()
                     Text(category.categoryTitle)
-                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 24))
+                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 20))
                                   .foregroundColor(.white)
                                   .multilineTextAlignment(.center) // Ensures text wraps properly
                                   .padding(.horizontal, 8) // Avoids text clipping
