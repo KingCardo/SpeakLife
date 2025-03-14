@@ -33,7 +33,7 @@ struct SettingsRow<Content: View>: View {
             Button(action: action) {
                 
             }
-            .sheet(isPresented: $isPresentingContentView) {
+            .fullScreenCover(isPresented: $isPresentingContentView) {
                 self.isPresentingContentView = false
             } content: {
                 viewToPresent

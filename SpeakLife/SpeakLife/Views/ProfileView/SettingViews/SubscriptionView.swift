@@ -203,6 +203,7 @@ struct OfferPageView: View {
 
 
 struct SubscriptionView: View {
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var appState: AppState
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var declarationStore: DeclarationViewModel
@@ -380,6 +381,22 @@ struct SubscriptionView: View {
             
             if declarationStore.isPurchasing {
                 RotatingLoadingImageView()
+            }
+            
+            VStack  {
+                HStack  {
+                    Button(action: { dismiss() }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.white)
+                        
+                    }
+                    Spacer()
+                }
+                .padding()
+                
+                Spacer()
             }
         }
         .sheet(isPresented: $chooseDifferentAmount) {

@@ -62,11 +62,15 @@ struct CategoryCell: View  {
             }
             
             VStack {
-                    Spacer()
+                   // Spacer()
                     Text(category.categoryTitle)
-                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 18))
-                        .foregroundColor(.white)
-                        .padding()
+                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 24))
+                                  .foregroundColor(.white)
+                                  .multilineTextAlignment(.center) // Ensures text wraps properly
+                                  .padding(.horizontal, 8) // Avoids text clipping
+                                  .frame(width: dimension * 0.9) // Ensures text fits inside the frame
+                                  .cornerRadius(4)
+                                  .padding(.bottom, 5)
             }
         }
         .frame(width: dimension, height: size.height * 0.22)
