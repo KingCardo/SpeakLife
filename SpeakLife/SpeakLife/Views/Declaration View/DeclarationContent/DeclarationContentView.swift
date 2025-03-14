@@ -205,7 +205,7 @@ struct DeclarationContentView: View {
         ]
         
         if declaration.bibleVerseText != nil {
-            buttons.append(AnyView(DeclarationMenuButton(iconName: viewModel.showVerse ? "arrowshape.zigzag.forward" : "arrowshape.zigzag.right.fill", label: "VERSE") { showVerse(declaration: declaration) }))
+            buttons.append(AnyView(DeclarationMenuButton(iconName: viewModel.showVerse ? "arrowshape.zigzag.right.fill" : "arrowshape.zigzag.forward", label: "VERSE") { showVerse(declaration: declaration) }))
         }
         if index < buttons.count {
             return AnyView(buttons[index]
@@ -240,7 +240,7 @@ struct DeclarationContentView: View {
             Spacer()
                     .frame(height: geometry.size.height * 0.05)
             
-            QuoteLabel(themeViewModel: themeViewModel, quote: viewModel.showVerse ? declaration.text : declaration.bibleVerseText ?? "")
+            QuoteLabel(themeViewModel: themeViewModel, quote: viewModel.showVerse ? declaration.bibleVerseText ?? "" : declaration.text)
                 .foregroundColor(themeViewModel.selectedTheme.fontColor)
                 .frame(width: geometry.size.width * 0.98)
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
@@ -328,7 +328,7 @@ struct DeclarationContentView: View {
         
                 
                 if declaration.bibleVerseText != nil {
-                    CapsuleImageButton(title: viewModel.showVerse ? "arrowshape.zigzag.forward" : "arrowshape.zigzag.right.fill") {
+                    CapsuleImageButton(title: viewModel.showVerse ? "arrowshape.zigzag.right.fill" : "arrowshape.zigzag.forward") {
                         showVerse(declaration: declaration)
                     }
                 }

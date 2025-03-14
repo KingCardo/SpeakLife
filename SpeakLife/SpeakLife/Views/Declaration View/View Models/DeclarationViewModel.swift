@@ -26,7 +26,7 @@ final class DeclarationViewModel: ObservableObject {
         }
     }
     
-    @Published var showVerse = true
+    @Published var showVerse = false
     
     @Published var selectedTab = 0
     
@@ -176,7 +176,7 @@ final class DeclarationViewModel: ObservableObject {
     
     func setCurrent(_ declaration: Declaration) {
         currentDeclaration = declaration
-        showVerse = true
+        showVerse = false
     }
     
     func toggleDeclaration(_ declaration: Declaration) {
@@ -188,20 +188,11 @@ final class DeclarationViewModel: ObservableObject {
     }
     
     func subtitle(_ declaration: Declaration) -> String {
-        return declaration.book ?? ""
-//        if selectedCategory.isBibleBook {
-//            if showVerse {
-//                return declaration.book ?? ""
-//            } else {
-//                return ""
-//            }
-//        } else {
-//            if showVerse {
-//                return declaration.book == "Jesus" ? "Jesus" : declaration.book
-//            } else {
-//                return declaration.book ?? ""
-//            }
-//        }
+        if selectedCategory.isBibleBook || showVerse {
+            return declaration.book ?? ""
+        } else {
+           return ""
+        }
     }
     
     

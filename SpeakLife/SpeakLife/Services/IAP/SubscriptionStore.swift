@@ -26,6 +26,7 @@ public enum StoreError: Error {
 }
 var yearlyID = ""
 var monthlyID = ""
+var discountID = ""
 let currentYearlyID = "SpeakLife1YR19"
 let currentMonthlyID = "SpeakLife1MO4"
 let currentMonthlyPremiumID = "SpeakLife1MO9"
@@ -42,7 +43,7 @@ final class SubscriptionStore: ObservableObject {
     @Published private(set) var purchasedSubscriptions: [Product] = []
     @Published private(set) var purchasedNonConsumables: [Product] = [] // New list for purchased non-consumables
     @Published private(set) var subscriptionGroupStatus: RenewalState?
-    @Published var currentOfferedYearly: Product? = nil
+    @Published var currentOfferedDiscount: Product? = nil
     @Published var currentOfferedLifetime: Product? = nil
     @Published var currentOfferedMonthly: Product? = nil
     @Published var currentOfferedPremium: Product? = nil
@@ -134,6 +135,7 @@ final class SubscriptionStore: ObservableObject {
         showMostPopularBadge = remoteConfig["showMostPopularBadge"].boolValue
         yearlyID = yearlySubscription
         monthlyID = monthlySubscription
+        discountID = discountSubscription
         completion()
 
     }
@@ -193,7 +195,7 @@ final class SubscriptionStore: ObservableObject {
                 case .autoRenewable:
                     newSubscriptions.append(product)
                     if product.id == discountSubscription {
-                        currentOfferedYearly = product
+                        currentOfferedDiscount = product
                         print("discount set RWRW")
                     }
                     if product.id == monthlySubscription {
@@ -447,6 +449,33 @@ extension Product {
         } else {
             return "Just \(displayPrice) per month. Cancel anytime."
         }
+    }
+    
+    var discountedPrice: String {
+        if id == discountID {
+            return displayPrice
+            }
+        return ""
+    }
+    
+    var discountedMonthlyPrice: String {
+        if id == discountID {
+            let monthly = getMonthlyAmount(price: price)
+            return "\(monthly)month"
+        }
+        return ""
+    }
+    
+    var percentageOff: String {
+        if id == discountID {
+            // Step 1: Calculate the raw discount value
+            let priceDouble = NSDecimalNumber(decimal: price).doubleValue
+
+            // Adjusted Calculation Formula
+            let discount = max(0, Int(((50 - priceDouble) / 50) * 100))
+            return "\(discount)%"
+        }
+        return ""
     }
         
 //        var discountOff: String {

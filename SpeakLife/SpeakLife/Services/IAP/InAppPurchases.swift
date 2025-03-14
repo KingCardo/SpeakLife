@@ -23,6 +23,7 @@ struct InAppId: Codable {
         case speakLife1YR49 = "SpeakLife1YR49"
         case speakLife1YR39 = "SpeakLife1YR39"
         case speakLife1YR29 = "SpeakLife1YR29"
+        case speakLife1YR19 = "SpeakLife1YR19"
         case speakLife1MO9 = "SpeakLife1MO9"
         case speakLife1MO7 = "SpeakLife1MO7"
         case speakLife1MO4 = "SpeakLife1MO4"
@@ -41,6 +42,7 @@ struct InAppId: Codable {
             case .speakLife1MO4: return "$4.99"
             case .speakLife1MO2: return "$2.99"
             case .speakLife1WK5: return "$4.99"
+            case .speakLife1YR19: return "19.99"
             }
         }
         
@@ -71,6 +73,7 @@ struct InAppId: Codable {
             case .speakLife1MO4: return "$4.99/month. Billed today. Cancel anytime."
             case .speakLife1MO2: return "$2.99/month"
             case .speakLife1WK5: return "7 days free, then $4.99/week. Cancel anytime."
+            default: return ""
             }
         }
         
@@ -130,7 +133,7 @@ struct InAppId: Codable {
     
     static let allInApp: [InAppId.Subscription] = [Subscription.speakLife1YR99, Subscription.speakLife1YR49, Subscription.speakLife1YR39, Subscription.speakLife1YR29, Subscription.speakLife1MO9,Subscription.speakLife1MO7, Subscription.speakLife1MO4]
     
-    static let all: [String] = [Subscription.speakLifeLifetime.id, Subscription.speakLife1YR99.id, Subscription.speakLife1YR49.id, Subscription.speakLife1YR39.id, Subscription.speakLife1YR29.id, Subscription.speakLife1MO9.id, Subscription.speakLife1MO7.id, Subscription.speakLife1MO4.id, Subscription.speakLife1WK5.id]
+    static let all: [String] = [Subscription.speakLifeLifetime.id, Subscription.speakLife1YR99.id, Subscription.speakLife1YR49.id, Subscription.speakLife1YR39.id, Subscription.speakLife1YR29.id, Subscription.speakLife1YR19.id, Subscription.speakLife1MO9.id, Subscription.speakLife1MO7.id, Subscription.speakLife1MO4.id, Subscription.speakLife1WK5.id]
 }
 
 struct Messages {

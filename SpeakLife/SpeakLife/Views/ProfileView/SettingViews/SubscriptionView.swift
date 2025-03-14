@@ -17,8 +17,6 @@ import SwiftUI
 class OfferViewModel: ObservableObject {
     @Published var originalPrice: String = "$49.99/year"
     @Published var monthlyPrice: String = "$4.16/month"
-    @Published var discountedPrice: String = "$29.99/year"
-    @Published var discountedMonthlyPrice: String = "$2.49/month"
 }
 
 struct OfferPageView: View {
@@ -30,9 +28,19 @@ struct OfferPageView: View {
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
     let callBack: (() -> Void)
     
+    @State var currentSelection: Product?
+    
     var body: some View {
             ZStack {
                 VStack(spacing: 20) {
+                    Image("gift")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 300, height: 300)
+                        .padding(.top, 30)
+                        .shadow(color: Color.purple.opacity(0.5), radius: 20, x: 10, y: 10)
+                        .cornerRadius(6)
+                    
                     Text("One-Time Exclusive Offer!")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .caption))
                         .foregroundColor(.white)
@@ -43,7 +51,7 @@ struct OfferPageView: View {
                                 .fill(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))
                         )
                     VStack {
-                        Text("40% off")
+                        Text("\(currentSelection?.percentageOff ?? "") off")
                             .font(Font.custom("AppleSDGothicNeo-Bold", size: 52, relativeTo: .title))
                             .foregroundColor(.white)
                         
@@ -56,8 +64,10 @@ struct OfferPageView: View {
                         RotatingLoadingImageView()
                     }
                     
-                    FeatureView()
-                        .foregroundStyle(.white)
+                    if !subscriptionStore.showSubscriptionFirst {
+                        FeatureView()
+                            .foregroundStyle(.white)
+                    }
                     HStack(spacing: 10) {
                         VStack {
                             RoundedRectangle(cornerRadius: 20)
@@ -90,10 +100,10 @@ struct OfferPageView: View {
                                         Text("Your price now")
                                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
                                             .foregroundColor(.white)
-                                        Text(viewModel.discountedPrice)
+                                        Text(currentSelection?.discountedPrice ?? "")
                                             .font(Font.custom("AppleSDGothicNeo-Bold", size: 20, relativeTo: .body))
                                             .foregroundColor(.white)
-                                        Text(viewModel.discountedMonthlyPrice)
+                                        Text(currentSelection?.discountedMonthlyPrice ?? "")
                                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
                                             .foregroundColor(.white)
                                     }
@@ -108,7 +118,7 @@ struct OfferPageView: View {
                     Button(action: {
                         makePurchase(iap: subscriptionStore.discountSubscription)
                     }) {
-                        Text("Claim My 40% Off Now")
+                        Text("Claim My \(currentSelection?.percentageOff ?? "") Off Now")
                             .font(.system(size: 18, weight: .bold))
                             .padding()
                             .frame(maxWidth: .infinity, maxHeight: 50)
@@ -127,6 +137,13 @@ struct OfferPageView: View {
                             .foregroundColor(.white)
                     }
                     
+//                    Button(action: restore) {
+//                        Text("Restore", comment: "restore iap")
+//                            .font(.caption)
+//                            .underline()
+//                            .foregroundColor(Color.blue)
+//                    }
+                    
                     Spacer()
                 }
                 .padding()
@@ -134,14 +151,12 @@ struct OfferPageView: View {
                 .alert(isPresented: $isShowingError, content: {
                     Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
                 })
-                Button(action: restore) {
-                    Text("Restore", comment: "restore iap")
-                        .font(.caption)
-                        .underline()
-                        .foregroundColor(Color.blue)
-                }
+               
                 
                 
+            }
+            .onAppear() {
+                self.currentSelection = subscriptionStore.currentOfferedDiscount
             }
     }
     
