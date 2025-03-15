@@ -149,8 +149,7 @@ struct ProfileView: View {
                     AudioPlayerService.shared.pauseMusic()
                 }
             }
-            .foregroundColor(.white)//colorScheme == .dark ? .white : .black)
-                        //.navigationBarTitle(Text("SpeakLife"))
+            .foregroundColor(.white)
         )
         .alert(isPresented: $declarationStore.errorAlert) {
             Alert(

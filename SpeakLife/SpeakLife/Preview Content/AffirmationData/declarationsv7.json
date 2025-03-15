@@ -3,6 +3,80 @@
     "version": 1,
     "declarations": [
         {
+            "text": "I am the Lord who goes before you; every obstacle in your path must bow before My power.",
+            "book": "Jesus",
+            "category": "destiny"
+        },
+        {
+            "text": "I hold the keys to every door—what I open, no one can shut. Trust Me, for your breakthrough is near.",
+            "book": "Jesus",
+            "category": "destiny"
+        },
+        {
+            "text": "I have called you by name and destined you for greatness. No force can stop what I have ordained for you.",
+            "book": "Jesus",
+            "category": "destiny"
+        },
+        {
+            "text": "I am making a way in the wilderness and streams in the desert. Watch as I turn impossibilities into testimonies.",
+            "book": "Jesus",
+            "category": "destiny"
+        },
+        {
+            "text": "My plans for you are unstoppable. I will break down every wall and shatter every chain that stands in your way.",
+            "book": "Jesus",
+            "category": "destiny"
+        },
+        {
+            "text": "I have anointed you for such a time as this. Step forward with boldness, for I am with you.",
+            "book": "Jesus",
+            "category": "destiny"
+        },
+        {
+            "text": "Your past cannot limit the future I have prepared for you. I am the God of new beginnings—walk in My promise.",
+            "book": "Jesus",
+            "category": "destiny"
+        },
+        {
+            "text": "Do not fear, for I am fighting for you. The battles that seemed impossible are already won in My name.",
+            "book": "Jesus",
+            "category": "destiny"
+        },
+        {
+            "text": "My word over your life will not return void. Every promise I have spoken shall come to pass.",
+            "book": "Jesus",
+            "category": "destiny"
+        },
+        {
+            "text": "The doors I am opening for you will exceed your expectations. Get ready for the miraculous!",
+            "book": "Jesus",
+            "category": "destiny"
+        },
+        {
+            "text": "You are my masterpiece, created for great works that I have prepared just for you.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "destiny"
+        },
+        {
+            "text": "I am the God of breakthroughs; trust me to break through every closed door for you.",
+            "book": "Jesus",
+            "isFavorite": false,
+            "category": "destiny"
+        },
+        {
+            "text": "Have faith—I am working even when you cannot see it.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "faith"
+        },
+        {
+            "text": "Keep your eyes on Me, and you will find peace in every storm.",
+            "isFavorite": false,
+            "book": "Jesus",
+            "category": "faith"
+        },
+        {
             "text": "I am chosen, appointed, and anointed by God to fulfill a destiny beyond human limits. Nothing can stop the plans He has for me!",
             "bibleVerseText": "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
             "book": "Jeremiah 29:11",
@@ -607,6 +681,56 @@
             "bibleVerseText": "The one who calls you is faithful, and he will do it.",
             "book": "1 Thessalonians 5:24",
             "category": "faith"
+        },
+        {
+            "text": "Do not be afraid, for I am with you. My presence surrounds you, and no evil shall touch you.",
+            "book": "Jesus",
+            "category": "fear"
+        },
+        {
+            "text": "I have not given you a spirit of fear, but of power, love, and a sound mind. Stand firm in My strength.",
+            "book": "Jesus",
+            "category": "fear"
+        },
+        {
+            "text": "Fear has no hold on you, for I have conquered the world. Trust in Me, and I will lead you in victory.",
+            "book": "Jesus",
+            "category": "fear"
+        },
+        {
+            "text": "I am your refuge and fortress. No weapon formed against you shall prosper, for I am your defender.",
+            "book": "Jesus",
+            "category": "fear"
+        },
+        {
+            "text": "When you walk through the fire, you will not be burned. When you pass through deep waters, I am with you.",
+            "book": "Jesus",
+            "category": "fear"
+        },
+        {
+            "text": "Be strong and courageous. I go before you and make every crooked path straight.",
+            "book": "Jesus",
+            "category": "fear"
+        },
+        {
+            "text": "My perfect love casts out all fear. Rest in My love, and you will walk in peace.",
+            "book": "Jesus",
+            "category": "fear"
+        },
+        {
+            "text": "Even in the valley of the shadow of death, fear no evil—I am your Good Shepherd, and I will lead you through.",
+            "book": "Jesus",
+            "category": "fear"
+        },
+        {
+            "text": "I hold you in My hands, and nothing can snatch you away. You are safe in My love forever.",
+            "book": "Jesus",
+            "category": "fear"
+        },
+        {
+            "text": "Rise up in faith, for I have already won the battle. You have nothing to fear when you stand in My victory.",
+            "book": "Jesus",
+            "category": "fear"
         },
         {
             "text": "Fear has no place in my life because God is with me!",
@@ -1365,6 +1489,51 @@
             "category": "health"
         },
         {
+            "text": "I am your provider, and I will supply all your needs according to My riches in glory.",
+            "book": "Jesus",
+            "category": "wealth"
+        },
+        {
+            "text": "I have anointed you to prosper. Whatever you put your hands to will flourish under My blessing.",
+            "book": "Jesus",
+            "category": "wealth"
+        },
+        {
+            "text": "The earth and all its fullness belong to Me, and as My beloved, I will lead you into abundance.",
+            "book": "Jesus",
+            "category": "wealth"
+        },
+        {
+            "text": "I give you the power to create wealth. Walk in wisdom, and you will see My provision overflow in your life.",
+            "book": "Jesus",
+            "category": "wealth"
+        },
+        {
+            "text": "Do not fear lack, for I am your Shepherd. You will never be in want as you trust in Me.",
+            "book": "Jesus",
+            "category": "wealth"
+        },
+        {
+            "text": "Seek first My kingdom, and I will add to you wealth, favor, and every good thing.",
+            "book": "Jesus",
+            "category": "wealth"
+        },
+        {
+            "text": "I have called you to be a blessing. As I prosper you, you will be a vessel of My abundance to others.",
+            "book": "Jesus",
+            "category": "wealth"
+        },
+        {
+            "text": "Your barns will be filled with plenty, and your cup will overflow, for I am the Lord of increase.",
+            "book": "Jesus",
+            "category": "wealth"
+        },
+        {
+            "text": "I am opening doors of opportunity for you. Walk through them in faith, and you will see My provision.",
+            "book": "Jesus",
+            "category": "wealth"
+        },
+        {
             "text": "I honor the Lord with my wealth, and my resources are overflowing!",
             "bibleVerseText": "Honor the Lord with your wealth, with the firstfruits of all your crops; then your barns will be filled to overflowing.",
             "book": "Proverbs 3:9-10",
@@ -1381,6 +1550,56 @@
             "bibleVerseText": "May the favor of the Lord our God rest on us; establish the work of our hands for us—yes, establish the work of our hands.",
             "book": "Psalm 90:17",
             "category": "wealth"
+        },
+        {
+            "text": "I am the Lord who heals you. Every sickness and pain must bow to My name.",
+            "book": "Jesus",
+            "category": "health"
+        },
+        {
+            "text": "By My stripes, you are healed. My power is at work in your body, bringing full restoration.",
+            "book": "Jesus",
+            "category": "health"
+        },
+        {
+            "text": "I am renewing your strength like the eagle’s. You will run and not grow weary, walk and not faint.",
+            "book": "Jesus",
+            "category": "health"
+        },
+        {
+            "text": "I have come that you may have life and have it abundantly. Receive My wholeness and vitality.",
+            "book": "Jesus",
+            "category": "health"
+        },
+        {
+            "text": "Fear not, for I am with you. I am restoring your health and reviving every weary bone.",
+            "book": "Jesus",
+            "category": "health"
+        },
+        {
+            "text": "No weapon formed against your body shall prosper. My healing flows through every part of you.",
+            "book": "Jesus",
+            "category": "health"
+        },
+        {
+            "text": "I send My word and heal you. My power is making you whole from the inside out.",
+            "book": "Jesus",
+            "category": "health"
+        },
+        {
+            "text": "I am breathing new life into you. Every organ, every cell, every bone is being restored in My name.",
+            "book": "Jesus",
+            "category": "health"
+        },
+        {
+            "text": "Your body is My temple, and I have declared it strong, vibrant, and full of life.",
+            "book": "Jesus",
+            "category": "health"
+        },
+        {
+            "text": "I am the resurrection and the life. What seemed lost, broken, or beyond repair, I am restoring completely.",
+            "book": "Jesus",
+            "category": "health"
         },
         {
             "text": "God’s joy fills me with strength, and I flourish in health!",
@@ -1891,6 +2110,56 @@
             "bibleVerseText": "The mouths of the righteous utter wisdom, and their tongues speak what is just.",
             "book": "Psalm 37:30",
             "category": "wisdom"
+        },
+        {
+            "text": "My grace is sufficient for you, and My power is made perfect in your weakness. Rest in Me.",
+            "book": "Jesus",
+            "category": "grace"
+        },
+        {
+            "text": "I have clothed you in My righteousness; you are fully accepted, fully forgiven, fully Mine.",
+            "book": "Jesus",
+            "category": "grace"
+        },
+        {
+            "text": "My mercy is new every morning. Yesterday is gone—walk in the freedom of My grace today.",
+            "book": "Jesus",
+            "category": "grace"
+        },
+        {
+            "text": "I have taken your burdens and given you My peace. Let go of striving and receive My grace.",
+            "book": "Jesus",
+            "category": "grace"
+        },
+        {
+            "text": "There is no condemnation for you in Me. My blood speaks of better things—redemption, restoration, and grace.",
+            "book": "Jesus",
+            "category": "grace"
+        },
+        {
+            "text": "You are not defined by your failures but by My love. My grace lifts you higher than your past.",
+            "book": "Jesus",
+            "category": "grace"
+        },
+        {
+            "text": "I have removed your sins as far as the east is from the west. Walk boldly as a child of grace.",
+            "book": "Jesus",
+            "category": "grace"
+        },
+        {
+            "text": "It is finished! My work on the cross has secured your victory—live in the fullness of My grace.",
+            "book": "Jesus",
+            "category": "grace"
+        },
+        {
+            "text": "My love for you is not based on what you do but on who I am. Rest in My unchanging grace.",
+            "book": "Jesus",
+            "category": "grace"
+        },
+        {
+            "text": "I am the God of second chances, of restoration, of boundless grace. Nothing can disqualify you from My love.",
+            "book": "Jesus",
+            "category": "grace"
         },
         {
             "text": "God’s grace covers me completely, and I am free from all guilt and shame!",
@@ -3677,6 +3946,56 @@
             "category": "parenting"
         },
         {
+            "text": "You are a new creation in Me. The old has passed away, and all things have become new.",
+            "book": "Jesus",
+            "category": "identity"
+        },
+        {
+            "text": "I have called you My beloved. You are chosen, set apart, and deeply loved.",
+            "book": "Jesus",
+            "category": "identity"
+        },
+        {
+            "text": "You are seated with Me in heavenly places, far above every power, principality, and fear.",
+            "book": "Jesus",
+            "category": "identity"
+        },
+        {
+            "text": "I have given you My righteousness. You are holy, blameless, and without fault in My sight.",
+            "book": "Jesus",
+            "category": "identity"
+        },
+        {
+            "text": "You are the light of the world, a city on a hill that cannot be hidden. Shine brightly, for I am with you.",
+            "book": "Jesus",
+            "category": "identity"
+        },
+        {
+            "text": "You are more than a conqueror through My love. Nothing can stand against you when you stand in Me.",
+            "book": "Jesus",
+            "category": "identity"
+        },
+        {
+            "text": "You are My workmanship, created for great works that I prepared for you before time began.",
+            "book": "Jesus",
+            "category": "identity"
+        },
+        {
+            "text": "I have given you My Spirit. You walk in power, authority, and victory over every challenge.",
+            "book": "Jesus",
+            "category": "identity"
+        },
+        {
+            "text": "You are no longer a slave to fear, sin, or doubt. You are My child, and My Spirit lives in you.",
+            "book": "Jesus",
+            "category": "identity"
+        },
+        {
+            "text": "You wear My name, and My glory rests upon you. Walk boldly, for you carry My presence wherever you go.",
+            "book": "Jesus",
+            "category": "identity"
+        },
+        {
             "text": "I am chosen by God, set apart for His purpose, and dearly loved!",
             "bibleVerseText": "But you are a chosen people, a royal priesthood, a holy nation, God’s special possession, that you may declare the praises of him who called you out of darkness into his wonderful light.",
             "book": "1 Peter 2:9",
@@ -5055,6 +5374,56 @@
             "bibleVerseText": "Come now, let us settle the matter, says the Lord. Though your sins are like scarlet, they shall be as white as snow.",
             "book": "Isaiah 1:18",
             "category": "purity"
+        },
+        {
+            "text": "I have loved you with an everlasting love; nothing can separate you from My embrace.",
+            "book": "Jesus",
+            "category": "love"
+        },
+        {
+            "text": "Before you took your first breath, I called you Mine. You are forever cherished in My heart.",
+            "book": "Jesus",
+            "category": "love"
+        },
+        {
+            "text": "I have engraved your name on the palms of My hands. You are never forgotten, never forsaken.",
+            "book": "Jesus",
+            "category": "love"
+        },
+        {
+            "text": "My love for you is unshakable, unwavering, and unstoppable. Rest in Me, for I will never let you go.",
+            "book": "Jesus",
+            "category": "love"
+        },
+        {
+            "text": "I gave everything to make you Mine. You are worth more to Me than all the riches of the world.",
+            "book": "Jesus",
+            "category": "love"
+        },
+        {
+            "text": "Come to Me, and I will give you rest. Let My love heal every wound and restore your soul.",
+            "book": "Jesus",
+            "category": "love"
+        },
+        {
+            "text": "I see you, I know you, and I delight in you. You are My beloved, and I rejoice over you with singing.",
+            "book": "Jesus",
+            "category": "love"
+        },
+        {
+            "text": "You are never alone. My presence surrounds you, My love upholds you, and My hand guides you.",
+            "book": "Jesus",
+            "category": "love"
+        },
+        {
+            "text": "No sin, no failure, no past mistake can change My love for you. I have washed you clean and called you holy.",
+            "book": "Jesus",
+            "category": "love"
+        },
+        {
+            "text": "Abide in My love, and you will walk in unshakable peace. My love is your foundation, and it will never fail.",
+            "book": "Jesus",
+            "category": "love"
         },
         {
             "text": "I am fully known and deeply loved by God!",
@@ -18247,54 +18616,120 @@
         { "text": "I live in faith and perseverance despite trials.", "bibleVerseText": "We boast about your perseverance and faith in all the persecutions and trials you are enduring.", "book": "2 Thessalonians 1:4", "category": "thessalonians2" },
         { "text": "The Lord directs my heart into His love and Christ’s perseverance.", "bibleVerseText": "May the Lord direct your hearts into God’s love and Christ’s perseverance.", "book": "2 Thessalonians 3:5", "category": "thessalonians2" },
         { "text": "I obey God's commands and do not associate with those who walk in disobedience.", "bibleVerseText": "Take special note of anyone who does not obey our instruction in this letter. Do not associate with them, in order that they may feel ashamed.", "book": "2 Thessalonians 3:14", "category": "thessalonians2" },
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+          {
+            "text": "I can do all things through Christ who strengthens me.",
+            "bibleVerseText": "I can do all things through Christ who strengthens me.",
+            "book": "Philippians 4:13",
+            "category": "speaklife"
+          },
+          {
+            "text": "No weapon formed against me shall prosper, and I condemn every tongue that rises against me.",
+            "bibleVerseText": "No weapon formed against you shall prosper, and every tongue which rises against you in judgment You shall condemn.",
+            "book": "Isaiah 54:17",
+            "category": "speaklife"
+          },
+          {
+            "text": "God has not given me a spirit of fear, but of power, love, and a sound mind.",
+            "bibleVerseText": "For God has not given us a spirit of fear, but of power and of love and of a sound mind.",
+            "book": "2 Timothy 1:7",
+            "category": "speaklife"
+          },
+          {
+            "text": "My God supplies all my needs according to His riches in glory by Christ Jesus.",
+            "bibleVerseText": "And my God shall supply all your need according to His riches in glory by Christ Jesus.",
+            "book": "Philippians 4:19",
+            "category": "speaklife"
+          },
+          {
+            "text": "By the stripes of Jesus, I am healed.",
+            "bibleVerseText": "By His stripes we are healed.",
+            "book": "Isaiah 53:5",
+            "category": "speaklife"
+          },
+          {
+            "text": "I trust in the Lord with all my heart, and He directs my paths.",
+            "bibleVerseText": "Trust in the Lord with all your heart, and lean not on your own understanding; In all your ways acknowledge Him, and He shall direct your paths.",
+            "book": "Proverbs 3:5-6",
+            "category": "speaklife"
+          },
+          {
+            "text": "The Lord has made me the head and not the tail, above and not beneath.",
+            "bibleVerseText": "And the Lord will make you the head and not the tail; you shall be above only, and not be beneath.",
+            "book": "Deuteronomy 28:13",
+            "category": "speaklife"
+          },
+          {
+            "text": "The Lord my God is with me wherever I go. I am strong and courageous.",
+            "bibleVerseText": "Have I not commanded you? Be strong and of good courage; do not be afraid, nor be dismayed, for the Lord your God is with you wherever you go.",
+            "book": "Joshua 1:9",
+            "category": "speaklife"
+          },
+          {
+            "text": "In all things, I am more than a conqueror through Him who loves me.",
+            "bibleVerseText": "Yet in all these things we are more than conquerors through Him who loved us.",
+            "book": "Romans 8:37",
+            "category": "speaklife"
+          },
+          {
+            "text": "I hold fast to my confession of faith, for God who promised is faithful.",
+            "bibleVerseText": "Let us hold fast the confession of our hope without wavering, for He who promised is faithful.",
+            "book": "Hebrews 10:23",
+            "category": "speaklife"
+          },
+          {
+              "text": "I dwell in the secret place of the Most High and abide under His shadow.",
+              "bibleVerseText": "He who dwells in the secret place of the Most High shall abide under the shadow of the Almighty.",
+              "book": "Psalm 91:1",
+              "category": "speaklife"
+          },
+          {
+              "text": "God is working all things together for my good.",
+              "bibleVerseText": "And we know that all things work together for good to those who love God, to those who are called according to His purpose.",
+              "book": "Romans 8:28",
+              "category": "speaklife"
+          },
+          {
+              "text": "I seek first the kingdom of God, and everything I need is provided.",
+              "bibleVerseText": "But seek first the kingdom of God and His righteousness, and all these things shall be added to you.",
+              "book": "Matthew 6:33",
+              "category": "speaklife"
+          },
+          {
+              "text": "This is the day the Lord has made; I will rejoice and be glad in it.",
+              "bibleVerseText": "This is the day the Lord has made; we will rejoice and be glad in it.",
+              "book": "Psalm 118:24",
+              "category": "speaklife"
+          },
+          {
+              "text": "I trample upon lions and cobras; I crush fierce lions and serpents under my feet.",
+              "bibleVerseText": "You shall tread upon the lion and the cobra, the young lion and the serpent you shall trample underfoot.",
+              "book": "Psalm 91:13",
+              "category": "speaklife"
+          },
+          {
+              "text": "God satisfies me with long life and shows me His salvation.",
+              "bibleVerseText": "With long life I will satisfy him, and show him My salvation.",
+              "book": "Psalm 91:16",
+              "category": "speaklife"
+          },
+          {
+              "text": "Nothing by any means shall harm me.",
+              "bibleVerseText": "Behold, I give you the authority to trample on serpents and scorpions, and over all the power of the enemy, and nothing shall by any means hurt you.",
+              "book": "Luke 10:19",
+              "category": "speaklife"
+          },
+          {
+              "text": "I won’t give up—God’s blessing is coming at the right time.",
+              "bibleVerseText": "Let us not grow weary in doing good, for at the proper time we will reap a harvest if we do not give up.",
+              "book": "Galatians 6:9",
+              "category": "speaklife"
+          },
+          {
+              "text": "God is making a way for me, even when I don’t see it.",
+              "bibleVerseText": "See, I am doing a new thing! Now it springs up; do you not perceive it? I am making a way in the wilderness and streams in the wasteland.",
+              "book": "Isaiah 43:19",
+              "category": "speaklife"
+          }
+          
     ]
 }

@@ -383,20 +383,22 @@ struct SubscriptionView: View {
                 RotatingLoadingImageView()
             }
             
-            VStack  {
-                HStack  {
-                    Button(action: { dismiss() }) {
-                        Image(systemName: "xmark.circle.fill")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(.white)
-                        
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                VStack  {
+                    HStack  {
+                        Button(action: { dismiss() }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(.white)
+                            
+                        }
+                        Spacer()
                     }
+                    .padding()
+                    
                     Spacer()
                 }
-                .padding()
-                
-                Spacer()
             }
         }
         .sheet(isPresented: $chooseDifferentAmount) {

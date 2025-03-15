@@ -46,6 +46,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case miracles
     case favor
     case work
+    case speaklife
     case friendship
     case innerHealing
     case obedience
@@ -136,6 +137,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .rest,
         .marriage,
         .miracles,
+        .speaklife,
         .spiritualGrowth,
         .warfare,
         .work,
@@ -183,6 +185,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     static var generalCategories: [DeclarationCategory] = [
         .general,
+        .speaklife,
         .favorites,
         .myOwn,
         ]
@@ -266,6 +269,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         case .peter2: return "2 Peter"
         case .thessalonians1: return "1 Thessalonians"
         case .thessalonians2: return "2 Thessalonians"
+        case .speaklife: return "Speak Life Daily"
         default:  return self.rawValue.capitalized
         }
     }
