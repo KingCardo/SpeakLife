@@ -41,7 +41,7 @@ struct SpeakLifeApp: App {
                 .environmentObject(viewModel)
                 .onAppear {
                     viewModel.requestPermission()
-                    if declarationStore.backgroundMusicEnabled && !AudioPlayerService.shared.isPlaying {
+                    if declarationStore.backgroundMusicEnabled {
                         AudioPlayerService.shared.playSound(files: resources)
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

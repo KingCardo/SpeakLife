@@ -16,18 +16,9 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
     private var isPausedInBackground = false
     var isPlaying = false
     
-    var currentArtist: String {
-        let artist = resources[currentFileIndex].artist
-        if artist.isEmpty {
-            return "unknown"
-        }
-        return artist
-    }
+    var currentArtist: String?
+    var currentTitle: String?
     
-    var currentTitle: String {
-        return resources[currentFileIndex].name
-    }
-
     private override init() {
            super.init()
            NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
@@ -78,6 +69,8 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
         self.audioFiles = files.shuffled()
         self.currentFileIndex = 0
         let type = audioFiles[currentFileIndex].type
+        currentArtist = audioFiles[currentFileIndex].artist
+        currentTitle = audioFiles[currentFileIndex].name
         playFile(type: type)
     }
 

@@ -7,16 +7,13 @@
 
 import SwiftUI
 import FacebookCore
-let resources: [MusicResources] = [.romanticPiano, .peacefulplace, .returntosurface, .sethpiano, .washed, .rainstorm, .everpresent]
+let resources: [MusicResources] = [.sethpiano, .washed, .rainstorm, .everpresent]
 
 struct MusicResources {
     let name: String
     let artist: String
     let type: String
    
-    static let romanticPiano = MusicResources(name: "romanticpiano", artist: "", type: "mp3")
-    static let peacefulplace = MusicResources(name: "peacefulplace", artist: "", type: "mp3")
-    static let returntosurface = MusicResources(name: "returntosurface", artist: "", type: "mp3")
     static let sethpiano = MusicResources(name: "sethpiano", artist: "", type: "mp3")
     static let washed = MusicResources(name: "washed", artist: "Brock Hewitt", type: "mp3")
     static let rainstorm = MusicResources(name: "rainstorm", artist: "Brock Hewitt", type: "mp3")
