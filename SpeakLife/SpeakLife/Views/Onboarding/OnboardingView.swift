@@ -64,16 +64,26 @@ struct OnboardingView: View  {
                     .tag(Tab.transformedLife)
                 
                 IntroTipScene(
-                    title: "Jesus Wants to Speak to You Daily",
+                    title: "Not Every Thought Is Yours",
                     bodyText: """
-            Jesus is always speaking—are you planting His words in your heart?
-            
-            Every time you meditate on Scripture and declare His promises, you are sowing seeds of faith.
-            
-            As you nurture them daily, you’ll see a harvest of peace, breakthrough, and transformation in your life.
-            """,
+            The enemy plants thoughts in your mind—using “I” so you think they’re your own. 
+
+            “I’ll never be enough.”  
+            “God doesn’t love me.”  
+            “I’ll always struggle.”  
+
+            These are lies. They are not your thoughts. They are not your identity. 
+
+            When you know who you are in Jesus, you can reject the lies and replace them with His truth:  
+
+            “I am loved.”  
+            “I am chosen.”  
+            “I am victorious.”  
+        
+            The battle is in your mind. Win it by speaking God’s truth daily.
+""",
                     subtext: "",
-                    ctaText: "Start Planting Seeds Today",
+                    ctaText: "Declare Truth Now",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)

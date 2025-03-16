@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseStorage
+import SwiftUI
 
 final class AudioDeclarationViewModel: ObservableObject {
     @Published var audioDeclarations: [AudioDeclaration]
@@ -17,6 +18,7 @@ final class AudioDeclarationViewModel: ObservableObject {
     @Published var downloadProgress: [String: Double] = [:]
     private let storage = Storage.storage()
     private let fileManager = FileManager.default
+    @AppStorage("shouldClearCache") private var shouldClearCache = true
     
       init() {
           self.audioDeclarations = audioFiles
@@ -27,6 +29,11 @@ final class AudioDeclarationViewModel: ObservableObject {
       }
     
     func fetchAudio(for item: AudioDeclaration, completion: @escaping (Result<URL, Error>) -> Void) {
+        
+        if shouldClearCache {
+            clearCache()
+            shouldClearCache = false
+        }
            // Get the local URL for the file
            let localURL = cachedFileURL(for: item.id)
            // self.downloadProgress[item.id] = 0.0
@@ -74,6 +81,22 @@ final class AudioDeclarationViewModel: ObservableObject {
         let cacheDirectory = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first!
             return cacheDirectory.appendingPathComponent(filename)
         }
+    
+    private func clearCache() {
+        let fileManager = FileManager.default
+        if let cacheDirectory = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first {
+            do {
+                let cacheContents = try fileManager.contentsOfDirectory(atPath: cacheDirectory.path)
+                for file in cacheContents {
+                    let fileURL = cacheDirectory.appendingPathComponent(file)
+                    try fileManager.removeItem(at: fileURL)
+                }
+                print("Cache cleared successfully!")
+            } catch {
+                print("Failed to clear cache: \(error.localizedDescription)")
+            }
+        }
+    }
   }
 
 struct AudioDeclaration: Identifiable, Equatable {
