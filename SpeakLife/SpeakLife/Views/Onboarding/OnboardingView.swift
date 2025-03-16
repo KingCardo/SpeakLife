@@ -137,11 +137,6 @@ struct OnboardingView: View  {
                 }
                 .tag(Tab.unshakeableFaith)
                 
-                RatingView(size: geometry.size) {
-                    withAnimation {
-                        advance()
-                    }
-                }.tag(Tab.review)
                 
                 NotificationOnboarding(size: geometry.size) {
                     withAnimation {
@@ -389,7 +384,8 @@ struct OnboardingView: View  {
                     Analytics.logEvent("LiveVictoriousScreenDone", parameters: nil)
                 case .unshakeableFaith:
                     impactMed.impactOccurred()
-                    selection = .review
+                    selection = .notification
+                    onboardingTab = selection.rawValue
                     Analytics.logEvent("UnshakeableFaithScreenDone", parameters: nil)
                 case .confidence:
                     impactMed.impactOccurred()

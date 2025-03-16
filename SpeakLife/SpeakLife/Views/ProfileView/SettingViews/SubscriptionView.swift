@@ -41,7 +41,7 @@ struct OfferPageView: View {
                         .shadow(color: Color.purple.opacity(0.5), radius: 20, x: 10, y: 10)
                         .cornerRadius(6)
                     
-                    Text("One-Time Exclusive Offer!")
+                    Text("Exclusive Offer!")
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .caption))
                         .foregroundColor(.white)
                         .padding(.horizontal, 20)
@@ -348,19 +348,19 @@ struct SubscriptionView: View {
                             } label: {
                                 secondSelectionBox()
                             }
-                            if !subscriptionStore.showYearlyOption {
-                                Button {
-                                    currentSelection = firstSelection
-                                } label: {
-                                    firstSelectionBox()
-                                }
-                            } else {
-                                Button {
-                                    currentSelection = thirdSelection
-                                } label: {
-                                    thirdSelectionBox()
-                                }
-                            }
+//                            if !subscriptionStore.showYearlyOption {
+//                                Button {
+//                                    currentSelection = firstSelection
+//                                } label: {
+//                                    firstSelectionBox()
+//                                }
+//                            } else {
+//                                Button {
+//                                    currentSelection = thirdSelection
+//                                } label: {
+//                                    thirdSelectionBox()
+//                                }
+//                            }
                             
                         }
                         

@@ -20,7 +20,13 @@ struct PremiumView: View {
     var body: some View {
         GeometryReader { geometry in
             if !subscriptionStore.isPremium {
+                if appState.offerDiscount {
+                    OfferPageView() {
+                        
+                    }
+                } else {
                     SubscriptionView(size: geometry.size)
+                }
             } else {
                 NavigationView {
                     VStack {
@@ -35,6 +41,15 @@ struct PremiumView: View {
                     .navigationTitle(LocalizedStringKey("Manage Subscription"))
                 }
             }
+        }
+        .onAppear {
+            if appState.discountEndTime == nil {
+                appState.discountEndTime = Date().addingTimeInterval(1 * 60 * 2)
+            }
+            initializeTimer()
+        }
+        .onReceive(timer) { timer in
+            updateTimer()
         }
     }
     
