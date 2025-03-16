@@ -384,6 +384,7 @@ struct ProfileView: View {
             SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "highlighter", title: "Contact us", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .review))) {
                 presentContentView()
             }
+            .id(UUID())
         }
     }
     
@@ -393,6 +394,7 @@ struct ProfileView: View {
             SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "hands.and.sparkles.fill", title: "Prayer Request", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .prayer))) {
                 presentContentView()
             }
+            .id(UUID())
         }
     }
     

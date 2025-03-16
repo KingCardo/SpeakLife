@@ -114,7 +114,6 @@ struct FeatureView: View {
         Feature(subtitle: "Start Every Morning with Jesus Devotionals"),
         Feature(subtitle: "Pray Boldly with Mountain-Moving Prayers"),
         Feature(subtitle: "Stay Encouraged with Daily Scripture Reminders"),
-        Feature(subtitle: "Sleep Peacefully with Bible Bedtime Stories"),
         Feature(subtitle: "Customize Your Experience with 30+ Beautiful Themes")
         ]
     
