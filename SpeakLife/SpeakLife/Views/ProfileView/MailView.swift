@@ -18,13 +18,14 @@ struct MailView: UIViewControllerRepresentable {
 
     @Binding var isShowing: Bool
     @Binding var result: Result<MFMailComposeResult, Error>?
-    @State var origin: Origin
+    
+    let origin: Origin
     private let appVersion = "App version: \(APP.Version.stringNumber)"
     
     var title: String {
         switch origin {
         case .profile: return "Scholarship request"
-        case .review: return "Report an issue \(appVersion)"
+        case .review: return "Prayer Request / Report an issue \(appVersion)"
         case .newFeatures: return "Request new feature"
         case .prayer: return "Prayer request"
         }

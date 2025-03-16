@@ -10,7 +10,7 @@ import Foundation
 // Declaration
 let audioFiles: [AudioDeclaration] = [
     AudioDeclaration(
-           id: "psalm911.mp3",
+           id: "psalm9_11.mp3",
            title: "Psalm 91: A Shield of Protection",
            subtitle: "Declaring God’s Faithful Promises of Safety and Refuge",
            duration: "2m",
@@ -19,7 +19,7 @@ let audioFiles: [AudioDeclaration] = [
        ),
     
     AudioDeclaration(
-           id: "healed.mp3",
+           id: "healed_v2.mp3",
            title: "Healing Declarations",
            subtitle: "Speaking Wholeness, Strength, and Restoration Through the Power of Faith",
            duration: "5m",
@@ -44,7 +44,7 @@ let audioFiles: [AudioDeclaration] = [
 //           isPremium: true
 //       ),
     AudioDeclaration(
-           id: "peace.mp3",
+           id: "peace_v2.mp3",
            title: "Peace Beyond Understanding",
            subtitle: "Overcoming Anxiety, Stress, and Fear Through God’s Promises",
            duration: "3m",
@@ -52,7 +52,7 @@ let audioFiles: [AudioDeclaration] = [
            isPremium: true
        ),
     AudioDeclaration(
-           id: "gratitude1.mp3",
+           id: "gratitude_v2.mp3",
            title: "A Heart of Gratitude",
            subtitle: "Declaring God’s Goodness and Faithfulness with Thankful Praise",
            duration: "3m",
@@ -60,7 +60,7 @@ let audioFiles: [AudioDeclaration] = [
            isPremium: true
        ),
     AudioDeclaration(
-           id: "warfare.mp3",
+           id: "warfare_v2.mp3",
            title: "Victory in Spiritual Warfare",
            subtitle: "Declaring Authority and Triumph Over All Evil Through Christ",
            duration: "3m",
@@ -69,7 +69,7 @@ let audioFiles: [AudioDeclaration] = [
        ),
    
     AudioDeclaration(
-           id: "victorious.mp3",
+           id: "victorious_v2.mp3",
            title: "Living Victoriously in Christ",
            subtitle: "Declaring Bible Verses to Walk in Victory Every Day",
            duration: "3m",
@@ -77,7 +77,7 @@ let audioFiles: [AudioDeclaration] = [
            isPremium: true
        ),
     AudioDeclaration(
-           id: "prosperity.mp3",
+           id: "prosperity_v2.mp3",
            title: "Abundance Declarations",
            subtitle: "Unlocking Wealth, Prosperity, and Overflow Through Faith and Affirmation",
            duration: "4m",
@@ -85,7 +85,7 @@ let audioFiles: [AudioDeclaration] = [
            isPremium: true
        ),
     AudioDeclaration(
-           id: "spiritualGrowth.mp3",
+           id: "spiritualGrowth_v2.mp3",
            title: "A Declaration for Spiritual Growth",
            subtitle: "Rooted in Jesus’ Redemption and Growing in God’s Promises",
            duration: "8m",
@@ -94,7 +94,7 @@ let audioFiles: [AudioDeclaration] = [
        ),
     
     AudioDeclaration(
-           id: "heartbreak.mp3",
+           id: "heartbreak_v2.mp3",
            title: "Healing for the Brokenhearted",
            subtitle: "Declaring God’s Love and Restoration Over a Wounded Heart",
            duration: "3m",
@@ -103,7 +103,7 @@ let audioFiles: [AudioDeclaration] = [
        ),
     
     AudioDeclaration(
-           id: "identity1.mp3",
+           id: "identity_v2.mp3",
            title: "Identity in Christ",
            subtitle: "Living in the Power of Your God-Given Identity",
            duration: "4m",
@@ -111,7 +111,7 @@ let audioFiles: [AudioDeclaration] = [
            isPremium: true
        ),
     AudioDeclaration(
-           id: "godsprotection1.mp3",
+           id: "godsprotection_v2.mp3",
            title: "Protection Promises",
            subtitle: "Speaking God’s Word for Safety and Peace Over Your Life",
            duration: "4m",
@@ -119,7 +119,7 @@ let audioFiles: [AudioDeclaration] = [
            isPremium: true
        ),
     AudioDeclaration(
-           id: "longlife.mp3",
+           id: "longlife_v2.mp3",
            title: "Renewed Youth and Long Life Declaration",
            subtitle: "Declarations for Long Life, Strength, and Youth Restored Through God’s Promises",
            duration: "3m",
@@ -135,7 +135,7 @@ let audioFiles: [AudioDeclaration] = [
 //           isPremium: true
 //       ),
     AudioDeclaration(
-           id: "children.mp3",
+           id: "children_v2.mp3",
            title: "Blessing Our Children",
            subtitle: "Declaring Safety, Wisdom, and Destiny Over Their Lives",
            duration: "3m",
@@ -143,7 +143,7 @@ let audioFiles: [AudioDeclaration] = [
            isPremium: true
        ),
     AudioDeclaration(
-           id: "miracles.mp3",
+           id: "miracles_v2.mp3",
            title: "Breakthrough and Miracles",
            subtitle: "Declaring the Power of God to Transform the Impossible",
            duration: "3m",
@@ -151,7 +151,7 @@ let audioFiles: [AudioDeclaration] = [
            isPremium: true
        ),
     AudioDeclaration(
-           id: "restoration.mp3",
+           id: "restoration_v2.mp3",
            title: "Restoring Relationships",
            subtitle: "Declaring Healing, Unity, and Love Over Marriages and Families",
            duration: "3m",

@@ -106,13 +106,13 @@ struct ProfileView: View {
                        
                         remindersRow
                         favoritesRow
-                      //  musicRow
+                        musicRow
                         soundsRow
                     }
                     
                     
                     Section(header: Text("SUPPORT").font(.caption)) {
-                        prayerRequestRow
+    
                         shareRow
                         reviewRow
                         feedbackRow
@@ -202,7 +202,7 @@ struct ProfileView: View {
         HStack {
             Image(systemName: "music.note")
                 .foregroundColor(Constants.DAMidBlue)
-            Text("Currently playing \(AudioPlayerService.shared.currentTitle) by \(AudioPlayerService.shared.currentArtist)")
+            Text("Currently playing \(AudioPlayerService.shared.currentTitle ?? "") by \(AudioPlayerService.shared.currentArtist ?? "")")
         }
     }
     
@@ -388,15 +388,15 @@ struct ProfileView: View {
         }
     }
     
-    @ViewBuilder
-    private var prayerRequestRow: some View {
-        if MFMailComposeViewController.canSendMail() {
-            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "hands.and.sparkles.fill", title: "Prayer Request", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .prayer))) {
-                presentContentView()
-            }
-            .id(UUID())
-        }
-    }
+//    @ViewBuilder
+//    private var prayerRequestRow: some View {
+//        if MFMailComposeViewController.canSendMail() {
+//            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "hands.and.sparkles.fill", title: "Prayer Request", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .prayer))) {
+//                presentContentView()
+//            }
+//            .id(UUID())
+//        }
+//    }
     
     @MainActor
     @ViewBuilder
