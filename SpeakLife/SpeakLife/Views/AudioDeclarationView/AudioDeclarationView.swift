@@ -133,7 +133,7 @@ struct AudioDeclarationView: View {
     @State private var audioURL: URL? = nil
     @State private var errorMessage: ErrorWrapper? = nil
     @State private var isPresentingPremiumView = false
-    let filters: [Filter] = [.declarations, .devotional, .meditation, .gospel, .bedtimeStories]
+    let filters: [Filter] = [.declarations]
     @State private var selectedFilter: Filter = .declarations
     @State var presentDevotionalSubscriptionView = false
     
@@ -284,9 +284,9 @@ struct AudioDeclarationView: View {
         if audioViewModel.isBarVisible {
             PersistentAudioBar(viewModel: audioViewModel)
                 .onDisappear {
-                    if declarationStore.backgroundMusicEnabled, !audioViewModel.isPlaying {
-                        AudioPlayerService.shared.playMusic()
-                    }
+//                    if declarationStore.backgroundMusicEnabled, !audioViewModel.isPlaying {
+//                        AudioPlayerService.shared.playMusic()
+//                    }
                 }
                 .onTapGesture {
                     if let lastSelectedItem = lastSelectedItem {

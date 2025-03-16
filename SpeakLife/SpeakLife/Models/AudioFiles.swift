@@ -26,23 +26,23 @@ let audioFiles: [AudioDeclaration] = [
            imageUrl: "JesusHealing",
            isPremium: false
        ),
-    AudioDeclaration(
-           id: "morningDeclaration.mp3",
-           title: "A Morning Declaration of Faith and Victory",
-           subtitle: "Speak Life Over Your Day Rooted in Jesus’ Love and Promises",
-           duration: "4m",
-           imageUrl: "morningDeclaration",
-           isPremium: false
-       ),
+//    AudioDeclaration(
+//           id: "morningDeclaration.mp3",
+//           title: "A Morning Declaration of Faith and Victory",
+//           subtitle: "Speak Life Over Your Day Rooted in Jesus’ Love and Promises",
+//           duration: "4m",
+//           imageUrl: "morningDeclaration",
+//           isPremium: false
+//       ),
 
-    AudioDeclaration(
-           id: "unshakablePeace.mp3",
-           title: "A Declaration of Unshakable Peace",
-           subtitle: "Finding Rest in God’s Promises and Jesus’ Love",
-           duration: "4m",
-           imageUrl: "unshakablePeace",
-           isPremium: true
-       ),
+//    AudioDeclaration(
+//           id: "unshakablePeace.mp3",
+//           title: "A Declaration of Unshakable Peace",
+//           subtitle: "Finding Rest in God’s Promises and Jesus’ Love",
+//           duration: "4m",
+//           imageUrl: "unshakablePeace",
+//           isPremium: true
+//       ),
     AudioDeclaration(
            id: "peace.mp3",
            title: "Peace Beyond Understanding",
@@ -126,14 +126,14 @@ let audioFiles: [AudioDeclaration] = [
            imageUrl: "JesusRisen",
            isPremium: true
        ),
-    AudioDeclaration(
-           id: "closer.mp3",
-           title: "Closer to God",
-           subtitle: "Declaring a Life of Intimacy with Him and Walking in the Spirit Every Day",
-           duration: "3m",
-           imageUrl: "flowingRiver",
-           isPremium: true
-       ),
+//    AudioDeclaration(
+//           id: "closer.mp3",
+//           title: "Closer to God",
+//           subtitle: "Declaring a Life of Intimacy with Him and Walking in the Spirit Every Day",
+//           duration: "3m",
+//           imageUrl: "flowingRiver",
+//           isPremium: true
+//       ),
     AudioDeclaration(
            id: "children.mp3",
            title: "Blessing Our Children",
