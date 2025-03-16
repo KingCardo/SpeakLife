@@ -112,6 +112,7 @@ struct ProfileView: View {
                     
                     
                     Section(header: Text("SUPPORT").font(.caption)) {
+                        prayerRequestRow
                         shareRow
                         reviewRow
                         feedbackRow
@@ -381,6 +382,15 @@ struct ProfileView: View {
     private var feedbackRow: some View {
         if MFMailComposeViewController.canSendMail() {
             SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "highlighter", title: "Contact us", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .review))) {
+                presentContentView()
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var prayerRequestRow: some View {
+        if MFMailComposeViewController.canSendMail() {
+            SettingsRow(isPresentingContentView: $isPresentingContentView, imageTitle: "hands.and.sparkles.fill", title: "Prayer Request", viewToPresent: LazyView(MailView(isShowing: $isPresentingContentView, result: self.$result, origin: .prayer))) {
                 presentContentView()
             }
         }

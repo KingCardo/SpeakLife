@@ -66,21 +66,11 @@ struct OnboardingView: View  {
                 IntroTipScene(
                     title: "Not Every Thought Is Yours",
                     bodyText: """
-            The enemy plants thoughts in your mind—using “I” so you think they’re your own. 
-
-            “I’ll never be enough.”  
-            “God doesn’t love me.”  
-            “I’ll always struggle.”  
-
-            These are lies. They are not your thoughts. They are not your identity. 
-
-            When you know who you are in Jesus, you can reject the lies and replace them with His truth:  
-
-            “I am loved.”  
-            “I am chosen.”  
-            “I am victorious.”  
-        
-            The battle is in your mind. Win it by speaking God’s truth daily.
+The enemy plants thoughts in your mind—using “I” so you think they’re your own. 
+“I’ll never be enough.” , “God doesn’t love me.” , “I’ll always struggle.” 
+ 
+These are lies. They are not your thoughts. They are not your identity. 
+The battle is in your mind. Win it by speaking God’s truth daily.
 """,
                     subtext: "",
                     ctaText: "Declare Truth Now",

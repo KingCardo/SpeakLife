@@ -13,6 +13,7 @@ struct MailView: UIViewControllerRepresentable {
         case profile
         case review
         case newFeatures
+        case prayer
     }
 
     @Binding var isShowing: Bool
@@ -25,6 +26,7 @@ struct MailView: UIViewControllerRepresentable {
         case .profile: return "Scholarship request"
         case .review: return "Report an issue \(appVersion)"
         case .newFeatures: return "Request new feature"
+        case .prayer: return "Prayer request"
         }
     }
 
