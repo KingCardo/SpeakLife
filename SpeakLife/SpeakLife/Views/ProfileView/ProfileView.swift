@@ -103,9 +103,10 @@ struct ProfileView: View {
                             streakRow
                           // prayerRow
                         }
-                        
+                       
                         remindersRow
                         favoritesRow
+                      //  musicRow
                         soundsRow
                     }
                     
@@ -194,6 +195,14 @@ struct ProfileView: View {
                     })
         }
         
+    }
+    
+    var musicRow: some View {
+        HStack {
+            Image(systemName: "music.note")
+                .foregroundColor(Constants.DAMidBlue)
+            Text("Currently playing \(AudioPlayerService.shared.currentTitle) by \(AudioPlayerService.shared.currentArtist)")
+        }
     }
     
     private var widgetsRow: some View {

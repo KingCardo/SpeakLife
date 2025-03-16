@@ -15,6 +15,18 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
     private var currentFileIndex = 0
     private var isPausedInBackground = false
     var isPlaying = false
+    
+    var currentArtist: String {
+        let artist = resources[currentFileIndex].artist
+        if artist.isEmpty {
+            return "unknown"
+        }
+        return artist
+    }
+    
+    var currentTitle: String {
+        return resources[currentFileIndex].name
+    }
 
     private override init() {
            super.init()
