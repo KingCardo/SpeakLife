@@ -284,9 +284,9 @@ struct AudioDeclarationView: View {
         if audioViewModel.isBarVisible {
             PersistentAudioBar(viewModel: audioViewModel)
                 .onDisappear {
-//                    if declarationStore.backgroundMusicEnabled, !audioViewModel.isPlaying {
-//                        AudioPlayerService.shared.playMusic()
-//                    }
+                    if declarationStore.backgroundMusicEnabled, !audioViewModel.isPlaying {
+                        AudioPlayerService.shared.playMusic()
+                    }
                 }
                 .onTapGesture {
                     if let lastSelectedItem = lastSelectedItem {
