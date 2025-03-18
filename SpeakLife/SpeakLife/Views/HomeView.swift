@@ -63,7 +63,8 @@ struct HomeView: View {
                 declarationView
                 audioView
                 devotionalView
-                createYourOwnView
+                testimoneyView
+                //createYourOwnView
                 profileView
                 
             }
@@ -93,6 +94,14 @@ struct HomeView: View {
                 Image(systemName: "house.fill")
                     .renderingMode(.original)
                 
+            }
+    }
+    
+    var testimoneyView: some View {
+        TestimonyFeedView()
+            .tabItem {
+                Image(systemName: "quote.bubble")
+                    .renderingMode(.original)
             }
     }
     

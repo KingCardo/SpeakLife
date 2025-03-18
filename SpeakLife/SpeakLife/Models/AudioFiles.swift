@@ -88,7 +88,7 @@ let audioFiles: [AudioDeclaration] = [
            id: "spiritualGrowth_v2.mp3",
            title: "A Declaration for Spiritual Growth",
            subtitle: "Rooted in Jesus’ Redemption and Growing in God’s Promises",
-           duration: "8m",
+           duration: "4m",
            imageUrl: "spiritualGrowth",
            isPremium: true
        ),

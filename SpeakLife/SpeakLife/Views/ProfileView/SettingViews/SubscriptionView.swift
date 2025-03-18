@@ -810,7 +810,7 @@ struct StarRatingView: View {
 }
 
 struct TestimonialView: View {
-    var testimonial: Testimonial
+    var testimonial: TestimonialPost
     @Namespace private var animationNamespace
     let size: CGSize
     

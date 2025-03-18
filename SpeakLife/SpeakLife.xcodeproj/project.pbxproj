@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F740F6929D4017400E89E7F /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F740F6829D4017400E89E7F /* APIClientTests.swift */; };
+		4501F3912D8926CA00315902 /* TestimonyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4501F3902D8926C500315902 /* TestimonyViewModel.swift */; };
 		450720DB2BAFFB4A0029EE2B /* TimerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450720DA2BAFFB4A0029EE2B /* TimerViewModelTests.swift */; };
 		452D17D92D703E9E000AB1D1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 452D17D82D703E9E000AB1D1 /* FirebaseAnalytics */; };
 		452D17DB2D703E9E000AB1D1 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 452D17DA2D703E9E000AB1D1 /* FirebaseRemoteConfig */; };
@@ -47,6 +48,8 @@
 		45A4A3CF2D86B81900DFCEB7 /* everpresent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3CE2D86B81900DFCEB7 /* everpresent.mp3 */; };
 		45A4A3D12D86B86100DFCEB7 /* washed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3D02D86B86100DFCEB7 /* washed.mp3 */; };
 		45A4A3D32D86B8DB00DFCEB7 /* rainstorm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3D22D86B8DB00DFCEB7 /* rainstorm.mp3 */; };
+		45A4A3D62D8917D600DFCEB7 /* TestimonyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4A3D52D8917D000DFCEB7 /* TestimonyView.swift */; };
+		45A4A3D82D8918BB00DFCEB7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 45A4A3D72D8918BB00DFCEB7 /* FirebaseFirestoreCombine-Community */; };
 		45AE76712D7960BD0037EE12 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 45AE76702D7960BD0037EE12 /* FirebaseMessaging */; };
 		45B07A422D24D98300EA2F5D /* WhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B07A412D24D98300EA2F5D /* WhatsNewView.swift */; };
 		45BCBA9A2C360245001F28C4 /* BibleStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BCBA992C360245001F28C4 /* BibleStory.swift */; };
@@ -186,6 +189,7 @@
 /* Begin PBXFileReference section */
 		2F740F5E29D4014500E89E7F /* SpeakLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeakLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F740F6829D4017400E89E7F /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		4501F3902D8926C500315902 /* TestimonyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimonyViewModel.swift; sourceTree = "<group>"; };
 		450720DA2BAFFB4A0029EE2B /* TimerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModelTests.swift; sourceTree = "<group>"; };
 		452D17E12D725F84000AB1D1 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		453172B32B2D274800388AD4 /* BenefitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitScene.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 		45A4A3CE2D86B81900DFCEB7 /* everpresent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = everpresent.mp3; sourceTree = "<group>"; };
 		45A4A3D02D86B86100DFCEB7 /* washed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = washed.mp3; sourceTree = "<group>"; };
 		45A4A3D22D86B8DB00DFCEB7 /* rainstorm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rainstorm.mp3; sourceTree = "<group>"; };
+		45A4A3D52D8917D000DFCEB7 /* TestimonyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimonyView.swift; sourceTree = "<group>"; };
 		45B07A412D24D98300EA2F5D /* WhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewView.swift; sourceTree = "<group>"; };
 		45BCBA992C360245001F28C4 /* BibleStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleStory.swift; sourceTree = "<group>"; };
 		45C748222B5802C60011D8F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -343,6 +348,7 @@
 				45AE76712D7960BD0037EE12 /* FirebaseMessaging in Frameworks */,
 				452D17D92D703E9E000AB1D1 /* FirebaseAnalytics in Frameworks */,
 				452D17DB2D703E9E000AB1D1 /* FirebaseRemoteConfig in Frameworks */,
+				45A4A3D82D8918BB00DFCEB7 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				7AF18CA22A0DB126005A6E31 /* SwiftUICharts in Frameworks */,
 				452D17DF2D703F3A000AB1D1 /* FirebaseFirestore in Frameworks */,
 				452D17DD2D703E9E000AB1D1 /* FirebaseStorage in Frameworks */,
@@ -401,6 +407,15 @@
 				458B6B202BA6E3EC0001BEFE /* StreakDetails.swift */,
 			);
 			path = Streak;
+			sourceTree = "<group>";
+		};
+		45A4A3D42D89179C00DFCEB7 /* TestimonyView */ = {
+			isa = PBXGroup;
+			children = (
+				4501F3902D8926C500315902 /* TestimonyViewModel.swift */,
+				45A4A3D52D8917D000DFCEB7 /* TestimonyView.swift */,
+			);
+			path = TestimonyView;
 			sourceTree = "<group>";
 		};
 		45C748282B5BBE4D0011D8F6 /* Audio */ = {
@@ -535,6 +550,7 @@
 				7AA8709728DACCB700134ADB /* Declaration View */,
 				7AF18C942A0CC518005A6E31 /* Devotionals */,
 				4582A9542CE690560077F555 /* AudioDeclarationView */,
+				45A4A3D42D89179C00DFCEB7 /* TestimonyView */,
 				7AA870A328DACCB700134ADB /* ProfileView */,
 				456885252B390FF4007B1EBB /* WarriorView.swift */,
 				456585F22D4F62EE002F2709 /* DevotionalSubscriptionView.swift */,
@@ -889,6 +905,7 @@
 				452D17DC2D703E9E000AB1D1 /* FirebaseStorage */,
 				452D17DE2D703F3A000AB1D1 /* FirebaseFirestore */,
 				45AE76702D7960BD0037EE12 /* FirebaseMessaging */,
+				45A4A3D72D8918BB00DFCEB7 /* FirebaseFirestoreCombine-Community */,
 			);
 			productName = SpeakLife;
 			productReference = 7A278F97288915DE0084BB57 /* SpeakLife.app */;
@@ -1049,6 +1066,7 @@
 				452D17E22D725F87000AB1D1 /* RatingView.swift in Sources */,
 				7AA870D028DACCB700134ADB /* ReminderView.swift in Sources */,
 				45CF271A2B4E52EF00BC8968 /* HabitScene.swift in Sources */,
+				4501F3912D8926CA00315902 /* TestimonyViewModel.swift in Sources */,
 				4571AA412B88A2A800067FD5 /* RemoteAPIClient.swift in Sources */,
 				7AF18C962A0CC532005A6E31 /* DevotionalView.swift in Sources */,
 				7AA870D828DACCB700134ADB /* CategoryChooserView.swift in Sources */,
@@ -1078,6 +1096,7 @@
 				7AA8709028DACCA700134ADB /* SelectionFeedback.swift in Sources */,
 				7AA870CC28DACCB700134ADB /* SettingsRow.swift in Sources */,
 				7ABA50C929E4DE60002699F1 /* PrayerDetailView.swift in Sources */,
+				45A4A3D62D8917D600DFCEB7 /* TestimonyView.swift in Sources */,
 				7AA8709528DACCA800134ADB /* FontPickerController.swift in Sources */,
 				7AA8708028DACC8300134ADB /* NotificationHandler.swift in Sources */,
 				7AA870D628DACCB700134ADB /* CreateYourOwnView.swift in Sources */,
@@ -1328,7 +1347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 743;
+				CURRENT_PROJECT_VERSION = 744;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1349,7 +1368,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.45;
+				MARKETING_VERSION = 3.0.46;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1370,7 +1389,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 743;
+				CURRENT_PROJECT_VERSION = 744;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1391,7 +1410,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.45;
+				MARKETING_VERSION = 3.0.46;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1550,6 +1569,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 452D17D72D703E9E000AB1D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		45A4A3D72D8918BB00DFCEB7 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 452D17D72D703E9E000AB1D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
 		};
 		45AE76702D7960BD0037EE12 /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
