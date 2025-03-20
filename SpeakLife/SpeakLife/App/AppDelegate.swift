@@ -14,7 +14,7 @@ import FacebookCore
 import AppTrackingTransparency
 import FirebaseMessaging
 
-final class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate {
+final class AppDelegate: NSObject, MessagingDelegate {
     
     var appState: AppState?
     var declarationStore: DeclarationViewModel?
@@ -30,9 +30,10 @@ final class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate {
             application,
             didFinishLaunchingWithOptions: launchOptions
         )
-        application.registerForRemoteNotifications()
-        Messaging.messaging().delegate = self
         registerNotificationHandler()
+        Messaging.messaging().delegate = self
+       
+        
         registerBGTask()
         Analytics.logEvent(Event.SessionStarted, parameters: nil)
         
@@ -43,21 +44,41 @@ final class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate {
                 self?.declarationStore?.setDeclaration(content.body, category: content.title)
             }
         }
+        if appState?.isOnboarded ?? false {
+            registerForPushNotifications()
+        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            if let token = Messaging.messaging().fcmToken {
+//                print("✅ Manually Retrieved FCM Token: \(token)")
+//            } else {
+//                print("🔴 No FCM token available.")
+//            }
+//        }
         
         return true
+    }
+    
+    func registerForPushNotifications() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            if granted {
+                DispatchQueue.main.async {
+                    print("✅ Manually registered FCM Token")
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            } else {
+                print("Push notifications permission denied: \(error?.localizedDescription ?? "No error")")
+            }
+        }
     }
     
    
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        Messaging.messaging().token { token, error in
-          if let error = error {
-            print("Error fetching FCM registration token: \(error)")
-          } else if let token = token {
-            print("FCM registration token: \(token)")
-           
-          }
-        }
+        if let token = fcmToken {
+                   print("✅ FCM Token: \(token)") // This should now appear in Xcode logs
+               } else {
+                   print("🔴 Failed to retrieve FCM token.")
+               }
     }
     
     func userNotificationCenter(
@@ -145,9 +166,22 @@ final class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate {
     }
 }
 
-extension AppDelegate {
-    func application(application: UIApplication,
+extension AppDelegate: UIApplicationDelegate {
+    func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-      Messaging.messaging().apnsToken = deviceToken
+        let tokenString = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+           print("✅ Successfully registered for APNs with token: \(tokenString)")
+        Messaging.messaging().apnsToken = deviceToken
+    
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("🔴 Failed to register for APNs: \(error.localizedDescription)")
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.banner, .sound])
     }
 }

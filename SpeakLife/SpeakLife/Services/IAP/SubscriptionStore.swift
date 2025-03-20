@@ -61,6 +61,7 @@ final class SubscriptionStore: ObservableObject {
     @Published var showYearlyOption = false
     @Published var onlyShowYearly = false
     @Published var showMostPopularBadge = false
+    @Published var showTestimonyTab = false
     
     @Published var yearlySubscription = ""
     @Published var monthlySubscription = ""
@@ -133,6 +134,7 @@ final class SubscriptionStore: ObservableObject {
         showYearlyOption = remoteConfig["showYearlyOption"].boolValue
         onlyShowYearly = remoteConfig["onlyShowYearly"].boolValue
         showMostPopularBadge = remoteConfig["showMostPopularBadge"].boolValue
+        showTestimonyTab = remoteConfig["showTestimonyTab"].boolValue
         yearlyID = yearlySubscription
         monthlyID = monthlySubscription
         discountID = discountSubscription

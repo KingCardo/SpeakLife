@@ -36,6 +36,8 @@ class TestimonyViewModel: ObservableObject {
     private let cacheKey = "cachedTestimonies"
     private let lastFetchKey = "lastFetchTimestamp"
     private let fetchCooldown: TimeInterval = 300
+    private let dailyFetchKey = "dailyFetchTimestamp"
+    private let dailyCooldown: TimeInterval = 86400
     private var lastDocument: DocumentSnapshot?
     private var listener: ListenerRegistration?
     private let deviceId: String
@@ -44,6 +46,7 @@ class TestimonyViewModel: ObservableObject {
     init() {
         self.deviceId = TestimonyViewModel.getDeviceId()
         loadCachedTestimonies()
+        preloadTestimonies()
         monitorNetwork()
         fetchTestimoniesIfNeeded()
     }
@@ -61,13 +64,45 @@ class TestimonyViewModel: ObservableObject {
                 UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: lastFetchKey)
             }
         }
-        
-        private func fetchTestimoniesIfNeeded() {
-            let lastFetch = UserDefaults.standard.double(forKey: lastFetchKey)
-            if Date().timeIntervalSince1970 - lastFetch > fetchCooldown {
-                fetchTestimonies(reset: true)
+    
+    private func preloadTestimonies() {
+            let fakeDeviceId = "test-device-123"
+            let sampleTestimonies = [
+                TestimonialPost(text: "I was lost, but Jesus found me and turned my life around.", user: "Kristin", timestamp: Timestamp(), deviceId: fakeDeviceId),
+                TestimonialPost(text: "I suffered from depression, but speaking life over myself and trusting God brought me healing.", user: "Jelena", timestamp: Timestamp(), deviceId: fakeDeviceId),
+                TestimonialPost(text: "I used to be an atheist, but Jesus showed me His love and grace, changing my entire perspective.", user: "Niall", timestamp: Timestamp(), deviceId: fakeDeviceId),
+                TestimonialPost(text: "Even in captivity, I felt God's presence and protection guiding me to freedom.", user: "Bethany", timestamp: Timestamp(), deviceId: fakeDeviceId),
+                TestimonialPost(text: "I encountered Jesus in the most unexpected way, and now my faith is unshakable.", user: "Anonymous", timestamp: Timestamp(), deviceId: fakeDeviceId),
+                TestimonialPost(text: "When I started declaring God's promises, doors opened that I never imagined possible.", user: "Chris", timestamp: Timestamp(), deviceId: fakeDeviceId),
+                TestimonialPost(text: "After years of struggling, Jesus brought breakthrough into my finances and relationships.", user: "David", timestamp: Timestamp(), deviceId: fakeDeviceId),
+                TestimonialPost(text: "I spoke healing over my body, and I witnessed a miracle unfold before my eyes.", user: "Grace", timestamp: Timestamp(), deviceId: fakeDeviceId),
+                TestimonialPost(text: "The power of Jesus' name turned my despair into joy overnight.", user: "Samuel", timestamp: Timestamp(), deviceId: fakeDeviceId),
+                TestimonialPost(text: "I had no hope, but Jesus restored my family and gave me a future.", user: "Olivia", timestamp: Timestamp(), deviceId: fakeDeviceId)
+            ]
+            
+            for testimony in sampleTestimonies {
+                do {
+                    _ = try db.collection(collection).addDocument(from: testimony)
+                } catch {
+                    print("Error preloading testimonies: \(error.localizedDescription)")
+                }
             }
         }
+        
+    private func fetchTestimoniesIfNeeded() {
+        let lastFetch = UserDefaults.standard.double(forKey: lastFetchKey)
+        let lastDailyFetch = UserDefaults.standard.double(forKey: dailyFetchKey)
+        let now = Date().timeIntervalSince1970
+        
+        if now - lastDailyFetch > dailyCooldown {
+            // Fetch once per day
+            fetchTestimonies(reset: true)
+            UserDefaults.standard.set(now, forKey: dailyFetchKey)
+        } else if now - lastFetch > fetchCooldown {
+            // Fetch only if user pulls down after cooldown period
+            fetchTestimonies(reset: true)
+        }
+    }
 
     
     static func getDeviceId() -> String {
@@ -138,7 +173,6 @@ class TestimonyViewModel: ObservableObject {
                         self.errorMessage = "Error submitting testimony: \(error.localizedDescription)"
                     }
                 } else {
-                    self.isSubmitting = false
                     self.submissionMessage = "Testimony added successfully!"
                     self.fetchTestimonies(reset: true)
                 }

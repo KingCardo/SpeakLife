@@ -45,12 +45,15 @@ struct OnboardingView: View  {
             TabView(selection: $selection) {
                 
                 IntroTipScene(
-                    title: "You Are Like Jesus",
-                    bodyText:  """
-            “As He is, so are we in this world.” – 1 John 4:17
-
-            Jesus isn’t just your Savior—He’s your example. You were designed to walk in His wisdom, peace, and power. As you speak life daily, you’re renewing your mind and becoming more like Him.
-            """,
+                    title: "Your Mind is a Battlefield",
+                    bodyText: "Fear. Doubt. Negativity. These keep you stuck. But your thoughts can be transformed—starting today!"
+            
+//            """
+//            “As He is, so are we in this world.” – 1 John 4:17
+//
+//            Jesus isn’t just your Savior—He’s your example. You were designed to walk in His wisdom, peace, and power. As you speak life daily, you’re renewing your mind and becoming more like Him.
+//            """
+                    ,
                    /* As He is, so are we in this world. – 1 John 4:17. Jesus isn’t just your Savior—He’s your example. You were designed to walk in His wisdom, peace, and power.",*/
                     subtext: "",
                     ctaText: "Step Into Your Jesus Identity",
@@ -64,16 +67,18 @@ struct OnboardingView: View  {
                     .tag(Tab.transformedLife)
                 
                 IntroTipScene(
-                    title: "Not Every Thought Is Yours",
-                    bodyText: """
-The enemy plants thoughts in your mind—using “I” so you think they’re your own. 
-“I’ll never be enough.” , “God doesn’t love me.” , “I’ll always struggle.” 
- 
-These are lies. They are not your thoughts. They are not your identity. 
-The battle is in your mind. Win it by speaking God’s truth daily.
-""",
+                    title: "Jesus Paid It All—Live in Freedom!",
+                    bodyText: "Sin is defeated. Fear is broken. Your past no longer defines you. Jesus made you righteous—now walk in it!"
+//"""
+//The enemy plants thoughts in your mind—using “I” so you think they’re your own. 
+//“I’ll never be enough.” , “God doesn’t love me.” , “I’ll always struggle.” 
+// 
+//These are lies. They are not your thoughts. They are not your identity. 
+//The battle is in your mind. Win it by speaking God’s truth daily.
+//"""
+                    ,
                     subtext: "",
-                    ctaText: "Declare Truth Now",
+                    ctaText: "Continue",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
@@ -85,14 +90,16 @@ The battle is in your mind. Win it by speaking God’s truth daily.
                
                 
                 IntroTipScene(
-                    title: "Victory is Already Yours",
-                    bodyText: """
-            “It is finished.” – John 19:30
-
-            You don’t fight for victory—you fight from it! Jesus already won your healing, peace, and breakthrough. Declare it and walk in it.
-            """,
+                    title: "Speak Life—Your Words Shape Your Future",
+                    bodyText: "What you say becomes your reality. Stop reinforcing fear and struggle. Speak God’s truth, and watch everything shift!"
+//            """
+//            “It is finished.” – John 19:30
+//
+//            You don’t fight for victory—you fight from it! Jesus already won your healing, peace, and breakthrough. Declare it and walk in it.
+//            """
+                    ,
                     subtext: "",
-                    ctaText: "Declare Your Victory",
+                    ctaText: "Start Speaking Life",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
@@ -102,16 +109,18 @@ The battle is in your mind. Win it by speaking God’s truth daily.
                     .tag(Tab.likeJesus)
                 
                 IntroTipScene(
-                    title: "Your Words Have Power",
-                    bodyText: """
-            “The words that I speak to you are spirit, and they are life.” – John 6:63
-
-            When Jesus spoke, storms stopped, sickness left, and the impossible became possible. That same power is in YOU. Your words shape your future.
-
-            Every time you declare God’s promises, you align with Heaven’s reality.
-            """,
+                    title: "Victory, Healing & Abundance Are Already Yours!",
+                    bodyText: "No more fear. No more lack. No more guilt. Jesus’ sacrifice secured your healing, breakthrough, and victory. Declare it. Walk in it. Live it!"
+//            """
+//            “The words that I speak to you are spirit, and they are life.” – John 6:63
+//
+//            When Jesus spoke, storms stopped, sickness left, and the impossible became possible. That same power is in YOU. Your words shape your future.
+//
+//            Every time you declare God’s promises, you align with Heaven’s reality.
+//            """
+                    ,
                     subtext: "",
-                    ctaText: "Start Speaking Life!",
+                    ctaText: "Claim God’s Promises Now",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
@@ -442,12 +451,21 @@ The battle is in your mind. Win it by speaking God’s truth daily.
                         }
                         
                         if granted {
+                            DispatchQueue.main.async {
+                                UIApplication.shared.registerForRemoteNotifications()
+                            }
                             appState.notificationEnabled = true
                             registerNotifications()
+                            withAnimation {
+                                advance()
+                            }
                            // NotificationManager.shared.prepareDailyStreakNotification(with: appState.userName, streak: streakViewModel.currentStreak, hasCurrentStreak: streakViewModel.hasCurrentStreak)
                             
                         } else {
                             appState.notificationEnabled = false
+                            withAnimation {
+                                advance()
+                            }
                             // return
                         }
                         withAnimation {

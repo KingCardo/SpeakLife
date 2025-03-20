@@ -59,12 +59,16 @@ struct HomeView: View {
     
     @ViewBuilder
     var homeView: some View {
-            TabView {
-                declarationView
-                audioView
-                devotionalView
-                testimoneyView
-                //createYourOwnView
+        TabView {
+            declarationView
+            audioView
+//            if subscriptionStore.showTestimonyTab {
+//                testimonyView
+//            }
+            devotionalView
+           // if !subscriptionStore.showTestimonyTab {
+                createYourOwnView
+           // }
                 profileView
                 
             }
@@ -97,7 +101,7 @@ struct HomeView: View {
             }
     }
     
-    var testimoneyView: some View {
+    var testimonyView: some View {
         TestimonyFeedView()
             .tabItem {
                 Image(systemName: "quote.bubble")

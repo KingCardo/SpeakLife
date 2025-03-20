@@ -49,7 +49,6 @@
 		45A4A3D12D86B86100DFCEB7 /* washed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3D02D86B86100DFCEB7 /* washed.mp3 */; };
 		45A4A3D32D86B8DB00DFCEB7 /* rainstorm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3D22D86B8DB00DFCEB7 /* rainstorm.mp3 */; };
 		45A4A3D62D8917D600DFCEB7 /* TestimonyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4A3D52D8917D000DFCEB7 /* TestimonyView.swift */; };
-		45A4A3D82D8918BB00DFCEB7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 45A4A3D72D8918BB00DFCEB7 /* FirebaseFirestoreCombine-Community */; };
 		45AE76712D7960BD0037EE12 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 45AE76702D7960BD0037EE12 /* FirebaseMessaging */; };
 		45B07A422D24D98300EA2F5D /* WhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B07A412D24D98300EA2F5D /* WhatsNewView.swift */; };
 		45BCBA9A2C360245001F28C4 /* BibleStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BCBA992C360245001F28C4 /* BibleStory.swift */; };
@@ -59,6 +58,7 @@
 		45CF27182B4E52C900BC8968 /* Personalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF27172B4E52C900BC8968 /* Personalization.swift */; };
 		45CF271A2B4E52EF00BC8968 /* HabitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF27192B4E52EF00BC8968 /* HabitScene.swift */; };
 		45CF271C2B4E530300BC8968 /* ImprovementScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF271B2B4E530300BC8968 /* ImprovementScene.swift */; };
+		45D623032D8A8B280059C935 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 45A4A3D72D8918BB00DFCEB7 /* FirebaseFirestoreCombine-Community */; };
 		45D6402B2CD218AE006F05AD /* declarationsv5.json in Resources */ = {isa = PBXBuildFile; fileRef = 45D6402A2CD218AE006F05AD /* declarationsv5.json */; };
 		45ED72C42BA10B3500F5F5E3 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED72C32BA10B3500F5F5E3 /* ConfettiView.swift */; };
 		45ED72C62BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED72C52BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift */; };
@@ -343,12 +343,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D623032D8A8B280059C935 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				45C7481F2B55B4B80011D8F6 /* FacebookCore in Frameworks */,
 				7AF18C8029FD1E20005A6E31 /* (null) in Frameworks */,
 				45AE76712D7960BD0037EE12 /* FirebaseMessaging in Frameworks */,
 				452D17D92D703E9E000AB1D1 /* FirebaseAnalytics in Frameworks */,
 				452D17DB2D703E9E000AB1D1 /* FirebaseRemoteConfig in Frameworks */,
-				45A4A3D82D8918BB00DFCEB7 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				7AF18CA22A0DB126005A6E31 /* SwiftUICharts in Frameworks */,
 				452D17DF2D703F3A000AB1D1 /* FirebaseFirestore in Frameworks */,
 				452D17DD2D703E9E000AB1D1 /* FirebaseStorage in Frameworks */,
@@ -1347,7 +1347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 744;
+				CURRENT_PROJECT_VERSION = 746;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1389,7 +1389,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 744;
+				CURRENT_PROJECT_VERSION = 746;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;

@@ -33,9 +33,16 @@ final class NotificationHandler: NSObject, ObservableObject, UNUserNotificationC
         callback?(content)
         completionHandler([.banner, .sound])
     }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [String : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+      // Handle data message in background.
+      print("Message ID: \(userInfo["gcm.message_id"] ?? "")")
+      completionHandler(.newData)
+    }
 }
 
 extension NotificationHandler {
+    
     func requestPermission(_ delegate : UNUserNotificationCenterDelegate? = nil ,
             onDeny handler :  (()-> Void)? = nil) {
         

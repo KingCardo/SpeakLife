@@ -16,28 +16,28 @@ struct TestimonyRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(testimony.user)
-                .font(.headline)
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .headline))
                 .foregroundColor(.blue)
             
             Text(testimony.text)
-                .font(.body)
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
                 .foregroundColor(.primary)
                 .multilineTextAlignment(.leading)
                 .lineLimit(nil)
             
             Text("Posted on \(formattedDate(testimony.timestamp))")
-                .font(.caption)
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .caption))
                 .foregroundColor(.gray)
             
-            Button(action: reportAction) {
-                HStack {
-                    Image(systemName: "flag.fill")
-                    Text("Report")
-                }
-                .font(.caption)
-                .foregroundColor(.red)
-            }
-            .buttonStyle(BorderlessButtonStyle())
+//            Button(action: reportAction) {
+//                HStack {
+//                    Image(systemName: "flag.fill")
+//                    Text("Report")
+//                }
+//                .font(.caption)
+//                .foregroundColor(.red)
+//            }
+//            .buttonStyle(BorderlessButtonStyle())
         }
         .padding()
     }
@@ -147,18 +147,22 @@ struct TestimonyFormView: View {
                 Section {
                     Button(action: submitTestimony) {
                         if viewModel.isSubmitting {
-                            ProgressView()
+                            HStack {
+                                Spacer()
+                                ProgressView()
+                                Spacer()
+                            }
                         } else {
                             Text("Submit Testimony")
                                 .bold()
                                 .frame(maxWidth: .infinity)
                                 .padding()
-                                .background(viewModel.isSubmitting ? Color.gray : Color.blue)
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
                         }
                     }
-                    .disabled(viewModel.isSubmitting || userName.isEmpty || testimonyText.isEmpty)
+                    .modifier(SubmitButtonModifier(isDisabled: viewModel.isSubmitting || userName.isEmpty || testimonyText.count > 10))
+                    .disabled(viewModel.isSubmitting || userName.isEmpty || testimonyText.count > 10)
                 }
             }
             .navigationTitle("Share Your Testimony")
@@ -167,5 +171,19 @@ struct TestimonyFormView: View {
     
     private func submitTestimony() {
         viewModel.addTestimony(user: userName, text: testimonyText)
+    }
+}
+
+
+struct SubmitButtonModifier: ViewModifier {
+    let isDisabled: Bool
+    
+    func body(content: Content) -> some View {
+        content
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(isDisabled ? Color.gray : Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(10)
     }
 }
