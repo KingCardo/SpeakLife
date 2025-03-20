@@ -456,16 +456,10 @@ struct OnboardingView: View  {
                             }
                             appState.notificationEnabled = true
                             registerNotifications()
-                            withAnimation {
-                                advance()
-                            }
                            // NotificationManager.shared.prepareDailyStreakNotification(with: appState.userName, streak: streakViewModel.currentStreak, hasCurrentStreak: streakViewModel.hasCurrentStreak)
                             
                         } else {
                             appState.notificationEnabled = false
-                            withAnimation {
-                                advance()
-                            }
                             // return
                         }
                         withAnimation {

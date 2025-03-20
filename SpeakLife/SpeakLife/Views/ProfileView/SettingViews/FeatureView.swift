@@ -108,13 +108,17 @@ struct FeatureView: View {
 //        Feature(subtitle: "Speak peace into your life with daily affirmations that calm your mind and align your heart with God’s promises."),
 //        Feature(subtitle: "Strengthen your faith daily with affirmations that remind you of God’s unchanging love and power."),
 //        Feature(subtitle: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future."),
+        Feature(subtitle: "Speak Life, See Change – Declare God’s Word and watch your life shift."),
+        Feature(subtitle: "Pray with Power – Speak bold, effective prayers that bring results."),
+        Feature(subtitle: "Stay Rooted in Faith – Build a daily habit of declaring God’s promises."),
+        Feature(subtitle: "Find Peace & Breakthrough – Replace fear and doubt with faith and victory."),
+        Feature(subtitle: "Step Into God’s Plan – Activate His promises and walk in your destiny."),
         
-       
-        Feature(subtitle: "Life-Changing Affirmations to Activate God's Promises"),
-        Feature(subtitle: "Start Every Morning with Jesus Devotionals"),
-        Feature(subtitle: "Pray Boldly with Mountain-Moving Prayers"),
-        Feature(subtitle: "Stay Encouraged with Daily Scripture Reminders"),
-        Feature(subtitle: "Customize Your Experience with 30+ Beautiful Themes")
+//        Feature(subtitle: "Life-Changing Affirmations to Activate God's Promises"),
+//        Feature(subtitle: "Start Every Morning with Jesus Devotionals"),
+//        Feature(subtitle: "Pray Boldly with Mountain-Moving Prayers"),
+//        Feature(subtitle: "Stay Encouraged with Daily Scripture Reminders"),
+//        Feature(subtitle: "Customize Your Experience with 30+ Beautiful Themes")
         ]
     
     let features: [Feature] = [
