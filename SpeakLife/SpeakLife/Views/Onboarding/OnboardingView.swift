@@ -46,7 +46,7 @@ struct OnboardingView: View  {
                 
                 IntroTipScene(
                     title: "Your Mind is a Battlefield",
-                    bodyText: "Fear. Doubt. Negativity. These keep you stuck. But your thoughts can be transformed—starting today!"
+                    bodyText: "You’re one step away from unlocking the power of speaking life activating God's promises daily. Millions struggle to stay consistent in their faith—you're here to change that."
             
 //            """
 //            “As He is, so are we in this world.” – 1 John 4:17
@@ -68,7 +68,7 @@ struct OnboardingView: View  {
                 
                 IntroTipScene(
                     title: "Jesus Paid It All—Live in Freedom!",
-                    bodyText: "Sin is defeated. Fear is broken. Your past no longer defines you. Jesus made you righteous—now walk in it!"
+                    bodyText: "Join thousands who are declaring God’s promises and seeing real transformation. This isn’t just an app—it’s a breakthrough."
 //"""
 //The enemy plants thoughts in your mind—using “I” so you think they’re your own. 
 //“I’ll never be enough.” , “God doesn’t love me.” , “I’ll always struggle.” 
@@ -91,7 +91,7 @@ struct OnboardingView: View  {
                 
                 IntroTipScene(
                     title: "Speak Life—Your Words Shape Your Future",
-                    bodyText: "What you say becomes your reality. Stop reinforcing fear and struggle. Speak God’s truth, and watch everything shift!"
+                    bodyText: "Stop letting fear and doubt control your day. Speak faith. Speak victory. Take charge of your future."
 //            """
 //            “It is finished.” – John 19:30
 //
@@ -110,7 +110,7 @@ struct OnboardingView: View  {
                 
                 IntroTipScene(
                     title: "Victory, Healing & Abundance Are Already Yours!",
-                    bodyText: "No more fear. No more lack. No more guilt. Jesus’ sacrifice secured your healing, breakthrough, and victory. Declare it. Walk in it. Live it!"
+                    bodyText: "Every day without this is a missed opportunity. Don’t wait—start speaking life now!"
 //            """
 //            “The words that I speak to you are spirit, and they are life.” – John 6:63
 //
