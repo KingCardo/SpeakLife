@@ -480,4 +480,28 @@ let speaklifeFiles: [AudioDeclaration] = [
            imageUrl: "devotional",
            isPremium: false
        ),
+    AudioDeclaration(
+           id: "speaklife-ep4.mp3",
+           title: "Fighting Back With Words",
+           subtitle: "Episode 4",
+           duration: "4m",
+           imageUrl: "devotional",
+           isPremium: false
+       ),
+    AudioDeclaration(
+           id: "speaklife-ep5.mp3",
+           title: "The Language of the Kingdom",
+           subtitle: "Episode 5",
+           duration: "4m",
+           imageUrl: "devotional",
+           isPremium: false
+       ),
+    AudioDeclaration(
+           id: "speaklife-ep6.mp3",
+           title: "Rewire Your Identity",
+           subtitle: "Episode 6",
+           duration: "4m",
+           imageUrl: "devotional",
+           isPremium: false
+       ),
     ]
