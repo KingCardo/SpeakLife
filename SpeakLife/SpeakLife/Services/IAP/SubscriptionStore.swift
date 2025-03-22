@@ -399,7 +399,7 @@ extension Product {
         } else if id == currentYearlyID {
             return "Start My Free Trial Now"
         } else if id == yearlyID {
-                return "Start Free Trial"
+                return "Try Free & Subscribe"
         } else {
            return "Subscribe"
         }

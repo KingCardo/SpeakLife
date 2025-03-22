@@ -452,3 +452,32 @@ let devotionalFiles: [AudioDeclaration] = [
            isPremium: true
        ),
     ]
+
+
+// SpeakLife files
+let speaklifeFiles: [AudioDeclaration] = [
+    AudioDeclaration(
+           id: "speaklife-ep1.mp3",
+           title: "The Power of Speaking Life",
+           subtitle: "Episode 1",
+           duration: "4m",
+           imageUrl: "devotional",
+           isPremium: false
+       ),
+    AudioDeclaration(
+           id: "speaklife-ep2.mp3",
+           title: "You Have Creative Power in Your Mouth",
+           subtitle: "Episode 2",
+           duration: "4m",
+           imageUrl: "devotional",
+           isPremium: false
+       ),
+    AudioDeclaration(
+           id: "speaklife-ep3.mp3",
+           title: "See It Before You Say It",
+           subtitle: "Episode 3",
+           duration: "4m",
+           imageUrl: "devotional",
+           isPremium: false
+       ),
+    ]

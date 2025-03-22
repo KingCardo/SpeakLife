@@ -15,6 +15,7 @@ final class AudioDeclarationViewModel: ObservableObject {
     @Published var gospelStories: [AudioDeclaration]
     @Published var meditations: [AudioDeclaration]
     @Published var devotionals: [AudioDeclaration]
+    @Published var speaklife: [AudioDeclaration]
     @Published var downloadProgress: [String: Double] = [:]
     private let storage = Storage.storage()
     private let fileManager = FileManager.default
@@ -26,6 +27,7 @@ final class AudioDeclarationViewModel: ObservableObject {
           self.gospelStories = gospelFiles
           self.meditations = meditationFiles
           self.devotionals = devotionalFiles
+          self.speaklife = speaklifeFiles
       }
     
     func fetchAudio(for item: AudioDeclaration, completion: @escaping (Result<URL, Error>) -> Void) {
