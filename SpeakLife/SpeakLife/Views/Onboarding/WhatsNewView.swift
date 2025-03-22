@@ -12,6 +12,7 @@ struct WhatsNewBottomSheet: View {
     let version: String
     let features = [
         "NEW SpeakLife Audio Category",
+        "14 New Audio Episodes",
     ]
 
     var body: some View {

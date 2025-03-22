@@ -496,60 +496,84 @@ let speaklifeFiles: [AudioDeclaration] = [
            imageUrl: "devotional",
            isPremium: false
        ),
-//    AudioDeclaration(
-//           id: "speaklife-ep6.mp3",
-//           title: "Rewire Your Identity",
-//           subtitle: "Episode 6",
-//           duration: "3m",
-//           imageUrl: "devotional",
-//           isPremium: false
-//       ),
-//    AudioDeclaration(
-//           id: "speaklife-ep7.mp3",
-//           title: "Speak to Your Body",
-//           subtitle: "Episode 7",
-//           duration: "3m",
-//           imageUrl: "devotional",
-//           isPremium: false
-//       ),
-//    AudioDeclaration(
-//           id: "speaklife-ep8.mp3",
-//           title: "Speak Over Your Finances",
-//           subtitle: "Episode 8",
-//           duration: "3m",
-//           imageUrl: "devotional",
-//           isPremium: false
-//       ),
-//    AudioDeclaration(
-//           id: "speaklife-ep9.mp3",
-//           title: "Protect Your Peace",
-//           subtitle: "Episode 9",
-//           duration: "3m",
-//           imageUrl: "devotional",
-//           isPremium: false
-//       ),
-//    AudioDeclaration(
-//           id: "speaklife-ep10.mp3",
-//           title: "Break Generational Patterns",
-//           subtitle: "Episode 10",
-//           duration: "3m",
-//           imageUrl: "devotional",
-//           isPremium: false
-//       ),
-//    AudioDeclaration(
-//           id: "speaklife-ep11.mp3",
-//           title: "Plant Seeds With Your Mouth",
-//           subtitle: "Episode 11",
-//           duration: "3m",
-//           imageUrl: "devotional",
-//           isPremium: false
-//       ),
-//    AudioDeclaration(
-//           id: "speaklife-ep12.mp3",
-//           title: "Speak Life, Live Blessed",
-//           subtitle: "Episode 12",
-//           duration: "3m",
-//           imageUrl: "devotional",
-//           isPremium: false
-//       ),
+    AudioDeclaration(
+           id: "speaklife-ep6.mp3",
+           title: "Rewire Your Identity",
+           subtitle: "Episode 6",
+           duration: "3m",
+           imageUrl: "devotional",
+           isPremium: false
+       ),
+    AudioDeclaration(
+           id: "speaklife-ep7.mp3",
+           title: "Speak to Your Body",
+           subtitle: "Episode 7",
+           duration: "3m",
+           imageUrl: "devotional",
+           isPremium: false
+       ),
+    AudioDeclaration(
+           id: "speaklife-ep8.mp3",
+           title: "Speak Over Your Finances",
+           subtitle: "Episode 8",
+           duration: "3m",
+           imageUrl: "devotional",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "speaklife-ep9.mp3",
+           title: "Protect Your Peace",
+           subtitle: "Episode 9",
+           duration: "3m",
+           imageUrl: "devotional",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "speaklife-ep10.mp3",
+           title: "Break Generational Patterns",
+           subtitle: "Episode 10",
+           duration: "3m",
+           imageUrl: "devotional",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "speaklife-ep11.mp3",
+           title: "Plant Seeds With Your Mouth",
+           subtitle: "Episode 11",
+           duration: "3m",
+           imageUrl: "devotional",
+           isPremium: true
+       ),
+    AudioDeclaration(
+           id: "speaklife-ep12.mp3",
+           title: "Speak Life, Live Blessed",
+           subtitle: "Episode 12",
+           duration: "3m",
+           imageUrl: "devotional",
+           isPremium: true
+    ),
+    AudioDeclaration(
+        id: "speaklife-s2ep1.mp3",
+        title: "The Battlefield Within",
+        subtitle: "S2 Episode 1",
+        duration: "3m",
+        imageUrl: "devotional",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "speaklife-s2ep2.mp3",
+        title: "Thoughts That Don’t Belong to You",
+        subtitle: "S2 Episode 2",
+        duration: "3m",
+        imageUrl: "devotional",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "speaklife-s2ep3.mp3",
+        title: "The Power of Agreement",
+        subtitle: "S2 Episode 3",
+        duration: "3m",
+        imageUrl: "devotional",
+        isPremium: true
+    ),
     ]
