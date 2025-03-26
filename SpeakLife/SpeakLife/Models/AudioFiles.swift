@@ -576,4 +576,12 @@ let speaklifeFiles: [AudioDeclaration] = [
         imageUrl: "devotional",
         isPremium: true
     ),
+    AudioDeclaration(
+        id: "speaklife-s2ep4.mp3",
+        title: "Recognizing Strongholds",
+        subtitle: "S2 Episode 4",
+        duration: "3m",
+        imageUrl: "devotional",
+        isPremium: true
+    ),
     ]

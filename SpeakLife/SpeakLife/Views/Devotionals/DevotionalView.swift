@@ -35,9 +35,9 @@ struct DevotionalView: View {
             devotionalView
                 .onAppear {
                     Analytics.logEvent(Event.devotionalTapped, parameters: nil)
-                    Task {
-                        await viewModel.fetchDevotional()
-                    }
+//                    Task {
+//                        await viewModel.fetchDevotional(remoteVersion: subscriptionStore.currentDevotionalVersion)
+//                    }
                 }
                 .alert(isPresented: $viewModel.hasError) {
                     Alert(title: Text(viewModel.errorString))

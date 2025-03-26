@@ -44,6 +44,9 @@ struct HomeView: View {
             } else if appState.isOnboarded {
                 homeView
                     .onAppear() {
+                        Task {
+                            await devotionalViewModel.fetchDevotional(remoteVersion: subscriptionStore.currentDevotionalVersion)
+                        }
                         if appState.firstOpen {
                             appState.firstOpen = false
                         }

@@ -97,6 +97,10 @@ struct DeclarationContentView: View {
                     
                 }
             }
+            .scaleEffect(viewModel.showVerse ? 1.05 : 1)
+            .opacity(viewModel.showVerse ? 1 : 0.8)
+            .animation(.spring(response: 0.4, dampingFraction: 0.7), value: viewModel.showVerse)
+
             .tabViewStyle(.page(indexDisplayMode: .never))
             .onChange(of: viewModel.selectedTab) { newIndex in
                 isMenuExpanded = false
@@ -126,7 +130,7 @@ struct DeclarationContentView: View {
         print("Updated buttonVisibilities count: \(buttonVisibilities.count) RWRW")
     }
     
-    func prepareShareItems() -> [Any] {
+    func prepareShareItems() -> [UIImage] {
         guard let image = image else { return [] }
      //   let message = "Check out SpeakLife - Bible Meditation and email speaklife@diosesaqui.com for a 30-day free pass. \n\(APP.Product.urlID)"
         return [image]//, message]
@@ -257,21 +261,29 @@ struct DeclarationContentView: View {
         }
     }
     
+    func setImage(completion: (() -> Void)?) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            if let windowScene =  UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                if let window = windowScene.windows.first {
+                    image = window.rootViewController?.view.toImage()
+                    completion?()
+                }
+            }
+            
+        }
+    }
+    
     private func shareTapped(declaration: Declaration) {
         viewModel.setCurrent(declaration)
         withAnimation {
             appState.showScreenshotLabel = true
             
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            if let windowScene =  UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                if let window = windowScene.windows.first {
-                    image = window.rootViewController?.view.toImage()
-                    self.showShareSheet = true
-                }
-            }
-            
+        
+        setImage() {
+            self.showShareSheet = true
         }
+       
         
         Analytics.logEvent(Event.shareTapped, parameters: ["share": declaration.text.prefix(100)])
         Selection.shared.selectionFeedback()
@@ -290,16 +302,17 @@ struct DeclarationContentView: View {
     }
     
     private func speakTapped(declaration: Declaration) {
+        Selection.shared.selectionFeedback()
         affirm(declaration, isAffirmation: viewModel.showVerse)
         Analytics.logEvent(Event.speechTapped, parameters: ["declaration": declaration.text])
-        Selection.shared.selectionFeedback()
+        
     }
     
     private func showVerse(declaration: Declaration) {
+        Selection.shared.selectionFeedback()
         withAnimation {
             toggleDeclaration(declaration)
         }
-        Selection.shared.selectionFeedback()
     }
     
     private func favoriteTapped(declaration: Declaration) {
@@ -318,9 +331,24 @@ struct DeclarationContentView: View {
         if !appState.showScreenshotLabel {
             HStack(spacing: 24) {
                 
-                CapsuleImageButton(title: "tray.and.arrow.up") {
-                    shareTapped(declaration: declaration)
+                Menu {
+                    Button("Instagram Stories") {
+                        setImage() {
+                            if let image = prepareShareItems().first {
+                                shareToInstagramStories(image: image)
+                            }
+                        }
+                    }
+                    Button("Other Apps") {
+                        shareTapped(declaration: declaration)
+                    }
+                } label: {
+                    CapsuleImageButton(title: "tray.and.arrow.up") { }
                 }
+                
+//                CapsuleImageButton(title: "tray.and.arrow.up") {
+//                    shareTapped(declaration: declaration)
+//                }
                 
                 CapsuleImageButton(title: (declaration.isFavorite ?? false) ? "heart.fill" : "heart") {
                     favoriteTapped(declaration: declaration)
@@ -401,6 +429,28 @@ struct ShareSheet: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
         
+    }
+}
+
+func shareToInstagramStories(image: UIImage) {
+    guard let imageData = image.pngData() else { return }
+
+    let pasteboardItems: [String: Any] = [
+        "com.instagram.sharedSticker.backgroundImage": imageData
+    ]
+
+    let pasteboardOptions = [
+        UIPasteboard.OptionsKey.expirationDate: Date().addingTimeInterval(60 * 5)
+    ]
+
+    UIPasteboard.general.setItems([pasteboardItems], options: pasteboardOptions)
+
+    if let url = URL(string: "instagram-stories://share") {
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        } else {
+            print("Instagram is not installed.")
+        }
     }
 }
 

@@ -46,7 +46,7 @@ struct OnboardingView: View  {
                 
                 IntroTipScene(
                     title: "Your Mind is a Battlefield",
-                    bodyText: "You’re one step away from unlocking the power of speaking life activating God's promises daily. Millions struggle to stay consistent in their faith—you're here to change that."
+                    bodyText: "One bold declaration can unlock a life of power, consistency, and breakthrough. You’re not here to struggle—you're here to speak life and activate God’s promises every day."
             
 //            """
 //            “As He is, so are we in this world.” – 1 John 4:17
@@ -91,7 +91,7 @@ struct OnboardingView: View  {
                 
                 IntroTipScene(
                     title: "Speak Life—Your Words Shape Your Future",
-                    bodyText: "Stop letting fear and doubt control your day. Speak faith. Speak victory. Take charge of your future."
+                    bodyText: "Silence fear. Crush doubt. Your words shape your world—so speak faith, declare victory, and command your future to align with God’s promises."
 //            """
 //            “It is finished.” – John 19:30
 //
@@ -109,8 +109,8 @@ struct OnboardingView: View  {
                     .tag(Tab.likeJesus)
                 
                 IntroTipScene(
-                    title: "Victory, Healing & Abundance Are Already Yours!",
-                    bodyText: "Every day without this is a missed opportunity. Don’t wait—start speaking life now!"
+                    title: "The Same Way You Gave Your Life to Jesus",
+                    bodyText: "You believed in your heart and declared with your mouth—and salvation became yours."
 //            """
 //            “The words that I speak to you are spirit, and they are life.” – John 6:63
 //
@@ -119,7 +119,14 @@ struct OnboardingView: View  {
 //            Every time you declare God’s promises, you align with Heaven’s reality.
 //            """
                     ,
-                    subtext: "",
+                    subtext: """
+That’s how faith works for everything:
+Healing, peace, purpose, abundance—
+You receive them the same way you received Jesus.
+
+By believing and boldly speaking God's promises over your life.
+"""
+                    ,
                     ctaText: "Claim God’s Promises Now",
                     showTestimonials: false,
                     isScholarship: false,
@@ -146,6 +153,10 @@ struct OnboardingView: View  {
                 }
                 .tag(Tab.unshakeableFaith)
                 
+                RatingView(size: geometry.size) {
+                    advance()
+                } .tag(Tab.review)
+                
                 
                 NotificationOnboarding(size: geometry.size) {
                     withAnimation {
@@ -154,25 +165,26 @@ struct OnboardingView: View  {
                 }
                 .tag(Tab.notification)
                 
-                if subscriptionStore.showSubscriptionFirst {
-                    subscriptionScene(size: geometry.size)
-                        .tag(Tab.subscription)
-                    OfferPageView() {
-                        withAnimation {
-                            advance()
-                        }
-                    }
-                    .tag(Tab.discount)
-                } else {
-                    OfferPageView() {
-                        withAnimation {
-                            advance()
-                        }
-                    }
-                    .tag(Tab.discount)
-                    subscriptionScene(size: geometry.size)
-                        .tag(Tab.subscription)
-                }
+                subscriptionScene(size: geometry.size)
+                    .tag(Tab.subscription)
+//                if subscriptionStore.showSubscriptionFirst {
+//                    
+//                    OfferPageView() {
+//                        withAnimation {
+//                            advance()
+//                        }
+//                    }
+//                    .tag(Tab.discount)
+//                } else {
+//                    OfferPageView() {
+//                        withAnimation {
+//                            advance()
+//                        }
+//                    }
+//                    .tag(Tab.discount)
+//                    subscriptionScene(size: geometry.size)
+//                        .tag(Tab.subscription)
+//                }
                 
                
                 
@@ -393,7 +405,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("LiveVictoriousScreenDone", parameters: nil)
                 case .unshakeableFaith:
                     impactMed.impactOccurred()
-                    selection = .notification
+                    selection = .review
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("UnshakeableFaithScreenDone", parameters: nil)
                 case .confidence:

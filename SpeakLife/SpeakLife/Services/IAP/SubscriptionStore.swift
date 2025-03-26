@@ -69,6 +69,8 @@ final class SubscriptionStore: ObservableObject {
     
     @Published var onboardingBGImage = ""
     @Published var backgroundImage = "moonlight2"
+    
+    @Published var currentDevotionalVersion: Int = 0
    
     private var remoteConfig = RemoteConfig.remoteConfig()
     var updateListenerTask: Task<Void, Error>? = nil
@@ -130,6 +132,7 @@ final class SubscriptionStore: ObservableObject {
         showSubscription = remoteConfig["showSubscription"].boolValue
         onboardingBGImage = remoteConfig["onboardingImage"].stringValue
         backgroundImage = remoteConfig["backgroundImage"].stringValue
+        currentDevotionalVersion = remoteConfig["currentDevotionalVersion"].numberValue.intValue
         showSubscriptionFirst = remoteConfig["showSubscriptionFirst"].boolValue
         showYearlyOption = remoteConfig["showYearlyOption"].boolValue
         onlyShowYearly = remoteConfig["onlyShowYearly"].boolValue

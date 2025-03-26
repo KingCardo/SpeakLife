@@ -7,9 +7,10 @@
 
 import Foundation
 import FirebaseStorage
+import SwiftUI
 
 protocol DevotionalService {
-    func fetchDevotionForToday(needsSync: Bool) async -> [Devotional]
+    func fetchDevotionForToday(remoteVersion: Int) async -> [Devotional]
     func fetchAllDevotionals(needsSync: Bool) async -> [Devotional]
     var devotionals: [Devotional] { get }
     
@@ -18,15 +19,14 @@ protocol DevotionalService {
 final class DevotionalServiceClient: DevotionalService {
     
     internal var devotionals: [Devotional] = []
+    @AppStorage("devotionalRemoteVersion") var currentVersion = 0
     
     init() { }
     
-    func fetchDevotionForToday(needsSync: Bool) async -> [Devotional] {
-        
-        
-        guard let data = await fetch(needsSync: false) else { return [] }
-        
-        
+    func fetchDevotionForToday(remoteVersion: Int) async -> [Devotional] {
+        let needsSync = currentVersion < remoteVersion
+        print(needsSync)
+        guard let data = await fetch(needsSync: needsSync) else { return [] }
         do {
             
             let dateFormatter = DateFormatter()
@@ -36,13 +36,9 @@ final class DevotionalServiceClient: DevotionalService {
             
             let welcome = try decoder.decode(WelcomeDevotional.self, from: data)
             let devotionals = welcome.devotionals
+            self.currentVersion = welcome.version
             self.devotionals = devotionals
-//            saveRemoteDevotionals { success in
-//                print(success, "saved RWRW")
-//            }
-            print(devotionals.count, "RWRW")
-            
-           
+   
             let todaysDate = Date()
             let calendar = Calendar.current
             let todaysComponents = calendar.dateComponents([.year, .month, .day], from: todaysDate)
@@ -61,14 +57,14 @@ final class DevotionalServiceClient: DevotionalService {
             }
             
         } catch {
-            print(error, "RWRW")
+            print(error, "decoding RWRW")
            return []
         }
     }
     
     func fetchAllDevotionals(needsSync: Bool) async -> [Devotional] {
        
-        guard let data = await fetch(needsSync: false) else { return [] }
+        guard let data = await fetch(needsSync: needsSync) else { return [] }
         
         do {
             
@@ -90,6 +86,20 @@ final class DevotionalServiceClient: DevotionalService {
            return []
         }
         
+    }
+    
+    func downloadDevotionals() async throws -> Data {
+        return try await withCheckedThrowingContinuation { continuation in
+            downloadDevotionals { data, error in
+                if let error = error {
+                    continuation.resume(throwing: error)
+                } else if let data = data {
+                    continuation.resume(returning: data)
+                } else {
+                    continuation.resume(throwing: NSError(domain: "DownloadError", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data and no error returned"]))
+                }
+            }
+        }
     }
     
     func downloadDevotionals(completion: @escaping((Data?, Error?) -> Void))  {
@@ -145,20 +155,27 @@ final class DevotionalServiceClient: DevotionalService {
     
     
     private func fetch(needsSync: Bool) async -> Data? {
-        var remoteData: Data?
         if needsSync {
-            downloadDevotionals { data, error in
-                remoteData = data
+            do {
+                let data = try await downloadDevotionals()
+                return data
+            } catch {
+                guard
+                    let url = Bundle.main.url(forResource: "devotionals", withExtension: "json"),
+                    let data = try? Data(contentsOf: url) else {
+                    print("RWRW file not found")
+                    return nil
+                }
+                return data
             }
-            return remoteData
+        } else {
+            guard
+                let url = Bundle.main.url(forResource: "devotionals", withExtension: "json"),
+                let data = try? Data(contentsOf: url) else {
+                print("RWRW file not found")
+                return nil
+            }
+            return data
         }
-        guard
-            let url = Bundle.main.url(forResource: "devotionals", withExtension: "json"),
-            let data = try? Data(contentsOf: url) else {
-            print("RWRW file not found")
-            return nil
-        }
-        return data
-       
     }
 }

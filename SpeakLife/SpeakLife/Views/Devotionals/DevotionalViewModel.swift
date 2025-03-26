@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class DevotionalViewModel: ObservableObject {
+final class DevotionalViewModel: ObservableObject, Sendable {
     
     @AppStorage("devotionalDictionary") var devotionalDictionaryData = Data()
     
@@ -92,19 +92,15 @@ final class DevotionalViewModel: ObservableObject {
         }
     }
     
-    func fetchDevotional() async {
+    func fetchDevotional(remoteVersion: Int) async {
         
-        if let devotional = await service.fetchDevotionForToday(needsSync: false).first {
+        if let devotional = await service.fetchDevotionForToday(remoteVersion: remoteVersion).first {
             DispatchQueue.main.async { [weak self] in
                 self?.devotional = devotional
             }
             setDevotionalDictionary()
-        } else if let devotional = await service.fetchDevotionForToday(needsSync: true).first {
-            DispatchQueue.main.async { [weak self] in
-                self?.devotional = devotional
-            }
-            setDevotionalDictionary()
-        } else {
+        }
+        else {
             DispatchQueue.main.async { [weak self] in
                 self?.hasError = true
             }
