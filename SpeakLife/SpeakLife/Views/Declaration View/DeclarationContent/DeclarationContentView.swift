@@ -333,9 +333,17 @@ struct DeclarationContentView: View {
                 
                 Menu {
                     Button("Instagram Stories") {
+                        withAnimation {
+                            appState.showScreenshotLabel = true
+                            
+                        }
                         setImage() {
                             if let image = prepareShareItems().first {
                                 shareToInstagramStories(image: image)
+                                withAnimation {
+                                    appState.showScreenshotLabel = false
+                                    
+                                }
                             }
                         }
                     }
@@ -444,9 +452,9 @@ func shareToInstagramStories(image: UIImage) {
     ]
 
     UIPasteboard.general.setItems([pasteboardItems], options: pasteboardOptions)
-    let kInstagramAppId = 3072555279733524
-    let instagramURL = URL(string: "instagram-stories://share?source_application=\(kInstagramAppId)")!
-    if let url = URL(string: "instagram-stories://share") {
+    let kInstagramAppId = 904572920975437
+    let instagramURL = URL(string: "instagram-stories://share?source_application=\(kInstagramAppId)")
+    if let url = instagramURL {
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         } else {

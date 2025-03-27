@@ -188,7 +188,7 @@ final class DeclarationViewModel: ObservableObject {
     }
     
     func subtitle(_ declaration: Declaration) -> String {
-        if selectedCategory.isBibleBook || showVerse {
+        if DeclarationCategory.bibleCategories.contains(declaration.category) || showVerse  {
             return declaration.book ?? ""
         } else if !showVerse, declaration.book == "Jesus" {
            return "Jesus"
