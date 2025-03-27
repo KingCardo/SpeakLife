@@ -444,7 +444,8 @@ func shareToInstagramStories(image: UIImage) {
     ]
 
     UIPasteboard.general.setItems([pasteboardItems], options: pasteboardOptions)
-
+    let kInstagramAppId = 3072555279733524
+    let instagramURL = URL(string: "instagram-stories://share?source_application=\(kInstagramAppId)")!
     if let url = URL(string: "instagram-stories://share") {
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
