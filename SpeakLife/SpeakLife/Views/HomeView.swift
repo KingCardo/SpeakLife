@@ -29,6 +29,7 @@ struct HomeView: View {
     @EnvironmentObject var timerViewModel: TimerViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var viewModel: FacebookTrackingViewModel
+    @EnvironmentObject var audioDeclarationViewModel: AudioDeclarationViewModel
     @Binding var isShowingLanding: Bool
    
     @State var showGiftView = false
@@ -44,7 +45,7 @@ struct HomeView: View {
             } else if appState.isOnboarded {
                 homeView
                     .onAppear() {
-                        
+                        audioDeclarationViewModel.fetchAudio(version: subscriptionStore.audioRemoteVersion)
                         declarationStore.setRemoteDeclarationVersion(version: subscriptionStore.remoteVersion)
                         Task {
                             await devotionalViewModel.fetchDevotional(remoteVersion: subscriptionStore.currentDevotionalVersion)

@@ -82,6 +82,18 @@ final class LocalAPIClient: APIService {
         return
     }
     
+    private func loadAudioFromDisk(completion: @escaping([AudioDeclaration], APIError?) -> Void) {
+        let documentDirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentDirURL.appendingPathComponent("audioDeclarations").appendingPathExtension("txt")
+        
+        guard let data = try? Data(contentsOf: fileURL),
+              let declarations = try? JSONDecoder().decode([AudioDeclaration].self, from: data) else {
+            completion([], APIError.failedRequest)
+            return
+        }
+        completion(declarations, nil)
+        return
+    }
     
     func save(declarations: [Declaration], completion: @escaping(Bool) -> Void) {
         
@@ -90,11 +102,33 @@ final class LocalAPIClient: APIService {
             let data = try? JSONEncoder().encode(declarations)
         else {
             completion(false)
-            fatalError("Unable to Load Declaration")
+           return
         }
         
         do  {
             let fileURL = DocumentDirURL.appendingPathComponent("declarations").appendingPathExtension("txt")
+            try data.write(to: fileURL, options: .atomic)
+            completion(true)
+            return
+        } catch {
+            print(error)
+            completion(false)
+            return
+        }
+    }
+    
+    func save(audioDeclarations: [AudioDeclaration], completion: @escaping(Bool) -> Void) {
+        
+        guard
+            let DocumentDirURL = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true),
+            let data = try? JSONEncoder().encode(audioDeclarations)
+        else {
+            completion(false)
+            return
+        }
+        
+        do  {
+            let fileURL = DocumentDirURL.appendingPathComponent("audioDeclarations").appendingPathExtension("txt")
             try data.write(to: fileURL, options: .atomic)
             completion(true)
             return
@@ -217,23 +251,34 @@ final class LocalAPIClient: APIService {
     func audio(version: Int, completion: @escaping([AudioDeclaration]) -> Void) {
         if audioLocalVersion < version {
             downloadAudioDeclarations() { data, error in
-                if let error = error {
+                if let _ = error {
                     completion(speaklifeFiles)
                 }
                 if let data = data {
                     do {
                         let welcome = try JSONDecoder().decode(WelcomeAudio.self, from: data)
-                        let declarations = Array(welcome.audios)
+                        let audios = Array(welcome.audios)
                         self.audioLocalVersion = welcome.version
-                        completion(declarations)
+                        self.save(audioDeclarations: audios) { success in
+                        }
+                        completion(audios)
                         return
                     } catch {
+                        print(error, error.localizedDescription, "RWRW")
                         completion(speaklifeFiles)
                     }
                 }
             }
         } else {
-            completion(speaklifeFiles)
+            loadAudioFromDisk { audios, error in
+                if let error = error {
+                    completion(speaklifeFiles)
+                }
+                
+                if !audios.isEmpty {
+                    completion(audios)
+                }
+            }
         }
     }
     

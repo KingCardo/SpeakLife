@@ -32,7 +32,10 @@ final class AudioDeclarationViewModel: ObservableObject {
     
     func fetchAudio(version: Int) {
         service.audio(version: version) { audio in
-            self.speaklife = audio
+            print(audio.count, "RWRW")
+            DispatchQueue.main.async {
+                self.speaklife = audio
+            }
         }
     }
     
@@ -107,12 +110,12 @@ final class AudioDeclarationViewModel: ObservableObject {
     }
   }
 
-struct WelcomeAudio: Decodable {
+struct WelcomeAudio: Codable {
     let version: Int
     let audios: [AudioDeclaration]
 }
 
-struct AudioDeclaration: Identifiable, Equatable, Decodable {
+struct AudioDeclaration: Identifiable, Equatable, Codable {
       let id: String
       let title: String
       let subtitle: String

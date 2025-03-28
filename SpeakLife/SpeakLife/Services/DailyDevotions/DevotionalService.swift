@@ -25,40 +25,68 @@ final class DevotionalServiceClient: DevotionalService {
     
     func fetchDevotionForToday(remoteVersion: Int) async -> [Devotional] {
         let needsSync = currentVersion < remoteVersion
-        print(needsSync)
-        guard let data = await fetch(needsSync: needsSync) else { return [] }
-        do {
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd-MM"
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .formatted(dateFormatter)
-            
-            let welcome = try decoder.decode(WelcomeDevotional.self, from: data)
-            let devotionals = welcome.devotionals
-            self.currentVersion = welcome.version
-            self.devotionals = devotionals
-   
-            let todaysDate = Date()
-            let calendar = Calendar.current
-            let todaysComponents = calendar.dateComponents([.year, .month, .day], from: todaysDate)
-            
+        if needsSync {
+            guard let data = await fetch(needsSync: needsSync) else { return [] }
+            do {
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd-MM"
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                
+                let welcome = try decoder.decode(WelcomeDevotional.self, from: data)
+                let devotionals = welcome.devotionals
+                self.currentVersion = remoteVersion
+                self.devotionals = devotionals
+                if needsSync {
+                    saveRemoteDevotionals { _ in
+                        
+                    }
+                }
+                
+                let todaysDate = Date()
+                let calendar = Calendar.current
+                let todaysComponents = calendar.dateComponents([.year, .month, .day], from: todaysDate)
+                
                 let month = todaysComponents.month
                 let day = todaysComponents.day
-            
-            if let today = devotionals.first(where: {
-                let devotionalComponents = calendar.dateComponents([.month, .day], from: $0.date)
-                let devotionalMonth = devotionalComponents.month
-                let devotionalDay = devotionalComponents.day
-                return (devotionalMonth, devotionalDay) == (month, day)}) {
-                return [today]
-            } else {
+                
+                if let today = devotionals.first(where: {
+                    let devotionalComponents = calendar.dateComponents([.month, .day], from: $0.date)
+                    let devotionalMonth = devotionalComponents.month
+                    let devotionalDay = devotionalComponents.day
+                    return (devotionalMonth, devotionalDay) == (month, day)}) {
+                    return [today]
+                } else {
+                    return []
+                }
+                
+            } catch {
+                print(error, "decoding RWRW")
                 return []
             }
-            
-        } catch {
-            print(error, "decoding RWRW")
-           return []
+        } else {
+            do {
+                let devotionals = try await loadFromFileDevotionals()
+                let todaysDate = Date()
+                let calendar = Calendar.current
+                let todaysComponents = calendar.dateComponents([.year, .month, .day], from: todaysDate)
+                
+                let month = todaysComponents.month
+                let day = todaysComponents.day
+                
+                if let today = devotionals.first(where: {
+                    let devotionalComponents = calendar.dateComponents([.month, .day], from: $0.date)
+                    let devotionalMonth = devotionalComponents.month
+                    let devotionalDay = devotionalComponents.day
+                    return (devotionalMonth, devotionalDay) == (month, day)}) {
+                    return [today]
+                } else {
+                    return []
+                }
+            } catch {
+                return []
+            }
         }
     }
     
@@ -136,6 +164,18 @@ final class DevotionalServiceClient: DevotionalService {
             print(error)
             completion(false)
             return
+        }
+    }
+    
+    func loadFromFileDevotionals() async throws -> [Devotional] {
+        return try await withCheckedThrowingContinuation { continuation in
+            loadFromFileDevotionals { [weak self] devotionals in
+                if !devotionals.isEmpty {
+                    continuation.resume(returning: devotionals)
+                } else {
+                    continuation.resume(throwing: NSError(domain: "DownloadError", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data and no error returned"]))
+                }
+            }
         }
     }
     

@@ -125,7 +125,7 @@ enum Filter: String {
 }
 
 struct AudioDeclarationView: View {
-    @StateObject private var viewModel = AudioDeclarationViewModel()
+    @EnvironmentObject private var viewModel: AudioDeclarationViewModel
     @StateObject private var audioViewModel = AudioPlayerViewModel()
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var declarationStore: DeclarationViewModel
