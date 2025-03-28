@@ -44,6 +44,8 @@ struct HomeView: View {
             } else if appState.isOnboarded {
                 homeView
                     .onAppear() {
+                        
+                        declarationStore.setRemoteDeclarationVersion(version: subscriptionStore.remoteVersion)
                         Task {
                             await devotionalViewModel.fetchDevotional(remoteVersion: subscriptionStore.currentDevotionalVersion)
                         }

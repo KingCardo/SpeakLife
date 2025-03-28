@@ -102,7 +102,7 @@ final class DeclarationViewModel: ObservableObject {
         }
     }
    
-    private let service: APIService
+    private var service: APIService
     
     private let notificationManager: NotificationManager
     
@@ -146,7 +146,7 @@ final class DeclarationViewModel: ObservableObject {
     private func fetchDeclarations() {
         isFetching = true
         
-        service.declarations() {  [weak self] declarations, error, neededSync in
+        service.declarations() {  [weak self] declarations, error, _ in
             guard let self  = self else { return }
             self.isFetching = false
             self.allDeclarations = declarations
@@ -156,9 +156,9 @@ final class DeclarationViewModel: ObservableObject {
             self.createOwn = self.getCreateOwn()
             self.errorMessage = error?.localizedDescription
             
-            if neededSync {
-                self.showNewAlertMessage = true
-            }
+//            if neededSync {
+//                self.showNewAlertMessage = true
+//            }
         }
     }
     
@@ -395,6 +395,10 @@ final class DeclarationViewModel: ObservableObject {
             self.choose(declaration)
             
         }
+    }
+    
+    func setRemoteDeclarationVersion(version: Int) {
+        service.remoteVersion = version
     }
 }
 

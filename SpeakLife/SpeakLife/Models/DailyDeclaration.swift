@@ -313,7 +313,7 @@ struct Updates: Codable {
 // MARK: - Welcome
 struct Welcome: Codable {
     let count: Int
-    let version: Int?
+    let version: Int
     let declarations: [Declaration]
 }
 

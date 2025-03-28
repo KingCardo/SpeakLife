@@ -20,15 +20,21 @@ final class AudioDeclarationViewModel: ObservableObject {
     private let storage = Storage.storage()
     private let fileManager = FileManager.default
     @AppStorage("shouldClearCache") private var shouldClearCache = true
-    
-      init() {
+    private let service: APIService = LocalAPIClient()
+    init() {
           self.audioDeclarations = audioFiles
           self.bedtimeStories = bedTimeFiles
           self.gospelStories = gospelFiles
           self.meditations = meditationFiles
           self.devotionals = devotionalFiles
-          self.speaklife = speaklifeFiles
+          self.speaklife = []
       }
+    
+    func fetchAudio(version: Int) {
+        service.audio(version: version) { audio in
+            self.speaklife = audio
+        }
+    }
     
     func fetchAudio(for item: AudioDeclaration, completion: @escaping (Result<URL, Error>) -> Void) {
         
@@ -101,12 +107,16 @@ final class AudioDeclarationViewModel: ObservableObject {
     }
   }
 
-struct AudioDeclaration: Identifiable, Equatable {
+struct WelcomeAudio: Decodable {
+    let version: Int
+    let audios: [AudioDeclaration]
+}
+
+struct AudioDeclaration: Identifiable, Equatable, Decodable {
       let id: String
       let title: String
       let subtitle: String
       let duration: String
       let imageUrl: String
-     let isPremium: Bool
-    
+      let isPremium: Bool
 }

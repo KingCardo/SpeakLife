@@ -19,6 +19,7 @@ final class LocalAPIClient: APIService {
     
     @AppStorage("remoteVersion") var remoteVersion = 0
     @AppStorage("localVersion") var localVersion = 0
+    @AppStorage("audioLocalVersion") var audioLocalVersion = 0
     
     func declarations(completion: @escaping([Declaration], APIError?, Bool) -> Void) {
         if firstInstallDate == nil {
@@ -44,7 +45,7 @@ final class LocalAPIClient: APIService {
             }
             updatedDeclarations.append(contentsOf: favorites)
             updatedDeclarations.append(contentsOf: myOwn)
-            self?.declarationCountFile = updatedDeclarations.count
+           // self?.declarationCountFile = updatedDeclarations.count
             completion(updatedDeclarations,  nil, needsSync)
             return
             
@@ -146,84 +147,124 @@ final class LocalAPIClient: APIService {
     }
     
     private func loadFromBackEnd(completion: @escaping([Declaration], APIError?, Bool) ->  Void) {
-//        if lastRemoteFetchDate == nil || !(lastRemoteFetchDate?.isDateToday ?? false) {
-//            downloadUpdates { [weak self] needsUpdate, error in
-//                guard let self = self else { return }
-//                self.lastRemoteFetchDate = Date()
-//                if needsUpdate {
-//                    self.localVersion = self.remoteVersion
-//                    fetchDeclarationData(tryLocal: false) { [weak self] data in
-//                        if let data = data {
-//                            do {
-//                                let welcome = try JSONDecoder().decode(Welcome.self, from: data)
-//                                let declarations = Set(welcome.declarations)
-//                                
-//                                let array = Array(declarations)
-//                                self?.declarationCountBE = array.count
-//                                completion(array, nil, true)
-//                                return
-//                            } catch {
-//                                print(error, "RWRW")
-//                                completion([],APIError.failedDecode, false)
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        } else {
+        if localVersion < remoteVersion {
+            fetchDeclarationData(tryLocal: false) { [weak self] data in
+                if let data = data {
+                    do {
+                        let welcome = try JSONDecoder().decode(Welcome.self, from: data)
+                        let declarations = Set(welcome.declarations)
+                        self?.localVersion = welcome.version
+                        let array = Array(declarations)
+                        // self?.declarationCountBE = array.count
+                        completion(array, nil, true)
+                        return
+                    } catch {
+                        self?.fetchDeclarationData(tryLocal: true) { data in
+                            if let data = data {
+                                do {
+                                    let welcome = try JSONDecoder().decode(Welcome.self, from: data)
+                                    let declarations = Set(welcome.declarations)
+                                    let array = Array(declarations)
+                                    completion(array, nil, false)
+                                    return
+                                } catch {
+                                    print(error, "RWRW")
+                                    completion([],APIError.failedDecode, false)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
             fetchDeclarationData(tryLocal: true) { [weak self] data in
                 if let data = data {
                     do {
                         let welcome = try JSONDecoder().decode(Welcome.self, from: data)
                         let declarations = Set(welcome.declarations)
-                        
                         let array = Array(declarations)
-                        let needsSync = array.count != self?.declarationCountBE
-                        print(needsSync, "RWRW  needs sync")
-                        self?.declarationCountBE = array.count
-                        completion(array, nil, needsSync)
+                        completion(array, nil, false)
                         return
                     } catch {
                         print(error, "RWRW")
                         completion([],APIError.failedDecode, false)
-                 //   }
+                    }
                 }
             }
         }
     }
     
-    func downloadUpdates(completion: @escaping((Bool, Error?) -> Void))  {
-        let storage = Storage.storage()
-        let jsonRef = storage.reference(withPath: "updates.json")
-
-        // Download the file into memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-        jsonRef.getData(maxSize: 1 * 1024 * 1024) { [weak self] data, error in
-            if let error = error {
-                completion(false, error)
-                print("Error downloading JSON file: \(error)")
-            } else if let jsonData = data {
-                guard let self = self else { completion(false, nil)
-                    return
+//    func downloadUpdates(completion: @escaping((Bool, Error?) -> Void))  {
+//        let storage = Storage.storage()
+//        let jsonRef = storage.reference(withPath: "updates.json")
+//
+//        // Download the file into memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+//        jsonRef.getData(maxSize: 1 * 1024 * 1024) { [weak self] data, error in
+//            if let error = error {
+//                completion(false, error)
+//                print("Error downloading JSON file: \(error)")
+//            } else if let jsonData = data {
+//                guard let self = self else { completion(false, nil)
+//                    return
+//                }
+//                let version = try? JSONDecoder().decode(Updates.self, from: jsonData)
+//                self.remoteVersion = version?.currentDeclarationVersion ?? 0
+//                completion(self.remoteVersion > self.localVersion, nil)
+//                print("JSON download successful, data length: \(jsonData.count)")
+//            }
+//        }
+//    }
+    func audio(version: Int, completion: @escaping([AudioDeclaration]) -> Void) {
+        if audioLocalVersion < version {
+            downloadAudioDeclarations() { data, error in
+                if let error = error {
+                    completion(speaklifeFiles)
                 }
-                let version = try? JSONDecoder().decode(Updates.self, from: jsonData)
-                self.remoteVersion = version?.currentDeclarationVersion ?? 0
-                completion(self.remoteVersion > self.localVersion, nil)
-                print("JSON download successful, data length: \(jsonData.count)")
+                if let data = data {
+                    do {
+                        let welcome = try JSONDecoder().decode(WelcomeAudio.self, from: data)
+                        let declarations = Array(welcome.audios)
+                        self.audioLocalVersion = welcome.version
+                        completion(declarations)
+                        return
+                    } catch {
+                        completion(speaklifeFiles)
+                    }
+                }
             }
+        } else {
+            completion(speaklifeFiles)
         }
     }
     
     func downloadDeclarations(completion: @escaping((Data?, Error?) -> Void))  {
         let storage = Storage.storage()
-        let jsonRef = storage.reference(withPath: "declarationsv3.json")
+        let jsonRef = storage.reference(withPath: "declarationsv7.json")
 
         // Download the file into memory with a maximum allowed size of 1MB (2 * 1024 * 1024 bytes)
-        jsonRef.getData(maxSize: 2 * 1024 * 1024) { [weak self] data, error in
+        jsonRef.getData(maxSize: 2 * 1024 * 1024) { data, error in
             if let error = error {
                 completion(nil, error)
                 print("Error downloading JSON file: \(error)")
             } else if let jsonData = data {
-                self?.storeFetchDate()
+                //self?.storeFetchDate()
+                completion(jsonData, nil)
+                print("JSON download successful, data length: \(jsonData.count)")
+            }
+        }
+    }
+    
+    func downloadAudioDeclarations(completion: @escaping((Data?, Error?) -> Void))  {
+        let storage = Storage.storage()
+        let jsonRef = storage.reference(withPath: "audioDevotionals.json")
+
+        // Download the file into memory with a maximum allowed size of 1MB (2 * 1024 * 1024 bytes)
+        jsonRef.getData(maxSize: 2 * 1024 * 1024) { data, error in
+            if let error = error {
+                completion(nil, error)
+                print("Error downloading JSON file: \(error)")
+            } else if let jsonData = data {
+                //self?.storeFetchDate()
                 completion(jsonData, nil)
                 print("JSON download successful, data length: \(jsonData.count)")
             }

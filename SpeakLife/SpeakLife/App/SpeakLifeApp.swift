@@ -14,7 +14,6 @@ struct SpeakLifeApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @Environment(\.scenePhase) private var scenePhase
-    
     @StateObject var appState = AppState()
     @StateObject var declarationStore = DeclarationViewModel(apiService: LocalAPIClient())
     @StateObject var themeStore = ThemeViewModel()
@@ -23,6 +22,7 @@ struct SpeakLifeApp: App {
     @StateObject var streakViewModel = StreakViewModel()
     @StateObject var timerViewModel = TimerViewModel()
     @StateObject private var viewModel = FacebookTrackingViewModel()
+    @StateObject private var audioDeclarationViewModel = AudioDeclarationViewModel()
     
     @State var isShowingLanding = true
     
@@ -39,6 +39,7 @@ struct SpeakLifeApp: App {
                 .environmentObject(streakViewModel)
                 .environmentObject(timerViewModel)
                 .environmentObject(viewModel)
+                .environmentObject(audioDeclarationViewModel)
                 .onAppear {
                     viewModel.requestPermission()
                     if declarationStore.backgroundMusicEnabled {
