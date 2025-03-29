@@ -10,115 +10,146 @@ import FirebaseStorage
 import SwiftUI
 
 protocol DevotionalService {
-    func fetchDevotionForToday(remoteVersion: Int) async -> [Devotional]
+    func fetchTodayDevotional(remoteVersion: Int) async -> [Devotional]
     func fetchAllDevotionals(needsSync: Bool) async -> [Devotional]
     var devotionals: [Devotional] { get }
-    
 }
 
 final class DevotionalServiceClient: DevotionalService {
-    
-    internal var devotionals: [Devotional] = []
-    @AppStorage("devotionalRemoteVersion") var currentVersion = 0
-    
-    init() { }
-    
-    func fetchDevotionForToday(remoteVersion: Int) async -> [Devotional] {
+
+    // MARK: - Properties
+    private(set) var devotionals: [Devotional] = []
+    @AppStorage("devotionalRemoteVersion") private var currentVersion = 0
+
+    // MARK: - Public Methods
+    func fetchTodayDevotional(remoteVersion: Int) async -> [Devotional] {
         let needsSync = currentVersion < remoteVersion
         if needsSync {
-            guard let data = await fetch(needsSync: needsSync) else { return [] }
-            do {
-                
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "dd-MM"
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .formatted(dateFormatter)
-                
-                let welcome = try decoder.decode(WelcomeDevotional.self, from: data)
-                let devotionals = welcome.devotionals
-                self.currentVersion = remoteVersion
-                self.devotionals = devotionals
-                if needsSync {
-                    saveRemoteDevotionals { _ in
-                        
+            if let data = await fetchData(needsSync: needsSync) {
+                do {
+                    let decodedDevotionals = try decodeDevotionals(from: data)
+                    self.currentVersion = remoteVersion
+                    self.devotionals = decodedDevotionals
+                    
+                    if needsSync {
+                        saveDevotionalsToFile { _ in }
                     }
+                    
+                    return findTodayDevotional(from: decodedDevotionals)
+                } catch {
+                    print("Decoding error: \(error)")
                 }
-                
-                let todaysDate = Date()
-                let calendar = Calendar.current
-                let todaysComponents = calendar.dateComponents([.year, .month, .day], from: todaysDate)
-                
-                let month = todaysComponents.month
-                let day = todaysComponents.day
-                
-                if let today = devotionals.first(where: {
-                    let devotionalComponents = calendar.dateComponents([.month, .day], from: $0.date)
-                    let devotionalMonth = devotionalComponents.month
-                    let devotionalDay = devotionalComponents.day
-                    return (devotionalMonth, devotionalDay) == (month, day)}) {
-                    return [today]
-                } else {
-                    return []
-                }
-                
-            } catch {
-                print(error, "decoding RWRW")
-                return []
             }
         } else {
             do {
-                let devotionals = try await loadFromFileDevotionals()
-                let todaysDate = Date()
-                let calendar = Calendar.current
-                let todaysComponents = calendar.dateComponents([.year, .month, .day], from: todaysDate)
-                
-                let month = todaysComponents.month
-                let day = todaysComponents.day
-                
-                if let today = devotionals.first(where: {
-                    let devotionalComponents = calendar.dateComponents([.month, .day], from: $0.date)
-                    let devotionalMonth = devotionalComponents.month
-                    let devotionalDay = devotionalComponents.day
-                    return (devotionalMonth, devotionalDay) == (month, day)}) {
-                    return [today]
-                } else {
-                    return []
-                }
+                let localDevotionals = try await loadDevotionalsFromFile()
+                return findTodayDevotional(from: localDevotionals)
             } catch {
-                return []
+                print("Local load error: \(error)")
             }
         }
+        return []
     }
-    
+
     func fetchAllDevotionals(needsSync: Bool) async -> [Devotional] {
-       
-        guard let data = await fetch(needsSync: needsSync) else { return [] }
-        
+        guard let data = await fetchData(needsSync: needsSync) else { return [] }
+
         do {
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd-MM"
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .formatted(dateFormatter)
-            
-            let welcome = try decoder.decode(WelcomeDevotional.self, from: data)
-            let devotionals = welcome.devotionals
-            saveRemoteDevotionals { success in
-                print(success, "saved RWRW")
+            let decodedDevotionals = try decodeDevotionals(from: data)
+            if needsSync {
+                saveDevotionalsToFile { _ in }
             }
-            return devotionals
-            
-            
+            return decodedDevotionals
         } catch {
-            print(error.localizedDescription, "RWRW")
-           return []
+            print("Decoding error: \(error.localizedDescription)")
+            return []
         }
-        
     }
-    
-    func downloadDevotionals() async throws -> Data {
+
+    // MARK: - Private Helpers
+    private func fetchData(needsSync: Bool) async -> Data? {
+        if needsSync {
+            do {
+                return try await downloadDevotionals()
+            } catch {
+                print("Remote fetch failed, falling back to bundle")
+            }
+        }
+
+        return Bundle.main.url(forResource: "devotionals", withExtension: "json")
+            .flatMap { try? Data(contentsOf: $0) }
+    }
+
+    private func decodeDevotionals(from data: Data) throws -> [Devotional] {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM"
+
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(formatter)
+
+        let container = try decoder.decode(WelcomeDevotional.self, from: data)
+        return container.devotionals
+    }
+
+    private func findTodayDevotional(from devotionals: [Devotional]) -> [Devotional] {
+        let today = Calendar.current.dateComponents([.month, .day], from: Date())
+        return devotionals.filter {
+            let components = Calendar.current.dateComponents([.month, .day], from: $0.date)
+            return components.month == today.month && components.day == today.day
+        }
+    }
+
+    private func saveDevotionalsToFile(completion: @escaping (Bool) -> Void) {
+        guard
+            let documentDir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true),
+            let data = try? JSONEncoder().encode(devotionals)
+        else {
+            completion(false)
+            return
+        }
+
+        do {
+            let fileURL = documentDir.appendingPathComponent("remoteDevotionals.json")
+            try data.write(to: fileURL, options: .atomic)
+            completion(true)
+        } catch {
+            print("File save error: \(error)")
+            completion(false)
+        }
+    }
+
+    private func loadDevotionalsFromFile() async throws -> [Devotional] {
         return try await withCheckedThrowingContinuation { continuation in
-            downloadDevotionals { data, error in
+            loadDevotionalsFromFile { result in
+                switch result {
+                case .success(let devotionals):
+                    continuation.resume(returning: devotionals)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
+
+    private func loadDevotionalsFromFile(completion: @escaping (Result<[Devotional], Error>) -> Void) {
+        let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            .appendingPathComponent("remoteDevotionals.json")
+
+        do {
+            let data = try Data(contentsOf: fileURL)
+            let devotionals = try JSONDecoder().decode([Devotional].self, from: data)
+            completion(.success(devotionals))
+        } catch {
+            completion(.failure(error))
+        }
+    }
+
+    private func downloadDevotionals() async throws -> Data {
+        return try await withCheckedThrowingContinuation { continuation in
+            let storage = Storage.storage()
+            let ref = storage.reference(withPath: "devotionals.json")
+
+            ref.getData(maxSize: 1 * 1024 * 1024) { data, error in
                 if let error = error {
                     continuation.resume(throwing: error)
                 } else if let data = data {
@@ -127,95 +158,6 @@ final class DevotionalServiceClient: DevotionalService {
                     continuation.resume(throwing: NSError(domain: "DownloadError", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data and no error returned"]))
                 }
             }
-        }
-    }
-    
-    func downloadDevotionals(completion: @escaping((Data?, Error?) -> Void))  {
-        let storage = Storage.storage()
-        let jsonRef = storage.reference(withPath: "devotionals.json")
-
-        // Download the file into memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-        jsonRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            if let error = error {
-                completion(nil, error)
-                print("Error downloading JSON file: \(error)")
-            } else if let jsonData = data {
-                completion(jsonData, nil)
-                print("JSON download successful, data length devotionals: \(jsonData.count)")
-            }
-        }
-    }
-    
-    func saveRemoteDevotionals(completion: @escaping(Bool) -> Void) {
-        guard
-            let DocumentDirURL = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true),
-            let data = try? JSONEncoder().encode(devotionals)
-        else {
-            completion(false)
-            fatalError("Unable to Load Notification categories")
-        }
-        
-        do  {
-            let fileURL = DocumentDirURL.appendingPathComponent("remoteDevotionals").appendingPathExtension("json")
-            try data.write(to: fileURL, options: .atomic)
-            completion(true)
-            return
-        } catch {
-            print(error)
-            completion(false)
-            return
-        }
-    }
-    
-    func loadFromFileDevotionals() async throws -> [Devotional] {
-        return try await withCheckedThrowingContinuation { continuation in
-            loadFromFileDevotionals { [weak self] devotionals in
-                if !devotionals.isEmpty {
-                    continuation.resume(returning: devotionals)
-                } else {
-                    continuation.resume(throwing: NSError(domain: "DownloadError", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data and no error returned"]))
-                }
-            }
-        }
-    }
-    
-    private func loadFromFileDevotionals(completion: @escaping([Devotional]) -> Void) {
-        let documentDirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let fileURL = documentDirURL.appendingPathComponent("remoteDevotionals").appendingPathExtension("json")
-        
-        
-        guard let data = try? Data(contentsOf: fileURL),
-              let devotionals = try? JSONDecoder().decode([Devotional].self, from: data) else {
-            completion([])
-            return
-        }
-        completion(devotionals)
-        return
-    }
-    
-    
-    private func fetch(needsSync: Bool) async -> Data? {
-        if needsSync {
-            do {
-                let data = try await downloadDevotionals()
-                return data
-            } catch {
-                guard
-                    let url = Bundle.main.url(forResource: "devotionals", withExtension: "json"),
-                    let data = try? Data(contentsOf: url) else {
-                    print("RWRW file not found")
-                    return nil
-                }
-                return data
-            }
-        } else {
-            guard
-                let url = Bundle.main.url(forResource: "devotionals", withExtension: "json"),
-                let data = try? Data(contentsOf: url) else {
-                print("RWRW file not found")
-                return nil
-            }
-            return data
         }
     }
 }

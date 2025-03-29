@@ -94,7 +94,7 @@ final class DevotionalViewModel: ObservableObject, Sendable {
     
     func fetchDevotional(remoteVersion: Int) async {
         
-        if let devotional = await service.fetchDevotionForToday(remoteVersion: remoteVersion).first {
+        if let devotional = await service.fetchTodayDevotional(remoteVersion: remoteVersion).first {
             DispatchQueue.main.async { [weak self] in
                 self?.devotional = devotional
             }
