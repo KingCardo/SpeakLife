@@ -33,6 +33,8 @@ struct IntroTipScene: View {
     var buyCallBack: ((InAppId.Subscription) -> Void)?
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
+    @State private var animateButton: Bool = false
+    @State private var showText: Bool = false
     
     @State private var selectedOption = InAppId.Subscription.speakLife1YR29
     
@@ -41,6 +43,10 @@ struct IntroTipScene: View {
             .alert(isPresented: $isShowingError, content: {
                 Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
             })
+            .onAppear {
+                showText = true
+                animateButton = true
+            }
     }
     
    
@@ -51,78 +57,49 @@ struct IntroTipScene: View {
         
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
                 Text(title)
-                    .font(.system(size: 34, weight: .semibold, design: .rounded))
+                    .font(.system(size: 28, weight: .semibold, design: .rounded))
+                    .foregroundColor(.white)
                     .multilineTextAlignment(.center)
-                    .foregroundColor(appState.onBoardingTest ? .white : Constants.DEABlack)
-                    .padding([.leading, .trailing], 4)
-                    .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
-//                    .opacity(showTitle ? 1 : 0) // Initial opacity for fade-in
-//                    .onAppear {
-//                        withAnimation(Animation.easeIn(duration: 0.3).delay(0.2)) {
-//                            showTitle = true
-//                        }
-                //    }
-                
+                    .shadow(color: .white.opacity(0.6), radius: 4, x: 0, y: 2)
+                    .opacity(showText ? 1 : 0)
+                    .offset(y: showText ? 0 : 20)
+                    .animation(.easeOut(duration: 1).delay(0.1), value: showText)
+                    .padding([.horizontal])
+
                 Spacer().frame(height: appState.onBoardingTest ? size.height * 0.04 : 24)
                 
                 VStack {
+                    
                     Text(bodyText)
-                       // .font(.body)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .body))
-                        .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
+                        .foregroundColor(.white)
                         .multilineTextAlignment(.center)
-                        .lineSpacing(12)
-                        .lineLimit(nil)
-//                        .opacity(showBodyText ? 1 : 0) // Initial opacity for fade-in
-//                        .onAppear {
-//                            withAnimation(Animation.easeIn(duration: 2.0).delay(0.6)) {
-//                                showBodyText = true
-//                            }
-//                        }
+                        .lineSpacing(8)
+                        .opacity(showText ? 1 : 0)
+                        .offset(y: showText ? 0 : 20)
+                        .animation(.easeOut(duration: 1).delay(0.3), value: showText)
+                        .padding(.horizontal)// was 12
+                    //.lineLimit(nil)
                     
-                    Spacer().frame(height: appState.onBoardingTest ? size.height * 0.04 : 24)
-                    
-            
                     Text(subtext)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .callout))
-                        .foregroundColor(appState.onBoardingTest ? .white : Color(red: 119/255, green: 142/255, blue: 180/255))
-                       // .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
+                        .foregroundColor(.white)
                         .multilineTextAlignment(.center)
-                        .lineSpacing(10)
-                      //  .foregroundColor(Color(red: 119, green: 142, blue: 180, opacity: 1))
+                        .lineSpacing(8)
+                        .opacity(showText ? 1 : 0)
+                        .offset(y: showText ? 0 : 20)
+                        .animation(.easeOut(duration: 1).delay(0.5), value: showText)
+                    // was 8
                         .lineLimit(nil)
-                        .opacity(showSubtext ? 1 : 0) // Initial opacity for fade-in
-                        .onAppear {
-                            withAnimation(Animation.easeIn(duration: 1.0).delay(0.5)) {
-                                showSubtext = true
-                            }
-                        }
                 }
-                .frame(width: size.width * 0.9)
-                if isScholarship {
-                    Spacer().frame(height: size.height * 0.05)
-                    VStack {
-                        Text("Select an option")
-                            .foregroundStyle(Color.white)
-                            .font(.headline)
-                        // .padding()
-                    }
-                    Picker("subscriptionScholarship", selection: $selectedOption) {
-                        ForEach(InAppId.allInApp) { subscription in
-                            Text(subscription.scholarshipTitle)
-                                .tag(subscription)
-                                .foregroundStyle(Color.white)
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                    .frame(height: 150)
-                }
-                
             }
             
             Spacer()
             ShimmerButton(colors: [.blue], buttonTitle: ctaText, action: buttonTouched)
             .frame(width: size.width * 0.87 ,height: 50)
+            .shadow(color: .white.opacity(animateButton ? 0.3 : 0.1), radius: animateButton ? 12 : 6)
+            .scaleEffect(animateButton ? 1.02 : 1.0)
+            .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: animateButton)
             //.shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
             
             //.foregroundColor(.white)

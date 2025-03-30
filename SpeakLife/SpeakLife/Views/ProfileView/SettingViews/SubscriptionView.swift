@@ -15,8 +15,8 @@ import SwiftUI
 
 // ViewModel to manage data for the view
 class OfferViewModel: ObservableObject {
-    @Published var originalPrice: String = "$49.99/year"
-    @Published var monthlyPrice: String = "$4.16/month"
+    @Published var originalPrice: String = "$39.99/year"
+    @Published var monthlyPrice: String = "$3.33/month"
 }
 
 struct OfferPageView: View {
@@ -257,26 +257,15 @@ struct SubscriptionView: View {
                 self.secondSelection = subscriptionStore.currentOfferedPremiumMonthly
                 self.thirdSelection = subscriptionStore.currentOfferedLifetime
                 self.weeklySelection = subscriptionStore.currentOfferedWeekly
-//                self.monthlyPremiumSelection = subscriptionStore.currentOfferedPremiumMonthly
-//                self.monthlyProSelection = subscriptionStore.currentOfferedMonthly
             }
     }
     
     
     private func goPremiumView(size: CGSize) -> some View  {
-        // ScrollView {
         ZStack {
-            
-//            GeometryReader { geometry in
-                if subscriptionStore.testGroup == 0 {
+
                     LinearGradient(gradient: Gradient(colors: [Color.black]), startPoint: .top, endPoint: .bottom)
                         .edgesIgnoringSafeArea(.all)
-                }
-//            else {
-//                    LinearGradient(gradient: Gradient(colors: [Constants.DADarkBlue, Color.black.opacity(0.9)]), startPoint: .top, endPoint: .bottom)
-//                        .edgesIgnoringSafeArea(.all)
-//                }
-               
                 
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
 
@@ -303,44 +292,32 @@ struct SubscriptionView: View {
                     
                  
                     Spacer()
-                        .frame(height: 20)
-                    VStack {
-                        Text("Join 50,000+ SpeakLifers Today!")
-                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .title))
+                        .frame(height: 16)
+                    VStack(spacing: 10) {
+                        Text("Speak Life Daily. \nWalk in God’s Promises.")
+                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .title))
                             .foregroundStyle(Color.white)
-//                        Text("Giving is the key to abundance! 🌱✨ The Word says, 'Give, and it will be given to you—a good measure, pressed down, shaken together, and running over!' (Luke 6:38)")
-//                            .font(Font.custom("AppleSDGothicNeo", size: 12, relativeTo: .caption))
-//                            .foregroundStyle(Color.white)
-//                            .padding()
+                            .multilineTextAlignment(.center)
+                        Text("Unlimited Bible-based affirmations and daily devotionals for peace, healing, and purpose.")
+                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 14, relativeTo: .subheadline))
+                            .foregroundStyle(Color.white)
+                            .padding([.horizontal])
+                            .multilineTextAlignment(.center)
                     }
+    
                     FeatureView()
                         .foregroundColor(.white)
+                        .padding([.horizontal])
                     Spacer()
                                             
                     VStack {
-                        
-                        if subscriptionStore.onlyShowYearly {
-                            Button {
-                                currentSelection = firstSelection
-                            } label: {
-                                firstSelectionBox()
-                            }
-        
-                        } else {
-                            
-                            if subscriptionStore.showYearlyOption {
-                                Button {
-                                    currentSelection = firstSelection
-                                } label: {
-                                    firstSelectionBox()
-                                }
-                            } else {
-                                Button {
-                                    currentSelection = weeklySelection
-                                } label: {
-                                    weeklySelectionBox()
-                                }
-                            }
+                        Button {
+                            currentSelection = firstSelection
+                        } label: {
+                            firstSelectionBox()
+                        }
+                    
+
                             Spacer()
                                 .frame(height: 8)
                             Button {
@@ -348,31 +325,13 @@ struct SubscriptionView: View {
                             } label: {
                                 secondSelectionBox()
                             }
-//                            if !subscriptionStore.showYearlyOption {
-//                                Button {
-//                                    currentSelection = firstSelection
-//                                } label: {
-//                                    firstSelectionBox()
-//                                }
-//                            } else {
-//                                Button {
-//                                    currentSelection = thirdSelection
-//                                } label: {
-//                                    thirdSelectionBox()
-//                                }
-//                            }
-                            
-                        }
+
                         
                     }
-        
-                    Spacer()
-                
-                    
+
                     goPremiumStack()
-                    
-                    
-             //   }
+                    Spacer()
+                        .frame(height: 4)
             }
             .onAppear {
                 currentSelection = firstSelection
@@ -465,12 +424,12 @@ struct SubscriptionView: View {
     
     @ViewBuilder
     var costDescription: some View {
-        VStack(spacing: 4) {
+        VStack() {
             Text(currentSelection?.costDescription ?? "")
                 .multilineTextAlignment(.center)
             
         }
-        .font(Font.custom("AppleSDGothicNeo-Regular", size: 12))
+        .font(Font.custom("AppleSDGothicNeo-Regular", size: 10, relativeTo: .footnote))
         .foregroundColor(.white)
     }
     
@@ -503,15 +462,6 @@ struct SubscriptionView: View {
                         .underline()
                         .foregroundColor(Color.blue)
                 }
-//                if appState.isOnboarded {
-//                    Spacer()
-//                        .frame(width: 16)
-//                    Button(action: presentDifferentAmount) {
-//                        Text("Pick your price", comment: "different iap")
-//                            .font(.caption2)
-//                            .foregroundColor(Color.blue)
-//                    }
-//                }
             }
         }
         .padding([.leading, .trailing], 20)

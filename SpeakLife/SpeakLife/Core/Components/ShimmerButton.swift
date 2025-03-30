@@ -19,7 +19,7 @@ struct ShimmerButton: View {
     var body: some View {
         Button(action: action) {
             Text(buttonTitle)
-                .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .title))
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .title))
                 .bold()
                 .foregroundColor(textColor)
                 .frame(maxWidth: .infinity, minHeight: 50) // Ensures the button takes up the entire width and has a minimum height of 50

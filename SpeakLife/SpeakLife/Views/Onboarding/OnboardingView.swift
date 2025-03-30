@@ -45,15 +45,24 @@ struct OnboardingView: View  {
             TabView(selection: $selection) {
                 
                 IntroTipScene(
-                    title: "Your Mind is a Battlefield",
-                    bodyText: "One bold declaration can unlock a life of power, consistency, and breakthrough. You’re not here to struggle—you're here to speak life and activate God’s promises every day."
+                    title: "Welcome to SpeakLife",//"Your Mind is a Battlefield",
+                    bodyText: """
+You’re about to start a powerful journey of renewing your mind and speaking life, every single day.
+
+Let God’s Word be the loudest voice in your life.
+
+Peace, healing, clarity, and purpose are just ahead.
+""",
+                    
+//                    You’re about to start a powerful journey of renewing your mind and speaking life, every single day.",
+//                        //"One bold declaration can unlock a life of power, consistency, and breakthrough. You’re not here to struggle—you're here to speak life and activate God’s promises every day."
             
 //            """
 //            “As He is, so are we in this world.” – 1 John 4:17
 //
 //            Jesus isn’t just your Savior—He’s your example. You were designed to walk in His wisdom, peace, and power. As you speak life daily, you’re renewing your mind and becoming more like Him.
 //            """
-                    ,
+            //        ,
                    /* As He is, so are we in this world. – 1 John 4:17. Jesus isn’t just your Savior—He’s your example. You were designed to walk in His wisdom, peace, and power.",*/
                     subtext: "",
                     ctaText: "Step Into Your Jesus Identity",
@@ -67,8 +76,8 @@ struct OnboardingView: View  {
                     .tag(Tab.transformedLife)
                 
                 IntroTipScene(
-                    title: "Jesus Paid It All—Live in Freedom!",
-                    bodyText: "Join thousands who are declaring God’s promises and seeing real transformation. This isn’t just an app—it’s a breakthrough."
+                    title: "Feeling stressed, stuck, or like God is distant?",
+                    bodyText: "Discover how speaking God's Word can shift your mindset, heal your heart. \n\nUnlock peace, purpose, and power every day."
 //"""
 //The enemy plants thoughts in your mind—using “I” so you think they’re your own. 
 //“I’ll never be enough.” , “God doesn’t love me.” , “I’ll always struggle.” 
@@ -90,14 +99,15 @@ struct OnboardingView: View  {
                
                 
                 IntroTipScene(
-                    title: "Speak Life—Your Words Shape Your Future",
-                    bodyText: "Silence fear. Crush doubt. Your words shape your world—so speak faith, declare victory, and command your future to align with God’s promises."
-//            """
-//            “It is finished.” – John 19:30
-//
-//            You don’t fight for victory—you fight from it! Jesus already won your healing, peace, and breakthrough. Declare it and walk in it.
-//            """
-                    ,
+                    title: "You were created to live in peace, power, and purpose.",
+                    bodyText:"""
+                    Thousands are transforming their lives by declaring God’s promises.
+                    You can too.
+                    
+                    • Speak what God says about you daily
+                    • Unlock health, joy, and abundance
+                    • Build unshakable faith in just minutes a day
+                    """,
                     subtext: "",
                     ctaText: "Start Speaking Life",
                     showTestimonials: false,
@@ -108,33 +118,33 @@ struct OnboardingView: View  {
                 }
                     .tag(Tab.likeJesus)
                 
-                IntroTipScene(
-                    title: "The Same Way You Gave Your Life to Jesus",
-                    bodyText: "You believed in your heart and declared with your mouth—and salvation became yours."
-//            """
-//            “The words that I speak to you are spirit, and they are life.” – John 6:63
+//                IntroTipScene(
+//                    title: "The Same Way You Gave Your Life to Jesus",
+//                    bodyText: "You believed in your heart and declared with your mouth—and salvation became yours."
+////            """
+////            “The words that I speak to you are spirit, and they are life.” – John 6:63
+////
+////            When Jesus spoke, storms stopped, sickness left, and the impossible became possible. That same power is in YOU. Your words shape your future.
+////
+////            Every time you declare God’s promises, you align with Heaven’s reality.
+////            """
+//                    ,
+//                    subtext: """
+//That’s how faith works for everything:
+//Healing, peace, purpose, abundance—
+//You receive them the same way you received Jesus.
 //
-//            When Jesus spoke, storms stopped, sickness left, and the impossible became possible. That same power is in YOU. Your words shape your future.
-//
-//            Every time you declare God’s promises, you align with Heaven’s reality.
-//            """
-                    ,
-                    subtext: """
-That’s how faith works for everything:
-Healing, peace, purpose, abundance—
-You receive them the same way you received Jesus.
-
-By believing and boldly speaking God's promises over your life.
-"""
-                    ,
-                    ctaText: "Claim God’s Promises Now",
-                    showTestimonials: false,
-                    isScholarship: false,
-                    size: geometry.size)
-                {
-                        advance()
-                }
-                    .tag(Tab.liveVictorious)
+//By believing and boldly speaking God's promises over your life.
+//"""
+//                    ,
+//                    ctaText: "Claim God’s Promises Now",
+//                    showTestimonials: false,
+//                    isScholarship: false,
+//                    size: geometry.size)
+//                {
+//                        advance()
+//                }
+//                    .tag(Tab.liveVictorious)
                 
                 ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
                     withAnimation {
@@ -395,7 +405,7 @@ By believing and boldly speaking God's promises over your life.
                     Analytics.logEvent("TransformedLifeScreenDone", parameters: nil)
                 case .likeJesus:
                     impactMed.impactOccurred()
-                    selection = .liveVictorious
+                    selection = .improvement
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("LikeJesusScreenDone", parameters: nil)
                 case .liveVictorious:

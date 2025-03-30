@@ -60,65 +60,25 @@ struct FeatureRow: View {
 // Main subscription view
 struct FeatureView: View {
 
-   // @Binding var currentSelection: Product?
-    //var valueProps: [Feature] = []
     var valueProps: [Feature] {
-//        if currentSelection?.id == currentPremiumID || currentSelection?.id == currentMonthlyPremiumID {
-//            return allPremiumFeatures
-//        }
         return allFeatures
     }
     
     
-//    init(_ userValueProps: [Feature]) {
-//        if self.userValueProps.count > 1 {
-//            let count = self.userValueProps.count
-//            let maximum = min(count, 4)
-//            let firstNElements = Array(self.userValueProps.prefix(maximum))
-//            valueProps = firstNElements
-//            valueProps.append(Feature(name: "Spiritual Growth", subtitle: "365+ Daily Devotionals to grow with Jesus", imageName: "book.fill"))
-//        } else if userValueProps.count > 1 {
-//            self.userValueProps = userValueProps
-//            let count = userValueProps.count
-//            let maximum = min(count, 4)
-//            let firstNElements = Array(userValueProps.prefix(maximum))
-//            valueProps = firstNElements
-//            valueProps.append(Feature(name: "Spiritual Growth", subtitle: "365+ Daily Devotionals to grow with Jesus", imageName: "book.fill"))
-//        } else {
-//            valueProps = features
-//        }
-//    }
-    
     let allPremiumFeatures = [
-       // Feature(subtitle: "Unlock everything"),
-//        Feature(subtitle: ""),
-//        Feature(subtitle: "Start your day spiritually equipped with affirmations rooted in God’s Word—your shield against negativity."),
-//        Feature(subtitle: "Speak peace into your life with daily affirmations that calm your mind and align your heart with God’s promises."),
-//        Feature(subtitle: "Strengthen your faith daily with affirmations that remind you of God’s unchanging love and power."),
-//        Feature(subtitle: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future."),
         Feature(subtitle: "Everything from Pro"),
         Feature(subtitle: "Audio declarations to claim victory"),
         Feature(subtitle: "Bible Bedtime Stories for peaceful rest"),
         ]
     
     let allFeatures = [
-       // Feature(subtitle: "Unlock everything"),
-//        Feature(subtitle: ""),
-//        Feature(subtitle: "Start your day spiritually equipped with affirmations rooted in God’s Word—your shield against negativity."),
-//        Feature(subtitle: "Speak peace into your life with daily affirmations that calm your mind and align your heart with God’s promises."),
-//        Feature(subtitle: "Strengthen your faith daily with affirmations that remind you of God’s unchanging love and power."),
-//        Feature(subtitle: "Unlock your potential by declaring the truth of God’s Word over your dreams, goals, and future."),
-        Feature(subtitle: "Speak Life, Shift Atmospheres – Declare God’s Word and watch your life shift."),
-        Feature(subtitle: "Pray with Power – Speak bold prayers that release results and heaven’s will."),
-        Feature(subtitle: "Rooted in Faith – Build unshakable faith through daily declarations in Christ."),
-        Feature(subtitle: "Peace & Breakthrough – Silence fear, declare victory, and step into total freedom."),
-        Feature(subtitle: "Walk in Your Identity – Activate God’s promises and live the destiny Jesus designed."),
+
+        Feature(subtitle: "Speak God’s Word over your life daily"),
+        Feature(subtitle: "Renew your mind with truth-filled devotionals"),
+        Feature(subtitle: "Hear faith-building declarations spoken over you"),
+        Feature(subtitle: "Access God’s promises for every season of life"),
+        Feature(subtitle: "Listen offline — no noise, no ads"),
         
-//        Feature(subtitle: "Life-Changing Affirmations to Activate God's Promises"),
-//        Feature(subtitle: "Start Every Morning with Jesus Devotionals"),
-//        Feature(subtitle: "Pray Boldly with Mountain-Moving Prayers"),
-//        Feature(subtitle: "Stay Encouraged with Daily Scripture Reminders"),
-//        Feature(subtitle: "Customize Your Experience with 30+ Beautiful Themes")
         ]
     
     let features: [Feature] = [

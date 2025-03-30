@@ -406,7 +406,7 @@ extension Product {
         } else if id == currentYearlyID {
             return "Start My Free Trial Now"
         } else if id == yearlyID {
-                return "Try Free & Subscribe"
+                return "Start My 7-Day Free Trial"
         } else {
            return "Subscribe"
         }
@@ -481,7 +481,7 @@ extension Product {
             let priceDouble = NSDecimalNumber(decimal: price).doubleValue
 
             // Adjusted Calculation Formula
-            let discount = max(0, Int(((50 - priceDouble) / 50) * 100))
+            let discount = max(0, Int(((40 - priceDouble) / 40) * 100))
             return "\(discount)%"
         }
         return ""
