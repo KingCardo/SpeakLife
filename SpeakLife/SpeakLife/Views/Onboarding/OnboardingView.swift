@@ -67,10 +67,10 @@ Peace, healing, clarity, and purpose are just ahead.
                 
                 IntroTipScene(
                     title: "Feeling stressed, stuck, or like God is distant?",
-                    bodyText: "Discover how speaking God's Word can shift your mindset, heal your heart. \n\nUnlock peace, purpose, and power every day."
+                    bodyText: "When you speak what Jesus says about you, your thoughts change, your heart is made new, and your purpose becomes clear.\n\nPeace, identity, and bold faith — one day at a time."
                     ,
                     subtext: "",
-                    ctaText: "Continue",
+                    ctaText: "Next",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
@@ -108,6 +108,15 @@ Peace, healing, clarity, and purpose are just ahead.
                 }
                 .tag(Tab.improvement)
                 
+//                FeatureShowcaseScreen(size: geometry.size) {
+//                    advance()
+//                }
+//                .tag(Tab.useCase)
+//                
+//                TestimonialScreen(size: geometry.size) {
+//                    advance()
+//                }
+//                .tag(Tab.unshakeableFaith)
                 
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)

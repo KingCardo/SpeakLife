@@ -67,7 +67,7 @@ final class SubscriptionStore: ObservableObject {
     @Published var monthlySubscription = ""
     @Published var discountSubscription = ""
     
-    @Published var onboardingBGImage = ""
+    @Published var onboardingBGImage = "moonlight2"
     @Published var backgroundImage = "moonlight2"
     
     @Published var currentDevotionalVersion: Int = 0
