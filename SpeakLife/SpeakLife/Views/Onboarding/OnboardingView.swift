@@ -108,15 +108,6 @@ Peace, healing, clarity, and purpose are just ahead.
                 }
                 .tag(Tab.improvement)
                 
-                FeatureShowcaseScreen(size: geometry.size) {
-                    advance()
-                }
-                .tag(Tab.useCase)
-                
-                TestimonialScreen(size: geometry.size) {
-                    advance()
-                }
-                .tag(Tab.unshakeableFaith)
                 
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
@@ -251,7 +242,7 @@ Peace, healing, clarity, and purpose are just ahead.
                     Analytics.logEvent("HabitScreenDone", parameters: nil)
                 case .improvement:
                     impactMed.impactOccurred()
-                    selection = .useCase//.intro
+                    selection = .subscription//.intro
                     onboardingTab = selection.rawValue
                     
                     decodeCategories(improvementViewModel.selectedExperiences)
