@@ -76,8 +76,7 @@ struct FeatureView: View {
         Feature(subtitle: "Speak God’s Word over your life daily"),
         Feature(subtitle: "Renew your mind with truth-filled devotionals"),
         Feature(subtitle: "Hear faith-building declarations spoken over you"),
-        Feature(subtitle: "Access God’s promises for every season of life"),
-        Feature(subtitle: "Listen offline — no noise, no ads"),
+        Feature(subtitle: "Meditate offline — no distractions, no ads"),
         
         ]
     

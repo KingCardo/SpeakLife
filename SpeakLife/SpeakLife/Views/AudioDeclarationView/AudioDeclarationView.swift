@@ -134,7 +134,7 @@ struct AudioDeclarationView: View {
     @State private var audioURL: URL? = nil
     @State private var errorMessage: ErrorWrapper? = nil
     @State private var isPresentingPremiumView = false
-    let filters: [Filter] = [.speaklife, .declarations, .gospel, .bedtimeStories]
+    let filters: [Filter] = [.speaklife, .declarations, .gospel, .bedtimeStories, .meditation]
     @State private var selectedFilter: Filter = .speaklife
     @State var presentDevotionalSubscriptionView = false
     
@@ -151,7 +151,11 @@ struct AudioDeclarationView: View {
         case .devotional:
             return viewModel.devotionals
         case .speaklife:
-            return viewModel.speaklife
+//            if subscriptionStore.isPremium {
+//                return viewModel.speaklife
+//            } else {
+                return viewModel.speaklife.reversed()
+          //  }
         }
     }
     

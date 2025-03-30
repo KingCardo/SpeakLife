@@ -98,7 +98,7 @@ struct DeclarationContentView: View {
                 }
             }
             .scaleEffect(viewModel.showVerse ? 1.05 : 1)
-            .opacity(viewModel.showVerse ? 1 : 0.8)
+            .opacity(viewModel.showVerse ? 1 : 0.9)
             .animation(.spring(response: 0.4, dampingFraction: 0.7), value: viewModel.showVerse)
 
             .tabViewStyle(.page(indexDisplayMode: .never))

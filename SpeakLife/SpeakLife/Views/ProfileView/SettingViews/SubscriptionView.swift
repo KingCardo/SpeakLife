@@ -137,13 +137,6 @@ struct OfferPageView: View {
                             .foregroundColor(.white)
                     }
                     
-//                    Button(action: restore) {
-//                        Text("Restore", comment: "restore iap")
-//                            .font(.caption)
-//                            .underline()
-//                            .foregroundColor(Color.blue)
-//                    }
-                    
                     Spacer()
                 }
                 .padding()
@@ -298,7 +291,7 @@ struct SubscriptionView: View {
                             .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .title))
                             .foregroundStyle(Color.white)
                             .multilineTextAlignment(.center)
-                        Text("Unlimited Bible-based affirmations and daily devotionals for peace, healing, and purpose.")
+                        Text("Declare God's Promises daily to renew your mind and unlock peace, healing, and purpose.")
                             .font(Font.custom("AppleSDGothicNeo-Bold", size: 14, relativeTo: .subheadline))
                             .foregroundStyle(Color.white)
                             .padding([.horizontal])
