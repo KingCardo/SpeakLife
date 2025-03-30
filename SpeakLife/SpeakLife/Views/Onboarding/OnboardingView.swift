@@ -53,17 +53,7 @@ Let God’s Word be the loudest voice in your life.
 
 Peace, healing, clarity, and purpose are just ahead.
 """,
-                    
-//                    You’re about to start a powerful journey of renewing your mind and speaking life, every single day.",
-//                        //"One bold declaration can unlock a life of power, consistency, and breakthrough. You’re not here to struggle—you're here to speak life and activate God’s promises every day."
-            
-//            """
-//            “As He is, so are we in this world.” – 1 John 4:17
-//
-//            Jesus isn’t just your Savior—He’s your example. You were designed to walk in His wisdom, peace, and power. As you speak life daily, you’re renewing your mind and becoming more like Him.
-//            """
-            //        ,
-                   /* As He is, so are we in this world. – 1 John 4:17. Jesus isn’t just your Savior—He’s your example. You were designed to walk in His wisdom, peace, and power.",*/
+        
                     subtext: "",
                     ctaText: "Step Into Your Jesus Identity",
                     showTestimonials: false,
@@ -78,13 +68,6 @@ Peace, healing, clarity, and purpose are just ahead.
                 IntroTipScene(
                     title: "Feeling stressed, stuck, or like God is distant?",
                     bodyText: "Discover how speaking God's Word can shift your mindset, heal your heart. \n\nUnlock peace, purpose, and power every day."
-//"""
-//The enemy plants thoughts in your mind—using “I” so you think they’re your own. 
-//“I’ll never be enough.” , “God doesn’t love me.” , “I’ll always struggle.” 
-// 
-//These are lies. They are not your thoughts. They are not your identity. 
-//The battle is in your mind. Win it by speaking God’s truth daily.
-//"""
                     ,
                     subtext: "",
                     ctaText: "Continue",
@@ -118,34 +101,6 @@ Peace, healing, clarity, and purpose are just ahead.
                 }
                     .tag(Tab.likeJesus)
                 
-//                IntroTipScene(
-//                    title: "The Same Way You Gave Your Life to Jesus",
-//                    bodyText: "You believed in your heart and declared with your mouth—and salvation became yours."
-////            """
-////            “The words that I speak to you are spirit, and they are life.” – John 6:63
-////
-////            When Jesus spoke, storms stopped, sickness left, and the impossible became possible. That same power is in YOU. Your words shape your future.
-////
-////            Every time you declare God’s promises, you align with Heaven’s reality.
-////            """
-//                    ,
-//                    subtext: """
-//That’s how faith works for everything:
-//Healing, peace, purpose, abundance—
-//You receive them the same way you received Jesus.
-//
-//By believing and boldly speaking God's promises over your life.
-//"""
-//                    ,
-//                    ctaText: "Claim God’s Promises Now",
-//                    showTestimonials: false,
-//                    isScholarship: false,
-//                    size: geometry.size)
-//                {
-//                        advance()
-//                }
-//                    .tag(Tab.liveVictorious)
-                
                 ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
                     withAnimation {
                         advance()
@@ -163,9 +118,8 @@ Peace, healing, clarity, and purpose are just ahead.
                 }
                 .tag(Tab.unshakeableFaith)
                 
-                RatingView(size: geometry.size) {
-                    advance()
-                } .tag(Tab.review)
+                subscriptionScene(size: geometry.size)
+                    .tag(Tab.subscription)
                 
                 
                 NotificationOnboarding(size: geometry.size) {
@@ -175,28 +129,13 @@ Peace, healing, clarity, and purpose are just ahead.
                 }
                 .tag(Tab.notification)
                 
-                subscriptionScene(size: geometry.size)
-                    .tag(Tab.subscription)
-//                if subscriptionStore.showSubscriptionFirst {
-//                    
-//                    OfferPageView() {
-//                        withAnimation {
-//                            advance()
-//                        }
-//                    }
-//                    .tag(Tab.discount)
-//                } else {
-//                    OfferPageView() {
-//                        withAnimation {
-//                            advance()
-//                        }
-//                    }
-//                    .tag(Tab.discount)
-//                    subscriptionScene(size: geometry.size)
-//                        .tag(Tab.subscription)
-//                }
+                RatingView(size: geometry.size) {
+                    advance()
+                } .tag(Tab.review)
                 
-               
+                
+                
+
                 
             }
             .ignoresSafeArea()
@@ -351,15 +290,7 @@ Peace, healing, clarity, and purpose are just ahead.
                     Analytics.logEvent("BenefitScreenDone", parameters: nil)
                 case .notification:
                     impactMed.impactOccurred()
-                    if subscriptionStore.showSubscription {
-                        selection = .subscription
-                        onboardingTab = selection.rawValue
-                    } else if subscriptionStore.showOneTimeSubscription {
-                        selection = .discount
-                        onboardingTab = selection.rawValue
-                    } else {
                         dismissOnboarding()
-                    }
                     Analytics.logEvent("NotificationScreenDone", parameters: nil)
                 case .useCase:
                     selection = .unshakeableFaith
@@ -370,14 +301,10 @@ Peace, healing, clarity, and purpose are just ahead.
                     onboardingTab = selection.rawValue
                 case .subscription:
                     Analytics.logEvent("SubscriptionScreenDone", parameters: nil)
-                    if subscriptionStore.isPremium || !subscriptionStore.showOneTimeSubscription {
-                        viewModel.choose(.general) { _ in }
-                        dismissOnboarding()
-                    } else {
-                        selection = .discount
-                        //dismissOnboarding()
-                        //selection = .discount
-                    }
+                    impactMed.impactOccurred()
+                    selection = .notification
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("TransformedLifeScreenDone", parameters: nil)
                 case .scholarship:
                     dismissOnboarding()
                 case .widgets:
@@ -415,7 +342,7 @@ Peace, healing, clarity, and purpose are just ahead.
                     Analytics.logEvent("LiveVictoriousScreenDone", parameters: nil)
                 case .unshakeableFaith:
                     impactMed.impactOccurred()
-                    selection = .review
+                    selection = .subscription
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("UnshakeableFaithScreenDone", parameters: nil)
                 case .confidence:
