@@ -168,11 +168,13 @@ struct TextViewWrapper: UIViewRepresentable {
     }
 
     func makeUIView(context: Context) -> UITextView {
+        let font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        let roundedFont = UIFont(descriptor: font.fontDescriptor.withDesign(.rounded)!, size: 20)
         let textView = UITextView()
         textView.backgroundColor = .white
         textView.textColor = .black
         textView.layer.cornerRadius = 4
-        textView.font = UIFont(name: "HelveticaNeue", size: 20)
+        textView.font = roundedFont
         textView.delegate = context.coordinator
         return textView
     }
@@ -250,7 +252,7 @@ struct AffirmationAlertView: View {
                     .padding()
                     .frame(maxWidth: .infinity)
                     .background(Color.gray.opacity(0.3)) // A lighter background for the cancel button
-                    .foregroundColor(Color.black) // Dark text for contrast
+                    .foregroundColor(Color.red) // Dark text for contrast
                     .cornerRadius(10)
                     .shadow(radius: 5)
                 }

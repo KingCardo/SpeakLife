@@ -25,7 +25,7 @@ struct ContentRow: View {
     var body: some View {
         HStack {
             Text(declaration.text)
-                .font(.system(.body, design: .rounded))
+                .font(.system(size: 17, weight: .medium, design: .rounded))
                 .foregroundColor(.white)
             Spacer()
             

@@ -59,7 +59,7 @@ struct PrayerDetailView<InjectedView: View>: View {
                 Spacer().frame(height: 20)
                 
                 Text(createYourOwn?.text ?? "")
-                    .font(.system(.body, design: .rounded))
+                    .font(.system(size: 20, weight: .medium, design: .rounded))
                     .lineSpacing(4)
                     .padding(.horizontal, 32)
                     .foregroundColor(.white)
