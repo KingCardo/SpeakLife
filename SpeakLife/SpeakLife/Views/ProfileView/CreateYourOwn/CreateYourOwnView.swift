@@ -223,7 +223,7 @@ struct AffirmationAlertView: View {
             VStack(spacing: 20) {
                 Text("Add an Affirmation")
                     .font(.system(size: 24, weight: .semibold)) // Custom font size and weight
-                    .foregroundColor(Color(#colorLiteral(red: 0.255, green: 0.518, blue: 0.576, alpha: 1))) // Darker shade for contrast
+                    .foregroundColor(.white)
                 
                 TextViewWrapper(text: $affirmationText)
                     .foregroundColor(.black)
@@ -249,8 +249,9 @@ struct AffirmationAlertView: View {
                     Button("Cancel") {
                         dismiss()
                     }
-                    .padding()
+                    .font(.system(size: 20, weight: .medium))
                     .frame(maxWidth: .infinity)
+                    .padding()
                     .background(Color.gray.opacity(0.3)) // A lighter background for the cancel button
                     .foregroundColor(Color.red) // Dark text for contrast
                     .cornerRadius(10)

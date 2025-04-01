@@ -8,6 +8,7 @@
 import SwiftUI
 import AVFoundation
 import Combine
+import MediaPlayer
 
 final class AudioPlayerViewModel: ObservableObject {
     @Published var isPlaying: Bool = false
@@ -37,11 +38,15 @@ final class AudioPlayerViewModel: ObservableObject {
                 }
             }
             .store(in: &cancellables)
+        setupRemoteCommands()
     }
     
     func loadAudio(from url: URL, isSameItem: Bool) {
         if isPlaying, isSameItem { return }
         resetPlayer()
+        
+        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+        try? AVAudioSession.sharedInstance().setActive(true)
         
         player = AVPlayer(url: url)
         
@@ -57,6 +62,7 @@ final class AudioPlayerViewModel: ObservableObject {
         timeObserver = player?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1), queue: .main) { [weak self] time in
             guard let self = self else { return }
             self.currentTime = CMTimeGetSeconds(time)
+            self.updateNowPlayingInfo()
         }
         
         // Add observer for when the audio finishes playing
@@ -74,9 +80,11 @@ final class AudioPlayerViewModel: ObservableObject {
                 self.isPlaying = false
                 self.player?.seek(to: CMTime.zero)
             }
+            updateNowPlayingInfo()
         }
         
         togglePlayPause()
+        updateNowPlayingInfo()
     }
     
     func togglePlayPause() {
@@ -89,7 +97,7 @@ final class AudioPlayerViewModel: ObservableObject {
             AudioPlayerService.shared.pauseMusic()
             player.play()
         }
-        
+        updateNowPlayingInfo()
         isPlaying.toggle()
     }
     
@@ -135,6 +143,55 @@ final class AudioPlayerViewModel: ObservableObject {
         // Appends item to the end of the queue
         queue.append(item)
         print("\(item), added to queue")
+    }
+    
+    private func updateNowPlayingInfo() {
+        guard let player = player,
+              let currentItem = player.currentItem else { return }
+
+        let currentTime = CMTimeGetSeconds(player.currentTime())
+        let duration = CMTimeGetSeconds(currentItem.asset.duration)
+        
+        var info: [String: Any] = [
+            MPMediaItemPropertyTitle: currentTrack,
+            MPMediaItemPropertyArtist: subtitle,
+            MPNowPlayingInfoPropertyElapsedPlaybackTime: currentTime,
+            MPMediaItemPropertyPlaybackDuration: duration,
+            MPNowPlayingInfoPropertyPlaybackRate: isPlaying ? 1.0 : 0.0
+        ]
+
+        if let image = UIImage(named: "heavenStairway") { // or fetch async from imageUrl
+            let artwork = MPMediaItemArtwork(boundsSize: image.size) { _ in image }
+            info[MPMediaItemPropertyArtwork] = artwork
+        }
+
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = info
+    }
+    
+    private func setupRemoteCommands() {
+        let commandCenter = MPRemoteCommandCenter.shared()
+
+        commandCenter.playCommand.addTarget { [weak self] _ in
+            self?.player?.play()
+            self?.isPlaying = true
+            self?.updateNowPlayingInfo()
+            return .success
+        }
+
+        commandCenter.pauseCommand.addTarget { [weak self] _ in
+            self?.player?.pause()
+            self?.isPlaying = false
+            self?.updateNowPlayingInfo()
+            return .success
+        }
+
+        commandCenter.changePlaybackPositionCommand.addTarget { [weak self] event in
+            guard let self = self,
+                  let seekEvent = event as? MPChangePlaybackPositionCommandEvent else { return .commandFailed }
+            
+            self.seek(to: seekEvent.positionTime)
+            return .success
+        }
     }
     
     deinit {
