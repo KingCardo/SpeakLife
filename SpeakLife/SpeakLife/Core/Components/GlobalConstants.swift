@@ -27,5 +27,6 @@ struct Constants {
     static let peach = Color(red: 1.0, green: 0.855, blue: 0.725)
     static let lightBlue = Color(red: 0.529, green: 0.808, blue: 0.922)
     static let brightYellow = Color(red: 1.0, green: 0.835, blue: 0.310)
+    static let navBlue = Color(hex: "#4DA6FF")
 }
 

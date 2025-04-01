@@ -53,16 +53,16 @@ struct PrayerDetailView<InjectedView: View>: View {
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .caption))
                         .lineSpacing(4)
                         .padding(.horizontal, 32)
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                 }
                 
                 Spacer().frame(height: 20)
                 
                 Text(createYourOwn?.text ?? "")
-                    .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .body))
+                    .font(.system(.body, design: .rounded))
                     .lineSpacing(4)
                     .padding(.horizontal, 32)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .frame(width: UIScreen.main.bounds.width)
                 
                 Spacer()

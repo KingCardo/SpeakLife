@@ -52,7 +52,7 @@ struct CategoryCell: View  {
                         lockIcon
                     }
                 } else {
-                    Gradients().randomGradient
+                    Gradients().speakLifeBlueCell
                         .scaledToFill()
                         .frame(width: dimension, height: size.height * 0.22)
                         .clipped()
@@ -64,7 +64,7 @@ struct CategoryCell: View  {
             VStack {
                     Spacer()
                     Text(category.categoryTitle)
-                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 20))
+                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 22))
                                   .foregroundColor(.white)
                                   .multilineTextAlignment(.center) // Ensures text wraps properly
                                   .padding(.horizontal, 8) // Avoids text clipping
@@ -226,5 +226,19 @@ struct CategoryChooserView: View {
                 }
             }.padding()
         }
+    }
+}
+
+extension Color {
+    init(hex: String) {
+        let scanner = Scanner(string: hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted))
+        var int: UInt64 = 0
+        scanner.scanHexInt64(&int)
+
+        let r = Double((int >> 16) & 0xFF) / 255
+        let g = Double((int >> 8) & 0xFF) / 255
+        let b = Double(int & 0xFF) / 255
+
+        self.init(.sRGB, red: r, green: g, blue: b, opacity: 1)
     }
 }

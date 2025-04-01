@@ -83,5 +83,17 @@ struct Gradients {
     var random: some View { LinearGradient(gradient: Gradient(colors: randomColors()), startPoint: .topLeading, endPoint: .bottomTrailing)
             .edgesIgnoringSafeArea(.all)
     }
+    
+    var speakLifeBlueCell: some View { LinearGradient(colors: [Color(hex: "#43cea2").opacity(0.5), Color(hex: "#185a9d").opacity(0.5)],
+                                                      startPoint: .topLeading, endPoint: .bottomTrailing)
+    }
+    
+    var speakLifeBlackCell: some View { LinearGradient(colors: [Color.black.opacity(0.4), Color(hex: "#1c1c1e").opacity(0.4)],
+                                                       startPoint: .topLeading, endPoint: .bottomTrailing).edgesIgnoringSafeArea(.all)
+    }
+    
+    var speakLifeCYOCell: some View { LinearGradient(colors: [Color(#colorLiteral(red: 0.1, green: 0.15, blue: 0.3, alpha: 1)), Color(#colorLiteral(red: 0.02, green: 0.07, blue: 0.15, alpha: 1))],
+                                                       startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+    }
 }
 

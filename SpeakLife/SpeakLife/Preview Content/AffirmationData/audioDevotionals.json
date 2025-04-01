@@ -2,6 +2,22 @@
     "version": 1,
     "audios": [
         {
+            "id": "speaklife-s2ep7.mp3",
+            "title": "The Mind of Christ",
+            "subtitle": "S2 Episode 7",
+            "duration": "3m",
+            "imageUrl": "devotional",
+            "isPremium": true
+        },
+        {
+            "id": "speaklife-s2ep6.mp3",
+            "title": "Rewire the Default",
+            "subtitle": "S2 Episode 6",
+            "duration": "3m",
+            "imageUrl": "devotional",
+            "isPremium": true
+        },
+        {
             "id": "speaklife-s2ep5.mp3",
             "title": "The Truth That Tears It Down",
             "subtitle": "S2 Episode 5",

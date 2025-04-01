@@ -34,7 +34,7 @@ struct NotificationOnboarding:  View {
             }
             
             VStack {
-                Text("Stay Connected Throughout Your Days", comment: "Notification onboarding title")
+                Text("Stay Anchored in God's Word", comment: "Notification onboarding title")
                     .font(.system(size: 34, weight: .semibold, design: .rounded))
                     .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                     .minimumScaleFactor(0.7)
@@ -44,7 +44,7 @@ struct NotificationOnboarding:  View {
                 Spacer().frame(height: 16)
                 
                 VStack {
-                    Text("Choose how often and when you’d like to be inspired.", comment: "Setup notifications instructions")
+                    Text("Choose how often and when you’d like to receive promises thruout your day.", comment: "Setup notifications instructions")
                         .font(.system(size: 16, weight: .semibold, design: .rounded))
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)

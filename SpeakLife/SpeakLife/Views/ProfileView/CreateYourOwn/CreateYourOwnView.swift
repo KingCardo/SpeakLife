@@ -70,39 +70,40 @@ struct CreateYourOwnView: View {
             }.padding()
             
         } else {
-                NavigationView {
-                    List(declarationStore.createOwn) { declaration in
-                        NavigationLink(destination: PrayerDetailView(declaration: declaration, isCreatedOwn: true) { Gradients().cyan }) {
-                            ContentRow(declaration, isEditable: true) { declarationString, delete in
-                                if delete {
-                                    declarationStore.removeOwn(declaration: declaration)
-                                } else {
-                                    edit(declarationString)
-                                }
+            NavigationView {
+                List(declarationStore.createOwn) { declaration in
+                    NavigationLink(destination: PrayerDetailView(declaration: declaration, isCreatedOwn: true) {
+                        Gradients().speakLifeCYOCell
+                    }) {
+                        ContentRow(declaration, isEditable: true) { declarationString, delete in
+                            if delete {
+                                declarationStore.removeOwn(declaration: declaration)
+                            } else {
+                                edit(declarationString)
                             }
                         }
-                        
-                        
                     }
-                   
-                    .navigationBarTitle("Affirmations")
-                    .toolbar {
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                Button(action: {
-                                    showAffirmationAlert()
-                                }) {
-                                        Image(systemName: "plus")
-                                            .font(.system(size: 22, weight: .bold))
-                                            .frame(width: 30, height: 30)
-                                            .foregroundColor(Constants.DAMidBlue)
-
-                                }
-                            }
-                        }
-    
                 }
+                .listRowBackground(Color.clear)
+                .scrollContentBackground(.hidden)
+                .background(Gradients().speakLifeCYOCell) // ✅ This is the real fix
+                .navigationBarTitle("Affirmations")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {
+                            showAffirmationAlert()
+                        }) {
+                            Image(systemName: "plus")
+                                .font(.system(size: 22, weight: .bold))
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(Constants.navBlue)
+                        }
+                    }
+                }
+            }
         }
     }
+
 
     
     private func edit(_ declaration: String) {

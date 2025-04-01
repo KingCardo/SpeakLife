@@ -25,8 +25,8 @@ struct ContentRow: View {
     var body: some View {
         HStack {
             Text(declaration.text)
-                .font(Font.custom("AppleSDGothicNeo-Regular", size: 20))
-               // .lineLimit(2)
+                .font(.system(.body, design: .rounded))
+                .foregroundColor(.white)
             Spacer()
             
             Image(systemName: "ellipsis.circle.fill")

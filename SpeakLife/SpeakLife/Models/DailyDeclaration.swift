@@ -336,6 +336,7 @@ struct Declaration: Codable, Identifiable, Hashable {
             case bibleVerseText
             case category
             case isFavorite
+            case lastEdit
         }
     
     var lastEdit: Date?

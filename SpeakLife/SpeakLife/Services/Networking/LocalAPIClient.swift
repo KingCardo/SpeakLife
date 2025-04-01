@@ -249,6 +249,7 @@ final class LocalAPIClient: APIService {
 //        }
 //    }
     func audio(version: Int, completion: @escaping([AudioDeclaration]) -> Void) {
+        print(version, "rwrw")
         if audioLocalVersion < version {
             downloadAudioDeclarations() { data, error in
                 if let _ = error {
@@ -258,7 +259,7 @@ final class LocalAPIClient: APIService {
                     do {
                         let welcome = try JSONDecoder().decode(WelcomeAudio.self, from: data)
                         let audios = Array(welcome.audios)
-                        self.audioLocalVersion = welcome.version
+                        self.audioLocalVersion = version
                         self.save(audioDeclarations: audios) { success in
                         }
                         completion(audios)
@@ -294,7 +295,7 @@ final class LocalAPIClient: APIService {
             } else if let jsonData = data {
                 //self?.storeFetchDate()
                 completion(jsonData, nil)
-                print("JSON download successful, data length: \(jsonData.count)")
+                print("JSON download successful, data length: \(jsonData.count) decl rwrw")
             }
         }
     }
@@ -311,7 +312,7 @@ final class LocalAPIClient: APIService {
             } else if let jsonData = data {
                 //self?.storeFetchDate()
                 completion(jsonData, nil)
-                print("JSON download successful, data length: \(jsonData.count)")
+                print("JSON download successful, data length: \(jsonData.count) audio rwrw")
             }
         }
     }
@@ -337,7 +338,6 @@ final class LocalAPIClient: APIService {
         else {
             completion(false)
             return
-           // fatalError("Unable to Load Notification categories")
         }
         
         do  {
