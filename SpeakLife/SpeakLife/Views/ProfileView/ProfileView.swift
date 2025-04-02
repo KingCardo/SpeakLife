@@ -266,7 +266,7 @@ struct ProfileView: View {
             }
         }.sheet(isPresented: $isPresentingBottomSheet) {
             StreakSheet(isShown: $isPresentingBottomSheet, streakViewModel: streakViewModel)
-                .presentationDetents([.medium, .fraction(0.5)])
+                .presentationDetents([.medium, .fraction(0.7)])
                 .preferredColorScheme(.light)
         }
     }

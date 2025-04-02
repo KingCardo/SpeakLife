@@ -19,7 +19,7 @@ final class AudioDeclarationViewModel: ObservableObject {
     @Published var downloadProgress: [String: Double] = [:]
     private let storage = Storage.storage()
     private let fileManager = FileManager.default
-    @AppStorage("shouldClearCache") private var shouldClearCache = true
+    @AppStorage("shouldClearCachev2") private var shouldClearCachev2 = true
     private let service: APIService = LocalAPIClient()
     init() {
           self.audioDeclarations = audioFiles
@@ -41,9 +41,9 @@ final class AudioDeclarationViewModel: ObservableObject {
     
     func fetchAudio(for item: AudioDeclaration, completion: @escaping (Result<URL, Error>) -> Void) {
         
-        if shouldClearCache {
+        if shouldClearCachev2 {
             clearCache()
-            shouldClearCache = false
+            shouldClearCachev2 = false
         }
            // Get the local URL for the file
            let localURL = cachedFileURL(for: item.id)
