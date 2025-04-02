@@ -17,6 +17,7 @@ final class AudioDeclarationViewModel: ObservableObject {
     @Published var devotionals: [AudioDeclaration]
     @Published var speaklife: [AudioDeclaration]
     @Published var downloadProgress: [String: Double] = [:]
+    @Published var fetchingAudioIDs: Set<String> = []
     private let storage = Storage.storage()
     private let fileManager = FileManager.default
     @AppStorage("shouldClearCachev2") private var shouldClearCachev2 = true

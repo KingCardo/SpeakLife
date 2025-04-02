@@ -15,15 +15,14 @@ struct PremiumView: View {
     @EnvironmentObject var appState: AppState
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var presentDevotionalSubscriptionView = false
+    @State private var countdown: TimeInterval = 0
         
     
     var body: some View {
         GeometryReader { geometry in
             if !subscriptionStore.isPremium {
                 if appState.offerDiscount {
-                    OfferPageView() {
-                        
-                    }
+                OfferPageView(countdown: $countdown) { }
                 } else {
                     SubscriptionView(size: geometry.size)
                 }
@@ -44,7 +43,7 @@ struct PremiumView: View {
         }
         .onAppear {
             if appState.discountEndTime == nil {
-                appState.discountEndTime = Date().addingTimeInterval(1 * 60 * 2)
+                appState.discountEndTime = Date().addingTimeInterval(1 * 60 * 15)
             }
             initializeTimer()
         }
@@ -57,9 +56,11 @@ struct PremiumView: View {
         guard appState.timeRemainingForDiscount != 0 else { return }
         if let endTime = appState.discountEndTime, Date() < endTime {
             appState.timeRemainingForDiscount = Int(endTime.timeIntervalSinceNow)
+            countdown = endTime.timeIntervalSinceNow
            } else {
                appState.offerDiscount = false
                appState.timeRemainingForDiscount = 0
+               countdown = 0
                timer.upstream.connect().cancel()
                // Stop the timer
            }
@@ -69,6 +70,7 @@ struct PremiumView: View {
         if let endTime = appState.discountEndTime, Date() < endTime, !subscriptionStore.isPremium {
             appState.offerDiscount = true
             appState.timeRemainingForDiscount = Int(endTime.timeIntervalSinceNow)
+            countdown = endTime.timeIntervalSinceNow
         } else {
             appState.offerDiscount = false
         }

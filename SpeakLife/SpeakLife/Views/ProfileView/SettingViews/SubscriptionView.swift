@@ -19,6 +19,15 @@ class OfferViewModel: ObservableObject {
     @Published var monthlyPrice: String = "$3.33/month"
 }
 
+extension AnyTransition {
+    static var slideFadeFromRight: AnyTransition {
+        AnyTransition.asymmetric(
+            insertion: .move(edge: .trailing).combined(with: .opacity),
+            removal: .move(edge: .leading).combined(with: .opacity)
+        )
+    }
+}
+
 struct OfferPageView: View {
     @ObservedObject var viewModel = OfferViewModel()
     @EnvironmentObject var subscriptionStore: SubscriptionStore
@@ -26,23 +35,42 @@ struct OfferPageView: View {
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     let impactMed = UIImpactFeedbackGenerator(style: .soft)
+    @Binding var countdown: TimeInterval
     let callBack: (() -> Void)
-    
+    @State private var animateCTA = false
+    @Environment(\.dismiss) var dismiss
     @State var currentSelection: Product?
     
+    @State private var testimonialIndex = 0
+        private let testimonials = [
+            "It brings peace to my mornings and hope to my day.",
+            "Holy Spirit designed",
+            "God used this app to restore my confidence.",
+            "Scriptures now speak directly to my heart thanks to SpeakLife.",
+            "This is my favorite way to start the day!",
+        ]
+
     var body: some View {
+        GeometryReader { reader in
             ZStack {
+                LinearGradient(
+                    gradient: Gradient(colors: [Color(red: 0.1, green: 0.1, blue: 0.3), Color(red: 0.2, green: 0.4, blue: 0.9)]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .ignoresSafeArea()
+                
                 VStack(spacing: 20) {
                     Image("gift")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 300, height: 300)
+                        .frame(width: reader.size.width * 0.6, height: reader.size.width * 0.6)
                         .padding(.top, 30)
                         .shadow(color: Color.purple.opacity(0.5), radius: 20, x: 10, y: 10)
                         .cornerRadius(6)
                     
-                    Text("Exclusive Offer!")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .caption))
+                    Text("Limited Time Offer!")
+                        .font(.system(size: 22, weight: .semibold, design: .rounded))
                         .foregroundColor(.white)
                         .padding(.horizontal, 20)
                         .padding(.vertical, 8)
@@ -50,13 +78,19 @@ struct OfferPageView: View {
                             Capsule()
                                 .fill(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))
                         )
-                    VStack {
+                    // Countdown Timer
+                    Text("Ends in: \(formatTime(countdown))")
+                        .font(.system(size: 16, weight: .medium, design: .rounded))
+                        .foregroundColor(.white.opacity(0.9))
+                        .padding(.bottom, 4)
+                    
+                    VStack(spacing: 4) {
                         Text("\(currentSelection?.percentageOff ?? "") off")
-                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 52, relativeTo: .title))
+                            .font(.system(size: 48, weight: .heavy, design: .rounded))
                             .foregroundColor(.white)
                         
                         Text("SpeakLife Premium")
-                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 30, relativeTo: .title))
+                            .font(.system(size: 28, weight: .semibold, design: .rounded))
                             .foregroundColor(.white)
                     }
                     
@@ -68,53 +102,60 @@ struct OfferPageView: View {
                         FeatureView()
                             .foregroundStyle(.white)
                     }
+                    
                     HStack(spacing: 10) {
                         VStack {
-                            RoundedRectangle(cornerRadius: 20)
+                            RoundedRectangle(cornerRadius: 16)
                                 .strokeBorder(Color.gray, lineWidth: 1)
                                 .frame(height: 90)
                                 .overlay(
                                     VStack(spacing: 4) {
                                         Text("Original price")
-                                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 22, relativeTo: .body))
+                                            .font(.system(size: 16, weight: .regular))
                                             .foregroundColor(.gray)
                                         Text(viewModel.originalPrice)
-                                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .body))
+                                            .font(.system(size: 20, weight: .bold))
                                             .strikethrough()
                                             .foregroundColor(.gray)
                                         Text(viewModel.monthlyPrice)
-                                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
+                                            .font(.system(size: 14, weight: .regular))
                                             .foregroundColor(.gray)
                                     }
                                 )
                         }
                         
                         VStack {
-                            RoundedRectangle(cornerRadius: 20)
-                               // .strokeBorder(.purple, lineWidth: 1)
-                                .fill(Color.black.opacity(0.3))
-                                
+                            RoundedRectangle(cornerRadius: 16)
+                                .fill(Color.white.opacity(0.1))
                                 .frame(height: 90)
                                 .overlay(
                                     VStack(spacing: 4) {
                                         Text("Your price now")
-                                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
-                                            .foregroundColor(.white)
+                                            .font(.system(size: 16, weight: .regular))
+                                            .foregroundColor(.white.opacity(0.9))
                                         Text(currentSelection?.discountedPrice ?? "")
-                                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 20, relativeTo: .body))
+                                            .font(.system(size: 20, weight: .bold))
                                             .foregroundColor(.white)
                                         Text(currentSelection?.discountedMonthlyPrice ?? "")
-                                            .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
-                                            .foregroundColor(.white)
+                                            .font(.system(size: 14, weight: .medium))
+                                            .foregroundColor(.white.opacity(0.9))
                                     }
                                 )
                         }
                     }
                     .padding(.top, 10)
                     
-                    Spacer()
-                    
-                    // Claim button
+                    Group {
+                        Text("\"\(testimonials[testimonialIndex])\"")
+                            .font(.system(size: 15, weight: .medium, design: .rounded))
+                            .foregroundColor(.white.opacity(0.9))
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .transition(.slideFadeFromRight)
+                            .id(testimonialIndex)
+                    }
+                    .animation(.easeInOut(duration: 0.5), value: testimonialIndex)
+
                     Button(action: {
                         makePurchase(iap: subscriptionStore.discountSubscription)
                     }) {
@@ -122,36 +163,50 @@ struct OfferPageView: View {
                             .font(.system(size: 18, weight: .bold))
                             .padding()
                             .frame(maxWidth: .infinity, maxHeight: 50)
-                            .background(LinearGradient(gradient: Gradient(colors: [.purple]), startPoint: .leading, endPoint: .trailing))
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.purple, Color.pink, Color.blue]),
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
                             .foregroundColor(.white)
                             .cornerRadius(30)
+                            .scaleEffect(animateCTA ? 1.03 : 1.0)
+                            .shadow(color: .purple.opacity(0.3), radius: 8, x: 0, y: 4)
                     }
                     .padding(.horizontal)
                     
                     Button(action: {
-                        callBack()
+                        dismiss()
                     }) {
                         Text("No thanks")
-                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 14, relativeTo: .body))
-                            .padding()
-                            .foregroundColor(.white)
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundColor(.white.opacity(0.8))
                     }
                     
                     Spacer()
                 }
                 .padding()
-                .background(.black)
                 .alert(isPresented: $isShowingError, content: {
                     Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
                 })
-               
-                
-                
             }
-            .onAppear() {
+            .onAppear {
+                withAnimation(Animation.easeInOut(duration: 1.2).repeatForever(autoreverses: true)) {
+                                       animateCTA = true
+                                   }
+                                   startTestimonialRotation()
                 self.currentSelection = subscriptionStore.currentOfferedDiscount
             }
+        }
     }
+
+    private func formatTime(_ time: TimeInterval) -> String {
+            let minutes = Int(time) / 60
+            let seconds = Int(time) % 60
+            return String(format: "%02d:%02d", minutes, seconds)
+        }
     
     func buy(_ iap: String) async {
         do {
@@ -192,6 +247,14 @@ struct OfferPageView: View {
             isShowingError = true
         }
     }
+    
+    private func startTestimonialRotation() {
+            Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { _ in
+                withAnimation {
+                    testimonialIndex = (testimonialIndex + 1) % testimonials.count
+                }
+            }
+        }
 }
 
 
@@ -855,6 +918,7 @@ struct RotatingLoadingImageView_Previews: PreviewProvider {
         RotatingLoadingImageView() // Display a live preview of ContentView in Xcode
     }
 }
+    
 
 
 import SwiftUI

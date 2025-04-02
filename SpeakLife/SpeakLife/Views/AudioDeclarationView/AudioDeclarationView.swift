@@ -135,6 +135,7 @@ struct AudioDeclarationView: View {
     @State private var selectedFilter: Filter = .speaklife
     @State var presentDevotionalSubscriptionView = false
     
+    
     var filteredContent: [AudioDeclaration] {
         switch selectedFilter {
         case .declarations:
@@ -270,8 +271,10 @@ struct AudioDeclarationView: View {
                         isPresentingPremiumView = true
                     } else {
                         viewModel.downloadProgress[item.id] = nil
+                        viewModel.fetchingAudioIDs.insert(item.id)
                         viewModel.fetchAudio(for: item) { result in
                             DispatchQueue.main.async {
+                                viewModel.fetchingAudioIDs.remove(item.id)
                                 switch result {
                                 case .success(let url):
                                     audioURL = url
@@ -303,6 +306,7 @@ struct AudioDeclarationView: View {
                     .listRowInsets(EdgeInsets()) // remove default padding
                     .background(Color.clear)
                 }
+                .disabled(viewModel.fetchingAudioIDs.contains(item.id))
                 .listRowBackground(Color.clear)
             }
         }

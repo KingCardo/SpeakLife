@@ -162,7 +162,6 @@ struct ThemeChooserView: View {
                         .rotationEffect(Angle(degrees: shimmer ? 0 : -30))
                         .offset(x: shimmer ? dimension : -dimension)
                         .blendMode(.overlay)
-                        .animation(Animation.linear(duration: 2.5).repeatForever(autoreverses: false), value: shimmer)
                     )
             }
             .background(Color.white.opacity(0.05))
