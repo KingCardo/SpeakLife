@@ -78,16 +78,13 @@ struct DevotionalView: View {
                 )
             ScrollViewReader { scrollView in
                 ScrollView {
-                    VStack {
+                    VStack(alignment: .leading, spacing: 24) {
                         Spacer()
                             .frame(height: 40)
                         if !subscriptionStore.isPremium && !subscriptionStore.isInDevotionalPremium {
                             Text("\(viewModel.devotionalsLeft) more free devotionals left")
-                               // .padding()
                         }
-                        
-                        Spacer()
-                            .frame(height: 20)//spacing)
+                    
                         dateLabel
                         
                         titleLabel
@@ -96,7 +93,11 @@ struct DevotionalView: View {
                         
                         devotionText
                         
-                        navigateDevotionalStack
+                        HStack {
+                            Spacer()
+                            navigateDevotionalStack
+                            Spacer()
+                        }
                         
                     }
                     .id("titleID")
@@ -128,8 +129,8 @@ struct DevotionalView: View {
         HStack {
             Spacer()
             Text(viewModel.devotionalDate)
-                .font(.caption)
-                .fontWeight(.bold)
+                .font(.system(size: 14, weight: .medium))
+                .foregroundStyle(.white.opacity(0.7))
         }
         Spacer()
             .frame(height: spacing)
@@ -138,8 +139,8 @@ struct DevotionalView: View {
     @ViewBuilder
     var titleLabel: some View {
         Text(viewModel.title)
-            .font(.custom("AppleSDGothicNeo-Regular", size: 22))
-            .fontWeight(.medium)
+            .font(.system(size: 30, weight: .bold, design: .default))
+            .foregroundStyle(.white)
         
         Spacer()
             .frame(height: 24)
@@ -148,8 +149,9 @@ struct DevotionalView: View {
     @ViewBuilder
     var bookLabel: some View {
         Text(viewModel.devotionalBooks)
-            .font(.custom("AppleSDGothicNeo-Regular", size: 16))
+            .font(.system(size: 18, weight: .semibold))
             .italic()
+            .foregroundStyle(.white.opacity(0.9))
         
         Spacer()
             .frame(height: 24)
@@ -158,7 +160,8 @@ struct DevotionalView: View {
     @ViewBuilder
     var devotionText: some View {
         Text(viewModel.devotionalText)
-            .font(.custom("AppleSDGothicNeo-Regular", size: 18))
+            .font(.system(size: 14))
+            .foregroundStyle(.white.opacity(0.8))
             .lineSpacing(4)
         Spacer()
             .frame(height: spacing)

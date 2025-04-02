@@ -9,70 +9,121 @@ import SwiftUI
 import FirebaseAnalytics
 
 struct ContentRow: View {
-    
+
     @Environment(\.colorScheme) var colorScheme
     @State private var showShareSheet = false
+    @State private var isPressed = false
+    @State private var shouldGlow = false
+
     var isEditable: Bool
     var declaration: Declaration
     var callback: ((String, _ delete: Bool) -> Void)?
-    
-    init(_ favorite: Declaration, isEditable: Bool = false, callback: ((String, Bool) -> Void)? = nil) {
-        self.declaration = favorite
-        self.isEditable = isEditable
-        self.callback = callback
-    }
-    
+    var onSelect: (() -> Void)?
+
+//    init(_ favorite: Declaration, isEditable: Bool = false, callback: ((String, Bool) -> Void)? = nil) {
+//        self.declaration = favorite
+//        self.isEditable = isEditable
+//        self.callback = callback
+//    }
+    init(_ favorite: Declaration, isEditable: Bool = false, callback: ((String, Bool) -> Void)? = nil, onSelect: (() -> Void)? = nil) {
+            self.declaration = favorite
+            self.isEditable = isEditable
+            self.callback = callback
+            self.onSelect = onSelect
+        }
+
     var body: some View {
-        HStack {
-            Text(declaration.text)
-                .font(.system(size: 17, weight: .medium, design: .rounded))
-                .foregroundColor(.white)
-            Spacer()
-            
-            Image(systemName: "ellipsis.circle.fill")
-                .contextMenu {
-                    Button(action: share) {
-                        Label(LocalizedStringKey("Share"), systemImage: "square.and.arrow.up.fill")
-                    }
-                    
-                    
-                    if isEditable {
+        Button(action: {
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            withAnimation(.easeInOut(duration: 0.2)) {
+                shouldGlow = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                withAnimation { shouldGlow = false }
+            }
+            onSelect?()
+        }) {
+            HStack(spacing: 12) {
+                Text(declaration.text)
+                    .font(.system(size: 17, weight: .semibold, design: .rounded))
+                    .foregroundColor(.white)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.8)
+
+                Spacer()
+
+                Image(systemName: "ellipsis.circle.fill")
+                    .font(.title3)
+                    .foregroundColor(colorScheme == .dark ? .white.opacity(0.8) : Constants.DAMidBlue)
+                    .padding(8)
+                    .background(Color.white.opacity(0.05))
+                    .clipShape(Circle())
+                    .contextMenu {
+                        Button(action: share) {
+                            Label(LocalizedStringKey("Share"), systemImage: "square.and.arrow.up.fill")
+                        }
+
+                        if isEditable {
+                            Button {
+                                edit(declaration.text)
+                            } label: {
+                                Label(LocalizedStringKey("Edit"), systemImage: "pencil.circle.fill")
+                            }
+                        }
+
                         Button {
-                            edit(declaration.text)
+                            delete(declaration.text)
                         } label: {
-                            Label(LocalizedStringKey("Edit"), systemImage: "pencil.circle.fill")
+                            Label(LocalizedStringKey("Delete"), systemImage: "delete.backward.fill")
                         }
                     }
-                    
-                    Button {
-                        delete(declaration.text)
-                    } label: {
-                        Label(LocalizedStringKey("Delete"), systemImage: "delete.backward.fill")
+                    .sheet(isPresented: $showShareSheet) {
+                        ShareSheet(activityItems: ["\(declaration.text) \nSpeakLife App:", APP.Product.urlID])
+                    }
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 16)
+            .background(
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(.ultraThinMaterial)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .strokeBorder(Color.white.opacity(0.08), lineWidth: 0.5)
+                    )
+                    .shadow(color: shouldGlow ? Color.blue.opacity(0.4) : .black.opacity(0.15),
+                            radius: shouldGlow ? 10 : 8, x: 0, y: 4)
+            )
+            .scaleEffect(isPressed ? 0.97 : 1.0)
+            .animation(.spring(response: 0.25, dampingFraction: 0.65), value: isPressed)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .simultaneousGesture(
+            DragGesture(minimumDistance: 0)
+                .onChanged { _ in isPressed = true }
+                .onEnded { _ in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        isPressed = false
                     }
                 }
-                .sheet(isPresented: $showShareSheet, content: {
-                    ShareSheet(activityItems: ["\(declaration.text) \nSpeakLife App:", APP.Product.urlID])
-                })
-                .foregroundColor(colorScheme  == .dark ? .white : Constants.DAMidBlue)
-                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-                    self.showShareSheet = false
-                }
+        )
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+            self.showShareSheet = false
         }
-        .padding()
     }
-    
+
     func delete(_ declaration: String, delete: Bool = true) {
         callback?(declaration, delete)
     }
-    
+
     private func share() {
         showShareSheet = true
     }
-    
+
     func edit(_ declaration: String) {
         callback?(declaration, false)
     }
 }
+
 
 struct FavoritesView: View {
     @EnvironmentObject var appState: AppState

@@ -16,6 +16,7 @@ struct CreateYourOwnView: View {
     @State private var showShareSheet = false
     @State private var showAlert = false
     @State private var alertText = ""
+    @State private var selectedDeclaration: Declaration?
     
     
     var body: some View {
@@ -71,23 +72,45 @@ struct CreateYourOwnView: View {
             
         } else {
             NavigationView {
-                List(declarationStore.createOwn) { declaration in
-                    NavigationLink(destination: PrayerDetailView(declaration: declaration, isCreatedOwn: true) {
-                        Gradients().speakLifeCYOCell
-                    }) {
+                ZStack {
+                    // 1. Background gradient
+                    Gradients().speakLifeCYOCell
+                        .ignoresSafeArea()
+                    
+                    // 2. Main List with transparent background
+                    List(declarationStore.createOwn) { declaration in
                         ContentRow(declaration, isEditable: true) { declarationString, delete in
                             if delete {
                                 declarationStore.removeOwn(declaration: declaration)
                             } else {
                                 edit(declarationString)
                             }
+                        } onSelect: {
+                            selectedDeclaration = declaration
                         }
+                        .listRowBackground(Color.clear)
                     }
+                    .scrollContentBackground(.hidden)
+                    .background(Color.clear)
+                    
+                    // 3. NavigationLink hidden trigger
+                    NavigationLink(
+                        destination: PrayerDetailView(
+                            declaration: selectedDeclaration ?? declarationStore.createOwn.first!,
+                            isCreatedOwn: true
+                        ) {
+                            Gradients().speakLifeCYOCell
+                        },
+                        isActive: Binding(
+                            get: { selectedDeclaration != nil },
+                            set: { if !$0 { selectedDeclaration = nil } }
+                        )
+                    ) {
+                        EmptyView()
+                    }
+                    .hidden()
                 }
-                .listRowBackground(Color.clear)
-                .scrollContentBackground(.hidden)
-                .background(Gradients().speakLifeCYOCell) // ✅ This is the real fix
-                .navigationBarTitle("Affirmations")
+                .navigationTitle("Affirmations")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
