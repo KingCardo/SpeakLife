@@ -92,13 +92,12 @@ final class AudioPlayerViewModel: ObservableObject {
         
         if isPlaying {
             player.pause()
-            isPlaying = false
             AudioPlayerService.shared.playMusic()
         } else {
             AudioPlayerService.shared.pauseMusic()
             player.play()
-            isPlaying = true
         }
+        isPlaying.toggle()
         updateNowPlayingInfo()
         
     }

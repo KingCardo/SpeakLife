@@ -64,7 +64,8 @@ struct CategoryCell: View  {
             VStack {
                     Spacer()
                     Text(category.categoryTitle)
-                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 22))
+                    .font(.system(size: 22, weight: .semibold))
+                   // .font(Font.custom("AppleSDGothicNeo-Bold", size: 22))
                                   .foregroundColor(.white)
                                   .multilineTextAlignment(.center) // Ensures text wraps properly
                                   .padding(.horizontal, 8) // Avoids text clipping

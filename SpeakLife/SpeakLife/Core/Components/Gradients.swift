@@ -84,7 +84,7 @@ struct Gradients {
             .edgesIgnoringSafeArea(.all)
     }
     
-    var speakLifeBlueCell: some View { LinearGradient(colors: [Color(hex: "#43cea2").opacity(0.5), Color(hex: "#185a9d").opacity(0.5)],
+    var speakLifeBlueCell: some View { LinearGradient(colors: [Color(hex: "#1A264D").opacity(0.5), Color(hex: "#1e3c72").opacity(0.5)],
                                                       startPoint: .topLeading, endPoint: .bottomTrailing)
     }
     
@@ -108,6 +108,7 @@ extension Gradients {
             endPoint: .bottomTrailing
         )
     }
+    
 }
 
 

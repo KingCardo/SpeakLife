@@ -177,18 +177,18 @@ struct AudioDeclarationView: View {
                         header
                     }
                     .background(.clear)
-                    .padding(.top)
+                    .padding(.vertical)
                     
                     episodeRow(proxy)
             
-                    Spacer().frame(height: 80)
+                    Spacer().frame(height: proxy.size.height * 0.09)
                 }
             }
             VStack {
                  Spacer()
                  
                  audioBar
-                 Spacer().frame(height: proxy.size.height * 0.1)
+                 Spacer().frame(height: proxy.size.height * 0.09)
             }
         }
         
@@ -227,6 +227,7 @@ struct AudioDeclarationView: View {
                     audioSubtitle: item.subtitle,
                     imageUrl: item.imageUrl
                 )
+                .presentationDetents([.large])
                 .onAppear {
                     audioViewModel.loadAudio(from: audioURL, isSameItem: lastSelectedItem == item)
                     lastSelectedItem = item
