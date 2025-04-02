@@ -25,44 +25,67 @@ struct ReminderView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var declarationViewModel: DeclarationViewModel
     @State private var showAlert = false
+    @State private var showConfirmation = false
+   // @State private var showConfirmationToast = false
     
     let reminderViewModel: ReminderViewModel
-   
-    var body: some View {
-        GeometryReader { geometry in
-                ScrollView  {
-                    Text("Set up your daily reminders to make your declaration's fit your daily routine", comment: "setup reminder")
-                        .foregroundColor(colorScheme == .dark ? .white : .black)
-                        .font(.caption)
-                        .padding()
-                    ForEach(reminderViewModel.reminderCellViewModel) { reminderVM in
-                        ReminderCell(reminderVM)
-                            .cornerRadius(8)
-                            .padding()
-                    }
-                
-                }
-                .navigationTitle(LocalizedStringKey("Reminders"))
     
-        }
-        .alert(isPresented: $showAlert) {
-            Alert(
-                title: Text("Notifications are not enabled on this device", comment: "notifications not enabled"),
-                message: Text("Go to Settings", comment: "go to settings"),
-                dismissButton: .default(Text("Settings", comment: "settings alert"), action: goToSettings)
-            )
-        }
+    var body: some View {
+            NavigationView {
+                GeometryReader { geometry in
+                    ScrollView {
+                        VStack(alignment: .center, spacing: 16) {
+                            Text("Set up your daily reminders to make your declarations fit your daily routine")
+                                .foregroundColor(.white.opacity(0.8))
+                                .font(.callout)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal)
+                                .padding(.top)
+
+                            ForEach(reminderViewModel.reminderCellViewModel) { reminderVM in
+                                ReminderCell(reminderVM, showConfirmation: $showConfirmation)
+                                    .cornerRadius(16)
+                                    .padding(.horizontal)
+                            }
+                        }
+                        .padding(.bottom)
+                    }
+                    .navigationTitle("Reminders")
+                    .background(Gradients().speakLifeCYOCell)
+                }
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Notifications are not enabled on this device"),
+                    message: Text("Go to Settings"),
+                    dismissButton: .default(Text("Settings"), action: goToSettings)
+                )
+            }
+            .overlay(
+                Group {
+                    if showConfirmation {
+                        VStack {
+                            Spacer()
+                                ToastView(message: "✅ Preferences saved")
+                            }
+                            .transition(.opacity)
+                            .animation(.easeInOut(duration: 0.3), value: showConfirmation)
         
-        .onDisappear {
-            registerNotifications()
-        }
-        .onAppear() {
-            Analytics.logEvent(Event.remindersTapped, parameters: nil)
-            askNotificationPermission() { showAlert in
-                self.showAlert = showAlert
+                        .padding()
+                    }
+                }
+            )
+            .onDisappear {
+                registerNotifications()
+            }
+            .onAppear {
+                Analytics.logEvent(Event.remindersTapped, parameters: nil)
+                askNotificationPermission { showAlert in
+                    self.showAlert = showAlert
+                }
             }
         }
-    }
+
     
     private func registerNotifications() {
         if appState.notificationEnabled {
@@ -123,5 +146,30 @@ struct ReminderView: View {
             completion(false)
             return
         }
+    }
+}
+
+
+struct ToastView: View {
+    var message: String
+    @Environment(\.colorScheme) var colorScheme
+
+    var body: some View {
+        Text(message)
+            .font(.system(size: 14, weight: .semibold, design: .rounded))
+            .foregroundColor(.white)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 12)
+            .background(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .fill(Color.black.opacity(colorScheme == .dark ? 0.7 : 0.85))
+                    .shadow(color: .black.opacity(0.3), radius: 8, x: 0, y: 4)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 14)
+                    .stroke(Color.white.opacity(0.1), lineWidth: 0.5)
+            )
+            .transition(.move(edge: .bottom).combined(with: .opacity))
+            .padding(.bottom, 40)
     }
 }

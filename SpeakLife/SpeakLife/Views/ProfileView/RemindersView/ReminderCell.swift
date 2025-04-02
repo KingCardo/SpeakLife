@@ -17,65 +17,78 @@ final class ReminderCellViewModel: ObservableObject,  Identifiable {
 }
 
 
-struct ReminderCell: View  {
-    
+struct ReminderCell: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var appState: AppState
-   
+    @Binding var showConfirmation: Bool
+
     private let reminderVM: ReminderCellViewModel
-    
-    init(_ reminderVM: ReminderCellViewModel) {
+
+    init(_ reminderVM: ReminderCellViewModel, showConfirmation: Binding<Bool>) {
         self.reminderVM = reminderVM
+        self._showConfirmation = showConfirmation
     }
-    var body: some View  {
-        VStack {
-            Toggle("",  isOn: appState.$notificationEnabled)
-                .toggleStyle(ColoredToggleStyle(label: "Daily Declaration Reminder",
-                                                onColor: Constants.DAMidBlue))
-                .padding([.bottom, .top])
-                .foregroundColor(Constants.DAMidBlue)
-                .padding(6)
-            
-    
-            StepperNotificationCountView(appState.notificationCount) { valueCount in
-                appState.notificationCount = valueCount
-                
+
+    var body: some View {
+        VStack(alignment: .center, spacing: 16) {
+            Toggle(isOn: appState.$notificationEnabled) {
+                Text("Daily Declaration Reminder")
+                    .font(.headline)
+                    .foregroundColor(.white)
             }
-            .padding(6)
-            .padding([.leading, .trailing])
-            .foregroundColor(colorScheme == .dark ? .white : Constants.DEABlack)
-            
+            .toggleStyle(SwitchToggleStyle(tint: Constants.DAMidBlue))
+            .onChange(of: appState.notificationEnabled) { _ in
+                showToast()
+            }
+
+            StepperNotificationCountView(appState.notificationCount) { newValue in
+                appState.notificationCount = newValue
+                showToast()
+            }
+
             TimeNotificationCountView(value: appState.startTimeIndex) {
-                Text("Start_time" , comment: "start time reminder cell title")
-                
-            } valueTime:  { valueTime in
-                appState.startTimeNotification = valueTime
-            } valueIndex: { valueIndex in
-                appState.startTimeIndex = valueIndex
+                Text("Start Time")
+                    .font(.subheadline)
+                    .foregroundColor(.white.opacity(0.9))
+            } valueTime: { newTime in
+                appState.startTimeNotification = newTime
+                showToast()
+            } valueIndex: { index in
+                appState.startTimeIndex = index
+                showToast()
             }
-            
-            .padding(6)
-            .padding([.leading, .trailing])
-            .foregroundColor(colorScheme == .dark ? .white : Constants.DEABlack)
-            
+
             TimeNotificationCountView(value: appState.endTimeIndex) {
-                Text("End_time", comment: "end time reminder cell title")
-            } valueTime: { valueTime in
-                appState.endTimeNotification = valueTime
-            } valueIndex: { valueIndex in
-                appState.endTimeIndex = valueIndex
+                Text("End Time")
+                    .font(.subheadline)
+                    .foregroundColor(.white.opacity(0.9))
+            } valueTime: { newTime in
+                appState.endTimeNotification = newTime
+                showToast()
+            } valueIndex: { index in
+                appState.endTimeIndex = index
+                showToast()
             }
-            .padding(6)
-            .padding([.leading, .trailing])
-            .foregroundColor(colorScheme == .dark ? .white : Constants.DEABlack)
-            
-            CategoryButtonRow()
-                .padding(6)
-                .padding([.leading, .trailing])
-                .foregroundColor(colorScheme == .dark ? .white : Constants.DEABlack)
-            
+
+            CategoryButtonRow(showConfirmation: $showConfirmation)
         }
         .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(Color.white.opacity(0.05))
+                .background(.ultraThinMaterial)
+                .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 6)
+        )
+    }
+
+    private func showToast() {
+        withAnimation {
+            showConfirmation = true
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            withAnimation {
+                showConfirmation = false
+            }
+        }
     }
 }
-

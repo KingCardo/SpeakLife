@@ -111,7 +111,6 @@
 		7AA870D028DACCB700134ADB /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA870AD28DACCB700134ADB /* ReminderView.swift */; };
 		7AA870D128DACCB700134ADB /* ReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA870AE28DACCB700134ADB /* ReminderCell.swift */; };
 		7AA870D228DACCB700134ADB /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA870AF28DACCB700134ADB /* CategoryListView.swift */; };
-		7AA870D328DACCB700134ADB /* CategoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA870B028DACCB700134ADB /* CategoryListCell.swift */; };
 		7AA870D428DACCB700134ADB /* CategoryButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA870B128DACCB700134ADB /* CategoryButtonRow.swift */; };
 		7AA870D528DACCB700134ADB /* ReminderEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA870B228DACCB700134ADB /* ReminderEditView.swift */; };
 		7AA870D628DACCB700134ADB /* CreateYourOwnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA870B428DACCB700134ADB /* CreateYourOwnView.swift */; };
@@ -289,7 +288,6 @@
 		7AA870AD28DACCB700134ADB /* ReminderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		7AA870AE28DACCB700134ADB /* ReminderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderCell.swift; sourceTree = "<group>"; };
 		7AA870AF28DACCB700134ADB /* CategoryListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
-		7AA870B028DACCB700134ADB /* CategoryListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListCell.swift; sourceTree = "<group>"; };
 		7AA870B128DACCB700134ADB /* CategoryButtonRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryButtonRow.swift; sourceTree = "<group>"; };
 		7AA870B228DACCB700134ADB /* ReminderEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderEditView.swift; sourceTree = "<group>"; };
 		7AA870B428DACCB700134ADB /* CreateYourOwnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateYourOwnView.swift; sourceTree = "<group>"; };
@@ -772,7 +770,6 @@
 				7AA870AD28DACCB700134ADB /* ReminderView.swift */,
 				7AA870AE28DACCB700134ADB /* ReminderCell.swift */,
 				7AA870AF28DACCB700134ADB /* CategoryListView.swift */,
-				7AA870B028DACCB700134ADB /* CategoryListCell.swift */,
 				7AA870B128DACCB700134ADB /* CategoryButtonRow.swift */,
 				7AA870B228DACCB700134ADB /* ReminderEditView.swift */,
 			);
@@ -1053,7 +1050,6 @@
 				7AA870C928DACCB700134ADB /* ThemeChooserView.swift in Sources */,
 				7AA8708228DACC8300134ADB /* InAppPurchases.swift in Sources */,
 				7AA870DE28DACCB700134ADB /* TimeNotificationStepper.swift in Sources */,
-				7AA870D328DACCB700134ADB /* CategoryListCell.swift in Sources */,
 				7AF18C8A29FF9819005A6E31 /* Gradients.swift in Sources */,
 				4582A9562CE690800077F555 /* AudioDeclarationView.swift in Sources */,
 				453A83202C9BF1AE00398ECE /* SpeechCoordinator.swift in Sources */,
@@ -1347,7 +1343,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 782;
+				CURRENT_PROJECT_VERSION = 783;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1389,7 +1385,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 782;
+				CURRENT_PROJECT_VERSION = 783;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;

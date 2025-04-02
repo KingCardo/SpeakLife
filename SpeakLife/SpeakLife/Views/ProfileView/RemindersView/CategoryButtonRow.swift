@@ -9,9 +9,10 @@ import SwiftUI
 import FirebaseAnalytics
 
 struct CategoryButtonRow: View  {
-    
+
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var declarationStore: DeclarationViewModel
+
     @State var presentDevotionalSubscriptionView = false
     @State var isPresentingCategoryList = false
     @State var isPresentingPremiumView = false {
@@ -19,42 +20,61 @@ struct CategoryButtonRow: View  {
             print("\(isPresentingPremiumView) is being changed")
         }
     }
-    
+
+    @Binding var showConfirmation: Bool
+
     var body: some View {
-        HStack {
-            Button(action: displayCategoryView) {
-                Text("Categories", comment: "category button title")
+        Button(action: displayCategoryView) {
+                HStack {
+                    Image(systemName: "slider.horizontal.3")
+                        .foregroundColor(Constants.DAMidBlue)
+                        .font(.system(size: 16, weight: .medium))
+
+                    Text("Categories", comment: "category button title")
+                        .foregroundColor(.white)
+                        .font(.system(size: 16, weight: .semibold))
+
+                    Spacer()
+
+                    Image(systemName: "chevron.right")
+                        .foregroundColor(.white.opacity(0.6))
+                        .font(.system(size: 14, weight: .medium))
+                }
+                .padding(.horizontal, 16)
+                .frame(height: 50)
+                .overlay(RoundedRectangle(cornerRadius: 20)
+                .stroke(Constants.DAMidBlue, lineWidth: 1))// ✅ same as the rest of the input cells
             }
-            .padding()
-            
-            Spacer()
-            
-            Button(action: displayCategoryView) {
-                Image(systemName: "chevron.right")
-            }
-            
-            .sheet(isPresented: subscriptionStore.isPremium ? $isPresentingCategoryList : $isPresentingPremiumView, onDismiss: {
+            .buttonStyle(PlainButtonStyle())
+
+        .sheet(
+            isPresented: subscriptionStore.isPremium ? $isPresentingCategoryList : $isPresentingPremiumView,
+            onDismiss: {
+                if isPresentingCategoryList {
+                    withAnimation {
+                        showConfirmation = true
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                        withAnimation {
+                            showConfirmation = false
+                        }
+                    }
+                }
                 self.isPresentingPremiumView = false
                 self.isPresentingCategoryList = false
-            }, content: {
+            },
+            content: {
                 contentView
                     .sheet(isPresented: $presentDevotionalSubscriptionView) {
-                        DevotionalSubscriptionView() {
+                        DevotionalSubscriptionView {
                             presentDevotionalSubscriptionView = false
                         }
-                       }
-                       
-            })
-            .padding()
-        }
-        
-        .accentColor(Constants.DALightBlue)
-                .overlay(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Constants.DAMidBlue, lineWidth: 1))
-
+                    }
+            }
+        )
     }
-    
-    private func displayCategoryView()  {
+
+    private func displayCategoryView() {
         if !subscriptionStore.isPremium {
             isPresentingPremiumView = true
             Analytics.logEvent(Event.tryPremiumTapped, parameters: nil)
@@ -63,11 +83,11 @@ struct CategoryButtonRow: View  {
             Analytics.logEvent(Event.reminders_categoriesTapped, parameters: nil)
         }
     }
-    
+
     @ViewBuilder
     private var contentView: some View {
         if !subscriptionStore.isPremium {
-            SubscriptionView(size:  UIScreen.main.bounds.size)
+            SubscriptionView(size: UIScreen.main.bounds.size)
                 .onDisappear {
                     if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
                         if subscriptionStore.showDevotionalSubscription {
@@ -75,7 +95,6 @@ struct CategoryButtonRow: View  {
                         }
                     }
                 }
-                
         } else {
             CategoryListView(categoryList: CategoryListViewModel(declarationStore))
         }

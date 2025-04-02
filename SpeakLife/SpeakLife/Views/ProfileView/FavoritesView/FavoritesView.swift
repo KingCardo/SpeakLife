@@ -30,7 +30,7 @@ struct ContentRow: View {
     var body: some View {
         Button(action: {
             UIImpactFeedbackGenerator(style: .light).impactOccurred()
-            withAnimation(.easeInOut(duration: 0.2)) {
+            withAnimation(.easeInOut(duration: 0.4)) {
                 shouldGlow = true
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
@@ -43,7 +43,6 @@ struct ContentRow: View {
                     .font(.system(size: 17, weight: .semibold, design: .rounded))
                     .foregroundColor(.white)
                     .lineLimit(2)
-                    .minimumScaleFactor(0.8)
 
                 Spacer()
 
@@ -158,28 +157,32 @@ struct FavoritesView: View {
             }.padding()
             
         } else {
-            Spacer()
-                .background(Color.clear)
-                .frame(height: 16)
-            List {
-                ForEach(declarationStore.favorites) { favorite in
-                    ContentRow(favorite)
-                        .onTapGesture {
-                            withAnimation {
-                                declarationStore.choose(favorite)
-                                popToRoot()
+            ZStack {
+                Gradients().speakLifeCYOCell
+                    .ignoresSafeArea()
+                List {
+                    ForEach(declarationStore.favorites) { favorite in
+                        ContentRow(favorite)
+                            .onTapGesture {
+                                withAnimation {
+                                    declarationStore.choose(favorite)
+                                    popToRoot()
+                                }
+                                
                             }
-                            
-                        }
+                    }
+                    .onDelete { offsets in
+                        declarationStore.removeFavorite(at: offsets)
+                    }
                 }
-                .onDelete { offsets in
-                    declarationStore.removeFavorite(at: offsets)
+                .scrollContentBackground(.hidden)
+                .background(.clear)
+                .onAppear()  {
+                    loadFavorites()
                 }
-            }
-            .onAppear()  {
-                loadFavorites()
             }
         }
+            
     }
     
     private func popToRoot()  {

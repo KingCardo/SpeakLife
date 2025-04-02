@@ -105,7 +105,7 @@ struct ProfileView: View {
                         }
                        
                         remindersRow
-                        favoritesRow
+                       // favoritesRow
                         musicRow
                         soundsRow
                     }
