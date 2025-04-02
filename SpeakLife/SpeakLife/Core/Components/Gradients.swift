@@ -96,4 +96,18 @@ struct Gradients {
                                                        startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
     }
 }
+extension Gradients {
+    var speakLifeFrostyCell: some View {
+        LinearGradient(
+            colors: [
+                Color(hex: "#0B0F1A"), // deep navy
+                Color(hex: "#1A2B3C"),
+                Color(hex: "#1e3c72")  // frosted blue tone
+            ],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+    }
+}
+
 

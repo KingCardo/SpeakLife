@@ -94,7 +94,9 @@ struct HomeView: View {
                 checkForNewVersion()
                 UIScrollView.appearance().isScrollEnabled = true
             }
+            .background(Color.clear)
             .environment(\.colorScheme, .dark)
+            .ignoresSafeArea()
     }
     
     var declarationView: some View {

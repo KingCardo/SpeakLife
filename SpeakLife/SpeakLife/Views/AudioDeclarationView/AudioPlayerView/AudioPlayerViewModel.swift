@@ -92,13 +92,15 @@ final class AudioPlayerViewModel: ObservableObject {
         
         if isPlaying {
             player.pause()
+            isPlaying = false
             AudioPlayerService.shared.playMusic()
         } else {
             AudioPlayerService.shared.pauseMusic()
             player.play()
+            isPlaying = true
         }
         updateNowPlayingInfo()
-        isPlaying.toggle()
+        
     }
     
     func seek(to time: Double) {
@@ -159,10 +161,16 @@ final class AudioPlayerViewModel: ObservableObject {
             MPMediaItemPropertyPlaybackDuration: duration,
             MPNowPlayingInfoPropertyPlaybackRate: isPlaying ? 1.0 : 0.0
         ]
-
-        if let image = UIImage(named: "heavenStairway") { // or fetch async from imageUrl
-            let artwork = MPMediaItemArtwork(boundsSize: image.size) { _ in image }
-            info[MPMediaItemPropertyArtwork] = artwork
+        if imageUrl == "devotional" {
+            if let image = UIImage(named: "appIconDisplay") { // or fetch async from imageUrl
+                let artwork = MPMediaItemArtwork(boundsSize: image.size) { _ in image }
+                info[MPMediaItemPropertyArtwork] = artwork
+            }
+        } else {
+            if let image = UIImage(named: "heavenStairway") { // or fetch async from imageUrl
+                let artwork = MPMediaItemArtwork(boundsSize: image.size) { _ in image }
+                info[MPMediaItemPropertyArtwork] = artwork
+            }
         }
 
         MPNowPlayingInfoCenter.default().nowPlayingInfo = info

@@ -7,220 +7,225 @@
 
 import SwiftUI
 
+
+
 struct AudioPlayerView: View {
     @ObservedObject var viewModel: AudioPlayerViewModel
     @EnvironmentObject var timerViewModel: TimerViewModel
     let audioTitle: String
     let audioSubtitle: String
     let imageUrl: String
-    
+
+    @State private var isPlayingPulse = false
+
     var body: some View {
         ZStack {
-            // Background Color
-            Color.black.opacity(0.9)
-                .ignoresSafeArea()
-                    // Top section: Image and details
-                    VStack(spacing: 30) {
-                        Image(imageUrl) // Replace with actual remote image logic if needed
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 250)
-                            .cornerRadius(20)
-                            .shadow(radius: 10)
-                        
-                        VStack(spacing: 10) {
-                            Text(audioTitle)
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .multilineTextAlignment(.center)
-                            
-                            
-                        Text(audioSubtitle)
-                            .font(.subheadline)
-                            .foregroundColor(.white)
-                    }
-                   // .padding()
-                    
-                    // Playback controls
-                        VStack(spacing: 16) {
-                            // Slider for playback progress
-                            if viewModel.duration > 0 {
-                                Slider(
-                                    value: $viewModel.currentTime,
-                                    in: 0...viewModel.duration,
-                                    onEditingChanged: { isEditing in
-                                        if !isEditing {
-                                            viewModel.seek(to: viewModel.currentTime)
-                                        }
-                                    }
-                                )
-                                // Time indicators
-//                                HStack {
-//                                    Text(formatTime(viewModel.currentTime))
-//                                        .font(.caption)
-//                                    Spacer()
-//                                    Text(formatTime(viewModel.duration))
-//                                        .font(.caption)
-//                                }
-//                                .foregroundColor(.white)
-//                                .padding(.horizontal)
-                            } else {
-                                Text("Loading...")
-                                    .foregroundColor(.white)
-                                    .font(.subheadline)
-                            }
-                
-                        
-                        
-                                // Time indicators
-                                HStack {
-                                    Text(formatTime(viewModel.currentTime))
-                                        .font(.caption)
-                                    Spacer()
-                                    Text(formatTime(viewModel.duration))
-                                        .font(.caption)
-                                }
-                        
-                            .foregroundColor(.white)
-                            .padding(.horizontal)
-                            // Playback buttons
-                            HStack(spacing: 50) {
-                                
-                                Button(action: {
-                                    let newTime = max(viewModel.currentTime - 15, 0)
-                                    viewModel.seek(to: newTime)
-                                }) {
-                                    Image(systemName: "gobackward.15")
-                                        .font(.title)
-                                        .foregroundColor(.white)
-                                        .frame(width: 40, height: 40)
-                                       // .background(Circle().fill(Color(.systemGray6)))
-                                        .shadow(radius: 5)
-                                }
-                                
-                                Button(action: {
-                                    viewModel.togglePlayPause()
-                                }) {
-                                    Image(systemName: viewModel.isPlaying ? "pause.circle.fill" : "play.circle.fill")
-                                        .font(.system(size: 50))
-                                        .foregroundColor(.white)
-                                        .frame(width: 80, height: 80)
-                                      //  .background(Circle().fill(Color(.systemGray6)))
-                                        .shadow(radius: 5)
-                                }
-                                
-                                Button(action: {
-                                    let newTime = min(viewModel.currentTime + 30, viewModel.duration)
-                                    viewModel.seek(to: newTime)
-                                }) {
-                                    Image(systemName: "goforward.30")
-                                        .font(.title)
-                                        .foregroundColor(.white)
-                                        .frame(width: 40, height: 40)
-                                       // .background(Circle().fill(Color(.systemGray6)))
-                                        .shadow(radius: 5)
-                                }
-                            }
-                            .padding(.top)
-                        }
-                        
-                        Button(action: {
-                            viewModel.repeatTrack()
-                        }) {
-                            Image(systemName: "repeat")
-                                .font(.title)
-                                .foregroundColor(viewModel.onRepeat ? Constants.DAMidBlue : .white)
-                                .frame(width: 40, height: 40)
-                               // .background(Circle().fill(Color(.systemGray6)))
-                                .shadow(radius: 5)
-                        }
-                        
-                        // Playback speed control
-                        //                    HStack {
-                        //                        Text("Speed")
-                        //                            .font(.caption)
-                        //                        Picker("Speed", selection: $viewModel.playbackSpeed) {
-                        //                            Text("0.5x").tag(0.5)
-                        //                            Text("1x").tag(1.0)
-                        //                            Text("1.5x").tag(1.5)
-                        //                            Text("2x").tag(2.0)
-                        //                        }
-                        //                        .pickerStyle(SegmentedPickerStyle())
-                        //                        .onChange(of: viewModel.playbackSpeed) { newSpeed in
-                        //                            viewModel.changePlaybackSpeed(to: newSpeed)
-                        //                        }
-                        //                    }
-                    }
-                    .padding()
-                    
-                    //   Spacer()
-                }
-            .onAppear {
-                viewModel.changePlaybackSpeed(to: 1.0) 
-                timerViewModel.loadRemainingTime()// Reset speed to default
+            // Background Blur
+            if let uiImage = UIImage(named: imageUrl) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .blur(radius: 50)
+                    .overlay(Color.black.opacity(0.4))
+                    .ignoresSafeArea()
             }
+
+            VStack(spacing: 30) {
+                // Sheet grabber
+                RoundedRectangle(cornerRadius: 3)
+                    .fill(Color.white.opacity(0.3))
+                    .frame(width: 40, height: 4)
+                    .padding(.top, 8)
+
+                // Cover Image
+                Image(imageUrl)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 250)
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .shadow(radius: 10)
+
+                // Title & Subtitle
+                VStack(spacing: 10) {
+                    Text(audioTitle)
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+
+                    Text(audioSubtitle)
+                        .font(.subheadline)
+                        .foregroundColor(.white.opacity(0.8))
+                }
+
+                VStack(spacing: 16) {
+                    HStack {
+                         if viewModel.duration > 0 {
+                        Slider(
+                            value: $viewModel.currentTime,
+                            in: 0...viewModel.duration,
+                            onEditingChanged: { isEditing in
+                                if !isEditing {
+                                    viewModel.seek(to: viewModel.currentTime)
+                                }
+                            }
+                        )
+                
+                            HStack {
+                                Text(formatTime(viewModel.currentTime))
+                                Spacer()
+                                Text(formatTime(viewModel.duration))
+                            }
+                            .font(.caption)
+                            .foregroundColor(.white.opacity(0.8))
+                            .padding(.horizontal)
+                        } else {
+                            Text("Loading...")
+                                .foregroundColor(.white)
+                                .font(.subheadline)
+                        }
+
+
+                    }
+
+
+                    HStack(spacing: 50) {
+                        Button(action: {
+                            let newTime = max(viewModel.currentTime - 15, 0)
+                            viewModel.seek(to: newTime)
+                        }) {
+                            Image(systemName: "gobackward.15")
+                                .font(.title)
+                                .foregroundColor(.white)
+                        }
+
+                        Button(action: {
+                            viewModel.togglePlayPause()
+                        }) {
+                            Image(systemName: viewModel.isPlaying ? "pause.circle.fill" : "play.circle.fill")
+                                .font(.system(size: 60))
+                                .foregroundColor(.white)
+                                .scaleEffect(isPlayingPulse ? 1.08 : 1.0)
+                                .shadow(radius: 8)
+                        }
+
+                        Button(action: {
+                            let newTime = min(viewModel.currentTime + 30, viewModel.duration)
+                            viewModel.seek(to: newTime)
+                        }) {
+                            Image(systemName: "goforward.30")
+                                .font(.title)
+                                .foregroundColor(.white)
+                        }
+                    }
+                    .padding(.top)
+
+                    Button(action: {
+                        viewModel.repeatTrack()
+                    }) {
+                        Image(systemName: "repeat")
+                            .font(.title)
+                            .foregroundColor(viewModel.onRepeat ? Constants.DAMidBlue : .white.opacity(0.8))
+                    }
+                    .padding(.top, 10)
+                    Spacer()
+                }
+                .padding(.horizontal)
+                .padding(.bottom, 30)
+            }
+
+        }
+        .onAppear {
+            viewModel.changePlaybackSpeed(to: 1.0)
+            timerViewModel.loadRemainingTime()
+        }
+        .onReceive(viewModel.$isPlaying) { isPlaying in
+            withAnimation(Animation.easeInOut(duration: 0.8).repeatForever(autoreverses: true)) {
+                isPlayingPulse = isPlaying
+            }
+        }
     }
     
     private func formatTime(_ time: Double) -> String {
-        let minutes = Int(time) / 60
-        let seconds = Int(time) % 60
-        return String(format: "%02d:%02d", minutes, seconds)
-    }
+            let minutes = Int(time) / 60
+            let seconds = Int(time) % 60
+            return String(format: "%02d:%02d", minutes, seconds)
+        }
 }
 
+
 struct PersistentAudioBar: View {
-    //@EnvironmentObject var audioPlayerVM: AudioPlayerViewModel
     @ObservedObject var viewModel: AudioPlayerViewModel
+    @State private var isTapped = false
+    @State private var animatePulse = false
 
     var body: some View {
-        HStack(spacing: 16){
-            Image(viewModel.imageUrl) 
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 50)
-                .frame(width: 50)
-                .cornerRadius(8)
-                .clipped()
-            
-            VStack(alignment: .leading, spacing: 4) {
-                            Text(viewModel.currentTrack)
-                                .font(.headline)
-                                .foregroundColor(.primary)
-                                .lineLimit(1)
-                                .truncationMode(.tail)
+        HStack(spacing: 12) {
+            ZStack {
+                Image(viewModel.imageUrl)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 50, height: 50)
+                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    .shadow(radius: 4)
 
-                            Text(viewModel.subtitle)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                                .lineLimit(1)
-                                .truncationMode(.tail)
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-            
+                if viewModel.isPlaying {
+                    Circle()
+                        .stroke(Color.blue.opacity(0.4), lineWidth: 2)
+                        .frame(width: 58, height: 58)
+                        .scaleEffect(animatePulse ? 1.15 : 1)
+                        .opacity(animatePulse ? 0.6 : 0)
+                        .animation(.easeOut(duration: 1).repeatForever(autoreverses: true), value: animatePulse)
+                        .onAppear { animatePulse = true }
+                }
+            }
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text(viewModel.currentTrack)
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundColor(.white)
+                    .lineLimit(1)
+
+                Text(viewModel.subtitle)
+                    .font(.system(size: 13))
+                    .foregroundColor(.gray)
+                    .lineLimit(1)
+            }
+
+            Spacer()
+
             Button(action: {
                 viewModel.togglePlayPause()
             }) {
                 Image(systemName: viewModel.isPlaying ? "pause.fill" : "play.fill")
-                    .foregroundColor(.primary)
+                    .font(.title3)
+                    .foregroundColor(.white)
+                    .scaleEffect(isTapped ? 0.9 : 1.0)
             }
+            .buttonStyle(PlainButtonStyle())
+            .onTapGesture {
+                isTapped = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    isTapped = false
+                }
+            }
+
             Button(action: {
                 viewModel.resetPlayer()
                 viewModel.isBarVisible = false
             }) {
                 Image(systemName: "xmark")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.white.opacity(0.6))
             }
-
         }
+        .padding(.vertical, 8)
         .padding(.horizontal, 16)
-                .padding(.vertical, 8)
-                .background(
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color(.systemGray6))
-                        .shadow(radius: 2)
-                )
-                .padding(.horizontal)
-
+        .background(
+            .ultraThinMaterial,
+            in: RoundedRectangle(cornerRadius: 20, style: .continuous)
+        )
+        .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 4)
+        .padding(.horizontal)
+        .padding(.bottom, 8)
+        .transition(.move(edge: .bottom).combined(with: .opacity))
     }
 }
