@@ -19,7 +19,7 @@ struct DevotionalView: View {
     @State private var share = false
     @State var presentDevotionalSubscriptionView = false
     
-    let spacing: CGFloat = 70
+    let spacing: CGFloat = 50
     
     var body: some View {
         contentView
@@ -108,7 +108,7 @@ struct DevotionalView: View {
                         ShareSheet(activityItems: [viewModel.devotionalText as String,  URL(string: "\(APP.Product.urlID)")! as URL])
                     }
                 }
-                .padding([.top], 40)
+               // .padding([.top], 40)
                 .padding([.bottom], 80)
                 .onChange(of: scrollToTop) { value in
                     if value {

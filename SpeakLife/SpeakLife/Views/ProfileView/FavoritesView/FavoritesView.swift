@@ -20,11 +20,6 @@ struct ContentRow: View {
     var callback: ((String, _ delete: Bool) -> Void)?
     var onSelect: (() -> Void)?
 
-//    init(_ favorite: Declaration, isEditable: Bool = false, callback: ((String, Bool) -> Void)? = nil) {
-//        self.declaration = favorite
-//        self.isEditable = isEditable
-//        self.callback = callback
-//    }
     init(_ favorite: Declaration, isEditable: Bool = false, callback: ((String, Bool) -> Void)? = nil, onSelect: (() -> Void)? = nil) {
             self.declaration = favorite
             self.isEditable = isEditable
