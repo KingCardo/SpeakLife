@@ -69,87 +69,119 @@ struct AbbasLoveView: View {
     ]
     
     @EnvironmentObject var appState: AppState
-    
     var body: some View {
-        
         GeometryReader { proxy in
-                
-                ScrollView {
+            ScrollView {
+                VStack(spacing: 24) {
+                    // Spacer from top
                     Spacer().frame(height: proxy.size.height * 0.05)
-                    Text("Heavenly Father's Love Letter 💌")
-                        .font(.custom("AppleSDGothicNeo-Bold", size: 28))
+
+                    // ✉️ Title
+                    Text("Heavenly Father’s Love Letter 💌")
+                        .font(.system(size: 28, weight: .bold, design: .rounded))
                         .foregroundStyle(.white)
-                        .padding()
-                    Spacer().frame(height: proxy.size.height * 0.1)
-                    PageView(views:
-                                pageContentViews
-                       
-                    )
-                    .frame(height: proxy.size.height * 0.66)
-                    .foregroundStyle(.white)
-                    
-                    Button {
-                        withAnimation {
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 24)
+                        .shadow(radius: 4)
+
+                    // Extra breathing room before pages
+                    Spacer().frame(height: proxy.size.height * 0.06)
+
+                    // 📄 PageView
+                    PageView(views: pageContentViews)
+                        .frame(height: proxy.size.height * 0.60)
+                        .padding(.horizontal)
+                        .transition(.opacity)
+                        .animation(.easeInOut(duration: 0.6), value: pageContentViews.count)
+
+                    // 🔁 Reset Button
+                    Button(action: {
+                        withAnimation(.easeInOut) {
                             appState.loveLetterIndex = 0
                         }
-                    } label: {
-                        Text("reset to beginning")
-                            .foregroundStyle(Color.white)
+                    }) {
+                        Text("Start from beginning")
+                            .font(.system(size: 17, weight: .semibold, design: .rounded))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.white.opacity(0.15))
+                            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                            .shadow(color: .black.opacity(0.25), radius: 4, x: 0, y: 2)
+                            .padding(.horizontal)
                     }
+                    .padding(.bottom, 40)
                 }
-        }
-        .background {
-            ZStack {
-                Image("lakeTrees")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
-    
-                Rectangle()
-                    .fill(Color.black.opacity(0.1))
-                    .edgesIgnoringSafeArea(.all)
             }
-        }
-        .onAppear() {
-            Analytics.logEvent(Event.devotionalTapped, parameters: nil)
-            appState.abbasLoveAdded = false
+            .background {
+                ZStack {
+                    Image("lakeTrees")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
+
+                    LinearGradient(
+                        gradient: Gradient(colors: [
+                            Color.black.opacity(0.35),
+                            Color.black.opacity(0.7)
+                        ]),
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                    .edgesIgnoringSafeArea(.all)
+                }
+            }
+            .onAppear {
+                Analytics.logEvent(Event.devotionalTapped, parameters: nil)
+                appState.abbasLoveAdded = false
+            }
         }
     }
 }
 
 struct PageContent: View {
-    
     let verse: String
     let book: String
-    
+
     var body: some View {
-        VStack {
-            Text(verse)
-                .font(.custom("AppleSDGothicNeo-Bold", size: 24))
-                .padding()
+        VStack(spacing: 24) {
             Spacer()
-                .frame(height: 20)
+
+            Text(verse)
+                .font(.system(size: 22, weight: .semibold, design: .rounded))
+                .multilineTextAlignment(.center)
+                .foregroundColor(.white)
+                .padding(.horizontal, 24)
+
             Text(book)
-                .font(.callout)
-            
+                .font(.system(size: 16, weight: .regular, design: .rounded))
+                .foregroundColor(.white.opacity(0.85))
+
+            Spacer()
         }
-        .padding()
+        .frame(maxWidth: .infinity)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 10)
     }
 }
-
 
 struct PageView<Content: View>: View {
     @EnvironmentObject var appState: AppState
     var views: [Content]
-    
+
     var body: some View {
         TabView(selection: $appState.loveLetterIndex) {
             ForEach(views.indices, id: \.self) { index in
                 views[index]
+                    .tag(index)
+                    .padding(.horizontal, 20)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .transition(.opacity)
+                    .animation(.easeInOut(duration: 0.4), value: appState.loveLetterIndex)
             }
         }
-        .tabViewStyle(PageTabViewStyle())
-        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .interactive))
+        .animation(.easeInOut(duration: 0.4), value: appState.loveLetterIndex)
     }
 }
