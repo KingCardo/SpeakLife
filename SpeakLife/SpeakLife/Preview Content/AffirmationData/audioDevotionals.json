@@ -2,6 +2,14 @@
     "version": 1,
     "audios": [
         {
+            "id": "speaklife-s2ep8.mp3",
+            "title": "Mental Health and the Holy Spirit",
+            "subtitle": "S2 Episode 8",
+            "duration": "3m",
+            "imageUrl": "devotional",
+            "isPremium": true
+        },
+        {
             "id": "speaklife-s2ep7.mp3",
             "title": "The Mind of Christ",
             "subtitle": "S2 Episode 7",

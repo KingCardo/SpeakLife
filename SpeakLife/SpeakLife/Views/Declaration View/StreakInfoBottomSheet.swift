@@ -7,86 +7,104 @@
 
 import SwiftUI
 
+struct StreakInfoSection: View {
+    let viewModel: StreakViewModel
+
+    var body: some View {
+        VStack(spacing: 12) {
+            StreakRow(title: "Current streak", value: viewModel.titleText, icon: "flame", iconColor: .orange)
+            StreakRow(title: "Longest streak", value: viewModel.subTitleText, icon: "bolt.fill", iconColor: Constants.traditionalGold)
+            StreakRow(title: "Total Days Speaking Life", value: viewModel.subTitleDetailText, icon: "star.fill", iconColor: Constants.traditionalGold)
+        }
+        .padding(.horizontal)
+    }
+}
+
+struct PrimaryActionButton: View {
+    var title: String
+    var action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Text(title)
+                .font(.system(size: 18, weight: .medium, design: .rounded))
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.white.opacity(0.2))
+                .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        }
+    }
+}
+
+
+struct StreakRow: View {
+    let title: String
+    let value: String
+    let icon: String
+    let iconColor: Color
+
+    var body: some View {
+        HStack {
+            Text(title)
+                .font(.system(size: 18, weight: .medium, design: .rounded))
+                .foregroundColor(.white)
+            Spacer()
+            HStack(spacing: 6) {
+                Text(value)
+                    .font(.system(size: 18, weight: .semibold, design: .rounded))
+                    .monospacedDigit()
+                    .foregroundColor(.white)
+                Image(systemName: icon)
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(iconColor)
+                    .frame(width: 18, height: 18)
+            }
+        }
+        .foregroundColor(.white)
+    }
+}
+
+
 struct StreakInfoBottomSheet: View {
     @EnvironmentObject var streakViewModel: StreakViewModel
     @Binding var isShown: Bool
-    let titleFont = Font.custom("AppleSDGothicNeo-Regular", size: 26, relativeTo: .title)
-    let bodyFont = Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body)
-    
+
     var body: some View {
-        VStack {
-            Image("thingsToSay")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 100)
-                .clipShape(Circle())
-            
+        VStack(spacing: 20) {
+            HandleBar()
+                .padding(.top, 10)
+
             Text("Speak Life Daily")
-                .font(Font.custom("AppleSDGothicNeo-Regular", size: 26, relativeTo: .title))
-                .padding()
-                .foregroundColor(.black)
-            Text("Practice speaking, imagining, and meditating on a certain scripture, saying it 7x a day activating the Word! Then you will reap what you sow 🌱")
-                .lineLimit(nil)
-                .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
-                .padding([.leading,.trailing])
-                .foregroundColor(.black)
+                .font(.system(size: 24, weight: .semibold, design: .rounded))
+                .foregroundColor(.white)
+
+            Text("Speak, imagine, and meditate on God’s Word often — each time you do, you plant powerful seeds that will produce a harvest 🌱")
+                .foregroundColor(.white.opacity(0.85))
+                .font(.system(size: 16, weight: .regular, design: .rounded))
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+
             Spacer()
-                .frame(height: 12)
-            VStack {
-                HStack {
-                    Text("Current streak")
-                        .font(bodyFont)
-                    
-                    HStack {
-                        Text(streakViewModel.titleText)
-                            .font(bodyFont)
-                        Image(systemName: "flame")
-                            .resizable()
-                            .foregroundStyle(.orange)
-                            .frame(width: 15, height: 20)
-                    }
-                }
-                
-                HStack {
-                    Text("Longest streak")
-                        .font(bodyFont)
-                    
-                    HStack {
-                        Text(streakViewModel.subTitleText)
-                            .font(bodyFont)
-                        Image(systemName: "bolt.fill")
-                            .resizable()
-                            .foregroundStyle(Constants.traditionalGold)
-                            .frame(width: 15, height: 20)
-                    }
-                }
-                HStack {
-                    Text("Total Days Speaking Life")
-                        .font(bodyFont)
-                    
-                    HStack {
-                        Text(streakViewModel.subTitleDetailText)
-                            .font(bodyFont)
-                        Image(systemName: "star.fill")
-                            .resizable()
-                            .foregroundStyle(Constants.traditionalGold)
-                            .frame(width: 20, height: 20)
-                    }
-                }
-            }
             
-            Button(action: {
-                self.isShown = false
-            }) {
-                Text("Got it!")
-                    .foregroundColor(.white)
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding()
-                    .background(Constants.DAMidBlue)
-                    .cornerRadius(10)
-                    .padding()
+            StreakInfoSection(viewModel: streakViewModel)
+
+            Spacer()
+
+            PrimaryActionButton(title: "Got it!") {
+                isShown = false
+                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             }
+            .padding(.horizontal)
+            .padding(.bottom, 16)
         }
-       
+        .padding(.top, 10)
+        .background(
+            Gradients().speakLifeCYOCell
+                .ignoresSafeArea()
+        )
+        .transition(.move(edge: .bottom).combined(with: .opacity)) // 💥 transition
+        .animation(.easeOut(duration: 0.4), value: isShown) 
     }
 }

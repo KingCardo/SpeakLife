@@ -24,6 +24,11 @@ final class StreakViewModel: ObservableObject {
         currentStreak > 0
     }
     
+    var progress: Double {
+        let completed = weekCompletions.filter { $0.isCompleted }.count
+        return Double(completed) / 7.0
+    }
+    
     @Published var titleText: String = ""
     @Published var subTitleText: String = ""
     @Published var subTitleDetailText: String = ""
@@ -128,114 +133,142 @@ struct StreakView: View {
     }
 }
 
+struct Sparkles: View {
+    var body: some View {
+        ForEach(0..<10, id: \.self) { _ in
+            Circle()
+                .fill(Color.white.opacity(0.6))
+                .frame(width: CGFloat.random(in: 2...5), height: CGFloat.random(in: 2...5))
+                .position(x: CGFloat.random(in: 20...100), y: CGFloat.random(in: 20...100))
+                .opacity(Double.random(in: 0.5...1.0))
+                .animation(Animation.easeInOut(duration: Double.random(in: 0.6...1.2)).repeatForever(), value: UUID())
+        }
+    }
+}
+
+
+struct ProgressRing: View {
+    let progress: Double
+    let showSparkles: Bool
+
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(lineWidth: 12)
+                .opacity(0.2)
+                .foregroundColor(.white)
+                .frame(width: 120, height: 120)
+
+            Circle()
+                .trim(from: 0.0, to: progress)
+                .stroke(style: StrokeStyle(lineWidth: 12, lineCap: .round, lineJoin: .round))
+                .foregroundColor(.green)
+                .rotationEffect(.degrees(-90))
+                .animation(.easeOut(duration: 1.0), value: progress)
+                .frame(width: 120, height: 120)
+
+            VStack(spacing: 4) {
+                Text("Progress")
+                    .font(.caption)
+                    .foregroundColor(.white.opacity(0.8))
+                Text("\(Int(progress * 100))%")
+                    .font(.title3.bold())
+                    .foregroundColor(.white)
+            }
+
+            if showSparkles {
+                Sparkles()
+            }
+        }
+    }
+}
+
+
+struct HandleBar: View {
+    var body: some View {
+        RoundedRectangle(cornerRadius: 3)
+            .fill(Color.white.opacity(0.3))
+            .frame(width: 40, height: 5)
+    }
+}
+
+struct StatBlock: View {
+    let title: String
+    let value: String
+
+    let titleFont = Font.system(size: 22, weight: .semibold, design: .rounded)
+    let bodyFont = Font.system(size: 18, weight: .medium, design: .rounded)
+
+    var body: some View {
+        VStack(spacing: 4) {
+            Text(title)
+                .font(titleFont)
+
+            HStack(spacing: 6) {
+                Text(value)
+                    .font(bodyFont)
+                Image(systemName: "bolt.fill")
+                    .resizable()
+                    .frame(width: 16, height: 20)
+            }
+        }
+    }
+}
+
+
+
+struct StreakStatsView: View {
+    let viewModel: StreakViewModel
+
+    let titleFont = Font.system(size: 22, weight: .semibold, design: .rounded)
+    let bodyFont = Font.system(size: 18, weight: .medium, design: .rounded)
+
+    var body: some View {
+        VStack(spacing: 12) {
+            StatBlock(title: "Current streak 🔥", value: viewModel.titleText)
+            StatBlock(title: "Longest streak 🥇", value: viewModel.subTitleText)
+            VStack(spacing: 4) {
+                Text("Total days completed 📈")
+                    .font(titleFont)
+                Text(viewModel.subTitleDetailText)
+                    .font(bodyFont)
+            }
+        }
+    }
+}
+
+
 
 struct StreakSheet: View {
     @Binding var isShown: Bool
     @ObservedObject var streakViewModel: StreakViewModel
 
-    let titleFont = Font.system(size: 22, weight: .semibold, design: .rounded)
-    let bodyFont = Font.system(size: 18, weight: .medium, design: .rounded)
-
-    var progress: Double {
-        let completed = streakViewModel.weekCompletions.filter { $0.isCompleted }.count
-        return Double(completed) / 7.0
+    private var progress: Double {
+        streakViewModel.progress
     }
 
-    var showSparkles: Bool {
+    private var showSparkles: Bool {
         progress >= 0.8
     }
 
     var body: some View {
         ZStack {
             Gradients().speakLifeCYOCell
-            .ignoresSafeArea()
+                .ignoresSafeArea()
 
             VStack(spacing: 20) {
-                RoundedRectangle(cornerRadius: 16)
-                    .fill(.ultraThinMaterial)
-                    .frame(width: 120, height: 6)
+                HandleBar()
                     .padding(.top, 12)
 
-                StreakView(streak: streakViewModel.weekCompletions.map { $0.isCompleted })
+                StreakView(streak: streakViewModel.weekCompletions.map(\.isCompleted))
                     .padding(.top, 8)
 
-                // Progress Ring
-                ZStack {
-                    Circle()
-                        .stroke(lineWidth: 12)
-                        .opacity(0.2)
-                        .foregroundColor(.white)
-                        .frame(width: 120, height: 120)
+                ProgressRing(progress: progress, showSparkles: showSparkles)
+                    .padding(.top, 12)
 
-                    Circle()
-                        .trim(from: 0.0, to: progress)
-                        .stroke(style: StrokeStyle(lineWidth: 12, lineCap: .round, lineJoin: .round))
-                        .foregroundColor(Color.green)
-                        .rotationEffect(.degrees(-90))
-                        .animation(.easeOut(duration: 1.0), value: progress)
-                        .frame(width: 120, height: 120)
-
-                    VStack(spacing: 4) {
-                        Text("Progress")
-                            .font(.caption)
-                            .foregroundColor(.white.opacity(0.8))
-                        Text("\(Int(progress * 100))%")
-                            .font(.title3.bold())
-                            .foregroundColor(.white)
-                    }
-
-                    if showSparkles {
-                        ForEach(0..<10) { i in
-                            Circle()
-                                .fill(Color.white.opacity(0.6))
-                                .frame(width: CGFloat.random(in: 2...5), height: CGFloat.random(in: 2...5))
-                                .position(
-                                    x: CGFloat.random(in: 20...100),
-                                    y: CGFloat.random(in: 20...100)
-                                )
-                                .opacity(Double.random(in: 0.5...1.0))
-                                .animation(Animation.easeInOut(duration: Double.random(in: 0.6...1.2)).repeatForever(), value: UUID())
-                        }
-                    }
-                }
-                .padding(.top, 12)
-
-                VStack(spacing: 12) {
-                    VStack(spacing: 4) {
-                        Text("Current streak 🔥")
-                            .font(titleFont)
-
-                        HStack(spacing: 6) {
-                            Text(streakViewModel.titleText)
-                                .font(bodyFont)
-                            Image(systemName: "bolt.fill")
-                                .resizable()
-                                .frame(width: 16, height: 20)
-                        }
-                    }
-
-                    VStack(spacing: 4) {
-                        Text("Longest streak 🥇")
-                            .font(titleFont)
-
-                        HStack(spacing: 6) {
-                            Text(streakViewModel.subTitleText)
-                                .font(bodyFont)
-                            Image(systemName: "bolt.fill")
-                                .resizable()
-                                .frame(width: 16, height: 20)
-                        }
-                    }
-
-                    VStack(spacing: 4) {
-                        Text("Total days completed 📈")
-                            .font(titleFont)
-                        Text(streakViewModel.subTitleDetailText)
-                            .font(bodyFont)
-                    }
-                }
-                .padding(.horizontal, 24)
-                .padding(.bottom, 20)
+                StreakStatsView(viewModel: streakViewModel)
+                    .padding(.horizontal, 24)
+                    .padding(.bottom, 20)
             }
         }
         .foregroundColor(.white)

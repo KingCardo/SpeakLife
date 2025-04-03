@@ -170,12 +170,26 @@ struct ProfileView: View {
             .environment(\.colorScheme, .dark)
     }
     
-    private var subscriptionRow:  some View {
-        SettingsRow(isPresentingContentView: $isPresentingManageSubscriptionView, imageTitle: "crown.fill", title: "Manage Subscription", viewToPresent: PremiumView()) {
-            isPresentingManageSubscriptionView.toggle()
-            Analytics.logEvent(Event.manageSubscriptionTapped, parameters: nil)
+    @MainActor
+    private var subscriptionRow: some View {
+        HStack {
+            Image(systemName: "crown.fill")
+                .foregroundColor(Constants.DAMidBlue)
+            NavigationLink(LocalizedStringKey("Manage Subscription"), destination: LazyView(PremiumView()))
+                .opacity(0)
+                .background(
+                    HStack {
+                        Text("Manage Subscription", comment:  "subs row")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 8)
+                            .foregroundColor(Constants.DAMidBlue)
+                    })
         }
     }
+    
     
     @MainActor
     private var remindersRow: some View {

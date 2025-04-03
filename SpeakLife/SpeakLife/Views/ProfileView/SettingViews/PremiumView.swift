@@ -22,22 +22,49 @@ struct PremiumView: View {
         GeometryReader { geometry in
             if !subscriptionStore.isPremium {
                 if appState.offerDiscount {
-                OfferPageView(countdown: $countdown) { }
+                    OfferPageView(countdown: $countdown) { }
                 } else {
                     SubscriptionView(size: geometry.size)
                 }
             } else {
                 NavigationView {
-                    VStack {
-                        Text("You are currently a premium member", comment: "current member text")
-                            .font(.title2)
-                        Button(LocalizedStringKey("Manage Subscription")) {
-                            openURL(URL(string: "itms-apps://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/DirectAction/manageSubscriptions")!)
+                    ZStack {
+                        // 💫 Gradient Background
+                        Gradients().speakLifeCYOCell
+                        .ignoresSafeArea()
+                        
+                        VStack(spacing: 24) {
+                            Text("You are currently a premium member")
+                                .font(.system(size: 22, weight: .semibold, design: .rounded))
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, 24)
+                            
+                            Text("Thank you for supporting the mission of speaking life daily!")
+                                .font(.system(size: 16, weight: .regular, design: .rounded))
+                                .foregroundColor(.white.opacity(0.85))
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, 24)
+                            
+                            Button(action: {
+                                openURL(URL(string: "itms-apps://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/DirectAction/manageSubscriptions")!)
+                            }) {
+                                Text("Manage Subscription")
+                                    .font(.system(size: 17, weight: .medium, design: .rounded))
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.white.opacity(0.2))
+                                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            }
+                            .padding(.horizontal)
+                            
+                            Spacer()
                         }
-                        .foregroundColor(.blue)
-                        .padding()
+                        .padding(.top, 80)
                     }
-                    .navigationTitle(LocalizedStringKey("Manage Subscription"))
+                    .navigationTitle("Manage Subscription")
+                    .navigationBarTitleDisplayMode(.inline)
                 }
             }
         }
