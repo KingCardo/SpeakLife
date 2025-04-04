@@ -48,6 +48,11 @@ struct OfferPageView: View {
         "God used this app to restore my confidence.",
         "Scriptures now speak directly to my heart thanks to SpeakLife.",
         "This is my favorite way to start the day!",
+        "I speak life over myself every morning now — it’s changed everything.",
+        "My mind feels renewed and at peace after every session.",
+        "This app taught me how to fight fear with God’s Word.",
+        "It helps me hear God's voice clearer every day.",
+        "I finally feel confident speaking truth over my life.",
     ]
 
     var body: some View {
@@ -257,6 +262,10 @@ struct OfferPageView: View {
         }
 }
 
+//        "I speak life over myself every morning now \nit’s changed everything.",
+//        "My mind feels renewed and at peace\n after every session.",
+//        "This app taught me how to fight fear \n with God’s Word.",
+
 
 struct SubscriptionView: View {
     
@@ -275,10 +284,12 @@ struct SubscriptionView: View {
 
     private let testimonials = [
         "I feel God's presence every time I open this app.",
-        "Holy Spirit designed",
-        "More than an app — it’s part of my walk with God.",
-        "Scriptures now speak directly to my heart.",
-        "This is my favorite way to start the day!"
+            "Holy Spirit designed",
+            "It helps me hear God's voice clearer every day.",
+            "Scriptures now speak directly to my heart.",
+            "More than an app — it’s part of my walk with God.",
+            "I finally feel confident speaking truth over my life.",
+            "This is my favorite way to start the day!"
     ]
 
     var body: some View {
@@ -289,7 +300,7 @@ struct SubscriptionView: View {
             VStack(spacing: 14) {
                 headerSection
                 titleSection
-                FeatureView()//.padding(.horizontal)
+                FeatureView()
                 testimonialView
                 selectionButtons
                 goPremiumStack
@@ -333,10 +344,12 @@ struct SubscriptionView: View {
                     .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
             }
         }
-        .frame(height: size.height * 0.25)
+        .frame(height: size.height * 0.23)
     }
 
+    @ViewBuilder
     private var titleSection: some View {
+        Spacer().frame(height: 4)
         VStack(spacing: 10) {
             Text("Speak Life Daily. \nWalk in Health & Favor.")
                 .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .title))
@@ -347,7 +360,7 @@ struct SubscriptionView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
         }
-        .padding(.top, 4)
+       // .padding(.top, 8)
     }
 
     private var testimonialView: some View {
@@ -356,7 +369,8 @@ struct SubscriptionView: View {
             .foregroundColor(.white.opacity(0.9))
             .multilineTextAlignment(.center)
             .padding(.horizontal)
-            .transition(.opacity)
+            .transition(.slideFadeFromRight)
+            //.transition(.opacity)
             .id(testimonialIndex)
             .animation(.easeInOut(duration: 0.5), value: testimonialIndex)
     }
