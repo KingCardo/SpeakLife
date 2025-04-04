@@ -20,84 +20,95 @@ struct VisualEffectBlur: UIViewRepresentable {
     }
 }
 
-struct CategoryCell: View  {
-    
+struct CategoryCell: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
-    
     let size: CGSize
     var category: DeclarationCategory
     
+    @State private var appear = false
+    
     var body: some View {
         categoryCell(size: size)
+            .opacity(appear ? 1 : 0)
+            .scaleEffect(appear ? 1 : 0.94)
+            .animation(
+                .spring(response: 0.55, dampingFraction: 0.85)
+                    .delay(Double(category.id.hashValue % 10) * 0.05),
+                value: appear
+            )
+            .onAppear {
+                appear = true
+            }
     }
     
-    
     @ViewBuilder
-    private func categoryCell(size: CGSize) -> some View  {
-        
-        let dimension =  size.width *  0.44
+    private func categoryCell(size: CGSize) -> some View {
+        let dimension = size.width * 0.44
+        let height = size.height * 0.22
         
         ZStack {
-            
+            // Background Layer
             ZStack(alignment: .topTrailing) {
                 if category.isBibleBook {
-                    ZStack {
-                        Image("JesusOnCross")
-                            .resizable().scaledToFill()
-                            .frame(width: dimension, height: size.height * 0.22)
-                            .clipped()
-                            .cornerRadius(4)
-                        
-                        Gradients().clearGradient
-                        lockIcon
-                    }
+                    Image("JesusOnCross")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: dimension, height: height)
+                        .clipped()
+                        .cornerRadius(6)
+                    Gradients().clearGradient
                 } else {
                     Gradients().speakLifeBlueCell
                         .scaledToFill()
-                        .frame(width: dimension, height: size.height * 0.22)
+                        .frame(width: dimension, height: height)
                         .clipped()
-                        .cornerRadius(4)
+                        .cornerRadius(6)
+                }
+                
+                // Lock Icon
+                if category.isPremium && !subscriptionStore.isPremium {
                     lockIcon
+                        .padding(.top, 6)
+                        .padding(.trailing, 6)
                 }
             }
             
+            // Text Centered
             VStack {
-                    Spacer()
-                    Text(category.categoryTitle)
-                    .font(.system(size: 22, weight: .semibold))
-                   // .font(Font.custom("AppleSDGothicNeo-Bold", size: 22))
-                                  .foregroundColor(.white)
-                                  .multilineTextAlignment(.center) // Ensures text wraps properly
-                                  .padding(.horizontal, 8) // Avoids text clipping
-                                  .frame(width: dimension * 0.9) // Ensures text fits inside the frame
-                                  .cornerRadius(4)
-                                  .padding(.bottom, 5)
+                Spacer()
+                Text(category.categoryTitle)
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.85)
+                    .padding(.horizontal, 8)
+                    .frame(maxWidth: .infinity)
+                Spacer()
             }
+            .padding(.horizontal, 4)
         }
-        .frame(width: dimension, height: size.height * 0.22)
+        .frame(width: dimension, height: height)
+        .background(Color.clear)
         .cornerRadius(6)
         .shadow(color: Constants.lightShadow, radius: 8, x: 0, y: 4)
     }
     
-    @ViewBuilder
-    var lockIcon: some View {
-        if category.isPremium && !subscriptionStore.isPremium {
-            ZStack {
-                VisualEffectBlur(blurStyle: .systemMaterial)
-                    .frame(width: 18, height: 18)
-                
-                    .padding(10)
-                    .blur(radius: 8)
-                
-                Image(systemName: "lock.fill")
-                    .font(.body)
-                    .frame(width: 12, height: 12)
-                
-            }
-            
+    // Lock Icon
+    private var lockIcon: some View {
+        ZStack {
+            VisualEffectBlur(blurStyle: .systemThinMaterialDark)
+                .clipShape(Circle())
+                .frame(width: 22, height: 22)
+
+            Image(systemName: "lock.fill")
+                .font(.system(size: 12, weight: .bold))
+                .foregroundColor(.white)
         }
     }
 }
+
+
 
 struct CategoryChooserView: View {
     
@@ -115,7 +126,7 @@ struct CategoryChooserView: View {
             NavigationView {
                 ScrollView {
                     VStack {
-                        Text("Select one of the following categories to get powerful promises focused on your needs.", comment: "category reminder selection")
+                        Text("Pick your need — unlock faith-filled promises made just for you.", comment: "category reminder selection")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 18))
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)

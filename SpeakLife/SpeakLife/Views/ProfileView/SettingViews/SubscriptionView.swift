@@ -42,13 +42,13 @@ struct OfferPageView: View {
     @State var currentSelection: Product?
     
     @State private var testimonialIndex = 0
-        private let testimonials = [
-            "It brings peace to my mornings and hope to my day.",
-            "Holy Spirit designed",
-            "God used this app to restore my confidence.",
-            "Scriptures now speak directly to my heart thanks to SpeakLife.",
-            "This is my favorite way to start the day!",
-        ]
+    private let testimonials = [
+        "It brings peace to my mornings and hope to my day.",
+        "Holy Spirit designed",
+        "God used this app to restore my confidence.",
+        "Scriptures now speak directly to my heart thanks to SpeakLife.",
+        "This is my favorite way to start the day!",
+    ]
 
     var body: some View {
         GeometryReader { reader in
@@ -259,517 +259,300 @@ struct OfferPageView: View {
 
 
 struct SubscriptionView: View {
+    
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var appState: AppState
-    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
-    @State var errorTitle = ""
-    @State var isShowingError: Bool = false
-    @State private var currentTestimonialIndex: Int = 0
-    
-    @State var freeTrialEnabled = false
-    
-    
-    @State private var textOpacity: Double = 0
-    
-    let linearGradient = LinearGradient(gradient: Gradient(colors: [Constants.DAMidBlue, .cyan]),
-                                        startPoint: .top,
-                                        endPoint: .bottom)// Adjust time as needed
-    
 
-    @State var currentSelection: Product?
-    @State var firstSelection: Product?
-    @State var secondSelection: Product?
-    @State var thirdSelection: Product?
-    @State var weeklySelection: Product?
+    @State private var isShowingError = false
+    @State private var testimonialIndex = 0
+    @State private var currentSelection: Product?
+    @State private var pulse = false
 
-    @State var chooseDifferentAmount = false
-    let impactMed = UIImpactFeedbackGenerator(style: .soft)
-    
-    let valueProps: [Feature]
     let size: CGSize
     var callback: (() -> Void)?
-    var isDiscount = false
-    
-    
-    init(valueProps: [Feature] = [], size: CGSize, ctaText: String = "3 days free, then", isDiscount: Bool = false, callback: (() -> Void)? = nil) {
-        self.valueProps = valueProps
-        self.size = size
-        // self.ctaText = ctaText
-        self.isDiscount = isDiscount
-        self.callback = callback
-    }
-    
+
+    private let testimonials = [
+        "I feel God's presence every time I open this app.",
+        "Holy Spirit designed",
+        "More than an app — it’s part of my walk with God.",
+        "Scriptures now speak directly to my heart.",
+        "This is my favorite way to start the day!"
+    ]
+
     var body: some View {
-        goPremiumView(size: size)
-            .foregroundColor(.white)
-            .alert(isPresented: $isShowingError, content: {
-                Alert(title: Text(errorTitle), message: nil, dismissButton: .default(Text("OK")))
-            })
-            .onAppear() {
-                self.firstSelection = subscriptionStore.currentOfferedPremium
-                self.currentSelection = subscriptionStore.currentOfferedPremium
-                self.secondSelection = subscriptionStore.currentOfferedPremiumMonthly
-                self.thirdSelection = subscriptionStore.currentOfferedLifetime
-                self.weeklySelection = subscriptionStore.currentOfferedWeekly
-            }
-    }
-    
-    
-    private func goPremiumView(size: CGSize) -> some View  {
         ZStack {
+            LinearGradient(gradient: Gradient(colors: [.black]), startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
 
-                    LinearGradient(gradient: Gradient(colors: [Color.black]), startPoint: .top, endPoint: .bottom)
-                        .edgesIgnoringSafeArea(.all)
-                
-                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
-
-                    ZStack {
-                        Image("headerSubscription")
-                            .resizable()
-                           
-                        VStack(alignment: .center) {
-                        
-                            Image("appIconDisplay")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 90, height: 90)
-                                .clipShape(Circle())
-                                .offset(x: 0, y: 0)
-                                .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
-                            
-                            Text("SpeakLife")
-                                .font(Font.custom("AppleSDGothicNeo-Bold", size: 30, relativeTo: .title))
-                                .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
-                            
-                        }
-                    } .frame(height: size.height * 0.25)
-                    
-                 
-                    Spacer()
-                        .frame(height: 16)
-                    VStack(spacing: 10) {
-                        Text("Speak Life Daily. \nWalk in God’s Promises.")
-                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .title))
-                            .foregroundStyle(Color.white)
-                            .multilineTextAlignment(.center)
-                        Text("Declare God's Promises daily to renew your mind and unlock peace, healing, and purpose.")
-                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 14, relativeTo: .subheadline))
-                            .foregroundStyle(Color.white)
-                            .padding([.horizontal])
-                            .multilineTextAlignment(.center)
-                    }
-    
-                    FeatureView()
-                        .foregroundColor(.white)
-                        .padding([.horizontal])
-                    Spacer()
-                                            
-                    VStack {
-                        Button {
-                            currentSelection = firstSelection
-                        } label: {
-                            firstSelectionBox()
-                        }
-                    
-
-                            Spacer()
-                                .frame(height: 8)
-                            Button {
-                                currentSelection = secondSelection
-                            } label: {
-                                secondSelectionBox()
-                            }
-
-                        
-                    }
-
-                    goPremiumStack()
-                    Spacer()
-                        .frame(height: 4)
+            VStack(spacing: 14) {
+                headerSection
+                titleSection
+                FeatureView().padding(.horizontal)
+                testimonialView
+                selectionButtons
+                goPremiumStack
+                Spacer().frame(height: 4)
+            }
+            .foregroundColor(.white)
+            .alert("", isPresented: $isShowingError) {
+                Button("OK", role: .cancel) { }
+            } message: {
+                Text("There was an error processing your purchase.")
             }
             .onAppear {
-                currentSelection = firstSelection
+                currentSelection = subscriptionStore.currentOfferedPremium
+                startTestimonialRotation()
             }
-            
-            
+
             if declarationStore.isPurchasing {
                 RotatingLoadingImageView()
             }
-            
+
             if UIDevice.current.userInterfaceIdiom == .pad {
-                VStack  {
-                    HStack  {
-                        Button(action: { dismiss() }) {
-                            Image(systemName: "xmark.circle.fill")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                                .foregroundColor(.white)
-                            
-                        }
-                        Spacer()
+                iPadCloseButton
+            }
+        }
+    }
+    
+    private var headerSection: some View {
+        ZStack {
+            AnimatedHeaderBackground()
+
+            VStack {
+                Image("appIconDisplay")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 90, height: 90)
+                    .clipShape(Circle())
+                    .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
+
+                Text("SpeakLife")
+                    .font(.system(size: 30, weight: .bold))
+                    .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
+            }
+        }
+        .frame(height: size.height * 0.25)
+    }
+
+//    private var headerSection: some View {
+//        ZStack {
+//            Image("headerSubscription")
+//                .resizable()
+//            VStack {
+//                Image("appIconDisplay")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 90, height: 90)
+//                    .clipShape(Circle())
+//                    .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
+//
+//                Text("SpeakLife")
+//                    .font(.system(size: 30, weight: .bold))
+//                    .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
+//            }
+//        }
+//        .frame(height: size.height * 0.25)
+//    }
+
+    private var titleSection: some View {
+        VStack(spacing: 10) {
+            Text("Speak Life Daily. \nWalk in Health & Favor.")
+                .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .title))
+                .multilineTextAlignment(.center)
+
+            Text("Declare God's promises daily to renew your mind and unlock peace, healing, and purpose.")
+                .font(Font.custom("AppleSDGothicNeo-Bold", size: 14, relativeTo: .subheadline))
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+        }
+    }
+
+    private var testimonialView: some View {
+        Text("\"\(testimonials[testimonialIndex])\"")
+            .font(.system(size: 15, weight: .medium, design: .rounded))
+            .foregroundColor(.white.opacity(0.9))
+            .multilineTextAlignment(.center)
+            .padding(.horizontal)
+            .transition(.opacity)
+            .id(testimonialIndex)
+            .animation(.easeInOut(duration: 0.5), value: testimonialIndex)
+    }
+
+    private var selectionButtons: some View {
+        VStack(spacing: 8) {
+            if let annual = subscriptionStore.currentOfferedPremium {
+                subscriptionOption(product: annual)
+            }
+            if let monthly = subscriptionStore.currentOfferedPremiumMonthly {
+                subscriptionOption(product: monthly)
+            }
+        }
+    }
+    
+    private func subscriptionOption(product: Product) -> some View {
+        ZStack(alignment: .topTrailing) {
+            Button(action: {
+                currentSelection = product
+            }) {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(product.ctaDurationTitle)
+                            .font(.system(size: 14, weight: .bold))
+                        Text(product.subTitle)
+                            .font(.system(size: 12))
                     }
-                    .padding()
-                    
+                    .foregroundColor(.white)
                     Spacer()
                 }
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(currentSelection == product ? Color.yellow : Color.gray, lineWidth: 1)
+                )
+                .shadow(color: currentSelection == product ? Color.yellow.opacity(0.6) : .clear, radius: 4)
+                .padding(.horizontal, 20)
             }
-        }
-        .sheet(isPresented: $chooseDifferentAmount) {
-            patronView
-        }
-    }
-    
-    @ViewBuilder
-    private var patronView: some View {
-        GeometryReader { reader in
-            ZStack {
-                // Main content
-                VStack {
-                    IntroTipScene(
-                        title: "Pay What Feels Right",
-                        bodyText: "",
-                        subtext: "Please support our mission of delivering Jesus, daily peace, love, and transformation to a world in need. Unlocks all features.",
-                        ctaText: "Continue",
-                        showTestimonials: false,
-                        isScholarship: true,
-                        size: reader.size,
-                        callBack: {},
-                        buyCallBack: { subscription in
-                            makePurchase(iap: subscription)
-                        }
-                    )
-                }
-                
-                // ProgressView centered in the middle
-                if declarationStore.isPurchasing {
-                    RotatingLoadingImageView()
-                }
-            }
-        }
-    }
-    
-    var subscriptionStack: some View {
-        VStack {
-            
-            Button {
-                makePurchase()
-            } label: {
-                Text("Try Free & Subscribe")
-                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 20))
-                    .foregroundColor(Constants.DAMidBlue)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(.white)
-                    .cornerRadius(25)
-            }
-            .padding(.horizontal)
-            
-            Text(firstSelection?.displayName ?? "")
-                .font(Font.custom("AppleSDGothicNeo-Regular", size: 12, relativeTo: .callout))
-                .foregroundColor(.white)
-                .padding(.top, 4)
-        }
-        .padding(.vertical)
-        .background(Color(UIColor.systemBackground).opacity(0.2))
-        .cornerRadius(10)
-        .padding()
-    }
-    
-    
-    @ViewBuilder
-    var costDescription: some View {
-        VStack() {
-            Text(currentSelection?.costDescription ?? "")
-                .multilineTextAlignment(.center)
-            
-        }
-        .font(Font.custom("AppleSDGothicNeo-Regular", size: 10, relativeTo: .footnote))
-        .foregroundColor(.white)
-    }
-    
-    
-    private func goPremiumStack() -> some View  {
-        return VStack {
-            continueButton(gradient:  LinearGradient(gradient: Gradient(colors: [.cyan, .black]), startPoint: .top, endPoint: .bottom))
-                .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 6)
-            Spacer()
-                .frame(height: 10)
-            costDescription
-            Spacer()
-                .frame(height: 8)
-            
-            
-            HStack {
-                Button(action: restore) {
-                    Text("Restore", comment: "restore iap")
-                        .font(.caption)
-                        .underline()
-                        .foregroundColor(Color.blue)
-                }
-                
-                Spacer()
-                    .frame(width: 16)
-                
-                Link(destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!) {
-                    Text("Terms & Conditions")
-                        .font(.caption)
-                        .underline()
-                        .foregroundColor(Color.blue)
-                }
-            }
-        }
-        .padding([.leading, .trailing], 20)
-    }
-    
-    func presentDifferentAmount() {
-        chooseDifferentAmount.toggle()
-    }
-    
-    func buy() async {
-        do {
-            guard let currentSelection = currentSelection else { return }
-            if let transaction = try await subscriptionStore.purchaseWithID([currentSelection.id]) {
-                print(currentSelection, transaction.id, transaction.jsonRepresentation, transaction.productType, "RWRW")
-              //  NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
-                Analytics.logEvent(currentSelection.id, parameters: ["backgroundImage": subscriptionStore.testGroup == 0 ? subscriptionStore.onboardingBGImage : onboardingBGImage2])
-               // callback?()
-            }
-        } catch StoreError.failedVerification {
-            errorTitle = "Your purchase could not be verified by the App Store."
-            isShowingError = true
-        } catch {
-            errorTitle = error.localizedDescription
-            isShowingError = true
-        }
-    }
-    
-    private func makePurchase() {
-        impactMed.impactOccurred()
-        Task {
-            withAnimation {
-                declarationStore.isPurchasing = true
-            }
-            await buy()
-            withAnimation {
-                declarationStore.isPurchasing = false
-                callback?()
-                
-            }
-        }
-    }
-    
-    func buy(_ iap: Product) async {
-        do {
-            if let _ = try await subscriptionStore.purchaseWithID([iap.id]) {
-               // NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
-                Analytics.logEvent(iap.id, parameters: ["backgroundImage": subscriptionStore.testGroup == 0 ? subscriptionStore.onboardingBGImage : onboardingBGImage2])
-            }
-        } catch StoreError.failedVerification {
-            print("error RWRW")
-            errorTitle = "Your purchase could not be verified by the App Store."
-            isShowingError = true
-        } catch {
-            print("Failed purchase for \(iap.id): \(error)")
-            errorTitle = error.localizedDescription
-            isShowingError = true
-        }
-    }
-    
-    func makePurchase(iap: Product) {
-        impactMed.impactOccurred()
-        Task {
-            withAnimation {
-                declarationStore.isPurchasing = true
-            }
-            await buy(iap)
-            withAnimation {
-                declarationStore.isPurchasing = false
-                callback?()
-            }
-        }
-    }
-    
-    func buy(_ iap: InAppId.Subscription) async {
-        do {
-            if let _ = try await subscriptionStore.purchaseWithID([iap.rawValue]) {
-               // NotificationManager.shared.scheduleTrialEndingReminder(subscriptionDate: Date())
-                Analytics.logEvent(iap.rawValue, parameters: ["backgroundImage": subscriptionStore.testGroup == 0 ? subscriptionStore.onboardingBGImage : onboardingBGImage2])
-                //callback?()
-            }
-        } catch StoreError.failedVerification {
-            print("error RWRW")
-            errorTitle = "Your purchase could not be verified by the App Store."
-            isShowingError = true
-        } catch {
-            print("Failed purchase for \(iap.rawValue): \(error)")
-            errorTitle = error.localizedDescription
-            isShowingError = true
-        }
-    }
-    
-    private func makePurchase(iap: InAppId.Subscription) {
-        impactMed.impactOccurred()
-        Task {
-            withAnimation {
-                declarationStore.isPurchasing = true
-            }
-            await buy(iap)
-            withAnimation {
-                declarationStore.isPurchasing = false
-                callback?()
-            }
-        }
-    }
-    private func continueButton(gradient: LinearGradient) -> some View {
-        return ShimmerButton(colors: [.white], buttonTitle: currentSelection?.ctaButtonTitle ?? "Subscribe", action: makePurchase, textColor: .black)
-            .opacity(currentSelection != nil ? 1 : 0.5)
-    }
-    // currentSelection == firstSelection ? "Try Free & Subscribe" : "Subscribe"
-    private func restore() {
-        Task {
-            declarationStore.isPurchasing = true
-            try? await AppStore.sync()
-            declarationStore.isPurchasing = false
-            errorTitle = "All purchases restored"
-            isShowingError = true
-        }
-    }
-    
-    
-    func firstSelectionBox() -> some View {
-        ZStack() {
-            RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(currentSelection == firstSelection ? Constants.gold : Color.gray, lineWidth: 1)
-                .background(.clear)
-                .shadow(color: currentSelection == firstSelection ? Color.yellow.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
-                .frame(height: 60)
-            
-            if subscriptionStore.showMostPopularBadge {
-                
+
+            if product.id == subscriptionStore.currentOfferedPremium?.id {
                 HStack {
                     Spacer()
                     
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
                             .fill(Constants.traditionalGold)
-                            .frame(width: 100, height: 30)
+                            .frame(width: 90, height: 30)
                             .cornerRadius(15)
                         
                         Text("Most Popular")
                             .font(.caption2)
                             .foregroundColor(.black)
                     }
-                    //  .padding(.trailing)
-                    .offset(x: -10, y: -36)
+                    .offset(x: -25, y: -10)
+    
                 }
             }
-            
-            HStack {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(firstSelection?.ctaDurationTitle ?? "")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
-                        .bold()
-                    Text(firstSelection?.subTitle ?? "")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 12))
-                    
-                }
-                Spacer()
-            }
-                .foregroundStyle(.white)
-                .padding([.leading, .trailing])
-                
         }
-        
-        .padding([.leading, .trailing], 20)
     }
     
     
-    func weeklySelectionBox() -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(currentSelection == weeklySelection ? Constants.gold : Color.gray, lineWidth: 1)
-                .background(.clear)
-                .shadow(color: currentSelection == weeklySelection ? Color.yellow.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
-                .frame(height: 50)
-            
+    private var goPremiumStack: some View {
+        VStack(spacing: 8) {
+            Button(action: makePurchase) {
+                Text(currentSelection?.ctaButtonTitle ?? "Subscribe")
+                    .font(.system(size: 18, weight: .bold))
+                    .foregroundColor(.black)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(25)
+                    .scaleEffect(pulse ? 1.05 : 1)
+                    .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: pulse)
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            pulse = true
+                        }
+                    }
+                    .padding(.horizontal)
+            }
+            .opacity(currentSelection != nil ? 1 : 0.5)
+
+            Text(currentSelection?.costDescription ?? "")
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 10, relativeTo: .footnote))
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
+
             HStack {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(weeklySelection?.ctaDurationTitle ?? "")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
-                        .bold()
-                    Text(weeklySelection?.subTitle ?? "")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 12))
-                    
+                Button("Restore", action: restore)
+                    .font(.caption)
+                    .underline()
+                    .foregroundColor(.blue)
+
+                Spacer().frame(width: 16)
+
+                Link("Terms & Conditions", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
+                    .font(.caption)
+                    .underline()
+                    .foregroundColor(.blue)
+            }
+        }
+        .padding(.horizontal, 20)
+    }
+
+    private var iPadCloseButton: some View {
+        VStack {
+            HStack {
+                Button(action: dismiss.callAsFunction) {
+                    Image(systemName: "xmark.circle.fill")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.white)
                 }
                 Spacer()
             }
-            .foregroundStyle(.white)
-            .padding([.leading, .trailing])
-            
+            .padding()
+            Spacer()
         }
-        
-        .padding([.leading, .trailing], 20)
     }
-    
-    
-    
-    func secondSelectionBox() -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(currentSelection == secondSelection ? Constants.gold : Color.gray, lineWidth: 1)
-                .background(.clear)
-                .shadow(color: currentSelection == secondSelection ? Color.yellow.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
-                .frame(height: 50)
-            
-            HStack {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(secondSelection?.ctaDurationTitle ?? "")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
-                        .bold()
-                    Text(secondSelection?.subTitle ?? "")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 12))
-                    
-                }
-                Spacer()
+
+    private func startTestimonialRotation() {
+        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { _ in
+            withAnimation {
+                testimonialIndex = (testimonialIndex + 1) % testimonials.count
             }
-            .foregroundStyle(.white)
-            .padding([.leading, .trailing])
-            
         }
-        
-        .padding([.leading, .trailing], 20)
     }
-    
-    func thirdSelectionBox() -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(currentSelection == thirdSelection ? Constants.gold : Color.gray, lineWidth: 1)
-                .background(.clear)
-                .shadow(color: currentSelection == thirdSelection ? Color.yellow.opacity(0.6) : .clear, radius: 4, x: 0, y: 2)
-                .frame(height: 50)
-            
-            HStack {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(thirdSelection?.ctaDurationTitle ?? "")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16))
-                        .bold()
-                    Text(thirdSelection?.subTitle ?? "")
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14))
-                    
+
+    private func makePurchase() {
+        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+        Task {
+            withAnimation { declarationStore.isPurchasing = true }
+            do {
+                if let currentSelection = currentSelection,
+                   let _ = try await subscriptionStore.purchaseWithID([currentSelection.id]) {
+                    Analytics.logEvent(currentSelection.id, parameters: nil)
+                    callback?()
                 }
-                Spacer()
+            } catch {
+                isShowingError = true
             }
-            .foregroundStyle(.white)
-            .padding([.leading, .trailing])
-            
+            withAnimation { declarationStore.isPurchasing = false }
         }
-        
-        .padding([.leading, .trailing], 20)
     }
-    
+
+    private func restore() {
+        Task {
+            declarationStore.isPurchasing = true
+            try? await AppStore.sync()
+            declarationStore.isPurchasing = false
+            isShowingError = true
+        }
+    }
+
+    private var patronView: some View {
+        GeometryReader { reader in
+            ZStack {
+                IntroTipScene(
+                    title: "Pay What Feels Right",
+                    bodyText: "",
+                    subtext: "Please support our mission of delivering Jesus, daily peace, love, and transformation to a world in need. Unlocks all features.",
+                    ctaText: "Continue",
+                    showTestimonials: false,
+                    isScholarship: true,
+                    size: reader.size,
+                    callBack: {},
+                    buyCallBack: { _ in makePurchase() }
+                )
+                if declarationStore.isPurchasing {
+                    RotatingLoadingImageView()
+                }
+            }
+        }
+    }
 }
+
 
 
 struct StarRatingView: View {
@@ -815,59 +598,28 @@ struct StarRatingView: View {
     }
 }
 
-struct TestimonialView: View {
-    var testimonial: TestimonialPost
-    @Namespace private var animationNamespace
-    let size: CGSize
-    
-    @State private var currentTextOpacity: Double = 1.0
-    @State private var textKey: UUID = UUID()
-    
+struct AnimatedHeaderBackground: View {
+    @State private var animate = false
+
     var body: some View {
-        VStack(alignment: .center, spacing: 10) {
-            Text("🌟 Testimonial's 🌟")
-                .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .headline))
-                .padding(.top)
-                .frame(maxWidth: .infinity)
-            
-            TestimonialTextView(text: testimonial.text)
-                .id(textKey)
-                .frame(height: 110)
-                .matchedGeometryEffect(id: "text", in: animationNamespace)
+        ZStack {
+            Image("headerSubscription")
+                .resizable()
+                .scaledToFill()
+                .scaleEffect(animate ? 1.03 : 1)
+                .animation(.easeInOut(duration: 6).repeatForever(autoreverses: true), value: animate)
+
+            // Optional overlay sparkle or glow
+            RadialGradient(gradient: Gradient(colors: [Color.white.opacity(0.05), Color.clear]),
+                           center: .top,
+                           startRadius: 10,
+                           endRadius: 300)
+                .blendMode(.screen)
         }
-        .foregroundColor(.white)
-        .padding()
-        .frame(width: size.width * 0.90, height: size.height * 0.2)
-        .background(Constants.DAMidBlue.opacity(0.9))
-        .cornerRadius(20)
-        .shadow(radius: 5)
-        .padding()
-        .onChange(of: testimonial.text) { _ in
-            textKey = UUID()
+        .onAppear {
+            animate = true
         }
     }
-}
-
-struct TestimonialTextView: View {
-    var text: String
-    
-    var body: some View {
-        Text("\"\(text)\"")
-            .font(.custom("AppleSDGothicNeo-Regular", size: 16))
-        //.font(.body)
-            .fontWeight(.light)
-            .italic()
-            .padding()
-            .transition(.opacity) // Apply a fade transition
-            .animation(.easeInOut(duration: 3.0), value: text) // Animate the opacity transition
-    }
-}
-
-struct Testimonial: Identifiable {
-    var id: Int
-    var text: String
-    var author: String
-    var details: String
 }
 
 
@@ -919,139 +671,3 @@ struct RotatingLoadingImageView_Previews: PreviewProvider {
     }
 }
     
-
-
-import SwiftUI
-
-struct SubscriptionPricingView: View {
-    @State private var selectedPlan: String = "Yearly Pro"
-
-    var body: some View {
-        VStack(spacing: 20) {
-            // Title
-            Text("Choose Your Plan")
-                .font(.title)
-                .fontWeight(.semibold)
-                .foregroundColor(.primary)
-
-            // Plan Options
-            VStack(spacing: 15) {
-                // Pro Plan (Yearly)
-                PlanOptionView(
-                    title: "Pro Yearly",
-                    subtitle: "Save 50% - $24.99/year",
-                    isBestValue: true,
-                    isSelected: selectedPlan == "Yearly Pro"
-                ) {
-                    selectedPlan = "Yearly Pro"
-                }
-
-                // Premium Plan (Yearly)
-                PlanOptionView(
-                    title: "Premium Yearly",
-                    subtitle: "Save 50% - $49.99/year",
-                    isBestValue: true,
-                    isSelected: selectedPlan == "Yearly Premium"
-                ) {
-                    selectedPlan = "Yearly Premium"
-                }
-
-                // Divider
-                Divider()
-                    .padding(.horizontal, 30)
-
-                // Pro Plan (Monthly)
-                PlanOptionView(
-                    title: "Pro Monthly",
-                    subtitle: "$3.99/month",
-                    isBestValue: false,
-                    isSelected: selectedPlan == "Monthly Pro"
-                ) {
-                    selectedPlan = "Monthly Pro"
-                }
-
-                // Premium Plan (Monthly)
-                PlanOptionView(
-                    title: "Premium Monthly",
-                    subtitle: "$7.99/month",
-                    isBestValue: false,
-                    isSelected: selectedPlan == "Monthly Premium"
-                ) {
-                    selectedPlan = "Monthly Premium"
-                }
-            }
-            .padding(.horizontal)
-
-            Spacer()
-
-            // Continue Button
-            Button(action: {
-                print("Selected Plan: \(selectedPlan)")
-            }) {
-                Text("Continue with \(selectedPlan)")
-                    .fontWeight(.bold)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(12)
-            }
-            .padding(.horizontal)
-        }
-        .padding()
-    }
-}
-
-// MARK: - PlanOptionView
-struct PlanOptionView: View {
-    var title: String
-    var subtitle: String
-    var isBestValue: Bool
-    var isSelected: Bool
-    var action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            HStack {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text(title)
-                            .font(.headline)
-                            .foregroundColor(isSelected ? .blue : .primary)
-                        if isBestValue {
-                            Text("BEST VALUE")
-                                .font(.caption)
-                                .foregroundColor(.white)
-                                .padding(5)
-                                .background(Color.orange)
-                                .cornerRadius(5)
-                        }
-                    }
-                    Text(subtitle)
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                }
-                Spacer()
-                if isSelected {
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(.blue)
-                } else {
-                    Image(systemName: "circle")
-                        .foregroundColor(.gray)
-                }
-            }
-            .padding()
-            .background(isSelected ? Color.blue.opacity(0.1) : Color(UIColor.secondarySystemBackground))
-            .cornerRadius(12)
-        }
-        .buttonStyle(PlainButtonStyle())
-    }
-}
-
-struct SubscriptionPricingView_Previews: PreviewProvider {
-    static var previews: some View {
-        SubscriptionPricingView()
-    }
-}
-
-
