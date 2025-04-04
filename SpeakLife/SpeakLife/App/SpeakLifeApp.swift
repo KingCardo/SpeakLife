@@ -40,7 +40,13 @@ struct SpeakLifeApp: App {
                 .environmentObject(timerViewModel)
                 .environmentObject(viewModel)
                 .environmentObject(audioDeclarationViewModel)
+                .onOpenURL { url in
+                    if url.absoluteString == "speaklife://event/daily-declarations" {
+
+                    }
+                }
                 .onAppear {
+                    
                     viewModel.requestPermission()
                     if declarationStore.backgroundMusicEnabled {
                         AudioPlayerService.shared.playSound(files: resources)

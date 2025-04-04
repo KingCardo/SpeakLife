@@ -336,26 +336,6 @@ struct SubscriptionView: View {
         .frame(height: size.height * 0.25)
     }
 
-//    private var headerSection: some View {
-//        ZStack {
-//            Image("headerSubscription")
-//                .resizable()
-//            VStack {
-//                Image("appIconDisplay")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .frame(width: 90, height: 90)
-//                    .clipShape(Circle())
-//                    .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
-//
-//                Text("SpeakLife")
-//                    .font(.system(size: 30, weight: .bold))
-//                    .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
-//            }
-//        }
-//        .frame(height: size.height * 0.25)
-//    }
-
     private var titleSection: some View {
         VStack(spacing: 10) {
             Text("Speak Life Daily. \nWalk in Health & Favor.")
@@ -367,6 +347,7 @@ struct SubscriptionView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
         }
+        .padding(.top, 4)
     }
 
     private var testimonialView: some View {

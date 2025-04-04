@@ -450,7 +450,7 @@ extension Product {
     var costDescription: String {
         if id == yearlyID {
             let monthly = getMonthlyAmount(price: price)
-            return "Totally free for 7 days, then \(monthly)month, billed annually at \(displayPrice)/year. Cancel anytime."
+            return "7 days Free, then \(monthly)month, billed annually at \(displayPrice)/year. Cancel anytime."
         } else if id == lifetimeID {
             return "Pay once, own it for life!"
         } else if id == weeklyID {
