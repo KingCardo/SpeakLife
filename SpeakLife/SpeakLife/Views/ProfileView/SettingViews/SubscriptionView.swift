@@ -283,8 +283,8 @@ struct SubscriptionView: View {
     var callback: (() -> Void)?
 
     private let testimonials = [
+        "Holy Spirit designed",
         "I feel God's presence every time I open this app.",
-            "Holy Spirit designed",
             "It helps me hear God's voice clearer every day.",
             "Scriptures now speak directly to my heart.",
             "More than an app — it’s part of my walk with God.",

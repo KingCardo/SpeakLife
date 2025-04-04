@@ -28,5 +28,6 @@ struct Constants {
     static let lightBlue = Color(red: 0.529, green: 0.808, blue: 0.922)
     static let brightYellow = Color(red: 1.0, green: 0.835, blue: 0.310)
     static let navBlue = Color(hex: "#4DA6FF")
+    static let SLBlue = Color(#colorLiteral(red: 0.1, green: 0.15, blue: 0.3, alpha: 1))
 }
 
