@@ -289,7 +289,7 @@ struct SubscriptionView: View {
             VStack(spacing: 14) {
                 headerSection
                 titleSection
-                FeatureView().padding(.horizontal)
+                FeatureView()//.padding(.horizontal)
                 testimonialView
                 selectionButtons
                 goPremiumStack
@@ -342,7 +342,7 @@ struct SubscriptionView: View {
                 .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .title))
                 .multilineTextAlignment(.center)
 
-            Text("Declare God's promises daily to renew your mind and unlock peace, healing, and purpose.")
+            Text("Declare God's promises daily to renew your mind and unlock healing, peace, and purpose.")
                 .font(Font.custom("AppleSDGothicNeo-Bold", size: 14, relativeTo: .subheadline))
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
@@ -489,7 +489,13 @@ struct SubscriptionView: View {
     private func makePurchase() {
         UIImpactFeedbackGenerator(style: .soft).impactOccurred()
         Task {
-            withAnimation { declarationStore.isPurchasing = true }
+           declarationStore.isPurchasing = true
+            defer {
+                    Task {
+                        try? await Task.sleep(nanoseconds: 1_000_000_000) // 1 second delay
+                        declarationStore.isPurchasing = false
+                    }
+                }
             do {
                 if let currentSelection = currentSelection,
                    let _ = try await subscriptionStore.purchaseWithID([currentSelection.id]) {
@@ -499,7 +505,6 @@ struct SubscriptionView: View {
             } catch {
                 isShowingError = true
             }
-            withAnimation { declarationStore.isPurchasing = false }
         }
     }
 

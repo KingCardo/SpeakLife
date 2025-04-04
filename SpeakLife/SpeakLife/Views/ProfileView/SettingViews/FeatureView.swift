@@ -73,9 +73,9 @@ struct FeatureView: View {
     
     let allFeatures = [
         Feature(subtitle: "Unlock everything"),
-        Feature(subtitle: "Declare God’s Word and unlock His promises"),
-        Feature(subtitle: "Renew your mind with truth-filled devotionals"),
-        Feature(subtitle: "Speak truth that silences fear and restores peace"),
+        Feature(subtitle: "Rewire your thoughts with God's living Word"),
+        Feature(subtitle: "Life-changing truth to renew your mind"),
+        Feature(subtitle: "Declare victory over your health, thoughts, and future"),
         
         ]
     
