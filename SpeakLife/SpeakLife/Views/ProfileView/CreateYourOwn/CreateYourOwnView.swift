@@ -64,7 +64,7 @@ struct CreateYourOwnView: View {
                         .opacity(animate ? 0.6 : 0.3)
                         .animation(.easeInOut(duration: 1.8).repeatForever(autoreverses: true), value: animate)
                     
-                    Image(systemName: "doc.fill.badge.plus")
+                    Image(systemName: "quote.bubble.fill")
                         .resizable()
                         .frame(width: 90, height: 90)
                         .foregroundColor(Constants.DAMidBlue)
@@ -97,17 +97,26 @@ struct CreateYourOwnView: View {
                         .ignoresSafeArea()
                     
                     // 2. Main List with transparent background
-                    List(declarationStore.createOwn.reversed()) { declaration in
-                        ContentRow(declaration, isEditable: true) { declarationString, delete in
-                            if delete {
-                                declarationStore.removeOwn(declaration: declaration)
-                            } else {
-                                edit(declarationString)
+                    List {
+                        ForEach(declarationStore.createOwn.reversed()) { declaration in
+                            ContentRow(declaration, isEditable: true) { declarationString, delete in
+                                if delete {
+                                    declarationStore.removeOwn(declaration: declaration)
+                                } else {
+                                    edit(declarationString)
+                                }
+                            } onSelect: {
+                                selectedDeclaration = declaration
                             }
-                        } onSelect: {
-                            selectedDeclaration = declaration
+                            .listRowBackground(Color.clear)
                         }
-                        .listRowBackground(Color.clear)
+                        .onDelete { indexSet in
+                            let reversed = declarationStore.createOwn.reversed()
+                            for index in indexSet {
+                                let itemToDelete = Array(reversed)[index]
+                                declarationStore.removeOwn(declaration: itemToDelete)
+                            }
+                        }
                     }
                     .scrollContentBackground(.hidden)
                     .background(Color.clear)
@@ -159,7 +168,7 @@ struct CreateYourOwnView: View {
         Button(action: {
             showAffirmationAlert()
         }) {
-            Text("Speak a Promise")
+            Text("Create your own")
                 .font(.system(size: 18, weight: .semibold))
                 .foregroundColor(.white)
                 .padding(.vertical, 14)
@@ -445,20 +454,4 @@ struct AffirmationDetailView: View {
         let size = (text as NSString).size(withAttributes: attributes)
         return size.width
     }
-    //    private func startTypingAnimation() {
-    //        let affirmation = affirmation.text
-    //            timer = Timer.scheduledTimer(withTimeInterval: 0.08, repeats: true) { _ in
-    //                guard displayedText.count < affirmation.count else {
-    //                    timer?.invalidate()
-    //                    timer = nil
-    //                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-    //                        withAnimation { showCursor = false }
-    //                    }
-    //                    return
-    //                }
-    //
-    //                let nextChar = affirmation[affirmation.index(affirmation.startIndex, offsetBy: displayedText.count)]
-    //                displayedText.append(nextChar)
-    //            }
-    //        }
 }
