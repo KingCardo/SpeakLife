@@ -59,15 +59,12 @@ struct CreateYourOwnView: View {
                 ZStack {
                     Circle()
                         .fill(Constants.DAMidBlue.opacity(0.15))
-                        .frame(width: 160, height: 160)
+                        .frame(width: 170, height: 170)
                         .scaleEffect(animate ? 1.1 : 1)
-                        .opacity(animate ? 0.6 : 0.3)
+                        .opacity(animate ? 0.8 : 0.3)
                         .animation(.easeInOut(duration: 1.8).repeatForever(autoreverses: true), value: animate)
                     
-                    Image(systemName: "quote.bubble.fill")
-                        .resizable()
-                        .frame(width: 90, height: 90)
-                        .foregroundColor(Constants.DAMidBlue)
+                    AppLogo(height: 100)
                 }
                 
                 VStack(spacing: 8) {
@@ -95,32 +92,52 @@ struct CreateYourOwnView: View {
                     // 1. Background gradient
                     Gradients().speakLifeCYOCell
                         .ignoresSafeArea()
-                    
-                    // 2. Main List with transparent background
-                    List {
-                        ForEach(declarationStore.createOwn.reversed()) { declaration in
-                            ContentRow(declaration, isEditable: true) { declarationString, delete in
-                                if delete {
-                                    declarationStore.removeOwn(declaration: declaration)
-                                } else {
-                                    edit(declarationString)
+                   // VStack {
+                      
+                        // 2. Main List with transparent background
+                        List {
+                            ForEach(declarationStore.createOwn.reversed()) { declaration in
+                                ContentRow(declaration, isEditable: true) { declarationString, delete in
+                                    if delete {
+                                        declarationStore.removeOwn(declaration: declaration)
+                                    } else {
+                                        edit(declarationString)
+                                    }
+                                } onSelect: {
+                                    selectedDeclaration = declaration
                                 }
-                            } onSelect: {
-                                selectedDeclaration = declaration
+                                .listRowBackground(Color.clear)
                             }
+                            .onDelete { indexSet in
+                                let reversed = declarationStore.createOwn.reversed()
+                                for index in indexSet {
+                                    let itemToDelete = Array(reversed)[index]
+                                    declarationStore.removeOwn(declaration: itemToDelete)
+                                }
+                            }
+                            Section {
+                                HStack {
+                                    Spacer()
+                                    HStack {
+                                        Spacer()
+                                        AppLogo(height: 80)
+                                        Spacer()
+                                    }
+                                    Spacer()
+                                }
+                                .padding(.top, 12)
+                                .padding(.bottom, 40)
+                            }
+                            .listRowInsets(EdgeInsets())
                             .listRowBackground(Color.clear)
                         }
-                        .onDelete { indexSet in
-                            let reversed = declarationStore.createOwn.reversed()
-                            for index in indexSet {
-                                let itemToDelete = Array(reversed)[index]
-                                declarationStore.removeOwn(declaration: itemToDelete)
-                            }
-                        }
-                    }
-                    .scrollContentBackground(.hidden)
-                    .background(Color.clear)
-                    
+                           
+                        .scrollContentBackground(.hidden)
+                        .background(Color.clear)
+                        
+                       
+                        
+                 //   }
                     // 3. NavigationLink hidden trigger
                     NavigationLink(
                         destination:
@@ -410,6 +427,7 @@ struct AffirmationDetailView: View {
                         }
                     }
                     Spacer()
+                    AppLogo(height: 80)
                 }
             }
 

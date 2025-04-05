@@ -360,7 +360,6 @@ struct SubscriptionView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
         }
-       // .padding(.top, 8)
     }
 
     private var testimonialView: some View {
@@ -370,7 +369,6 @@ struct SubscriptionView: View {
             .multilineTextAlignment(.center)
             .padding(.horizontal)
             .transition(.slideFadeFromRight)
-            //.transition(.opacity)
             .id(testimonialIndex)
             .animation(.easeInOut(duration: 0.5), value: testimonialIndex)
     }

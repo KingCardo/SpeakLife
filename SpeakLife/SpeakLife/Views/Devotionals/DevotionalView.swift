@@ -35,33 +35,31 @@ struct DevotionalView: View {
             devotionalView
                 .onAppear {
                     Analytics.logEvent(Event.devotionalTapped, parameters: nil)
-//                    Task {
-//                        await viewModel.fetchDevotional(remoteVersion: subscriptionStore.currentDevotionalVersion)
-//                    }
                 }
                 .alert(isPresented: $viewModel.hasError) {
                     Alert(title: Text(viewModel.errorString))
                 }
         } else {
-            
-            ScrollView {
-               
-                SubscriptionView(size: UIScreen.main.bounds.size)
-                    .onDisappear {
-                        if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
-                            if subscriptionStore.showDevotionalSubscription {
-                                presentDevotionalSubscriptionView = true
-                            }
+                ScrollView {
+                    VStack {
+                        SubscriptionView(size: UIScreen.main.bounds.size)
+                    }
+                    .padding(.bottom, 20) // Add spacing to avoid clipping at the bottom
+                }
+                .navigationTitle("") // Optional: hide nav title
+                .navigationBarHidden(true) // Hide bar if desired
+                .onDisappear {
+                    if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
+                        if subscriptionStore.showDevotionalSubscription {
+                            presentDevotionalSubscriptionView = true
                         }
                     }
-                                .sheet(isPresented: $presentDevotionalSubscriptionView) {
-                                    DevotionalSubscriptionView() {
-                                        presentDevotionalSubscriptionView = false
-                                    }
-                 
                 }
-            }
-            .edgesIgnoringSafeArea(.top)
+                .sheet(isPresented: $presentDevotionalSubscriptionView) {
+                    DevotionalSubscriptionView {
+                        presentDevotionalSubscriptionView = false
+                    }
+                }
         }
     }
     
@@ -78,7 +76,7 @@ struct DevotionalView: View {
                 )
             ScrollViewReader { scrollView in
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 24) {
+                    VStack(alignment: .leading, spacing: 18) {
                         Spacer()
                             .frame(height: 40)
                         if !subscriptionStore.isPremium && !subscriptionStore.isInDevotionalPremium {
@@ -86,6 +84,11 @@ struct DevotionalView: View {
                         }
                     
                         dateLabel
+                        HStack {
+                            Spacer()
+                            AppLogo(height: 90)
+                            Spacer()
+                        }
                         
                         titleLabel
                         

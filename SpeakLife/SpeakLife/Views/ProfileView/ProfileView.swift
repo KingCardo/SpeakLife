@@ -77,16 +77,10 @@ struct ProfileView: View {
             VStack {
                 VStack {
             Spacer().frame(height: 8)
-            Image(uiImage: UIImage(named: "appIconDisplay") ?? UIImage())
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 70, height: 70)
-                .clipShape(Circle())
-                .offset(x: 0, y: 0)
                     
-                    Text("SpeakLife")
-                        .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .title))
-            
+            AppLogo(height: 80)
+
+
             Spacer().frame(height: 8)
         }
                 List {

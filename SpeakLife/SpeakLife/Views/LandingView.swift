@@ -39,7 +39,7 @@ struct AnimatedAppIconView: View {
     @State private var fadeOut = false
 
     var body: some View {
-        Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
+        Image(uiImage: UIImage(named: "appIconDisplay") ?? UIImage())
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 250, height: 250)

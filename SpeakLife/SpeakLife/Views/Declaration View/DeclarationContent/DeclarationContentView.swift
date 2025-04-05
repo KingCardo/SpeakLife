@@ -10,6 +10,23 @@ import FirebaseAnalytics
 import UIKit
 import AVFoundation
 
+struct AppLogo: View {
+    let height: CGFloat
+    var fontSize: CGFloat = 26
+    var body: some View {
+        VStack {
+            Image(uiImage: UIImage(named: "appIconDisplay") ?? UIImage())
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: height, height: height)
+                .clipShape(Circle())
+            Text("SpeakLife")
+                .font(.system(size: fontSize, weight: .bold))
+                .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
+                .foregroundColor(.white)
+        }
+    }
+}
 struct DeclarationContentView: View {
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -154,9 +171,10 @@ struct DeclarationContentView: View {
         VStack {
             
             Spacer()
+            screenshotLabel()
             intentStackButtons(declaration: declaration)
                 .opacity(appState.showScreenshotLabel ? 0 : 1)
-            screenshotLabel()
+            
             Spacer()
                 .frame(height: horizontalSizeClass == .compact ? geometry.size.height * 0.10 : geometry.size.height * 0.25)
         }
@@ -225,17 +243,8 @@ struct DeclarationContentView: View {
     @ViewBuilder
     private func screenshotLabel() -> some View {
         if appState.showScreenshotLabel, !subscriptionStore.isPremium {
-            VStack {
-                Image(uiImage: UIImage(named: "appIconDisplay") ?? UIImage())
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
-                Text("SpeakLife")
-                    .font(.system(size: 26, weight: .bold))
-                    .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
-            }
-        }
+            AppLogo(height: 90)
+       }
         
     }
     
