@@ -351,7 +351,7 @@ struct SubscriptionView: View {
     private var titleSection: some View {
         Spacer().frame(height: 4)
         VStack(spacing: 10) {
-            Text("Speak Life Daily. \nWalk in Health & Favor.")
+            Text("Speak Life Daily. \nWalk in Health, Favor & Provision.")
                 .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .title))
                 .multilineTextAlignment(.center)
 
