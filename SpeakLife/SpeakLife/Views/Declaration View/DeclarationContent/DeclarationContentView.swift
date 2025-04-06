@@ -171,9 +171,10 @@ struct DeclarationContentView: View {
         VStack {
             
             Spacer()
-            screenshotLabel()
+            
             intentStackButtons(declaration: declaration)
                 .opacity(appState.showScreenshotLabel ? 0 : 1)
+            
             
             Spacer()
                 .frame(height: horizontalSizeClass == .compact ? geometry.size.height * 0.10 : geometry.size.height * 0.25)
@@ -242,15 +243,16 @@ struct DeclarationContentView: View {
     
     @ViewBuilder
     private func screenshotLabel() -> some View {
-        if appState.showScreenshotLabel, !subscriptionStore.isPremium {
+        if appState.showScreenshotLabel {
             AppLogo(height: 90)
        }
-        
     }
     
     private func quoteLabel(_ declaration: Declaration, _ geometry: GeometryProxy) -> some View  {
         
         VStack(spacing: 1) {
+            
+            screenshotLabel()
             Spacer()
                     .frame(height: geometry.size.height * 0.05)
             
