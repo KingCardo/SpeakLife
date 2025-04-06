@@ -172,14 +172,18 @@ struct DeclarationContentView: View {
             
             Spacer()
             
-            intentStackButtons(declaration: declaration)
-                .opacity(appState.showScreenshotLabel ? 0 : 1)
-            
+                        intentStackButtons(declaration: declaration)
+                            .opacity(appState.showScreenshotLabel ? 0 : 1)
+            VStack {
+                screenshotLabel()
+                Spacer()
+                    .frame(height: geometry.size.height * 0.05)
+            }
             
             Spacer()
                 .frame(height: horizontalSizeClass == .compact ? geometry.size.height * 0.10 : geometry.size.height * 0.25)
+            
         }
-        
     }
     
     func showButtonsInSequence() {
@@ -252,7 +256,6 @@ struct DeclarationContentView: View {
         
         VStack(spacing: 1) {
             
-            screenshotLabel()
             Spacer()
                     .frame(height: geometry.size.height * 0.05)
             
