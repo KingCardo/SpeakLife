@@ -39,16 +39,9 @@ struct FeatureRow: View {
         HStack(alignment: .firstTextBaseline) {
             Spacer()
                 .frame(width: 4)
-            Image(systemName: feature.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 10, height: 10)
-                .padding(.trailing, 8)
-                .foregroundColor(Constants.traditionalGold)
             VStack(alignment: .leading) {
-                
                 Text(feature.subtitle)
-                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .font(.system(size: 14, weight: .semibold, design: .rounded))
                 
             }
             Spacer()
@@ -72,10 +65,17 @@ struct FeatureView: View {
         ]
     
     let allFeatures = [
-        Feature(subtitle: "Unlock everything"),
-        Feature(subtitle: "Rewire your thoughts with God's living Word"),
-        Feature(subtitle: "Life-changing truth to renew your mind"),
-        Feature(subtitle: "Declare victory over your health, thoughts, and future"),
+       // Feature(subtitle: "Unlock everything"),
+        Feature(subtitle: "🛡️ God's Protection over your mind, body, and spirit"),
+        Feature(subtitle: "💖 Grace that empowers, not condemns"),
+        Feature(subtitle: "🙏 Devotionals filled with God's love and wisdom"),
+        Feature(subtitle: "❤️ Healing and health anchored in the Word"),
+        Feature(subtitle: "🌿 Feel God’s presence daily and walk in peace"),
+        
+//        Feature(subtitle: "Unlock everything"),
+//        Feature(subtitle: "Rewire your thoughts with God's living Word"),
+//        Feature(subtitle: "Life-changing truth to renew your mind"),
+//        Feature(subtitle: "Declare victory over your health, thoughts, and future"),
         
         ]
     
@@ -91,7 +91,7 @@ struct FeatureView: View {
         VStack {
             ForEach(valueProps) { feature in
                 FeatureRow(feature: feature)
-                Spacer().frame(height: 15)
+                Spacer().frame(height: 8)
                 
             }
         }

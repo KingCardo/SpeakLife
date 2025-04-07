@@ -29,16 +29,6 @@ struct CategoryCell: View {
     
     var body: some View {
         categoryCell(size: size)
-            .opacity(appear ? 1 : 0)
-            .scaleEffect(appear ? 1 : 0.94)
-            .animation(
-                .spring(response: 0.55, dampingFraction: 0.85)
-                    .delay(Double(category.id.hashValue % 10) * 0.05),
-                value: appear
-            )
-            .onAppear {
-                appear = true
-            }
     }
     
     @ViewBuilder

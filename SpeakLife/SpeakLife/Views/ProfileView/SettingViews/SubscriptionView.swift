@@ -351,14 +351,12 @@ struct SubscriptionView: View {
     private var titleSection: some View {
         Spacer().frame(height: 4)
         VStack(spacing: 10) {
-            Text("Speak Life Daily. \nWalk in Health, Favor & Provision.")
+            Text("Speak Life")
                 .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .title))
                 .multilineTextAlignment(.center)
-
-            Text("Declare God's promises daily to renew your mind and unlock healing, peace, and purpose.")
-                .font(Font.custom("AppleSDGothicNeo-Bold", size: 14, relativeTo: .subheadline))
+            Text("Live Healed, Loved, and Covered by God.")
+                .font(Font.custom("AppleSDGothicNeo-Bold", size: 20, relativeTo: .title))
                 .multilineTextAlignment(.center)
-                .padding(.horizontal)
         }
     }
 

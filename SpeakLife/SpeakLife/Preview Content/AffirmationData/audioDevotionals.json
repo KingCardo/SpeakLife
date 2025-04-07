@@ -2,6 +2,22 @@
     "version": 1,
     "audios": [
         {
+            "id": "speaklife-s2ep10.mp3",
+            "title": "Godly Imagination",
+            "subtitle": "S2 Episode 10",
+            "duration": "3m",
+            "imageUrl": "devotional",
+            "isPremium": true
+        },
+        {
+            "id": "speaklife-s2ep9.mp3",
+            "title": "Fear Is a Liar",
+            "subtitle": "S2 Episode 9",
+            "duration": "3m",
+            "imageUrl": "devotional",
+            "isPremium": true
+        },
+        {
             "id": "speaklife-s2ep8.mp3",
             "title": "Mental Health and the Holy Spirit",
             "subtitle": "S2 Episode 8",

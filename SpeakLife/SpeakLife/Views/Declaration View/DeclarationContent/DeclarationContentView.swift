@@ -149,6 +149,7 @@ struct DeclarationContentView: View {
     
     func prepareShareItems() -> [UIImage] {
         guard let image = image else { return [] }
+        ImageSaver().writeToPhotoAlbum(image: image)
      //   let message = "Check out SpeakLife - Bible Meditation and email speaklife@diosesaqui.com for a 30-day free pass. \n\(APP.Product.urlID)"
         return [image]//, message]
     }
@@ -452,6 +453,21 @@ struct ShareSheet: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
         
+    }
+}
+
+
+class ImageSaver: NSObject {
+    func writeToPhotoAlbum(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveCompleted), nil)
+    }
+
+    @objc private func saveCompleted(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            print("❌ Save failed: \(error.localizedDescription)")
+        } else {
+            print("✅ Saved to Photos")
+        }
     }
 }
 

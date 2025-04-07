@@ -47,15 +47,14 @@ struct OnboardingView: View  {
                 IntroTipScene(
                     title: "Welcome to SpeakLife",//"Your Mind is a Battlefield",
                     bodyText: """
-You’re about to start a powerful journey of renewing your mind and speaking life, every single day.
+You’re about to speak God’s promises over your life.
+This is your daily space for peace, protection, and purpose.
 
-Let God’s Word be the loudest voice in your life.
-
-Peace, healing, clarity, and purpose are just ahead.
+Let His Word renew your mind, heal your body, and fill your day with hope.
 """,
         
                     subtext: "",
-                    ctaText: "Step Into Your Jesus Identity",
+                    ctaText: "Step Into Peace, Protection & Grace",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size
@@ -66,9 +65,20 @@ Peace, healing, clarity, and purpose are just ahead.
                     .tag(Tab.transformedLife)
                 
                 IntroTipScene(
-                    title: "Feeling stressed, stuck, or like God is distant?",
-                    bodyText: "When you speak what Jesus says about you, your thoughts change, your heart is made new, and your purpose becomes clear.\n\nPeace, identity, and bold faith — one day at a time."
-                    ,
+                    title: "Feeling anxious, overwhelmed, or stuck?",
+                    bodyText: """
+                    You’re not alone. But you were never meant to stay there.
+
+                    When you speak what Jesus says about you:
+
+                    Your thoughts shift
+
+                    Your heart heals
+
+                    Peace replaces pressure
+
+                    It only takes minutes a day.
+                    """,
                     subtext: "",
                     ctaText: "Next",
                     showTestimonials: false,
@@ -82,14 +92,15 @@ Peace, healing, clarity, and purpose are just ahead.
                
                 
                 IntroTipScene(
-                    title: "You were created to live in peace, power, and purpose.",
+                    title: "Speak Life Daily. Walk in Health, Grace, and God’s Protection.",
                     bodyText:"""
-                    Thousands are transforming their lives by declaring God’s promises.
-                    You can too.
+                    Thousands are using SpeakLife to declare God’s Word
+                    —and it’s changing everything.
                     
-                    • Speak what God says about you daily
-                    • Unlock health, joy, and abundance
-                    • Build unshakable faith in just minutes a day
+                    With just minutes a day, you’ll:
+                    • Speak powerful truth over your mind and body
+                    • Unlock healing, joy, and clarity
+                    • Grow in bold, unshakable faith
                     """,
                     subtext: "",
                     ctaText: "Start Speaking Life",
