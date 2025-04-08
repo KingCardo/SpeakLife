@@ -103,10 +103,6 @@ struct OfferPageView: View {
                         RotatingLoadingImageView()
                     }
                     
-                    if !subscriptionStore.showSubscriptionFirst {
-                        FeatureView()
-                            .foregroundStyle(.white)
-                    }
                     
                     HStack(spacing: 10) {
                         VStack {

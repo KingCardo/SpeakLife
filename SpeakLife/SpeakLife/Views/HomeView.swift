@@ -34,33 +34,45 @@ struct HomeView: View {
    
     @State var showGiftView = false
     @State private var isPresented = false
+    @State var showSubscription = false
     
     private let currentVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0.0"
 
     let data = [true, false]
     var body: some View {
-        Group {
-            if isShowingLanding {
-                LandingView()
-            } else if appState.isOnboarded {
-                homeView
-                    .onAppear() {
-                        audioDeclarationViewModel.fetchAudio(version: subscriptionStore.audioRemoteVersion)
-                        declarationStore.setRemoteDeclarationVersion(version: subscriptionStore.remoteVersion)
-                        Task {
-                            await devotionalViewModel.fetchDevotional(remoteVersion: subscriptionStore.currentDevotionalVersion)
+       
+            Group {
+                if isShowingLanding {
+                    LandingView()
+                } else if appState.isOnboarded {
+                        homeView
+                            .onAppear() {
+                                showSubscription = subscriptionStore.showSubscription && !subscriptionStore.isPremium && !appState.firstOpen
+                                audioDeclarationViewModel.fetchAudio(version: subscriptionStore.audioRemoteVersion)
+                                declarationStore.setRemoteDeclarationVersion(version: subscriptionStore.remoteVersion)
+                                Task {
+                                    await devotionalViewModel.fetchDevotional(remoteVersion: subscriptionStore.currentDevotionalVersion)
+                                }
+                                if appState.firstOpen {
+                                    appState.firstOpen = false
+                                }
+                            }
+                            .sheet(isPresented: $showSubscription, content: {
+                                GeometryReader { proxy in
+                                    SubscriptionView(size: proxy.size)
+                                        .frame(height:  UIScreen.main.bounds.height * 0.96)
+                                }
+                            
+                            })
+                  
+                } else {
+                    OnboardingView()
+                        .onAppear {
+                            viewModel.requestPermission()
                         }
-                        if appState.firstOpen {
-                            appState.firstOpen = false
-                        }
-                    }
-            } else {
-                OnboardingView()
-                    .onAppear {
-                        viewModel.requestPermission()
                 }
             }
-        }
+        
     }
     
     @ViewBuilder

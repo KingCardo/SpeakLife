@@ -88,21 +88,19 @@ Let His Word renew your mind, heal your body, and fill your day with hope.
                         advance()
                 }
                     .tag(Tab.mindset)
-                
-               
-                
+                                
                 IntroTipScene(
-                    title: "Speak Life Daily. Walk in Health, Grace, and God’s Protection.",
+                    title: "Speak Life daily and walk in God’s protection, grace, and peace.",
                     bodyText:"""
-                    Thousands are using SpeakLife to declare God’s Word
-                    —and it’s changing everything.
-                    
-                    With just minutes a day, you’ll:
-                    • Speak powerful truth over your mind and body
-                    • Unlock healing, joy, and clarity
-                    • Grow in bold, unshakable faith
+                    Over 70,000+ are using SpeakLife to declare God’s Word—
+                    and it’s changing everything.
                     """,
-                    subtext: "",
+                    subtext: """
+    
+    With just minutes a day, you’ll:
+    
+    """,
+                    bullets: ["Speak powerful truth over your mind and body", "Unlock healing, joy, and clarity", "Grow in bold, unshakable faith"],
                     ctaText: "Start Speaking Life",
                     showTestimonials: false,
                     isScholarship: false,

@@ -7,6 +7,22 @@
 
 import SwiftUI
 
+struct FeatureBullet: View {
+    let text: String
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 8) {
+            Image(systemName: "checkmark.circle.fill")
+                .foregroundColor(.blue)
+            Text(text)
+                .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
+                .foregroundColor(.white)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+}
+
+
 struct IntroTipScene: View {
     
     @EnvironmentObject var viewModel: DeclarationViewModel
@@ -23,6 +39,7 @@ struct IntroTipScene: View {
     let title: String
     let bodyText: String
     let subtext: String
+    var bullets: [String] = []
     let ctaText: String
     let showTestimonials: Bool
     let isScholarship: Bool
@@ -82,16 +99,31 @@ struct IntroTipScene: View {
                     //.lineLimit(nil)
                     
                     Text(subtext)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
                         .foregroundColor(.white)
-                        .multilineTextAlignment(.center)
+                        .multilineTextAlignment(.leading)
                         .lineSpacing(8)
                         .opacity(showText ? 1 : 0)
                         .offset(y: showText ? 0 : 20)
                         .animation(.easeOut(duration: 1).delay(0.5), value: showText)
                     // was 8
                         .lineLimit(nil)
+                    
+                   
                 }
+                
+            }
+            Spacer()
+                .frame(width: 5, height: size.height * 0.02)
+            ForEach(bullets, id: \.self) { bullet in
+                HStack {
+                    VStack {
+                        FeatureBullet(text: bullet)
+                        Spacer()
+                            .frame(width: 5, height: size.height * 0.02)
+                    }
+                    Spacer()
+                }.padding([.leading])
             }
             
             Spacer()

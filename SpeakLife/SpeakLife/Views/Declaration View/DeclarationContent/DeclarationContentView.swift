@@ -149,7 +149,7 @@ struct DeclarationContentView: View {
     
     func prepareShareItems() -> [UIImage] {
         guard let image = image else { return [] }
-        ImageSaver().writeToPhotoAlbum(image: image)
+       // ImageSaver().writeToPhotoAlbum(image: image)
      //   let message = "Check out SpeakLife - Bible Meditation and email speaklife@diosesaqui.com for a 30-day free pass. \n\(APP.Product.urlID)"
         return [image]//, message]
     }
