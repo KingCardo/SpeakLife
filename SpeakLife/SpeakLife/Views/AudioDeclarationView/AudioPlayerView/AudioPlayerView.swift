@@ -43,8 +43,9 @@ struct AudioPlayerView: View {
                     // Cover Image
                     Image(imageUrl)
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .aspectRatio(contentMode: .fill)
                         .frame(width: viewModel.isPlaying ? proxy.size.width * 0.9 : proxy.size.width * 0.7, height: viewModel.isPlaying ? proxy.size.width * 0.9 : proxy.size.width * 0.7)
+                        .clipped()
                         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                         .shadow(radius: 12)
                         //.scaleEffect(viewModel.isPlaying ? 1.0 : 0.75)
