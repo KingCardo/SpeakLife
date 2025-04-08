@@ -10,20 +10,17 @@ import StoreKit
 
 struct Feature: Codable, Identifiable {
     var id = UUID()
-    var name: String
     var subtitle: String
-    var imageName: String = "checkmark"
+    var imageName: String = "checkmark.circle.fill"
     
-    init(id: UUID = UUID(), name: String, subtitle: String, imageName: String) {
+    init(id: UUID = UUID(), subtitle: String, imageName: String) {
         self.id = id
-        self.name = name
         self.subtitle = subtitle
         self.imageName = imageName
     }
     
     init(subtitle: String) {
         self.id = UUID()
-        self.name = ""
         self.subtitle = subtitle
     }
 
@@ -39,6 +36,12 @@ struct FeatureRow: View {
         HStack(alignment: .firstTextBaseline) {
             Spacer()
                 .frame(width: 4)
+//            Image(systemName: feature.imageName)
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(width: 14, height: 14)
+//                .padding(.trailing, 8)
+//                .foregroundColor(.white)
             VStack(alignment: .leading) {
                 Text(feature.subtitle)
                     .font(.system(size: 14, weight: .semibold, design: .rounded))
@@ -71,6 +74,13 @@ struct FeatureView: View {
         Feature(subtitle: "🙏 Devotionals filled with God's love and wisdom"),
         Feature(subtitle: "❤️ Healing and health anchored in the Word"),
         Feature(subtitle: "🌿 Feel God’s presence daily and walk in peace"),
+
+//        Feature(subtitle: "God's Protection over your mind, body, and spirit"),
+//        Feature(subtitle: "Grace that empowers, not condemns"),
+//        Feature(subtitle: "Devotionals filled with God's love and wisdom"),
+//        Feature(subtitle: "Healing and health anchored in the Word"),
+//        Feature(subtitle: "Feel God’s presence daily and walk in peace")
+
         
 //        Feature(subtitle: "Unlock everything"),
 //        Feature(subtitle: "Rewire your thoughts with God's living Word"),
@@ -81,9 +91,9 @@ struct FeatureView: View {
     
     let features: [Feature] = [
 
-        Feature(name: "Prosperity", subtitle: "Those who delight in the Lord and meditate day and night prosper in everything they do! Psalm 1:2-3", imageName: "infinity"),
-        Feature(name: "Inner Peace & Joy", subtitle: "Unlimited affirmations, Guided Prayers, and more to declare and activate a life of prosperity, peace, and health for yourself and your loved ones."/* Start declaring your blessings today!**Declare and fulfill a long, prosperous, peaceful life for you and your family."*/, imageName: "sparkles"),
-        Feature(name: "Guidance & Wisdom", subtitle: "365+ Daily Devotionals to grow with Jesus"/*Receive Jesus's love and be victorious from guilt, anxiety, and fear."*/, imageName: "book.fill"),
+//        Feature(name: "Prosperity", subtitle: "Those who delight in the Lord and meditate day and night prosper in everything they do! Psalm 1:2-3", imageName: "infinity"),
+//        Feature(name: "Inner Peace & Joy", subtitle: "Unlimited affirmations, Guided Prayers, and more to declare and activate a life of prosperity, peace, and health for yourself and your loved ones."/* Start declaring your blessings today!**Declare and fulfill a long, prosperous, peaceful life for you and your family."*/, imageName: "sparkles"),
+//        Feature(name: "Guidance & Wisdom", subtitle: "365+ Daily Devotionals to grow with Jesus"/*Receive Jesus's love and be victorious from guilt, anxiety, and fear."*/, imageName: "book.fill"),
      
     ]
 
