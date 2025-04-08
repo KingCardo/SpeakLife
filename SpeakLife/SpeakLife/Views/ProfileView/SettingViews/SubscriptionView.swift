@@ -328,6 +328,8 @@ struct SubscriptionView: View {
             AnimatedHeaderBackground()
 
             VStack {
+                Spacer()
+                    .frame(height: size.height * 0.06)
                 Image("appIconDisplay")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -336,7 +338,7 @@ struct SubscriptionView: View {
                     .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
 
                 Text("SpeakLife")
-                    .font(.system(size: 30, weight: .bold))
+                    .font(.system(size: 26, weight: .bold))
                     .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
             }
         }
@@ -345,22 +347,23 @@ struct SubscriptionView: View {
 
     @ViewBuilder
     private var titleSection: some View {
-        Spacer().frame(height: 4)
+        Spacer().frame(height: 12)
         VStack(spacing: 10) {
     
-            Text("Live Healed, Loved, and Covered by God.")
-                .font(Font.custom("AppleSDGothicNeo-Bold", size: 22, relativeTo: .title))
+            Text("Speak life daily with affirmations, devotionals, & prayer")
+                .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .title))
                 .multilineTextAlignment(.center)
-            Text("Daily affirmations, devotionals, prayers, and more — for your peace, health, and breakthrough.")
-                .font(Font.custom("AppleSDGothicNeo-Bold", size: 14, relativeTo: .title))
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.gray)
+//            Text("to rewire your thoughts and experience God’s peace, healing, and purpose")
+//                .font(Font.custom("AppleSDGothicNeo-Bold", size: 16, relativeTo: .subheadline))
+//                .multilineTextAlignment(.center)
+//                .foregroundStyle(.gray)
         }
     }
 
     private var testimonialView: some View {
         Text("\"\(testimonials[testimonialIndex])\"")
-            .font(.system(size: 15, weight: .medium, design: .rounded))
+            .font(.system(size: 12, weight: .medium, design: .default))
+            .italic()
             .foregroundColor(.white.opacity(0.9))
             .multilineTextAlignment(.center)
             .padding(.horizontal)

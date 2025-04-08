@@ -36,15 +36,16 @@ struct FeatureRow: View {
         HStack(alignment: .firstTextBaseline) {
             Spacer()
                 .frame(width: 4)
-//            Image(systemName: feature.imageName)
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 14, height: 14)
-//                .padding(.trailing, 8)
-//                .foregroundColor(.white)
+            Image(systemName: feature.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 14, height: 14)
+                .padding(.trailing, 8)
+                .foregroundColor(Constants.gold)
             VStack(alignment: .leading) {
                 Text(feature.subtitle)
-                    .font(.system(size: 14, weight: .semibold, design: .rounded))
+                    .font(.caption)
+                   // .font(.system(size: 14, weight: .medium, design: .rounded))
                 
             }
             Spacer()
@@ -69,17 +70,18 @@ struct FeatureView: View {
     
     let allFeatures = [
        // Feature(subtitle: "Unlock everything"),
-        Feature(subtitle: "🛡️ God's Protection over your mind, body, and spirit"),
-        Feature(subtitle: "💖 Grace that empowers, not condemns"),
-        Feature(subtitle: "🙏 Devotionals filled with God's love and wisdom"),
-        Feature(subtitle: "❤️ Healing and health anchored in the Word"),
-        Feature(subtitle: "🌿 Feel God’s presence daily and walk in peace"),
-
-//        Feature(subtitle: "God's Protection over your mind, body, and spirit"),
-//        Feature(subtitle: "Grace that empowers, not condemns"),
-//        Feature(subtitle: "Devotionals filled with God's love and wisdom"),
-//        Feature(subtitle: "Healing and health anchored in the Word"),
-//        Feature(subtitle: "Feel God’s presence daily and walk in peace")
+//        Feature(subtitle: "🛡️ God's Protection over your mind and body"),
+//        Feature(subtitle: "🙏 Devotionals filled with God's love & wisdom"),
+//        Feature(subtitle: "❤️ Healing & health anchored in the Word"),
+//        Feature(subtitle: "🌿 Feel God’s presence daily"),
+//        Feature(subtitle: "💖 Grace that empowers"),
+       
+       
+        Feature(subtitle: "God's Protection over your mind and body"),
+        Feature(subtitle: "Grace that empowers, not condemns"),
+        Feature(subtitle: "Devotionals filled with God's love and wisdom"),
+        Feature(subtitle: "Healing and health anchored in the Word"),
+        Feature(subtitle: "Rewire your thoughts, renew your mind")
 
         
 //        Feature(subtitle: "Unlock everything"),

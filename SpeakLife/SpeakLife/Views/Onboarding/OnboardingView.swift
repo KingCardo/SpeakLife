@@ -185,7 +185,7 @@ Let His Word renew your mind, heal your body, and fill your day with hope.
                 //withAnimation {
                     advance()
               //  }
-            }
+            }.frame(height: UIScreen.main.bounds.height * 0.96)
             
             VStack  {
                 HStack  {

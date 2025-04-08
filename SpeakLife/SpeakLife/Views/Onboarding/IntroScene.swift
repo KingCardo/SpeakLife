@@ -108,23 +108,26 @@ struct IntroTipScene: View {
                         .animation(.easeOut(duration: 1).delay(0.5), value: showText)
                     // was 8
                         .lineLimit(nil)
-                    
+                    Spacer()
+                        .frame(width: 5, height: size.height * 0.02)
+                    ForEach(bullets, id: \.self) { bullet in
+                        HStack {
+                            VStack {
+                                FeatureBullet(text: bullet)
+                                Spacer()
+                                    .frame(width: 5, height: size.height * 0.02)
+                            }
+                            Spacer()
+                        }.padding([.leading])
+                    }
+                    .opacity(showText ? 1 : 0)
+                    .offset(y: showText ? 0 : 20)
+                    .animation(.easeOut(duration: 1).delay(0.7), value: showText)
                    
                 }
                 
             }
-            Spacer()
-                .frame(width: 5, height: size.height * 0.02)
-            ForEach(bullets, id: \.self) { bullet in
-                HStack {
-                    VStack {
-                        FeatureBullet(text: bullet)
-                        Spacer()
-                            .frame(width: 5, height: size.height * 0.02)
-                    }
-                    Spacer()
-                }.padding([.leading])
-            }
+          
             
             Spacer()
             ShimmerButton(colors: [.blue], buttonTitle: ctaText, action: buttonTouched)
