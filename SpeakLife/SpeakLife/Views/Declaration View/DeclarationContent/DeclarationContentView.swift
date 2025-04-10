@@ -124,6 +124,7 @@ struct DeclarationContentView: View {
                 askForReview()
                 let declaration = viewModel.declarations[newIndex]
                 viewModel.setCurrent(declaration)
+                viewModel.showVerse = false
                 
             }
                 

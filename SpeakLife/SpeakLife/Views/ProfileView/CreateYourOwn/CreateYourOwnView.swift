@@ -407,7 +407,9 @@ struct AffirmationDetailView: View {
                     }
                     
                     ZStack(alignment: .topLeading) {
+                       
                         if showCursor {
+                            VStack {
                             Text(displayedText + "|")
                                 .font(.system(size: dynamicFontSize, weight: .bold))
                                 .foregroundColor(.white)
@@ -419,15 +421,23 @@ struct AffirmationDetailView: View {
                                         .shadow(color: Color.white.opacity(0.1), radius: 6)
                                 )
                                 .animation(.easeInOut(duration: 0.5).repeatForever(autoreverses: true), value: showCursor)
+                            Spacer()
+                                .frame(height: UIScreen.main.bounds.height * 0.1)
+                            AppLogo(height: 80)
+                        }
                         } else {
-                            Text(displayedText)
-                                .font(.system(size: dynamicFontSize, weight: .bold))
-                                .foregroundColor(.white)
-                                .padding(12)
+                            VStack {
+                                Text(displayedText)
+                                    .font(.system(size: dynamicFontSize, weight: .bold))
+                                    .foregroundColor(.white)
+                                    .padding(12)
+                                Spacer()
+                                    .frame(height: UIScreen.main.bounds.height * 0.1)
+                                AppLogo(height: 80)
+                            }
                         }
                     }
                     Spacer()
-                    AppLogo(height: 80)
                 }
             }
 

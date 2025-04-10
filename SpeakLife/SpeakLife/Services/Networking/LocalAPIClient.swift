@@ -25,7 +25,6 @@ final class LocalAPIClient: APIService {
         if firstInstallDate == nil {
             firstInstallDate = Date()
         }
-        
         self.loadFromBackEnd() { [weak self] declarations, error, needsSync in
             var favorites: [Declaration] = []
             var myOwn: [Declaration] = []
@@ -181,13 +180,15 @@ final class LocalAPIClient: APIService {
     }
     
     private func loadFromBackEnd(completion: @escaping([Declaration], APIError?, Bool) ->  Void) {
-        if localVersion < remoteVersion {
+        let twentyFourHoursAgo = Date().addingTimeInterval(-86400)
+        if localVersion < remoteVersion, lastRemoteFetchDate ?? Date() <= twentyFourHoursAgo {
             fetchDeclarationData(tryLocal: false) { [weak self] data in
+                self?.lastRemoteFetchDate = Date()
                 if let data = data {
                     do {
                         let welcome = try JSONDecoder().decode(Welcome.self, from: data)
                         let declarations = Set(welcome.declarations)
-                        self?.localVersion = welcome.version
+                        self?.localVersion = self?.remoteVersion ?? 2
                         let array = Array(declarations)
                         // self?.declarationCountBE = array.count
                         completion(array, nil, true)

@@ -176,7 +176,6 @@ final class DeclarationViewModel: ObservableObject {
     
     func setCurrent(_ declaration: Declaration) {
         currentDeclaration = declaration
-        showVerse = false
     }
     
     func toggleDeclaration(_ declaration: Declaration) {
