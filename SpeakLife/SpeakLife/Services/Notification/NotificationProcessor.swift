@@ -28,8 +28,8 @@ final class NotificationProcessor {
                              categories: [DeclarationCategory]? = nil,
                              completion: @escaping([NotificationData]) -> Void) {
         
-        DispatchQueue.global(qos: .userInitiated).sync {
-            getDeclarations()
+//        DispatchQueue.global(qos: .userInitiated).sync {
+//            getDeclarations()
             
             guard allDeclarations.count >= count else { 
                 completion([])
@@ -53,13 +53,14 @@ final class NotificationProcessor {
                 }
             } else {
                 for category in categories! {
-                    fetchDeclarations(for: category) { declarations in
-                        guard declarations.count >= count else { completion([]); return }
+                    let categoryDeclarations = allDeclarations.filter { $0.category == category }
+                   // fetchDeclarations(for: category) { declarations in
+                        guard categoryDeclarations.count >= count else { completion([]); return }
                         let divisor = (count/categories!.count)
-                        let endpoint = min(divisor, declarations.count - 1)
-                        let notificationCategories = declarations.shuffled()[0...endpoint]
+                        let endpoint = min(divisor, categoryDeclarations.count - 1)
+                        let notificationCategories = categoryDeclarations.shuffled()[0...endpoint]
                         categoryReminders.append(contentsOf: notificationCategories)
-                    }
+                 //   }
                 }
                 if categoryReminders.count >= count {
                     data = parse(categoryReminders, count: count)
@@ -69,7 +70,7 @@ final class NotificationProcessor {
             }
             completion(data)
             return
-        }
+       // }
         
     }
     

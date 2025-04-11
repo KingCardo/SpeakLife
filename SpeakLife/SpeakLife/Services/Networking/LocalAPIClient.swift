@@ -179,9 +179,24 @@ final class LocalAPIClient: APIService {
         }
     }
     
-    private func loadFromBackEnd(completion: @escaping([Declaration], APIError?, Bool) ->  Void) {
-        let twentyFourHoursAgo = Date().addingTimeInterval(-86400)
-        if localVersion < remoteVersion, lastRemoteFetchDate ?? Date() <= twentyFourHoursAgo {
+    private func loadFromBackEnd(completion: @escaping([Declaration], APIError?, Bool) -> Void) {
+        let now = Date()
+        let twentyFourHoursAgo = now.addingTimeInterval(-86400)
+
+        let shouldFetchFromRemote: Bool
+
+        if localVersion < remoteVersion {
+            if let lastFetchDate = lastRemoteFetchDate {
+                shouldFetchFromRemote = lastFetchDate <= twentyFourHoursAgo
+            } else {
+                shouldFetchFromRemote = true // no fetch has happened yet
+            }
+        } else {
+            shouldFetchFromRemote = false
+        }
+
+        if shouldFetchFromRemote {
+            print("Fetching from remote...")
             fetchDeclarationData(tryLocal: false) { [weak self] data in
                 self?.lastRemoteFetchDate = Date()
                 if let data = data {
@@ -190,45 +205,36 @@ final class LocalAPIClient: APIService {
                         let declarations = Set(welcome.declarations)
                         self?.localVersion = self?.remoteVersion ?? 2
                         let array = Array(declarations)
-                        // self?.declarationCountBE = array.count
                         completion(array, nil, true)
-                        return
                     } catch {
-                        self?.fetchDeclarationData(tryLocal: true) { data in
-                            if let data = data {
-                                do {
-                                    let welcome = try JSONDecoder().decode(Welcome.self, from: data)
-                                    let declarations = Set(welcome.declarations)
-                                    let array = Array(declarations)
-                                    completion(array, nil, false)
-                                    return
-                                } catch {
-                                    print(error, "RWRW")
-                                    completion([],APIError.failedDecode, false)
-                                }
-                            }
-                        }
+                        self?.fallbackToLocal(completion: completion)
                     }
+                } else {
+                    self?.fallbackToLocal(completion: completion)
                 }
             }
         } else {
-            fetchDeclarationData(tryLocal: true) { [weak self] data in
-                if let data = data {
-                    do {
-                        let welcome = try JSONDecoder().decode(Welcome.self, from: data)
-                        let declarations = Set(welcome.declarations)
-                        let array = Array(declarations)
-                        completion(array, nil, false)
-                        return
-                    } catch {
-                        print(error, "RWRW")
-                        completion([],APIError.failedDecode, false)
-                    }
+            fallbackToLocal(completion: completion)
+        }
+    }
+
+    private func fallbackToLocal(completion: @escaping ([Declaration], APIError?, Bool) -> Void) {
+        fetchDeclarationData(tryLocal: true) { data in
+            if let data = data {
+                do {
+                    let welcome = try JSONDecoder().decode(Welcome.self, from: data)
+                    let declarations = Set(welcome.declarations)
+                    let array = Array(declarations)
+                    completion(array, nil, false)
+                } catch {
+                    print(error, "Failed to decode local")
+                    completion([], APIError.failedDecode, false)
                 }
+            } else {
+                completion([], APIError.failedDecode, false)
             }
         }
     }
-    
 //    func downloadUpdates(completion: @escaping((Bool, Error?) -> Void))  {
 //        let storage = Storage.storage()
 //        let jsonRef = storage.reference(withPath: "updates.json")

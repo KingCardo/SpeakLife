@@ -163,7 +163,7 @@ struct DevotionalView: View {
     @ViewBuilder
     var devotionText: some View {
         Text(viewModel.devotionalText)
-            .font(.system(size: 14))
+            .font(.system(size: 16))
             .foregroundStyle(.white.opacity(0.8))
             .lineSpacing(4)
         Spacer()

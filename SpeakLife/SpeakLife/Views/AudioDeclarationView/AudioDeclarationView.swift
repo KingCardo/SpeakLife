@@ -7,7 +7,6 @@
 
 import SwiftUI
 import FirebaseAnalytics
-
 import SwiftUI
 import UIKit
 
@@ -119,6 +118,7 @@ enum Filter: String {
     case meditation = "Scripture Meditation's"
     case devotional = "Devotional"
     case speaklife = "SpeakLife"
+    case godsHeart = "God's Heart"
 }
 
 struct AudioDeclarationView: View {
@@ -131,8 +131,8 @@ struct AudioDeclarationView: View {
     @State private var audioURL: URL? = nil
     @State private var errorMessage: ErrorWrapper? = nil
     @State private var isPresentingPremiumView = false
-    let filters: [Filter] = [.speaklife, .declarations, .gospel, .bedtimeStories, .meditation]
-    @State private var selectedFilter: Filter = .speaklife
+    let filters: [Filter] = [.godsHeart, .speaklife,.declarations, .gospel, .bedtimeStories, .meditation]
+    @State private var selectedFilter: Filter = .godsHeart
     @State var presentDevotionalSubscriptionView = false
     
     
@@ -150,6 +150,8 @@ struct AudioDeclarationView: View {
             return viewModel.devotionals
         case .speaklife:
             return viewModel.speaklife.reversed()
+        case .godsHeart:
+            return viewModel.godsHeart.reversed()
             
         }
     }
