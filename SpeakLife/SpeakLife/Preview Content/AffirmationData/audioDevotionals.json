@@ -2,14 +2,23 @@
     "version": 1,
     "audios": [
         {
+            "id": "godsheart-ep3.mp3",
+            "title": "The Touch That Changed Everything",
+            "subtitle": "God's Heart Episode 3",
+            "duration": "3m",
+            "imageUrl": "godsHeart",
+            "isPremium": true,
+            "tag": "godsHeart"
+        },
+        {
             "id": "godsheart-ep2.mp3",
             "title": "He Came for the Broken, Not the Perfect",
             "subtitle": "God's Heart Episode 2",
             "duration": "3m",
             "imageUrl": "godsHeart",
-            "isPremium": false,
+            "isPremium": true,
             "tag": "godsHeart"
-          },
+        },
         {
             "id": "godsheart-ep1.mp3",
             "title": "This Is God’s Heart",
@@ -18,7 +27,7 @@
             "imageUrl": "godsHeart",
             "isPremium": false,
             "tag": "godsHeart"
-          },
+        },
         {
             "id": "speaklife-s2ep12.mp3",
             "title": "Think Like Someone Who’s Free",
@@ -27,8 +36,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-s2ep11.mp3",
             "title": "Focus Is Spiritual Warfare",
             "subtitle": "S2 Episode 11",
@@ -36,8 +45,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-s2ep10.mp3",
             "title": "Godly Imagination",
             "subtitle": "S2 Episode 10",
@@ -45,8 +54,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-s2ep9.mp3",
             "title": "Fear Is a Liar",
             "subtitle": "S2 Episode 9",
@@ -54,8 +63,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-s2ep8.mp3",
             "title": "Mental Health and the Holy Spirit",
             "subtitle": "S2 Episode 8",
@@ -63,8 +72,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-s2ep7.mp3",
             "title": "The Mind of Christ",
             "subtitle": "S2 Episode 7",
@@ -72,8 +81,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-s2ep6.mp3",
             "title": "Rewire the Default",
             "subtitle": "S2 Episode 6",
@@ -81,8 +90,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-s2ep5.mp3",
             "title": "The Truth That Tears It Down",
             "subtitle": "S2 Episode 5",
@@ -90,8 +99,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-s2ep4.mp3",
             "title": "Recognizing Strongholds",
             "subtitle": "S2 Episode 4",
@@ -99,8 +108,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-s2ep3.mp3",
             "title": "The Power of Agreement",
             "subtitle": "S2 Episode 3",
@@ -108,8 +117,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-s2ep2.mp3",
             "title": "Thoughts That Don’t Belong to You",
             "subtitle": "S2 Episode 2",
@@ -117,8 +126,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-s2ep1.mp3",
             "title": "The Battlefield Within",
             "subtitle": "S2 Episode 1",
@@ -126,8 +135,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-ep12.mp3",
             "title": "Speak Life, Live Blessed",
             "subtitle": "Episode 12",
@@ -135,8 +144,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-ep11.mp3",
             "title": "Plant Seeds With Your Mouth",
             "subtitle": "Episode 11",
@@ -144,8 +153,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-ep10.mp3",
             "title": "Break Generational Patterns",
             "subtitle": "Episode 10",
@@ -153,8 +162,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-ep9.mp3",
             "title": "Protect Your Peace",
             "subtitle": "Episode 9",
@@ -162,8 +171,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-ep8.mp3",
             "title": "Speak Over Your Finances",
             "subtitle": "Episode 8",
@@ -171,8 +180,8 @@
             "imageUrl": "devotional",
             "isPremium": true,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-ep7.mp3",
             "title": "Speak to Your Body",
             "subtitle": "Episode 7",
@@ -180,8 +189,8 @@
             "imageUrl": "devotional",
             "isPremium": false,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-ep6.mp3",
             "title": "Rewire Your Identity",
             "subtitle": "Episode 6",
@@ -189,8 +198,8 @@
             "imageUrl": "devotional",
             "isPremium": false,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-ep5.mp3",
             "title": "The Language of the Kingdom",
             "subtitle": "Episode 5",
@@ -198,8 +207,8 @@
             "imageUrl": "devotional",
             "isPremium": false,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-ep4.mp3",
             "title": "Fighting Back With Words",
             "subtitle": "Episode 4",
@@ -207,8 +216,8 @@
             "imageUrl": "devotional",
             "isPremium": false,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-ep3.mp3",
             "title": "See It Before You Say It",
             "subtitle": "Episode 3",
@@ -216,8 +225,8 @@
             "imageUrl": "devotional",
             "isPremium": false,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-ep2.mp3",
             "title": "You Have Creative Power in Your Mouth",
             "subtitle": "Episode 2",
@@ -225,8 +234,8 @@
             "imageUrl": "devotional",
             "isPremium": false,
             "tag": "speaklife"
-          },
-          {
+        },
+        {
             "id": "speaklife-ep1.mp3",
             "title": "The Power of Speaking Life",
             "subtitle": "Episode 1",
@@ -234,6 +243,6 @@
             "imageUrl": "devotional",
             "isPremium": false,
             "tag": "speaklife"
-          }
+        }
     ]
 }
