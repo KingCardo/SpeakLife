@@ -2,6 +2,87 @@
     "version": 1,
     "audios": [
         {
+            "id": "godsheart-ep12.mp3",
+            "title": "He Answers the Cry of Faith",
+            "subtitle": "God's Heart Episode 12",
+            "duration": "3m",
+            "imageUrl": "godsHeart",
+            "isPremium": true,
+            "tag": "godsHeart"
+        },
+        {
+            "id": "godsheart-ep11.mp3",
+            "title": "He Breaks Every Chain",
+            "subtitle": "God's Heart Episode 11",
+            "duration": "3m",
+            "imageUrl": "godsHeart",
+            "isPremium": true,
+            "tag": "godsHeart"
+        },
+        {
+            "id": "godsheart-ep10.mp3",
+            "title": "He Calls You by Name",
+            "subtitle": "God's Heart Episode 10",
+            "duration": "3m",
+            "imageUrl": "godsHeart",
+            "isPremium": true,
+            "tag": "godsHeart"
+        },
+        {
+            "id": "godsheart-ep9.mp3",
+            "title": "You Are Not Too Far Gone",
+            "subtitle": "God's Heart Episode 9",
+            "duration": "3m",
+            "imageUrl": "godsHeart",
+            "isPremium": true,
+            "tag": "godsHeart"
+        },
+        {
+            "id": "godsheart-ep8.mp3",
+            "title": "He Forgives First",
+            "subtitle": "God's Heart Episode 8",
+            "duration": "3m",
+            "imageUrl": "godsHeart",
+            "isPremium": true,
+            "tag": "godsHeart"
+        },
+        {
+            "id": "godsheart-ep7.mp3",
+            "title": "He Weeps With You",
+            "subtitle": "God's Heart Episode 7",
+            "duration": "3m",
+            "imageUrl": "godsHeart",
+            "isPremium": true,
+            "tag": "godsHeart"
+        },
+        {
+            "id": "godsheart-ep6.mp3",
+            "title": "The Compassion Before the Miracle",
+            "subtitle": "God's Heart Episode 6",
+            "duration": "3m",
+            "imageUrl": "godsHeart",
+            "isPremium": true,
+            "tag": "godsHeart"
+        },
+        {
+            "id": "godsheart-ep5.mp3",
+            "title": "He Sees You, Not Just the Crowd",
+            "subtitle": "God's Heart Episode 5",
+            "duration": "3m",
+            "imageUrl": "godsHeart",
+            "isPremium": true,
+            "tag": "godsHeart"
+        },
+        {
+            "id": "godsheart-ep4.mp3",
+            "title": "Jesus Wasn’t in a Rush",
+            "subtitle": "God's Heart Episode 4",
+            "duration": "3m",
+            "imageUrl": "godsHeart",
+            "isPremium": true,
+            "tag": "godsHeart"
+        },
+        {
             "id": "godsheart-ep3.mp3",
             "title": "The Touch That Changed Everything",
             "subtitle": "God's Heart Episode 3",

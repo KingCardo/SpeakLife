@@ -79,11 +79,12 @@ struct HomeView: View {
     var homeView: some View {
         TabView {
             declarationView
-            audioView
+           
 //            if subscriptionStore.showTestimonyTab {
 //                testimonyView
 //            }
             devotionalView
+            audioView
            // if !subscriptionStore.showTestimonyTab {
                 createYourOwnView
            // }

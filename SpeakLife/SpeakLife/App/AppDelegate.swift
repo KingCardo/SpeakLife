@@ -13,6 +13,7 @@ import UserNotifications
 import FacebookCore
 import AppTrackingTransparency
 import FirebaseMessaging
+import FirebaseRemoteConfigInternal
 
 final class AppDelegate: NSObject, MessagingDelegate {
     
@@ -32,6 +33,13 @@ final class AppDelegate: NSObject, MessagingDelegate {
         )
         registerNotificationHandler()
         Messaging.messaging().delegate = self
+        let settings = RemoteConfigSettings()
+        #if DEBUG
+        settings.minimumFetchInterval = 0
+        #else
+        settings.minimumFetchInterval = 3600 * 5 // 1 hour
+        #endif
+        RemoteConfig.remoteConfig().configSettings = settings
        
         
         registerBGTask()
