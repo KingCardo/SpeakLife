@@ -12,9 +12,7 @@ import SwiftUI
 struct AudioPlayerView: View {
     @ObservedObject var viewModel: AudioPlayerViewModel
     @EnvironmentObject var timerViewModel: TimerViewModel
-    let audioTitle: String
-    let audioSubtitle: String
-    let imageUrl: String
+
 
     @State private var isPlayingPulse = false
 
@@ -22,7 +20,7 @@ struct AudioPlayerView: View {
         GeometryReader { proxy in
             ZStack {
                 // Background Blur
-                if let uiImage = UIImage(named: imageUrl) {
+                if let uiImage = UIImage(named: viewModel.imageUrl) {
                     Image(uiImage: uiImage)
                         .resizable()
                         .blur(radius: 60)
@@ -41,7 +39,7 @@ struct AudioPlayerView: View {
                         .frame(height: proxy.size.height * 0.02)
                     
                     // Cover Image
-                    Image(imageUrl)
+                    Image(viewModel.imageUrl)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: viewModel.isPlaying ? proxy.size.width * 0.9 : proxy.size.width * 0.7, height: viewModel.isPlaying ? proxy.size.width * 0.9 : proxy.size.width * 0.7)
@@ -55,13 +53,13 @@ struct AudioPlayerView: View {
                     
                     // Title & Subtitle
                     VStack(spacing: 6) {
-                        Text(audioTitle)
+                        Text(viewModel.currentTrack)
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)
                         
-                        Text(audioSubtitle)
+                        Text(viewModel.subtitle)
                             .font(.subheadline)
                             .foregroundColor(.white.opacity(0.75))
                     }
@@ -76,7 +74,7 @@ struct AudioPlayerView: View {
                                         viewModel.seek(to: viewModel.currentTime)
                                     }
                                 }
-                            )
+                            ).tint(.white)
                             
                             HStack {
                                 Text(formatTime(viewModel.currentTime))

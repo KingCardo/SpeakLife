@@ -119,22 +119,27 @@ enum Filter: String {
     case devotional = "Devotional"
     case speaklife = "SpeakLife"
     case godsHeart = "God's Heart"
+    case growWithJesus = "Grow With Jesus"
 }
 
 struct AudioDeclarationView: View {
     @EnvironmentObject private var viewModel: AudioDeclarationViewModel
-    @StateObject private var audioViewModel = AudioPlayerViewModel()
+    @StateObject private var audioViewModel: AudioPlayerViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var declarationStore: DeclarationViewModel
-    @State private var selectedItem: AudioDeclaration? = nil
-    @State private var lastSelectedItem: AudioDeclaration?
+   
     @State private var audioURL: URL? = nil
     @State private var errorMessage: ErrorWrapper? = nil
     @State private var isPresentingPremiumView = false
-    let filters: [Filter] = [.godsHeart, .speaklife,.declarations, .gospel, .bedtimeStories, .meditation]
+    let filters: [Filter] = [.godsHeart, .growWithJesus, .speaklife,.declarations, .gospel, .bedtimeStories, .meditation]
     @State private var selectedFilter: Filter = .godsHeart
     @State var presentDevotionalSubscriptionView = false
-    
+   
+    init(declarationStore: AudioDeclarationViewModel) {
+        let playerVM = AudioPlayerViewModel()
+        playerVM.audioDeclarationViewModel = declarationStore
+        _audioViewModel = StateObject(wrappedValue: playerVM)
+    }
     
     var filteredContent: [AudioDeclaration] {
         switch selectedFilter {
@@ -152,6 +157,8 @@ struct AudioDeclarationView: View {
             return viewModel.speaklife.reversed()
         case .godsHeart:
             return viewModel.godsHeart.reversed()
+        case .growWithJesus:
+            return viewModel.growWithJesus
             
         }
     }
@@ -170,6 +177,40 @@ struct AudioDeclarationView: View {
                                 .font(.system(size: 28, weight: .bold))
                                 .foregroundColor(.white)
                             Spacer()
+//                                HStack(spacing: 8) {
+//                                    Text("AutoPlay")
+//                                        .foregroundColor(.white)
+//                                        .font(.subheadline)
+//
+//                                    Toggle("", isOn: $audioViewModel.autoPlayAudio)
+//                                        .labelsHidden()
+//                                        .tint(.blue)
+//                                .tint(.white)
+//                                .onChange(of: audioViewModel.autoPlayAudio) { newValue in
+//                                    if subscriptionStore.isPremium {
+//                                        if newValue {
+//                                            print(newValue, audioViewModel.lastSelectedItem, "RWRW")
+//                                            let allItems = filteredContent
+//                                            if let lastSelectedItem = audioViewModel.lastSelectedItem,
+//                                               let currentIndex = allItems.firstIndex(of: lastSelectedItem),
+//                                               currentIndex + 1 < allItems.count {
+//                                                print(lastSelectedItem, "RWRW last selected" )
+//                                                
+//                                                let itemsToQueue = Array(allItems[(currentIndex + 1)...])
+//                                                audioViewModel.addToQueue(items: itemsToQueue)
+//                                            } else {
+//                                                audioViewModel.clearQueue()
+//                                            }
+//                                        }
+//                                    } else {
+//                                        withAnimation {
+//                                            isPresentingPremiumView = true
+//                                            audioViewModel.autoPlayAudio = false
+//                                        }
+//                                       
+//                                    }
+//                                }
+//                            }
                         }
                         .padding(.horizontal)
                         .padding(.top, 8)
@@ -198,8 +239,9 @@ struct AudioDeclarationView: View {
         .sheet(isPresented: $isPresentingPremiumView) {
             self.isPresentingPremiumView = false
         } content: {
-            GeometryReader { geometry in
-                SubscriptionView(size: geometry.size)
+           // GeometryReader { geometry in
+            SubscriptionView(size: UIScreen.main.bounds.size)
+                .frame(height: UIScreen.main.bounds.height * 0.96)
                     .onDisappear {
                         if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
                             if subscriptionStore.showDevotionalSubscription {
@@ -207,7 +249,7 @@ struct AudioDeclarationView: View {
                             }
                         }
                     }
-            }
+            //}
         }
         
         .alert(item: $errorMessage) { error in
@@ -218,22 +260,21 @@ struct AudioDeclarationView: View {
             )
         }
 
-        .sheet(item: $selectedItem, onDismiss: {
+        .sheet(item: $audioViewModel.selectedItem, onDismiss: {
             withAnimation {
                 audioViewModel.isBarVisible = true
             }
         }) { item in
+          
             if let audioURL = audioURL {
                 AudioPlayerView(
-                    viewModel: audioViewModel,
-                    audioTitle: item.title,
-                    audioSubtitle: item.subtitle,
-                    imageUrl: item.imageUrl
+                    viewModel: audioViewModel
                 )
                 .presentationDetents([.large])
                 .onAppear {
-                    audioViewModel.loadAudio(from: audioURL, isSameItem: lastSelectedItem == item)
-                    lastSelectedItem = item
+                    print(item.subtitle, "RWRW selected" )
+                   // audioViewModel.loadAudio(from: audioURL, isSameItem: audioViewModel.lastSelectedItem == item)
+                    audioViewModel.lastSelectedItem = item
                     Analytics.logEvent(item.id, parameters: nil)
                 }
             }
@@ -280,14 +321,16 @@ struct AudioDeclarationView: View {
                                 switch result {
                                 case .success(let url):
                                     audioURL = url
-                                    selectedItem = item
+                                    audioViewModel.selectedItem = item
+                                    audioViewModel.insert(url)
                                     viewModel.downloadProgress[item.id] = 0.0
-                                    audioViewModel.currentTrack = selectedItem?.title ?? ""
-                                    audioViewModel.subtitle = selectedItem?.subtitle ?? ""
-                                    audioViewModel.imageUrl = selectedItem?.imageUrl ?? ""
+                                    audioViewModel.currentTrack = audioViewModel.selectedItem?.title ?? ""
+                                    audioViewModel.subtitle = audioViewModel.selectedItem?.subtitle ?? ""
+                                    audioViewModel.imageUrl = audioViewModel.selectedItem?.imageUrl ?? ""
+                                    audioViewModel.loadAudio(from: url, isSameItem: audioViewModel.selectedItem == item)
                                 case .failure(let error):
                                     errorMessage = ErrorWrapper(message: "Failed to download audio: \(error.localizedDescription)")
-                                    selectedItem = nil
+                                    audioViewModel.selectedItem = nil
                                     viewModel.downloadProgress[item.id] = 0.0
                                 }
                             }
@@ -320,14 +363,16 @@ struct AudioDeclarationView: View {
     var audioBar: some View {
         if audioViewModel.isBarVisible {
             PersistentAudioBar(viewModel: audioViewModel)
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+                .animation(.easeOut(duration: 0.4), value: audioViewModel.isBarVisible)
                 .onDisappear {
                     if declarationStore.backgroundMusicEnabled, !audioViewModel.isPlaying {
                         AudioPlayerService.shared.playMusic()
                     }
                 }
                 .onTapGesture {
-                    if let lastSelectedItem = lastSelectedItem {
-                        self.selectedItem = lastSelectedItem
+                    if let lastSelectedItem = audioViewModel.lastSelectedItem {
+                        self.audioViewModel.selectedItem = lastSelectedItem
                     }
                 }
         }

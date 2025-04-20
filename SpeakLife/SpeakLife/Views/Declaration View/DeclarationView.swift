@@ -83,8 +83,11 @@ struct DeclarationView: View {
                                     Selection.shared.selectionFeedback()
                                 }
                                 .sheet(isPresented: $isPresentingAbbaLoveView) {
-                                    AbbasLoveView()
+                                    timerViewModel.loadRemainingTime()
+                                  
                                        // .allowsHitTesting(!appState.showScreenshotLabel)
+                                } content: {
+                                    AbbasLoveView()
                                 }
 
                                 Spacer()

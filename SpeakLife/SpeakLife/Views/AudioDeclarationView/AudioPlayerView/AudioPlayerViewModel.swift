@@ -19,77 +19,162 @@ final class AudioPlayerViewModel: ObservableObject {
     @Published var currentTrack: String = ""
     @Published var subtitle: String = ""
     @Published var imageUrl: String = ""
-    @Published var isBarVisible: Bool = false // Manage bar visibility
+    @Published var isBarVisible: Bool = false
+    @Published var autoPlayAudio: Bool = false
+    @Published var audioQueue: [AudioDeclaration] = []
+    @Published var selectedItem: AudioDeclaration? = nil
+    @Published var lastSelectedItem: AudioDeclaration?
 
-    private var queue: [URL] = []
-    
+    private var urlQueue: [URL] = []
+    weak var audioDeclarationViewModel: AudioDeclarationViewModel?
+
     private var player: AVPlayer?
     private var timeObserver: Any?
-    private var endObserver: NSObjectProtocol?  // Observer for track end
-    
+    private var endObserver: NSObjectProtocol?
+    private var timeObserverToken: Any?
+    private var hasPrefetchedNext = false
     private var cancellables = Set<AnyCancellable>()
-    
+
     init() {
         Publishers.CombineLatest($currentTime, $duration)
             .sink { [weak self] currentTime, duration in
                 if (currentTime + 0.05) >= duration {
                     self?.isPlaying = false
-                    self?.player?.seek(to: CMTime.zero)
+                    self?.player?.seek(to: .zero)
                 }
             }
             .store(in: &cancellables)
+
         setupRemoteCommands()
     }
-    
-    func loadAudio(from url: URL, isSameItem: Bool) {
-        if isPlaying, isSameItem { return }
+
+    deinit {
         resetPlayer()
-        
+        if let token = timeObserverToken {
+            player?.removeTimeObserver(token)
+        }
+    }
+
+    func startMonitoringPlayback() {
+//        if let token = timeObserverToken {
+//            timeObserverToken = nil
+//        }
+        print("start monitioring RWRW")
+        let interval = CMTime(seconds: 5.0, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+        timeObserverToken = player?.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self] time in
+            print("check RWRW")
+            self?.checkIfShouldPrefetch(time: time)
+           
+        }
+    }
+
+    func checkIfShouldPrefetch(time: CMTime) {
+        print(autoPlayAudio, !audioQueue.isEmpty, !hasPrefetchedNext, "RWRW yee")
+        guard autoPlayAudio, !audioQueue.isEmpty, !hasPrefetchedNext else { return }
+        guard let duration = player?.currentItem?.duration.seconds, duration.isFinite else { return }
+
+        let currentTime = time.seconds
+        let remainingTime = duration - currentTime
+
+        if remainingTime <= 60 {
+            hasPrefetchedNext = true
+            prefetchNextAudio()
+        }
+    }
+
+    func playNextInQueue() {
+        guard !audioQueue.isEmpty, !urlQueue.isEmpty else {
+            print("Queue is empty RWRW")
+            return
+        }
+
+        let next = audioQueue.removeFirst()
+        let nextURL = urlQueue.removeFirst()
+
+        print("Now playing next queued track: \(next.title) RWRW")
+
+        isBarVisible = false
+        loadAudio(from: nextURL, isSameItem: false)
+
+        currentTrack = next.title
+        subtitle = next.subtitle
+        imageUrl = next.imageUrl
+        selectedItem = next
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            withAnimation(.easeOut(duration: 0.4)) {
+                self.isBarVisible = true
+            }
+        }
+    }
+
+    func prefetchNextAudio() {
+        guard let next = audioQueue.first else { return }
+        print("prefetching next audio RWRW")
+        audioDeclarationViewModel?.fetchAudio(for: next) { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                switch result {
+                case .success(let url):
+                   // if !self.urlQueue.isEmpty {
+                        self.addToQueue(url)
+                        print("adding to queue RWRW")
+                   // }
+                case .failure(let error):
+                    print("Failed to prefetch: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+
+    func loadAudio(from url: URL, isSameItem: Bool) {
+        hasPrefetchedNext = false
+        startMonitoringPlayback()
+
+        if isPlaying && isSameItem { return }
+        resetPlayer()
+
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
         try? AVAudioSession.sharedInstance().setActive(true)
-        
+
         player = AVPlayer(url: url)
-        
-        // Get the duration of the audio
+
         if let duration = player?.currentItem?.asset.duration {
             self.duration = CMTimeGetSeconds(duration)
         }
-        
-        print("Loading audio from URL: \(url)")
-        print("Player duration: \(CMTimeGetSeconds(player?.currentItem?.duration ?? CMTime.zero))")
-        
-        // Add time observer for playback progress
+
         timeObserver = player?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1), queue: .main) { [weak self] time in
             guard let self = self else { return }
             self.currentTime = CMTimeGetSeconds(time)
             self.updateNowPlayingInfo()
         }
-        
-        // Add observer for when the audio finishes playing
+       
         endObserver = NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem, queue: .main) { [weak self] _ in
             guard let self = self else { return }
-            
+
             if self.onRepeat {
-                self.player?.seek(to: CMTime.zero)
+                self.player?.seek(to: .zero)
                 self.player?.play()
-            } else if !self.queue.isEmpty {
-                // Get next URL from the queue and load it
-                let nextURL = self.queue.removeFirst()
-                self.loadAudio(from: nextURL, isSameItem: false)
+            } else if !self.urlQueue.isEmpty {
+                playNextInQueue()
+                self.player?.seek(to: .zero)
+                self.isPlaying = false
             } else {
                 self.isPlaying = false
-                self.player?.seek(to: CMTime.zero)
+                self.player?.seek(to: .zero)
             }
-            updateNowPlayingInfo()
+            self.updateNowPlayingInfo()
         }
-        
         togglePlayPause()
         updateNowPlayingInfo()
+
+        
+       
     }
-    
+
     func togglePlayPause() {
         guard let player = player else { return }
-        
+
         if isPlaying {
             player.pause()
             AudioPlayerService.shared.playMusic()
@@ -99,31 +184,28 @@ final class AudioPlayerViewModel: ObservableObject {
         }
         isPlaying.toggle()
         updateNowPlayingInfo()
-        
     }
-    
+
     func seek(to time: Double) {
         guard let player = player else { return }
         let targetTime = CMTime(seconds: time, preferredTimescale: 1)
         player.seek(to: targetTime)
     }
-    
+
     func repeatTrack() {
         onRepeat.toggle()
     }
-    
+
     func changePlaybackSpeed(to speed: Float) {
         playbackSpeed = speed
         player?.rate = speed
     }
-    
+
     func resetPlayer() {
-        // Remove time observer if exists
         if let timeObserver = timeObserver {
             player?.removeTimeObserver(timeObserver)
             self.timeObserver = nil
         }
-        // Remove the end-of-track observer if it exists
         if let endObserver = endObserver {
             NotificationCenter.default.removeObserver(endObserver)
             self.endObserver = nil
@@ -132,27 +214,35 @@ final class AudioPlayerViewModel: ObservableObject {
         player = nil
         currentTime = 0
     }
-    
-    func playNext(_ item: URL?) {
-        guard let item = item else { return }
-        // Inserts item at the beginning of the queue
-        queue.insert(item, at: 0)
+
+    func addToQueue(items: [AudioDeclaration]) {
+        audioQueue.append(contentsOf: items)
+        print("\(items), added to queu RWRW")
     }
-    
+
+    func clearQueue() {
+        audioQueue.removeAll()
+        urlQueue.removeAll()
+    }
+
     func addToQueue(_ item: URL?) {
         guard let item = item else { return }
-        // Appends item to the end of the queue
-        queue.append(item)
+        urlQueue.append(item)
         print("\(item), added to queue")
     }
-    
+    func insert(_ item: URL?) {
+        guard let item = item else { return }
+        urlQueue.insert(item, at: 0)
+        print("\(item), inserted to queue")
+    }
+
     private func updateNowPlayingInfo() {
         guard let player = player,
               let currentItem = player.currentItem else { return }
 
         let currentTime = CMTimeGetSeconds(player.currentTime())
         let duration = CMTimeGetSeconds(currentItem.asset.duration)
-        
+
         var info: [String: Any] = [
             MPMediaItemPropertyTitle: currentTrack,
             MPMediaItemPropertyArtist: subtitle,
@@ -160,21 +250,15 @@ final class AudioPlayerViewModel: ObservableObject {
             MPMediaItemPropertyPlaybackDuration: duration,
             MPNowPlayingInfoPropertyPlaybackRate: isPlaying ? 1.0 : 0.0
         ]
-        if imageUrl == "devotional" {
-            if let image = UIImage(named: "appIconDisplay") { // or fetch async from imageUrl
-                let artwork = MPMediaItemArtwork(boundsSize: image.size) { _ in image }
-                info[MPMediaItemPropertyArtwork] = artwork
-            }
-        } else {
-            if let image = UIImage(named: "heavenStairway") { // or fetch async from imageUrl
-                let artwork = MPMediaItemArtwork(boundsSize: image.size) { _ in image }
-                info[MPMediaItemPropertyArtwork] = artwork
-            }
+
+        if let image = UIImage(named: imageUrl) {
+            let artwork = MPMediaItemArtwork(boundsSize: image.size) { _ in image }
+            info[MPMediaItemPropertyArtwork] = artwork
         }
 
         MPNowPlayingInfoCenter.default().nowPlayingInfo = info
     }
-    
+
     private func setupRemoteCommands() {
         let commandCenter = MPRemoteCommandCenter.shared()
 
@@ -195,14 +279,8 @@ final class AudioPlayerViewModel: ObservableObject {
         commandCenter.changePlaybackPositionCommand.addTarget { [weak self] event in
             guard let self = self,
                   let seekEvent = event as? MPChangePlaybackPositionCommandEvent else { return .commandFailed }
-            
             self.seek(to: seekEvent.positionTime)
             return .success
         }
-    }
-    
-    deinit {
-        resetPlayer()
-       // AudioPlayerService.shared.playMusic()
     }
 }

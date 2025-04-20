@@ -131,7 +131,7 @@ struct HomeView: View {
     }
     
     var audioView: some View {
-        AudioDeclarationView()
+        AudioDeclarationView(declarationStore: audioDeclarationViewModel)
             .tabItem {
                 if #available(iOS 17, *) {
                     Image(systemName: "waveform")

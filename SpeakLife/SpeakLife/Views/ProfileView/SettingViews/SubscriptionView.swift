@@ -389,11 +389,11 @@ struct SubscriptionView: View {
                 currentSelection = product
             }) {
                 HStack {
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 4) {
                         Text(product.ctaDurationTitle)
-                            .font(.system(size: 14, weight: .bold))
+                            .font(.system(size: 16))
                         Text(product.subTitle)
-                            .font(.system(size: 12))
+                            .font(.system(size: 14))
                     }
                     .foregroundColor(.white)
                     Spacer()

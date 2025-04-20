@@ -17,6 +17,7 @@ final class AudioDeclarationViewModel: ObservableObject {
     @Published var devotionals: [AudioDeclaration]
     @Published var speaklife: [AudioDeclaration]
     @Published var godsHeart: [AudioDeclaration]
+    @Published var growWithJesus: [AudioDeclaration]
     @Published var downloadProgress: [String: Double] = [:]
     @Published var fetchingAudioIDs: Set<String> = []
     private let storage = Storage.storage()
@@ -29,11 +30,13 @@ final class AudioDeclarationViewModel: ObservableObject {
           self.gospelStories = gospelFiles
           self.meditations = meditationFiles
           self.devotionals = devotionalFiles
+          self.growWithJesus = growWithJesusFiles
           self.speaklife = []
           self.godsHeart = []
       }
     
     func fetchAudio(version: Int) {
+        print(version, "RWRW version")
         service.audio(version: version) { audio in
             print(audio.count, "RWRW")
             DispatchQueue.main.async {
@@ -120,7 +123,11 @@ struct WelcomeAudio: Codable {
     let audios: [AudioDeclaration]
 }
 
-struct AudioDeclaration: Identifiable, Equatable, Codable {
+struct AudioDeclaration: Identifiable, Equatable, Codable, Comparable {
+    static func < (lhs: AudioDeclaration, rhs: AudioDeclaration) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
       let id: String
       let title: String
       let subtitle: String
