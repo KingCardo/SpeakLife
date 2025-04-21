@@ -406,7 +406,7 @@ extension Product {
         } else if id == currentYearlyID {
             return "Start My Free Trial Now"
         } else if id == yearlyID {
-                return "Try Free & Subscribe"
+                return "Try It Free"
         } else {
            return "Subscribe"
         }

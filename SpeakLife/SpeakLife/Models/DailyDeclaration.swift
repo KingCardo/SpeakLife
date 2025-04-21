@@ -51,6 +51,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case innerHealing
     case obedience
     case spiritualGrowth
+    case blood
+    case nameOfJesus
     case genesis, exodus, leviticus, numbers, deuteronomy
     case joshua, judges, ruth
     case samuel1, samuel2
@@ -76,6 +78,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     static var allCategories: [DeclarationCategory] = [
         .favorites,
         .myOwn,
+        .blood,
+        .nameOfJesus,
         .destiny,
         .grace,
         .faith,
@@ -192,6 +196,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     
     static var categoryOrder: [DeclarationCategory] = [
+        .blood,
+        .nameOfJesus,
         .destiny,
         .grace,
         .faith,
@@ -270,6 +276,8 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         case .thessalonians1: return "1 Thessalonians"
         case .thessalonians2: return "2 Thessalonians"
         case .speaklife: return "Speak Life Daily"
+        case .blood: return "Blood of Jesus"
+        case .nameOfJesus: return "Name of Jesus"
         default:  return self.rawValue.capitalized
         }
     }
@@ -300,7 +308,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     var isPremium: Bool {
         switch self {
-        case .general, .favorites, .myOwn, .ephesians, .faith, .health, .destiny, .genesis,  .godsprotection, .proverbs, .luke : return false
+        case .general, .favorites, .myOwn, .ephesians, .faith, .nameOfJesus, .health, .blood, .destiny, .genesis,  .godsprotection, .proverbs, .luke : return false
         default: return true
         }
     }
