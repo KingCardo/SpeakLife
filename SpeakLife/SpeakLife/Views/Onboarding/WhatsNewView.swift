@@ -13,6 +13,8 @@ struct WhatsNewBottomSheet: View {
     let features = [
         "New God's Heart Audio",
         "New Grow with Jesus Audio",
+        "New Blood of Jesus category",
+        "New Name of Jesus category",
        // "NEW Audio AutoPlay"
     ]
 
