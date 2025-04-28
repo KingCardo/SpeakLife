@@ -45,12 +45,11 @@ struct OnboardingView: View  {
             TabView(selection: $selection) {
                 
                 IntroTipScene(
-                    title: "Welcome to SpeakLife",//"Your Mind is a Battlefield",
+                    title: "Seek First the Kingdom",//"Your Mind is a Battlefield",
                     bodyText: """
-You’re about to speak God’s promises over your life.
-This is your daily space for peace, protection, and purpose.
+Jesus said, “Seek first the Kingdom of God and His righteousness, and all these things will be added to you.” (Matthew 6:33)
 
-Let His Word renew your mind, heal your body, and fill your day with hope.
+When you speak His Word, healing flows. Peace settles in. Your mind renews. Everything changes.
 """,
         
                     subtext: "",
@@ -65,19 +64,28 @@ Let His Word renew your mind, heal your body, and fill your day with hope.
                     .tag(Tab.transformedLife)
                 
                 IntroTipScene(
-                    title: "Feeling anxious, overwhelmed, or stuck?",
+                    title: "Healing, Peace & Clarity Await You",
+                    bodyText:"""
+                    Speak truth. Renew your mind. Transform your life.
+                    
+                    God’s Word brings healing to your body, peace to your mind, and clarity to your path. All by speaking and listening daily.
+                    """,
+                    subtext: "",
+                    ctaText: "Start Speaking Life",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size)
+                {
+                        advance()
+                }
+                .tag(Tab.unshakeableFaith)
+                
+                IntroTipScene(
+                    title: "The More You Meditate, the More You Receive",
                     bodyText: """
-                    You’re not alone. But you were never meant to stay there.
-
-                    When you speak what Jesus says about you:
-
-                    Your thoughts shift
-
-                    Your heart heals
-
-                    Peace replaces pressure
-
-                    It only takes minutes a day.
+                    The measure you give determines the measure you receive.
+                    
+                    The more you fill your heart with God’s Word, the greater the flow of His peace, healing, and revelation into your life.
                     """,
                     subtext: "",
                     ctaText: "Next",
@@ -88,20 +96,33 @@ Let His Word renew your mind, heal your body, and fill your day with hope.
                         advance()
                 }
                     .tag(Tab.mindset)
-                                
+                
                 IntroTipScene(
-                    title: "Speak Life daily and walk in God’s protection, grace, and peace.",
+                    title: "Like Medicine, It Works Daily",
                     bodyText:"""
-                    Over 70,000+ are using SpeakLife to declare God’s Word—
-                    and it’s changing everything.
+                    God’s Word works like medicine.
+                    
+                    Just like medicine needs daily doses, God’s Word nourishes, restores and transform's you when spoken and heard consistently.
                     """,
-                    subtext: """
-    
-    With just minutes a day, you’ll:
-    
-    """,
-                    bullets: ["Speak powerful truth over your mind and body", "Unlock healing, joy, and clarity", "Grow in bold, unshakable faith"],
-                    ctaText: "Start Speaking Life",
+                    subtext: "",
+                    ctaText: "Next",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size)
+                {
+                        advance()
+                }
+                .tag(Tab.liveVictorious)
+                
+                IntroTipScene(
+                    title: "Stay Connected, Stay Filled",
+                    bodyText:"""
+                    Abide in Jesus. Draw life every day.
+                    
+                    Just like a branch draws life from the vine, your spirit flourishes by staying connected to Jesus every day. Abiding isn’t occasional—it’s constant.
+                    """,
+                    subtext: "",
+                    ctaText: "Next",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
@@ -109,6 +130,9 @@ Let His Word renew your mind, heal your body, and fill your day with hope.
                         advance()
                 }
                     .tag(Tab.likeJesus)
+                
+               
+             
                 
                 ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
                     withAnimation {
@@ -290,7 +314,7 @@ Let His Word renew your mind, heal your body, and fill your day with hope.
                     Analytics.logEvent("IntroTipScreenDone", parameters: nil)
                 case .mindset:
                     impactMed.impactOccurred()
-                    selection = .likeJesus
+                    selection = .liveVictorious
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("IntroMindsetScreenDone", parameters: nil)
                 case .benefits:
@@ -336,7 +360,7 @@ Let His Word renew your mind, heal your body, and fill your day with hope.
                     }
                 case .transformedLife:
                     impactMed.impactOccurred()
-                    selection = .mindset
+                    selection = .unshakeableFaith
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("TransformedLifeScreenDone", parameters: nil)
                 case .likeJesus:
@@ -346,17 +370,17 @@ Let His Word renew your mind, heal your body, and fill your day with hope.
                     Analytics.logEvent("LikeJesusScreenDone", parameters: nil)
                 case .liveVictorious:
                     impactMed.impactOccurred()
-                    selection = .improvement
+                    selection = .likeJesus
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("LiveVictoriousScreenDone", parameters: nil)
                 case .unshakeableFaith:
                     impactMed.impactOccurred()
-                    selection = .subscription
+                    selection = .mindset
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("UnshakeableFaithScreenDone", parameters: nil)
                 case .confidence:
                     impactMed.impactOccurred()
-                    selection = .transformedLife
+                    selection = .liveVictorious
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("ConfidenceScreenDone", parameters: nil)
                    

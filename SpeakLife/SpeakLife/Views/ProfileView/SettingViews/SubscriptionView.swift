@@ -350,7 +350,7 @@ struct SubscriptionView: View {
         Spacer().frame(height: 12)
         VStack(spacing: 10) {
     
-            Text("Speak life daily with affirmations, devotionals, & prayer")
+            Text("SpeakLife & Transform")
                 .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .title))
                 .multilineTextAlignment(.center)
 //            Text("to rewire your thoughts and experience God’s peace, healing, and purpose")
@@ -379,6 +379,9 @@ struct SubscriptionView: View {
             }
             if let monthly = subscriptionStore.currentOfferedPremiumMonthly {
                 subscriptionOption(product: monthly)
+            }
+            if let lifetime = subscriptionStore.currentOfferedLifetime {
+                subscriptionOption(product: lifetime)
             }
         }
     }
