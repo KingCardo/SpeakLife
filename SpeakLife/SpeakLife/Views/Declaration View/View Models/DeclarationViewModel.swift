@@ -58,6 +58,7 @@ final class DeclarationViewModel: ObservableObject {
         didSet  {
             if selectedCategory == .favorites {
                 declarations = favorites.shuffled()
+                showVerse = false
             }
         }
     }
@@ -74,6 +75,7 @@ final class DeclarationViewModel: ObservableObject {
         didSet {
             if selectedCategory == .myOwn {
                 declarations = createOwn.shuffled()
+                showVerse = false
             }
         }
     }

@@ -124,7 +124,11 @@ struct DeclarationContentView: View {
                 askForReview()
                 let declaration = viewModel.declarations[newIndex]
                 viewModel.setCurrent(declaration)
-                viewModel.showVerse = true
+                if viewModel.selectedCategory == .myOwn || viewModel.selectedCategory == .favorites {
+                    viewModel.showVerse = false
+                } else {
+                    viewModel.showVerse = true
+                }
                 
             }
                 
@@ -261,7 +265,7 @@ struct DeclarationContentView: View {
             Spacer()
                     .frame(height: geometry.size.height * 0.05)
             
-            QuoteLabel(themeViewModel: themeViewModel, quote: viewModel.showVerse ? declaration.bibleVerseText ?? "" : declaration.text)
+            QuoteLabel(themeViewModel: themeViewModel, quote: viewModel.showVerse ? declaration.bibleVerseText ?? declaration.text : declaration.text)
                 .foregroundColor(themeViewModel.selectedTheme.fontColor)
                 .frame(width: geometry.size.width * 0.98)
                 .shadow(color: .black, radius: themeViewModel.selectedTheme.blurEffect ? 10 : 0)
