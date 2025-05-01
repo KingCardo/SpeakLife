@@ -20,6 +20,12 @@ final class AudioDeclarationViewModel: ObservableObject {
     @Published var growWithJesus: [AudioDeclaration]
     @Published var downloadProgress: [String: Double] = [:]
     @Published var fetchingAudioIDs: Set<String> = []
+    @Published var filters: [Filter] = [
+        .godsHeart, .growWithJesus, .speaklife, .declarations, .gospel, .bedtimeStories, .meditation
+    ]
+    @Published var selectedFilter: Filter = .godsHeart
+    @Published var dynamicFilters: [FetchedFilter] = []
+    @Published var selectedDynamicFilter: FetchedFilter? = nil
     private let storage = Storage.storage()
     private let fileManager = FileManager.default
     @AppStorage("shouldClearCachev3") private var shouldClearCachev3 = true
@@ -34,6 +40,33 @@ final class AudioDeclarationViewModel: ObservableObject {
           self.speaklife = []
           self.godsHeart = []
       }
+    
+    var filteredContent: [AudioDeclaration] {
+        
+//        if let dynamicFilter = selectedDynamicFilter {
+////                return allAudioDeclarations
+////                    .filter { $0.tag == dynamicFilter.tag }
+////                    .reversed()
+//            }
+        switch selectedFilter {
+        case .declarations:
+            return audioDeclarations
+        case .bedtimeStories:
+            return bedtimeStories
+        case .gospel:
+            return gospelStories
+        case .meditation:
+            return meditations
+        case .devotional:
+            return devotionals
+        case .speaklife:
+            return speaklife.reversed()
+        case .godsHeart:
+            return godsHeart.reversed()
+        case .growWithJesus:
+            return growWithJesus
+        }
+    }
     
     func fetchAudio(version: Int) {
         print(version, "RWRW version")

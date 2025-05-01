@@ -702,49 +702,41 @@ let growWithJesusFiles: [AudioDeclaration] = [
     ),
     AudioDeclaration(
         id: "growJesus-ep15.mp3",
-        title: "What to Do When He Feels Silent",
+        title: "There’s Grace for Your Messy Process",
         subtitle: "Episode 15",
-        duration: "3m",
+        duration: "2m",
         imageUrl: "growWithJesus",
         isPremium: true
     ),
     AudioDeclaration(
         id: "growJesus-ep16.mp3",
-        title: "What to Do When He Feels Silent",
+        title: "He Will Reveal His Voice",
         subtitle: "Episode 16",
-        duration: "3m",
+        duration: "2m",
         imageUrl: "growWithJesus",
         isPremium: true
     ),
     AudioDeclaration(
         id: "growJesus-ep17.mp3",
-        title: "What to Do When He Feels Silent",
+        title: "You’ll Start to Love Like He Does",
         subtitle: "Episode 17",
-        duration: "3m",
+        duration: "2m",
         imageUrl: "growWithJesus",
         isPremium: true
     ),
     AudioDeclaration(
         id: "growJesus-ep18.mp3",
-        title: "What to Do When He Feels Silent",
+        title: "Walking With Him Changes How You Live",
         subtitle: "Episode 18",
-        duration: "3m",
+        duration: "2m",
         imageUrl: "growWithJesus",
         isPremium: true
     ),
     AudioDeclaration(
         id: "growJesus-ep19.mp3",
-        title: "What to Do When He Feels Silent",
+        title: "He Walks With You All the Way Home",
         subtitle: "Episode 19",
-        duration: "3m",
-        imageUrl: "growWithJesus",
-        isPremium: true
-    ),
-    AudioDeclaration(
-        id: "growJesus-ep20.mp3",
-        title: "What to Do When He Feels Silent",
-        subtitle: "Episode 20",
-        duration: "3m",
+        duration: "2m",
         imageUrl: "growWithJesus",
         isPremium: true
     ),

@@ -122,6 +122,12 @@ enum Filter: String {
     case growWithJesus = "Grow With Jesus"
 }
 
+struct FetchedFilter: Identifiable, Hashable {
+    var id: String  // unique ID for the filter
+    var displayName: String
+    var tag: String // used to filter audio files
+}
+
 struct AudioDeclarationView: View {
     @EnvironmentObject private var viewModel: AudioDeclarationViewModel
     @StateObject private var audioViewModel: AudioPlayerViewModel
@@ -131,36 +137,12 @@ struct AudioDeclarationView: View {
     @State private var audioURL: URL? = nil
     @State private var errorMessage: ErrorWrapper? = nil
     @State private var isPresentingPremiumView = false
-    let filters: [Filter] = [.godsHeart, .growWithJesus, .speaklife,.declarations, .gospel, .bedtimeStories, .meditation]
-    @State private var selectedFilter: Filter = .godsHeart
     @State var presentDevotionalSubscriptionView = false
    
     init(declarationStore: AudioDeclarationViewModel) {
         let playerVM = AudioPlayerViewModel()
         playerVM.audioDeclarationViewModel = declarationStore
         _audioViewModel = StateObject(wrappedValue: playerVM)
-    }
-    
-    var filteredContent: [AudioDeclaration] {
-        switch selectedFilter {
-        case .declarations:
-            return viewModel.audioDeclarations
-        case .bedtimeStories:
-            return viewModel.bedtimeStories
-        case .gospel:
-            return viewModel.gospelStories
-        case .meditation:
-            return viewModel.meditations
-        case .devotional:
-            return viewModel.devotionals
-        case .speaklife:
-            return viewModel.speaklife.reversed()
-        case .godsHeart:
-            return viewModel.godsHeart.reversed()
-        case .growWithJesus:
-            return viewModel.growWithJesus
-            
-        }
     }
     
     var body: some View {
@@ -266,7 +248,7 @@ struct AudioDeclarationView: View {
             }
         }) { item in
           
-            if let audioURL = audioURL {
+            if let _ = audioURL {
                 AudioPlayerView(
                     viewModel: audioViewModel
                 )
@@ -289,26 +271,50 @@ struct AudioDeclarationView: View {
     
     var header: some View {
         HStack(spacing: 15) {
-            ForEach(filters, id: \.self) { filter in
+            ForEach(viewModel.filters, id: \.self) { filter in
                 Button(action: {
-                    selectedFilter = filter
+                    viewModel.selectedFilter = filter
+                  //  viewModel.selectedDynamicFilter = nil
                 }) {
                     Text(filter.rawValue)
                         .font(.caption)
                         .padding(.horizontal, 15)
                         .padding(.vertical, 10)
-                        .background(selectedFilter == filter ? Constants.DAMidBlue : Color.gray.opacity(0.2))
+                        .background(viewModel.selectedFilter == filter ? Constants.DAMidBlue : Color.gray.opacity(0.2))
                         .foregroundColor(.white)
                         .cornerRadius(20)
                 }
             }
+            
+//            ForEach(viewModel.dynamicFilters, id: \.self) { filter in
+//                Button(action: {
+//                    viewModel.selectedDynamicFilter = filter
+//                    //viewModel.selectedFilter = filter
+//                }) {
+//                    Text(filter.displayName)
+//                        .font(.caption)
+//                        .padding(.horizontal, 15)
+//                        .padding(.vertical, 10)
+//                        .background(viewModel.selectedDynamicFilter == filter ? Constants.DAMidBlue : Color.gray.opacity(0.2))
+//                        .foregroundColor(.white)
+//                        .cornerRadius(20)
+//                }
+//            }
+            
+//            ForEach(viewModel.dynamicFilters) { fetchedFilter in
+//                Button(action: {
+//                    viewModel.selectedDynamicFilter = fetchedFilter
+//                }) {
+//                    Text(fetchedFilter.displayName)
+//                        .foregroundColor(viewModel.selectedDynamicFilter == fetchedFilter ? .accentColor : .primary)
+//                }
         }
         .padding(.horizontal)
     }
     
     func episodeRow(_ proxy: GeometryProxy) -> some View {
         List {
-            ForEach(filteredContent) { item in
+            ForEach(viewModel.filteredContent) { item in
                 Button(action: {
                     if item.isPremium, !subscriptionStore.isPremium {
                         isPresentingPremiumView = true

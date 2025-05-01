@@ -380,8 +380,11 @@ struct SubscriptionView: View {
             if let monthly = subscriptionStore.currentOfferedPremiumMonthly {
                 subscriptionOption(product: monthly)
             }
-            if let lifetime = subscriptionStore.currentOfferedLifetime {
-                subscriptionOption(product: lifetime)
+            
+            if subscriptionStore.showSubscriptionFirst {
+                if let lifetime = subscriptionStore.currentOfferedLifetime {
+                    subscriptionOption(product: lifetime)
+                }
             }
         }
     }
