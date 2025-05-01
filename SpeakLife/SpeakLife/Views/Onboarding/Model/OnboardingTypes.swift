@@ -35,5 +35,10 @@ enum Tab: String {
     case unshakeableFaith
     case confidence
     case review
+    case rooted
+    case victorious
+    case riverOfLife
+    case dailyBread
+    case seedHarvest
     
 }

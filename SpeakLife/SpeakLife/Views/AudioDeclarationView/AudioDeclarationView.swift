@@ -120,6 +120,7 @@ enum Filter: String {
     case speaklife = "SpeakLife"
     case godsHeart = "God's Heart"
     case growWithJesus = "Grow With Jesus"
+    case divineHealth = "Divine Health"
 }
 
 struct FetchedFilter: Identifiable, Hashable {

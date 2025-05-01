@@ -26,7 +26,7 @@ final class DeclarationViewModel: ObservableObject {
         }
     }
     
-    @Published var showVerse = true
+    @Published var showVerse = false
     
     @Published var selectedTab = 0
     

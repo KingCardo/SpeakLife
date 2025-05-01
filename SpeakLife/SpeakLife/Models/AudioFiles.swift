@@ -741,3 +741,23 @@ let growWithJesusFiles: [AudioDeclaration] = [
         isPremium: true
     ),
 ]
+
+// Divine Health files
+let divineHealthFiles: [AudioDeclaration] = [
+    AudioDeclaration(
+        id: "divineHealth-ep1.mp3",
+        title: "The Victory Is Already Won",
+        subtitle: "Episode 1",
+        duration: "4m",
+        imageUrl: "divineHealth",
+        isPremium: false
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep2.mp3",
+        title: "Your Position of Authority",
+        subtitle: "Episode 2",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    ]

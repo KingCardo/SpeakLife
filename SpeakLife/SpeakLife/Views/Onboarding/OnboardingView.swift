@@ -45,91 +45,135 @@ struct OnboardingView: View  {
             TabView(selection: $selection) {
                 
                 IntroTipScene(
-                    title: "Seek First the Kingdom",//"Your Mind is a Battlefield",
+                    title: "Seek First the Kingdom",
                     bodyText: """
-Jesus said, “Seek first the Kingdom of God and His righteousness, and all these things will be added to you.” (Matthew 6:33)
+                Jesus said, “Seek first the Kingdom of God and His righteousness, and all these things will be added to you.” (Matthew 6:33)
 
-When you speak His Word, healing flows. Peace settles in. Your mind renews. Everything changes.
-""",
-        
+                When you speak His Word, healing flows. Peace settles in. Your mind renews. Everything changes. This is where your true victory begins.
+                """,
                     subtext: "",
                     ctaText: "Step Into Peace, Protection & Grace",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size
                 ) {
-                
                     advance()
                 }
-                    .tag(Tab.transformedLife)
-                
-                IntroTipScene(
-                    title: "Healing, Peace & Clarity Await You",
-                    bodyText:"""
-                    Speak truth. Renew your mind. Transform your life.
-                    
-                    God’s Word brings healing to your body, peace to your mind, and clarity to your path. All by speaking and listening daily.
-                    """,
-                    subtext: "",
-                    ctaText: "Start Speaking Life",
-                    showTestimonials: false,
-                    isScholarship: false,
-                    size: geometry.size)
-                {
-                        advance()
-                }
-                .tag(Tab.unshakeableFaith)
-                
+                .tag(Tab.transformedLife)
+
+
                 IntroTipScene(
                     title: "The More You Meditate, the More You Receive",
                     bodyText: """
-                    The measure you give determines the measure you receive.
-                    
-                    The more you fill your heart with God’s Word, the greater the flow of His peace, healing, and revelation into your life.
-                    """,
+                The measure you give determines the measure you receive.
+
+                The more you fill your heart with God’s Word, the greater the flow of His peace, healing, and revelation into your life.
+                
+                Your victory multiplies with every word spoken.
+                """,
                     subtext: "",
                     ctaText: "Next",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
                 {
-                        advance()
+                    advance()
                 }
-                    .tag(Tab.mindset)
-                
+                .tag(Tab.mindset)
+
                 IntroTipScene(
                     title: "Like Medicine, It Works Daily",
                     bodyText:"""
-                    God’s Word works like medicine.
-                    
-                    Just like medicine needs daily doses, God’s Word nourishes, restores and transform's you when spoken and heard consistently.
-                    """,
+                God’s Word works like medicine.
+
+                Just as daily doses of medicine bring healing, God’s Word nourishes, restores, and transforms you when spoken and heard consistently. 
+                
+                Your breakthrough builds with daily practice.
+                """,
                     subtext: "",
                     ctaText: "Next",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
                 {
-                        advance()
+                    advance()
                 }
                 .tag(Tab.liveVictorious)
-                
+
                 IntroTipScene(
-                    title: "Stay Connected, Stay Filled",
+                    title: "Rooted & Nourished by God’s Word",
                     bodyText:"""
-                    Abide in Jesus. Draw life every day.
-                    
-                    Just like a branch draws life from the vine, your spirit flourishes by staying connected to Jesus every day. Abiding isn’t occasional—it’s constant.
-                    """,
+                His Word is your life source and unshakable foundation.
+
+                Like a branch draws life from the vine and a tree roots deep into rich soil, you flourish by staying connected to Jesus.
+                """,
                     subtext: "",
                     ctaText: "Next",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
                 {
-                        advance()
+                    advance()
                 }
-                    .tag(Tab.likeJesus)
+                .tag(Tab.rooted)
+
+                IntroTipScene(
+                    title: "I Am Victorious & Overflowing",
+                    bodyText:"""
+                Through Jesus, you are healed, provided for, and filled with peace. Every word you speak enforces what’s already yours—you are made to live in overflow.
+
+                Speaking God’s Word is like holding up your title deed—it proves your ownership and drives out every false claim. 
+                
+                Symptoms and thoughts are thieves, but your declarations keep you in possession of God’s victory.
+                """,
+                    subtext: "",
+                    ctaText: "Next",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size)
+                {
+                    advance()
+                }
+                .tag(Tab.victorious)
+
+                IntroTipScene(
+                    title: "A River of Life Within You",
+                    bodyText:"""
+                Fill your heart and mouth with God’s truth—your identity, your destiny, your inheritance.
+                
+                His Word in you starts as a gentle stream but grows into a mighty river, overflowing with healing, peace, and breakthrough the more you release it.
+                """,
+                    subtext: "",
+                    ctaText: "Next",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size)
+                {
+                    advance()
+                }
+                .tag(Tab.riverOfLife)
+
+
+                IntroTipScene(
+                    title: "Plant Seeds of Victory Daily",
+                    bodyText:"""
+                Every declaration you speak is a supernatural seed—and every seed must produce a harvest. 
+                
+                The more you plant, the greater your harvest of peace, healing, and transformation.
+
+                Your breakthrough is growing—keep speaking and watch it bloom.
+                """,
+                    subtext: "",
+                    ctaText: "Let’s Speak Life ➔",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size)
+                {
+                    advance()
+                }
+                .tag(Tab.seedHarvest)
+
+                
                 
                
              
@@ -360,7 +404,7 @@ When you speak His Word, healing flows. Peace settles in. Your mind renews. Ever
                     }
                 case .transformedLife:
                     impactMed.impactOccurred()
-                    selection = .unshakeableFaith
+                    selection = .mindset
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("TransformedLifeScreenDone", parameters: nil)
                 case .likeJesus:
@@ -370,7 +414,7 @@ When you speak His Word, healing flows. Peace settles in. Your mind renews. Ever
                     Analytics.logEvent("LikeJesusScreenDone", parameters: nil)
                 case .liveVictorious:
                     impactMed.impactOccurred()
-                    selection = .likeJesus
+                    selection = .rooted
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("LiveVictoriousScreenDone", parameters: nil)
                 case .unshakeableFaith:
@@ -398,6 +442,31 @@ When you speak His Word, healing flows. Peace settles in. Your mind renews. Ever
                     }
                     appState.lastReviewRequestSetDate = Date()
                    
+                case .rooted:
+                    impactMed.impactOccurred()
+                    selection = .victorious
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("rootedScreenDone", parameters: nil)
+                case .victorious:
+                    impactMed.impactOccurred()
+                    selection = .riverOfLife
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("victoriousScreenDone", parameters: nil)
+                case .riverOfLife:
+                    impactMed.impactOccurred()
+                    selection = .seedHarvest
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("riverOfLifeScreenDone", parameters: nil)
+                case .dailyBread:
+                    impactMed.impactOccurred()
+                    selection = .seedHarvest
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("dailyBreadScreenDone", parameters: nil)
+                case .seedHarvest:
+                    impactMed.impactOccurred()
+                    selection = .subscription
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("seedHarvestScreenDone", parameters: nil)
                 }
        // }
     }

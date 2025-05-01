@@ -124,11 +124,12 @@ struct DeclarationContentView: View {
                 askForReview()
                 let declaration = viewModel.declarations[newIndex]
                 viewModel.setCurrent(declaration)
-                if viewModel.selectedCategory == .myOwn || viewModel.selectedCategory == .favorites {
-                    viewModel.showVerse = false
-                } else {
-                    viewModel.showVerse = true
-                }
+                viewModel.showVerse = false
+//                if viewModel.selectedCategory == .myOwn || viewModel.selectedCategory == .favorites {
+//                    viewModel.showVerse = false
+//                } else {
+//                    viewModel.showVerse = true
+//                }
                 
             }
                 
