@@ -50,6 +50,8 @@ struct OnboardingView: View  {
                 Jesus said, “Seek first the Kingdom of God and His righteousness, and all these things will be added to you.” (Matthew 6:33)
 
                 When you speak His Word, healing flows, peace settles in, and your life transforms. This is where your true victory begins.
+                
+                Make God’s Word your *first* and greatest priority — and watch heaven move for you.
                 """,
                     subtext: "",
                     ctaText: "Step Into Peace & Victory ➔",
@@ -67,6 +69,8 @@ struct OnboardingView: View  {
                 The more you fill your heart with God’s Word, the greater the flow of His peace, healing, and revelation.
 
                 Your victory multiplies with every word spoken.
+                
+                Keep soaking in His Word — and soon, you’ll overflow with breakthrough.
                 """,
                     subtext: "",
                     ctaText: "Next ➔",
@@ -82,6 +86,8 @@ struct OnboardingView: View  {
                     title: "Faith Comes by Hearing",
                     bodyText: """
                 Faith comes by hearing—and hearing, and hearing God’s Word.
+                
+                More hearing = more faith = more power
 
                 The more you listen, the more your heart fills with unshakable faith. And when your heart is full, you release that faith by boldly speaking His promises into your life.
                 """,
