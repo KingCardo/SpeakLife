@@ -760,4 +760,52 @@ let divineHealthFiles: [AudioDeclaration] = [
         imageUrl: "divineHealth",
         isPremium: true
     ),
+    AudioDeclaration(
+        id: "divineHealth-ep3.mp3",
+        title: "Guard Your Heart Like a Fortress",
+        subtitle: "Episode 3",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep4.mp3",
+        title: "Faith Comes by Hearing—And Hearing Again",
+        subtitle: "Episode 4",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep5.mp3",
+        title: "Your Words Are Weapons",
+        subtitle: "Episode 5",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep6.mp3",
+        title: "The Power of Agreement",
+        subtitle: "Episode 6",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep7.mp3",
+        title: "Identity Fuels Faith",
+        subtitle: "Episode 7",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep8.mp3",
+        title: "The Power of Persistent Faith",
+        subtitle: "Episode 8",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
     ]

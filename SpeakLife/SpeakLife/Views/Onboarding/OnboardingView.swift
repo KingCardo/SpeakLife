@@ -49,30 +49,27 @@ struct OnboardingView: View  {
                     bodyText: """
                 Jesus said, “Seek first the Kingdom of God and His righteousness, and all these things will be added to you.” (Matthew 6:33)
 
-                When you speak His Word, healing flows. Peace settles in. Your mind renews. Everything changes. This is where your true victory begins.
+                When you speak His Word, healing flows, peace settles in, and your life transforms. This is where your true victory begins.
                 """,
                     subtext: "",
-                    ctaText: "Step Into Peace, Protection & Grace",
+                    ctaText: "Step Into Peace & Victory ➔",
                     showTestimonials: false,
                     isScholarship: false,
-                    size: geometry.size
-                ) {
+                    size: geometry.size)
+                {
                     advance()
                 }
                 .tag(Tab.transformedLife)
 
-
                 IntroTipScene(
                     title: "The More You Meditate, the More You Receive",
                     bodyText: """
-                The measure you give determines the measure you receive.
+                The more you fill your heart with God’s Word, the greater the flow of His peace, healing, and revelation.
 
-                The more you fill your heart with God’s Word, the greater the flow of His peace, healing, and revelation into your life.
-                
                 Your victory multiplies with every word spoken.
                 """,
                     subtext: "",
-                    ctaText: "Next",
+                    ctaText: "Next ➔",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
@@ -82,52 +79,31 @@ struct OnboardingView: View  {
                 .tag(Tab.mindset)
 
                 IntroTipScene(
-                    title: "Like Medicine, It Works Daily",
-                    bodyText:"""
-                God’s Word works like medicine.
+                    title: "Faith Comes by Hearing",
+                    bodyText: """
+                Faith comes by hearing—and hearing, and hearing God’s Word.
 
-                Just as daily doses of medicine bring healing, God’s Word nourishes, restores, and transforms you when spoken and heard consistently. 
-                
-                Your breakthrough builds with daily practice.
+                The more you listen, the more your heart fills with unshakable faith. And when your heart is full, you release that faith by boldly speaking His promises into your life.
                 """,
                     subtext: "",
-                    ctaText: "Next",
+                    ctaText: "Keep Building Faith ➔",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
                 {
                     advance()
                 }
-                .tag(Tab.liveVictorious)
-
-                IntroTipScene(
-                    title: "Rooted & Nourished by God’s Word",
-                    bodyText:"""
-                His Word is your life source and unshakable foundation.
-
-                Like a branch draws life from the vine and a tree roots deep into rich soil, you flourish by staying connected to Jesus.
-                """,
-                    subtext: "",
-                    ctaText: "Next",
-                    showTestimonials: false,
-                    isScholarship: false,
-                    size: geometry.size)
-                {
-                    advance()
-                }
-                .tag(Tab.rooted)
+                .tag(Tab.hearingFaith)
 
                 IntroTipScene(
                     title: "I Am Victorious & Overflowing",
-                    bodyText:"""
-                Through Jesus, you are healed, provided for, and filled with peace. Every word you speak enforces what’s already yours—you are made to live in overflow.
+                    bodyText: """
+                Through Jesus, you are healed, provided for, and filled with peace.
 
-                Speaking God’s Word is like holding up your title deed—it proves your ownership and drives out every false claim. 
-                
-                Symptoms and thoughts are thieves, but your declarations keep you in possession of God’s victory.
+                Every word you speak enforces what’s already yours. Speaking God’s Word is like holding up your title deed — it proves your ownership and drives out every false claim.
                 """,
                     subtext: "",
-                    ctaText: "Next",
+                    ctaText: "Next ➔",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
@@ -137,31 +113,11 @@ struct OnboardingView: View  {
                 .tag(Tab.victorious)
 
                 IntroTipScene(
-                    title: "A River of Life Within You",
-                    bodyText:"""
-                Fill your heart and mouth with God’s truth—your identity, your destiny, your inheritance.
-                
-                His Word in you starts as a gentle stream but grows into a mighty river, overflowing with healing, peace, and breakthrough the more you release it.
-                """,
-                    subtext: "",
-                    ctaText: "Next",
-                    showTestimonials: false,
-                    isScholarship: false,
-                    size: geometry.size)
-                {
-                    advance()
-                }
-                .tag(Tab.riverOfLife)
-
-
-                IntroTipScene(
                     title: "Plant Seeds of Victory Daily",
-                    bodyText:"""
-                Every declaration you speak is a supernatural seed—and every seed must produce a harvest. 
-                
-                The more you plant, the greater your harvest of peace, healing, and transformation.
+                    bodyText: """
+                Every declaration you speak is a supernatural seed — and every seed must produce a harvest.
 
-                Your breakthrough is growing—keep speaking and watch it bloom.
+                The more you plant, the greater your harvest of peace, healing, and transformation. Your breakthrough is growing — keep speaking and watch it bloom.
                 """,
                     subtext: "",
                     ctaText: "Let’s Speak Life ➔",
@@ -172,10 +128,7 @@ struct OnboardingView: View  {
                     advance()
                 }
                 .tag(Tab.seedHarvest)
-
                 
-                
-               
              
                 
                 ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
@@ -185,16 +138,7 @@ struct OnboardingView: View  {
                 }
                 .tag(Tab.improvement)
                 
-//                FeatureShowcaseScreen(size: geometry.size) {
-//                    advance()
-//                }
-//                .tag(Tab.useCase)
-//                
-//                TestimonialScreen(size: geometry.size) {
-//                    advance()
-//                }
-//                .tag(Tab.unshakeableFaith)
-                
+
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
                 
@@ -358,7 +302,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("IntroTipScreenDone", parameters: nil)
                 case .mindset:
                     impactMed.impactOccurred()
-                    selection = .liveVictorious
+                    selection = .hearingFaith
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("IntroMindsetScreenDone", parameters: nil)
                 case .benefits:
@@ -449,7 +393,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("rootedScreenDone", parameters: nil)
                 case .victorious:
                     impactMed.impactOccurred()
-                    selection = .riverOfLife
+                    selection = .seedHarvest
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("victoriousScreenDone", parameters: nil)
                 case .riverOfLife:
@@ -464,7 +408,12 @@ struct OnboardingView: View  {
                     Analytics.logEvent("dailyBreadScreenDone", parameters: nil)
                 case .seedHarvest:
                     impactMed.impactOccurred()
-                    selection = .subscription
+                    selection = .improvement
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("seedHarvestScreenDone", parameters: nil)
+                case .hearingFaith:
+                    impactMed.impactOccurred()
+                    selection = .victorious
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("seedHarvestScreenDone", parameters: nil)
                 }

@@ -40,5 +40,6 @@ enum Tab: String {
     case riverOfLife
     case dailyBread
     case seedHarvest
+    case hearingFaith
     
 }
