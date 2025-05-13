@@ -1,5 +1,70 @@
 import SwiftUI
 
+
+struct SkillLevelView: View {
+    @ObservedObject var progressManager: QuizProgressManager
+
+    var body: some View {
+        let level = progressManager.levelName
+        let color = colorForLevel(level)
+        let icon = iconForLevel(level)
+
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Image(systemName: icon)
+                    .foregroundColor(color)
+                    .imageScale(.large)
+                    .padding(8)
+                    .background(color.opacity(0.1))
+                    .clipShape(Circle())
+
+                VStack(alignment: .leading) {
+                    Text("Your Level")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    Text(level)
+                        .font(.title3.bold())
+                        .foregroundColor(color)
+                }
+
+                Spacer()
+            }
+
+            ProgressView(value: progressManager.progress)
+                .progressViewStyle(LinearProgressViewStyle(tint: color))
+                .animation(.easeInOut(duration: 0.5), value: progressManager.progress)
+                .frame(height: 8)
+        }
+        .padding()
+        .background(.ultraThinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .shadow(radius: 5)
+        .padding(.horizontal)
+    }
+
+    private func iconForLevel(_ level: String) -> String {
+        switch level {
+        case "New Listener": return "ear.fill"
+        case "Faith Builder": return "leaf.fill"
+        case "Word Warrior": return "shield.lefthalf.fill"
+        case "Life Speaker": return "megaphone.fill"
+        case "SpeakLife Master": return "crown.fill"
+        default: return "circle.fill"
+        }
+    }
+
+    private func colorForLevel(_ level: String) -> Color {
+        switch level {
+        case "New Listener": return .gray
+        case "Faith Builder": return .green
+        case "Word Warrior": return .indigo
+        case "Life Speaker": return .orange
+        case "SpeakLife Master": return .cyan
+        default: return .blue
+        }
+    }
+}
+
 struct QuizConfettiView: View {
     @State private var particles: [ConfettiParticleData] = []
     @State private var isExploded = false

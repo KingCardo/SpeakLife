@@ -27,17 +27,39 @@ class QuizProgressManager: ObservableObject {
             save()
         }
     }
+    
+    var levelName: String {
+        switch completedQuizTitles.count {
+        case 0: return "New Listener"
+        case 1...2: return "Faith Builder"
+        case 3...4: return "Word Warrior"
+        case 5...6: return "Life Speaker"
+        default: return "SpeakLife Master"
+        }
+    }
+
+    var progress: Double {
+        Double(completedQuizTitles.count) / Double(totalQuizCount)
+    }
+
+    var totalQuizCount: Int {
+        QuizHomeView.quizzes.count 
+    }
 }
 struct QuizHomeView: View {
     @StateObject private var progressManager = QuizProgressManager()
     
-    let quizzes = [Quiz(title: "When to Speak Faith", questions: questions), Quiz(title:"How to Get & Stay Healed", questions: healingQuizQuestions), Quiz(title:"How to Stay in Peace", questions: peaceQuizQuestions), Quiz(title:"The Power of Words", questions: wordsQuizQuestions), Quiz(title:"God’s Protection", questions: protectionQuizQuestions), Quiz(title:"Trusting God With Your Destiny", questions: destinyQuizQuestions)]
+    static let quizzes = [Quiz(title: "When to Speak Faith", questions: questions), Quiz(title:"How to Get & Stay Healed", questions: healingQuizQuestions), Quiz(title:"How to Stay in Peace", questions: peaceQuizQuestions), Quiz(title:"The Power of Words", questions: wordsQuizQuestions), Quiz(title:"God’s Protection", questions: protectionQuizQuestions), Quiz(title:"Count it all Joy", questions: joyQuizQuestions), Quiz(title:"Trusting God With Your Destiny", questions: destinyQuizQuestions)]
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
-                    ForEach(quizzes) { quiz in
+                    VStack(spacing: 12) {
+                        SkillLevelView(progressManager: progressManager)
+                    }
+                    .padding(.top)
+                    ForEach(QuizHomeView.quizzes) { quiz in
                         NavigationLink(
                             destination: QuizStartView(
                                 quizTitle: quiz.title,

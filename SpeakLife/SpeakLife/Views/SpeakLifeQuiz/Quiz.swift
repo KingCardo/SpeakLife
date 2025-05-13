@@ -571,3 +571,96 @@ let wordsQuizQuestions = [
         "2 Corinthians 4:13 — 'I believed, and therefore I spoke.' Faith speaks!"
     )
 ]
+
+let joyQuizQuestions = [
+    (
+        "What does James 1:2 say to do when you face trials?",
+        ["Complain", "Run from them", "Count it all joy", "Ignore them"],
+        2,
+        "'Count it all joy… knowing the testing of your faith produces endurance.' Joy shifts perspective."
+    ),
+    (
+        "Why can we have joy during hard times?",
+        ["We fake it", "We hope for escape", "God is working something good", "It distracts us"],
+        2,
+        "Romans 8:28 — 'All things work together for good to those who love God.'"
+    ),
+    (
+        "What should your mouth speak when life gets tough?",
+        ["It’s too much", "I can’t do this", "God is with me and joy is my strength", "Just survive it"],
+        2,
+        "Nehemiah 8:10 — 'The joy of the Lord is your strength.'"
+    ),
+    (
+        "You’re facing delays and disappointments. What now?",
+        ["Give up", "Count them as joy", "Get frustrated", "Compare with others"],
+        1,
+        "Joy is a spiritual choice — it releases strength and endurance."
+    ),
+    (
+        "What does rejoicing in trials produce?",
+        ["Relief", "Confusion", "Endurance and maturity", "Weakness"],
+        2,
+        "James 1:4 — 'Let endurance have its full effect, that you may be perfect and complete.'"
+    ),
+    (
+        "What does joy look like under pressure?",
+        ["Denial", "Laughing at pain", "Confidence in God's faithfulness", "Pretending to be okay"],
+        2,
+        "Joy isn't fake — it's faith. It says, 'I trust God’s goodness even now.'"
+    ),
+    (
+        "How did Paul respond in prison?",
+        ["Gave up", "Wrote angry letters", "Rejoiced always", "Demanded release"],
+        2,
+        "Philippians 4:4 — 'Rejoice in the Lord always.' He wrote that from jail!"
+    ),
+    (
+        "You just got bad news. What do you say?",
+        ["This ruins everything", "God is still good", "Why me?", "Nothing ever works out"],
+        1,
+        "Habakkuk 3:18 — 'Yet I will rejoice in the Lord… I will be joyful in God my Savior.'"
+    ),
+    (
+        "What kind of joy does Jesus give?",
+        ["Temporary", "Based on feelings", "Full and unshakable", "Earned joy"],
+        2,
+        "John 15:11 — 'That My joy may remain in you, and your joy may be full.'"
+    ),
+    (
+        "How can you stir up joy in hard times?",
+        ["Ignore the problem", "Listen to sad music", "Praise and speak promises", "Wait it out"],
+        2,
+        "Isaiah 61:3 — God gives a 'garment of praise for the spirit of heaviness.'"
+    ),
+    (
+        "Joy is not a feeling — it’s a...",
+        ["Reaction", "Spiritual weapon", "Reward", "Temporary escape"],
+        1,
+        "Joy fights back — it releases strength, hope, and victory in the middle of pressure."
+    ),
+    (
+        "What happens when you choose joy instead of fear?",
+        ["People think you're weird", "You stay in denial", "You overcome with faith", "Nothing"],
+        2,
+        "Faith rejoices before the breakthrough — joy is a sign you believe."
+    ),
+    (
+        "What does joy in trials say to the enemy?",
+        ["You’re not affected", "You're ignoring reality", "God will win this", "You’re giving up"],
+        2,
+        "Joy is defiant faith — it announces that God is bigger than the attack."
+    ),
+    (
+        "What does it mean to 'rejoice always'?",
+        ["Be fake", "Avoid pain", "Choose faith even in chaos", "Be out of touch"],
+        2,
+        "1 Thess. 5:16 — Joy is choosing to believe in God’s nature no matter what."
+    ),
+    (
+        "How do you cultivate joy daily?",
+        ["Meditate on problems", "Hope for better days", "Speak God’s promises and give thanks", "Fake a smile"],
+        2,
+        "Philippians 4:8 — Think on what is good. Gratitude and the Word fuel joy."
+    )
+]
