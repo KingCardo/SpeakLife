@@ -1,18 +1,59 @@
 import SwiftUI
+import Firebase
+import Foundation
 
+class QuizProgressManager: ObservableObject {
+    @AppStorage("completedQuizTitlesRaw") private var completedRaw: String = ""
+
+    @Published var completedQuizTitles: [String] = []
+
+    init() {
+        load()
+    }
+
+    private func load() {
+        completedQuizTitles = (try? JSONDecoder().decode([String].self, from: Data(completedRaw.utf8))) ?? []
+    }
+
+    private func save() {
+        if let data = try? JSONEncoder().encode(completedQuizTitles) {
+            completedRaw = String(data: data, encoding: .utf8) ?? ""
+        }
+    }
+
+    func markQuizComplete(_ title: String) {
+        if !completedQuizTitles.contains(title) {
+            completedQuizTitles.append(title)
+            save()
+        }
+    }
+}
 struct QuizHomeView: View {
-    let quizzes = ["When to Speak Faith"]
-
+    @StateObject private var progressManager = QuizProgressManager()
+    
+    let quizzes = [Quiz(title: "When to Speak Faith", questions: questions), Quiz(title:"How to Get & Stay Healed", questions: healingQuizQuestions), Quiz(title:"How to Stay in Peace", questions: peaceQuizQuestions), Quiz(title:"The Power of Words", questions: wordsQuizQuestions), Quiz(title:"God’s Protection", questions: protectionQuizQuestions), Quiz(title:"Trusting God With Your Destiny", questions: destinyQuizQuestions)]
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
-                    ForEach(quizzes, id: \.self) { quiz in
-                        NavigationLink(destination: QuizStartView(quizTitle: quiz)) {
-                            QuizCardView(title: quiz)
+                    ForEach(quizzes) { quiz in
+                        NavigationLink(
+                            destination: QuizStartView(
+                                quizTitle: quiz.title,
+                                questions: quiz.questions,
+                                progressManager: progressManager
+                            )
+                        ) {
+                            HStack {
+                                QuizCardView(title: quiz.title)
+                                if progressManager.completedQuizTitles.contains(quiz.title) {
+                                    Image(systemName: "checkmark.seal.fill")
+                                        .foregroundColor(.green)
+                                }
+                            }
                         }
                         .buttonStyle(PlainButtonStyle())
-                        .transition(.scale)
                     }
                 }
                 .padding()
@@ -21,6 +62,7 @@ struct QuizHomeView: View {
         }
     }
 }
+
 
 struct QuizCardView: View {
     let title: String

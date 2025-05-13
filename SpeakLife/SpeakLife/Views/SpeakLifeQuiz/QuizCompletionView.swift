@@ -43,7 +43,7 @@ struct QuizCompletionView: View {
                 // ✅ CTA Button
                 Button(action: {
                     dismiss()
-                    appState.showQuizButton = false
+                   // appState.showQuizButton = false
                 }) {
                     Text("Back to Lessons")
                         .font(.headline)

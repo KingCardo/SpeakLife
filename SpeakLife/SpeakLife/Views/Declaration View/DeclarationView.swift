@@ -79,18 +79,8 @@ struct DeclarationView: View {
                         VStack() {
                            
                             HStack {
-//                                CapsuleImageButton(title: "envelope.fill") {
-//                                    abbaLoveView()
-//                                    Selection.shared.selectionFeedback()
-//                                }
-//                                .sheet(isPresented: $isPresentingAbbaLoveView) {
-//                                    timerViewModel.loadRemainingTime()
-//                                  
-//                                       // .allowsHitTesting(!appState.showScreenshotLabel)
-//                                } content: {
-//                                    AbbasLoveView()
-//                                }
-                                if appState.showQuizButton {
+
+                              //  if appState.showQuizButton {
                                     CapsuleImageButton(title: "lightbulb.fill") {
                                         presentQuiz()
                                         Selection.shared.selectionFeedback()
@@ -100,7 +90,7 @@ struct DeclarationView: View {
                                     } content: {
                                         QuizHomeView()
                                     }
-                                }
+                              //  }
 
                                 Spacer()
                                 if !timerViewModel.checkIfCompletedToday() {

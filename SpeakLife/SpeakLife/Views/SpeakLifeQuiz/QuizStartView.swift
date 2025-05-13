@@ -1,7 +1,10 @@
 import SwiftUI
+import FirebaseAnalytics
 
 struct QuizStartView: View {
     let quizTitle: String
+    let questions: [(String, [String], Int, String)]
+    @ObservedObject var progressManager: QuizProgressManager
 
     var body: some View {
         VStack(spacing: 30) {
@@ -16,7 +19,7 @@ struct QuizStartView: View {
 
             Spacer()
 
-            NavigationLink(destination: QuizQuestionView()) {
+            NavigationLink(destination: QuizQuestionView(progressManager: progressManager, quizTitle: quizTitle, questions: questions)) {
                 Text("Start Lesson")
                     .font(.headline)
                     .padding()
@@ -30,5 +33,9 @@ struct QuizStartView: View {
             Spacer()
         }
         .padding()
+        .onAppear {
+            Analytics.logEvent(quizTitle, parameters: nil)
+        }
     }
+        
 }
