@@ -808,4 +808,20 @@ let divineHealthFiles: [AudioDeclaration] = [
         imageUrl: "divineHealth",
         isPremium: true
     ),
+    AudioDeclaration(
+        id: "divineHealth-ep9.mp3",
+        title: "Resting in God’s Finished Work",
+        subtitle: "Episode 9",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep10.mp3",
+        title: "Thanksgiving as a Weapon",
+        subtitle: "Episode 10",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
     ]

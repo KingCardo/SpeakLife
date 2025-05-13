@@ -50,7 +50,7 @@ struct OnboardingView: View  {
                 Jesus said, “Seek first the Kingdom of God and His righteousness, and all these things will be added to you.” (Matthew 6:33)
 
                 When you speak His Word, healing flows, peace settles in, and your life transforms. This is where your true victory begins.
-                
+
                 Make God’s Word your *first* and greatest priority — and watch heaven move for you.
                 """,
                     subtext: "",
@@ -69,7 +69,7 @@ struct OnboardingView: View  {
                 The more you fill your heart with God’s Word, the greater the flow of His peace, healing, and revelation.
 
                 Your victory multiplies with every word spoken.
-                
+
                 Keep soaking in His Word — and soon, you’ll overflow with breakthrough.
                 """,
                     subtext: "",
@@ -86,8 +86,8 @@ struct OnboardingView: View  {
                     title: "Faith Comes by Hearing",
                     bodyText: """
                 Faith comes by hearing—and hearing, and hearing God’s Word.
-                
-                More hearing = more faith = more power
+
+                More hearing = more faith = more power.
 
                 The more you listen, the more your heart fills with unshakable faith. And when your heart is full, you release that faith by boldly speaking His promises into your life.
                 """,
@@ -100,6 +100,25 @@ struct OnboardingView: View  {
                     advance()
                 }
                 .tag(Tab.hearingFaith)
+
+                IntroTipScene(
+                    title: "Feed Your Spirit All Day",
+                    bodyText: """
+                Just like your physical body needs food and drink every day, your spirit needs constant nourishment.
+
+                Listening to God’s Word, speaking His promises, and meditating on truth throughout the day fills you with strength, peace, and power.
+
+                The more you feed on spiritual food, the more your faith thrives — and the more heaven’s power flows through you.
+                """,
+                    subtext: "",
+                    ctaText: "Stay Spiritually Nourished ➔",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size)
+                {
+                    advance()
+                }
+                .tag(Tab.spiritualFood)
 
                 IntroTipScene(
                     title: "I Am Victorious & Overflowing",
@@ -121,7 +140,7 @@ struct OnboardingView: View  {
                 IntroTipScene(
                     title: "Plant Seeds of Victory Daily",
                     bodyText: """
-                Every declaration you speak is a supernatural seed — and every seed must produce a harvest.
+                Faith is a partnership — God supplies the promise, but you must sow the seed. Keep watering it by speaking, and the harvest will surely come.
 
                 The more you plant, the greater your harvest of peace, healing, and transformation. Your breakthrough is growing — keep speaking and watch it bloom.
                 """,
@@ -134,8 +153,7 @@ struct OnboardingView: View  {
                     advance()
                 }
                 .tag(Tab.seedHarvest)
-                
-             
+
                 
                 ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
                     withAnimation {
@@ -419,9 +437,14 @@ struct OnboardingView: View  {
                     Analytics.logEvent("seedHarvestScreenDone", parameters: nil)
                 case .hearingFaith:
                     impactMed.impactOccurred()
-                    selection = .victorious
+                    selection = .spiritualFood
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("seedHarvestScreenDone", parameters: nil)
+                case .spiritualFood:
+                    impactMed.impactOccurred()
+                    selection = .victorious
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("spiritualFoodScreenDone", parameters: nil)
                 }
        // }
     }

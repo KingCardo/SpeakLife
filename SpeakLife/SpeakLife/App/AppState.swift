@@ -47,6 +47,7 @@ final class AppState: ObservableObject {
     @AppStorage("showGiftViewCount") var showGiftViewCount = 0
     @AppStorage("email") var email = ""
     @AppStorage("hasEmail") var needEmail = true
+    @AppStorage("showQuizButton") var showQuizButton = true
   
     
 }

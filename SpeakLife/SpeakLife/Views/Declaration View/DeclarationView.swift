@@ -41,6 +41,7 @@ struct DeclarationView: View {
     @State var showDailyDevotion = false
     @State private var isPresentingPremiumView = false
     @State private var isPresentingAbbaLoveView = false
+    @State private var isPresentingQuizView = false
     @State private var isPresentingDiscountView = false
     @State private var isPresentingBottomSheet = false
     @EnvironmentObject var timerViewModel: TimerViewModel
@@ -78,16 +79,27 @@ struct DeclarationView: View {
                         VStack() {
                            
                             HStack {
-                                CapsuleImageButton(title: "envelope.fill") {
-                                    abbaLoveView()
-                                    Selection.shared.selectionFeedback()
-                                }
-                                .sheet(isPresented: $isPresentingAbbaLoveView) {
-                                    timerViewModel.loadRemainingTime()
-                                  
-                                       // .allowsHitTesting(!appState.showScreenshotLabel)
-                                } content: {
-                                    AbbasLoveView()
+//                                CapsuleImageButton(title: "envelope.fill") {
+//                                    abbaLoveView()
+//                                    Selection.shared.selectionFeedback()
+//                                }
+//                                .sheet(isPresented: $isPresentingAbbaLoveView) {
+//                                    timerViewModel.loadRemainingTime()
+//                                  
+//                                       // .allowsHitTesting(!appState.showScreenshotLabel)
+//                                } content: {
+//                                    AbbasLoveView()
+//                                }
+                                if appState.showQuizButton {
+                                    CapsuleImageButton(title: "lightbulb.fill") {
+                                        presentQuiz()
+                                        Selection.shared.selectionFeedback()
+                                    }
+                                    .sheet(isPresented: $isPresentingQuizView) {
+                                        
+                                    } content: {
+                                        QuizHomeView()
+                                    }
                                 }
 
                                 Spacer()
@@ -265,6 +277,10 @@ struct DeclarationView: View {
     private func abbaLoveView()  {
         timerViewModel.saveRemainingTime()
         self.isPresentingAbbaLoveView = true
+    }
+    
+    private func presentQuiz()  {
+        self.isPresentingQuizView = true
     }
     
     
