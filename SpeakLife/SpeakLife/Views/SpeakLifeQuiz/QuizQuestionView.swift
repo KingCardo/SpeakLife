@@ -18,7 +18,7 @@ struct QuizQuestionView: View {
         if quizCompleted {
             QuizCompletionView().onAppear {
                 progressManager.markQuizComplete(quizTitle)
-                Analytics.logEvent(quizTitle, parameters: nil)
+                Analytics.logEvent(quizTitle.replacingOccurrences(of: " ", with: ""), parameters: nil)
             }
         } else if showExplanation {
                 if !isAnswerCorrect {
@@ -66,7 +66,7 @@ struct QuizQuestionView: View {
                             .padding()
                             .frame(maxWidth: .infinity)
                             .background(buttonColor(for: index))
-                            .foregroundColor(.black)
+                            .foregroundColor(.cyan)
                             .cornerRadius(10)
                     }
                     .disabled(showFeedback)

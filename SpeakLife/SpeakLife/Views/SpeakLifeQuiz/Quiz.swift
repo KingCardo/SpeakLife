@@ -15,280 +15,281 @@ struct Quiz: Identifiable {
 
 let questions = [
     (
-        "What should you do when the devil whispers, 'You're not good enough'?",
+        "The enemy whispers, 'You're not good enough.' What do you do?",
         ["Agree and try harder", "Ignore it", "Speak God's truth aloud", "Complain to a friend"],
         2,
-        "Speak the truth: ‘I am the righteousness of God in Christ’ (2 Cor. 5:21)."
+        "Declare with authority: 'I am the righteousness of God in Christ' (2 Cor. 5:21). You’re not fighting for worth — you're standing in what Jesus already finished."
     ),
     (
-        "You feel anxiety rising—what's the best first response?",
+        "Anxiety begins to rise — what’s your first response?",
         ["Accept it as normal", "Declare 'God has not given me a spirit of fear'", "Distract yourself", "Call someone"],
         1,
-        "Use 2 Tim. 1:7. Speaking Scripture out loud silences fear and activates peace."
+        "Your words are weapons. Speak 2 Tim. 1:7 — and peace will silence the storm. Fear has no legal ground."
     ),
     (
-        "What do you do when symptoms hit your body suddenly?",
+        "Symptoms hit your body suddenly — how do you respond?",
         ["Panic", "Pray silently", "Declare healing Scriptures", "Search online for answers"],
         2,
-        "Isaiah 53:5 says by His wounds, we are healed. Speak healing boldly."
+        "Isaiah 53:5 isn’t a maybe — it’s a blood-bought fact. Speak it: 'By His wounds, I AM healed.' The Word carries the healing itself."
     ),
     (
-        "The enemy says you’ll never change—what do you say?",
+        "The devil says, 'You’ll never change.' What’s the truth?",
         ["Maybe that’s true", "Say nothing", "Declare 'I am a new creation in Christ'", "Try to prove him wrong"],
         2,
-        "2 Cor. 5:17 — remind yourself and the enemy of your reborn identity."
+        "2 Cor. 5:17 — You're not improving the old you; you’re living from a completely new nature."
     ),
     (
-        "What’s the best response when your finances look hopeless?",
+        "Your finances look hopeless — what do you say?",
         ["Cry", "Declare God is your provider", "Blame yourself", "Work more hours"],
         1,
-        "Declare: 'My God supplies all my needs' (Phil. 4:19). Speak faith, not fear."
+        "Declare: 'My God shall supply all my needs' (Phil. 4:19). God isn’t reacting to need — He responds to faith in His promise."
     ),
     (
-        "In the middle of a trial, what honors God most?",
-        ["Complaining", "Silence", "Worship and gratitude", "Waiting to see what happens"],
+        "In the middle of a trial, how do you honor God?",
+        ["Complain", "Stay silent", "Worship and give thanks", "Wait to see what happens"],
         2,
-        "Psalm 34:1 — 'I will bless the Lord at all times.' Praise shifts the atmosphere."
+        "Psalm 34:1 — Praise turns pressure into breakthrough. Your worship is warfare."
     ),
     (
-        "The enemy whispers, 'You're alone' — what do you speak?",
+        "The devil whispers, 'You're alone.' What do you speak?",
         ["It's true", "Call a friend", "Declare 'God will never leave me'", "Cry it out"],
         2,
-        "Hebrews 13:5 — God promised never to leave or forsake you. Speak it with boldness."
+        "Hebrews 13:5 — God promised never to leave you. Say it until your feelings bow to it."
     ),
     (
-        "You feel shame from your past — what now?",
+        "You feel shame from your past. What do you declare?",
         ["Own it", "Bury it", "Speak 'I’m forgiven and free'", "Try harder to be better"],
         2,
-        "Romans 8:1 — No condemnation in Christ. Declare freedom!"
+        "Romans 8:1 — There’s zero condemnation in Christ. Shame has no voice when grace is spoken."
     ),
     (
-        "How do you renew your mind daily?",
-        ["Ignore bad thoughts", "Think positive", "Read and speak Scripture", "Pray only in church"],
+        "How do you renew your mind and transform your life?",
+        ["Ignore bad thoughts", "Think positive", "Read and speak God’s Word aloud", "Pray only at church"],
         2,
-        "Romans 12:2 — Be transformed by renewing your mind with God's Word."
+        "Romans 12:2 — Transformation flows from hearing and declaring truth, not just thinking it."
     ),
     (
-        "The devil says your future is doomed—how do you answer?",
-        ["Believe it", "Speak Jeremiah 29:11", "Worry", "Wait and see"],
+        "The enemy says, 'Your future is doomed.' What’s your reply?",
+        ["Believe it", "Speak Jeremiah 29:11", "Worry silently", "Wait and see"],
         1,
-        "Speak: 'God has plans to prosper me, not to harm me.' Faith speaks."
+        "Speak life: 'God’s plans are for my hope and future.' Faith doesn’t echo feelings — it echoes God's voice."
     ),
     (
-        "What do you do when you feel unworthy to pray?",
-        ["Stay silent", "Try to fix yourself", "Declare your righteousness in Jesus", "Ask someone else to pray"],
+        "You feel unworthy to pray — what do you declare?",
+        ["Stay silent", "Try to fix yourself", "Declare your righteousness in Christ", "Ask someone else to pray"],
         2,
-        "Hebrews 4:16 — Come boldly to the throne because of Jesus, not your performance."
+        "Hebrews 4:16 — Boldness isn’t arrogance, it’s confidence in Jesus’ finished work. You’re always welcome."
     ),
     (
-        "When healing is slow, what should your response be?",
+        "Healing feels slow — what should you keep doing?",
         ["Doubt it", "Keep declaring the Word", "Complain", "Give up"],
         1,
-        "Faith holds on to the Word. Keep speaking it (Hebrews 10:23)."
+        "Hebrews 10:23 — Hold fast your confession. The healing began when you believed, not when you felt it."
     ),
     (
-        "If symptoms return after prayer, what do you do?",
-        ["Accept them", "Keep standing on God's promise", "Search for new remedies", "Blame yourself"],
+        "Symptoms return after prayer. What do you speak?",
+        ["Accept them", "Stand on God's promise", "Search for other options", "Blame yourself"],
         1,
-        "Symptoms don’t cancel God’s Word. Keep standing — healing is yours (Isaiah 53:5)."
+        "Symptoms don’t override the Word — the Word overrides symptoms. Speak healing until your body agrees."
     ),
     (
-        "The enemy says 'You’ll always be stuck' — what’s the truth?",
-        ["Maybe he’s right", "Hope it changes", "Declare freedom in Jesus", "Stay quiet"],
+        "The enemy says, 'You’ll always be stuck.' What do you declare?",
+        ["Maybe he’s right", "Hope it gets better", "Declare freedom in Jesus", "Stay quiet"],
         2,
-        "John 8:36 — Whom the Son sets free is free indeed. Speak your freedom."
+        "John 8:36 — 'Whom the Son sets free is free indeed.' Speak it until you see it."
     ),
     (
-        "When things don’t change fast, what do you believe?",
-        ["It’s not working", "God’s Word is still true", "I must be doing something wrong", "Quit"],
+        "You don’t see change yet — what do you believe?",
+        ["It’s not working", "God’s Word is still true", "I must be missing something", "Quit"],
         1,
-        "God’s Word never fails (Isaiah 55:11). Speak it, believe it, wait in faith."
+        "Isaiah 55:11 — The Word never returns void. Keep watering your promise — harvest is coming."
     )
 ]
 
+
 let healingQuizQuestions = [
     (
-        "What’s the first step to receiving healing?",
+        "What’s the first step to walking in divine healing?",
         ["Beg God to heal you", "Keep reading healing testimonies", "Hear and believe God’s Word", "Try natural remedies"],
         2,
-        "Faith comes by hearing the Word (Romans 10:17). Healing begins with revelation."
+        "Healing doesn’t start with begging — it begins with revelation. Romans 10:17: 'Faith comes by hearing.' You can’t believe what you haven’t heard."
     ),
     (
-        "What should you do when symptoms return?",
+        "Symptoms return — what’s your first move?",
         ["Accept them", "Speak God's Word louder", "Change your prayer", "Try harder"],
         1,
-        "Don’t draw back—declare the truth: 'By His stripes I am healed' (Isaiah 53:5)."
+        "Symptoms are lies trying to reclaim territory. Speak louder: 'By His stripes, I was healed' (Isaiah 53:5). Truth spoken resists deception."
     ),
     (
-        "What does it mean to prioritize God's Word?",
+        "What does it really mean to prioritize God’s Word?",
         ["Make time when convenient", "Read it once a week", "Feed on it daily like food", "Quote it only in emergencies"],
         2,
-        "God’s Word is life and health (Proverbs 4:20–22). Feed on it daily like vital nourishment."
+        "Proverbs 4:22 says His Word is life and health. If your body needs daily nourishment, your spirit needs daily Word intake to sustain healing."
     ),
     (
-        "How do you respond to lying symptoms?",
+        "Lying symptoms show up. What do you do?",
         ["Trust what you feel", "Google them", "Speak the truth in faith", "Call your doctor immediately"],
         2,
-        "Symptoms are temporary facts. Truth is eternal. Speak the Word until facts bow to it."
+        "Symptoms are temporary facts. Truth is eternal. Say what God says until every fact submits."
     ),
     (
-        "What’s the danger of focusing on how you feel?",
+        "What’s the real danger of focusing on how you feel?",
         ["You might feel worse", "It helps nothing", "It empowers doubt", "It’s natural"],
         2,
-        "What you focus on grows. Focusing on symptoms empowers fear, not faith."
+        "Your attention feeds your reality. The more you focus on symptoms, the more authority you give them. Focus on the promise instead."
     ),
     (
-        "How do you keep your healing?",
+        "How do you stay healed after receiving?",
         ["Rest and eat well", "Keep hearing and speaking the Word", "Tell no one", "Keep testing yourself"],
         1,
-        "Faith is a lifestyle. Keep feeding on the Word to stay strong and whole (Joshua 1:8)."
+        "Joshua 1:8 — Meditate day and night. Healing that flows by faith is sustained by Word saturation."
     ),
     (
-        "What did Jesus say brings healing?",
+        "What did Jesus say made people whole?",
         ["Hope", "Touching His garment", "Faith in Him", "Being good enough"],
         2,
-        "Jesus told many: 'Your faith has made you whole.' Faith in His finished work heals."
+        "Over and over, Jesus said: 'Your faith has made you whole.' Your faith plugs into what grace has already provided."
     ),
     (
-        "When do you stop speaking the Word?",
+        "When do you stop speaking healing Scriptures?",
         ["When you feel better", "After 3 days", "When symptoms leave", "Never"],
         3,
-        "The Word is your sword—don’t put it down. Keep speaking to guard your health (Eph. 6:17)."
+        "God's Word is your medicine (Proverbs 4:22). You don’t stop speaking truth — you live from it."
     ),
     (
-        "How often should you hear God’s healing Word?",
+        "How often should you listen to healing Word?",
         ["Every Sunday", "Occasionally", "Daily", "When you're sick"],
         2,
-        "Faith comes by *hearing* — not once, but continually (Romans 10:17)."
+        "Faith doesn’t come from what you heard once. Romans 10:17 — 'Faith comes by hearing' (present tense)."
     ),
     (
-        "Why is repetition of Scripture important?",
+        "Why speak the same healing Scriptures over and over?",
         ["It helps memory", "It impresses others", "It builds unshakable faith", "It’s tradition"],
         2,
-        "Repetition renews your mind and transforms you from the inside out (Romans 12:2)."
+        "Romans 12:2 — Repetition renews the mind. Your faith isn’t built on feelings but formed by the Word heard and spoken consistently."
     ),
     (
         "God’s Word is medicine. How should you take it?",
         ["With food", "Once in crisis", "Consistently, with faith", "At night only"],
         2,
-        "Proverbs 4:22 calls the Word health to all your flesh—take it daily like medicine."
+        "Proverbs 4:22 — Take it morning, noon, and night. It's spiritual medicine with no side effects, but powerful results."
     ),
     (
-        "You feel discouraged about progress—what now?",
+        "Discouraged by progress? What do you do?",
         ["Stop trying", "Look for a new teaching", "Speak God’s promises again", "Rest more"],
         2,
-        "Encourage yourself in the Lord (1 Samuel 30:6). Speak what’s true, not what you feel."
+        "1 Samuel 30:6 — David encouraged himself in the Lord. You win this war with your mouth, not your mood."
     ),
     (
-        "What do you do when results are slow?",
+        "Healing seems slow. What’s the right posture?",
         ["Doubt", "Press in more to the Word", "Give it a break", "Try something new"],
         1,
-        "Keep planting and watering with the Word—God gives the increase (1 Cor. 3:6)."
+        "Keep sowing, keep watering. God gives the increase (1 Cor. 3:6). If symptoms persist, double your dosage of Scripture."
     ),
     (
-        "How do you know you're healed if symptoms remain?",
-        ["You don't", "You speak what God said", "You ask others", "You wait for proof"],
+        "You still feel pain. Are you healed?",
+        ["You don't know", "Speak what God said", "You ask others", "Wait for proof"],
         1,
-        "We walk by faith, not by sight (2 Cor. 5:7). Believe and speak God’s Word over your body."
+        "We walk by faith, not by sight (2 Cor. 5:7). Pain doesn’t prove God lied — it proves you need to speak again."
     ),
     (
-        "What should your mouth always align with?",
+        "What should your words align with — always?",
         ["Feelings", "Doctor’s report", "God’s report", "What seems likely"],
         2,
-        "'Let the redeemed of the Lord say so' (Psalm 107:2). Speak what Heaven says, not the world."
+        "Psalm 107:2 — 'Let the redeemed of the Lord say so.' Don’t echo what you feel — echo what God says until your body obeys."
     )
-    ]
+]
 
 let peaceQuizQuestions = [
     (
         "Someone cuts you off in traffic. What do you do?",
         ["Yell at them", "Bless them and speak peace", "Let it ruin your day", "Hold it in"],
         1,
-        "Speak peace instead of offense — 'Bless those who curse you' (Luke 6:28)."
+        "Luke 6:28 — 'Bless those who curse you.' Every moment is a chance to shift the atmosphere with your mouth, not mirror the madness."
     ),
     (
-        "Your day feels rushed and overwhelming. What's your first move?",
+        "Your day feels rushed and overwhelming. What’s your first move?",
         ["Power through", "Take a deep breath and give it to Jesus", "Complain", "Multitask harder"],
         1,
-        "Cast your cares on Him (1 Peter 5:7). Peace starts with surrender."
+        "1 Peter 5:7 — 'Cast your cares on Him.' Peace begins the moment you surrender control and trust God’s pacing."
     ),
     (
-        "You're feeling irritated for no clear reason. What should you speak?",
+        "You feel irritated for no clear reason. What should you speak?",
         ["This day is ruined", "I just need coffee", "I have the mind of Christ", "I’m so done"],
         2,
-        "Speak identity over emotion. You have the mind of Christ (1 Cor. 2:16)."
+        "1 Cor. 2:16 — 'We have the mind of Christ.' Identity overrides emotion. Speak who you are, not how you feel."
     ),
     (
-        "How do you stay grounded when your routine gets disrupted?",
+        "Your schedule is disrupted. How do you stay grounded?",
         ["Panic", "Reset and speak God’s promises", "Blame others", "Skip your quiet time"],
         1,
-        "God’s peace isn’t based on routine — it flows from His Word (Isaiah 26:3)."
+        "Isaiah 26:3 — Peace isn’t found in control. It’s found in staying anchored to God’s unchanging Word."
     ),
     (
-        "What’s the root of perfect peace?",
+        "What’s the true root of perfect peace?",
         ["Having control", "No interruptions", "Trusting in God", "Zero problems"],
         2,
-        "Isaiah 26:3 — 'You will keep him in perfect peace whose mind is stayed on You.'"
+        "Isaiah 26:3 — Perfect peace is not the absence of chaos, but the presence of trust. Keep your mind stayed on Him."
     ),
     (
-        "How do you protect your peace throughout the day?",
+        "How do you guard your peace during the day?",
         ["Isolate", "Avoid people", "Speak Scripture throughout the day", "Ignore feelings"],
         2,
-        "Speak life consistently — 'Great peace have they who love your law' (Psalm 119:165)."
+        "Psalm 119:165 — 'Great peace have those who love Your law.' Peace isn’t protected by withdrawal, but by truth-filled repetition."
     ),
     (
-        "You wake up anxious. What do you do before anything else?",
+        "You wake up anxious. What do you do first?",
         ["Scroll your phone", "Speak Psalm 23:1", "Rush to work", "Get distracted"],
         1,
-        "Start by declaring peace — 'The Lord is my Shepherd, I shall not want.'"
+        "'The Lord is my Shepherd, I shall not want.' Don’t just feel your way into the day — speak your way into peace."
     ),
     (
         "Someone says something rude. How do you respond?",
         ["Fire back", "Walk away", "Speak, 'I’m unoffendable in Christ'", "Ignore them"],
         2,
-        "'A gentle answer turns away wrath' (Proverbs 15:1). Speaking truth keeps your peace."
+        "Proverbs 15:1 — 'A gentle answer turns away wrath.' Speaking truth silences offense and keeps you in peace territory."
     ),
     (
         "What happens when you keep speaking peace?",
         ["You fake it", "Nothing", "Peace multiplies in your life", "You become passive"],
         2,
-        "'Grace and peace be multiplied to you through the knowledge of God' (2 Peter 1:2)."
+        "2 Peter 1:2 — Grace and peace are multiplied through knowledge. The more you know Him, the more peace grows through your mouth."
     ),
     (
-        "You’re tired and someone needs help. What now?",
-        ["Ignore them", "Help and grumble", "Speak grace and serve with joy", "Say you're busy"],
+        "You’re tired, but someone needs help. What now?",
+        ["Ignore them", "Help and grumble", "Speak grace and serve with joy", "Say you’re busy"],
         2,
-        "Peace and strength come from grace — not your own energy (2 Cor. 12:9)."
+        "2 Cor. 12:9 — His grace is your strength. Don’t serve from your flesh; serve from overflow."
     ),
     (
-        "Your thoughts keep racing. How do you calm them?",
+        "Your thoughts won’t stop racing. How do you calm them?",
         ["Sleep", "Talk to a friend", "Speak God’s promises out loud", "Scroll Instagram"],
         2,
-        "Let peace guard your heart and mind through Christ Jesus (Philippians 4:7)."
+        "Philippians 4:7 — Peace doesn’t just show up. It guards your heart when you speak God’s Word aloud."
     ),
     (
-        "What should you do with every small frustration?",
+        "What should you do with small frustrations?",
         ["Suppress it", "Rant about it", "Cast it on Jesus", "Hold it in until later"],
         2,
-        "Jesus said, 'Come to me... I will give you rest' (Matt. 11:28)."
+        "Matthew 11:28 — Bring Him the small and the heavy. Peace flows to those who offload early."
     ),
     (
-        "When someone tries to steal your peace, what do you speak?",
+        "Someone tries to steal your peace — what do you say?",
         ["They’re so annoying", "Why me?", "I choose peace — nothing missing, nothing broken", "I’ll get even later"],
         2,
-        "Peace is a decision. 'Let the peace of Christ rule in your hearts' (Col. 3:15)."
+        "Colossians 3:15 — Let peace rule. Don’t let people write your script — speak what Heaven already declared."
     ),
     (
         "You forgot to pray this morning. What now?",
         ["Feel guilty", "Start right now", "Blame your schedule", "Hope God understands"],
         1,
-        "God is always ready — peace is restored the moment you return (Isaiah 30:15)."
+        "Isaiah 30:15 — 'In returning and rest is your salvation.' Peace isn’t lost. Just return and reset your focus."
     ),
     (
-        "What’s a powerful peace confession you can speak daily?",
+        "What’s a powerful peace confession to speak daily?",
         ["I hope this day goes well", "I'm just trying to survive", "I live in perfect peace — my mind is on Jesus", "No one better mess with me today"],
         2,
-        "Confession brings possession. Speak Isaiah 26:3 every morning."
+        "Confession brings possession. Isaiah 26:3 — Speak it until your emotions catch up to your position in Christ."
     )
 ]
 
@@ -662,5 +663,98 @@ let joyQuizQuestions = [
         ["Meditate on problems", "Hope for better days", "Speak God’s promises and give thanks", "Fake a smile"],
         2,
         "Philippians 4:8 — Think on what is good. Gratitude and the Word fuel joy."
+    )
+]
+
+let identityQuizQuestions = [
+    (
+        "When you feel unworthy, what truth should you declare?",
+        ["Try to be better", "I’m not enough", "I am the righteousness of God in Christ", "Maybe next time"],
+        2,
+        "2 Corinthians 5:21 — You’re not righteous by performance, but by Jesus' finished work."
+    ),
+    (
+        "What happened when you believed in Jesus?",
+        ["You joined a church", "You got rules to follow", "You became a new creation", "You got religion"],
+        2,
+        "2 Corinthians 5:17 — 'If anyone is in Christ, he is a new creation… all things have become new.'"
+    ),
+    (
+        "How does God see you right now?",
+        ["Trying your best", "Still messed up", "Holy, blameless, and loved", "On probation"],
+        2,
+        "Colossians 1:22 — He sees you holy and blameless in His sight through Christ."
+    ),
+    (
+        "What gives you authority as a believer?",
+        ["Your good behavior", "Being a church member", "Faith in Jesus' name", "Time spent studying"],
+        2,
+        "Luke 10:19 — Jesus gave you authority to trample every lie and tactic of the enemy."
+    ),
+    (
+        "What does it mean to be a child of God?",
+        ["You must earn it", "You’re adopted with full rights", "You’re tolerated", "You belong if you behave"],
+        1,
+        "Romans 8:15 — You received the Spirit of adoption, by whom you cry out, 'Abba, Father.'"
+    ),
+    (
+        "How should you see yourself daily?",
+        ["A work in progress", "Trying not to sin", "Seated with Christ in heavenly places", "Still broken"],
+        2,
+        "Ephesians 2:6 — You’re already seated with Christ in victory and authority."
+    ),
+    (
+        "What is your true spiritual position?",
+        ["Trying to get close to God", "Under spiritual attack", "In Christ, above all things", "At the mercy of life"],
+        2,
+        "Colossians 3:3 — Your life is hidden with Christ in God. That’s your secure identity."
+    ),
+    (
+        "How do you renew your identity mindset?",
+        ["Positive thinking", "Hearing & speaking the Word", "Social media detox", "Trying harder"],
+        1,
+        "Romans 12:2 — You’re transformed by renewing your mind with God’s truth daily."
+    ),
+    (
+        "If you’ve sinned, what’s your standing with God?",
+        ["He’s disappointed", "You must work to earn back favor", "Confess & receive mercy instantly", "He ignores you"],
+        2,
+        "1 John 1:9 — Confess and be instantly cleansed. Your position in Christ doesn't change."
+    ),
+    (
+        "You feel defeated. What truth lifts you up?",
+        ["Try again tomorrow", "Maybe it's not God's will", "I’m more than a conqueror in Christ", "Everyone struggles"],
+        2,
+        "Romans 8:37 — You are more than a conqueror through Him who loves you."
+    ),
+    (
+        "What’s your status in God's family?",
+        ["Visitor", "Barely accepted", "Chosen, royal, and set apart", "Trying to fit in"],
+        2,
+        "1 Peter 2:9 — 'You are a chosen generation… royal priesthood… God’s special possession.'"
+    ),
+    (
+        "Why can you speak with boldness before God?",
+        ["You’ve been good lately", "You read your Bible", "You’re clothed in Christ's righteousness", "You’ve been consistent"],
+        2,
+        "Hebrews 4:16 — Come boldly to the throne of grace because of Jesus, not your performance."
+    ),
+    (
+        "What’s your true spiritual identity?",
+        ["Trying to be holy", "A sinner saved by grace", "A saint empowered by Christ", "A barely forgiven servant"],
+        2,
+        "Ephesians 1:4 — You were chosen to be holy and blameless in His sight before time began."
+    ),
+    (
+        "What makes you valuable?",
+        ["Your achievements", "What others think", "Christ’s blood and calling", "Your gifts"],
+        2,
+        "You were bought with a price (1 Cor. 6:20). Your value is set by Heaven."
+    ),
+    (
+        "What does it mean to be 'in Christ'?",
+        ["You’re trying to follow Jesus", "You’re part of a religion", "You’ve been placed into His victory", "You believe the right stuff"],
+        2,
+        "Being 'in Christ' means you now share in His identity, righteousness, and authority."
     )
 ]

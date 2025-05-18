@@ -6,8 +6,8 @@ struct SkillLevelView: View {
 
     var body: some View {
         let level = progressManager.levelName
-        let color = colorForLevel(level)
-        let icon = iconForLevel(level)
+        let color = progressManager.colorForLevel(level)
+        let icon = progressManager.iconForLevel(level)
 
         VStack(alignment: .leading, spacing: 12) {
             HStack {
@@ -40,28 +40,6 @@ struct SkillLevelView: View {
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .shadow(radius: 5)
         .padding(.horizontal)
-    }
-
-    private func iconForLevel(_ level: String) -> String {
-        switch level {
-        case "New Listener": return "ear.fill"
-        case "Faith Builder": return "leaf.fill"
-        case "Word Warrior": return "shield.lefthalf.fill"
-        case "Life Speaker": return "megaphone.fill"
-        case "SpeakLife Master": return "crown.fill"
-        default: return "circle.fill"
-        }
-    }
-
-    private func colorForLevel(_ level: String) -> Color {
-        switch level {
-        case "New Listener": return .gray
-        case "Faith Builder": return .green
-        case "Word Warrior": return .indigo
-        case "Life Speaker": return .orange
-        case "SpeakLife Master": return .cyan
-        default: return .blue
-        }
     }
 }
 

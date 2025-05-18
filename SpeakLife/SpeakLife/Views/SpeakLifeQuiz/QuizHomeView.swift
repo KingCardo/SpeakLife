@@ -45,11 +45,33 @@ class QuizProgressManager: ObservableObject {
     var totalQuizCount: Int {
         QuizHomeView.quizzes.count 
     }
+    
+    func colorForLevel(_ level: String) -> Color {
+        switch level {
+        case "New Listener": return .gray
+        case "Faith Builder": return .green
+        case "Word Warrior": return .indigo
+        case "Life Speaker": return .orange
+        case "SpeakLife Master": return .yellow
+        default: return .blue
+        }
+    }
+
+    func iconForLevel(_ level: String) -> String {
+        switch level {
+        case "New Listener": return "ear.fill"
+        case "Faith Builder": return "leaf.fill"
+        case "Word Warrior": return "shield.fill"
+        case "Life Speaker": return "megaphone.fill"
+        case "SpeakLife Master": return "crown.fill"
+        default: return "circle.fill"
+        }
+    }
 }
 struct QuizHomeView: View {
     @StateObject private var progressManager = QuizProgressManager()
     
-    static let quizzes = [Quiz(title: "When to Speak Faith", questions: questions), Quiz(title:"How to Get & Stay Healed", questions: healingQuizQuestions), Quiz(title:"How to Stay in Peace", questions: peaceQuizQuestions), Quiz(title:"The Power of Words", questions: wordsQuizQuestions), Quiz(title:"God’s Protection", questions: protectionQuizQuestions), Quiz(title:"Count it all Joy", questions: joyQuizQuestions), Quiz(title:"Trusting God With Your Destiny", questions: destinyQuizQuestions)]
+    static let quizzes = [Quiz(title: "When to Speak Faith", questions: questions), Quiz(title:"How to Get & Stay Healed", questions: healingQuizQuestions), Quiz(title:"Who You Are in Christ", questions: identityQuizQuestions), Quiz(title:"How to Stay in Peace", questions: peaceQuizQuestions), Quiz(title:"The Power of Words", questions: wordsQuizQuestions), Quiz(title:"God’s Protection", questions: protectionQuizQuestions), Quiz(title:"Count it all Joy", questions: joyQuizQuestions), Quiz(title:"Trusting God With Your Destiny", questions: destinyQuizQuestions)]
     
     var body: some View {
         NavigationView {

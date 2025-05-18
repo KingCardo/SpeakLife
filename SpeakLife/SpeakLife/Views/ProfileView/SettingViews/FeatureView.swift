@@ -77,11 +77,11 @@ struct FeatureView: View {
 //        Feature(subtitle: "💖 Grace that empowers"),
        
        
-        Feature(subtitle: "God's Protection over your mind and body"),
-        Feature(subtitle: "Grace that empowers, not condemns"),
-        Feature(subtitle: "Devotionals filled with God's love and wisdom"),
-        Feature(subtitle: "Healing and health anchored in the Word"),
-        Feature(subtitle: "Rewire your thoughts, renew your mind")
+        Feature(subtitle: "Become skillful in speaking God’s Word"),
+        Feature(subtitle: "Make His Word your first response, not your last resort"),
+        Feature(subtitle: "Devotionals that saturate you in God’s love and truth"),
+        Feature(subtitle: "Walk in divine health, anchored in Scripture"),
+        Feature(subtitle: "Renew your mind, and reshape your world"),
 
         
 //        Feature(subtitle: "Unlock everything"),

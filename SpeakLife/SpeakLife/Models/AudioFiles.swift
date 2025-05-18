@@ -824,4 +824,76 @@ let divineHealthFiles: [AudioDeclaration] = [
         imageUrl: "divineHealth",
         isPremium: true
     ),
+    AudioDeclaration(
+        id: "divineHealth-ep11.mp3",
+        title: "The Strength of Joy",
+        subtitle: "Episode 11",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep12.mp3",
+        title: "The Trap of Offense",
+        subtitle: "Episode 12",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep13.mp3",
+        title: "Peace Is a Shield",
+        subtitle: "Episode 13",
+        duration: "4m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep14.mp3",
+        title: "The Power of Laying on Hands",
+        subtitle: "Episode 14",
+        duration: "2m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep15.mp3",
+        title: "The Power of a Holy Imagination",
+        subtitle: "Episode 15",
+        duration: "4m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep16.mp3",
+        title: "Seed, Time, and Harvest",
+        subtitle: "Episode 16",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep17.mp3",
+        title: "The Strength of Joy",
+        subtitle: "Episode 17",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep18.mp3",
+        title: "The Strength of Joy",
+        subtitle: "Episode 18",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep19.mp3",
+        title: "The Strength of Joy",
+        subtitle: "Episode 19",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
     ]

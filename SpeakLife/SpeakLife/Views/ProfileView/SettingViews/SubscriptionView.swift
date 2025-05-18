@@ -277,6 +277,7 @@ struct SubscriptionView: View {
 
     let size: CGSize
     var callback: (() -> Void)?
+    let foregroundColor: Color = .white
 
     private let testimonials = [
         "Holy Spirit designed",
@@ -290,8 +291,21 @@ struct SubscriptionView: View {
 
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.black]), startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
+//            LinearGradient(
+//                gradient: Gradient(colors: [
+//                    Color(red: 0.66, green: 0.85, blue: 1.0),   // #A8D8FF – Light Sky Blue (top)
+//                    Color(red: 0.43, green: 0.62, blue: 0.98),  // #6E9DFB – Soft Periwinkle (middle)
+//                    Color(red: 0.14, green: 0.23, blue: 0.50)   // #243B80 – Deep Royal Blue (bottom)
+//                ]),
+//                startPoint: .top,
+//                endPoint: .bottom
+//            )
+            LinearGradient(
+                gradient: Gradient(colors: [Color(red: 0.1, green: 0.1, blue: 0.3), Color(red: 0.2, green: 0.4, blue: 0.9)]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
 
             VStack(spacing: 14) {
                 headerSection
@@ -302,7 +316,7 @@ struct SubscriptionView: View {
                 goPremiumStack
                 Spacer().frame(height: 4)
             }
-            .foregroundColor(.white)
+            .foregroundColor(foregroundColor)
             .alert("", isPresented: $isShowingError) {
                 Button("OK", role: .cancel) { }
             } message: {
@@ -342,7 +356,7 @@ struct SubscriptionView: View {
                     .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
             }
         }
-        .frame(height: size.height * 0.23)
+        .frame(height: size.height * 0.3)
     }
 
     @ViewBuilder
@@ -606,10 +620,10 @@ struct AnimatedHeaderBackground: View {
 
     var body: some View {
         ZStack {
-            Image("headerSubscription")
+            Image("headerSubscription2")
                 .resizable()
                 .scaledToFill()
-                .scaleEffect(animate ? 1.03 : 1)
+               // .scaleEffect(animate ? 1.03 : 1)
                 .animation(.easeInOut(duration: 6).repeatForever(autoreverses: true), value: animate)
 
             // Optional overlay sparkle or glow
