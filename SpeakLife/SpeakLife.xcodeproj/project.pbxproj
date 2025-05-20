@@ -51,6 +51,7 @@
 		45A4A3D62D8917D600DFCEB7 /* TestimonyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4A3D52D8917D000DFCEB7 /* TestimonyView.swift */; };
 		45AE76712D7960BD0037EE12 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 45AE76702D7960BD0037EE12 /* FirebaseMessaging */; };
 		45B07A422D24D98300EA2F5D /* WhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B07A412D24D98300EA2F5D /* WhatsNewView.swift */; };
+		45B5A8302DDC14B4006DE6AA /* DevotionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5A82F2DDC14B4006DE6AA /* DevotionalTests.swift */; };
 		45BCBA9A2C360245001F28C4 /* BibleStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BCBA992C360245001F28C4 /* BibleStory.swift */; };
 		45C7481F2B55B4B80011D8F6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 45C7481E2B55B4B80011D8F6 /* FacebookCore */; };
 		45C748232B5802C60011D8F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45C748222B5802C60011D8F6 /* GoogleService-Info.plist */; };
@@ -227,6 +228,7 @@
 		45A4A3D22D86B8DB00DFCEB7 /* rainstorm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rainstorm.mp3; sourceTree = "<group>"; };
 		45A4A3D52D8917D000DFCEB7 /* TestimonyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimonyView.swift; sourceTree = "<group>"; };
 		45B07A412D24D98300EA2F5D /* WhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewView.swift; sourceTree = "<group>"; };
+		45B5A82F2DDC14B4006DE6AA /* DevotionalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevotionalTests.swift; sourceTree = "<group>"; };
 		45BCBA992C360245001F28C4 /* BibleStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleStory.swift; sourceTree = "<group>"; };
 		45C748222B5802C60011D8F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45C748242B5802CA0011D8F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 		2F740F5F29D4014500E89E7F /* SpeakLifeTests */ = {
 			isa = PBXGroup;
 			children = (
+				45B5A82F2DDC14B4006DE6AA /* DevotionalTests.swift */,
 				2F740F6829D4017400E89E7F /* APIClientTests.swift */,
 				456885292B428D77007B1EBB /* NotificationManagerTests.swift */,
 				4568852B2B428FE2007B1EBB /* SpeakLifeTests-Bridging-Header.h */,
@@ -1034,6 +1037,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B5A8302DDC14B4006DE6AA /* DevotionalTests.swift in Sources */,
 				4568852A2B428D77007B1EBB /* NotificationManagerTests.swift in Sources */,
 				450720DB2BAFFB4A0029EE2B /* TimerViewModelTests.swift in Sources */,
 				2F740F6929D4017400E89E7F /* APIClientTests.swift in Sources */,

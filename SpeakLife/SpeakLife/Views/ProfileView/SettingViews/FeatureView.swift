@@ -77,7 +77,7 @@ struct FeatureView: View {
 //        Feature(subtitle: "💖 Grace that empowers"),
        
        
-        Feature(subtitle: "Become skillful in speaking God’s Word"),
+        Feature(subtitle: "Become skillful in applying God’s Word"),
         Feature(subtitle: "Make His Word your first response, not your last resort"),
         Feature(subtitle: "Devotionals that saturate you in God’s love and truth"),
         Feature(subtitle: "Walk in divine health, anchored in Scripture"),

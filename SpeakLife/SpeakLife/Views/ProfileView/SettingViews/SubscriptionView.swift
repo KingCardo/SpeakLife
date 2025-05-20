@@ -300,13 +300,18 @@ struct SubscriptionView: View {
 //                startPoint: .top,
 //                endPoint: .bottom
 //            )
+//            LinearGradient(
+//                gradient: Gradient(colors: [Color(red: 0.1, green: 0.1, blue: 0.3), Color(red: 0.2, green: 0.4, blue: 0.9)]),
+//                startPoint: .topLeading,
+//                endPoint: .bottomTrailing
+//            )
+//            .ignoresSafeArea()
             LinearGradient(
-                gradient: Gradient(colors: [Color(red: 0.1, green: 0.1, blue: 0.3), Color(red: 0.2, green: 0.4, blue: 0.9)]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
-
+                gradient: Gradient(colors: [.black]),
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                        .ignoresSafeArea()
             VStack(spacing: 14) {
                 headerSection
                 titleSection
@@ -623,8 +628,8 @@ struct AnimatedHeaderBackground: View {
             Image("headerSubscription2")
                 .resizable()
                 .scaledToFill()
-               // .scaleEffect(animate ? 1.03 : 1)
-                .animation(.easeInOut(duration: 6).repeatForever(autoreverses: true), value: animate)
+//                .scaleEffect(animate ? 1.03 : 1)
+//                .animation(.easeInOut(duration: 6).repeatForever(autoreverses: true), value: animate)
 
             // Optional overlay sparkle or glow
             RadialGradient(gradient: Gradient(colors: [Color.white.opacity(0.05), Color.clear]),
