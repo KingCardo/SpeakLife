@@ -121,6 +121,8 @@ enum Filter: String {
     case godsHeart = "God's Heart"
     case growWithJesus = "Grow With Jesus"
     case divineHealth = "Divine Health"
+    case imagination = "Imagination"
+    case psalm91 = "Psalm 91"
 }
 
 struct FetchedFilter: Identifiable, Hashable {
@@ -146,126 +148,89 @@ struct AudioDeclarationView: View {
         _audioViewModel = StateObject(wrappedValue: playerVM)
     }
     
+    
     var body: some View {
         GeometryReader { proxy in
-        ZStack {
-            Gradients().speakLifeCYOCell
-                .ignoresSafeArea()
-            
-           
+            ZStack {
+                Gradients().speakLifeCYOCell
+                    .ignoresSafeArea()
+
                 VStack(spacing: 0) {
-                    VStack {
-                        HStack {
-                            Text("Meditation")
-                                .font(.system(size: 28, weight: .bold))
-                                .foregroundColor(.white)
-                            Spacer()
-//                                HStack(spacing: 8) {
-//                                    Text("AutoPlay")
-//                                        .foregroundColor(.white)
-//                                        .font(.subheadline)
-//
-//                                    Toggle("", isOn: $audioViewModel.autoPlayAudio)
-//                                        .labelsHidden()
-//                                        .tint(.blue)
-//                                .tint(.white)
-//                                .onChange(of: audioViewModel.autoPlayAudio) { newValue in
-//                                    if subscriptionStore.isPremium {
-//                                        if newValue {
-//                                            print(newValue, audioViewModel.lastSelectedItem, "RWRW")
-//                                            let allItems = filteredContent
-//                                            if let lastSelectedItem = audioViewModel.lastSelectedItem,
-//                                               let currentIndex = allItems.firstIndex(of: lastSelectedItem),
-//                                               currentIndex + 1 < allItems.count {
-//                                                print(lastSelectedItem, "RWRW last selected" )
-//                                                
-//                                                let itemsToQueue = Array(allItems[(currentIndex + 1)...])
-//                                                audioViewModel.addToQueue(items: itemsToQueue)
-//                                            } else {
-//                                                audioViewModel.clearQueue()
-//                                            }
-//                                        }
-//                                    } else {
-//                                        withAnimation {
-//                                            isPresentingPremiumView = true
-//                                            audioViewModel.autoPlayAudio = false
-//                                        }
-//                                       
-//                                    }
-//                                }
-//                            }
-                        }
-                        .padding(.horizontal)
-                        .padding(.top, 8)
+                    // Header
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Meditation")
+                            .font(.system(size: 28, weight: .bold))
+                            .foregroundColor(.white)
+                            .padding(.horizontal)
+                            .padding(.top, 8)
                     }
-                    .padding(.top,  44)
-                    
+                    .padding(.top, 44)
+
+                    // Horizontal Scrollable Header
                     ScrollView(.horizontal, showsIndicators: false) {
                         header
                     }
-                    .background(.clear)
                     .padding(.vertical)
-                    
+
+                    // Episode List with swipe support
                     episodeRow(proxy)
-            
+                        .listStyle(.plain)
+
+                    Spacer().frame(height: proxy.size.height * 0.09)
+                }
+
+                // Audio bar at bottom
+                VStack {
+                    Spacer()
+                    audioBar
                     Spacer().frame(height: proxy.size.height * 0.09)
                 }
             }
-            VStack {
-                 Spacer()
-                 
-                 audioBar
-                 Spacer().frame(height: proxy.size.height * 0.09)
-            }
-        }
-        
-        .sheet(isPresented: $isPresentingPremiumView) {
-            self.isPresentingPremiumView = false
-        } content: {
-           // GeometryReader { geometry in
-            SubscriptionView(size: UIScreen.main.bounds.size)
-                .frame(height: UIScreen.main.bounds.height * 0.96)
+            // Premium Sheet
+            .sheet(isPresented: $isPresentingPremiumView) {
+                isPresentingPremiumView = false
+            } content: {
+                SubscriptionView(size: UIScreen.main.bounds.size)
+                    .frame(height: UIScreen.main.bounds.height * 0.96)
                     .onDisappear {
-                        if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
-                            if subscriptionStore.showDevotionalSubscription {
-                                presentDevotionalSubscriptionView = true
-                            }
+                        if !subscriptionStore.isPremium,
+                           !subscriptionStore.isInDevotionalPremium,
+                           subscriptionStore.showDevotionalSubscription {
+                            presentDevotionalSubscriptionView = true
                         }
                     }
-            //}
-        }
-        
-        .alert(item: $errorMessage) { error in
-            Alert(
-                title: Text("Error"),
-                message: Text(error.message),
-                dismissButton: .default(Text("OK"))
-            )
-        }
-
-        .sheet(item: $audioViewModel.selectedItem, onDismiss: {
-            withAnimation {
-                audioViewModel.isBarVisible = true
             }
-        }) { item in
-          
-            if let _ = audioURL {
-                AudioPlayerView(
-                    viewModel: audioViewModel
+
+            // Error Alert
+            .alert(item: $errorMessage) { error in
+                Alert(
+                    title: Text("Error"),
+                    message: Text(error.message),
+                    dismissButton: .default(Text("OK"))
                 )
-                .presentationDetents([.large])
-                .onAppear {
-                    print(item.subtitle, "RWRW selected" )
-                   // audioViewModel.loadAudio(from: audioURL, isSameItem: audioViewModel.lastSelectedItem == item)
-                    audioViewModel.lastSelectedItem = item
-                    Analytics.logEvent(item.id, parameters: nil)
+            }
+
+            // Audio Player Sheet
+            .sheet(item: $audioViewModel.selectedItem, onDismiss: {
+                withAnimation {
+                    audioViewModel.isBarVisible = true
+                }
+            }) { item in
+                if let _ = audioURL {
+                    AudioPlayerView(viewModel: audioViewModel)
+                        .presentationDetents([.large])
+                        .onAppear {
+                            audioViewModel.lastSelectedItem = item
+                            Analytics.logEvent(item.id, parameters: nil)
+                        }
                 }
             }
-        }
-        
-        .sheet(isPresented: $presentDevotionalSubscriptionView) {
-            DevotionalSubscriptionView {
-                presentDevotionalSubscriptionView = false
+
+            // Devotional Subscription Sheet
+            .sheet(isPresented: $presentDevotionalSubscriptionView) {
+                DevotionalSubscriptionView {
+                    presentDevotionalSubscriptionView = false
+                }
             }
         }
     }
@@ -275,7 +240,6 @@ struct AudioDeclarationView: View {
             ForEach(viewModel.filters, id: \.self) { filter in
                 Button(action: {
                     viewModel.selectedFilter = filter
-                  //  viewModel.selectedDynamicFilter = nil
                 }) {
                     Text(filter.rawValue)
                         .font(.caption)
@@ -286,29 +250,6 @@ struct AudioDeclarationView: View {
                         .cornerRadius(20)
                 }
             }
-            
-//            ForEach(viewModel.dynamicFilters, id: \.self) { filter in
-//                Button(action: {
-//                    viewModel.selectedDynamicFilter = filter
-//                    //viewModel.selectedFilter = filter
-//                }) {
-//                    Text(filter.displayName)
-//                        .font(.caption)
-//                        .padding(.horizontal, 15)
-//                        .padding(.vertical, 10)
-//                        .background(viewModel.selectedDynamicFilter == filter ? Constants.DAMidBlue : Color.gray.opacity(0.2))
-//                        .foregroundColor(.white)
-//                        .cornerRadius(20)
-//                }
-//            }
-            
-//            ForEach(viewModel.dynamicFilters) { fetchedFilter in
-//                Button(action: {
-//                    viewModel.selectedDynamicFilter = fetchedFilter
-//                }) {
-//                    Text(fetchedFilter.displayName)
-//                        .foregroundColor(viewModel.selectedDynamicFilter == fetchedFilter ? .accentColor : .primary)
-//                }
         }
         .padding(.horizontal)
     }
@@ -317,33 +258,7 @@ struct AudioDeclarationView: View {
         List {
             ForEach(viewModel.filteredContent) { item in
                 Button(action: {
-                    if item.isPremium, !subscriptionStore.isPremium {
-                        isPresentingPremiumView = true
-                    } else {
-                        viewModel.downloadProgress[item.id] = nil
-                        viewModel.fetchingAudioIDs.insert(item.id)
-                        viewModel.fetchAudio(for: item) { result in
-                            DispatchQueue.main.async {
-                                viewModel.fetchingAudioIDs.remove(item.id)
-                                switch result {
-                                case .success(let url):
-                                    audioURL = url
-                                    audioViewModel.selectedItem = item
-                                    audioViewModel.insert(url)
-                                    viewModel.downloadProgress[item.id] = 0.0
-                                    audioViewModel.currentTrack = audioViewModel.selectedItem?.title ?? ""
-                                    audioViewModel.subtitle = audioViewModel.selectedItem?.subtitle ?? ""
-                                    audioViewModel.imageUrl = audioViewModel.selectedItem?.imageUrl ?? ""
-                                    audioViewModel.loadAudio(from: url, isSameItem: audioViewModel.selectedItem == item)
-                                case .failure(let error):
-                                    errorMessage = ErrorWrapper(message: "Failed to download audio: \(error.localizedDescription)")
-                                    audioViewModel.selectedItem = nil
-                                    viewModel.downloadProgress[item.id] = 0.0
-                                }
-                            }
-                        }
-                        
-                    }
+                        handleItemTap(item)
                 }) {
                     VStack {
                         UpNextCell(viewModel: viewModel, audioViewModel: audioViewModel, item: item)
@@ -357,6 +272,14 @@ struct AudioDeclarationView: View {
                     }
                     .listRowInsets(EdgeInsets()) // remove default padding
                     .background(Color.clear)
+//                    .swipeActions(edge: .leading) {
+//                        Button {
+//                            handleSwipeRightAction(for: item)
+//                        } label: {
+//                            Label("Mark", systemImage: "text.insert")
+//                        }
+//                        .tint(.green)
+//                    }
                 }
                 .disabled(viewModel.fetchingAudioIDs.contains(item.id))
                 .listRowBackground(Color.clear)
@@ -383,6 +306,44 @@ struct AudioDeclarationView: View {
                     }
                 }
         }
+    }
+    
+    private func handleItemTap(_ item: AudioDeclaration) {
+        if item.isPremium, !subscriptionStore.isPremium {
+            isPresentingPremiumView = true
+            return
+        }
+
+        viewModel.downloadProgress[item.id] = nil
+        viewModel.fetchingAudioIDs.insert(item.id)
+
+        viewModel.fetchAudio(for: item) { result in
+            DispatchQueue.main.async {
+                viewModel.fetchingAudioIDs.remove(item.id)
+                switch result {
+                case .success(let url):
+                    audioURL = url
+                    audioViewModel.selectedItem = item
+                    audioViewModel.insert(url)
+                    viewModel.downloadProgress[item.id] = 0.0
+                    audioViewModel.currentTrack = item.title
+                    audioViewModel.subtitle = item.subtitle
+                    audioViewModel.imageUrl = item.imageUrl
+                    audioViewModel.loadAudio(from: url, isSameItem: audioViewModel.selectedItem == item)
+                case .failure(let error):
+                    errorMessage = ErrorWrapper(message: "Failed to download audio: \(error.localizedDescription)")
+                    audioViewModel.selectedItem = nil
+                    viewModel.downloadProgress[item.id] = 0.0
+                }
+            }
+        }
+    }
+    
+    private func handleSwipeRightAction(for item: AudioDeclaration) {
+        if item.isPremium, !subscriptionStore.isPremium {
+            return
+        }
+        audioViewModel.addToQueue(item: item)
     }
 }
 

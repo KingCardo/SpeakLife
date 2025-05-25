@@ -28,10 +28,6 @@ struct ThemeChooserView: View {
             GeometryReader { geometry in
                 ScrollView {
                     VStack(alignment: .center, spacing: 20) {
-                        Text("Theme")
-                            .font(.largeTitle.bold())
-                            .foregroundColor(.white)
-                            .padding(.horizontal)
 
                         Text("Pick from a selection of fonts and backgrounds to personalize your theme.")
                             .font(.body)

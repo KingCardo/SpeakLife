@@ -26,23 +26,6 @@ let audioFiles: [AudioDeclaration] = [
         imageUrl: "JesusHealing",
         isPremium: false
     ),
-    //    AudioDeclaration(
-    //           id: "morningDeclaration.mp3",
-    //           title: "A Morning Declaration of Faith and Victory",
-    //           subtitle: "Speak Life Over Your Day Rooted in Jesus’ Love and Promises",
-    //           duration: "4m",
-    //           imageUrl: "morningDeclaration",
-    //           isPremium: false
-    //       ),
-    
-    //    AudioDeclaration(
-    //           id: "unshakablePeace.mp3",
-    //           title: "A Declaration of Unshakable Peace",
-    //           subtitle: "Finding Rest in God’s Promises and Jesus’ Love",
-    //           duration: "4m",
-    //           imageUrl: "unshakablePeace",
-    //           isPremium: true
-    //       ),
     AudioDeclaration(
         id: "peace_v2.mp3",
         title: "Peace Beyond Understanding",
@@ -126,14 +109,6 @@ let audioFiles: [AudioDeclaration] = [
         imageUrl: "JesusRisen",
         isPremium: true
     ),
-    //    AudioDeclaration(
-    //           id: "closer.mp3",
-    //           title: "Closer to God",
-    //           subtitle: "Declaring a Life of Intimacy with Him and Walking in the Spirit Every Day",
-    //           duration: "3m",
-    //           imageUrl: "flowingRiver",
-    //           isPremium: true
-    //       ),
     AudioDeclaration(
         id: "children_v2.mp3",
         title: "Blessing Our Children",
@@ -630,7 +605,7 @@ let growWithJesusFiles: [AudioDeclaration] = [
     ),
     AudioDeclaration(
         id: "growJesus-ep6.mp3",
-        title: "Talk to Him Like You’re Already Loved",
+        title: "Learning to Listen",
         subtitle: "Episode 6",
         duration: "3m",
         imageUrl: "growWithJesus",
@@ -874,7 +849,7 @@ let divineHealthFiles: [AudioDeclaration] = [
     ),
     AudioDeclaration(
         id: "divineHealth-ep17.mp3",
-        title: "The Strength of Joy",
+        title: "Words That Water or Choke",
         subtitle: "Episode 17",
         duration: "3m",
         imageUrl: "divineHealth",
@@ -882,7 +857,7 @@ let divineHealthFiles: [AudioDeclaration] = [
     ),
     AudioDeclaration(
         id: "divineHealth-ep18.mp3",
-        title: "The Strength of Joy",
+        title: "Lay Down Stress, Pick Up Peace",
         subtitle: "Episode 18",
         duration: "3m",
         imageUrl: "divineHealth",
@@ -890,8 +865,16 @@ let divineHealthFiles: [AudioDeclaration] = [
     ),
     AudioDeclaration(
         id: "divineHealth-ep19.mp3",
-        title: "The Strength of Joy",
+        title: "Sleep Is Spiritual",
         subtitle: "Episode 19",
+        duration: "3m",
+        imageUrl: "divineHealth",
+        isPremium: true
+    ),
+    AudioDeclaration(
+        id: "divineHealth-ep20.mp3",
+        title: "Nothing Missing, Nothing Broken",
+        subtitle: "Episode 20",
         duration: "3m",
         imageUrl: "divineHealth",
         isPremium: true

@@ -2,6 +2,42 @@
     "version": 1,
     "audios": [
         {
+            "id": "godourrefuge-ep4.mp3",
+            "title": "You Will Not Fear",
+            "subtitle": "God Our Refuge Episode 4”,
+            "duration": "3m",
+            "imageUrl": "psalm91",
+            "isPremium": true,
+            "tag": "psalm91"
+        },
+        {
+            "id": "godourrefuge-ep3.mp3",
+            "title": "His Faithfulness is Your Shield”,
+            "subtitle": "God Our Refuge Episode 3”,
+            "duration": "3m",
+            "imageUrl": "psalm91",
+            "isPremium": true,
+            "tag": "psalm91"
+        },
+        {
+            "id": "godourrefuge-ep2.mp3",
+            "title": "My God, My Refuge and My Fortress",
+            "subtitle": "God Our Refuge Episode 2",
+            "duration": "3m",
+            "imageUrl": "psalm91",
+            "isPremium": true,
+            "tag": "psalm91"
+        },
+        {
+            "id": "godourrefuge-ep1.mp3",
+            "title": "The Shadow of the Almighty",
+            "subtitle": "God Our Refuge Episode 1",
+            "duration": "3m",
+            "imageUrl": "psalm91",
+            "isPremium": false,
+            "tag": "psalm91"
+        },
+        {
             "id": "godsheart-ep20.mp3",
             "title": "This Is Still His Heart Today",
             "subtitle": "God's Heart Episode 20",
