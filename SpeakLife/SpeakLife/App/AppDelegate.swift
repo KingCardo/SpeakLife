@@ -54,15 +54,7 @@ final class AppDelegate: NSObject, MessagingDelegate {
         }
         if appState?.isOnboarded ?? false {
             registerForPushNotifications()
-        }
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//            if let token = Messaging.messaging().fcmToken {
-//                print("✅ Manually Retrieved FCM Token: \(token)")
-//            } else {
-//                print("🔴 No FCM token available.")
-//            }
-//        }
-        
+        }        
         return true
     }
     

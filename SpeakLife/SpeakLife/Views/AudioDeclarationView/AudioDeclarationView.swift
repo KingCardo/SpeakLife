@@ -262,7 +262,7 @@ struct AudioDeclarationView: View {
                 }) {
                     VStack {
                         UpNextCell(viewModel: viewModel, audioViewModel: audioViewModel, item: item)
-                            .frame(width: proxy.size.width * 0.85, height: proxy.size.height * 0.15)
+                            .frame(width: proxy.size.width * 0.9, height: proxy.size.height * 0.15)
                         
                         if let progress = viewModel.downloadProgress[item.id], progress > 0 {
                             ProgressView(value: progress)

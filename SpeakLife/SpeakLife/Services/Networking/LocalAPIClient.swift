@@ -87,6 +87,7 @@ final class LocalAPIClient: APIService {
         
         guard let data = try? Data(contentsOf: fileURL),
               let declarations = try? JSONDecoder().decode([AudioDeclaration].self, from: data) else {
+            print("failed to load audio RWRW")
             completion([], APIError.failedRequest)
             return
         }
@@ -255,12 +256,12 @@ final class LocalAPIClient: APIService {
 //            }
 //        }
 //    }
-    func audio(version: Int, completion: @escaping([AudioDeclaration]) -> Void) {
+    func audio(version: Int, completion: @escaping(WelcomeAudio?, [AudioDeclaration]?) -> Void) {
         print(version, "rwrw")
         if audioLocalVersion < version {
             downloadAudioDeclarations() { data, error in
                 if let _ = error {
-                    completion(speaklifeFiles)
+                    completion(nil, speaklifeFiles)
                 }
                 if let data = data {
                     do {
@@ -269,24 +270,25 @@ final class LocalAPIClient: APIService {
                         self.audioLocalVersion = version
                         self.save(audioDeclarations: audios) { success in
                         }
-                        completion(audios)
+                        completion(welcome, nil)
                         return
                     } catch {
                         print(error, error.localizedDescription, "RWRW")
-                        completion(speaklifeFiles)
+                        completion(nil, speaklifeFiles)
                     }
                 }
             }
         } else {
             loadAudioFromDisk { audios, error in
                 if let error = error {
-                    completion(speaklifeFiles)
+                    completion(nil, speaklifeFiles)
                 }
-                
-                if !audios.isEmpty {
-                    completion(audios)
+                    
+                    if !audios.isEmpty {
+                        print("this got hit RWRW")
+                        completion(nil, audios)
+                    }
                 }
-            }
         }
     }
     

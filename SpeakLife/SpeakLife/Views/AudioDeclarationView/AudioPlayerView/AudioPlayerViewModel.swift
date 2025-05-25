@@ -83,7 +83,7 @@ final class AudioPlayerViewModel: ObservableObject {
     }
 
     func playNextInQueue() {
-        guard !audioQueue.isEmpty, !urlQueue.isEmpty else {
+        guard !urlQueue.isEmpty else {
             print("Queue is empty RWRW")
             return
         }
@@ -129,7 +129,7 @@ final class AudioPlayerViewModel: ObservableObject {
 
     func loadAudio(from url: URL, isSameItem: Bool) {
         hasPrefetchedNext = false
-        startMonitoringPlayback()
+       // startMonitoringPlayback()
 
         if isPlaying && isSameItem { return }
         resetPlayer()
@@ -215,9 +215,9 @@ final class AudioPlayerViewModel: ObservableObject {
         currentTime = 0
     }
 
-    func addToQueue(items: [AudioDeclaration]) {
-        audioQueue.append(contentsOf: items)
-        print("\(items), added to queu RWRW")
+    func addToQueue(item: AudioDeclaration) {
+        audioQueue.append(item)
+        print("\(item), added to queu RWRW")
     }
 
     func clearQueue() {

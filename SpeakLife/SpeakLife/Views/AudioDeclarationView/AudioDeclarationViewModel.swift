@@ -10,46 +10,34 @@ import FirebaseStorage
 import SwiftUI
 
 final class AudioDeclarationViewModel: ObservableObject {
-    @Published var audioDeclarations: [AudioDeclaration]
-    @Published var bedtimeStories: [AudioDeclaration]
-    @Published var gospelStories: [AudioDeclaration]
-    @Published var meditations: [AudioDeclaration]
-    @Published var devotionals: [AudioDeclaration]
-    @Published var speaklife: [AudioDeclaration]
-    @Published var godsHeart: [AudioDeclaration]
-    @Published var growWithJesus: [AudioDeclaration]
-    @Published var divineHealth: [AudioDeclaration]
+    @Published var audioDeclarations: [AudioDeclaration]  = []
+    @Published var bedtimeStories: [AudioDeclaration]  = []
+    @Published var gospelStories: [AudioDeclaration]  = []
+    @Published var meditations: [AudioDeclaration]  = []
+    @Published var devotionals: [AudioDeclaration]  = []
+    @Published var speaklife: [AudioDeclaration]  = []
+    @Published var godsHeart: [AudioDeclaration]  = []
+    @Published var growWithJesus: [AudioDeclaration]  = []
+    @Published var divineHealth: [AudioDeclaration]  = []
+    @Published var imagination: [AudioDeclaration]  = []
+    @Published var psalm91: [AudioDeclaration]  = []
+   // @Published var audioDeclarations: [AudioDeclaration] = []
+    private(set) var allAudioFiles: [AudioDeclaration] = []
     @Published var downloadProgress: [String: Double] = [:]
     @Published var fetchingAudioIDs: Set<String> = []
-    @Published var filters: [Filter] = [
-        .godsHeart, .divineHealth, .growWithJesus, .speaklife, .declarations, .gospel, .bedtimeStories, .meditation
-    ]
+    @Published var filters: [Filter] = [.godsHeart, .speaklife, .psalm91, /*.imagination,.devotional,*/ .divineHealth,  .growWithJesus,.declarations, .gospel, .meditation, .bedtimeStories]
+
     @Published var selectedFilter: Filter = .godsHeart
-    @Published var dynamicFilters: [FetchedFilter] = []
-    @Published var selectedDynamicFilter: FetchedFilter? = nil
     private let storage = Storage.storage()
     private let fileManager = FileManager.default
     @AppStorage("shouldClearCachev3") private var shouldClearCachev3 = true
     private let service: APIService = LocalAPIClient()
     init() {
-          self.audioDeclarations = audioFiles
-          self.bedtimeStories = bedTimeFiles
-          self.gospelStories = gospelFiles
-          self.meditations = meditationFiles
-          self.devotionals = devotionalFiles
-          self.growWithJesus = growWithJesusFiles
-          self.speaklife = []
-          self.godsHeart = []
-          self.divineHealth = divineHealthFiles
+
       }
+
     
     var filteredContent: [AudioDeclaration] {
-        
-//        if let dynamicFilter = selectedDynamicFilter {
-////                return allAudioDeclarations
-////                    .filter { $0.tag == dynamicFilter.tag }
-////                    .reversed()
-//            }
         switch selectedFilter {
         case .declarations:
             return audioDeclarations
@@ -62,25 +50,36 @@ final class AudioDeclarationViewModel: ObservableObject {
         case .devotional:
             return devotionals
         case .speaklife:
-            return speaklife.reversed()
+            return speaklife
         case .godsHeart:
             return godsHeart.reversed()
         case .growWithJesus:
             return growWithJesus
         case .divineHealth:
             return divineHealth
+        case .imagination:
+            return imagination
+        case .psalm91:
+            return psalm91
         }
     }
     
     func fetchAudio(version: Int) {
-        print(version, "RWRW version")
-        service.audio(version: version) { audio in
-            print(audio.count, "RWRW")
-            DispatchQueue.main.async {
-                let godsHeart = audio.filter { $0.tag == "godsHeart" }
-                let speakLife = audio.filter { $0.tag == "speaklife" || $0.tag == nil }
-                self.speaklife = speakLife
-                self.godsHeart = godsHeart
+        service.audio(version: version) { [weak self] welcome, audios in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.allAudioFiles = welcome?.audios ?? audios!
+                audioDeclarations = self.allAudioFiles
+                    .filter { $0.tag == "declarations" }
+                bedtimeStories = self.allAudioFiles.filter { $0.tag == "bedtimeStories" }
+                gospelStories = self.allAudioFiles.filter { $0.tag == "gospel" }
+                meditations = self.allAudioFiles.filter { $0.tag == "meditation" }
+                speaklife = self.allAudioFiles.filter { $0.tag == "speaklife" }
+                godsHeart = self.allAudioFiles.filter { $0.tag == "godsHeart" }
+                growWithJesus = self.allAudioFiles.filter { $0.tag == "growWithJesus" }
+                divineHealth = self.allAudioFiles.filter { $0.tag == "divineHealth" }
+                psalm91 = self.allAudioFiles.filter { $0.tag == "psalm91" }
+                imagination = self.allAudioFiles.filter { $0.tag == "imagination" }
             }
         }
     }
@@ -157,6 +156,7 @@ final class AudioDeclarationViewModel: ObservableObject {
 
 struct WelcomeAudio: Codable {
     let version: Int
+    let filters: [String]?
     let audios: [AudioDeclaration]
 }
 
