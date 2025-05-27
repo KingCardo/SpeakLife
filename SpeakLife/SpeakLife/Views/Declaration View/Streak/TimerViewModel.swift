@@ -28,27 +28,18 @@ final class TimerViewModel: ObservableObject {
     
     init() {
         checkAndUpdateCompletionDate()
-        if !newStreakNotification {
-            registerStreakNotification()
-            newStreakNotification = true
-        }
-    }
-    
-//    func setupMidnightReset() {
-//        let now = Date()
-//        if let midnight = calendar.nextDate(after: now, matching: DateComponents(hour: 0, minute: 0, second: 0), matchingPolicy: .nextTime) {
-//            let midnightResetTimer = Timer(fireAt: midnight, interval: 0, target: self, selector: #selector(resetTimerAtMidnight), userInfo: nil, repeats: false)
-//            RunLoop.main.add(midnightResetTimer, forMode: .common)
+//        if !newStreakNotification {
+//            registerStreakNotification()
+//            newStreakNotification = true
 //        }
-//    }
-    
-//    @objc func resetTimerAtMidnight() {
-//        isComplete = false
-//        timeRemaining = TimerViewModel.totalDuration // Reset to 10 minutes
-//      //  stopTimer()
-//       // startTimer()
-//       // checkAndUpdateCompletionDate()
-//    }
+        
+        UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
+                let hasDailyReminder = requests.contains { $0.identifier == "daily_speak_life_reminder" }
+                if !hasDailyReminder {
+                    self.scheduleDailyStreakReminder()
+                }
+            }
+    }
     
     func runCountdownTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
@@ -126,7 +117,7 @@ final class TimerViewModel: ObservableObject {
     func checkAndUpdateCompletionDate() {
         
         if checkIfMidnightOfTomorrowHasPassedSinceLastCompletedStreak() {
-                scheduleNotificationForMidnightTomorrow()
+               // scheduleNotificationForMidnightTomorrow()
             currentStreak = 0
         }
     }
@@ -186,66 +177,85 @@ final class TimerViewModel: ObservableObject {
         return String(format: "%02d:%02d", minutes, seconds)
     }
     
-    let speakLifeArray:[String] = ["Time to activate God's promises ⚔️🗣️",
-                                   " 🗺️⚔️ Ready to SpeakLife?",
-                                   "It's time! 🌄 Your destiny awaits. Speak life.",
-                                   "We missed you.🛡️⚒️ Gear up and Speak life.",
-                                   "Legends don't rest for too long! 🌟 It's time to claim your ground.",
-                                   "The spiritual realm misses its hero! 🏰 Speak life.",
-                                   "Too quiet without you! 🌿👣 Let's stir things up again.",
-                                   "Your saga awaits its next chapter! 📖✨ Speak life.",
-                                   " 🔄 The adventure never stops! Speak life.",
-                                   "It's comeback time! 🎉 Speak life!",
-                                   "The heavens whisper your name! 🍃🗣️ Speak life.",
-                                   "Feeling the call of adventure? 🏞️ It's time to Speak life",
-                                   "Your destiny isn't written yet! 🌌  Speak life.",
-                                   "A hero's work is never done! ⚔️🛡️ Speak life.",
-                                   "The path remains! 🚶‍♂️🌲 Speak life",
-                                   "Epic moments await! 🌠 Speak life"
-
+    lazy var speakLifeArray: [String] = [
+        // Existing 16 from previous message...
+        "What you speak today shapes your tomorrow. 🗣️💭 Speak life now.",
+        "Seeds of life planted today become harvests of breakthrough. 🌱✨ Start now.",
+        "Your words are weapons. The more you speak truth, the more you win. ⚔️🔥",
+        "Every time you show up, heaven moves. 📖🕊️ Let’s go again.",
+        "God’s promises work when you work them. 🔁📜 Speak life today.",
+        "The more time in His Word, the more power in your life. 📖⚡ Speak life now.",
+        "You grow when you speak. You win when you declare. 🔥🌿 Tap in.",
+        "Don’t wait for change—declare it into existence. 🎯🗣️ Speak life.",
+        "This is how mountains move. Start speaking. 🏔️🔊",
+        "You’re one declaration away from a shift. 🔁 Speak life boldly.",
+        "Every spoken promise waters your future. 💦🌻 Keep going.",
+        "Heaven responds to your voice. 🎙️🕊️ Declare His Word today.",
+        "Power, peace, and purpose await your voice. 🗣️☁️ Step in.",
+        "Breakthrough belongs to the bold. 📣💥 Speak like it’s already done.",
+        "Your future self will thank you for today’s declarations. 🧭🛡️",
+        "If you want more out of life, put more Word into your day. 🔥📖 Start now.",
+        
+        // 🔥 10 NEW streak-based gamified nudges:
+        "🔥 Day \(currentStreak + 1) is here. Let’s keep the fire going—don’t break the streak!",
+        "🏆 Momentum is your superpower. Keep your streak strong—declare today.",
+        "🎯 Consistency builds champions. One more day. One more victory. Speak life.",
+        "📆 You've come too far to stop now. Day \(currentStreak + 1)—lock it in!",
+        "🚀 Every day you speak, your spirit levels up. Keep the streak alive!",
+        "🧠 Train your spirit daily. Your streak is your strength—stay sharp.",
+        "📲 Heaven’s watching your streak. Let’s make today count!",
+        "💡 Each declaration stacks eternal rewards. Keep it going!",
+        "⏳ Don’t let today slip away. Your streak is your legacy—protect it.",
+        "🌟 Greatness is built in small, daily declarations. Keep your streak glowing!"
     ]
     
-    func scheduleNotificationForMidnightTomorrow() {
+//    func scheduleNotificationForMidnightTomorrow() {
+//        let content = UNMutableNotificationContent()
+//        content.title = "Speaking life is a weapon"
+//        content.body = speakLifeArray.shuffled().first ??  "We missed you.🛡️⚒️ Gear up and Speak life."
+//        content.sound = UNNotificationSound.default
+//
+//        var dateComponents = DateComponents()
+//        dateComponents.hour = 7  
+//        dateComponents.minute = 0
+//
+//        // Increment day by 1 to schedule for tomorrow
+//        if let tomorrow = Calendar.current.date(byAdding: .hour, value: 7, to: Date()) {
+//            dateComponents.day = Calendar.current.component(.day, from: tomorrow)
+//            dateComponents.month = Calendar.current.component(.month, from: tomorrow)
+//            dateComponents.year = Calendar.current.component(.year, from: tomorrow)
+//        }
+//
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+//
+//        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+//
+//        UNUserNotificationCenter.current().add(request) { error in
+//            if let error = error {
+//                print("Error scheduling notification: \(error.localizedDescription)")
+//            }
+//        }
+//    }
+//
+    func scheduleDailyStreakReminder() {
         let content = UNMutableNotificationContent()
-        content.title = "Speaking life is a weapon"
-        content.body = speakLifeArray.shuffled().first ??  "We missed you.🛡️⚒️ Gear up and Speak life."
+        content.title = "Keep your streak alive 🔥"
+        content.body = speakLifeArray.shuffled().first ?? "It’s a new day to speak life. Let’s go!"
         content.sound = UNNotificationSound.default
 
         var dateComponents = DateComponents()
-        dateComponents.hour = 7  
+        dateComponents.hour = 8
         dateComponents.minute = 0
 
-        // Increment day by 1 to schedule for tomorrow
-        if let tomorrow = Calendar.current.date(byAdding: .hour, value: 7, to: Date()) {
-            dateComponents.day = Calendar.current.component(.day, from: tomorrow)
-            dateComponents.month = Calendar.current.component(.month, from: tomorrow)
-            dateComponents.year = Calendar.current.component(.year, from: tomorrow)
-        }
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
 
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "daily_speak_life_reminder", content: content, trigger: trigger)
 
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
-                print("Error scheduling notification: \(error.localizedDescription)")
-            }
-        }
-    }
-    
-    func registerStreakNotification() {
-        let content = UNMutableNotificationContent()
-        content.title = "New Streak 🔥"
-        content.body = "Speaking Life just got easier, let's start a streak."
-        content.sound = UNNotificationSound.default
-
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400, repeats: false)
-
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-
-        UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
-                print("Error scheduling notification: \(error.localizedDescription)")
+                print("Error scheduling daily streak reminder: \(error.localizedDescription)")
+            } else {
+                print("Daily streak reminder scheduled ✅")
             }
         }
     }
