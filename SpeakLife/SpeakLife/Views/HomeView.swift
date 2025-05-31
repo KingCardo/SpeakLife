@@ -20,6 +20,18 @@ struct MusicResources {
     static let everpresent = MusicResources(name: "everpresent", artist: "Brock Hewitt", type: "mp3")
 }
 
+class TabViewModel: ObservableObject {
+    @Published var selectedTab: Int = 0
+
+    func goToAudio() {
+        selectedTab = 2
+    }
+
+    func resetToHome() {
+        selectedTab = 0
+    }
+}
+
 struct HomeView: View {
     
     @EnvironmentObject var declarationStore: DeclarationViewModel
@@ -30,7 +42,9 @@ struct HomeView: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var viewModel: FacebookTrackingViewModel
     @EnvironmentObject var audioDeclarationViewModel: AudioDeclarationViewModel
+    @EnvironmentObject var tabViewModel: TabViewModel
     @Binding var isShowingLanding: Bool
+   
    
     @State var showGiftView = false
     @State private var isPresented = false
@@ -77,18 +91,12 @@ struct HomeView: View {
     
     @ViewBuilder
     var homeView: some View {
-        TabView {
+        TabView(selection: $tabViewModel.selectedTab) {
             declarationView
-           
-//            if subscriptionStore.showTestimonyTab {
-//                testimonyView
-//            }
             devotionalView
             audioView
-           // if !subscriptionStore.showTestimonyTab {
-                createYourOwnView
-           // }
-                profileView
+            createYourOwnView
+            profileView
                 
             }
             .hideTabBar(if: appState.showScreenshotLabel)
@@ -97,11 +105,6 @@ struct HomeView: View {
                     .presentationDetents([.medium])
                     .presentationDragIndicator(.visible)
             }
-//            .sheet(isPresented: $appState.needEmail) {
-//                EmailBottomSheet(isPresented: $appState.needEmail)
-//                    .presentationDetents([.medium])
-//                                   .presentationDragIndicator(.visible)
-//            }
             .accentColor(Constants.DAMidBlue)
             .onAppear {
                 checkForNewVersion()
@@ -115,6 +118,7 @@ struct HomeView: View {
     var declarationView: some View {
         DeclarationView()
             .id(appState.rootViewId)
+            .tag(0)
             .tabItem {
                 Image(systemName: "house.fill")
                     .renderingMode(.original)
@@ -132,6 +136,7 @@ struct HomeView: View {
     
     var audioView: some View {
         AudioDeclarationView(declarationStore: audioDeclarationViewModel)
+            .tag(2)
             .tabItem {
                 if #available(iOS 17, *) {
                     Image(systemName: "waveform")
@@ -146,6 +151,7 @@ struct HomeView: View {
     
     var devotionalView: some View {
         DevotionalView(viewModel:devotionalViewModel)
+            .tag(1)
             .tabItem {
                 if #available(iOS 17, *) {
                     Image(systemName: "book.pages.fill")
@@ -159,6 +165,7 @@ struct HomeView: View {
     
     var createYourOwnView: some View {
         CreateYourOwnView()
+            .tag(3)
             .tabItem {
                 Image(systemName: "plus.bubble.fill")
                     .renderingMode(.original)
@@ -167,6 +174,7 @@ struct HomeView: View {
     
     var profileView: some View {
         ProfileView()
+            .tag(4)
             .tabItem {
                 Image(systemName: "line.3.horizontal")
                     .renderingMode(.original)

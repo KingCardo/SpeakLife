@@ -23,6 +23,7 @@ struct SpeakLifeApp: App {
     @StateObject var timerViewModel = TimerViewModel()
     @StateObject private var viewModel = FacebookTrackingViewModel()
     @StateObject private var audioDeclarationViewModel = AudioDeclarationViewModel()
+    @StateObject var tabViewModel = TabViewModel()
     
     @State var isShowingLanding = true
     
@@ -40,6 +41,7 @@ struct SpeakLifeApp: App {
                 .environmentObject(timerViewModel)
                 .environmentObject(viewModel)
                 .environmentObject(audioDeclarationViewModel)
+                .environmentObject(tabViewModel)
                 .onOpenURL { url in
                     if url.absoluteString == "speaklife://event/daily-declarations" {
 
@@ -71,6 +73,7 @@ struct SpeakLifeApp: App {
                 //DispatchQueue.global().async {
                 appDelegate.appState = appState
                 appDelegate.declarationStore = declarationStore
+                appDelegate.tabViewModel = tabViewModel
                     
                 if appState.notificationEnabled {
                     NotificationManager.shared.prepareDailyStreakNotification(with: appState.userName, streak: streakViewModel.currentStreak, hasCurrentStreak: streakViewModel.hasCurrentStreak)

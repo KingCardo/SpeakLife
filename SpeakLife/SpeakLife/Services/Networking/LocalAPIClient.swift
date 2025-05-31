@@ -296,8 +296,8 @@ final class LocalAPIClient: APIService {
         let storage = Storage.storage()
         let jsonRef = storage.reference(withPath: "declarationsv7.json")
 
-        // Download the file into memory with a maximum allowed size of 1MB (2 * 1024 * 1024 bytes)
-        jsonRef.getData(maxSize: 2 * 1024 * 1024) { data, error in
+        // Download the file into memory with a maximum allowed size of 2MB (4 * 1024 * 1024 bytes)
+        jsonRef.getData(maxSize: 4 * 1024 * 1024) { data, error in
             if let error = error {
                 completion(nil, error)
                 print("Error downloading JSON file: \(error)")

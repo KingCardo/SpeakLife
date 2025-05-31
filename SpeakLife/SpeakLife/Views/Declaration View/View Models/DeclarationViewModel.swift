@@ -128,9 +128,9 @@ final class DeclarationViewModel: ObservableObject {
             }
         }
         
-        NotificationHandler.shared.callback = { [weak self] content in
-            self?.setDeclaration(content.body, category: content.title)
-        }
+//        NotificationHandler.shared.callback = { [weak self] content in
+//            self?.setDeclaration(content.body, category: content.title)
+//        }
     }
     
     func cleanUpSelectedCategories(completion: (Set<DeclarationCategory>) -> Void) {
@@ -371,31 +371,14 @@ final class DeclarationViewModel: ObservableObject {
     func setDeclaration(_ content: String,  category: String)  {
         let contentData = content
        // contentData += " ~ " + category
-        let contentText = prefixString(content, until: ".").dropLast()
-        print(contentText, "RWRW")
+        let contentText = prefixString(content, until: " ~").dropLast()
+        print(contentText, category, "RWRW")
         
-        if let category = DeclarationCategory(category),
-           let categoryArray = allDeclarationsDict[category] {
-            guard let declaration = categoryArray.filter ({ $0.text == contentData }).first else {
-                print("failed to create dec rwrw")
-                return
-            }
-            self.choose(declaration)
-            print("choose dec")
-        } else {
-            let contentPrefix: String
-            if let periodIndex = content.firstIndex(of: ".") {
-                contentPrefix = String(content[..<periodIndex])
-            } else {
-                contentPrefix = content  // Use full content if no period is found
-            }
-            guard let declaration = allDeclarations.first(where: { $0.text.hasPrefix(contentPrefix) }) else {
+            guard let declaration = allDeclarations.first(where: { $0.text.hasPrefix(contentText) }) else {
                 print("Failed to find a matching declaration")
                 return
             }
             self.choose(declaration)
-            
-        }
     }
     
     func setRemoteDeclarationVersion(version: Int) {
@@ -403,9 +386,9 @@ final class DeclarationViewModel: ObservableObject {
     }
 }
 
-func prefixString(_ text: String, until character: Character) -> String {
-    if let index = text.firstIndex(of: character) {
-        let prefix = text[..<index]
+func prefixString(_ text: String, until substring: String) -> String {
+    if let range = text.range(of: substring) {
+        let prefix = text[..<range.lowerBound]
         return String(prefix)
     } else {
         return text
