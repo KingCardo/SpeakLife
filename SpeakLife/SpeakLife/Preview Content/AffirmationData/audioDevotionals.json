@@ -3,6 +3,24 @@
     "filters": ["godsHeart", "speaklife", "psalm91", "divineHealth", "growWithJesus", "declarations", "gospel", "meditation", "bedtimeStories"],
     "audios": [
         {
+            "id": "godourrefuge-ep7.mp3",
+            "title": "Treading on Lions and Cobras",
+            "subtitle": "God Our Refuge Episode 7",
+            "duration": "3m",
+            "imageUrl": "psalm91",
+            "isPremium": true,
+            "tag": "psalm91"
+        },
+        {
+            "id": "godourrefuge-ep6.mp3",
+            "title": "Angels on Assignment",
+            "subtitle": "God Our Refuge Episode 6",
+            "duration": "3m",
+            "imageUrl": "psalm91",
+            "isPremium": true,
+            "tag": "psalm91"
+        },
+        {
             "id": "godourrefuge-ep5.mp3",
             "title": "A Thousand May Fall—But Not You",
             "subtitle": "God Our Refuge Episode 5",

@@ -54,7 +54,7 @@ struct OfferPageView: View {
         "It helps me hear God's voice clearer every day.",
         "I finally feel confident speaking truth over my life.",
     ]
-
+    
     var body: some View {
         GeometryReader { reader in
             ZStack {
@@ -156,7 +156,7 @@ struct OfferPageView: View {
                             .id(testimonialIndex)
                     }
                     .animation(.easeInOut(duration: 0.5), value: testimonialIndex)
-
+                    
                     Button(action: {
                         makePurchase(iap: subscriptionStore.discountSubscription)
                     }) {
@@ -195,19 +195,19 @@ struct OfferPageView: View {
             }
             .onAppear {
                 withAnimation(Animation.easeInOut(duration: 1.2).repeatForever(autoreverses: true)) {
-                                       animateCTA = true
-                                   }
-                                   startTestimonialRotation()
+                    animateCTA = true
+                }
+                startTestimonialRotation()
                 self.currentSelection = subscriptionStore.currentOfferedDiscount
             }
         }
     }
-
+    
     private func formatTime(_ time: TimeInterval) -> String {
-            let minutes = Int(time) / 60
-            let seconds = Int(time) % 60
-            return String(format: "%02d:%02d", minutes, seconds)
-        }
+        let minutes = Int(time) / 60
+        let seconds = Int(time) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
     
     func buy(_ iap: String) async {
         do {
@@ -250,12 +250,12 @@ struct OfferPageView: View {
     }
     
     private func startTestimonialRotation() {
-            Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { _ in
-                withAnimation {
-                    testimonialIndex = (testimonialIndex + 1) % testimonials.count
-                }
+        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { _ in
+            withAnimation {
+                testimonialIndex = (testimonialIndex + 1) % testimonials.count
             }
         }
+    }
 }
 
 //        "I speak life over myself every morning now \nit’s changed everything.",
@@ -269,54 +269,54 @@ struct SubscriptionView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
-
+    
     @State private var isShowingError = false
     @State private var testimonialIndex = 0
     @State private var currentSelection: Product?
     @State private var pulse = false
-
+    
     let size: CGSize
     var callback: (() -> Void)?
     let foregroundColor: Color = .white
-
+    
+    @State private var selectedPlan: SubscriptionPlan = .yearly
+    
+    enum SubscriptionPlan: String, CaseIterable {
+        case monthly = "Monthly"
+        case yearly = "Yearly"
+        case lifetime = "Lifetime"
+    }
+    
     private let testimonials = [
         "Holy Spirit designed",
         "I feel God's presence every time I open this app.",
-            "It helps me hear God's voice clearer every day.",
-            "Scriptures now speak directly to my heart.",
-            "More than an app — it’s part of my walk with God.",
-            "I finally feel confident speaking truth over my life.",
-            "This is my favorite way to start the day!"
+        "It helps me hear God's voice clearer every day.",
+        "Scriptures now speak directly to my heart.",
+        "More than an app — it’s part of my walk with God.",
+        "I finally feel confident speaking truth over my life.",
+        "This is my favorite way to start the day!"
     ]
-
+    
     var body: some View {
         ZStack {
-//            LinearGradient(
-//                gradient: Gradient(colors: [
-//                    Color(red: 0.66, green: 0.85, blue: 1.0),   // #A8D8FF – Light Sky Blue (top)
-//                    Color(red: 0.43, green: 0.62, blue: 0.98),  // #6E9DFB – Soft Periwinkle (middle)
-//                    Color(red: 0.14, green: 0.23, blue: 0.50)   // #243B80 – Deep Royal Blue (bottom)
-//                ]),
-//                startPoint: .top,
-//                endPoint: .bottom
-//            )
-//            LinearGradient(
-//                gradient: Gradient(colors: [Color(red: 0.1, green: 0.1, blue: 0.3), Color(red: 0.2, green: 0.4, blue: 0.9)]),
-//                startPoint: .topLeading,
-//                endPoint: .bottomTrailing
-//            )
-//            .ignoresSafeArea()
             LinearGradient(
                 gradient: Gradient(colors: [.black]),
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                        .ignoresSafeArea()
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
             VStack(spacing: 14) {
                 headerSection
                 titleSection
-                FeatureView()
+                if subscriptionStore.showSubscriptionFirst {
+                    descriptionText
+                    Spacer().frame(height: 4)
+                } else {
+                    FeatureView()
+                }
                 testimonialView
+                durationTab
+                
                 selectionButtons
                 goPremiumStack
                 Spacer().frame(height: 4)
@@ -331,13 +331,60 @@ struct SubscriptionView: View {
                 currentSelection = subscriptionStore.currentOfferedPremium
                 startTestimonialRotation()
             }
-
+            
             if declarationStore.isPurchasing {
                 RotatingLoadingImageView()
             }
-
+            
             if UIDevice.current.userInterfaceIdiom == .pad {
                 iPadCloseButton
+            }
+        }
+    }
+    
+    private var descriptionText: some View {
+        return Text("""
+        By supporting the SpeakLife mission, you give to a ministry to spread the love of Jesus and help people become like him. As our thank-you, enjoy SpeakLife Premium — ad-free, unlimited, and fully unlocked.
+        """)
+        .font(Font.custom("AppleSDGothicNeo", size: 12, relativeTo: .body))
+        .foregroundColor(.white)
+        .multilineTextAlignment(.leading)
+        .lineSpacing(4)
+        .padding([.leading, .trailing])
+    }
+    
+    @ViewBuilder
+    private var durationTab: some View {
+        if subscriptionStore.showSubscriptionFirst {
+            VStack {
+                Text("Become a supporter")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                    .padding(.top, 8)
+                HStack(spacing: 16) {
+                    ForEach(SubscriptionPlan.allCases, id: \.self) { plan in
+                        Text(plan.rawValue)
+                            .fontWeight(.semibold)
+                            .padding(.vertical, 6)
+                            .padding(.horizontal, 16)
+                            .background(selectedPlan == plan ? Color.yellow.opacity(0.9) : Color.gray.opacity(0.2))
+                            .cornerRadius(20)
+                            .foregroundColor(.black)
+                            .onTapGesture {
+                                switch plan {
+                                case .monthly:
+                                    currentSelection = subscriptionStore.currentOfferedPremiumMonthly
+                                case .yearly:
+                                    currentSelection = subscriptionStore.currentOfferedPremium
+                                case .lifetime:
+                                    currentSelection = subscriptionStore.currentOfferedLifetime
+                                }
+                                selectedPlan = plan
+                            }
+                    }
+                }
+                Spacer().frame(height: 12)
             }
         }
     }
@@ -345,8 +392,8 @@ struct SubscriptionView: View {
     private var headerSection: some View {
         ZStack {
             AnimatedHeaderBackground()
-
-            VStack {
+            
+            VStack(spacing: 8) {
                 Spacer()
                     .frame(height: size.height * 0.06)
                 Image("appIconDisplay")
@@ -355,7 +402,7 @@ struct SubscriptionView: View {
                     .frame(width: 90, height: 90)
                     .clipShape(Circle())
                     .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
-
+                
                 Text("SpeakLife")
                     .font(.system(size: 26, weight: .bold))
                     .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
@@ -363,22 +410,18 @@ struct SubscriptionView: View {
         }
         .frame(height: size.height * 0.3)
     }
-
+    
     @ViewBuilder
     private var titleSection: some View {
         Spacer().frame(height: 12)
         VStack(spacing: 10) {
-    
-            Text("SpeakLife & Transform")
+            
+            Text(subscriptionStore.showSubscriptionFirst ? "Support the Mission" : "SpeakLife & Transform")
                 .font(Font.custom("AppleSDGothicNeo-Bold", size: 24, relativeTo: .title))
                 .multilineTextAlignment(.center)
-//            Text("to rewire your thoughts and experience God’s peace, healing, and purpose")
-//                .font(Font.custom("AppleSDGothicNeo-Bold", size: 16, relativeTo: .subheadline))
-//                .multilineTextAlignment(.center)
-//                .foregroundStyle(.gray)
         }
     }
-
+    
     private var testimonialView: some View {
         Text("\"\(testimonials[testimonialIndex])\"")
             .font(.system(size: 12, weight: .medium, design: .default))
@@ -390,20 +433,27 @@ struct SubscriptionView: View {
             .id(testimonialIndex)
             .animation(.easeInOut(duration: 0.5), value: testimonialIndex)
     }
-
+    
+    @ViewBuilder
     private var selectionButtons: some View {
-        VStack(spacing: 8) {
-            if let annual = subscriptionStore.currentOfferedPremium {
-                subscriptionOption(product: annual)
+        if subscriptionStore.showSubscriptionFirst {
+            if let currentSelection = currentSelection {
+                subscriptionOption(product: currentSelection)
             }
-            if let monthly = subscriptionStore.currentOfferedPremiumMonthly {
-                subscriptionOption(product: monthly)
-            }
-            
-            if subscriptionStore.showSubscriptionFirst {
+        } else {
+            VStack(spacing: 8) {
+                if let annual = subscriptionStore.currentOfferedPremium {
+                    subscriptionOption(product: annual)
+                }
+                if let monthly = subscriptionStore.currentOfferedPremiumMonthly {
+                    subscriptionOption(product: monthly)
+                }
+                
+                   if subscriptionStore.showSubscriptionFirst {
                 if let lifetime = subscriptionStore.currentOfferedLifetime {
                     subscriptionOption(product: lifetime)
                 }
+                 }
             }
         }
     }
@@ -427,12 +477,12 @@ struct SubscriptionView: View {
                 .frame(maxWidth: .infinity)
                 .background(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(currentSelection == product ? Color.yellow : Color.gray, lineWidth: 1)
+                        .stroke(currentSelection == product ? Color.yellow : Color.gray, lineWidth: 3)
                 )
                 .shadow(color: currentSelection == product ? Color.yellow.opacity(0.6) : .clear, radius: 4)
                 .padding(.horizontal, 20)
             }
-
+            
             if product.id == subscriptionStore.currentOfferedPremium?.id {
                 HStack {
                     Spacer()
@@ -448,7 +498,7 @@ struct SubscriptionView: View {
                             .foregroundColor(.black)
                     }
                     .offset(x: -25, y: -10)
-    
+                    
                 }
             }
         }
@@ -463,7 +513,7 @@ struct SubscriptionView: View {
                     .foregroundColor(.black)
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(Color.white)
+                    .background(subscriptionStore.showSubscriptionFirst ? Constants.brightYellow : Color.white)
                     .cornerRadius(25)
                     .scaleEffect(pulse ? 1.05 : 1)
                     .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: pulse)
@@ -475,20 +525,20 @@ struct SubscriptionView: View {
                     .padding(.horizontal)
             }
             .opacity(currentSelection != nil ? 1 : 0.5)
-
+            
             Text(currentSelection?.costDescription ?? "")
                 .font(Font.custom("AppleSDGothicNeo-Regular", size: 10, relativeTo: .footnote))
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
-
+            
             HStack {
                 Button("Restore", action: restore)
                     .font(.caption)
                     .underline()
                     .foregroundColor(.blue)
-
+                
                 Spacer().frame(width: 16)
-
+                
                 Link("Terms & Conditions", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
                     .font(.caption)
                     .underline()
@@ -497,7 +547,7 @@ struct SubscriptionView: View {
         }
         .padding(.horizontal, 20)
     }
-
+    
     private var iPadCloseButton: some View {
         VStack {
             HStack {
@@ -513,7 +563,7 @@ struct SubscriptionView: View {
             Spacer()
         }
     }
-
+    
     private func startTestimonialRotation() {
         Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { _ in
             withAnimation {
@@ -521,17 +571,17 @@ struct SubscriptionView: View {
             }
         }
     }
-
+    
     private func makePurchase() {
         UIImpactFeedbackGenerator(style: .soft).impactOccurred()
         Task {
-           declarationStore.isPurchasing = true
+            declarationStore.isPurchasing = true
             defer {
-                    Task {
-                        try? await Task.sleep(nanoseconds: 1_000_000_000) // 1 second delay
-                        declarationStore.isPurchasing = false
-                    }
+                Task {
+                    try? await Task.sleep(nanoseconds: 1_000_000_000) // 1 second delay
+                    declarationStore.isPurchasing = false
                 }
+            }
             do {
                 if let currentSelection = currentSelection,
                    let _ = try await subscriptionStore.purchaseWithID([currentSelection.id]) {
@@ -543,7 +593,7 @@ struct SubscriptionView: View {
             }
         }
     }
-
+    
     private func restore() {
         Task {
             declarationStore.isPurchasing = true
@@ -552,7 +602,7 @@ struct SubscriptionView: View {
             isShowingError = true
         }
     }
-
+    
     private var patronView: some View {
         GeometryReader { reader in
             ZStack {
@@ -622,21 +672,21 @@ struct StarRatingView: View {
 
 struct AnimatedHeaderBackground: View {
     @State private var animate = false
-
+    
     var body: some View {
         ZStack {
             Image("headerSubscription2")
                 .resizable()
                 .scaledToFill()
-//                .scaleEffect(animate ? 1.03 : 1)
-//                .animation(.easeInOut(duration: 6).repeatForever(autoreverses: true), value: animate)
-
+            //                .scaleEffect(animate ? 1.03 : 1)
+            //                .animation(.easeInOut(duration: 6).repeatForever(autoreverses: true), value: animate)
+            
             // Optional overlay sparkle or glow
             RadialGradient(gradient: Gradient(colors: [Color.white.opacity(0.05), Color.clear]),
                            center: .top,
                            startRadius: 10,
                            endRadius: 300)
-                .blendMode(.screen)
+            .blendMode(.screen)
         }
         .onAppear {
             animate = true
@@ -692,4 +742,4 @@ struct RotatingLoadingImageView_Previews: PreviewProvider {
         RotatingLoadingImageView() // Display a live preview of ContentView in Xcode
     }
 }
-    
+

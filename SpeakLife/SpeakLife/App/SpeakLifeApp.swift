@@ -77,10 +77,10 @@ struct SpeakLifeApp: App {
                 }
                 
                 //reset for updated versions
-                if appState.notificationEnabled, appState.resetNotifications {
-                    resetNotifications()
-                    appState.resetNotifications.toggle()
-                }
+//                if appState.notificationEnabled, appState.resetNotifications {
+//                    resetNotifications()
+//                    appState.resetNotifications.toggle()
+//                }
                
                 // update for next four days
                 if appState.lastNotificationSetDate < appState.lastNotificationSetDate.addingTimeInterval(fourDaysInSeconds), appState.notificationEnabled {

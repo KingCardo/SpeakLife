@@ -37,7 +37,7 @@ final class AppDelegate: NSObject, MessagingDelegate {
         #if DEBUG
         settings.minimumFetchInterval = 0
         #else
-        settings.minimumFetchInterval = 3600 * 5 // 1 hour
+        settings.minimumFetchInterval = 3600 * 5
         #endif
         RemoteConfig.remoteConfig().configSettings = settings
        

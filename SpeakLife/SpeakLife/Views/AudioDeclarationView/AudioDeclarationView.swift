@@ -94,15 +94,15 @@ struct UpNextCell: View {
         }
     }
 
-    func addToQueue(_ url: URL?) {
-        audioViewModel.addToQueue(url)
-        showToast = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            withAnimation {
-                showToast = false
-            }
-        }
-    }
+//    func addToQueue(_ url: URL?) {
+//        audioViewModel.addToQueue(url)
+//        showToast = true
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            withAnimation {
+//                showToast = false
+//            }
+//        }
+//    }
 }
 
 
@@ -221,7 +221,7 @@ struct AudioDeclarationView: View {
                         .presentationDetents([.large])
                         .onAppear {
                             audioViewModel.lastSelectedItem = item
-                            Analytics.logEvent(item.id, parameters: nil)
+                            Analytics.logEvent(item.title, parameters: nil)
                         }
                 }
             }
@@ -324,7 +324,7 @@ struct AudioDeclarationView: View {
                 case .success(let url):
                     audioURL = url
                     audioViewModel.selectedItem = item
-                    audioViewModel.insert(url)
+                    //audioViewModel.insert(url)
                     viewModel.downloadProgress[item.id] = 0.0
                     audioViewModel.currentTrack = item.title
                     audioViewModel.subtitle = item.subtitle
@@ -339,12 +339,12 @@ struct AudioDeclarationView: View {
         }
     }
     
-    private func handleSwipeRightAction(for item: AudioDeclaration) {
-        if item.isPremium, !subscriptionStore.isPremium {
-            return
-        }
-        audioViewModel.addToQueue(item: item)
-    }
+//    private func handleSwipeRightAction(for item: AudioDeclaration) {
+//        if item.isPremium, !subscriptionStore.isPremium {
+//            return
+//        }
+//        audioViewModel.addToQueue(item: item)
+//    }
 }
 
 
