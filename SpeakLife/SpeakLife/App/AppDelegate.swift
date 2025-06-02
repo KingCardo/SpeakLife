@@ -27,12 +27,13 @@ final class AppDelegate: NSObject, MessagingDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-                    
+        registerNotificationHandler()
+        NotificationManager.shared.checkForLowReminders()
         ApplicationDelegate.shared.application(
             application,
             didFinishLaunchingWithOptions: launchOptions
         )
-        registerNotificationHandler()
+        
         Messaging.messaging().delegate = self
         let settings = RemoteConfigSettings()
         #if DEBUG
@@ -48,6 +49,7 @@ final class AppDelegate: NSObject, MessagingDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(scheduleNotificationRequest), name: UIApplication.didEnterBackgroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(scheduleNotificationRequest), name: resyncNotification, object: nil)
+        
         NotificationHandler.shared.callback = { [weak self] content in
             DispatchQueue.main.async { [weak self] in
                 self?.tabViewModel?.resetToHome()

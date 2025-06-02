@@ -21,11 +21,13 @@ final class AudioDeclarationViewModel: ObservableObject {
     @Published var divineHealth: [AudioDeclaration]  = []
     @Published var imagination: [AudioDeclaration]  = []
     @Published var psalm91: [AudioDeclaration]  = []
+    @Published var magnify: [AudioDeclaration]  = []
    // @Published var audioDeclarations: [AudioDeclaration] = []
     private(set) var allAudioFiles: [AudioDeclaration] = []
     @Published var downloadProgress: [String: Double] = [:]
     @Published var fetchingAudioIDs: Set<String> = []
-    @Published var filters: [Filter] = [.godsHeart, .speaklife, .psalm91, /*.imagination,.devotional,*/ .divineHealth,  .growWithJesus,.declarations, .gospel, .meditation, .bedtimeStories]
+    @Published var filters: [Filter] = [.godsHeart, .magnify, .speaklife, .psalm91, /*.imagination,.devotional,*/ .divineHealth,  .growWithJesus,.declarations, .gospel, .meditation, .bedtimeStories]
+
 
     @Published var selectedFilter: Filter = .godsHeart
     private let storage = Storage.storage()
@@ -61,6 +63,8 @@ final class AudioDeclarationViewModel: ObservableObject {
             return imagination
         case .psalm91:
             return psalm91
+        case .magnify:
+            return magnify
         }
     }
     
@@ -80,9 +84,19 @@ final class AudioDeclarationViewModel: ObservableObject {
                 divineHealth = self.allAudioFiles.filter { $0.tag == "divineHealth" }
                 psalm91 = self.allAudioFiles.filter { $0.tag == "psalm91" }
                 imagination = self.allAudioFiles.filter { $0.tag == "imagination" }
+                magnify = self.allAudioFiles.filter { $0.tag == "magnify" }
+               // setFilters(welcome)
             }
         }
     }
+                    
+//    private func setFilters(_ weclome: WelcomeAudio?) {
+//        guard let filterString = weclome?.filters else {
+//            self.filters = [.godsHeart, .magnify, .speaklife, .psalm91, /*.imagination,.devotional,*/ .divineHealth,  .growWithJesus,.declarations, .gospel, .meditation, .bedtimeStories]
+//            return }
+//        let filters = filterString.compactMap { Filter(rawValue: $0)}
+//        self.filters = filters
+//    }
     
     func fetchAudio(for item: AudioDeclaration, completion: @escaping (Result<URL, Error>) -> Void) {
         if shouldClearCachev3 {

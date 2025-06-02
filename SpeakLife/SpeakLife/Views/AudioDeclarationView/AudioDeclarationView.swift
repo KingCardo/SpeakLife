@@ -123,6 +123,7 @@ enum Filter: String {
     case divineHealth = "Divine Health"
     case imagination = "Imagination"
     case psalm91 = "Psalm 91"
+    case magnify = "Behold & Become"
 }
 
 struct FetchedFilter: Identifiable, Hashable {

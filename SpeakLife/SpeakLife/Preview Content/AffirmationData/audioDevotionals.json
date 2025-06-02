@@ -1,7 +1,70 @@
 {
     "version": 1,
-    "filters": ["godsHeart", "speaklife", "psalm91", "divineHealth", "growWithJesus", "declarations", "gospel", "meditation", "bedtimeStories"],
+    "filters": ["godsHeart", "magnify","speaklife", "psalm91", "divineHealth", "growWithJesus", "declarations", "gospel", "meditation", "bedtimeStories"],
     "audios": [
+        {
+            "id": " .mp3",
+            "title": "He Sits Above the Circle of the Earth",
+            "subtitle": "Magnify the Lord Episode 2",
+            "duration": "3m",
+            "imageUrl": "magnify",
+            "isPremium": true,
+            "tag": "magnify"
+        },
+        {
+            "id": "magnify-ep1.mp3",
+            "title": "Magnify the Lord with Me",
+            "subtitle": "Magnify the Lord Episode 1",
+            "duration": "3m",
+            "imageUrl": "magnify",
+            "isPremium": false,
+            "tag": "magnify"
+        },
+        {
+            "id": "godourrefuge-ep12.mp3",
+            "title": "You Will Only Observe with Your Eyes",
+            "subtitle": "God Our Refuge Episode 12",
+            "duration": "2m",
+            "imageUrl": "psalm91",
+            "isPremium": true,
+            "tag": "psalm91"
+        },
+        {
+            "id": "godourrefuge-ep11.mp3",
+            "title": "No Evil Shall Befall You",
+            "subtitle": "God Our Refuge Episode 11",
+            "duration": "3m",
+            "imageUrl": "psalm91",
+            "isPremium": true,
+            "tag": "psalm91"
+        },
+        {
+            "id": "godourrefuge-ep10.mp3",
+            "title": "With Long Life I Will Satisfy You",
+            "subtitle": "God Our Refuge Episode 10",
+            "duration": "3m",
+            "imageUrl": "psalm91",
+            "isPremium": true,
+            "tag": "psalm91"
+        },
+        {
+            "id": "godourrefuge-ep9.mp3",
+            "title": "He Will Answer You",
+            "subtitle": "God Our Refuge Episode 9",
+            "duration": "3m",
+            "imageUrl": "psalm91",
+            "isPremium": true,
+            "tag": "psalm91"
+        },
+        {
+            "id": "godourrefuge-ep8.mp3",
+            "title": "Because You Set Your Love on Me",
+            "subtitle": "God Our Refuge Episode 8",
+            "duration": "3m",
+            "imageUrl": "psalm91",
+            "isPremium": true,
+            "tag": "psalm91"
+        },
         {
             "id": "godourrefuge-ep7.mp3",
             "title": "Treading on Lions and Cobras",

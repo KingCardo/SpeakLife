@@ -56,11 +56,40 @@ final class NotificationManager: NSObject {
         }
         morningAffirmationReminder()
         nightlyAffirmationReminder()
-        devotionalAffirmationReminder()
-        prayersAffirmationReminder()
+        //devotionalAffirmationReminder()
+       // prayersAffirmationReminder()
         christmasReminder()
         newYearsReminder()
         thanksgivingReminder()
+    }
+    
+
+    func checkForLowReminders() {
+        UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
+            if requests.isEmpty {
+                // Likely wiped on reboot or uninstall
+                DispatchQueue.main.async {
+                    self.scheduleReminder(
+                        title: "⚠️ Reminders ending!",
+                        body: "Tap to schedule more reminders.",
+                        date: Date().addingTimeInterval(10),
+                        id: "reschedule_prompt"
+                    )
+                }
+            }
+        }
+    }
+    
+    func scheduleReminder(title: String, body: String, date: Date, id: String) {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+
+        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date), repeats: false)
+
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request)
     }
     
     func scheduleTrialEndingReminder(subscriptionDate: Date) {

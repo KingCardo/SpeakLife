@@ -85,9 +85,11 @@ class Theme: Identifiable, Codable {
         }
     }
     
-    static var all: [Theme] = [sunsetMountains3,mountainValley,autumnLake,fullmoonOcean,boatLakeMountain,redRosesGreySkies, redTreeLake,wheatFieldRedRose, lakeSunrise2,oceansunrise2, starrySunrise,redmoon,snowMountainLake, nightStarrySkies,starryNightLake, desertNight, doveSkies,wheatField,lightHouse,oceanSunrise,lakeSunset, sunriseCliff, JesusOnWater,JesusHealing,JesusOnCross,JesusRisen, JesusPraying,heavenStairway, JesusHeaven,warriorAngel,heavenly, starryNight,lakeTrees,majesticNight, mountainLandscape, pinkHueMountain, sunsetMountain, breathTakingSunset, sunset3,moonlight2,desertsky, lushForestSunrise, flowingRiver]
+    static var all: [Theme] = [nightaurora, starrySunrise, redmoon, fullmoonOcean, JesusOnWater,JesusOnCross,JesusHealing,JesusRisen, lakeSunrise2,oceansunrise2, sunsetMountains3,mountainValley,autumnLake, autumnleaves,redRosesGreySkies, redTreeLake, snowMountainLake,boatLakeMountain,sunriseCliff,heavenStairway,wheatFieldRedRose,nightStarrySkies, desertNight, doveSkies,wheatField,lightHouse,oceanSunrise,lakeSunset,  JesusPraying, JesusHeaven,warriorAngel,heavenly, starryNight,lakeTrees,majesticNight, mountainLandscape, pinkHueMountain, sunsetMountain, breathTakingSunset, sunset3,moonlight2,desertsky, lushForestSunrise, flowingRiver]
     
     private static let boatLakeMountain = Theme("boatLakeMountain", blurEffect: true)
+    private static let nightaurora = Theme("nightaurora", blurEffect: false)
+    private static let autumnleaves = Theme("autumnleaves", blurEffect: false)
     private static let redRosesGreySkies = Theme("redRosesGreySkies", blurEffect: false)
     private static let redTreeLake = Theme("redTreeLake", blurEffect: true)
     private static let wheatFieldRedRose = Theme("wheatFieldRedRose", blurEffect: true)
@@ -102,7 +104,6 @@ class Theme: Identifiable, Codable {
     private static let mountainValley = Theme("mountainValley", blurEffect: true)
     static let nightStarrySkies = Theme("nightStarrySkies", blurEffect: true)
     private static let desertNight = Theme("desertNight", blurEffect: true)
-    private static let starryNightLake = Theme("starryNightLake", blurEffect: true)
     private static let oceanSunrise = Theme("oceanSunrise", blurEffect: true)
     private static let lushForestSunrise = Theme("lushForestSunrise", blurEffect: true)
     private static let sunriseCliff = Theme("sunriseCliff", blurEffect: true)
