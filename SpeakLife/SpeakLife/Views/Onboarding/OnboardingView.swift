@@ -102,23 +102,23 @@ struct OnboardingView: View  {
                 .tag(Tab.hearingFaith)
 
                 IntroTipScene(
-                    title: "Feed Your Spirit All Day",
+                    title: "You Can’t Reap What You Never Planted",
                     bodyText: """
-                Just like your physical body needs food and drink every day, your spirit needs constant nourishment.
+                Just like a woman doesn’t get pregnant by walking past a man…  
+                You won’t receive a harvest just by glancing at God’s Word.
 
-                Listening to God’s Word, speaking His promises, and meditating on truth throughout the day fills you with strength, peace, and power.
+                To carry healing, peace, and breakthrough—you must plant His Word deep in your heart.
 
-                The more you feed on spiritual food, the more your faith thrives — and the more heaven’s power flows through you.
+                Speaking it is sowing. Meditating is watering. And the harvest? It always comes.
                 """,
                     subtext: "",
-                    ctaText: "Stay Spiritually Nourished ➔",
+                    ctaText: "Plant the Word Now ➔",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
                 {
                     advance()
-                }
-                .tag(Tab.spiritualFood)
+                } .tag(Tab.spiritualFood)
 
                 IntroTipScene(
                     title: "I Am Victorious & Overflowing",
@@ -138,14 +138,20 @@ struct OnboardingView: View  {
                 .tag(Tab.victorious)
 
                 IntroTipScene(
-                    title: "Plant Seeds of Victory Daily",
+                    title: "The Spiritual Realm Rules the Physical",
                     bodyText: """
-                Faith is a partnership — God supplies the promise, but you must sow the seed. Keep watering it by speaking, and the harvest will surely come.
+                What you see is temporary. What God says is eternal.
 
-                The more you plant, the greater your harvest of peace, healing, and transformation. Your breakthrough is growing — keep speaking and watch it bloom.
+                Symptoms, emotions, and circumstances shift. But the Word? It never changes.
+
+                God’s Word is spirit—and the spirit realm *governs* the physical.
+
+                Don’t let the visible world define you.  
+                Speak truth. Live from the spirit.  
+                Let the physical bow to what’s already settled in heaven.
                 """,
                     subtext: "",
-                    ctaText: "Let’s Speak Life ➔",
+                    ctaText: "Live from the Spirit ➔",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
