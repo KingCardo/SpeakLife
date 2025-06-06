@@ -50,12 +50,7 @@ final class AppDelegate: NSObject, MessagingDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(scheduleNotificationRequest), name: UIApplication.didEnterBackgroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(scheduleNotificationRequest), name: resyncNotification, object: nil)
         
-        NotificationHandler.shared.callback = { [weak self] content in
-            DispatchQueue.main.async { [weak self] in
-                self?.tabViewModel?.resetToHome()
-                self?.declarationStore?.setDeclaration(content.body, category: content.title)
-            }
-        }
+       
         if appState?.isOnboarded ?? false {
             registerForPushNotifications()
         }        

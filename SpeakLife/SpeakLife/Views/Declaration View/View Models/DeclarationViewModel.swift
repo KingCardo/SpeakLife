@@ -127,10 +127,6 @@ final class DeclarationViewModel: ObservableObject {
                 self.fetchDeclarations()
             }
         }
-        
-//        NotificationHandler.shared.callback = { [weak self] content in
-//            self?.setDeclaration(content.body, category: content.title)
-//        }
     }
     
     func cleanUpSelectedCategories(completion: (Set<DeclarationCategory>) -> Void) {

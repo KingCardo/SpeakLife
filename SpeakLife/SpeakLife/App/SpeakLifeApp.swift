@@ -48,6 +48,12 @@ struct SpeakLifeApp: App {
                     }
                 }
                 .onAppear {
+                    NotificationHandler.shared.callback = { content in
+                        DispatchQueue.main.async {
+                            tabViewModel.resetToHome()
+                            declarationStore.setDeclaration(content.body, category: content.title)
+                        }
+                    }
                     
                     viewModel.requestPermission()
                     if declarationStore.backgroundMusicEnabled {

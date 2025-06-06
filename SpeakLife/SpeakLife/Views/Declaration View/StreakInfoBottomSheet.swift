@@ -80,7 +80,7 @@ struct StreakInfoBottomSheet: View {
                 .font(.system(size: 24, weight: .semibold, design: .rounded))
                 .foregroundColor(.white)
 
-            Text("Speak, imagine, and meditate on God’s Word often — each time you do, you plant powerful seeds that will produce a harvest 🌱")
+            Text("Practice God’s presence and speak His Word—He promised to never leave you. Let your attitude, mindset, and perspective be shaped by this truth: God is in you, with you, and for you 🙌")
                 .foregroundColor(.white.opacity(0.85))
                 .font(.system(size: 16, weight: .regular, design: .rounded))
                 .multilineTextAlignment(.center)
