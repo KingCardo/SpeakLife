@@ -33,9 +33,6 @@ struct DevotionalView: View {
     var contentView: some  View {
         if subscriptionStore.isPremium || !viewModel.devotionalLimitReached || subscriptionStore.isInDevotionalPremium {
             devotionalView
-                .onAppear {
-                    Analytics.logEvent(Event.devotionalTapped, parameters: nil)
-                }
                 .alert(isPresented: $viewModel.hasError) {
                     Alert(title: Text(viewModel.errorString))
                 }

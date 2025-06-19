@@ -3,6 +3,78 @@
     "filters": ["godsHeart", "magnify","speaklife", "psalm91", "divineHealth", "growWithJesus", "declarations", "gospel", "meditation", "bedtimeStories"],
     "audios": [
         {
+            "id": "magnify-ep10.mp3",
+            "title": "Heaven Declares His Glory",
+            "subtitle": "Magnify the Lord Episode 10",
+            "duration": "2m",
+            "imageUrl": "magnify",
+            "isPremium": true,
+            "tag": "magnify"
+        },
+        {
+            "id": "magnify-ep9.mp3",
+            "title": "His Voice Breaks the Cedars",
+            "subtitle": "Magnify the Lord Episode 9",
+            "duration": "2m",
+            "imageUrl": "magnify",
+            "isPremium": true,
+            "tag": "magnify"
+        },
+        {
+            "id": "magnify-ep8.mp3",
+            "title": "His Glory Fills the Earth",
+            "subtitle": "Magnify the Lord Episode 8",
+            "duration": "2m",
+            "imageUrl": "magnify",
+            "isPremium": true,
+            "tag": "magnify"
+        },
+        {
+            "id": "magnify-ep7.mp3",
+            "title": "He Numbers the Stars — and Calls Them by Name",
+            "subtitle": "Magnify the Lord Episode 7",
+            "duration": "2m",
+            "imageUrl": "magnify",
+            "isPremium": true,
+            "tag": "magnify"
+        },
+        {
+            "id": "magnify-ep6.mp3",
+            "title": "He Holds All Things Together",
+            "subtitle": "Magnify the Lord Episode 6",
+            "duration": "2m",
+            "imageUrl": "magnify",
+            "isPremium": true,
+            "tag": "magnify"
+        },
+        {
+            "id": "magnify-ep5.mp3",
+            "title": "He Commands the Storm",
+            "subtitle": "Magnify the Lord Episode 5",
+            "duration": "2m",
+            "imageUrl": "magnify",
+            "isPremium": true,
+            "tag": "magnify"
+        },
+        {
+            "id": "magnify-ep4.mp3",
+            "title": "The Mountains Melt Like Wax",
+            "subtitle": "Magnify the Lord Episode 4",
+            "duration": "2m",
+            "imageUrl": "magnify",
+            "isPremium": true,
+            "tag": "magnify"
+        },
+        {
+            "id": "magnify-ep3.mp3",
+            "title": "The Earth is His Footstool",
+            "subtitle": "Magnify the Lord Episode 3",
+            "duration": "2m",
+            "imageUrl": "magnify",
+            "isPremium": true,
+            "tag": "magnify"
+        },
+        {
             "id": "magnify-ep2.mp3",
             "title": "He Sits Above the Circle of the Earth",
             "subtitle": "Magnify the Lord Episode 2",

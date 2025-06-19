@@ -108,10 +108,21 @@ struct DeclarationContentView: View {
                     }
                     
                     .tag(index)
-                    .sheet(isPresented: $showShareSheet) {
-                        ShareSheet(activityItems: prepareShareItems())
+                    .sheet(isPresented: Binding<Bool>(
+                        get: {
+                            showShareSheet && image != nil
+                        },
+                        set: { newValue in
+                            showShareSheet = newValue
+                            if !newValue {
+                                image = nil // clear image after dismiss
+                            }
+                        }
+                    )) {
+                        if let image = image {
+                            ShareSheet(activityItems: [image])
+                        }
                     }
-                    
                 }
             }
             .scaleEffect(viewModel.showVerse ? 1.05 : 1)
@@ -178,9 +189,8 @@ struct DeclarationContentView: View {
         VStack {
             
             Spacer()
-            
-                        intentStackButtons(declaration: declaration)
-                            .opacity(appState.showScreenshotLabel ? 0 : 1)
+            intentStackButtons(declaration: declaration)
+                .opacity(appState.showScreenshotLabel ? 0 : 1)
             VStack {
                 screenshotLabel()
                 Spacer()
@@ -283,43 +293,39 @@ struct DeclarationContentView: View {
         }
     }
     
-    func setImage(completion: (() -> Void)?) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            if let windowScene =  UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                if let window = windowScene.windows.first {
-                    image = window.rootViewController?.view.toImage()
-                    completion?()
-                }
+    func setImage(completion: @escaping () -> Void) {
+        DispatchQueue.main.async {
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                  let window = windowScene.windows.first,
+                  let capturedImage = window.rootViewController?.view.toImage() else {
+                return
             }
-            
+            self.image = capturedImage
+            DispatchQueue.main.async {
+                completion()
+            }
         }
     }
     
     private func shareTapped(declaration: Declaration) {
         viewModel.setCurrent(declaration)
+
         withAnimation {
             appState.showScreenshotLabel = true
-            
         }
-        
-        setImage() {
+
+        setImage {
             self.showShareSheet = true
         }
-       
-        
-        Analytics.logEvent(Event.shareTapped, parameters: ["share": declaration.text.prefix(100)])
+
+        Analytics.logEvent(Event.shareTapped, parameters: ["share": declaration.text.prefix(50)])
         Selection.shared.selectionFeedback()
-        // Hide the label after 2 seconds
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             withAnimation {
                 appState.showScreenshotLabel = false
                 appState.shareDiscountTry += 1
-//                if !subscriptionStore.isPremium, appState.shareDiscountTry % 3 == 0 {
-//                    viewModel.showDiscountView.toggle()
-//                }
-                viewModel.requestReview.toggle()
             }
-            
         }
     }
     

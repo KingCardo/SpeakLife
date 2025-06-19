@@ -18,6 +18,7 @@ final class DevotionalViewModel: ObservableObject, Sendable {
     @Published var hasError = false
     let errorString = "Upgrade to the latest version for Today's Devotional."
     private let freeCount = 3
+    @Published var lastFetchDate: String = ""
     
     var devotionals: [Devotional] = []
     
@@ -134,5 +135,10 @@ final class DevotionalViewModel: ObservableObject, Sendable {
             setDevotionalDictionary(date: searchDate)
         }
         }
+    }
+    
+    func shouldFetchNewDevotional() -> Bool {
+        let today = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
+        return today != lastFetchDate
     }
 }

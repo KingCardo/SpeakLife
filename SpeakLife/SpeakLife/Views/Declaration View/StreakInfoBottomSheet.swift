@@ -72,7 +72,7 @@ struct StreakInfoBottomSheet: View {
     @Binding var isShown: Bool
 
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 12) {
             HandleBar()
                 .padding(.top, 10)
 

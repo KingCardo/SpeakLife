@@ -65,10 +65,21 @@ struct HomeView: View {
                                 audioDeclarationViewModel.fetchAudio(version: subscriptionStore.audioRemoteVersion)
                                 declarationStore.setRemoteDeclarationVersion(version: subscriptionStore.remoteVersion)
                                 Task {
-                                    await devotionalViewModel.fetchDevotional(remoteVersion: subscriptionStore.currentDevotionalVersion)
+                                    if devotionalViewModel.shouldFetchNewDevotional() {
+                                            await devotionalViewModel.fetchDevotional(remoteVersion: subscriptionStore.currentDevotionalVersion)
+                                            devotionalViewModel.lastFetchDate = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
+                                        }
                                 }
                                 if appState.firstOpen {
                                     appState.firstOpen = false
+                                }
+                            }
+                            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+                                Task {
+                                    if devotionalViewModel.shouldFetchNewDevotional() {
+                                        await devotionalViewModel.fetchDevotional(remoteVersion: subscriptionStore.currentDevotionalVersion)
+                                        devotionalViewModel.lastFetchDate = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
+                                    }
                                 }
                             }
                             .sheet(isPresented: $showSubscription, content: {
