@@ -99,6 +99,7 @@ struct ProfileView: View {
                         }
                         AbbasLoveRow
                         remindersRow
+                     //   emailsRow
                        // favoritesRow
                         musicRow
                         soundsRow
@@ -174,6 +175,26 @@ struct ProfileView: View {
                 .background(
                     HStack {
                         Text("Manage Subscription", comment:  "subs row")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 8)
+                            .foregroundColor(Constants.DAMidBlue)
+                    })
+        }
+    }
+    
+    @MainActor
+    private var emailsRow: some View {
+        HStack {
+            Image(systemName: "crown.fill")
+                .foregroundColor(Constants.DAMidBlue)
+            NavigationLink(LocalizedStringKey("Emails"), destination: LazyView(EmailCaptureView()))
+                .opacity(0)
+                .background(
+                    HStack {
+                        Text("Email", comment:  "subs row")
                         Spacer()
                         Image(systemName: "chevron.right")
                             .resizable()

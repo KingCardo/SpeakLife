@@ -108,6 +108,13 @@ struct DeclarationContentView: View {
                     }
                     
                     .tag(index)
+                    .onChange(of: image) { newImage in
+                        if newImage != nil {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+                                showShareSheet = true
+                            }
+                        }
+                    }
                     .sheet(isPresented: Binding<Bool>(
                         get: {
                             showShareSheet && image != nil
@@ -301,7 +308,7 @@ struct DeclarationContentView: View {
                 return
             }
             self.image = capturedImage
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 completion()
             }
         }
@@ -309,13 +316,16 @@ struct DeclarationContentView: View {
     
     private func shareTapped(declaration: Declaration) {
         viewModel.setCurrent(declaration)
-
+        
         withAnimation {
             appState.showScreenshotLabel = true
         }
-
-        setImage {
-            self.showShareSheet = true
+        DispatchQueue.main.async {
+            RunLoop.main.perform {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                setImage { }
+            }
+        }
         }
 
         Analytics.logEvent(Event.shareTapped, parameters: ["share": declaration.text.prefix(50)])

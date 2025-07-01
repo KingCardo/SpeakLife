@@ -63,15 +63,7 @@ struct SpeakLifeApp: App {
                         withAnimation {
                             isShowingLanding = false
                         }
-                            
-                            UNUserNotificationCenter.current().getDeliveredNotifications { notifications in
-                                if let content = notifications.first?.request.content {
-                                    DispatchQueue.main.async {
-                                        tabViewModel.resetToHome()
-                                        declarationStore.setDeclaration(content.body, category: content.title)
-                                    }
-                                }
-                            }
+                        
 
                             if !appState.isOnboarded {
                                 let categoryString = appState.selectedNotificationCategories.components(separatedBy: ",").first ?? "destiny"

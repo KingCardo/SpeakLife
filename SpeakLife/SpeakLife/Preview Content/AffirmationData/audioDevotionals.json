@@ -3,6 +3,24 @@
     "filters": ["godsHeart", "magnify","speaklife", "psalm91", "divineHealth", "growWithJesus", "declarations", "gospel", "meditation", "bedtimeStories"],
     "audios": [
         {
+            "id": "magnify-ep12.mp3",
+            "title": "Behold Him, Become Like Him",
+            "subtitle": "Magnify the Lord Episode 12",
+            "duration": "2m",
+            "imageUrl": "magnify",
+            "isPremium": true,
+            "tag": "magnify"
+        },
+        {
+            "id": "magnify-ep11.mp3",
+            "title": "His Name Is Above Every Name",
+            "subtitle": "Magnify the Lord Episode 11",
+            "duration": "2m",
+            "imageUrl": "magnify",
+            "isPremium": true,
+            "tag": "magnify"
+        },
+        {
             "id": "magnify-ep10.mp3",
             "title": "Heaven Declares His Glory",
             "subtitle": "Magnify the Lord Episode 10",

@@ -26,7 +26,7 @@ final class AudioDeclarationViewModel: ObservableObject {
     private(set) var allAudioFiles: [AudioDeclaration] = []
     @Published var downloadProgress: [String: Double] = [:]
     @Published var fetchingAudioIDs: Set<String> = []
-    @Published var filters: [Filter] = [.godsHeart, .magnify, .speaklife, .psalm91, /*.imagination,.devotional,*/ .divineHealth,  .growWithJesus,.declarations, .gospel, .meditation, .bedtimeStories]
+    @Published var filters: [Filter] = [.godsHeart, .speaklife, .growWithJesus, .psalm91, .divineHealth, .magnify,/*.imagination,.devotional,*/ .declarations, .gospel, .meditation, .bedtimeStories]
 
 
     @Published var selectedFilter: Filter = .godsHeart
@@ -52,7 +52,7 @@ final class AudioDeclarationViewModel: ObservableObject {
         case .devotional:
             return devotionals
         case .speaklife:
-            return speaklife
+            return speaklife.reversed()
         case .godsHeart:
             return godsHeart.reversed()
         case .growWithJesus:
@@ -62,9 +62,9 @@ final class AudioDeclarationViewModel: ObservableObject {
         case .imagination:
             return imagination
         case .psalm91:
-            return psalm91
+            return psalm91.reversed()
         case .magnify:
-            return magnify
+            return magnify.reversed()
         }
     }
     

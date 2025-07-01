@@ -75,13 +75,22 @@ struct HomeView: View {
                                 }
                             }
                             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+                               
                                 Task {
                                     if devotionalViewModel.shouldFetchNewDevotional() {
+                                        await subscriptionStore.fetchRemoteConfig()
                                         await devotionalViewModel.fetchDevotional(remoteVersion: subscriptionStore.currentDevotionalVersion)
                                         devotionalViewModel.lastFetchDate = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
                                     }
                                 }
                             }
+                            .sheet(isPresented: $appState.needEmail, content: {
+                                //GeometryReader { proxy in
+                                    EmailCaptureView()
+                                //        .frame(height:  UIScreen.main.bounds.height * 0.96)
+                             //   }
+                            
+                            })
                             .sheet(isPresented: $showSubscription, content: {
                                 GeometryReader { proxy in
                                     SubscriptionView(size: proxy.size)

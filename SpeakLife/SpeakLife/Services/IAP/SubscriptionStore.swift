@@ -112,6 +112,15 @@ final class SubscriptionStore: ObservableObject {
         updateListenerTask?.cancel()
     }
     
+    func fetchRemoteConfig() async {
+        await withCheckedContinuation { continuation in
+            remoteConfig.fetchAndActivate { _, _ in
+                // parse, update store
+                continuation.resume()
+            }
+        }
+    }
+    
     func fetchRemoteConfig(completion: @escaping() -> Void) {
         
         remoteConfig.fetchAndActivate { [weak self] status, error in
