@@ -16,9 +16,6 @@ struct UpNextCell: View {
     @ObservedObject var audioViewModel: AudioPlayerViewModel
 
     let item: AudioDeclaration
-    init() {
-        audioViewModel.selectedItem = item
-    }
 
     @State private var showToast = false
     @State private var isTapped = false
