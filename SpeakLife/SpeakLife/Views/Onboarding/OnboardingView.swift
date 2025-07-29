@@ -44,11 +44,11 @@ struct OnboardingView: View  {
         GeometryReader { geometry in
             TabView(selection: $selection) {
                 IntroTipScene(
-                    title: "Jesus Changes Everything",
+                    title: "Step into the presence of Jesus",
                     bodyText: """
-                    You weren’t made for religion — you were made for a relationship.
+                    This isn't a religion-it's an encounter.
 
-                    Jesus is the doorway to healing, joy, clarity, and purpose.
+                    Jesus is the doorway to healing, joy, and divine purpose.
 
                     The more you know Him, the more life opens up.
 
@@ -65,13 +65,13 @@ struct OnboardingView: View  {
                 .tag(Tab.transformedLife)
 
                 IntroTipScene(
-                    title: "Every Word Brings You Closer",
+                    title: "Every Word Breathes Life",
                     bodyText: """
-                    When Jesus speaks, everything changes.
+                    When Jesus speaks, storms calm, bodies heal and destinies awaken.
 
-                    His words calm storms, heal hearts, and awaken your destiny.
+                    His words aren't just to be read - they're meant to be experienced.
 
-                    The more you meditate on His Word, the more you understand His heart.
+                    The more you meditate on His Word, the more you will recieve.
 
                     Lean in — He’s ready to reveal more than you imagined.
                     """,
@@ -92,9 +92,9 @@ struct OnboardingView: View  {
 
                     The more you listen, the more alive your spirit becomes.
 
-                    His voice ignites courage, confidence, and clarity.
+                    His Word ignites courage, confidence, and clarity.
 
-                    Let His voice be the loudest in your life.
+                    Let His whisper be the loudest sound in your life.
                     """,
                     subtext: "",
                     ctaText: "Hear and Come Alive ➔",
@@ -107,11 +107,11 @@ struct OnboardingView: View  {
                 .tag(Tab.hearingFaith)
 
                 IntroTipScene(
-                    title: "Victory Starts With Jesus",
+                    title: "Step Into the Victory Already Won",
                     bodyText: """
-                    You weren’t made to live defeated.
+                    You weren’t made to live defeated - you were made to reign in life.
 
-                    Jesus already won the battle — now He invites you to walk in the win.
+                    Jesus already won the battle.
 
                     Every promise He made belongs to you.
 
@@ -136,7 +136,7 @@ struct OnboardingView: View  {
 
                     Circumstances may shift — but His Word anchors you.
 
-                    Don’t live from fear. Live from faith.
+                    Don’t live from fear. Live from Heaven's view.
                     """,
                     subtext: "",
                     ctaText: "Live Kingdom-Minded ➔",
@@ -147,123 +147,7 @@ struct OnboardingView: View  {
                     advance()
                 }
                 .tag(Tab.seedHarvest)
-                
-//                IntroTipScene(
-//                    title: "Seek First the Kingdom",
-//                    bodyText: """
-//                Jesus said, “Seek first the Kingdom of God and His righteousness, and all these things will be added to you.” (Matthew 6:33)
-//
-//                When you speak His Word, healing flows, peace settles in, and your life transforms. This is where your true victory begins.
-//
-//                Make God’s Word your *first* and greatest priority — and watch heaven move for you.
-//                """,
-//                    subtext: "",
-//                    ctaText: "Step Into Peace & Victory ➔",
-//                    showTestimonials: false,
-//                    isScholarship: false,
-//                    size: geometry.size)
-//                {
-//                    advance()
-//                }
-//                .tag(Tab.transformedLife)
-//
-//                IntroTipScene(
-//                    title: "The More You Meditate, the More You Receive",
-//                    bodyText: """
-//                The more you fill your heart with God’s Word, the greater the flow of His peace, healing, and revelation.
-//
-//                Your victory multiplies with every word spoken.
-//
-//                Keep soaking in His Word — and soon, you’ll overflow with breakthrough.
-//                """,
-//                    subtext: "",
-//                    ctaText: "Next ➔",
-//                    showTestimonials: false,
-//                    isScholarship: false,
-//                    size: geometry.size)
-//                {
-//                    advance()
-//                }
-//                .tag(Tab.mindset)
-//
-//                IntroTipScene(
-//                    title: "Faith Comes by Hearing",
-//                    bodyText: """
-//                Faith comes by hearing—and hearing, and hearing God’s Word.
-//
-//                More hearing = more faith = more power.
-//
-//                The more you listen, the more your heart fills with unshakable faith. And when your heart is full, you release that faith by boldly speaking His promises into your life.
-//                """,
-//                    subtext: "",
-//                    ctaText: "Keep Building Faith ➔",
-//                    showTestimonials: false,
-//                    isScholarship: false,
-//                    size: geometry.size)
-//                {
-//                    advance()
-//                }
-//                .tag(Tab.hearingFaith)
-//
-//                IntroTipScene(
-//                    title: "You Can’t Reap What You Never Planted",
-//                    bodyText: """
-//                Just like a woman doesn’t get pregnant by walking past a man…  
-//                You won’t receive a harvest just by glancing at God’s Word.
-//
-//                To carry healing, peace, and breakthrough—you must plant His Word deep in your heart.
-//
-//                Speaking it is sowing. Meditating is watering. And the harvest? It always comes.
-//                """,
-//                    subtext: "",
-//                    ctaText: "Plant the Word Now ➔",
-//                    showTestimonials: false,
-//                    isScholarship: false,
-//                    size: geometry.size)
-//                {
-//                    advance()
-//                } .tag(Tab.spiritualFood)
-//
-//                IntroTipScene(
-//                    title: "I Am Victorious & Overflowing",
-//                    bodyText: """
-//                Through Jesus, you are healed, provided for, and filled with peace.
-//
-//                Every word you speak enforces what’s already yours. Speaking God’s Word is like holding up your title deed — it proves your ownership and drives out every false claim.
-//                """,
-//                    subtext: "",
-//                    ctaText: "Next ➔",
-//                    showTestimonials: false,
-//                    isScholarship: false,
-//                    size: geometry.size)
-//                {
-//                    advance()
-//                }
-//                .tag(Tab.victorious)
-//
-//                IntroTipScene(
-//                    title: "The Spiritual Realm Rules the Physical",
-//                    bodyText: """
-//                What you see is temporary. What God says is eternal.
-//
-//                Symptoms, emotions, and circumstances shift. But the Word? It never changes.
-//
-//                God’s Word is spirit—and the spirit realm *governs* the physical.
-//
-//                Don’t let the visible world define you.  
-//                Speak truth. Live from the spirit.  
-//                Let the physical bow to what’s already settled in heaven.
-//                """,
-//                    subtext: "",
-//                    ctaText: "Live from the Spirit ➔",
-//                    showTestimonials: false,
-//                    isScholarship: false,
-//                    size: geometry.size)
-//                {
-//                    advance()
-//                }
-//                .tag(Tab.seedHarvest)
-
+                 
                 
                 ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
                     withAnimation {

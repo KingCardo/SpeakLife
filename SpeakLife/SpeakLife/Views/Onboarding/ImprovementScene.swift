@@ -27,7 +27,7 @@ struct ImprovementScene: View {
                     VStack(spacing: 20) {
                         Spacer().frame(height: 30)
 
-                        Text("What brings you to SpeakLife?", comment: "Intro scene title label")
+                        Text("What Are You Seeking?", comment: "Intro scene title label")
                             .font(.system(size: 34, weight: .semibold, design: .rounded))
                             .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                             .multilineTextAlignment(.center)
@@ -35,7 +35,7 @@ struct ImprovementScene: View {
                             .padding()
                             .lineLimit(2)
 
-                        Text("Let us guide you based on your goals. Choose what matters most to you.", comment: "Intro scene instructions")
+                        Text("Tell us what's on your heart, and we'll guide you wiith words and prayers that speak into your life.", comment: "Intro scene instructions")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                             .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                             .multilineTextAlignment(.center)
@@ -55,11 +55,11 @@ struct ImprovementScene: View {
                 // CTA Button
                 ShimmerButton(colors: [.blue], buttonTitle: "Start My Journey", action: callBack)
                     .frame(width: size.width * 0.87, height: 50)
-                    .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+//                    .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
                     .disabled(viewModel.selectedExperiences.isEmpty)
-                    .background(viewModel.selectedExperiences.isEmpty ? Constants.DAMidBlue.opacity(0.3) : Constants.DADarkBlue.opacity(0.6))
-                    .foregroundColor(.white)
-                    .cornerRadius(30)
+                    //.background(viewModel.selectedExperiences.isEmpty ? Constants.DAMidBlue.opacity(0.3) : Constants.DADarkBlue.opacity(0.6))
+//                    .foregroundColor(.white)
+//                    .cornerRadius(30)
                    // .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
 
                 Spacer()
@@ -111,8 +111,19 @@ struct ImprovementSelectionListView: View {
                     .padding(8)
                     .background(Constants.DAMidBlue.opacity(viewModel.selectedExperiences.contains(interest) ? 0.8 : 0.3))
                     .cornerRadius(15)
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 15)
+                                .stroke(Constants.DAMidBlue, lineWidth: viewModel.selectedExperiences.contains(interest) ? 2 : 0)
+                                .shadow(color: Constants.DAMidBlue.opacity(0.7),
+                                        radius: viewModel.selectedExperiences.contains(interest) ? 8 : 0)
+                        )
+                        // Slightly scale up when selected for a "pop"
+                        .scaleEffect(viewModel.selectedExperiences.contains(interest) ? 1.05 : 1.0)
+                        .animation(.spring(response: 0.3, dampingFraction: 0.6), value: viewModel.selectedExperiences)
                     .onTapGesture {
-                        viewModel.selectExperience(interest)
+                        withAnimation {
+                            viewModel.selectExperience(interest)
+                        }
                     }
             }
             .padding()

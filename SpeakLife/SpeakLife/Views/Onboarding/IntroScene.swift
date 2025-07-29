@@ -132,15 +132,15 @@ struct IntroTipScene: View {
             Spacer()
             ShimmerButton(colors: [.blue], buttonTitle: ctaText, action: buttonTouched)
             .frame(width: size.width * 0.87 ,height: 50)
-            .shadow(color: .white.opacity(animateButton ? 0.3 : 0.1), radius: animateButton ? 12 : 6)
-            .scaleEffect(animateButton ? 1.02 : 1.0)
-            .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: animateButton)
-            //.shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
-            
-            //.foregroundColor(.white)
-            .cornerRadius(30)
-            //.shadow(color: Constants.DAMidBlue.opacity(0.5), radius: 8, x: 0, y: 10)
-            .scaleEffect(buttonTapped ? 0.95 : 1.0)
+//            .shadow(color: .white.opacity(animateButton ? 0.3 : 0.1), radius: animateButton ? 12 : 6)
+//            .scaleEffect(animateButton ? 1.02 : 1.0)
+//            .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: animateButton)
+//            //.shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+//            
+//            //.foregroundColor(.white)
+//            .cornerRadius(30)
+//            //.shadow(color: Constants.DAMidBlue.opacity(0.5), radius: 8, x: 0, y: 10)
+//            .scaleEffect(buttonTapped ? 0.95 : 1.0)
 
             
             Spacer()
