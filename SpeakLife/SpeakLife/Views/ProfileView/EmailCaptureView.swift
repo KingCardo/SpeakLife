@@ -85,44 +85,48 @@ struct EmailCaptureView: View {
         // Check for duplicate email
         collection.whereField("email", isEqualTo: email.lowercased())
             .getDocuments { snapshot, error in
-                if let error = error {
-                    print("Error checking duplicates: \(error.localizedDescription)")
-                    withAnimation {
-                        message = "Something went wrong. Please try again."
-                        showSuccess = false
-                        isSubmitting = false
-                    }
-                    return
-                }
-                
-                if let docs = snapshot?.documents, !docs.isEmpty {
-                    withAnimation {
-                        message = "You're already subscribed! ✅"
-                        showSuccess = true
-                        isSubmitting = false
-                    }
-                    return
-                }
-                
-                // No duplicate, add email
-                collection.addDocument(data: [
-                    "email": email.lowercased(),
-                    "timestamp": Timestamp(date: Date())
-                ]) { error in
-                    isSubmitting = false
+                DispatchQueue.main.async {
                     if let error = error {
-                        print("Error saving email: \(error.localizedDescription)")
+                        print("Error checking duplicates: \(error.localizedDescription)")
                         withAnimation {
                             message = "Something went wrong. Please try again."
                             showSuccess = false
+                            isSubmitting = false
                         }
-                    } else {
+                        return
+                    }
+                    
+                    if let docs = snapshot?.documents, !docs.isEmpty {
                         withAnimation {
+                            message = "You're already subscribed! ✅"
                             showSuccess = true
-                            message = "You're subscribed! 🎉"
-                            appState.email = email
-                            email = ""
-                            appState.needEmail = false
+                            isSubmitting = false
+                        }
+                        return
+                    }
+                    
+                    // No duplicate, add email
+                    collection.addDocument(data: [
+                        "email": email.lowercased(),
+                        "timestamp": Timestamp(date: Date())
+                    ]) { error in
+                        DispatchQueue.main.async {
+                            isSubmitting = false
+                            if let error = error {
+                                print("Error saving email: \(error.localizedDescription)")
+                                withAnimation {
+                                    message = "Something went wrong. Please try again."
+                                    showSuccess = false
+                                }
+                            } else {
+                                withAnimation {
+                                    showSuccess = true
+                                    message = "You're subscribed! 🎉"
+                                    appState.email = email
+                                    email = ""
+                                    appState.needEmail = false
+                                }
+                            }
                         }
                     }
                 }
