@@ -99,19 +99,19 @@ struct EnhancedProgressRing: View {
     private func getMilestoneName(_ days: Int) -> String {
         switch days {
         case 7:
-            return "Week Warrior"
+            return "Faith Builder"
         case 14:
-            return "Fortnight Fighter"
+            return "Word Warrior"
         case 30:
-            return "Month Master"
+            return "Faith Overcomer"
         case 50:
-            return "Faithful Fifty"
+            return "Kingdom Heir"
         case 100:
-            return "Century Champion"
+            return "Covenant Keeper"
         case 200:
-            return "Bicentennial Beast"
+            return "Spiritual Giant"
         case 365:
-            return "Year-Long Legend"
+            return "Destiny Carrier"
         default:
             return "\(days) Days"
         }

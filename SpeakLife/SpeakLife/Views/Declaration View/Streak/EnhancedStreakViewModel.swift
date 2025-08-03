@@ -876,13 +876,13 @@ final class EnhancedStreakViewModel: ObservableObject {
     
     private func getMilestone(for streak: Int) -> String {
         switch streak {
-        case 7...13: return "Week Warrior"
-        case 14...29: return "Fortnight Fighter"
-        case 30...49: return "Month Master"
-        case 50...99: return "Faithful Fifty"
-        case 100...199: return "Century Champion"
-        case 200...364: return "Bicentennial Beast"
-        case 365...: return "Year Legend"
+        case 7...13: return "Faith Builder"
+        case 14...29: return "Word Warrior"
+        case 30...49: return "Faith Overcomer"
+        case 50...99: return "Kingdom Heir"
+        case 100...199: return "Covenant Keeper"
+        case 200...364: return "Spiritual Giant"
+        case 365...: return "Destiny Carrier"
         default: return ""
         }
     }
