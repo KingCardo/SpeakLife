@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Badge: View {
+struct NewCategoriesBadge: View {
     var body: some View {
         ZStack {
             Circle()
@@ -23,6 +23,6 @@ struct Badge: View {
 
 struct Badge_Previews: PreviewProvider {
     static var previews: some View {
-        Badge()
+        NewCategoriesBadge()
     }
 }

@@ -61,7 +61,7 @@ struct IntentsBarView: View {
                 Text(viewModel.selectedCategory.categoryTitle)
                     .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .callout))
                 if appState.newCategoriesAddedv4 {
-                    Badge()
+                    NewCategoriesBadge()
                 }
             }
         }.sheet(isPresented: $isPresentingCategoryChooser, onDismiss: {

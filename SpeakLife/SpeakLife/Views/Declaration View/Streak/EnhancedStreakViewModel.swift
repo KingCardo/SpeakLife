@@ -16,6 +16,8 @@ final class EnhancedStreakViewModel: ObservableObject {
     @Published var showCompletionCelebration = false
     @Published var celebrationData: CompletionCelebration?
     @Published var showFireAnimation = false
+    @Published var badgeManager: BadgeManager
+    @Published var showBadgeUnlock = false
     
     // MARK: - Private Properties
     private let userDefaults = UserDefaults.standard
@@ -26,9 +28,11 @@ final class EnhancedStreakViewModel: ObservableObject {
     init() {
         self.todayChecklist = Self.createTodayChecklist()
         self.streakStats = StreakStats()
+        self.badgeManager = BadgeManager()
         
         loadData()
         checkStreakValidity()
+        checkForNewBadges()
         
         // Listen for app becoming active to check for new day
         NotificationCenter.default.addObserver(
@@ -58,6 +62,7 @@ final class EnhancedStreakViewModel: ObservableObject {
         }
         
         saveData()
+        checkForNewBadges()
     }
     
     func uncompleteTask(taskId: String) {
@@ -99,7 +104,7 @@ final class EnhancedStreakViewModel: ObservableObject {
             shareImage: generateShareImage()
         )
         
-        // Show fire animation first, then celebration
+        // Show fire animation first, then celebration, then badges
         showFireAnimation = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -108,6 +113,11 @@ final class EnhancedStreakViewModel: ObservableObject {
         }
         
         saveData()
+        
+        // Check for badges AFTER completing the day to ensure proper timing
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.checkForNewBadges()
+        }
     }
     
     private func checkStreakValidity() {
@@ -125,6 +135,7 @@ final class EnhancedStreakViewModel: ObservableObject {
             todayChecklist = Self.createTodayChecklist()
             checkStreakValidity()
             saveData()
+            checkForNewBadges()
         }
     }
     
@@ -899,6 +910,48 @@ final class EnhancedStreakViewModel: ObservableObject {
         // Use streak number to pick consistent message
         let index = streakStats.currentStreak % messages.count
         return messages[index]
+    }
+    
+    // MARK: - Badge System Integration
+    
+    private func checkForNewBadges() {
+        // Only use metrics we can actually track accurately
+        let userStats = UserStats(
+            affirmationsSpoken: 0, // Not tracking yet
+            versesRead: 0, // Not tracking yet
+            socialShares: 0, // Not tracking yet
+            favoritesAdded: 0, // Not tracking yet
+            categoriesCompleted: Set<String>() // Not tracking yet
+        )
+        
+        let previousBadgeCount = badgeManager.unlockedBadgeCount
+        badgeManager.checkForNewBadges(streakStats: streakStats, userStats: userStats)
+        
+        // Only show badge unlock if a NEW badge was unlocked this check
+        if let newBadge = badgeManager.recentlyUnlocked,
+           badgeManager.unlockedBadgeCount > previousBadgeCount {
+            
+            print("🏆 NEW BADGE UNLOCKED: \(newBadge.title) for \(newBadge.requirement.description)")
+            
+            // Show badge unlock after main celebrations if they're showing, otherwise immediately
+            let delay: Double = (showFireAnimation || showCompletionCelebration) ? 6.0 : 1.0
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                if !self.showFireAnimation && !self.showCompletionCelebration {
+                    self.showBadgeUnlock = true
+                } else {
+                    // Wait a bit more if celebrations are still showing
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.showBadgeUnlock = true
+                    }
+                }
+            }
+        }
+    }
+    
+    func dismissBadgeUnlock() {
+        showBadgeUnlock = false
+        badgeManager.clearRecentlyUnlocked()
     }
 }
 

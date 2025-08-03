@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Photos
 
 // MARK: - Fire Animation View
 struct FireStreakView: View {
@@ -842,110 +843,13 @@ struct CompletionCelebrationView: View {
         
         print("✅ Share image available: \(shareImage.size), scale: \(shareImage.scale)")
         
-        // Create properly sized image for Instagram (Instagram Stories: 1080x1920)
+        // Create properly sized image for Instagram
         let targetSize = CGSize(width: 1080, height: 1920)
         let resizedImage = resizeImageForInstagram(shareImage, targetSize: targetSize)
         
-        // Convert to PNG first (Instagram sometimes has issues with JPEG)
-        guard let imageData = resizedImage.pngData() else {
-            print("❌ Failed to convert image to PNG format")
-            return
-        }
-        
-        // Create final image from PNG data
-        guard let finalImage = UIImage(data: imageData) else {
-            print("❌ Failed to create final image from PNG data")
-            return
-        }
-        
-        // Validate Instagram story dimensions
-        let aspectRatio = finalImage.size.width / finalImage.size.height
-        let expectedRatio: CGFloat = 9.0 / 16.0
-        let tolerance: CGFloat = 0.01
-        
-        print("✅ Final image size: \(finalImage.size), aspect ratio: \(aspectRatio)")
-        
-        if abs(aspectRatio - expectedRatio) > tolerance {
-            print("⚠️ Warning: Image aspect ratio (\(aspectRatio)) may not be optimal for Instagram Stories (expected: \(expectedRatio))")
-        }
-        
-        // Try Instagram direct URL scheme first (if available)
-        if tryInstagramDirectShare(image: finalImage) {
-            print("✅ Attempting Instagram direct share")
-            return
-        }
-        
-        // Fallback to share sheet with optimized configuration
-        print("🔄 Using share sheet fallback")
-        
-        // Create activity items - image only for better Instagram compatibility
-        let activityItems: [Any] = [finalImage]
-        
-        let activityViewController = UIActivityViewController(
-            activityItems: activityItems,
-            applicationActivities: nil
-        )
-        
-        // Configure for Instagram compatibility
-        activityViewController.excludedActivityTypes = [
-            .addToReadingList,
-            .assignToContact,
-            .print,
-            .saveToCameraRoll,  // Exclude camera roll to encourage direct sharing
-            .copyToPasteboard
-        ]
-        
-        // Configure for iPad
-        if let popover = activityViewController.popoverPresentationController {
-            popover.sourceView = UIApplication.shared.windows.first
-            popover.sourceRect = CGRect(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2, width: 0, height: 0)
-            popover.permittedArrowDirections = []
-        }
-        
-        // Add completion handler to track sharing results
-        activityViewController.completionWithItemsHandler = { activityType, completed, returnedItems, error in
-            if let error = error {
-                print("❌ Sharing error: \(error.localizedDescription)")
-                print("❌ Error details: \(error)")
-                
-                // If Instagram specifically fails, provide troubleshooting
-                if let activityTypeRaw = activityType?.rawValue, activityTypeRaw.contains("instagram") {
-                    print("🔄 Instagram sharing failed. Troubleshooting:")
-                    print("   • Try saving to camera roll and sharing manually")
-                    print("   • Check Instagram app version (update if needed)")
-                    print("   • Verify Instagram account permissions")
-                    print("   • Try switching to Instagram business account")
-                }
-            } else if completed {
-                print("✅ Successfully shared to: \(activityType?.rawValue ?? "unknown")")
-                if let activityTypeRaw = activityType?.rawValue, activityTypeRaw.contains("instagram") {
-                    print("🎉 Instagram share completed successfully!")
-                }
-            } else {
-                print("ℹ️ Sharing cancelled by user")
-            }
-        }
-        
-        // Present the share sheet
-        DispatchQueue.main.async {
-            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-               let window = windowScene.windows.first,
-               let rootViewController = window.rootViewController {
-                
-                // Find the topmost presented view controller
-                var topController = rootViewController
-                while let presentedController = topController.presentedViewController {
-                    topController = presentedController
-                }
-                
-                print("✅ Presenting share sheet from: \(type(of: topController))")
-                topController.present(activityViewController, animated: true) {
-                    print("✅ Share sheet presented successfully")
-                }
-            } else {
-                print("❌ Could not find root view controller for presentation")
-            }
-        }
+        // Use Photos approach for consistent behavior across all screens
+        print("📱 Using Photos approach for reliable Instagram sharing")
+        trySaveToPhotosForManualShare(image: resizedImage)
     }
     
     // MARK: - Instagram Sharing Helper Methods
@@ -957,59 +861,99 @@ struct CompletionCelebrationView: View {
         }
     }
     
-    private func tryInstagramDirectShare(image: UIImage) -> Bool {
-        // Check if Instagram is installed
-        guard let instagramURL = URL(string: "instagram://app"),
-              UIApplication.shared.canOpenURL(instagramURL) else {
-            print("❌ Instagram app not installed")
-            return false
-        }
+    private func trySaveToPhotosForManualShare(image: UIImage) {
+        // Request photos permission first
+        let photos = PHPhotoLibrary.shared()
         
-        // Try Instagram Stories with proper data format
-        return shareToInstagramStories(image: image)
-    }
-    
-    private func shareToInstagramStories(image: UIImage) -> Bool {
-        guard let instagramStoriesURL = URL(string: "instagram-stories://share") else {
-            print("❌ Invalid Instagram Stories URL")
-            return false
-        }
-        
-        // Convert image to JPEG with optimal settings for Instagram
-        guard let imageData = image.jpegData(compressionQuality: 0.85) else {
-            print("❌ Failed to convert image to JPEG for Instagram")
-            return false
-        }
-        
-        print("✅ Image size: \(image.size), data size: \(imageData.count) bytes")
-        
-        // Instagram Stories format according to official documentation
-        let pasteboard = UIPasteboard.general
-        
-        // Method 1: Use official Instagram background image format
-        pasteboard.setData(imageData, forPasteboardType: "com.instagram.sharedSticker.backgroundImage")
-        
-        // Method 2: Also add as standard image types for fallback
-        pasteboard.setData(imageData, forPasteboardType: "public.jpeg")
-        pasteboard.image = image
-        
-        print("✅ Added image to pasteboard with multiple formats")
-        print("   - com.instagram.sharedSticker.backgroundImage")
-        print("   - public.jpeg")
-        print("   - UIImage")
-        
-        // Open Instagram Stories
-        UIApplication.shared.open(instagramStoriesURL, options: [:]) { success in
+        PHPhotoLibrary.requestAuthorization { status in
             DispatchQueue.main.async {
-                if success {
-                    print("✅ Successfully opened Instagram Stories")
-                } else {
-                    print("❌ Failed to open Instagram Stories")
+                switch status {
+                case .authorized, .limited:
+                    self.saveImageToPhotos(image: image)
+                case .denied, .restricted:
+                    print("❌ Photos access denied")
+                    self.showPhotosPermissionAlert()
+                case .notDetermined:
+                    print("❌ Photos permission not determined")
+                @unknown default:
+                    print("❌ Unknown photos permission status")
                 }
             }
         }
+    }
+    
+    private func saveImageToPhotos(image: UIImage) {
+        PHPhotoLibrary.shared().performChanges({
+            PHAssetChangeRequest.creationRequestForAsset(from: image)
+        }) { success, error in
+            DispatchQueue.main.async {
+                if success {
+                    print("✅ Image saved to Photos")
+                    self.showImageSavedAlert()
+                } else {
+                    print("❌ Failed to save image: \(error?.localizedDescription ?? "Unknown error")")
+                }
+            }
+        }
+    }
+    
+    private func showImageSavedAlert() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first,
+              let rootViewController = window.rootViewController else {
+            return
+        }
         
-        return true
+        let alert = UIAlertController(
+            title: "🎉 Image Saved!",
+            message: "Your streak achievement has been saved to Photos. Open Instagram and create a new Story to share it!",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Open Instagram", style: .default) { _ in
+            if let instagramURL = URL(string: "instagram://story-camera"),
+               UIApplication.shared.canOpenURL(instagramURL) {
+                UIApplication.shared.open(instagramURL)
+            }
+        })
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        
+        var topController = rootViewController
+        while let presentedController = topController.presentedViewController {
+            topController = presentedController
+        }
+        
+        topController.present(alert, animated: true)
+    }
+    
+    private func showPhotosPermissionAlert() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first,
+              let rootViewController = window.rootViewController else {
+            return
+        }
+        
+        let alert = UIAlertController(
+            title: "Photos Access Needed",
+            message: "To save your streak achievement, please allow access to Photos in Settings.",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Settings", style: .default) { _ in
+            if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(settingsURL)
+            }
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        var topController = rootViewController
+        while let presentedController = topController.presentedViewController {
+            topController = presentedController
+        }
+        
+        topController.present(alert, animated: true)
     }
 }
 

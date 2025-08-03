@@ -29,6 +29,10 @@
 		4548075C2E3F04C100B8C71B /* StreakCompletionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548075B2E3F04C100B8C71B /* StreakCompletionViews.swift */; };
 		4548075E2E3F0D8400B8C71B /* EnhancedProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548075D2E3F0D8400B8C71B /* EnhancedProgressRing.swift */; };
 		454807602E3F11DC00B8C71B /* DailyChecklistFullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548075F2E3F11DC00B8C71B /* DailyChecklistFullScreenView.swift */; };
+		454807872E3F3CAA00B8C71B /* BadgeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454807832E3F3CAA00B8C71B /* BadgeCollectionView.swift */; };
+		454807882E3F3CAA00B8C71B /* BadgeUnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454807852E3F3CAA00B8C71B /* BadgeUnlockView.swift */; };
+		454807892E3F3CAA00B8C71B /* BadgeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454807842E3F3CAA00B8C71B /* BadgeRenderer.swift */; };
+		4548078C2E3F3E6500B8C71B /* BadgeTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548078A2E3F3E1D00B8C71B /* BadgeTestView.swift */; };
 		456585F32D4F62EE002F2709 /* DevotionalSubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456585F22D4F62EE002F2709 /* DevotionalSubscriptionView.swift */; };
 		456885262B390FF4007B1EBB /* WarriorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456885252B390FF4007B1EBB /* WarriorView.swift */; };
 		456885282B395F66007B1EBB /* declarationsv3.json in Resources */ = {isa = PBXBuildFile; fileRef = 456885272B395F66007B1EBB /* declarationsv3.json */; };
@@ -50,6 +54,7 @@
 		458BBE702D1F8A3D0035985F /* AudioFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458BBE6F2D1F8A3D0035985F /* AudioFiles.swift */; };
 		458C756A2D64811000C4F2B8 /* declarationsv6.json in Resources */ = {isa = PBXBuildFile; fileRef = 458C75692D64811000C4F2B8 /* declarationsv6.json */; };
 		4590BF9E2BCA4F1A00CF4F54 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4590BF9D2BCA4F1A00CF4F54 /* FeatureView.swift */; };
+		4597E1CE2E3F4221009D6C66 /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E1CD2E3F4221009D6C66 /* BadgeModel.swift */; };
 		45A4A3A42D7BD2AC00DFCEB7 /* declarationsv7.json in Sources */ = {isa = PBXBuildFile; fileRef = 45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */; };
 		45A4A3A52D7BF62600DFCEB7 /* declarationsv7.json in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */; };
 		45A4A3CB2D869D2700DFCEB7 /* sethpiano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3CA2D869D2700DFCEB7 /* sethpiano.mp3 */; };
@@ -216,6 +221,10 @@
 		4548075B2E3F04C100B8C71B /* StreakCompletionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCompletionViews.swift; sourceTree = "<group>"; };
 		4548075D2E3F0D8400B8C71B /* EnhancedProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedProgressRing.swift; sourceTree = "<group>"; };
 		4548075F2E3F11DC00B8C71B /* DailyChecklistFullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChecklistFullScreenView.swift; sourceTree = "<group>"; };
+		454807832E3F3CAA00B8C71B /* BadgeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionView.swift; sourceTree = "<group>"; };
+		454807842E3F3CAA00B8C71B /* BadgeRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeRenderer.swift; sourceTree = "<group>"; };
+		454807852E3F3CAA00B8C71B /* BadgeUnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeUnlockView.swift; sourceTree = "<group>"; };
+		4548078A2E3F3E1D00B8C71B /* BadgeTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTestView.swift; sourceTree = "<group>"; };
 		456585F22D4F62EE002F2709 /* DevotionalSubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevotionalSubscriptionView.swift; sourceTree = "<group>"; };
 		456885252B390FF4007B1EBB /* WarriorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarriorView.swift; sourceTree = "<group>"; };
 		456885272B395F66007B1EBB /* declarationsv3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv3.json; sourceTree = "<group>"; };
@@ -238,6 +247,7 @@
 		458BBE6F2D1F8A3D0035985F /* AudioFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFiles.swift; sourceTree = "<group>"; };
 		458C75692D64811000C4F2B8 /* declarationsv6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv6.json; sourceTree = "<group>"; };
 		4590BF9D2BCA4F1A00CF4F54 /* FeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
+		4597E1CD2E3F4221009D6C66 /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
 		45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv7.json; sourceTree = "<group>"; };
 		45A4A3CA2D869D2700DFCEB7 /* sethpiano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sethpiano.mp3; sourceTree = "<group>"; };
 		45A4A3CE2D86B81900DFCEB7 /* everpresent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = everpresent.mp3; sourceTree = "<group>"; };
@@ -405,6 +415,17 @@
 				450720DA2BAFFB4A0029EE2B /* TimerViewModelTests.swift */,
 			);
 			path = SpeakLifeTests;
+			sourceTree = "<group>";
+		};
+		454807862E3F3CAA00B8C71B /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				454807832E3F3CAA00B8C71B /* BadgeCollectionView.swift */,
+				454807842E3F3CAA00B8C71B /* BadgeRenderer.swift */,
+				454807852E3F3CAA00B8C71B /* BadgeUnlockView.swift */,
+				4548078A2E3F3E1D00B8C71B /* BadgeTestView.swift */,
+			);
+			path = Badge;
 			sourceTree = "<group>";
 		};
 		457DC17C2CEEA91000C666D5 /* AudioPlayerView */ = {
@@ -582,6 +603,7 @@
 			children = (
 				458510D82B159B0D00230EE5 /* LandingView.swift */,
 				7A601440294E574500CD2103 /* HomeView.swift */,
+				454807862E3F3CAA00B8C71B /* Badge */,
 				7AA870B828DACCB700134ADB /* Onboarding */,
 				7AA8709728DACCB700134ADB /* Declaration View */,
 				7AF18C942A0CC518005A6E31 /* Devotionals */,
@@ -601,6 +623,7 @@
 				7AA8706B28DACC4E00134ADB /* DailyDeclaration.swift */,
 				7AA8706A28DACC4E00134ADB /* Reminder.swift */,
 				7AA8706928DACC4E00134ADB /* Theme.swift */,
+				4597E1CD2E3F4221009D6C66 /* BadgeModel.swift */,
 				7AF18C8E2A0CBD03005A6E31 /* Devotional.swift */,
 				45BCBA992C360245001F28C4 /* BibleStory.swift */,
 				458BBE6F2D1F8A3D0035985F /* AudioFiles.swift */,
@@ -1088,6 +1111,7 @@
 				7AA870C228DACCB700134ADB /* IntentsBarView.swift in Sources */,
 				7AA870E428DACD1A00134ADB /* AppState.swift in Sources */,
 				7AA870CB28DACCB700134ADB /* PremiumView.swift in Sources */,
+				4597E1CE2E3F4221009D6C66 /* BadgeModel.swift in Sources */,
 				7AA8709428DACCA800134ADB /* App.swift in Sources */,
 				7A92E31B2993882F00FBF2AE /* Events.swift in Sources */,
 				7AF18C8229FD2494005A6E31 /* Badge.swift in Sources */,
@@ -1122,6 +1146,7 @@
 				45B07A422D24D98300EA2F5D /* WhatsNewView.swift in Sources */,
 				7AA8706D28DACC4E00134ADB /* Reminder.swift in Sources */,
 				45CF271C2B4E530300BC8968 /* ImprovementScene.swift in Sources */,
+				4548078C2E3F3E6500B8C71B /* BadgeTestView.swift in Sources */,
 				7AA8709228DACCA700134ADB /* ToggleStyle.swift in Sources */,
 				458B6B1D2BA6D58D0001BEFE /* StreakView.swift in Sources */,
 				7AA870D928DACCB700134ADB /* DeclarationView.swift in Sources */,
@@ -1133,6 +1158,9 @@
 				457DC17E2CEEA92700C666D5 /* AudioPlayerView.swift in Sources */,
 				7AA870D128DACCB700134ADB /* ReminderCell.swift in Sources */,
 				7AF18C8629FEC6EB005A6E31 /* BulletList.swift in Sources */,
+				454807872E3F3CAA00B8C71B /* BadgeCollectionView.swift in Sources */,
+				454807882E3F3CAA00B8C71B /* BadgeUnlockView.swift in Sources */,
+				454807892E3F3CAA00B8C71B /* BadgeRenderer.swift in Sources */,
 				7AF18C9C2A0D99E5005A6E31 /* TimeTrackerViewModel.swift in Sources */,
 				4568BE8F2B60EB1300678565 /* LoadingView.swift in Sources */,
 				7ABA50C729E4D996002699F1 /* PrayerViewModel.swift in Sources */,
@@ -1395,7 +1423,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 849;
+				CURRENT_PROJECT_VERSION = 855;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1437,7 +1465,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 849;
+				CURRENT_PROJECT_VERSION = 855;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;

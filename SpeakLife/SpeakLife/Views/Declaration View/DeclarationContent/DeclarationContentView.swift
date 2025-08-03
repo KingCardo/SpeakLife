@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseAnalytics
 import UIKit
 import AVFoundation
+import Photos
 
 struct AppLogo: View {
     let height: CGFloat
@@ -499,26 +500,98 @@ class ImageSaver: NSObject {
 }
 
 func shareToInstagramStories(image: UIImage) {
-    guard let imageData = image.pngData() else { return }
-
-    let pasteboardItems: [String: Any] = [
-        "com.instagram.sharedSticker.backgroundImage": imageData
-    ]
-
-    let pasteboardOptions = [
-        UIPasteboard.OptionsKey.expirationDate: Date().addingTimeInterval(60 * 5)
-    ]
-
-    UIPasteboard.general.setItems([pasteboardItems], options: pasteboardOptions)
-    let kInstagramAppId = 904572920975437
-    let instagramURL = URL(string: "instagram-stories://share?source_application=\(kInstagramAppId)")
-    if let url = instagramURL {
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url)
-        } else {
-            print("Instagram is not installed.")
+    // Use Photos approach for consistent behavior
+    let photos = PHPhotoLibrary.shared()
+    
+    PHPhotoLibrary.requestAuthorization { status in
+        DispatchQueue.main.async {
+            switch status {
+            case .authorized, .limited:
+                saveImageToPhotos(image: image)
+            case .denied, .restricted:
+                print("❌ Photos access denied")
+                showPhotosPermissionAlert()
+            case .notDetermined:
+                print("❌ Photos permission not determined")
+            @unknown default:
+                print("❌ Unknown photos permission status")
+            }
         }
     }
+}
+
+private func saveImageToPhotos(image: UIImage) {
+    PHPhotoLibrary.shared().performChanges({
+        PHAssetChangeRequest.creationRequestForAsset(from: image)
+    }) { success, error in
+        DispatchQueue.main.async {
+            if success {
+                print("✅ Image saved to Photos")
+                showImageSavedAlert()
+            } else {
+                print("❌ Failed to save image: \(error?.localizedDescription ?? "Unknown error")")
+            }
+        }
+    }
+}
+
+private func showImageSavedAlert() {
+    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+          let window = windowScene.windows.first,
+          let rootViewController = window.rootViewController else {
+        return
+    }
+    
+    let alert = UIAlertController(
+        title: "🎉 Image Saved!",
+        message: "Your affirmation has been saved to Photos. Open Instagram and create a new Story to share it!",
+        preferredStyle: .alert
+    )
+    
+    alert.addAction(UIAlertAction(title: "Open Instagram", style: .default) { _ in
+        if let instagramURL = URL(string: "instagram://story-camera"),
+           UIApplication.shared.canOpenURL(instagramURL) {
+            UIApplication.shared.open(instagramURL)
+        }
+    })
+    
+    alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+    
+    var topController = rootViewController
+    while let presentedController = topController.presentedViewController {
+        topController = presentedController
+    }
+    
+    topController.present(alert, animated: true)
+}
+
+private func showPhotosPermissionAlert() {
+    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+          let window = windowScene.windows.first,
+          let rootViewController = window.rootViewController else {
+        return
+    }
+    
+    let alert = UIAlertController(
+        title: "Photos Access Needed",
+        message: "To save your affirmation, please allow access to Photos in Settings.",
+        preferredStyle: .alert
+    )
+    
+    alert.addAction(UIAlertAction(title: "Settings", style: .default) { _ in
+        if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(settingsURL)
+        }
+    })
+    
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+    
+    var topController = rootViewController
+    while let presentedController = topController.presentedViewController {
+        topController = presentedController
+    }
+    
+    topController.present(alert, animated: true)
 }
 
 

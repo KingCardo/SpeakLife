@@ -77,6 +77,14 @@ struct EnhancedStreakView: View {
                 CompletionCelebrationView(celebration: celebration)
             }
         }
+        .fullScreenCover(isPresented: $viewModel.showBadgeUnlock) {
+            if let badge = viewModel.badgeManager.recentlyUnlocked {
+                BadgeUnlockView(badge: badge, isPresented: $viewModel.showBadgeUnlock)
+                    .onDisappear {
+                        viewModel.dismissBadgeUnlock()
+                    }
+            }
+        }
     }
 }
 
@@ -100,7 +108,7 @@ struct CompactStreakButton: View {
                 
                 // Progress ring
                 Circle()
-                    .stroke(Color.white.opacity(0.3), lineWidth: 3)
+                    .stroke(Constants.DAMidBlue.opacity(0.3), lineWidth: 3)
                     .frame(width: 52, height: 52)
                 
                 Circle()
@@ -222,6 +230,7 @@ struct CompletedStreakBadge: View {
 struct EnhancedStreakSheet: View {
     @Binding var isShown: Bool
     @ObservedObject var viewModel: EnhancedStreakViewModel
+    @State private var showBadgeCollection = false
     
     private var progress: Double {
         let currentStreak = viewModel.streakStats.currentStreak
@@ -258,8 +267,20 @@ struct EnhancedStreakSheet: View {
                 .ignoresSafeArea()
             
             VStack(spacing: 0) {
-                // Navigation bar with close button
+                // Navigation bar with badge and close buttons
                 HStack {
+                    Button("Badges") {
+                        showBadgeCollection = true
+                    }
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color.white.opacity(0.2))
+                    )
+                    
                     Spacer()
                     
                     Button(action: {
@@ -326,6 +347,9 @@ struct EnhancedStreakSheet: View {
             }
         }
         .foregroundColor(.white)
+        .sheet(isPresented: $showBadgeCollection) {
+            BadgeCollectionView(badgeManager: viewModel.badgeManager)
+        }
     }
 }
 
