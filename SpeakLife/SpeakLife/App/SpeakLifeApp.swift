@@ -20,6 +20,7 @@ struct SpeakLifeApp: App {
     @StateObject var subscriptionStore = SubscriptionStore()
     @StateObject var devotionalViewModel = DevotionalViewModel()
     @StateObject var streakViewModel = StreakViewModel()
+    @StateObject var enhancedStreakViewModel = EnhancedStreakViewModel()
     @StateObject var timerViewModel = TimerViewModel()
     @StateObject private var viewModel = FacebookTrackingViewModel()
     @StateObject private var audioDeclarationViewModel = AudioDeclarationViewModel()
@@ -38,6 +39,7 @@ struct SpeakLifeApp: App {
                 .environmentObject(subscriptionStore)
                 .environmentObject(devotionalViewModel)
                 .environmentObject(streakViewModel)
+                .environmentObject(enhancedStreakViewModel)
                 .environmentObject(timerViewModel)
                 .environmentObject(viewModel)
                 .environmentObject(audioDeclarationViewModel)
@@ -83,6 +85,7 @@ struct SpeakLifeApp: App {
                 appDelegate.appState = appState
                 appDelegate.declarationStore = declarationStore
                 appDelegate.tabViewModel = tabViewModel
+                StreakIntegrationManager.shared.setStreakViewModel(enhancedStreakViewModel)
                     
                 if appState.notificationEnabled {
                     NotificationManager.shared.prepareDailyStreakNotification(with: appState.userName, streak: streakViewModel.currentStreak, hasCurrentStreak: streakViewModel.hasCurrentStreak)

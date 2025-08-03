@@ -81,35 +81,22 @@ struct DeclarationView: View {
                             HStack {
 
                               //  if appState.showQuizButton {
-                                    CapsuleImageButton(title: "lightbulb.fill") {
-                                        presentQuiz()
-                                        Selection.shared.selectionFeedback()
-                                    }
-                                    .sheet(isPresented: $isPresentingQuizView) {
-                                        
-                                    } content: {
-                                        QuizHomeView()
-                                    }
+//                                    CapsuleImageButton(title: "lightbulb.fill") {
+//                                        presentQuiz()
+//                                        Selection.shared.selectionFeedback()
+//                                    }
+//                                    .sheet(isPresented: $isPresentingQuizView) {
+//                                        
+//                                    } content: {
+//                                        QuizHomeView()
+//                                    }
                               //  }
 
                                 Spacer()
-                                if !timerViewModel.checkIfCompletedToday() {
-                                    CountdownTimerView(viewModel: timerViewModel) {
-                                        presentTimerBottomSheet()
-                                    }
-
+                                // Enhanced Streak System with Daily Checklist
+                                EnhancedStreakView()
                                     .opacity(appState.showScreenshotLabel ? 0 : 1)
                                     .allowsHitTesting(!appState.showScreenshotLabel)
-                                    .sheet(isPresented: $isPresentingBottomSheet) {
-                                        StreakInfoBottomSheet(isShown: $isPresentingBottomSheet)
-                                            
-                                            .presentationDetents([.fraction(0.55)])
-
-                                            .preferredColorScheme(.light)
-                                    }
-                                } else {
-                                    GoldBadgeView()
-                                }
                                 if !subscriptionStore.isPremium {
                                     Spacer()
                                         .frame(width: 8)

@@ -337,6 +337,7 @@ struct DeclarationContentView: View {
                 appState.shareDiscountTry += 1
             }
         }
+        StreakIntegrationManager.notifyAffirmationShared()
     }
     
     private func speakTapped(declaration: Declaration) {

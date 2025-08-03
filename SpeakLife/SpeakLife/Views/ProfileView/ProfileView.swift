@@ -25,7 +25,7 @@ struct ProfileView: View {
     
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var declarationStore: DeclarationViewModel
-    @EnvironmentObject var streakViewModel: StreakViewModel
+    @EnvironmentObject var streakViewModel: EnhancedStreakViewModel
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var devotionalViewModel: DevotionalViewModel
     @EnvironmentObject var subscriptionStore: SubscriptionStore
@@ -94,7 +94,8 @@ struct ProfileView: View {
                         
                         if appState.onBoardingTest {
                             createYourOwnRow
-                            streakRow
+                            quizRow
+                          //  streakRow
                           // prayerRow
                         }
                         AbbasLoveRow
@@ -227,6 +228,27 @@ struct ProfileView: View {
         
     }
     
+    @MainActor
+    private var quizRow: some View {
+        HStack {
+            Image(systemName: "lightbulb.fill")
+                .foregroundColor(Constants.DAMidBlue)
+            NavigationLink("Quiz", destination: LazyView(QuizHomeView()))
+                .opacity(0)
+                .background(
+                    HStack {
+                        Text("Quizzes", comment: "Reminder row title")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 8)
+                            .foregroundColor(Constants.DAMidBlue)
+                    })
+        }
+        
+    }
+    
     var musicRow: some View {
         HStack {
             Image(systemName: "music.note")
@@ -280,25 +302,26 @@ struct ProfileView: View {
         }
     }
     
-    @MainActor
-    private var streakRow: some View {
-        ZStack {
-            Button("") {
-                isPresentingBottomSheet = true
-            }
-            HStack {
-                Image(systemName: "flame.fill")
-                    .foregroundColor(Constants.DAMidBlue)
-                
-                Text("Streak")
-                
-            }
-        }.sheet(isPresented: $isPresentingBottomSheet) {
-            StreakSheet(isShown: $isPresentingBottomSheet, streakViewModel: streakViewModel)
-                .presentationDetents([.medium, .fraction(0.7)])
-                .preferredColorScheme(.light)
-        }
-    }
+//    @MainActor
+//    private var streakRow: some View {
+//        ZStack {
+//            Button("") {
+//                isPresentingBottomSheet = true
+//            }
+//            HStack {
+//                Image(systemName: "flame.fill")
+//                    .foregroundColor(Constants.DAMidBlue)
+//                
+//                Text("Streak")
+//                
+//            }
+//        }.sheet(isPresented: $isPresentingBottomSheet) {
+//           // EnhancedStreakView(viewModel: streakViewModel)
+//           // StreakSheet(isShown: $isPresentingBottomSheet, streakViewModel: streakViewModel)
+//                .presentationDetents([.medium, .fraction(0.7)])
+//                .preferredColorScheme(.light)
+//        }
+//    }
     
     @MainActor
     private var AbbasLoveRow: some View {

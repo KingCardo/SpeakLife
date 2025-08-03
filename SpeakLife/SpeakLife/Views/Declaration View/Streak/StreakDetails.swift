@@ -133,18 +133,18 @@ struct StreakView: View {
     }
 }
 
-struct Sparkles: View {
-    var body: some View {
-        ForEach(0..<10, id: \.self) { _ in
-            Circle()
-                .fill(Color.white.opacity(0.6))
-                .frame(width: CGFloat.random(in: 2...5), height: CGFloat.random(in: 2...5))
-                .position(x: CGFloat.random(in: 20...100), y: CGFloat.random(in: 20...100))
-                .opacity(Double.random(in: 0.5...1.0))
-                .animation(Animation.easeInOut(duration: Double.random(in: 0.6...1.2)).repeatForever(), value: UUID())
-        }
-    }
-}
+//struct Sparkles: View {
+//    var body: some View {
+//        ForEach(0..<10, id: \.self) { _ in
+//            Circle()
+//                .fill(Color.white.opacity(0.6))
+//                .frame(width: CGFloat.random(in: 2...5), height: CGFloat.random(in: 2...5))
+//                .position(x: CGFloat.random(in: 20...100), y: CGFloat.random(in: 20...100))
+//                .opacity(Double.random(in: 0.5...1.0))
+//                .animation(Animation.easeInOut(duration: Double.random(in: 0.6...1.2)).repeatForever(), value: UUID())
+//        }
+//    }
+//}
 
 
 struct ProgressRing: View {

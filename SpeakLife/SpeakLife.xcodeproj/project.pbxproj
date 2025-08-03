@@ -21,6 +21,14 @@
 		453A83202C9BF1AE00398ECE /* SpeechCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A831F2C9BF1AE00398ECE /* SpeechCoordinator.swift */; };
 		453C35852C5092A800817FCC /* HelpUsGrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453C35842C5092A800817FCC /* HelpUsGrowView.swift */; };
 		453C35872C50B15900817FCC /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453C35862C50B15900817FCC /* MenuButtonView.swift */; };
+		454807522E3F048800B8C71B /* DailyChecklistModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454807512E3F048800B8C71B /* DailyChecklistModels.swift */; };
+		454807542E3F049400B8C71B /* DailyChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454807532E3F049400B8C71B /* DailyChecklistView.swift */; };
+		454807572E3F04A700B8C71B /* EnhancedStreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454807552E3F04A700B8C71B /* EnhancedStreakView.swift */; };
+		454807582E3F04A700B8C71B /* EnhancedStreakViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454807562E3F04A700B8C71B /* EnhancedStreakViewModel.swift */; };
+		4548075A2E3F04B300B8C71B /* StreakIntegrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454807592E3F04B300B8C71B /* StreakIntegrationManager.swift */; };
+		4548075C2E3F04C100B8C71B /* StreakCompletionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548075B2E3F04C100B8C71B /* StreakCompletionViews.swift */; };
+		4548075E2E3F0D8400B8C71B /* EnhancedProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548075D2E3F0D8400B8C71B /* EnhancedProgressRing.swift */; };
+		454807602E3F11DC00B8C71B /* DailyChecklistFullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548075F2E3F11DC00B8C71B /* DailyChecklistFullScreenView.swift */; };
 		456585F32D4F62EE002F2709 /* DevotionalSubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456585F22D4F62EE002F2709 /* DevotionalSubscriptionView.swift */; };
 		456885262B390FF4007B1EBB /* WarriorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456885252B390FF4007B1EBB /* WarriorView.swift */; };
 		456885282B395F66007B1EBB /* declarationsv3.json in Resources */ = {isa = PBXBuildFile; fileRef = 456885272B395F66007B1EBB /* declarationsv3.json */; };
@@ -200,6 +208,14 @@
 		453BD6112D79865200BF39E0 /* SpeakLife.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpeakLife.entitlements; sourceTree = "<group>"; };
 		453C35842C5092A800817FCC /* HelpUsGrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpUsGrowView.swift; sourceTree = "<group>"; };
 		453C35862C50B15900817FCC /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
+		454807512E3F048800B8C71B /* DailyChecklistModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChecklistModels.swift; sourceTree = "<group>"; };
+		454807532E3F049400B8C71B /* DailyChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChecklistView.swift; sourceTree = "<group>"; };
+		454807552E3F04A700B8C71B /* EnhancedStreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedStreakView.swift; sourceTree = "<group>"; };
+		454807562E3F04A700B8C71B /* EnhancedStreakViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedStreakViewModel.swift; sourceTree = "<group>"; };
+		454807592E3F04B300B8C71B /* StreakIntegrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakIntegrationManager.swift; sourceTree = "<group>"; };
+		4548075B2E3F04C100B8C71B /* StreakCompletionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCompletionViews.swift; sourceTree = "<group>"; };
+		4548075D2E3F0D8400B8C71B /* EnhancedProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedProgressRing.swift; sourceTree = "<group>"; };
+		4548075F2E3F11DC00B8C71B /* DailyChecklistFullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChecklistFullScreenView.swift; sourceTree = "<group>"; };
 		456585F22D4F62EE002F2709 /* DevotionalSubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevotionalSubscriptionView.swift; sourceTree = "<group>"; };
 		456885252B390FF4007B1EBB /* WarriorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarriorView.swift; sourceTree = "<group>"; };
 		456885272B395F66007B1EBB /* declarationsv3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv3.json; sourceTree = "<group>"; };
@@ -413,6 +429,14 @@
 		458B6B1B2BA6D57F0001BEFE /* Streak */ = {
 			isa = PBXGroup;
 			children = (
+				4548075B2E3F04C100B8C71B /* StreakCompletionViews.swift */,
+				454807592E3F04B300B8C71B /* StreakIntegrationManager.swift */,
+				454807552E3F04A700B8C71B /* EnhancedStreakView.swift */,
+				454807562E3F04A700B8C71B /* EnhancedStreakViewModel.swift */,
+				4548075D2E3F0D8400B8C71B /* EnhancedProgressRing.swift */,
+				454807532E3F049400B8C71B /* DailyChecklistView.swift */,
+				4548075F2E3F11DC00B8C71B /* DailyChecklistFullScreenView.swift */,
+				454807512E3F048800B8C71B /* DailyChecklistModels.swift */,
 				458B6B1C2BA6D58D0001BEFE /* StreakView.swift */,
 				458B6B1E2BA6D5CF0001BEFE /* TimerViewModel.swift */,
 				458B6B202BA6E3EC0001BEFE /* StreakDetails.swift */,
@@ -1054,6 +1078,8 @@
 				45BCBA9A2C360245001F28C4 /* BibleStory.swift in Sources */,
 				458B6B1F2BA6D5CF0001BEFE /* TimerViewModel.swift in Sources */,
 				7AA8706C28DACC4E00134ADB /* Theme.swift in Sources */,
+				454807572E3F04A700B8C71B /* EnhancedStreakView.swift in Sources */,
+				454807582E3F04A700B8C71B /* EnhancedStreakViewModel.swift in Sources */,
 				453C35872C50B15900817FCC /* MenuButtonView.swift in Sources */,
 				458510D52B13C77000230EE5 /* WebView.swift in Sources */,
 				7AA8709628DACCA800134ADB /* String+Extension.swift in Sources */,
@@ -1076,11 +1102,13 @@
 				7AA8707D28DACC8300134ADB /* LocalAPIClient.swift in Sources */,
 				7AA8706E28DACC4E00134ADB /* DailyDeclaration.swift in Sources */,
 				4582A9582CE690EF0077F555 /* AudioDeclarationViewModel.swift in Sources */,
+				454807522E3F048800B8C71B /* DailyChecklistModels.swift in Sources */,
 				7AA8707F28DACC8300134ADB /* NotificationManager.swift in Sources */,
 				7AA870E028DACCB700134ADB /* WidgetScene.swift in Sources */,
 				458BBE702D1F8A3D0035985F /* AudioFiles.swift in Sources */,
 				7AA8708128DACC8300134ADB /* NotificationProcessor.swift in Sources */,
 				452D17E22D725F87000AB1D1 /* RatingView.swift in Sources */,
+				4548075E2E3F0D8400B8C71B /* EnhancedProgressRing.swift in Sources */,
 				7AA870D028DACCB700134ADB /* ReminderView.swift in Sources */,
 				45CF271A2B4E52EF00BC8968 /* HabitScene.swift in Sources */,
 				4501F3912D8926CA00315902 /* TestimonyViewModel.swift in Sources */,
@@ -1119,6 +1147,7 @@
 				45ED72C62BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift in Sources */,
 				7A60143F294E382700CD2103 /* SubscriptionStore.swift in Sources */,
 				7ABA50C529E4D818002699F1 /* Prayer.swift in Sources */,
+				454807602E3F11DC00B8C71B /* DailyChecklistFullScreenView.swift in Sources */,
 				7AA8707E28DACC8300134ADB /* APIService.swift in Sources */,
 				7AA870CA28DACCB700134ADB /* SubscriptionView.swift in Sources */,
 				7AA8709128DACCA700134ADB /* GlobalConstants.swift in Sources */,
@@ -1143,6 +1172,7 @@
 				7AA8707C28DACC8300134ADB /* APIError.swift in Sources */,
 				45C748302B5BC4330011D8F6 /* AudioPlayer.swift in Sources */,
 				457DC1802CEEB47700C666D5 /* AudioPlayerViewModel.swift in Sources */,
+				454807542E3F049400B8C71B /* DailyChecklistView.swift in Sources */,
 				45CF27182B4E52C900BC8968 /* Personalization.swift in Sources */,
 				7AF46FC52A41326100A45C01 /* AbbasLoveView.swift in Sources */,
 				453A831E2C9BF18500398ECE /* DeclarationMenuButton.swift in Sources */,
@@ -1155,6 +1185,8 @@
 				458510D72B15935100230EE5 /* HideTabModifier.swift in Sources */,
 				7AF18C8C2A08CE92005A6E31 /* SpeechSynthesizer.swift in Sources */,
 				7AA8709328DACCA700134ADB /* CapsuleImageButton.swift in Sources */,
+				4548075C2E3F04C100B8C71B /* StreakCompletionViews.swift in Sources */,
+				4548075A2E3F04B300B8C71B /* StreakIntegrationManager.swift in Sources */,
 				7AA870DF28DACCB700134ADB /* IntroScene.swift in Sources */,
 				7AA870DD28DACCB700134ADB /* OnboardingView.swift in Sources */,
 				7AA870E328DACD1A00134ADB /* AppDelegate.swift in Sources */,
@@ -1363,7 +1395,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 848;
+				CURRENT_PROJECT_VERSION = 849;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1384,7 +1416,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.15;
+				MARKETING_VERSION = 3.1.16;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1405,7 +1437,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 848;
+				CURRENT_PROJECT_VERSION = 849;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1426,7 +1458,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.15;
+				MARKETING_VERSION = 3.1.16;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
