@@ -115,7 +115,7 @@ struct OnboardingView: View  {
 
                     Every promise He made belongs to you.
 
-                    Speak it. Believe it. Own it.
+                    Speak it. Believe it. Receive it.
                     """,
                     subtext: "",
                     ctaText: "Step Into Victory ➔",

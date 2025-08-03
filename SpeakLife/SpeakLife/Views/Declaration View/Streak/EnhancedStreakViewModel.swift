@@ -170,138 +170,735 @@ final class EnhancedStreakViewModel: ObservableObject {
         }
     }
     
-    // MARK: - Share Image Generation
-    private func generateShareImage() -> UIImage? {
-        let size = CGSize(width: 1080, height: 1920) // Instagram story size
+    // MARK: - Premium Share Image Generation
+    func generateShareImage() -> UIImage? {
+        // Instagram Stories optimal dimensions (exactly 9:16 ratio)
+        let size = CGSize(width: 1080, height: 1920)
+        
+        print("🎨 Starting share image generation: \(size)")
         
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        defer { UIGraphicsEndImageContext() }
+        defer { 
+            UIGraphicsEndImageContext()
+        }
         
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        guard let context = UIGraphicsGetCurrentContext() else { 
+            print("❌ Failed to get graphics context")
+            return nil 
+        }
         
-        // Create gradient background
-        let colors = [UIColor(red: 0.2, green: 0.4, blue: 0.8, alpha: 1),
-                     UIColor(red: 0.1, green: 0.2, blue: 0.4, alpha: 1)]
-        let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(),
-                                colors: colors.map { $0.cgColor } as CFArray,
-                                locations: [0.0, 1.0])!
-        
-        context.drawLinearGradient(gradient,
-                                 start: CGPoint(x: 0, y: 0),
-                                 end: CGPoint(x: 0, y: size.height),
-                                 options: [])
-        
-        // Add content
-        let textColor = UIColor.white
-        let font = UIFont.systemFont(ofSize: 48, weight: .bold)
-        let subFont = UIFont.systemFont(ofSize: 32, weight: .medium)
-        
-        // Fire emoji and streak number
-        let fireText = "🔥 \(streakStats.currentStreak)"
-        let fireAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.systemFont(ofSize: 72, weight: .bold),
-            .foregroundColor: textColor
+        // Create breathtaking cinematic gradient background
+        let colors = [
+            UIColor(red: 0.02, green: 0.0, blue: 0.15, alpha: 1),   // Ultra deep midnight
+            UIColor(red: 0.15, green: 0.02, blue: 0.35, alpha: 1),  // Rich royal purple
+            UIColor(red: 0.35, green: 0.05, blue: 0.55, alpha: 1),  // Electric purple
+            UIColor(red: 0.55, green: 0.15, blue: 0.75, alpha: 1),  // Brilliant violet
+            UIColor(red: 0.45, green: 0.25, blue: 0.85, alpha: 1),  // Luminous purple
+            UIColor(red: 0.25, green: 0.08, blue: 0.65, alpha: 1),  // Deep amethyst
+            UIColor(red: 0.08, green: 0.02, blue: 0.35, alpha: 1),  // Rich darkness
+            UIColor(red: 0.02, green: 0.0, blue: 0.15, alpha: 1)    // Return to midnight
         ]
         
-        let fireSize = fireText.size(withAttributes: fireAttributes)
-        let fireRect = CGRect(x: (size.width - fireSize.width) / 2,
-                             y: size.height * 0.3,
-                             width: fireSize.width,
-                             height: fireSize.height)
-        fireText.draw(in: fireRect, withAttributes: fireAttributes)
+        // Ultra-premium multi-stop gradient with perfect cinematic transitions
+        let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(),
+                                colors: colors.map { $0.cgColor } as CFArray,
+                                locations: [0.0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.0])!
         
-        // Days text
-        let daysText = "DAYS STRONG!"
+        // Draw main gradient
+        context.drawLinearGradient(gradient,
+                                 start: CGPoint(x: 0, y: 0),
+                                 end: CGPoint(x: size.width, y: size.height),
+                                 options: [])
+        
+        // Add radial overlay for depth and drama
+        let radialGradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(),
+                                       colors: [
+                                           UIColor.clear.cgColor,
+                                           UIColor(red: 0.1, green: 0.02, blue: 0.3, alpha: 0.4).cgColor,
+                                           UIColor(red: 0.0, green: 0.0, blue: 0.1, alpha: 0.7).cgColor
+                                       ] as CFArray,
+                                       locations: [0.0, 0.6, 1.0])!
+        
+        context.drawRadialGradient(radialGradient,
+                                 startCenter: CGPoint(x: size.width * 0.5, y: size.height * 0.3),
+                                 startRadius: 0,
+                                 endCenter: CGPoint(x: size.width * 0.5, y: size.height * 0.3),
+                                 endRadius: size.width * 0.8,
+                                 options: [])
+        
+        // Add subtle texture overlay for premium feel
+        addPremiumTextureOverlay(to: context, in: size)
+        
+        // Add floating orbs/particles in background
+        addFloatingOrbs(to: context, in: size)
+        
+        // Add cinematic light rays
+        addLightRays(to: context, in: size)
+        
+        // Add stellar particle field
+        addStellarParticles(to: context, in: size)
+        
+        // Typography setup
+        let textColor = UIColor.white
+        
+        // Create stunning visual hierarchy
+        
+        // 1. Top section - App branding
+        drawTopBranding(in: context, size: size, textColor: textColor)
+        
+        // 2. Center hero - Fire animation style
+        drawCenterHero(in: context, size: size, textColor: textColor)
+        
+        // 3. Achievement section
+        drawAchievementSection(in: context, size: size, textColor: textColor)
+        
+        // 4. Bottom section - App logo and branding
+        drawBottomBranding(in: context, size: size, textColor: textColor)
+        
+        let finalImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        if let image = finalImage {
+            print("✅ Share image generated successfully: \(image.size)")
+        } else {
+            print("❌ Failed to generate share image")
+        }
+        
+        return finalImage
+    }
+    
+    // MARK: - Share Image Drawing Methods
+    
+    private func addFloatingOrbs(to context: CGContext, in size: CGSize) {
+        // Add subtle floating orbs in background
+        let orbPositions = [
+            CGPoint(x: size.width * 0.15, y: size.height * 0.2),
+            CGPoint(x: size.width * 0.85, y: size.height * 0.3),
+            CGPoint(x: size.width * 0.25, y: size.height * 0.7),
+            CGPoint(x: size.width * 0.75, y: size.height * 0.8),
+            CGPoint(x: size.width * 0.1, y: size.height * 0.5),
+            CGPoint(x: size.width * 0.9, y: size.height * 0.6)
+        ]
+        
+        for (index, position) in orbPositions.enumerated() {
+            let radius = CGFloat(20 + index * 5)
+            let alpha = 0.1 - Double(index) * 0.015
+            
+            context.setFillColor(UIColor.white.withAlphaComponent(alpha).cgColor)
+            context.fillEllipse(in: CGRect(
+                x: position.x - radius,
+                y: position.y - radius,
+                width: radius * 2,
+                height: radius * 2
+            ))
+        }
+    }
+    
+    private func drawTopBranding(in context: CGContext, size: CGSize, textColor: UIColor) {
+        // Premium app name with enhanced styling
+        let appName = "SPEAKLIFE"
+        let appNameAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 48, weight: .black),
+            .foregroundColor: textColor,
+            .kern: 3.0  // Enhanced letter spacing for luxury feel
+        ]
+        
+        let appNameSize = appName.size(withAttributes: appNameAttributes)
+        let appNameRect = CGRect(
+            x: (size.width - appNameSize.width) / 2,
+            y: size.height * 0.06,
+            width: appNameSize.width,
+            height: appNameSize.height
+        )
+        
+        // Add golden glow for premium feel
+        context.setShadow(offset: CGSize.zero, blur: 12, color: UIColor.systemYellow.withAlphaComponent(0.4).cgColor)
+        appName.draw(in: appNameRect, withAttributes: appNameAttributes)
+        context.setShadow(offset: CGSize.zero, blur: 0, color: nil)
+        
+        // Elegant tagline with premium styling
+        let tagline = "SPEAK IT • BELIEVE IT • RECEIVE IT"
+        let taglineAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 18, weight: .semibold),
+            .foregroundColor: UIColor.systemYellow.withAlphaComponent(0.95),
+            .kern: 1.5  // Letter spacing for elegance
+        ]
+        
+        let taglineSize = tagline.size(withAttributes: taglineAttributes)
+        let taglineRect = CGRect(
+            x: (size.width - taglineSize.width) / 2,
+            y: appNameRect.maxY + 20,  // More space from app name
+            width: taglineSize.width,
+            height: taglineSize.height
+        )
+        
+        // Add subtle glow to tagline
+        context.setShadow(offset: CGSize.zero, blur: 6, color: UIColor.systemYellow.withAlphaComponent(0.5).cgColor)
+        tagline.draw(in: taglineRect, withAttributes: taglineAttributes)
+        context.setShadow(offset: CGSize.zero, blur: 0, color: nil)
+    }
+    
+    private func drawCenterHero(in context: CGContext, size: CGSize, textColor: UIColor) {
+        let centerY = size.height * 0.42
+        
+        // Draw enhanced flame shapes as background
+        drawPremiumFlameShapes(in: context, centerX: size.width / 2, centerY: centerY)
+        
+        // COLOSSAL streak number with cinematic glow effects
+        let streakText = "\(streakStats.currentStreak)"
+        let streakAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 200, weight: .black),  // MASSIVE!
+            .foregroundColor: textColor,
+            .kern: 5.0  // Dramatic letter spacing
+        ]
+        
+        let streakSize = streakText.size(withAttributes: streakAttributes)
+        let streakRect = CGRect(
+            x: (size.width - streakSize.width) / 2,
+            y: centerY - streakSize.height / 2,
+            width: streakSize.width,
+            height: streakSize.height
+        )
+        
+        // EPIC six-layer glow effect for absolutely mind-blowing impact
+        context.setShadow(offset: CGSize.zero, blur: 40, color: UIColor.systemYellow.withAlphaComponent(0.9).cgColor)
+        streakText.draw(in: streakRect, withAttributes: streakAttributes)
+        
+        context.setShadow(offset: CGSize.zero, blur: 30, color: UIColor.systemOrange.withAlphaComponent(0.8).cgColor)
+        streakText.draw(in: streakRect, withAttributes: streakAttributes)
+        
+        context.setShadow(offset: CGSize.zero, blur: 20, color: UIColor.systemRed.withAlphaComponent(0.7).cgColor)
+        streakText.draw(in: streakRect, withAttributes: streakAttributes)
+        
+        context.setShadow(offset: CGSize.zero, blur: 12, color: UIColor.white.withAlphaComponent(0.9).cgColor)
+        streakText.draw(in: streakRect, withAttributes: streakAttributes)
+        
+        context.setShadow(offset: CGSize.zero, blur: 6, color: UIColor.systemPink.withAlphaComponent(0.5).cgColor)
+        streakText.draw(in: streakRect, withAttributes: streakAttributes)
+        
+        context.setShadow(offset: CGSize.zero, blur: 2, color: UIColor.systemPurple.withAlphaComponent(0.4).cgColor)
+        streakText.draw(in: streakRect, withAttributes: streakAttributes)
+        
+        context.setShadow(offset: CGSize.zero, blur: 0, color: nil)
+        
+        // Dramatic "DAYS" text with premium styling
+        let daysText = "DAYS OF SPEAKING LIFE!"
         let daysAttributes: [NSAttributedString.Key: Any] = [
-            .font: font,
-            .foregroundColor: textColor
+            .font: UIFont.systemFont(ofSize: 40, weight: .black),  // Even bigger for impact
+            .foregroundColor: UIColor.white,
+            .kern: 2.5  // Enhanced letter spacing
         ]
         
         let daysSize = daysText.size(withAttributes: daysAttributes)
-        let daysRect = CGRect(x: (size.width - daysSize.width) / 2,
-                             y: fireRect.maxY + 20,
-                             width: daysSize.width,
-                             height: daysSize.height)
+        let daysRect = CGRect(
+            x: (size.width - daysSize.width) / 2,
+            y: streakRect.maxY + 32,  // More spacing
+            width: daysSize.width,
+            height: daysSize.height
+        )
+        
+        // Add premium multi-layer glow to days text
+        context.setShadow(offset: CGSize.zero, blur: 15, color: UIColor.systemYellow.withAlphaComponent(0.8).cgColor)
         daysText.draw(in: daysRect, withAttributes: daysAttributes)
         
-        // Motivational message
-        if let message = celebrationData?.motivationalMessage {
-            let messageAttributes: [NSAttributedString.Key: Any] = [
-                .font: subFont,
-                .foregroundColor: textColor
+        context.setShadow(offset: CGSize.zero, blur: 8, color: UIColor.systemOrange.withAlphaComponent(0.6).cgColor)
+        daysText.draw(in: daysRect, withAttributes: daysAttributes)
+        
+        context.setShadow(offset: CGSize.zero, blur: 0, color: nil)
+    }
+    
+    private func drawFlameShapes(in context: CGContext, centerX: CGFloat, centerY: CGFloat) {
+        // Draw multiple flame layers for depth
+        let flameColors = [
+            UIColor.red.withAlphaComponent(0.3),
+            UIColor.orange.withAlphaComponent(0.25),
+            UIColor.yellow.withAlphaComponent(0.2)
+        ]
+        
+        for (index, color) in flameColors.enumerated() {
+            let width = CGFloat(150 + index * 30)
+            let height = CGFloat(200 + index * 40)
+            
+            context.setFillColor(color.cgColor)
+            
+            // Create flame path
+            let flamePath = UIBezierPath()
+            flamePath.move(to: CGPoint(x: centerX, y: centerY + height/2))
+            
+            // Left side
+            flamePath.addCurve(
+                to: CGPoint(x: centerX - width/2, y: centerY),
+                controlPoint1: CGPoint(x: centerX - width/3, y: centerY + height/3),
+                controlPoint2: CGPoint(x: centerX - width/2, y: centerY + height/6)
+            )
+            
+            // Top
+            flamePath.addCurve(
+                to: CGPoint(x: centerX, y: centerY - height/2),
+                controlPoint1: CGPoint(x: centerX - width/3, y: centerY - height/3),
+                controlPoint2: CGPoint(x: centerX - width/6, y: centerY - height/2)
+            )
+            
+            // Right side
+            flamePath.addCurve(
+                to: CGPoint(x: centerX + width/2, y: centerY),
+                controlPoint1: CGPoint(x: centerX + width/6, y: centerY - height/2),
+                controlPoint2: CGPoint(x: centerX + width/3, y: centerY - height/3)
+            )
+            
+            // Close path
+            flamePath.addCurve(
+                to: CGPoint(x: centerX, y: centerY + height/2),
+                controlPoint1: CGPoint(x: centerX + width/2, y: centerY + height/6),
+                controlPoint2: CGPoint(x: centerX + width/3, y: centerY + height/3)
+            )
+            
+            context.addPath(flamePath.cgPath)
+            context.fillPath()
+        }
+    }
+    
+    private func drawAchievementSection(in context: CGContext, size: CGSize, textColor: UIColor) {
+        let achievementY = size.height * 0.68
+        
+        // Premium achievement badge with enhanced styling
+        let milestone = getMilestone(for: streakStats.currentStreak)
+        if !milestone.isEmpty {
+            let badgeText = "🏆 \(milestone.uppercased()) UNLOCKED!"
+            let badgeAttributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.systemFont(ofSize: 32, weight: .black),
+                .foregroundColor: UIColor.white,
+                .kern: 2.0  // Letter spacing for premium feel
             ]
             
-            let messageSize = message.size(withAttributes: messageAttributes)
-            let messageRect = CGRect(x: (size.width - messageSize.width) / 2,
-                                   y: daysRect.maxY + 40,
-                                   width: messageSize.width,
-                                   height: messageSize.height)
-            message.draw(in: messageRect, withAttributes: messageAttributes)
+            let badgeSize = badgeText.size(withAttributes: badgeAttributes)
+            let badgeRect = CGRect(
+                x: (size.width - badgeSize.width) / 2,
+                y: achievementY,
+                width: badgeSize.width,
+                height: badgeSize.height
+            )
+            
+            // Add dramatic multi-layer glow to badge
+            context.setShadow(offset: CGSize.zero, blur: 18, color: UIColor.systemYellow.withAlphaComponent(0.9).cgColor)
+            badgeText.draw(in: badgeRect, withAttributes: badgeAttributes)
+            
+            context.setShadow(offset: CGSize.zero, blur: 10, color: UIColor.systemOrange.withAlphaComponent(0.7).cgColor)
+            badgeText.draw(in: badgeRect, withAttributes: badgeAttributes)
+            
+            context.setShadow(offset: CGSize.zero, blur: 4, color: UIColor.white.withAlphaComponent(0.8).cgColor)
+            badgeText.draw(in: badgeRect, withAttributes: badgeAttributes)
+            
+            context.setShadow(offset: CGSize.zero, blur: 0, color: nil)
         }
         
-        // SpeakLife app icon logo - try multiple sources
-        let logoImageNames = ["appIconDisplay", "speaklifeicon", "speaklifeicon 1", "AppIcon", "app-icon", "new-speaklifeiconoptionsv2-01 1"]
+        // Powerful motivational message with premium styling
+        let message = getMotivationalMessage()
+        let messageAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 26, weight: .semibold),
+            .foregroundColor: textColor,
+            .kern: 0.8  // Subtle letter spacing for readability
+        ]
+        
+        // Enhanced multi-line text handling with premium spacing
+        let maxWidth = size.width * 0.88  // Slightly wider for better use of space
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        paragraphStyle.lineSpacing = 12  // Enhanced line spacing for elegance
+        
+        let messageAttributesWithStyle: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 26, weight: .semibold),
+            .foregroundColor: textColor,
+            .paragraphStyle: paragraphStyle,
+            .kern: 0.8  // Consistent letter spacing
+        ]
+        
+        let messageRect = CGRect(
+            x: (size.width - maxWidth) / 2,
+            y: achievementY + 60,  // Better spacing
+            width: maxWidth,
+            height: 120  // More height for text
+        )
+        
+        // Add elegant glow to message
+        context.setShadow(offset: CGSize.zero, blur: 8, color: UIColor.white.withAlphaComponent(0.4).cgColor)
+        message.draw(in: messageRect, withAttributes: messageAttributesWithStyle)
+        
+        context.setShadow(offset: CGSize.zero, blur: 3, color: UIColor.systemYellow.withAlphaComponent(0.2).cgColor)
+        message.draw(in: messageRect, withAttributes: messageAttributesWithStyle)
+        
+        context.setShadow(offset: CGSize.zero, blur: 0, color: nil)
+    }
+    
+    private func drawBottomBranding(in context: CGContext, size: CGSize, textColor: UIColor) {
+        // Try to load and draw app icon
+        let logoImageNames = ["appIconDisplay", "speaklifeicon", "AppIcon"]
         var foundImage: UIImage?
-        var foundImageName: String?
         
         for imageName in logoImageNames {
             if let image = UIImage(named: imageName) {
                 foundImage = image
-                foundImageName = imageName
-                print("✅ Found logo image: \(imageName)")
+                print("✅ Found logo image '\(imageName)' with size: \(image.size)")
                 break
             } else {
                 print("❌ Could not find logo image: \(imageName)")
             }
         }
         
+        let logoY = size.height * 0.78  // Moved higher to prevent overlap with bottom text
+        
         if let appIcon = foundImage {
-            let logoSize: CGFloat = 100
-            let logoRect = CGRect(x: (size.width - logoSize) / 2,
-                                 y: size.height * 0.82,
-                                 width: logoSize,
-                                 height: logoSize)
+            let logoSize: CGFloat = 250  // Made even bigger
+            let logoRect = CGRect(
+                x: (size.width - logoSize) / 2,
+                y: logoY,
+                width: logoSize,
+                height: logoSize
+            )
             
-            // Draw circular background with better visibility
-            let circleRect = logoRect
-            context.setFillColor(UIColor.white.withAlphaComponent(0.9).cgColor)
-            context.fillEllipse(in: circleRect)
+            // Draw premium circular background
+            drawPremiumLogoBackground(in: context, rect: logoRect)
             
-            // Draw stronger border
-            context.setStrokeColor(UIColor.black.withAlphaComponent(0.1).cgColor)
-            context.setLineWidth(1)
-            context.strokeEllipse(in: circleRect)
-            
-            // Draw app icon - first try without clipping to test
-            let iconRect = circleRect.insetBy(dx: 8, dy: 8)
-            print("✅ Drawing logo at rect: \(iconRect), image size: \(appIcon.size)")
-            
-            // Try simple draw first
-            appIcon.draw(in: iconRect)
-            
-            // Also try with clipping for circular effect
+            // Create proper circular mask and draw icon correctly
             context.saveGState()
+            
+            // Create circular clipping path with smaller inset for better fit
+            let iconRect = logoRect.insetBy(dx: 8, dy: 8)
             context.addEllipse(in: iconRect)
             context.clip()
+            
+            print("✅ Drawing app icon in circular mask at rect: \(iconRect)")
+            
+            // Use UIImage.draw() only - it handles orientation correctly
+            // CGImage can cause upside-down issues, so avoid it
             appIcon.draw(in: iconRect)
+            
             context.restoreGState()
+            print("✅ Circular masked icon drawing completed")
+            
         } else {
-            // Fallback to text logo if image not found
-            let logoText = "SpeakLife"
+            // Enhanced fallback text logo with matching size
+            let logoSize: CGFloat = 140  // Match the icon size
+            let logoRect = CGRect(
+                x: (size.width - logoSize) / 2,
+                y: logoY,
+                width: logoSize,
+                height: logoSize
+            )
+            
+            // Draw premium background
+            drawPremiumLogoBackground(in: context, rect: logoRect)
+            
+            // Draw "SL" text centered in circle
+            let logoText = "SL"
             let logoAttributes: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: 28, weight: .bold),
-                .foregroundColor: textColor.withAlphaComponent(0.9)
+                .font: UIFont.systemFont(ofSize: 56, weight: .black),  // Bigger font
+                .foregroundColor: textColor
             ]
             
-            let logoSize = logoText.size(withAttributes: logoAttributes)
-            let logoRect = CGRect(x: (size.width - logoSize.width) / 2,
-                                 y: size.height * 0.87,
-                                 width: logoSize.width,
-                                 height: logoSize.height)
-            logoText.draw(in: logoRect, withAttributes: logoAttributes)
+            let textSize = logoText.size(withAttributes: logoAttributes)
+            let textRect = CGRect(
+                x: logoRect.midX - textSize.width / 2,
+                y: logoRect.midY - textSize.height / 2,
+                width: textSize.width,
+                height: textSize.height
+            )
+            logoText.draw(in: textRect, withAttributes: logoAttributes)
+            print("✅ Fallback 'SL' text logo drawn")
         }
         
-        return UIGraphicsGetImageFromCurrentImageContext()
+        // Premium call-to-action with dramatic styling
+        let bottomText = "SHARE YOUR VICTORY!"
+        let bottomAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 26, weight: .black),
+            .foregroundColor: UIColor.white,
+            .kern: 2.0  // Letter spacing for premium feel
+        ]
+        
+        let bottomSize = bottomText.size(withAttributes: bottomAttributes)
+        let bottomRect = CGRect(
+            x: (size.width - bottomSize.width) / 2,
+            y: logoY + 160,  // Better spacing from logo
+            width: bottomSize.width,
+            height: bottomSize.height
+        )
+        
+        // Add dramatic multi-layer glow to call-to-action
+        context.setShadow(offset: CGSize.zero, blur: 20, color: UIColor.systemYellow.withAlphaComponent(0.8).cgColor)
+        bottomText.draw(in: bottomRect, withAttributes: bottomAttributes)
+        
+        context.setShadow(offset: CGSize.zero, blur: 12, color: UIColor.systemOrange.withAlphaComponent(0.6).cgColor)
+        bottomText.draw(in: bottomRect, withAttributes: bottomAttributes)
+        
+        context.setShadow(offset: CGSize.zero, blur: 6, color: UIColor.white.withAlphaComponent(0.9).cgColor)
+        bottomText.draw(in: bottomRect, withAttributes: bottomAttributes)
+        
+        context.setShadow(offset: CGSize.zero, blur: 0, color: nil)
+    }
+    
+    private func drawPremiumLogoBackground(in context: CGContext, rect: CGRect) {
+        print("✅ Drawing ultra-premium logo background at rect: \(rect)")
+        
+        // Draw MASSIVE outer glow for cinematic effect
+        context.setShadow(offset: CGSize.zero, blur: 50, color: UIColor.white.withAlphaComponent(0.6).cgColor)
+        
+        // Draw radial gradient background for depth
+        let logoGradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(),
+                                    colors: [
+                                        UIColor.white.withAlphaComponent(0.98).cgColor,
+                                        UIColor.white.withAlphaComponent(0.85).cgColor,
+                                        UIColor.white.withAlphaComponent(0.95).cgColor
+                                    ] as CFArray,
+                                    locations: [0.0, 0.7, 1.0])!
+        
+        context.saveGState()
+        context.addEllipse(in: rect)
+        context.clip()
+        context.drawRadialGradient(logoGradient,
+                                 startCenter: CGPoint(x: rect.midX, y: rect.midY),
+                                 startRadius: 0,
+                                 endCenter: CGPoint(x: rect.midX, y: rect.midY),
+                                 endRadius: rect.width / 2,
+                                 options: [])
+        context.restoreGState()
+        
+        // Clear shadow for next operations
+        context.setShadow(offset: CGSize.zero, blur: 0, color: nil)
+        
+        // Draw multiple elegant borders with varying opacity
+        context.setStrokeColor(UIColor.white.withAlphaComponent(0.8).cgColor)
+        context.setLineWidth(3)
+        context.strokeEllipse(in: rect.insetBy(dx: 2, dy: 2))
+        
+        context.setStrokeColor(UIColor.systemYellow.withAlphaComponent(0.4).cgColor)
+        context.setLineWidth(1)
+        context.strokeEllipse(in: rect.insetBy(dx: 5, dy: 5))
+        
+        print("✅ Ultra-premium background drawn successfully")
+    }
+    
+    // MARK: - Premium Helper Methods
+    
+    private func addPremiumTextureOverlay(to context: CGContext, in size: CGSize) {
+        // Add cinematic noise texture and light particles
+        for _ in 0..<200 {  // Double the particles
+            let x = CGFloat.random(in: 0...size.width)
+            let y = CGFloat.random(in: 0...size.height)
+            let alpha = Double.random(in: 0.02...0.08)
+            let particleSize = CGFloat.random(in: 1...4)
+            
+            context.setFillColor(UIColor.white.withAlphaComponent(alpha).cgColor)
+            context.fillEllipse(in: CGRect(x: x, y: y, width: particleSize, height: particleSize))
+        }
+        
+        // Add brilliant light streaks
+        for _ in 0..<15 {
+            let startX = CGFloat.random(in: 0...size.width)
+            let startY = CGFloat.random(in: 0...size.height)
+            let endX = startX + CGFloat.random(in: -100...100)
+            let endY = startY + CGFloat.random(in: -100...100)
+            
+            context.setStrokeColor(UIColor.white.withAlphaComponent(0.03).cgColor)
+            context.setLineWidth(1)
+            context.move(to: CGPoint(x: startX, y: startY))
+            context.addLine(to: CGPoint(x: endX, y: endY))
+            context.strokePath()
+        }
+    }
+    
+    private func addStellarParticles(to context: CGContext, in size: CGSize) {
+        // Add brilliant star-like particles throughout the image
+        for _ in 0..<50 {
+            let x = CGFloat.random(in: 0...size.width)
+            let y = CGFloat.random(in: 0...size.height)
+            let starSize = CGFloat.random(in: 2...6)
+            let alpha = Double.random(in: 0.3...0.9)
+            
+            // Draw cross-shaped star
+            context.setStrokeColor(UIColor.white.withAlphaComponent(alpha).cgColor)
+            context.setLineWidth(1)
+            
+            // Horizontal line
+            context.move(to: CGPoint(x: x - starSize, y: y))
+            context.addLine(to: CGPoint(x: x + starSize, y: y))
+            context.strokePath()
+            
+            // Vertical line
+            context.move(to: CGPoint(x: x, y: y - starSize))
+            context.addLine(to: CGPoint(x: x, y: y + starSize))
+            context.strokePath()
+            
+            // Center dot
+            context.setFillColor(UIColor.white.withAlphaComponent(alpha).cgColor)
+            context.fillEllipse(in: CGRect(x: x - 1, y: y - 1, width: 2, height: 2))
+        }
+        
+        // Add brilliant golden stars
+        for _ in 0..<25 {
+            let x = CGFloat.random(in: 0...size.width)
+            let y = CGFloat.random(in: 0...size.height)
+            let starSize = CGFloat.random(in: 3...8)
+            let alpha = Double.random(in: 0.4...0.8)
+            
+            context.setStrokeColor(UIColor.systemYellow.withAlphaComponent(alpha).cgColor)
+            context.setLineWidth(1.5)
+            
+            // Four-pointed star
+            context.move(to: CGPoint(x: x - starSize, y: y))
+            context.addLine(to: CGPoint(x: x + starSize, y: y))
+            context.strokePath()
+            
+            context.move(to: CGPoint(x: x, y: y - starSize))
+            context.addLine(to: CGPoint(x: x, y: y + starSize))
+            context.strokePath()
+            
+            // Diagonal lines for 8-pointed star
+            context.move(to: CGPoint(x: x - starSize * 0.7, y: y - starSize * 0.7))
+            context.addLine(to: CGPoint(x: x + starSize * 0.7, y: y + starSize * 0.7))
+            context.strokePath()
+            
+            context.move(to: CGPoint(x: x - starSize * 0.7, y: y + starSize * 0.7))
+            context.addLine(to: CGPoint(x: x + starSize * 0.7, y: y - starSize * 0.7))
+            context.strokePath()
+        }
+    }
+    
+    private func addLightRays(to context: CGContext, in size: CGSize) {
+        // Add dramatic cinematic light rays emanating from center
+        let centerX = size.width / 2
+        let centerY = size.height * 0.42  // Same as streak number position
+        
+        for i in 0..<12 {
+            let angle = Double(i) * .pi / 6  // 12 rays, 30 degrees apart
+            let rayLength = size.width * 0.8
+            
+            let endX = centerX + cos(angle) * rayLength
+            let endY = centerY + sin(angle) * rayLength
+            
+            // Create gradient for each ray
+            let rayGradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(),
+                                       colors: [
+                                           UIColor.white.withAlphaComponent(0.15).cgColor,
+                                           UIColor.systemYellow.withAlphaComponent(0.08).cgColor,
+                                           UIColor.clear.cgColor
+                                       ] as CFArray,
+                                       locations: [0.0, 0.3, 1.0])!
+            
+            context.saveGState()
+            
+            // Create ray path
+            let rayPath = UIBezierPath()
+            rayPath.move(to: CGPoint(x: centerX, y: centerY))
+            rayPath.addLine(to: CGPoint(x: centerX + cos(angle + 0.05) * rayLength, y: centerY + sin(angle + 0.05) * rayLength))
+            rayPath.addLine(to: CGPoint(x: endX, y: endY))
+            rayPath.addLine(to: CGPoint(x: centerX + cos(angle - 0.05) * rayLength, y: centerY + sin(angle - 0.05) * rayLength))
+            rayPath.close()
+            
+            context.addPath(rayPath.cgPath)
+            context.clip()
+            
+            context.drawLinearGradient(rayGradient,
+                                     start: CGPoint(x: centerX, y: centerY),
+                                     end: CGPoint(x: endX, y: endY),
+                                     options: [])
+            
+            context.restoreGState()
+        }
+    }
+    
+    private func drawPremiumFlameShapes(in context: CGContext, centerX: CGFloat, centerY: CGFloat) {
+        // EPIC flame shapes with cinematic gradients
+        let flameConfigs = [
+            (width: 180, height: 240, colors: [UIColor.systemRed, UIColor.systemOrange, UIColor.systemYellow], alpha: 0.5),
+            (width: 220, height: 280, colors: [UIColor.systemOrange, UIColor.systemYellow, UIColor.white], alpha: 0.4),
+            (width: 260, height: 320, colors: [UIColor.systemYellow, UIColor.white, UIColor.systemYellow], alpha: 0.35),
+            (width: 300, height: 360, colors: [UIColor.white, UIColor.systemYellow, UIColor.systemOrange], alpha: 0.3),
+            (width: 340, height: 400, colors: [UIColor.systemYellow, UIColor.white, UIColor.systemPink], alpha: 0.25),
+            (width: 380, height: 440, colors: [UIColor.white, UIColor.systemPink, UIColor.systemPurple], alpha: 0.2)
+        ]
+        
+        for (index, config) in flameConfigs.enumerated() {
+            let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(),
+                                    colors: config.colors.map { $0.withAlphaComponent(config.alpha).cgColor } as CFArray,
+                                    locations: [0.0, 0.5, 1.0])!
+            
+            let flamePath = createFlameShape(centerX: centerX, centerY: centerY, width: config.width, height: config.height)
+            
+            context.saveGState()
+            context.addPath(flamePath)
+            context.clip()
+            context.drawLinearGradient(gradient,
+                                     start: CGPoint(x: centerX, y: centerY + CGFloat(config.height)/2),
+                                     end: CGPoint(x: centerX, y: centerY - CGFloat(config.height)/2),
+                                     options: [])
+            context.restoreGState()
+        }
+    }
+    
+    private func createFlameShape(centerX: CGFloat, centerY: CGFloat, width: Int, height: Int) -> CGPath {
+        let path = UIBezierPath()
+        let w = CGFloat(width)
+        let h = CGFloat(height)
+        
+        // Start at bottom center
+        path.move(to: CGPoint(x: centerX, y: centerY + h/2))
+        
+        // Left side curves
+        path.addCurve(
+            to: CGPoint(x: centerX - w/2, y: centerY),
+            controlPoint1: CGPoint(x: centerX - w/3, y: centerY + h/3),
+            controlPoint2: CGPoint(x: centerX - w/2, y: centerY + h/6)
+        )
+        
+        // Top curve
+        path.addCurve(
+            to: CGPoint(x: centerX, y: centerY - h/2),
+            controlPoint1: CGPoint(x: centerX - w/3, y: centerY - h/3),
+            controlPoint2: CGPoint(x: centerX - w/6, y: centerY - h/2)
+        )
+        
+        // Right side curves
+        path.addCurve(
+            to: CGPoint(x: centerX + w/2, y: centerY),
+            controlPoint1: CGPoint(x: centerX + w/6, y: centerY - h/2),
+            controlPoint2: CGPoint(x: centerX + w/3, y: centerY - h/3)
+        )
+        
+        // Bottom right curve
+        path.addCurve(
+            to: CGPoint(x: centerX, y: centerY + h/2),
+            controlPoint1: CGPoint(x: centerX + w/2, y: centerY + h/6),
+            controlPoint2: CGPoint(x: centerX + w/3, y: centerY + h/3)
+        )
+        
+        path.close()
+        return path.cgPath
+    }
+    
+    private func getMilestone(for streak: Int) -> String {
+        switch streak {
+        case 7...13: return "Week Warrior"
+        case 14...29: return "Fortnight Fighter"
+        case 30...49: return "Month Master"
+        case 50...99: return "Faithful Fifty"
+        case 100...199: return "Century Champion"
+        case 200...364: return "Bicentennial Beast"
+        case 365...: return "Year Legend"
+        default: return ""
+        }
+    }
+    
+    private func getMotivationalMessage() -> String {
+        let messages = [
+            "Every word you speak has the power to transform your reality!",
+            "You are rewriting your story with words of LIFE!",
+            "Your consistency is building an unstoppable future!",
+            "Speaking life daily - this is how legends are made!",
+            "Your words are creating the life you were meant to live!"
+        ]
+        
+        // Use streak number to pick consistent message
+        let index = streakStats.currentStreak % messages.count
+        return messages[index]
     }
 }
 

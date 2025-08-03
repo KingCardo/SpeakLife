@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Photos
 
 struct EnhancedStreakView: View {
     @EnvironmentObject var viewModel: EnhancedStreakViewModel
@@ -273,8 +274,6 @@ struct EnhancedStreakSheet: View {
                 .padding(.top, 16)
                 
                 VStack(spacing: 20) {
-                    HandleBar()
-                        .padding(.top, 12)
                 
                 // Today's checklist status
                 DailyChecklistSummary(viewModel: viewModel)
@@ -294,26 +293,31 @@ struct EnhancedStreakSheet: View {
                     .padding(.horizontal, 24)
                 
                 // Action buttons
-                if !viewModel.todayChecklist.isCompleted {
-                    VStack(spacing: 12) {
-                        Button("Complete Daily Practice") {
-                            isShown = false
+                VStack(spacing: 16) {
+                    if !viewModel.todayChecklist.isCompleted {
+                        VStack(spacing: 12) {
+                            Button("Complete Daily Practice") {
+                                isShown = false
+                            }
+                            .font(.headline)
+                            .foregroundColor(Color(red: 0.2, green: 0.4, blue: 0.8))
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 12)
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            
+                            Button("Reset Today's Tasks") {
+                                viewModel.resetDay()
+                            }
+                            .font(.caption)
+                            .foregroundColor(.white.opacity(0.7))
                         }
-                        .font(.headline)
-                        .foregroundColor(Color(red: 0.2, green: 0.4, blue: 0.8))
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 12)
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        
-                        Button("Reset Today's Tasks") {
-                            viewModel.resetDay()
-                        }
-                        .font(.caption)
-                        .foregroundColor(.white.opacity(0.7))
+                    } else {
+                        // Show share button when daily tasks are completed
+                        StreakShareButton(viewModel: viewModel)
                     }
-                    .padding(.horizontal, 24)
                 }
+                .padding(.horizontal, 24)
                 
                     Spacer()
                 }
@@ -476,6 +480,317 @@ struct PremiumStatCard: View {
                     lineWidth: 1
                 )
         )
+    }
+}
+
+struct StreakShareButton: View {
+    @ObservedObject var viewModel: EnhancedStreakViewModel
+    @State private var pulseScale: CGFloat = 1.0
+    @State private var shimmerOffset: CGFloat = -1
+    @State private var glowIntensity: Double = 0
+    
+    var body: some View {
+        Button(action: shareStreak) {
+            HStack(spacing: 12) {
+                Image(systemName: "camera.fill")
+                    .font(.system(size: 18, weight: .semibold))
+                
+                Text("Share My \(viewModel.streakStats.currentStreak) Day Streak!")
+                    .font(.system(size: 16, weight: .bold, design: .rounded))
+            }
+            .foregroundColor(.white)
+            .padding(.horizontal, 24)
+            .padding(.vertical, 14)
+            .frame(maxWidth: .infinity)
+            .background(
+                ZStack {
+                    // Base gradient
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(
+                            LinearGradient(
+                                colors: [
+                                    Color(red: 1.0, green: 0.3, blue: 0.6),
+                                    Color(red: 0.8, green: 0.2, blue: 0.9)
+                                ],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                    
+                    // Shimmer effect
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(
+                            LinearGradient(
+                                colors: [
+                                    Color.clear,
+                                    Color.white.opacity(0.3),
+                                    Color.white.opacity(0.5),
+                                    Color.white.opacity(0.3),
+                                    Color.clear
+                                ],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .mask(
+                            Rectangle()
+                                .fill(
+                                    LinearGradient(
+                                        colors: [Color.clear, Color.white, Color.clear],
+                                        startPoint: .leading,
+                                        endPoint: .trailing
+                                    )
+                                )
+                                .rotationEffect(.degrees(45))
+                                .offset(x: shimmerOffset * 300)
+                        )
+                }
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 25)
+                    .stroke(Color.white.opacity(0.6), lineWidth: 1.5)
+            )
+            .shadow(color: Color(red: 1.0, green: 0.3, blue: 0.6).opacity(glowIntensity), radius: 10, x: 0, y: 0)
+            .scaleEffect(pulseScale)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .onAppear {
+            withAnimation(.easeInOut(duration: 2.0).repeatForever(autoreverses: true)) {
+                pulseScale = 1.02
+                glowIntensity = 0.4
+            }
+            withAnimation(.linear(duration: 3.0).repeatForever(autoreverses: false).delay(0.5)) {
+                shimmerOffset = 1
+            }
+        }
+    }
+    
+    private func shareStreak() {
+        // Generate and share streak achievement
+        if let shareImage = viewModel.generateShareImage() {
+            let celebration = CompletionCelebration(
+                streakNumber: viewModel.streakStats.currentStreak,
+                isNewRecord: viewModel.streakStats.currentStreak >= viewModel.streakStats.longestStreak,
+                motivationalMessage: "🔥 \(viewModel.streakStats.currentStreak) days of speaking LIFE into my destiny! Every word has power! #SpeakLife",
+                shareImage: shareImage
+            )
+            
+            shareToInstagram(celebration: celebration)
+        }
+    }
+    
+    private func shareToInstagram(celebration: CompletionCelebration) {
+        guard let shareImage = celebration.shareImage else { 
+            print("❌ No share image available for sharing")
+            return 
+        }
+        
+        print("✅ Share image available: \(shareImage.size), scale: \(shareImage.scale)")
+        
+        // Create properly sized image for Instagram
+        let targetSize = CGSize(width: 1080, height: 1920)
+        let resizedImage = resizeImageForInstagram(shareImage, targetSize: targetSize)
+        
+        // Use Photos approach for reliable Instagram sharing
+        print("📱 Using Photos approach for reliable Instagram sharing")
+        trySaveToPhotosForManualShare(image: resizedImage)
+    }
+    
+    // MARK: - Instagram Helper Methods
+    
+    private func resizeImageForInstagram(_ image: UIImage, targetSize: CGSize) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: targetSize)
+        return renderer.image { _ in
+            image.draw(in: CGRect(origin: .zero, size: targetSize))
+        }
+    }
+    
+    private func tryInstagramDirectShare(image: UIImage) -> Bool {
+        // Check if Instagram is installed
+        guard let instagramURL = URL(string: "instagram://app"),
+              UIApplication.shared.canOpenURL(instagramURL) else {
+            print("❌ Instagram app not installed")
+            return false
+        }
+        
+        // Try Instagram Stories with proper data format
+        return shareToInstagramStories(image: image)
+    }
+    
+    private func shareToInstagramStories(image: UIImage) -> Bool {
+        print("🚀 Starting Instagram Stories sharing...")
+        
+        // Method 1: Try the pasteboard approach for Instagram Stories
+        print("🔄 Trying pasteboard approach for Instagram Stories")
+        if shareToInstagramViaPasteboard(image: image) {
+            print("✅ Instagram Stories pasteboard method initiated")
+            return true
+        }
+        
+        // Method 2: Photos fallback (always works)
+        print("🔄 Using Photos fallback for reliable sharing")
+        return trySaveToPhotosForManualShare(image: image)
+    }
+    
+    
+    private func shareToInstagramViaPasteboard(image: UIImage) -> Bool {
+        // Check if Instagram is available first
+        guard let instagramStoriesURL = URL(string: "instagram-stories://share"),
+              UIApplication.shared.canOpenURL(instagramStoriesURL) else {
+            print("❌ Instagram Stories not available")
+            return false
+        }
+        
+        print("✅ Instagram Stories URL scheme is available")
+        
+        // Ensure image is exactly the right size for Instagram Stories
+        let instagramSize = CGSize(width: 1080, height: 1920)
+        let resizedImage = resizeImageExactly(image, to: instagramSize)
+        
+        // Convert to high-quality JPEG
+        guard let imageData = resizedImage.jpegData(compressionQuality: 0.9) else {
+            print("❌ Failed to convert image to JPEG")
+            return false
+        }
+        
+        print("✅ Image prepared: \(resizedImage.size), \(imageData.count) bytes")
+        
+        // Clear pasteboard completely and set new data
+        let pasteboard = UIPasteboard.general
+        pasteboard.items = []
+        
+        // Try multiple pasteboard formats for maximum compatibility
+        
+        // Format 1: Instagram's official format
+        pasteboard.setData(imageData, forPasteboardType: "com.instagram.sharedSticker.backgroundImage")
+        
+        // Format 2: Alternative Instagram format
+        pasteboard.setData(imageData, forPasteboardType: "com.instagram.sharedSticker.stickerImage")
+        
+        // Format 3: Standard image format as fallback
+        pasteboard.setData(imageData, forPasteboardType: "public.jpeg")
+        pasteboard.image = resizedImage
+        
+        print("✅ Pasteboard configured with Instagram format")
+        print("📱 Opening Instagram Stories...")
+        
+        // Open Instagram Stories
+        UIApplication.shared.open(instagramStoriesURL, options: [:]) { success in
+            DispatchQueue.main.async {
+                if success {
+                    print("✅ Successfully launched Instagram Stories")
+                } else {
+                    print("❌ Failed to launch Instagram Stories")
+                }
+            }
+        }
+        
+        return true
+    }
+    
+    
+    private func resizeImageExactly(_ image: UIImage, to size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        image.draw(in: CGRect(origin: .zero, size: size))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext() ?? image
+        UIGraphicsEndImageContext()
+        return resizedImage
+    }
+    
+    private func trySaveToPhotosForManualShare(image: UIImage) -> Bool {
+        // Request photos permission first
+        let photos = PHPhotoLibrary.shared()
+        
+        PHPhotoLibrary.requestAuthorization { status in
+            DispatchQueue.main.async {
+                switch status {
+                case .authorized, .limited:
+                    self.saveImageToPhotos(image: image)
+                case .denied, .restricted:
+                    print("❌ Photos access denied")
+                    self.showPhotosPermissionAlert()
+                case .notDetermined:
+                    print("❌ Photos permission not determined")
+                @unknown default:
+                    print("❌ Unknown photos permission status")
+                }
+            }
+        }
+        return true
+    }
+    
+    private func saveImageToPhotos(image: UIImage) {
+        PHPhotoLibrary.shared().performChanges({
+            PHAssetChangeRequest.creationRequestForAsset(from: image)
+        }) { success, error in
+            DispatchQueue.main.async {
+                if success {
+                    print("✅ Image saved to Photos")
+                    self.showImageSavedAlert()
+                } else {
+                    print("❌ Failed to save image: \(error?.localizedDescription ?? "Unknown error")")
+                }
+            }
+        }
+    }
+    
+    private func showImageSavedAlert() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first,
+              let rootViewController = window.rootViewController else {
+            return
+        }
+        
+        let alert = UIAlertController(
+            title: "🎉 Image Saved!",
+            message: "Your streak achievement has been saved to Photos. Open Instagram and create a new Story to share it!",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Open Instagram", style: .default) { _ in
+            if let instagramURL = URL(string: "instagram://story-camera"),
+               UIApplication.shared.canOpenURL(instagramURL) {
+                UIApplication.shared.open(instagramURL)
+            }
+        })
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        
+        var topController = rootViewController
+        while let presentedController = topController.presentedViewController {
+            topController = presentedController
+        }
+        
+        topController.present(alert, animated: true)
+    }
+    
+    private func showPhotosPermissionAlert() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first,
+              let rootViewController = window.rootViewController else {
+            return
+        }
+        
+        let alert = UIAlertController(
+            title: "Photos Access Needed",
+            message: "To save your streak achievement, please allow access to Photos in Settings.",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Settings", style: .default) { _ in
+            if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(settingsURL)
+            }
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        var topController = rootViewController
+        while let presentedController = topController.presentedViewController {
+            topController = presentedController
+        }
+        
+        topController.present(alert, animated: true)
     }
 }
 

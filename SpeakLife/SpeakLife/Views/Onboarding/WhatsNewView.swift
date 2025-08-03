@@ -12,6 +12,7 @@ struct WhatsNewBottomSheet: View {
     let version: String
     let features = [
         "NEW Daily Streak Checklist",
+        "Instagram share fix",
        // "NEW Audio AutoPlay"
     ]
 

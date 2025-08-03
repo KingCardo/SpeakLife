@@ -5,6 +5,10 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>instagram-stories</string>
+		<string>instagram</string>
+		<string>instagram-media</string>
+		<string>fb</string>
+		<string>fbapi</string>
 	</array>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
@@ -102,5 +106,7 @@
 	</array>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>We use this to save your affirmation to your Photos</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>SpeakLife saves your streak achievements to Photos so you can easily share them on Instagram and other social media platforms.</string>
 </dict>
 </plist>

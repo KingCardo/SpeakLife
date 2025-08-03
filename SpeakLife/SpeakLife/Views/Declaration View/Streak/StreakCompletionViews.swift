@@ -151,21 +151,54 @@ struct SparkleView: View {
 
 struct AnimatedGradientBackground: View {
     @State private var animateGradient = false
+    @State private var shimmerOffset: CGFloat = -1
     
     var body: some View {
-        LinearGradient(
-            colors: [
-                Color(red: 0.1, green: 0.0, blue: 0.3),
-                Color(red: 0.3, green: 0.1, blue: 0.5),
-                Color(red: 0.1, green: 0.0, blue: 0.4),
-                Color(red: 0.0, green: 0.1, blue: 0.3)
-            ],
-            startPoint: animateGradient ? .topLeading : .bottomTrailing,
-            endPoint: animateGradient ? .bottomTrailing : .topLeading
-        )
+        ZStack {
+            // Base gradient
+            LinearGradient(
+                colors: [
+                    Color(red: 0.1, green: 0.0, blue: 0.3),
+                    Color(red: 0.3, green: 0.1, blue: 0.5),
+                    Color(red: 0.1, green: 0.0, blue: 0.4),
+                    Color(red: 0.0, green: 0.1, blue: 0.3)
+                ],
+                startPoint: animateGradient ? .topLeading : .bottomTrailing,
+                endPoint: animateGradient ? .bottomTrailing : .topLeading
+            )
+            
+            // Shimmer overlay
+            LinearGradient(
+                colors: [
+                    Color.clear,
+                    Color.white.opacity(0.1),
+                    Color.white.opacity(0.2),
+                    Color.white.opacity(0.1),
+                    Color.clear
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .mask(
+                Rectangle()
+                    .fill(
+                        LinearGradient(
+                            colors: [Color.clear, Color.white, Color.clear],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .rotationEffect(.degrees(45))
+                    .offset(x: shimmerOffset * UIScreen.main.bounds.width * 2)
+            )
+        }
         .onAppear {
             withAnimation(.easeInOut(duration: 3.0).repeatForever(autoreverses: true)) {
                 animateGradient.toggle()
+            }
+            
+            withAnimation(.linear(duration: 2.5).repeatForever(autoreverses: false)) {
+                shimmerOffset = 1
             }
         }
     }
@@ -267,17 +300,33 @@ struct StunningFireDisplay: View {
     @State private var flameAnimations: [Bool] = Array(repeating: false, count: 7)
     @State private var numberScale: CGFloat = 0
     @State private var glowIntensity: Double = 0
+    @State private var sparkleRotation: Double = 0
+    @State private var numberShimmer: CGFloat = -1
     
     var body: some View {
         ZStack {
-            // Multiple flame layers for depth
+            // Rotating sparkle ring
+            ForEach(0..<12, id: \.self) { index in
+                Image(systemName: "sparkles")
+                    .font(.system(size: 16))
+                    .foregroundColor(.yellow.opacity(0.8))
+                    .offset(
+                        x: cos(Double(index) * .pi / 6 + sparkleRotation) * 80,
+                        y: sin(Double(index) * .pi / 6 + sparkleRotation) * 80
+                    )
+                    .opacity(showContent ? 1 : 0)
+                    .animation(.easeInOut(duration: 0.5).delay(Double(index) * 0.1), value: showContent)
+            }
+            
+            // Multiple flame layers for depth with enhanced effects
             ForEach(0..<7, id: \.self) { index in
                 FlameShape()
                     .fill(
-                        LinearGradient(
-                            colors: flameColors(for: index),
-                            startPoint: .bottom,
-                            endPoint: .top
+                        RadialGradient(
+                            colors: enhancedFlameColors(for: index),
+                            center: .bottom,
+                            startRadius: 10,
+                            endRadius: 80
                         )
                     )
                     .frame(
@@ -286,6 +335,7 @@ struct StunningFireDisplay: View {
                     )
                     .offset(y: flameAnimations[index] ? -CGFloat(8 + index * 2) : CGFloat(8 + index * 2))
                     .opacity(0.9 - Double(index) * 0.1)
+                    .shadow(color: flameColors(for: index)[0], radius: 5, x: 0, y: 0)
                     .animation(
                         .easeInOut(duration: 0.8 + Double(index) * 0.1)
                         .repeatForever(autoreverses: true),
@@ -293,14 +343,41 @@ struct StunningFireDisplay: View {
                     )
             }
             
-            // Glowing streak number
-            Text("\(streakNumber)")
-                .font(.system(size: 84, weight: .black, design: .rounded))
-                .foregroundColor(.white)
-                .shadow(color: .orange, radius: glowIntensity, x: 0, y: 0)
-                .shadow(color: .yellow, radius: glowIntensity * 0.5, x: 0, y: 0)
-                .scaleEffect(numberScale)
-                .animation(.spring(response: 0.8, dampingFraction: 0.6), value: numberScale)
+            // Enhanced glowing streak number with shimmer
+            ZStack {
+                // Number with glow
+                Text("\(streakNumber)")
+                    .font(.system(size: 84, weight: .black, design: .rounded))
+                    .foregroundColor(.white)
+                    .shadow(color: .orange, radius: glowIntensity, x: 0, y: 0)
+                    .shadow(color: .yellow, radius: glowIntensity * 0.5, x: 0, y: 0)
+                    .shadow(color: .red, radius: glowIntensity * 0.3, x: 0, y: 0)
+                
+                // Shimmer overlay
+                Text("\(streakNumber)")
+                    .font(.system(size: 84, weight: .black, design: .rounded))
+                    .foregroundColor(.clear)
+                    .overlay(
+                        LinearGradient(
+                            colors: [
+                                Color.clear,
+                                Color.white.opacity(0.8),
+                                Color.yellow.opacity(0.6),
+                                Color.white.opacity(0.8),
+                                Color.clear
+                            ],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                        .mask(
+                            Text("\(streakNumber)")
+                                .font(.system(size: 84, weight: .black, design: .rounded))
+                        )
+                        .offset(x: numberShimmer * 200)
+                    )
+            }
+            .scaleEffect(numberScale)
+            .animation(.spring(response: 0.8, dampingFraction: 0.6), value: numberScale)
         }
         .onChange(of: showContent) { show in
             if show {
@@ -320,6 +397,17 @@ struct StunningFireDisplay: View {
         }
     }
     
+    private func enhancedFlameColors(for index: Int) -> [Color] {
+        switch index {
+        case 0...2:
+            return [.red, .orange, .yellow, .white]
+        case 3...4:
+            return [.orange, .yellow, .white, .yellow]
+        default:
+            return [.yellow, .white, .yellow, .orange]
+        }
+    }
+    
     private func startAnimations() {
         for index in flameAnimations.indices {
             DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.1) {
@@ -336,6 +424,14 @@ struct StunningFireDisplay: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
             withAnimation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) {
                 glowIntensity = 15
+            }
+            
+            withAnimation(.linear(duration: 3.0).repeatForever(autoreverses: false)) {
+                sparkleRotation = .pi * 2
+            }
+            
+            withAnimation(.linear(duration: 2.0).repeatForever(autoreverses: false).delay(0.5)) {
+                numberShimmer = 1
             }
         }
     }
@@ -442,6 +538,8 @@ struct StunningShareButton: View {
     let action: () -> Void
     @State private var pulseScale: CGFloat = 1.0
     @State private var gradientAnimation = false
+    @State private var shimmerOffset: CGFloat = -1
+    @State private var glowIntensity: Double = 0
     
     var body: some View {
         Button(action: action) {
@@ -456,32 +554,79 @@ struct StunningShareButton: View {
             .padding(.horizontal, 32)
             .padding(.vertical, 16)
             .background(
-                RoundedRectangle(cornerRadius: 30)
-                    .fill(
-                        LinearGradient(
-                            colors: [
-                                Color(red: 1.0, green: 0.3, blue: 0.6),
-                                Color(red: 0.8, green: 0.2, blue: 0.9),
-                                Color(red: 1.0, green: 0.3, blue: 0.6)
-                            ],
-                            startPoint: gradientAnimation ? .leading : .trailing,
-                            endPoint: gradientAnimation ? .trailing : .leading
+                ZStack {
+                    // Base gradient
+                    RoundedRectangle(cornerRadius: 30)
+                        .fill(
+                            LinearGradient(
+                                colors: [
+                                    Color(red: 1.0, green: 0.3, blue: 0.6),
+                                    Color(red: 0.8, green: 0.2, blue: 0.9),
+                                    Color(red: 1.0, green: 0.3, blue: 0.6)
+                                ],
+                                startPoint: gradientAnimation ? .leading : .trailing,
+                                endPoint: gradientAnimation ? .trailing : .leading
+                            )
                         )
-                    )
+                    
+                    // Shimmer effect
+                    RoundedRectangle(cornerRadius: 30)
+                        .fill(
+                            LinearGradient(
+                                colors: [
+                                    Color.clear,
+                                    Color.white.opacity(0.3),
+                                    Color.white.opacity(0.6),
+                                    Color.white.opacity(0.3),
+                                    Color.clear
+                                ],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .mask(
+                            Rectangle()
+                                .fill(
+                                    LinearGradient(
+                                        colors: [Color.clear, Color.white, Color.clear],
+                                        startPoint: .leading,
+                                        endPoint: .trailing
+                                    )
+                                )
+                                .rotationEffect(.degrees(45))
+                                .offset(x: shimmerOffset * 300)
+                        )
+                }
             )
             .overlay(
                 RoundedRectangle(cornerRadius: 30)
-                    .stroke(Color.white.opacity(0.5), lineWidth: 1)
+                    .stroke(
+                        LinearGradient(
+                            colors: [
+                                Color.white.opacity(0.8),
+                                Color.white.opacity(0.4),
+                                Color.white.opacity(0.8)
+                            ],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ),
+                        lineWidth: 2
+                    )
             )
+            .shadow(color: Color(red: 1.0, green: 0.3, blue: 0.6).opacity(glowIntensity), radius: 15, x: 0, y: 0)
             .scaleEffect(pulseScale)
         }
         .buttonStyle(PlainButtonStyle())
         .onAppear {
             withAnimation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) {
                 pulseScale = 1.05
+                glowIntensity = 0.6
             }
             withAnimation(.linear(duration: 2.0).repeatForever(autoreverses: false)) {
                 gradientAnimation.toggle()
+            }
+            withAnimation(.linear(duration: 2.0).repeatForever(autoreverses: false).delay(0.5)) {
+                shimmerOffset = 1
             }
         }
     }
@@ -690,26 +835,181 @@ struct CompletionCelebrationView: View {
     }
     
     private func shareToInstagram() {
-        guard let shareImage = celebration.shareImage else { return }
+        guard let shareImage = celebration.shareImage else { 
+            print("❌ No share image available for sharing")
+            return 
+        }
+        
+        print("✅ Share image available: \(shareImage.size), scale: \(shareImage.scale)")
+        
+        // Create properly sized image for Instagram (Instagram Stories: 1080x1920)
+        let targetSize = CGSize(width: 1080, height: 1920)
+        let resizedImage = resizeImageForInstagram(shareImage, targetSize: targetSize)
+        
+        // Convert to PNG first (Instagram sometimes has issues with JPEG)
+        guard let imageData = resizedImage.pngData() else {
+            print("❌ Failed to convert image to PNG format")
+            return
+        }
+        
+        // Create final image from PNG data
+        guard let finalImage = UIImage(data: imageData) else {
+            print("❌ Failed to create final image from PNG data")
+            return
+        }
+        
+        // Validate Instagram story dimensions
+        let aspectRatio = finalImage.size.width / finalImage.size.height
+        let expectedRatio: CGFloat = 9.0 / 16.0
+        let tolerance: CGFloat = 0.01
+        
+        print("✅ Final image size: \(finalImage.size), aspect ratio: \(aspectRatio)")
+        
+        if abs(aspectRatio - expectedRatio) > tolerance {
+            print("⚠️ Warning: Image aspect ratio (\(aspectRatio)) may not be optimal for Instagram Stories (expected: \(expectedRatio))")
+        }
+        
+        // Try Instagram direct URL scheme first (if available)
+        if tryInstagramDirectShare(image: finalImage) {
+            print("✅ Attempting Instagram direct share")
+            return
+        }
+        
+        // Fallback to share sheet with optimized configuration
+        print("🔄 Using share sheet fallback")
+        
+        // Create activity items - image only for better Instagram compatibility
+        let activityItems: [Any] = [finalImage]
         
         let activityViewController = UIActivityViewController(
-            activityItems: [shareImage],
+            activityItems: activityItems,
             applicationActivities: nil
         )
         
-        // Present the share sheet
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let window = windowScene.windows.first,
-           let rootViewController = window.rootViewController {
-            
-            // Find the topmost presented view controller
-            var topController = rootViewController
-            while let presentedController = topController.presentedViewController {
-                topController = presentedController
-            }
-            
-            topController.present(activityViewController, animated: true)
+        // Configure for Instagram compatibility
+        activityViewController.excludedActivityTypes = [
+            .addToReadingList,
+            .assignToContact,
+            .print,
+            .saveToCameraRoll,  // Exclude camera roll to encourage direct sharing
+            .copyToPasteboard
+        ]
+        
+        // Configure for iPad
+        if let popover = activityViewController.popoverPresentationController {
+            popover.sourceView = UIApplication.shared.windows.first
+            popover.sourceRect = CGRect(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2, width: 0, height: 0)
+            popover.permittedArrowDirections = []
         }
+        
+        // Add completion handler to track sharing results
+        activityViewController.completionWithItemsHandler = { activityType, completed, returnedItems, error in
+            if let error = error {
+                print("❌ Sharing error: \(error.localizedDescription)")
+                print("❌ Error details: \(error)")
+                
+                // If Instagram specifically fails, provide troubleshooting
+                if let activityTypeRaw = activityType?.rawValue, activityTypeRaw.contains("instagram") {
+                    print("🔄 Instagram sharing failed. Troubleshooting:")
+                    print("   • Try saving to camera roll and sharing manually")
+                    print("   • Check Instagram app version (update if needed)")
+                    print("   • Verify Instagram account permissions")
+                    print("   • Try switching to Instagram business account")
+                }
+            } else if completed {
+                print("✅ Successfully shared to: \(activityType?.rawValue ?? "unknown")")
+                if let activityTypeRaw = activityType?.rawValue, activityTypeRaw.contains("instagram") {
+                    print("🎉 Instagram share completed successfully!")
+                }
+            } else {
+                print("ℹ️ Sharing cancelled by user")
+            }
+        }
+        
+        // Present the share sheet
+        DispatchQueue.main.async {
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let window = windowScene.windows.first,
+               let rootViewController = window.rootViewController {
+                
+                // Find the topmost presented view controller
+                var topController = rootViewController
+                while let presentedController = topController.presentedViewController {
+                    topController = presentedController
+                }
+                
+                print("✅ Presenting share sheet from: \(type(of: topController))")
+                topController.present(activityViewController, animated: true) {
+                    print("✅ Share sheet presented successfully")
+                }
+            } else {
+                print("❌ Could not find root view controller for presentation")
+            }
+        }
+    }
+    
+    // MARK: - Instagram Sharing Helper Methods
+    
+    private func resizeImageForInstagram(_ image: UIImage, targetSize: CGSize) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: targetSize)
+        return renderer.image { _ in
+            image.draw(in: CGRect(origin: .zero, size: targetSize))
+        }
+    }
+    
+    private func tryInstagramDirectShare(image: UIImage) -> Bool {
+        // Check if Instagram is installed
+        guard let instagramURL = URL(string: "instagram://app"),
+              UIApplication.shared.canOpenURL(instagramURL) else {
+            print("❌ Instagram app not installed")
+            return false
+        }
+        
+        // Try Instagram Stories with proper data format
+        return shareToInstagramStories(image: image)
+    }
+    
+    private func shareToInstagramStories(image: UIImage) -> Bool {
+        guard let instagramStoriesURL = URL(string: "instagram-stories://share") else {
+            print("❌ Invalid Instagram Stories URL")
+            return false
+        }
+        
+        // Convert image to JPEG with optimal settings for Instagram
+        guard let imageData = image.jpegData(compressionQuality: 0.85) else {
+            print("❌ Failed to convert image to JPEG for Instagram")
+            return false
+        }
+        
+        print("✅ Image size: \(image.size), data size: \(imageData.count) bytes")
+        
+        // Instagram Stories format according to official documentation
+        let pasteboard = UIPasteboard.general
+        
+        // Method 1: Use official Instagram background image format
+        pasteboard.setData(imageData, forPasteboardType: "com.instagram.sharedSticker.backgroundImage")
+        
+        // Method 2: Also add as standard image types for fallback
+        pasteboard.setData(imageData, forPasteboardType: "public.jpeg")
+        pasteboard.image = image
+        
+        print("✅ Added image to pasteboard with multiple formats")
+        print("   - com.instagram.sharedSticker.backgroundImage")
+        print("   - public.jpeg")
+        print("   - UIImage")
+        
+        // Open Instagram Stories
+        UIApplication.shared.open(instagramStoriesURL, options: [:]) { success in
+            DispatchQueue.main.async {
+                if success {
+                    print("✅ Successfully opened Instagram Stories")
+                } else {
+                    print("❌ Failed to open Instagram Stories")
+                }
+            }
+        }
+        
+        return true
     }
 }
 
