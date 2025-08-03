@@ -49,9 +49,22 @@ final class EnhancedStreakViewModel: ObservableObject {
     
     // MARK: - Public Methods
     func completeTask(taskId: String) {
-        Analytics.logEvent("complete_task", parameters: ["task_id": taskId])
         guard let taskIndex = todayChecklist.tasks.firstIndex(where: { $0.id == taskId }),
               !todayChecklist.tasks[taskIndex].isCompleted else { return }
+        
+        let task = todayChecklist.tasks[taskIndex]
+        
+        // Enhanced analytics with progressive task data
+        Analytics.logEvent("complete_task", parameters: [
+            "task_id": taskId,
+            "task_category": task.category.rawValue,
+            "task_type": task.type.rawValue,
+            "task_difficulty": task.difficulty.rawValue,
+            "streak_day": streakStats.currentStreak,
+            "current_phase": todayChecklist.currentPhase.rawValue,
+            "estimated_minutes": task.estimatedMinutes,
+            "is_newly_unlocked": task.isNewlyUnlocked
+        ])
         
         todayChecklist.tasks[taskIndex].isCompleted = true
         todayChecklist.tasks[taskIndex].completedAt = Date()
@@ -81,8 +94,101 @@ final class EnhancedStreakViewModel: ObservableObject {
     }
     
     func resetDay() {
-        todayChecklist = Self.createTodayChecklist()
+        let currentStreak = max(1, streakStats.currentStreak)
+        todayChecklist = createProgressiveChecklist(for: currentStreak)
         saveData()
+    }
+    
+    // MARK: - Progressive Task System
+    func updateTasksForNewStreak() {
+        let currentStreak = streakStats.currentStreak
+        let previousStreak = currentStreak - 1
+        
+        // Check if we've entered a new phase
+        let currentPhase = ProgressionPhase.getPhase(for: currentStreak)
+        let previousPhase = ProgressionPhase.getPhase(for: previousStreak)
+        
+        // Analytics for phase progression
+        if currentPhase != previousPhase {
+            Analytics.logEvent("phase_progression", parameters: [
+                "previous_phase": previousPhase.rawValue,
+                "new_phase": currentPhase.rawValue,
+                "streak_day": currentStreak
+            ])
+        }
+        
+        // Get newly unlocked tasks
+        let newTasks = TaskLibrary.getNewlyUnlockedTasks(currentStreak: currentStreak, previousStreak: previousStreak)
+        
+        if !newTasks.isEmpty {
+            todayChecklist.newTasksUnlocked = newTasks.map { $0.id }
+            
+            // Analytics for new task unlocks
+            for newTask in newTasks {
+                Analytics.logEvent("task_unlocked", parameters: [
+                    "task_id": newTask.id,
+                    "task_category": newTask.category.rawValue,
+                    "task_type": newTask.type.rawValue,
+                    "task_difficulty": newTask.difficulty.rawValue,
+                    "unlock_streak_day": currentStreak,
+                    "current_phase": currentPhase.rawValue
+                ])
+            }
+            
+            // Mark new tasks as newly unlocked for UI celebration
+            for newTask in newTasks {
+                if let index = todayChecklist.tasks.firstIndex(where: { $0.id == newTask.id }) {
+                    todayChecklist.tasks[index].isNewlyUnlocked = true
+                }
+            }
+        }
+        
+        // Update current phase
+        todayChecklist.currentPhase = currentPhase
+        
+        // Generate new task list for today based on current streak
+        let updatedTasks = TaskLibrary.getCoreTasksForStreak(currentStreak)
+        
+        // Preserve completion status for existing tasks
+        let existingCompletions = Dictionary(uniqueKeysWithValues: todayChecklist.tasks.map { ($0.id, $0.isCompleted) })
+        
+        todayChecklist.tasks = updatedTasks.map { task in
+            var updatedTask = task
+            if let wasCompleted = existingCompletions[task.id] {
+                updatedTask.isCompleted = wasCompleted
+                if wasCompleted {
+                    updatedTask.completedAt = Date()
+                }
+            }
+            return updatedTask
+        }
+        
+        saveData()
+    }
+    
+    private func createProgressiveChecklist(for streakDay: Int) -> DailyChecklist {
+        let today = Calendar.current.startOfDay(for: Date())
+        let phase = ProgressionPhase.getPhase(for: streakDay)
+        let tasks = TaskLibrary.getCoreTasksForStreak(streakDay)
+        
+        return DailyChecklist(
+            date: today,
+            tasks: tasks,
+            currentPhase: phase
+        )
+    }
+    
+    func getUpcomingUnlocks(for streakDay: Int) -> [DailyTask] {
+        let nextFewDays = (streakDay + 1)...(streakDay + 10)
+        var upcomingTasks: [DailyTask] = []
+        
+        for day in nextFewDays {
+            let newTasks = TaskLibrary.getNewlyUnlockedTasks(currentStreak: day, previousStreak: day - 1)
+            upcomingTasks.append(contentsOf: newTasks)
+            if upcomingTasks.count >= 3 { break } // Limit to next 3 unlocks
+        }
+        
+        return upcomingTasks
     }
     
     // MARK: - Private Methods
@@ -91,7 +197,11 @@ final class EnhancedStreakViewModel: ObservableObject {
         todayChecklist.completedAt = today
         
         let wasNewRecord = streakStats.currentStreak >= streakStats.longestStreak
+        let previousStreak = streakStats.currentStreak
         streakStats.updateStreak(for: today)
+        
+        // Update tasks for new streak milestone
+        updateTasksForNewStreak()
         
         // Create celebration data
         celebrationData = CompletionCelebration(
@@ -131,9 +241,10 @@ final class EnhancedStreakViewModel: ObservableObject {
         let checklistDate = calendar.startOfDay(for: todayChecklist.date)
         
         if today != checklistDate {
-            // New day, create fresh checklist
-            todayChecklist = Self.createTodayChecklist()
+            // New day, create fresh checklist with progressive tasks
             checkStreakValidity()
+            let currentStreak = max(1, streakStats.currentStreak)
+            todayChecklist = createProgressiveChecklist(for: currentStreak)
             saveData()
             checkForNewBadges()
         }
@@ -141,9 +252,12 @@ final class EnhancedStreakViewModel: ObservableObject {
     
     private static func createTodayChecklist() -> DailyChecklist {
         let today = Calendar.current.startOfDay(for: Date())
+        // Start with day 1 for new users
+        let initialTasks = TaskLibrary.getCoreTasksForStreak(1)
         return DailyChecklist(
             date: today,
-            tasks: DailyTask.defaultTasks
+            tasks: initialTasks,
+            currentPhase: .foundation
         )
     }
     

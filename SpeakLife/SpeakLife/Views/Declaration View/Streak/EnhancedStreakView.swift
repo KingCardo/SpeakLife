@@ -113,7 +113,7 @@ struct CompactStreakButton: View {
                 
                 Circle()
                     .trim(from: 0, to: viewModel.todayChecklist.completionProgress)
-                    .stroke(Color.white, lineWidth: 3)
+                    .stroke(Constants.DAMidBlue, lineWidth: 3)
                     .frame(width: 52, height: 52)
                     .rotationEffect(.degrees(-90))
                     .animation(.easeInOut(duration: 0.5), value: viewModel.todayChecklist.completionProgress)
@@ -121,7 +121,7 @@ struct CompactStreakButton: View {
                 // Center content
                 if viewModel.todayChecklist.isCompleted {
                     // Fire icon with streak number
-                    VStack(spacing: -2) {
+                    HStack(spacing: -2) {
                         Text("🔥")
                             .font(.system(size: 16))
                         Text("\(viewModel.streakStats.currentStreak)")

@@ -13,17 +13,25 @@ struct DailyChecklistView: View {
     var onClose: (() -> Void)? = nil
     
     var body: some View {
-        VStack(spacing: 16) {
-            // Header with progress circle
+        VStack(spacing: 0) {
+            // Header with progress circle - fixed at top
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Daily Practice")
-                        .font(.headline)
-                        .foregroundColor(.white)
+                    HStack(spacing: 8) {
+                        Text(viewModel.todayChecklist.currentPhase.emoji)
+                            .font(.system(size: 16))
+                        Text(viewModel.todayChecklist.currentPhase.displayName)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                    }
                     
-                    Text("\(viewModel.todayChecklist.completedTasksCount)/\(viewModel.todayChecklist.tasks.count) completed")
+                    Text("\(viewModel.todayChecklist.completedTasksCount)/\(viewModel.todayChecklist.tasks.count) completed • \(viewModel.todayChecklist.estimatedTotalMinutes)min total")
                         .font(.caption)
                         .foregroundColor(.white.opacity(0.8))
+                        
+                    Text(viewModel.todayChecklist.currentPhase.description)
+                        .font(.caption2)
+                        .foregroundColor(viewModel.todayChecklist.currentPhase.color)
                 }
                 
                 Spacer()
@@ -70,23 +78,58 @@ struct DailyChecklistView: View {
             .padding(.horizontal, 20)
             .padding(.top, 16)
             
-            // Task List
-            LazyVStack(spacing: 12) {
-                ForEach(viewModel.todayChecklist.tasks) { task in
-                    DailyTaskRow(
-                        task: task,
-                        onToggle: { taskId in
-                            if task.isCompleted {
-                                viewModel.uncompleteTask(taskId: taskId)
-                            } else {
-                                viewModel.completeTask(taskId: taskId)
+            // Scrollable content
+            ScrollView {
+                VStack(spacing: 16) {
+                    // Progress Journey Info
+                    ProgressJourneyInfo()
+                        .padding(.horizontal, 20)
+                    
+                    // Task List
+                    LazyVStack(spacing: 12) {
+                        ForEach(viewModel.todayChecklist.tasks) { task in
+                            DailyTaskRow(
+                                task: task,
+                                onToggle: { taskId in
+                                    if task.isCompleted {
+                                        viewModel.uncompleteTask(taskId: taskId)
+                                    } else {
+                                        viewModel.completeTask(taskId: taskId)
+                                    }
+                                }
+                            )
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    
+                    // Upcoming Unlocks Preview
+                    let upcomingTasks = viewModel.getUpcomingUnlocks(for: viewModel.streakStats.currentStreak)
+                    if !upcomingTasks.isEmpty {
+                        VStack(alignment: .leading, spacing: 12) {
+                            HStack {
+                                Image(systemName: "lock")
+                                    .font(.system(size: 14))
+                                    .foregroundColor(.white.opacity(0.6))
+                                Text("Coming Soon")
+                                    .font(.system(size: 16, weight: .semibold))
+                                    .foregroundColor(.white.opacity(0.8))
+                                Spacer()
+                            }
+                            
+                            LazyVStack(spacing: 8) {
+                                ForEach(Array(upcomingTasks.prefix(2)), id: \.id) { task in
+                                    UpcomingTaskPreview(task: task, currentStreakDay: viewModel.streakStats.currentStreak)
+                                }
                             }
                         }
-                    )
+                        .padding(.horizontal, 20)
+                    }
+                    
+                    // Bottom spacing
+                    Color.clear.frame(height: 20)
                 }
+                .padding(.top, 8)
             }
-            .padding(.horizontal, 20)
-            .padding(.bottom, 20)
         }
         .background(
             RoundedRectangle(cornerRadius: 16)
@@ -149,27 +192,81 @@ struct DailyTaskRow: View {
             }
             .buttonStyle(PlainButtonStyle())
             
-            // Task Icon
+            // Task Icon with Category Color
             Image(systemName: task.icon)
                 .font(.system(size: 16, weight: .medium))
                 .foregroundColor(.white)
                 .frame(width: 32, height: 32)
                 .background(
                     Circle()
-                        .fill(Color.white.opacity(0.2))
+                        .fill(task.category.color.opacity(0.3))
+                )
+                .overlay(
+                    Circle()
+                        .stroke(task.category.color.opacity(0.6), lineWidth: 1)
                 )
             
             // Task Details
-            VStack(alignment: .leading, spacing: 4) {
-                Text(task.title)
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundColor(.white)
-                    .strikethrough(task.isCompleted)
+            VStack(alignment: .leading, spacing: 6) {
+                HStack(alignment: .top, spacing: 8) {
+                    Text(task.title)
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.white)
+                        .strikethrough(task.isCompleted)
+                    
+                    if task.isNewlyUnlocked {
+                        Text("NEW!")
+                            .font(.system(size: 10, weight: .bold))
+                            .foregroundColor(.yellow)
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 2)
+                            .background(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color.yellow.opacity(0.2))
+                            )
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(Color.yellow.opacity(0.6), lineWidth: 1)
+                            )
+                    }
+                    
+                    Spacer()
+                }
                 
                 Text(task.description)
                     .font(.system(size: 14, weight: .regular))
                     .foregroundColor(.white.opacity(0.8))
-                    .lineLimit(4)
+                    .lineLimit(3)
+                
+                // Task metadata - clean and focused
+                HStack(spacing: 10) {
+                    // Category badge
+                    HStack(spacing: 4) {
+                        Text(task.category.emoji)
+                            .font(.system(size: 10))
+                        Text(task.category.displayName)
+                            .font(.system(size: 11, weight: .medium))
+                            .foregroundColor(task.category.color)
+                            .lineLimit(1)
+                    }
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 3)
+                    .background(
+                        RoundedRectangle(cornerRadius: 6)
+                            .fill(task.category.color.opacity(0.15))
+                    )
+                    
+                    // Estimated time
+                    HStack(spacing: 3) {
+                        Image(systemName: "clock")
+                            .font(.system(size: 9))
+                        Text("\(task.estimatedMinutes)m")
+                            .font(.system(size: 11, weight: .medium))
+                    }
+                    .foregroundColor(.white.opacity(0.6))
+                    
+                    Spacer()
+                }
             }
             
             Spacer()
@@ -199,6 +296,7 @@ struct DailyTaskRow: View {
                 .stroke(Color.white.opacity(task.isCompleted ? 0.3 : 0.1), lineWidth: 1)
         )
     }
+    
 }
 
 struct DailyChecklistInfoSheet: View {
@@ -302,6 +400,160 @@ struct TaskInfoRow: View {
             
             Spacer()
         }
+    }
+}
+
+struct ProgressJourneyInfo: View {
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Image(systemName: "map")
+                    .font(.system(size: 12))
+                    .foregroundColor(.white.opacity(0.6))
+                Text("Your Spiritual Journey")
+                    .font(.system(size: 12, weight: .medium))
+                    .foregroundColor(.white.opacity(0.7))
+                Spacer()
+            }
+            
+            HStack {
+                JourneyPhaseItem(
+                    emoji: "🌱",
+                    label: "Foundation",
+                    color: .blue
+                )
+                
+                Spacer()
+                
+                Image(systemName: "arrow.right")
+                    .font(.system(size: 10))
+                    .foregroundColor(.white.opacity(0.4))
+                
+                Spacer()
+                
+                JourneyPhaseItem(
+                    emoji: "🌿",
+                    label: "Growth",
+                    color: .green
+                )
+                
+                Spacer()
+                
+                Image(systemName: "arrow.right")
+                    .font(.system(size: 10))
+                    .foregroundColor(.white.opacity(0.4))
+                
+                Spacer()
+                
+                JourneyPhaseItem(
+                    emoji: "🌟",
+                    label: "Impact",
+                    color: .orange
+                )
+                
+                Spacer()
+                
+                Image(systemName: "arrow.right")
+                    .font(.system(size: 10))
+                    .foregroundColor(.white.opacity(0.4))
+                
+                Spacer()
+                
+                JourneyPhaseItem(
+                    emoji: "👑",
+                    label: "Mastery",
+                    color: .purple
+                )
+            }
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.white.opacity(0.05))
+        )
+    }
+}
+
+struct JourneyPhaseItem: View {
+    let emoji: String
+    let label: String
+    let color: Color
+    
+    var body: some View {
+        VStack(spacing: 1) {
+            Text(emoji)
+                .font(.system(size: 10))
+            Text(label)
+                .font(.system(size: 8, weight: .medium))
+                .foregroundColor(color.opacity(0.8))
+                .lineLimit(1)
+        }
+    }
+}
+
+struct UpcomingTaskPreview: View {
+    let task: DailyTask
+    let currentStreakDay: Int
+    
+    private var unlockMessage: String {
+        let daysUntilUnlock = task.minimumStreakDay - currentStreakDay
+        if daysUntilUnlock <= 0 {
+            return "Available"
+        } else if daysUntilUnlock == 1 {
+            return "Tomorrow"
+        } else {
+            return "In \(daysUntilUnlock) days"
+        }
+    }
+    
+    var body: some View {
+        HStack(spacing: 12) {
+            // Locked icon
+            Image(systemName: "lock.fill")
+                .font(.system(size: 12, weight: .medium))
+                .foregroundColor(.white.opacity(0.4))
+                .frame(width: 24, height: 24)
+                .background(
+                    Circle()
+                        .fill(Color.white.opacity(0.1))
+                )
+            
+            VStack(alignment: .leading, spacing: 2) {
+                HStack(spacing: 6) {
+                    Text(task.title)
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(.white.opacity(0.7))
+                    
+                    Text(unlockMessage)
+                        .font(.system(size: 10, weight: .medium))
+                        .foregroundColor(.white.opacity(0.5))
+                        .padding(.horizontal, 4)
+                        .padding(.vertical, 1)
+                        .background(
+                            RoundedRectangle(cornerRadius: 4)
+                                .fill(Color.white.opacity(0.1))
+                        )
+                }
+                
+                Text(task.description)
+                    .font(.system(size: 12, weight: .regular))
+                    .foregroundColor(.white.opacity(0.5))
+                    .lineLimit(2)
+            }
+            
+            Spacer()
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.white.opacity(0.05))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(Color.white.opacity(0.1), lineWidth: 1)
+        )
     }
 }
 

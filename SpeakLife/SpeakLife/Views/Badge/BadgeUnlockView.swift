@@ -101,18 +101,21 @@ struct BadgeUnlockView: View {
                 // Badge title and description
                 VStack(spacing: 16) {
                     Text(badge.title)
-                        .font(.system(size: 28, weight: .bold, design: .rounded))
+                        .font(.system(size: 24, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
+                        .minimumScaleFactor(0.8)
+                        .lineLimit(2)
+                        .padding(.horizontal, 20)
                         .offset(y: titleOffset)
                     
                     Text(badge.description)
-                        .font(.system(size: 16, weight: .medium, design: .rounded))
+                        .font(.system(size: 14, weight: .medium, design: .rounded))
                         .foregroundColor(.white.opacity(0.9))
                         .multilineTextAlignment(.center)
-                        .lineLimit(3)
-                        .minimumScaleFactor(0.9)
-                        .padding(.horizontal, 32)
+                        .lineLimit(4)
+                        .minimumScaleFactor(0.7)
+                        .padding(.horizontal, 40)
                         .opacity(descriptionOpacity)
                     
                     // Rarity badge

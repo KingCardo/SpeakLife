@@ -288,14 +288,14 @@ struct AffirmationAlertView: View {
                     .foregroundColor(.white.opacity(0.6))
                     .padding(.top, 8)
                 
-                Text("What do you want to speak into your life?")
+                Text("What do you want to journal or speak into your life?")
                     .font(.title3.bold())
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                 
                 ZStack(alignment: .topLeading) {
                     if affirmationText.isEmpty {
-                        Text("Type your affirmation here…")
+                        Text("Type your entry here…")
                             .foregroundColor(.gray)
                             .padding(.top, 8)
                             .padding(.leading, 5)
