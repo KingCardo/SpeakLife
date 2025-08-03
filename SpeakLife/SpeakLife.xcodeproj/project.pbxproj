@@ -55,6 +55,13 @@
 		458C756A2D64811000C4F2B8 /* declarationsv6.json in Resources */ = {isa = PBXBuildFile; fileRef = 458C75692D64811000C4F2B8 /* declarationsv6.json */; };
 		4590BF9E2BCA4F1A00CF4F54 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4590BF9D2BCA4F1A00CF4F54 /* FeatureView.swift */; };
 		4597E1CE2E3F4221009D6C66 /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E1CD2E3F4221009D6C66 /* BadgeModel.swift */; };
+		4597E1E22E3FDC5C009D6C66 /* DailyChecklistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E1E12E3FDC5C009D6C66 /* DailyChecklistTests.swift */; };
+		4597E1E42E3FDC66009D6C66 /* EnhancedStreakViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E1E32E3FDC66009D6C66 /* EnhancedStreakViewModelTests.swift */; };
+		4597E1E72E3FDC79009D6C66 /* StreakDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E1E52E3FDC79009D6C66 /* StreakDisplayTests.swift */; };
+		4597E1E82E3FDC79009D6C66 /* StreakStatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E1E62E3FDC79009D6C66 /* StreakStatsTests.swift */; };
+		4597E1EB2E3FEC72009D6C66 /* AudioAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E1E92E3FEC72009D6C66 /* AudioAnalytics.swift */; };
+		4597E1EC2E3FEC72009D6C66 /* AudioFavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E1EA2E3FEC72009D6C66 /* AudioFavoritesManager.swift */; };
+		4597E1EE2E3FECCA009D6C66 /* AudioFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E1ED2E3FECCA009D6C66 /* AudioFavoritesView.swift */; };
 		45A4A3A42D7BD2AC00DFCEB7 /* declarationsv7.json in Sources */ = {isa = PBXBuildFile; fileRef = 45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */; };
 		45A4A3A52D7BF62600DFCEB7 /* declarationsv7.json in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */; };
 		45A4A3CB2D869D2700DFCEB7 /* sethpiano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3CA2D869D2700DFCEB7 /* sethpiano.mp3 */; };
@@ -248,6 +255,13 @@
 		458C75692D64811000C4F2B8 /* declarationsv6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv6.json; sourceTree = "<group>"; };
 		4590BF9D2BCA4F1A00CF4F54 /* FeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
 		4597E1CD2E3F4221009D6C66 /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
+		4597E1E12E3FDC5C009D6C66 /* DailyChecklistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChecklistTests.swift; sourceTree = "<group>"; };
+		4597E1E32E3FDC66009D6C66 /* EnhancedStreakViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedStreakViewModelTests.swift; sourceTree = "<group>"; };
+		4597E1E52E3FDC79009D6C66 /* StreakDisplayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakDisplayTests.swift; sourceTree = "<group>"; };
+		4597E1E62E3FDC79009D6C66 /* StreakStatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakStatsTests.swift; sourceTree = "<group>"; };
+		4597E1E92E3FEC72009D6C66 /* AudioAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAnalytics.swift; sourceTree = "<group>"; };
+		4597E1EA2E3FEC72009D6C66 /* AudioFavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFavoritesManager.swift; sourceTree = "<group>"; };
+		4597E1ED2E3FECCA009D6C66 /* AudioFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFavoritesView.swift; sourceTree = "<group>"; };
 		45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv7.json; sourceTree = "<group>"; };
 		45A4A3CA2D869D2700DFCEB7 /* sethpiano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sethpiano.mp3; sourceTree = "<group>"; };
 		45A4A3CE2D86B81900DFCEB7 /* everpresent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = everpresent.mp3; sourceTree = "<group>"; };
@@ -409,7 +423,11 @@
 			isa = PBXGroup;
 			children = (
 				45B5A82F2DDC14B4006DE6AA /* DevotionalTests.swift */,
+				4597E1E12E3FDC5C009D6C66 /* DailyChecklistTests.swift */,
 				2F740F6829D4017400E89E7F /* APIClientTests.swift */,
+				4597E1E32E3FDC66009D6C66 /* EnhancedStreakViewModelTests.swift */,
+				4597E1E52E3FDC79009D6C66 /* StreakDisplayTests.swift */,
+				4597E1E62E3FDC79009D6C66 /* StreakStatsTests.swift */,
 				456885292B428D77007B1EBB /* NotificationManagerTests.swift */,
 				4568852B2B428FE2007B1EBB /* SpeakLifeTests-Bridging-Header.h */,
 				450720DA2BAFFB4A0029EE2B /* TimerViewModelTests.swift */,
@@ -442,6 +460,7 @@
 			children = (
 				457DC17C2CEEA91000C666D5 /* AudioPlayerView */,
 				4582A9552CE690800077F555 /* AudioDeclarationView.swift */,
+				4597E1ED2E3FECCA009D6C66 /* AudioFavoritesView.swift */,
 				4582A9572CE690EF0077F555 /* AudioDeclarationViewModel.swift */,
 			);
 			path = AudioDeclarationView;
@@ -488,6 +507,8 @@
 		45C7482E2B5BC41E0011D8F6 /* AudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				4597E1E92E3FEC72009D6C66 /* AudioAnalytics.swift */,
+				4597E1EA2E3FEC72009D6C66 /* AudioFavoritesManager.swift */,
 				45C7482F2B5BC4330011D8F6 /* AudioPlayer.swift */,
 			);
 			path = AudioPlayer;
@@ -1087,9 +1108,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4597E1E42E3FDC66009D6C66 /* EnhancedStreakViewModelTests.swift in Sources */,
 				45B5A8302DDC14B4006DE6AA /* DevotionalTests.swift in Sources */,
+				4597E1E72E3FDC79009D6C66 /* StreakDisplayTests.swift in Sources */,
+				4597E1E82E3FDC79009D6C66 /* StreakStatsTests.swift in Sources */,
 				4568852A2B428D77007B1EBB /* NotificationManagerTests.swift in Sources */,
 				450720DB2BAFFB4A0029EE2B /* TimerViewModelTests.swift in Sources */,
+				4597E1E22E3FDC5C009D6C66 /* DailyChecklistTests.swift in Sources */,
 				2F740F6929D4017400E89E7F /* APIClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1101,6 +1126,7 @@
 				45BCBA9A2C360245001F28C4 /* BibleStory.swift in Sources */,
 				458B6B1F2BA6D5CF0001BEFE /* TimerViewModel.swift in Sources */,
 				7AA8706C28DACC4E00134ADB /* Theme.swift in Sources */,
+				4597E1EE2E3FECCA009D6C66 /* AudioFavoritesView.swift in Sources */,
 				454807572E3F04A700B8C71B /* EnhancedStreakView.swift in Sources */,
 				454807582E3F04A700B8C71B /* EnhancedStreakViewModel.swift in Sources */,
 				453C35872C50B15900817FCC /* MenuButtonView.swift in Sources */,
@@ -1147,6 +1173,8 @@
 				7AA8706D28DACC4E00134ADB /* Reminder.swift in Sources */,
 				45CF271C2B4E530300BC8968 /* ImprovementScene.swift in Sources */,
 				4548078C2E3F3E6500B8C71B /* BadgeTestView.swift in Sources */,
+				4597E1EB2E3FEC72009D6C66 /* AudioAnalytics.swift in Sources */,
+				4597E1EC2E3FEC72009D6C66 /* AudioFavoritesManager.swift in Sources */,
 				7AA8709228DACCA700134ADB /* ToggleStyle.swift in Sources */,
 				458B6B1D2BA6D58D0001BEFE /* StreakView.swift in Sources */,
 				7AA870D928DACCB700134ADB /* DeclarationView.swift in Sources */,
@@ -1423,7 +1451,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 855;
+				CURRENT_PROJECT_VERSION = 857;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1444,7 +1472,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.16;
+				MARKETING_VERSION = 3.1.17;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1465,7 +1493,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 855;
+				CURRENT_PROJECT_VERSION = 857;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1486,7 +1514,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.16;
+				MARKETING_VERSION = 3.1.17;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

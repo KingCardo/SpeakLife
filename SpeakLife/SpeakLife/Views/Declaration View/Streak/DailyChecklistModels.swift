@@ -211,25 +211,44 @@ struct StreakStats: Codable {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: date)
         
+        print("🔥 STREAK DEBUG: Updating streak for date: \(today)")
+        print("🔥 STREAK DEBUG: Current streak before update: \(currentStreak)")
+        print("🔥 STREAK DEBUG: Last completed date: \(lastCompletedDate?.description ?? "None")")
+        
         if let lastDate = lastCompletedDate {
-            let daysDifference = calendar.dateComponents([.day], from: lastDate, to: today).day ?? 0
+            let lastDateStart = calendar.startOfDay(for: lastDate)
+            let daysDifference = calendar.dateComponents([.day], from: lastDateStart, to: today).day ?? 0
+            print("🔥 STREAK DEBUG: Days difference: \(daysDifference)")
+            print("🔥 STREAK DEBUG: Last date (start of day): \(lastDateStart)")
+            print("🔥 STREAK DEBUG: Today (start of day): \(today)")
             
             if daysDifference == 1 {
                 // Consecutive day
                 currentStreak += 1
+                print("🔥 STREAK DEBUG: Consecutive day! New streak: \(currentStreak)")
             } else if daysDifference > 1 {
                 // Streak broken
                 currentStreak = 1
+                print("🔥 STREAK DEBUG: Streak broken! Reset to: \(currentStreak)")
+            } else if daysDifference == 0 {
+                // Same day - don't increment streak but still update totals
+                print("🔥 STREAK DEBUG: Same day, no streak update. Streak remains: \(currentStreak)")
+            } else {
+                // daysDifference < 0 - completion in the past relative to last completion
+                // This shouldn't normally happen, but handle it gracefully
+                print("🔥 STREAK DEBUG: Date is before last completion. Streak remains: \(currentStreak)")
             }
-            // If daysDifference == 0, it's the same day, don't update
         } else {
             // First completion
             currentStreak = 1
+            print("🔥 STREAK DEBUG: First completion! Streak set to: \(currentStreak)")
         }
         
         longestStreak = max(longestStreak, currentStreak)
         totalDaysCompleted += 1
         lastCompletedDate = today
+        
+        print("🔥 STREAK DEBUG: Final streak: \(currentStreak), longest: \(longestStreak), total days: \(totalDaysCompleted)")
     }
     
     mutating func checkStreakValidity() {

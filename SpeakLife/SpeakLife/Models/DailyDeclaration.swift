@@ -325,6 +325,33 @@ struct Welcome: Codable {
     let declarations: [Declaration]
 }
 
+// MARK: - Content Type
+enum ContentType: String, Codable, CaseIterable {
+    case affirmation = "affirmation"
+    case journal = "journal"
+    
+    var displayName: String {
+        switch self {
+        case .affirmation: return "Affirmation"
+        case .journal: return "Journal"
+        }
+    }
+    
+    var pluralDisplayName: String {
+        switch self {
+        case .affirmation: return "Affirmations"
+        case .journal: return "Journals"
+        }
+    }
+    
+    var icon: String {
+        switch self {
+        case .affirmation: return "quote.bubble"
+        case .journal: return "book.pages"
+        }
+    }
+}
+
 // MARK: - Declaration
 struct Declaration: Codable, Identifiable, Hashable {
     let text: String
@@ -333,9 +360,10 @@ struct Declaration: Codable, Identifiable, Hashable {
     var category: DeclarationCategory = .faith
     var categories: [DeclarationCategory] = []
     var isFavorite: Bool? = false
+    var contentType: ContentType = .affirmation
     var id: String {
        //UUID().uuidString
-        text + category.rawValue
+        text + category.rawValue + contentType.rawValue
     }
     
     enum CodingKeys: String, CodingKey {
@@ -345,7 +373,36 @@ struct Declaration: Codable, Identifiable, Hashable {
             case category
             case isFavorite
             case lastEdit
+            case contentType
         }
     
     var lastEdit: Date?
+    
+    // Custom decoder to handle missing contentType in existing data
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        text = try container.decode(String.self, forKey: .text)
+        book = try container.decodeIfPresent(String.self, forKey: .book)
+        bibleVerseText = try container.decodeIfPresent(String.self, forKey: .bibleVerseText)
+        category = try container.decodeIfPresent(DeclarationCategory.self, forKey: .category) ?? .faith
+        categories = [] // Default empty array for backwards compatibility
+        isFavorite = try container.decodeIfPresent(Bool.self, forKey: .isFavorite)
+        lastEdit = try container.decodeIfPresent(Date.self, forKey: .lastEdit)
+        
+        // Default to affirmation if contentType is missing (for backwards compatibility)
+        contentType = try container.decodeIfPresent(ContentType.self, forKey: .contentType) ?? .affirmation
+    }
+    
+    // Standard initializer
+    init(text: String, book: String? = nil, bibleVerseText: String? = nil, category: DeclarationCategory = .faith, categories: [DeclarationCategory] = [], isFavorite: Bool? = false, contentType: ContentType = .affirmation, lastEdit: Date? = nil) {
+        self.text = text
+        self.book = book
+        self.bibleVerseText = bibleVerseText
+        self.category = category
+        self.categories = categories
+        self.isFavorite = isFavorite
+        self.contentType = contentType
+        self.lastEdit = lastEdit
+    }
 }

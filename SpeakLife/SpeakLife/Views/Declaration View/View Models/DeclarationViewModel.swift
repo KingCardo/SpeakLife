@@ -232,9 +232,9 @@ final class DeclarationViewModel: ObservableObject {
     
     // MARK: - Create own
     
-    func createDeclaration(_ text: String)  {
+    func createDeclaration(_ text: String, contentType: ContentType = .affirmation)  {
         guard text.count > 2 else {  return }
-        let declaration = Declaration(text: text, category: .myOwn, isFavorite: false, lastEdit: Date())
+        let declaration = Declaration(text: text, category: .myOwn, isFavorite: false, contentType: contentType, lastEdit: Date())
         guard !allDeclarations.contains(declaration) else {
             return
         }
@@ -247,7 +247,7 @@ final class DeclarationViewModel: ObservableObject {
     }
     
     func editMyOwn(_ declaration: String) {
-        let declaration = Declaration(text: declaration, category: .myOwn, isFavorite: false, lastEdit: Date())
+        let declaration = Declaration(text: declaration, category: .myOwn, isFavorite: false, contentType: .affirmation, lastEdit: Date())
         removeOwn(declaration: declaration)
     }
     

@@ -26,13 +26,15 @@ final class AudioDeclarationViewModel: ObservableObject {
     private(set) var allAudioFiles: [AudioDeclaration] = []
     @Published var downloadProgress: [String: Double] = [:]
     @Published var fetchingAudioIDs: Set<String> = []
-    @Published var filters: [Filter] = [.godsHeart, .speaklife, .growWithJesus, .psalm91, .divineHealth, .magnify,/*.imagination,.devotional,*/ .declarations, .gospel, .meditation, .bedtimeStories]
+    @Published var filters: [Filter] = [.favorites, .godsHeart, .speaklife, .growWithJesus, .psalm91, .divineHealth, .magnify,/*.imagination,.devotional,*/ .declarations, .gospel, .meditation, .bedtimeStories]
 
+    // Favorites manager
+    @StateObject var favoritesManager = AudioFavoritesManager()
 
     @Published var selectedFilter: Filter = .godsHeart
     private let storage = Storage.storage()
     private let fileManager = FileManager.default
-    @AppStorage("shouldClearCachev3") private var shouldClearCachev3 = true
+    @AppStorage("shouldClearCachev4") private var shouldClearCachev4 = true
     private let service: APIService = LocalAPIClient()
     init() {
 
@@ -41,6 +43,8 @@ final class AudioDeclarationViewModel: ObservableObject {
     
     var filteredContent: [AudioDeclaration] {
         switch selectedFilter {
+        case .favorites:
+            return favoritesManager.getFavoritesSortedByDate()
         case .declarations:
             return audioDeclarations
         case .bedtimeStories:
@@ -69,6 +73,11 @@ final class AudioDeclarationViewModel: ObservableObject {
     }
     
     func fetchAudio(version: Int) {
+        if shouldClearCachev4 {
+            clearCache()
+            clearAudioDeclarationsCache()
+            shouldClearCachev4 = false
+        }
         service.audio(version: version) { [weak self] welcome, audios in
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
@@ -99,9 +108,10 @@ final class AudioDeclarationViewModel: ObservableObject {
 //    }
     
     func fetchAudio(for item: AudioDeclaration, completion: @escaping (Result<URL, Error>) -> Void) {
-        if shouldClearCachev3 {
+        if shouldClearCachev4 {
             clearCache()
-            shouldClearCachev3 = false
+            clearAudioDeclarationsCache()
+            shouldClearCachev4 = false
         }
            // Get the local URL for the file
            let localURL = cachedFileURL(for: item.id)
@@ -166,6 +176,26 @@ final class AudioDeclarationViewModel: ObservableObject {
             }
         }
     }
+    
+    private func clearAudioDeclarationsCache() {
+        let fileManager = FileManager.default
+        let documentDirURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentDirURL.appendingPathComponent("audioDeclarations").appendingPathExtension("txt")
+        
+        do {
+            if fileManager.fileExists(atPath: fileURL.path) {
+                try fileManager.removeItem(at: fileURL)
+                print("Audio declarations cache cleared successfully!")
+            }
+            
+            // Reset the audio local version to force fresh download
+            UserDefaults.standard.set(0, forKey: "audioLocalVersion")
+            print("Audio local version reset to force fresh download")
+            
+        } catch {
+            print("Failed to clear audio declarations cache: \(error.localizedDescription)")
+        }
+    }
   }
 
 struct WelcomeAudio: Codable {
@@ -186,4 +216,64 @@ struct AudioDeclaration: Identifiable, Equatable, Codable, Comparable {
       let imageUrl: String
       let isPremium: Bool
       var tag: String?
+      var isFavorite: Bool = false
+      var favoriteId: String?
+      var dateFavorited: Date?
+    
+    // Initializer for creating new instances (used in AudioFiles.swift)
+    init(id: String, title: String, subtitle: String, duration: String, imageUrl: String, 
+         isPremium: Bool, tag: String? = nil, isFavorite: Bool = false, 
+         favoriteId: String? = nil, dateFavorited: Date? = nil) {
+        self.id = id
+        self.title = title
+        self.subtitle = subtitle
+        self.duration = duration
+        self.imageUrl = imageUrl
+        self.isPremium = isPremium
+        self.tag = tag
+        self.isFavorite = isFavorite
+        self.favoriteId = favoriteId
+        self.dateFavorited = dateFavorited
+    }
+    
+    // Custom coding keys for the core properties
+    private enum CodingKeys: String, CodingKey {
+        case id, title, subtitle, duration, imageUrl, isPremium, tag
+        case isFavorite, favoriteId, dateFavorited
+    }
+    
+    // Custom decoder to handle missing favorite fields
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        // Decode required fields
+        id = try container.decode(String.self, forKey: .id)
+        title = try container.decode(String.self, forKey: .title)
+        subtitle = try container.decode(String.self, forKey: .subtitle)
+        duration = try container.decode(String.self, forKey: .duration)
+        imageUrl = try container.decode(String.self, forKey: .imageUrl)
+        isPremium = try container.decode(Bool.self, forKey: .isPremium)
+        tag = try container.decodeIfPresent(String.self, forKey: .tag)
+        
+        // Decode favorite fields with defaults if missing
+        isFavorite = try container.decodeIfPresent(Bool.self, forKey: .isFavorite) ?? false
+        favoriteId = try container.decodeIfPresent(String.self, forKey: .favoriteId)
+        dateFavorited = try container.decodeIfPresent(Date.self, forKey: .dateFavorited)
+    }
+    
+    // Custom encoder to include all fields when saving
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(id, forKey: .id)
+        try container.encode(title, forKey: .title)
+        try container.encode(subtitle, forKey: .subtitle)
+        try container.encode(duration, forKey: .duration)
+        try container.encode(imageUrl, forKey: .imageUrl)
+        try container.encode(isPremium, forKey: .isPremium)
+        try container.encodeIfPresent(tag, forKey: .tag)
+        try container.encode(isFavorite, forKey: .isFavorite)
+        try container.encodeIfPresent(favoriteId, forKey: .favoriteId)
+        try container.encodeIfPresent(dateFavorited, forKey: .dateFavorited)
+    }
 }

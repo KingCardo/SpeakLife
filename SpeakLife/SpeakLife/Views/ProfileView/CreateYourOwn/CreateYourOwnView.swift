@@ -18,7 +18,29 @@ struct CreateYourOwnView: View {
     @State private var alertText = ""
     @State private var selectedDeclaration: Declaration?
     @State private var animate = false
+    @State private var selectedContentType: ContentType = .affirmation
     
+    private var filteredDeclarations: [Declaration] {
+        declarationStore.createOwn.filter { $0.contentType == selectedContentType }
+    }
+    
+    private var emptyStateTitle: String {
+        switch selectedContentType {
+        case .affirmation:
+            return "You're just one affirmation away\nfrom breakthrough."
+        case .journal:
+            return "Start your spiritual journey\nwith journaling."
+        }
+    }
+    
+    private var emptyStateSubtitle: String {
+        switch selectedContentType {
+        case .affirmation:
+            return "Speak what God says. See what God promised."
+        case .journal:
+            return "Record God's faithfulness and your growth."
+        }
+    }
     
     var body: some View {
         ZStack {
@@ -36,7 +58,8 @@ struct CreateYourOwnView: View {
             if showAlert {
                 AffirmationAlertView(
                     affirmationText: $alertText,
-                    showAlert: $showAlert
+                    showAlert: $showAlert,
+                    contentType: selectedContentType
                 ) {
                     save()
                     declarationStore.requestReview.toggle()
@@ -52,9 +75,47 @@ struct CreateYourOwnView: View {
     
     @ViewBuilder
     func configureView() -> some View {
-        if declarationStore.createOwn.isEmpty {
-            VStack(spacing: 24) {
+        if filteredDeclarations.isEmpty {
+            VStack(spacing: 32) {
                 Spacer()
+                    .frame(height: 60) // Push content down from navigation area
+                
+                // Custom SLBlue Segmented Control
+                VStack(spacing: 16) {
+                    HStack(spacing: 0) {
+                        ForEach(ContentType.allCases, id: \.self) { contentType in
+                            Button(action: {
+                                withAnimation(.easeInOut(duration: 0.2)) {
+                                    selectedContentType = contentType
+                                }
+                            }) {
+                                Text(contentType.pluralDisplayName)
+                                    .font(.system(size: 16, weight: .medium))
+                                    .foregroundColor(selectedContentType == contentType ? .white : .white.opacity(0.7))
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 8)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 6)
+                                            .fill(selectedContentType == contentType ? 
+                                                  Constants.SLBlue.opacity(0.9) : 
+                                                  Color.clear)
+                                    )
+                                    .animation(.easeInOut(duration: 0.2), value: selectedContentType)
+                            }
+                        }
+                    }
+                    .padding(2)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Constants.SLBlue.opacity(0.3))
+                            .shadow(color: Constants.SLBlue.opacity(0.2), radius: 2, x: 0, y: 1)
+                    )
+                    .padding(.horizontal, 20)
+                    
+                }
+                
+                Spacer()
+                    .frame(height: 20)
                 
                 ZStack {
                     Circle()
@@ -68,14 +129,16 @@ struct CreateYourOwnView: View {
                 }
                 
                 VStack(spacing: 8) {
-                    Text("You're just one affirmation away\nfrom breakthrough.")
+                    Text(emptyStateTitle)
                         .font(.system(size: 20, weight: .semibold))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)
+                        .animation(.easeInOut(duration: 0.3), value: selectedContentType)
                     
-                    Text("Speak what God says. See what God promised.")
+                    Text(emptyStateSubtitle)
                         .font(.system(size: 14, weight: .regular))
                         .foregroundColor(.white.opacity(0.8))
+                        .animation(.easeInOut(duration: 0.3), value: selectedContentType)
                 }
                 .padding(.horizontal)
                 
@@ -88,15 +151,48 @@ struct CreateYourOwnView: View {
             }
         } else {
             NavigationView {
-                ZStack {
-                    // 1. Background gradient
-                    Gradients().speakLifeCYOCell
-                        .ignoresSafeArea()
-                   // VStack {
-                      
-                        // 2. Main List with transparent background
+                VStack(spacing: 0) {
+                    // Custom SLBlue Segmented Control
+                    HStack(spacing: 0) {
+                        ForEach(ContentType.allCases, id: \.self) { contentType in
+                            Button(action: {
+                                withAnimation(.easeInOut(duration: 0.2)) {
+                                    selectedContentType = contentType
+                                }
+                            }) {
+                                Text(contentType.pluralDisplayName)
+                                    .font(.system(size: 16, weight: .medium))
+                                    .foregroundColor(selectedContentType == contentType ? .white : .white.opacity(0.7))
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 8)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 6)
+                                            .fill(selectedContentType == contentType ? 
+                                                  Constants.SLBlue.opacity(0.9) : 
+                                                  Color.clear)
+                                    )
+                                    .animation(.easeInOut(duration: 0.2), value: selectedContentType)
+                            }
+                        }
+                    }
+                    .padding(2)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Constants.SLBlue.opacity(0.3))
+                            .shadow(color: Constants.SLBlue.opacity(0.2), radius: 2, x: 0, y: 1)
+                    )
+                    .padding(.horizontal, 16)
+                    .padding(.top, 8)
+                    .padding(.bottom, 12)
+                    
+                    ZStack {
+                        // Background gradient
+                        Gradients().speakLifeCYOCell
+                            .ignoresSafeArea()
+                        
+                        // Main List with transparent background
                         List {
-                            ForEach(declarationStore.createOwn.reversed()) { declaration in
+                            ForEach(filteredDeclarations.reversed()) { declaration in
                                 ContentRow(declaration, isEditable: true) { declarationString, delete in
                                     if delete {
                                         declarationStore.removeOwn(declaration: declaration)
@@ -151,7 +247,8 @@ struct CreateYourOwnView: View {
                     }
                     .hidden()
                 }
-                .navigationTitle("Affirmations")
+                } // Close VStack
+                .navigationTitle(selectedContentType.pluralDisplayName)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
@@ -164,6 +261,10 @@ struct CreateYourOwnView: View {
                         }
                     }
                 }
+                .navigationBarTitleDisplayMode(.large)
+                .toolbarBackground(Constants.SLBlue.opacity(0.8), for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .toolbarColorScheme(.dark, for: .navigationBar)
             }
         }
     }
@@ -204,7 +305,7 @@ struct CreateYourOwnView: View {
         }
     }
     private func save() {
-        declarationStore.createDeclaration(alertText)
+        declarationStore.createDeclaration(alertText, contentType: selectedContentType)
         alertText = ""
         Analytics.logEvent(Event.addYourOwnSaved, parameters: nil)
     }
@@ -267,6 +368,7 @@ struct AffirmationAlertView: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @Binding var affirmationText: String
     @Binding var showAlert: Bool
+    var contentType: ContentType = .affirmation
     var closure: (() -> Void)?
     @State private var animateGlow = false
     
@@ -283,12 +385,20 @@ struct AffirmationAlertView: View {
                 .onTapGesture { dismiss() }
             
             VStack(spacing: 20) {
-                Text("Create Your Own")
-                    .font(.subheadline)
-                    .foregroundColor(.white.opacity(0.6))
-                    .padding(.top, 8)
+                HStack(spacing: 8) {
+                    Image(systemName: contentType.icon)
+                        .font(.subheadline)
+                        .foregroundColor(.white.opacity(0.6))
+                    
+                    Text("Create Your Own \(contentType.displayName)")
+                        .font(.subheadline)
+                        .foregroundColor(.white.opacity(0.6))
+                }
+                .padding(.top, 8)
                 
-                Text("What do you want to journal or speak into your life?")
+                Text(contentType == .affirmation ? 
+                     "What do you want to speak into your life?" : 
+                     "What is God showing you today?")
                     .font(.title3.bold())
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)

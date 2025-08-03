@@ -196,20 +196,28 @@ final class EnhancedStreakViewModel: ObservableObject {
         let today = Date()
         todayChecklist.completedAt = today
         
-        let wasNewRecord = streakStats.currentStreak >= streakStats.longestStreak
         let previousStreak = streakStats.currentStreak
+        let wasNewRecord = streakStats.currentStreak >= streakStats.longestStreak
         streakStats.updateStreak(for: today)
         
         // Update tasks for new streak milestone
         updateTasksForNewStreak()
         
+        // Capture the current streak after update for celebration
+        let currentStreakNumber = streakStats.currentStreak
+        let isNewRecord = wasNewRecord && currentStreakNumber > streakStats.longestStreak
+        
+        print("🔥 CELEBRATION DEBUG: Creating celebration with streak number: \(currentStreakNumber)")
+        print("🔥 CELEBRATION DEBUG: Is new record: \(isNewRecord)")
+        print("🔥 CELEBRATION DEBUG: Previous streak was: \(previousStreak)")
+        
         // Create celebration data
         celebrationData = CompletionCelebration(
-            streakNumber: streakStats.currentStreak,
-            isNewRecord: wasNewRecord && streakStats.currentStreak > streakStats.longestStreak,
+            streakNumber: currentStreakNumber,
+            isNewRecord: isNewRecord,
             motivationalMessage: CompletionCelebration.generateMessage(
-                for: streakStats.currentStreak,
-                isRecord: wasNewRecord && streakStats.currentStreak > streakStats.longestStreak
+                for: currentStreakNumber,
+                isRecord: isNewRecord
             ),
             shareImage: generateShareImage()
         )

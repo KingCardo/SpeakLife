@@ -35,4 +35,18 @@ struct Event {
     static let devotionalShared = "devotionalShared"
     static let ninetyOnePsalmTapped = "ninetyOnePsalmTapped"
     static let leaveReviewShown = "leaveReviewShown"
+    
+    // MARK: - Audio Favorites Events
+    static let audioFavoriteTapped = "audioFavoriteTapped"
+    static let audioUnfavoriteTapped = "audioUnfavoriteTapped"
+    static let favoriteAudioPlayed = "favoriteAudioPlayed"
+    static let favoritesCategoryViewed = "favoritesCategoryViewed"
+    static let favoriteAudioShared = "favoriteAudioShared"
+    static let favoriteAudioRemoved = "favoriteAudioRemoved"
+    static let favoritesCleared = "favoritesCleared"
+    static let favoritesSorted = "favoritesSorted"
+    static let favoritesSearched = "favoritesSearched"
+    static let favoriteAudioReplayStarted = "favoriteAudioReplayStarted"
+    static let favoriteFromPlayer = "favoriteFromPlayer"
+    static let unfavoriteFromPlayer = "unfavoriteFromPlayer"
 }

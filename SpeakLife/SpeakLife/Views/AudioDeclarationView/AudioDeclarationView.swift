@@ -20,6 +20,7 @@ struct UpNextCell: View {
     @State private var showToast = false
     @State private var isTapped = false
     @State private var animateGlow = false
+    @State private var showFavoriteAnimation = false
 
     var body: some View {
         ZStack {
@@ -58,6 +59,20 @@ struct UpNextCell: View {
                     }
                     
                     Spacer()
+                    
+                    // Favorite Button
+                    Button(action: {
+                        toggleFavorite()
+                    }) {
+                        Image(systemName: viewModel.favoritesManager.isFavorite(item) ? "heart.fill" : "heart")
+                            .font(.system(size: 20, weight: .medium))
+                            .foregroundColor(viewModel.favoritesManager.isFavorite(item) ? .pink : .white.opacity(0.7))
+                            .scaleEffect(showFavoriteAnimation ? 1.3 : 1.0)
+                            .animation(.spring(response: 0.3, dampingFraction: 0.6), value: showFavoriteAnimation)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .contentShape(Circle())
+                    .frame(width: 44, height: 44)
                 }
                 .contentShape(Rectangle())
                 .padding(.vertical, 16)
@@ -79,7 +94,7 @@ struct UpNextCell: View {
 
             if showToast {
                 VStack {
-                    Text("Added to queue")
+                    Text(viewModel.favoritesManager.isFavorite(item) ? "Added to Favorites" : "Removed from Favorites")
                         .foregroundColor(.white)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
@@ -90,6 +105,36 @@ struct UpNextCell: View {
                 }
                 .transition(.opacity)
                 .zIndex(1)
+            }
+        }
+    }
+    
+    // MARK: - Favorite Actions
+    private func toggleFavorite() {
+        // Haptic feedback
+        let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
+        impactFeedback.impactOccurred()
+        
+        // Animate favorite button
+        withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+            showFavoriteAnimation = true
+        }
+        
+        // Reset animation after delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                showFavoriteAnimation = false
+            }
+        }
+        
+        // Toggle favorite status
+        viewModel.favoritesManager.toggleFavorite(item)
+        
+        // Show toast for feedback
+        showToast = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            withAnimation {
+                showToast = false
             }
         }
     }
@@ -112,6 +157,7 @@ struct ErrorWrapper: Identifiable {
 }
 
 enum Filter: String {
+    case favorites = "Favorites"
     case declarations = "Mountain-Moving Prayers"
     case bedtimeStories = "Bedtime Stories"
     case gospel = "Gospel"
@@ -233,6 +279,9 @@ struct AudioDeclarationView: View {
                     presentDevotionalSubscriptionView = false
                 }
             }
+            .onAppear {
+                viewModel.fetchAudio(version: subscriptionStore.audioRemoteVersion)
+            }
         }
     }
     
@@ -241,14 +290,37 @@ struct AudioDeclarationView: View {
             ForEach(viewModel.filters, id: \.self) { filter in
                 Button(action: {
                     viewModel.selectedFilter = filter
+                    if filter == .favorites {
+                        AudioAnalytics.shared.trackFavoritesCategoryViewed(
+                            favoritesCount: viewModel.favoritesManager.favoritesCount
+                        )
+                    }
                 }) {
-                    Text(filter.rawValue)
-                        .font(.caption)
-                        .padding(.horizontal, 15)
-                        .padding(.vertical, 10)
-                        .background(viewModel.selectedFilter == filter ? Constants.DAMidBlue : Color.gray.opacity(0.2))
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
+                    HStack(spacing: 6) {
+                        if filter == .favorites {
+                            Image(systemName: "heart.fill")
+                                .font(.caption2)
+                                .foregroundColor(viewModel.selectedFilter == filter ? .white : .pink)
+                        }
+                        
+                        Text(filter.rawValue)
+                            .font(.caption)
+                        
+                        if filter == .favorites && viewModel.favoritesManager.favoritesCount > 0 {
+                            Text("(\(viewModel.favoritesManager.favoritesCount))")
+                                .font(.caption2)
+                                .foregroundColor(.white.opacity(0.8))
+                        }
+                    }
+                    .padding(.horizontal, 15)
+                    .padding(.vertical, 10)
+                    .background(
+                        viewModel.selectedFilter == filter ? 
+                        (filter == .favorites ? Color.pink : Constants.DAMidBlue) :
+                        Color.gray.opacity(0.2)
+                    )
+                    .foregroundColor(.white)
+                    .cornerRadius(20)
                 }
             }
         }
@@ -256,8 +328,44 @@ struct AudioDeclarationView: View {
     }
     
     func episodeRow(_ proxy: GeometryProxy) -> some View {
-        List {
-            ForEach(viewModel.filteredContent) { item in
+        Group {
+            if viewModel.selectedFilter == .favorites && viewModel.filteredContent.isEmpty {
+                // Empty favorites state
+                VStack(spacing: 20) {
+                    Image(systemName: "heart.text.square")
+                        .resizable()
+                        .frame(width: 80, height: 80)
+                        .foregroundColor(.white.opacity(0.6))
+                    
+                    Text("No Audio Favorites Yet")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                    
+                    Text("Tap the heart icon on any audio to add it to your favorites.")
+                        .font(.body)
+                        .foregroundColor(.white.opacity(0.7))
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 40)
+                    
+                    Button("Browse Audio") {
+                        viewModel.selectedFilter = .godsHeart
+                    }
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 24)
+                    .padding(.vertical, 12)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.pink.opacity(0.8))
+                    )
+                    .padding(.top, 10)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding(40)
+            } else {
+                List {
+                    ForEach(viewModel.filteredContent) { item in
                 Button(action: {
                         handleItemTap(item)
                 }) {
@@ -273,21 +381,26 @@ struct AudioDeclarationView: View {
                     }
                     .listRowInsets(EdgeInsets()) // remove default padding
                     .background(Color.clear)
-//                    .swipeActions(edge: .leading) {
-//                        Button {
-//                            handleSwipeRightAction(for: item)
-//                        } label: {
-//                            Label("Mark", systemImage: "text.insert")
-//                        }
-//                        .tint(.green)
-//                    }
+                    .swipeActions(edge: .leading) {
+                        Button {
+                            handleFavoriteSwipeAction(for: item)
+                        } label: {
+                            Label(
+                                viewModel.favoritesManager.isFavorite(item) ? "Unfavorite" : "Favorite",
+                                systemImage: viewModel.favoritesManager.isFavorite(item) ? "heart.slash" : "heart.fill"
+                            )
+                        }
+                        .tint(viewModel.favoritesManager.isFavorite(item) ? .gray : .pink)
+                    }
                 }
                 .disabled(viewModel.fetchingAudioIDs.contains(item.id))
                 .listRowBackground(Color.clear)
             }
+                }
+                .scrollContentBackground(.hidden)
+                .background(.clear)
+            }
         }
-        .scrollContentBackground(.hidden)
-        .background(.clear)
     }
     
     @ViewBuilder
@@ -340,12 +453,14 @@ struct AudioDeclarationView: View {
         }
     }
     
-//    private func handleSwipeRightAction(for item: AudioDeclaration) {
-//        if item.isPremium, !subscriptionStore.isPremium {
-//            return
-//        }
-//        audioViewModel.addToQueue(item: item)
-//    }
+    private func handleFavoriteSwipeAction(for item: AudioDeclaration) {
+        // Haptic feedback
+        let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
+        impactFeedback.impactOccurred()
+        
+        // Toggle favorite status
+        viewModel.favoritesManager.toggleFavorite(item)
+    }
 }
 
 

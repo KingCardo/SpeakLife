@@ -39,10 +39,22 @@ struct ContentRow: View {
             onSelect?()
         }) {
             HStack(spacing: 12) {
-                Text(declaration.text)
-                    .font(.system(size: 17, weight: .semibold, design: .rounded))
-                    .foregroundColor(.white)
-                    .lineLimit(2)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(declaration.text)
+                        .font(.system(size: 17, weight: .semibold, design: .rounded))
+                        .foregroundColor(.white)
+                        .lineLimit(2)
+                    
+                    HStack(spacing: 4) {
+                        Image(systemName: declaration.contentType.icon)
+                            .font(.caption2)
+                            .foregroundColor(.white.opacity(0.6))
+                        
+                        Text(declaration.contentType.displayName)
+                            .font(.caption2)
+                            .foregroundColor(.white.opacity(0.6))
+                    }
+                }
 
                 Spacer()
 

@@ -425,6 +425,11 @@ struct EnhancedStreakStatsView: View {
                 subtitle: viewModel.streakStats.currentStreak == 1 ? "day" : "days",
                 isHero: true
             )
+            .onAppear {
+                print("🔥 STATS DEBUG: Current streak displayed in stats: \(viewModel.streakStats.currentStreak)")
+                print("🔥 STATS DEBUG: Longest streak: \(viewModel.streakStats.longestStreak)")
+                print("🔥 STATS DEBUG: Total completed: \(viewModel.streakStats.totalDaysCompleted)")
+            }
             
             // Secondary stats in elegant grid
             HStack(spacing: 16) {
@@ -521,6 +526,9 @@ struct StreakShareButton: View {
                 
                 Text("Share My \(viewModel.streakStats.currentStreak) Day Streak!")
                     .font(.system(size: 16, weight: .bold, design: .rounded))
+                    .onAppear {
+                        print("🔥 SHARE BUTTON DEBUG: Current streak displayed: \(viewModel.streakStats.currentStreak)")
+                    }
             }
             .foregroundColor(.white)
             .padding(.horizontal, 24)
