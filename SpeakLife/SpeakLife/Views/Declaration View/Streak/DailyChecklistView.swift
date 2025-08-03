@@ -151,7 +151,7 @@ struct DailyTaskRow: View {
             
             // Task Icon
             Image(systemName: task.icon)
-                .font(.system(size: 20, weight: .medium))
+                .font(.system(size: 16, weight: .medium))
                 .foregroundColor(.white)
                 .frame(width: 32, height: 32)
                 .background(
@@ -169,7 +169,7 @@ struct DailyTaskRow: View {
                 Text(task.description)
                     .font(.system(size: 14, weight: .regular))
                     .foregroundColor(.white.opacity(0.8))
-                    .lineLimit(2)
+                    .lineLimit(4)
             }
             
             Spacer()
