@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseStorage
 import SwiftUI
+import Combine
 
 final class AudioDeclarationViewModel: ObservableObject {
     @Published var audioDeclarations: [AudioDeclaration]  = []
@@ -29,16 +30,23 @@ final class AudioDeclarationViewModel: ObservableObject {
     @Published var filters: [Filter] = [.favorites, .godsHeart, .speaklife, .growWithJesus, .psalm91, .divineHealth, .magnify,/*.imagination,.devotional,*/ .declarations, .gospel, .meditation, .bedtimeStories]
 
     // Favorites manager
-    @StateObject var favoritesManager = AudioFavoritesManager()
+    let favoritesManager = AudioFavoritesManager()
 
     @Published var selectedFilter: Filter = .godsHeart
     private let storage = Storage.storage()
     private let fileManager = FileManager.default
     @AppStorage("shouldClearCachev4") private var shouldClearCachev4 = true
     private let service: APIService = LocalAPIClient()
+    private var cancellables = Set<AnyCancellable>()
+    
     init() {
-
-      }
+        // Observe changes in favorites manager to trigger UI updates
+        favoritesManager.objectWillChange
+            .sink { [weak self] _ in
+                self?.objectWillChange.send()
+            }
+            .store(in: &cancellables)
+    }
 
     
     var filteredContent: [AudioDeclaration] {

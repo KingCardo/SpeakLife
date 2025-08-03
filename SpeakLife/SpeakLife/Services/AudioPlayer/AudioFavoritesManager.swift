@@ -34,7 +34,7 @@ final class AudioFavoritesManager: ObservableObject {
     func toggleFavorite(_ audio: AudioDeclaration) {
         var updatedAudio = audio
         
-        if audio.isFavorite {
+        if isFavorite(audio) {
             // Remove from favorites
             updatedAudio.isFavorite = false
             updatedAudio.favoriteId = nil

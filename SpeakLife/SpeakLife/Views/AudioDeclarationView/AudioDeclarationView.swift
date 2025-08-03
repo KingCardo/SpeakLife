@@ -120,21 +120,22 @@ struct UpNextCell: View {
             showFavoriteAnimation = true
         }
         
-        // Reset animation after delay
+        // Delay the actual toggle to allow animation to complete
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            // Reset animation
             withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
                 showFavoriteAnimation = false
             }
-        }
-        
-        // Toggle favorite status
-        viewModel.favoritesManager.toggleFavorite(item)
-        
-        // Show toast for feedback
-        showToast = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            withAnimation {
-                showToast = false
+            
+            // Toggle favorite status after animation
+            viewModel.favoritesManager.toggleFavorite(item)
+            
+            // Show toast for feedback after toggle
+            showToast = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                withAnimation {
+                    showToast = false
+                }
             }
         }
     }
@@ -458,8 +459,11 @@ struct AudioDeclarationView: View {
         let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
         impactFeedback.impactOccurred()
         
-        // Toggle favorite status
-        viewModel.favoritesManager.toggleFavorite(item)
+        // Add a small delay to allow swipe animation to complete
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            // Toggle favorite status
+            viewModel.favoritesManager.toggleFavorite(item)
+        }
     }
 }
 
