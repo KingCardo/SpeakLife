@@ -374,14 +374,18 @@ struct DeclarationContentView: View {
                     Button("Instagram Stories") {
                         withAnimation {
                             appState.showScreenshotLabel = true
-                            
                         }
-                        setImage() {
-                            if let image = prepareShareItems().first {
-                                shareToInstagramStories(image: image)
-                                withAnimation {
-                                    appState.showScreenshotLabel = false
-                                    
+                        DispatchQueue.main.async {
+                            RunLoop.main.perform {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                    setImage() {
+                                        if let image = prepareShareItems().first {
+                                            shareToInstagramStories(image: image)
+                                            withAnimation {
+                                                appState.showScreenshotLabel = false
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
