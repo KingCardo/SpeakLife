@@ -42,8 +42,9 @@ struct BadgeUnlockView: View {
                 )
             }
             
-            VStack(spacing: 40) {
+            VStack(spacing: 30) {
                 Spacer()
+                    .frame(minHeight: 20)
                 
                 // "BADGE UNLOCKED!" text with typewriter effect
                 VStack(spacing: 20) {
@@ -110,12 +111,13 @@ struct BadgeUnlockView: View {
                         .offset(y: titleOffset)
                     
                     Text(badge.description)
-                        .font(.system(size: 14, weight: .medium, design: .rounded))
+                        .font(.system(size: 16, weight: .medium, design: .rounded))
                         .foregroundColor(.white.opacity(0.9))
                         .multilineTextAlignment(.center)
-                        .lineLimit(4)
-                        .minimumScaleFactor(0.7)
-                        .padding(.horizontal, 40)
+                        .lineLimit(nil) // Allow unlimited lines
+                        .fixedSize(horizontal: false, vertical: true) // Allow vertical expansion
+                        .frame(maxWidth: UIScreen.main.bounds.width - 60) // Ensure proper width
+                        .padding(.horizontal, 30)
                         .opacity(descriptionOpacity)
                     
                     // Rarity badge
@@ -133,8 +135,10 @@ struct BadgeUnlockView: View {
                     }
                     .opacity(descriptionOpacity)
                 }
+                .frame(maxWidth: .infinity)
                 
                 Spacer()
+                    .frame(minHeight: 20)
                 
                 // Continue button
                 if celebrationComplete {
@@ -146,7 +150,6 @@ struct BadgeUnlockView: View {
                     .transition(.scale.combined(with: .opacity))
                 }
             }
-            .padding(.horizontal, 20)
         }
         .onAppear {
             startCelebrationSequence()
