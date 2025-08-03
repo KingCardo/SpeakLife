@@ -75,116 +75,88 @@ struct CreateYourOwnView: View {
     
     @ViewBuilder
     func configureView() -> some View {
-        if filteredDeclarations.isEmpty {
-            VStack(spacing: 32) {
-                Spacer()
-                    .frame(height: 60) // Push content down from navigation area
-                
-                // Custom SLBlue Segmented Control
-                VStack(spacing: 16) {
-                    HStack(spacing: 0) {
-                        ForEach(ContentType.allCases, id: \.self) { contentType in
-                            Button(action: {
-                                withAnimation(.easeInOut(duration: 0.2)) {
-                                    selectedContentType = contentType
-                                }
-                            }) {
-                                Text(contentType.pluralDisplayName)
-                                    .font(.system(size: 16, weight: .medium))
-                                    .foregroundColor(selectedContentType == contentType ? .white : .white.opacity(0.7))
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.vertical, 8)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 6)
-                                            .fill(selectedContentType == contentType ? 
-                                                  Constants.SLBlue.opacity(0.9) : 
-                                                  Color.clear)
-                                    )
-                                    .animation(.easeInOut(duration: 0.2), value: selectedContentType)
+        NavigationView {
+            VStack(spacing: 0) {
+                // Custom SLBlue Segmented Control - Always visible
+                HStack(spacing: 0) {
+                    ForEach(ContentType.allCases, id: \.self) { contentType in
+                        Button(action: {
+                            withAnimation(.easeInOut(duration: 0.2)) {
+                                selectedContentType = contentType
                             }
+                        }) {
+                            Text(contentType.pluralDisplayName)
+                                .font(.system(size: 16, weight: .medium))
+                                .foregroundColor(selectedContentType == contentType ? .white : .white.opacity(0.7))
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 8)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .fill(selectedContentType == contentType ? 
+                                              Constants.SLBlue.opacity(0.9) : 
+                                              Color.clear)
+                                )
+                                .animation(.easeInOut(duration: 0.2), value: selectedContentType)
                         }
                     }
-                    .padding(2)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Constants.SLBlue.opacity(0.3))
-                            .shadow(color: Constants.SLBlue.opacity(0.2), radius: 2, x: 0, y: 1)
-                    )
-                    .padding(.horizontal, 20)
-                    
                 }
+                .padding(2)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Constants.SLBlue.opacity(0.3))
+                        .shadow(color: Constants.SLBlue.opacity(0.2), radius: 2, x: 0, y: 1)
+                )
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 12)
                 
-                Spacer()
-                    .frame(height: 20)
-                
-                ZStack {
-                    Circle()
-                        .fill(Constants.DAMidBlue.opacity(0.15))
-                        .frame(width: 170, height: 170)
-                        .scaleEffect(animate ? 1.1 : 1)
-                        .opacity(animate ? 0.8 : 0.3)
-                        .animation(.easeInOut(duration: 1.8).repeatForever(autoreverses: true), value: animate)
-                    
-                    AppLogo(height: 100)
-                }
-                
-                VStack(spacing: 8) {
-                    Text(emptyStateTitle)
-                        .font(.system(size: 20, weight: .semibold))
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.white)
-                        .animation(.easeInOut(duration: 0.3), value: selectedContentType)
-                    
-                    Text(emptyStateSubtitle)
-                        .font(.system(size: 14, weight: .regular))
-                        .foregroundColor(.white.opacity(0.8))
-                        .animation(.easeInOut(duration: 0.3), value: selectedContentType)
-                }
-                .padding(.horizontal)
-                
-                addAffirmationsButton
-                
-                Spacer()
-            }
-            .onAppear {
-                animate = true
-            }
-        } else {
-            NavigationView {
-                VStack(spacing: 0) {
-                    // Custom SLBlue Segmented Control
-                    HStack(spacing: 0) {
-                        ForEach(ContentType.allCases, id: \.self) { contentType in
-                            Button(action: {
-                                withAnimation(.easeInOut(duration: 0.2)) {
-                                    selectedContentType = contentType
-                                }
-                            }) {
-                                Text(contentType.pluralDisplayName)
-                                    .font(.system(size: 16, weight: .medium))
-                                    .foregroundColor(selectedContentType == contentType ? .white : .white.opacity(0.7))
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.vertical, 8)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 6)
-                                            .fill(selectedContentType == contentType ? 
-                                                  Constants.SLBlue.opacity(0.9) : 
-                                                  Color.clear)
-                                    )
-                                    .animation(.easeInOut(duration: 0.2), value: selectedContentType)
+                // Content Area - conditionally show empty state or list
+                if filteredDeclarations.isEmpty {
+                    // Empty state for current tab
+                    ZStack {
+                        // Background gradient - same as list view
+                        Gradients().speakLifeCYOCell
+                            .ignoresSafeArea()
+                        
+                        VStack(spacing: 32) {
+                            Spacer()
+                                .frame(height: 40)
+                            
+                            ZStack {
+                                Circle()
+                                    .fill(Constants.DAMidBlue.opacity(0.15))
+                                    .frame(width: 170, height: 170)
+                                    .scaleEffect(animate ? 1.1 : 1)
+                                    .opacity(animate ? 0.8 : 0.3)
+                                    .animation(.easeInOut(duration: 1.8).repeatForever(autoreverses: true), value: animate)
+                                
+                                AppLogo(height: 100)
                             }
+                            
+                            VStack(spacing: 8) {
+                                Text(emptyStateTitle)
+                                    .font(.system(size: 20, weight: .semibold))
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(.white)
+                                    .animation(.easeInOut(duration: 0.3), value: selectedContentType)
+                                
+                                Text(emptyStateSubtitle)
+                                    .font(.system(size: 14, weight: .regular))
+                                    .foregroundColor(.white.opacity(0.8))
+                                    .animation(.easeInOut(duration: 0.3), value: selectedContentType)
+                            }
+                            .padding(.horizontal)
+                            
+                            addAffirmationsButton
+                            
+                            Spacer()
+                        }
+                        .onAppear {
+                            animate = true
                         }
                     }
-                    .padding(2)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Constants.SLBlue.opacity(0.3))
-                            .shadow(color: Constants.SLBlue.opacity(0.2), radius: 2, x: 0, y: 1)
-                    )
-                    .padding(.horizontal, 16)
-                    .padding(.top, 8)
-                    .padding(.bottom, 12)
-                    
+                } else {
+                    // List view for current tab
                     ZStack {
                         // Background gradient
                         Gradients().speakLifeCYOCell
@@ -227,30 +199,28 @@ struct CreateYourOwnView: View {
                             .listRowInsets(EdgeInsets())
                             .listRowBackground(Color.clear)
                         }
-                           
                         .scrollContentBackground(.hidden)
                         .background(Color.clear)
                         
-                       
-                        
-                 //   }
-                    // 3. NavigationLink hidden trigger
-                    NavigationLink(
-                        destination:
-                            AffirmationDetailView(affirmation: selectedDeclaration ?? declarationStore.createOwn.first!),
-                        isActive: Binding(
-                            get: { selectedDeclaration != nil },
-                            set: { if !$0 { selectedDeclaration = nil } }
-                        )
-                    ) {
-                        EmptyView()
+                        // NavigationLink hidden trigger
+                        NavigationLink(
+                            destination:
+                                AffirmationDetailView(affirmation: selectedDeclaration ?? declarationStore.createOwn.first!),
+                            isActive: Binding(
+                                get: { selectedDeclaration != nil },
+                                set: { if !$0 { selectedDeclaration = nil } }
+                            )
+                        ) {
+                            EmptyView()
+                        }
+                        .hidden()
                     }
-                    .hidden()
                 }
-                } // Close VStack
-                .navigationTitle(selectedContentType.pluralDisplayName)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
+            } // Close VStack
+            .navigationTitle(selectedContentType.pluralDisplayName)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    if !filteredDeclarations.isEmpty {
                         Button(action: {
                             showAffirmationAlert()
                         }) {
@@ -261,11 +231,11 @@ struct CreateYourOwnView: View {
                         }
                     }
                 }
-                .navigationBarTitleDisplayMode(.large)
-                .toolbarBackground(Constants.SLBlue.opacity(0.8), for: .navigationBar)
-                .toolbarBackground(.visible, for: .navigationBar)
-                .toolbarColorScheme(.dark, for: .navigationBar)
             }
+            .navigationBarTitleDisplayMode(.large)
+            .toolbarBackground(Constants.SLBlue.opacity(0.8), for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarColorScheme(.dark, for: .navigationBar)
         }
     }
     
