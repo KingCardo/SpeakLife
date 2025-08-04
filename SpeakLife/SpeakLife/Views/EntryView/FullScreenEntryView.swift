@@ -88,6 +88,7 @@ struct FullScreenEntryView: View {
                     voiceManager: voiceManager,
                     viewModel: viewModel
                 )
+                .padding(.horizontal, 16)
                 .padding(.bottom, 8)
                 
                 // Save/Cancel toolbar
@@ -96,6 +97,7 @@ struct FullScreenEntryView: View {
                     onSave: handleSave,
                     onCancel: handleCancel
                 )
+                .padding(.horizontal, 16)
                 .padding(.bottom, keyboardHeight > 0 ? max(keyboardHeight - 100, 20) : 20)
             }
             

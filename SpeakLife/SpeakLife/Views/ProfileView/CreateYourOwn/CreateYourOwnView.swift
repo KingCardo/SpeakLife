@@ -44,15 +44,6 @@ struct CreateYourOwnView: View {
     
     var body: some View {
         ZStack {
-            Image(subscriptionStore.onboardingBGImage)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                .overlay(
-                    Rectangle()
-                        .fill(Color.black.opacity(0.4))
-                )
-            
             configureView()
             
         }
@@ -79,166 +70,237 @@ struct CreateYourOwnView: View {
     func configureView() -> some View {
         NavigationView {
             VStack(spacing: 0) {
-                // Custom SLBlue Segmented Control - Always visible
-                HStack(spacing: 0) {
-                    ForEach(ContentType.allCases, id: \.self) { contentType in
-                        Button(action: {
-                            withAnimation(.easeInOut(duration: 0.2)) {
-                                selectedContentType = contentType
-                            }
-                        }) {
-                            Text(contentType.pluralDisplayName)
-                                .font(.system(size: 16, weight: .medium))
-                                .foregroundColor(selectedContentType == contentType ? .white : .white.opacity(0.7))
-                                .frame(maxWidth: .infinity)
-                                .padding(.vertical, 8)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 6)
-                                        .fill(selectedContentType == contentType ? 
-                                              Constants.SLBlue.opacity(0.9) : 
-                                              Color.clear)
-                                )
-                                .animation(.easeInOut(duration: 0.2), value: selectedContentType)
-                        }
-                    }
-                }
-                .padding(2)
-                .background(
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(Constants.SLBlue.opacity(0.3))
-                        .shadow(color: Constants.SLBlue.opacity(0.2), radius: 2, x: 0, y: 1)
-                )
-                .padding(.horizontal, 16)
-                .padding(.top, 8)
-                .padding(.bottom, 12)
-                
-                // Content Area - conditionally show empty state or list
-                if filteredDeclarations.isEmpty {
-                    // Empty state for current tab
-                    ZStack {
-                        // Background gradient - same as list view
-                        Gradients().speakLifeCYOCell
-                            .ignoresSafeArea()
-                        
-                        VStack(spacing: 32) {
-                            Spacer()
-                                .frame(height: 40)
-                            
-                            ZStack {
-                                Circle()
-                                    .fill(Constants.DAMidBlue.opacity(0.15))
-                                    .frame(width: 170, height: 170)
-                                    .scaleEffect(animate ? 1.1 : 1)
-                                    .opacity(animate ? 0.8 : 0.3)
-                                    .animation(.easeInOut(duration: 1.8).repeatForever(autoreverses: true), value: animate)
-                                
-                                AppLogo(height: 100)
-                            }
-                            
-                            VStack(spacing: 8) {
-                                Text(emptyStateTitle)
-                                    .font(.system(size: 20, weight: .semibold))
-                                    .multilineTextAlignment(.center)
-                                    .foregroundColor(.white)
-                                    .animation(.easeInOut(duration: 0.3), value: selectedContentType)
-                                
-                                Text(emptyStateSubtitle)
-                                    .font(.system(size: 14, weight: .regular))
-                                    .foregroundColor(.white.opacity(0.8))
-                                    .animation(.easeInOut(duration: 0.3), value: selectedContentType)
-                            }
-                            .padding(.horizontal)
-                            
-                            addAffirmationsButton
-                            
-                            Spacer()
-                        }
-                        .onAppear {
-                            animate = true
-                        }
-                    }
-                } else {
-                    // List view for current tab
-                    ZStack {
-                        // Background gradient
-                        Gradients().speakLifeCYOCell
-                            .ignoresSafeArea()
-                        
-                        // Main List with transparent background
-                        List {
-                            ForEach(filteredDeclarations.reversed()) { declaration in
-                                ContentRow(declaration, isEditable: true) { declarationString, delete in
-                                    if delete {
-                                        declarationStore.removeOwn(declaration: declaration)
-                                    } else {
-                                        editingDeclaration = declaration
-                                        showFullScreenEntry = true
-                                    }
-                                } onSelect: {
-                                    selectedDeclaration = declaration
-                                }
-                                .listRowBackground(Color.clear)
-                            }
-                            .onDelete { indexSet in
-                                let reversed = declarationStore.createOwn.reversed()
-                                for index in indexSet {
-                                    let itemToDelete = Array(reversed)[index]
-                                    declarationStore.removeOwn(declaration: itemToDelete)
-                                }
-                            }
-                            Section {
-                                HStack {
-                                    Spacer()
-                                    HStack {
-                                        Spacer()
-                                        AppLogo(height: 80)
-                                        Spacer()
-                                    }
-                                    Spacer()
-                                }
-                                .padding(.top, 12)
-                                .padding(.bottom, 40)
-                            }
-                            .listRowInsets(EdgeInsets())
-                            .listRowBackground(Color.clear)
-                        }
-                        .scrollContentBackground(.hidden)
-                        .background(Color.clear)
-                        
-                        // NavigationLink hidden trigger
-                        NavigationLink(
-                            destination:
-                                AffirmationDetailView(affirmation: selectedDeclaration ?? declarationStore.createOwn.first!),
-                            isActive: Binding(
-                                get: { selectedDeclaration != nil },
-                                set: { if !$0 { selectedDeclaration = nil } }
-                            )
-                        ) {
-                            EmptyView()
-                        }
-                        .hidden()
-                    }
-                }
-            } // Close VStack
-            .navigationTitle(selectedContentType.pluralDisplayName)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    if !filteredDeclarations.isEmpty {
-                        Button(action: {
-                            showFullScreenEntry = true
-                        }) {
-                            Image(systemName: "plus")
-                                .font(.system(size: 22, weight: .bold))
-                                .frame(width: 30, height: 30)
-                                .foregroundColor(Constants.navBlue)
-                        }
-                    }
-                }
+                segmentedControlView
+                contentAreaView
             }
+            .background(backgroundGradient)
+            .navigationTitle(selectedContentType.pluralDisplayName)
+            .toolbar { toolbarContent }
             .navigationBarTitleDisplayMode(.large)
             .toolbarBackground(Constants.SLBlue.opacity(0.8), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
+        }
+    }
+    
+    // MARK: - Background Components
+    private var backgroundGradient: some View {
+        LinearGradient(
+            colors: [
+                Color(red: 0.1, green: 0.15, blue: 0.3),
+                Color(red: 0.08, green: 0.12, blue: 0.25)
+            ],
+            startPoint: .top,
+            endPoint: .bottom
+        )
+    }
+    
+    // MARK: - Segmented Control Components
+    private var segmentedControlView: some View {
+        HStack(spacing: 0) {
+            ForEach(ContentType.allCases, id: \.self) { contentType in
+                segmentedControlButton(for: contentType)
+            }
+        }
+        .padding(2)
+        .background(segmentedControlBackground)
+        .padding(.horizontal, 16)
+        .padding(.top, 8)
+        .padding(.bottom, 12)
+    }
+    
+    private func segmentedControlButton(for contentType: ContentType) -> some View {
+        Button(action: {
+            withAnimation(.easeInOut(duration: 0.2)) {
+                selectedContentType = contentType
+            }
+        }) {
+            Text(contentType.pluralDisplayName)
+                .font(.system(size: 16, weight: .medium))
+                .foregroundColor(selectedContentType == contentType ? .white : .white.opacity(0.7))
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 8)
+                .background(segmentedControlButtonBackground(for: contentType))
+                .animation(.easeInOut(duration: 0.2), value: selectedContentType)
+        }
+    }
+    
+    private func segmentedControlButtonBackground(for contentType: ContentType) -> some View {
+        RoundedRectangle(cornerRadius: 6)
+            .fill(selectedContentType == contentType ? 
+                .white.opacity(0.1) :
+                  Color.clear)
+    }
+    
+    private var segmentedControlBackground: some View {
+        RoundedRectangle(cornerRadius: 8)
+            .fill(Constants.SLBlue.opacity(0.2))
+            .shadow(color: Constants.SLBlue.opacity(0.4), radius: 2, x: 0, y: 1)
+    }
+    
+    // MARK: - Content Area Components
+    @ViewBuilder
+    private var contentAreaView: some View {
+        if filteredDeclarations.isEmpty {
+            emptyStateView
+                .transition(.opacity.combined(with: .scale))
+        } else {
+            declarationsListView
+                .transition(.opacity)
+        }
+    }
+    
+    // MARK: - Empty State Components
+    private var emptyStateView: some View {
+        ZStack {
+            Gradients().speakLifeCYOCell
+                .ignoresSafeArea()
+            
+            VStack(spacing: 32) {
+                Spacer().frame(height: 40)
+                animatedLogoView
+                emptyStateTextContent
+                addAffirmationsButton
+                Spacer()
+            }
+            .onAppear { animate = true }
+        }
+    }
+    
+    private var animatedLogoView: some View {
+        ZStack {
+            Circle()
+                .fill(Constants.DAMidBlue.opacity(0.15))
+                .frame(width: 170, height: 170)
+                .scaleEffect(animate ? 1.1 : 1)
+                .opacity(animate ? 0.8 : 0.3)
+                .animation(.easeInOut(duration: 1.8).repeatForever(autoreverses: true), value: animate)
+            
+            AppLogo(height: 100)
+        }
+    }
+    
+    private var emptyStateTextContent: some View {
+        VStack(spacing: 8) {
+            Text(emptyStateTitle)
+                .font(.system(size: 20, weight: .semibold))
+                .multilineTextAlignment(.center)
+                .foregroundColor(.white)
+                .animation(.easeInOut(duration: 0.3), value: selectedContentType)
+            
+            Text(emptyStateSubtitle)
+                .font(.system(size: 14, weight: .regular))
+                .foregroundColor(.white.opacity(0.8))
+                .animation(.easeInOut(duration: 0.3), value: selectedContentType)
+        }
+        .padding(.horizontal)
+    }
+    
+    // MARK: - Declarations List Components
+    private var declarationsListView: some View {
+        ZStack {
+            Gradients().speakLifeCYOCell
+                .ignoresSafeArea()
+            
+            declarationsList
+            hiddenNavigationLink
+        }
+    }
+    
+    private var declarationsList: some View {
+        List {
+            ForEach(filteredDeclarations.reversed()) { declaration in
+                declarationRow(for: declaration)
+            }
+            .onDelete(perform: deleteDeclarations)
+            
+            listFooterSection
+        }
+        .scrollContentBackground(.hidden)
+        .background(Color.clear)
+    }
+    
+    private func declarationRow(for declaration: Declaration) -> some View {
+        ContentRow(declaration, isEditable: true) { _, delete in
+            handleDeclarationAction(declaration: declaration, delete: delete)
+        } onSelect: {
+            selectedDeclaration = declaration
+        }
+        .listRowBackground(Color.clear)
+    }
+    
+    private var listFooterSection: some View {
+        Section {
+            HStack {
+                Spacer()
+                AppLogo(height: 80)
+                Spacer()
+            }
+            .padding(.top, 12)
+            .padding(.bottom, 40)
+        }
+        .listRowInsets(EdgeInsets())
+        .listRowBackground(Color.clear)
+    }
+    
+    private var hiddenNavigationLink: some View {
+        NavigationLink(
+            destination: AffirmationDetailView(affirmation: selectedDeclaration ?? declarationStore.createOwn.first!),
+            isActive: Binding(
+                get: { selectedDeclaration != nil },
+                set: { if !$0 { selectedDeclaration = nil } }
+            )
+        ) {
+            EmptyView()
+        }
+        .hidden()
+    }
+    
+    // MARK: - Toolbar Components
+    @ToolbarContentBuilder
+    private var toolbarContent: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarTrailing) {
+            if !filteredDeclarations.isEmpty {
+                addButton
+            }
+        }
+    }
+    
+    private var addButton: some View {
+        Button(action: { showFullScreenEntry = true }) {
+            Image(systemName: "plus")
+                .font(.system(size: 22, weight: .bold))
+                .frame(width: 30, height: 30)
+                .foregroundColor(Constants.navBlue)
+        }
+    }
+    
+    // MARK: - Action Handlers
+    private func handleDeclarationAction(declaration: Declaration, delete: Bool) {
+        if delete {
+            declarationStore.removeOwn(declaration: declaration)
+        } else {
+            editingDeclaration = declaration
+            showFullScreenEntry = true
+        }
+    }
+    
+    private func deleteDeclarations(at indexSet: IndexSet) {
+        let displayedDeclarations = Array(filteredDeclarations.reversed())
+        
+        // Collect items to delete first
+        var itemsToDelete: [Declaration] = []
+        for index in indexSet {
+            if index < displayedDeclarations.count {
+                itemsToDelete.append(displayedDeclarations[index])
+            }
+        }
+        
+        // Use withAnimation to ensure proper SwiftUI state management
+        withAnimation(.easeInOut(duration: 0.3)) {
+            for item in itemsToDelete {
+                declarationStore.removeOwn(declaration: item)
+            }
         }
     }
     
