@@ -76,6 +76,9 @@ final class EnhancedStreakViewModel: ObservableObject {
         
         saveData()
         checkForNewBadges()
+        
+        // Update evening notification based on current progress
+        scheduleEveningCheckIn()
     }
     
     func uncompleteTask(taskId: String) {
@@ -236,6 +239,9 @@ final class EnhancedStreakViewModel: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.checkForNewBadges()
         }
+        
+        // Schedule personalized notifications for tomorrow
+        schedulePersonalizedNotifications()
     }
     
     private func checkStreakValidity() {
@@ -1074,6 +1080,60 @@ final class EnhancedStreakViewModel: ObservableObject {
     func dismissBadgeUnlock() {
         showBadgeUnlock = false
         badgeManager.clearRecentlyUnlocked()
+    }
+    
+    // MARK: - Notification Scheduling
+    
+    private func schedulePersonalizedNotifications() {
+        let completedActivities = todayChecklist.tasks.filter { $0.isCompleted }.map { $0.name }
+        let remainingActivities = todayChecklist.tasks.filter { !$0.isCompleted }.map { $0.name }
+        let userName = getUserName()
+        
+        // Schedule evening celebration notification for today
+        NotificationManager.shared.schedulePersonalizedChecklistNotification(
+            isEvening: true,
+            userName: userName,
+            currentStreak: streakStats.currentStreak,
+            completedActivities: completedActivities,
+            remainingActivities: remainingActivities,
+            totalActivities: todayChecklist.tasks.count
+        )
+        
+        // Schedule morning motivation notification for tomorrow
+        NotificationManager.shared.schedulePersonalizedChecklistNotification(
+            isEvening: false,
+            userName: userName,
+            currentStreak: streakStats.currentStreak,
+            completedActivities: [],
+            remainingActivities: [],
+            totalActivities: 0 // Not used for morning notifications
+        )
+    }
+    
+    func scheduleEveningCheckIn() {
+        // Called during the day to schedule evening reminder based on current progress
+        let completedActivities = todayChecklist.tasks.filter { $0.isCompleted }.map { $0.name }
+        let remainingActivities = todayChecklist.tasks.filter { !$0.isCompleted }.map { $0.name }
+        let userName = getUserName()
+        
+        NotificationManager.shared.schedulePersonalizedChecklistNotification(
+            isEvening: true,
+            userName: userName,
+            currentStreak: streakStats.currentStreak,
+            completedActivities: completedActivities,
+            remainingActivities: remainingActivities,
+            totalActivities: todayChecklist.tasks.count
+        )
+    }
+    
+    private func getUserName() -> String {
+        // Try to get user name from user defaults first
+        // Fallback to "Friend" if no name is available
+        if let name = userDefaults.string(forKey: "userName"), !name.isEmpty {
+            return name
+        } else {
+            return "Friend"
+        }
     }
 }
 

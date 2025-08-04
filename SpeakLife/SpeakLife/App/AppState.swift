@@ -48,7 +48,15 @@ final class AppState: ObservableObject {
     @AppStorage("email") var email = ""
     @AppStorage("hasEmail") var needEmail = true
     @AppStorage("showQuizButton") var showQuizButton = true
-  
+    
+    // Checklist notification settings
+    @AppStorage("checklistNotificationsEnabled") var checklistNotificationsEnabled = true
+    @AppStorage("morningReminderEnabled") var morningReminderEnabled = true
+    @AppStorage("eveningCheckInEnabled") var eveningCheckInEnabled = true
+    @AppStorage("morningReminderHour") var morningReminderHour = 8
+    @AppStorage("morningReminderMinute") var morningReminderMinute = 0
+    @AppStorage("eveningCheckInHour") var eveningCheckInHour = 19
+    @AppStorage("eveningCheckInMinute") var eveningCheckInMinute = 0
     
 }
 

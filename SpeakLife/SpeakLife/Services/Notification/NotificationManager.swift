@@ -61,6 +61,9 @@ final class NotificationManager: NSObject {
         christmasReminder()
         newYearsReminder()
         thanksgivingReminder()
+        
+        // Schedule new checklist notifications
+        scheduleChecklistNotifications()
     }
     
 
@@ -712,6 +715,204 @@ final class NotificationManager: NSObject {
     
     private func removeNotifications() {
         notificationCenter.removeAllPendingNotificationRequests()
+    }
+    
+    // MARK: - Checklist Notifications
+    
+    func scheduleChecklistNotifications() {
+        scheduleMorningChecklistReminder()
+        scheduleEveningChecklistCheckIn()
+    }
+    
+    private func scheduleMorningChecklistReminder() {
+        let id = "MorningChecklistReminder"
+        
+        let morningMessages: [String] = [
+            "🌅 Day [STREAK] awaits! Continue your amazing streak with God's Word today.",
+            "⚡ New day, new grace! Complete your spiritual journey activities today.",
+            "🙏 Rise and shine, warrior! Your daily spiritual checklist is ready.",
+            "✨ Good morning! Let's make today count in your walk with God.",
+            "🔥 Start strong! Your spiritual activities are waiting to be completed.",
+            "👑 You're a child of the King! Begin your day with His promises.",
+            "🌟 Morning grace is here! Time to engage with God's Word.",
+            "💪 Ready to conquer the day spiritually? Your checklist awaits!"
+        ]
+        
+        let body = morningMessages.randomElement() ?? "🌅 Good morning! Start your day with God's Word - your spiritual checklist is ready!"
+        
+        let content = UNMutableNotificationContent()
+        content.title = "SpeakLife"
+        content.body = body
+        content.sound = UNNotificationSound.default
+        
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.autoupdatingCurrent
+        dateComponents.timeZone = TimeZone.autoupdatingCurrent
+        dateComponents.hour = 8
+        dateComponents.minute = 0
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        
+        notificationCenter.add(request) { error in
+            if let error = error {
+                print("Error scheduling morning checklist reminder: \(error)")
+            }
+        }
+    }
+    
+    private func scheduleEveningChecklistCheckIn() {
+        let id = "EveningChecklistCheckIn"
+        
+        let eveningMessages: [String] = [
+            "🌙 How did your spiritual journey go today? Check your progress!",
+            "✨ Evening check-in: Did you complete your activities with God today?",
+            "🙌 Time to celebrate or catch up on your spiritual checklist!",
+            "💫 Before bed, let's see how you did with your daily spiritual goals.",
+            "🔥 Evening reflection: Your spiritual checklist awaits your review.",
+            "👑 End the day strong - check your spiritual activity progress!",
+            "🌟 Nighttime grace: Time to complete any remaining spiritual activities.",
+            "🛡️ Warrior, how was your spiritual battle today? Check your progress!"
+        ]
+        
+        let body = eveningMessages.randomElement() ?? "🌙 Evening check-in: How did your spiritual journey go today?"
+        
+        let content = UNMutableNotificationContent()
+        content.title = "SpeakLife"
+        content.body = body
+        content.sound = UNNotificationSound.default
+        
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.autoupdatingCurrent
+        dateComponents.timeZone = TimeZone.autoupdatingCurrent
+        dateComponents.hour = 19
+        dateComponents.minute = 0
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        
+        notificationCenter.add(request) { error in
+            if let error = error {
+                print("Error scheduling evening checklist check-in: \(error)")
+            }
+        }
+    }
+    
+    // MARK: - Dynamic Checklist Notifications
+    
+    func schedulePersonalizedChecklistNotification(
+        isEvening: Bool,
+        userName: String = "Friend",
+        currentStreak: Int,
+        completedActivities: [String],
+        remainingActivities: [String],
+        totalActivities: Int
+    ) {
+        let id = isEvening ? "PersonalizedEveningNotification" : "PersonalizedMorningNotification"
+        
+        // Cancel existing personalized notification
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [id])
+        
+        let content = UNMutableNotificationContent()
+        content.title = "SpeakLife"
+        content.sound = UNNotificationSound.default
+        
+        if isEvening {
+            content.body = createEveningNotificationMessage(
+                userName: userName,
+                currentStreak: currentStreak,
+                completedActivities: completedActivities,
+                remainingActivities: remainingActivities,
+                totalActivities: totalActivities
+            )
+        } else {
+            content.body = createMorningNotificationMessage(
+                userName: userName,
+                currentStreak: currentStreak
+            )
+        }
+        
+        // Schedule for tomorrow
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.autoupdatingCurrent
+        dateComponents.timeZone = TimeZone.autoupdatingCurrent
+        dateComponents.hour = isEvening ? 19 : 8
+        dateComponents.minute = 0
+        
+        // Set to tomorrow
+        if let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date()) {
+            let tomorrowComponents = Calendar.current.dateComponents([.year, .month, .day], from: tomorrow)
+            dateComponents.year = tomorrowComponents.year
+            dateComponents.month = tomorrowComponents.month
+            dateComponents.day = tomorrowComponents.day
+        }
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        
+        notificationCenter.add(request) { error in
+            if let error = error {
+                print("Error scheduling personalized checklist notification: \(error)")
+            }
+        }
+    }
+    
+    private func createMorningNotificationMessage(userName: String, currentStreak: Int) -> String {
+        let templates = [
+            "🌅 Good morning \(userName)! Day \(currentStreak + 1) awaits - continue your amazing streak!",
+            "⚡ Rise and shine \(userName)! Ready to make day \(currentStreak + 1) count?",
+            "🔥 Morning warrior \(userName)! Your \(currentStreak + 1)-day journey with God begins now!",
+            "👑 \(userName), you're on fire! Day \(currentStreak + 1) of your spiritual journey starts now!",
+            "🌟 Hey \(userName)! Let's make day \(currentStreak + 1) your best spiritual day yet!"
+        ]
+        
+        return templates.randomElement() ?? "🌅 Good morning \(userName)! Time to continue your spiritual journey!"
+    }
+    
+    private func createEveningNotificationMessage(
+        userName: String,
+        currentStreak: Int,
+        completedActivities: [String],
+        remainingActivities: [String],
+        totalActivities: Int
+    ) -> String {
+        
+        let completedCount = completedActivities.count
+        let progress = "(\(completedCount)/\(totalActivities))"
+        
+        if remainingActivities.isEmpty {
+            // All completed - celebration messages
+            let celebrationTemplates = [
+                "🎉 Amazing \(userName)! You completed all \(totalActivities) activities today. Day \(currentStreak) strong!",
+                "✨ Perfect day \(userName)! \(totalActivities)/\(totalActivities) activities completed! 🔥",
+                "👑 Incredible \(userName)! You crushed all your spiritual goals today!",
+                "🌟 Outstanding \(userName)! Another perfect day in your \(currentStreak)-day streak!",
+                "🙌 Phenomenal \(userName)! All \(totalActivities) activities completed - you're unstoppable!"
+            ]
+            return celebrationTemplates.randomElement() ?? "🎉 Amazing work today \(userName)!"
+            
+        } else if completedCount > 0 {
+            // Partially completed - encouraging messages
+            let remaining = remainingActivities.prefix(2).joined(separator: ", ")
+            let partialTemplates = [
+                "💪 Great progress \(userName)! \(progress) Just \(remaining) left to complete your perfect day!",
+                "🔥 So close \(userName)! You've got \(remaining) remaining - finish strong!",
+                "⚡ Nice work \(userName)! \(progress) Only \(remaining) left for a complete day!",
+                "🌟 Keep going \(userName)! Just \(remaining) away from perfection \(progress)!"
+            ]
+            return partialTemplates.randomElement() ?? "💪 Keep going \(userName)! You're almost there!"
+            
+        } else {
+            // Nothing completed - gentle encouragement
+            let encouragementTemplates = [
+                "🕊️ Hey \(userName), there's still time! Spend a few moments with God before the day ends.",
+                "💛 \(userName), no pressure - even 5 minutes with God can transform your day!",
+                "🌙 It's okay \(userName)! God's grace is new every morning. Try one quick activity?",
+                "✨ \(userName), God's not keeping score - but you might feel amazing after just one activity!",
+                "🙏 \(userName), even a brief moment with God counts. Your heart matters to Him!"
+            ]
+            return encouragementTemplates.randomElement() ?? "🕊️ There's still time \(userName)! A few moments with God can make all the difference."
+        }
     }
 }
 
