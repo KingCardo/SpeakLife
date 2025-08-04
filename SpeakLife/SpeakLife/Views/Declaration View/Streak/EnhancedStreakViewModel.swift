@@ -1085,8 +1085,8 @@ final class EnhancedStreakViewModel: ObservableObject {
     // MARK: - Notification Scheduling
     
     private func schedulePersonalizedNotifications() {
-        let completedActivities = todayChecklist.tasks.filter { $0.isCompleted }.map { $0.name }
-        let remainingActivities = todayChecklist.tasks.filter { !$0.isCompleted }.map { $0.name }
+        let completedActivities = todayChecklist.tasks.filter { $0.isCompleted }.map { $0.title }
+        let remainingActivities = todayChecklist.tasks.filter { !$0.isCompleted }.map { $0.title }
         let userName = getUserName()
         
         // Schedule evening celebration notification for today
@@ -1112,8 +1112,8 @@ final class EnhancedStreakViewModel: ObservableObject {
     
     func scheduleEveningCheckIn() {
         // Called during the day to schedule evening reminder based on current progress
-        let completedActivities = todayChecklist.tasks.filter { $0.isCompleted }.map { $0.name }
-        let remainingActivities = todayChecklist.tasks.filter { !$0.isCompleted }.map { $0.name }
+        let completedActivities = todayChecklist.tasks.filter { $0.isCompleted }.map { $0.title }
+        let remainingActivities = todayChecklist.tasks.filter { !$0.isCompleted }.map { $0.title }
         let userName = getUserName()
         
         NotificationManager.shared.schedulePersonalizedChecklistNotification(
