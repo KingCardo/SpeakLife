@@ -62,6 +62,16 @@
 		4597E1EB2E3FEC72009D6C66 /* AudioAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E1E92E3FEC72009D6C66 /* AudioAnalytics.swift */; };
 		4597E1EC2E3FEC72009D6C66 /* AudioFavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E1EA2E3FEC72009D6C66 /* AudioFavoritesManager.swift */; };
 		4597E1EE2E3FECCA009D6C66 /* AudioFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E1ED2E3FECCA009D6C66 /* AudioFavoritesView.swift */; };
+		4597E1F02E412346009D6C66 /* ChecklistNotificationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E1EF2E412346009D6C66 /* ChecklistNotificationSettings.swift */; };
+		4597E21A2E4138A9009D6C66 /* ContentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2142E4138A9009D6C66 /* ContentInputView.swift */; };
+		4597E21B2E4138A9009D6C66 /* SaveConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2172E4138A9009D6C66 /* SaveConfirmationView.swift */; };
+		4597E21C2E4138A9009D6C66 /* VoiceInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2112E4138A9009D6C66 /* VoiceInputManager.swift */; };
+		4597E21D2E4138A9009D6C66 /* EntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2152E4138A9009D6C66 /* EntryViewModel.swift */; };
+		4597E21E2E4138A9009D6C66 /* VoiceMicrophoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2122E4138A9009D6C66 /* VoiceMicrophoneButton.swift */; };
+		4597E21F2E4138A9009D6C66 /* VoiceInputToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2182E4138A9009D6C66 /* VoiceInputToolbar.swift */; };
+		4597E2202E4138A9009D6C66 /* FullScreenEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2162E4138A9009D6C66 /* FullScreenEntryView.swift */; };
+		4597E2222E4146C9009D6C66 /* EntryActionToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2212E4146C9009D6C66 /* EntryActionToolbar.swift */; };
+		4597E2242E4146EF009D6C66 /* VoiceStateIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2232E4146EF009D6C66 /* VoiceStateIndicator.swift */; };
 		45A4A3A42D7BD2AC00DFCEB7 /* declarationsv7.json in Sources */ = {isa = PBXBuildFile; fileRef = 45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */; };
 		45A4A3A52D7BF62600DFCEB7 /* declarationsv7.json in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */; };
 		45A4A3CB2D869D2700DFCEB7 /* sethpiano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3CA2D869D2700DFCEB7 /* sethpiano.mp3 */; };
@@ -262,6 +272,16 @@
 		4597E1E92E3FEC72009D6C66 /* AudioAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAnalytics.swift; sourceTree = "<group>"; };
 		4597E1EA2E3FEC72009D6C66 /* AudioFavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFavoritesManager.swift; sourceTree = "<group>"; };
 		4597E1ED2E3FECCA009D6C66 /* AudioFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFavoritesView.swift; sourceTree = "<group>"; };
+		4597E1EF2E412346009D6C66 /* ChecklistNotificationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistNotificationSettings.swift; sourceTree = "<group>"; };
+		4597E2112E4138A9009D6C66 /* VoiceInputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputManager.swift; sourceTree = "<group>"; };
+		4597E2122E4138A9009D6C66 /* VoiceMicrophoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMicrophoneButton.swift; sourceTree = "<group>"; };
+		4597E2142E4138A9009D6C66 /* ContentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentInputView.swift; sourceTree = "<group>"; };
+		4597E2152E4138A9009D6C66 /* EntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewModel.swift; sourceTree = "<group>"; };
+		4597E2162E4138A9009D6C66 /* FullScreenEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenEntryView.swift; sourceTree = "<group>"; };
+		4597E2172E4138A9009D6C66 /* SaveConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveConfirmationView.swift; sourceTree = "<group>"; };
+		4597E2182E4138A9009D6C66 /* VoiceInputToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputToolbar.swift; sourceTree = "<group>"; };
+		4597E2212E4146C9009D6C66 /* EntryActionToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryActionToolbar.swift; sourceTree = "<group>"; };
+		4597E2232E4146EF009D6C66 /* VoiceStateIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceStateIndicator.swift; sourceTree = "<group>"; };
 		45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv7.json; sourceTree = "<group>"; };
 		45A4A3CA2D869D2700DFCEB7 /* sethpiano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sethpiano.mp3; sourceTree = "<group>"; };
 		45A4A3CE2D86B81900DFCEB7 /* everpresent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = everpresent.mp3; sourceTree = "<group>"; };
@@ -484,6 +504,31 @@
 			path = Streak;
 			sourceTree = "<group>";
 		};
+		4597E2132E4138A9009D6C66 /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+				4597E2112E4138A9009D6C66 /* VoiceInputManager.swift */,
+				4597E2122E4138A9009D6C66 /* VoiceMicrophoneButton.swift */,
+				4597E2232E4146EF009D6C66 /* VoiceStateIndicator.swift */,
+			);
+			path = Voice;
+			sourceTree = "<group>";
+		};
+		4597E2192E4138A9009D6C66 /* EntryView */ = {
+			isa = PBXGroup;
+			children = (
+				4597E2132E4138A9009D6C66 /* Voice */,
+				4597E2142E4138A9009D6C66 /* ContentInputView.swift */,
+				4597E2152E4138A9009D6C66 /* EntryViewModel.swift */,
+				4597E2162E4138A9009D6C66 /* FullScreenEntryView.swift */,
+				4597E2212E4146C9009D6C66 /* EntryActionToolbar.swift */,
+				4597E2172E4138A9009D6C66 /* SaveConfirmationView.swift */,
+				4597E2182E4138A9009D6C66 /* VoiceInputToolbar.swift */,
+			);
+			name = EntryView;
+			path = SpeakLife/Views/EntryView;
+			sourceTree = SOURCE_ROOT;
+		};
 		45A4A3D42D89179C00DFCEB7 /* TestimonyView */ = {
 			isa = PBXGroup;
 			children = (
@@ -626,6 +671,7 @@
 				7A601440294E574500CD2103 /* HomeView.swift */,
 				454807862E3F3CAA00B8C71B /* Badge */,
 				7AA870B828DACCB700134ADB /* Onboarding */,
+				4597E2192E4138A9009D6C66 /* EntryView */,
 				7AA8709728DACCB700134ADB /* Declaration View */,
 				7AF18C942A0CC518005A6E31 /* Devotionals */,
 				4582A9542CE690560077F555 /* AudioDeclarationView */,
@@ -850,6 +896,7 @@
 		7AA870AC28DACCB700134ADB /* RemindersView */ = {
 			isa = PBXGroup;
 			children = (
+				4597E1EF2E412346009D6C66 /* ChecklistNotificationSettings.swift */,
 				7AA870AD28DACCB700134ADB /* ReminderView.swift */,
 				7AA870AE28DACCB700134ADB /* ReminderCell.swift */,
 				7AA870AF28DACCB700134ADB /* CategoryListView.swift */,
@@ -1161,6 +1208,7 @@
 				4548075E2E3F0D8400B8C71B /* EnhancedProgressRing.swift in Sources */,
 				7AA870D028DACCB700134ADB /* ReminderView.swift in Sources */,
 				45CF271A2B4E52EF00BC8968 /* HabitScene.swift in Sources */,
+				4597E2222E4146C9009D6C66 /* EntryActionToolbar.swift in Sources */,
 				4501F3912D8926CA00315902 /* TestimonyViewModel.swift in Sources */,
 				7AF18C962A0CC532005A6E31 /* DevotionalView.swift in Sources */,
 				7AA870D828DACCB700134ADB /* CategoryChooserView.swift in Sources */,
@@ -1237,6 +1285,15 @@
 				7AA870DC28DACCB700134ADB /* TimeSlots.swift in Sources */,
 				7ABA50CB29E63178002699F1 /* PrayerServiceClient.swift in Sources */,
 				4590BF9E2BCA4F1A00CF4F54 /* FeatureView.swift in Sources */,
+				4597E21A2E4138A9009D6C66 /* ContentInputView.swift in Sources */,
+				4597E21B2E4138A9009D6C66 /* SaveConfirmationView.swift in Sources */,
+				4597E21C2E4138A9009D6C66 /* VoiceInputManager.swift in Sources */,
+				4597E21D2E4138A9009D6C66 /* EntryViewModel.swift in Sources */,
+				4597E21E2E4138A9009D6C66 /* VoiceMicrophoneButton.swift in Sources */,
+				4597E2242E4146EF009D6C66 /* VoiceStateIndicator.swift in Sources */,
+				4597E21F2E4138A9009D6C66 /* VoiceInputToolbar.swift in Sources */,
+				4597E2202E4138A9009D6C66 /* FullScreenEntryView.swift in Sources */,
+				4597E1F02E412346009D6C66 /* ChecklistNotificationSettings.swift in Sources */,
 				7AF18C8829FF8CEE005A6E31 /* TipsView.swift in Sources */,
 				458510D72B15935100230EE5 /* HideTabModifier.swift in Sources */,
 				7AF18C8C2A08CE92005A6E31 /* SpeechSynthesizer.swift in Sources */,

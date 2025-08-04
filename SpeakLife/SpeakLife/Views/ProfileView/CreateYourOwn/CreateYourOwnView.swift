@@ -14,8 +14,8 @@ struct CreateYourOwnView: View {
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @Environment(\.colorScheme) var colorScheme
     @State private var showShareSheet = false
-    @State private var showAlert = false
-    @State private var alertText = ""
+    @State private var showFullScreenEntry = false
+    @State private var editingDeclaration: Declaration?
     @State private var selectedDeclaration: Declaration?
     @State private var animate = false
     @State private var selectedContentType: ContentType = .affirmation
@@ -55,16 +55,18 @@ struct CreateYourOwnView: View {
             
             configureView()
             
-            if showAlert {
-                AffirmationAlertView(
-                    affirmationText: $alertText,
-                    showAlert: $showAlert,
-                    contentType: selectedContentType
-                ) {
-                    save()
-                    declarationStore.requestReview.toggle()
-                }
-                .transition(.scale.combined(with: .opacity))
+        }
+        .fullScreenCover(isPresented: $showFullScreenEntry) {
+            FullScreenEntryView(
+                contentType: selectedContentType,
+                existingText: editingDeclaration?.text ?? "",
+                isEditing: editingDeclaration != nil
+            )
+            .environmentObject(declarationStore)
+            .onDisappear {
+                editingDeclaration = nil
+                declarationStore.refreshCreateOwn()
+                declarationStore.requestReview.toggle()
             }
         }
         .onAppear()  {
@@ -169,7 +171,8 @@ struct CreateYourOwnView: View {
                                     if delete {
                                         declarationStore.removeOwn(declaration: declaration)
                                     } else {
-                                        edit(declarationString)
+                                        editingDeclaration = declaration
+                                        showFullScreenEntry = true
                                     }
                                 } onSelect: {
                                     selectedDeclaration = declaration
@@ -222,7 +225,7 @@ struct CreateYourOwnView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if !filteredDeclarations.isEmpty {
                         Button(action: {
-                            showAffirmationAlert()
+                            showFullScreenEntry = true
                         }) {
                             Image(systemName: "plus")
                                 .font(.system(size: 22, weight: .bold))
@@ -242,9 +245,7 @@ struct CreateYourOwnView: View {
     
     
     private func edit(_ declaration: String) {
-        alertText = declaration
-        showAffirmationAlert()
-        declarationStore.editMyOwn(declaration)
+        // This method is no longer used - editing is handled through the full-screen view
     }
     
     private func spacerView(_ height:  CGFloat)  -> some View  {
@@ -254,7 +255,7 @@ struct CreateYourOwnView: View {
     
     private var addAffirmationsButton: some View {
         Button(action: {
-            showAffirmationAlert()
+            showFullScreenEntry = true
         }) {
             Text("Create your own")
                 .font(.system(size: 18, weight: .semibold))
@@ -269,16 +270,6 @@ struct CreateYourOwnView: View {
         .padding(.horizontal, 32)
     }
     
-    private func showAffirmationAlert() {
-        withAnimation {
-            showAlert.toggle()
-        }
-    }
-    private func save() {
-        declarationStore.createDeclaration(alertText, contentType: selectedContentType)
-        alertText = ""
-        Analytics.logEvent(Event.addYourOwnSaved, parameters: nil)
-    }
     
     private func popToRoot()  {
         appState.rootViewId = UUID()
@@ -334,115 +325,6 @@ struct CreateYourOwnView_Previews: PreviewProvider {
     }
 }
 
-struct AffirmationAlertView: View {
-    @EnvironmentObject var subscriptionStore: SubscriptionStore
-    @Binding var affirmationText: String
-    @Binding var showAlert: Bool
-    var contentType: ContentType = .affirmation
-    var closure: (() -> Void)?
-    @State private var animateGlow = false
-    
-    @FocusState private var isFocused: Bool
-    
-    private var disabled: Bool {
-        affirmationText.count < 3
-    }
-    
-    var body: some View {
-        ZStack {
-            Color.black.opacity(0.4)
-                .ignoresSafeArea()
-                .onTapGesture { dismiss() }
-            
-            VStack(spacing: 20) {
-                HStack(spacing: 8) {
-                    Image(systemName: contentType.icon)
-                        .font(.subheadline)
-                        .foregroundColor(.white.opacity(0.6))
-                    
-                    Text("Create Your Own \(contentType.displayName)")
-                        .font(.subheadline)
-                        .foregroundColor(.white.opacity(0.6))
-                }
-                .padding(.top, 8)
-                
-                Text(contentType == .affirmation ? 
-                     "What do you want to speak into your life?" : 
-                     "What is God showing you today?")
-                    .font(.title3.bold())
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                
-                ZStack(alignment: .topLeading) {
-                    if affirmationText.isEmpty {
-                        Text("Type your entry here…")
-                            .foregroundColor(.gray)
-                            .padding(.top, 8)
-                            .padding(.leading, 5)
-                    }
-                    
-                    TextEditor(text: $affirmationText)
-                        .padding(8)
-                        .focused($isFocused)
-                        .frame(height: 120)
-                        .background(Color(.secondarySystemBackground))
-                        .cornerRadius(12)
-                        .foregroundColor(.white)
-                }
-                
-                Button(action: {
-                    dismiss()
-                }) {
-                    Text("Save")
-                        .font(.system(size: 20, weight: .medium))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(Constants.DAMidBlue)
-                                .shadow(color: !disabled ? Constants.DAMidBlue.opacity(0.7) : .clear,
-                                        radius: animateGlow ? 12 : 4)
-                                .scaleEffect(animateGlow ? 1.03 : 1)
-                        )
-                        .animation(!disabled ? .easeInOut(duration: 1).repeatForever(autoreverses: true) : .default, value: animateGlow)
-                }
-                .disabled(disabled)
-                .onAppear {
-                    if !disabled {
-                        animateGlow = true
-                    }
-                }
-                
-                Button("Cancel") {
-                    dismiss()
-                }
-                .foregroundColor(.red)
-                .padding(.bottom, 8)
-            }
-            .padding()
-            .background(.ultraThinMaterial)
-            .cornerRadius(24)
-            .shadow(radius: 10)
-            .padding(.horizontal, 24)
-            .scaleEffect(showAlert ? 1 : 0.95)
-            .opacity(showAlert ? 1 : 0)
-            .animation(.spring(response: 0.4, dampingFraction: 0.75), value: showAlert)
-        }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                isFocused = true
-            }
-        }
-    }
-    
-    private func dismiss() {
-        withAnimation {
-            showAlert = false
-        }
-        closure?()
-    }
-}
 
 
 struct AffirmationDetailView: View {
