@@ -134,28 +134,61 @@ struct TimePickerCompact: View {
     @Binding var minute: Int
     let onChange: () -> Void
     
+    // Convert 24-hour to 12-hour format
+    private var hour12: Int {
+        if hour == 0 { return 12 }
+        if hour > 12 { return hour - 12 }
+        return hour
+    }
+    
+    private var isAM: Bool {
+        hour < 12
+    }
+    
+    private func updateHour12(_ newHour: Int) {
+        if isAM {
+            hour = newHour == 12 ? 0 : newHour
+        } else {
+            hour = newHour == 12 ? 12 : newHour + 12
+        }
+    }
+    
+    private func updatePeriod(_ newIsAM: Bool) {
+        if newIsAM != isAM {
+            if newIsAM {
+                // Switch to AM
+                hour = hour >= 12 ? hour - 12 : hour
+            } else {
+                // Switch to PM
+                hour = hour < 12 ? hour + 12 : hour
+            }
+        }
+    }
+    
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: 8) {
             // Hour Picker
             VStack(spacing: 4) {
                 Text("Hour")
                     .font(.caption2)
                     .foregroundColor(.white.opacity(0.6))
                 
-                Picker("Hour", selection: $hour) {
-                    ForEach(0..<24, id: \.self) { hour in
-                        Text(String(format: "%02d", hour))
+                Picker("Hour", selection: Binding(
+                    get: { hour12 },
+                    set: { updateHour12($0); onChange() }
+                )) {
+                    ForEach(1...12, id: \.self) { hour in
+                        Text(String(hour))
                             .foregroundColor(.white)
                             .tag(hour)
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
-                .frame(width: 80)
+                .frame(width: 70)
                 .background(
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Color.white.opacity(0.1))
                 )
-                .onChange(of: hour) { _ in onChange() }
             }
             
             Text(":")
@@ -177,12 +210,37 @@ struct TimePickerCompact: View {
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
-                .frame(width: 80)
+                .frame(width: 70)
                 .background(
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Color.white.opacity(0.1))
                 )
                 .onChange(of: minute) { _ in onChange() }
+            }
+            
+            // AM/PM Picker
+            VStack(spacing: 4) {
+                Text("Period")
+                    .font(.caption2)
+                    .foregroundColor(.white.opacity(0.6))
+                
+                Picker("AM/PM", selection: Binding(
+                    get: { isAM },
+                    set: { updatePeriod($0); onChange() }
+                )) {
+                    Text("AM")
+                        .foregroundColor(.white)
+                        .tag(true)
+                    Text("PM")
+                        .foregroundColor(.white)
+                        .tag(false)
+                }
+                .pickerStyle(MenuPickerStyle())
+                .frame(width: 70)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.white.opacity(0.1))
+                )
             }
         }
         .padding(.horizontal, 8)
