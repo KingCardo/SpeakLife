@@ -12,7 +12,7 @@ struct ChecklistNotificationSettings: View {
     @Binding var showConfirmation: Bool
     
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 20) {
             // Section Header
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
@@ -34,12 +34,12 @@ struct ChecklistNotificationSettings: View {
             }
             
             if appState.checklistNotificationsEnabled {
-                VStack(spacing: 12) {
+                VStack(spacing: 16) {
                     Divider()
                         .background(Color.white.opacity(0.2))
                     
                     // Morning Reminder Settings
-                    VStack(spacing: 8) {
+                    VStack(spacing: 12) {
                         HStack {
                             Text("🌅 Morning Motivation")
                                 .font(.subheadline)
@@ -54,11 +54,10 @@ struct ChecklistNotificationSettings: View {
                         }
                         
                         if appState.morningReminderEnabled {
-                            HStack {
+                            VStack(alignment: .leading, spacing: 6) {
                                 Text("Time:")
                                     .font(.caption)
                                     .foregroundColor(.white.opacity(0.8))
-                                Spacer()
                                 
                                 TimePickerCompact(
                                     hour: $appState.morningReminderHour,
@@ -71,7 +70,7 @@ struct ChecklistNotificationSettings: View {
                     .padding(.horizontal, 8)
                     
                     // Evening Check-in Settings
-                    VStack(spacing: 8) {
+                    VStack(spacing: 12) {
                         HStack {
                             Text("🌙 Evening Check-in")
                                 .font(.subheadline)
@@ -86,11 +85,10 @@ struct ChecklistNotificationSettings: View {
                         }
                         
                         if appState.eveningCheckInEnabled {
-                            HStack {
+                            VStack(alignment: .leading, spacing: 6) {
                                 Text("Time:")
                                     .font(.caption)
                                     .foregroundColor(.white.opacity(0.8))
-                                Spacer()
                                 
                                 TimePickerCompact(
                                     hour: $appState.eveningCheckInHour,
@@ -137,32 +135,57 @@ struct TimePickerCompact: View {
     let onChange: () -> Void
     
     var body: some View {
-        HStack(spacing: 4) {
-            Picker("Hour", selection: $hour) {
-                ForEach(0..<24, id: \.self) { hour in
-                    Text(String(format: "%02d", hour))
-                        .tag(hour)
+        HStack(spacing: 12) {
+            // Hour Picker
+            VStack(spacing: 4) {
+                Text("Hour")
+                    .font(.caption2)
+                    .foregroundColor(.white.opacity(0.6))
+                
+                Picker("Hour", selection: $hour) {
+                    ForEach(0..<24, id: \.self) { hour in
+                        Text(String(format: "%02d", hour))
+                            .foregroundColor(.white)
+                            .tag(hour)
+                    }
                 }
+                .pickerStyle(MenuPickerStyle())
+                .frame(width: 80)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.white.opacity(0.1))
+                )
+                .onChange(of: hour) { _ in onChange() }
             }
-            .pickerStyle(MenuPickerStyle())
-            .frame(width: 60)
-            .onChange(of: hour) { _ in onChange() }
             
             Text(":")
-                .foregroundColor(.white.opacity(0.8))
+                .foregroundColor(.white)
+                .font(.title2)
+                .fontWeight(.semibold)
             
-            Picker("Minute", selection: $minute) {
-                ForEach([0, 15, 30, 45], id: \.self) { minute in
-                    Text(String(format: "%02d", minute))
-                        .tag(minute)
+            // Minute Picker
+            VStack(spacing: 4) {
+                Text("Minute")
+                    .font(.caption2)
+                    .foregroundColor(.white.opacity(0.6))
+                
+                Picker("Minute", selection: $minute) {
+                    ForEach([0, 15, 30, 45], id: \.self) { minute in
+                        Text(String(format: "%02d", minute))
+                            .foregroundColor(.white)
+                            .tag(minute)
+                    }
                 }
+                .pickerStyle(MenuPickerStyle())
+                .frame(width: 80)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.white.opacity(0.1))
+                )
+                .onChange(of: minute) { _ in onChange() }
             }
-            .pickerStyle(MenuPickerStyle())
-            .frame(width: 60)
-            .onChange(of: minute) { _ in onChange() }
         }
-        .foregroundColor(.white)
-        .font(.caption.monospacedDigit())
+        .padding(.horizontal, 8)
     }
 }
 
