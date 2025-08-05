@@ -11,6 +11,7 @@ struct FullScreenEntryView: View {
     let contentType: ContentType
     let existingText: String
     let isEditing: Bool
+    let editingDeclaration: Declaration?
     
     @StateObject private var viewModel: EntryViewModel
     @StateObject private var voiceManager = VoiceInputManager()
@@ -30,10 +31,11 @@ struct FullScreenEntryView: View {
         )
     }
     
-    init(contentType: ContentType, existingText: String = "", isEditing: Bool = false) {
+    init(contentType: ContentType, existingText: String = "", isEditing: Bool = false, editingDeclaration: Declaration? = nil) {
         self.contentType = contentType
         self.existingText = existingText
         self.isEditing = isEditing
+        self.editingDeclaration = editingDeclaration
         self._viewModel = StateObject(wrappedValue: EntryViewModel(
             contentType: contentType,
             existingText: existingText,
@@ -246,8 +248,12 @@ struct FullScreenEntryView: View {
         guard !finalText.isEmpty else { return false }
         
         do {
-            // Create declaration in the store
             await MainActor.run {
+                if isEditing, let originalDeclaration = editingDeclaration {
+                    // Remove the old declaration first
+                    declarationStore.removeOwn(declaration: originalDeclaration)
+                }
+                // Create the new/updated declaration
                 declarationStore.createDeclaration(finalText, contentType: contentType)
             }
             
@@ -367,7 +373,8 @@ struct FullScreenEntryView_Previews: PreviewProvider {
         FullScreenEntryView(
             contentType: .journal,
             existingText: "God is showing me His faithfulness today...",
-            isEditing: true
+            isEditing: true,
+            editingDeclaration: nil
         )
         .environmentObject(DeclarationViewModel(apiService: LocalAPIClient()))
         .previewDisplayName("Edit Journal")

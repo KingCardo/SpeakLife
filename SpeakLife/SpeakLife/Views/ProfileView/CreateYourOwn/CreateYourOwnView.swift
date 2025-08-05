@@ -51,7 +51,8 @@ struct CreateYourOwnView: View {
             FullScreenEntryView(
                 contentType: selectedContentType,
                 existingText: editingDeclaration?.text ?? "",
-                isEditing: editingDeclaration != nil
+                isEditing: editingDeclaration != nil,
+                editingDeclaration: editingDeclaration
             )
             .environmentObject(declarationStore)
             .onDisappear {
@@ -494,9 +495,9 @@ struct AffirmationDetailView: View {
     
     private var dynamicFontSize: CGFloat {
         switch affirmation.text.count {
-        case 0..<100: return 32
-        case 100..<160: return 28
-        default: return 24
+        case 0..<100: return 28
+        case 100..<160: return 24
+        default: return 20
         }
     }
     
