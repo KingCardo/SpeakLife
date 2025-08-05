@@ -50,6 +50,7 @@ final class CategoryListViewModel: ObservableObject {
 struct CategoryListView: View {
     @EnvironmentObject var appState: AppState
     @ObservedObject var categoryList: CategoryListViewModel
+    var onSave: (() -> Void)? = nil
     
     var body: some View {
         NavigationView {
@@ -102,6 +103,7 @@ struct CategoryListView: View {
         }
         .onDisappear {
             categoryList.saveCategories(appState)
+            onSave?()
         }
     }
 }

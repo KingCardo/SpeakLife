@@ -96,7 +96,19 @@ struct CategoryButtonRow: View  {
                     }
                 }
         } else {
-            CategoryListView(categoryList: CategoryListViewModel(declarationStore))
+            CategoryListView(
+                categoryList: CategoryListViewModel(declarationStore),
+                onSave: {
+                    withAnimation {
+                        showConfirmation = true
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                        withAnimation {
+                            showConfirmation = false
+                        }
+                    }
+                }
+            )
         }
     }
 }
