@@ -72,6 +72,7 @@
 		4597E2202E4138A9009D6C66 /* FullScreenEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2162E4138A9009D6C66 /* FullScreenEntryView.swift */; };
 		4597E2222E4146C9009D6C66 /* EntryActionToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2212E4146C9009D6C66 /* EntryActionToolbar.swift */; };
 		4597E2242E4146EF009D6C66 /* VoiceStateIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2232E4146EF009D6C66 /* VoiceStateIndicator.swift */; };
+		4597E2262E419183009D6C66 /* VoiceCorrectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2252E419183009D6C66 /* VoiceCorrectionsView.swift */; };
 		45A4A3A42D7BD2AC00DFCEB7 /* declarationsv7.json in Sources */ = {isa = PBXBuildFile; fileRef = 45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */; };
 		45A4A3A52D7BF62600DFCEB7 /* declarationsv7.json in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */; };
 		45A4A3CB2D869D2700DFCEB7 /* sethpiano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3CA2D869D2700DFCEB7 /* sethpiano.mp3 */; };
@@ -282,6 +283,7 @@
 		4597E2182E4138A9009D6C66 /* VoiceInputToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputToolbar.swift; sourceTree = "<group>"; };
 		4597E2212E4146C9009D6C66 /* EntryActionToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryActionToolbar.swift; sourceTree = "<group>"; };
 		4597E2232E4146EF009D6C66 /* VoiceStateIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceStateIndicator.swift; sourceTree = "<group>"; };
+		4597E2252E419183009D6C66 /* VoiceCorrectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCorrectionsView.swift; sourceTree = "<group>"; };
 		45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv7.json; sourceTree = "<group>"; };
 		45A4A3CA2D869D2700DFCEB7 /* sethpiano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sethpiano.mp3; sourceTree = "<group>"; };
 		45A4A3CE2D86B81900DFCEB7 /* everpresent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = everpresent.mp3; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 			children = (
 				4597E2112E4138A9009D6C66 /* VoiceInputManager.swift */,
 				4597E2122E4138A9009D6C66 /* VoiceMicrophoneButton.swift */,
+				4597E2252E419183009D6C66 /* VoiceCorrectionsView.swift */,
 				4597E2232E4146EF009D6C66 /* VoiceStateIndicator.swift */,
 			);
 			path = Voice;
@@ -1187,6 +1190,7 @@
 				4597E1CE2E3F4221009D6C66 /* BadgeModel.swift in Sources */,
 				7AA8709428DACCA800134ADB /* App.swift in Sources */,
 				7A92E31B2993882F00FBF2AE /* Events.swift in Sources */,
+				4597E2262E419183009D6C66 /* VoiceCorrectionsView.swift in Sources */,
 				7AF18C8229FD2494005A6E31 /* Badge.swift in Sources */,
 				7AA2AFCA29DA1BBF00176ADF /* ImagePicker.swift in Sources */,
 				7AA870C928DACCB700134ADB /* ThemeChooserView.swift in Sources */,

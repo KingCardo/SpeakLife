@@ -99,8 +99,10 @@ struct FullScreenEntryView: View {
                     onSave: handleSave,
                     onCancel: handleCancel
                 )
+                .cornerRadius(8)
                 .padding(.horizontal, 16)
                 .padding(.bottom, keyboardHeight > 0 ? max(keyboardHeight - 100, 20) : 20)
+                
             }
             
             // Save confirmation overlay

@@ -38,11 +38,16 @@ class VoiceInputManager: NSObject, ObservableObject {
     @Published var audioLevels: [Float] = []
     @Published var hasPermissions: Bool = false
     @Published var errorMessage: String?
+    @Published var transcriptionConfidence: Float = 0.0
+    @Published var alternativeTranscriptions: [String] = []
     
     // MARK: - Configuration
     private let maxRecordingDuration: TimeInterval = 300 // 5 minutes
     private var recordingTimer: Timer?
     private var audioLevelTimer: Timer?
+    private var retryCount = 0
+    private let maxRetries = 3
+    private var lastTranscriptionTime: Date?
     
     override init() {
         super.init()
@@ -237,9 +242,18 @@ class VoiceInputManager: NSObject, ObservableObject {
         // Enhanced audio session for better voice recognition
         try audioSession.setCategory(
             .playAndRecord,
-            mode: .spokenAudio, // Optimized for speech
-            options: [.defaultToSpeaker, .allowBluetooth, .allowBluetoothA2DP]
+            mode: .measurement, // Better quality than .spokenAudio for recognition
+            options: [.defaultToSpeaker, .allowBluetooth, .mixWithOthers]
         )
+        
+        // Configure for optimal voice recording quality
+        try audioSession.setPreferredSampleRate(48000) // Higher sample rate for better clarity
+        try audioSession.setPreferredIOBufferDuration(0.005) // Lower latency
+        
+        // Enable audio processing for noise reduction
+        if #available(iOS 15.0, *) {
+            try audioSession.setSupportsMultichannelContent(true)
+        }
         
         // Activate with proper error handling
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
@@ -259,6 +273,9 @@ class VoiceInputManager: NSObject, ObservableObject {
         recognitionRequest.shouldReportPartialResults = true
         
         // Enhanced configuration for better accuracy
+        recognitionRequest.shouldReportPartialResults = true
+        recognitionRequest.contextualStrings = getContextualStrings() // Add religious context
+        
         if #available(iOS 16.0, *) {
             recognitionRequest.addsPunctuation = true
             recognitionRequest.requiresOnDeviceRecognition = false // Use cloud for better accuracy
@@ -270,6 +287,7 @@ class VoiceInputManager: NSObject, ObservableObject {
         if #available(iOS 17.0, *) {
             // Use the most accurate recognition mode available
             recognitionRequest.requiresOnDeviceRecognition = false
+            recognitionRequest.contextualStrings = getExtendedContextualStrings()
         }
         
         // Start recognition task
@@ -278,11 +296,36 @@ class VoiceInputManager: NSObject, ObservableObject {
                 guard let self = self else { return }
                 
                 if let result = result {
-                    let newText = result.bestTranscription.formattedString
+                    let bestTranscription = result.bestTranscription
+                    let newText = bestTranscription.formattedString
                     
-                    // Only update if text actually changed to prevent duplicates
-                    if newText != self.transcribedText {
+                    // Calculate confidence score
+                    var totalConfidence: Float = 0
+                    var segmentCount = 0
+                    
+                    for segment in bestTranscription.segments {
+                        totalConfidence += segment.confidence
+                        segmentCount += 1
+                    }
+                    
+                    if segmentCount > 0 {
+                        self.transcriptionConfidence = totalConfidence / Float(segmentCount)
+                    }
+                    
+                    // Collect alternative transcriptions for manual correction
+                    self.alternativeTranscriptions = result.transcriptions
+                        .prefix(3)
+                        .map { $0.formattedString }
+                        .filter { $0 != newText }
+                    
+                    // Only update if text actually changed and confidence is reasonable
+                    if newText != self.transcribedText && (self.transcriptionConfidence > 0.5 || self.retryCount >= self.maxRetries) {
                         self.transcribedText = self.enhanceTranscription(newText)
+                        self.lastTranscriptionTime = Date()
+                        self.retryCount = 0
+                    } else if self.transcriptionConfidence <= 0.5 && self.retryCount < self.maxRetries {
+                        // Low confidence - might retry
+                        self.retryCount += 1
                     }
                     
                     // Update state based on final result
@@ -301,10 +344,31 @@ class VoiceInputManager: NSObject, ObservableObject {
         
         // Setup audio input with optimized settings
         let inputNode = audioEngine.inputNode
-        let recordingFormat = inputNode.outputFormat(forBus: 0)
         
-        // Use larger buffer size for better accuracy (was 1024)
-        inputNode.installTap(onBus: 0, bufferSize: 4096, format: recordingFormat) { [weak self] buffer, _ in
+        // Request higher quality audio format
+        let recordingFormat = AVAudioFormat(
+            commonFormat: .pcmFormatFloat32,
+            sampleRate: 48000, // Higher sample rate
+            channels: 1,
+            interleaved: false
+        ) ?? inputNode.outputFormat(forBus: 0)
+        
+        // Configure input node for better voice capture
+        if let inputFormat = AVAudioFormat(
+            commonFormat: .pcmFormatFloat32,
+            sampleRate: 48000,
+            channels: 1,
+            interleaved: false
+        ) {
+            do {
+                try inputNode.setVoiceProcessingEnabled(true) // Enable voice processing
+            } catch {
+                print("Voice processing not available: \(error)")
+            }
+        }
+        
+        // Use larger buffer size for better accuracy
+        inputNode.installTap(onBus: 0, bufferSize: 8192, format: recordingFormat) { [weak self] buffer, _ in
             self?.recognitionRequest?.append(buffer)
         }
         
@@ -333,35 +397,136 @@ class VoiceInputManager: NSObject, ObservableObject {
         }
     }
     
+    private func getContextualStrings() -> [String] {
+        // Common religious phrases and terms to help recognition
+        return [
+            "In Jesus name", "Amen", "Hallelujah", "Praise God",
+            "Thank you Lord", "Holy Spirit", "God is good",
+            "By His stripes", "Blood of Jesus", "Word of God",
+            "I declare", "I believe", "I receive", "I am blessed",
+            "Kingdom of God", "Glory to God", "Grace and mercy",
+            "Faith over fear", "God's promises", "Spiritual warfare",
+            "Prayer warrior", "Testimony", "Breakthrough", "Deliverance"
+        ]
+    }
+    
+    private func getExtendedContextualStrings() -> [String] {
+        // Extended vocabulary for iOS 17+
+        let basic = getContextualStrings()
+        let extended = [
+            "I speak life", "Prophetic word", "Divine purpose",
+            "Godly wisdom", "Heavenly Father", "Christ Jesus",
+            "Born again", "Saved by grace", "Walking in faith",
+            "Armor of God", "Fruit of the Spirit", "Gift of tongues",
+            "Laying on hands", "Fasting and prayer", "Worship and praise",
+            "Tithes and offerings", "Mission field", "Great commission"
+        ]
+        return basic + extended
+    }
+    
     private func enhanceTranscription(_ text: String) -> String {
         var enhanced = text
         
-        // Capitalize spiritual terms
+        // Capitalize spiritual terms with better pattern matching
         let spiritualTerms = [
             "god", "jesus", "christ", "lord", "father", "holy spirit",
             "bible", "scripture", "prayer", "amen", "hallelujah", "praise",
-            "blessing", "faith", "grace", "mercy", "salvation", "heaven"
+            "blessing", "faith", "grace", "mercy", "salvation", "heaven",
+            "gospel", "psalm", "proverbs", "corinthians", "genesis",
+            "exodus", "revelation", "matthew", "john", "romans"
         ]
         
+        // More sophisticated replacement that handles compound terms
         for term in spiritualTerms {
             let pattern = "\\b\(term)\\b"
+            let replacement = term.components(separatedBy: " ")
+                .map { $0.capitalized }
+                .joined(separator: " ")
+            
             enhanced = enhanced.replacingOccurrences(
                 of: pattern,
-                with: term.capitalized,
+                with: replacement,
                 options: [.regularExpression, .caseInsensitive]
             )
         }
+        
+        // Fix common transcription errors
+        let corrections = [
+            ("i m", "I'm"),
+            ("i ve", "I've"),
+            ("i ll", "I'll"),
+            ("gods", "God's"),
+            ("jesus s", "Jesus's"),
+            ("isnt", "isn't"),
+            ("dont", "don't"),
+            ("wont", "won't"),
+            ("cant", "can't")
+        ]
+        
+        for (wrong, right) in corrections {
+            enhanced = enhanced.replacingOccurrences(
+                of: "\\b\(wrong)\\b",
+                with: right,
+                options: [.regularExpression, .caseInsensitive]
+            )
+        }
+        
+        // Ensure first letter of sentences is capitalized
+        enhanced = enhanced.replacingOccurrences(
+            of: "(^|\\. )([a-z])",
+            with: "$1$2",
+            options: .regularExpression,
+            range: nil
+        )
         
         return enhanced
     }
     
     private func handleError(_ error: Error) {
-        stopListening()
-        voiceInputState = .error
-        
-        errorMessage = "Voice input error: \(error.localizedDescription)"
-        
-        print("❌ Voice input error: \(error)")
+        // Check if we should retry
+        if retryCount < maxRetries && shouldRetryError(error) {
+            retryCount += 1
+            errorMessage = "Retrying... (\(retryCount)/\(maxRetries))"
+            
+            // Wait a moment then retry
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+                self?.startListening()
+            }
+        } else {
+            // Stop and show error
+            stopListening()
+            voiceInputState = .error
+            
+            errorMessage = getReadableErrorMessage(for: error)
+            retryCount = 0
+            
+            print("❌ Voice input error: \(error)")
+        }
+    }
+    
+    private func shouldRetryError(_ error: Error) -> Bool {
+        // Retry on temporary network or audio issues
+        if let nsError = error as NSError? {
+            let retryableCodes = [1, 203, 204, 205] // Audio/network temporary failures
+            return retryableCodes.contains(nsError.code)
+        }
+        return false
+    }
+    
+    private func getReadableErrorMessage(for error: Error) -> String {
+        if let nsError = error as NSError? {
+            switch nsError.code {
+            case 201:
+                return "Please check your internet connection"
+            case 203, 204, 205:
+                return "Audio input error. Please try again"
+            case 1700:
+                return "Speech recognition is temporarily unavailable"
+            default:
+                return "Voice input error. Please try again"
+            }
+        }
+        return error.localizedDescription
     }
 }
 

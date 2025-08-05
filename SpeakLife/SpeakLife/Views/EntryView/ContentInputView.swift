@@ -21,12 +21,19 @@ struct ContentInputView: View {
             // Top section with prompts
             VStack(spacing: 12) {
                 contextualPromptSection
-                liveTranscriptionSection
+               // liveTranscriptionSection
+                voiceCorrectionsSection
             }
             .padding(.bottom, 20)
             
             // Text input section - takes most space
             textInputSection
+            
+            // Voice quick corrections
+            if voiceManager.hasContent || voiceManager.voiceInputState == .error {
+                VoiceQuickCorrections(voiceManager: voiceManager, text: $text)
+                    .padding(.vertical, 8)
+            }
             
             // Bottom guidance
             contentGuidanceSection
@@ -90,6 +97,14 @@ struct ContentInputView: View {
             )
             .padding(.horizontal, 20)
             .transition(.move(edge: .bottom).combined(with: .opacity))
+        }
+    }
+    
+    @ViewBuilder
+    private var voiceCorrectionsSection: some View {
+        if voiceManager.hasContent || voiceManager.transcriptionConfidence > 0 {
+            VoiceCorrectionsView(voiceManager: voiceManager, text: $text)
+                .transition(.opacity)
         }
     }
     

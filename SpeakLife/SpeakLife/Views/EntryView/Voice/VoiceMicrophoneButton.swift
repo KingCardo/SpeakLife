@@ -56,7 +56,6 @@ struct VoiceMicrophoneButton: View {
                     Image(systemName: isListening ? "mic.fill" : "mic")
                         .font(.system(size: 24, weight: .medium))
                         .foregroundColor(isListening ? .red : .blue)
-                        .rotationEffect(.degrees(rotationAngle))
                 }
                 
                 // Recording indicator dot
