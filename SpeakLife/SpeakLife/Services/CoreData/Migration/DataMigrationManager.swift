@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import FirebaseAnalytics
 
 final class DataMigrationManager {
     
@@ -26,8 +27,16 @@ final class DataMigrationManager {
         // Check if migration has already been performed
         let migrationKey = "HasMigratedToCoreData"
         if UserDefaults.standard.bool(forKey: migrationKey) {
+            // Track that user already migrated
+            Analytics.logEvent("core_data_migration_skipped", parameters: [
+                "reason": "already_migrated"
+            ])
             return
         }
+        
+        // Track migration start
+        let migrationStartTime = Date()
+        Analytics.logEvent("core_data_migration_started", parameters: [:])
         
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             legacyAPIService.declarations { [weak self] declarations, error, _ in
@@ -37,21 +46,44 @@ final class DataMigrationManager {
                 }
                 
                 if let error = error {
+                    // Track API error
+                    Analytics.logEvent("core_data_migration_failed", parameters: [
+                        "error_type": "api_error",
+                        "error_description": error.localizedDescription
+                    ])
                     continuation.resume(throwing: error)
                     return
                 }
                 
                 Task {
                     do {
-                        try await self.migrateLegacyDeclarations(declarations, context: context)
+                        let migrationResult = try await self.migrateLegacyDeclarations(declarations, context: context)
                         UserDefaults.standard.set(true, forKey: migrationKey)
+                        
+                        // Calculate migration duration
+                        let migrationDuration = Date().timeIntervalSince(migrationStartTime)
+                        
+                        // Track successful migration
+                        Analytics.logEvent("core_data_migration_success", parameters: [
+                            "total_entries": migrationResult.totalEntries,
+                            "journal_entries": migrationResult.journalEntries,
+                            "affirmation_entries": migrationResult.affirmationEntries,
+                            "migration_duration_seconds": Int(migrationDuration),
+                            "had_legacy_data": migrationResult.totalEntries > 0
+                        ])
                         
                         // Clean up legacy data only after successful migration
                         self.cleanUpLegacyData()
                         continuation.resume()
                     } catch {
+                        // Track migration failure
+                        Analytics.logEvent("core_data_migration_failed", parameters: [
+                            "error_type": "core_data_error",
+                            "error_description": error.localizedDescription,
+                            "migration_duration_seconds": Int(Date().timeIntervalSince(migrationStartTime))
+                        ])
+                        
                         // Don't set migration flag if failed - will retry next time
-                        print("Migration failed: \(error)")
                         continuation.resume(throwing: error)
                     }
                 }
@@ -59,7 +91,9 @@ final class DataMigrationManager {
         }
     }
     
-    private func migrateLegacyDeclarations(_ declarations: [Declaration], context: NSManagedObjectContext) async throws {
+    private func migrateLegacyDeclarations(_ declarations: [Declaration], context: NSManagedObjectContext) async throws -> MigrationResult {
+        var journalCount = 0
+        var affirmationCount = 0
         try await context.perform {
             for declaration in declarations where declaration.category == .myOwn {
                 if declaration.contentType == .journal {
@@ -72,6 +106,7 @@ final class DataMigrationManager {
                     journalEntry.isFavorite = declaration.isFavorite ?? false
                     journalEntry.createdAt = declaration.lastEdit ?? Date()
                     journalEntry.lastModified = declaration.lastEdit ?? Date()
+                    journalCount += 1
                 } else if declaration.contentType == .affirmation {
                     let affirmationEntry = AffirmationEntry(context: context)
                     affirmationEntry.id = UUID()
@@ -82,16 +117,26 @@ final class DataMigrationManager {
                     affirmationEntry.isFavorite = declaration.isFavorite ?? false
                     affirmationEntry.createdAt = declaration.lastEdit ?? Date()
                     affirmationEntry.lastModified = declaration.lastEdit ?? Date()
+                    affirmationCount += 1
                 }
             }
             
             try context.save()
         }
+        
+        return MigrationResult(
+            journalEntries: journalCount,
+            affirmationEntries: affirmationCount,
+            totalEntries: journalCount + affirmationCount
+        )
     }
     
     // MARK: - Clean Up Legacy Data
     func cleanUpLegacyData() {
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            Analytics.logEvent("legacy_cleanup_failed", parameters: [
+                "error": "documents_directory_not_found"
+            ])
             return
         }
         
@@ -100,11 +145,27 @@ final class DataMigrationManager {
         do {
             if FileManager.default.fileExists(atPath: declarationsURL.path) {
                 try FileManager.default.removeItem(at: declarationsURL)
+                Analytics.logEvent("legacy_cleanup_success", parameters: [
+                    "file_removed": "declarations.json"
+                ])
+            } else {
+                Analytics.logEvent("legacy_cleanup_skipped", parameters: [
+                    "reason": "file_not_found"
+                ])
             }
         } catch {
-            print("Failed to clean up legacy data: \(error)")
+            Analytics.logEvent("legacy_cleanup_failed", parameters: [
+                "error": error.localizedDescription
+            ])
         }
     }
+}
+
+// MARK: - Migration Result
+struct MigrationResult {
+    let journalEntries: Int
+    let affirmationEntries: Int
+    let totalEntries: Int
 }
 
 // MARK: - Error Types

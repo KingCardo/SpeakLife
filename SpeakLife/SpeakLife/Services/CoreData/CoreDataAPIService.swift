@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 import Combine
+import FirebaseAnalytics
 
 final class CoreDataAPIService: APIService {
     
@@ -35,7 +36,12 @@ final class CoreDataAPIService: APIService {
         Task {
             do {
                 try await migrationManager.migrateLegacyData()
+                // Track that Core Data service was initialized successfully
+                Analytics.logEvent("core_data_service_initialized", parameters: [:])
             } catch {
+                Analytics.logEvent("core_data_service_init_failed", parameters: [
+                    "error": error.localizedDescription
+                ])
                 print("Migration failed: \(error)")
             }
         }

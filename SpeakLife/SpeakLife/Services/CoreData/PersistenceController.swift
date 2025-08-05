@@ -72,7 +72,7 @@ final class PersistenceController {
             description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
             description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
             
-            // Set CloudKit container options
+            // Set CloudKit container options  
             let options = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.franchiz.speaklife")
             options.databaseScope = .private
             description.cloudKitContainerOptions = options
@@ -80,12 +80,11 @@ final class PersistenceController {
         
         container.loadPersistentStores { _, error in
             if let error = error as NSError? {
-                // In production, log error but don't crash the app
                 #if DEBUG
                 fatalError("Unresolved error \(error), \(error.userInfo)")
                 #else
+                // In production, log error but don't crash the app
                 print("Core Data error: \(error), \(error.userInfo)")
-                // Could fallback to local-only storage or show user message
                 #endif
             }
         }
