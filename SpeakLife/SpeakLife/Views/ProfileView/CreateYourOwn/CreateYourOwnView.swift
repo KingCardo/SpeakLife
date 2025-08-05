@@ -22,9 +22,14 @@ struct CreateYourOwnView: View {
     @State private var selectedDeclaration: Declaration?
     @State private var animate = false
     @State private var selectedContentType: ContentType = .affirmation
+    @State private var forceRefresh: Int = 0
+    @State private var localDeclarations: [Declaration] = []
     
     private var filteredDeclarations: [Declaration] {
-        declarationStore.createOwn.filter { $0.contentType == selectedContentType }
+        // Use local copy to avoid SwiftUI update issues
+        let filtered = localDeclarations.filter { $0.contentType == selectedContentType }
+        print("RWRW: Filtered declarations count: \(filtered.count) for type: \(selectedContentType)")
+        return filtered
     }
     
     private var emptyStateTitle: String {
@@ -66,14 +71,19 @@ struct CreateYourOwnView: View {
         }
         .onAppear()  {
             loadCreateOwn()
+            refreshLocalDeclarations()
             Analytics.logEvent(Event.createYourOwnTapped, parameters: nil)
             
             // Force refresh in case CloudKit import happened
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 print("RWRW: CreateYourOwnView onAppear - forcing data refresh")
                 declarationStore.fetchDeclarations(for: .myOwn) { decs in
+                    self.refreshLocalDeclarations()
                 }
             }
+        }
+        .onChange(of: declarationStore.createOwn) { _ in
+            refreshLocalDeclarations()
         }
     }
     
@@ -223,12 +233,13 @@ struct CreateYourOwnView: View {
             ForEach(filteredDeclarations.reversed()) { declaration in
                 declarationRow(for: declaration)
             }
-            .onDelete(perform: deleteDeclarations)
+            // Remove .onDelete completely to avoid SwiftUI collection view issues
             
             listFooterSection
         }
         .scrollContentBackground(.hidden)
         .background(Color.clear)
+        .id("declarations-\(forceRefresh)")
     }
     
     private func declarationRow(for declaration: Declaration) -> some View {
@@ -296,6 +307,13 @@ struct CreateYourOwnView: View {
     // MARK: - Action Handlers
     private func handleDeclarationAction(declaration: Declaration, delete: Bool) {
         if delete {
+            print("RWRW: Handling declaration delete for: \(declaration.text.prefix(20))")
+            
+            // Remove from local array immediately
+            localDeclarations.removeAll { $0.id == declaration.id }
+            print("RWRW: Local declarations after delete: \(localDeclarations.count)")
+            
+            // Delete from store in background
             declarationStore.removeOwn(declaration: declaration)
         } else {
             editingDeclaration = declaration
@@ -314,12 +332,24 @@ struct CreateYourOwnView: View {
             }
         }
         
-        // Use withAnimation to ensure proper SwiftUI state management
-        withAnimation(.easeInOut(duration: 0.3)) {
-            for item in itemsToDelete {
-                declarationStore.removeOwn(declaration: item)
-            }
+        print("RWRW: Deleting \(itemsToDelete.count) items from UI")
+        
+        // Remove from local array immediately to prevent UI conflicts
+        for item in itemsToDelete {
+            localDeclarations.removeAll { $0.id == item.id }
         }
+        
+        // Delete from store in background
+        for item in itemsToDelete {
+            declarationStore.removeOwn(declaration: item)
+        }
+        
+        print("RWRW: Local declarations updated, count: \(localDeclarations.count)")
+    }
+    
+    private func refreshLocalDeclarations() {
+        localDeclarations = declarationStore.createOwn
+        print("RWRW: Local declarations refreshed, count: \(localDeclarations.count)")
     }
     
     

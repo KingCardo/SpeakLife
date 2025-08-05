@@ -198,7 +198,7 @@ struct FullScreenEntryView: View {
                     }
                     
                     // Auto-dismiss after showing confirmation
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                         safeDismiss()
                     }
                 } else {

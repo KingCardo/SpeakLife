@@ -266,10 +266,38 @@ final class DeclarationViewModel: ObservableObject {
             return
         }
         
+        // Update UI immediately to prevent collection view inconsistency
         allDeclarations.removeAll(where: { $0.id == declaration.id })
-        createOwn.remove(at: indexOf)
-        service.save(declarations: allDeclarations) { [weak self] success in
-            self?.refreshCreateOwn()
+        createOwn.removeAll(where: { $0.id == declaration.id })
+        objectWillChange.send()
+        
+        // If using CoreDataAPIService, delete from Core Data in background
+        if let coreDataService = service as? CoreDataAPIService {
+            Task {
+                do {
+                    try await coreDataService.deleteDeclaration(withId: declaration.id, contentType: declaration.contentType)
+                    print("RWRW: Declaration removed from Core Data successfully")
+                } catch {
+                    print("RWRW: Error removing declaration from Core Data - \(error.localizedDescription)")
+                    
+                    // If Core Data delete fails, restore the item
+                    await MainActor.run {
+                        self.allDeclarations.append(declaration)
+                        self.refreshCreateOwn()
+                    }
+                }
+            }
+        } else {
+            // Fallback for non-Core Data services
+            service.save(declarations: allDeclarations) { [weak self] success in
+                if !success {
+                    // Restore item if save fails
+                    DispatchQueue.main.async {
+                        self?.allDeclarations.append(declaration)
+                        self?.refreshCreateOwn()
+                    }
+                }
+            }
         }
     }
     

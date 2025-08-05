@@ -202,4 +202,36 @@ final class CoreDataAPIService: APIService {
     func deleteAffirmationEntry(_ entry: AffirmationEntry) async throws {
         try await affirmationRepository.delete(entry)
     }
+    
+    // MARK: - Optimized Delete Method
+    func deleteDeclaration(withId idString: String, contentType: ContentType) async throws {
+        print("RWRW: Deleting declaration - ID: \(idString), Type: \(contentType)")
+        
+        // Since Declaration IDs are text+category+contentType, we need to find by text content
+        // Parse the Declaration ID to extract the text
+        let categoryRaw = "myOwn"
+        let contentTypeRaw = contentType.rawValue
+        
+        // Remove category and contentType from the end to get the text
+        var searchText = idString
+        if searchText.hasSuffix(categoryRaw + contentTypeRaw) {
+            searchText = String(searchText.dropLast(categoryRaw.count + contentTypeRaw.count))
+        }
+        
+        print("RWRW: Searching for entries with text: '\(searchText)'")
+        
+        if contentType == .journal {
+            let entries = try await journalRepository.fetch(predicate: NSPredicate(format: "text == %@", searchText))
+            for entry in entries {
+                try await journalRepository.delete(entry)
+                print("RWRW: Journal entry deleted successfully")
+            }
+        } else if contentType == .affirmation {
+            let entries = try await affirmationRepository.fetch(predicate: NSPredicate(format: "text == %@", searchText))
+            for entry in entries {
+                try await affirmationRepository.delete(entry)
+                print("RWRW: Affirmation entry deleted successfully")
+            }
+        }
+    }
 }

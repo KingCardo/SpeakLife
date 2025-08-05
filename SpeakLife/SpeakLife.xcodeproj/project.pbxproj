@@ -94,7 +94,6 @@
 		4597E2552E41A62D009D6C66 /* SpeakLife.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2532E41A62D009D6C66 /* SpeakLife.xcdatamodeld */; };
 		4597E2572E41C181009D6C66 /* CloudKitSyncMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2562E41C181009D6C66 /* CloudKitSyncMonitor.swift */; };
 		4597E25A2E41C1AC009D6C66 /* CloudKitSyncBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2582E41C1AC009D6C66 /* CloudKitSyncBadge.swift */; };
-		45A4A3A42D7BD2AC00DFCEB7 /* declarationsv7.json in Sources */ = {isa = PBXBuildFile; fileRef = 45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */; };
 		45A4A3A52D7BF62600DFCEB7 /* declarationsv7.json in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */; };
 		45A4A3CB2D869D2700DFCEB7 /* sethpiano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3CA2D869D2700DFCEB7 /* sethpiano.mp3 */; };
 		45A4A3CF2D86B81900DFCEB7 /* everpresent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3CE2D86B81900DFCEB7 /* everpresent.mp3 */; };
@@ -1412,7 +1411,6 @@
 				4597E2572E41C181009D6C66 /* CloudKitSyncMonitor.swift in Sources */,
 				7AA870D228DACCB700134ADB /* CategoryListView.swift in Sources */,
 				7AA870DA28DACCB700134ADB /* NotificationScene.swift in Sources */,
-				45A4A3A42D7BD2AC00DFCEB7 /* declarationsv7.json in Sources */,
 				7AA870D528DACCB700134ADB /* ReminderEditView.swift in Sources */,
 				7AF18C9F2A0DB06C005A6E31 /* TrackerView.swift in Sources */,
 				7AA870C328DACCB700134ADB /* ThemeViewModel.swift in Sources */,
@@ -1752,7 +1750,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 200;
+				CURRENT_PROJECT_VERSION = 861;
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PromisesWidget/Info.plist;
@@ -1781,7 +1779,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 200;
+				CURRENT_PROJECT_VERSION = 861;
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PromisesWidget/Info.plist;
