@@ -231,8 +231,10 @@ struct StreakStats: Codable {
                 currentStreak = 1
                 print("🔥 STREAK DEBUG: Streak broken! Reset to: \(currentStreak)")
             } else if daysDifference == 0 {
-                // Same day - don't increment streak but still update totals
-                print("🔥 STREAK DEBUG: Same day, no streak update. Streak remains: \(currentStreak)")
+                // Same day - don't increment streak or totals (already counted)
+                print("🔥 STREAK DEBUG: Same day, no updates. Streak remains: \(currentStreak)")
+                // Early return to avoid double-counting total days
+                return
             } else {
                 // daysDifference < 0 - completion in the past relative to last completion
                 // This shouldn't normally happen, but handle it gracefully
