@@ -762,40 +762,11 @@ final class NotificationManager: NSObject {
     }
     
     private func scheduleEveningChecklistCheckIn() {
+        // Remove the generic repeating evening notification
+        // The personalized notification system will handle evening reminders
+        // based on actual checklist completion status
         let id = "EveningChecklistCheckIn"
-        
-        let eveningMessages: [String] = [
-            "🌙 How did your spiritual journey go today? Check your progress!",
-            "✨ Evening check-in: Did you complete your activities with God today?",
-            "🙌 Time to celebrate or catch up on your spiritual checklist!",
-            "💫 Before bed, let's see how you did with your daily spiritual goals.",
-            "🔥 Evening reflection: Your spiritual checklist awaits your review.",
-            "👑 End the day strong - check your spiritual activity progress!",
-            "🌟 Nighttime grace: Time to complete any remaining spiritual activities.",
-            "🛡️ Warrior, how was your spiritual battle today? Check your progress!"
-        ]
-        
-        let body = eveningMessages.randomElement() ?? "🌙 Evening check-in: How did your spiritual journey go today?"
-        
-        let content = UNMutableNotificationContent()
-        content.title = "SpeakLife"
-        content.body = body
-        content.sound = UNNotificationSound.default
-        
-        var dateComponents = DateComponents()
-        dateComponents.calendar = Calendar.autoupdatingCurrent
-        dateComponents.timeZone = TimeZone.autoupdatingCurrent
-        dateComponents.hour = 19
-        dateComponents.minute = 0
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
-        
-        notificationCenter.add(request) { error in
-            if let error = error {
-                print("Error scheduling evening checklist check-in: \(error)")
-            }
-        }
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [id])
     }
     
     // MARK: - Dynamic Checklist Notifications
@@ -832,19 +803,36 @@ final class NotificationManager: NSObject {
             )
         }
         
-        // Schedule for tomorrow
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.autoupdatingCurrent
         dateComponents.timeZone = TimeZone.autoupdatingCurrent
         dateComponents.hour = isEvening ? 19 : 8
         dateComponents.minute = 0
         
-        // Set to tomorrow
-        if let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date()) {
-            let tomorrowComponents = Calendar.current.dateComponents([.year, .month, .day], from: tomorrow)
-            dateComponents.year = tomorrowComponents.year
-            dateComponents.month = tomorrowComponents.month
-            dateComponents.day = tomorrowComponents.day
+        if isEvening {
+            // For evening notifications, schedule for today if it's before 7 PM
+            let now = Date()
+            let calendar = Calendar.current
+            let currentHour = calendar.component(.hour, from: now)
+            
+            if currentHour < 19 {
+                // Schedule for today at 7 PM
+                let todayComponents = calendar.dateComponents([.year, .month, .day], from: now)
+                dateComponents.year = todayComponents.year
+                dateComponents.month = todayComponents.month
+                dateComponents.day = todayComponents.day
+            } else {
+                // It's already past 7 PM, don't schedule for today
+                return
+            }
+        } else {
+            // Morning notifications for tomorrow
+            if let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date()) {
+                let tomorrowComponents = Calendar.current.dateComponents([.year, .month, .day], from: tomorrow)
+                dateComponents.year = tomorrowComponents.year
+                dateComponents.month = tomorrowComponents.month
+                dateComponents.day = tomorrowComponents.day
+            }
         }
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
