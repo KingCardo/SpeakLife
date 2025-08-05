@@ -32,7 +32,18 @@ final class JournalRepository: JournalRepositoryProtocol {
             entity.id = UUID()
             entity.createdAt = Date()
             entity.lastModified = Date()
+            
+            // Capture values before saving
+            let entityId = entity.id?.uuidString ?? "nil"
+            let entityText = entity.text?.prefix(50) ?? "nil"
+            
             try self.context.save()
+            print("RWRW: Journal entry created - ID: \(entityId), Text: \(entityText)")
+        }
+        
+        // Trigger immediate sync for faster perceived performance
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            PersistenceController.shared.requestImmediateSync()
         }
     }
     
@@ -58,7 +69,12 @@ final class JournalRepository: JournalRepositoryProtocol {
             let request = JournalEntry.fetchRequest()
             request.predicate = predicate
             request.sortDescriptors = [NSSortDescriptor(keyPath: \JournalEntry.lastModified, ascending: false)]
-            return try self.context.fetch(request)
+            let results = try self.context.fetch(request)
+            print("RWRW: Journal fetch returned \(results.count) entries")
+            for (index, entry) in results.enumerated() {
+                print("RWRW: Journal[\(index)]: ID=\(entry.id?.uuidString ?? "nil"), Text=\(entry.text?.prefix(30) ?? "nil"), Created=\(entry.createdAt?.description ?? "nil")")
+            }
+            return results
         }
     }
     
@@ -81,6 +97,7 @@ final class JournalRepository: JournalRepositoryProtocol {
                 try? self.context.fetch(request)
             }
             .prepend(initialResults)
+            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
     

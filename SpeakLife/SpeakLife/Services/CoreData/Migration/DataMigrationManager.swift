@@ -58,10 +58,19 @@ final class DataMigrationManager {
                 Task {
                     do {
                         let migrationResult = try await self.migrateLegacyDeclarations(declarations, context: context)
-                        UserDefaults.standard.set(true, forKey: migrationKey)
                         
                         // Calculate migration duration
                         let migrationDuration = Date().timeIntervalSince(migrationStartTime)
+                        
+                        // Only set migration flag if we actually migrated some data
+                        if migrationResult.totalEntries > 0 {
+                            UserDefaults.standard.set(true, forKey: migrationKey)
+                            
+                            // Clean up legacy data only after successful migration
+                            self.cleanUpLegacyData()
+                        } else {
+                            print("⚠️ No data to migrate - keeping migration flag false")
+                        }
                         
                         // Track successful migration
                         Analytics.logEvent("core_data_migration_success", parameters: [
@@ -72,8 +81,6 @@ final class DataMigrationManager {
                             "had_legacy_data": migrationResult.totalEntries > 0
                         ])
                         
-                        // Clean up legacy data only after successful migration
-                        self.cleanUpLegacyData()
                         continuation.resume()
                     } catch {
                         // Track migration failure

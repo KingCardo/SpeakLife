@@ -49,9 +49,11 @@ final class CoreDataAPIService: APIService {
     
     // MARK: - APIService Implementation
     func declarations(completion: @escaping ([Declaration], APIError?, Bool) -> Void) {
+        print("RWRW: CoreDataAPIService.declarations() called")
         Task {
             do {
                 // Get both journal and affirmation entries
+                print("RWRW: Fetching journal and affirmation entries from Core Data...")
                 let journalEntries = try await journalRepository.fetch(predicate: nil)
                 let affirmationEntries = try await affirmationRepository.fetch(predicate: nil)
                 
@@ -86,15 +88,25 @@ final class CoreDataAPIService: APIService {
                     declarations.append(declaration)
                 }
                 
+                print("RWRW: Converted \(declarations.count) Core Data entries to Declaration objects")
+                
                 // Also get non-own declarations from legacy service
                 legacyAPIService.declarations { legacyDeclarations, error, synced in
                     let nonOwnDeclarations = legacyDeclarations.filter { $0.category != .myOwn }
                     let allDeclarations = declarations + nonOwnDeclarations
-                    completion(allDeclarations, error, synced)
+                    
+                    print("RWRW: Final declaration count: \(allDeclarations.count) (Core Data: \(declarations.count), Legacy: \(nonOwnDeclarations.count))")
+                    
+                    DispatchQueue.main.async {
+                        completion(allDeclarations, error, synced)
+                    }
                 }
                 
             } catch {
-                completion([], APIError.noData, false)
+                print("RWRW: Error fetching declarations from Core Data - \(error.localizedDescription)")
+                DispatchQueue.main.async {
+                    completion([], APIError.noData, false)
+                }
             }
         }
     }
@@ -139,11 +151,15 @@ final class CoreDataAPIService: APIService {
                 // Save non-own declarations to legacy service
                 let nonOwnDeclarations = declarations.filter { $0.category != .myOwn }
                 legacyAPIService.save(declarations: nonOwnDeclarations) { success in
-                    completion(success)
+                    DispatchQueue.main.async {
+                        completion(success)
+                    }
                 }
                 
             } catch {
-                completion(false)
+                DispatchQueue.main.async {
+                    completion(false)
+                }
             }
         }
     }
@@ -166,6 +182,7 @@ final class CoreDataAPIService: APIService {
         let journalEntry = JournalEntry(context: context)
         journalEntry.text = text
         journalEntry.category = category.rawValue
+        print("RWRW: Creating journal entry via API - Text: \(text.prefix(50))")
         try await journalRepository.create(journalEntry)
     }
     
@@ -174,6 +191,7 @@ final class CoreDataAPIService: APIService {
         let affirmationEntry = AffirmationEntry(context: context)
         affirmationEntry.text = text
         affirmationEntry.category = category.rawValue
+        print("RWRW: Creating affirmation entry via API - Text: \(text.prefix(50))")
         try await affirmationRepository.create(affirmationEntry)
     }
     

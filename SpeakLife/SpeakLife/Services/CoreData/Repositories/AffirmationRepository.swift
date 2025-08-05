@@ -33,7 +33,18 @@ final class AffirmationRepository: AffirmationRepositoryProtocol {
             entity.id = UUID()
             entity.createdAt = Date()
             entity.lastModified = Date()
+            
+            // Capture values before saving
+            let entityId = entity.id?.uuidString ?? "nil"
+            let entityText = entity.text?.prefix(50) ?? "nil"
+            
             try self.context.save()
+            print("RWRW: Affirmation entry created - ID: \(entityId), Text: \(entityText)")
+        }
+        
+        // Trigger immediate sync for faster perceived performance
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            PersistenceController.shared.requestImmediateSync()
         }
     }
     
@@ -59,7 +70,12 @@ final class AffirmationRepository: AffirmationRepositoryProtocol {
             let request = AffirmationEntry.fetchRequest()
             request.predicate = predicate
             request.sortDescriptors = [NSSortDescriptor(keyPath: \AffirmationEntry.lastModified, ascending: false)]
-            return try self.context.fetch(request)
+            let results = try self.context.fetch(request)
+            print("RWRW: Affirmation fetch returned \(results.count) entries")
+            for (index, entry) in results.enumerated() {
+                print("RWRW: Affirmation[\(index)]: ID=\(entry.id?.uuidString ?? "nil"), Text=\(entry.text?.prefix(30) ?? "nil"), Created=\(entry.createdAt?.description ?? "nil")")
+            }
+            return results
         }
     }
     
@@ -82,6 +98,7 @@ final class AffirmationRepository: AffirmationRepositoryProtocol {
                 try? self.context.fetch(request)
             }
             .prepend(initialResults)
+            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
     

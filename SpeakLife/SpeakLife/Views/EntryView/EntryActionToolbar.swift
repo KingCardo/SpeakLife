@@ -13,7 +13,7 @@ struct EntryActionToolbar: View {
     let onCancel: () -> Void
     
     var body: some View {
-        HStack(spacing: 16) {
+        HStack(spacing: 12) {
             // Progress info
             if !viewModel.text.isEmpty {
                 VStack(alignment: .leading, spacing: 4) {
@@ -27,52 +27,60 @@ struct EntryActionToolbar: View {
                             .foregroundColor(.orange)
                     }
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
             
             Spacer()
             
-            // Cancel button
-            Button(action: onCancel) {
-                HStack(spacing: 6) {
-                    Image(systemName: "xmark")
-                        .font(.system(size: 14, weight: .medium))
-                    Text("Cancel")
-                        .font(.system(size: 16, weight: .medium))
-                }
-                .foregroundColor(.white.opacity(0.7))
-                .padding(.horizontal, 16)
-                .padding(.vertical, 12)
-                .background(Color.white.opacity(0.1))
-                .cornerRadius(20)
-            }
-            .disabled(viewModel.isSaving)
-            
-            // Save button
-            Button(action: onSave) {
-                HStack(spacing: 8) {
-                    if viewModel.isSaving {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                            .scaleEffect(0.8)
-                    } else {
-                        Image(systemName: "checkmark")
-                            .font(.system(size: 14, weight: .semibold))
+            // Buttons container with fixed width
+            HStack(spacing: 12) {
+                // Cancel button
+                Button(action: onCancel) {
+                    HStack(spacing: 6) {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 14, weight: .medium))
+                        Text("Cancel")
+                            .font(.system(size: 16, weight: .medium))
+                            .lineLimit(1)
                     }
-                    
-                    Text(viewModel.isSaving ? "Saving..." : "Save")
-                        .font(.system(size: 16, weight: .semibold))
+                    .foregroundColor(.white.opacity(0.7))
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 12)
+                    .background(Color.white.opacity(0.1))
+                    .cornerRadius(20)
                 }
-                .foregroundColor(.white)
-                .padding(.horizontal, 20)
-                .padding(.vertical, 12)
-                .background(
-                    viewModel.canSave ? 
-                    Color.blue.opacity(0.8) : 
-                    Color.white.opacity(0.2)
-                )
-                .cornerRadius(20)
+                .disabled(viewModel.isSaving)
+                .frame(minWidth: 80)
+                
+                // Save button
+                Button(action: onSave) {
+                    HStack(spacing: 8) {
+                        if viewModel.isSaving {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                .scaleEffect(0.8)
+                        } else {
+                            Image(systemName: "checkmark")
+                                .font(.system(size: 14, weight: .semibold))
+                        }
+                        
+                        Text(viewModel.isSaving ? "Saving..." : "Save")
+                            .font(.system(size: 16, weight: .semibold))
+                            .lineLimit(1)
+                    }
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 12)
+                    .background(
+                        viewModel.canSave ? 
+                        Color.blue.opacity(0.8) : 
+                        Color.white.opacity(0.2)
+                    )
+                    .cornerRadius(20)
+                }
+                .disabled(!viewModel.canSave || viewModel.isSaving)
+                .frame(minWidth: 90)
             }
-            .disabled(!viewModel.canSave || viewModel.isSaving)
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 16)

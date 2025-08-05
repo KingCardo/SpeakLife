@@ -115,6 +115,16 @@ final class DeclarationViewModel: ObservableObject {
         self.service = apiService
         self.notificationManager = notificationManager
         
+        // Listen for CloudKit import completion
+        NotificationCenter.default.addObserver(
+            forName: NSNotification.Name("CloudKitImportCompleted"),
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            print("RWRW: DeclarationViewModel received CloudKit import notification - refreshing data")
+            self?.fetchDeclarations()
+        }
+        
         fetchSelectedCategories() { [weak self] in
             self?.cleanUpSelectedCategories() { [weak self] _ in
                 guard let self = self else { return }

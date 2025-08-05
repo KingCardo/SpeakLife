@@ -8,11 +8,14 @@
 import SwiftUI
 import FirebaseAnalytics
 
+
+
 struct CreateYourOwnView: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var declarationStore: DeclarationViewModel
     @Environment(\.colorScheme) var colorScheme
+    @StateObject private var syncMonitor = CloudKitSyncMonitor()
     @State private var showShareSheet = false
     @State private var showFullScreenEntry = false
     @State private var editingDeclaration: Declaration?
@@ -64,6 +67,13 @@ struct CreateYourOwnView: View {
         .onAppear()  {
             loadCreateOwn()
             Analytics.logEvent(Event.createYourOwnTapped, parameters: nil)
+            
+            // Force refresh in case CloudKit import happened
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                print("RWRW: CreateYourOwnView onAppear - forcing data refresh")
+                declarationStore.fetchDeclarations(for: .myOwn) { decs in
+                }
+            }
         }
     }
     
@@ -232,10 +242,13 @@ struct CreateYourOwnView: View {
     
     private var listFooterSection: some View {
         Section {
-            HStack {
-                Spacer()
-                AppLogo(height: 80)
-                Spacer()
+            VStack(spacing: 12) {
+                
+                HStack {
+                    Spacer()
+                    AppLogo(height: 80)
+                    Spacer()
+                }
             }
             .padding(.top, 12)
             .padding(.bottom, 40)
@@ -260,6 +273,10 @@ struct CreateYourOwnView: View {
     // MARK: - Toolbar Components
     @ToolbarContentBuilder
     private var toolbarContent: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarLeading) {
+            CloudKitSyncBadgeCompact(syncMonitor: syncMonitor)
+        }
+        
         ToolbarItem(placement: .navigationBarTrailing) {
             if !filteredDeclarations.isEmpty {
                 addButton

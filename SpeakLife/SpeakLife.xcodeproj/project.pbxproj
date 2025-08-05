@@ -92,6 +92,8 @@
 		4597E2512E419DDF009D6C66 /* SyncConflictResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E24C2E419DDF009D6C66 /* SyncConflictResolverTests.swift */; };
 		4597E2522E419DDF009D6C66 /* DataMigrationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2492E419DDF009D6C66 /* DataMigrationManagerTests.swift */; };
 		4597E2552E41A62D009D6C66 /* SpeakLife.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2532E41A62D009D6C66 /* SpeakLife.xcdatamodeld */; };
+		4597E2572E41C181009D6C66 /* CloudKitSyncMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2562E41C181009D6C66 /* CloudKitSyncMonitor.swift */; };
+		4597E25A2E41C1AC009D6C66 /* CloudKitSyncBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2582E41C1AC009D6C66 /* CloudKitSyncBadge.swift */; };
 		45A4A3A42D7BD2AC00DFCEB7 /* declarationsv7.json in Sources */ = {isa = PBXBuildFile; fileRef = 45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */; };
 		45A4A3A52D7BF62600DFCEB7 /* declarationsv7.json in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */; };
 		45A4A3CB2D869D2700DFCEB7 /* sethpiano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3CA2D869D2700DFCEB7 /* sethpiano.mp3 */; };
@@ -322,6 +324,8 @@
 		4597E24B2E419DDF009D6C66 /* PersistenceControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceControllerTests.swift; sourceTree = "<group>"; };
 		4597E24C2E419DDF009D6C66 /* SyncConflictResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncConflictResolverTests.swift; sourceTree = "<group>"; };
 		4597E2542E41A62D009D6C66 /* SpeakLife.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpeakLife.xcdatamodel; sourceTree = "<group>"; };
+		4597E2562E41C181009D6C66 /* CloudKitSyncMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CloudKitSyncMonitor.swift; path = SpeakLife/Services/CoreData/CloudKitSyncMonitor.swift; sourceTree = SOURCE_ROOT; };
+		4597E2582E41C1AC009D6C66 /* CloudKitSyncBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitSyncBadge.swift; sourceTree = "<group>"; };
 		45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv7.json; sourceTree = "<group>"; };
 		45A4A3CA2D869D2700DFCEB7 /* sethpiano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sethpiano.mp3; sourceTree = "<group>"; };
 		45A4A3CE2D86B81900DFCEB7 /* everpresent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = everpresent.mp3; sourceTree = "<group>"; };
@@ -611,6 +615,7 @@
 				4597E22A2E419CEA009D6C66 /* Protocols */,
 				4597E22D2E419CEA009D6C66 /* Repositories */,
 				4597E22F2E419CEA009D6C66 /* Sync */,
+				4597E2562E41C181009D6C66 /* CloudKitSyncMonitor.swift */,
 				4597E2302E419CEA009D6C66 /* CoreDataAPIService.swift */,
 				4597E2312E419CEA009D6C66 /* PersistenceController.swift */,
 			);
@@ -648,6 +653,14 @@
 				4597E24C2E419DDF009D6C66 /* SyncConflictResolverTests.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		4597E2592E41C1AC009D6C66 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4597E2582E41C1AC009D6C66 /* CloudKitSyncBadge.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		45A4A3D42D89179C00DFCEB7 /* TestimonyView */ = {
@@ -791,6 +804,7 @@
 			children = (
 				458510D82B159B0D00230EE5 /* LandingView.swift */,
 				7A601440294E574500CD2103 /* HomeView.swift */,
+				4597E2592E41C1AC009D6C66 /* Components */,
 				454807862E3F3CAA00B8C71B /* Badge */,
 				7AA870B828DACCB700134ADB /* Onboarding */,
 				4597E2192E4138A9009D6C66 /* EntryView */,
@@ -1311,6 +1325,7 @@
 				7AA8709628DACCA800134ADB /* String+Extension.swift in Sources */,
 				7AF18C8F2A0CBD03005A6E31 /* Devotional.swift in Sources */,
 				456585F32D4F62EE002F2709 /* DevotionalSubscriptionView.swift in Sources */,
+				4597E25A2E41C1AC009D6C66 /* CloudKitSyncBadge.swift in Sources */,
 				7AA870C228DACCB700134ADB /* IntentsBarView.swift in Sources */,
 				7AA870E428DACD1A00134ADB /* AppState.swift in Sources */,
 				7AA870CB28DACCB700134ADB /* PremiumView.swift in Sources */,
@@ -1394,6 +1409,7 @@
 				4597E2422E419D7D009D6C66 /* AffirmationEntry+CoreDataClass.swift in Sources */,
 				4597E2432E419D7D009D6C66 /* JournalEntry+CoreDataClass.swift in Sources */,
 				4597E2442E419D7D009D6C66 /* AffirmationEntry+CoreDataProperties.swift in Sources */,
+				4597E2572E41C181009D6C66 /* CloudKitSyncMonitor.swift in Sources */,
 				7AA870D228DACCB700134ADB /* CategoryListView.swift in Sources */,
 				7AA870DA28DACCB700134ADB /* NotificationScene.swift in Sources */,
 				45A4A3A42D7BD2AC00DFCEB7 /* declarationsv7.json in Sources */,

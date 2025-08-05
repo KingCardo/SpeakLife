@@ -20,7 +20,7 @@ struct SaveConfirmationView: View {
     var body: some View {
         ZStack {
             // Semi-transparent background
-            Color.black.opacity(0.6)
+            Color.black.opacity(0.8)
                 .ignoresSafeArea()
             
             VStack(spacing: 24) {

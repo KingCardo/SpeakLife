@@ -50,15 +50,6 @@ struct FullScreenEntryView: View {
                 .ignoresSafeArea()
             
            VStack(spacing: 0) {
-//                // Header section - moved higher and with proper safe area handling
-//                EntryHeaderView(
-//                    contentType: contentType,
-//                    isEditing: isEditing,
-//                    wordCount: viewModel.wordCount,
-//                    onCancel: handleCancel
-//                )
-//                .padding(.top, 8)
-                    
                     // Voice state indicator (when active)
                     if voiceManager.voiceInputState != .idle {
                         VoiceStateIndicator(state: voiceManager.voiceInputState)
