@@ -15,7 +15,8 @@ struct SpeakLifeApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @Environment(\.scenePhase) private var scenePhase
     @StateObject var appState = AppState()
-    @StateObject var declarationStore = DeclarationViewModel(apiService: LocalAPIClient())
+    @StateObject var declarationStore = DeclarationViewModel(apiService: CoreDataAPIService())
+    let persistenceController = PersistenceController.shared
     @StateObject var themeStore = ThemeViewModel()
     @StateObject var subscriptionStore = SubscriptionStore()
     @StateObject var devotionalViewModel = DevotionalViewModel()
@@ -33,6 +34,7 @@ struct SpeakLifeApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView(isShowingLanding: $isShowingLanding)
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(appState)
                 .environmentObject(declarationStore)
                 .environmentObject(themeStore)

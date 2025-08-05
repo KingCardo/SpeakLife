@@ -73,6 +73,25 @@
 		4597E2222E4146C9009D6C66 /* EntryActionToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2212E4146C9009D6C66 /* EntryActionToolbar.swift */; };
 		4597E2242E4146EF009D6C66 /* VoiceStateIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2232E4146EF009D6C66 /* VoiceStateIndicator.swift */; };
 		4597E2262E419183009D6C66 /* VoiceCorrectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2252E419183009D6C66 /* VoiceCorrectionsView.swift */; };
+		4597E2332E419CEA009D6C66 /* JournalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E22C2E419CEA009D6C66 /* JournalRepository.swift */; };
+		4597E2342E419CEA009D6C66 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2312E419CEA009D6C66 /* PersistenceController.swift */; };
+		4597E2352E419CEA009D6C66 /* DataMigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2272E419CEA009D6C66 /* DataMigrationManager.swift */; };
+		4597E2362E419CEA009D6C66 /* AffirmationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E22B2E419CEA009D6C66 /* AffirmationRepository.swift */; };
+		4597E2372E419CEA009D6C66 /* SyncConflictResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E22E2E419CEA009D6C66 /* SyncConflictResolver.swift */; };
+		4597E2382E419CEA009D6C66 /* CoreDataAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2302E419CEA009D6C66 /* CoreDataAPIService.swift */; };
+		4597E2392E419CEA009D6C66 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2292E419CEA009D6C66 /* Repository.swift */; };
+		4597E2402E419D7D009D6C66 /* CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E23C2E419D7D009D6C66 /* CoreDataExtensions.swift */; };
+		4597E2412E419D7D009D6C66 /* JournalEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E23E2E419D7D009D6C66 /* JournalEntry+CoreDataProperties.swift */; };
+		4597E2422E419D7D009D6C66 /* AffirmationEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E23A2E419D7D009D6C66 /* AffirmationEntry+CoreDataClass.swift */; };
+		4597E2432E419D7D009D6C66 /* JournalEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E23D2E419D7D009D6C66 /* JournalEntry+CoreDataClass.swift */; };
+		4597E2442E419D7D009D6C66 /* AffirmationEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E23B2E419D7D009D6C66 /* AffirmationEntry+CoreDataProperties.swift */; };
+		4597E2472E419DB4009D6C66 /* CoreDataDeclarationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2452E419DB4009D6C66 /* CoreDataDeclarationViewModel.swift */; };
+		4597E24E2E419DDF009D6C66 /* AffirmationRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2482E419DDF009D6C66 /* AffirmationRepositoryTests.swift */; };
+		4597E24F2E419DDF009D6C66 /* JournalRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E24A2E419DDF009D6C66 /* JournalRepositoryTests.swift */; };
+		4597E2502E419DDF009D6C66 /* PersistenceControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E24B2E419DDF009D6C66 /* PersistenceControllerTests.swift */; };
+		4597E2512E419DDF009D6C66 /* SyncConflictResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E24C2E419DDF009D6C66 /* SyncConflictResolverTests.swift */; };
+		4597E2522E419DDF009D6C66 /* DataMigrationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2492E419DDF009D6C66 /* DataMigrationManagerTests.swift */; };
+		4597E2552E41A62D009D6C66 /* SpeakLife.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4597E2532E41A62D009D6C66 /* SpeakLife.xcdatamodeld */; };
 		45A4A3A42D7BD2AC00DFCEB7 /* declarationsv7.json in Sources */ = {isa = PBXBuildFile; fileRef = 45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */; };
 		45A4A3A52D7BF62600DFCEB7 /* declarationsv7.json in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */; };
 		45A4A3CB2D869D2700DFCEB7 /* sethpiano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45A4A3CA2D869D2700DFCEB7 /* sethpiano.mp3 */; };
@@ -284,6 +303,25 @@
 		4597E2212E4146C9009D6C66 /* EntryActionToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryActionToolbar.swift; sourceTree = "<group>"; };
 		4597E2232E4146EF009D6C66 /* VoiceStateIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceStateIndicator.swift; sourceTree = "<group>"; };
 		4597E2252E419183009D6C66 /* VoiceCorrectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCorrectionsView.swift; sourceTree = "<group>"; };
+		4597E2272E419CEA009D6C66 /* DataMigrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMigrationManager.swift; sourceTree = "<group>"; };
+		4597E2292E419CEA009D6C66 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		4597E22B2E419CEA009D6C66 /* AffirmationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationRepository.swift; sourceTree = "<group>"; };
+		4597E22C2E419CEA009D6C66 /* JournalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRepository.swift; sourceTree = "<group>"; };
+		4597E22E2E419CEA009D6C66 /* SyncConflictResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncConflictResolver.swift; sourceTree = "<group>"; };
+		4597E2302E419CEA009D6C66 /* CoreDataAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAPIService.swift; sourceTree = "<group>"; };
+		4597E2312E419CEA009D6C66 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		4597E23A2E419D7D009D6C66 /* AffirmationEntry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AffirmationEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4597E23B2E419D7D009D6C66 /* AffirmationEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AffirmationEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4597E23C2E419D7D009D6C66 /* CoreDataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExtensions.swift; sourceTree = "<group>"; };
+		4597E23D2E419D7D009D6C66 /* JournalEntry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4597E23E2E419D7D009D6C66 /* JournalEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4597E2452E419DB4009D6C66 /* CoreDataDeclarationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDeclarationViewModel.swift; sourceTree = "<group>"; };
+		4597E2482E419DDF009D6C66 /* AffirmationRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationRepositoryTests.swift; sourceTree = "<group>"; };
+		4597E2492E419DDF009D6C66 /* DataMigrationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMigrationManagerTests.swift; sourceTree = "<group>"; };
+		4597E24A2E419DDF009D6C66 /* JournalRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRepositoryTests.swift; sourceTree = "<group>"; };
+		4597E24B2E419DDF009D6C66 /* PersistenceControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceControllerTests.swift; sourceTree = "<group>"; };
+		4597E24C2E419DDF009D6C66 /* SyncConflictResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncConflictResolverTests.swift; sourceTree = "<group>"; };
+		4597E2542E41A62D009D6C66 /* SpeakLife.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpeakLife.xcdatamodel; sourceTree = "<group>"; };
 		45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv7.json; sourceTree = "<group>"; };
 		45A4A3CA2D869D2700DFCEB7 /* sethpiano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sethpiano.mp3; sourceTree = "<group>"; };
 		45A4A3CE2D86B81900DFCEB7 /* everpresent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = everpresent.mp3; sourceTree = "<group>"; };
@@ -453,6 +491,7 @@
 				456885292B428D77007B1EBB /* NotificationManagerTests.swift */,
 				4568852B2B428FE2007B1EBB /* SpeakLifeTests-Bridging-Header.h */,
 				450720DA2BAFFB4A0029EE2B /* TimerViewModelTests.swift */,
+				4597E24D2E419DDF009D6C66 /* CoreData */,
 			);
 			path = SpeakLifeTests;
 			sourceTree = "<group>";
@@ -532,6 +571,85 @@
 			path = SpeakLife/Views/EntryView;
 			sourceTree = SOURCE_ROOT;
 		};
+		4597E2282E419CEA009D6C66 /* Migration */ = {
+			isa = PBXGroup;
+			children = (
+				4597E2272E419CEA009D6C66 /* DataMigrationManager.swift */,
+			);
+			path = Migration;
+			sourceTree = "<group>";
+		};
+		4597E22A2E419CEA009D6C66 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4597E2292E419CEA009D6C66 /* Repository.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4597E22D2E419CEA009D6C66 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				4597E22B2E419CEA009D6C66 /* AffirmationRepository.swift */,
+				4597E22C2E419CEA009D6C66 /* JournalRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		4597E22F2E419CEA009D6C66 /* Sync */ = {
+			isa = PBXGroup;
+			children = (
+				4597E22E2E419CEA009D6C66 /* SyncConflictResolver.swift */,
+			);
+			path = Sync;
+			sourceTree = "<group>";
+		};
+		4597E2322E419CEA009D6C66 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4597E2282E419CEA009D6C66 /* Migration */,
+				4597E22A2E419CEA009D6C66 /* Protocols */,
+				4597E22D2E419CEA009D6C66 /* Repositories */,
+				4597E22F2E419CEA009D6C66 /* Sync */,
+				4597E2302E419CEA009D6C66 /* CoreDataAPIService.swift */,
+				4597E2312E419CEA009D6C66 /* PersistenceController.swift */,
+			);
+			name = CoreData;
+			path = SpeakLife/Services/CoreData;
+			sourceTree = SOURCE_ROOT;
+		};
+		4597E23F2E419D7D009D6C66 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4597E23A2E419D7D009D6C66 /* AffirmationEntry+CoreDataClass.swift */,
+				4597E23B2E419D7D009D6C66 /* AffirmationEntry+CoreDataProperties.swift */,
+				4597E23C2E419D7D009D6C66 /* CoreDataExtensions.swift */,
+				4597E23D2E419D7D009D6C66 /* JournalEntry+CoreDataClass.swift */,
+				4597E23E2E419D7D009D6C66 /* JournalEntry+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		4597E2462E419DB4009D6C66 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4597E2452E419DB4009D6C66 /* CoreDataDeclarationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4597E24D2E419DDF009D6C66 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4597E2482E419DDF009D6C66 /* AffirmationRepositoryTests.swift */,
+				4597E2492E419DDF009D6C66 /* DataMigrationManagerTests.swift */,
+				4597E24A2E419DDF009D6C66 /* JournalRepositoryTests.swift */,
+				4597E24B2E419DDF009D6C66 /* PersistenceControllerTests.swift */,
+				4597E24C2E419DDF009D6C66 /* SyncConflictResolverTests.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		45A4A3D42D89179C00DFCEB7 /* TestimonyView */ = {
 			isa = PBXGroup;
 			children = (
@@ -606,6 +724,7 @@
 				453BD6112D79865200BF39E0 /* SpeakLife.entitlements */,
 				7A7BEBCA2913534E008D08A3 /* Info.plist */,
 				7AA8706428DACB2900134ADB /* App */,
+				4597E2462E419DB4009D6C66 /* ViewModels */,
 				7AA8706528DACB3500134ADB /* Views */,
 				7AA8706628DACB3F00134ADB /* Models */,
 				7AA8706728DACB5100134ADB /* Services */,
@@ -690,7 +809,9 @@
 		7AA8706628DACB3F00134ADB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4597E23F2E419D7D009D6C66 /* CoreData */,
 				7AA8706B28DACC4E00134ADB /* DailyDeclaration.swift */,
+				4597E2532E41A62D009D6C66 /* SpeakLife.xcdatamodeld */,
 				7AA8706A28DACC4E00134ADB /* Reminder.swift */,
 				7AA8706928DACC4E00134ADB /* Theme.swift */,
 				4597E1CD2E3F4221009D6C66 /* BadgeModel.swift */,
@@ -704,6 +825,7 @@
 		7AA8706728DACB5100134ADB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4597E2322E419CEA009D6C66 /* CoreData */,
 				45C7482E2B5BC41E0011D8F6 /* AudioPlayer */,
 				7AF18C8D2A0CBAAF005A6E31 /* DailyDevotions */,
 				7AA8707828DACC8300134ADB /* IAP */,
@@ -1158,6 +1280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4597E24E2E419DDF009D6C66 /* AffirmationRepositoryTests.swift in Sources */,
+				4597E24F2E419DDF009D6C66 /* JournalRepositoryTests.swift in Sources */,
+				4597E2502E419DDF009D6C66 /* PersistenceControllerTests.swift in Sources */,
+				4597E2512E419DDF009D6C66 /* SyncConflictResolverTests.swift in Sources */,
+				4597E2522E419DDF009D6C66 /* DataMigrationManagerTests.swift in Sources */,
 				4597E1E42E3FDC66009D6C66 /* EnhancedStreakViewModelTests.swift in Sources */,
 				45B5A8302DDC14B4006DE6AA /* DevotionalTests.swift in Sources */,
 				4597E1E72E3FDC79009D6C66 /* StreakDisplayTests.swift in Sources */,
@@ -1258,8 +1385,15 @@
 				454807602E3F11DC00B8C71B /* DailyChecklistFullScreenView.swift in Sources */,
 				7AA8707E28DACC8300134ADB /* APIService.swift in Sources */,
 				7AA870CA28DACCB700134ADB /* SubscriptionView.swift in Sources */,
+				4597E2552E41A62D009D6C66 /* SpeakLife.xcdatamodeld in Sources */,
 				7AA8709128DACCA700134ADB /* GlobalConstants.swift in Sources */,
+				4597E2472E419DB4009D6C66 /* CoreDataDeclarationViewModel.swift in Sources */,
 				7A601441294E574500CD2103 /* HomeView.swift in Sources */,
+				4597E2402E419D7D009D6C66 /* CoreDataExtensions.swift in Sources */,
+				4597E2412E419D7D009D6C66 /* JournalEntry+CoreDataProperties.swift in Sources */,
+				4597E2422E419D7D009D6C66 /* AffirmationEntry+CoreDataClass.swift in Sources */,
+				4597E2432E419D7D009D6C66 /* JournalEntry+CoreDataClass.swift in Sources */,
+				4597E2442E419D7D009D6C66 /* AffirmationEntry+CoreDataProperties.swift in Sources */,
 				7AA870D228DACCB700134ADB /* CategoryListView.swift in Sources */,
 				7AA870DA28DACCB700134ADB /* NotificationScene.swift in Sources */,
 				45A4A3A42D7BD2AC00DFCEB7 /* declarationsv7.json in Sources */,
@@ -1301,6 +1435,13 @@
 				7AF18C8829FF8CEE005A6E31 /* TipsView.swift in Sources */,
 				458510D72B15935100230EE5 /* HideTabModifier.swift in Sources */,
 				7AF18C8C2A08CE92005A6E31 /* SpeechSynthesizer.swift in Sources */,
+				4597E2332E419CEA009D6C66 /* JournalRepository.swift in Sources */,
+				4597E2342E419CEA009D6C66 /* PersistenceController.swift in Sources */,
+				4597E2352E419CEA009D6C66 /* DataMigrationManager.swift in Sources */,
+				4597E2362E419CEA009D6C66 /* AffirmationRepository.swift in Sources */,
+				4597E2372E419CEA009D6C66 /* SyncConflictResolver.swift in Sources */,
+				4597E2382E419CEA009D6C66 /* CoreDataAPIService.swift in Sources */,
+				4597E2392E419CEA009D6C66 /* Repository.swift in Sources */,
 				7AA8709328DACCA700134ADB /* CapsuleImageButton.swift in Sources */,
 				4548075C2E3F04C100B8C71B /* StreakCompletionViews.swift in Sources */,
 				4548075A2E3F04B300B8C71B /* StreakIntegrationManager.swift in Sources */,
@@ -1756,6 +1897,19 @@
 			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		4597E2532E41A62D009D6C66 /* SpeakLife.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4597E2542E41A62D009D6C66 /* SpeakLife.xcdatamodel */,
+			);
+			currentVersion = 4597E2542E41A62D009D6C66 /* SpeakLife.xcdatamodel */;
+			path = SpeakLife.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7A278F8F288915DE0084BB57 /* Project object */;
 }

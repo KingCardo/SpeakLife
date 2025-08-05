@@ -18,6 +18,7 @@ enum APIError: Error {
     case invalidResponse
     case failedDecode
     case resourceNotFound
+    case noData
 
     // MARK: - Properties
 
@@ -26,6 +27,7 @@ enum APIError: Error {
         case .unreachable:
             return "You need to have a network connection."
         case .unknown,
+                .noData,
                 .failedRequest,
                 .invalidResponse,
                 .failedDecode,
