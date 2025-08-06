@@ -148,19 +148,21 @@ struct VoiceInputToolbar: View {
     }
     
     private func stopVoiceInput() {
-        // Save any pending transcription before stopping
-        if !voiceManager.transcribedText.isEmpty {
-            let trimmedText = voiceManager.transcribedText.trimmingCharacters(in: .whitespacesAndNewlines)
-            if trimmedText.count > 3 {
-                viewModel.appendVoiceText(trimmedText)
-            }
-        }
-        
+        // First stop listening to prevent further updates
         voiceManager.stopListening()
         
-        // Clear transcription after saving
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.voiceManager.clearTranscription()
+        // Wait a moment for final transcription results, then save
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            // Save any pending transcription after stopping
+            if !self.voiceManager.transcribedText.isEmpty {
+                let trimmedText = self.voiceManager.transcribedText.trimmingCharacters(in: .whitespacesAndNewlines)
+                if trimmedText.count > 3 {
+                    self.viewModel.appendVoiceText(trimmedText)
+                }
+                
+                // Clear transcription immediately after saving to prevent duplication
+                self.voiceManager.clearTranscription()
+            }
         }
         
         // Gentle haptic feedback

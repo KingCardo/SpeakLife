@@ -124,22 +124,28 @@ final class CloudKitSyncMonitor: ObservableObject {
     }
     
     private func updateSyncStatus() {
-        // If we're not actively syncing, mark as synced
-        if !isImporting && !isExporting {
-            switch syncStatus {
-            case .syncing:
-                syncStatus = .synced
-                lastSyncDate = Date()
-            default:
-                break
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            // If we're not actively syncing, mark as synced
+            if !self.isImporting && !self.isExporting {
+                switch self.syncStatus {
+                case .syncing:
+                    self.syncStatus = .synced
+                    self.lastSyncDate = Date()
+                default:
+                    break
+                }
             }
         }
     }
     
     // MARK: - Public Methods
     func requestSync() {
-        print("RWRW: Sync Monitor - Manual sync requested")
-        syncStatus = .syncing
+        DispatchQueue.main.async { [weak self] in
+            print("RWRW: Sync Monitor - Manual sync requested")
+            self?.syncStatus = .syncing
+        }
         
         // Use the optimized sync request
         PersistenceController.shared.requestImmediateSync()

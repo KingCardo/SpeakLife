@@ -81,6 +81,7 @@ class EntryViewModel: ObservableObject {
         guard !voiceText.isEmpty else { return }
         
         let trimmedVoice = voiceText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedVoice.isEmpty else { return }
         
         if text.isEmpty {
             text = trimmedVoice
@@ -92,7 +93,31 @@ class EntryViewModel: ObservableObject {
             text += separator + trimmedVoice
         }
         
+        // Ensure text ends properly - add period if it doesn't end with punctuation
+        if !text.isEmpty, let lastChar = text.last,
+           !CharacterSet.punctuationCharacters.contains(Unicode.Scalar(String(lastChar))!) {
+            text += "."
+        }
+        
         // Trigger haptic feedback for voice integration
+        let impactFeedback = UIImpactFeedbackGenerator(style: .light)
+        impactFeedback.impactOccurred()
+    }
+    
+    func replaceWithVoiceText(_ voiceText: String) {
+        // Alternative method to replace entire text with voice input
+        let trimmedVoice = voiceText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedVoice.isEmpty else { return }
+        
+        text = trimmedVoice
+        
+        // Ensure text ends properly
+        if let lastChar = text.last,
+           !CharacterSet.punctuationCharacters.contains(Unicode.Scalar(String(lastChar))!) {
+            text += "."
+        }
+        
+        // Trigger haptic feedback
         let impactFeedback = UIImpactFeedbackGenerator(style: .light)
         impactFeedback.impactOccurred()
     }

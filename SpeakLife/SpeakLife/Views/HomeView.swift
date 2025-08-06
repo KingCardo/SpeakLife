@@ -77,8 +77,15 @@ struct HomeView: View {
                             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
                                
                                 Task {
+                                    // Always fetch remote config when coming from background
+                                    await subscriptionStore.fetchRemoteConfig()
+                                    
+                                    // Update audio and declaration versions with new remote values
+                                    audioDeclarationViewModel.fetchAudio(version: subscriptionStore.audioRemoteVersion)
+                                    declarationStore.setRemoteDeclarationVersion(version: subscriptionStore.remoteVersion)
+                                    
+                                    // Fetch devotional if needed
                                     if devotionalViewModel.shouldFetchNewDevotional() {
-                                        await subscriptionStore.fetchRemoteConfig()
                                         await devotionalViewModel.fetchDevotional(remoteVersion: subscriptionStore.currentDevotionalVersion)
                                         devotionalViewModel.lastFetchDate = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
                                     }

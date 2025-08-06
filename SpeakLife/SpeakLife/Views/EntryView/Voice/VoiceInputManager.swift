@@ -120,12 +120,21 @@ class VoiceInputManager: NSObject, ObservableObject {
             return
         }
         
-        // Clean up any previous session first - always do this
-        if isListening || audioEngine.isRunning {
+        // If already listening or engine is running, stop first
+        if isListening || audioEngine.isRunning || recognitionTask != nil {
             stopListening()
-            // Wait a moment for cleanup to complete
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            // Wait longer for cleanup to complete
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
                 self.performStartListening()
+            }
+            return
+        }
+        
+        // Check if we're in a transitional state
+        if voiceInputState == .processing || voiceInputState == .transcribing {
+            // Wait for current operation to complete
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.startListening()
             }
             return
         }
@@ -135,8 +144,22 @@ class VoiceInputManager: NSObject, ObservableObject {
     
     private func performStartListening() {
         do {
+            print("🎤 Voice Input: Starting new session...")
+            
+            // Reset audio engine to clean state
+            if audioEngine.isRunning {
+                print("🎤 Voice Input: Stopping running engine")
+                audioEngine.stop()
+                audioEngine.reset()
+            }
+            
+            print("🎤 Voice Input: Setting up audio session")
             try setupAudioSession()
+            
+            print("🎤 Voice Input: Starting speech recognition")
             try startSpeechRecognition()
+            
+            print("🎤 Voice Input: Starting audio level monitoring")
             startAudioLevelMonitoring()
             
             voiceInputState = .listening
@@ -146,6 +169,7 @@ class VoiceInputManager: NSObject, ObservableObject {
             // Auto-stop after max duration
             recordingTimer = Timer.scheduledTimer(withTimeInterval: maxRecordingDuration, repeats: false) { [weak self] _ in
                 Task { @MainActor [weak self] in
+                    print("🎤 Voice Input: Max duration reached, stopping")
                     self?.stopListening()
                 }
             }
@@ -154,7 +178,10 @@ class VoiceInputManager: NSObject, ObservableObject {
             let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
             impactFeedback.impactOccurred()
             
+            print("🎤 Voice Input: Successfully started listening")
+            
         } catch {
+            print("🎤 Voice Input Error: \(error)")
             handleError(error)
         }
     }
@@ -162,11 +189,19 @@ class VoiceInputManager: NSObject, ObservableObject {
     func stopListening() {
         guard isListening else { return }
         
-        // Stop recognition first to prevent new audio data
-        recognitionRequest?.endAudio()
-        recognitionTask?.cancel()
+        // Set state first to prevent new operations
+        isListening = false
         
-        // Stop audio engine safely with proper cleanup
+        // Stop recognition immediately but gracefully
+        recognitionRequest?.endAudio()
+        
+        // Clean up timers immediately
+        recordingTimer?.invalidate()
+        recordingTimer = nil
+        audioLevelTimer?.invalidate()
+        audioLevelTimer = nil
+        
+        // Stop audio engine immediately with proper cleanup
         if audioEngine.isRunning {
             // Remove the tap first to avoid crashes
             let inputNode = audioEngine.inputNode
@@ -174,36 +209,35 @@ class VoiceInputManager: NSObject, ObservableObject {
             
             // Stop the engine
             audioEngine.stop()
+        }
+        
+        // Wait a brief moment for final results, then do final cleanup
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            guard let self = self else { return }
             
-            // Reset the engine for next session
-            audioEngine.reset()
+            // Cancel recognition task
+            self.recognitionTask?.cancel()
+            self.recognitionTask = nil
+            self.recognitionRequest = nil
+            
+            // Reset audio engine for next use
+            self.audioEngine.reset()
+            
+            // Deactivate audio session
+            do {
+                try self.audioSession.setActive(false, options: .notifyOthersOnDeactivation)
+            } catch {
+                print("Error deactivating audio session: \(error)")
+            }
+            
+            // Update final state
+            self.voiceInputState = self.transcribedText.isEmpty ? .idle : .completed
+            self.audioLevels.removeAll()
+            
+            // Add haptic feedback
+            let impactFeedback = UIImpactFeedbackGenerator(style: .light)
+            impactFeedback.impactOccurred()
         }
-        
-        // Clean up recognition objects
-        recognitionRequest = nil
-        recognitionTask = nil
-        
-        // Clean up timers safely
-        recordingTimer?.invalidate()
-        recordingTimer = nil
-        audioLevelTimer?.invalidate()
-        audioLevelTimer = nil
-        
-        // Deactivate audio session to allow other apps to use audio
-        do {
-            try audioSession.setActive(false, options: .notifyOthersOnDeactivation)
-        } catch {
-            print("Error deactivating audio session: \(error)")
-        }
-        
-        // Update state
-        voiceInputState = transcribedText.isEmpty ? .idle : .completed
-        isListening = false
-        audioLevels.removeAll()
-        
-        // Add haptic feedback
-        let impactFeedback = UIImpactFeedbackGenerator(style: .light)
-        impactFeedback.impactOccurred()
     }
     
     func pauseListening() {
@@ -232,11 +266,25 @@ class VoiceInputManager: NSObject, ObservableObject {
         errorMessage = nil
     }
     
+    func finalizePendingTranscription() {
+        // Force finalization of any pending transcription - useful when switching between voice and manual input
+        if !transcribedText.isEmpty && voiceInputState == .transcribing {
+            voiceInputState = .completed
+            
+            // Give one final enhancement pass
+            transcribedText = enhanceTranscription(transcribedText)
+        }
+    }
+    
     // MARK: - Private Implementation
     private func setupAudioSession() throws {
-        // Deactivate first if already active to avoid conflicts
-        if audioSession.isOtherAudioPlaying == false {
-            try audioSession.setActive(false, options: .notifyOthersOnDeactivation)
+        // Always deactivate first to ensure clean state
+        do {
+            if audioSession.category != .playAndRecord {
+                try audioSession.setActive(false, options: .notifyOthersOnDeactivation)
+            }
+        } catch {
+            print("🎤 Voice Input: Warning - Could not deactivate audio session: \(error)")
         }
         
         // Enhanced audio session for better voice recognition
@@ -256,7 +304,14 @@ class VoiceInputManager: NSObject, ObservableObject {
         }
         
         // Activate with proper error handling
-        try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        do {
+            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        } catch {
+            print("🎤 Voice Input: Error activating audio session: \(error)")
+            // Try once more with basic settings
+            try audioSession.setCategory(.playAndRecord, mode: .default)
+            try audioSession.setActive(true)
+        }
     }
     
     private func startSpeechRecognition() throws {
@@ -318,21 +373,26 @@ class VoiceInputManager: NSObject, ObservableObject {
                         .map { $0.formattedString }
                         .filter { $0 != newText }
                     
-                    // Only update if text actually changed and confidence is reasonable
-                    if newText != self.transcribedText && (self.transcriptionConfidence > 0.5 || self.retryCount >= self.maxRetries) {
+                    // Always update text for live transcription, but prioritize final results
+                    if result.isFinal {
+                        // Final result - always use it regardless of confidence
                         self.transcribedText = self.enhanceTranscription(newText)
                         self.lastTranscriptionTime = Date()
                         self.retryCount = 0
-                    } else if self.transcriptionConfidence <= 0.5 && self.retryCount < self.maxRetries {
-                        // Low confidence - might retry
-                        self.retryCount += 1
-                    }
-                    
-                    // Update state based on final result
-                    if result.isFinal {
                         self.voiceInputState = .completed
-                    } else {
-                        self.voiceInputState = .transcribing
+                    } else if newText != self.transcribedText {
+                        // Partial result - update if confidence is reasonable or if it's significantly longer
+                        let significantlyLonger = newText.count > self.transcribedText.count + 5
+                        
+                        if self.transcriptionConfidence > 0.3 || significantlyLonger || self.retryCount >= self.maxRetries {
+                            self.transcribedText = self.enhanceTranscription(newText)
+                            self.lastTranscriptionTime = Date()
+                            self.retryCount = 0
+                            self.voiceInputState = .transcribing
+                        } else if self.transcriptionConfidence <= 0.3 && self.retryCount < self.maxRetries {
+                            // Low confidence - might retry
+                            self.retryCount += 1
+                        }
                     }
                 }
                 
@@ -366,6 +426,9 @@ class VoiceInputManager: NSObject, ObservableObject {
                 print("Voice processing not available: \(error)")
             }
         }
+        
+        // Remove any existing tap before installing new one
+        inputNode.removeTap(onBus: 0)
         
         // Use larger buffer size for better accuracy
         inputNode.installTap(onBus: 0, bufferSize: 8192, format: recordingFormat) { [weak self] buffer, _ in
