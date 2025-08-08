@@ -120,28 +120,31 @@ struct HomeView: View {
     
     @ViewBuilder
     var homeView: some View {
-        TabView(selection: $tabViewModel.selectedTab) {
-            declarationView
-            devotionalView
-            audioView
-            createYourOwnView
-            profileView
-                
-            }
-            .hideTabBar(if: appState.showScreenshotLabel)
-            .sheet(isPresented: $isPresented) {
-                WhatsNewBottomSheet(isPresented: $isPresented, version: currentVersion)
-                    .presentationDetents([.medium])
-                    .presentationDragIndicator(.visible)
-            }
-            .accentColor(Constants.DAMidBlue)
-            .onAppear {
-                checkForNewVersion()
-                UIScrollView.appearance().isScrollEnabled = true
-            }
-            .background(Color.clear)
-            .environment(\.colorScheme, .dark)
-            .ignoresSafeArea()
+        ZStack {
+            TabView(selection: $tabViewModel.selectedTab) {
+                declarationView
+                devotionalView
+                audioView
+                createYourOwnView
+                profileView
+                    
+                }
+                .hideTabBar(if: appState.showScreenshotLabel)
+                .sheet(isPresented: $isPresented) {
+                    WhatsNewBottomSheet(isPresented: $isPresented, version: currentVersion)
+                        .presentationDetents([.medium])
+                        .presentationDragIndicator(.visible)
+                }
+                .accentColor(Constants.DAMidBlue)
+                .onAppear {
+                    checkForNewVersion()
+                    UIScrollView.appearance().isScrollEnabled = true
+                }
+                .background(Color.clear)
+                .environment(\.colorScheme, .dark)
+                .ignoresSafeArea()
+            
+        }
     }
     
     var declarationView: some View {

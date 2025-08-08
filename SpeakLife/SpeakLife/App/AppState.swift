@@ -48,6 +48,7 @@ final class AppState: ObservableObject {
     @AppStorage("email") var email = ""
     @AppStorage("hasEmail") var needEmail = true
     @AppStorage("showQuizButton") var showQuizButton = true
+    
     @AppStorage("hasCompletedDemo") var hasCompletedDemo = false
     
     // Checklist notification settings

@@ -60,6 +60,15 @@ struct CloudKitSyncBadge: View {
             Image(systemName: "icloud")
                 .font(.caption)
                 .foregroundColor(.gray)
+            
+        case .importing:
+            Image(systemName: "icloud.and.arrow.down")
+                .font(.caption)
+                .foregroundColor(.blue)
+                .rotationEffect(.degrees(animateSync ? 360 : 0))
+                .animation(.linear(duration: 2).repeatForever(autoreverses: false), value: animateSync)
+                .onAppear { animateSync = true }
+                .onDisappear { animateSync = false }
         }
     }
     
@@ -75,6 +84,8 @@ struct CloudKitSyncBadge: View {
             return .orange.opacity(0.1)
         case .unknown:
             return .gray.opacity(0.1)
+        case .importing:
+            return .blue.opacity(0.1)
         }
     }
     
@@ -90,6 +101,8 @@ struct CloudKitSyncBadge: View {
             return .orange
         case .unknown:
             return .gray
+        case .importing:
+            return .blue
         }
     }
     
@@ -100,14 +113,14 @@ struct CloudKitSyncBadge: View {
         case .synced:
             // Show briefly after sync completes, then fade out
             return syncMonitor.lastSyncDate?.timeIntervalSinceNow ?? -1000 > -5
-        case .syncing, .error, .accountUnavailable:
+        case .syncing, .error, .accountUnavailable, .importing:
             return true
         }
     }
     
     private var shouldShowText: Bool {
         switch syncMonitor.syncStatus {
-        case .syncing, .error, .accountUnavailable:
+        case .syncing, .error, .accountUnavailable, .importing:
             return true
         case .synced, .unknown:
             return false
@@ -168,6 +181,15 @@ struct CloudKitSyncBadgeCompact: View {
             Image(systemName: "icloud")
                 .font(.system(size: 14))
                 .foregroundColor(.gray)
+            
+        case .importing:
+            Image(systemName: "icloud.and.arrow.down")
+                .font(.system(size: 14))
+                .foregroundColor(.blue)
+                .rotationEffect(.degrees(animateSync ? 360 : 0))
+                .animation(.linear(duration: 2).repeatForever(autoreverses: false), value: animateSync)
+                .onAppear { animateSync = true }
+                .onDisappear { animateSync = false }
         }
     }
     
@@ -187,7 +209,7 @@ struct CloudKitSyncBadgeCompact: View {
         case .synced:
             // Show briefly after sync completes
             return syncMonitor.lastSyncDate?.timeIntervalSinceNow ?? -1000 > -3
-        case .syncing, .error, .accountUnavailable:
+        case .syncing, .error, .accountUnavailable, .importing:
             return true
         }
     }

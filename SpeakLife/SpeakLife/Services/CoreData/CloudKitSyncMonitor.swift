@@ -16,6 +16,7 @@ enum CloudKitSyncStatus {
     case synced
     case error(String)
     case accountUnavailable
+    case importing // New state for initial import
 }
 
 final class CloudKitSyncMonitor: ObservableObject {
@@ -48,6 +49,35 @@ final class CloudKitSyncMonitor: ObservableObject {
             .sink { [weak self] _ in
                 print("RWRW: Remote change detected - updating sync status")
                 self?.updateSyncStatus()
+            }
+            .store(in: &cancellables)
+        
+        // Monitor import started
+        NotificationCenter.default.publisher(for: NSNotification.Name("CloudKitImportStarted"))
+            .sink { [weak self] _ in
+                DispatchQueue.main.async {
+                    self?.syncStatus = .importing
+                }
+            }
+            .store(in: &cancellables)
+        
+        // Monitor import completed
+        NotificationCenter.default.publisher(for: NSNotification.Name("CloudKitImportCompleted"))
+            .sink { [weak self] _ in
+                DispatchQueue.main.async {
+                    self?.syncStatus = .synced
+                    self?.lastSyncDate = Date()
+                }
+            }
+            .store(in: &cancellables)
+        
+        // Monitor import failed
+        NotificationCenter.default.publisher(for: NSNotification.Name("CloudKitImportFailed"))
+            .sink { [weak self] notification in
+                DispatchQueue.main.async {
+                    let reason = notification.userInfo?["reason"] as? String ?? "Unknown error"
+                    self?.syncStatus = .error(reason)
+                }
             }
             .store(in: &cancellables)
     }
@@ -166,6 +196,8 @@ final class CloudKitSyncMonitor: ObservableObject {
             return "Sync error: \(message)"
         case .accountUnavailable:
             return "iCloud unavailable"
+        case .importing:
+            return "Importing your data..."
         }
     }
     

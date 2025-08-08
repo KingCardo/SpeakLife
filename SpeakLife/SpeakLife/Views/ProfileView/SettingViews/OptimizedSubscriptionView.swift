@@ -722,7 +722,7 @@ struct OptimizedSubscriptionView: View {
         animateCTA = true
         showBadge = true
         startTestimonialRotation()
-        
+        usersOnline = Int.random(in: 1200...1400)
         // Randomize online users
         Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { _ in
             withAnimation {

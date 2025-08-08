@@ -13,6 +13,11 @@ final class PersistenceController {
     
     static let shared = PersistenceController()
     
+    // Track import attempts for retry logic
+    private var importAttempts = 0
+    private let maxImportAttempts = 5
+    private let importRetryDelays = [5.0, 10.0, 15.0, 30.0, 60.0] // Progressive delays
+    
     static var preview: PersistenceController = {
         let controller = PersistenceController(inMemory: true)
         let viewContext = controller.container.viewContext
@@ -80,6 +85,13 @@ final class PersistenceController {
             let options = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.franchiz.speaklife")
             options.databaseScope = .private
             
+            // IMPORTANT: Check if we're in production (TestFlight/App Store) or development
+            #if DEBUG
+            print("RWRW: Using CloudKit DEVELOPMENT environment")
+            #else
+            print("RWRW: Using CloudKit PRODUCTION environment")
+            #endif
+            
             description.cloudKitContainerOptions = options
         }
         
@@ -96,6 +108,11 @@ final class PersistenceController {
                 print("RWRW: Persistent store loaded successfully")
                 print("RWRW: Store URL: \(storeDescription.url?.path ?? "No URL")")
                 print("RWRW: CloudKit enabled: \(storeDescription.cloudKitContainerOptions != nil)")
+                
+                // CRITICAL: For production builds, we need to ensure schema is initialized
+                #if !DEBUG
+                self.initializeCloudKitSchema()
+                #endif
                 
                 // Check CloudKit account status
                 self.checkCloudKitAccountStatus()
@@ -116,8 +133,8 @@ final class PersistenceController {
         // Setup background sync optimization
         setupBackgroundSyncOptimization()
         
-        // Force initial CloudKit import check on fresh install
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        // Force initial CloudKit import check on fresh install with longer delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
             self.checkForInitialCloudKitImport()
         }
     }
@@ -243,35 +260,70 @@ final class PersistenceController {
     
     // MARK: - Initial CloudKit Import Check
     private func checkForInitialCloudKitImport() {
-        print("RWRW: Checking for initial CloudKit import...")
+        print("RWRW: Checking for initial CloudKit import (attempt \(importAttempts + 1)/\(maxImportAttempts))...")
         
-        let context = container.viewContext
-        context.perform {
-            // Check if we have any local data
-            let journalRequest = JournalEntry.fetchRequest()
-            let affirmationRequest = AffirmationEntry.fetchRequest()
+        // First check CloudKit account status
+        let cloudKitContainer = CKContainer(identifier: "iCloud.com.franchiz.speaklife")
+        cloudKitContainer.accountStatus { [weak self] status, error in
+            guard let self = self else { return }
             
-            do {
-                let journalCount = try context.count(for: journalRequest)
-                let affirmationCount = try context.count(for: affirmationRequest)
-                
-                print("RWRW: Local data count - Journals: \(journalCount), Affirmations: \(affirmationCount)")
-                
-                if journalCount == 0 && affirmationCount == 0 {
-                    print("RWRW: No local data found - forcing CloudKit import...")
-                    
-                    // Force CloudKit to import by refreshing context
-                    DispatchQueue.main.async {
-                        self.container.viewContext.refreshAllObjects()
-                        
-                        // Also try to trigger import by fetching from CloudKit
-                        self.forceCloudKitImport()
-                    }
-                } else {
-                    print("RWRW: Local data exists - no import needed")
+            if status != .available {
+                let statusString = switch status {
+                case .noAccount: "No iCloud account"
+                case .restricted: "iCloud restricted"
+                case .couldNotDetermine: "Could not determine"
+                case .temporarilyUnavailable: "Temporarily unavailable"
+                @unknown default: "Unknown status"
                 }
-            } catch {
-                print("RWRW: Error checking local data count - \(error.localizedDescription)")
+                
+                print("RWRW: CloudKit not available, status: \(status)")
+                NotificationCenter.default.post(name: NSNotification.Name("CloudKitImportFailed"), 
+                                              object: nil, 
+                                              userInfo: ["reason": statusString])
+                return
+            }
+            
+            let context = self.container.viewContext
+            context.perform {
+                // Check if we have any local data
+                let journalRequest = JournalEntry.fetchRequest()
+                let affirmationRequest = AffirmationEntry.fetchRequest()
+                
+                do {
+                    let journalCount = try context.count(for: journalRequest)
+                    let affirmationCount = try context.count(for: affirmationRequest)
+                    
+                    print("RWRW: Local data count - Journals: \(journalCount), Affirmations: \(affirmationCount)")
+                    
+                    if journalCount == 0 && affirmationCount == 0 {
+                        print("RWRW: No local data found - forcing CloudKit import...")
+                        
+                        self.importAttempts += 1
+                        
+                        // Notify UI that import is starting
+                        DispatchQueue.main.async {
+                            NotificationCenter.default.post(name: NSNotification.Name("CloudKitImportStarted"), object: nil)
+                        }
+                        
+                        // Force CloudKit to import by refreshing context
+                        DispatchQueue.main.async {
+                            self.container.viewContext.refreshAllObjects()
+                            
+                            // Also try to trigger import by fetching from CloudKit
+                            self.forceCloudKitImport()
+                        }
+                    } else {
+                        print("RWRW: Local data exists - no import needed")
+                        self.importAttempts = 0 // Reset attempts on success
+                        
+                        // Notify UI of successful data presence
+                        DispatchQueue.main.async {
+                            NotificationCenter.default.post(name: NSNotification.Name("CloudKitImportCompleted"), object: nil)
+                        }
+                    }
+                } catch {
+                    print("RWRW: Error checking local data count - \(error.localizedDescription)")
+                }
             }
         }
     }
@@ -279,26 +331,51 @@ final class PersistenceController {
     private func forceCloudKitImport() {
         print("RWRW: Forcing CloudKit import...")
         
-        // Create a background context to trigger import
+        // Strategy 1: Refresh all objects in main context
+        container.viewContext.refreshAllObjects()
+        
+        // Strategy 2: Reset and reload the context
+        container.viewContext.reset()
+        
+        // Strategy 3: Create a new background context with fresh fetch
         let backgroundContext = container.newBackgroundContext()
+        backgroundContext.automaticallyMergesChangesFromParent = true
         backgroundContext.perform {
-            // Perform fetch operations to trigger CloudKit import
+            // Set up fetch requests with no cache
             let journalRequest = JournalEntry.fetchRequest()
+            journalRequest.includesPendingChanges = true
+            journalRequest.returnsObjectsAsFaults = false
+            journalRequest.shouldRefreshRefetchedObjects = true
+            
             let affirmationRequest = AffirmationEntry.fetchRequest()
+            affirmationRequest.includesPendingChanges = true
+            affirmationRequest.returnsObjectsAsFaults = false
+            affirmationRequest.shouldRefreshRefetchedObjects = true
             
             do {
+                // Force a fresh fetch
                 let journals = try backgroundContext.fetch(journalRequest)
                 let affirmations = try backgroundContext.fetch(affirmationRequest)
                 
                 print("RWRW: Background fetch results - Journals: \(journals.count), Affirmations: \(affirmations.count)")
+                
+                // If we found data in background context, ensure it's in main context
+                if journals.count > 0 || affirmations.count > 0 {
+                    DispatchQueue.main.async {
+                        self.container.viewContext.refreshAllObjects()
+                    }
+                }
                 
                 // Save context to ensure changes propagate
                 if backgroundContext.hasChanges {
                     try backgroundContext.save()
                 }
                 
+                // Strategy 4: Force CloudKit to re-evaluate by creating a dummy query
+                self.performDummyCloudKitQuery()
+                
                 // Wait a bit then check main context
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                     self.recheckAfterImport()
                 }
                 
@@ -306,6 +383,34 @@ final class PersistenceController {
                 print("RWRW: Error during forced import - \(error.localizedDescription)")
             }
         }
+    }
+    
+    private func performDummyCloudKitQuery() {
+        // This forces CloudKit to sync by performing a direct query
+        let container = CKContainer(identifier: "iCloud.com.franchiz.speaklife")
+        let privateDatabase = container.privateCloudDatabase
+        
+        // Query for recent records to trigger sync
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "CD_JournalEntry", predicate: predicate)
+        query.sortDescriptors = [NSSortDescriptor(key: "CD_createdAt", ascending: false)]
+        
+        let operation = CKQueryOperation(query: query)
+        operation.resultsLimit = 1
+        
+        operation.recordFetchedBlock = { record in
+            print("RWRW: Found CloudKit record: \(record.recordID)")
+        }
+        
+        operation.queryCompletionBlock = { cursor, error in
+            if let error = error {
+                print("RWRW: CloudKit query error: \(error.localizedDescription)")
+            } else {
+                print("RWRW: CloudKit query completed")
+            }
+        }
+        
+        privateDatabase.add(operation)
     }
     
     private func recheckAfterImport() {
@@ -330,7 +435,26 @@ final class PersistenceController {
                         NotificationCenter.default.post(name: NSNotification.Name("CloudKitImportCompleted"), object: nil)
                     }
                 } else {
-                    print("RWRW: ⚠️ No data imported - may need manual sync or CloudKit account check")
+                    print("RWRW: ⚠️ No data imported - attempt \(self.importAttempts)/\(self.maxImportAttempts)")
+                    
+                    // Retry with progressive delays
+                    if self.importAttempts < self.maxImportAttempts {
+                        let delay = self.importRetryDelays[min(self.importAttempts - 1, self.importRetryDelays.count - 1)]
+                        print("RWRW: Retrying import in \(delay) seconds...")
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                            self.checkForInitialCloudKitImport()
+                        }
+                    } else {
+                        print("RWRW: Max import attempts reached. User may need to check iCloud settings.")
+                        
+                        // Notify UI of import failure
+                        DispatchQueue.main.async {
+                            NotificationCenter.default.post(name: NSNotification.Name("CloudKitImportFailed"), 
+                                                          object: nil,
+                                                          userInfo: ["reason": "Max attempts reached"])
+                        }
+                    }
                 }
             } catch {
                 print("RWRW: Error rechecking data - \(error.localizedDescription)")
@@ -347,14 +471,39 @@ final class PersistenceController {
             try? container.viewContext.save()
         }
         
-        // Refresh to pull remote changes
-        container.viewContext.refreshAllObjects()
+        // Reset import attempts to try again
+        importAttempts = 0
         
-        // Force merge of remote changes
-        container.viewContext.perform {
-            // This triggers CloudKit to check for remote changes
-            _ = try? self.container.viewContext.fetch(JournalEntry.fetchRequest())
-            _ = try? self.container.viewContext.fetch(AffirmationEntry.fetchRequest())
+        // Trigger a fresh import check
+        checkForInitialCloudKitImport()
+    }
+    
+    // MARK: - CloudKit Schema Initialization
+    private func initializeCloudKitSchema() {
+        print("RWRW: Initializing CloudKit schema for production")
+        
+        // This forces Core Data to initialize the CloudKit schema
+        // by performing a simple operation
+        do {
+            let backgroundContext = container.newBackgroundContext()
+            backgroundContext.perform {
+                // Try to count existing records - this ensures schema exists
+                let journalRequest = JournalEntry.fetchRequest()
+                journalRequest.fetchLimit = 1
+                
+                let affirmationRequest = AffirmationEntry.fetchRequest()
+                affirmationRequest.fetchLimit = 1
+                
+                do {
+                    _ = try backgroundContext.count(for: journalRequest)
+                    _ = try backgroundContext.count(for: affirmationRequest)
+                    print("RWRW: CloudKit schema check completed")
+                } catch {
+                    print("RWRW: CloudKit schema initialization error: \(error)")
+                }
+            }
+        } catch {
+            print("RWRW: Failed to initialize CloudKit schema: \(error)")
         }
     }
     
