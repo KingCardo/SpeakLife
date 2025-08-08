@@ -42,5 +42,6 @@ enum Tab: String {
     case seedHarvest
     case hearingFaith
     case spiritualFood
+    case demoExperience
     
 }

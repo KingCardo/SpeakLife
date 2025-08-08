@@ -44,18 +44,18 @@ struct OnboardingView: View  {
         GeometryReader { geometry in
             TabView(selection: $selection) {
                 IntroTipScene(
-                    title: "Step into the presence of Jesus",
+                    title: "Your Words Have Power to Heal",
                     bodyText: """
-                    This isn't a religion-it's an encounter.
+                    Every morning, 50,000+ people speak life over their struggles.
 
-                    Jesus is the doorway to healing, joy, and divine purpose.
+                    Anxiety turns to peace. Fear becomes faith. Doubt transforms into purpose.
 
-                    The more you know Him, the more life opens up.
+                    What if the breakthrough you need is just 5 minutes away?
 
-                    Ready to discover what’s possible when you walk with Jesus?
+                    Join the SpeakLife movement and discover what happens when God's promises meet your daily routine.
                     """,
                     subtext: "",
-                    ctaText: "Begin the Journey ➔",
+                    ctaText: "Start My Breakthrough →",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
@@ -64,89 +64,89 @@ struct OnboardingView: View  {
                 }
                 .tag(Tab.transformedLife)
 
-                IntroTipScene(
-                    title: "Every Word Breathes Life",
-                    bodyText: """
-                    When Jesus speaks, storms calm, bodies heal and destinies awaken.
-
-                    His words aren't just to be read - they're meant to be experienced.
-
-                    The more you meditate on His Word, the more you will recieve.
-
-                    Lean in — He’s ready to reveal more than you imagined.
-                    """,
-                    subtext: "",
-                    ctaText: "Draw Closer ➔",
-                    showTestimonials: false,
-                    isScholarship: false,
-                    size: geometry.size)
-                {
-                    advance()
-                }
-                .tag(Tab.mindset)
-
-                IntroTipScene(
-                    title: "Tune In and Come Alive",
-                    bodyText: """
-                    Faith isn’t forced — it flows from hearing Jesus again and again.
-
-                    The more you listen, the more alive your spirit becomes.
-
-                    His Word ignites courage, confidence, and clarity.
-
-                    Let His whisper be the loudest sound in your life.
-                    """,
-                    subtext: "",
-                    ctaText: "Hear and Come Alive ➔",
-                    showTestimonials: false,
-                    isScholarship: false,
-                    size: geometry.size)
-                {
-                    advance()
-                }
-                .tag(Tab.hearingFaith)
-
-                IntroTipScene(
-                    title: "Step Into the Victory Already Won",
-                    bodyText: """
-                    You weren’t made to live defeated - you were made to reign in life.
-
-                    Jesus already won the battle.
-
-                    Every promise He made belongs to you.
-
-                    Speak it. Believe it. Receive it.
-                    """,
-                    subtext: "",
-                    ctaText: "Step Into Victory ➔",
-                    showTestimonials: false,
-                    isScholarship: false,
-                    size: geometry.size)
-                {
-                    advance()
-                }
-                .tag(Tab.victorious)
-
-                IntroTipScene(
-                    title: "Live From a Higher Place",
-                    bodyText: """
-                    Jesus gave you access to a Kingdom that’s unshakable.
-
-                    When life gets loud, His truth stays steady.
-
-                    Circumstances may shift — but His Word anchors you.
-
-                    Don’t live from fear. Live from Heaven's view.
-                    """,
-                    subtext: "",
-                    ctaText: "Live Kingdom-Minded ➔",
-                    showTestimonials: false,
-                    isScholarship: false,
-                    size: geometry.size)
-                {
-                    advance()
-                }
-                .tag(Tab.seedHarvest)
+//                IntroTipScene(
+//                    title: "Every Word Breathes Life",
+//                    bodyText: """
+//                    When Jesus speaks, storms calm, bodies heal and destinies awaken.
+//
+//                    His words aren't just to be read - they're meant to be experienced.
+//
+//                    The more you meditate on His Word, the more you will recieve.
+//
+//                    Lean in — He’s ready to reveal more than you imagined.
+//                    """,
+//                    subtext: "",
+//                    ctaText: "Draw Closer ➔",
+//                    showTestimonials: false,
+//                    isScholarship: false,
+//                    size: geometry.size)
+//                {
+//                    advance()
+//                }
+//                .tag(Tab.mindset)
+//
+//                IntroTipScene(
+//                    title: "Tune In and Come Alive",
+//                    bodyText: """
+//                    Faith isn’t forced — it flows from hearing Jesus again and again.
+//
+//                    The more you listen, the more alive your spirit becomes.
+//
+//                    His Word ignites courage, confidence, and clarity.
+//
+//                    Let His whisper be the loudest sound in your life.
+//                    """,
+//                    subtext: "",
+//                    ctaText: "Hear and Come Alive ➔",
+//                    showTestimonials: false,
+//                    isScholarship: false,
+//                    size: geometry.size)
+//                {
+//                    advance()
+//                }
+//                .tag(Tab.hearingFaith)
+//
+//                IntroTipScene(
+//                    title: "Step Into the Victory Already Won",
+//                    bodyText: """
+//                    You weren’t made to live defeated - you were made to reign in life.
+//
+//                    Jesus already won the battle.
+//
+//                    Every promise He made belongs to you.
+//
+//                    Speak it. Believe it. Receive it.
+//                    """,
+//                    subtext: "",
+//                    ctaText: "Step Into Victory ➔",
+//                    showTestimonials: false,
+//                    isScholarship: false,
+//                    size: geometry.size)
+//                {
+//                    advance()
+//                }
+//                .tag(Tab.victorious)
+//
+//                IntroTipScene(
+//                    title: "Live From a Higher Place",
+//                    bodyText: """
+//                    Jesus gave you access to a Kingdom that’s unshakable.
+//
+//                    When life gets loud, His truth stays steady.
+//
+//                    Circumstances may shift — but His Word anchors you.
+//
+//                    Don’t live from fear. Live from Heaven's view.
+//                    """,
+//                    subtext: "",
+//                    ctaText: "Live Kingdom-Minded ➔",
+//                    showTestimonials: false,
+//                    isScholarship: false,
+//                    size: geometry.size)
+//                {
+//                    advance()
+//                }
+//                .tag(Tab.seedHarvest)
                  
                 
                 ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
@@ -156,6 +156,12 @@ struct OnboardingView: View  {
                 }
                 .tag(Tab.improvement)
                 
+                DemoExperienceView(size: geometry.size) {
+                    withAnimation {
+                        advance()
+                    }
+                }
+                .tag(Tab.demoExperience)
 
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
@@ -211,7 +217,7 @@ struct OnboardingView: View  {
     private func subscriptionScene(size: CGSize) -> some View  {
         
         ZStack {
-            SubscriptionView(size: size) {
+            OptimizedSubscriptionView(size: size) {
                 //withAnimation {
                     advance()
               //  }
@@ -290,12 +296,17 @@ struct OnboardingView: View  {
                     Analytics.logEvent("HabitScreenDone", parameters: nil)
                 case .improvement:
                     impactMed.impactOccurred()
-                    selection = .subscription//.intro
+                    selection = .demoExperience
                     onboardingTab = selection.rawValue
                     
                     decodeCategories(improvementViewModel.selectedExperiences)
                    // valueProps = createValueProps(categories: improvementViewModel.selectedExperiences)
                     Analytics.logEvent("ImprovementScreenDone", parameters: nil)
+                case .demoExperience:
+                    impactMed.impactOccurred()
+                    selection = .subscription
+                    onboardingTab = selection.rawValue
+                    Analytics.logEvent("DemoExperienceScreenDone", parameters: nil)
                 case .intro:
                     impactMed.impactOccurred()
                     selection = .foe
@@ -366,7 +377,7 @@ struct OnboardingView: View  {
                     }
                 case .transformedLife:
                     impactMed.impactOccurred()
-                    selection = .mindset
+                    selection = .improvement
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("TransformedLifeScreenDone", parameters: nil)
                 case .likeJesus:

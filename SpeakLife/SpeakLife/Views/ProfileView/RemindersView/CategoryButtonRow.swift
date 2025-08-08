@@ -87,7 +87,9 @@ struct CategoryButtonRow: View  {
     @ViewBuilder
     private var contentView: some View {
         if !subscriptionStore.isPremium {
-            SubscriptionView(size: UIScreen.main.bounds.size)
+            OptimizedSubscriptionView(size: UIScreen.main.bounds.size) {
+                // Handle callback - typically dismiss or navigation
+            }
                 .onDisappear {
                     if !subscriptionStore.isPremium, !subscriptionStore.isInDevotionalPremium {
                         if subscriptionStore.showDevotionalSubscription {

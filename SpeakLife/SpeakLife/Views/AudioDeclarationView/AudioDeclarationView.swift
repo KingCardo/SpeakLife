@@ -238,7 +238,9 @@ struct AudioDeclarationView: View {
             .sheet(isPresented: $isPresentingPremiumView) {
                 isPresentingPremiumView = false
             } content: {
-                SubscriptionView(size: UIScreen.main.bounds.size)
+                OptimizedSubscriptionView(size: UIScreen.main.bounds.size) {
+                        isPresentingPremiumView = false
+                    }
                     .frame(height: UIScreen.main.bounds.height * 0.96)
                     .onDisappear {
                         if !subscriptionStore.isPremium,

@@ -39,7 +39,9 @@ struct DevotionalView: View {
         } else {
                 ScrollView {
                     VStack {
-                        SubscriptionView(size: UIScreen.main.bounds.size)
+                        OptimizedSubscriptionView(size: UIScreen.main.bounds.size) {
+                            // Handle callback - typically dismiss or navigation
+                        }
                     }
                     .padding(.bottom, 20) // Add spacing to avoid clipping at the bottom
                 }

@@ -100,7 +100,9 @@ struct HomeView: View {
                             })
                             .sheet(isPresented: $showSubscription, content: {
                                 GeometryReader { proxy in
-                                    SubscriptionView(size: proxy.size)
+                                    OptimizedSubscriptionView(size: proxy.size) {
+                                        showSubscription = false
+                                    }
                                         .frame(height:  UIScreen.main.bounds.height * 0.96)
                                 }
                             

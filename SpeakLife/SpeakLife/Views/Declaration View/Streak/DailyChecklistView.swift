@@ -9,11 +9,15 @@ import SwiftUI
 
 struct DailyChecklistView: View {
     @ObservedObject var viewModel: EnhancedStreakViewModel
+    @EnvironmentObject var appState: AppState
     @State private var showInfoSheet = false
+    @State private var hasAutoCompleted = false
+    @State private var showFirstTaskConfetti = false
     var onClose: (() -> Void)? = nil
     
     var body: some View {
-        VStack(spacing: 0) {
+        ZStack {
+            VStack(spacing: 0) {
             // Header with progress circle - fixed at top
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
@@ -130,6 +134,14 @@ struct DailyChecklistView: View {
                 }
                 .padding(.top, 8)
             }
+            }
+            
+            // Confetti animation for first task completion
+            if showFirstTaskConfetti || viewModel.showFirstTaskConfetti {
+                ConfettiView()
+                    .ignoresSafeArea()
+                    .allowsHitTesting(false)
+            }
         }
         .background(
             RoundedRectangle(cornerRadius: 16)
@@ -148,6 +160,13 @@ struct DailyChecklistView: View {
         )
         .sheet(isPresented: $showInfoSheet) {
             DailyChecklistInfoSheet()
+        }
+        .onAppear {
+            // Auto-complete first task if demo was completed and haven't done this yet
+            if !hasAutoCompleted {
+                viewModel.autoCompleteFirstTaskIfDemoCompleted(hasCompletedDemo: appState.hasCompletedDemo)
+                hasAutoCompleted = true
+            }
         }
     }
 }

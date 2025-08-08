@@ -34,7 +34,7 @@ struct NotificationOnboarding:  View {
             }
             
             VStack {
-                Text("Stay Anchored in God's Word", comment: "Notification onboarding title")
+                Text("Lock In Your Daily Transformation", comment: "Notification onboarding title")
                     .font(.system(size: 34, weight: .semibold, design: .rounded))
                     .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                     .minimumScaleFactor(0.7)
@@ -43,15 +43,23 @@ struct NotificationOnboarding:  View {
                 
                 Spacer().frame(height: 16)
                 
-                VStack {
-                    Text("Choose how often and when you’d like to receive promises thruout your day.", comment: "Setup notifications instructions")
+                VStack(spacing: 8) {
+                    Text("92% of users who set reminders reach 21-day streaks", comment: "Setup notifications instructions")
                         .font(.system(size: 16, weight: .semibold, design: .rounded))
                         .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                         .multilineTextAlignment(.center)
                         .lineSpacing(10)
                         .lineLimit(2)
+                    
+                    HStack {
+                        Image(systemName: "bell.badge.fill")
+                            .foregroundColor(.yellow)
+                        Text("Your brain rewires through consistency")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundColor(appState.onBoardingTest ? .white.opacity(0.8) : Constants.DALightBlue.opacity(0.8))
+                    }
                 }
-                .frame(width: size.width * 0.8)
+                .frame(width: size.width * 0.85)
                 
                 Spacer().frame(height: 28)
                 
@@ -93,9 +101,20 @@ struct NotificationOnboarding:  View {
                 
             }
             
-            ShimmerButton(colors: [.blue], buttonTitle: "Save My Preferences", action: callBack)
-            .frame(width: size.width * 0.87 ,height: 50)
-           // .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+            VStack(spacing: 12) {
+                ShimmerButton(colors: [.blue], buttonTitle: "Yes, I'm Committed to Change 💪", action: callBack)
+                .frame(width: size.width * 0.87 ,height: 50)
+               // .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
+                
+                HStack(spacing: 4) {
+                    Image(systemName: "checkmark.shield.fill")
+                        .font(.system(size: 14))
+                        .foregroundColor(.green)
+                    Text("You can change these anytime in settings")
+                        .font(.system(size: 12, weight: .medium))
+                        .foregroundColor(appState.onBoardingTest ? .white.opacity(0.7) : Constants.DALightBlue.opacity(0.7))
+                }
+            }
             
             Spacer()
                 .frame(width: 5, height: size.height * 0.07)

@@ -27,7 +27,7 @@ struct ImprovementScene: View {
                     VStack(spacing: 20) {
                         Spacer().frame(height: 30)
 
-                        Text("What Are You Seeking?", comment: "Intro scene title label")
+                        Text("What's Your Biggest Battle Right Now?", comment: "Intro scene title label")
                             .font(.system(size: 34, weight: .semibold, design: .rounded))
                             .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
                             .multilineTextAlignment(.center)
@@ -35,7 +35,7 @@ struct ImprovementScene: View {
                             .padding()
                             .lineLimit(2)
 
-                        Text("Tell us what's on your heart, and we'll guide you wiith words and prayers that speak into your life.", comment: "Intro scene instructions")
+                        Text("87% of believers struggle in silence. Let's create your personalized breakthrough plan.", comment: "Intro scene instructions")
                             .font(Font.custom("AppleSDGothicNeo-Regular", size: 20, relativeTo: .body))
                             .foregroundColor(appState.onBoardingTest ? .white : Constants.DALightBlue)
                             .multilineTextAlignment(.center)
@@ -53,7 +53,7 @@ struct ImprovementScene: View {
                 Spacer() // ✅ Ensures the button stays at the bottom
                 
                 // CTA Button
-                ShimmerButton(colors: [.blue], buttonTitle: "Start My Journey", action: callBack)
+                ShimmerButton(colors: [.blue], buttonTitle: "Get My Breakthrough Plan →", action: callBack)
                     .frame(width: size.width * 0.87, height: 50)
 //                    .shadow(color: Constants.DAMidBlue, radius: 8, x: 0, y: 10)
                     .disabled(viewModel.selectedExperiences.isEmpty)

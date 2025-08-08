@@ -38,6 +38,8 @@
 		456885282B395F66007B1EBB /* declarationsv3.json in Resources */ = {isa = PBXBuildFile; fileRef = 456885272B395F66007B1EBB /* declarationsv3.json */; };
 		4568852A2B428D77007B1EBB /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456885292B428D77007B1EBB /* NotificationManagerTests.swift */; };
 		4568BE8F2B60EB1300678565 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568BE8E2B60EB1300678565 /* LoadingView.swift */; };
+		4575C93E2E45A8B5007C14F3 /* DemoExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C93D2E45A8B5007C14F3 /* DemoExperienceView.swift */; };
+		4575C9402E45AA00007C14F3 /* OptimizedSubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C93F2E45AA00007C14F3 /* OptimizedSubscriptionView.swift */; };
 		457D531B2D964AAF0098A49A /* audioDevotionals.json in Resources */ = {isa = PBXBuildFile; fileRef = 457D531A2D964AA10098A49A /* audioDevotionals.json */; };
 		457DC17E2CEEA92700C666D5 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457DC17D2CEEA92700C666D5 /* AudioPlayerView.swift */; };
 		457DC1802CEEB47700C666D5 /* AudioPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457DC17F2CEEB47700C666D5 /* AudioPlayerViewModel.swift */; };
@@ -269,6 +271,8 @@
 		456885292B428D77007B1EBB /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerTests.swift; sourceTree = "<group>"; };
 		4568852B2B428FE2007B1EBB /* SpeakLifeTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpeakLifeTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4568BE8E2B60EB1300678565 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		4575C93D2E45A8B5007C14F3 /* DemoExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoExperienceView.swift; sourceTree = "<group>"; };
+		4575C93F2E45AA00007C14F3 /* OptimizedSubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimizedSubscriptionView.swift; sourceTree = "<group>"; };
 		457D531A2D964AA10098A49A /* audioDevotionals.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = audioDevotionals.json; sourceTree = "<group>"; };
 		457DC17D2CEEA92700C666D5 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
 		457DC17F2CEEB47700C666D5 /* AudioPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewModel.swift; sourceTree = "<group>"; };
@@ -1016,6 +1020,7 @@
 			isa = PBXGroup;
 			children = (
 				7AA870A528DACCB700134ADB /* SubscriptionView.swift */,
+				4575C93F2E45AA00007C14F3 /* OptimizedSubscriptionView.swift */,
 				7AA870A628DACCB700134ADB /* PremiumView.swift */,
 				7AA870A728DACCB700134ADB /* SettingsRow.swift */,
 				4590BF9D2BCA4F1A00CF4F54 /* FeatureView.swift */,
@@ -1057,6 +1062,7 @@
 			children = (
 				7AA870BA28DACCB700134ADB /* Model */,
 				7AA870BE28DACCB700134ADB /* OnboardingView.swift */,
+				4575C93D2E45A8B5007C14F3 /* DemoExperienceView.swift */,
 				45B07A412D24D98300EA2F5D /* WhatsNewView.swift */,
 				7AA870BF28DACCB700134ADB /* TimeNotificationStepper.swift */,
 				7AA870C028DACCB700134ADB /* IntroScene.swift */,
@@ -1351,6 +1357,7 @@
 				7AA8708128DACC8300134ADB /* NotificationProcessor.swift in Sources */,
 				452D17E22D725F87000AB1D1 /* RatingView.swift in Sources */,
 				4548075E2E3F0D8400B8C71B /* EnhancedProgressRing.swift in Sources */,
+				4575C93E2E45A8B5007C14F3 /* DemoExperienceView.swift in Sources */,
 				7AA870D028DACCB700134ADB /* ReminderView.swift in Sources */,
 				45CF271A2B4E52EF00BC8968 /* HabitScene.swift in Sources */,
 				4597E2222E4146C9009D6C66 /* EntryActionToolbar.swift in Sources */,
@@ -1447,6 +1454,7 @@
 				4597E2202E4138A9009D6C66 /* FullScreenEntryView.swift in Sources */,
 				4597E1F02E412346009D6C66 /* ChecklistNotificationSettings.swift in Sources */,
 				7AF18C8829FF8CEE005A6E31 /* TipsView.swift in Sources */,
+				4575C9402E45AA00007C14F3 /* OptimizedSubscriptionView.swift in Sources */,
 				458510D72B15935100230EE5 /* HideTabModifier.swift in Sources */,
 				7AF18C8C2A08CE92005A6E31 /* SpeechSynthesizer.swift in Sources */,
 				4597E2332E419CEA009D6C66 /* JournalRepository.swift in Sources */,
@@ -1667,7 +1675,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 862;
+				CURRENT_PROJECT_VERSION = 863;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1688,7 +1696,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.19;
+				MARKETING_VERSION = 3.1.20;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1709,7 +1717,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 862;
+				CURRENT_PROJECT_VERSION = 863;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1730,7 +1738,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.19;
+				MARKETING_VERSION = 3.1.20;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

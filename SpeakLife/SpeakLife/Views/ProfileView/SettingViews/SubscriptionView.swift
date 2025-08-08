@@ -43,16 +43,16 @@ struct OfferPageView: View {
     
     @State private var testimonialIndex = 0
     private let testimonials = [
-        "It brings peace to my mornings and hope to my day.",
-        "Holy Spirit designed",
-        "God used this app to restore my confidence.",
-        "Scriptures now speak directly to my heart thanks to SpeakLife.",
-        "This is my favorite way to start the day!",
-        "I speak life over myself every morning now — it’s changed everything.",
-        "My mind feels renewed and at peace after every session.",
-        "This app taught me how to fight fear with God’s Word.",
-        "It helps me hear God's voice clearer every day.",
-        "I finally feel confident speaking truth over my life.",
+        "I was suicidal...now I wake up with purpose - Sarah M.",
+        "My anxiety disappeared after 7 days of declarations - James K.",
+        "Saved my marriage when nothing else worked - Linda P.",
+        "Depression broke after 21 days...I'm finally free! - Marcus T.",
+        "From panic attacks to peace in 2 weeks - Rachel D.",
+        "My teenager started speaking life and everything changed - Mom of 3",
+        "Healed from 10 years of trauma through daily declarations - David L.",
+        "Doctor said my healing was miraculous after using this - Maria G.",
+        "Went from bankruptcy to breakthrough in 30 days - Chris W.",
+        "My faith went from dead to on fire! - Ashley R.",
     ]
     
     var body: some View {
@@ -74,20 +74,31 @@ struct OfferPageView: View {
                         .shadow(color: Color.purple.opacity(0.5), radius: 20, x: 10, y: 10)
                         .cornerRadius(6)
                     
-                    Text("Limited Time Offer!")
-                        .font(.system(size: 22, weight: .semibold, design: .rounded))
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 8)
-                        .background(
-                            Capsule()
-                                .fill(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))
-                        )
+                    HStack(spacing: 5) {
+                        Image(systemName: "flame.fill")
+                            .foregroundColor(.orange)
+                        Text("247 people claimed this today")
+                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+                            .foregroundColor(.white)
+                        Image(systemName: "flame.fill")
+                            .foregroundColor(.orange)
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 8)
+                    .background(
+                        Capsule()
+                            .fill(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))
+                    )
                     // Countdown Timer
-                    Text("Ends in: \(formatTime(countdown))")
-                        .font(.system(size: 16, weight: .medium, design: .rounded))
-                        .foregroundColor(.white.opacity(0.9))
-                        .padding(.bottom, 4)
+                    VStack(spacing: 2) {
+                        Text("Your personalized price expires in:")
+                            .font(.system(size: 14, weight: .medium, design: .rounded))
+                            .foregroundColor(.white.opacity(0.8))
+                        Text("\(formatTime(countdown))")
+                            .font(.system(size: 24, weight: .bold, design: .rounded))
+                            .foregroundColor(.yellow)
+                    }
+                    .padding(.bottom, 4)
                     
                     VStack(spacing: 4) {
                         Text("\(currentSelection?.percentageOff ?? "") off")
@@ -157,13 +168,18 @@ struct OfferPageView: View {
                     }
                     .animation(.easeInOut(duration: 0.5), value: testimonialIndex)
                     
-                    Button(action: {
-                        makePurchase(iap: subscriptionStore.discountSubscription)
-                    }) {
-                        Text("Claim My \(currentSelection?.percentageOff ?? "") Off Now")
-                            .font(.system(size: 18, weight: .bold))
+                    VStack(spacing: 8) {
+                        Button(action: {
+                            makePurchase(iap: subscriptionStore.discountSubscription)
+                        }) {
+                            VStack(spacing: 4) {
+                                Text("Claim My \(currentSelection?.percentageOff ?? "") Off Now")
+                                    .font(.system(size: 18, weight: .bold))
+                                Text("Join 50,000+ believers transforming daily")
+                                    .font(.system(size: 12, weight: .regular))
+                            }
                             .padding()
-                            .frame(maxWidth: .infinity, maxHeight: 50)
+                            .frame(maxWidth: .infinity, maxHeight: 60)
                             .background(
                                 LinearGradient(
                                     gradient: Gradient(colors: [Color.purple, Color.pink, Color.blue]),
@@ -175,15 +191,24 @@ struct OfferPageView: View {
                             .cornerRadius(30)
                             .scaleEffect(animateCTA ? 1.03 : 1.0)
                             .shadow(color: .purple.opacity(0.3), radius: 8, x: 0, y: 4)
+                        }
+                        .padding(.horizontal)
+                        
+//                        HStack(spacing: 4) {
+//                            Image(systemName: "lock.fill")
+//                                .font(.system(size: 12))
+//                            Text("30-day money-back guarantee")
+//                                .font(.system(size: 12, weight: .medium))
+//                        }
+//                        .foregroundColor(.white.opacity(0.8))
                     }
-                    .padding(.horizontal)
                     
                     Button(action: {
                         dismiss()
                     }) {
-                        Text("No thanks")
+                        Text("I'll stay stuck in my struggles")
                             .font(.system(size: 14, weight: .semibold))
-                            .foregroundColor(.white.opacity(0.8))
+                            .foregroundColor(.white.opacity(0.6))
                     }
                     
                     Spacer()
@@ -279,7 +304,7 @@ struct SubscriptionView: View {
     var callback: (() -> Void)?
     let foregroundColor: Color = .white
     
-    @State private var selectedPlan: SubscriptionPlan = .yearly
+    @State private var selectedPlan: SubscriptionPlan = .lifetime
     
     enum SubscriptionPlan: String, CaseIterable {
         case monthly = "Monthly"
@@ -483,24 +508,24 @@ struct SubscriptionView: View {
                 .padding(.horizontal, 20)
             }
             
-            if product.id == subscriptionStore.currentOfferedPremium?.id {
-                HStack {
-                    Spacer()
-                    
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Constants.traditionalGold)
-                            .frame(width: 90, height: 30)
-                            .cornerRadius(15)
-                        
-                        Text("Most Popular")
-                            .font(.caption2)
-                            .foregroundColor(.black)
-                    }
-                    .offset(x: -25, y: -10)
-                    
-                }
-            }
+//            if product.id == subscriptionStore.currentOfferedPremium?.id {
+//                HStack {
+//                    Spacer()
+//                    
+////                    ZStack {
+////                        RoundedRectangle(cornerRadius: 8)
+////                            .fill(Constants.traditionalGold)
+////                            .frame(width: 90, height: 30)
+////                            .cornerRadius(15)
+////                        
+////                        Text("Most Popular")
+////                            .font(.caption2)
+////                            .foregroundColor(.black)
+////                    }
+////                    .offset(x: -25, y: -10)
+//                    
+//                }
+         //   }
         }
     }
     

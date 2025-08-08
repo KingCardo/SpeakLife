@@ -18,6 +18,7 @@ final class EnhancedStreakViewModel: ObservableObject {
     @Published var showFireAnimation = false
     @Published var badgeManager: BadgeManager
     @Published var showBadgeUnlock = false
+    @Published var showFirstTaskConfetti = false
     
     // MARK: - Private Properties
     private let userDefaults = UserDefaults.standard
@@ -48,6 +49,39 @@ final class EnhancedStreakViewModel: ObservableObject {
     }
     
     // MARK: - Public Methods
+    func autoCompleteFirstTaskIfDemoCompleted(hasCompletedDemo: Bool) {
+        // Only auto-complete if demo was completed and no tasks have been completed yet
+        guard hasCompletedDemo,
+              !todayChecklist.tasks.isEmpty,
+              todayChecklist.completedTasksCount == 0,
+              let firstTask = todayChecklist.tasks.first,
+              !firstTask.isCompleted else { return }
+        
+        // Auto-complete the first task with animation delay for UX
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
+                self.completeTaskWithCelebration(taskId: firstTask.id)
+            }
+        }
+    }
+    
+    private func completeTaskWithCelebration(taskId: String) {
+        // Complete the task with special celebration for first completion
+        completeTask(taskId: taskId)
+        
+        // Show confetti animation for first task completion
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.showFirstTaskConfetti = true
+            
+            // Hide confetti after 3 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                withAnimation(.easeOut(duration: 0.5)) {
+                    self.showFirstTaskConfetti = false
+                }
+            }
+        }
+    }
+    
     func completeTask(taskId: String) {
         guard let taskIndex = todayChecklist.tasks.firstIndex(where: { $0.id == taskId }),
               !todayChecklist.tasks[taskIndex].isCompleted else { return }
