@@ -44,7 +44,7 @@ struct OnboardingView: View  {
         GeometryReader { geometry in
             TabView(selection: $selection) {
                 IntroTipScene(
-                    title: "Your Words Have Power to Heal",
+                    title: "Your Words Have Power",
                     bodyText: """
                     Every morning, 50,000+ people speak life over their struggles.
 
