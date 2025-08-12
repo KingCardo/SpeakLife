@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01ED29F757107A93D56507E0 /* WidgetIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFF68BFA515EAC0AC88C85 /* WidgetIntents.swift */; };
 		2F740F6929D4017400E89E7F /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F740F6829D4017400E89E7F /* APIClientTests.swift */; };
 		4501F3912D8926CA00315902 /* TestimonyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4501F3902D8926C500315902 /* TestimonyViewModel.swift */; };
 		450720DB2BAFFB4A0029EE2B /* TimerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450720DA2BAFFB4A0029EE2B /* TimerViewModelTests.swift */; };
+		4514AF152E47031200254B74 /* AppGroupsDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514AF142E47031200254B74 /* AppGroupsDebugView.swift */; };
 		452D17D92D703E9E000AB1D1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 452D17D82D703E9E000AB1D1 /* FirebaseAnalytics */; };
 		452D17DB2D703E9E000AB1D1 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 452D17DA2D703E9E000AB1D1 /* FirebaseRemoteConfig */; };
 		452D17DD2D703E9E000AB1D1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 452D17DC2D703E9E000AB1D1 /* FirebaseStorage */; };
@@ -41,6 +43,9 @@
 		4575C93E2E45A8B5007C14F3 /* DemoExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C93D2E45A8B5007C14F3 /* DemoExperienceView.swift */; };
 		4575C9402E45AA00007C14F3 /* OptimizedSubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C93F2E45AA00007C14F3 /* OptimizedSubscriptionView.swift */; };
 		4575C9422E4657D2007C14F3 /* CloudKitDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C9412E4657D2007C14F3 /* CloudKitDebugView.swift */; };
+		4575C9482E46F25B007C14F3 /* SiriIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C9432E46F25B007C14F3 /* SiriIntents.swift */; };
+		4575C9492E46F25B007C14F3 /* SmartContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C9442E46F25B007C14F3 /* SmartContentProvider.swift */; };
+		4575C94A2E46F25B007C14F3 /* WidgetDataBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C9452E46F25B007C14F3 /* WidgetDataBridge.swift */; };
 		457D531B2D964AAF0098A49A /* audioDevotionals.json in Resources */ = {isa = PBXBuildFile; fileRef = 457D531A2D964AA10098A49A /* audioDevotionals.json */; };
 		457DC17E2CEEA92700C666D5 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457DC17D2CEEA92700C666D5 /* AudioPlayerView.swift */; };
 		457DC1802CEEB47700C666D5 /* AudioPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457DC17F2CEEB47700C666D5 /* AudioPlayerViewModel.swift */; };
@@ -246,6 +251,7 @@
 		2F740F6829D4017400E89E7F /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		4501F3902D8926C500315902 /* TestimonyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimonyViewModel.swift; sourceTree = "<group>"; };
 		450720DA2BAFFB4A0029EE2B /* TimerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModelTests.swift; sourceTree = "<group>"; };
+		4514AF142E47031200254B74 /* AppGroupsDebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroupsDebugView.swift; sourceTree = "<group>"; };
 		452D17E12D725F84000AB1D1 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		453172B32B2D274800388AD4 /* BenefitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitScene.swift; sourceTree = "<group>"; };
 		453478F02B9D29CC0012C2C0 /* declarationsv4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv4.json; sourceTree = "<group>"; };
@@ -275,6 +281,9 @@
 		4575C93D2E45A8B5007C14F3 /* DemoExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoExperienceView.swift; sourceTree = "<group>"; };
 		4575C93F2E45AA00007C14F3 /* OptimizedSubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimizedSubscriptionView.swift; sourceTree = "<group>"; };
 		4575C9412E4657D2007C14F3 /* CloudKitDebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitDebugView.swift; sourceTree = "<group>"; };
+		4575C9432E46F25B007C14F3 /* SiriIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriIntents.swift; sourceTree = "<group>"; };
+		4575C9442E46F25B007C14F3 /* SmartContentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartContentProvider.swift; sourceTree = "<group>"; };
+		4575C9452E46F25B007C14F3 /* WidgetDataBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDataBridge.swift; sourceTree = "<group>"; };
 		457D531A2D964AA10098A49A /* audioDevotionals.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = audioDevotionals.json; sourceTree = "<group>"; };
 		457DC17D2CEEA92700C666D5 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
 		457DC17F2CEEB47700C666D5 /* AudioPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewModel.swift; sourceTree = "<group>"; };
@@ -350,6 +359,7 @@
 		45ED72C32BA10B3500F5F5E3 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		45ED72C52BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakInfoBottomSheet.swift; sourceTree = "<group>"; };
 		45F32FD92E0F29AE0035FB1D /* EmailCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCaptureView.swift; sourceTree = "<group>"; };
+		59BFF68BFA515EAC0AC88C85 /* WidgetIntents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetIntents.swift; sourceTree = "<group>"; };
 		7A00721728F8ED4A00965AF7 /* declarations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = declarations.json; sourceTree = "<group>"; };
 		7A278F97288915DE0084BB57 /* SpeakLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakLifeApp.swift; sourceTree = "<group>"; };
@@ -488,6 +498,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A35AF937E2A698A0D550C49 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				59BFF68BFA515EAC0AC88C85 /* WidgetIntents.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		2F740F5F29D4014500E89E7F /* SpeakLifeTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +532,16 @@
 				4548078A2E3F3E1D00B8C71B /* BadgeTestView.swift */,
 			);
 			path = Badge;
+			sourceTree = "<group>";
+		};
+		4575C9472E46F25B007C14F3 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				4575C9432E46F25B007C14F3 /* SiriIntents.swift */,
+				4575C9442E46F25B007C14F3 /* SmartContentProvider.swift */,
+				4575C9452E46F25B007C14F3 /* WidgetDataBridge.swift */,
+			);
+			path = Widget;
 			sourceTree = "<group>";
 		};
 		457DC17C2CEEA91000C666D5 /* AudioPlayerView */ = {
@@ -664,6 +692,7 @@
 			isa = PBXGroup;
 			children = (
 				4575C9412E4657D2007C14F3 /* CloudKitDebugView.swift */,
+				4514AF142E47031200254B74 /* AppGroupsDebugView.swift */,
 				4597E2582E41C1AC009D6C66 /* CloudKitSyncBadge.swift */,
 			);
 			path = Components;
@@ -724,6 +753,7 @@
 				2F740F5F29D4014500E89E7F /* SpeakLifeTests */,
 				7A278F98288915DE0084BB57 /* Products */,
 				7A7BEBCB2913536B008D08A3 /* Frameworks */,
+				1A35AF937E2A698A0D550C49 /* Shared */,
 			);
 			sourceTree = "<group>";
 		};
@@ -845,6 +875,7 @@
 		7AA8706728DACB5100134ADB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4575C9472E46F25B007C14F3 /* Widget */,
 				4597E2322E419CEA009D6C66 /* CoreData */,
 				45C7482E2B5BC41E0011D8F6 /* AudioPlayer */,
 				7AF18C8D2A0CBAAF005A6E31 /* DailyDevotions */,
@@ -1358,6 +1389,7 @@
 				7AA8707F28DACC8300134ADB /* NotificationManager.swift in Sources */,
 				7AA870E028DACCB700134ADB /* WidgetScene.swift in Sources */,
 				458BBE702D1F8A3D0035985F /* AudioFiles.swift in Sources */,
+				4514AF152E47031200254B74 /* AppGroupsDebugView.swift in Sources */,
 				7AA8708128DACC8300134ADB /* NotificationProcessor.swift in Sources */,
 				452D17E22D725F87000AB1D1 /* RatingView.swift in Sources */,
 				4548075E2E3F0D8400B8C71B /* EnhancedProgressRing.swift in Sources */,
@@ -1387,6 +1419,9 @@
 				7AA870CF28DACCB700134ADB /* MailView.swift in Sources */,
 				7AF18C7D29FD1A67005A6E31 /* AdBanner.swift in Sources */,
 				453172B42B2D274800388AD4 /* BenefitScene.swift in Sources */,
+				4575C9482E46F25B007C14F3 /* SiriIntents.swift in Sources */,
+				4575C9492E46F25B007C14F3 /* SmartContentProvider.swift in Sources */,
+				4575C94A2E46F25B007C14F3 /* WidgetDataBridge.swift in Sources */,
 				457DC17E2CEEA92700C666D5 /* AudioPlayerView.swift in Sources */,
 				7AA870D128DACCB700134ADB /* ReminderCell.swift in Sources */,
 				7AF18C8629FEC6EB005A6E31 /* BulletList.swift in Sources */,
@@ -1475,6 +1510,7 @@
 				7AA870DD28DACCB700134ADB /* OnboardingView.swift in Sources */,
 				7AA870E328DACD1A00134ADB /* AppDelegate.swift in Sources */,
 				7AF18C8429FDCE0A005A6E31 /* ShimmerButton.swift in Sources */,
+				01ED29F757107A93D56507E0 /* WidgetIntents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1761,8 +1797,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = PromisesWidget/PromisesWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 861;
+				CURRENT_PROJECT_VERSION = 866;
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PromisesWidget/Info.plist;
@@ -1774,7 +1811,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.14;
+				MARKETING_VERSION = 3.1.20;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife.PromisesWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1790,8 +1827,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = PromisesWidget/PromisesWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 861;
+				CURRENT_PROJECT_VERSION = 866;
 				DEVELOPMENT_TEAM = 652R6A63L8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PromisesWidget/Info.plist;
@@ -1803,7 +1841,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.14;
+				MARKETING_VERSION = 3.1.20;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Franchiz.SpeakLife.PromisesWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

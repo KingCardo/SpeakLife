@@ -98,7 +98,7 @@ final class DeclarationViewModel: ObservableObject {
     
     private var allDeclarations: [Declaration] = []
     
-    private(set) var selectedCategories = Set<DeclarationCategory>() {
+    var selectedCategories = Set<DeclarationCategory>() {
         didSet {
             print(selectedCategories, "RWRW changed")
         }
@@ -162,6 +162,17 @@ final class DeclarationViewModel: ObservableObject {
             self.choose(self.selectedCategory) { _ in }
             self.favorites = self.getFavorites()
             self.createOwn = self.getCreateOwn()
+            
+            // Sync initial favorites to widget
+            let favoriteTexts = self.favorites.map { $0.text }
+            WidgetDataBridge.shared.syncDeclarationFavorites(favoriteTexts)
+            
+            // Sync all declarations to widget for accurate text matching
+            let allTexts = self.allDeclarations.map { $0.text }
+            WidgetDataBridge.shared.syncAllDeclarationsToWidget(allTexts)
+            
+            // Sync categorized declarations for smart widget filtering
+            self.syncCategorizedDeclarationsToWidget()
             self.errorMessage = error?.localizedDescription
             
 //            if neededSync {
@@ -208,19 +219,31 @@ final class DeclarationViewModel: ObservableObject {
     // MARK: - Favorites
     
     func favorite(declaration: Declaration) {
+        print("💖 DeclarationViewModel: Toggling favorite for:", declaration.text)
+        
         guard let indexOf = declarations.firstIndex(where: { $0.id == declaration.id } ) else {
+            print("❌ Declaration not found in current declarations")
             return
         }
         
-        declarations[indexOf].isFavorite = !(declarations[indexOf].isFavorite ?? false)
+        let wasFavorite = declarations[indexOf].isFavorite ?? false
+        declarations[indexOf].isFavorite = !wasFavorite
+        print("   Was favorite:", wasFavorite, "Now:", !wasFavorite)
         
-        guard let index = allDeclarations.firstIndex(where: { $0.id == declaration.id }) else { return }
+        guard let index = allDeclarations.firstIndex(where: { $0.id == declaration.id }) else { 
+            print("❌ Declaration not found in allDeclarations")
+            return 
+        }
         allDeclarations[index] = declarations[indexOf]
-        print(allDeclarations[index], "RWRW")
+        print("✅ Updated in allDeclarations")
         
         
         service.save(declarations: allDeclarations) { [weak self] success in
             self?.refreshFavorites()
+            // Sync favorites to widget
+            if let favoriteTexts = self?.getFavorites().map({ $0.text }) {
+                WidgetDataBridge.shared.syncDeclarationFavorites(favoriteTexts)
+            }
         }
     }
     
@@ -417,6 +440,142 @@ final class DeclarationViewModel: ObservableObject {
     
     func setRemoteDeclarationVersion(version: Int) {
         service.remoteVersion = version
+    }
+    
+    // MARK: - Smart Widget Category Integration
+    
+    /// Sync declarations organized by categories to widget for intelligent filtering
+    private func syncCategorizedDeclarationsToWidget() {
+        var categorizedDeclarations: [String: [String]] = [:]
+        
+        // Map your DeclarationCategory to widget-friendly category names
+        let categoryMapping: [DeclarationCategory: [String]] = [
+            // Spiritual Life
+            .faith: ["Faith", "Strength", "Wisdom"],
+            .hope: ["Hope", "New Beginnings", "Purpose"],
+            .destiny: ["Purpose", "New Beginnings", "Strength"],
+            .identity: ["Identity", "Purpose", "Strength"],
+            .grace: ["Grace", "Forgiveness", "Love"],
+            .love: ["Love", "Family", "Gratitude"],
+            .gratitude: ["Gratitude", "Joy", "Celebration"],
+            .praise: ["Worship", "Gratitude", "Joy"],
+            .joy: ["Joy", "Celebration", "Gratitude"],
+            
+            // Life Challenges  
+            .fear: ["Peace", "Comfort", "Strength"],
+            .anxiety: ["Peace", "Comfort", "Rest"],
+            .hardtimes: ["Strength", "Perseverance", "Hope"],
+            .addiction: ["Strength", "New Beginnings", "Purpose"],
+            .rest: ["Rest", "Peace", "Comfort"],
+            
+            // Relationships & Work
+            .marriage: ["Love", "Family", "Gratitude"],
+            .parenting: ["Family", "Love", "Wisdom"],
+            .friendship: ["Love", "Gratitude", "Joy"],
+            .work: ["Work", "Productivity", "Wisdom", "Perseverance"],
+            
+            // Spiritual Warfare & Protection
+            .warfare: ["Protection", "Strength", "Faith"],
+            .godsprotection: ["Protection", "Peace", "Comfort"],
+            
+            // Personal Growth
+            .wisdom: ["Wisdom", "Growth", "Purpose"],
+            .confidence: ["Strength", "Identity", "Purpose"],
+            .purity: ["Purity", "Identity", "Purpose"],
+            .obedience: ["Wisdom", "Growth", "Purpose"],
+            .spiritualGrowth: ["Growth", "Wisdom", "Purpose"],
+            
+            // Blessings & Favor
+            .health: ["Health", "Strength", "Gratitude"],
+            .wealth: ["Prosperity", "Gratitude", "Wisdom"],
+            .favor: ["Favor", "Gratitude", "Purpose"],
+            .miracles: ["Miracles", "Faith", "Hope"],
+            
+            // Bible categories get mapped to contextual categories
+            .psalms: ["Worship", "Gratitude", "Peace"],
+            .proverbs: ["Wisdom", "Growth", "Purpose"]
+        ]
+        
+        // Group declarations by widget categories
+        for declaration in allDeclarations {
+            let categoryKeys = categoryMapping[declaration.category] ?? ["General"]
+            
+            for categoryKey in categoryKeys {
+                if categorizedDeclarations[categoryKey] == nil {
+                    categorizedDeclarations[categoryKey] = []
+                }
+                categorizedDeclarations[categoryKey]?.append(declaration.text)
+            }
+        }
+        
+        // Always include user's favorites and personal declarations
+        if !favorites.isEmpty {
+            categorizedDeclarations["Favorites"] = favorites.map { $0.text }
+        }
+        
+        if !createOwn.isEmpty {
+            categorizedDeclarations["Personal"] = createOwn.map { $0.text }
+        }
+        
+        // Sync to widget
+        WidgetDataBridge.shared.syncCategorizedDeclarations(categorizedDeclarations)
+        
+        // Update user's selected categories for widget
+        syncUserCategoryPreferences()
+    }
+    
+    /// Sync user's currently selected categories to widget for personalization
+    private func syncUserCategoryPreferences() {
+        // Convert user's selected DeclarationCategories to widget category names
+        let widgetCategories = selectedCategories.compactMap { category -> [String]? in
+            switch category {
+            case .faith: return ["Faith", "Strength"]
+            case .hope: return ["Hope", "New Beginnings"]
+            case .love: return ["Love", "Family"]
+            case .rest: return ["Peace", "Rest"]
+            case .work: return ["Work", "Productivity"]
+            case .anxiety: return ["Peace", "Comfort"]
+            case .fear: return ["Peace", "Strength"]
+            case .gratitude: return ["Gratitude", "Joy"]
+            case .wisdom: return ["Wisdom", "Growth"]
+            case .health: return ["Health", "Strength"]
+            case .confidence: return ["Strength", "Identity"]
+            case .favor: return ["Favor", "Gratitude"]
+            case .destiny: return ["Purpose", "New Beginnings"]
+            default: return nil
+            }
+        }.flatMap { $0 }
+        
+        // Include contextual categories based on current time if user hasn't selected many
+        var finalCategories = widgetCategories
+        if finalCategories.count < 3 {
+            let hour = Calendar.current.component(.hour, from: Date())
+            switch hour {
+            case 5...8: finalCategories.append(contentsOf: ["Morning", "Energy", "New Beginnings"])
+            case 12...13: finalCategories.append(contentsOf: ["Rest", "Reflection"])
+            case 18...20: finalCategories.append(contentsOf: ["Family", "Gratitude"])
+            case 21...23: finalCategories.append(contentsOf: ["Peace", "Rest"])
+            default: break
+            }
+        }
+        
+        // Remove duplicates and update widget
+        let uniqueCategories = Array(Set(finalCategories))
+        WidgetDataBridge.shared.updateSelectedCategories(uniqueCategories)
+    }
+    
+    /// Call this when user changes their category selections
+    func updateCategorySelections(_ newCategories: Set<DeclarationCategory>) {
+        selectedCategories = newCategories
+        
+        // Immediately sync the updated preferences to widget
+        syncUserCategoryPreferences()
+        
+        // Track usage for analytics
+        for category in newCategories {
+            let categoryName = category.rawValue
+            WidgetDataBridge.shared.trackCategoryUsage(categoryName)
+        }
     }
 }
 

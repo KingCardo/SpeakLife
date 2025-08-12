@@ -24,6 +24,7 @@ final class EnhancedStreakViewModel: ObservableObject {
     private let userDefaults = UserDefaults.standard
     private let checklistKey = "dailyChecklist"
     private let streakStatsKey = "streakStats"
+    private let hasAutoCompletedFirstTaskKey = "hasAutoCompletedFirstTask"
     
     // MARK: - Initialization
     init() {
@@ -50,12 +51,19 @@ final class EnhancedStreakViewModel: ObservableObject {
     
     // MARK: - Public Methods
     func autoCompleteFirstTaskIfDemoCompleted(hasCompletedDemo: Bool) {
+        // Check if we've already auto-completed once globally
+        let hasAlreadyAutoCompleted = userDefaults.bool(forKey: hasAutoCompletedFirstTaskKey)
+        guard !hasAlreadyAutoCompleted else { return }
+        
         // Only auto-complete if demo was completed and no tasks have been completed yet
         guard hasCompletedDemo,
               !todayChecklist.tasks.isEmpty,
               todayChecklist.completedTasksCount == 0,
               let firstTask = todayChecklist.tasks.first,
               !firstTask.isCompleted else { return }
+        
+        // Mark that we've auto-completed so it won't happen again
+        userDefaults.set(true, forKey: hasAutoCompletedFirstTaskKey)
         
         // Auto-complete the first task with animation delay for UX
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

@@ -59,6 +59,9 @@ struct SpeakLifeApp: App {
                         }
                     }
                     
+                    // Sync widget data on app launch
+                    WidgetDataBridge.shared.syncAllData()
+                    
                     viewModel.requestPermission()
                     if declarationStore.backgroundMusicEnabled {
                         AudioPlayerService.shared.playSound(files: resources)
@@ -88,6 +91,9 @@ struct SpeakLifeApp: App {
                 appDelegate.declarationStore = declarationStore
                 appDelegate.tabViewModel = tabViewModel
                 StreakIntegrationManager.shared.setStreakViewModel(enhancedStreakViewModel)
+                
+                // Process any pending widget actions when app becomes active
+                WidgetDataBridge.shared.processPendingWidgetActions()
                     
                 if appState.notificationEnabled {
                     NotificationManager.shared.prepareDailyStreakNotification(with: appState.userName, streak: streakViewModel.currentStreak, hasCurrentStreak: streakViewModel.hasCurrentStreak)

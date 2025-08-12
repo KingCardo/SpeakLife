@@ -8,169 +8,404 @@
 import WidgetKit
 import SwiftUI
 
+// MARK: - Constants
+
+private enum WidgetConstants {
+    static let appGroupSuiteName = "group.com.speaklife.widget"
+    static let syncedPromisesKey = "syncedPromises"
+    static let fallbackPromise = "I am blessed!"
+    static let placeholderText = "Loading..."
+    static let customFontName = "BodoniSvtyTwoOSITCTT-Book"
+    
+    enum Design {
+        static let backgroundOpacity: Double = 0.85
+        static let greetingOpacity: Double = 0.8
+        static let contentSpacing: CGFloat = 8
+        static let horizontalPadding: CGFloat = 16
+        static let bottomPadding: CGFloat = 8
+        
+        enum FontSizes {
+            static let small: CGFloat = 14
+            static let medium: CGFloat = 16
+            static let large: CGFloat = 18
+            static let greeting: CGFloat = 12
+        }
+    }
+    
+    enum UserPreferences {
+        static let selectedCategoriesKey = "selectedCategories"
+        static let recentCategoriesKey = "recentCategories"
+        static let categoryUsageKey = "categoryUsage"
+        static let lastCategoryUpdateKey = "lastCategoryUpdate"
+    }
+    
+    enum TimeRanges {
+        static let morningStart = 5
+        static let morningEnd = 11
+        static let afternoonEnd = 17
+        static let eveningEnd = 21
+    }
+}
+
+// MARK: - Timeline Provider
+
 struct Provider: TimelineProvider {
-    private let content = "I am blessed!"
     
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), promise: content)
+        SimpleEntry(date: Date(), promise: WidgetConstants.placeholderText)
     }
-
+    
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), promise: content)
-        completion(entry)
+        let promise = getCurrentPromise()
+        completion(SimpleEntry(date: Date(), promise: promise))
     }
-
+    
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-                let endDate = Calendar.current.date(byAdding: .hour, value: 8, to: Date()) ?? Date()
-                let thirtyMinutes: TimeInterval = 60 * 30
-                var entries: [SimpleEntry] = []
-
-                var currentDate = Date()
-                while currentDate < endDate {
-                    let declaration = Data.declarations.randomElement() ?? content
-                    let entry = SimpleEntry(date: currentDate, promise: declaration)
-                    currentDate += thirtyMinutes
-                    entries.append(entry)
+        let now = Date()
+        let promise = getCurrentPromise()
+        
+        // Create entries for the current hour and next few hours
+        var entries: [SimpleEntry] = []
+        
+        // Current entry
+        entries.append(SimpleEntry(date: now, promise: promise))
+        
+        // Next hour entry (different promise if available)
+        if let nextHour = Calendar.current.date(byAdding: .hour, value: 1, to: now) {
+            let nextPromise = getPromiseForTime(nextHour)
+            entries.append(SimpleEntry(date: nextHour, promise: nextPromise))
+        }
+        
+        // Determine next refresh time (next hour boundary)
+        let nextRefresh = Calendar.current.date(byAdding: .hour, value: 1, to: now) ?? 
+                         Calendar.current.date(byAdding: .minute, value: 15, to: now) ?? now
+        
+        let timeline = Timeline(entries: entries, policy: .after(nextRefresh))
+        completion(timeline)
+    }
+    
+    // MARK: - Private Methods
+    
+    private func getCurrentPromise() -> String {
+        return getPromiseForTime(Date())
+    }
+    
+    private func getPromiseForTime(_ date: Date) -> String {
+        guard let widgetDefaults = UserDefaults(suiteName: WidgetConstants.appGroupSuiteName) else {
+            return WidgetConstants.fallbackPromise
+        }
+        
+        // Try to get category-filtered promises first
+        if let categoryPromise = getCategoryFilteredPromise(from: widgetDefaults, for: date) {
+            return categoryPromise
+        }
+        
+        // Fallback to all synced promises
+        guard let syncedPromises = widgetDefaults.stringArray(forKey: WidgetConstants.syncedPromisesKey),
+              !syncedPromises.isEmpty else {
+            return WidgetConstants.fallbackPromise
+        }
+        
+        // Use hour-based selection for consistent daily rotation
+        let hour = Calendar.current.component(.hour, from: date)
+        let safeIndex = hour % syncedPromises.count
+        
+        return syncedPromises[safeIndex]
+    }
+    
+    private func getCategoryFilteredPromise(from defaults: UserDefaults, for date: Date) -> String? {
+        // Strategy 1: Time-based category intelligence
+        let contextualCategories = getContextualCategories(for: date)
+        
+        for category in contextualCategories {
+            if let categoryPromises = defaults.stringArray(forKey: "category_\(category)"),
+               !categoryPromises.isEmpty {
+                let hour = Calendar.current.component(.hour, from: date)
+                let index = hour % categoryPromises.count
+                return categoryPromises[index]
+            }
+        }
+        
+        // Strategy 2: User's selected categories
+        if let selectedCategories = defaults.stringArray(forKey: WidgetConstants.UserPreferences.selectedCategoriesKey) {
+            for category in selectedCategories {
+                if let categoryPromises = defaults.stringArray(forKey: "category_\(category)"),
+                   !categoryPromises.isEmpty {
+                    let hour = Calendar.current.component(.hour, from: date)
+                    let index = hour % categoryPromises.count
+                    return categoryPromises[index]
                 }
-
-                let timeline = Timeline(entries: entries, policy: .atEnd)
-                completion(timeline)
+            }
+        }
+        
+        return nil
     }
-}
-extension Provider {
-    struct Data {
-        static let declarations: [String] = ["I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.",
-        "Love is patient and kind. Love is not jealous or boastful or proud or rude. It does not demand its own way. It is not irritable, and it keeps no record of being wronged.",
-         "Always be joyful. Never stop praying. Be thankful in all circumstances, for this is God’s will for you who belong to Christ Jesus.",
-         "The Lord is for me, so I will have no fear. What can mere people do to me?",
-          "The Lord keeps watch over you as you come and go, both now and forever.",
-            "You must serve only the Lord your God. If you do, I will bless you with food and water, and I will protect you from illness.",
-           "I am leaving you with a gift—peace of mind and heart. And the peace I give is a gift the world cannot give. So don’t be troubled or afraid.",
-            "How much better to get wisdom than gold, and good judgment than silver!",
-           "A fool is quick-tempered, but a wise person stays calm when insulted.",
-            "The light shines in the darkness, and the darkness can never extinguish it.",
-            "For you know that when your faith is tested, your endurance has a chance to grow.",
-           "Three things will last forever—faith, hope, and love—and the greatest of these is love.",
-            "Don’t worry about anything; instead, pray about everything. Tell God what you need, and thank him for all he has done.",
-            "For God has not given us a spirit of fear and timidity, but of power, love, and self-discipline.",
-            "\"For I know the plans I have for you,\" says the Lord. \"They are plans for good and not for disaster, to give you a future and a hope.\"",
-            "Kind words are like honey— sweet to the soul and healthy for the body.",
-            "I have told you all this so that you may have peace in me. Here on earth you will have many trials and sorrows. But take heart, because I have overcome the world.",
-            "Wealth from get-rich-quick schemes quickly disappears; wealth from hard work grows over time.",
-            "Better to be patient than powerful; better to have self-control than to conquer a city.",
-            "So I say, let the Holy Spirit guide your lives. Then you won’t be doing what your sinful nature craves.",
-            "Faith shows the reality of what we hope for; it is the evidence of things we cannot see.",
-            "And do everything with love.",
-            "But thank God! He gives us victory over sin and death through our Lord Jesus Christ.",
-            "I pray that God, the source of hope, will fill you completely with joy and peace because you trust in him. Then you will overflow with confident hope through the power of the Holy Spirit.",
-            "So now wrap your heart tightly around the hope that lives within us, knowing that God always keeps his promises!",
-            "So whether you eat or drink or whatever you do, do it all for the glory of God.",
-            "Now may the Lord of peace himself give you his peace at all times and in every situation. The Lord be with you all.",
-            "Honor the Lord with your wealth and with the best part of everything you produce.",
-            "A person without self-control is like a city with broken-down walls.",
-            "Let your unfailing love surround us, Lord, for our hope is in you alone.",
-            "For it is by believing in your heart that you are made right with God, and it is by openly declaring your faith that you are saved.",
-            "Most important of all, continue to show deep love for each other, for love covers a multitude of sins.",
-            "Devote yourselves to prayer with an alert mind and a thankful heart.",
-            "Fearing people is a dangerous trap, but trusting the Lord means safety.",
-            "I am counting on the Lord; yes, I am counting on him. I have put my hope in his word.",
-            "I will reward them with a long life and give them my salavtion",
-            "So letting your sinful nature control your mind leads to death. But letting the Spirit control your mind leads to life and peace.",
-            "Work hard and become a leader; be lazy and become a slave.",
-            "The Lord is more pleased when we do what is right and just than when we offer him sacrifices.",
-            "Let us hold tightly without wavering to the hope we affirm, for God can be trusted to keep his promise.",
-            "So faith comes from hearing, that is, hearing the Good News about Christ.",
-            "Love does no wrong to others, so love fulfills the requirements of God's law.",
-            "This is the day the Lord has made. We will rejoice and be glad in it.",
-            "Don't be afraid, for I am with you. Don't be discouraged, for I am your God. I will strengthen you and help you. I will hold you up with my victorious right hand.",
-            "But if we look forward to something we don't yet have, we must wait patiently and confidently.",
-            "Don’t you realize that your body is the temple of the Holy Spirit, who lives in you and was given to you by God? You do not belong to yourself, for God bought you with a high price. So you must honor God with your body.",
-            "The Lord gives his people strength. The Lord blesses them with peace.",
-            "Choose a good reputation over great riches; being held in high esteem is better than silver or gold.",
-            "The temptations in your life are no different from what others experience. And God is faithful. He will not allow the temptation to be more than you can stand. When you are tempted, he will show you a way out so that you can endure.",
-            "Trust in the Lord with all your heart; do not depend on your own understanding.",
-            "And it is impossible to please God without faith. Anyone who wants to come to him must believe that God exists and that he rewards those who sincerely seek him.",
-            "\"I tell you, you can pray for anything, and if you believe that you’ve received it, it will be yours.\"",
-            "\"I tell you the truth, you can say to this mountain, ‘May you be lifted up and thrown into the sea,’ and it will happen. But you must really believe it will happen and have no doubt in your heart.\"",
-            "Our life is lived by faith. We do not live by what we see in front of us.",
-            "For the word of God will never fail.",
-            "But when you ask him, be sure that your faith is in God alone. Do not waver, for a person with divided loyalty is as unsettled as a wave of the sea that is blown and tossed by the wind.",
-            "If you openly declare that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved."]
+    
+    private func getContextualCategories(for date: Date) -> [String] {
+        let hour = Calendar.current.component(.hour, from: date)
+        let dayOfWeek = Calendar.current.component(.weekday, from: date)
+        
+        var categories: [String] = []
+        
+        // Time-based context
+        switch hour {
+        case 5...8:
+            categories.append(contentsOf: ["Morning", "Strength", "New Beginnings", "Energy"])
+        case 9...11:
+            categories.append(contentsOf: ["Work", "Focus", "Productivity", "Wisdom"])
+        case 12...13:
+            categories.append(contentsOf: ["Rest", "Reflection", "Gratitude"])
+        case 14...17:
+            categories.append(contentsOf: ["Perseverance", "Strength", "Purpose"])
+        case 18...20:
+            categories.append(contentsOf: ["Family", "Love", "Gratitude", "Reflection"])
+        case 21...23:
+            categories.append(contentsOf: ["Peace", "Rest", "Forgiveness", "Comfort"])
+        default:
+            categories.append(contentsOf: ["Peace", "Comfort", "Protection"])
+        }
+        
+        // Day-based context
+        switch dayOfWeek {
+        case 1: // Sunday
+            categories.append(contentsOf: ["Worship", "Rest", "Family", "Reflection"])
+        case 2: // Monday
+            categories.append(contentsOf: ["New Beginnings", "Strength", "Purpose", "Energy"])
+        case 6, 7: // Friday/Saturday
+            categories.append(contentsOf: ["Gratitude", "Joy", "Celebration", "Rest"])
+        default:
+            categories.append(contentsOf: ["Work", "Perseverance", "Wisdom"])
+        }
+        
+        return categories
     }
 }
 
+// MARK: - Timeline Entry
+
+/// Represents a single timeline entry for the widget
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let promise: String
     
-}
-
-struct Gradients {
-
-    let colors: [Color] = [.cyan, .purple, .white, .red]
-
-    func randomColors() -> [Color] {
-        let shuffledColors = colors.shuffled()
-        let array = Array(shuffledColors.prefix(2))
-        return array
-    }
-
-    var purple: some View {
-        LinearGradient(gradient: Gradient(colors: randomColors()), startPoint: .topLeading, endPoint: .bottomTrailing)
-            .edgesIgnoringSafeArea(.all)
+    init(date: Date, promise: String) {
+        self.date = date
+        self.promise = promise.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
 
-struct PromisesGlanceView: View {
+// MARK: - Widget Entry View
+
+struct PromisesWidgetEntryView: View {
     @Environment(\.widgetFamily) var family: WidgetFamily
-    let affirmation: String
+    let entry: Provider.Entry
     
-    var fontSize: CGFloat {
-        switch family {
-        case .systemMedium: return 16
-        default: return 24
+    var body: some View {
+        widgetContent
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel(accessibilityText)
+    }
+    
+    // MARK: - Private Views
+    
+    @ViewBuilder
+    private var widgetContent: some View {
+        if #available(iOS 17.0, *) {
+            contentView
+                .containerBackground(.clear, for: .widget)
+        } else {
+            contentView
         }
     }
     
-    private let opacity = 0.85
-    
-    var body: some View {
+    private var contentView: some View {
         ZStack {
-            Gradients().purple.opacity(opacity)
-            Text(affirmation)
-                .foregroundColor(.white)
-                .font(.custom("BodoniSvtyTwoOSITCTT-Book", size: fontSize))
-                .fontWeight(.medium)
-                .padding()
+            WidgetGradientBackground()
+                .opacity(WidgetConstants.Design.backgroundOpacity)
+            
+            VStack(spacing: WidgetConstants.Design.contentSpacing) {
+                Spacer()
+                
+                promiseText
+                
+                Spacer()
+                
+                if shouldShowGreeting {
+                    greetingText
+                }
+            }
+        }
+    }
+    
+    private var promiseText: some View {
+        Text(entry.promise)
+            .foregroundColor(.white)
+            .font(.custom(WidgetConstants.customFontName, size: fontSize))
+            .fontWeight(.medium)
+            .multilineTextAlignment(.center)
+            .padding(.horizontal, WidgetConstants.Design.horizontalPadding)
+            .minimumScaleFactor(0.8) // Allow text scaling for better fit
+    }
+    
+    private var greetingText: some View {
+        Text(TimeBasedGreeting.current.message)
+            .font(.system(size: WidgetConstants.Design.FontSizes.greeting, weight: .light))
+            .foregroundColor(.white.opacity(WidgetConstants.Design.greetingOpacity))
+            .padding(.bottom, WidgetConstants.Design.bottomPadding)
+    }
+    
+    // MARK: - Computed Properties
+    
+    private var fontSize: CGFloat {
+        switch family {
+        case .systemSmall:
+            return WidgetConstants.Design.FontSizes.small
+        case .systemMedium:
+            return WidgetConstants.Design.FontSizes.medium
+        default:
+            return WidgetConstants.Design.FontSizes.large
+        }
+    }
+    
+    private var shouldShowGreeting: Bool {
+        family == .systemLarge
+    }
+    
+    private var accessibilityText: String {
+        if shouldShowGreeting {
+            return "\(entry.promise). \(TimeBasedGreeting.current.message)"
+        }
+        return entry.promise
+    }
+}
+
+// MARK: - Time-Based Greeting System
+
+enum TimeBasedGreeting {
+    case morning, afternoon, evening, night
+    
+    var message: String {
+        switch self {
+        case .morning:
+            return "Good morning! Start your day with faith."
+        case .afternoon:
+            return "Good afternoon! Keep your spirit strong."
+        case .evening:
+            return "Good evening! Reflect on God's blessings."
+        case .night:
+            return "Good night! Rest in His promises."
+        }
+    }
+    
+    static var current: TimeBasedGreeting {
+        let hour = Calendar.current.component(.hour, from: Date())
+        switch hour {
+        case WidgetConstants.TimeRanges.morningStart...WidgetConstants.TimeRanges.morningEnd:
+            return .morning
+        case (WidgetConstants.TimeRanges.morningEnd + 1)...WidgetConstants.TimeRanges.afternoonEnd:
+            return .afternoon
+        case (WidgetConstants.TimeRanges.afternoonEnd + 1)...WidgetConstants.TimeRanges.eveningEnd:
+            return .evening
+        default:
+            return .night
         }
     }
 }
 
-struct PromisesWidgetEntryView : View {
-    var entry: Provider.Entry
+// MARK: - Gradient Background
 
+struct WidgetGradientBackground: View {
+    
+    private enum GradientColors {
+        static let morning: [Color] = [.orange, .yellow, .pink]
+        static let afternoon: [Color] = [.blue, .cyan, .teal]
+        static let evening: [Color] = [.purple, .indigo, .blue]
+        static let night: [Color] = [.black, .purple, .indigo]
+    }
+    
     var body: some View {
-        PromisesGlanceView(affirmation: entry.promise)
+        LinearGradient(
+            gradient: Gradient(colors: timeBasedColors),
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+    }
+    
+    private var timeBasedColors: [Color] {
+        let colors: [Color]
+        
+        switch TimeBasedGreeting.current {
+        case .morning:
+            colors = GradientColors.morning
+        case .afternoon:
+            colors = GradientColors.afternoon
+        case .evening:
+            colors = GradientColors.evening
+        case .night:
+            colors = GradientColors.night
+        }
+        
+        // Return a stable 2-color gradient (no randomization for consistency)
+        return Array(colors.prefix(2))
     }
 }
+
+// MARK: - Widget Configuration
 
 @main
 struct PromisesWidget: Widget {
-    let kind: String = "PromisesWidget"
-
+    private static let widgetKind = "PromisesWidget"
+    
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+        StaticConfiguration(
+            kind: Self.widgetKind,
+            provider: Provider()
+        ) { entry in
             PromisesWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Promises")
-        .description("Shows today's Bible promises.")
-        .supportedFamilies([.systemMedium, .systemLarge, .systemExtraLarge])
+        .configurationDisplayName("Daily Promises")
+        .description("Inspiring Bible promises that change throughout the day to encourage your faith journey.")
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .contentMarginsDisabled() // Use full widget space
     }
 }
 
+// MARK: - Widget Preview
+
+#if DEBUG
 struct PromisesWidget_Previews: PreviewProvider {
     static var previews: some View {
-        PromisesWidgetEntryView(entry: SimpleEntry(date: Date(), promise:  "God loves you!"))
+        Group {
+            // Small widget preview
+            PromisesWidgetEntryView(
+                entry: SimpleEntry(
+                    date: Date(),
+                    promise: "Trust in the Lord with all your heart; do not depend on your own understanding."
+                )
+            )
             .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .previewDisplayName("Small")
+            
+            // Medium widget preview
+            PromisesWidgetEntryView(
+                entry: SimpleEntry(
+                    date: Date(),
+                    promise: "For I know the plans I have for you, says the Lord. They are plans for good and not for disaster, to give you a future and a hope."
+                )
+            )
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
+            .previewDisplayName("Medium")
+            
+            // Large widget preview
+            PromisesWidgetEntryView(
+                entry: SimpleEntry(
+                    date: Date(),
+                    promise: "Don't worry about anything; instead, pray about everything. Tell God what you need, and thank him for all he has done."
+                )
+            )
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
+            .previewDisplayName("Large")
+        }
     }
 }
+#endif

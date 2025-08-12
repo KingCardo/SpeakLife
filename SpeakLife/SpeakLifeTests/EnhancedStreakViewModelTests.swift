@@ -22,6 +22,7 @@ final class EnhancedStreakViewModelTests: XCTestCase {
         // Clear any existing UserDefaults data to ensure clean state
         UserDefaults.standard.removeObject(forKey: "dailyChecklist")
         UserDefaults.standard.removeObject(forKey: "streakStats")
+        UserDefaults.standard.removeObject(forKey: "hasAutoCompletedFirstTask")
         
         viewModel = EnhancedStreakViewModel()
     }
@@ -33,6 +34,7 @@ final class EnhancedStreakViewModelTests: XCTestCase {
         // Clean up UserDefaults
         UserDefaults.standard.removeObject(forKey: "dailyChecklist")
         UserDefaults.standard.removeObject(forKey: "streakStats")
+        UserDefaults.standard.removeObject(forKey: "hasAutoCompletedFirstTask")
         
         super.tearDown()
     }
@@ -268,6 +270,169 @@ final class EnhancedStreakViewModelTests: XCTestCase {
         XCTAssertNotNil(shareImage)
         XCTAssertGreaterThan(shareImage?.size.width ?? 0, 0)
         XCTAssertGreaterThan(shareImage?.size.height ?? 0, 0)
+    }
+    
+    // MARK: - Auto-Completion Tests (Bug Fix Verification)
+    
+    func testAutoCompleteFirstTask_ShouldOnlyHappenOnce() {
+        // Given: Fresh start with demo completed
+        XCTAssertEqual(viewModel.todayChecklist.completedTasksCount, 0)
+        
+        // When: Call auto-complete for the first time
+        viewModel.autoCompleteFirstTaskIfDemoCompleted(hasCompletedDemo: true)
+        
+        // Wait for async completion
+        let expectation1 = XCTestExpectation(description: "First auto-completion")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            expectation1.fulfill()
+        }
+        wait(for: [expectation1], timeout: 1.0)
+        
+        // Then: First task should be completed
+        XCTAssertEqual(viewModel.todayChecklist.completedTasksCount, 1)
+        let firstTask = viewModel.todayChecklist.tasks.first!
+        XCTAssertTrue(firstTask.isCompleted)
+        
+        // When: Call auto-complete again (simulating view re-appearing)
+        viewModel.autoCompleteFirstTaskIfDemoCompleted(hasCompletedDemo: true)
+        
+        // Wait to ensure no additional completion happens
+        let expectation2 = XCTestExpectation(description: "Second auto-completion attempt")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            expectation2.fulfill()
+        }
+        wait(for: [expectation2], timeout: 1.0)
+        
+        // Then: Still only one task should be completed (no double completion)
+        XCTAssertEqual(viewModel.todayChecklist.completedTasksCount, 1)
+    }
+    
+    func testAutoCompleteFirstTask_ShouldNotHappenOnFutureDays() {
+        // Given: Auto-complete has been done on first day
+        viewModel.autoCompleteFirstTaskIfDemoCompleted(hasCompletedDemo: true)
+        
+        // Wait for completion
+        let expectation1 = XCTestExpectation(description: "Initial auto-completion")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            expectation1.fulfill()
+        }
+        wait(for: [expectation1], timeout: 1.0)
+        
+        XCTAssertEqual(viewModel.todayChecklist.completedTasksCount, 1)
+        
+        // When: Simulate moving to next day by creating a new view model
+        // (This simulates the app being reopened on a new day)
+        let newDayViewModel = EnhancedStreakViewModel()
+        
+        // Reset the checklist to simulate a new day with no completed tasks
+        newDayViewModel.resetDay()
+        
+        // Attempt auto-complete on the new day
+        newDayViewModel.autoCompleteFirstTaskIfDemoCompleted(hasCompletedDemo: true)
+        
+        // Wait to see if any completion happens
+        let expectation2 = XCTestExpectation(description: "Auto-completion on new day")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            expectation2.fulfill()
+        }
+        wait(for: [expectation2], timeout: 1.0)
+        
+        // Then: No tasks should be auto-completed on the new day
+        XCTAssertEqual(newDayViewModel.todayChecklist.completedTasksCount, 0)
+    }
+    
+    func testAutoCompleteFirstTask_PersistsAcrossAppRestarts() {
+        // Given: Auto-complete has been triggered once
+        viewModel.autoCompleteFirstTaskIfDemoCompleted(hasCompletedDemo: true)
+        
+        // Wait for completion
+        let expectation1 = XCTestExpectation(description: "Initial auto-completion")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            expectation1.fulfill()
+        }
+        wait(for: [expectation1], timeout: 1.0)
+        
+        XCTAssertEqual(viewModel.todayChecklist.completedTasksCount, 1)
+        
+        // When: Create multiple new view models (simulating app restarts)
+        for i in 1...3 {
+            let newViewModel = EnhancedStreakViewModel()
+            
+            // Reset to get fresh checklist
+            newViewModel.resetDay()
+            
+            // Try to auto-complete again
+            newViewModel.autoCompleteFirstTaskIfDemoCompleted(hasCompletedDemo: true)
+            
+            // Wait to see if completion happens
+            let expectation = XCTestExpectation(description: "Auto-completion attempt \(i)")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                expectation.fulfill()
+            }
+            wait(for: [expectation], timeout: 1.0)
+            
+            // Then: No auto-completion should happen
+            XCTAssertEqual(newViewModel.todayChecklist.completedTasksCount, 0, 
+                          "Auto-completion should not happen on app restart #\(i)")
+        }
+    }
+    
+    func testAutoCompleteFirstTask_DoesNotHappenWithoutDemo() {
+        // Given: Fresh start with demo NOT completed
+        XCTAssertEqual(viewModel.todayChecklist.completedTasksCount, 0)
+        
+        // When: Call auto-complete with demo not completed
+        viewModel.autoCompleteFirstTaskIfDemoCompleted(hasCompletedDemo: false)
+        
+        // Wait to see if any completion happens
+        let expectation = XCTestExpectation(description: "Auto-completion without demo")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+        
+        // Then: No tasks should be completed
+        XCTAssertEqual(viewModel.todayChecklist.completedTasksCount, 0)
+    }
+    
+    func testAutoCompleteFirstTask_DoesNotHappenIfTasksAlreadyCompleted() {
+        // Given: Manually complete a task first
+        let firstTask = viewModel.todayChecklist.tasks.first!
+        viewModel.completeTask(taskId: firstTask.id)
+        XCTAssertEqual(viewModel.todayChecklist.completedTasksCount, 1)
+        
+        // When: Try to auto-complete
+        viewModel.autoCompleteFirstTaskIfDemoCompleted(hasCompletedDemo: true)
+        
+        // Wait to see if additional completion happens
+        let expectation = XCTestExpectation(description: "Auto-completion with existing completed task")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+        
+        // Then: Still only one task should be completed
+        XCTAssertEqual(viewModel.todayChecklist.completedTasksCount, 1)
+    }
+    
+    func testAutoCompleteFirstTask_HandlesMultipleSimultaneousCalls() {
+        // Given: Fresh start
+        XCTAssertEqual(viewModel.todayChecklist.completedTasksCount, 0)
+        
+        // When: Call auto-complete multiple times rapidly (race condition test)
+        for _ in 1...5 {
+            viewModel.autoCompleteFirstTaskIfDemoCompleted(hasCompletedDemo: true)
+        }
+        
+        // Wait for all potential completions
+        let expectation = XCTestExpectation(description: "Multiple simultaneous auto-completions")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.5)
+        
+        // Then: Still only one task should be completed (no race condition)
+        XCTAssertEqual(viewModel.todayChecklist.completedTasksCount, 1)
     }
     
     // MARK: - Badge Integration Tests

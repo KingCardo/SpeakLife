@@ -11,7 +11,6 @@ struct DailyChecklistView: View {
     @ObservedObject var viewModel: EnhancedStreakViewModel
     @EnvironmentObject var appState: AppState
     @State private var showInfoSheet = false
-    @State private var hasAutoCompleted = false
     @State private var showFirstTaskConfetti = false
     var onClose: (() -> Void)? = nil
     
@@ -162,11 +161,8 @@ struct DailyChecklistView: View {
             DailyChecklistInfoSheet()
         }
         .onAppear {
-            // Auto-complete first task if demo was completed and haven't done this yet
-            if !hasAutoCompleted {
-                viewModel.autoCompleteFirstTaskIfDemoCompleted(hasCompletedDemo: appState.hasCompletedDemo)
-                hasAutoCompleted = true
-            }
+            // Auto-complete first task if demo was completed (will only happen once ever)
+            viewModel.autoCompleteFirstTaskIfDemoCompleted(hasCompletedDemo: appState.hasCompletedDemo)
         }
     }
 }
