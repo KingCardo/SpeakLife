@@ -721,35 +721,27 @@ final class NotificationManager: NSObject {
     // MARK: - Checklist Notifications
     
     func scheduleChecklistNotifications() {
-        scheduleMorningChecklistReminder()
-        scheduleEveningChecklistCheckIn()
+        scheduleDailyPersonalizedNotifications()
+        scheduleFallbackEveningNotification()
     }
     
-    private func scheduleMorningChecklistReminder() {
-        let id = "MorningChecklistReminder"
+    // Schedule a fallback evening notification that repeats for days when app isn't opened
+    func scheduleFallbackEveningNotification() {
+        let id = "FallbackEveningNotification"
         
-        let morningMessages: [String] = [
-            "🌅 Day [STREAK] awaits! Continue your amazing streak with God's Word today.",
-            "⚡ New day, new grace! Complete your spiritual journey activities today.",
-            "🙏 Rise and shine, warrior! Your daily spiritual checklist is ready.",
-            "✨ Good morning! Let's make today count in your walk with God.",
-            "🔥 Start strong! Your spiritual activities are waiting to be completed.",
-            "👑 You're a child of the King! Begin your day with His promises.",
-            "🌟 Morning grace is here! Time to engage with God's Word.",
-            "💪 Ready to conquer the day spiritually? Your checklist awaits!"
-        ]
-        
-        let body = morningMessages.randomElement() ?? "🌅 Good morning! Start your day with God's Word - your spiritual checklist is ready!"
+        // Get saved info for personalization
+        let userDefaults = UserDefaults.standard
+        let userName = userDefaults.string(forKey: "userName") ?? "Friend"
         
         let content = UNMutableNotificationContent()
         content.title = "SpeakLife"
-        content.body = body
+        content.body = "🌙 Hey \(userName)! Don't forget to check your spiritual progress today. Every step counts!"
         content.sound = UNNotificationSound.default
         
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.autoupdatingCurrent
         dateComponents.timeZone = TimeZone.autoupdatingCurrent
-        dateComponents.hour = 8
+        dateComponents.hour = 19  // 7 PM
         dateComponents.minute = 0
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
@@ -757,17 +749,30 @@ final class NotificationManager: NSObject {
         
         notificationCenter.add(request) { error in
             if let error = error {
-                print("Error scheduling morning checklist reminder: \(error)")
+                print("Error scheduling fallback evening notification: \(error)")
             }
         }
     }
     
-    private func scheduleEveningChecklistCheckIn() {
-        // Remove the generic repeating evening notification
-        // The personalized notification system will handle evening reminders
-        // based on actual checklist completion status
-        let id = "EveningChecklistCheckIn"
-        notificationCenter.removePendingNotificationRequests(withIdentifiers: [id])
+    // Schedule morning personalized notifications (repeating)
+    func scheduleDailyPersonalizedNotifications() {
+        // Get current streak info from UserDefaults if available
+        let userDefaults = UserDefaults.standard
+        let currentStreak = userDefaults.integer(forKey: "currentStreak")
+        let userName = userDefaults.string(forKey: "userName") ?? "Friend"
+        
+        // Schedule morning notification (repeats daily at 8 AM)
+        schedulePersonalizedChecklistNotification(
+            isEvening: false,
+            userName: userName,
+            currentStreak: currentStreak,
+            completedActivities: [],
+            remainingActivities: [],
+            totalActivities: 0
+        )
+        
+        // Evening notifications are scheduled separately by the ViewModel 
+        // with actual daily progress - not here
     }
     
     // MARK: - Dynamic Checklist Notifications
@@ -810,33 +815,28 @@ final class NotificationManager: NSObject {
         dateComponents.hour = isEvening ? 19 : 8
         dateComponents.minute = 0
         
+        // Morning notifications can repeat daily, but evening notifications need fresh content each day
+        let repeats = !isEvening
+        
         if isEvening {
-            // For evening notifications, schedule for today if it's before 7 PM
+            // For evening, schedule for today at 7 PM
             let now = Date()
             let calendar = Calendar.current
             let currentHour = calendar.component(.hour, from: now)
             
             if currentHour < 19 {
-                // Schedule for today at 7 PM
+                // Schedule for today at 7 PM with specific date
                 let todayComponents = calendar.dateComponents([.year, .month, .day], from: now)
                 dateComponents.year = todayComponents.year
                 dateComponents.month = todayComponents.month
                 dateComponents.day = todayComponents.day
             } else {
-                // It's already past 7 PM, don't schedule for today
+                // Already past 7 PM, don't schedule for today
                 return
-            }
-        } else {
-            // Morning notifications for tomorrow
-            if let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date()) {
-                let tomorrowComponents = Calendar.current.dateComponents([.year, .month, .day], from: tomorrow)
-                dateComponents.year = tomorrowComponents.year
-                dateComponents.month = tomorrowComponents.month
-                dateComponents.day = tomorrowComponents.day
             }
         }
         
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: repeats)
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         
         notificationCenter.add(request) { error in

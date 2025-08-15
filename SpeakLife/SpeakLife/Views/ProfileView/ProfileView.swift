@@ -100,6 +100,7 @@ struct ProfileView: View {
                         }
                         AbbasLoveRow
                         remindersRow
+                     //   widgetPreferencesRow
                      //   emailsRow
                        // favoritesRow
                         musicRow
@@ -227,6 +228,29 @@ struct ProfileView: View {
         }
         
     }
+    
+    // Temporarily commented out - will be activated in future update
+    /*
+    @MainActor
+    private var widgetPreferencesRow: some View {
+        HStack {
+            Image(systemName: "widget.small.fill")
+                .foregroundColor(Constants.DAMidBlue)
+            NavigationLink("Widget Preferences", destination: LazyView(WidgetPreferencesView()))
+                .opacity(0)
+                .background(
+                    HStack {
+                        Text("Widget Preferences", comment: "Widget preferences row title")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 8)
+                            .foregroundColor(Constants.DAMidBlue)
+                    })
+        }
+    }
+    */
     
     @MainActor
     private var quizRow: some View {

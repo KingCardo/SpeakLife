@@ -32,9 +32,11 @@ final class EnhancedStreakViewModel: ObservableObject {
         self.streakStats = StreakStats()
         self.badgeManager = BadgeManager()
         
-        loadData()
-        checkStreakValidity()
+        loadData()  // This now handles checkStreakValidity internally when needed
         checkForNewBadges()
+        
+        // Schedule evening notification for today with current progress
+        scheduleEveningCheckIn()
         
         // Listen for app becoming active to check for new day
         NotificationCenter.default.addObserver(
@@ -303,6 +305,9 @@ final class EnhancedStreakViewModel: ObservableObject {
             todayChecklist = createProgressiveChecklist(for: currentStreak)
             saveData()
             checkForNewBadges()
+            
+            // Schedule evening notification for the new day with current progress
+            scheduleEveningCheckIn()
         }
     }
     
@@ -328,9 +333,18 @@ final class EnhancedStreakViewModel: ObservableObject {
         if let statsData = try? JSONEncoder().encode(streakStats) {
             userDefaults.set(statsData, forKey: streakStatsKey)
         }
+        
+        // Also save current streak as simple integer for notifications to use
+        userDefaults.set(streakStats.currentStreak, forKey: "currentStreak")
     }
     
     private func loadData() {
+        // Load streak stats first (needed for creating new checklist)
+        if let statsData = userDefaults.data(forKey: streakStatsKey),
+           let stats = try? JSONDecoder().decode(StreakStats.self, from: statsData) {
+            streakStats = stats
+        }
+        
         // Load checklist
         if let checklistData = userDefaults.data(forKey: checklistKey),
            let checklist = try? JSONDecoder().decode(DailyChecklist.self, from: checklistData) {
@@ -340,14 +354,20 @@ final class EnhancedStreakViewModel: ObservableObject {
             let checklistDate = calendar.startOfDay(for: checklist.date)
             
             if today == checklistDate {
+                // Same day - use saved checklist with completion status
                 todayChecklist = checklist
+            } else {
+                // Different day - create fresh checklist for new day
+                checkStreakValidity()
+                let currentStreak = max(1, streakStats.currentStreak)
+                todayChecklist = createProgressiveChecklist(for: currentStreak)
+                saveData()
             }
-        }
-        
-        // Load streak stats
-        if let statsData = userDefaults.data(forKey: streakStatsKey),
-           let stats = try? JSONDecoder().decode(StreakStats.self, from: statsData) {
-            streakStats = stats
+        } else {
+            // No saved checklist - create fresh one based on current streak
+            let currentStreak = max(1, streakStats.currentStreak)
+            todayChecklist = createProgressiveChecklist(for: currentStreak)
+            saveData()
         }
     }
     
@@ -1157,6 +1177,9 @@ final class EnhancedStreakViewModel: ObservableObject {
         let completedActivities = todayChecklist.tasks.filter { $0.isCompleted }.map { $0.title }
         let remainingActivities = todayChecklist.tasks.filter { !$0.isCompleted }.map { $0.title }
         let userName = getUserName()
+        
+        // Cancel the fallback evening notification since we're providing a personalized one
+        NotificationManager.shared.notificationCenter.removePendingNotificationRequests(withIdentifiers: ["FallbackEveningNotification"])
         
         NotificationManager.shared.schedulePersonalizedChecklistNotification(
             isEvening: true,
