@@ -16,7 +16,7 @@ struct DemoExperienceView: View {
     let size: CGSize
     let callBack: (() -> Void)
     
-    @State private var currentDeclaration = "By His stripes, I am healed. No sickness can remain in my body because Jesus already paid the price for my wholeness."
+    @State private var currentDeclaration = "Jesus already paid the price for my wholeness, protection and abundance. I receive it by faith."
     @State private var hasSpoken = false
     @State private var showCelebration = false
     @State private var streakCount = 1

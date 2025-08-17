@@ -74,17 +74,17 @@ struct OfferPageView: View {
                         .shadow(color: Color.purple.opacity(0.5), radius: 20, x: 10, y: 10)
                         .cornerRadius(6)
                     
-                    HStack(spacing: 5) {
-                        Image(systemName: "flame.fill")
-                            .foregroundColor(.orange)
-                        Text("247 people claimed this today")
-                            .font(.system(size: 16, weight: .semibold, design: .rounded))
-                            .foregroundColor(.white)
-                        Image(systemName: "flame.fill")
-                            .foregroundColor(.orange)
-                    }
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 8)
+//                    HStack(spacing: 5) {
+//                        Image(systemName: "flame.fill")
+//                            .foregroundColor(.orange)
+//                        Text("247 people claimed this today")
+//                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+//                            .foregroundColor(.white)
+//                        Image(systemName: "flame.fill")
+//                            .foregroundColor(.orange)
+//                    }
+//                    .padding(.horizontal, 20)
+//                    .padding(.vertical, 8)
                     .background(
                         Capsule()
                             .fill(LinearGradient(gradient: Gradient(colors: [.purple, .cyan]), startPoint: .leading, endPoint: .trailing))

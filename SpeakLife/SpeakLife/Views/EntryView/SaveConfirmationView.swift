@@ -108,7 +108,7 @@ struct SaveConfirmationView: View {
     private func getSuccessMessage() -> String {
         switch contentType {
         case .affirmation:
-            return "Your declaration of faith has been saved. Speak it, believe it, live it!"
+            return "Your declaration of faith has been saved. Speak it, believe it, receive it!"
         case .journal:
             return "Your spiritual reflection has been saved. God sees your faithful heart."
         }

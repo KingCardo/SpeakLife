@@ -240,8 +240,8 @@ struct OptimizedSubscriptionView: View {
             // Value props with unified gradient like Calm
             VStack(alignment: .leading, spacing: 20) {
                 valueItemWithUnifiedGradient(icon: "heart.text.square.fill", text: "Personalized Declarations")
-                valueItemWithUnifiedGradient(icon: "headphones.circle.fill", text: "Healing Audio Prayers")
-                valueItemWithUnifiedGradient(icon: "trophy.circle.fill", text: "Daily Streak Rewards")
+                valueItemWithUnifiedGradient(icon: "headphones.circle.fill", text: "Audio Prayers")
+                valueItemWithUnifiedGradient(icon: "pencil.tip.crop.circle.badge.plus.fill", text: "Journal / Create your own")
                 valueItemWithUnifiedGradient(icon: "eye.slash.circle.fill", text: "Ad-Free Experience")
             }
             .padding(.horizontal, 20)
@@ -622,7 +622,7 @@ struct OptimizedSubscriptionView: View {
                 
                 // Skip option
                 Button(action: dismiss.callAsFunction) {
-                    Text("No thanks, I'll stay stuck in my struggles")
+                    Text("No thanks")
                         .font(.system(size: 13, weight: .medium, design: .rounded))
                         .foregroundColor(.white.opacity(0.4))
                 }
@@ -687,9 +687,6 @@ struct OptimizedSubscriptionView: View {
                 Text("4.9")
                     .font(.system(size: 14, weight: .bold))
                     .foregroundColor(.white)
-                Text("(3,847 ratings)")
-                    .font(.system(size: 12))
-                    .foregroundColor(.white.opacity(0.7))
             }
             
             // Links

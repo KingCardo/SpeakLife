@@ -125,6 +125,7 @@ struct HomeView: View {
                 declarationView
                 devotionalView
                 audioView
+              //  BootcampMainView()
                 createYourOwnView
                 profileView
                     

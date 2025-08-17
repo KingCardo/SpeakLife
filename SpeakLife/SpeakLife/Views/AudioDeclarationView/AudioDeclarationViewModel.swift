@@ -27,12 +27,12 @@ final class AudioDeclarationViewModel: ObservableObject {
     private(set) var allAudioFiles: [AudioDeclaration] = []
     @Published var downloadProgress: [String: Double] = [:]
     @Published var fetchingAudioIDs: Set<String> = []
-    @Published var filters: [Filter] = [.favorites, .godsHeart, .speaklife, .growWithJesus, .psalm91, .divineHealth, .magnify,/*.imagination,.devotional,*/ .declarations, .gospel, .meditation, .bedtimeStories]
+    @Published var filters: [Filter] = [.favorites, .speaklife, .godsHeart, .growWithJesus, .psalm91, .divineHealth, .magnify,/*.imagination,.devotional,*/ .declarations, .gospel, .meditation, .bedtimeStories]
 
     // Favorites manager
     let favoritesManager = AudioFavoritesManager()
 
-    @Published var selectedFilter: Filter = .godsHeart
+    @Published var selectedFilter: Filter = .speaklife
     private let storage = Storage.storage()
     private let fileManager = FileManager.default
     @AppStorage("shouldClearCachev4") private var shouldClearCachev4 = true
