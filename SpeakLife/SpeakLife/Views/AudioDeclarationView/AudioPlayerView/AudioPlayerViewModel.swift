@@ -130,17 +130,29 @@ final class AudioPlayerViewModel: ObservableObject {
     func loadAudio(from url: URL, isSameItem: Bool) {
         hasPrefetchedNext = false
        // startMonitoringPlayback()
+        
+        print("loadAudio called - URL: \(url), isSameItem: \(isSameItem), isPlaying: \(isPlaying)")
 
-        if isPlaying && isSameItem { return }
+        if isPlaying && isSameItem { 
+            print("Already playing same item, returning")
+            return 
+        }
         resetPlayer()
 
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
         try? AVAudioSession.sharedInstance().setActive(true)
 
         player = AVPlayer(url: url)
-
-        if let duration = player?.currentItem?.asset.duration {
-            self.duration = CMTimeGetSeconds(duration)
+        
+        // Wait for the asset to load before getting duration
+        player?.currentItem?.asset.loadValuesAsynchronously(forKeys: ["duration"]) { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self, let asset = self.player?.currentItem?.asset else { return }
+                let duration = asset.duration
+                if duration.isValid && !duration.isIndefinite {
+                    self.duration = CMTimeGetSeconds(duration)
+                }
+            }
         }
 
         timeObserver = player?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1), queue: .main) { [weak self] time in
@@ -167,7 +179,10 @@ final class AudioPlayerViewModel: ObservableObject {
             }
             self.updateNowPlayingInfo()
         }
-        togglePlayPause()
+        // Always start playing when loading audio
+        player?.play()
+        isPlaying = true
+        AudioPlayerService.shared.pauseMusic()
         updateNowPlayingInfo()
 
         
@@ -175,8 +190,13 @@ final class AudioPlayerViewModel: ObservableObject {
     }
 
     func togglePlayPause() {
-        guard let player = player else { return }
+        guard let player = player else { 
+            print("togglePlayPause: No player available")
+            return 
+        }
 
+        print("togglePlayPause called - isPlaying before: \(isPlaying)")
+        
         if isPlaying {
             player.pause()
             AudioPlayerService.shared.playMusic()
@@ -185,6 +205,8 @@ final class AudioPlayerViewModel: ObservableObject {
             player.play()
         }
         isPlaying.toggle()
+        
+        print("togglePlayPause - isPlaying after: \(isPlaying), player rate: \(player.rate)")
         updateNowPlayingInfo()
     }
 
@@ -215,6 +237,7 @@ final class AudioPlayerViewModel: ObservableObject {
         player?.pause()
         player = nil
         currentTime = 0
+        isPlaying = false
     }
 
 //    func addToQueue(item: AudioDeclaration) {

@@ -440,13 +440,14 @@ struct AudioDeclarationView: View {
                 switch result {
                 case .success(let url):
                     audioURL = url
+                    let isSameItem = audioViewModel.selectedItem?.id == item.id
                     audioViewModel.selectedItem = item
                     //audioViewModel.insert(url)
                     viewModel.downloadProgress[item.id] = 0.0
                     audioViewModel.currentTrack = item.title
                     audioViewModel.subtitle = item.subtitle
                     audioViewModel.imageUrl = item.imageUrl
-                    audioViewModel.loadAudio(from: url, isSameItem: audioViewModel.selectedItem == item)
+                    audioViewModel.loadAudio(from: url, isSameItem: isSameItem)
                 case .failure(let error):
                     errorMessage = ErrorWrapper(message: "Failed to download audio: \(error.localizedDescription)")
                     audioViewModel.selectedItem = nil
