@@ -22,7 +22,7 @@ struct OptimizedSubscriptionView: View {
     @State private var animateCTA = false
     @State private var showBadge = false
     @State private var testimonialIndex = 0
-    @State private var usersOnline = 1247
+   // @State private var usersOnline = 1247
     @State private var timeRemaining: TimeInterval = 600 // 10 minutes
     
     let size: CGSize
@@ -160,7 +160,7 @@ struct OptimizedSubscriptionView: View {
         HStack {
             Image(systemName: "checkmark.shield.fill")
                 .foregroundColor(.green)
-            Text("Join \(String(usersOnline))+ believers transforming now")
+            Text("Join 50,000 + believers SpeakingLife")
                 .font(.system(size: 16, weight: .semibold))
                 .foregroundColor(.white)
             Image(systemName: "checkmark.shield.fill")
@@ -239,10 +239,10 @@ struct OptimizedSubscriptionView: View {
             
             // Value props with unified gradient like Calm
             VStack(alignment: .leading, spacing: 20) {
-                valueItemWithUnifiedGradient(icon: "heart.text.square.fill", text: "Personalized Declarations")
-                valueItemWithUnifiedGradient(icon: "headphones.circle.fill", text: "Audio Prayers")
-                valueItemWithUnifiedGradient(icon: "pencil.tip.crop.circle.badge.plus.fill", text: "Journal / Create your own")
-                valueItemWithUnifiedGradient(icon: "eye.slash.circle.fill", text: "Ad-Free Experience")
+                valueItemWithUnifiedGradient(icon: "heart.text.square.fill", text: "Trade Fear for Faith")
+                valueItemWithUnifiedGradient(icon: "headphones.circle.fill", text: "Find Peace in Chaos")
+                valueItemWithUnifiedGradient(icon: "pencil.tip.crop.circle.badge.plus.fill", text: "Speak Life Daily")
+                valueItemWithUnifiedGradient(icon: "eye.slash.circle.fill", text: "Transform Your Mindset")
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 24)
@@ -719,13 +719,13 @@ struct OptimizedSubscriptionView: View {
         animateCTA = true
         showBadge = true
         startTestimonialRotation()
-        usersOnline = Int.random(in: 1200...1400)
-        // Randomize online users
-        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { _ in
-            withAnimation {
-                usersOnline = Int.random(in: 1200...1400)
-            }
-        }
+//        usersOnline = Int.random(in: 1200...1400)
+//        // Randomize online users
+//        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { _ in
+//            withAnimation {
+//                usersOnline = Int.random(in: 1200...1400)
+//            }
+//        }
     }
     
     private func updateCountdown() {

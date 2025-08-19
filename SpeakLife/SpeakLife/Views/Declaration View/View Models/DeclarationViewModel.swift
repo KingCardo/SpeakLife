@@ -57,8 +57,34 @@ final class DeclarationViewModel: ObservableObject {
     @Published var favorites: [Declaration] = [] {
         didSet  {
             if selectedCategory == .favorites {
-                declarations = favorites.shuffled()
-                showVerse = false
+                // Only update declarations if it's a category change, not a favorite toggle
+                // Check if this is just a favorite update (same count or +/- 1)
+                let countDiff = abs(favorites.count - oldValue.count)
+                if countDiff <= 1 && !declarations.isEmpty {
+                    // This is likely a favorite toggle, update existing list without shuffling
+                    if favorites.count > oldValue.count {
+                        // Added a favorite - add it to current declarations if not present
+                        let newFavorite = favorites.first { fav in
+                            !oldValue.contains { $0.id == fav.id }
+                        }
+                        if let newFavorite = newFavorite,
+                           !declarations.contains(where: { $0.id == newFavorite.id }) {
+                            declarations.append(newFavorite)
+                        }
+                    } else if favorites.count < oldValue.count {
+                        // Removed a favorite - remove it from current declarations
+                        let removedFavorite = oldValue.first { old in
+                            !favorites.contains { $0.id == old.id }
+                        }
+                        if let removedFavorite = removedFavorite {
+                            declarations.removeAll { $0.id == removedFavorite.id }
+                        }
+                    }
+                } else {
+                    // This is a category change or initial load, shuffle the list
+                    declarations = favorites.shuffled()
+                    showVerse = false
+                }
             }
         }
     }
