@@ -239,10 +239,10 @@ struct OptimizedSubscriptionView: View {
             
             // Value props with unified gradient like Calm
             VStack(alignment: .leading, spacing: 20) {
-                valueItemWithUnifiedGradient(icon: "heart.text.square.fill", text: "Trade Fear for Faith")
-                valueItemWithUnifiedGradient(icon: "headphones.circle.fill", text: "Find Peace in Chaos")
-                valueItemWithUnifiedGradient(icon: "pencil.tip.crop.circle.badge.plus.fill", text: "Speak Life Daily")
-                valueItemWithUnifiedGradient(icon: "eye.slash.circle.fill", text: "Transform Your Mindset")
+                valueItemWithUnifiedGradient(icon: "shield.fill", text: "Trade Fear for Faith")
+                valueItemWithUnifiedGradient(icon: "leaf.fill", text: "Find Peace in Chaos")
+                valueItemWithUnifiedGradient(icon: "sparkles", text: "Speak Life Daily")
+                valueItemWithUnifiedGradient(icon: "brain.head.profile", text: "Transform Your Mindset")
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 24)
