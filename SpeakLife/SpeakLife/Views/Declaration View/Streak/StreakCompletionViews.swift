@@ -863,7 +863,7 @@ struct CompletionCelebrationView: View {
     
     private func trySaveToPhotosForManualShare(image: UIImage) {
         // Request photos permission first
-        let photos = PHPhotoLibrary.shared()
+       // let photos = PHPhotoLibrary.shared()
         
         PHPhotoLibrary.requestAuthorization { status in
             DispatchQueue.main.async {
