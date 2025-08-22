@@ -38,7 +38,8 @@ class EmailMarketingService: ObservableObject {
     private var audienceId: String = ""
     
     private var baseURL: String = ""
-    private let db = Firestore.firestore()
+    // Use the specific 'speaklife' database instead of default
+    private let db = Firestore.firestore(database: "speaklife")
     
     init() {
 //        switch provider {
@@ -157,15 +158,8 @@ class EmailMarketingService: ObservableObject {
         print("  - Source: \(source)")
         print("  - Collection: email_list")
         
-        // Check for duplicate first
-        let snapshot = try await db.collection("email_list")
-            .whereField("email", isEqualTo: email)
-            .getDocuments()
-        
-        if !snapshot.documents.isEmpty {
-            print("ℹ️ Email already exists in Firebase - skipping save")
-            return // Don't throw error, just skip
-        }
+        // Skip duplicate check - let Firestore handle it with security rules
+        // The duplicate check requires read permissions which anonymous users don't have
         
         var data: [String: Any] = [
             "email": email,
@@ -179,10 +173,30 @@ class EmailMarketingService: ObservableObject {
             data["first_name"] = firstName
         }
         
+        // Use email as document ID (sanitized)
+        // This prevents duplicates automatically at database level
+        let documentId = email.replacingOccurrences(of: ".", with: "_")
+            .replacingOccurrences(of: "@", with: "_at_")
+        
         do {
-            let docRef = try await db.collection("email_list").addDocument(data: data)
+            let docRef = db.collection("email_list").document(documentId)
+            
+            // Check if document exists (requires read permission)
+            // If you want to avoid reads, just use setData and it will overwrite
+            // For now, let's just save without checking (cheaper)
+            
+            // Option 1: Overwrite (cheapest - 1 write only)
+            try await docRef.setData(data)
+            
+            // Option 2: Preserve first signup (uncomment if you prefer)
+            // This adds "updated_at" field on duplicates but preserves original timestamp
+            // try await docRef.setData([
+            //     "updated_at": Timestamp(date: Date()),
+            //     "last_source": source
+            // ], merge: true)
+            
             print("✅ Email saved to Firebase successfully!")
-            print("  - Document ID: \(docRef.documentID)")
+            print("  - Document ID: \(documentId)")
             print("  - Collection: email_list")
         } catch {
             print("❌ Failed to save email to Firebase!")
@@ -353,6 +367,8 @@ enum EmailMarketingError: LocalizedError {
     case invalidURL
     case apiError
     case notImplemented
+    case databaseNotConfigured
+    case timeout
     
     var errorDescription: String? {
         switch self {
@@ -366,6 +382,10 @@ enum EmailMarketingError: LocalizedError {
             return "Email service error"
         case .notImplemented:
             return "Feature not implemented for this provider"
+        case .databaseNotConfigured:
+            return "Firestore database not created. Please set up Firestore in Firebase Console."
+        case .timeout:
+            return "Request timed out. Please check your connection and try again."
         }
     }
 }
