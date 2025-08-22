@@ -319,6 +319,7 @@ struct OptimizedSubscriptionView: View {
     @State private var currentSelection: Product?
     @State private var hasInitialized = false
     @State private var animateCTA = false
+    @State private var isInitialLoad = true
     @State private var testimonialIndex = 0
     @State private var timeRemaining: TimeInterval = 600
     
@@ -381,7 +382,8 @@ struct OptimizedSubscriptionView: View {
     
     // MARK: - Computed Properties
     private var isYearlyPlan: Bool {
-        guard let currentSelection = currentSelection else { return false }
+        // Default to yearly on initial load to prevent CTA flicker
+        guard let currentSelection = currentSelection else { return true }
         return currentSelection.id == subscriptionStore.currentOfferedPremium?.id ||
                currentSelection.id.contains("1YR") || currentSelection.id.contains("Yearly")
     }
@@ -741,15 +743,20 @@ struct OptimizedSubscriptionView: View {
     
     private func setupView() {
         if currentSelection == nil {
-            // Default to yearly as most popular
+            // Default to yearly as most popular - no animation on initial load
             currentSelection = subscriptionStore.currentOfferedPremium
         }
         
         if !hasInitialized {
             hasInitialized = true
+            // Delay CTA animation to avoid initial flicker
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                animateCTA = true
+            }
+        } else {
+            animateCTA = true
         }
         
-        animateCTA = true
         startTestimonialRotation()
     }
     

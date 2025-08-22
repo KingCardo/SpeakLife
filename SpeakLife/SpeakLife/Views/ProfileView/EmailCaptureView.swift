@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseFirestore
+import FirebaseAnalytics
 
 struct EmailCaptureView: View {
     @EnvironmentObject var appState: AppState
@@ -14,6 +15,9 @@ struct EmailCaptureView: View {
     @State private var message: String?
     @State private var isSubmitting: Bool = false
     @State private var showSuccess: Bool = false
+    @State private var showAdvancedOptions: Bool = false
+    
+    private let emailService = EmailMarketingService.shared
     
     var body: some View {
         VStack(spacing: 16) {
@@ -70,71 +74,128 @@ struct EmailCaptureView: View {
     }
     
     private func submitEmail() {
-        guard isValidEmail(email) else {
+        let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        // Provide specific error messages
+        if trimmedEmail.isEmpty {
             withAnimation {
-                message = "Please enter a valid email."
+                message = "Please enter your email address"
                 showSuccess = false
             }
+            return
+        }
+        
+        if !trimmedEmail.contains("@") {
+            withAnimation {
+                message = "Email must include @ symbol"
+                showSuccess = false
+            }
+            return
+        }
+        
+        if trimmedEmail.filter({ $0 == "@" }).count > 1 {
+            withAnimation {
+                message = "Email can only have one @ symbol"
+                showSuccess = false
+            }
+            return
+        }
+        
+        if !trimmedEmail.contains(".") || trimmedEmail.hasSuffix(".") {
+            withAnimation {
+                message = "Please include a valid domain (e.g., gmail.com)"
+                showSuccess = false
+            }
+            return
+        }
+        
+        guard isValidEmail(trimmedEmail) else {
+            withAnimation {
+                message = "Please enter a valid email address (e.g., name@example.com)"
+                showSuccess = false
+            }
+            Analytics.logEvent("email_signup_invalid", parameters: [
+                "source": "ios_app_profile"
+            ])
             return
         }
         isSubmitting = true
         message = nil
         
-        let db = Firestore.firestore()
-        let collection = db.collection("email_list")
-        // Check for duplicate email
-        collection.whereField("email", isEqualTo: email.lowercased())
-            .getDocuments { snapshot, error in
-                DispatchQueue.main.async {
-                    if let error = error {
-                        print("Error checking duplicates: \(error.localizedDescription)")
-                        withAnimation {
-                            message = "Something went wrong. Please try again."
-                            showSuccess = false
-                            isSubmitting = false
+        // Log attempt
+        Analytics.logEvent("email_signup_attempt", parameters: [
+            "source": "ios_app_profile"
+        ])
+        
+        Task {
+            do {
+                // Add to email marketing service (Mailchimp, etc.) and Firebase
+                try await emailService.addSubscriber(
+                    email: trimmedEmail,
+                    firstName: nil,
+                    source: "ios_app_profile"
+                )
+                
+                // Log success
+                Analytics.logEvent("email_signup_success", parameters: [
+                    "source": "ios_app_profile"
+                ])
+                
+                await MainActor.run {
+                    withAnimation {
+                        showSuccess = true
+                        message = "You're subscribed! 🎉 Check your email for confirmation."
+                        appState.email = email
+                        appState.needEmail = false
+                        
+                        // Clear form after successful submission
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            email = ""
                         }
-                        return
                     }
-                    
-                    if let docs = snapshot?.documents, !docs.isEmpty {
-                        withAnimation {
+                    isSubmitting = false
+                }
+            } catch {
+                // Log failure
+                Analytics.logEvent("email_signup_failed", parameters: [
+                    "source": "ios_app_profile",
+                    "error": error.localizedDescription
+                ])
+                
+                await MainActor.run {
+                    withAnimation {
+                        if error.localizedDescription.contains("already") {
                             message = "You're already subscribed! ✅"
                             showSuccess = true
-                            isSubmitting = false
-                        }
-                        return
-                    }
-                    
-                    // No duplicate, add email
-                    collection.addDocument(data: [
-                        "email": email.lowercased(),
-                        "timestamp": Timestamp(date: Date())
-                    ]) { error in
-                        DispatchQueue.main.async {
-                            isSubmitting = false
-                            if let error = error {
-                                print("Error saving email: \(error.localizedDescription)")
-                                withAnimation {
-                                    message = "Something went wrong. Please try again."
-                                    showSuccess = false
-                                }
-                            } else {
-                                withAnimation {
-                                    showSuccess = true
-                                    message = "You're subscribed! 🎉"
-                                    appState.email = email
-                                    email = ""
-                                    appState.needEmail = false
-                                }
-                            }
+                        } else {
+                            message = "Error: \(error.localizedDescription)"
+                            showSuccess = false
                         }
                     }
+                    isSubmitting = false
                 }
+                print("❌ Error subscribing email: \(error)")
+                print("Error details: \(error.localizedDescription)")
             }
+        }
     }
         
         private func isValidEmail(_ email: String) -> Bool {
-            let pattern = #"^\S+@\S+\.\S+$"#
-            return email.range(of: pattern, options: .regularExpression) != nil
+            // More robust email validation
+            let pattern = #"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"#
+            let trimmed = email.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            // Check basic requirements
+            guard !trimmed.isEmpty,
+                  trimmed.count >= 5, // Minimum: a@b.c
+                  trimmed.count <= 254, // RFC 5321 max email length
+                  !trimmed.hasPrefix("."),
+                  !trimmed.hasSuffix("."),
+                  !trimmed.contains(".."),
+                  trimmed.filter({ $0 == "@" }).count == 1 else {
+                return false
+            }
+            
+            return trimmed.range(of: pattern, options: .regularExpression) != nil
         }
     }
