@@ -96,8 +96,6 @@ struct SpeakLifeApp: App {
                 WidgetDataBridge.shared.processPendingWidgetActions()
                     
                 if appState.notificationEnabled {
-                    NotificationManager.shared.prepareDailyStreakNotification(with: appState.userName, streak: streakViewModel.currentStreak, hasCurrentStreak: streakViewModel.hasCurrentStreak)
-                    
                     // Ensure checklist notifications are scheduled (they repeat daily)
                     NotificationManager.shared.scheduleChecklistNotifications()
                 }

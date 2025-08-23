@@ -46,7 +46,7 @@ final class AppState: ObservableObject {
     @AppStorage("firstOpen") var firstOpen = true
     @AppStorage("showGiftViewCount") var showGiftViewCount = 0
     @AppStorage("email") var email = ""
-    @AppStorage("hasEmail") var needEmail = true
+    @AppStorage("hasEmailv2") var needEmail = true
     @AppStorage("showQuizButton") var showQuizButton = true
     
     @AppStorage("hasCompletedDemo") var hasCompletedDemo = false

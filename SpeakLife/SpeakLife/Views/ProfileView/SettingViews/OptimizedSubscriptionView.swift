@@ -36,16 +36,40 @@ struct ValueProposition: View {
                         .fill(
                             LinearGradient(
                                 gradient: Gradient(colors: [
-                                    Color(red: 0.7, green: 0.4, blue: 1.0),
-                                    Color(red: 0.9, green: 0.9, blue: 1.0),
-                                    Color(red: 0.3, green: 0.6, blue: 1.0)
+                                    Color(red: 0.7, green: 0.3, blue: 1.0),  // Bright violet
+                                    Color(red: 0.85, green: 0.6, blue: 1.0), // Lavender
+                                    Color(red: 0.5, green: 0.2, blue: 0.9)   // Deep purple
                                 ]),
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
                             )
+//                            LinearGradient(
+//                                gradient: Gradient(colors: [
+//                                    Color(red: 1.0, green: 0.85, blue: 0.4),   // Gold
+//                                    Color(red: 1.0, green: 0.95, blue: 0.7),   // Soft highlight
+//                                    Color(red: 0.95, green: 0.7, blue: 0.2)    // Rich amber
+//                                ]),
+//                                startPoint: .topLeading,
+//                                endPoint: .bottomTrailing
+//                            )
                         )
-                        .shadow(color: Color.purple.opacity(0.3), radius: 4, x: 0, y: 2)
+                        .shadow(color: Color.orange.opacity(0.3), radius: 4, x: 0, y: 2)
                 )
+//                .background(
+//                    Circle()
+//                        .fill(
+//                            LinearGradient(
+//                                gradient: Gradient(colors: [
+//                                    Color(red: 0.7, green: 0.4, blue: 1.0),
+//                                    Color(red: 0.9, green: 0.9, blue: 1.0),
+//                                    Color(red: 0.3, green: 0.6, blue: 1.0)
+//                                ]),
+//                                startPoint: .topLeading,
+//                                endPoint: .bottomTrailing
+//                            )
+//                        )
+//                        .shadow(color: Color.purple.opacity(0.3), radius: 4, x: 0, y: 2)
+//                )
             
             Text(text)
                 .font(.system(size: 17, weight: .semibold, design: .rounded))
@@ -161,7 +185,7 @@ struct PricingOptionView: View {
         if product.id.contains("Weekly") || product.id.contains("1WK") || product.id.lowercased().contains("week") {
             return "Weekly"
         } else if product.id.contains("1YR") || product.id.contains("Yearly") || product.id.lowercased().contains("year") {
-            return "Yearly"
+            return "Yearly - \(option.monthlyEquivalent ?? "")"
         } else if product.id.contains("Monthly") || product.id.contains("1MO") || product.id.lowercased().contains("month") {
             return "Monthly"
         } else {
@@ -298,7 +322,7 @@ struct FloatingCTAButton: View {
     }
     
     private var ctaTitle: String {
-        isYearlyPlan ? "Start My Free 7-Day Trial" : "Start Your Transformation"
+        isYearlyPlan ? "Begin My Breakthrough • Free 7 Days" : "Start Your Transformation"
     }
     
     private var ctaSubtitle: String {
@@ -328,19 +352,19 @@ struct OptimizedSubscriptionView: View {
     
     // Always show monthly and yearly options
     
-    private let transformationStories = [
-        "Anxiety gone in 21 days - Sarah M.",
-        "Saved my marriage in 30 days - Marcus T.",
-        "Broke 10-year depression cycle - Rachel D.",
-        "Miraculous healing declared into reality - James K.",
-        "From suicidal to purposeful daily - Ashley R."
-    ]
+//    private let transformationStories = [
+//        "Anxiety gone in 21 days - Sarah M.",
+//        "Saved my marriage in 30 days - Marcus T.",
+//        "Broke 10-year depression cycle - Rachel D.",
+//        "Miraculous healing declared into reality - James K.",
+//        "From suicidal to purposeful daily - Ashley R."
+//    ]
     
     private let valueProps = [
        // ValueProposition(icon: "shield.fill", text: "Trade Fear for Faith"),
-        ValueProposition(icon: "leaf.fill", text: "Find Peace in Chaos"),
-        ValueProposition(icon: "sparkles", text: "Build Spiritual Discipline"),
-        ValueProposition(icon: "brain.head.profile", text: "Transform Your Mindset")
+        ValueProposition(icon: "leaf.fill", text: "Speak God’s Word with Power"),
+        ValueProposition(icon: "sparkles", text: "Live in Peace, Protection & Purpose"),
+        ValueProposition(icon: "brain.head.profile", text: "Renew Your Mind Daily in 5 Minutes")
     ]
     
     var body: some View {
@@ -352,7 +376,8 @@ struct OptimizedSubscriptionView: View {
                     headerSection
                    // socialProofBanner
                     mainOfferSection
-                    transformationSection
+                    Spacer().frame(height: 40)
+                  //  transformationSection
                     pricingSection
                     Spacer().frame(height: 20)
                     trustSection
@@ -370,9 +395,9 @@ struct OptimizedSubscriptionView: View {
             }
         }
         .onAppear(perform: setupView)
-        .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
-            updateCountdown()
-        }
+//        .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
+//            updateCountdown()
+//        }
         .alert("", isPresented: $isShowingError) {
             Button("OK", role: .cancel) { }
         } message: {
@@ -456,7 +481,7 @@ struct OptimizedSubscriptionView: View {
         HStack {
             Image(systemName: "checkmark.shield.fill")
                 .foregroundColor(.green)
-            Text("Join 50,000+ believers SpeakingLife")
+            Text("Join 50,000+ believers transforming fear into faith in just 5 minutes.")
                 .font(.system(size: 16, weight: .semibold))
                 .foregroundColor(.white)
             Image(systemName: "checkmark.shield.fill")
@@ -525,15 +550,15 @@ struct OptimizedSubscriptionView: View {
     
     private var headlineSection: some View {
         VStack(spacing: 8) {
-            Text("Unlock Your")
+            Text("Experience God’s")
                 .font(.system(size: 26, weight: .medium, design: .rounded))
                 .foregroundColor(.white.opacity(0.9))
             
-            Text("Breakthrough Moment")
+            Text("Promises Every Day")
                 .font(.system(size: 36, weight: .bold, design: .rounded))
                 .foregroundColor(.white)
             
-            Text("Join thousands transforming fear into faith")
+            Text("Join thousands becoming who Jesus called them to be.")
                 .font(.system(size: 16, weight: .medium, design: .rounded))
                 .foregroundColor(.white.opacity(0.8))
         }
@@ -548,6 +573,23 @@ struct OptimizedSubscriptionView: View {
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 24)
+//        .background(
+//            RoundedRectangle(cornerRadius: 20, style: .continuous)
+//                .fill(
+//                    LinearGradient(
+//                        gradient: Gradient(colors: [
+//                            Color.purple.opacity(0.35),
+//                            Color.blue.opacity(0.25)
+//                        ]),
+//                        startPoint: .topLeading,
+//                        endPoint: .bottomTrailing
+//                    )
+//                )
+//                .overlay(
+//                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+//                        .stroke(Color.white.opacity(0.15), lineWidth: 1)
+//                )
+//        )
         .background(
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .fill(
@@ -565,28 +607,43 @@ struct OptimizedSubscriptionView: View {
                         .stroke(Color.white.opacity(0.1), lineWidth: 1)
                 )
         )
-        .padding(.horizontal, 20)
+       // .padding(.horizontal, 20)
     }
     
-    private var transformationSection: some View {
-        VStack(spacing: 16) {
-            Text("\"\(transformationStories[testimonialIndex])\"")
-                .font(.system(size: 17, weight: .medium, design: .rounded))
-                .foregroundColor(.white.opacity(0.9))
-                .multilineTextAlignment(.center)
-                .transition(.asymmetric(
-                    insertion: .move(edge: .trailing).combined(with: .opacity),
-                    removal: .move(edge: .leading).combined(with: .opacity)
-                ))
-                .id(testimonialIndex)
-                .animation(.easeInOut(duration: 0.5), value: testimonialIndex)
-                .padding(.horizontal, 30)
-        }
-        .padding(.vertical, 20)
-    }
+//    private var transformationSection: some View {
+//        VStack(spacing: 16) {
+//            Text("\"\(transformationStories[testimonialIndex])\"")
+//                .font(.system(size: 17, weight: .medium, design: .rounded))
+//                .foregroundColor(.white.opacity(0.9))
+//                .multilineTextAlignment(.center)
+//                .transition(.asymmetric(
+//                    insertion: .move(edge: .trailing).combined(with: .opacity),
+//                    removal: .move(edge: .leading).combined(with: .opacity)
+//                ))
+//                .id(testimonialIndex)
+//                .animation(.easeInOut(duration: 0.5), value: testimonialIndex)
+//                .padding(.horizontal, 30)
+//        }
+//        .padding(.vertical, 20)
+//    }
     
     private var pricingSection: some View {
         VStack(spacing: 12) {
+            // Yearly option with Most Popular badge and free trial
+            PricingOptionView(
+                option: PricingOption(
+                    product: subscriptionStore.currentOfferedPremium,
+                    isSelected: currentSelection == subscriptionStore.currentOfferedPremium,
+                    isYearly: true,
+                    displayPrice: yearlyPrice,
+                    monthlyEquivalent: "\(yearlyEquivalentPrice)",
+                    savingsPercentage: yearlySavingsFromMonthly,
+                    isMostPopular: true
+                ),
+                action: selectYearly,
+                showingWeeklyMonthly: false
+            )
+            .padding(.horizontal, 20)
             // Monthly option
             PricingOptionView(
                 option: PricingOption(
@@ -603,21 +660,8 @@ struct OptimizedSubscriptionView: View {
             )
             .padding(.horizontal, 20)
             
-            // Yearly option with Most Popular badge and free trial
-            PricingOptionView(
-                option: PricingOption(
-                    product: subscriptionStore.currentOfferedPremium,
-                    isSelected: currentSelection == subscriptionStore.currentOfferedPremium,
-                    isYearly: true,
-                    displayPrice: yearlyPrice,
-                    monthlyEquivalent: "7-day free trial • \(yearlyEquivalentPrice)",
-                    savingsPercentage: yearlySavingsFromMonthly,
-                    isMostPopular: true
-                ),
-                action: selectYearly,
-                showingWeeklyMonthly: false
-            )
-            .padding(.horizontal, 20)
+            
+            
         }
     }
     
@@ -744,20 +788,22 @@ struct OptimizedSubscriptionView: View {
     private func setupView() {
         if currentSelection == nil {
             // Default to yearly as most popular - no animation on initial load
-            currentSelection = subscriptionStore.currentOfferedPremium
-        }
-        
-        if !hasInitialized {
-            hasInitialized = true
-            // Delay CTA animation to avoid initial flicker
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                animateCTA = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                currentSelection = subscriptionStore.currentOfferedPremium
             }
-        } else {
-            animateCTA = true
         }
         
-        startTestimonialRotation()
+//        if !hasInitialized {
+//            hasInitialized = true
+//            // Delay CTA animation to avoid initial flicker
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+//                animateCTA = true
+//            }
+//        } else {
+//            animateCTA = true
+//        }
+        
+       // startTestimonialRotation()
     }
     
     private func updateCountdown() {
@@ -766,13 +812,13 @@ struct OptimizedSubscriptionView: View {
         }
     }
     
-    private func startTestimonialRotation() {
-        Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { _ in
-            withAnimation {
-                testimonialIndex = (testimonialIndex + 1) % transformationStories.count
-            }
-        }
-    }
+//    private func startTestimonialRotation() {
+//        Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { _ in
+//            withAnimation {
+//                testimonialIndex = (testimonialIndex + 1) % transformationStories.count
+//            }
+//        }
+//    }
     
     private func makePurchase() {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()

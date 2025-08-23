@@ -44,15 +44,15 @@ struct OnboardingView: View  {
         GeometryReader { geometry in
             TabView(selection: $selection) {
                 IntroTipScene(
-                    title: "Your Words Have Power",
+                    title: "God’s Promises for Every Struggle",
                     bodyText: """
-                    Every morning, 50,000+ people speak life over their struggles.
+                    God knew life would bring problems, so He gave promises to stand on.
 
-                    Anxiety turns to peace. Fear becomes faith. Doubt transforms into purpose.
+                    Every morning, thousands of people open SpeakLife to declare those promises over anxiety, fear, and doubt.
 
-                    What if the breakthrough you need is just 5 minutes away?
+                    Peace replaces worry. Faith rises. Purpose awakens. Grace sustains.
 
-                    Join the SpeakLife movement and discover what happens when God's promises meet your daily routine.
+                    The breakthrough you’ve been needing is closer than you think — just 5 minutes away.
                     """,
                     subtext: "",
                     ctaText: "Start My Breakthrough →",

@@ -790,6 +790,13 @@ final class NotificationManager: NSObject {
         // Cancel existing personalized notification
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [id])
         
+        // Don't schedule evening notification if all tasks are already completed
+        // This prevents unnecessary "congrats" notifications when user already knows they're done
+        if isEvening && remainingActivities.isEmpty && completedActivities.count == totalActivities {
+            // All tasks completed - skip evening notification as user is already aware
+            return
+        }
+        
         let content = UNMutableNotificationContent()
         content.title = "SpeakLife"
         content.sound = UNNotificationSound.default
@@ -823,15 +830,23 @@ final class NotificationManager: NSObject {
             let now = Date()
             let calendar = Calendar.current
             let currentHour = calendar.component(.hour, from: now)
+            let currentMinute = calendar.component(.minute, from: now)
             
-            if currentHour < 19 {
-                // Schedule for today at 7 PM with specific date
+            // If it's already close to 7 PM (within 30 minutes), delay by 30 minutes to allow more time for completion
+            if currentHour == 18 && currentMinute >= 30 {
+                // Schedule for 7:30 PM instead to give more time for task completion
+                dateComponents.hour = 19
+                dateComponents.minute = 30
+            }
+            
+            if currentHour < 19 || (currentHour == 19 && currentMinute < 30) {
+                // Schedule for today at 7 PM (or 7:30 PM) with specific date
                 let todayComponents = calendar.dateComponents([.year, .month, .day], from: now)
                 dateComponents.year = todayComponents.year
                 dateComponents.month = todayComponents.month
                 dateComponents.day = todayComponents.day
             } else {
-                // Already past 7 PM, don't schedule for today
+                // Already past notification time, don't schedule for today
                 return
             }
         }
