@@ -352,13 +352,15 @@ struct OptimizedSubscriptionView: View {
     
     // Always show monthly and yearly options
     
-//    private let transformationStories = [
-//        "Anxiety gone in 21 days - Sarah M.",
-//        "Saved my marriage in 30 days - Marcus T.",
-//        "Broke 10-year depression cycle - Rachel D.",
-//        "Miraculous healing declared into reality - James K.",
-//        "From suicidal to purposeful daily - Ashley R."
-//    ]
+    private let transformationStories = [
+        "Thank SpeakLife for helping me to know who Jesus is. I love everything about SpeakLife. It has brought me closer to Him...",
+        "This app was created under the manifestation and direction of the Holy Spirit...",
+        "I'm spending more time on this than facebook. This is filling me with truth instead of garbage and the audios are amazing...",
+        "I love to be able to feed on promises of God thruout the day, its' so upliting and encouraging. It feeds my soul...",
+        "I love this app so much its amazing all glory be to God...",
+        "I just read the letter from my Heavenly Father on this app and it really drives home the message of God's love for me...",
+        "I love the daily reminders they've been helping me renew my mind and how I think..."
+    ]
     
     private let valueProps = [
        // ValueProposition(icon: "shield.fill", text: "Trade Fear for Faith"),
@@ -376,10 +378,10 @@ struct OptimizedSubscriptionView: View {
                     headerSection
                    // socialProofBanner
                     mainOfferSection
-                    Spacer().frame(height: 40)
-                  //  transformationSection
+                    transformationSection
                     pricingSection
                     Spacer().frame(height: 20)
+                   
                     trustSection
                     Spacer().frame(height: 140)
                 }
@@ -395,9 +397,9 @@ struct OptimizedSubscriptionView: View {
             }
         }
         .onAppear(perform: setupView)
-//        .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
-//            updateCountdown()
-//        }
+        .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
+            updateCountdown()
+        }
         .alert("", isPresented: $isShowingError) {
             Button("OK", role: .cancel) { }
         } message: {
@@ -610,22 +612,22 @@ struct OptimizedSubscriptionView: View {
        // .padding(.horizontal, 20)
     }
     
-//    private var transformationSection: some View {
-//        VStack(spacing: 16) {
-//            Text("\"\(transformationStories[testimonialIndex])\"")
-//                .font(.system(size: 17, weight: .medium, design: .rounded))
-//                .foregroundColor(.white.opacity(0.9))
-//                .multilineTextAlignment(.center)
-//                .transition(.asymmetric(
-//                    insertion: .move(edge: .trailing).combined(with: .opacity),
-//                    removal: .move(edge: .leading).combined(with: .opacity)
-//                ))
-//                .id(testimonialIndex)
-//                .animation(.easeInOut(duration: 0.5), value: testimonialIndex)
-//                .padding(.horizontal, 30)
-//        }
-//        .padding(.vertical, 20)
-//    }
+    private var transformationSection: some View {
+        VStack(spacing: 16) {
+            Text("\"\(transformationStories[testimonialIndex])\"")
+                .font(.system(size: 17, weight: .medium, design: .rounded))
+                .foregroundColor(.white.opacity(0.9))
+                .multilineTextAlignment(.center)
+                .transition(.asymmetric(
+                    insertion: .move(edge: .trailing).combined(with: .opacity),
+                    removal: .move(edge: .leading).combined(with: .opacity)
+                ))
+                .id(testimonialIndex)
+                .animation(.easeInOut(duration: 0.5), value: testimonialIndex)
+                .padding(.horizontal, 30)
+        }
+        .padding(.vertical, 20)
+    }
     
     private var pricingSection: some View {
         VStack(spacing: 12) {
@@ -790,6 +792,7 @@ struct OptimizedSubscriptionView: View {
             // Default to yearly as most popular - no animation on initial load
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 currentSelection = subscriptionStore.currentOfferedPremium
+                //animateCTA = true
             }
         }
         
@@ -803,7 +806,7 @@ struct OptimizedSubscriptionView: View {
 //            animateCTA = true
 //        }
         
-       // startTestimonialRotation()
+        startTestimonialRotation()
     }
     
     private func updateCountdown() {
@@ -812,13 +815,13 @@ struct OptimizedSubscriptionView: View {
         }
     }
     
-//    private func startTestimonialRotation() {
-//        Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { _ in
-//            withAnimation {
-//                testimonialIndex = (testimonialIndex + 1) % transformationStories.count
-//            }
-//        }
-//    }
+    private func startTestimonialRotation() {
+        Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { _ in
+            withAnimation {
+                testimonialIndex = (testimonialIndex + 1) % transformationStories.count
+            }
+        }
+    }
     
     private func makePurchase() {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
