@@ -26,11 +26,11 @@ struct ValueProposition: View {
     let text: String
     
     var body: some View {
-        HStack(spacing: 20) {
+        HStack(spacing: 16) {
             Image(systemName: icon)
-                .font(.system(size: 28, weight: .medium))
+                .font(.system(size: 24, weight: .medium))
                 .foregroundColor(.white)
-                .frame(width: 40, height: 40)
+                .frame(width: 36, height: 36)
                 .background(
                     Circle()
                         .fill(
@@ -72,7 +72,7 @@ struct ValueProposition: View {
 //                )
             
             Text(text)
-                .font(.system(size: 17, weight: .semibold, design: .rounded))
+                .font(.system(size: 15, weight: .semibold, design: .rounded))
                 .foregroundColor(.white)
                 .fixedSize(horizontal: false, vertical: true)
         }
@@ -92,14 +92,13 @@ struct PricingOptionView: View {
                     ZStack {
                         Circle()
                             .fill(option.isSelected ? 
-                                  (option.isYearly ? Color.black : Color.white) : 
-                                  Color.white.opacity(0.2))
+                                   Color.black : Color.white)
                             .frame(width: 24, height: 24)
                         
                         if option.isSelected {
                             Image(systemName: "checkmark")
                                 .font(.system(size: 12, weight: .bold))
-                                .foregroundColor(option.isYearly ? .white : .black)
+                                .foregroundColor(.white)
                         }
                     }
                     
@@ -133,8 +132,8 @@ struct PricingOptionView: View {
                         .font(.system(size: 24, weight: .bold, design: .rounded))
                         .foregroundColor(textColor)
                 }
-                .padding(.horizontal, 24)
-                .padding(.vertical, 20)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 16)
                 .background(backgroundGradient)
                 .scaleEffect(option.isSelected ? 1.02 : 1.0)
                 .shadow(
@@ -144,34 +143,34 @@ struct PricingOptionView: View {
                 )
                 
                 // Most Popular badge
-                if option.isMostPopular {
-                    VStack {
-                        HStack {
-                            Spacer()
-                            Text("MOST POPULAR")
-                                .font(.system(size: 10, weight: .bold, design: .rounded))
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 10)
-                                .padding(.vertical, 4)
-                                .background(
-                                    Capsule()
-                                        .fill(
-                                            LinearGradient(
-                                                gradient: Gradient(colors: [
-                                                    Color(red: 0.9, green: 0.3, blue: 0.3),
-                                                    Color(red: 1.0, green: 0.4, blue: 0.4)
-                                                ]),
-                                                startPoint: .leading,
-                                                endPoint: .trailing
-                                            )
-                                        )
-                                )
-                                .shadow(color: Color.red.opacity(0.4), radius: 6, y: 2)
-                                .offset(x: -12, y: -12)
-                        }
-                        Spacer()
-                    }
-                }
+//                if option.isMostPopular {
+//                    VStack {
+//                        HStack {
+//                            Spacer()
+//                            Text("MOST POPULAR")
+//                                .font(.system(size: 10, weight: .bold, design: .rounded))
+//                                .foregroundColor(.white)
+//                                .padding(.horizontal, 10)
+//                                .padding(.vertical, 4)
+//                                .background(
+//                                    Capsule()
+//                                        .fill(
+//                                            LinearGradient(
+//                                                gradient: Gradient(colors: [
+//                                                    Color(red: 0.9, green: 0.3, blue: 0.3),
+//                                                    Color(red: 1.0, green: 0.4, blue: 0.4)
+//                                                ]),
+//                                                startPoint: .leading,
+//                                                endPoint: .trailing
+//                                            )
+//                                        )
+//                                )
+//                                .shadow(color: Color.red.opacity(0.4), radius: 6, y: 2)
+//                                .offset(x: -12, y: -12)
+//                        }
+//                        Spacer()
+//                    }
+//                }
             }
         }
         .buttonStyle(PlainButtonStyle())
@@ -179,7 +178,7 @@ struct PricingOptionView: View {
     
     private func getSubscriptionTypeText(for option: PricingOption, showingWeeklyMonthly: Bool) -> String {
         guard let product = option.product else {
-            return "Monthly"
+            return "Weekly"
         }
         
         if product.id.contains("Weekly") || product.id.contains("1WK") || product.id.lowercased().contains("week") {
@@ -192,16 +191,14 @@ struct PricingOptionView: View {
             // Fallback based on the isYearly flag in the option
             if option.isYearly {
                 return "Yearly"
-            } else if showingWeeklyMonthly && option.isMostPopular {
-                return "Weekly"
             } else {
-                return "Monthly"
+                return "Weekly"
             }
         }
     }
     
     private var textColor: Color {
-        if option.isSelected && option.isYearly {
+        if option.isSelected {
             return .black
         }
         return .white
@@ -232,17 +229,15 @@ struct PricingOptionView: View {
         RoundedRectangle(cornerRadius: 16, style: .continuous)
             .fill(
                 option.isSelected ? 
-                (option.isYearly ? yearlySelectedGradient : monthlySelectedGradient) :
-                unselectedGradient
-            )
+                yearlySelectedGradient : weeklySelectedGradient)
+    
             .overlay(
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .stroke(
                         option.isSelected ?
-                        (option.isYearly ? Color.orange.opacity(0.4) : Color.white.opacity(0.4)) :
-                        Color.white.opacity(0.15),
+                        Color.orange.opacity(0.4) : Color.white.opacity(0.4),
                         lineWidth: 1
-                    )
+                        )
             )
     }
     
@@ -258,7 +253,7 @@ struct PricingOptionView: View {
         )
     }
     
-    private var monthlySelectedGradient: LinearGradient {
+    private var weeklySelectedGradient: LinearGradient {
         LinearGradient(
             gradient: Gradient(colors: [
                 Color.white.opacity(0.2),
@@ -350,13 +345,13 @@ struct OptimizedSubscriptionView: View {
     let size: CGSize
     var callback: (() -> Void)?
     
-    // Always show monthly and yearly options
+    // Always show weekly and yearly options
     
     private let transformationStories = [
-        "Thank SpeakLife for helping me to know who Jesus is. I love everything about SpeakLife. It has brought me closer to Him...",
+        "Thanks SpeakLife for helping me to know who Jesus is. I love everything about SpeakLife. It has brought me closer to Him...",
         "This app was created under the manifestation and direction of the Holy Spirit...",
         "I'm spending more time on this than facebook. This is filling me with truth instead of garbage and the audios are amazing...",
-        "I love to be able to feed on promises of God thruout the day, its' so upliting and encouraging. It feeds my soul...",
+        "I love to be able to feed on promises of God thruout the day, it's so upliting and encouraging. It feeds my soul...",
         "I love this app so much its amazing all glory be to God...",
         "I just read the letter from my Heavenly Father on this app and it really drives home the message of God's love for me...",
         "I love the daily reminders they've been helping me renew my mind and how I think..."
@@ -380,10 +375,10 @@ struct OptimizedSubscriptionView: View {
                     mainOfferSection
                     transformationSection
                     pricingSection
-                    Spacer().frame(height: 20)
+                    Spacer().frame(height: 8)
                    
                     trustSection
-                    Spacer().frame(height: 140)
+                    Spacer().frame(height: 100)
                 }
             }
             
@@ -417,13 +412,13 @@ struct OptimizedSubscriptionView: View {
     
     private var currentDisplayPrice: String {
         currentSelection?.displayPrice ?? 
-        subscriptionStore.currentOfferedPremiumMonthly?.displayPrice ?? 
-        "$9.99"
+        subscriptionStore.currentOfferedWeekly?.displayPrice ?? 
+        "$3.99"
     }
     
     
-    private var monthlyPrice: String {
-        subscriptionStore.currentOfferedPremiumMonthly?.displayPrice ?? "$9.99"
+    private var weeklyPrice: String {
+        subscriptionStore.currentOfferedWeekly?.displayPrice ?? "$3.99"
     }
     
     private var yearlyPrice: String {
@@ -442,19 +437,19 @@ struct OptimizedSubscriptionView: View {
     }
     
     
-    private var yearlySavingsFromMonthly: String? {
-        guard let monthlyProduct = subscriptionStore.currentOfferedPremiumMonthly,
+    private var yearlySavingsFromWeekly: String? {
+        guard let weeklyProduct = subscriptionStore.currentOfferedWeekly,
               let yearlyProduct = subscriptionStore.currentOfferedPremium else {
             return nil
         }
         
-        // Calculate what 12 months would cost at monthly rate
-        let monthlyYearlyEquivalent = monthlyProduct.price * 12
+        // Calculate what 52 weeks would cost at weekly rate
+        let weeklyYearlyEquivalent = weeklyProduct.price * 52
         let yearlyCost = yearlyProduct.price
         
         // Only show savings if yearly is actually cheaper
-        if yearlyCost < monthlyYearlyEquivalent {
-            let savings = ((monthlyYearlyEquivalent - yearlyCost) / monthlyYearlyEquivalent) * 100
+        if yearlyCost < weeklyYearlyEquivalent {
+            let savings = ((weeklyYearlyEquivalent - yearlyCost) / weeklyYearlyEquivalent) * 100
             let roundedSavings = Int(Double(truncating: savings as NSNumber).rounded())
             return "SAVE \(roundedSavings)%"
         }
@@ -476,7 +471,7 @@ struct OptimizedSubscriptionView: View {
     }
     
     private var headerSection: some View {
-        Spacer().frame(height: 60)
+        Spacer().frame(height: 30)
     }
     
     private var socialProofBanner: some View {
@@ -504,7 +499,7 @@ struct OptimizedSubscriptionView: View {
     }
     
     private var mainOfferSection: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 12) {
             appIconSection
             headlineSection
             valuePropsSection
@@ -525,12 +520,12 @@ struct OptimizedSubscriptionView: View {
                         endRadius: 80
                     )
                 )
-                .frame(width: 160, height: 160)
+                .frame(width: 100, height: 100)
             
             Image("appIconDisplay")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 110, height: 110)
+                .frame(width: 70, height: 70)
                 .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
                 .overlay(
                     RoundedRectangle(cornerRadius: 24, style: .continuous)
@@ -551,30 +546,31 @@ struct OptimizedSubscriptionView: View {
     }
     
     private var headlineSection: some View {
-        VStack(spacing: 8) {
-            Text("Experience God’s")
-                .font(.system(size: 26, weight: .medium, design: .rounded))
+        VStack(spacing: 4) {
+            Text("Experience God's")
+                .font(.system(size: 22, weight: .medium, design: .rounded))
                 .foregroundColor(.white.opacity(0.9))
             
             Text("Promises Every Day")
-                .font(.system(size: 36, weight: .bold, design: .rounded))
+                .font(.system(size: 28, weight: .bold, design: .rounded))
                 .foregroundColor(.white)
             
             Text("Join thousands becoming who Jesus called them to be.")
-                .font(.system(size: 16, weight: .medium, design: .rounded))
+                .font(.system(size: 14, weight: .medium, design: .rounded))
                 .foregroundColor(.white.opacity(0.8))
+                .padding(.top, 4)
         }
         .multilineTextAlignment(.center)
     }
     
     private var valuePropsSection: some View {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .leading, spacing: 14) {
             ForEach(valueProps, id: \.text) { prop in
                 prop
             }
         }
         .padding(.horizontal, 20)
-        .padding(.vertical, 24)
+        .padding(.vertical, 16)
 //        .background(
 //            RoundedRectangle(cornerRadius: 20, style: .continuous)
 //                .fill(
@@ -626,12 +622,30 @@ struct OptimizedSubscriptionView: View {
                 .animation(.easeInOut(duration: 0.5), value: testimonialIndex)
                 .padding(.horizontal, 30)
         }
-        .padding(.vertical, 20)
+        .padding(.vertical, 12)
     }
     
     private var pricingSection: some View {
         VStack(spacing: 12) {
             // Yearly option with Most Popular badge and free trial
+        
+            
+            // Weekly option
+            PricingOptionView(
+                option: PricingOption(
+                    product: subscriptionStore.currentOfferedWeekly,
+                    isSelected: currentSelection == subscriptionStore.currentOfferedWeekly,
+                    isYearly: false,
+                    displayPrice: weeklyPrice,
+                    monthlyEquivalent: "Cancel anytime",
+                    savingsPercentage: nil,
+                    isMostPopular: false
+                ),
+                action: selectWeekly,
+                showingWeeklyMonthly: true
+            )
+            .padding(.horizontal, 20)
+            
             PricingOptionView(
                 option: PricingOption(
                     product: subscriptionStore.currentOfferedPremium,
@@ -639,29 +653,13 @@ struct OptimizedSubscriptionView: View {
                     isYearly: true,
                     displayPrice: yearlyPrice,
                     monthlyEquivalent: "\(yearlyEquivalentPrice)",
-                    savingsPercentage: yearlySavingsFromMonthly,
+                    savingsPercentage: yearlySavingsFromWeekly,
                     isMostPopular: true
                 ),
                 action: selectYearly,
                 showingWeeklyMonthly: false
             )
             .padding(.horizontal, 20)
-            // Monthly option
-            PricingOptionView(
-                option: PricingOption(
-                    product: subscriptionStore.currentOfferedPremiumMonthly,
-                    isSelected: currentSelection == subscriptionStore.currentOfferedPremiumMonthly,
-                    isYearly: false,
-                    displayPrice: monthlyPrice,
-                    monthlyEquivalent: "Cancel anytime",
-                    savingsPercentage: nil,
-                    isMostPopular: false
-                ),
-                action: selectMonthly,
-                showingWeeklyMonthly: false
-            )
-            .padding(.horizontal, 20)
-            
             
             
         }
@@ -775,9 +773,9 @@ struct OptimizedSubscriptionView: View {
     }
     
     // MARK: - Actions
-    private func selectMonthly() {
+    private func selectWeekly() {
         withAnimation(.spring(response: 0.5, dampingFraction: 0.8)) {
-            currentSelection = subscriptionStore.currentOfferedPremiumMonthly
+            currentSelection = subscriptionStore.currentOfferedWeekly
         }
     }
     
@@ -791,7 +789,7 @@ struct OptimizedSubscriptionView: View {
         if currentSelection == nil {
             // Default to yearly as most popular - no animation on initial load
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                currentSelection = subscriptionStore.currentOfferedPremium
+                currentSelection = subscriptionStore.currentOfferedWeekly
                 //animateCTA = true
             }
         }
@@ -838,7 +836,7 @@ struct OptimizedSubscriptionView: View {
             do {
                 let selectedProduct = currentSelection ?? 
                                     subscriptionStore.currentOfferedWeekly ?? 
-                                    subscriptionStore.currentOfferedPremiumMonthly
+                                    subscriptionStore.currentOfferedPremium
                 
                 if let selectedProduct = selectedProduct,
                    let _ = try await subscriptionStore.purchaseWithID([selectedProduct.id]) {

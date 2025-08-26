@@ -21,12 +21,12 @@ struct PremiumView: View {
     var body: some View {
         GeometryReader { geometry in
             if !subscriptionStore.isPremium {
-//                if appState.offerDiscount {
-//                    OfferPageView(countdown: $countdown) { }
-//                } else {
+                if appState.offerDiscount {
+                    OfferPageView(countdown: $countdown) { }
+                } else {
                     OptimizedSubscriptionView(size: geometry.size) {
                         // Handle callback - typically dismiss or navigation
-                 //   }
+                    }
                 }
             } else {
                 NavigationView {
