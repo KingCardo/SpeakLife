@@ -263,11 +263,20 @@ final class DeclarationViewModel: ObservableObject {
         allDeclarations[index] = declarations[indexOf]
         print("✅ Updated in allDeclarations")
         
+        // Update favorites directly without triggering full refresh
+        if !wasFavorite {
+            // Adding to favorites
+            if !favorites.contains(where: { $0.id == declaration.id }) {
+                favorites.append(declarations[indexOf])
+            }
+        } else {
+            // Removing from favorites
+            favorites.removeAll { $0.id == declaration.id }
+        }
         
         service.save(declarations: allDeclarations) { [weak self] success in
-            self?.refreshFavorites()
             // Sync favorites to widget
-            if let favoriteTexts = self?.getFavorites().map({ $0.text }) {
+            if let favoriteTexts = self?.favorites.map({ $0.text }) {
                 WidgetDataBridge.shared.syncDeclarationFavorites(favoriteTexts)
             }
         }
