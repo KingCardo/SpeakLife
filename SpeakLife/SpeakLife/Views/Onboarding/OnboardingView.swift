@@ -44,15 +44,13 @@ struct OnboardingView: View  {
         GeometryReader { geometry in
             TabView(selection: $selection) {
                 IntroTipScene(
-                    title: "God’s Promises for Every Struggle",
+                    title: "God’s Promises for Every Battle",
                     bodyText: """
-                    God knew life would bring problems, so He gave promises to stand on.
+                    Life brings battles — but God already gave you promises to win them.
 
-                    Every morning, thousands of people open SpeakLife to declare those promises over anxiety, fear, and doubt.
+                    Every day, thousands open SpeakLife to declare His Word over fear, anxiety, and doubt.
 
-                    Peace replaces worry. Faith rises. Purpose awakens. Grace sustains.
-
-                    The breakthrough you’ve been needing is closer than you think — just 5 minutes away.
+                    Peace takes over. Faith rises. Purpose awakens. Breakthroughs begin.
                     """,
                     subtext: "",
                     ctaText: "Start My Breakthrough →",
@@ -64,89 +62,45 @@ struct OnboardingView: View  {
                 }
                 .tag(Tab.transformedLife)
 
-//                IntroTipScene(
-//                    title: "Every Word Breathes Life",
-//                    bodyText: """
-//                    When Jesus speaks, storms calm, bodies heal and destinies awaken.
-//
-//                    His words aren't just to be read - they're meant to be experienced.
-//
-//                    The more you meditate on His Word, the more you will recieve.
-//
-//                    Lean in — He’s ready to reveal more than you imagined.
-//                    """,
-//                    subtext: "",
-//                    ctaText: "Draw Closer ➔",
-//                    showTestimonials: false,
-//                    isScholarship: false,
-//                    size: geometry.size)
-//                {
-//                    advance()
-//                }
-//                .tag(Tab.mindset)
-//
-//                IntroTipScene(
-//                    title: "Tune In and Come Alive",
-//                    bodyText: """
-//                    Faith isn’t forced — it flows from hearing Jesus again and again.
-//
-//                    The more you listen, the more alive your spirit becomes.
-//
-//                    His Word ignites courage, confidence, and clarity.
-//
-//                    Let His whisper be the loudest sound in your life.
-//                    """,
-//                    subtext: "",
-//                    ctaText: "Hear and Come Alive ➔",
-//                    showTestimonials: false,
-//                    isScholarship: false,
-//                    size: geometry.size)
-//                {
-//                    advance()
-//                }
-//                .tag(Tab.hearingFaith)
-//
-//                IntroTipScene(
-//                    title: "Step Into the Victory Already Won",
-//                    bodyText: """
-//                    You weren’t made to live defeated - you were made to reign in life.
-//
-//                    Jesus already won the battle.
-//
-//                    Every promise He made belongs to you.
-//
-//                    Speak it. Believe it. Receive it.
-//                    """,
-//                    subtext: "",
-//                    ctaText: "Step Into Victory ➔",
-//                    showTestimonials: false,
-//                    isScholarship: false,
-//                    size: geometry.size)
-//                {
-//                    advance()
-//                }
-//                .tag(Tab.victorious)
-//
-//                IntroTipScene(
-//                    title: "Live From a Higher Place",
-//                    bodyText: """
-//                    Jesus gave you access to a Kingdom that’s unshakable.
-//
-//                    When life gets loud, His truth stays steady.
-//
-//                    Circumstances may shift — but His Word anchors you.
-//
-//                    Don’t live from fear. Live from Heaven's view.
-//                    """,
-//                    subtext: "",
-//                    ctaText: "Live Kingdom-Minded ➔",
-//                    showTestimonials: false,
-//                    isScholarship: false,
-//                    size: geometry.size)
-//                {
-//                    advance()
-//                }
-//                .tag(Tab.seedHarvest)
+
+
+                IntroTipScene(
+                    title: "Step Into the Victory Already Won",
+                    bodyText: """
+                    You weren’t made to live defeated. Jesus already won the battle.
+
+                    Every promise is already yours.
+
+                    Speak it. Believe it. Receive it.
+                    """,
+                    subtext: "",
+                    ctaText: "Step Into Victory ➔",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size)
+                {
+                    advance()
+                }
+                .tag(Tab.victorious)
+
+                IntroTipScene(
+                    title: "Live From a Higher Place",
+                    bodyText: """
+                    Jesus gave you access to a Kingdom that’s unshakable.
+
+                    Storms may come, but His Word anchors you
+
+                    Live unshaken. Live from Heaven's view.
+                    """,
+                    subtext: "",
+                    ctaText: "Live Kingdom-Minded ➔",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size)
+                {
+                    advance()
+                }
+                .tag(Tab.seedHarvest)
                  
                 
                 ImprovementScene(size: geometry.size, viewModel: improvementViewModel) {
@@ -377,7 +331,7 @@ struct OnboardingView: View  {
                     }
                 case .transformedLife:
                     impactMed.impactOccurred()
-                    selection = .improvement
+                    selection = .victorious
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("TransformedLifeScreenDone", parameters: nil)
                 case .likeJesus:
