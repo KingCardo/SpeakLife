@@ -77,7 +77,7 @@ struct DeclarationContentView: View {
 
                         
                         if !showShareSheet {
-                            intentVstack(declaration: viewModel.declarations[viewModel.selectedTab], geometry)
+                            intentVstack(declaration: declaration, geometry)
                                 .rotationEffect(Angle(degrees: -degrees))
                 
                         }
@@ -356,8 +356,9 @@ struct DeclarationContentView: View {
     }
     
     private func favoriteTapped(declaration: Declaration) {
+        let wasFavorite = declaration.isFavorite ?? false
         favorite(declaration)
-        self.isFavorite = (declaration.isFavorite ?? false) ? false : true
+        self.isFavorite = !wasFavorite // Use the inverse of the original state for animation
         Analytics.logEvent(Event.favoriteTapped, parameters: ["declaration": declaration.text.prefix(100)])
         Selection.shared.selectionFeedback()
         appState.offerDiscountTry += 1

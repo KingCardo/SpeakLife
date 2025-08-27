@@ -54,34 +54,17 @@ final class DeclarationViewModel: ObservableObject {
         DeclarationCategory(rawValue: selectedCategoryString) ?? .destiny
     }
     
+    private var isTogglingFavorite = false
+    private var pendingSaveTimer: Timer?
+    
     @Published var favorites: [Declaration] = [] {
         didSet  {
+            // Skip updates if we're in the middle of toggling a favorite
+            guard !isTogglingFavorite else { return }
+            
             if selectedCategory == .favorites {
-                // Only update declarations if it's a category change, not a favorite toggle
-                // Check if this is just a favorite update (same count or +/- 1)
-                let countDiff = abs(favorites.count - oldValue.count)
-                if countDiff <= 1 && !declarations.isEmpty {
-                    // This is likely a favorite toggle, update existing list without shuffling
-                    if favorites.count > oldValue.count {
-                        // Added a favorite - add it to current declarations if not present
-                        let newFavorite = favorites.first { fav in
-                            !oldValue.contains { $0.id == fav.id }
-                        }
-                        if let newFavorite = newFavorite,
-                           !declarations.contains(where: { $0.id == newFavorite.id }) {
-                            declarations.append(newFavorite)
-                        }
-                    } else if favorites.count < oldValue.count {
-                        // Removed a favorite - remove it from current declarations
-                        let removedFavorite = oldValue.first { old in
-                            !favorites.contains { $0.id == old.id }
-                        }
-                        if let removedFavorite = removedFavorite {
-                            declarations.removeAll { $0.id == removedFavorite.id }
-                        }
-                    }
-                } else {
-                    // This is a category change or initial load, shuffle the list
+                // Only shuffle on category change or initial load
+                if declarations.isEmpty || oldValue.isEmpty {
                     declarations = favorites.shuffled()
                     showVerse = false
                 }
@@ -160,7 +143,7 @@ final class DeclarationViewModel: ObservableObject {
                     let love = self.allDeclarations.filter({ $0.category == .love })
                     general = destiny + identity + love
                 }
-                self.fetchDeclarations()
+                self.fetchDeclarations(isInitialLoad: true)
             }
         }
     }
@@ -177,15 +160,27 @@ final class DeclarationViewModel: ObservableObject {
         completion(selectedCategories)
     }
     
-    private func fetchDeclarations() {
+    private func fetchDeclarations(isInitialLoad: Bool = false) {
         isFetching = true
+        
+        // Store current state before fetching
+        let currentDeclarationId = currentDeclaration?.id
+        let currentDeclarations = declarations
         
         service.declarations() {  [weak self] declarations, error, _ in
             guard let self  = self else { return }
             self.isFetching = false
             self.allDeclarations = declarations
             self.populateDeclarationsByCategory()
-            self.choose(self.selectedCategory) { _ in }
+            
+            // Only reshuffle if it's initial load or declarations is empty
+            if isInitialLoad || self.declarations.isEmpty {
+                self.choose(self.selectedCategory) { _ in }
+            } else {
+                // Update existing declarations in place without reshuffling
+                self.updateDeclarationsInPlace(from: declarations, preservingOrder: currentDeclarations)
+            }
+            
             self.favorites = self.getFavorites()
             self.createOwn = self.getCreateOwn()
             
@@ -205,6 +200,18 @@ final class DeclarationViewModel: ObservableObject {
 //                self.showNewAlertMessage = true
 //            }
         }
+    }
+    
+    private func updateDeclarationsInPlace(from newDeclarations: [Declaration], preservingOrder currentDeclarations: [Declaration]) {
+        // Update each declaration in the current array with new data from backend
+        var updatedDeclarations = currentDeclarations
+        for (index, declaration) in updatedDeclarations.enumerated() {
+            if let updatedDeclaration = newDeclarations.first(where: { $0.id == declaration.id }) {
+                // Preserve position but update the data (especially isFavorite status)
+                updatedDeclarations[index] = updatedDeclaration
+            }
+        }
+        self.declarations = updatedDeclarations
     }
     
     private func populateDeclarationsByCategory() {
@@ -263,26 +270,54 @@ final class DeclarationViewModel: ObservableObject {
         allDeclarations[index] = declarations[indexOf]
         print("✅ Updated in allDeclarations")
         
-        // Update favorites directly without triggering full refresh
-        if !wasFavorite {
-            // Adding to favorites
-            if !favorites.contains(where: { $0.id == declaration.id }) {
-                favorites.append(declarations[indexOf])
+        // Set flag to prevent array mutations during favorite toggle
+        isTogglingFavorite = true
+        
+        // Update favorites list based on category context
+        if selectedCategory == .favorites {
+            // In favorites view, update the item in place without removing
+            if let favIndex = favorites.firstIndex(where: { $0.id == declaration.id }) {
+                favorites[favIndex] = declarations[indexOf]
             }
+            
+            // If unfavoriting in favorites view, we keep the item visible until user navigates away
+            // This prevents the TabView from jumping to wrong items
         } else {
-            // Removing from favorites
-            favorites.removeAll { $0.id == declaration.id }
+            // In other categories, update the favorites list normally
+            if !wasFavorite {
+                // Adding to favorites
+                if !favorites.contains(where: { $0.id == declaration.id }) {
+                    favorites.append(declarations[indexOf])
+                }
+            } else {
+                // Removing from favorites
+                favorites.removeAll { $0.id == declaration.id }
+            }
         }
         
-        service.save(declarations: allDeclarations) { [weak self] success in
-            // Sync favorites to widget
-            if let favoriteTexts = self?.favorites.map({ $0.text }) {
+        // Reset flag
+        isTogglingFavorite = false
+        
+        // Cancel any pending save
+        pendingSaveTimer?.invalidate()
+        
+        // Debounce the save operation to prevent rapid CloudKit syncs
+        pendingSaveTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] _ in
+            guard let self = self else { return }
+            
+            self.service.save(declarations: self.allDeclarations) { [weak self] success in
+                // Sync only actual favorites to widget
+                guard let self = self else { return }
+                let actualFavorites = self.allDeclarations.filter { $0.isFavorite == true }
+                let favoriteTexts = actualFavorites.map { $0.text }
                 WidgetDataBridge.shared.syncDeclarationFavorites(favoriteTexts)
             }
         }
     }
     
     func refreshFavorites() {
+        // Clear the toggling flag before refresh
+        isTogglingFavorite = false
         favorites = getFavorites()
     }
     
@@ -379,6 +414,9 @@ final class DeclarationViewModel: ObservableObject {
     // MARK: - Declarations
     
     func choose(_ category: DeclarationCategory, completion: @escaping(Bool) -> Void) {
+        // Don't reshuffle if we're already in this category
+        let isChangingCategory = selectedCategory != category
+        
         fetchDeclarations(for: category) { [weak self] declarations in
             guard let self = self else { return }
             guard declarations.count > 0 else {
@@ -397,9 +435,13 @@ final class DeclarationViewModel: ObservableObject {
                 return
             }
             self.selectedCategoryString = category.rawValue
-            let shuffled = declarations.shuffled()
-            self.declarations = shuffled
-            self.resetListToTop = true
+            
+            // Only shuffle if changing categories or if declarations is empty
+            if isChangingCategory || self.declarations.isEmpty {
+                let shuffled = declarations.shuffled()
+                self.declarations = shuffled
+                self.resetListToTop = true
+            }
             completion(true)
         }
     }

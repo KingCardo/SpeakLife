@@ -350,7 +350,7 @@ struct OptimizedSubscriptionView: View {
                     Spacer().frame(height: 8)
                    
                     trustSection
-                    Spacer().frame(height: 100)
+                    Spacer().frame(height: 120)
                 }
             }
             
