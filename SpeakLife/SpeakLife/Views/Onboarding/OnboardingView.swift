@@ -43,6 +43,8 @@ struct OnboardingView: View  {
     var body: some View {
         GeometryReader { geometry in
             TabView(selection: $selection) {
+                
+               
                 IntroTipScene(
                     title: "God’s Promises for Every Battle",
                     bodyText: """
@@ -116,6 +118,28 @@ struct OnboardingView: View  {
                     }
                 }
                 .tag(Tab.demoExperience)
+                
+                IntroTipScene(
+                    title: "How Psalm 91 Turned Setback into Victory",
+                    bodyText: """
+                    During COVID, when fear was loud, God led me to Psalm 91. I lost my job, so I started speaking God’s promises daily. His Word gave me ideas, strength, and unshakable peace.
+
+                    I didn’t just recover - I doubled my salary.
+                    
+                    Later my health was attacked, including Bell’s palsy. I chose God’s report over symptoms. Today I’m fully healed. He proved Himself my Healer, Provider, and Source.
+
+                    I built SpeakLife to put those same weapons in your hands. If He did it for me, He’ll do it for you.
+                    
+                    """,
+                    subtext: "Franchiz Washington - Founder",
+                    ctaText: "Use These Same Promises →",
+                    showTestimonials: false,
+                    isScholarship: false,
+                    size: geometry.size)
+                {
+                    advance()
+                }
+                .tag(Tab.life)
 
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
@@ -258,7 +282,7 @@ struct OnboardingView: View  {
                     Analytics.logEvent("ImprovementScreenDone", parameters: nil)
                 case .demoExperience:
                     impactMed.impactOccurred()
-                    selection = .subscription
+                    selection = .life
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("DemoExperienceScreenDone", parameters: nil)
                 case .intro:
@@ -275,7 +299,7 @@ struct OnboardingView: View  {
                     
                 case .life:
                     impactMed.impactOccurred()
-                    selection = .tip
+                    selection = .subscription
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("IntroLifeDone", parameters: nil)
                 case .tip:

@@ -99,7 +99,7 @@ struct IntroTipScene: View {
                     //.lineLimit(nil)
                     
                     Text(subtext)
-                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 16, relativeTo: .body))
+                        .font(Font.custom("AppleSDGothicNeo-Regular", size: 14, relativeTo: .body))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.leading)
                         .lineSpacing(8)

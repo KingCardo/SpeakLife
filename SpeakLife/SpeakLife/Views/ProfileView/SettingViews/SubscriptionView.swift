@@ -101,7 +101,7 @@ struct OfferPageView: View {
                     .padding(.bottom, 4)
                     
                     VStack(spacing: 4) {
-                        Text("\(currentSelection?.percentageOff ?? "") off")
+                        Text("50% off")
                             .font(.system(size: 48, weight: .heavy, design: .rounded))
                             .foregroundColor(.white)
                         
@@ -125,7 +125,7 @@ struct OfferPageView: View {
                                         Text("Original price")
                                             .font(.system(size: 16, weight: .regular))
                                             .foregroundColor(.gray)
-                                        Text(viewModel.originalPrice)
+                                        Text(subscriptionStore.currentOfferedPremium?.displayPrice ?? viewModel.originalPrice)
                                             .font(.system(size: 20, weight: .bold))
                                             .strikethrough()
                                             .foregroundColor(.gray)
