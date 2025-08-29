@@ -91,8 +91,8 @@ struct OfferPageView: View {
                     )
                     // Countdown Timer
                     VStack(spacing: 2) {
-                        Text("Your personalized price expires in:")
-                            .font(.system(size: 14, weight: .medium, design: .rounded))
+                        Text("Your One-Time Offer")
+                            .font(.system(size: 24, weight: .medium, design: .rounded))
                             .foregroundColor(.white.opacity(0.8))
                         Text("\(formatTime(countdown))")
                             .font(.system(size: 24, weight: .bold, design: .rounded))
@@ -105,7 +105,7 @@ struct OfferPageView: View {
                             .font(.system(size: 48, weight: .heavy, design: .rounded))
                             .foregroundColor(.white)
                         
-                        Text("SpeakLife Premium")
+                        Text("Lifetime Discount")
                             .font(.system(size: 28, weight: .semibold, design: .rounded))
                             .foregroundColor(.white)
                     }
@@ -129,9 +129,9 @@ struct OfferPageView: View {
                                             .font(.system(size: 20, weight: .bold))
                                             .strikethrough()
                                             .foregroundColor(.gray)
-                                        Text(viewModel.monthlyPrice)
-                                            .font(.system(size: 14, weight: .regular))
-                                            .foregroundColor(.gray)
+//                                        Text(viewModel.monthlyPrice)
+//                                            .font(.system(size: 14, weight: .regular))
+//                                            .foregroundColor(.gray)
                                     }
                                 )
                         }
@@ -173,10 +173,10 @@ struct OfferPageView: View {
                             makePurchase(iap: subscriptionStore.discountSubscription)
                         }) {
                             VStack(spacing: 4) {
-                                Text("Claim My \(currentSelection?.percentageOff ?? "") Off Now")
+                                Text("Claim My 50% Off Only $29.99/yr")
                                     .font(.system(size: 18, weight: .bold))
-                                Text("Join 50,000+ believers transforming daily")
-                                    .font(.system(size: 12, weight: .regular))
+                                //Text("Join 50,000+ believers transforming daily")
+                                 //   .font(.system(size: 12, weight: .regular))
                             }
                             .padding()
                             .frame(maxWidth: .infinity, maxHeight: 60)
@@ -206,7 +206,7 @@ struct OfferPageView: View {
                     Button(action: {
                         dismiss()
                     }) {
-                        Text("I'll stay stuck in my struggles")
+                        Text("I'll risk losing this discount")
                             .font(.system(size: 14, weight: .semibold))
                             .foregroundColor(.white.opacity(0.6))
                     }

@@ -3,6 +3,15 @@
     "filters": ["godsHeart", "magnify","speaklife", "psalm91", "divineHealth", "growWithJesus", "declarations", "gospel", "meditation", "bedtimeStories"],
     "audios": [
         {
+            "id": "praiseWinsWars-ep1.mp3",
+            "title": "Praise Wins Wars",
+            "subtitle": "SpeakLife wins battles - praise wins wars.",
+            "duration": "5m",
+            "imageUrl": "praisewinswars",
+            "isPremium": false,
+            "tag": "praise"
+        },
+        {
             "id": "magnify-ep12.mp3",
             "title": "Behold Him, Become Like Him",
             "subtitle": "Magnify the Lord Episode 12",
@@ -1276,7 +1285,7 @@
           "title": "Blessing Our Children",
           "subtitle": "Declaring Safety, Wisdom, and Destiny Over Their Lives",
           "duration": "3m",
-          "imageUrl": "sunsetMountains3",
+          "imageUrl": "sunsetmountains3",
           "isPremium": true,
           "tag": "declarations"
         },

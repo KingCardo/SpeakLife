@@ -140,6 +140,10 @@ struct OnboardingView: View  {
                     advance()
                 }
                 .tag(Tab.life)
+                
+                RatingView(size: geometry.size) {
+                    advance()
+                } .tag(Tab.review)
 
                 subscriptionScene(size: geometry.size)
                     .tag(Tab.subscription)
@@ -152,9 +156,7 @@ struct OnboardingView: View  {
                 }
                 .tag(Tab.notification)
                 
-                RatingView(size: geometry.size) {
-                    advance()
-                } .tag(Tab.review)
+               
                 
                 
                 
@@ -299,7 +301,7 @@ struct OnboardingView: View  {
                     
                 case .life:
                     impactMed.impactOccurred()
-                    selection = .subscription
+                    selection = .review
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("IntroLifeDone", parameters: nil)
                 case .tip:
@@ -381,17 +383,9 @@ struct OnboardingView: View  {
                    
                 case .review:
                     impactMed.impactOccurred()
-                    selection = .notification
+                    selection = .subscription
                     onboardingTab = selection.rawValue
                     Analytics.logEvent("ReviewScreenDone", parameters: nil)
-                    DispatchQueue.main.async {
-                        if let scene = UIApplication.shared.connectedScenes
-                            .first(where: { $0.activationState == .foregroundActive })
-                            as? UIWindowScene {
-                            SKStoreReviewController.requestReview(in: scene)
-                        }
-                    }
-                    appState.lastReviewRequestSetDate = Date()
                    
                 case .rooted:
                     impactMed.impactOccurred()

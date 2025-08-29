@@ -114,7 +114,7 @@ let audioFiles: [AudioDeclaration] = [
         title: "Blessing Our Children",
         subtitle: "Declaring Safety, Wisdom, and Destiny Over Their Lives",
         duration: "3m",
-        imageUrl: "sunsetMountains3",
+        imageUrl: "sunsetmountains3",
         isPremium: true
     ),
     AudioDeclaration(

@@ -167,7 +167,7 @@ struct DeclarationView: View {
                     }
                     
                     Rectangle()
-                        .fill(Color.black.opacity(themeViewModel.selectedTheme.blurEffect ? 0.20 : 0))
+                        .fill(Color.black.opacity(themeViewModel.selectedTheme.blurEffect ? 0.25 : 0))
                         .edgesIgnoringSafeArea(.all)
 //                    
                 }

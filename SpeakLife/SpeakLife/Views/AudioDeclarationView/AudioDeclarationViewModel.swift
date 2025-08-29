@@ -23,11 +23,12 @@ final class AudioDeclarationViewModel: ObservableObject {
     @Published var imagination: [AudioDeclaration]  = []
     @Published var psalm91: [AudioDeclaration]  = []
     @Published var magnify: [AudioDeclaration]  = []
+    @Published var praise: [AudioDeclaration]  = []
    // @Published var audioDeclarations: [AudioDeclaration] = []
     private(set) var allAudioFiles: [AudioDeclaration] = []
     @Published var downloadProgress: [String: Double] = [:]
     @Published var fetchingAudioIDs: Set<String> = []
-    @Published var filters: [Filter] = [.favorites, .speaklife, .godsHeart, .growWithJesus, .psalm91, .divineHealth, .magnify,/*.imagination,.devotional,*/ .declarations, .gospel, .meditation, .bedtimeStories]
+    @Published var filters: [Filter] = [.favorites, .speaklife, .praise, .godsHeart, .growWithJesus, .psalm91, .divineHealth, .magnify,/*.imagination,.devotional,*/ .declarations, .gospel, .meditation, .bedtimeStories]
 
     // Favorites manager
     let favoritesManager = AudioFavoritesManager()
@@ -77,6 +78,8 @@ final class AudioDeclarationViewModel: ObservableObject {
             return psalm91.reversed()
         case .magnify:
             return magnify.reversed()
+        case .praise:
+            return praise.reversed()
         }
     }
     
@@ -102,6 +105,7 @@ final class AudioDeclarationViewModel: ObservableObject {
                 psalm91 = self.allAudioFiles.filter { $0.tag == "psalm91" }
                 imagination = self.allAudioFiles.filter { $0.tag == "imagination" }
                 magnify = self.allAudioFiles.filter { $0.tag == "magnify" }
+                praise = self.allAudioFiles.filter { $0.tag == "praise" }
                // setFilters(welcome)
             }
         }

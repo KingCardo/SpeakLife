@@ -100,7 +100,7 @@ class Theme: Identifiable, Codable {
     private static let redmoon = Theme("redmoon", blurEffect: true)
     private static let snowMountainLake = Theme("snowMountainLake", blurEffect: true)
     private static let starrySunrise = Theme("starrySunrise", blurEffect: true)
-    private static let sunsetMountains3 = Theme("sunsetMountains3", blurEffect: true)
+    private static let sunsetMountains3 = Theme("sunsetmountains3", blurEffect: true)
     private static let mountainValley = Theme("mountainValley", blurEffect: true)
     static let nightStarrySkies = Theme("nightStarrySkies", blurEffect: true)
     private static let desertNight = Theme("desertNight", blurEffect: true)

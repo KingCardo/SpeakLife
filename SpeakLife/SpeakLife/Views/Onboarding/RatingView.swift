@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct RatingView: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
+    @EnvironmentObject var appState: AppState
     let size: CGSize
     let callBack: (() -> Void)
     @State private var showStars = [false, false, false, false, false]
@@ -106,6 +108,16 @@ struct RatingView: View {
                 }
                 
             )
+        }
+        .onAppear {
+            DispatchQueue.main.async {
+                if let scene = UIApplication.shared.connectedScenes
+                    .first(where: { $0.activationState == .foregroundActive })
+                    as? UIWindowScene {
+                    SKStoreReviewController.requestReview(in: scene)
+                }
+            }
+            appState.lastReviewRequestSetDate = Date()
         }
     }
        

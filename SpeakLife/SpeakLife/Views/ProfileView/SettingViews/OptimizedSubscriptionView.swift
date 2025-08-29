@@ -124,7 +124,7 @@ struct PricingOptionView: View {
                     VStack {
                         HStack {
                             Spacer()
-                            Text("Best Value")
+                            Text("Most Popular")
                                 .font(.system(size: 10, weight: .bold, design: .rounded))
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 10)
@@ -405,11 +405,11 @@ struct OptimizedSubscriptionView: View {
         guard let yearlyProduct = subscriptionStore.currentOfferedPremium else {
             return "$3.33/mo"
         }
-        let monthlyEquiv = yearlyProduct.price / 52
+        let monthlyEquiv = yearlyProduct.price / 12
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.locale = yearlyProduct.priceFormatStyle.locale
-        return "\(formatter.string(from: NSNumber(value: Double(truncating: monthlyEquiv as NSNumber))) ?? "$3.33")/wk"
+        return "\(formatter.string(from: NSNumber(value: Double(truncating: monthlyEquiv as NSNumber))) ?? "$3.33")/mo"
     }
     
     

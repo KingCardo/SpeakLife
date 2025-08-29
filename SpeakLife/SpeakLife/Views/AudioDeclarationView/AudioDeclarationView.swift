@@ -171,6 +171,7 @@ enum Filter: String {
     case imagination = "Imagination"
     case psalm91 = "Psalm 91"
     case magnify = "Behold & Become"
+    case praise = "Praise Wins Wars"
 }
 
 struct FetchedFilter: Identifiable, Hashable {
@@ -271,7 +272,7 @@ struct AudioDeclarationView: View {
                         .presentationDetents([.large])
                         .onAppear {
                             audioViewModel.lastSelectedItem = item
-                            Analytics.logEvent(item.title, parameters: nil)
+                            Analytics.logEvent(item.id, parameters: nil)
                         }
                 }
             }
@@ -352,7 +353,7 @@ struct AudioDeclarationView: View {
                         .padding(.horizontal, 40)
                     
                     Button("Browse Audio") {
-                        viewModel.selectedFilter = .godsHeart
+                        viewModel.selectedFilter = .speaklife
                     }
                     .font(.headline)
                     .foregroundColor(.white)
