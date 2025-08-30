@@ -130,6 +130,7 @@
 		45ED72C42BA10B3500F5F5E3 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED72C32BA10B3500F5F5E3 /* ConfettiView.swift */; };
 		45ED72C62BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED72C52BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift */; };
 		45F32FDA2E0F29B80035FB1D /* EmailCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F32FD92E0F29AE0035FB1D /* EmailCaptureView.swift */; };
+		45FF718E2E6294330048C523 /* declarationsv7_backup.json in Resources */ = {isa = PBXBuildFile; fileRef = 45FF718D2E6294330048C523 /* declarationsv7_backup.json */; };
 		7A00721828F8ED4A00965AF7 /* declarations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A00721728F8ED4A00965AF7 /* declarations.json */; };
 		7A00721D2908D50800965AF7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		7A278F9B288915DE0084BB57 /* SpeakLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */; };
@@ -373,6 +374,7 @@
 		45ED72C32BA10B3500F5F5E3 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		45ED72C52BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakInfoBottomSheet.swift; sourceTree = "<group>"; };
 		45F32FD92E0F29AE0035FB1D /* EmailCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCaptureView.swift; sourceTree = "<group>"; };
+		45FF718D2E6294330048C523 /* declarationsv7_backup.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv7_backup.json; sourceTree = "<group>"; };
 		59BFF68BFA515EAC0AC88C85 /* WidgetIntents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetIntents.swift; sourceTree = "<group>"; };
 		7A00721728F8ED4A00965AF7 /* declarations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = declarations.json; sourceTree = "<group>"; };
 		7A278F97288915DE0084BB57 /* SpeakLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -766,6 +768,7 @@
 			isa = PBXGroup;
 			children = (
 				457D531A2D964AA10098A49A /* audioDevotionals.json */,
+				45FF718D2E6294330048C523 /* declarationsv7_backup.json */,
 				45A4A3A32D7BD2A000DFCEB7 /* declarationsv7.json */,
 				7A00721728F8ED4A00965AF7 /* declarations.json */,
 				456885272B395F66007B1EBB /* declarationsv3.json */,
@@ -1346,6 +1349,7 @@
 				45A4A3CF2D86B81900DFCEB7 /* everpresent.mp3 in Resources */,
 				457DF4AB2BDA3313006974C3 /* PrivacyInfo.xcprivacy in Resources */,
 				4583A4C52B0080440069C27D /* declarationsv2.json in Resources */,
+				45FF718E2E6294330048C523 /* declarationsv7_backup.json in Resources */,
 				7ABA50CF29E63275002699F1 /* prayers.json in Resources */,
 				457D531B2D964AAF0098A49A /* audioDevotionals.json in Resources */,
 				45A4A3D32D86B8DB00DFCEB7 /* rainstorm.mp3 in Resources */,
