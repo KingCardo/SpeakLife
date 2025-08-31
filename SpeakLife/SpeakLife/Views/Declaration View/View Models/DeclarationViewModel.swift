@@ -134,6 +134,13 @@ final class DeclarationViewModel: ObservableObject {
             self?.fetchDeclarations()
         }
         
+        // Clean up duplicates on startup if using CoreDataAPIService
+        if let coreDataService = service as? CoreDataAPIService {
+            Task {
+                try? await coreDataService.removeDuplicates()
+            }
+        }
+        
         fetchSelectedCategories() { [weak self] in
             self?.cleanUpSelectedCategories() { [weak self] _ in
                 guard let self = self else { return }
@@ -343,9 +350,28 @@ final class DeclarationViewModel: ObservableObject {
         }
         allDeclarations.append(declaration)
         
-        service.save(declarations: allDeclarations) { [weak self] success in
-            guard success else { return }
-            self?.refreshCreateOwn()
+        // Use the new single declaration create method if available
+        if let coreDataService = service as? CoreDataAPIService {
+            Task {
+                do {
+                    try await coreDataService.createSingleDeclaration(declaration)
+                    await MainActor.run {
+                        self.refreshCreateOwn()
+                    }
+                } catch {
+                    print("RWRW: Error creating declaration - \(error.localizedDescription)")
+                    // Remove from allDeclarations if save failed
+                    await MainActor.run {
+                        self.allDeclarations.removeAll(where: { $0.id == declaration.id })
+                    }
+                }
+            }
+        } else {
+            // Fallback to old save method for legacy service
+            service.save(declarations: allDeclarations) { [weak self] success in
+                guard success else { return }
+                self?.refreshCreateOwn()
+            }
         }
     }
     

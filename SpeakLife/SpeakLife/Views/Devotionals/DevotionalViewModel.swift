@@ -50,14 +50,15 @@ final class DevotionalViewModel: ObservableObject, Sendable {
         }
     }
     
-    var devotionalsLeft: Int {
-        if !devotionalLimitReached {
-            return freeCount - devotionalDictionary.count
-        }
-        return 0
-    }
+//    var devotionalsLeft: Int {
+////        if !devotionalLimitReached {
+////            return freeCount - devotionalDictionary.count
+////        }
+//        return 0
+//    }
     
     var devotionalLimitReached: Bool {
+        return true
         devotionalDictionary.count > 3
     }
     

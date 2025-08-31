@@ -30,8 +30,13 @@ final class AffirmationRepository: AffirmationRepositoryProtocol {
     // MARK: - Create
     func create(_ entity: AffirmationEntry) async throws {
         try await context.perform {
-            entity.id = UUID()
-            entity.createdAt = Date()
+            // Always set a UUID if not present
+            if entity.id == nil {
+                entity.id = UUID()
+            }
+            if entity.createdAt == nil {
+                entity.createdAt = Date()
+            }
             entity.lastModified = Date()
             
             // Capture values before saving
@@ -128,4 +133,5 @@ final class AffirmationRepository: AffirmationRepositoryProtocol {
         let predicate = NSPredicate(format: "category == %@", category)
         return try await fetch(predicate: predicate)
     }
+    
 }

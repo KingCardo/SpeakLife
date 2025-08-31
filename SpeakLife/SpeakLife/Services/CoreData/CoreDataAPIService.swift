@@ -112,55 +112,37 @@ final class CoreDataAPIService: APIService {
     }
     
     func save(declarations: [Declaration], completion: @escaping (Bool) -> Void) {
-        Task {
-            do {
-                let context = PersistenceController.shared.container.viewContext
-                
-                // Clear existing user-created entries
-                let existingJournalEntries = try await journalRepository.fetch(predicate: nil)
-                for entry in existingJournalEntries {
-                    try await journalRepository.delete(entry)
-                }
-                
-                let existingAffirmationEntries = try await affirmationRepository.fetch(predicate: nil)
-                for entry in existingAffirmationEntries {
-                    try await affirmationRepository.delete(entry)
-                }
-                
-                // Save new entries
-                for declaration in declarations where declaration.category == .myOwn {
-                    if declaration.contentType == .journal {
-                        let journalEntry = JournalEntry(context: context)
-                        journalEntry.text = declaration.text
-                        journalEntry.book = declaration.book
-                        journalEntry.bibleVerseText = declaration.bibleVerseText
-                        journalEntry.category = declaration.category.rawValue
-                        journalEntry.isFavorite = declaration.isFavorite ?? false
-                        try await journalRepository.create(journalEntry)
-                    } else if declaration.contentType == .affirmation {
-                        let affirmationEntry = AffirmationEntry(context: context)
-                        affirmationEntry.text = declaration.text
-                        affirmationEntry.book = declaration.book
-                        affirmationEntry.bibleVerseText = declaration.bibleVerseText
-                        affirmationEntry.category = declaration.category.rawValue
-                        affirmationEntry.isFavorite = declaration.isFavorite ?? false
-                        try await affirmationRepository.create(affirmationEntry)
-                    }
-                }
-                
-                // Save non-own declarations to legacy service
-                let nonOwnDeclarations = declarations.filter { $0.category != .myOwn }
-                legacyAPIService.save(declarations: nonOwnDeclarations) { success in
-                    DispatchQueue.main.async {
-                        completion(success)
-                    }
-                }
-                
-            } catch {
-                DispatchQueue.main.async {
-                    completion(false)
-                }
-            }
+        // WARNING: This method receives ALL declarations but should NOT delete and recreate everything
+        // The legacy implementation may have done that, but with CloudKit we need to be smarter
+        
+        // For now, just save to legacy service for non-myOwn declarations
+        // Individual create/update/delete methods should be used for myOwn content
+        let nonOwnDeclarations = declarations.filter { $0.category != .myOwn }
+        legacyAPIService.save(declarations: nonOwnDeclarations, completion: completion)
+    }
+    
+    // MARK: - Create Single Declaration
+    func createSingleDeclaration(_ declaration: Declaration) async throws {
+        guard declaration.category == .myOwn else { return }
+        
+        let context = PersistenceController.shared.container.viewContext
+        
+        if declaration.contentType == .journal {
+            let journalEntry = JournalEntry(context: context)
+            journalEntry.text = declaration.text
+            journalEntry.book = declaration.book
+            journalEntry.bibleVerseText = declaration.bibleVerseText
+            journalEntry.category = declaration.category.rawValue
+            journalEntry.isFavorite = declaration.isFavorite ?? false
+            try await journalRepository.create(journalEntry)
+        } else if declaration.contentType == .affirmation {
+            let affirmationEntry = AffirmationEntry(context: context)
+            affirmationEntry.text = declaration.text
+            affirmationEntry.book = declaration.book
+            affirmationEntry.bibleVerseText = declaration.bibleVerseText
+            affirmationEntry.category = declaration.category.rawValue
+            affirmationEntry.isFavorite = declaration.isFavorite ?? false
+            try await affirmationRepository.create(affirmationEntry)
         }
     }
     
@@ -203,9 +185,65 @@ final class CoreDataAPIService: APIService {
         try await affirmationRepository.delete(entry)
     }
     
-    // MARK: - Optimized Delete Method
+    // MARK: - Remove Duplicates
+    func removeDuplicates() async throws {
+        print("RWRW: Checking for duplicate entries...")
+        
+        // Remove duplicate journal entries
+        let allJournals = try await journalRepository.fetch(predicate: nil)
+        var seenJournalTexts = Set<String>()
+        var journalDuplicates = 0
+        
+        for entry in allJournals {
+            guard let text = entry.text else { continue }
+            if seenJournalTexts.contains(text) {
+                // This is a duplicate
+                try await journalRepository.delete(entry)
+                journalDuplicates += 1
+            } else {
+                seenJournalTexts.insert(text)
+            }
+        }
+        
+        // Remove duplicate affirmation entries
+        let allAffirmations = try await affirmationRepository.fetch(predicate: nil)
+        var seenAffirmationTexts = Set<String>()
+        var affirmationDuplicates = 0
+        
+        for entry in allAffirmations {
+            guard let text = entry.text else { continue }
+            if seenAffirmationTexts.contains(text) {
+                // This is a duplicate
+                try await affirmationRepository.delete(entry)
+                affirmationDuplicates += 1
+            } else {
+                seenAffirmationTexts.insert(text)
+            }
+        }
+        
+        print("RWRW: Removed \(journalDuplicates) duplicate journal entries and \(affirmationDuplicates) duplicate affirmation entries")
+    }
+    
+    // MARK: - Delete by UUID
+    func deleteByUUID(_ uuid: UUID, contentType: ContentType) async throws {
+        print("RWRW: Deleting entry by UUID - ID: \(uuid), Type: \(contentType)")
+        
+        if contentType == .journal {
+            if let entry = try await journalRepository.fetchById(uuid) {
+                try await journalRepository.delete(entry)
+                print("RWRW: Journal entry deleted successfully")
+            }
+        } else if contentType == .affirmation {
+            if let entry = try await affirmationRepository.fetchById(uuid) {
+                try await affirmationRepository.delete(entry)
+                print("RWRW: Affirmation entry deleted successfully")
+            }
+        }
+    }
+    
+    // MARK: - Legacy Delete Method (for compatibility)
     func deleteDeclaration(withId idString: String, contentType: ContentType) async throws {
-        print("RWRW: Deleting declaration - ID: \(idString), Type: \(contentType)")
+        print("RWRW: Legacy delete - ID: \(idString), Type: \(contentType)")
         
         // Since Declaration IDs are text+category+contentType, we need to find by text content
         // Parse the Declaration ID to extract the text
@@ -220,17 +258,18 @@ final class CoreDataAPIService: APIService {
         
         print("RWRW: Searching for entries with text: '\(searchText)'")
         
+        // For legacy compatibility, delete the first matching entry
         if contentType == .journal {
             let entries = try await journalRepository.fetch(predicate: NSPredicate(format: "text == %@", searchText))
-            for entry in entries {
-                try await journalRepository.delete(entry)
-                print("RWRW: Journal entry deleted successfully")
+            if let firstEntry = entries.first {
+                try await journalRepository.delete(firstEntry)
+                print("RWRW: Journal entry deleted (1 of \(entries.count) matching)")
             }
         } else if contentType == .affirmation {
             let entries = try await affirmationRepository.fetch(predicate: NSPredicate(format: "text == %@", searchText))
-            for entry in entries {
-                try await affirmationRepository.delete(entry)
-                print("RWRW: Affirmation entry deleted successfully")
+            if let firstEntry = entries.first {
+                try await affirmationRepository.delete(firstEntry)
+                print("RWRW: Affirmation entry deleted (1 of \(entries.count) matching)")
             }
         }
     }

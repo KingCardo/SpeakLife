@@ -78,9 +78,9 @@ struct DevotionalView: View {
                     VStack(alignment: .leading, spacing: 18) {
                         Spacer()
                             .frame(height: 40)
-                        if !subscriptionStore.isPremium && !subscriptionStore.isInDevotionalPremium {
-                            Text("\(viewModel.devotionalsLeft) more free devotionals left")
-                        }
+//                        if !subscriptionStore.isPremium && !subscriptionStore.isInDevotionalPremium {
+//                            Text("\(viewModel.devotionalsLeft) more free devotionals left")
+//                        }
                     
                         dateLabel
                         HStack {

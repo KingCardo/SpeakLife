@@ -124,15 +124,15 @@ struct PricingOptionView: View {
                     VStack {
                         HStack {
                             Spacer()
-                            Text("Most Popular")
-                                .font(.system(size: 10, weight: .bold, design: .rounded))
+                            Text("7-Day Free Trial")
+                                .font(.system(size: 12, weight: .bold, design: .rounded))
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 10)
                                 .padding(.vertical, 4)
                                 .background(
                                     Capsule()
                                         .fill(
-                                            Constants.specialRateColor
+                                            Constants.gold
                                         )
                                 )
                                 .shadow(color: Color.yellow.opacity(0.4), radius: 6, y: 2)
@@ -168,9 +168,9 @@ struct PricingOptionView: View {
     }
     
     private var textColor: Color {
-        if option.isSelected {
-            return .black
-        }
+//        if option.isSelected {
+//            return .black
+//        }
         return .white
     }
     
@@ -197,16 +197,15 @@ struct PricingOptionView: View {
     
     private var backgroundGradient: some View {
         RoundedRectangle(cornerRadius: 16, style: .continuous)
-            .fill(
-                option.isSelected ? 
-                yearlySelectedGradient : weeklySelectedGradient)
+            .fill(weeklySelectedGradient)
+//                option.isSelected ?
+//                yearlySelectedGradient :)
     
             .overlay(
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .stroke(
-                        option.isSelected ?
-                        Color.orange.opacity(0.4) : Color.white.opacity(0.4),
-                        lineWidth: 1
+                        Color.white.opacity(0.9),
+                        lineWidth: option.isSelected ? 3 : 1
                         )
             )
     }

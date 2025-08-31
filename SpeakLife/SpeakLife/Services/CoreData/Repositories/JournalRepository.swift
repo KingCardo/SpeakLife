@@ -29,8 +29,13 @@ final class JournalRepository: JournalRepositoryProtocol {
     // MARK: - Create
     func create(_ entity: JournalEntry) async throws {
         try await context.perform {
-            entity.id = UUID()
-            entity.createdAt = Date()
+            // Always set a UUID if not present
+            if entity.id == nil {
+                entity.id = UUID()
+            }
+            if entity.createdAt == nil {
+                entity.createdAt = Date()
+            }
             entity.lastModified = Date()
             
             // Capture values before saving
@@ -121,4 +126,5 @@ final class JournalRepository: JournalRepositoryProtocol {
         let predicate = NSPredicate(format: "text CONTAINS[cd] %@", text)
         return try await fetch(predicate: predicate)
     }
+    
 }
