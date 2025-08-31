@@ -14,6 +14,7 @@ struct UpNextCell: View {
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @ObservedObject var viewModel: AudioDeclarationViewModel
     @ObservedObject var audioViewModel: AudioPlayerViewModel
+    @StateObject private var metricsService = ListenerMetricsService.shared
 
     let item: AudioDeclaration
 
@@ -21,6 +22,7 @@ struct UpNextCell: View {
     @State private var isTapped = false
     @State private var animateGlow = false
     @State private var showFavoriteAnimation = false
+    @State private var listenerCount: String? = nil
 
     var body: some View {
         ZStack {
@@ -50,6 +52,18 @@ struct UpNextCell: View {
                             Text(item.duration)
                                 .font(.system(size: 13))
                                 .foregroundColor(.gray)
+                            
+                            if let listenerCount = listenerCount {
+                                Text("•")
+                                    .font(.caption)
+                                    .foregroundColor(.gray)
+                                Image(systemName: "headphones")
+                                    .font(.caption)
+                                    .foregroundColor(.gray)
+                                Text(listenerCount)
+                                    .font(.system(size: 13))
+                                    .foregroundColor(.gray)
+                            }
                             
                             if item.isPremium, !subscriptionStore.isPremium {
                                 Image(systemName: "lock")
@@ -90,6 +104,23 @@ struct UpNextCell: View {
                 )
                 .scaleEffect(isTapped ? 0.97 : 1.0)
                 .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isTapped)
+                .onAppear {
+                    // Fetch listener count for this audio
+                    print("🎵 UpNextCell appearing for: \(item.id)")
+                    Task {
+                        let metrics = await metricsService.fetchMetrics(for: [item.id], contentType: .audio)
+                        print("📊 Metrics received for \(item.id): \(metrics)")
+                        if let count = metrics[item.id] {
+                            let formatted = ListenerMetricsService.formatListenerCount(count)
+                            print("📝 Setting listenerCount to: \(formatted ?? "nil")")
+                            await MainActor.run {
+                                listenerCount = formatted
+                            }
+                        } else {
+                            print("❌ No count found for \(item.id)")
+                        }
+                    }
+                }
 
 
             if showToast {

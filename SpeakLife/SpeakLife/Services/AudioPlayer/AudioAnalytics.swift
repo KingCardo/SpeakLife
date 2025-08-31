@@ -193,6 +193,14 @@ final class AudioAnalytics {
         
         print("📊 Audio Analytics: Discovery to favorite - \(audio.title) from \(discoverySource.rawValue) in \(Int(timeToFavorite))s")
     }
+    
+    func trackAudioFetch(audio: AudioDeclaration, discoverySource: DiscoverySource) {
+        Analytics.logEvent("audio_fetch", parameters: [
+            "audio_id": audio.id,
+            "audio_title": audio.title,
+            "discovery_source": discoverySource.rawValue
+        ])
+    }
 }
 
 // MARK: - Supporting Enums

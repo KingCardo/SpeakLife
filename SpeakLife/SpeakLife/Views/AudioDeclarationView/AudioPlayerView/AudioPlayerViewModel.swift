@@ -182,6 +182,14 @@ final class AudioPlayerViewModel: ObservableObject {
         // Always start playing when loading audio
         player?.play()
         isPlaying = true
+        
+        // Track listen event for metrics
+        if let currentAudio = selectedItem {
+            ListenerMetricsService.shared.trackListen(
+                contentId: currentAudio.id,
+                contentType: .audio
+            )
+        }
         AudioPlayerService.shared.pauseMusic()
         updateNowPlayingInfo()
 

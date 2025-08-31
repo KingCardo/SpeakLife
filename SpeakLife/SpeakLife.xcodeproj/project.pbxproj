@@ -131,6 +131,7 @@
 		45ED72C62BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED72C52BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift */; };
 		45F32FDA2E0F29B80035FB1D /* EmailCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F32FD92E0F29AE0035FB1D /* EmailCaptureView.swift */; };
 		45FF718E2E6294330048C523 /* declarationsv7_backup.json in Resources */ = {isa = PBXBuildFile; fileRef = 45FF718D2E6294330048C523 /* declarationsv7_backup.json */; };
+		45FF71912E64293D0048C523 /* ListenerMetricsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FF718F2E64293D0048C523 /* ListenerMetricsService.swift */; };
 		7A00721828F8ED4A00965AF7 /* declarations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A00721728F8ED4A00965AF7 /* declarations.json */; };
 		7A00721D2908D50800965AF7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		7A278F9B288915DE0084BB57 /* SpeakLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A278F9A288915DE0084BB57 /* SpeakLifeApp.swift */; };
@@ -375,6 +376,7 @@
 		45ED72C52BA64C3F00F5F5E3 /* StreakInfoBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakInfoBottomSheet.swift; sourceTree = "<group>"; };
 		45F32FD92E0F29AE0035FB1D /* EmailCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCaptureView.swift; sourceTree = "<group>"; };
 		45FF718D2E6294330048C523 /* declarationsv7_backup.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = declarationsv7_backup.json; sourceTree = "<group>"; };
+		45FF718F2E64293D0048C523 /* ListenerMetricsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerMetricsService.swift; sourceTree = "<group>"; };
 		59BFF68BFA515EAC0AC88C85 /* WidgetIntents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetIntents.swift; sourceTree = "<group>"; };
 		7A00721728F8ED4A00965AF7 /* declarations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = declarations.json; sourceTree = "<group>"; };
 		7A278F97288915DE0084BB57 /* SpeakLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -764,6 +766,14 @@
 			path = AudioPlayer;
 			sourceTree = "<group>";
 		};
+		45FF71902E64293D0048C523 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				45FF718F2E64293D0048C523 /* ListenerMetricsService.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
 		7A00721628F8ED4A00965AF7 /* AffirmationData */ = {
 			isa = PBXGroup;
 			children = (
@@ -914,6 +924,7 @@
 		7AA8706728DACB5100134ADB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				45FF71902E64293D0048C523 /* Analytics */,
 				45B02FCF2E57A48D00D12033 /* EmailMarketing */,
 				4575C9472E46F25B007C14F3 /* Widget */,
 				4597E2322E419CEA009D6C66 /* CoreData */,
@@ -1537,6 +1548,7 @@
 				4597E21E2E4138A9009D6C66 /* VoiceMicrophoneButton.swift in Sources */,
 				4597E2242E4146EF009D6C66 /* VoiceStateIndicator.swift in Sources */,
 				4597E21F2E4138A9009D6C66 /* VoiceInputToolbar.swift in Sources */,
+				45FF71912E64293D0048C523 /* ListenerMetricsService.swift in Sources */,
 				4597E2202E4138A9009D6C66 /* FullScreenEntryView.swift in Sources */,
 				451AECEB2E4EE7B100C1490E /* BootcampViewModel.swift in Sources */,
 				4597E1F02E412346009D6C66 /* ChecklistNotificationSettings.swift in Sources */,
@@ -1763,7 +1775,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 877;
+				CURRENT_PROJECT_VERSION = 878;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1805,7 +1817,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 877;
+				CURRENT_PROJECT_VERSION = 878;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;

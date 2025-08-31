@@ -15,9 +15,11 @@ struct DevotionalView: View {
     @StateObject var viewModel: DevotionalViewModel
     @EnvironmentObject var declarationViewModel: DeclarationViewModel
     @EnvironmentObject var appState: AppState
+    @StateObject private var metricsService = ListenerMetricsService.shared
     @State private var scrollToTop = false
     @State private var share = false
     @State var presentDevotionalSubscriptionView = false
+    @State private var readerCount: String? = nil
     
     let spacing: CGFloat = 50
     
@@ -25,6 +27,21 @@ struct DevotionalView: View {
         contentView
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
                 self.presentationMode.wrappedValue.dismiss()
+            }
+            .onAppear {
+                // Track devotional view for metrics
+                ListenerMetricsService.shared.trackListen(
+                    contentId: viewModel.devotionalId,
+                    contentType: .devotional
+                )
+                
+                // Fetch reader count for this devotional
+                Task {
+                    let metrics = await metricsService.fetchMetrics(for: [viewModel.devotionalId], contentType: .devotional)
+                    if let count = metrics[viewModel.devotionalId] {
+                        readerCount = ListenerMetricsService.formatListenerCount(count)
+                    }
+                }
             }
         
     }
@@ -140,9 +157,22 @@ struct DevotionalView: View {
     
     @ViewBuilder
     var titleLabel: some View {
-        Text(viewModel.title)
-            .font(.system(size: 30, weight: .bold, design: .default))
-            .foregroundStyle(.white)
+        VStack(alignment: .leading, spacing: 8) {
+            Text(viewModel.title)
+                .font(.system(size: 30, weight: .bold, design: .default))
+                .foregroundStyle(.white)
+            
+            if let listenerCount = readerCount {
+                HStack(spacing: 6) {
+                    Image(systemName: "person.2.fill")
+                        .font(.system(size: 12))
+                        .foregroundColor(.white.opacity(0.6))
+                    Text("\(listenerCount) readers")
+                        .font(.system(size: 14))
+                        .foregroundColor(.white.opacity(0.6))
+                }
+            }
+        }
         
         Spacer()
             .frame(height: 24)

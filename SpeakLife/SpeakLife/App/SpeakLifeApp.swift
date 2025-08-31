@@ -62,6 +62,9 @@ struct SpeakLifeApp: App {
                     // Sync widget data on app launch
                     WidgetDataBridge.shared.syncAllData()
                     
+                    // Warm up listener metrics cache for better performance
+                    ListenerMetricsService.shared.warmUpCache()
+                    
                     viewModel.requestPermission()
                     if declarationStore.backgroundMusicEnabled {
                         AudioPlayerService.shared.playSound(files: resources)

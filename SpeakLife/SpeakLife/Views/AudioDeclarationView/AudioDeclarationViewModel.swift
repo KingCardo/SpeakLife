@@ -28,7 +28,7 @@ final class AudioDeclarationViewModel: ObservableObject {
     private(set) var allAudioFiles: [AudioDeclaration] = []
     @Published var downloadProgress: [String: Double] = [:]
     @Published var fetchingAudioIDs: Set<String> = []
-    @Published var filters: [Filter] = [.favorites, .speaklife, .praise, .godsHeart, .growWithJesus, .psalm91, .divineHealth, .magnify,/*.imagination,.devotional,*/ .declarations, .gospel, .meditation, .bedtimeStories]
+    @Published var filters: [Filter] = [.favorites, .speaklife, .declarations, .praise, .godsHeart, .growWithJesus, .psalm91, .divineHealth, .magnify,/*.imagination,.devotional,*/  .gospel, .meditation, .bedtimeStories]
 
     // Favorites manager
     let favoritesManager = AudioFavoritesManager()
