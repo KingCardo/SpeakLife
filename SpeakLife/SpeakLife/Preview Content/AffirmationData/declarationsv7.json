@@ -1,5 +1,5 @@
 {
-  "count": 1578,
+  "count": 1635,
   "version": 1,
   "declarations": [
     {
@@ -10229,6 +10229,349 @@
       "book": "Galatians 6:7",
       "category": "galatians",
       "isFavorite": false
+    },
+    {
+      "text": "What I sow, I also reap.",
+      "bibleVerseText": "Do not be deceived: God cannot be mocked. A man reaps what he sows.",
+      "book": "Galatians 6:7",
+      "category": "galatians",
+      "isFavorite": false
+    },
+    {
+      "text": "No door stays closed to my destiny.",
+      "bibleVerseText": "I have placed before you an open door that no one can shut.",
+      "book": "Revelation 3:8",
+      "category": "destiny"
+    },
+    {
+      "text": "I conquer every obstacle. I am unstoppable.",
+      "bibleVerseText": "In all these things we are more than conquerors through him who loved us.",
+      "book": "Romans 8:37",
+      "category": "destiny"
+    },
+    {
+      "text": "Circumstances bow to my destiny.",
+      "bibleVerseText": "I can do all things through Christ who strengthens me.",
+      "book": "Philippians 4:13",
+      "category": "destiny"
+    },
+    {
+      "text": "I inherit God's promises. I walk in boldness.",
+      "bibleVerseText": "If children, then heirs\u2014heirs of God and co-heirs with Christ.",
+      "book": "Romans 8:17",
+      "category": "destiny"
+    },
+    {
+      "text": "I shine. I lead. I transform darkness.",
+      "bibleVerseText": "Let your light shine before others, so that they may see your good works.",
+      "book": "Matthew 5:16",
+      "category": "destiny"
+    },
+    {
+      "text": "My gifts open doors to greatness.",
+      "bibleVerseText": "A man's gift makes room for him and brings him before the great.",
+      "book": "Proverbs 18:16",
+      "category": "destiny"
+    },
+    {
+      "text": "I run my race. I finish strong.",
+      "bibleVerseText": "Let us run with endurance the race that is set before us.",
+      "book": "Hebrews 12:1",
+      "category": "destiny"
+    },
+    {
+      "text": "Every day counts. Every moment has purpose.",
+      "bibleVerseText": "You shall serve the Lord your God... and I will fulfill the number of your days.",
+      "book": "Exodus 23:25-26",
+      "category": "destiny"
+    },
+    {
+      "text": "Nations shift when I speak.",
+      "bibleVerseText": "Ask me, and I will make the nations your inheritance.",
+      "book": "Psalm 2:8",
+      "category": "destiny"
+    },
+    {
+      "text": "I bear fruit in every season.",
+      "bibleVerseText": "They will still bear fruit in old age, they will stay fresh and green.",
+      "book": "Psalm 92:14",
+      "category": "destiny"
+    },
+    {
+      "text": "Grace fuels my calling. I cannot fail.",
+      "bibleVerseText": "By the grace of God I am what I am, and his grace was not without effect.",
+      "book": "1 Corinthians 15:10",
+      "category": "destiny"
+    },
+    {
+      "text": "Excellence is my standard. Glory is my aim.",
+      "bibleVerseText": "Whatever you do, work at it with all your heart, as working for the Lord.",
+      "book": "Colossians 3:23",
+      "category": "destiny"
+    },
+    {
+      "text": "Favor surrounds me. Purpose drives me.",
+      "bibleVerseText": "You bless the righteous, O Lord; you cover him with favor as with a shield.",
+      "book": "Psalm 5:12",
+      "category": "destiny"
+    },
+    {
+      "text": "I lead my generation forward.",
+      "bibleVerseText": "Set an example for the believers in speech, conduct, love, faith and purity.",
+      "book": "1 Timothy 4:12",
+      "category": "destiny"
+    },
+    {
+      "text": "Today moves me closer to greatness.",
+      "bibleVerseText": "This is the day the Lord has made; we will rejoice and be glad in it.",
+      "book": "Psalm 118:24",
+      "category": "destiny"
+    },
+    {
+      "text": "Divine wisdom guides every step.",
+      "bibleVerseText": "If any of you lacks wisdom, let him ask God, who gives generously.",
+      "book": "James 1:5",
+      "category": "destiny"
+    },
+    {
+      "text": "God orders my steps. I cannot miss.",
+      "bibleVerseText": "The steps of a man are established by the Lord.",
+      "book": "Psalm 37:23",
+      "category": "destiny"
+    },
+    {
+      "text": "I am fearless. My purpose is secure.",
+      "bibleVerseText": "Be strong and courageous. The Lord your God is with you.",
+      "book": "Joshua 1:9",
+      "category": "destiny"
+    },
+    {
+      "text": "Nothing shakes me. My destiny is sealed.",
+      "bibleVerseText": "He who began a good work in you will carry it on to completion.",
+      "book": "Philippians 1:6",
+      "category": "destiny"
+    },
+    {
+      "text": "I carry heaven's love to earth.",
+      "bibleVerseText": "We are Christ's ambassadors, as though God were making his appeal through us.",
+      "book": "2 Corinthians 5:20",
+      "category": "destiny"
+    },
+    {
+      "text": "Faith speaks first. Reality follows.",
+      "bibleVerseText": "We walk by faith, not by sight.",
+      "book": "2 Corinthians 5:7",
+      "category": "faith"
+    },
+    {
+      "text": "My faith commands. Heaven responds.",
+      "bibleVerseText": "Whatever you bind on earth will be bound in heaven.",
+      "book": "Matthew 18:18",
+      "category": "faith"
+    },
+    {
+      "text": "Doubt dies. Faith thrives. I win.",
+      "bibleVerseText": "This is the victory that overcomes the world\u2014our faith.",
+      "book": "1 John 5:4",
+      "category": "faith"
+    },
+    {
+      "text": "I stand on promises, not circumstances.",
+      "bibleVerseText": "For all the promises of God find their Yes in him.",
+      "book": "2 Corinthians 1:20",
+      "category": "faith"
+    },
+    {
+      "text": "Grace rewrites my story daily.",
+      "bibleVerseText": "His mercies are new every morning.",
+      "book": "Lamentations 3:23",
+      "category": "grace"
+    },
+    {
+      "text": "I overflow with undeserved favor.",
+      "bibleVerseText": "From his fullness we have all received, grace upon grace.",
+      "book": "John 1:16",
+      "category": "grace"
+    },
+    {
+      "text": "Mercy found me. Grace kept me.",
+      "bibleVerseText": "By the grace of God I am what I am.",
+      "book": "1 Corinthians 15:10",
+      "category": "grace"
+    },
+    {
+      "text": "I live from grace, not for it.",
+      "bibleVerseText": "For sin shall not have dominion over you, for you are not under law but under grace.",
+      "book": "Romans 6:14",
+      "category": "grace"
+    },
+    {
+      "text": "Heaven's wisdom trumps earth's logic.",
+      "bibleVerseText": "The wisdom of this world is foolishness in God's sight.",
+      "book": "1 Corinthians 3:19",
+      "category": "wisdom"
+    },
+    {
+      "text": "Wisdom whispers. I listen. I prosper.",
+      "bibleVerseText": "Blessed are those who find wisdom, those who gain understanding.",
+      "book": "Proverbs 3:13",
+      "category": "wisdom"
+    },
+    {
+      "text": "My decisions carry divine intelligence.",
+      "bibleVerseText": "If any of you lacks wisdom, you should ask God.",
+      "book": "James 1:5",
+      "category": "wisdom"
+    },
+    {
+      "text": "Understanding comes before the asking ends.",
+      "bibleVerseText": "Before they call I will answer.",
+      "book": "Isaiah 65:24",
+      "category": "wisdom"
+    },
+    {
+      "text": "I download heaven's strategies.",
+      "bibleVerseText": "Call to me and I will answer you and tell you great and unsearchable things.",
+      "book": "Jeremiah 33:3",
+      "category": "wisdom"
+    },
+    {
+      "text": "Healing lives in me permanently.",
+      "bibleVerseText": "By his wounds you have been healed.",
+      "book": "1 Peter 2:24",
+      "category": "health"
+    },
+    {
+      "text": "My cells sing with divine life.",
+      "bibleVerseText": "The Spirit gives life.",
+      "book": "John 6:63",
+      "category": "health"
+    },
+    {
+      "text": "Sickness finds no home here.",
+      "bibleVerseText": "No plague shall come near your dwelling.",
+      "book": "Psalm 91:10",
+      "category": "health"
+    },
+    {
+      "text": "I attract resources effortlessly.",
+      "bibleVerseText": "Every good gift comes from above.",
+      "book": "James 1:17",
+      "category": "wealth"
+    },
+    {
+      "text": "I love without conditions or limits.",
+      "bibleVerseText": "Love one another as I have loved you.",
+      "book": "John 15:12",
+      "category": "love"
+    },
+    {
+      "text": "Love makes me unstoppable.",
+      "bibleVerseText": "Love bears all things, believes all things, hopes all things.",
+      "book": "1 Corinthians 13:7",
+      "category": "love"
+    },
+    {
+      "text": "Courage is my default setting.",
+      "bibleVerseText": "Be strong and of good courage.",
+      "book": "Joshua 1:9",
+      "category": "fear"
+    },
+    {
+      "text": "I live above fear's reach.",
+      "bibleVerseText": "God has not given us a spirit of fear.",
+      "book": "2 Timothy 1:7",
+      "category": "fear"
+    },
+    {
+      "text": "Fear bows when I speak.",
+      "bibleVerseText": "Perfect love casts out fear.",
+      "book": "1 John 4:18",
+      "category": "fear"
+    },
+    {
+      "text": "Boldness is my superpower.",
+      "bibleVerseText": "The righteous are as bold as a lion.",
+      "book": "Proverbs 28:1",
+      "category": "confidence"
+    },
+    {
+      "text": "Favor chases me down daily.",
+      "bibleVerseText": "Surely goodness and mercy shall follow me.",
+      "book": "Psalm 23:6",
+      "category": "favor"
+    },
+    {
+      "text": "I wear favor like a crown.",
+      "bibleVerseText": "You crown the year with your bounty.",
+      "book": "Psalm 65:11",
+      "category": "favor"
+    },
+    {
+      "text": "Uncommon favor is my portion.",
+      "bibleVerseText": "The Lord will give grace and glory.",
+      "book": "Psalm 84:11",
+      "category": "favor"
+    },
+    {
+      "text": "Worry dissolves in my presence.",
+      "bibleVerseText": "Cast all your anxiety on him.",
+      "book": "1 Peter 5:7",
+      "category": "anxiety"
+    },
+    {
+      "text": "I breathe peace, exhale worry.",
+      "bibleVerseText": "Peace I leave with you; my peace I give you.",
+      "book": "John 14:27",
+      "category": "anxiety"
+    },
+    {
+      "text": "Calm is my superpower.",
+      "bibleVerseText": "Be still, and know that I am God.",
+      "book": "Psalm 46:10",
+      "category": "anxiety"
+    },
+    {
+      "text": "Miracles follow my words.",
+      "bibleVerseText": "These signs will accompany those who believe.",
+      "book": "Mark 16:17",
+      "category": "miracles"
+    },
+    {
+      "text": "I live in the miraculous zone.",
+      "bibleVerseText": "Nothing is impossible with God.",
+      "book": "Luke 1:37",
+      "category": "miracles"
+    },
+    {
+      "text": "Supernatural is my natural.",
+      "bibleVerseText": "You will do even greater things than these.",
+      "book": "John 14:12",
+      "category": "miracles"
+    },
+    {
+      "text": "I war from the throne room.",
+      "bibleVerseText": "We are seated with him in heavenly places.",
+      "book": "Ephesians 2:6",
+      "category": "warfare"
+    },
+    {
+      "text": "Hell trembles when I pray.",
+      "bibleVerseText": "The gates of hell shall not prevail.",
+      "book": "Matthew 16:18",
+      "category": "warfare"
+    },
+    {
+      "text": "I upgrade spiritually daily.",
+      "bibleVerseText": "We go from glory to glory.",
+      "book": "2 Corinthians 3:18",
+      "category": "spiritualGrowth"
+    },
+    {
+      "text": "My roots go deeper hourly.",
+      "bibleVerseText": "Rooted and built up in him.",
+      "book": "Colossians 2:7",
+      "category": "spiritualGrowth"
     }
   ]
 }
