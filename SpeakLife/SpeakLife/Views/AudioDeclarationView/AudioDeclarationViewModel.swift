@@ -36,7 +36,7 @@ final class AudioDeclarationViewModel: ObservableObject {
     @Published var selectedFilter: Filter = .speaklife
     private let storage = Storage.storage()
     private let fileManager = FileManager.default
-    @AppStorage("shouldClearCachev5") private var shouldClearCachev5 = true
+    @AppStorage("lastCachedAudioVersion") private var lastCachedAudioVersion = 0
     private let service: APIService = LocalAPIClient()
     private var cancellables = Set<AnyCancellable>()
     
@@ -84,10 +84,9 @@ final class AudioDeclarationViewModel: ObservableObject {
     }
     
     func fetchAudio(version: Int) {
-        if shouldClearCachev5 {
+        if version > lastCachedAudioVersion {
             clearCache()
             clearAudioDeclarationsCache()
-            shouldClearCachev5 = false
         }
         service.audio(version: version) { [weak self] welcome, audios in
             DispatchQueue.main.async { [weak self] in
@@ -107,6 +106,9 @@ final class AudioDeclarationViewModel: ObservableObject {
                 magnify = self.allAudioFiles.filter { $0.tag == "magnify" }
                 praise = self.allAudioFiles.filter { $0.tag == "praise" }
                // setFilters(welcome)
+                
+                // Update the cached version after successful fetch
+                self.lastCachedAudioVersion = version
             }
         }
     }
@@ -120,11 +122,6 @@ final class AudioDeclarationViewModel: ObservableObject {
 //    }
     
     func fetchAudio(for item: AudioDeclaration, completion: @escaping (Result<URL, Error>) -> Void) {
-        if shouldClearCachev5 {
-            clearCache()
-            clearAudioDeclarationsCache()
-            shouldClearCachev5 = false
-        }
         print(item.id, "RWRW")
            // Get the local URL for the file
            let localURL = cachedFileURL(for: item.id)
