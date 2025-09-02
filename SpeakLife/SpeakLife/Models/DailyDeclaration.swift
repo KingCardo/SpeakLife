@@ -12,7 +12,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     static func < (lhs: DeclarationCategory, rhs: DeclarationCategory) -> Bool {
         return  lhs.name <= rhs.name
     }
-    
+    case godsheart
     case destiny
     case faith
    
@@ -80,6 +80,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .myOwn,
 //        .blood,
 //        .nameOfJesus,
+        .godsheart,
         .destiny,
         .grace,
         .faith,
@@ -197,8 +198,9 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     
     static var categoryOrder: [DeclarationCategory] = [
-//        .blood,
-//        .nameOfJesus,
+        .godsheart,
+        .blood,
+        .nameOfJesus,
         .destiny,
         .grace,
         .faith,
@@ -243,6 +245,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     var name: String {
         switch self {
        // case .selfcontrol: return "Self Control"
+        case .godsheart: return "God's Heart"
         case .spiritualGrowth: return "Spiritual Growth"
         case .obedience: return "Surrender & Obedience"
         case .innerHealing: return "Emotional & Inner Healing"

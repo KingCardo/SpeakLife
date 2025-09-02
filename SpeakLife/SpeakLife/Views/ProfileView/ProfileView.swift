@@ -91,14 +91,14 @@ struct ProfileView: View {
                     
                     
                     Section(header: Text("Yours").font(.caption)) {
-                        
+                        AbbasLoveRow
                         if appState.onBoardingTest {
                             createYourOwnRow
                             quizRow
                           //  streakRow
                           // prayerRow
                         }
-                        AbbasLoveRow
+                        
                         remindersRow
                      //   widgetPreferencesRow
                      //   emailsRow
