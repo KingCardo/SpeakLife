@@ -201,13 +201,11 @@ final class LocalAPIClient: APIService {
             fetchDeclarationData(tryLocal: false) { [weak self] data in
                 self?.lastRemoteFetchDate = Date()
                 if let data = data {
-                    do {
-                        let welcome = try JSONDecoder().decode(Welcome.self, from: data)
-                        let declarations = Set(welcome.declarations)
+                    let declarations = self?.decodeDeclarationsSafely(from: data)
+                    if let declarations = declarations, !declarations.isEmpty {
                         self?.localVersion = self?.remoteVersion ?? 2
-                        let array = Array(declarations)
-                        completion(array, nil, true)
-                    } catch {
+                        completion(declarations, nil, true)
+                    } else {
                         self?.fallbackToLocal(completion: completion)
                     }
                 } else {
@@ -220,19 +218,64 @@ final class LocalAPIClient: APIService {
     }
 
     private func fallbackToLocal(completion: @escaping ([Declaration], APIError?, Bool) -> Void) {
-        fetchDeclarationData(tryLocal: true) { data in
+        fetchDeclarationData(tryLocal: true) { [weak self] data in
             if let data = data {
-                do {
-                    let welcome = try JSONDecoder().decode(Welcome.self, from: data)
-                    let declarations = Set(welcome.declarations)
-                    let array = Array(declarations)
-                    completion(array, nil, false)
-                } catch {
-                    print(error, "Failed to decode local")
+                let declarations = self?.decodeDeclarationsSafely(from: data)
+                if let declarations = declarations, !declarations.isEmpty {
+                    completion(declarations, nil, false)
+                } else {
+                    print("Failed to decode any declarations from local data")
                     completion([], APIError.failedDecode, false)
                 }
             } else {
                 completion([], APIError.failedDecode, false)
+            }
+        }
+    }
+    
+    private func decodeDeclarationsSafely(from data: Data) -> [Declaration]? {
+        do {
+            // First try to decode the full structure
+            let welcome = try JSONDecoder().decode(Welcome.self, from: data)
+            let declarations = Set(welcome.declarations)
+            return Array(declarations)
+        } catch {
+            // If that fails, try partial decoding
+            print("Standard decoding failed, attempting partial decoding: \(error)")
+            
+            do {
+                // Parse JSON as dictionary to extract individual declarations
+                guard let jsonObject = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                      let declarationsArray = jsonObject["declarations"] as? [[String: Any]] else {
+                    return nil
+                }
+                
+                var successfulDeclarations: [Declaration] = []
+                var failedCount = 0
+                
+                // Try to decode each declaration individually
+                for (index, declarationDict) in declarationsArray.enumerated() {
+                    do {
+                        let declarationData = try JSONSerialization.data(withJSONObject: declarationDict)
+                        let declaration = try JSONDecoder().decode(Declaration.self, from: declarationData)
+                        successfulDeclarations.append(declaration)
+                    } catch {
+                        failedCount += 1
+                        // Log which declaration failed and why
+                        let category = declarationDict["category"] as? String ?? "unknown"
+                        print("Failed to decode declaration at index \(index) with category '\(category)': \(error)")
+                    }
+                }
+                
+                print("Successfully decoded \(successfulDeclarations.count) declarations, failed \(failedCount)")
+                
+                // Return unique declarations
+                let uniqueDeclarations = Set(successfulDeclarations)
+                return Array(uniqueDeclarations)
+                
+            } catch {
+                print("Partial decoding also failed: \(error)")
+                return nil
             }
         }
     }
