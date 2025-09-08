@@ -120,11 +120,18 @@ class VoiceInputManager: NSObject, ObservableObject {
             return
         }
         
-        // If already listening or engine is running, stop first
-        if isListening || audioEngine.isRunning || recognitionTask != nil {
-            stopListening()
-            // Wait longer for cleanup to complete
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+        // If already listening, just return
+        if isListening {
+            print("🎤 Voice Input: Already listening, ignoring start request")
+            return
+        }
+        
+        // Clean stop if engine is running or task exists
+        if audioEngine.isRunning || recognitionTask != nil {
+            print("🎤 Voice Input: Cleaning up previous session")
+            cleanupPreviousSession()
+            // Shorter delay for better responsiveness
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.performStartListening()
             }
             return
@@ -132,14 +139,29 @@ class VoiceInputManager: NSObject, ObservableObject {
         
         // Check if we're in a transitional state
         if voiceInputState == .processing || voiceInputState == .transcribing {
+            print("🎤 Voice Input: Waiting for transition to complete")
             // Wait for current operation to complete
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 self.startListening()
             }
             return
         }
         
         performStartListening()
+    }
+    
+    private func cleanupPreviousSession() {
+        // Immediate cleanup without state changes
+        recognitionRequest?.endAudio()
+        recognitionRequest = nil
+        recognitionTask?.cancel()
+        recognitionTask = nil
+        
+        if audioEngine.isRunning {
+            audioEngine.inputNode.removeTap(onBus: 0)
+            audioEngine.stop()
+            audioEngine.reset()
+        }
     }
     
     private func performStartListening() {
@@ -189,11 +211,10 @@ class VoiceInputManager: NSObject, ObservableObject {
     func stopListening() {
         guard isListening else { return }
         
+        print("🎤 Voice Input: Stopping listening session")
+        
         // Set state first to prevent new operations
         isListening = false
-        
-        // Stop recognition immediately but gracefully
-        recognitionRequest?.endAudio()
         
         // Clean up timers immediately
         recordingTimer?.invalidate()
@@ -201,15 +222,14 @@ class VoiceInputManager: NSObject, ObservableObject {
         audioLevelTimer?.invalidate()
         audioLevelTimer = nil
         
-        // Stop audio engine immediately with proper cleanup
+        // Stop audio engine first before ending recognition
         if audioEngine.isRunning {
-            // Remove the tap first to avoid crashes
-            let inputNode = audioEngine.inputNode
-            inputNode.removeTap(onBus: 0)
-            
-            // Stop the engine
             audioEngine.stop()
+            audioEngine.inputNode.removeTap(onBus: 0)
         }
+        
+        // Then end recognition to capture any final results
+        recognitionRequest?.endAudio()
         
         // Wait a brief moment for final results, then do final cleanup
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
@@ -278,39 +298,39 @@ class VoiceInputManager: NSObject, ObservableObject {
     
     // MARK: - Private Implementation
     private func setupAudioSession() throws {
-        // Always deactivate first to ensure clean state
+        // Deactivate first for clean state
         do {
-            if audioSession.category != .playAndRecord {
-                try audioSession.setActive(false, options: .notifyOthersOnDeactivation)
-            }
+            try audioSession.setActive(false, options: .notifyOthersOnDeactivation)
         } catch {
             print("🎤 Voice Input: Warning - Could not deactivate audio session: \(error)")
         }
         
-        // Enhanced audio session for better voice recognition
-        try audioSession.setCategory(
-            .playAndRecord,
-            mode: .measurement, // Better quality than .spokenAudio for recognition
-            options: [.defaultToSpeaker, .allowBluetooth, .mixWithOthers]
-        )
-        
-        // Configure for optimal voice recording quality
-        try audioSession.setPreferredSampleRate(48000) // Higher sample rate for better clarity
-        try audioSession.setPreferredIOBufferDuration(0.005) // Lower latency
-        
-        // Enable audio processing for noise reduction
-        if #available(iOS 15.0, *) {
-            try audioSession.setSupportsMultichannelContent(true)
-        }
-        
-        // Activate with proper error handling
+        // Use speech mode for better recognition
         do {
+            try audioSession.setCategory(
+                .playAndRecord,
+                mode: .spokenAudio, // Optimized for speech
+                options: [.defaultToSpeaker, .allowBluetooth]
+            )
+            
+            // Set reasonable quality without overdoing it
+            try audioSession.setPreferredSampleRate(16000) // Standard for speech
+            try audioSession.setPreferredIOBufferDuration(0.01) // Balanced latency
+            
             try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+            print("🎤 Voice Input: Audio session configured successfully")
+            
         } catch {
-            print("🎤 Voice Input: Error activating audio session: \(error)")
-            // Try once more with basic settings
-            try audioSession.setCategory(.playAndRecord, mode: .default)
-            try audioSession.setActive(true)
+            print("🎤 Voice Input: Failed with enhanced settings: \(error)")
+            // Fallback to most basic configuration
+            do {
+                try audioSession.setCategory(.playAndRecord, mode: .default)
+                try audioSession.setActive(true)
+                print("🎤 Voice Input: Using fallback audio configuration")
+            } catch {
+                print("🎤 Voice Input: Critical error - cannot configure audio: \(error)")
+                throw error
+            }
         }
     }
     
@@ -380,18 +400,23 @@ class VoiceInputManager: NSObject, ObservableObject {
                         self.lastTranscriptionTime = Date()
                         self.retryCount = 0
                         self.voiceInputState = .completed
+                        print("🎤 Voice Input: Final transcription: \(newText.prefix(50))...")
                     } else if newText != self.transcribedText {
-                        // Partial result - update if confidence is reasonable or if it's significantly longer
-                        let significantlyLonger = newText.count > self.transcribedText.count + 5
+                        // Partial result - be more accepting of transcriptions
+                        let significantlyLonger = newText.count > self.transcribedText.count + 3
+                        let hasContent = newText.count > 2
                         
-                        if self.transcriptionConfidence > 0.3 || significantlyLonger || self.retryCount >= self.maxRetries {
+                        // Lower threshold to 0.15 for better acceptance
+                        if self.transcriptionConfidence > 0.15 || significantlyLonger || hasContent {
                             self.transcribedText = self.enhanceTranscription(newText)
                             self.lastTranscriptionTime = Date()
                             self.retryCount = 0
                             self.voiceInputState = .transcribing
-                        } else if self.transcriptionConfidence <= 0.3 && self.retryCount < self.maxRetries {
-                            // Low confidence - might retry
+                            print("🎤 Voice Input: Partial transcription (confidence: \(self.transcriptionConfidence)): \(newText.prefix(50))...")
+                        } else if self.transcriptionConfidence <= 0.15 && self.retryCount < self.maxRetries {
+                            // Very low confidence - might retry
                             self.retryCount += 1
+                            print("🎤 Voice Input: Low confidence, retry \(self.retryCount)")
                         }
                     }
                 }
@@ -405,10 +430,10 @@ class VoiceInputManager: NSObject, ObservableObject {
         // Setup audio input with optimized settings
         let inputNode = audioEngine.inputNode
         
-        // Request higher quality audio format
+        // Use standard format for speech recognition
         let recordingFormat = AVAudioFormat(
             commonFormat: .pcmFormatFloat32,
-            sampleRate: 48000, // Higher sample rate
+            sampleRate: 16000, // Standard for speech recognition
             channels: 1,
             interleaved: false
         ) ?? inputNode.outputFormat(forBus: 0)

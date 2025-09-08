@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "filters": ["godsHeart", "magnify","speaklife", "psalm91", "divineHealth", "growWithJesus", "declarations", "gospel", "meditation", "bedtimeStories"],
+    "filters": ["favorites", "speaklife", "declarations","speaklife", "praise", "godsHeart", "growWithJesus", "psalm91", "divineHealth", "magnify", "gospel", "meditation", "bedtimeStories"],
     "audios": [
         {
             "id": "praiseWinsWars-ep1.mp3",

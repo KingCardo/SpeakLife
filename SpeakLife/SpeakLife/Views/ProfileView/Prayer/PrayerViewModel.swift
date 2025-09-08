@@ -32,30 +32,31 @@ final class PrayerViewModel: ObservableObject {
     
     init(service: PrayerService = PrayerServiceClient()) {
         self.service = service
+        buildSectionData()
     }
     
     func fetchPrayers() async {
         guard prayers.isEmpty else { return }
-        let prayers = await service.fetchPrayers()
-        self.prayers = prayers
+       // let prayers = await service.fetchPrayers()
+       // self.prayers = prayers
     }
     
     private func buildSectionData()  {
-        guard !prayers.isEmpty else {
-            DispatchQueue.main.async { [weak self] in
-                self?.hasError = true
-            }
-            return
-        }
+//        guard !prayers.isEmpty else {
+//            DispatchQueue.main.async { [weak self] in
+//                self?.hasError = true
+//            }
+//            return
+//        }
     
-        for category in DeclarationCategory.allCases {
-            let prayers = prayers.filter { $0.category == category }
-            DispatchQueue.main.async { [weak self] in
-                if !prayers.isEmpty {
-                    self?.sectionData.append(SectionData(title: category.categoryTitle, items: prayers))
-                }
-            }
-        }
+//        for category in DeclarationCategory.allCases {
+//            let prayers = prayers.filter { $0.category == category }
+//            DispatchQueue.main.async { [weak self] in
+//                if !prayers.isEmpty {
+//                    self?.sectionData.append(SectionData(title: category.categoryTitle, items: prayers))
+//                }
+//            }
+//        }
         DispatchQueue.main.async { [weak self] in
             self?.sectionData.insert(SectionData(title: "God's Protection", items: [Prayer(prayerText: psalm91NLT, category: .godsprotection, isPremium: false)]), at: 0)
         }
@@ -67,16 +68,15 @@ final class PrayerViewModel: ObservableObject {
 }
 let salvationPrayer = """
 
-Lord Jesus
+Lord Jesus,
 
-I repent of all my sins past, present, and future
+I turn from my sins — past, present, and future.
 
-Come into my heart and be my Lord and Savior!
+Come into my heart. Be my Lord and my Savior.
 
-Thank you for dying for my sins and welcoming me into your Kingdom
+Thank You for dying for me, forgiving me, and welcoming me into Your Kingdom,
 
-where I can live with you for eternity!
-
+where I will live with You forever. Amen!
 
 
 

@@ -66,18 +66,18 @@ struct PricingOptionView: View {
             ZStack {
                 HStack(spacing: 16) {
                     // Selection indicator
-                    ZStack {
-                        Circle()
-                            .fill(option.isSelected ? 
-                                   Color.black : Color.white)
-                            .frame(width: 24, height: 24)
-                        
-                        if option.isSelected {
-                            Image(systemName: "checkmark")
-                                .font(.system(size: 12, weight: .bold))
-                                .foregroundColor(.white)
-                        }
-                    }
+//                    ZStack {
+//                        Circle()
+//                            .fill(option.isSelected ? 
+//                                   Color.black : Color.white)
+//                            .frame(width: 24, height: 24)
+//                        
+//                        if option.isSelected {
+//                            Image(systemName: "checkmark")
+//                                .font(.system(size: 12, weight: .bold))
+//                                .foregroundColor(.white)
+//                        }
+//                    }
                     
                     VStack(alignment: .leading, spacing: 4) {
                         HStack(spacing: 8) {
@@ -286,12 +286,12 @@ struct FloatingCTAButton: View {
     }
     
     private var ctaTitle: String {
-        isYearlyPlan ? "Begin My Breakthrough • Free 7 Days" : "Start Your Transformation"
+        isYearlyPlan ? "Try it Free" : "Start Your Transformation"
     }
     
     private var ctaSubtitle: String {
-        let priceText = isYearlyPlan ? "Then \(displayPrice)" : displayPrice
-        return "\(priceText) • Cancel anytime"
+        //let priceText = isYearlyPlan ? "Then \(displayPrice)" : displayPrice
+        return "Begin My Breakthrough"//"\(priceText) • Cancel anytime"
     }
  }
 
@@ -328,9 +328,13 @@ struct OptimizedSubscriptionView: View {
     
     private let valueProps = [
        // ValueProposition(icon: "shield.fill", text: "Trade Fear for Faith"),
-        ValueProposition(icon: "brain.head.profile", text: "Rewire your mind & live in victory"),
-        ValueProposition(icon: "leaf.fill", text: "Unlock Heaven’s power"),
-        ValueProposition(icon: "sparkles", text: "Walk in peace, protection & unshakable confidence"),
+        ValueProposition(icon: "brain.head.profile", text: "Renew your mind to"),
+        ValueProposition(icon: "heart.fill", text: "Experience God's love"),
+        ValueProposition(icon: "bandage.fill", text: "Walk in Healing"),
+        ValueProposition(icon: "leaf.circle.fill", text: "Divine Peace"),
+        ValueProposition(icon: "shield.checkered", text: "Live in Protection"),
+        ValueProposition(icon: "drop.fill", text: "Walk in Overflow"),
+        ValueProposition(icon: "trophy.fill", text: "Stand in Victory"),
         
     ]
     
@@ -522,15 +526,15 @@ struct OptimizedSubscriptionView: View {
     
     private var headlineSection: some View {
         VStack(spacing: 4) {
-            Text("Activate God's")
+            Text("Speak Life. See Miracles.")
                 .font(.system(size: 22, weight: .medium, design: .rounded))
                 .foregroundColor(.white.opacity(0.9))
             
-            Text("Promises In Your Life")
-                .font(.system(size: 28, weight: .bold, design: .rounded))
-                .foregroundColor(.white)
+//            Text("Cancel anytime.")
+//                .font(.system(size: 28, weight: .bold, design: .rounded))
+//                .foregroundColor(.white)
             
-            Text("Thousands are already speaking life and seeing miracles.")
+            Text("Join 50K+ already speaking life and seeing miracles.")
                 .font(.system(size: 14, weight: .medium, design: .rounded))
                 .foregroundColor(.white.opacity(0.8))
                 .padding(.top, 4)
@@ -586,40 +590,40 @@ struct OptimizedSubscriptionView: View {
     private var pricingSection: some View {
         VStack(spacing: 12) {
             // Yearly option with Most Popular badge and free trial
-        
+            Spacer().frame(height: 8)
+            
+//            // Weekly option
+//            PricingOptionView(
+//                option: PricingOption(
+//                    product: subscriptionStore.currentOfferedWeekly,
+//                    isSelected: currentSelection == subscriptionStore.currentOfferedWeekly,
+//                    isYearly: false,
+//                    displayPrice: weeklyPrice,
+//                    monthlyEquivalent: "Cancel anytime",
+//                    savingsPercentage: nil,
+//                    isMostPopular: false
+//                ),
+//                action: selectWeekly,
+//                showingWeeklyMonthly: true
+//            )
+//            .padding(.horizontal, 20)
+            
             
             // Weekly option
-            PricingOptionView(
-                option: PricingOption(
-                    product: subscriptionStore.currentOfferedWeekly,
-                    isSelected: currentSelection == subscriptionStore.currentOfferedWeekly,
-                    isYearly: false,
-                    displayPrice: weeklyPrice,
-                    monthlyEquivalent: "Cancel anytime",
-                    savingsPercentage: nil,
-                    isMostPopular: false
-                ),
-                action: selectWeekly,
-                showingWeeklyMonthly: true
-            )
-            .padding(.horizontal, 20)
-            
-            
-            // Weekly option
-            PricingOptionView(
-                option: PricingOption(
-                    product: subscriptionStore.currentOfferedPremiumMonthly,
-                    isSelected: currentSelection == subscriptionStore.currentOfferedPremiumMonthly,
-                    isYearly: false,
-                    displayPrice: monthlyPrice,
-                    monthlyEquivalent: "Cancel anytime",
-                    savingsPercentage: nil,
-                    isMostPopular: false
-                ),
-                action: selectMonthly,
-                showingWeeklyMonthly: true
-            )
-            .padding(.horizontal, 20)
+//            PricingOptionView(
+//                option: PricingOption(
+//                    product: subscriptionStore.currentOfferedPremiumMonthly,
+//                    isSelected: currentSelection == subscriptionStore.currentOfferedPremiumMonthly,
+//                    isYearly: false,
+//                    displayPrice: monthlyPrice,
+//                    monthlyEquivalent: "Cancel anytime",
+//                    savingsPercentage: nil,
+//                    isMostPopular: false
+//                ),
+//                action: selectMonthly,
+//                showingWeeklyMonthly: true
+//            )
+//            .padding(.horizontal, 20)
             
             PricingOptionView(
                 option: PricingOption(
@@ -662,11 +666,11 @@ struct OptimizedSubscriptionView: View {
                 
                 trustIndicators
                 
-                Button(action: dismiss.callAsFunction) {
-                    Text("No thanks")
-                        .font(.system(size: 13, weight: .medium, design: .rounded))
-                        .foregroundColor(.white.opacity(0.4))
-                }
+//                Button(action: dismiss.callAsFunction) {
+//                    Text("No thanks")
+//                        .font(.system(size: 13, weight: .medium, design: .rounded))
+//                        .foregroundColor(.white.opacity(0.4))
+//                }
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 16)
@@ -689,7 +693,7 @@ struct OptimizedSubscriptionView: View {
                     Image(systemName: "checkmark.circle.fill")
                         .font(.system(size: 12))
                         .foregroundColor(Color(red: 0.2, green: 0.8, blue: 0.2))
-                    Text("7-day free trial")
+                    Text("No Payment Due Now")
                         .font(.system(size: 11, weight: .medium, design: .rounded))
                         .foregroundColor(.white.opacity(0.8))
                 }

@@ -3,7 +3,7 @@
 //  SpeakLife
 //
 //  Progressive daily checklist models for enhanced streak feature
-//
+//  
 
 import Foundation
 import SwiftUI
@@ -310,7 +310,7 @@ struct TaskLibrary {
             type: .speak,
             difficulty: .beginner,
             minimumStreakDay: 1,
-            estimatedMinutes: 3
+            estimatedMinutes: 2
         ),
         DailyTask(
             id: "read_devotional",
@@ -326,7 +326,7 @@ struct TaskLibrary {
         DailyTask(
             id: "listen_audio",
             title: "Listen to Audio Affirmation",
-            description: "Let truth sink deep through audio content",
+            description: "Faith comes by hearing God's Word",
             icon: "headphones",
             category: .foundation,
             type: .listen,

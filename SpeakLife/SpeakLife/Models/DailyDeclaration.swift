@@ -80,7 +80,7 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
         .myOwn,
 //        .blood,
 //        .nameOfJesus,
-        .godsheart,
+//        .godsheart,
         .destiny,
         .grace,
         .faith,
@@ -198,9 +198,9 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     
     static var categoryOrder: [DeclarationCategory] = [
-        .godsheart,
-        .blood,
-        .nameOfJesus,
+//        .godsheart,
+//        .blood,
+//        .nameOfJesus,
         .destiny,
         .grace,
         .faith,

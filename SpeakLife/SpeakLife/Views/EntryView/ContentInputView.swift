@@ -136,11 +136,11 @@ struct ContentInputView: View {
             animatePrompt = true
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-            withAnimation(.easeInOut(duration: 0.6)) {
-                showVoiceHint = true
-            }
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+//            withAnimation(.easeInOut(duration: 0.6)) {
+//                showVoiceHint = true
+//            }
+//        }
     }
     
     private func hideKeyboard() {

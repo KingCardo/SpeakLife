@@ -53,17 +53,17 @@ struct UpNextCell: View {
                                 .font(.system(size: 13))
                                 .foregroundColor(.gray)
                             
-                            if let listenerCount = listenerCount {
-                                Text("•")
-                                    .font(.caption)
-                                    .foregroundColor(.gray)
-                                Image(systemName: "headphones")
-                                    .font(.caption)
-                                    .foregroundColor(.gray)
-                                Text(listenerCount)
-                                    .font(.system(size: 13))
-                                    .foregroundColor(.gray)
-                            }
+//                            if let listenerCount = listenerCount {
+//                                Text("•")
+//                                    .font(.caption)
+//                                    .foregroundColor(.gray)
+//                                Image(systemName: "headphones")
+//                                    .font(.caption)
+//                                    .foregroundColor(.gray)
+//                                Text(listenerCount)
+//                                    .font(.system(size: 13))
+//                                    .foregroundColor(.gray)
+//                            }
                             
                             if item.isPremium, !subscriptionStore.isPremium {
                                 Image(systemName: "lock")
@@ -107,19 +107,19 @@ struct UpNextCell: View {
                 .onAppear {
                     // Fetch listener count for this audio
                     print("🎵 UpNextCell appearing for: \(item.id)")
-                    Task {
-                        let metrics = await metricsService.fetchMetrics(for: [item.id], contentType: .audio)
-                        print("📊 Metrics received for \(item.id): \(metrics)")
-                        if let count = metrics[item.id] {
-                            let formatted = ListenerMetricsService.formatListenerCount(count)
-                            print("📝 Setting listenerCount to: \(formatted ?? "nil")")
-                            await MainActor.run {
-                                listenerCount = formatted
-                            }
-                        } else {
-                            print("❌ No count found for \(item.id)")
-                        }
-                    }
+//                    Task {
+//                        let metrics = await metricsService.fetchMetrics(for: [item.id], contentType: .audio)
+//                        print("📊 Metrics received for \(item.id): \(metrics)")
+//                        if let count = metrics[item.id] {
+//                            let formatted = ListenerMetricsService.formatListenerCount(count)
+//                            print("📝 Setting listenerCount to: \(formatted ?? "nil")")
+//                            await MainActor.run {
+//                                listenerCount = formatted
+//                            }
+//                        } else {
+//                            print("❌ No count found for \(item.id)")
+//                        }
+//                    }
                 }
 
 

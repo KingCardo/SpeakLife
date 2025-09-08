@@ -77,12 +77,12 @@ struct FullScreenEntryView: View {
                 .padding(.bottom, 16)
                 
                 // Voice input toolbar
-                VoiceInputToolbar(
-                    voiceManager: voiceManager,
-                    viewModel: viewModel
-                )
-                .padding(.horizontal, 16)
-                .padding(.bottom, 8)
+//                VoiceInputToolbar(
+//                    voiceManager: voiceManager,
+//                    viewModel: viewModel
+//                )
+//                .padding(.horizontal, 16)
+//                .padding(.bottom, 8)
                 
                 // Save/Cancel toolbar
                 EntryActionToolbar(
@@ -116,15 +116,15 @@ struct FullScreenEntryView: View {
                 keyboardHeight = height
             }
         }
-        .onAppear {
-            setupVoiceInput()
-        }
-        .onDisappear {
-            cleanupVoiceInput()
-        }
-        .onChange(of: voiceManager.transcribedText) { newText in
-            handleVoiceTranscription(newText)
-        }
+//        .onAppear {
+//            setupVoiceInput()
+//        }
+//        .onDisappear {
+//            cleanupVoiceInput()
+//        }
+//        .onChange(of: voiceManager.transcribedText) { newText in
+//            handleVoiceTranscription(newText)
+//        }
         .alert("Discard Changes?", isPresented: $showingDiscardAlert) {
             Button("Discard", role: .destructive) {
                 viewModel.clearDraft()
@@ -160,14 +160,23 @@ struct FullScreenEntryView: View {
         let trimmedNew = newText.trimmingCharacters(in: .whitespacesAndNewlines)
         let currentText = viewModel.text.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        // Check if new text is different and not a subset of current text
-        guard trimmedNew != currentText && trimmedNew.count > 3 else { return }
+        // Accept even short transcriptions (1 character or more)
+        guard trimmedNew != currentText && trimmedNew.count > 0 else { return }
         
         // Append transcription when voice input completes or when stopping
         if voiceManager.voiceInputState == .completed || !voiceManager.isListening {
-            // Check if this text isn't already included to prevent duplicates
-            if currentText.isEmpty || !currentText.lowercased().contains(trimmedNew.lowercased()) {
-                viewModel.appendVoiceText(trimmedNew)
+            // More lenient duplicate check - only check exact matches
+            if currentText.isEmpty || currentText != trimmedNew {
+                // If the new text starts with the current text, just append the difference
+                if trimmedNew.starts(with: currentText) && currentText.count > 0 {
+                    let difference = String(trimmedNew.dropFirst(currentText.count)).trimmingCharacters(in: .whitespaces)
+                    if !difference.isEmpty {
+                        viewModel.appendVoiceText(difference)
+                    }
+                } else if !currentText.contains(trimmedNew) {
+                    // Only append if it's not already contained
+                    viewModel.appendVoiceText(trimmedNew)
+                }
                 
                 // Clear after a short delay to ensure it's processed
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

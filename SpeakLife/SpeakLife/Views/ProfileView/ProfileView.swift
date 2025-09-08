@@ -96,7 +96,7 @@ struct ProfileView: View {
                             createYourOwnRow
                             quizRow
                           //  streakRow
-                          // prayerRow
+                           prayerRow
                         }
                         
                         remindersRow

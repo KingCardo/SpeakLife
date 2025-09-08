@@ -42,18 +42,18 @@ struct OfferPageView: View {
     @State var currentSelection: Product?
     
     @State private var testimonialIndex = 0
-    private let testimonials = [
-        "I was suicidal...now I wake up with purpose - Sarah M.",
-        "My anxiety disappeared after 7 days of declarations - James K.",
-        "Saved my marriage when nothing else worked - Linda P.",
-        "Depression broke after 21 days...I'm finally free! - Marcus T.",
-        "From panic attacks to peace in 2 weeks - Rachel D.",
-        "My teenager started speaking life and everything changed - Mom of 3",
-        "Healed from 10 years of trauma through daily declarations - David L.",
-        "Doctor said my healing was miraculous after using this - Maria G.",
-        "Went from bankruptcy to breakthrough in 30 days - Chris W.",
-        "My faith went from dead to on fire! - Ashley R.",
-    ]
+//    private let testimonials = [
+//        "I was suicidal...now I wake up with purpose - Sarah M.",
+//        "My anxiety disappeared after 7 days of declarations - James K.",
+//        "Saved my marriage when nothing else worked - Linda P.",
+//        "Depression broke after 21 days...I'm finally free! - Marcus T.",
+//        "From panic attacks to peace in 2 weeks - Rachel D.",
+//        "My teenager started speaking life and everything changed - Mom of 3",
+//        "Healed from 10 years of trauma through daily declarations - David L.",
+//        "Doctor said my healing was miraculous after using this - Maria G.",
+//        "Went from bankruptcy to breakthrough in 30 days - Chris W.",
+//        "My faith went from dead to on fire! - Ashley R.",
+//    ]
     
     var body: some View {
         GeometryReader { reader in
@@ -91,7 +91,7 @@ struct OfferPageView: View {
                     )
                     // Countdown Timer
                     VStack(spacing: 2) {
-                        Text("Your One-Time Offer")
+                        Text("Your Special Offer")
                             .font(.system(size: 24, weight: .medium, design: .rounded))
                             .foregroundColor(.white.opacity(0.8))
                         Text("\(formatTime(countdown))")
@@ -101,13 +101,13 @@ struct OfferPageView: View {
                     .padding(.bottom, 4)
                     
                     VStack(spacing: 4) {
-                        Text("50% off")
+                        Text("40% off")
                             .font(.system(size: 48, weight: .heavy, design: .rounded))
                             .foregroundColor(.white)
                         
-                        Text("Lifetime Discount")
-                            .font(.system(size: 28, weight: .semibold, design: .rounded))
-                            .foregroundColor(.white)
+//                        Text("Lifetime Discount")
+//                            .font(.system(size: 28, weight: .semibold, design: .rounded))
+//                            .foregroundColor(.white)
                     }
                     
                     if declarationStore.isPurchasing {
@@ -157,23 +157,23 @@ struct OfferPageView: View {
                     }
                     .padding(.top, 10)
                     
-                    Group {
-                        Text("\"\(testimonials[testimonialIndex])\"")
-                            .font(.system(size: 15, weight: .medium, design: .rounded))
-                            .foregroundColor(.white.opacity(0.9))
-                            .multilineTextAlignment(.center)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .transition(.slideFadeFromRight)
-                            .id(testimonialIndex)
-                    }
-                    .animation(.easeInOut(duration: 0.5), value: testimonialIndex)
+//                    Group {
+//                        Text("\"\(testimonials[testimonialIndex])\"")
+//                            .font(.system(size: 15, weight: .medium, design: .rounded))
+//                            .foregroundColor(.white.opacity(0.9))
+//                            .multilineTextAlignment(.center)
+//                            .fixedSize(horizontal: false, vertical: true)
+//                            .transition(.slideFadeFromRight)
+//                            .id(testimonialIndex)
+//                    }
+//                    .animation(.easeInOut(duration: 0.5), value: testimonialIndex)
                     
                     VStack(spacing: 8) {
                         Button(action: {
                             makePurchase(iap: subscriptionStore.discountSubscription)
                         }) {
                             VStack(spacing: 4) {
-                                Text("Claim My 50% Off Only $29.99/yr")
+                                Text("Claim My Discount")
                                     .font(.system(size: 18, weight: .bold))
                                 //Text("Join 50,000+ believers transforming daily")
                                  //   .font(.system(size: 12, weight: .regular))
@@ -222,7 +222,7 @@ struct OfferPageView: View {
                 withAnimation(Animation.easeInOut(duration: 1.2).repeatForever(autoreverses: true)) {
                     animateCTA = true
                 }
-                startTestimonialRotation()
+               // startTestimonialRotation()
                 self.currentSelection = subscriptionStore.currentOfferedDiscount
             }
         }
@@ -274,13 +274,13 @@ struct OfferPageView: View {
         }
     }
     
-    private func startTestimonialRotation() {
-        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { _ in
-            withAnimation {
-                testimonialIndex = (testimonialIndex + 1) % testimonials.count
-            }
-        }
-    }
+//    private func startTestimonialRotation() {
+//        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { _ in
+//            withAnimation {
+//                testimonialIndex = (testimonialIndex + 1) % testimonials.count
+//            }
+//        }
+//    }
 }
 
 //        "I speak life over myself every morning now \nit’s changed everything.",

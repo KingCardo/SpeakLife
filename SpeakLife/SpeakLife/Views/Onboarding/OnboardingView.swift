@@ -86,16 +86,18 @@ struct OnboardingView: View  {
                 .tag(Tab.victorious)
 
                 IntroTipScene(
-                    title: "Live From a Higher Place",
+                    title: "Planted to Prosper Through Every Storm",
                     bodyText: """
-                    Jesus gave you access to a Kingdom that’s unshakable.
-
-                    Storms may come, but His Word anchors you
-
-                    Live unshaken. Live from Heaven's view.
+                    Life's storms come to everyone — but here's the revelation:
+                    
+                    Those planted in God's Word don't just survive, they thrive.
+                    
+                    While others are shaken, you'll stand firm. While others fear, you'll flourish.
+                    
+                    His promises are your roots. His truth is your anchor.
                     """,
                     subtext: "",
-                    ctaText: "Live Kingdom-Minded ➔",
+                    ctaText: "Get Rooted in His Word ➔",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
@@ -120,19 +122,22 @@ struct OnboardingView: View  {
                 .tag(Tab.demoExperience)
                 
                 IntroTipScene(
-                    title: "How Psalm 91 Turned Setback into Victory",
+                    title: "From Rock Bottom to Breakthrough: My Story",
                     bodyText: """
-                    During COVID, when fear was loud, God led me to Psalm 91. I lost my job, so I started speaking God’s promises daily. His Word gave me ideas, strength, and unshakable peace.
-
-                    I didn’t just recover - I doubled my salary.
+                    When everything collapsed — job gone, fear everywhere, health failing with Bell's palsy — I discovered something:
                     
-                    Later my health was attacked, including Bell’s palsy. I chose God’s report over symptoms. Today I’m fully healed. He proved Himself my Healer, Provider, and Source.
-
-                    I built SpeakLife to put those same weapons in your hands. If He did it for me, He’ll do it for you.
+                    Speaking God's Word daily literally rewired my mind. What seemed impossible became inevitable.
                     
+                    First came peace in chaos. Then divine ideas. Then supernatural provision. Finally, complete healing.
+                    
+                    I didn't just bounce back — I launched forward into purpose.
+                    
+                    That's why I built SpeakLife. These aren't positive thoughts. They're weapons that demolish strongholds and release breakthrough.
+                    
+                    What worked for me will work for you. Same God. Same promises. Your turn.
                     """,
                     subtext: "Franchiz Washington - Founder",
-                    ctaText: "Use These Same Promises →",
+                    ctaText: "Activate My Breakthrough →",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
