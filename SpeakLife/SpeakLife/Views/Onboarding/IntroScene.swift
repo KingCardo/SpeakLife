@@ -85,7 +85,7 @@ struct IntroTipScene: View {
 
                 Spacer().frame(height: appState.onBoardingTest ? size.height * 0.04 : 24)
                 
-                VStack {
+                VStack(spacing: 24) {
                     
                     Text(bodyText)
                         .font(Font.custom("AppleSDGothicNeo-Regular", size: 18, relativeTo: .body))

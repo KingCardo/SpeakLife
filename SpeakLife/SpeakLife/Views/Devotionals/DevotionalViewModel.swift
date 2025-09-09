@@ -21,7 +21,7 @@ final class DevotionalViewModel: ObservableObject, Sendable {
         return "devotional_\(devotionalDate.replacingOccurrences(of: " ", with: "_"))"
     }
     let errorString = "Upgrade to the latest version for Today's Devotional."
-    private let freeCount = 3
+    private let freeCount = 1
     @Published var lastFetchDate: String = ""
     
     var devotionals: [Devotional] = []
@@ -54,16 +54,15 @@ final class DevotionalViewModel: ObservableObject, Sendable {
         }
     }
     
-//    var devotionalsLeft: Int {
-////        if !devotionalLimitReached {
-////            return freeCount - devotionalDictionary.count
-////        }
-//        return 0
-//    }
+    var devotionalsLeft: Int {
+        if !devotionalLimitReached {
+            return freeCount - devotionalDictionary.count
+        }
+        return 0
+    }
     
     var devotionalLimitReached: Bool {
-        return true
-        devotionalDictionary.count > 3
+        devotionalDictionary.count > 1
     }
     
     private func setDevotionalDictionary(date: Date = Date()) {

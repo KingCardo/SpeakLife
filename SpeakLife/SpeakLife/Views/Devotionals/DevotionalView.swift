@@ -28,21 +28,21 @@ struct DevotionalView: View {
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
                 self.presentationMode.wrappedValue.dismiss()
             }
-            .onAppear {
-                // Track devotional view for metrics
-                ListenerMetricsService.shared.trackListen(
-                    contentId: viewModel.devotionalId,
-                    contentType: .devotional
-                )
+//            .onAppear {
+//                // Track devotional view for metrics
+//                ListenerMetricsService.shared.trackListen(
+//                    contentId: viewModel.devotionalId,
+//                    contentType: .devotional
+//                )
                 
                 // Fetch reader count for this devotional
-                Task {
-                    let metrics = await metricsService.fetchMetrics(for: [viewModel.devotionalId], contentType: .devotional)
-                    if let count = metrics[viewModel.devotionalId] {
-                        readerCount = ListenerMetricsService.formatListenerCount(count)
-                    }
-                }
-            }
+//                Task {
+//                    let metrics = await metricsService.fetchMetrics(for: [viewModel.devotionalId], contentType: .devotional)
+//                    if let count = metrics[viewModel.devotionalId] {
+//                        readerCount = ListenerMetricsService.formatListenerCount(count)
+//                    }
+//                }
+         //   }
         
     }
     
@@ -95,9 +95,9 @@ struct DevotionalView: View {
                     VStack(alignment: .leading, spacing: 18) {
                         Spacer()
                             .frame(height: 40)
-//                        if !subscriptionStore.isPremium && !subscriptionStore.isInDevotionalPremium {
-//                            Text("\(viewModel.devotionalsLeft) more free devotionals left")
-//                        }
+                        if !subscriptionStore.isPremium && !subscriptionStore.isInDevotionalPremium {
+                            Text("\(viewModel.devotionalsLeft) more free devotionals left")
+                        }
                     
                         dateLabel
                         HStack {

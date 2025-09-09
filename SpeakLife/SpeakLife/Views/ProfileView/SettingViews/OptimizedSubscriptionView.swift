@@ -286,12 +286,11 @@ struct FloatingCTAButton: View {
     }
     
     private var ctaTitle: String {
-        isYearlyPlan ? "Try it Free" : "Start Your Transformation"
+        isYearlyPlan ? "Activate My Miracle - Try Free" : "Start Speaking Life Now"
     }
     
     private var ctaSubtitle: String {
-        //let priceText = isYearlyPlan ? "Then \(displayPrice)" : displayPrice
-        return "Begin My Breakthrough"//"\(priceText) • Cancel anytime"
+        return "Your Breakthrough Starts Today"
     }
  }
 
@@ -327,15 +326,11 @@ struct OptimizedSubscriptionView: View {
     ]
     
     private let valueProps = [
-       // ValueProposition(icon: "shield.fill", text: "Trade Fear for Faith"),
-        ValueProposition(icon: "brain.head.profile", text: "Renew your mind to"),
-        ValueProposition(icon: "heart.fill", text: "Experience God's love"),
-        ValueProposition(icon: "bandage.fill", text: "Walk in Healing"),
-        ValueProposition(icon: "leaf.circle.fill", text: "Divine Peace"),
-        ValueProposition(icon: "shield.checkered", text: "Live in Protection"),
-        ValueProposition(icon: "drop.fill", text: "Walk in Overflow"),
-        ValueProposition(icon: "trophy.fill", text: "Stand in Victory"),
-        
+        ValueProposition(icon: "sparkles", text: "Speak healing, see it manifest"),
+        ValueProposition(icon: "bolt.fill", text: "Turn setbacks into breakthroughs"),
+        ValueProposition(icon: "leaf.fill", text: "Plant yourself in promises that prosper"),
+        ValueProposition(icon: "crown.fill", text: "Walk in supernatural provision"),
+        ValueProposition(icon: "heart.circle.fill", text: "Peace that silences every fear"),
     ]
     
     var body: some View {
@@ -530,11 +525,7 @@ struct OptimizedSubscriptionView: View {
                 .font(.system(size: 22, weight: .medium, design: .rounded))
                 .foregroundColor(.white.opacity(0.9))
             
-//            Text("Cancel anytime.")
-//                .font(.system(size: 28, weight: .bold, design: .rounded))
-//                .foregroundColor(.white)
-            
-            Text("Join 50K+ already speaking life and seeing miracles.")
+            Text("Get planted so deep in His promises that breakthrough becomes inevitable.")
                 .font(.system(size: 14, weight: .medium, design: .rounded))
                 .foregroundColor(.white.opacity(0.8))
                 .padding(.top, 4)
@@ -729,7 +720,7 @@ struct OptimizedSubscriptionView: View {
                             .foregroundColor(.yellow)
                     }
                 }
-                Text("4.9")
+                Text("3k+ 5 star reviews")
                     .font(.system(size: 14, weight: .bold))
                     .foregroundColor(.white)
             }

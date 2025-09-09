@@ -120,24 +120,32 @@ struct OnboardingView: View  {
                     }
                 }
                 .tag(Tab.demoExperience)
-                
+//                Job lost. Health issues. World in chaos. I had 91 days of savings left.
+//                
+//                So I did one thing differently: Every morning, I spoke Psalm 91 and Prosperity verses until I believed it.
+//                
+//                Day 7: Fear broke. Day 21: Million-dollar ideas came. Day 45: Opportunities appeared from nowhere. Day 91: Total healing, new income streams, unshakeable peace.
+//                
+//                The secret? God's Word doesn't just comfort you — it literally reprograms your reality.
+//                
+//                I built SpeakLife because this revelation shouldn't be hidden. 50,000+ are already experiencing their turnaround.
+//                
+//                Your breakthrough is 5 minutes away. Same words that changed my life are waiting for you.
                 IntroTipScene(
                     title: "From Rock Bottom to Breakthrough: My Story",
                     bodyText: """
-                    When everything collapsed — job gone, fear everywhere, health failing with Bell's palsy — I discovered something:
+                    When everything collapsed — job gone, fear everywhere, health failing with Bell's palsy — I put all my faith into God's promises.
                     
-                    Speaking God's Word daily literally rewired my mind. What seemed impossible became inevitable.
+                    Back against the wall, only God could save me.
                     
-                    First came peace in chaos. Then divine ideas. Then supernatural provision. Finally, complete healing.
+                    First came peace in chaos. Then divine ideas. Then supernatural opporunities. Finally, complete healing.
                     
-                    I didn't just bounce back — I launched forward into purpose.
-                    
-                    That's why I built SpeakLife. These aren't positive thoughts. They're weapons that demolish strongholds and release breakthrough.
+                    I didn't just bounce back — I conquered.
                     
                     What worked for me will work for you. Same God. Same promises. Your turn.
                     """,
                     subtext: "Franchiz Washington - Founder",
-                    ctaText: "Activate My Breakthrough →",
+                    ctaText: "Start My Turnaround Now →",
                     showTestimonials: false,
                     isScholarship: false,
                     size: geometry.size)
