@@ -10,7 +10,7 @@ import AVFoundation
 import Combine
 import MediaPlayer
 
-final class AudioPlayerViewModel: ObservableObject {
+final class AudioPlayerViewModel: NSObject, ObservableObject {
     @Published var isPlaying: Bool = false
     @Published var currentTime: Double = 0
     @Published var duration: Double = 0
@@ -35,7 +35,9 @@ final class AudioPlayerViewModel: ObservableObject {
     private var hasPrefetchedNext = false
     private var cancellables = Set<AnyCancellable>()
 
-    init() {
+    override init() {
+        super.init()
+        
         Publishers.CombineLatest($currentTime, $duration)
             .sink { [weak self] currentTime, duration in
                 if (currentTime + 0.05) >= duration {
@@ -49,10 +51,13 @@ final class AudioPlayerViewModel: ObservableObject {
     }
 
     deinit {
+        // Clean up all observers and stop all audio
         resetPlayer()
         if let token = timeObserverToken {
             player?.removeTimeObserver(token)
         }
+        // Ensure background music is stopped
+        AudioPlayerService.shared.stopMusic()
     }
 
 //    func startMonitoringPlayback() {
@@ -139,10 +144,31 @@ final class AudioPlayerViewModel: ObservableObject {
         }
         resetPlayer()
 
-        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
-        try? AVAudioSession.sharedInstance().setActive(true)
+        // Improved audio session setup with error handling
+        do {
+            // For simulator, use a different configuration
+            #if targetEnvironment(simulator)
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers])
+            #else
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+            #endif
+            try AVAudioSession.sharedInstance().setActive(true)
+            print("Audio session configured successfully")
+        } catch {
+            print("Failed to configure audio session: \(error)")
+        }
 
+        // Verify file exists at URL (important for simulator)
+        if FileManager.default.fileExists(atPath: url.path) {
+            print("Audio file exists at path: \(url.path)")
+        } else {
+            print("WARNING: Audio file does not exist at path: \(url.path)")
+        }
+        
         player = AVPlayer(url: url)
+        
+        // Add observer for player status
+        player?.currentItem?.addObserver(self, forKeyPath: "status", options: [.new], context: nil)
         
         // Wait for the asset to load before getting duration
         player?.currentItem?.asset.loadValuesAsynchronously(forKeys: ["duration"]) { [weak self] in
@@ -182,6 +208,11 @@ final class AudioPlayerViewModel: ObservableObject {
         // Always start playing when loading audio
         player?.play()
         isPlaying = true
+        
+        // Check player status after attempting to play
+        if let currentItem = player?.currentItem {
+            print("Player status: \(currentItem.status.rawValue), Rate: \(player?.rate ?? 0)")
+        }
         
         // Track listen event for metrics
         if let currentAudio = selectedItem {
@@ -234,6 +265,15 @@ final class AudioPlayerViewModel: ObservableObject {
     }
 
     func resetPlayer() {
+        // Safely remove KVO observer
+        if player?.currentItem != nil {
+            do {
+                player?.currentItem?.removeObserver(self, forKeyPath: "status")
+            } catch {
+                // Observer wasn't added or already removed
+            }
+        }
+        
         if let timeObserver = timeObserver {
             player?.removeTimeObserver(timeObserver)
             self.timeObserver = nil
@@ -246,6 +286,9 @@ final class AudioPlayerViewModel: ObservableObject {
         player = nil
         currentTime = 0
         isPlaying = false
+        
+        // Ensure we stop the background music player to prevent conflicts
+        AudioPlayerService.shared.stopMusic()
     }
 
 //    func addToQueue(item: AudioDeclaration) {
@@ -314,6 +357,24 @@ final class AudioPlayerViewModel: ObservableObject {
                   let seekEvent = event as? MPChangePlaybackPositionCommandEvent else { return .commandFailed }
             self.seek(to: seekEvent.positionTime)
             return .success
+        }
+    }
+    
+    // KVO observer for player status
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "status" {
+            if let playerItem = object as? AVPlayerItem {
+                switch playerItem.status {
+                case .readyToPlay:
+                    print("Player is ready to play")
+                case .failed:
+                    print("Player failed with error: \(playerItem.error?.localizedDescription ?? "Unknown error")")
+                case .unknown:
+                    print("Player status unknown")
+                @unknown default:
+                    print("Player status unhandled")
+                }
+            }
         }
     }
 }

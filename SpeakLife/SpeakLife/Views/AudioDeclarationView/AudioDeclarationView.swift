@@ -188,21 +188,41 @@ struct ErrorWrapper: Identifiable {
     let message: String
 }
 
-enum Filter: String {
-    case favorites = "Favorites"
-    case declarations = "Mountain-Moving Prayers"
-    case bedtimeStories = "Bedtime Stories"
-    case gospel = "Gospel"
-    case meditation = "Scripture Meditation's"
-    case devotional = "Devotional"
-    case speaklife = "SpeakLife"
-    case godsHeart = "God's Heart"
-    case growWithJesus = "Grow With Jesus"
-    case divineHealth = "Divine Health"
-    case imagination = "Imagination"
-    case psalm91 = "Psalm 91"
-    case magnify = "Behold & Become"
-    case praise = "Praise Wins Wars"
+enum Filter: String, CaseIterable {
+    case favorites
+    case declarations
+    case bedtimeStories
+    case gospel  
+    case meditation
+    case devotional
+    case speaklife
+    case godsHeart
+    case growWithJesus
+    case divineHealth
+    case imagination
+    case psalm91
+    case magnify
+    case praise
+    
+    // Display name for UI
+    var displayName: String {
+        switch self {
+        case .favorites: return "Favorites"
+        case .declarations: return "Mountain-Moving Prayers"
+        case .bedtimeStories: return "Bedtime Stories"
+        case .gospel: return "Gospel"
+        case .meditation: return "Scripture Meditation's"
+        case .devotional: return "Devotional"
+        case .speaklife: return "SpeakLife"
+        case .godsHeart: return "God's Heart"
+        case .growWithJesus: return "Grow With Jesus"
+        case .divineHealth: return "Divine Health"
+        case .imagination: return "Imagination"
+        case .psalm91: return "Psalm 91"
+        case .magnify: return "Behold & Become"
+        case .praise: return "Praise Wins Wars"
+        }
+    }
 }
 
 struct FetchedFilter: Identifiable, Hashable {
@@ -248,7 +268,12 @@ struct AudioDeclarationView: View {
 
                     // Horizontal Scrollable Header
                     ScrollView(.horizontal, showsIndicators: false) {
-                        header
+                        // Use dynamic header if filter configs are available, otherwise fall back to legacy
+                        if !viewModel.dynamicFilters.isEmpty {
+                            dynamicHeader
+                        } else {
+                            header
+                        }
                     }
                     .padding(.vertical)
 
@@ -320,6 +345,53 @@ struct AudioDeclarationView: View {
         }
     }
     
+    // Dynamic header using new filter system
+    var dynamicHeader: some View {
+        HStack(spacing: 15) {
+            ForEach(viewModel.dynamicFilters, id: \.id) { filterConfig in
+                Button(action: {
+                    viewModel.selectedFilterId = filterConfig.id
+                    // Update legacy system for compatibility
+                    if let legacyFilter = Filter(rawValue: filterConfig.id) {
+                        viewModel.selectedFilter = legacyFilter
+                    }
+                    if filterConfig.id == "favorites" {
+                        AudioAnalytics.shared.trackFavoritesCategoryViewed(
+                            favoritesCount: viewModel.favoritesManager.favoritesCount
+                        )
+                    }
+                }) {
+                    HStack(spacing: 6) {
+                        if filterConfig.id == "favorites" {
+                            Image(systemName: "heart.fill")
+                                .font(.caption2)
+                                .foregroundColor(viewModel.selectedFilterId == filterConfig.id ? .white : .pink)
+                        }
+                        
+                        Text(filterConfig.displayName)
+                            .font(.caption)
+                        
+                        if filterConfig.id == "favorites" && viewModel.favoritesManager.favoritesCount > 0 {
+                            Text("(\(viewModel.favoritesManager.favoritesCount))")
+                                .font(.caption2)
+                                .foregroundColor(.white.opacity(0.8))
+                        }
+                    }
+                    .padding(.horizontal, 15)
+                    .padding(.vertical, 10)
+                    .background(
+                        viewModel.selectedFilterId == filterConfig.id ? 
+                        (filterConfig.id == "favorites" ? Color.pink : Constants.DAMidBlue) :
+                        Color.gray.opacity(0.2)
+                    )
+                    .foregroundColor(.white)
+                    .cornerRadius(20)
+                }
+            }
+        }
+    }
+    
+    // Legacy header for backward compatibility
     var header: some View {
         HStack(spacing: 15) {
             ForEach(viewModel.filters, id: \.self) { filter in
@@ -338,7 +410,7 @@ struct AudioDeclarationView: View {
                                 .foregroundColor(viewModel.selectedFilter == filter ? .white : .pink)
                         }
                         
-                        Text(filter.rawValue)
+                        Text(filter.displayName)
                             .font(.caption)
                         
                         if filter == .favorites && viewModel.favoritesManager.favoritesCount > 0 {
@@ -364,7 +436,10 @@ struct AudioDeclarationView: View {
     
     func episodeRow(_ proxy: GeometryProxy) -> some View {
         Group {
-            if viewModel.selectedFilter == .favorites && viewModel.filteredContent.isEmpty {
+            // Use dynamic filtered content if available, otherwise fall back to legacy
+            let currentContent = !viewModel.dynamicFilters.isEmpty ? viewModel.dynamicFilteredContent : viewModel.filteredContent
+            
+            if viewModel.selectedFilterId == "favorites" && currentContent.isEmpty {
                 // Empty favorites state
                 VStack(spacing: 20) {
                     Image(systemName: "heart.text.square")
@@ -400,7 +475,8 @@ struct AudioDeclarationView: View {
                 .padding(40)
             } else {
                 List {
-                    ForEach(viewModel.filteredContent) { item in
+                    // Use dynamic filtered content if available, otherwise fall back to legacy
+                    ForEach(!viewModel.dynamicFilters.isEmpty ? viewModel.dynamicFilteredContent : viewModel.filteredContent) { item in
                 Button(action: {
                         handleItemTap(item)
                 }) {

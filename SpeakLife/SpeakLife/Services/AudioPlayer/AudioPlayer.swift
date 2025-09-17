@@ -30,13 +30,8 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
             object: AVAudioSession.sharedInstance()
         )
         
-        do {
-            let audioSession = AVAudioSession.sharedInstance()
-            try audioSession.setCategory(.playback, mode: .default, options: [])
-            try audioSession.setActive(true)
-        } catch {
-            print("Failed to set up audio session: \(error)")
-        }
+        // Don't activate audio session on init - only when actually playing
+        // This prevents audio session conflicts
     }
 
        deinit {
@@ -55,17 +50,22 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
         }
 
         @objc private func appWillEnterForeground() {
-            if isPausedInBackground {
-                DispatchQueue.main.async { [weak self] in
-                    self?.audioPlayer?.play()
-                    self?.isPlaying = true
-                }
-                isPausedInBackground = false
-            }
+            // Don't automatically resume playback when returning to foreground
+            // User must explicitly press play
+            isPausedInBackground = false
         }
 
 
     func playSound(files: [MusicResources]) {
+        // Setup audio session only when actually playing
+        do {
+            let audioSession = AVAudioSession.sharedInstance()
+            try audioSession.setCategory(.ambient, mode: .default, options: [])
+            try audioSession.setActive(true)
+        } catch {
+            print("Failed to set up audio session: \(error)")
+        }
+        
         self.audioFiles = files.shuffled()
         self.currentFileIndex = 0
         let type = audioFiles[currentFileIndex].type
@@ -94,10 +94,13 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
     }
 
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        if flag {
+        if flag && isPlaying {  // Only continue if we're actively playing
             currentFileIndex = (currentFileIndex + 1) % audioFiles.count
             print("Moving to next file: \(audioFiles[currentFileIndex])") // Debugging log
             playFile(type: "mp3") // Assuming all files are mp3
+        } else {
+            // Stop playback if we're not actively playing
+            isPlaying = false
         }
     }
     
@@ -108,7 +111,26 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
         isPlaying = false
     }
     
+    func stopMusic() {
+        DispatchQueue.main.async { [weak self] in
+            self?.audioPlayer?.stop()
+            self?.audioPlayer = nil
+        }
+        isPlaying = false
+        isPausedInBackground = false
+        audioFiles = []
+        
+        // Deactivate audio session when stopping
+        do {
+            try AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        } catch {
+            print("Failed to deactivate audio session: \(error)")
+        }
+    }
+    
     func playMusic() {
+        // Only play if we have audio files loaded
+        guard !audioFiles.isEmpty else { return }
         DispatchQueue.main.async { [weak self] in
             self?.audioPlayer?.play()
         }
@@ -125,14 +147,11 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
         if type == .began {
             // Audio session was interrupted
             audioPlayer?.pause()
+            isPlaying = false
         } else if type == .ended {
-            // Interruption ended
-            if let optionsValue = userInfo[AVAudioSessionInterruptionOptionKey] as? UInt {
-                let options = AVAudioSession.InterruptionOptions(rawValue: optionsValue)
-                if options.contains(.shouldResume) {
-                    audioPlayer?.play()
-                }
-            }
+            // Interruption ended - don't automatically resume
+            // User must explicitly press play to resume
+            // This prevents unwanted audio playback
         }
     }
 }

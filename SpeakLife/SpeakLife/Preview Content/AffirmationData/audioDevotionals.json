@@ -1,15 +1,29 @@
 {
     "version": 1,
-    "filters": ["favorites", "speaklife", "declarations","speaklife", "praise", "godsHeart", "growWithJesus", "psalm91", "divineHealth", "magnify", "gospel", "meditation", "bedtimeStories"],
+    "filterConfigs": [
+        {"id": "favorites", "displayName": "Favorites", "order": 0},
+        {"id": "speaklife", "displayName": "SpeakLife", "order": 1, "reversed": true},
+        {"id": "declarations", "displayName": "Mountain-Moving Prayers", "order": 2},
+        {"id": "fightBack", "displayName": "Fight Back", "order": 3, "reversed": true},
+        {"id": "godsHeart", "displayName": "God's Heart", "order": 4, "reversed": true},
+        {"id": "growWithJesus", "displayName": "Grow With Jesus", "order": 5},
+        {"id": "psalm91", "displayName": "Psalm 91", "order": 6, "reversed": true},
+        {"id": "divineHealth", "displayName": "Divine Health", "order": 7},
+        {"id": "magnify", "displayName": "Behold & Become", "order": 8, "reversed": true},
+        {"id": "gospel", "displayName": "Gospel", "order": 9},
+        {"id": "meditation", "displayName": "Scripture Meditation's", "order": 10},
+        {"id": "bedtimeStories", "displayName": "Bedtime Stories", "order": 11}
+    ],
+    "filters": ["favorites", "speaklife", "declarations", "fightBack", "godsHeart", "growWithJesus", "psalm91", "divineHealth", "magnify", "gospel", "meditation", "bedtimeStories"],
     "audios": [
         {
             "id": "praiseWinsWars-ep1.mp3",
-            "title": "Praise Wins Wars",
-            "subtitle": "SpeakLife wins battles - praise wins wars.",
+            "title": "Fight Back",
+            "subtitle": "Intro",
             "duration": "6m",
             "imageUrl": "praisewinswars",
             "isPremium": true,
-            "tag": "praise"
+            "tag": "fightBack"
         },
         {
             "id": "magnify-ep12.mp3",

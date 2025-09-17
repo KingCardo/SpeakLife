@@ -103,7 +103,7 @@ struct HomeView: View {
                                     OptimizedSubscriptionView(size: proxy.size) {
                                         showSubscription = false
                                     }
-                                        .frame(height:  UIScreen.main.bounds.height * 0.96)
+                                    .frame(height:  UIScreen.main.bounds.height * 0.9)
                                 }
                             
                             })

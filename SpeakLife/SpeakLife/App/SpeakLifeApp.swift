@@ -66,7 +66,8 @@ struct SpeakLifeApp: App {
                     ListenerMetricsService.shared.warmUpCache()
                     
                     viewModel.requestPermission()
-                    if declarationStore.backgroundMusicEnabled {
+                    // Only start background music if explicitly enabled and app is in foreground
+                    if declarationStore.backgroundMusicEnabled && scenePhase == .active {
                         AudioPlayerService.shared.playSound(files: resources)
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -116,8 +117,12 @@ struct SpeakLifeApp: App {
         
                     }
             case .inactive:
+                // Stop background music when app becomes inactive
+                AudioPlayerService.shared.pauseMusic()
                 break
             case .background:
+                // Ensure all audio is stopped when going to background
+                AudioPlayerService.shared.stopMusic()
                 break
             @unknown default:
                 break

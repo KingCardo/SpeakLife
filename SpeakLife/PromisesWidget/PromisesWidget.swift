@@ -15,20 +15,22 @@ private enum WidgetConstants {
     static let syncedPromisesKey = "syncedPromises"
     static let fallbackPromise = "I am blessed!"
     static let placeholderText = "Loading..."
-    static let customFontName = "BodoniSvtyTwoOSITCTT-Book"
+    static let customFontName = "Avenir Next"  // Clean, modern font
     
     enum Design {
-        static let backgroundOpacity: Double = 0.85
-        static let greetingOpacity: Double = 0.8
+        static let backgroundOpacity: Double = 0.4  // Lower opacity for image overlay
+        static let textBackgroundOpacity: Double = 0.15  // Very subtle background for text
+        static let greetingOpacity: Double = 0.95
         static let contentSpacing: CGFloat = 8
         static let horizontalPadding: CGFloat = 16
         static let bottomPadding: CGFloat = 8
+        static let cornerRadius: CGFloat = 16
         
         enum FontSizes {
-            static let small: CGFloat = 14
-            static let medium: CGFloat = 16
-            static let large: CGFloat = 18
-            static let greeting: CGFloat = 12
+            static let small: CGFloat = 16
+            static let medium: CGFloat = 18
+            static let large: CGFloat = 20
+            static let greeting: CGFloat = 13
         }
     }
     
@@ -220,13 +222,26 @@ struct PromisesWidgetEntryView: View {
     
     private var contentView: some View {
         ZStack {
+            // Use beautiful gradient background (images may not load properly in widget)
+            BeautifulGradientBackground()
+            
+            // Time-based gradient overlay for ambiance
             WidgetGradientBackground()
-                .opacity(WidgetConstants.Design.backgroundOpacity)
+                .opacity(0.15)
             
             VStack(spacing: WidgetConstants.Design.contentSpacing) {
                 Spacer()
                 
-                promiseText
+                // Text with subtle background
+                VStack(spacing: 8) {
+                    promiseText
+                }
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: WidgetConstants.Design.cornerRadius)
+                        .fill(Color.black.opacity(WidgetConstants.Design.textBackgroundOpacity))
+                )
+                .padding(.horizontal, 8)
                 
                 Spacer()
                 
@@ -240,17 +255,19 @@ struct PromisesWidgetEntryView: View {
     private var promiseText: some View {
         Text(entry.promise)
             .foregroundColor(.white)
-            .font(.custom(WidgetConstants.customFontName, size: fontSize))
-            .fontWeight(.medium)
+            .font(.system(size: fontSize, weight: .semibold, design: .rounded))  // Clean, modern system font
             .multilineTextAlignment(.center)
-            .padding(.horizontal, WidgetConstants.Design.horizontalPadding)
-            .minimumScaleFactor(0.8) // Allow text scaling for better fit
+            .lineSpacing(3)
+            .shadow(color: .black.opacity(0.5), radius: 3, x: 0, y: 2)
+            .shadow(color: .black.opacity(0.3), radius: 1, x: 0, y: 1) // Double shadow for better readability
+            .minimumScaleFactor(0.75) // Allow text scaling for better fit
     }
     
     private var greetingText: some View {
         Text(TimeBasedGreeting.current.message)
-            .font(.system(size: WidgetConstants.Design.FontSizes.greeting, weight: .light))
+            .font(.system(size: WidgetConstants.Design.FontSizes.greeting, weight: .regular, design: .rounded))
             .foregroundColor(.white.opacity(WidgetConstants.Design.greetingOpacity))
+            .shadow(color: .black.opacity(0.3), radius: 1, x: 0, y: 1)
             .padding(.bottom, WidgetConstants.Design.bottomPadding)
     }
     
@@ -312,15 +329,114 @@ enum TimeBasedGreeting {
     }
 }
 
+// MARK: - Calendar Extension
+
+extension Calendar {
+    func ordinateOfDay(for date: Date) -> Int? {
+        return self.ordinality(of: .day, in: .year, for: date)
+    }
+}
+
+// MARK: - Background Helpers
+
+struct WidgetBackgroundImage {
+    static var current: String {
+        // Beautiful images available in the app
+        let images = [
+            "boatLakeMountain",
+            "wheatFieldRedRose",
+            "redTreeLake",
+            "redRosesGreySkies"
+        ]
+        
+        // Use time-based selection for variety
+        let hour = Calendar.current.component(.hour, from: Date())
+        let dayOfYear = Calendar.current.ordinateOfDay(for: Date()) ?? 1
+        
+        // Combine hour and day for image rotation
+        let index = (hour + dayOfYear) % images.count
+        return images[index]
+    }
+}
+
+// MARK: - Beautiful Gradient Background
+
+struct BeautifulGradientBackground: View {
+    private var timeBasedGradient: LinearGradient {
+        let hour = Calendar.current.component(.hour, from: Date())
+        
+        switch hour {
+        case 5...8: // Morning - sunrise colors
+            return LinearGradient(
+                colors: [
+                    Color(red: 1.0, green: 0.6, blue: 0.4).opacity(0.9),   // Peach
+                    Color(red: 1.0, green: 0.4, blue: 0.5).opacity(0.8),   // Coral
+                    Color(red: 0.9, green: 0.3, blue: 0.6).opacity(0.7)    // Pink
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        case 9...16: // Day - sky blue colors  
+            return LinearGradient(
+                colors: [
+                    Color(red: 0.4, green: 0.6, blue: 0.9).opacity(0.9),   // Sky blue
+                    Color(red: 0.3, green: 0.5, blue: 0.8).opacity(0.8),   // Medium blue
+                    Color(red: 0.5, green: 0.7, blue: 0.9).opacity(0.7)    // Light blue
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        case 17...20: // Evening - sunset colors
+            return LinearGradient(
+                colors: [
+                    Color(red: 0.9, green: 0.4, blue: 0.3).opacity(0.9),   // Orange
+                    Color(red: 0.8, green: 0.3, blue: 0.5).opacity(0.8),   // Pink-purple
+                    Color(red: 0.6, green: 0.2, blue: 0.6).opacity(0.7)    // Purple
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        default: // Night - dark blue/purple
+            return LinearGradient(
+                colors: [
+                    Color(red: 0.1, green: 0.1, blue: 0.3).opacity(0.95),  // Dark blue
+                    Color(red: 0.2, green: 0.1, blue: 0.4).opacity(0.9),   // Deep purple
+                    Color(red: 0.1, green: 0.05, blue: 0.25).opacity(0.85) // Midnight
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        }
+    }
+    
+    var body: some View {
+        ZStack {
+            // Base time-based gradient
+            timeBasedGradient
+            
+            // Subtle mesh gradient overlay for depth
+            RadialGradient(
+                colors: [
+                    Color.white.opacity(0.1),
+                    Color.clear
+                ],
+                center: .topLeading,
+                startRadius: 50,
+                endRadius: 300
+            )
+        }
+    }
+}
+
 // MARK: - Gradient Background
 
 struct WidgetGradientBackground: View {
     
     private enum GradientColors {
-        static let morning: [Color] = [.orange, .yellow, .pink]
-        static let afternoon: [Color] = [.blue, .cyan, .teal]
-        static let evening: [Color] = [.purple, .indigo, .blue]
-        static let night: [Color] = [.black, .purple, .indigo]
+        static let morning: [Color] = [.orange.opacity(0.3), .yellow.opacity(0.3)]
+        static let afternoon: [Color] = [.blue.opacity(0.3), .cyan.opacity(0.3)]
+        static let evening: [Color] = [.purple.opacity(0.3), .indigo.opacity(0.3)]
+        static let night: [Color] = [.indigo.opacity(0.3), .black.opacity(0.5)]
     }
     
     var body: some View {

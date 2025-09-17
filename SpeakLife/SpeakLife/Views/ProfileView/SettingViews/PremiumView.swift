@@ -26,7 +26,7 @@ struct PremiumView: View {
                 } else {
                     OptimizedSubscriptionView(size: geometry.size) {
                         // Handle callback - typically dismiss or navigation
-                    }
+                  }
                 }
             } else {
                 NavigationView {

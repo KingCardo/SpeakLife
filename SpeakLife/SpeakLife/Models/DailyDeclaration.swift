@@ -76,43 +76,57 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     case john1, john2, john3, jude, revelation
     
     static var allCategories: [DeclarationCategory] = [
+        // Special categories
         .favorites,
         .myOwn,
-//        .blood,
-//        .nameOfJesus,
-//        .godsheart,
-        .destiny,
-        .grace,
-        .faith,
-        .addiction,
-        .anxiety,
-        .confidence,
-        .favor,
-        .fear,
-        .friendship,
-        .godsprotection,
-        .gratitude,
-        .hardtimes,
-        .health,
-        .heaven,
-        .hope,
-        .identity,
-        .innerHealing,
-        .joy,
-        .love,
-        .obedience,
-        .parenting,
-        .praise,
-        .purity,
-        .rest,
-        .marriage,
-        .miracles,
+        
+        // Tier 1 - Foundation (God & Identity)
         .speaklife,
-        .spiritualGrowth,
-        .warfare,
-        .work,
+        .love,
+        .identity,
+        .faith,
+        .grace,
+        
+        // Tier 2 - Inner Life (Heart & Mind)
+        .rest,  // Peace & Rest
+        .hope,
+        .joy,
         .wisdom,
+        .praise,
+        
+        // Tier 3 - Transformation & Victory
+        .destiny,
+        .warfare,
+        .miracles,
+        .health,
+        .innerHealing,
+        
+        // Tier 4 - Daily Walk
+        .obedience,
+        .spiritualGrowth,
+        .purity,
+        .gratitude,
+        
+        // Tier 5 - Relationships
+        .marriage,
+        .parenting,
+        .friendship,
+        
+        // Tier 6 - Provision & Protection
+        .godsprotection,
+        .favor,
         .wealth,
+        .work,
+        
+        // Tier 7 - Challenges & Struggles
+        .anxiety,
+        .fear,
+        .hardtimes,
+        .addiction,
+        
+        // Tier 8 - Eternal Perspective
+        .heaven,
+        .confidence,
         .genesis,
         .exodus,
         .leviticus,
@@ -198,41 +212,53 @@ enum DeclarationCategory: String, CaseIterable, Identifiable, Codable,  Comparab
     
     
     static var categoryOrder: [DeclarationCategory] = [
-//        .godsheart,
-//        .blood,
-//        .nameOfJesus,
-        .destiny,
-        .grace,
-        .faith,
-        .addiction,
-        .anxiety,
-        .confidence,
-        .favor,
-        .fear,
-        .friendship,
-        .godsprotection,
-        .gratitude,
-        .hardtimes,
-        .health,
-        .heaven,
-        .hope,
-        .identity,
-        .innerHealing,
-        .joy,
+        // Tier 1 - Foundation (God & Identity)
+        .speaklife,
         .love,
-        .marriage,
-        .miracles,
-        .obedience,
-        .parenting,
+        .identity,
+        .faith,
+        .grace,
+        
+        // Tier 2 - Inner Life (Heart & Mind)
+        .rest,  // Peace & Rest
+        .hope,
+        .joy,
+        .wisdom,
         .praise,
-        .purity,
-        .rest,
-        .spiritualGrowth,
+        
+        // Tier 3 - Transformation & Victory
+        .destiny,
         .warfare,
+        .miracles,
+        .health,
+        .innerHealing,
+        
+        // Tier 4 - Daily Walk
+        .obedience,
+        .spiritualGrowth,
+        .purity,
+        .gratitude,
+        
+        // Tier 5 - Relationships
+        .marriage,
+        .parenting,
+        .friendship,
+        
+        // Tier 6 - Provision & Protection
+        .godsprotection,
+        .favor,
         .wealth,
         .work,
-        .wisdom
         
+        // Tier 7 - Challenges & Struggles
+        .anxiety,
+        .fear,
+        .hardtimes,
+        .addiction,
+        
+        // Tier 8 - Eternal Perspective
+        .heaven,
+        .confidence
     ]
     
     var isBibleBook: Bool {

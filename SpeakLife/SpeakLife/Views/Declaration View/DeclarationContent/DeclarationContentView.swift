@@ -143,9 +143,9 @@ struct DeclarationContentView: View {
                 askForReview()
                 let declaration = viewModel.declarations[newIndex]
                 viewModel.setCurrent(declaration)
-                if declaration.book != nil {
-                    viewModel.showVerse = true
-                }
+//                if declaration.book != nil {
+//                    viewModel.showVerse = true
+//                }
                 
 //                if viewModel.selectedCategory == .myOwn || viewModel.selectedCategory == .favorites {
 //                    viewModel.showVerse = false

@@ -11,6 +11,7 @@ import SwiftUI
 import Combine
 
 final class AudioDeclarationViewModel: ObservableObject {
+    // Legacy arrays - kept for backward compatibility, will be deprecated
     @Published var audioDeclarations: [AudioDeclaration]  = []
     @Published var bedtimeStories: [AudioDeclaration]  = []
     @Published var gospelStories: [AudioDeclaration]  = []
@@ -24,16 +25,22 @@ final class AudioDeclarationViewModel: ObservableObject {
     @Published var psalm91: [AudioDeclaration]  = []
     @Published var magnify: [AudioDeclaration]  = []
     @Published var praise: [AudioDeclaration]  = []
-   // @Published var audioDeclarations: [AudioDeclaration] = []
+    
+    // New dynamic system
+    @Published var dynamicFilters: [FilterConfig] = []  // Filter configs from JSON
+    @Published var contentByFilter: [String: [AudioDeclaration]] = [:]  // All content organized by filter ID
+    @Published var selectedFilterId: String = "speaklife"  // Selected filter ID
+    
     private(set) var allAudioFiles: [AudioDeclaration] = []
     @Published var downloadProgress: [String: Double] = [:]
     @Published var fetchingAudioIDs: Set<String> = []
-    @Published var filters: [Filter] = [.favorites, .speaklife, .declarations, .praise, .godsHeart, .growWithJesus, .psalm91, .divineHealth, .magnify,/*.imagination,.devotional,*/  .gospel, .meditation, .bedtimeStories]
+    
+    // Legacy filter system - will be deprecated
+    @Published var filters: [Filter] = [.favorites, .speaklife, .declarations, .praise, .godsHeart, .growWithJesus, .psalm91, .divineHealth, .magnify, .gospel, .meditation, .bedtimeStories]
+    @Published var selectedFilter: Filter = .speaklife
 
     // Favorites manager
     let favoritesManager = AudioFavoritesManager()
-
-    @Published var selectedFilter: Filter = .speaklife
     private let storage = Storage.storage()
     private let fileManager = FileManager.default
     @AppStorage("lastCachedAudioVersion") private var lastCachedAudioVersion = 0
@@ -50,6 +57,7 @@ final class AudioDeclarationViewModel: ObservableObject {
     }
 
     
+    // Legacy computed property for backward compatibility
     var filteredContent: [AudioDeclaration] {
         switch selectedFilter {
         case .favorites:
@@ -83,6 +91,14 @@ final class AudioDeclarationViewModel: ObservableObject {
         }
     }
     
+    // New dynamic filtered content
+    var dynamicFilteredContent: [AudioDeclaration] {
+        if selectedFilterId == "favorites" {
+            return favoritesManager.getFavoritesSortedByDate()
+        }
+        return contentByFilter[selectedFilterId] ?? []
+    }
+    
     func fetchAudio(version: Int) {
         if version > lastCachedAudioVersion {
             clearCache()
@@ -92,8 +108,9 @@ final class AudioDeclarationViewModel: ObservableObject {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 self.allAudioFiles = welcome?.audios ?? audios!
-                audioDeclarations = self.allAudioFiles
-                    .filter { $0.tag == "declarations" }
+                
+                // Legacy system - populate individual arrays
+                audioDeclarations = self.allAudioFiles.filter { $0.tag == "declarations" }
                 bedtimeStories = self.allAudioFiles.filter { $0.tag == "bedtimeStories" }
                 gospelStories = self.allAudioFiles.filter { $0.tag == "gospel" }
                 meditations = self.allAudioFiles.filter { $0.tag == "meditation" }
@@ -105,21 +122,97 @@ final class AudioDeclarationViewModel: ObservableObject {
                 imagination = self.allAudioFiles.filter { $0.tag == "imagination" }
                 magnify = self.allAudioFiles.filter { $0.tag == "magnify" }
                 praise = self.allAudioFiles.filter { $0.tag == "praise" }
-               // setFilters(welcome)
+                
+                // New dynamic system
+                self.setupDynamicFilters(welcome)
+                
+                // Legacy filter setup
+                setFilters(welcome)
                 
                 // Update the cached version after successful fetch
                 self.lastCachedAudioVersion = version
             }
         }
     }
+    
+    private func setupDynamicFilters(_ welcome: WelcomeAudio?) {
+        // Clear previous content
+        contentByFilter.removeAll()
+        
+        // Group all content by tag
+        let groupedContent = Dictionary(grouping: allAudioFiles) { $0.tag ?? "" }
+        
+        // Process filter configs from JSON
+        if let filterConfigs = welcome?.filterConfigs {
+            // Sort by order if provided
+            dynamicFilters = filterConfigs.sorted { 
+                ($0.order ?? Int.max) < ($1.order ?? Int.max) 
+            }
+            
+            // Populate content for each filter
+            for config in filterConfigs {
+                if config.id == "favorites" {
+                    // Favorites is handled separately
+                    continue
+                }
+                
+                var content = groupedContent[config.id] ?? []
+                
+                // Apply reversal if specified
+                if config.reversed == true {
+                    content = content.reversed()
+                }
+                
+                contentByFilter[config.id] = content
+            }
+        } else if let filterStrings = welcome?.filters {
+            // Fallback to old system if no filterConfigs
+            dynamicFilters = filterStrings.map { filterId in
+                FilterConfig(
+                    id: filterId,
+                    displayName: filterId.capitalized,
+                    order: nil,
+                    reversed: nil
+                )
+            }
+            
+            // Populate content using old filter strings
+            for filterId in filterStrings {
+                if filterId != "favorites" {
+                    contentByFilter[filterId] = groupedContent[filterId] ?? []
+                }
+            }
+        }
+    }
                     
-//    private func setFilters(_ weclome: WelcomeAudio?) {
-//        guard let filterString = weclome?.filters else {
-//            self.filters = [.godsHeart, .magnify, .speaklife, .psalm91, /*.imagination,.devotional,*/ .divineHealth,  .growWithJesus,.declarations, .gospel, .meditation, .bedtimeStories]
-//            return }
-//        let filters = filterString.compactMap { Filter(rawValue: $0)}
-//        self.filters = filters
-//    }
+    private func setFilters(_ welcome: WelcomeAudio?) {
+        // Default filters to use if none provided
+        let defaultFilters: [Filter] = [.favorites, .speaklife, .declarations, .praise, .godsHeart, .growWithJesus, .psalm91, .divineHealth, .magnify, .gospel, .meditation, .bedtimeStories]
+        
+        guard let filterStrings = welcome?.filters else {
+            self.filters = defaultFilters
+            return 
+        }
+        
+        // Dynamically map JSON strings to Filter enum cases
+        // This works because Filter enum raw values now match the JSON strings exactly
+        let mappedFilters = filterStrings.compactMap { filterString in
+            // Try to create Filter from raw value (this matches enum case names)
+            Filter(rawValue: filterString)
+        }
+        
+        // If we successfully mapped some filters, use them; otherwise use defaults
+        self.filters = mappedFilters.isEmpty ? defaultFilters : mappedFilters
+        
+        // Log any unmapped filters for debugging
+        let unmappedFilters = filterStrings.filter { filterString in
+            Filter(rawValue: filterString) == nil
+        }
+        if !unmappedFilters.isEmpty {
+            print("Warning: Could not map these filters from JSON: \(unmappedFilters)")
+            print("Available filter cases: \(Filter.allCases.map { $0.rawValue })")
+        }
+    }
     
     func fetchAudio(for item: AudioDeclaration, completion: @escaping (Result<URL, Error>) -> Void) {
         print(item.id, "RWRW")
@@ -208,9 +301,17 @@ final class AudioDeclarationViewModel: ObservableObject {
     }
   }
 
+struct FilterConfig: Codable {
+    let id: String
+    let displayName: String
+    let order: Int?
+    let reversed: Bool?
+}
+
 struct WelcomeAudio: Codable {
     let version: Int
-    let filters: [String]?
+    let filters: [String]?  // Keep for backward compatibility
+    let filterConfigs: [FilterConfig]?  // New dynamic filters
     let audios: [AudioDeclaration]
 }
 

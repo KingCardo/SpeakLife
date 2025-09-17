@@ -286,11 +286,11 @@ struct FloatingCTAButton: View {
     }
     
     private var ctaTitle: String {
-        isYearlyPlan ? "Activate My Miracle - Try Free" : "Start Speaking Life Now"
+        isYearlyPlan ? "Start My Transformation" : "Begin Speaking Life Today"
     }
     
     private var ctaSubtitle: String {
-        return "Your Breakthrough Starts Today"
+        return "Cancel anytime"
     }
  }
 
@@ -331,6 +331,13 @@ struct OptimizedSubscriptionView: View {
         ValueProposition(icon: "leaf.fill", text: "Plant yourself in promises that prosper"),
         ValueProposition(icon: "crown.fill", text: "Walk in supernatural provision"),
         ValueProposition(icon: "heart.circle.fill", text: "Peace that silences every fear"),
+    ]
+    
+    private let valuePropsSupport = [
+        ValueProposition(icon: "sunrise.fill", text: "Build your life on Jesus"),
+        ValueProposition(icon: "lock.open.fill", text: "Unlock 2000+ declarations, devotionals & audio"),
+        ValueProposition(icon: "hands.sparkles.fill", text: "Help millions discover God's promises"),
+        ValueProposition(icon: "sunrise.fill", text: "Life-changing revelations that unlock God's power"),
     ]
     
     var body: some View {
@@ -392,7 +399,7 @@ struct OptimizedSubscriptionView: View {
     }
     
     private var monthlyPrice: String {
-        subscriptionStore.currentOfferedMonthly?.displayPrice ?? "$9.99"
+        subscriptionStore.currentOfferedPremiumMonthly?.displayPrice ?? "$9.99"
     }
     
     private var yearlyPrice: String {
@@ -471,12 +478,17 @@ struct OptimizedSubscriptionView: View {
         .padding(.horizontal)
         .padding(.bottom, 24)
     }
+  
     
     private var mainOfferSection: some View {
         VStack(spacing: 12) {
             appIconSection
             headlineSection
-            valuePropsSection
+            if subscriptionStore.showSubscriptionFirst {
+                valuePropsSupportSection
+            } else {
+                valuePropsSection
+            }
         }
     }
     
@@ -521,11 +533,11 @@ struct OptimizedSubscriptionView: View {
     
     private var headlineSection: some View {
         VStack(spacing: 4) {
-            Text("Speak Life. See Miracles.")
+            Text("Ready to Speak God's Promises Daily?")
                 .font(.system(size: 22, weight: .medium, design: .rounded))
                 .foregroundColor(.white.opacity(0.9))
             
-            Text("Get planted so deep in His promises that breakthrough becomes inevitable.")
+            Text("Join thousands who are watching their words become their reality.")
                 .font(.system(size: 14, weight: .medium, design: .rounded))
                 .foregroundColor(.white.opacity(0.8))
                 .padding(.top, 4)
@@ -536,6 +548,34 @@ struct OptimizedSubscriptionView: View {
     private var valuePropsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
             ForEach(valueProps, id: \.text) { prop in
+                prop
+            }
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 12)
+        .background(
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(colors: [
+                            Color.white.opacity(0.08),
+                            Color.white.opacity(0.03)
+                        ]),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                )
+        )
+       // .padding(.horizontal, 20)
+    }
+    
+    private var valuePropsSupportSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            ForEach(valuePropsSupport, id: \.text) { prop in
                 prop
             }
         }
@@ -577,59 +617,46 @@ struct OptimizedSubscriptionView: View {
         }
         .padding(.vertical, 12)
     }
-    
+    @ViewBuilder
     private var pricingSection: some View {
         VStack(spacing: 12) {
-            // Yearly option with Most Popular badge and free trial
             Spacer().frame(height: 8)
             
-//            // Weekly option
-//            PricingOptionView(
-//                option: PricingOption(
-//                    product: subscriptionStore.currentOfferedWeekly,
-//                    isSelected: currentSelection == subscriptionStore.currentOfferedWeekly,
-//                    isYearly: false,
-//                    displayPrice: weeklyPrice,
-//                    monthlyEquivalent: "Cancel anytime",
-//                    savingsPercentage: nil,
-//                    isMostPopular: false
-//                ),
-//                action: selectWeekly,
-//                showingWeeklyMonthly: true
-//            )
-//            .padding(.horizontal, 20)
-            
-            
-            // Weekly option
-//            PricingOptionView(
-//                option: PricingOption(
-//                    product: subscriptionStore.currentOfferedPremiumMonthly,
-//                    isSelected: currentSelection == subscriptionStore.currentOfferedPremiumMonthly,
-//                    isYearly: false,
-//                    displayPrice: monthlyPrice,
-//                    monthlyEquivalent: "Cancel anytime",
-//                    savingsPercentage: nil,
-//                    isMostPopular: false
-//                ),
-//                action: selectMonthly,
-//                showingWeeklyMonthly: true
-//            )
-//            .padding(.horizontal, 20)
-            
+           /// if subscriptionStore.showSubscriptionFirst {
+            ///
             PricingOptionView(
-                option: PricingOption(
-                    product: subscriptionStore.currentOfferedPremium,
-                    isSelected: currentSelection == subscriptionStore.currentOfferedPremium,
-                    isYearly: true,
-                    displayPrice: yearlyPrice,
-                    monthlyEquivalent: "\(yearlyEquivalentPrice)",
-                    savingsPercentage: yearlySavingsFromWeekly,
-                    isMostPopular: true
-                ),
-                action: selectYearly,
-                showingWeeklyMonthly: false
-            )
-            .padding(.horizontal, 20)
+            option: PricingOption(
+                product: subscriptionStore.currentOfferedPremium,
+                isSelected: currentSelection == subscriptionStore.currentOfferedPremium,
+                isYearly: true,
+                displayPrice: yearlyPrice,
+                monthlyEquivalent: "\(yearlyEquivalentPrice)",
+                savingsPercentage: yearlySavingsFromWeekly,
+                isMostPopular: true
+            ),
+            action: selectYearly,
+            showingWeeklyMonthly: false
+        )
+        .padding(.horizontal, 20)
+
+                // MOnthly option
+                PricingOptionView(
+                    option: PricingOption(
+                        product: subscriptionStore.currentOfferedPremiumMonthly,
+                        isSelected: currentSelection == subscriptionStore.currentOfferedPremiumMonthly,
+                        isYearly: false,
+                        displayPrice: monthlyPrice,
+                        monthlyEquivalent: "Cancel anytime",
+                        savingsPercentage: nil,
+                        isMostPopular: false
+                    ),
+                    action: selectMonthly,
+                    showingWeeklyMonthly: true
+                )
+                .padding(.horizontal, 20)
+       //     }
+            
+           
             
             
         }
@@ -679,24 +706,13 @@ struct OptimizedSubscriptionView: View {
     
     private var trustIndicators: some View {
         HStack(spacing: 24) {
-            if isYearlyPlan {
-                HStack(spacing: 4) {
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.system(size: 12))
-                        .foregroundColor(Color(red: 0.2, green: 0.8, blue: 0.2))
-                    Text("No Payment Due Now")
-                        .font(.system(size: 11, weight: .medium, design: .rounded))
-                        .foregroundColor(.white.opacity(0.8))
-                }
-            } else {
-                HStack(spacing: 4) {
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.system(size: 12))
-                        .foregroundColor(Color(red: 0.2, green: 0.8, blue: 0.2))
-                    Text("Instant access")
-                        .font(.system(size: 11, weight: .medium, design: .rounded))
-                        .foregroundColor(.white.opacity(0.8))
-                }
+            HStack(spacing: 4) {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.system(size: 12))
+                    .foregroundColor(Color(red: 0.2, green: 0.8, blue: 0.2))
+                Text("Instant access")
+                    .font(.system(size: 11, weight: .medium, design: .rounded))
+                    .foregroundColor(.white.opacity(0.8))
             }
             
             HStack(spacing: 4) {
