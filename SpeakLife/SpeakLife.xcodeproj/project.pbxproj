@@ -51,6 +51,7 @@
 		4575C9482E46F25B007C14F3 /* SiriIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C9432E46F25B007C14F3 /* SiriIntents.swift */; };
 		4575C9492E46F25B007C14F3 /* SmartContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C9442E46F25B007C14F3 /* SmartContentProvider.swift */; };
 		4575C94A2E46F25B007C14F3 /* WidgetDataBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575C9452E46F25B007C14F3 /* WidgetDataBridge.swift */; };
+		457CD3402E7E735A00F435EC /* OptimizedSubscriptionViewV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457CD33F2E7E735A00F435EC /* OptimizedSubscriptionViewV1.swift */; };
 		457D531B2D964AAF0098A49A /* audioDevotionals.json in Resources */ = {isa = PBXBuildFile; fileRef = 457D531A2D964AA10098A49A /* audioDevotionals.json */; };
 		457DC17E2CEEA92700C666D5 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457DC17D2CEEA92700C666D5 /* AudioPlayerView.swift */; };
 		457DC1802CEEB47700C666D5 /* AudioPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457DC17F2CEEB47700C666D5 /* AudioPlayerViewModel.swift */; };
@@ -298,6 +299,7 @@
 		4575C9432E46F25B007C14F3 /* SiriIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriIntents.swift; sourceTree = "<group>"; };
 		4575C9442E46F25B007C14F3 /* SmartContentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartContentProvider.swift; sourceTree = "<group>"; };
 		4575C9452E46F25B007C14F3 /* WidgetDataBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDataBridge.swift; sourceTree = "<group>"; };
+		457CD33F2E7E735A00F435EC /* OptimizedSubscriptionViewV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimizedSubscriptionViewV1.swift; sourceTree = "<group>"; };
 		457D531A2D964AA10098A49A /* audioDevotionals.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = audioDevotionals.json; sourceTree = "<group>"; };
 		457DC17D2CEEA92700C666D5 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
 		457DC17F2CEEB47700C666D5 /* AudioPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewModel.swift; sourceTree = "<group>"; };
@@ -1113,6 +1115,7 @@
 			isa = PBXGroup;
 			children = (
 				7AA870A528DACCB700134ADB /* SubscriptionView.swift */,
+				457CD33F2E7E735A00F435EC /* OptimizedSubscriptionViewV1.swift */,
 				4575C93F2E45AA00007C14F3 /* OptimizedSubscriptionView.swift */,
 				7AA870A628DACCB700134ADB /* PremiumView.swift */,
 				7AA870A728DACCB700134ADB /* SettingsRow.swift */,
@@ -1530,6 +1533,7 @@
 				7AA870D728DACCB700134ADB /* ProfileBarButton.swift in Sources */,
 				458510D92B159B0D00230EE5 /* LandingView.swift in Sources */,
 				7AF18C7B29FD1A43005A6E31 /* GoogleAdMob.swift in Sources */,
+				457CD3402E7E735A00F435EC /* OptimizedSubscriptionViewV1.swift in Sources */,
 				7AF18C9A2A0D9884005A6E31 /* BlurView.swift in Sources */,
 				45ED72C42BA10B3500F5F5E3 /* ConfettiView.swift in Sources */,
 				7AA870C628DACCB700134ADB /* HeartView.swift in Sources */,
@@ -1783,7 +1787,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 885;
+				CURRENT_PROJECT_VERSION = 887;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;
@@ -1825,7 +1829,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeakLife/SpeakLife.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 885;
+				CURRENT_PROJECT_VERSION = 887;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SpeakLife/Preview Content\"";
 				DEVELOPMENT_TEAM = 652R6A63L8;

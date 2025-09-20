@@ -164,6 +164,7 @@ struct OptimizedSubscriptionView: View {
     @State private var isShowingError = false
     @State private var errorMessage = ""
     @State private var selectedOption: String = "annual" // "annual" or "monthly"
+    var flag = true
     
     var callback: (() -> Void)?
     
@@ -202,58 +203,64 @@ struct OptimizedSubscriptionView: View {
     ]
     
     var body: some View {
+       
         GeometryReader { geometry in
-            ZStack {
-                // Background
-                Constants.SLBlue.ignoresSafeArea()
-                
-                VStack(spacing: 0) {
-                    // Scrollable content
-                    ScrollView {
-                        VStack(spacing: 0) {
-                            // Header with background image
-                            
-                            headerSection(geometry: geometry)
-                            
-                            // Benefits
-                            benefitsSection
-                            
-                            // Space for sticky bottom
-                           // Spacer().frame(height: geometry.size.height * 0.2)
+            if subscriptionStore.showSubscriptionFirst {
+                OptimizedSubscriptionViewV1(size: geometry.size)
+            } else {
+                ZStack {
+                    // Background
+                    Constants.SLBlue.ignoresSafeArea()
+                    
+                    VStack(spacing: 0) {
+                        // Scrollable content
+                        ScrollView {
+                            VStack(spacing: 0) {
+                                // Header with background image
+                                
+                                headerSection(geometry: geometry)
+                                
+                                // Benefits
+                                benefitsSection
+                                
+                                // Space for sticky bottom
+                                // Spacer().frame(height: geometry.size.height * 0.2)
+                            }
                         }
+                        
+                        stickyBottomSection
+                            .frame(height: geometry.size.height * 0.35)
                     }
-                
-                    stickyBottomSection
-                        .frame(height: geometry.size.height * 0.35)
-                }
-                
-                // Close button
-                VStack {
-                    HStack {
+                    
+                    // Close button
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Button(action: { dismiss() }) {
+                                Image(systemName: "xmark")
+                                    .font(.system(size: 16, weight: .medium))
+                                    .foregroundColor(.white)
+                                    .frame(width: 32, height: 32)
+                                    .background(Circle().fill(Color.black.opacity(0.3)))
+                            }
+                            .padding(.top, geometry.safeAreaInsets.top + 20)
+                            .padding(.trailing, 20)
+                        }
                         Spacer()
-                        Button(action: { dismiss() }) {
-                            Image(systemName: "xmark")
-                                .font(.system(size: 16, weight: .medium))
-                                .foregroundColor(.white)
-                                .frame(width: 32, height: 32)
-                                .background(Circle().fill(Color.black.opacity(0.3)))
-                        }
-                        .padding(.top, geometry.safeAreaInsets.top + 20)
-                        .padding(.trailing, 20)
                     }
-                    Spacer()
+                    
+                    if declarationStore.isPurchasing {
+                        RotatingLoadingImageView()
+                    }
                 }
                 
-                if declarationStore.isPurchasing {
-                    RotatingLoadingImageView()
+                .onAppear(perform: setupView)
+                .alert("", isPresented: $isShowingError) {
+                    Button("OK", role: .cancel) { }
+                } message: {
+                    Text(errorMessage)
                 }
             }
-        }
-        .onAppear(perform: setupView)
-        .alert("", isPresented: $isShowingError) {
-            Button("OK", role: .cancel) { }
-        } message: {
-            Text(errorMessage)
         }
     }
     
