@@ -11,7 +11,15 @@ import Combine
 import MediaPlayer
 
 final class AudioPlayerViewModel: NSObject, ObservableObject {
-    @Published var isPlaying: Bool = false
+    // Static property to track if any content audio is playing globally
+    static var hasActiveAudio: Bool = false
+    
+    @Published var isPlaying: Bool = false {
+        didSet {
+            // Update the static property
+            AudioPlayerViewModel.hasActiveAudio = isPlaying
+        }
+    }
     @Published var currentTime: Double = 0
     @Published var duration: Double = 0
     @Published var playbackSpeed: Float = 1.0
@@ -26,7 +34,7 @@ final class AudioPlayerViewModel: NSObject, ObservableObject {
     @Published var lastSelectedItem: AudioDeclaration?
 
     private var urlQueue: [URL] = []
-    weak var audioDeclarationViewModel: AudioDeclarationViewModel?
+    // Removed audioDeclarationViewModel reference - not needed
 
     private var player: AVPlayer?
     private var timeObserver: Any?
@@ -38,19 +46,60 @@ final class AudioPlayerViewModel: NSObject, ObservableObject {
     override init() {
         super.init()
         
-        Publishers.CombineLatest($currentTime, $duration)
-            .sink { [weak self] currentTime, duration in
-                if (currentTime + 0.05) >= duration {
-                    self?.isPlaying = false
-                    self?.player?.seek(to: .zero)
-                }
-            }
-            .store(in: &cancellables)
-
+        // Removed the problematic Combine publisher that was checking for end of playback
+        // AVPlayer already handles this through AVPlayerItemDidPlayToEndTime notification
+        
         setupRemoteCommands()
+        setupBackgroundObservers()
+    }
+    
+    private func setupBackgroundObservers() {
+        // Audio content should continue playing in background
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleAppDidEnterBackground),
+            name: UIApplication.didEnterBackgroundNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleAppWillEnterForeground),
+            name: UIApplication.willEnterForegroundNotification,
+            object: nil
+        )
+    }
+    
+    @objc private func handleAppDidEnterBackground() {
+        // Ensure audio session remains active
+        do {
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            // Failed to keep audio session active
+        }
+        
+        // Force the player to continue if it was playing
+        if isPlaying, let player = player {
+            player.play()
+        }
+        
+        // Update the Now Playing info
+        updateNowPlayingInfo()
+    }
+    
+    @objc private func handleAppWillEnterForeground() {
+        // If audio should be playing but isn't, resume it
+        if isPlaying && player?.rate == 0 {
+            player?.play()
+        }
+        
+        // Update Now Playing info when returning
+        updateNowPlayingInfo()
     }
 
     deinit {
+        // Remove notification observers
+        NotificationCenter.default.removeObserver(self)
         // Clean up all observers and stop all audio
         resetPlayer()
         if let token = timeObserverToken {
@@ -136,33 +185,36 @@ final class AudioPlayerViewModel: NSObject, ObservableObject {
         hasPrefetchedNext = false
        // startMonitoringPlayback()
         
-        print("loadAudio called - URL: \(url), isSameItem: \(isSameItem), isPlaying: \(isPlaying)")
 
-        if isPlaying && isSameItem { 
-            print("Already playing same item, returning")
+        if isSameItem { 
+            // If same item and not playing, start playing
+            if !isPlaying {
+                player?.play()
+                isPlaying = true
+            }
             return 
         }
         resetPlayer()
 
-        // Improved audio session setup with error handling
+        // Improved audio session setup with error handling for background playback
         do {
-            // For simulator, use a different configuration
+            // Configure for background audio playback
+            let audioSession = AVAudioSession.sharedInstance()
             #if targetEnvironment(simulator)
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers])
+            try audioSession.setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
             #else
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+            try audioSession.setCategory(.playback, mode: .default, options: [.allowAirPlay])
             #endif
-            try AVAudioSession.sharedInstance().setActive(true)
-            print("Audio session configured successfully")
+            try audioSession.setActive(true)
+            // Audio session configured successfully
         } catch {
-            print("Failed to configure audio session: \(error)")
+            // Failed to configure audio session
         }
 
         // Verify file exists at URL (important for simulator)
-        if FileManager.default.fileExists(atPath: url.path) {
-            print("Audio file exists at path: \(url.path)")
-        } else {
-            print("WARNING: Audio file does not exist at path: \(url.path)")
+        if !FileManager.default.fileExists(atPath: url.path) {
+            // WARNING: Audio file does not exist
+            return
         }
         
         player = AVPlayer(url: url)
@@ -206,13 +258,11 @@ final class AudioPlayerViewModel: NSObject, ObservableObject {
             self.updateNowPlayingInfo()
         }
         // Always start playing when loading audio
-        player?.play()
+        if let player = player {
+            player.play()
+        }
         isPlaying = true
         
-        // Check player status after attempting to play
-        if let currentItem = player?.currentItem {
-            print("Player status: \(currentItem.status.rawValue), Rate: \(player?.rate ?? 0)")
-        }
         
         // Track listen event for metrics
         if let currentAudio = selectedItem {
@@ -230,11 +280,9 @@ final class AudioPlayerViewModel: NSObject, ObservableObject {
 
     func togglePlayPause() {
         guard let player = player else { 
-            print("togglePlayPause: No player available")
             return 
         }
 
-        print("togglePlayPause called - isPlaying before: \(isPlaying)")
         
         if isPlaying {
             player.pause()
@@ -245,7 +293,6 @@ final class AudioPlayerViewModel: NSObject, ObservableObject {
         }
         isPlaying.toggle()
         
-        print("togglePlayPause - isPlaying after: \(isPlaying), player rate: \(player.rate)")
         updateNowPlayingInfo()
     }
 
@@ -261,10 +308,15 @@ final class AudioPlayerViewModel: NSObject, ObservableObject {
 
     func changePlaybackSpeed(to speed: Float) {
         playbackSpeed = speed
-        player?.rate = speed
+        // Only set rate if player is actually playing
+        // Setting rate when not playing can interfere with playback
+        if isPlaying, let player = player {
+            player.rate = speed
+        }
     }
 
     func resetPlayer() {
+        print("🟣 resetPlayer START - current isPlaying: \(isPlaying)")
         // Safely remove KVO observer
         if player?.currentItem != nil {
             do {
@@ -286,9 +338,11 @@ final class AudioPlayerViewModel: NSObject, ObservableObject {
         player = nil
         currentTime = 0
         isPlaying = false
+        print("🟣 resetPlayer COMPLETED - isPlaying now false")
         
         // Ensure we stop the background music player to prevent conflicts
         AudioPlayerService.shared.stopMusic()
+        print("🟣 resetPlayer fully completed")
     }
 
 //    func addToQueue(item: AudioDeclaration) {

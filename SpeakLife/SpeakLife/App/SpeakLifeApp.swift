@@ -66,8 +66,8 @@ struct SpeakLifeApp: App {
                     ListenerMetricsService.shared.warmUpCache()
                     
                     viewModel.requestPermission()
-                    // Only start background music if explicitly enabled and app is in foreground
-                    if declarationStore.backgroundMusicEnabled && scenePhase == .active {
+                    // Start background music if explicitly enabled
+                    if declarationStore.backgroundMusicEnabled {
                         AudioPlayerService.shared.playSound(files: resources)
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -98,6 +98,13 @@ struct SpeakLifeApp: App {
                 
                 // Process any pending widget actions when app becomes active
                 WidgetDataBridge.shared.processPendingWidgetActions()
+                
+                // Resume background music if enabled, not already playing, and no content audio is active
+                if declarationStore.backgroundMusicEnabled && 
+                   !AudioPlayerService.shared.isPlaying && 
+                   !AudioPlayerViewModel.hasActiveAudio {
+                    AudioPlayerService.shared.playSound(files: resources)
+                }
                     
                 if appState.notificationEnabled {
                     // Ensure checklist notifications are scheduled (they repeat daily)
@@ -121,8 +128,9 @@ struct SpeakLifeApp: App {
                 AudioPlayerService.shared.pauseMusic()
                 break
             case .background:
-                // Ensure all audio is stopped when going to background
-                AudioPlayerService.shared.stopMusic()
+                // Only pause background music when going to background
+                // Content audio should continue playing
+                AudioPlayerService.shared.pauseMusic()
                 break
             @unknown default:
                 break

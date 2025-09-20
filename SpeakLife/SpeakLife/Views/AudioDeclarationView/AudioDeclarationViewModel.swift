@@ -54,6 +54,58 @@ final class AudioDeclarationViewModel: ObservableObject {
                 self?.objectWillChange.send()
             }
             .store(in: &cancellables)
+        
+        // Load cached audio data on startup
+        loadCachedAudioData()
+    }
+    
+    private func loadCachedAudioData() {
+        let fileManager = FileManager.default
+        let documentDirURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentDirURL.appendingPathComponent("audioDeclarations").appendingPathExtension("txt")
+        
+        guard fileManager.fileExists(atPath: fileURL.path) else {
+            return
+        }
+        
+        do {
+            let data = try Data(contentsOf: fileURL)
+            let decoder = JSONDecoder()
+            let cachedAudios = try decoder.decode([AudioDeclaration].self, from: data)
+            
+            self.allAudioFiles = cachedAudios
+            
+            // Populate the filtered arrays
+            audioDeclarations = allAudioFiles.filter { $0.tag == "declarations" }
+            bedtimeStories = allAudioFiles.filter { $0.tag == "bedtimeStories" }
+            gospelStories = allAudioFiles.filter { $0.tag == "gospel" }
+            meditations = allAudioFiles.filter { $0.tag == "meditation" }
+            speaklife = allAudioFiles.filter { $0.tag == "speaklife" }
+            godsHeart = allAudioFiles.filter { $0.tag == "godsHeart" }
+            growWithJesus = allAudioFiles.filter { $0.tag == "growWithJesus" }
+            divineHealth = allAudioFiles.filter { $0.tag == "divineHealth" }
+            psalm91 = allAudioFiles.filter { $0.tag == "psalm91" }
+            imagination = allAudioFiles.filter { $0.tag == "imagination" }
+            magnify = allAudioFiles.filter { $0.tag == "magnify" }
+            praise = allAudioFiles.filter { $0.tag == "praise" }
+            
+        } catch {
+            // Failed to load cached data, will fetch from service
+        }
+    }
+    
+    private func saveAudioDataToCache() {
+        let fileManager = FileManager.default
+        let documentDirURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentDirURL.appendingPathComponent("audioDeclarations").appendingPathExtension("txt")
+        
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(allAudioFiles)
+            try data.write(to: fileURL)
+        } catch {
+            // Failed to save cache, not critical
+        }
     }
 
     
@@ -100,6 +152,16 @@ final class AudioDeclarationViewModel: ObservableObject {
     }
     
     func fetchAudio(version: Int) {
+        // Don't clear cache if remote version is 0 (not loaded from Remote Config yet)
+        if version == 0 {
+            return
+        }
+        
+        // If we already have this version and content, don't refetch
+        if version <= lastCachedAudioVersion && !allAudioFiles.isEmpty {
+            return
+        }
+        
         if version > lastCachedAudioVersion {
             clearCache()
             clearAudioDeclarationsCache()
@@ -128,6 +190,9 @@ final class AudioDeclarationViewModel: ObservableObject {
                 
                 // Legacy filter setup
                 setFilters(welcome)
+                
+                // Save audio data to cache
+                self.saveAudioDataToCache()
                 
                 // Update the cached version after successful fetch
                 self.lastCachedAudioVersion = version
@@ -215,20 +280,22 @@ final class AudioDeclarationViewModel: ObservableObject {
     }
     
     func fetchAudio(for item: AudioDeclaration, completion: @escaping (Result<URL, Error>) -> Void) {
-        print(item.id, "RWRW")
            // Get the local URL for the file
            let localURL = cachedFileURL(for: item.id)
-           // self.downloadProgress[item.id] = 0.0
 
-           // Check if the file exists locally
+           // Check if the file exists locally and is valid
            if fileManager.fileExists(atPath: localURL.path) {
-               print("File found in cache: \(localURL.path)")
-               completion(.success(localURL))
-               return
+               let fileSize = (try? fileManager.attributesOfItem(atPath: localURL.path)[.size] as? Int) ?? 0
+               if fileSize > 0 {
+                   completion(.success(localURL))
+                   return
+               } else {
+                   // Remove the empty file and re-download
+                   try? fileManager.removeItem(at: localURL)
+               }
            }
 
            // If not, download from Firebase
-           print("File not found in cache. Downloading from Firebase.")
            downloadAudio(for: item, to: localURL, completion: completion)
        }
     
@@ -242,15 +309,12 @@ final class AudioDeclarationViewModel: ObservableObject {
             if let error = error {
                 completion(.failure(error))
             } else if let url = url {
-                
                 completion(.success(url))
             }
         }
         
         downloadTask.observe(.progress) { snapshot in
-           
             if let progress = snapshot.progress {
-                print("Download Progress: \(progress.fractionCompleted)")
                 DispatchQueue.main.async {
                     self.downloadProgress[item.id] = progress.fractionCompleted
                     
@@ -273,9 +337,8 @@ final class AudioDeclarationViewModel: ObservableObject {
                     let fileURL = cacheDirectory.appendingPathComponent(file)
                     try fileManager.removeItem(at: fileURL)
                 }
-                print("Cache cleared successfully!")
             } catch {
-                print("Failed to clear cache: \(error.localizedDescription)")
+                // Failed to clear cache
             }
         }
     }
@@ -288,15 +351,9 @@ final class AudioDeclarationViewModel: ObservableObject {
         do {
             if fileManager.fileExists(atPath: fileURL.path) {
                 try fileManager.removeItem(at: fileURL)
-                print("Audio declarations cache cleared successfully!")
             }
-            
-            // Reset the audio local version to force fresh download
-            UserDefaults.standard.set(0, forKey: "audioLocalVersion")
-            print("Audio local version reset to force fresh download")
-            
         } catch {
-            print("Failed to clear audio declarations cache: \(error.localizedDescription)")
+            // Failed to clear cache
         }
     }
   }

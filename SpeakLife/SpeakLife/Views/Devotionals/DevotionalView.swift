@@ -56,7 +56,7 @@ struct DevotionalView: View {
         } else {
                 ScrollView {
                     VStack {
-                        OptimizedSubscriptionView(size: UIScreen.main.bounds.size) {
+                        OptimizedSubscriptionView() { //size: UIScreen.main.bounds.size) {
                             // Handle callback - typically dismiss or navigation
                         }
                     }

@@ -11,7 +11,7 @@ struct WhatsNewBottomSheet: View {
     @Binding var isPresented: Bool
     let version: String
     let features = [
-        "performance improvements",
+        "UX fixes",
        // "NEW Audio AutoPlay"
     ]
 

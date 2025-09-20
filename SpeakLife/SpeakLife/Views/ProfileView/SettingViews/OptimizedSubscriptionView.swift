@@ -2,7 +2,7 @@
 //  OptimizedSubscriptionView.swift
 //  SpeakLife
 //
-//  Optimized for maximum trial conversion and sales
+//  Rebuilt with Abide-inspired design for maximum conversion
 //
 
 import SwiftUI
@@ -10,133 +10,121 @@ import StoreKit
 import FirebaseAnalytics
 
 // MARK: - View Models
+struct AbideStyleBenefit {
+    let icon: String
+    let title: String
+    let description: String
+}
+
 struct PricingOption {
     let product: Product?
+    let title: String
+    let subtitle: String
+    let price: String
     let isSelected: Bool
-    let isYearly: Bool
-    let displayPrice: String
-    let monthlyEquivalent: String?
-    let savingsPercentage: String?
-    let isMostPopular: Bool
+    let isBestOffer: Bool
 }
 
 // MARK: - Subcomponents
-struct ValueProposition: View {
-    let icon: String
-    let text: String
+struct BenefitRow: View {
+    let benefit: AbideStyleBenefit
     
     var body: some View {
         HStack(spacing: 16) {
-            Image(systemName: icon)
-                .font(.system(size: 20, weight: .medium))
-                .foregroundColor(.white)
-                .frame(width: 30, height: 30)
-                .background(
-                    Circle()
-                        .fill(
-                            LinearGradient(
-                                gradient: Gradient(colors: [
-                                    Color(red: 0.7, green: 0.3, blue: 1.0),  // Bright violet
-                                    Color(red: 0.85, green: 0.6, blue: 1.0), // Lavender
-                                    Color(red: 0.5, green: 0.2, blue: 0.9)   // Deep purple
-                                ]),
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            )
-
-                        )
-                        .shadow(color: Color.orange.opacity(0.3), radius: 4, x: 0, y: 2)
-                )
-            
-            Text(text)
-                .font(.system(size: 15, weight: .semibold, design: .rounded))
-                .foregroundColor(.white)
-                .fixedSize(horizontal: false, vertical: true)
+            VStack {
+                Image(systemName: benefit.icon)
+                    .font(.system(size: 20, weight: .medium))
+                    .foregroundColor(Constants.DAMidBlue) // SpeakLife blue
+                    .frame(width: 24, height: 24)
+                Spacer()
+                
+            }
+            VStack(alignment: .leading, spacing: 2) {
+                Text(benefit.title)
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Text(benefit.description)
+                    .font(.system(size: 12, weight: .regular))
+                    .foregroundColor(.white.opacity(0.8))
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.vertical, 4)
     }
 }
 
-struct PricingOptionView: View {
+struct AbideStylePricingOption: View {
     let option: PricingOption
     let action: () -> Void
-    let showingWeeklyMonthly: Bool
     
     var body: some View {
         Button(action: action) {
             ZStack {
-                HStack(spacing: 16) {
+                HStack(spacing: 12) {
                     // Selection indicator
-//                    ZStack {
-//                        Circle()
-//                            .fill(option.isSelected ? 
-//                                   Color.black : Color.white)
-//                            .frame(width: 24, height: 24)
-//                        
-//                        if option.isSelected {
-//                            Image(systemName: "checkmark")
-//                                .font(.system(size: 12, weight: .bold))
-//                                .foregroundColor(.white)
-//                        }
-//                    }
-                    
-                    VStack(alignment: .leading, spacing: 4) {
-                        HStack(spacing: 8) {
-                            Text(getSubscriptionTypeText(for: option, showingWeeklyMonthly: showingWeeklyMonthly))
-                                .font(.system(size: 18, weight: .semibold, design: .rounded))
-                                .foregroundColor(textColor)
-                            
-//                            if let savings = option.savingsPercentage {
-//                                Text(savings)
-//                                    .font(.system(size: 11, weight: .bold, design: .rounded))
-//                                    .foregroundColor(.white)
-//                                    .padding(.horizontal, 8)
-//                                    .padding(.vertical, 3)
-//                                    .background(
-//                                        Capsule()
-//                                            .fill(badgeBackgroundColor)
-//                                    )
-//                            }
-                        }
+                    ZStack {
+                        Circle()
+                            .stroke(Color.white.opacity(0.5), lineWidth: 2)
+                            .frame(width: 20, height: 20)
                         
-//                        Text(option.monthlyEquivalent ?? "Cancel anytime")
-//                            .font(.system(size: 14, weight: .medium))
-//                            .foregroundColor(subtextColor)
+                        if option.isSelected {
+                            Circle()
+                                .fill(Constants.DAMidBlue) // SpeakLife blue
+                                .frame(width: 12, height: 12)
+                        }
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(option.title)
+                            .font(.system(size: 16, weight: .medium))
+                            .foregroundColor(.white)
+                        
+                        Text(option.subtitle)
+                            .font(.system(size: 12, weight: .regular))
+                            .foregroundColor(.white.opacity(0.7))
                     }
                     
                     Spacer()
                     
-                    Text(option.displayPrice)
-                        .font(.system(size: 24, weight: .bold, design: .rounded))
-                        .foregroundColor(textColor)
+                    Text(option.price)
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.white)
                 }
-                .padding(.horizontal, 20)
-                .padding(.vertical, 16)
-                .background(backgroundGradient)
-                .scaleEffect(option.isSelected ? 1.02 : 1.0)
-                .shadow(
-                    color: option.isSelected ? shadowColor : Color.clear,
-                    radius: option.isSelected ? (option.isYearly ? 12 : 8) : 0,
-                    y: option.isSelected ? (option.isYearly ? 6 : 4) : 0
+                .padding(.horizontal, 12)
+                .padding(.vertical, 12)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(option.isSelected ? 
+                              Constants.DAMidBlue.opacity(0.3) : // SpeakLife blue
+                              Color.black.opacity(0.2))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(option.isSelected ? 
+                                       Constants.DAMidBlue : // SpeakLife blue
+                                       Color.white.opacity(0.2), 
+                                       lineWidth: option.isSelected ? 2 : 1)
+                        )
                 )
                 
-                // Most Popular badge
-                if option.isMostPopular {
+                // Best Offer badge
+                if option.isBestOffer {
                     VStack {
                         HStack {
                             Spacer()
-                            Text("7-Day Free Trial")
-                                .font(.system(size: 12, weight: .bold, design: .rounded))
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 10)
+                            Text("Best Offer")
+                                .font(.system(size: 12, weight: .bold))
+                                .foregroundColor(.black)
+                                .padding(.horizontal, 12)
                                 .padding(.vertical, 4)
                                 .background(
                                     Capsule()
-                                        .fill(
-                                            Constants.gold
-                                        )
+                                        .fill(Color(red: 1.0, green: 0.8, blue: 0.0))
                                 )
-                                .shadow(color: Color.yellow.opacity(0.4), radius: 6, y: 2)
-                                .offset(x: -12, y: -12)
+                                .offset(x: -8, y: -0)
                         }
                         Spacer()
                     }
@@ -145,154 +133,26 @@ struct PricingOptionView: View {
         }
         .buttonStyle(PlainButtonStyle())
     }
-    
-    private func getSubscriptionTypeText(for option: PricingOption, showingWeeklyMonthly: Bool) -> String {
-        guard let product = option.product else {
-            return "Weekly"
-        }
-        
-        if product.id.contains("Weekly") || product.id.contains("1WK") || product.id.lowercased().contains("week") {
-            return "Weekly"
-        } else if product.id.contains("1YR") || product.id.contains("Yearly") || product.id.lowercased().contains("year") {
-            return "Yearly - \(option.monthlyEquivalent ?? "")"
-        } else if product.id.contains("Monthly") || product.id.contains("MO") || product.id.lowercased().contains("month") {
-            return "Monthly"
-        } else {
-            // Fallback based on the isYearly flag in the option
-            if option.isYearly {
-                return "Yearly"
-            } else {
-                return "Weekly"
-            }
-        }
-    }
-    
-    private var textColor: Color {
-//        if option.isSelected {
-//            return .black
-//        }
-        return .white
-    }
-    
-    private var subtextColor: Color {
-        if option.isSelected && option.isYearly {
-            return .black.opacity(0.7)
-        }
-        return .white.opacity(0.7)
-    }
-    
-    private var badgeBackgroundColor: Color {
-        if option.isSelected && option.isYearly {
-            return Color.black.opacity(0.7)
-        }
-        return Color.white.opacity(0.3)
-    }
-    
-    private var shadowColor: Color {
-        if option.isYearly {
-            return Color.orange.opacity(0.2)
-        }
-        return Color.white.opacity(0.1)
-    }
-    
-    private var backgroundGradient: some View {
-        RoundedRectangle(cornerRadius: 16, style: .continuous)
-            .fill(weeklySelectedGradient)
-//                option.isSelected ?
-//                yearlySelectedGradient :)
-    
-            .overlay(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .stroke(
-                        Color.white.opacity(0.9),
-                        lineWidth: option.isSelected ? 3 : 1
-                        )
-            )
-    }
-    
-    private var yearlySelectedGradient: LinearGradient {
-        LinearGradient(
-            gradient: Gradient(colors: [
-                Color(red: 1.0, green: 0.88, blue: 0.2),
-                Color(red: 1.0, green: 0.8, blue: 0.0),
-                Color(red: 0.9, green: 0.7, blue: 0.0)
-            ]),
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        )
-    }
-    
-    private var weeklySelectedGradient: LinearGradient {
-        LinearGradient(
-            gradient: Gradient(colors: [
-                Color.white.opacity(0.2),
-                Color.white.opacity(0.15)
-            ]),
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        )
-    }
-    
-    private var unselectedGradient: LinearGradient {
-        LinearGradient(
-            gradient: Gradient(colors: [
-                Color.white.opacity(0.08),
-                Color.white.opacity(0.04)
-            ]),
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        )
-    }
 }
 
-struct FloatingCTAButton: View {
-    let isYearlyPlan: Bool
-    let displayPrice: String
+struct AbideStyleCTAButton: View {
     let action: () -> Void
-    @Binding var animateCTA: Bool
     
     var body: some View {
         Button(action: action) {
-            VStack(spacing: 6) {
-                Text(ctaTitle)
-                    .font(.system(size: 19, weight: .bold, design: .rounded))
-                    .foregroundColor(.black)
-                
-                Text(ctaSubtitle)
-                    .font(.system(size: 12, weight: .medium, design: .rounded))
-                    .foregroundColor(.black.opacity(0.7))
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 16)
-            .background(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .fill(
-                        LinearGradient(
-                            gradient: Gradient(stops: [
-                                .init(color: Color.white, location: 0.0),
-                                .init(color: Color(red: 0.95, green: 0.95, blue: 0.95), location: 1.0)
-                            ]),
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    )
-                    .shadow(color: Color.white.opacity(0.4), radius: 25, x: 0, y: 10)
-                    .shadow(color: Color.black.opacity(0.15), radius: 2, x: 0, y: 1)
-            )
-            .scaleEffect(animateCTA ? 1.015 : 1.0)
-            .animation(.easeInOut(duration: 2.5).repeatForever(autoreverses: true), value: animateCTA)
+            Text("Continue")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 16)
+                .background(
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(Constants.DAMidBlue) // SpeakLife blue
+                )
         }
         .buttonStyle(PlainButtonStyle())
     }
-    
-    private var ctaTitle: String {
-        isYearlyPlan ? "Start My Transformation" : "Begin Speaking Life Today"
-    }
-    
-    private var ctaSubtitle: String {
-        return "Cancel anytime"
-    }
- }
+}
 
 // MARK: - Main View
 struct OptimizedSubscriptionView: View {
@@ -303,75 +163,93 @@ struct OptimizedSubscriptionView: View {
     
     @State private var isShowingError = false
     @State private var errorMessage = ""
-    @State private var currentSelection: Product?
-    @State private var hasInitialized = false
-    @State private var animateCTA = false
-    @State private var isInitialLoad = true
-    @State private var testimonialIndex = 0
-    @State private var timeRemaining: TimeInterval = 600
+    @State private var selectedOption: String = "annual" // "annual" or "monthly"
     
-    let size: CGSize
     var callback: (() -> Void)?
     
-    // Always show weekly and yearly options
-    
-    private let transformationStories = [
-        "Thanks SpeakLife for helping me to know who Jesus is. I love everything about SpeakLife. It has brought me closer to Him...",
-        "This app was created under the manifestation and direction of the Holy Spirit...",
-        "I'm spending more time on this than facebook. This is filling me with truth instead of garbage and the audios are amazing...",
-        "I love to be able to feed on promises of God thruout the day, it's so upliting and encouraging. It feeds my soul...",
-        "I love this app so much its amazing all glory be to God...",
-        "I just read the letter from my Heavenly Father on this app and it really drives home the message of God's love for me...",
-        "I love the daily reminders they've been helping me renew my mind and how I think..."
-    ]
-    
-    private let valueProps = [
-        ValueProposition(icon: "sparkles", text: "Speak healing, see it manifest"),
-        ValueProposition(icon: "bolt.fill", text: "Turn setbacks into breakthroughs"),
-        ValueProposition(icon: "leaf.fill", text: "Plant yourself in promises that prosper"),
-        ValueProposition(icon: "crown.fill", text: "Walk in supernatural provision"),
-        ValueProposition(icon: "heart.circle.fill", text: "Peace that silences every fear"),
-    ]
-    
-    private let valuePropsSupport = [
-        ValueProposition(icon: "sunrise.fill", text: "Build your life on Jesus"),
-        ValueProposition(icon: "lock.open.fill", text: "Unlock 2000+ declarations, devotionals & audio"),
-        ValueProposition(icon: "hands.sparkles.fill", text: "Help millions discover God's promises"),
-        ValueProposition(icon: "sunrise.fill", text: "Life-changing revelations that unlock God's power"),
+    // Benefits matching the Abide screenshot
+    private let benefits = [
+        AbideStyleBenefit(
+            icon: "leaf.fill",
+            title: "Find Peace",
+            description: "Explore affirmation categories for answers to your life's circumanstances"
+        ),
+//        AbideStyleBenefit(
+//            icon: "moon.fill",
+//            title: "Improve Sleep",
+//            description: "500+ calming bedtime stories, relaxing music, and ambient sounds"
+//        ),
+        AbideStyleBenefit(
+            icon: "heart.fill",
+            title: "Be Encouraged",
+            description: "Start your day with \"New Creation\" devotionals and uplifting audio"
+        ),
+        AbideStyleBenefit(
+            icon: "sparkles",
+            title: "Deepen Faith",
+            description: "1500+ affirmations on topics like anxiety, healing, and spiritual growth with 25+ visual backgrounds"
+        ),
+        AbideStyleBenefit(
+            icon: "speaker.wave.2.fill",
+            title: "Seamless Listening",
+            description: "Stream continuously to renw your mind"
+        ),
+        AbideStyleBenefit(
+            icon: "heart.circle.fill",
+            title: "Invest in Well-Being",
+            description: "Get full access for just $39.99/year—less than $1/week"
+        )
     ]
     
     var body: some View {
-        ZStack {
-            backgroundGradient
-            
-            ScrollView {
+        GeometryReader { geometry in
+            ZStack {
+                // Background
+                Constants.SLBlue.ignoresSafeArea()
+                
                 VStack(spacing: 0) {
-                    headerSection
-                   // socialProofBanner
-                    mainOfferSection
-                    Spacer().frame(height: 16)
-                    pricingSection
-                    transformationSection
-                    Spacer().frame(height: 8)
-                   
-                    trustSection
-                    Spacer().frame(height: 150)
+                    // Scrollable content
+                    ScrollView {
+                        VStack(spacing: 0) {
+                            // Header with background image
+                            
+                            headerSection(geometry: geometry)
+                            
+                            // Benefits
+                            benefitsSection
+                            
+                            // Space for sticky bottom
+                           // Spacer().frame(height: geometry.size.height * 0.2)
+                        }
+                    }
+                
+                    stickyBottomSection
+                        .frame(height: geometry.size.height * 0.35)
                 }
-            }
-            
-            VStack {
-                Spacer()
-                floatingCTASection
-            }
-            
-            if declarationStore.isPurchasing {
-                RotatingLoadingImageView()
+                
+                // Close button
+                VStack {
+                    HStack {
+                        Spacer()
+                        Button(action: { dismiss() }) {
+                            Image(systemName: "xmark")
+                                .font(.system(size: 16, weight: .medium))
+                                .foregroundColor(.white)
+                                .frame(width: 32, height: 32)
+                                .background(Circle().fill(Color.black.opacity(0.3)))
+                        }
+                        .padding(.top, geometry.safeAreaInsets.top + 20)
+                        .padding(.trailing, 20)
+                    }
+                    Spacer()
+                }
+                
+                if declarationStore.isPurchasing {
+                    RotatingLoadingImageView()
+                }
             }
         }
         .onAppear(perform: setupView)
-        .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
-            updateCountdown()
-        }
         .alert("", isPresented: $isShowingError) {
             Button("OK", role: .cancel) { }
         } message: {
@@ -380,437 +258,215 @@ struct OptimizedSubscriptionView: View {
     }
     
     // MARK: - Computed Properties
-    private var isYearlyPlan: Bool {
-        // Default to yearly on initial load to prevent CTA flicker
-        guard let currentSelection = currentSelection else { return true }
-        return currentSelection.id == subscriptionStore.currentOfferedPremium?.id ||
-               currentSelection.id.contains("1YR") || currentSelection.id.contains("Yearly")
-    }
-    
-    private var currentDisplayPrice: String {
-        currentSelection?.displayPrice ?? 
-        subscriptionStore.currentOfferedWeekly?.displayPrice ?? 
-        "$3.99"
-    }
-    
-    
-    private var weeklyPrice: String {
-        subscriptionStore.currentOfferedWeekly?.displayPrice ?? "$3.99"
+    private var yearlyPrice: String {
+        subscriptionStore.currentOfferedPremium?.displayPrice ?? "$39.99"
     }
     
     private var monthlyPrice: String {
         subscriptionStore.currentOfferedPremiumMonthly?.displayPrice ?? "$9.99"
     }
     
-    private var yearlyPrice: String {
-        subscriptionStore.currentOfferedPremium?.displayPrice ?? "$59.99"
-    }
-    
     private var yearlyEquivalentPrice: String {
         guard let yearlyProduct = subscriptionStore.currentOfferedPremium else {
-            return "$3.33/mo"
+            return "then $39.99 per year"
         }
-        let monthlyEquiv = yearlyProduct.price / 12
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.locale = yearlyProduct.priceFormatStyle.locale
-        return "\(formatter.string(from: NSNumber(value: Double(truncating: monthlyEquiv as NSNumber))) ?? "$3.33")/mo"
+        return "then \(yearlyProduct.displayPrice) per year"
     }
     
+    private var monthlyEquivalentPrice: String {
+        guard let monthlyProduct = subscriptionStore.currentOfferedPremiumMonthly else {
+            return "then $9.99/mo"
+        }
+        return "then \(monthlyProduct.displayPrice)/mo"
+    }
     
-    private var yearlySavingsFromWeekly: String? {
-        guard let weeklyProduct = subscriptionStore.currentOfferedWeekly,
-              let yearlyProduct = subscriptionStore.currentOfferedPremium else {
-            return nil
+    private var dynamicHeaderPricing: String {
+        if selectedOption == "annual" {
+            guard let yearlyProduct = subscriptionStore.currentOfferedPremium else {
+                return "Get 7 days free, then $39.99 per year"
+            }
+            return "Get 7 days free, then \(yearlyProduct.displayPrice) per year"
+        } else {
+            guard let monthlyProduct = subscriptionStore.currentOfferedPremiumMonthly else {
+                return "Get 7 days free, then $9.99/mo"
+            }
+            return "Get 7 days free, then \(monthlyProduct.displayPrice)/mo"
         }
-        
-        // Calculate what 52 weeks would cost at weekly rate
-        let weeklyYearlyEquivalent = weeklyProduct.price * 52
-        let yearlyCost = yearlyProduct.price
-        
-        // Only show savings if yearly is actually cheaper
-        if yearlyCost < weeklyYearlyEquivalent {
-            let savings = ((weeklyYearlyEquivalent - yearlyCost) / weeklyYearlyEquivalent) * 100 / 52
-            let roundedSavings = Int(Double(truncating: savings as NSNumber).rounded())
-            return "SAVE \(roundedSavings)%"
-        }
-        return nil
+    }
+    
+    private var selectedProduct: Product? {
+        selectedOption == "annual" ? 
+            subscriptionStore.currentOfferedPremium : 
+            subscriptionStore.currentOfferedPremiumMonthly
     }
     
     // MARK: - View Components
-    private var backgroundGradient: some View {
-        LinearGradient(
-            gradient: Gradient(colors: [
-                Color(red: 0.1, green: 0.2, blue: 0.4),
-                Color(red: 0.3, green: 0.1, blue: 0.4),
-                Color(red: 0.2, green: 0.1, blue: 0.3)
-            ]),
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        )
-        .ignoresSafeArea()
-    }
     
-    private var headerSection: some View {
-        Spacer().frame(height: 30)
-    }
-    
-    private var socialProofBanner: some View {
-        HStack {
-            Image(systemName: "checkmark.shield.fill")
-                .foregroundColor(.green)
-            Text("Join 50,000+ believers transforming fear into faith in just 5 minutes.")
-                .font(.system(size: 16, weight: .semibold))
-                .foregroundColor(.white)
-            Image(systemName: "checkmark.shield.fill")
-                .foregroundColor(.green)
-        }
-        .padding(.vertical, 12)
-        .padding(.horizontal, 20)
-        .background(
-            Capsule()
-                .fill(LinearGradient(
-                    gradient: Gradient(colors: [.purple.opacity(0.6), .blue.opacity(0.6)]),
-                    startPoint: .leading,
-                    endPoint: .trailing
-                ))
-        )
-        .padding(.horizontal)
-        .padding(.bottom, 24)
-    }
-  
-    
-    private var mainOfferSection: some View {
-        VStack(spacing: 12) {
-            appIconSection
-            headlineSection
-            if subscriptionStore.showSubscriptionFirst {
-                valuePropsSupportSection
-            } else {
-                valuePropsSection
-            }
-        }
-    }
-    
-    private var appIconSection: some View {
+    private func headerSection(geometry: GeometryProxy) -> some View {
         ZStack {
-            Circle()
-                .fill(
-                    RadialGradient(
-                        gradient: Gradient(colors: [
-                            Color.white.opacity(0.15),
-                            Color.clear
-                        ]),
-                        center: .center,
-                        startRadius: 10,
-                        endRadius: 80
-                    )
-                )
-                .frame(width: 100, height: 100)
-            
-            Image("appIconDisplay")
+            // Background image
+            Image("starrySunrise")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 70, height: 70)
-                .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .stroke(
-                            LinearGradient(
-                                gradient: Gradient(colors: [
-                                    Color.white.opacity(0.8),
-                                    Color.white.opacity(0.2)
-                                ]),
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            ),
-                            lineWidth: 2
+                .aspectRatio(contentMode: .fill)
+                .frame(height: geometry.size.height * 0.33)
+                .clipped()
+            
+            // Gradient overlay
+//            LinearGradient(
+//                gradient: Gradient(colors: [
+//                    Color.clear,
+//                    Constants.SLBlue.opacity(0.3)
+//                ]),
+//                startPoint: .top,
+//                endPoint: .bottom
+//            )
+            
+            // Content
+            VStack(spacing: geometry.size.height * 0.02) {
+                Spacer().frame(height:geometry.size.height * 0.1)
+                
+                // Logo and title
+                VStack(spacing: geometry.size.height * 0.015) {
+                    Image("appIconDisplay")
+                        .resizable()
+                        .frame(width: geometry.size.width * 0.18, height: geometry.size.width * 0.18)
+                        .clipShape(RoundedRectangle(cornerRadius: geometry.size.width * 0.04))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: geometry.size.width * 0.04)
+                                .stroke(Color.white.opacity(0.3), lineWidth: 1)
                         )
+                    
+                    Text("SpeakLife")
+                        .font(.system(size: 26, weight: .bold))
+                        .shadow(color: Color.white.opacity(0.6), radius: 4, x: 0, y: 2)
+                        .foregroundColor(.white)
+                        .shadow(radius: 2)
+                }
+                
+                Spacer()
+                    .frame(height:geometry.size.height * 0.0005)
+                
+                // Join banner
+                VStack(spacing: geometry.size.height * 0.01) {
+                    Text("Join the 50,000+ Growing in Faith Daily")
+                        .font(.system(size: geometry.size.width * 0.040, weight: .semibold))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                    
+                    Text(dynamicHeaderPricing)
+                        .font(.system(size: geometry.size.width * 0.035, weight: .regular))
+                        .foregroundColor(.white.opacity(0.9))
+                }
+                .padding(.horizontal, geometry.size.width * 0.05)
+                .padding(.vertical, geometry.size.height * 0.02)
+                .background(
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Constants.DAMidBlue.opacity(0.9))
                 )
-                .shadow(color: .white.opacity(0.2), radius: 30, x: 0, y: 10)
-        }
-    }
-    
-    private var headlineSection: some View {
-        VStack(spacing: 4) {
-            Text("Ready to Speak God's Promises Daily?")
-                .font(.system(size: 22, weight: .medium, design: .rounded))
-                .foregroundColor(.white.opacity(0.9))
-            
-            Text("Join thousands who are watching their words become their reality.")
-                .font(.system(size: 14, weight: .medium, design: .rounded))
-                .foregroundColor(.white.opacity(0.8))
-                .padding(.top, 4)
-        }
-        .multilineTextAlignment(.center)
-    }
-    
-    private var valuePropsSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            ForEach(valueProps, id: \.text) { prop in
-                prop
+                .padding(.horizontal, geometry.size.width * 0.05)
+                .padding(.bottom, geometry.size.height * 0.025)
             }
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 12)
-        .background(
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .fill(
-                    LinearGradient(
-                        gradient: Gradient(colors: [
-                            Color.white.opacity(0.08),
-                            Color.white.opacity(0.03)
-                        ]),
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
-                .overlay(
-                    RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .stroke(Color.white.opacity(0.1), lineWidth: 1)
-                )
-        )
-       // .padding(.horizontal, 20)
+        .frame(height: geometry.size.height * 0.33)
     }
     
-    private var valuePropsSupportSection: some View {
+    private var benefitsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            ForEach(valuePropsSupport, id: \.text) { prop in
-                prop
+            ForEach(benefits, id: \.title) { benefit in
+                BenefitRow(benefit: benefit)
             }
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 12)
-        .background(
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .fill(
-                    LinearGradient(
-                        gradient: Gradient(colors: [
-                            Color.white.opacity(0.08),
-                            Color.white.opacity(0.03)
-                        ]),
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
-                .overlay(
-                    RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .stroke(Color.white.opacity(0.1), lineWidth: 1)
-                )
-        )
-       // .padding(.horizontal, 20)
+       // .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 24)
+        .padding(.top, 24)
+       // .padding(.bottom, 24)
     }
     
-    private var transformationSection: some View {
-        VStack(spacing: 16) {
-            Text("\"\(transformationStories[testimonialIndex])\"")
-                .font(.system(size: 17, weight: .medium, design: .rounded))
-                .foregroundColor(.white.opacity(0.9))
-                .multilineTextAlignment(.center)
-                .transition(.asymmetric(
-                    insertion: .move(edge: .trailing).combined(with: .opacity),
-                    removal: .move(edge: .leading).combined(with: .opacity)
-                ))
-                .id(testimonialIndex)
-                .animation(.easeInOut(duration: 0.5), value: testimonialIndex)
-                .padding(.horizontal, 30)
-        }
-        .padding(.vertical, 12)
-    }
-    @ViewBuilder
     private var pricingSection: some View {
-        VStack(spacing: 12) {
-            Spacer().frame(height: 8)
+        VStack(spacing: 0) {
+            AbideStylePricingOption(
+                option: PricingOption(
+                    product: subscriptionStore.currentOfferedPremium,
+                    title: "Annual",
+                    subtitle: "Full access, 7 days free \(yearlyEquivalentPrice)",
+                    price: yearlyPrice,
+                    isSelected: selectedOption == "annual",
+                    isBestOffer: true
+                ),
+                action: { selectedOption = "annual" }
+            )
             
-           /// if subscriptionStore.showSubscriptionFirst {
-            ///
-            PricingOptionView(
-            option: PricingOption(
-                product: subscriptionStore.currentOfferedPremium,
-                isSelected: currentSelection == subscriptionStore.currentOfferedPremium,
-                isYearly: true,
-                displayPrice: yearlyPrice,
-                monthlyEquivalent: "\(yearlyEquivalentPrice)",
-                savingsPercentage: yearlySavingsFromWeekly,
-                isMostPopular: true
-            ),
-            action: selectYearly,
-            showingWeeklyMonthly: false
-        )
-        .padding(.horizontal, 20)
-
-                // MOnthly option
-                PricingOptionView(
-                    option: PricingOption(
-                        product: subscriptionStore.currentOfferedPremiumMonthly,
-                        isSelected: currentSelection == subscriptionStore.currentOfferedPremiumMonthly,
-                        isYearly: false,
-                        displayPrice: monthlyPrice,
-                        monthlyEquivalent: "Cancel anytime",
-                        savingsPercentage: nil,
-                        isMostPopular: false
-                    ),
-                    action: selectMonthly,
-                    showingWeeklyMonthly: true
-                )
-                .padding(.horizontal, 20)
-       //     }
-            
-           
-            
-            
+            AbideStylePricingOption(
+                option: PricingOption(
+                    product: subscriptionStore.currentOfferedPremiumMonthly,
+                    title: "Monthly",
+                    subtitle: "Full access, 7 days free \(monthlyEquivalentPrice)",
+                    price: monthlyPrice,
+                    isSelected: selectedOption == "monthly",
+                    isBestOffer: false
+                ),
+                action: { selectedOption = "monthly" }
+            )
         }
+        .frame(maxWidth: .infinity)
     }
     
-    private var floatingCTASection: some View {
+    private var ctaButton: some View {
+        AbideStyleCTAButton(action: makePurchase)
+            .frame(maxWidth: .infinity)
+    }
+    
+    private var stickyBottomSection: some View {
         VStack(spacing: 0) {
+            // Gradient fade effect at top
             LinearGradient(
                 gradient: Gradient(colors: [
                     Color.clear,
-                    Color(red: 0.2, green: 0.1, blue: 0.3).opacity(0.95)
+                    Constants.SLBlue.opacity(0.95)
                 ]),
                 startPoint: .top,
                 endPoint: .bottom
             )
-            .frame(height: 20)
+            .frame(height: 15)
             
-            VStack(spacing: 16) {
-                FloatingCTAButton(
-                    isYearlyPlan: isYearlyPlan,
-                    displayPrice: currentDisplayPrice,
-                    action: makePurchase,
-                    animateCTA: $animateCTA
-                )
+            VStack(spacing: 8) {
+                // Pricing options
+                pricingSection
                 
-                trustIndicators
+                // CTA button
+                ctaButton
                 
-//                Button(action: dismiss.callAsFunction) {
-//                    Text("No thanks")
-//                        .font(.system(size: 13, weight: .medium, design: .rounded))
-//                        .foregroundColor(.white.opacity(0.4))
-//                }
+                // Bottom links
+                bottomLinks
             }
             .padding(.horizontal, 20)
-            .padding(.vertical, 16)
-            .background(
-                Color(red: 0.2, green: 0.1, blue: 0.3).opacity(0.95)
-                    .overlay(
-                        Rectangle()
-                            .fill(Color.white.opacity(0.05))
-                            .blur(radius: 1)
-                    )
-            )
+            .padding(.vertical, 12)
+            .padding(.bottom, 8)
+            .background(Constants.SLBlue.opacity(0.95))
         }
         .ignoresSafeArea(edges: .bottom)
     }
     
-    private var trustIndicators: some View {
-        HStack(spacing: 24) {
-            HStack(spacing: 4) {
-                Image(systemName: "checkmark.circle.fill")
-                    .font(.system(size: 12))
-                    .foregroundColor(Color(red: 0.2, green: 0.8, blue: 0.2))
-                Text("Instant access")
-                    .font(.system(size: 11, weight: .medium, design: .rounded))
-                    .foregroundColor(.white.opacity(0.8))
-            }
+    private var bottomLinks: some View {
+        HStack(spacing: 30) {
+            Button("Restore", action: restore)
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(.white)
             
-            HStack(spacing: 4) {
-                Image(systemName: "lock.fill")
-                    .font(.system(size: 12))
-                    .foregroundColor(Color(red: 0.2, green: 0.6, blue: 1.0))
-                Text("Cancel anytime")
-                    .font(.system(size: 11, weight: .medium, design: .rounded))
-                    .foregroundColor(.white.opacity(0.8))
-            }
-        }
-    }
-    
-    private var trustSection: some View {
-        VStack(spacing: 12) {
-            HStack(spacing: 4) {
-                HStack(spacing: 2) {
-                    ForEach(0..<5) { _ in
-                        Image(systemName: "star.fill")
-                            .font(.system(size: 14))
-                            .foregroundColor(.yellow)
-                    }
-                }
-                Text("3k+ 5 star reviews")
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundColor(.white)
-            }
+            Link("Terms", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(.white)
             
-            HStack(spacing: 20) {
-                Button("Restore", action: restore)
-                    .font(.caption)
-                    .foregroundColor(.blue)
-                
-                Link("Terms", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
-                    .font(.caption)
-                    .foregroundColor(.blue)
-                
-                Link("Privacy", destination: URL(string: "https://speaklife.io/privacy")!)
-                    .font(.caption)
-                    .foregroundColor(.blue)
-            }
+            Link("Privacy", destination: URL(string: "https://speaklife.io/privacy")!)
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(.white)
         }
-        .padding(.bottom, 40)
     }
     
     // MARK: - Actions
-    private func selectWeekly() {
-        withAnimation(.spring(response: 0.5, dampingFraction: 0.8)) {
-            currentSelection = subscriptionStore.currentOfferedWeekly
-        }
-    }
-    
-    private func selectMonthly() {
-        withAnimation(.spring(response: 0.5, dampingFraction: 0.8)) {
-            currentSelection = subscriptionStore.currentOfferedPremiumMonthly
-        }
-    }
-    
-    private func selectYearly() {
-        withAnimation(.spring(response: 0.5, dampingFraction: 0.8)) {
-            currentSelection = subscriptionStore.currentOfferedPremium
-        }
-    }
-    
     private func setupView() {
-        if currentSelection == nil {
-            // Default to yearly as most popular - no animation on initial load
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                currentSelection = subscriptionStore.currentOfferedPremium
-                //animateCTA = true
-            }
-        }
-        
-//        if !hasInitialized {
-//            hasInitialized = true
-//            // Delay CTA animation to avoid initial flicker
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-//                animateCTA = true
-//            }
-//        } else {
-//            animateCTA = true
-//        }
-        
-        startTestimonialRotation()
-    }
-    
-    private func updateCountdown() {
-        if timeRemaining > 0 {
-            timeRemaining -= 1
-        }
-    }
-    
-    private func startTestimonialRotation() {
-        Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { _ in
-            withAnimation {
-                testimonialIndex = (testimonialIndex + 1) % transformationStories.count
-            }
-        }
+        // Default to annual option
+        selectedOption = "annual"
     }
     
     private func makePurchase() {
@@ -826,12 +482,13 @@ struct OptimizedSubscriptionView: View {
             }
             
             do {
-                let selectedProduct = currentSelection ?? 
-                                    subscriptionStore.currentOfferedWeekly ?? 
-                                    subscriptionStore.currentOfferedPremium
+                guard let selectedProduct = selectedProduct else {
+                    errorMessage = "Please select a subscription option."
+                    isShowingError = true
+                    return
+                }
                 
-                if let selectedProduct = selectedProduct,
-                   let _ = try await subscriptionStore.purchaseWithID([selectedProduct.id]) {
+                if let _ = try await subscriptionStore.purchaseWithID([selectedProduct.id]) {
                     Analytics.logEvent("subscription_started", parameters: [
                         "product_id": selectedProduct.id,
                         "price": selectedProduct.price,

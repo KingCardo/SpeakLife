@@ -210,7 +210,7 @@ struct OnboardingView: View  {
     private func subscriptionScene(size: CGSize) -> some View  {
         
         ZStack {
-            OptimizedSubscriptionView(size: size) {
+            OptimizedSubscriptionView() { //}(size: size) {
                 //withAnimation {
                     advance()
               //  }

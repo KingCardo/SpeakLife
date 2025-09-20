@@ -233,7 +233,7 @@ struct FetchedFilter: Identifiable, Hashable {
 
 struct AudioDeclarationView: View {
     @EnvironmentObject private var viewModel: AudioDeclarationViewModel
-    @StateObject private var audioViewModel: AudioPlayerViewModel
+    @StateObject private var audioViewModel = AudioPlayerViewModel()
     @EnvironmentObject var subscriptionStore: SubscriptionStore
     @EnvironmentObject var declarationStore: DeclarationViewModel
    
@@ -242,11 +242,6 @@ struct AudioDeclarationView: View {
     @State private var isPresentingPremiumView = false
     @State var presentDevotionalSubscriptionView = false
    
-    init(declarationStore: AudioDeclarationViewModel) {
-        let playerVM = AudioPlayerViewModel()
-        playerVM.audioDeclarationViewModel = declarationStore
-        _audioViewModel = StateObject(wrappedValue: playerVM)
-    }
     
     
     var body: some View {
@@ -295,7 +290,7 @@ struct AudioDeclarationView: View {
             .sheet(isPresented: $isPresentingPremiumView) {
                 isPresentingPremiumView = false
             } content: {
-                OptimizedSubscriptionView(size: UIScreen.main.bounds.size) {
+                OptimizedSubscriptionView() { //size: UIScreen.main.bounds.size) {
                         isPresentingPremiumView = false
                     }
                     .frame(height: UIScreen.main.bounds.height * 0.96)
@@ -339,7 +334,8 @@ struct AudioDeclarationView: View {
                     presentDevotionalSubscriptionView = false
                 }
             }
-            .onAppear {
+            .task {
+                // Only fetch once when view first loads
                 viewModel.fetchAudio(version: subscriptionStore.audioRemoteVersion)
             }
         }
@@ -539,6 +535,13 @@ struct AudioDeclarationView: View {
             return
         }
 
+        // Check if tapping the same item that's already loaded
+        if audioViewModel.selectedItem?.id == item.id {
+            // Just open the modal for the same item without reloading
+            // This prevents re-triggering loadAudio for the same item
+            return
+        }
+
         viewModel.downloadProgress[item.id] = nil
         viewModel.fetchingAudioIDs.insert(item.id)
 
@@ -549,13 +552,15 @@ struct AudioDeclarationView: View {
                 case .success(let url):
                     audioURL = url
                     let isSameItem = audioViewModel.selectedItem?.id == item.id
-                    audioViewModel.selectedItem = item
-                    //audioViewModel.insert(url)
                     viewModel.downloadProgress[item.id] = 0.0
                     audioViewModel.currentTrack = item.title
                     audioViewModel.subtitle = item.subtitle
                     audioViewModel.imageUrl = item.imageUrl
+                    // Load audio and set selectedItem together
                     audioViewModel.loadAudio(from: url, isSameItem: isSameItem)
+                    audioViewModel.selectedItem = item
+                    // Show the audio bar when playing
+                    audioViewModel.isBarVisible = true
                 case .failure(let error):
                     errorMessage = ErrorWrapper(message: "Failed to download audio: \(error.localizedDescription)")
                     audioViewModel.selectedItem = nil

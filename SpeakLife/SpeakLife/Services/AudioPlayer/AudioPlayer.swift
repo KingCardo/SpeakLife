@@ -40,6 +40,7 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
     
     
     @objc private func appDidEnterBackground() {
+            // Only pause background music, not other audio
             if audioPlayer?.isPlaying == true {
                 DispatchQueue.main.async { [weak self] in
                     self?.audioPlayer?.pause()
@@ -63,11 +64,14 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
             try audioSession.setCategory(.ambient, mode: .default, options: [])
             try audioSession.setActive(true)
         } catch {
-            print("Failed to set up audio session: \(error)")
+            // Failed to set up audio session
         }
         
         self.audioFiles = files.shuffled()
         self.currentFileIndex = 0
+        if audioFiles.isEmpty {
+            return
+        }
         let type = audioFiles[currentFileIndex].type
         currentArtist = audioFiles[currentFileIndex].artist
         currentTitle = audioFiles[currentFileIndex].name
@@ -77,7 +81,6 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
     private func playFile(type: String) {
         guard !audioFiles.isEmpty else { return }
         let name = audioFiles[currentFileIndex].name
-        print("Playing file: \(name)") // Debugging log
         if let path = Bundle.main.path(forResource: name, ofType: type) {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
@@ -88,7 +91,7 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
                 }
                 isPlaying = true
             } catch {
-                print("Unable to locate audio file: \(name).\(type)")
+                // Unable to locate audio file
             }
         }
     }
@@ -96,7 +99,6 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag && isPlaying {  // Only continue if we're actively playing
             currentFileIndex = (currentFileIndex + 1) % audioFiles.count
-            print("Moving to next file: \(audioFiles[currentFileIndex])") // Debugging log
             playFile(type: "mp3") // Assuming all files are mp3
         } else {
             // Stop playback if we're not actively playing
@@ -120,12 +122,8 @@ class AudioPlayerService: NSObject, AVAudioPlayerDelegate {
         isPausedInBackground = false
         audioFiles = []
         
-        // Deactivate audio session when stopping
-        do {
-            try AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
-        } catch {
-            print("Failed to deactivate audio session: \(error)")
-        }
+        // Don't deactivate audio session - other audio might be playing
+        // The session will be managed by the audio content player
     }
     
     func playMusic() {

@@ -24,7 +24,7 @@ struct PremiumView: View {
                 if appState.offerDiscount {
                     OfferPageView(countdown: $countdown) { }
                 } else {
-                    OptimizedSubscriptionView(size: geometry.size) {
+                    OptimizedSubscriptionView() { //}(size: geometry.size) {
                         // Handle callback - typically dismiss or navigation
                   }
                 }

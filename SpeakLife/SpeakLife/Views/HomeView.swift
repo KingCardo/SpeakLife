@@ -100,7 +100,7 @@ struct HomeView: View {
                             })
                             .sheet(isPresented: $showSubscription, content: {
                                 GeometryReader { proxy in
-                                    OptimizedSubscriptionView(size: proxy.size) {
+                                    OptimizedSubscriptionView() { //size: proxy.size) {
                                         showSubscription = false
                                     }
                                     .frame(height:  UIScreen.main.bounds.height * 0.9)
@@ -168,7 +168,7 @@ struct HomeView: View {
     }
     
     var audioView: some View {
-        AudioDeclarationView(declarationStore: audioDeclarationViewModel)
+        AudioDeclarationView()
             .tag(2)
             .tabItem {
                 if #available(iOS 17, *) {
